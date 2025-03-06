@@ -78,6 +78,8 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
      * 
      * The extension should call this method when the user cancels the action or a failure occurs.
      * 
+     * API-Since: 12.0
+     * 
      * @param error error's domain should be ASExtensionErrorDomain and the code should be a value of type
      *              ASExtensionErrorCode.
      */
@@ -99,6 +101,8 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
      * Complete the request to configure the extension.
      * 
      * Calling this method will eventually dismiss the associated view controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("completeExtensionConfigurationRequest")
@@ -108,6 +112,8 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
      * Complete the request by providing the user selected credential.
      * 
      * Calling this method will eventually dismiss the associated view controller.
+     * 
+     * API-Since: 12.0
      * 
      * @param credential        the credential that the user has selected.
      * @param completionHandler optionally contains any work which the extension may need to perform after the request
@@ -251,4 +257,57 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Complete the request by providing the user selected one time code credential.
+     * 
+     * Calling this method will eventually dismiss the associated view controller.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param credential        the credential that the user has selected.
+     * @param completionHandler optionally contains any work which the extension may need to perform after the request
+     *                          has been completed,
+     *                          as a background-priority task. The `expired` parameter will be YES if the system decides
+     *                          to prematurely terminate a previous
+     *                          non-expiration invocation of the completionHandler.
+     */
+    @Generated
+    @Selector("completeOneTimeCodeRequestWithSelectedCredential:completionHandler:")
+    public native void completeOneTimeCodeRequestWithSelectedCredentialCompletionHandler(
+            @NotNull ASOneTimeCodeCredential credential,
+            @ObjCBlock(name = "call_completeOneTimeCodeRequestWithSelectedCredentialCompletionHandler") @Nullable Block_completeOneTimeCodeRequestWithSelectedCredentialCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_completeOneTimeCodeRequestWithSelectedCredentialCompletionHandler {
+        @Generated
+        void call_completeOneTimeCodeRequestWithSelectedCredentialCompletionHandler(boolean expired);
+    }
+
+    /**
+     * Complete the request by providing the user selected text.
+     * 
+     * Calling this method will eventually dismiss the associated view controller.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param text              The string that the user has selected.
+     * @param completionHandler Optionally contains any work which the extension may need to perform after the request
+     *                          has been completed,
+     *                          as a background-priority task. The `expired` parameter will be YES if the system decides
+     *                          to prematurely terminate a previous
+     *                          non-expiration invocation of the completionHandler.
+     */
+    @Generated
+    @Selector("completeRequestWithTextToInsert:completionHandler:")
+    public native void completeRequestWithTextToInsertCompletionHandler(@NotNull String text,
+            @ObjCBlock(name = "call_completeRequestWithTextToInsertCompletionHandler") @Nullable Block_completeRequestWithTextToInsertCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_completeRequestWithTextToInsertCompletionHandler {
+        @Generated
+        void call_completeRequestWithTextToInsertCompletionHandler(boolean expired);
+    }
 }

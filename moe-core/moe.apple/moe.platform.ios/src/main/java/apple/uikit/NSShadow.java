@@ -179,6 +179,9 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("init")
     public native NSShadow init();
@@ -189,6 +192,8 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * blur radius of the shadow in default user space units
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShadowBlurRadius:")
@@ -196,6 +201,8 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * color used for the shadow (default is black with an alpha value of 1/3)
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShadowColor:")
@@ -203,6 +210,8 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * offset in user space of the shadow from the original drawing
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShadowOffset:")
@@ -210,6 +219,8 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * blur radius of the shadow in default user space units
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("shadowBlurRadius")
@@ -218,6 +229,8 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * color used for the shadow (default is black with an alpha value of 1/3)
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -227,6 +240,8 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * offset in user space of the shadow from the original drawing
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("shadowOffset")

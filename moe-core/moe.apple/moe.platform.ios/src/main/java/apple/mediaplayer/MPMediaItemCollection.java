@@ -106,6 +106,8 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     /**
      * Creates a media item collection by copying an array of MPMediaItems.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -180,6 +182,8 @@ public class MPMediaItemCollection extends MPMediaEntity {
     /**
      * Returns the number of items in the collection.
      * In some cases, this is more efficient than fetching the items array and asking for the count.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("count")
@@ -194,12 +198,17 @@ public class MPMediaItemCollection extends MPMediaEntity {
     @Selector("initWithCoder:")
     public native MPMediaItemCollection initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithItems:")
     public native MPMediaItemCollection initWithItems(@NotNull NSArray<? extends MPMediaItem> items);
 
     /**
      * Returns the MPMediaItems in the collection.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -208,6 +217,8 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     /**
      * Returns the types of media which the collection holds.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("mediaTypes")
@@ -218,6 +229,8 @@ public class MPMediaItemCollection extends MPMediaEntity {
      * Returns an item representative of other items in the collection.
      * This item can be used for common item properties in the collection, often more efficiently than fetching an item
      * out of the items array.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated

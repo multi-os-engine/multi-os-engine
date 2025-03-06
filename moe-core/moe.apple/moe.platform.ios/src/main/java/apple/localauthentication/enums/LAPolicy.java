@@ -77,4 +77,29 @@ public final class LAPolicy {
     @Generated
     private LAPolicy() {
     }
+
+    /**
+     * Device owner will be authenticated by a companion device e.g. Watch, Mac, etc.
+     * 
+     * Companion authentication is required. If no nearby paired companion device can be found,
+     * LAErrorCompanionNotAvailable is returned.
+     * 
+     * Users should follow instructions on the companion device to authenticate.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long AuthenticationWithCompanion = 0x0000000000000003L;
+    /**
+     * Device owner will be authenticated by biometry or a companion device e.g. Watch, Mac, etc.
+     * 
+     * Companion or biometric authentication is required. If no nearby paired companion device can be found,
+     * it behaves as LAPolicyDeviceOwnerAuthenticationWithBiometrics. Similarly, if biometry is
+     * unavailable it behaves as LAPolicyDeviceOwnerAuthenticationWithCompanion.
+     * 
+     * When both mechanisms are available, user is asked to use biometry and companion authentication
+     * will run in parallel. Users should follow instructions on the companion device to authenticate.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long AuthenticationWithBiometricsOrCompanion = 0x0000000000000004L;
 }

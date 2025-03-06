@@ -82,6 +82,8 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * Provide promised items
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("activityItemsConfigurationWithItemProviders:")
@@ -90,6 +92,8 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * Provide data up front
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("activityItemsConfigurationWithObjects:")
@@ -112,6 +116,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("applicationActivitiesForActivityItemsConfiguration")
     public native NSArray<? extends UIActivity> applicationActivitiesForActivityItemsConfiguration();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("applicationActivitiesProvider")
@@ -170,6 +177,8 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * Provide promised items
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithItemProviders:")
@@ -178,6 +187,8 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * Provide data up front
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithObjects:")
@@ -212,6 +223,8 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * A local object retained for the convenience of the app developer
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -219,6 +232,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @MappedReturn(ObjCObjectMapper.class)
     public native Object localObject();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("metadataProvider")
@@ -239,6 +255,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("new")
     public static native UIActivityItemsConfiguration new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("perItemMetadataProvider")
@@ -254,6 +273,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
         Object call_perItemMetadataProvider_ret(@NInt long arg0, @NotNull String arg1);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("previewProvider")
@@ -276,6 +298,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setApplicationActivitiesProvider:")
     public native void setApplicationActivitiesProvider(
@@ -291,11 +316,16 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * A local object retained for the convenience of the app developer
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLocalObject:")
     public native void setLocalObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setMetadataProvider:")
     public native void setMetadataProvider(
@@ -310,6 +340,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
         Object call_setMetadataProvider(@NotNull String arg0);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPerItemMetadataProvider:")
     public native void setPerItemMetadataProvider(
@@ -324,6 +357,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
         Object call_setPerItemMetadataProvider(@NInt long arg0, @NotNull String arg1);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPreviewProvider:")
     public native void setPreviewProvider(
@@ -339,6 +375,8 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * Defaults to all known interactions
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSupportedInteractions:")
@@ -354,6 +392,8 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     /**
      * Defaults to all known interactions
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

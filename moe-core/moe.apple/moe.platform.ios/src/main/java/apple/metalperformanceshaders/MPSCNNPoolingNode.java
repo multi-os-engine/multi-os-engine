@@ -109,6 +109,8 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = size
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:filterSize:")
@@ -121,6 +123,8 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
      * @param size       kernelWidth = kernelHeight = size
      * @param stride     strideInPixelsX = strideInPixelsY = stride
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:filterSize:stride:")
@@ -136,6 +140,8 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
@@ -176,6 +182,8 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = size
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:filterSize:")
@@ -189,6 +197,8 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
      * @param size       kernelWidth = kernelHeight = size
      * @param stride     strideInPixelsX = strideInPixelsY = stride
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:filterSize:stride:")

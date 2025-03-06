@@ -136,6 +136,8 @@ public class NSSymbolReplaceContentTransition extends NSSymbolContentTransition 
     /**
      * Convenience initializer for a replace content transition where the initial symbol
      * scales down as it is removed, and the new symbol scales up as it is added.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("replaceDownUpTransition")
@@ -145,6 +147,8 @@ public class NSSymbolReplaceContentTransition extends NSSymbolContentTransition 
     /**
      * Convenience initializer for a replace content transition where the initial symbol
      * is removed with no animation, and the new symbol scales up as it is added.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("replaceOffUpTransition")
@@ -154,6 +158,8 @@ public class NSSymbolReplaceContentTransition extends NSSymbolContentTransition 
     /**
      * Convenience initializer for a replace content transition where the initial symbol
      * scales up as it is removed, and the new symbol scales up as it is added.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("replaceUpUpTransition")
@@ -188,6 +194,8 @@ public class NSSymbolReplaceContentTransition extends NSSymbolContentTransition 
 
     /**
      * The default replace transition, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("transition")
@@ -195,6 +203,8 @@ public class NSSymbolReplaceContentTransition extends NSSymbolContentTransition 
 
     /**
      * Returns a copy of the content transition that animates incrementally, by layer.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("transitionWithByLayer")
@@ -203,6 +213,8 @@ public class NSSymbolReplaceContentTransition extends NSSymbolContentTransition 
 
     /**
      * Returns a copy of the content transition that animates all layers of the symbol simultaneously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("transitionWithWholeSymbol")
@@ -218,4 +230,15 @@ public class NSSymbolReplaceContentTransition extends NSSymbolContentTransition 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Convenience initializer for a MagicReplace content transition with a configured Replace fallback.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("magicTransitionWithFallback:")
+    @NotNull
+    public static native NSSymbolMagicReplaceContentTransition magicTransitionWithFallback(
+            @NotNull NSSymbolReplaceContentTransition fallback);
 }

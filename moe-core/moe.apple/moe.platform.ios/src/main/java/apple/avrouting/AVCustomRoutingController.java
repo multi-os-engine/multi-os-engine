@@ -163,6 +163,8 @@ public class AVCustomRoutingController extends NSObject {
      * 
      * - Parameters:
      * - route: The route to invalidate authorization for.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("invalidateAuthorizationForRoute:")
@@ -177,6 +179,8 @@ public class AVCustomRoutingController extends NSObject {
      * - Returns: <doc://com.apple.documentation/documentation/objectivec/yes> if
      * the route is in an active state; otherwise,
      * <doc://com.apple.documentation/documentation/objectivec/no>.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isRouteActive:")
@@ -226,6 +230,8 @@ public class AVCustomRoutingController extends NSObject {
      * - active: A Boolean value that indicates whether the route is active.
      * 
      * - route: A route to change the active state for.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setActive:forRoute:")

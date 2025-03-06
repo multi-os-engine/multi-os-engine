@@ -134,6 +134,8 @@ public class AVCaptureSynchronizedMetadataObjectData extends AVCaptureSynchroniz
      * An array of AVMetadataObject subclasses.
      * 
      * -metadataObjects is never nil. If no metadata objects are present for a given time, an empty array is returned.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

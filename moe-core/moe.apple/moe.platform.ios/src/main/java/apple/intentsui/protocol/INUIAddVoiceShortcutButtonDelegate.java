@@ -19,12 +19,18 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INUIAddVoiceShortcutButtonDelegate")
 public interface INUIAddVoiceShortcutButtonDelegate {
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("presentAddVoiceShortcutViewController:forAddVoiceShortcutButton:")
     void presentAddVoiceShortcutViewControllerForAddVoiceShortcutButton(
             @NotNull INUIAddVoiceShortcutViewController addVoiceShortcutViewController,
             @NotNull INUIAddVoiceShortcutButton addVoiceShortcutButton);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("presentEditVoiceShortcutViewController:forAddVoiceShortcutButton:")
     void presentEditVoiceShortcutViewControllerForAddVoiceShortcutButton(

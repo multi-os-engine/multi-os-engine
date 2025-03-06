@@ -92,6 +92,9 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("descriptor")
     public static native MTLInstanceAccelerationStructureDescriptor descriptor();
@@ -107,6 +110,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Number of instance descriptors
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("instanceCount")
@@ -115,6 +120,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Buffer containing instance descriptors of the type specified by the instanceDescriptorType property
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -125,6 +132,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("instanceDescriptorBufferOffset")
@@ -135,6 +144,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
      * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
      * be at least the size of the instance descriptor type and must be a multiple of 4 bytes.
      * Defaults to the size of the instance descriptor type.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("instanceDescriptorStride")
@@ -152,6 +163,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Acceleration structures to be instanced
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -186,6 +199,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Number of instance descriptors
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setInstanceCount:")
@@ -193,6 +208,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Buffer containing instance descriptors of the type specified by the instanceDescriptorType property
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setInstanceDescriptorBuffer:")
@@ -201,6 +218,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setInstanceDescriptorBufferOffset:")
@@ -210,6 +229,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
      * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
      * be at least the size of the instance descriptor type and must be a multiple of 4 bytes.
      * Defaults to the size of the instance descriptor type.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setInstanceDescriptorStride:")
@@ -217,6 +238,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Acceleration structures to be instanced
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setInstancedAccelerationStructures:")
@@ -320,4 +343,67 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Matrix layout of the transformation matrices in the instance descriptors
+     * in the instance descriptor buffer and the transformation matrices in the
+     * transformation matrix buffer. Defaults to MTLMatrixLayoutColumnMajor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("instanceTransformationMatrixLayout")
+    @NInt
+    public native long instanceTransformationMatrixLayout();
+
+    /**
+     * Motion transform stride. Defaults to 0, indicating that transforms are tightly packed according to the
+     * motion transform type.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("motionTransformStride")
+    @NUInt
+    public native long motionTransformStride();
+
+    /**
+     * Type of motion transforms. Defaults to MTLTransformTypePackedFloat4x3.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("motionTransformType")
+    @NInt
+    public native long motionTransformType();
+
+    /**
+     * Matrix layout of the transformation matrices in the instance descriptors
+     * in the instance descriptor buffer and the transformation matrices in the
+     * transformation matrix buffer. Defaults to MTLMatrixLayoutColumnMajor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setInstanceTransformationMatrixLayout:")
+    public native void setInstanceTransformationMatrixLayout(@NInt long value);
+
+    /**
+     * Motion transform stride. Defaults to 0, indicating that transforms are tightly packed according to the
+     * motion transform type.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMotionTransformStride:")
+    public native void setMotionTransformStride(@NUInt long value);
+
+    /**
+     * Type of motion transforms. Defaults to MTLTransformTypePackedFloat4x3.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMotionTransformType:")
+    public native void setMotionTransformType(@NInt long value);
 }

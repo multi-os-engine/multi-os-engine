@@ -51,6 +51,8 @@ public interface INSearchForNotebookItemsIntentHandling {
      *                   handling.
      * 
      * @see INSearchForNotebookItemsIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -77,6 +79,8 @@ public interface INSearchForNotebookItemsIntentHandling {
      *                   details of the result of having executed the intent
      * 
      * @see INSearchForNotebookItemsIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("handleSearchForNotebookItems:completion:")
@@ -90,6 +94,9 @@ public interface INSearchForNotebookItemsIntentHandling {
         void call_handleSearchForNotebookItemsCompletion(@NotNull INSearchForNotebookItemsIntentResponse response);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveContentForSearchForNotebookItems:withCompletion:")
@@ -106,6 +113,9 @@ public interface INSearchForNotebookItemsIntentHandling {
                 @NotNull INStringResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveDateSearchTypeForSearchForNotebookItems:withCompletion:")
@@ -123,6 +133,9 @@ public interface INSearchForNotebookItemsIntentHandling {
                 @NotNull INDateSearchTypeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveDateTimeForSearchForNotebookItems:withCompletion:")
@@ -139,6 +152,9 @@ public interface INSearchForNotebookItemsIntentHandling {
                 @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveItemTypeForSearchForNotebookItems:withCompletion:")
@@ -155,6 +171,9 @@ public interface INSearchForNotebookItemsIntentHandling {
                 @NotNull INNotebookItemTypeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveLocationForSearchForNotebookItems:withCompletion:")
@@ -171,6 +190,9 @@ public interface INSearchForNotebookItemsIntentHandling {
                 @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveLocationSearchTypeForSearchForNotebookItems:withCompletion:")
@@ -188,6 +210,9 @@ public interface INSearchForNotebookItemsIntentHandling {
                 @NotNull INLocationSearchTypeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveStatusForSearchForNotebookItems:withCompletion:")
@@ -214,6 +239,8 @@ public interface INSearchForNotebookItemsIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional

@@ -47,6 +47,8 @@ public class QLThumbnailRepresentation extends NSObject {
 
     /**
      * Returns the CGImage representation of the thumbnail.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -161,6 +163,9 @@ public class QLThumbnailRepresentation extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("type")
     @NInt

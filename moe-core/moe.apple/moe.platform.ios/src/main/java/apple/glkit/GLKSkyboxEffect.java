@@ -232,7 +232,12 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * { 0.0, 0.0, 0.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("center")
     @ByValue
@@ -240,7 +245,12 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Draw skybox
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("draw")
     public native void draw();
@@ -251,54 +261,90 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * nil
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("label")
     public native String label();
 
+    @Deprecated
     @Generated
     @Selector("prepareToDraw")
     public native void prepareToDraw();
 
     /**
      * { 0.0, 0.0, 0.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setCenter:")
     public native void setCenter(@ByValue GLKVector3 value);
 
     /**
      * nil
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setLabel:")
     public native void setLabel(@Nullable String value);
 
     /**
      * 1.0, 1.0, 1.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setXSize:")
     public native void setXSize(float value);
 
     /**
      * 1.0, 1.0, 1.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setYSize:")
     public native void setYSize(float value);
 
     /**
      * 1.0, 1.0, 1.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setZSize:")
     public native void setZSize(float value);
 
     /**
      * name == 0, target == GL_TEXTURE_CUBE_MAP
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("textureCubeMap")
@@ -306,7 +352,12 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Identity for all matrices
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("transform")
@@ -314,21 +365,36 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * 1.0, 1.0, 1.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("xSize")
     public native float xSize();
 
     /**
      * 1.0, 1.0, 1.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("ySize")
     public native float ySize();
 
     /**
      * 1.0, 1.0, 1.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("zSize")
     public native float zSize();

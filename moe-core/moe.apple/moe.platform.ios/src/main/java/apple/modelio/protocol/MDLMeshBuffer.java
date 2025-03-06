@@ -52,6 +52,8 @@ public interface MDLMeshBuffer extends NSCopying {
      * 
      * This allcoator used for copy and relayout operations (such as when
      * a new vertex descriptor is applied to a vertex buffer)
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -67,6 +69,8 @@ public interface MDLMeshBuffer extends NSCopying {
      * Fills data.length bytes of data. Will not write beyond length of
      * this buffer.
      * 
+     * API-Since: 9.0
+     * 
      * @param data   Data to fill buffer with
      * @param offset Byte offset in buffer to begin filling data
      */
@@ -78,6 +82,8 @@ public interface MDLMeshBuffer extends NSCopying {
      * [@property] length
      * 
      * Size in bytes of the buffer allocation
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("length")
@@ -95,6 +101,8 @@ public interface MDLMeshBuffer extends NSCopying {
      * buffer may be unavailable for rendering while mapped, and cause a
      * draw failure. Precautions must be taken in such cases.
      * 
+     * API-Since: 9.0
+     * 
      * @return An MDLMeshBufferMap object to read or modify a buffer's memory
      */
     @NotNull
@@ -106,6 +114,8 @@ public interface MDLMeshBuffer extends NSCopying {
      * [@property] type
      * 
      * the intended type of the buffer
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("type")
@@ -120,6 +130,8 @@ public interface MDLMeshBuffer extends NSCopying {
      * This zone will be used for copy and relayout operations (such as
      * when a new vertex descriptor is applied to a vertex buffer). If
      * the default zone is used this will be nil.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

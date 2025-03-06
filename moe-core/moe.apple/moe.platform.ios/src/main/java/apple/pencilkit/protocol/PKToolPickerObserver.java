@@ -24,6 +24,8 @@ public interface PKToolPickerObserver {
      * changes, not just when this delegate method is called.
      * 
      * @param toolPicker The tool picker that changed.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -36,6 +38,8 @@ public interface PKToolPickerObserver {
      * Tells the delegate that the ruler active state was changed by the user.
      * 
      * @param toolPicker The tool picker that changed.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -48,7 +52,12 @@ public interface PKToolPickerObserver {
      * Tells the delegate that the selected tool was changed by the user.
      * 
      * @param toolPicker The tool picker that changed.
+     * 
+     *                   API-Since: 13.0
+     *                   Deprecated-Since: 18.0
+     *                   Deprecated-Message: Use toolPickerSelectedToolItemDidChange instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("toolPickerSelectedToolDidChange:")
@@ -60,11 +69,27 @@ public interface PKToolPickerObserver {
      * Tells the delegate that the tool picker UI changed visibility.
      * 
      * @param toolPicker The tool picker that changed.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("toolPickerVisibilityDidChange:")
     default void toolPickerVisibilityDidChange(@NotNull PKToolPicker toolPicker) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that the selected tool item was changed by the user.
+     * 
+     * @param toolPicker The tool picker that changed.
+     * 
+     *                   API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("toolPickerSelectedToolItemDidChange:")
+    default void toolPickerSelectedToolItemDidChange(@NotNull PKToolPicker toolPicker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

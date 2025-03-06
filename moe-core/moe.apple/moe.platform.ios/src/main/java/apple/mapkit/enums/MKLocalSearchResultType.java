@@ -20,4 +20,8 @@ public final class MKLocalSearchResultType {
      * API-Since: 13.0
      */
     @Generated @NUInt public static final long PointOfInterest = 0x0000000000000002L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NUInt public static final long PhysicalFeature = 0x0000000000000004L;
 }

@@ -49,6 +49,8 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      *                          to handle the command by beginning a suspension with an appropriate reason.
      *                          For buffering commands, the command should only be considered complete once the playback
      *                          object is ready to receive a subsequent play command.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("playbackCoordinator:didIssueBufferingCommand:completionHandler:")
@@ -82,6 +84,8 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      *                          If the command's shouldBufferInAnticipationOfPlayback is YES, the completion handler
      *                          should also only be called once the playback object is ready to receive a subsequent
      *                          play command.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("playbackCoordinator:didIssuePauseCommand:completionHandler:")
@@ -116,6 +120,8 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      *                          The receiver must call the completion handler when done, either when the command has
      *                          been handled succesfully or when the receiver has indicated its inability
      *                          to handle the command by beginning a suspension with an appropriate reason.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("playbackCoordinator:didIssuePlayCommand:completionHandler:")
@@ -151,6 +157,8 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      *                          If the command's shouldBufferInAnticipationOfPlayback is YES, the completion handler
      *                          should also only be called once the playback object is ready to receive a subsequent
      *                          play command.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("playbackCoordinator:didIssueSeekCommand:completionHandler:")

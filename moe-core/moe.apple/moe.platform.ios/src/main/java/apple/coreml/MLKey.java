@@ -143,6 +143,8 @@ public class MLKey extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Name of the key
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -164,6 +166,8 @@ public class MLKey extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * scope of the key
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

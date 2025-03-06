@@ -117,6 +117,9 @@ public class NSTextList extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native NSTextList initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithMarkerFormat:options:")
     public native NSTextList initWithMarkerFormatOptions(@NotNull String markerFormat, @NUInt long options);
@@ -160,6 +163,9 @@ public class NSTextList extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("listOptions")
     @NUInt
@@ -167,12 +173,17 @@ public class NSTextList extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns the marker corresponding to itemNumber. itemNumber is ignored if < 1 or isOrdered==NO.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("markerForItemNumber:")
     public native String markerForItemNumber(@NInt long itemNumber);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("markerFormat")
@@ -193,6 +204,8 @@ public class NSTextList extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * When > 0, it is used to define the starting value for a group of ordered text list.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setStartingItemNumber:")
@@ -204,6 +217,8 @@ public class NSTextList extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * When > 0, it is used to define the starting value for a group of ordered text list.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("startingItemNumber")

@@ -79,6 +79,8 @@ public class TKTokenConfiguration extends NSObject {
     /**
      * Returns certificate with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such
      * certificate exists.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -104,6 +106,8 @@ public class TKTokenConfiguration extends NSObject {
      * for the token. System does not interpret this data in any way. For example, network-based HSM can store here
      * (using Codable or other serialization mechanisms) target network address, access credentials and the list of
      * identities accessible in the HSM.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -130,6 +134,8 @@ public class TKTokenConfiguration extends NSObject {
     /**
      * Unique, persistent identifier of this token, always created by specific token implementation. Typically
      * implemented by some kind of serial number of the target hardware, for example SmartCard serial number.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -156,6 +162,8 @@ public class TKTokenConfiguration extends NSObject {
     /**
      * Returns keychain item key with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such key
      * exists.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -170,6 +178,8 @@ public class TKTokenConfiguration extends NSObject {
 
     /**
      * All keychain items of this token.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -196,6 +206,8 @@ public class TKTokenConfiguration extends NSObject {
      * for the token. System does not interpret this data in any way. For example, network-based HSM can store here
      * (using Codable or other serialization mechanisms) target network address, access credentials and the list of
      * identities accessible in the HSM.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setConfigurationData:")
@@ -203,6 +215,8 @@ public class TKTokenConfiguration extends NSObject {
 
     /**
      * All keychain items of this token.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setKeychainItems:")

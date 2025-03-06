@@ -28,6 +28,8 @@ import org.jetbrains.annotations.Nullable;
 public interface NSTextStorageObserving {
     /**
      * Transactional editing support
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("performEditingTransactionForTextStorage:usingBlock:")
@@ -45,6 +47,8 @@ public interface NSTextStorageObserving {
      * The newCharRange is the range in the final string which was explicitly edited. The invalidatedRange includes
      * portions that changed as a result of attribute fixing. invalidatedRange is either equal to newCharRange or
      * larger. Controllers should not change the contents of the text storage during the execution of this message.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("processEditingForTextStorage:edited:range:changeInLength:invalidatedRange:")
@@ -54,6 +58,8 @@ public interface NSTextStorageObserving {
 
     /**
      * The document object
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTextStorage:")
@@ -61,6 +67,8 @@ public interface NSTextStorageObserving {
 
     /**
      * The document object
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

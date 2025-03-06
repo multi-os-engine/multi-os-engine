@@ -198,6 +198,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * that throws on addition.
      * 
      * @see MDLObjectContainer
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("addChild:")
@@ -211,6 +213,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * The default value is an empty MDLObjectContainer
      * 
      * @see MDLObjectContainerComponent
+     * 
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -234,6 +238,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * Visibility of the node
      * 
      * default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hidden")
@@ -257,6 +263,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * transform of each chair would be found on the parent MDLObject, but
      * the various items making up the chair would be found in the original
      * object.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -270,6 +278,8 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * Return the object at the specified path, or nil if none exists there
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -283,6 +293,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -299,6 +311,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * Requesting a path will force any unnamed objects to became uniquely
      * named. Any characters outside of [A-Z][a-z][0-9][:-_.] will be
      * forced to underscore.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -313,6 +327,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * The default value is an empty MDLObjectContainer
      * 
      * @see MDLObjectContainerComponent
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setChildren:")
@@ -324,6 +340,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * Visibility of the node
      * 
      * default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHidden:")
@@ -343,6 +361,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * transform of each chair would be found on the parent MDLObject, but
      * the various items making up the chair would be found in the original
      * object.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInstance:")
@@ -359,6 +379,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setParent:")
@@ -371,6 +393,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     public void setParent(@Nullable MDLObject value) {
@@ -392,6 +416,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * The default value is nil
      * 
      * @see MDLTransformComponent
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setTransform:")
@@ -405,6 +431,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * The default value is nil
      * 
      * @see MDLTransformComponent
+     * 
+     *      API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -424,6 +452,8 @@ public class MDLObject extends NSObject implements MDLNamed {
      * [@property] components
      * 
      * Allows applications to introspect the components on the objects.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

@@ -18,6 +18,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKLookAroundViewControllerDelegate")
 public interface MKLookAroundViewControllerDelegate {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerDidDismissFullScreen:")
@@ -25,6 +28,9 @@ public interface MKLookAroundViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerDidPresentFullScreen:")
@@ -32,6 +38,9 @@ public interface MKLookAroundViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerDidUpdateScene:")
@@ -39,6 +48,9 @@ public interface MKLookAroundViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerWillDismissFullScreen:")
@@ -46,6 +58,9 @@ public interface MKLookAroundViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerWillPresentFullScreen:")
@@ -53,6 +68,9 @@ public interface MKLookAroundViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerWillUpdateScene:")

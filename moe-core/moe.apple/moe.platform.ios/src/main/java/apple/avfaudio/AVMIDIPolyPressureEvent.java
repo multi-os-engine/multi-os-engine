@@ -112,6 +112,8 @@ public class AVMIDIPolyPressureEvent extends AVMIDIChannelEvent {
      *                 The MIDI key number to which the pressure should be applied.
      * @param pressure
      *                 The poly pressure value.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @Selector("initWithChannel:key:pressure:")
@@ -137,6 +139,8 @@ public class AVMIDIPolyPressureEvent extends AVMIDIChannelEvent {
     /**
      * [@property] key
      * The MIDI key number.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("key")
@@ -155,6 +159,8 @@ public class AVMIDIPolyPressureEvent extends AVMIDIChannelEvent {
     /**
      * [@property] pressure
      * The poly pressure value for the requested key.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("pressure")
@@ -171,6 +177,8 @@ public class AVMIDIPolyPressureEvent extends AVMIDIChannelEvent {
     /**
      * [@property] key
      * The MIDI key number.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setKey:")
@@ -179,6 +187,8 @@ public class AVMIDIPolyPressureEvent extends AVMIDIChannelEvent {
     /**
      * [@property] pressure
      * The poly pressure value for the requested key.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPressure:")

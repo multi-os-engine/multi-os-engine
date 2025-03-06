@@ -166,6 +166,12 @@ public class INSetAudioSourceInCarIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetAudioSourceInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("audioSource")
     @NInt
@@ -175,6 +181,12 @@ public class INSetAudioSourceInCarIntent extends INIntent {
     @Selector("init")
     public native INSetAudioSourceInCarIntent init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetAudioSourceInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithAudioSource:relativeAudioSourceReference:")
     public native INSetAudioSourceInCarIntent initWithAudioSourceRelativeAudioSourceReference(@NInt long audioSource,
@@ -184,6 +196,12 @@ public class INSetAudioSourceInCarIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetAudioSourceInCarIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetAudioSourceInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("relativeAudioSourceReference")
     @NInt

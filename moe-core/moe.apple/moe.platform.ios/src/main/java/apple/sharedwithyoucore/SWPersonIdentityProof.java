@@ -119,6 +119,8 @@ public class SWPersonIdentityProof extends NSObject implements NSSecureCoding, N
      * Hashes of missing Merkle tree nodes that can provide proof of inclusion.
      * 
      * The data contains an array of SHA256 hash of the user's combined public identities.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -162,6 +164,8 @@ public class SWPersonIdentityProof extends NSObject implements NSSecureCoding, N
 
     /**
      * Public key of local device
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -172,6 +176,8 @@ public class SWPersonIdentityProof extends NSObject implements NSSecureCoding, N
      * Index of local public key in the Merkle tree
      * 
      * This data can be used to determine if the node is the left or the right child
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("publicKeyIndex")

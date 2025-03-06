@@ -170,6 +170,8 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Unique ID
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -189,6 +191,8 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Report failed execution of the receiver.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("fail")
@@ -196,11 +200,16 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Report successful execution of the receiver.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("fulfill")
     public native void fulfill();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native CXAction init();
@@ -211,6 +220,8 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Whether all actions are either fulfilled or failed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isComplete")
@@ -222,6 +233,9 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("timeoutDate")

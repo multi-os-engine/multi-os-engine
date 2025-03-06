@@ -71,6 +71,8 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
      * @param completion             The completion callback handler returns the status of the save. If the completion
      *                               handler success is NO, then error is non-nil. An error here is considered fatal and
      *                               the series builder will be complete.
+     * 
+     *                               API-Since: 13.0
      */
     @Generated
     @Selector("addHeartbeatWithTimeIntervalSinceSeriesStartDate:precededByGap:completion:")
@@ -100,6 +102,8 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
      *                   If success is YES, the metadata has been added to the builder successfully. If success
      *                   is NO, error will be non-null and will contain the error encountered during the
      *                   insertion operation. When an error occurs, the builder's metadata will remain unchanged.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @Selector("addMetadata:completion:")
@@ -171,6 +175,8 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
      *                   including database inaccessibility during device lock. Subsequent requests for the
      *                   HKHeartbeatSeriesSample can be made through HKSampleQuery or similar queries. To
      *                   retrieve the data stored with an HKHeartbeatSeriesSample use HKHeartbeatSeriesQuery.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @Selector("finishSeriesWithCompletion:")
@@ -205,6 +211,8 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
      * @param healthStore Specifies the HKHealthStore object to use for building the series.
      * @param device      The optional device represents the HKDevice from which the data is provided.
      * @param startDate   The start date of the HKHeartbeatSeriesSample that will be generated.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @Selector("initWithHealthStore:device:startDate:")
@@ -240,6 +248,8 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
      * 
      * Any calls to addHeartbeatWithTimeIntervalSinceSeriesStartDate:precededByGap:completion: once
      * maximumCount has been reached will fail and an error will be returned in the completion handler.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximumCount")

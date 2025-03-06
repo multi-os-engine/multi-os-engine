@@ -200,6 +200,8 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
      * The device from which the receiver provides data.
      * 
      * The value of this property is the AVCaptureDevice instance that was used to create the receiver.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -219,6 +221,8 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
      * in an AVCaptureSession. This method attempts to open the device for capture, taking exclusive control of it if
      * necessary. If the device cannot be opened because it is no longer available or because it is in use, for example,
      * this method returns nil, and the optional outError parameter points to an NSError describing the problem.
+     * 
+     * API-Since: 4.0
      * 
      * @param device
      *                 An AVCaptureDevice instance to be used for capture.
@@ -399,4 +403,101 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * isMultichannelAudioModeSupported:
+     * 
+     * Returns whether the receiver supports the given multichannel audio mode.
+     * 
+     * The receiver's multichannelAudioMode property can only be set to a certain mode if this method returns YES for
+     * that mode.
+     * 
+     * Multichannel audio modes are not supported when used in conjunction with AVCaptureMultiCamSession.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param multichannelAudioMode
+     *                              An AVCaptureMultichannelAudioMode to be checked.
+     * @return
+     *         YES if the receiver supports the given multichannel audio mode, NO otherwise.
+     */
+    @Generated
+    @Selector("isMultichannelAudioModeSupported:")
+    public native boolean isMultichannelAudioModeSupported(@NInt long multichannelAudioMode);
+
+    /**
+     * [@property] windNoiseRemovalEnabled
+     * 
+     * Specifies whether or not wind noise is removed during audio capture.
+     * 
+     * Wind noise removal is available when the AVCaptureDeviceInput multichannelAudioMode property is set to any value
+     * other than AVCaptureMultichannelAudioModeNone.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isWindNoiseRemovalEnabled")
+    public native boolean isWindNoiseRemovalEnabled();
+
+    /**
+     * [@property] windNoiseRemovalSupported
+     * 
+     * Returns whether or not the device supports wind noise removal during audio capture.
+     * 
+     * YES if the device supports wind noise removal, NO otherwise.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isWindNoiseRemovalSupported")
+    public native boolean isWindNoiseRemovalSupported();
+
+    /**
+     * [@property] multichannelAudioMode
+     * 
+     * Indicates the multichannel audio mode to apply when recording audio.
+     * 
+     * This property only takes effect when audio is being routed through the built-in microphone, and is ignored if an
+     * external microphone is in use.
+     * 
+     * The default value is AVCaptureMultichannelAudioModeNone, in which case the default single channel audio recording
+     * is used.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("multichannelAudioMode")
+    @NInt
+    public native long multichannelAudioMode();
+
+    /**
+     * [@property] multichannelAudioMode
+     * 
+     * Indicates the multichannel audio mode to apply when recording audio.
+     * 
+     * This property only takes effect when audio is being routed through the built-in microphone, and is ignored if an
+     * external microphone is in use.
+     * 
+     * The default value is AVCaptureMultichannelAudioModeNone, in which case the default single channel audio recording
+     * is used.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMultichannelAudioMode:")
+    public native void setMultichannelAudioMode(@NInt long value);
+
+    /**
+     * [@property] windNoiseRemovalEnabled
+     * 
+     * Specifies whether or not wind noise is removed during audio capture.
+     * 
+     * Wind noise removal is available when the AVCaptureDeviceInput multichannelAudioMode property is set to any value
+     * other than AVCaptureMultichannelAudioModeNone.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setWindNoiseRemovalEnabled:")
+    public native void setWindNoiseRemovalEnabled(boolean value);
 }

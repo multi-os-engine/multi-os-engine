@@ -20,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKOverlayDelegate")
 public interface SKOverlayDelegate {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("storeOverlay:didFailToLoadWithError:")
@@ -27,6 +30,9 @@ public interface SKOverlayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("storeOverlay:didFinishDismissal:")
@@ -35,6 +41,9 @@ public interface SKOverlayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("storeOverlay:didFinishPresentation:")
@@ -43,6 +52,9 @@ public interface SKOverlayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("storeOverlay:willStartDismissal:")
@@ -51,6 +63,9 @@ public interface SKOverlayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("storeOverlay:willStartPresentation:")

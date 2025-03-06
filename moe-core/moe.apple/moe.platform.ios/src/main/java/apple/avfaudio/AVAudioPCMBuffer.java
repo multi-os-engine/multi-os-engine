@@ -119,6 +119,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * 
      * If format.interleaved is true, then the pointers will refer into the same chunk of interleaved
      * samples, each offset by 1 frame. "stride" is the number of interleaved channels.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -130,6 +132,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * [@property] frameCapacity
      * 
      * The buffer's capacity, in audio sample frames.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("frameCapacity")
@@ -145,6 +149,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * the mDataByteSize in each of the underlying AudioBufferList's AudioBuffer's correspondingly,
      * and vice versa. Note that in the case of deinterleaved formats, mDataByteSize will refers
      * the size of one channel's worth of audio samples.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("frameLength")
@@ -216,6 +222,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * - if the buffer byte capacity (frameCapacity * format.streamDescription->mBytesPerFrame)
      * cannot be represented by an uint32_t
      * 
+     * API-Since: 8.0
+     * 
      * @param format
      *                      The format of the PCM audio to be contained in the buffer.
      * @param frameCapacity
@@ -247,6 +255,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * integer samples, or nil if it is another format.
      * 
      * See the discussion of floatChannelData.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -263,6 +273,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * integer samples, or nil if it is another format.
      * 
      * See the discussion of floatChannelData.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -302,6 +314,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * the mDataByteSize in each of the underlying AudioBufferList's AudioBuffer's correspondingly,
      * and vice versa. Note that in the case of deinterleaved formats, mDataByteSize will refers
      * the size of one channel's worth of audio samples.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFrameLength:")
@@ -317,6 +331,8 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * The buffer's number of interleaved channels.
      * 
      * Useful in conjunction with floatChannelData etc.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stride")

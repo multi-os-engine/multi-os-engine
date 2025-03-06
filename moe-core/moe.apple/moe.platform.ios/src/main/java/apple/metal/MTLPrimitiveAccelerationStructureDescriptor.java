@@ -90,6 +90,9 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("descriptor")
     public static native MTLPrimitiveAccelerationStructureDescriptor descriptor();
@@ -97,6 +100,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Array of geometry descriptors. If motionKeyframeCount is greater than one all geometryDescriptors
      * must be motion versions and have motionKeyframeCount of primitive buffers.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -150,6 +155,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Array of geometry descriptors. If motionKeyframeCount is greater than one all geometryDescriptors
      * must be motion versions and have motionKeyframeCount of primitive buffers.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setGeometryDescriptors:")

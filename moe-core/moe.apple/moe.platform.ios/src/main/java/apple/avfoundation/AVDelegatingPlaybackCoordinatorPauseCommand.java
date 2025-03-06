@@ -65,6 +65,8 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
      * [@property] anticipatedPlaybackRate
      * 
      * The rate to prepare for if shouldBufferInAnticipationOfPlayback is YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("anticipatedPlaybackRate")
@@ -161,6 +163,8 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
      * This should be treated similar to receiving a separate AVDelegatingPlaybackCoordinatorBufferingCommand.
      * If YES, the command should only be considered complete once the player is ready to receive an
      * AVDelegatingPlaybackCoordinatorPlayCommand with the indicated rate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("shouldBufferInAnticipationOfPlayback")

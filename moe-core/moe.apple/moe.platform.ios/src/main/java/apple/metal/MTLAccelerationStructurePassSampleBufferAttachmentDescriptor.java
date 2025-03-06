@@ -108,6 +108,8 @@ public class MTLAccelerationStructurePassSampleBufferAttachmentDescriptor extend
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of an
      * acceleration structure pass will fail.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("endOfEncoderSampleIndex")
@@ -166,6 +168,8 @@ public class MTLAccelerationStructurePassSampleBufferAttachmentDescriptor extend
      * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -183,6 +187,8 @@ public class MTLAccelerationStructurePassSampleBufferAttachmentDescriptor extend
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of an
      * acceleration structure pass will fail.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setEndOfEncoderSampleIndex:")
@@ -196,6 +202,8 @@ public class MTLAccelerationStructurePassSampleBufferAttachmentDescriptor extend
      * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSampleBuffer:")
@@ -211,6 +219,8 @@ public class MTLAccelerationStructurePassSampleBufferAttachmentDescriptor extend
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of an
      * acceleration structure pass will fail.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setStartOfEncoderSampleIndex:")
@@ -230,6 +240,8 @@ public class MTLAccelerationStructurePassSampleBufferAttachmentDescriptor extend
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of an
      * acceleration structure pass will fail.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("startOfEncoderSampleIndex")

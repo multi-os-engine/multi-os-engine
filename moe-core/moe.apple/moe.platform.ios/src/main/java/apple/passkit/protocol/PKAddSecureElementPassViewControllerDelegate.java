@@ -37,6 +37,9 @@ public interface PKAddSecureElementPassViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("addSecureElementPassViewController:didFinishAddingSecureElementPasses:error:")
     void addSecureElementPassViewControllerDidFinishAddingSecureElementPassesError(

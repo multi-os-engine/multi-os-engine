@@ -19,26 +19,39 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class UIPressPhase {
     /**
      * whenever a button press begins.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Began = 0x0000000000000000L;
     /**
      * whenever a button moves.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Changed = 0x0000000000000001L;
     /**
      * whenever a buttons was pressed and is still being held down.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Stationary = 0x0000000000000002L;
     /**
      * whenever a button is released.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Ended = 0x0000000000000003L;
     /**
      * whenever a button press doesn't end but we need to stop tracking.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Cancelled = 0x0000000000000004L;
 

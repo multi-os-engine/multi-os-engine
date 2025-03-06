@@ -52,6 +52,8 @@ public class STWebpageController extends UIViewController {
      * The URL for the webpage.
      * 
      * Set this value to the webpage’s URL when the user navigates to a new URL.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -62,7 +64,10 @@ public class STWebpageController extends UIViewController {
      * A Boolean that indicates whether a parent or guardian has blocked the URL.
      * 
      * When a parent or guardian blocks the webpage’s URL, the webpage controller
-     * displays a blocking UI and then sets this property to `YES`.
+     * displays a blocking UI and then sets this property to
+     * <doc://com.apple.documentation/documentation/objectivec/yes>.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("URLIsBlocked")
@@ -72,13 +77,16 @@ public class STWebpageController extends UIViewController {
      * A Boolean that indicates whether the webpage is currently displaying a
      * floating picture in picture window.
      * 
-     * The default value is `NO`. Set this value when the webpage starts or
+     * The default value is <doc://com.apple.documentation/documentation/objectivec/no>. Set this value when the webpage
+     * starts or
      * stops displaying a Picture in Picture window.
      * 
-     * - Important: Set this value to `NO` prior to changing
+     * - Important: Set this value to <doc://com.apple.documentation/documentation/objectivec/no> prior to changing
      * ``ScreenTime/STWebpageController/URL`` if the new webpage at that URL ends all
      * currently displayed Picture in Picture windows, and won’t immediately
      * display a new one.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("URLIsPictureInPicture")
@@ -88,12 +96,15 @@ public class STWebpageController extends UIViewController {
      * A Boolean that indicates whether there are one or more videos currently
      * playing in the webpage.
      * 
-     * The default value is `NO`. Set this value when the webpage starts or
+     * The default value is <doc://com.apple.documentation/documentation/objectivec/no>. Set this value when the webpage
+     * starts or
      * stops playing video.
      * 
-     * - Important: Set this value to `NO` prior to changing
+     * - Important: Set this value to <doc://com.apple.documentation/documentation/objectivec/no> prior to changing
      * ``ScreenTime/STWebpageController/URL`` if the new webpage at that URL stops currently
      * playing media and won’t immediately start playing new media.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("URLIsPlayingVideo")
@@ -217,6 +228,8 @@ public class STWebpageController extends UIViewController {
      * - bundleIdentifier: The bundle identifier that can be changed to facilitate web usage
      * reporting for a parent web browser from one of its helper processes or extensions.
      * - error: Any error that occurred while changing the bundle identifier.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBundleIdentifier:error:")
@@ -227,7 +240,10 @@ public class STWebpageController extends UIViewController {
      * A Boolean that indicates whether the webpage controller is not recording web
      * usage.
      * 
-     * Set to `YES` to stop recording and reporting web-usage data.
+     * Set to <doc://com.apple.documentation/documentation/objectivec/yes> to stop recording and reporting web-usage
+     * data.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSuppressUsageRecording:")
@@ -237,6 +253,8 @@ public class STWebpageController extends UIViewController {
      * The URL for the webpage.
      * 
      * Set this value to the webpage’s URL when the user navigates to a new URL.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setURL:")
@@ -246,13 +264,16 @@ public class STWebpageController extends UIViewController {
      * A Boolean that indicates whether the webpage is currently displaying a
      * floating picture in picture window.
      * 
-     * The default value is `NO`. Set this value when the webpage starts or
+     * The default value is <doc://com.apple.documentation/documentation/objectivec/no>. Set this value when the webpage
+     * starts or
      * stops displaying a Picture in Picture window.
      * 
-     * - Important: Set this value to `NO` prior to changing
+     * - Important: Set this value to <doc://com.apple.documentation/documentation/objectivec/no> prior to changing
      * ``ScreenTime/STWebpageController/URL`` if the new webpage at that URL ends all
      * currently displayed Picture in Picture windows, and won’t immediately
      * display a new one.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setURLIsPictureInPicture:")
@@ -262,12 +283,15 @@ public class STWebpageController extends UIViewController {
      * A Boolean that indicates whether there are one or more videos currently
      * playing in the webpage.
      * 
-     * The default value is `NO`. Set this value when the webpage starts or
+     * The default value is <doc://com.apple.documentation/documentation/objectivec/no>. Set this value when the webpage
+     * starts or
      * stops playing video.
      * 
-     * - Important: Set this value to `NO` prior to changing
+     * - Important: Set this value to <doc://com.apple.documentation/documentation/objectivec/no> prior to changing
      * ``ScreenTime/STWebpageController/URL`` if the new webpage at that URL stops currently
      * playing media and won’t immediately start playing new media.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setURLIsPlayingVideo:")
@@ -285,7 +309,10 @@ public class STWebpageController extends UIViewController {
      * A Boolean that indicates whether the webpage controller is not recording web
      * usage.
      * 
-     * Set to `YES` to stop recording and reporting web-usage data.
+     * Set to <doc://com.apple.documentation/documentation/objectivec/yes> to stop recording and reporting web-usage
+     * data.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("suppressUsageRecording")

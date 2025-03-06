@@ -57,6 +57,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      * Descriptors for additional categorical or numerical axes beyond x and y.
      * For example, in a visual chart, these values might be represented by the size
      * or color of data points.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -76,6 +78,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * An attributed version of the title of the chart.
      * When set, this will be used instead of `title`.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -109,6 +113,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The direction of the chart's X axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("contentDirection")
@@ -117,6 +123,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The bounds of the view area for visually rendering data values if applicable, provided in superview coordinates.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("contentFrame")
@@ -147,6 +155,9 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native AXChartDescriptor init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAttributedTitle:summary:xAxisDescriptor:yAxisDescriptor:additionalAxes:series:")
     public native AXChartDescriptor initWithAttributedTitleSummaryXAxisDescriptorYAxisDescriptorAdditionalAxesSeries(
@@ -155,6 +166,9 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
             @Nullable AXNumericDataAxisDescriptor yAxis, @Nullable NSArray<?> additionalAxes,
             @NotNull NSArray<? extends AXDataSeriesDescriptor> series);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAttributedTitle:summary:xAxisDescriptor:yAxisDescriptor:series:")
     public native AXChartDescriptor initWithAttributedTitleSummaryXAxisDescriptorYAxisDescriptorSeries(
@@ -162,6 +176,9 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
             @NotNull @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis,
             @NotNull AXNumericDataAxisDescriptor yAxis, @NotNull NSArray<? extends AXDataSeriesDescriptor> series);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithTitle:summary:xAxisDescriptor:yAxisDescriptor:additionalAxes:series:")
     public native AXChartDescriptor initWithTitleSummaryXAxisDescriptorYAxisDescriptorAdditionalAxesSeries(
@@ -170,6 +187,9 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
             @Nullable AXNumericDataAxisDescriptor yAxis, @Nullable NSArray<?> additionalAxes,
             @NotNull NSArray<? extends AXDataSeriesDescriptor> series);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithTitle:summary:xAxisDescriptor:yAxisDescriptor:series:")
     public native AXChartDescriptor initWithTitleSummaryXAxisDescriptorYAxisDescriptorSeries(@Nullable String title,
@@ -213,6 +233,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * A set of data series descriptors describing each series in the chart.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -223,6 +245,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      * Descriptors for additional categorical or numerical axes beyond x and y.
      * For example, in a visual chart, these values might be represented by the size
      * or color of data points.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAdditionalAxes:")
@@ -231,6 +255,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * An attributed version of the title of the chart.
      * When set, this will be used instead of `title`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAttributedTitle:")
@@ -238,6 +264,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The direction of the chart's X axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setContentDirection:")
@@ -245,6 +273,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The bounds of the view area for visually rendering data values if applicable, provided in superview coordinates.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setContentFrame:")
@@ -252,6 +282,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * A set of data series descriptors describing each series in the chart.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSeries:")
@@ -260,6 +292,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * A natural language summary of the key message or features of the chart.
      * e.g. "The chart shows that fuel efficiency decreases as vehicle weight increases."
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSummary:")
@@ -267,6 +301,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The title of the chart.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTitle:")
@@ -278,6 +314,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The axis descriptor for the chart's X axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setXAxis:")
@@ -285,6 +323,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The axis descriptor for the chart's Y axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setYAxis:")
@@ -293,6 +333,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * A natural language summary of the key message or features of the chart.
      * e.g. "The chart shows that fuel efficiency decreases as vehicle weight increases."
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -305,6 +347,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The title of the chart.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -318,6 +362,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The axis descriptor for the chart's X axis.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -327,6 +373,8 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
 
     /**
      * The axis descriptor for the chart's Y axis.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

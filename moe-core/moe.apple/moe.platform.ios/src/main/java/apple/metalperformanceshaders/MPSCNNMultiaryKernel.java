@@ -104,6 +104,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * over the entire graph. Filters of this variety should be avoided.
      * 
      * Default: NO
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("appendBatchBarrier")
@@ -146,6 +148,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * is the number of images to process in batch processing mode.
      * 
      * See Also: @ref subsubsection_clipRect
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("clipRect")
@@ -177,6 +181,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * image with insufficient number of feature channels result in an error.
      * E.g. if the MPSCNNConvolution outputs 32 channels, and destination has 64 channels, then it is an error to set
      * destinationFeatureChannelOffset > 32.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("destinationFeatureChannelOffset")
@@ -187,6 +193,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
      * 
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -270,6 +278,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *                     Since MPSCNNKernel is a unary kernel, it is an array of length 1.
      * @param sourceStates An optional array of source states that will be passed into the -encode call
      * @return an image descriptor allocated on the autorelease pool
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -282,6 +292,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source image to which the dilation rate applies
      * @return The dilation rate
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("dilationRateXatIndex:")
@@ -293,6 +305,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source image to which the dilation rate applies
      * @return The dilation rate
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("dilationRateYatIndex:")
@@ -311,6 +325,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source image to which the edge mode refers
      * @return The edge mode for that source image
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("edgeModeAtIndex:")
@@ -336,6 +352,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         graph.
      *         The returned image will be automatically released when the command buffer completes. If you want to
      *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -354,6 +372,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * @param sourceImages     An array containing the source images
      * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias
      *                         primarySourceImage or secondarySourceImage.
+     * 
+     *                         API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:destinationImage:")
@@ -384,6 +404,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         The offset property will be adjusted to reflect the offset used during the encode.
      *         The returned image will be automatically released when the command buffer completes. If you want to
      *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -418,6 +440,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -436,6 +460,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * @return A pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:sourceCount:")
@@ -461,6 +487,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * YES if the filter operates backwards.
      * 
      * This influences how strideInPixelsX/Y should be interpreted.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isBackwards")
@@ -473,6 +501,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * (and different) state to go with it. Set to YES to avoid allocating
      * redundant state in the case when the same state is used all the time.
      * Default: NO
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isResultStateReusedAcrossBatch")
@@ -480,6 +510,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
 
     /**
      * Returns true if the -encode call modifies the state object it accepts.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isStateModified")
@@ -497,6 +529,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 1 will be returned.
      * 
      * @param index The index of the source image to which the kernel width refers
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("kernelHeightAtIndex:")
@@ -511,6 +545,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 1 will be returned.
      * 
      * @param index The index of the source image to which the kernel width refers
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("kernelWidthAtIndex:")
@@ -536,6 +572,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source image described by the offset
      * @return A MPSOffset for that image
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("offsetAtIndex:")
@@ -551,6 +589,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * Default: MPSNNPaddingMethodAlignCentered | MPSNNPaddingMethodAddRemainderToTopLeft | MPSNNPaddingMethodSizeSame
      * Some object types (e.g. MPSCNNFullyConnected) may override this default with something appropriate to its
      * operation.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -629,6 +669,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         -isResultStateReusedAcrossBatch returns YES. If -isResultStateReusedAcrossBatch
      *         returns YES, then it will be called once per batch and the MPSStateBatch array will
      *         contain MPSStateBatch.length references to the same object.
+     * 
+     *         API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -649,6 +691,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * is the number of images to process in batch processing mode.
      * 
      * See Also: @ref subsubsection_clipRect
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setClipRect:")
@@ -671,6 +715,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * image with insufficient number of feature channels result in an error.
      * E.g. if the MPSCNNConvolution outputs 32 channels, and destination has 64 channels, then it is an error to set
      * destinationFeatureChannelOffset > 32.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDestinationFeatureChannelOffset:")
@@ -680,6 +726,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
      * 
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDestinationImageAllocator:")
@@ -690,6 +738,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index        The index of the source image to which the dilation rate applies
      * @param dilationRate The dilation rate
+     * 
+     *                     API-Since: 13.0
      */
     @Generated
     @Selector("setDilationRateX:atIndex:")
@@ -700,6 +750,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index        The index of the source image to which the dilation rate applies
      * @param dilationRate The dilation rate
+     * 
+     *                     API-Since: 13.0
      */
     @Generated
     @Selector("setDilationRateY:atIndex:")
@@ -717,6 +769,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param edgeMode The new edge mode to use
      * @param index    The index of the source image to which the edge mode refers
+     * 
+     *                 API-Since: 13.0
      */
     @Generated
     @Selector("setEdgeMode:atIndex:")
@@ -731,6 +785,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param height The new width
      * @param index  The index of the source image to which the kernel width refers
+     * 
+     *               API-Since: 13.0
      */
     @Generated
     @Selector("setKernelHeight:atIndex:")
@@ -745,6 +801,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param width The new width
      * @param index The index of the source image to which the kernel width refers
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("setKernelWidth:atIndex:")
@@ -759,6 +817,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param offset The new offset
      * @param index  The index of the source image described by the offset
+     * 
+     *               API-Since: 13.0
      */
     @Generated
     @Selector("setOffset:atIndex:")
@@ -773,6 +833,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * Default: MPSNNPaddingMethodAlignCentered | MPSNNPaddingMethodAddRemainderToTopLeft | MPSNNPaddingMethodSizeSame
      * Some object types (e.g. MPSCNNFullyConnected) may override this default with something appropriate to its
      * operation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPadding:")
@@ -789,6 +851,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param count The new source feature channel max count
      * @param index The index of the source image to which the max count refers
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("setSourceFeatureChannelMaxCount:atIndex:")
@@ -812,6 +876,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index  The index of the source image that the feature channel offset describes
      * @param offset The source feature channel offset
+     * 
+     *               API-Since: 13.0
      */
     @Generated
     @Selector("setSourceFeatureChannelOffset:atIndex:")
@@ -824,6 +890,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index  The index of the source Image
      * @param stride The stride for the source image
+     * 
+     *               API-Since: 13.0
      */
     @Generated
     @Selector("setStrideInPixelsX:atIndex:")
@@ -836,6 +904,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index  The index of the source Image
      * @param stride The stride for the source image
+     * 
+     *               API-Since: 13.0
      */
     @Generated
     @Selector("setStrideInPixelsY:atIndex:")
@@ -847,6 +917,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
 
     /**
      * The number of source images accepted by the kernel
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sourceCount")
@@ -864,6 +936,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source image to which the max count refers
      * @return The source feature channel max count
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("sourceFeatureChannelMaxCountAtIndex:")
@@ -888,6 +962,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source image that the feature channel offset describes
      * @return The source feature channel offset
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("sourceFeatureChannelOffsetAtIndex:")
@@ -901,6 +977,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source Image
      * @return The stride
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("strideInPixelsXatIndex:")
@@ -914,6 +992,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * @param index The index of the source Image
      * @return The stride
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("strideInPixelsYatIndex:")
@@ -999,6 +1079,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         -isResultStateReusedAcrossBatch returns YES. If -isResultStateReusedAcrossBatch
      *         returns YES, then it will be called once per batch and the MPSStateBatch array will
      *         contain MPSStateBatch.length references to the same object.
+     * 
+     *         API-Since: 13.0
      */
     @Nullable
     @Generated

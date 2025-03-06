@@ -108,6 +108,9 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("gigahertz")
@@ -118,6 +121,9 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("hertz")
@@ -145,26 +151,41 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilohertz")
     public static native NSUnitFrequency kilohertz();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("megahertz")
     public static native NSUnitFrequency megahertz();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("microhertz")
     public static native NSUnitFrequency microhertz();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("millihertz")
     public static native NSUnitFrequency millihertz();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("nanohertz")
@@ -197,6 +218,8 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - hertz
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

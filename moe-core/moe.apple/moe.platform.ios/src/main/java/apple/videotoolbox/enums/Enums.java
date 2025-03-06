@@ -82,4 +82,8 @@ public final class Enums {
     @Generated public static final int kVTExtensionDisabledErr = 0xFFFFBADF;
     @Generated public static final int kVTVideoEncoderMVHEVCVideoLayerIDsMismatchErr = 0xFFFFBADE;
     @Generated public static final int kVTCouldNotOutputTaggedBufferGroupErr = 0xFFFFBADD;
+    @Generated public static final int kVTQPModulationLevel_Default = 0xFFFFFFFF;
+    @Generated public static final int kVTQPModulationLevel_Disable = 0x00000000;
+    @Generated public static final int kVTCouldNotFindExtensionErr = 0xFFFFB3CA;
+    @Generated public static final int kVTExtensionConflictErr = 0xFFFFB3C9;
 }

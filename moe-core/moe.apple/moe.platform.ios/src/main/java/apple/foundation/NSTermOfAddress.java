@@ -104,6 +104,8 @@ public class NSTermOfAddress extends NSObject implements NSCopying, NSSecureCodi
      * Term of address that uses feminine pronouns (e.g. she/her/hers in English),
      * and a feminine grammatical gender when inflecting verbs and adjectives
      * referring to the person
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("feminine")
@@ -147,6 +149,8 @@ public class NSTermOfAddress extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * The ISO language code if this is a localized term of address
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("languageIdentifier")
@@ -159,6 +163,8 @@ public class NSTermOfAddress extends NSObject implements NSCopying, NSSecureCodi
      * @param language ISO language code identifier for the language
      * @param pronouns A list of pronouns in the target language that can be used to
      *                 refer to the person.
+     * 
+     *                 API-Since: 17.0
      */
     @Generated
     @Selector("localizedForLanguageIdentifier:withPronouns:")
@@ -170,6 +176,8 @@ public class NSTermOfAddress extends NSObject implements NSCopying, NSSecureCodi
      * Term of address that uses masculine pronouns (e.g. he/him/his in English),
      * and a masculine grammatical gender when inflecting verbs and adjectives
      * referring to the person
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("masculine")
@@ -180,6 +188,8 @@ public class NSTermOfAddress extends NSObject implements NSCopying, NSSecureCodi
      * Term of address that uses gender-neutral pronouns (e.g. they/them/theirs in
      * English), and an epicene grammatical gender when inflecting verbs and
      * adjectives referring to the person
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("neutral")
@@ -193,6 +203,8 @@ public class NSTermOfAddress extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * A list of pronouns for a localized term of address
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("pronouns")
@@ -234,4 +246,16 @@ public class NSTermOfAddress extends NSObject implements NSCopying, NSSecureCodi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The term of address that should be used for addressing the user
+     * 
+     * This term of address will only compare equal to another `+[NSTermOfAddress currentUser]`
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("currentUser")
+    @NotNull
+    public static native NSTermOfAddress currentUser();
 }

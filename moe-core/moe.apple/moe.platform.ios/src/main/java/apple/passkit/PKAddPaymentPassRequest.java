@@ -158,11 +158,17 @@ public class PKAddPaymentPassRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("activationData")
     public native NSData activationData();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("encryptedPassData")
@@ -170,35 +176,54 @@ public class PKAddPaymentPassRequest extends NSObject {
 
     /**
      * Scheme dependent properties:
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("ephemeralPublicKey")
     public native NSData ephemeralPublicKey();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("init")
     public native PKAddPaymentPassRequest init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setActivationData:")
     public native void setActivationData(@Nullable NSData value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setEncryptedPassData:")
     public native void setEncryptedPassData(@Nullable NSData value);
 
     /**
      * Scheme dependent properties:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEphemeralPublicKey:")
     public native void setEphemeralPublicKey(@Nullable NSData value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setWrappedKey:")
     public native void setWrappedKey(@Nullable NSData value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("wrappedKey")

@@ -105,6 +105,8 @@ public class QLPreviewSceneActivationConfiguration extends UIWindowSceneActivati
      * 
      * @param urls    The urls of the items to preview.
      * @param options Additional information to preview the items.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("initWithItemsAtURLs:options:")

@@ -63,6 +63,8 @@ public class NSFileProviderExtension extends NSObject {
      * This is a static mapping; each identifier must always return a path
      * corresponding to the same file. By default, this returns the path relative to
      * the path returned by documentStorageURL.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -160,6 +162,8 @@ public class NSFileProviderExtension extends NSObject {
     /**
      * Called at some point after the file has changed; the provider may then trigger
      * an upload.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("itemChangedAtURL:")
@@ -185,6 +189,9 @@ public class NSFileProviderExtension extends NSObject {
     @Selector("new")
     public static native NSFileProviderExtension new_objc();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("persistentIdentifierForItemAtURL:")
@@ -213,6 +220,8 @@ public class NSFileProviderExtension extends NSObject {
      * writePlaceholderAtURL:withMetadata:error:] with the URL returned by
      * +[NSFileProviderManager placeholderURLForURL:], then call the completion
      * handler.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("providePlaceholderAtURL:completionHandler:")
@@ -257,6 +266,8 @@ public class NSFileProviderExtension extends NSObject {
     /**
      * Should ensure that the actual file is in the position returned by
      * URLForItemWithPersistentIdentifier:, then call the completion handler.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startProvidingItemAtURL:completionHandler:")
@@ -276,6 +287,8 @@ public class NSFileProviderExtension extends NSObject {
      * 
      * Care should be taken that the corresponding placeholder file stays behind after
      * the content file has been deleted.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopProvidingItemAtURL:")
@@ -325,6 +338,8 @@ public class NSFileProviderExtension extends NSObject {
      * Errors (including collision errors) are handled as documented for the import
      * method above. Directory creation is gated by the capabilities of the
      * destination directory, with NSFileProviderItemCapabilitiesAllowsAddingSubItems.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("createDirectoryWithName:inParentItemIdentifier:completionHandler:")
@@ -349,6 +364,8 @@ public class NSFileProviderExtension extends NSObject {
      * 
      * Delete is gated by the capabilities of the removed item with
      * NSFileProviderItemCapabilitiesAllowsDeleting.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("deleteItemWithIdentifier:completionHandler:")
@@ -362,6 +379,9 @@ public class NSFileProviderExtension extends NSObject {
         void call_deleteItemWithIdentifierCompletionHandler(@Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("domain")
@@ -393,6 +413,8 @@ public class NSFileProviderExtension extends NSObject {
      * the very item that the enumeration was started on.
      * 
      * If returning nil, you must set the error out parameter.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -509,6 +531,8 @@ public class NSFileProviderExtension extends NSObject {
      * Other errors will be presented to the user, but are unexpected. If you want to
      * prevent imports in a given directory, then the directory item's capacities
      * should exclude NSFileProviderItemCapabilitiesAllowsAddingSubItems.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("importDocumentAtURL:toParentItemIdentifier:completionHandler:")
@@ -537,6 +561,8 @@ public class NSFileProviderExtension extends NSObject {
      * Errors (including collision errors) are handled as documented for the import
      * method above. Renames are gated by the capabilities of the renamed item, with
      * NSFileProviderItemCapabilitiesAllowsRenaming.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("renameItemWithIdentifier:toName:completionHandler:")
@@ -563,6 +589,8 @@ public class NSFileProviderExtension extends NSObject {
      * method above. Moves are gated by the capabilities of both the moved item with
      * NSFileProviderItemCapabilitiesAllowsReparenting, and the destination directory
      * with NSFileProviderItemCapabilitiesAllowsAddingSubItems.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("reparentItemWithIdentifier:toParentItemWithIdentifier:newName:completionHandler:")
@@ -592,6 +620,8 @@ public class NSFileProviderExtension extends NSObject {
      * The file provider is asked to persist the new favorite rank on disk, then call
      * the completion callback with the updated favorite rank. At a later point, the
      * file provider should sync the new favorite rank to their server.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFavoriteRank:forItemIdentifier:completionHandler:")
@@ -620,6 +650,8 @@ public class NSFileProviderExtension extends NSObject {
      * 
      * The error parameter is here for debugging purposes alone; it won't be presented
      * to the user or otherwise handled, but it will be logged.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLastUsedDate:forItemIdentifier:completionHandler:")
@@ -650,6 +682,8 @@ public class NSFileProviderExtension extends NSObject {
      * 
      * On shared items, tags should sync across the devices of any one participant but
      * shouldn't sync across users.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTagData:forItemIdentifier:completionHandler:")
@@ -693,6 +727,8 @@ public class NSFileProviderExtension extends NSObject {
      * 
      * Trash is gated by the capabilities of the trashed item with
      * NSFileProviderItemCapabilitiesAllowsTrashing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("trashItemWithIdentifier:completionHandler:")
@@ -720,6 +756,8 @@ public class NSFileProviderExtension extends NSObject {
      * 
      * Untrash is gated by the capabilities of the destination directory, with
      * NSFileProviderItemCapabilitiesAllowsAddingSubItems.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("untrashItemWithIdentifier:toParentItemIdentifier:completionHandler:")

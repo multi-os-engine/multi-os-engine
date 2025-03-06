@@ -166,6 +166,8 @@ public class NSBatchUpdateResult extends NSPersistentStoreResult {
 
     /**
      * Return the result. See NSBatchUpdateRequestResultType for options
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -173,6 +175,9 @@ public class NSBatchUpdateResult extends NSPersistentStoreResult {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object result();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("resultType")
     @NUInt

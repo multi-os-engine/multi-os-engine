@@ -94,6 +94,8 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
      * The computeLabelGradients property is used to control whether the loss gradient
      * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
      * Default: NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("computeLabelGradients")
@@ -103,6 +105,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("delta")
     public native float delta();
@@ -111,6 +116,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("epsilon")
     public native float epsilon();
@@ -130,6 +138,8 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
 
     /**
      * <NSSecureCoding> support
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -146,6 +156,8 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
      * @param device         The device the filter will run on.
      * @param lossDescriptor The loss descriptor.
      * @return A valid MPSNNLossGradient object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
@@ -174,12 +186,17 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("labelSmoothing")
     public native float labelSmoothing();
 
     /**
      * See MPSCNNLossDescriptor for information about the following properties.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("lossType")
@@ -190,11 +207,17 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("new")
     public static native MPSNNLossGradient new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("numberOfClasses")
     @NUInt
     public native long numberOfClasses();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -213,19 +236,30 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
      * The computeLabelGradients property is used to control whether the loss gradient
      * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
      * Default: NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setComputeLabelGradients:")
     public native void setComputeLabelGradients(boolean value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setEpsilon:")
     public native void setEpsilon(float value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setLabelSmoothing:")
     public native void setLabelSmoothing(float value);
@@ -234,6 +268,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setWeight:")
     public native void setWeight(float value);
@@ -257,6 +294,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("weight")
     public native float weight();

@@ -111,6 +111,8 @@ public class MPSCNNConvolutionGradientNode extends MPSNNGradientFilterNode imple
      *                       broken out into a separate node. Pass nil to use the weights
      *                       from the forward convolution pass.
      * @return A MPSCNNConvolutionGradientNode
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:convolutionGradientState:weights:")
@@ -158,6 +160,8 @@ public class MPSCNNConvolutionGradientNode extends MPSNNGradientFilterNode imple
      *                       broken out into a separate node. Pass nil to use the weights
      *                       from the forward convolution pass.
      * @return A MPSCNNConvolutionGradientNode
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:convolutionGradientState:weights:")

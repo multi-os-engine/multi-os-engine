@@ -95,6 +95,9 @@ public class MKImageryMapConfiguration extends MKMapConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("init")
     public native MKImageryMapConfiguration init();
@@ -103,6 +106,9 @@ public class MKImageryMapConfiguration extends MKMapConfiguration {
     @Selector("initWithCoder:")
     public native MKImageryMapConfiguration initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithElevationStyle:")
     public native MKImageryMapConfiguration initWithElevationStyle(@NInt long elevationStyle);

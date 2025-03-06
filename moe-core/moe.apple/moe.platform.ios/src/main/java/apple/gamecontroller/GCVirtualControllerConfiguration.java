@@ -93,6 +93,8 @@ public class GCVirtualControllerConfiguration extends NSObject {
     /**
      * The set of controller elements to be made available on \c GCVirtualController instances created with this
      * configuration. e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -146,6 +148,8 @@ public class GCVirtualControllerConfiguration extends NSObject {
     /**
      * The set of controller elements to be made available on \c GCVirtualController instances created with this
      * configuration. e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setElements:")

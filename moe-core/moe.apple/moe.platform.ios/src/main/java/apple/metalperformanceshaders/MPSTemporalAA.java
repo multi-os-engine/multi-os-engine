@@ -87,6 +87,8 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
      * The final value is given by
      * current * blendFactor + previous * (1 - blendFactor). Must be between zero
      * and one, inclusive. Defaults to 0.1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("blendFactor")
@@ -120,6 +122,9 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Owned
@@ -157,6 +162,8 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
      * @param destinationTexture  Output blended image
      * @param motionVectorTexture Motion vector texture
      * @param depthTexture        The depth values for the current frame
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:previousTexture:destinationTexture:motionVectorTexture:depthTexture:")
@@ -185,11 +192,17 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native MPSTemporalAA initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSTemporalAA initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSTemporalAA initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -234,6 +247,8 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
      * The final value is given by
      * current * blendFactor + previous * (1 - blendFactor). Must be between zero
      * and one, inclusive. Defaults to 0.1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBlendFactor:")

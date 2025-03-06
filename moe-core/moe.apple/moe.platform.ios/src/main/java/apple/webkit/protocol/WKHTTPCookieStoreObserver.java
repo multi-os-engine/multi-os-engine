@@ -18,6 +18,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WKHTTPCookieStoreObserver")
 public interface WKHTTPCookieStoreObserver {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("cookiesDidChangeInCookieStore:")

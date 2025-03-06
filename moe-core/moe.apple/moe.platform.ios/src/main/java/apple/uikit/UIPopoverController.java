@@ -182,12 +182,25 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * The content view controller is the `UIViewController` instance in charge of the content view of the displayed
      * popover. This property can be changed while the popover is displayed to allow different view controllers in the
      * same popover session.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("contentViewController")
     public native UIViewController contentViewController();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -197,7 +210,13 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * Called to dismiss the popover programmatically. The delegate methods for "should" and "did" dismiss are not
      * called when the popover is dismissed in this way.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("dismissPopoverAnimated:")
     public native void dismissPopoverAnimated(boolean animated);
@@ -209,14 +228,26 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * The view controller provided becomes the content view controller for the UIPopoverController. This is the
      * designated initializer for UIPopoverController.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("initWithContentViewController:")
     public native UIPopoverController initWithContentViewController(@NotNull UIViewController viewController);
 
     /**
      * Returns whether the popover is visible (presented) or not.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("isPopoverVisible")
     public native boolean isPopoverVisible();
@@ -225,7 +256,13 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
      * This property allows the specification of an array of UIView instances which the user is allowed to interact with
      * while the popover is up.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("passthroughViews")
@@ -234,7 +271,13 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns
      * UIPopoverArrowDirectionUnknown.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("popoverArrowDirection")
     @NUInt
@@ -254,7 +297,13 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * This property allows direction manipulation of the content size of the popover. Changing the property directly is
      * equivalent to animated=YES. The content size is limited to a minimum width of 320 and a maximum width of 600.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("popoverContentSize")
     @ByValue
@@ -277,7 +326,13 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * Like the above, but is a convenience for presentation from a `UIBarButtonItem` instance. arrowDirection limited
      * to UIPopoverArrowDirectionUp/Down
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("presentPopoverFromBarButtonItem:permittedArrowDirections:animated:")
     public native void presentPopoverFromBarButtonItemPermittedArrowDirectionsAnimated(@NotNull UIBarButtonItem item,
@@ -287,7 +342,13 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * -presentPopoverFromRect:inView:permittedArrowDirections:animated: allows you to present a popover from a rect in
      * a particular view. `arrowDirections` is a bitfield which specifies what arrow directions are allowed when laying
      * out the popover; for most uses, `UIPopoverArrowDirectionAny` is sufficient.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("presentPopoverFromRect:inView:permittedArrowDirections:animated:")
     public native void presentPopoverFromRectInViewPermittedArrowDirectionsAnimated(@ByValue CGRect rect,
@@ -306,19 +367,46 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * The content view controller is the `UIViewController` instance in charge of the content view of the displayed
      * popover. This property can be changed while the popover is displayed to allow different view controllers in the
      * same popover session.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("setContentViewController:")
     public native void setContentViewController(@NotNull UIViewController value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+     */
+    @Deprecated
     @Generated
     @Selector("setContentViewController:animated:")
     public native void setContentViewControllerAnimated(@NotNull UIViewController viewController, boolean animated);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value) {
         Object __old = delegate();
@@ -335,7 +423,13 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
      * This property allows the specification of an array of UIView instances which the user is allowed to interact with
      * while the popover is up.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("setPassthroughViews:")
     public native void setPassthroughViews(@Nullable NSArray<? extends UIView> value);
@@ -353,11 +447,24 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * This property allows direction manipulation of the content size of the popover. Changing the property directly is
      * equivalent to animated=YES. The content size is limited to a minimum width of 320 and a maximum width of 600.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
      */
+    @Deprecated
     @Generated
     @Selector("setPopoverContentSize:")
     public native void setPopoverContentSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+     * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+     */
+    @Deprecated
     @Generated
     @Selector("setPopoverContentSize:animated:")
     public native void setPopoverContentSizeAnimated(@ByValue CGSize size, boolean animated);

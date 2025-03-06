@@ -27,6 +27,8 @@ public interface UISpringLoadedInteractionBehavior {
      * Informs the behavior that springloading for a given interaction was cancelled or activated.
      * 
      * @param interaction The springloaded interaction object providing this information.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -41,6 +43,8 @@ public interface UISpringLoadedInteractionBehavior {
      * @param interaction The springloaded interaction object requesting this information
      * @param context     An object that provides information about the current drag.
      * @return true if the interaction should begin or continue springloading.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("shouldAllowInteraction:withContext:")

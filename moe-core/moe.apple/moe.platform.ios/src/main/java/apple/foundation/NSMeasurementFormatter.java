@@ -174,6 +174,8 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     /**
      * If not specified, locale is set to the user's current locale.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("locale")
@@ -181,6 +183,8 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     /**
      * If not specified, the number formatter is set up with NSNumberFormatterDecimalStyle.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("numberFormatter")
@@ -188,6 +192,8 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     /**
      * If not specified, locale is set to the user's current locale.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocale:")
@@ -195,6 +201,8 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     /**
      * If not specified, the number formatter is set up with NSNumberFormatterDecimalStyle.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setNumberFormatter:")
@@ -221,6 +229,9 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
      * particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the
      * formatter will implicitly convert the measurement object to miles and return the formatted string as the
      * equivalent measurement in miles.
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUnitOptions:")
@@ -228,11 +239,16 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     /**
      * If not specified, unitStyle is set to NSFormattingUnitStyleMedium.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("stringFromMeasurement:")
@@ -242,6 +258,8 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
      * @param An NSUnit
      * @return A formatted string representing the localized form of the unit without a value attached to it. This
      *         method will return [unit symbol] if the provided unit cannot be localized.
+     * 
+     *         API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -275,6 +293,9 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
      * particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the
      * formatter will implicitly convert the measurement object to miles and return the formatted string as the
      * equivalent measurement in miles.
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("unitOptions")
@@ -283,6 +304,8 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     /**
      * If not specified, unitStyle is set to NSFormattingUnitStyleMedium.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("unitStyle")

@@ -90,6 +90,9 @@ public class INShareFocusStatusIntent extends INIntent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("focusStatus")
@@ -108,6 +111,9 @@ public class INShareFocusStatusIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INShareFocusStatusIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithFocusStatus:")
     public native INShareFocusStatusIntent initWithFocusStatus(@Nullable INFocusStatus focusStatus);

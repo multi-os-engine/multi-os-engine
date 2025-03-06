@@ -47,6 +47,9 @@ public class CNChangeHistoryEvent extends NSObject implements NSCopying, NSSecur
         super(peer);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("acceptEventVisitor:")
     public native void acceptEventVisitor(@NotNull @Mapped(ObjCObjectMapper.class) CNChangeHistoryEventVisitor visitor);

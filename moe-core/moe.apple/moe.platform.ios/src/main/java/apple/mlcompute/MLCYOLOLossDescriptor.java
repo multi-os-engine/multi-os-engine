@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCYOLOLossDescriptor specifies a YOLO loss filter descriptor.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -69,7 +68,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] anchorBoxCount
      * 
      * number of anchor boxes used to detect object per grid cell
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("anchorBoxCount")
     @NUInt
@@ -81,7 +84,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * \p NSData containing the width and height for \p anchorBoxCount anchor boxes
      * This \p NSData should have 2 floating-point values per anchor box which represent the width
      * and height of the anchor box.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("anchorBoxes")
@@ -133,7 +140,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * @param anchorBoxes    The anchor box data
      * @param anchorBoxCount The number of anchor boxes
      * @return A new MLCYOLOLossDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithAnchorBoxes:anchorBoxCount:")
     public static native MLCYOLOLossDescriptor descriptorWithAnchorBoxesAnchorBoxCount(@NotNull NSData anchorBoxes,
@@ -175,7 +186,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence. The default is 0.3
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("maximumIOUForObjectAbsence")
     public native float maximumIOUForObjectAbsence();
@@ -185,7 +200,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, The default is 0.7
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("minimumIOUForObjectPresence")
     public native float minimumIOUForObjectPresence();
@@ -207,7 +226,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleClass
      * 
      * The scale factor for no object classes loss and loss gradient. The default is 2.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("scaleClassLoss")
     public native float scaleClassLoss();
@@ -216,7 +239,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleNoObject
      * 
      * The scale factor for no object confidence loss and loss gradient. The default is 5.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("scaleNoObjectConfidenceLoss")
     public native float scaleNoObjectConfidenceLoss();
@@ -225,7 +252,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleObject
      * 
      * The scale factor for object confidence loss and loss gradient. The default is 100.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("scaleObjectConfidenceLoss")
     public native float scaleObjectConfidenceLoss();
@@ -234,7 +265,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleSpatialPositionLoss
      * 
      * The scale factor for spatial position loss and loss gradient. The default is 10.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("scaleSpatialPositionLoss")
     public native float scaleSpatialPositionLoss();
@@ -243,7 +278,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleSpatialSizeLoss
      * 
      * The scale factor for spatial size loss and loss gradient. The default is 10.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("scaleSpatialSizeLoss")
     public native float scaleSpatialSizeLoss();
@@ -253,7 +292,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence. The default is 0.3
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setMaximumIOUForObjectAbsence:")
     public native void setMaximumIOUForObjectAbsence(float value);
@@ -263,7 +306,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, The default is 0.7
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setMinimumIOUForObjectPresence:")
     public native void setMinimumIOUForObjectPresence(float value);
@@ -272,7 +319,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleClass
      * 
      * The scale factor for no object classes loss and loss gradient. The default is 2.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setScaleClassLoss:")
     public native void setScaleClassLoss(float value);
@@ -281,7 +332,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleNoObject
      * 
      * The scale factor for no object confidence loss and loss gradient. The default is 5.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setScaleNoObjectConfidenceLoss:")
     public native void setScaleNoObjectConfidenceLoss(float value);
@@ -290,7 +345,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleObject
      * 
      * The scale factor for object confidence loss and loss gradient. The default is 100.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setScaleObjectConfidenceLoss:")
     public native void setScaleObjectConfidenceLoss(float value);
@@ -299,7 +358,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleSpatialPositionLoss
      * 
      * The scale factor for spatial position loss and loss gradient. The default is 10.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setScaleSpatialPositionLoss:")
     public native void setScaleSpatialPositionLoss(float value);
@@ -308,7 +371,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleSpatialSizeLoss
      * 
      * The scale factor for spatial size loss and loss gradient. The default is 10.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setScaleSpatialSizeLoss:")
     public native void setScaleSpatialSizeLoss(float value);
@@ -318,7 +385,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. The default is YES
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setShouldRescore:")
     public native void setShouldRescore(boolean value);
@@ -332,7 +403,11 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. The default is YES
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("shouldRescore")
     public native boolean shouldRescore();

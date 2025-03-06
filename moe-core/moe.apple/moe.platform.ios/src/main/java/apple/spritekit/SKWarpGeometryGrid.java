@@ -109,6 +109,8 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding
 
     /**
      * 1x1 grid with no distortion
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("grid")
@@ -116,6 +118,8 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding
 
     /**
      * grid of the specified dimensions and no distortion
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("gridWithColumns:rows:")
@@ -188,6 +192,8 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding
 
     /**
      * the number of columns in this grid
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("numberOfColumns")
@@ -196,6 +202,8 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding
 
     /**
      * the number of rows in this grid
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("numberOfRows")
@@ -205,6 +213,8 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding
     /**
      * the total number of (sourcePosition + destPosition) pairs that define this grid.
      * For a given dimension this is equal to (numberOfColumns + 1) * (numberOfRows + 1).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("vertexCount")

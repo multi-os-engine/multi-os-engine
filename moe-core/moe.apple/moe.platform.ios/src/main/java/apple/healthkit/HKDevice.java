@@ -144,6 +144,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * If an app chooses to save samples that were retrieved from the local device, e.g. an HKWorkout with a
      * totalDistance HKQuantity gathered from CoreLocation GPS distances, then this would be an appropriate
      * HKDevice to use.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -191,6 +193,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * the production identifier independently, if needed.
      * See http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/ for more
      * information.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -212,6 +216,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * [@property] firmwareVersion
      * 
      * The firmware revision of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -222,6 +228,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * [@property] hardwareVersion
      * 
      * The hardware revision of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -243,6 +251,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * This allows initialization of an HKDevice object based on the
      * information provided.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:")
@@ -261,6 +271,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * for the CoreBluetooth UUID which is valid only on the local
      * device and thus distinguish the same Bluetooth peripheral used
      * between multiple devices.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -271,6 +283,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * [@property] manufacturer
      * 
      * The manufacturer of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -281,6 +295,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * [@property] model
      * 
      * The model of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -293,6 +309,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * The name of the receiver.
      * 
      * The user-facing name, such as the one displayed in the Bluetooth Settings for a BLE device.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -303,6 +321,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * [@property] softwareVersion
      * 
      * The software revision of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

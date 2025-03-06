@@ -31,8 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * A transpose layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -102,7 +101,11 @@ public class MLCTransposeLayer extends MLCLayer {
      * Permutes the dimensions according to 'dimensions'.
      * 
      * The returned tensor's dimension i will correspond to dimensions[i].
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("dimensions")
@@ -147,7 +150,11 @@ public class MLCTransposeLayer extends MLCLayer {
      *                   K'th element in the dimensions array specifies the input axis source for the K'th axis in the
      *                   output. The batch dimension which is typically axis 0 cannot be transposed.
      * @return A new transpose layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDimensions:")
     public static native MLCTransposeLayer layerWithDimensions(@NotNull NSArray<? extends NSNumber> dimensions);
@@ -173,6 +180,7 @@ public class MLCTransposeLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

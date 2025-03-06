@@ -114,6 +114,8 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * [@property] expirationDate
      * 
      * The date this record expires.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -154,6 +156,8 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * [@property] issuedDate
      * 
      * The date this record was issued.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -164,6 +168,8 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * [@property] issuerIdentifier
      * 
      * The identifier for the issuer of this record.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -174,6 +180,8 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * [@property] itemNames
      * 
      * A list of display names for each item contained in this record.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -194,6 +202,8 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * [@property] recordTypes
      * 
      * The types present in this record.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -205,6 +215,8 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * A date most relevant to this record, like when a vaccine was
      * administered or a test was performed.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -227,6 +239,8 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * [@property] subject
      * 
      * The subject of this record.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

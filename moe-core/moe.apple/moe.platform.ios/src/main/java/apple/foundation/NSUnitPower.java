@@ -108,11 +108,17 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("femtowatts")
     public static native NSUnitPower femtowatts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("gigawatts")
@@ -123,6 +129,9 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("horsepower")
@@ -150,26 +159,41 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilowatts")
     public static native NSUnitPower kilowatts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("megawatts")
     public static native NSUnitPower megawatts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("microwatts")
     public static native NSUnitPower microwatts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milliwatts")
     public static native NSUnitPower milliwatts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("nanowatts")
@@ -180,6 +204,9 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitPower new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("picowatts")
@@ -207,6 +234,8 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - watts
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -218,6 +247,9 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("watts")

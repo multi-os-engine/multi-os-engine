@@ -18,6 +18,9 @@ import org.moe.natj.general.ann.ByValue;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLAccelerationStructure")
 public interface MTLAccelerationStructure extends MTLResource {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("size")
     @NUInt

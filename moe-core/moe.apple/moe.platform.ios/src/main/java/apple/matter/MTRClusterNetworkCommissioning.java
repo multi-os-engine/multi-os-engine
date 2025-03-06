@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterNetworkCommissioning extends MTRCluster {
+public class MTRClusterNetworkCommissioning extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -547,4 +547,22 @@ public class MTRClusterNetworkCommissioning extends MTRCluster {
     public native void writeAttributeInterfaceEnabledWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("scanNetworksWithExpectedValues:expectedValueInterval:completion:")
+    public native void scanNetworksWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_scanNetworksWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_scanNetworksWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scanNetworksWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_scanNetworksWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRNetworkCommissioningClusterScanNetworksResponseParams data, @Nullable NSError error);
+    }
 }

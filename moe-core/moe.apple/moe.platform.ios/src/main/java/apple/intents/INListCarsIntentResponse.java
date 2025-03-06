@@ -76,6 +76,8 @@ public class INListCarsIntentResponse extends INIntentResponse {
     /**
      * An array of INCar objects representing a user’s electric vehicles. These vehicles should potentially respond to
      * an INGetCarPowerLevelStatusIntent request so that the user can navigate with one of these vehicles in Maps.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -92,6 +94,9 @@ public class INListCarsIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -122,6 +127,8 @@ public class INListCarsIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -170,6 +177,8 @@ public class INListCarsIntentResponse extends INIntentResponse {
     /**
      * An array of INCar objects representing a user’s electric vehicles. These vehicles should potentially respond to
      * an INGetCarPowerLevelStatusIntent request so that the user can navigate with one of these vehicles in Maps.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCars:")

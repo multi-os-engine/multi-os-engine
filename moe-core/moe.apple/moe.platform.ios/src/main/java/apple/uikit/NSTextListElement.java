@@ -60,6 +60,8 @@ public class NSTextListElement extends NSTextParagraph {
     /**
      * The contents intended to be displayed. Derived from contents/textList configured with the text list element's
      * position inside the tree. It is overriding its superclass implementation, NSTextParagraph.attributedString
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -83,6 +85,8 @@ public class NSTextListElement extends NSTextParagraph {
 
     /**
      * NSTextListElement has children of the same type.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -101,6 +105,8 @@ public class NSTextListElement extends NSTextParagraph {
 
     /**
      * The text list element contents without markers and formatting.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -133,6 +139,8 @@ public class NSTextListElement extends NSTextParagraph {
      * element. Either of contents, markerAttributes, or childElements must be non-nil. Clients should typically use one
      * of 2 factory methods below for instantiating with a specific type. When markerAttributes!=nil, it will be used to
      * format the marker; otherwise, it is derived from contents.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithParentElement:textList:contents:markerAttributes:childElements:")
@@ -169,6 +177,8 @@ public class NSTextListElement extends NSTextParagraph {
 
     /**
      * Attributes defining the text formatting of marker string inside attributedString.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -182,6 +192,8 @@ public class NSTextListElement extends NSTextParagraph {
 
     /**
      * NSTextListElement has the parent of the same type.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -204,6 +216,9 @@ public class NSTextListElement extends NSTextParagraph {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("textList")
@@ -213,6 +228,8 @@ public class NSTextListElement extends NSTextParagraph {
      * Returns an instance with childElements without contents. Returns nil if childElements.count == 0. nestingLevel
      * specifies the number of shifts represented by the tree elements returned. Raises an exception when nestingLevel <
      * 0. textList specifies NSTextList used by the new instance.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("textListElementWithChildElements:textList:nestingLevel:")
@@ -222,6 +239,8 @@ public class NSTextListElement extends NSTextParagraph {
 
     /**
      * Instantiates a standard text list.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("textListElementWithContents:markerAttributes:textList:childElements:")

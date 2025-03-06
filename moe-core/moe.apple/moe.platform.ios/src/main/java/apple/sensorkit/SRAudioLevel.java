@@ -145,6 +145,8 @@ public class SRAudioLevel extends NSObject implements NSCopying, NSSecureCoding 
      * [@property] loudness
      * 
      * Measure of the audio level in decibels
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("loudness")
@@ -186,6 +188,8 @@ public class SRAudioLevel extends NSObject implements NSCopying, NSSecureCoding 
      * 
      * The time range in the client-provided audio stream to which this classification
      * result corresponds
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timeRange")

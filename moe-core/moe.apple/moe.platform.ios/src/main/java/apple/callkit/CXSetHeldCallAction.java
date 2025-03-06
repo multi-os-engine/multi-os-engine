@@ -172,18 +172,30 @@ public class CXSetHeldCallAction extends CXCallAction {
     @Selector("initWithCallUUID:")
     public native CXSetHeldCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCallUUID:onHold:")
     public native CXSetHeldCallAction initWithCallUUIDOnHold(@NotNull NSUUID callUUID, boolean onHold);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native CXSetHeldCallAction initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isOnHold")
     public native boolean isOnHold();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setOnHold:")
     public native void setOnHold(boolean value);

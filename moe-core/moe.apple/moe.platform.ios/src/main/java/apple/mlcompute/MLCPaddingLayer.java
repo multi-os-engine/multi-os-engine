@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * A padding layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -94,7 +93,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * [@property] constantValue
      * 
      * The constant value to use if padding type is constant.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("constantValue")
     public native float constantValue();
@@ -151,7 +154,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * @param padding       The padding sizes.
      * @param constantValue The constant value to pad the source tensor.
      * @return A new padding layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithConstantPadding:constantValue:")
     public static native MLCPaddingLayer layerWithConstantPaddingConstantValue(
@@ -162,7 +169,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * 
      * @param padding The padding sizes.
      * @return A new padding layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithReflectionPadding:")
     public static native MLCPaddingLayer layerWithReflectionPadding(@NotNull NSArray<? extends NSNumber> padding);
@@ -172,7 +183,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * 
      * @param padding The padding sizes.
      * @return A new padding layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithSymmetricPadding:")
     public static native MLCPaddingLayer layerWithSymmetricPadding(@NotNull NSArray<? extends NSNumber> padding);
@@ -182,7 +197,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * 
      * @param padding The padding sizes.
      * @return A new padding layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithZeroPadding:")
     public static native MLCPaddingLayer layerWithZeroPadding(@NotNull NSArray<? extends NSNumber> padding);
@@ -196,7 +215,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * [@property] paddingBottom
      * 
      * The bottom padding size
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingBottom")
     @NUInt
@@ -206,7 +229,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * [@property] paddingLeft
      * 
      * The left padding size
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingLeft")
     @NUInt
@@ -216,7 +243,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * [@property] paddingRight
      * 
      * The right padding size
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingRight")
     @NUInt
@@ -226,7 +257,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * [@property] paddingTop
      * 
      * The top padding size
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingTop")
     @NUInt
@@ -236,7 +271,11 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      * [@property] paddingType
      * 
      * The padding type i.e. constant, zero, reflect or symmetric
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingType")
     public native int paddingType();
@@ -257,6 +296,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

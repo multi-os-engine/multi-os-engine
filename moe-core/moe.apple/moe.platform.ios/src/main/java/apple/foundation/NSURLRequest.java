@@ -180,6 +180,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @param URL The URL for the request.
      * @return A newly-created and autoreleased NSURLRequest instance.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("requestWithURL:")
@@ -197,6 +199,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      *                        commentary for the <tt>timeoutInterval</tt> for more information on
      *                        timeout intervals.
      * @return A newly-created and autoreleased NSURLRequest instance.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("requestWithURL:cachePolicy:timeoutInterval:")
@@ -235,6 +239,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * in done in an HTTP POST request.
      * 
      * @return The request body data of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -253,6 +259,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * NSCoding protocol
      * 
      * @return The request body stream of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -263,6 +271,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * Returns the HTTP request method of the receiver.
      * 
      * @return the HTTP request method of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -277,6 +287,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @return YES if cookies will be sent with and set for this request;
      *         otherwise NO.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("HTTPShouldHandleCookies")
@@ -300,6 +312,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * Returns the URL of the receiver.
      * 
      * @return The URL of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -312,6 +326,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @return a dictionary containing all the HTTP header fields of the
      *         receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -335,6 +351,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * Returns the cache policy of the receiver.
      * 
      * @return The cache policy of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("cachePolicy")
@@ -371,6 +389,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @param URL The URL for the request.
      * @return An initialized NSURLRequest.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -391,6 +411,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      *                        commentary for the <tt>timeoutInterval</tt> for more information on
      *                        timeout intervals.
      * @return An initialized NSURLRequest.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithURL:cachePolicy:timeoutInterval:")
@@ -406,6 +428,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * See setMainDocumentURL:
      * 
      * @return The main document URL.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -455,6 +479,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * in seconds.
      * 
      * @return The timeout interval of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("timeoutInterval")
@@ -471,6 +497,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      *              (case-insensitive).
      * @return the value associated with the given header field, or nil if
      *         there is no value associated with the given header field.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -547,4 +575,28 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Allows storing and usage of DNS answers, potentially beyond TTL expiry,
+     * in a persistent per-process cache. This should only be set for hostnames whose resolutions
+     * are not expected to change across networks.
+     * 
+     * YES, if the DNS lookup for this request is allowed to use a persistent per-process cache,
+     * NO otherwise. Defaults to NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("allowsPersistentDNS")
+    public native boolean allowsPersistentDNS();
+
+    /**
+     * Cookie partition identifier used for cookie storage and retrieval.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("cookiePartitionIdentifier")
+    @Nullable
+    public native String cookiePartitionIdentifier();
 }

@@ -182,6 +182,8 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
      * orientation of the captured image, and the values of the corners reside within the bounds rectangle. The points
      * are arranged in counter-clockwise order (clockwise if the code or image is mirrored), starting with the top-left
      * of the code in its canonical orientation.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -199,6 +201,8 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
      * 
      * The value of this property is an NSString created by decoding the binary payload according to the format of the
      * machine readable code. Returns nil if a string representation cannot be created from the payload.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated

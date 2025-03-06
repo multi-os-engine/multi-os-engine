@@ -164,17 +164,24 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
 
     /**
      * Append audio to the end of the recognition stream. Must currently be in native format.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("appendAudioPCMBuffer:")
     public native void appendAudioPCMBuffer(@NotNull AVAudioPCMBuffer audioPCMBuffer);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("appendAudioSampleBuffer:")
     public native void appendAudioSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * Indicate that the audio source is finished and no more audio will be appended
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("endAudio")
@@ -186,6 +193,8 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
 
     /**
      * Preferred audio format for optimal speech recognition
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

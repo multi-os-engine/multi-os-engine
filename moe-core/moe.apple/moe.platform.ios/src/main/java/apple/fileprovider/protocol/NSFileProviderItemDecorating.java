@@ -74,6 +74,8 @@ public interface NSFileProviderItemDecorating extends NSFileProviderItem {
      * To adopt this protocol, implement the -decorations method on your NSFileProviderItem to return valid decoration
      * identifiers
      * from your Info.plist.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

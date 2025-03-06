@@ -11,37 +11,37 @@ public final class BNNSFilterType {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSConvolution = 0x00000000;
+    @Generated public static final int Convolution = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSFullyConnected = 0x00000001;
+    @Generated public static final int FullyConnected = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSBatchNorm = 0x00000002;
+    @Generated public static final int BatchNorm = 0x00000002;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSInstanceNorm = 0x00000003;
+    @Generated public static final int InstanceNorm = 0x00000003;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLayerNorm = 0x00000004;
+    @Generated public static final int LayerNorm = 0x00000004;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSGroupNorm = 0x00000005;
+    @Generated public static final int GroupNorm = 0x00000005;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSTransposedConvolution = 0x00000006;
+    @Generated public static final int TransposedConvolution = 0x00000006;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSQuantization = 0x00000007;
+    @Generated public static final int Quantization = 0x00000007;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSArithmetic = 0x00000008;
+    @Generated public static final int Arithmetic = 0x00000008;
 }

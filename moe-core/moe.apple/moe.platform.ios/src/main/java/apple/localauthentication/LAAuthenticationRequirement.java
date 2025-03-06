@@ -70,6 +70,8 @@ public class LAAuthenticationRequirement extends NSObject {
      * [@li] • There is a change in the enrollment database -e.g a new TouchID finger is enrolled.
      * 
      * @return @c LAAuthenticationRequirement instance
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -84,6 +86,8 @@ public class LAAuthenticationRequirement extends NSObject {
      * [@li] • There are no biometric enrollments
      * 
      * @return @c LAAuthenticationRequirement instance
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -96,6 +100,8 @@ public class LAAuthenticationRequirement extends NSObject {
      * @param fallback Fallback used in case biometry authentication fails, is not available or
      *                 not preferred by the user.
      * @return @c LAAuthenticationRequirement instance
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -132,6 +138,8 @@ public class LAAuthenticationRequirement extends NSObject {
      * Requires user authentication
      * 
      * @return @c LAAuthenticationRequirement instance
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated

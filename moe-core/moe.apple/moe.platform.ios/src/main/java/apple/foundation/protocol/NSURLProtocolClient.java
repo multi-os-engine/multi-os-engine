@@ -56,6 +56,8 @@ public interface NSURLProtocolClient {
      * @param protocol       the NSURLProtocol object sending the message.
      * @param cachedResponse the NSCachedURLResponse object that has
      *                       examined and is valid.
+     * 
+     *                       API-Since: 2.0
      */
     @Generated
     @Selector("URLProtocol:cachedResponseIsValid:")
@@ -68,6 +70,8 @@ public interface NSURLProtocolClient {
      * 
      * @param protocol  The protocol object cancelling authentication.
      * @param challenge The authentication challenge.
+     * 
+     *                  API-Since: 2.0
      */
     @Generated
     @Selector("URLProtocol:didCancelAuthenticationChallenge:")
@@ -82,6 +86,8 @@ public interface NSURLProtocolClient {
      * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param error    The error that caused the load to fail.
+     * 
+     *                 API-Since: 2.0
      */
     @Generated
     @Selector("URLProtocol:didFailWithError:")
@@ -99,6 +105,8 @@ public interface NSURLProtocolClient {
      * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param data     URL load data being made available.
+     * 
+     *                 API-Since: 2.0
      */
     @Generated
     @Selector("URLProtocol:didLoadData:")
@@ -113,6 +121,8 @@ public interface NSURLProtocolClient {
      * request on the same thread that called this method. It may add a
      * default credential to the challenge it issues to the connection delegate,
      * if the protocol did not provide one.
+     * 
+     * API-Since: 2.0
      * 
      * @param protocol  The protocol object requesting authentication.
      * @param challenge The authentication challenge.
@@ -134,6 +144,8 @@ public interface NSURLProtocolClient {
      * @param policy   The NSURLCacheStoragePolicy the protocol
      *                 has determined should be used for the given response if the
      *                 response is to be stored in a cache.
+     * 
+     *                 API-Since: 2.0
      */
     @Generated
     @Selector("URLProtocol:didReceiveResponse:cacheStoragePolicy:")
@@ -149,6 +161,8 @@ public interface NSURLProtocolClient {
      * @param protocol the NSURLProtocol object sending the message.
      * @param request  the NSURLRequest to which the protocol implementation
      *                 has redirected.
+     * 
+     *                 API-Since: 2.0
      */
     @Generated
     @Selector("URLProtocol:wasRedirectedToRequest:redirectResponse:")
@@ -162,6 +176,8 @@ public interface NSURLProtocolClient {
      * implementation has finished loading successfully.
      * 
      * @param protocol the NSURLProtocol object sending the message.
+     * 
+     *                 API-Since: 2.0
      */
     @Generated
     @Selector("URLProtocolDidFinishLoading:")

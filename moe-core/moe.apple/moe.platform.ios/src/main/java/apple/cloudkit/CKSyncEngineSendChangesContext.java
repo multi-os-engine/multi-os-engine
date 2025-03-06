@@ -133,6 +133,8 @@ public class CKSyncEngineSendChangesContext extends NSObject {
 
     /**
      * The options being used for this attempt to send changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("options")
@@ -141,6 +143,8 @@ public class CKSyncEngineSendChangesContext extends NSObject {
 
     /**
      * The reason why the sync engine is attempting to send changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("reason")

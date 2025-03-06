@@ -162,6 +162,8 @@ public class WKBackForwardListItem extends NSObject {
 
     /**
      * The URL of the webpage represented by this item.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -174,6 +176,8 @@ public class WKBackForwardListItem extends NSObject {
 
     /**
      * The URL of the initial request that created this item.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -182,6 +186,8 @@ public class WKBackForwardListItem extends NSObject {
 
     /**
      * The title of the webpage represented by this item.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

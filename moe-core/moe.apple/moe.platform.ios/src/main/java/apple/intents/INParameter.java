@@ -102,6 +102,9 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("indexForSubKeyPath:")
     @NUInt
@@ -128,6 +131,9 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("isEqualToParameter:")
     public native boolean isEqualToParameter(@NotNull INParameter parameter);
@@ -146,15 +152,24 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("new")
     public static native INParameter new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("parameterClass")
     public native Class parameterClass();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("parameterForClass:keyPath:")
     public static native INParameter parameterForClassKeyPath(@NotNull Class aClass, @NotNull String keyPath);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("parameterKeyPath")
@@ -168,6 +183,9 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setIndex:forSubKeyPath:")
     public native void setIndexForSubKeyPath(@NUInt long index, @NotNull String subKeyPath);

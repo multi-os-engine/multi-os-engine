@@ -130,6 +130,9 @@ public class MPSImageBilinearScale extends MPSImageScale {
     public native MPSImageBilinearScale initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSImageBilinearScale initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);

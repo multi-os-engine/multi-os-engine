@@ -141,11 +141,17 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Selector("new")
     public static native UIPrintInfo new_objc();
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @Selector("printInfo")
     public static native UIPrintInfo printInfo();
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @Selector("printInfoWithDictionary:")
@@ -179,6 +185,9 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
@@ -186,6 +195,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is based on document type (none for photo, long edge for other)
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("duplex")
@@ -206,6 +217,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is application name
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -214,6 +227,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is UIPrintInfoOrientationPortrait
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("orientation")
@@ -222,6 +237,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is UIPrintInfoOutputGeneral
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("outputType")
@@ -230,6 +247,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is nil. set after user selects printer
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -238,6 +257,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is based on document type (none for photo, long edge for other)
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setDuplex:")
@@ -245,6 +266,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is application name
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setJobName:")
@@ -252,6 +275,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is UIPrintInfoOrientationPortrait
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setOrientation:")
@@ -259,6 +284,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is UIPrintInfoOutputGeneral
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setOutputType:")
@@ -266,6 +293,8 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     /**
      * default is nil. set after user selects printer
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setPrinterID:")

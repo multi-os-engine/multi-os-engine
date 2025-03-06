@@ -180,6 +180,8 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
      * init
      * 
      * Initialize an MDLTransform's matrices with identity
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("init")
@@ -194,11 +196,17 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @Selector("initWithIdentity")
     public native MDLTransform initWithIdentity();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithTransformComponent:")
     public native MDLTransform initWithTransformComponent(
             @NotNull @Mapped(ObjCObjectMapper.class) MDLTransformComponent component);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithTransformComponent:resetsTransform:")
     public native MDLTransform initWithTransformComponentResetsTransform(
@@ -223,6 +231,8 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
 
     /**
      * Set all transform components to identity
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIdentity")

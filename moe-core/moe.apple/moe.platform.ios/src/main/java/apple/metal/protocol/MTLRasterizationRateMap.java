@@ -52,6 +52,8 @@ public interface MTLRasterizationRateMap {
      * offset.
      * The specified offset must be a multiple of parameterBufferSize.align.
      * The buffer can be bound to a shader stage to map screen space to physical fragment space, or vice versa.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("copyParameterDataToBuffer:offset:")
@@ -61,6 +63,8 @@ public interface MTLRasterizationRateMap {
      * [@property] device
      * 
      * @return The device on which the rasterization rate map was created
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -72,6 +76,8 @@ public interface MTLRasterizationRateMap {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -83,6 +89,8 @@ public interface MTLRasterizationRateMap {
      * 
      * Different render-target layers may target different variable rasterization configurations.
      * The rasterization rate layer for a primitive is selected on the [[render_target_layer_index]].
+     * 
+     * API-Since: 13.0
      * 
      * @return The number of different configured layers in the rasterization map.
      */
@@ -98,6 +106,8 @@ public interface MTLRasterizationRateMap {
      * space, in screen space pixels.
      * The returned value is greater-or-equal the input value because the rasterization quality never exceeds 1:1 in any
      * region.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mapPhysicalToScreenCoordinates:forLayer:")
@@ -112,6 +122,8 @@ public interface MTLRasterizationRateMap {
      * framebuffer, in physical fragments.
      * The returned value is less-or-equal the input value because the rasterization quality never exceeds 1:1 in any
      * region.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mapScreenToPhysicalCoordinates:forLayer:")
@@ -126,6 +138,8 @@ public interface MTLRasterizationRateMap {
      * 
      * The parameter data can be copied into a buffer with this size and alignment using
      * copyParameterDataToBuffer:offset:
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("parameterBufferSizeAndAlign")
@@ -138,6 +152,8 @@ public interface MTLRasterizationRateMap {
      * Rendering algorithms that use binning or tiling in screen space may want to determine the screen space bin size
      * using this value.
      * The depth component of the returned MTLSize is always 0.
+     * 
+     * API-Since: 13.0
      * 
      * @return The granularity, in physical pixels, at which variable rasterization rate varies.
      */
@@ -153,6 +169,8 @@ public interface MTLRasterizationRateMap {
      * 
      * Different configured layers may have a different rasterization rate and may have different size after rendering.
      * The rasterization rate layer for a primitive is selected on the [[render_target_layer_index]].
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("physicalSizeForLayer:")
@@ -164,6 +182,8 @@ public interface MTLRasterizationRateMap {
      * 
      * The region always has its origin at [0, 0].
      * The depth component of the returned MTLSize is always 0.
+     * 
+     * API-Since: 13.0
      * 
      * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      */

@@ -157,6 +157,9 @@ public class UIEvent extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("allTouches")
@@ -197,6 +200,9 @@ public class UIEvent extends NSObject {
     @NInt
     public native long subtype();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();
@@ -209,11 +215,17 @@ public class UIEvent extends NSObject {
     @Selector("touchesForGestureRecognizer:")
     public native NSSet<? extends UITouch> touchesForGestureRecognizer(@NotNull UIGestureRecognizer gesture);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("touchesForView:")
     public native NSSet<? extends UITouch> touchesForView(@NotNull UIView view);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("touchesForWindow:")

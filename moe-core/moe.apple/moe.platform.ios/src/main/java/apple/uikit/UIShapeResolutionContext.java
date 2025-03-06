@@ -88,6 +88,8 @@ public class UIShapeResolutionContext extends NSObject {
      * to a button, the `contentShape` could represent the bounding shape
      * of that button's background. You should typically size a dynamic
      * shape relative to the bounding `rect` of the `contentShape`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("contentShape")

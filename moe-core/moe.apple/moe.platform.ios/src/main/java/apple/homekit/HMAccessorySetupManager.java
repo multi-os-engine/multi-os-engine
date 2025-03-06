@@ -99,6 +99,9 @@ public class HMAccessorySetupManager extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native HMAccessorySetupManager init();

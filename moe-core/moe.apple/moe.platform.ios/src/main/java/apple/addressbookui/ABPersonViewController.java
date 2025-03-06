@@ -187,7 +187,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("addressBook")
@@ -205,7 +210,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * Indicates whether an edit/save button should be shown.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
@@ -213,7 +223,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("displayedPerson")
@@ -223,7 +238,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
      * An array of NSNumber instances representing the properties (ABPropertyID) that should
      * be visible when viewing the person. Note that all the properties are visible when
      * editing a person.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("displayedProperties")
@@ -244,7 +264,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("personViewDelegate")
@@ -254,7 +279,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(@Nullable ConstVoidPtr value);
@@ -271,7 +301,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * Indicates whether an edit/save button should be shown.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
@@ -279,7 +314,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(@NotNull ConstVoidPtr value);
@@ -288,7 +328,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
      * An array of NSNumber instances representing the properties (ABPropertyID) that should
      * be visible when viewing the person. Note that all the properties are visible when
      * editing a person.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setDisplayedProperties:")
     public native void setDisplayedProperties(@Nullable NSArray<? extends NSNumber> value);
@@ -296,14 +341,24 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * Indicates whether to highlight a certain value for the displayedPerson,
      * if a single value property is specified, identifier will be ignored.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setHighlightedItemForProperty:withIdentifier:")
     public native void setHighlightedItemForPropertyWithIdentifier(int property, int identifier);
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setPersonViewDelegate:")
     public native void setPersonViewDelegate_unsafe(
@@ -311,7 +366,12 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     public void setPersonViewDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value) {
         Object __old = personViewDelegate();

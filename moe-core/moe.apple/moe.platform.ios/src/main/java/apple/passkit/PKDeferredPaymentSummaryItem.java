@@ -88,6 +88,8 @@ public class PKDeferredPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The timestamp to which the payment is deferred.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -144,6 +146,8 @@ public class PKDeferredPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The timestamp to which the payment is deferred.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDeferredDate:")

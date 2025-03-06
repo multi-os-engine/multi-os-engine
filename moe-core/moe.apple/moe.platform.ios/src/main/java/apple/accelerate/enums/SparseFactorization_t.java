@@ -8,11 +8,11 @@ public final class SparseFactorization_t {
     private SparseFactorization_t() {
     }
 
-    @Generated public static final byte SparseFactorizationCholesky = 0;
-    @Generated public static final byte SparseFactorizationLDLT = 1;
-    @Generated public static final byte SparseFactorizationLDLTUnpivoted = 2;
-    @Generated public static final byte SparseFactorizationLDLTSBK = 3;
-    @Generated public static final byte SparseFactorizationLDLTTPP = 4;
-    @Generated public static final byte SparseFactorizationQR = 40;
-    @Generated public static final byte SparseFactorizationCholeskyAtA = 41;
+    @Generated public static final byte Cholesky = 0;
+    @Generated public static final byte LDLT = 1;
+    @Generated public static final byte LDLTUnpivoted = 2;
+    @Generated public static final byte LDLTSBK = 3;
+    @Generated public static final byte LDLTTPP = 4;
+    @Generated public static final byte QR = 40;
+    @Generated public static final byte CholeskyAtA = 41;
 }

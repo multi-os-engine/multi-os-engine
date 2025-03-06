@@ -60,6 +60,8 @@ public class PHASEEngine extends NSObject {
      * 
      * Returns nil if there are no active group presets in the engine. Activate or Deactivate the preset via
      * [PHASEGroupPreset activate] and [PHASEGroupPreset deactivate]
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -80,6 +82,8 @@ public class PHASEEngine extends NSObject {
      * [@property] assetRegistry
      * 
      * A registry for assets available to the engine
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -121,6 +125,8 @@ public class PHASEEngine extends NSObject {
      * The default medium in the engine.
      * 
      * The default value is PHASEMediumPresetAir.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -133,6 +139,8 @@ public class PHASEEngine extends NSObject {
      * The default reverb preset in the engine.
      * 
      * The default value is PHASEReverbPresetNone.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("defaultReverbPreset")
@@ -149,6 +157,8 @@ public class PHASEEngine extends NSObject {
      * An array of the ducker objects in the system
      * 
      * Returns a dictionary of the ducker objects at the time it is retrieved.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -161,6 +171,8 @@ public class PHASEEngine extends NSObject {
      * A dictionary of the groups in the system
      * 
      * Returns a dictionary of the groups at the time it is retrieved.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -183,6 +195,8 @@ public class PHASEEngine extends NSObject {
      * 
      * @param updateMode
      *                   Defines how the engine will be updated.
+     * 
+     *                   API-Since: 15.0
      */
     @Generated
     @Selector("initWithUpdateMode:")
@@ -220,6 +234,8 @@ public class PHASEEngine extends NSObject {
      * 
      * When set to a value other than PHASESpatializationModeAutomatic,
      * overrides the default output spatializer and uses the specified one instead.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("outputSpatializationMode")
@@ -230,6 +246,8 @@ public class PHASEEngine extends NSObject {
      * pause
      * 
      * Pause the engine.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("pause")
@@ -239,6 +257,8 @@ public class PHASEEngine extends NSObject {
      * [@property] renderingState
      * 
      * The engine's current rendering state.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("renderingState")
@@ -266,6 +286,8 @@ public class PHASEEngine extends NSObject {
      * The rootObject may not be set as the child of another object. This will cause an error to be thrown.
      * The rootObject's transform may not be changed. This will cause an error to be thrown.
      * The rootObject may not be copied. This will cause an error to be thrown.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -278,6 +300,8 @@ public class PHASEEngine extends NSObject {
      * The default medium in the engine.
      * 
      * The default value is PHASEMediumPresetAir.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDefaultMedium:")
@@ -289,6 +313,8 @@ public class PHASEEngine extends NSObject {
      * The default reverb preset in the engine.
      * 
      * The default value is PHASEReverbPresetNone.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDefaultReverbPreset:")
@@ -299,6 +325,8 @@ public class PHASEEngine extends NSObject {
      * 
      * When set to a value other than PHASESpatializationModeAutomatic,
      * overrides the default output spatializer and uses the specified one instead.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setOutputSpatializationMode:")
@@ -313,6 +341,8 @@ public class PHASEEngine extends NSObject {
      * This allows clients to pass metric values in their own native spatial scale.
      * [@note]
      * Values are clamped to the range (0, inf]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUnitsPerMeter:")
@@ -327,6 +357,8 @@ public class PHASEEngine extends NSObject {
      * This allows clients to pass time/duration values in their own native time scale.
      * [@note]
      * Values are clamped to the range (0, inf]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUnitsPerSecond:")
@@ -343,6 +375,8 @@ public class PHASEEngine extends NSObject {
      * 
      * Returns a dictionary of the sound events at the time it is retrieved. This includes all sound events that are
      * registered with the engine, including those that are preparing, playing, paused or stopping.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -356,6 +390,8 @@ public class PHASEEngine extends NSObject {
      * 
      * @return
      *         YES for success.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("startAndReturnError:")
@@ -365,6 +401,8 @@ public class PHASEEngine extends NSObject {
      * stop
      * 
      * Stop the engine.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("stop")
@@ -383,6 +421,8 @@ public class PHASEEngine extends NSObject {
      * This allows clients to pass metric values in their own native spatial scale.
      * [@note]
      * Values are clamped to the range (0, inf]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("unitsPerMeter")
@@ -397,6 +437,8 @@ public class PHASEEngine extends NSObject {
      * This allows clients to pass time/duration values in their own native time scale.
      * [@note]
      * Values are clamped to the range (0, inf]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("unitsPerSecond")
@@ -411,6 +453,8 @@ public class PHASEEngine extends NSObject {
      * update any systems and objects that need to be kept current, and call any registered handlers.
      * [@note]
      * This function has no effect if the engine's update mode is PHASEUpdateModeAutomatic.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("update")

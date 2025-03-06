@@ -170,6 +170,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Image should be a square with side length of 40 points
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -207,6 +209,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Default 2
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("maximumCallGroups")
@@ -215,6 +219,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Default 5
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("maximumCallsPerCallGroup")
@@ -223,6 +229,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Name of resource in app's bundle to play as ringtone for incoming call
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -231,6 +239,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Image should be a square with side length of 40 points
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setIconTemplateImageData:")
@@ -238,6 +248,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Default 2
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMaximumCallGroups:")
@@ -245,6 +257,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Default 5
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMaximumCallsPerCallGroup:")
@@ -252,6 +266,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Name of resource in app's bundle to play as ringtone for incoming call
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRingtoneSound:")
@@ -259,6 +275,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Numbers are of type CXHandleType
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSupportedHandleTypes:")
@@ -266,6 +284,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Default NO
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSupportsVideo:")
@@ -273,6 +293,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Numbers are of type CXHandleType
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -281,6 +303,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     /**
      * Default NO
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportsVideo")

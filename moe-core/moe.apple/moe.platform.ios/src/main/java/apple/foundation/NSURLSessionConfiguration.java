@@ -44,8 +44,8 @@ import org.jetbrains.annotations.Nullable;
  * created, a copy of the configuration object is made - you cannot
  * modify the configuration of a session after it has been created.
  * 
- * The shared session uses the global singleton credential, cache
- * and cookie storage objects.
+ * The shared session uses the global credential, cache and cookie
+ * storage objects.
  * 
  * An ephemeral session has no persistent disk storage for cookies,
  * cache or credentials.
@@ -131,6 +131,9 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("defaultSessionConfiguration")
@@ -140,6 +143,9 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("ephemeralSessionConfiguration")
@@ -208,6 +214,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * Specifies additional headers which will be set on outgoing requests.
      * Note that these headers are added to the request only if not already present.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -216,6 +224,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Policy for accepting cookies. This overrides the policy otherwise specified by the cookie storage.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("HTTPCookieAcceptPolicy")
@@ -224,6 +234,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The cookie storage object to use, or nil to indicate that no cookies should be handled
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -232,6 +244,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The maximum number of simultaneous persistent connections per host
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("HTTPMaximumConnectionsPerHost")
@@ -240,6 +254,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Allow the session to set cookies on requests
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("HTTPShouldSetCookies")
@@ -247,6 +263,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Allow the use of HTTP pipelining
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("HTTPShouldUsePipelining")
@@ -276,6 +294,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The URL resource cache, or nil to indicate that no caching is to be performed
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -284,6 +304,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The credential storage object, or nil to indicate that no credential storage is to be used
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -292,6 +314,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * allow request to route over cellular.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("allowsCellularAccess")
@@ -299,6 +323,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The proxy dictionary, as described by <CFNetwork/CFHTTPStream.h>
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -314,6 +340,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * identifier for the background session configuration
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -351,6 +379,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * type of service for requests.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("networkServiceType")
@@ -366,6 +396,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * than with an instance of NSURLSession.
      * Custom NSURLProtocol subclasses are not available to background
      * sessions.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -374,6 +406,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * default cache policy for requests
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("requestCachePolicy")
@@ -396,6 +430,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * allow request to route over cellular.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAllowsCellularAccess:")
@@ -403,6 +439,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The proxy dictionary, as described by <CFNetwork/CFHTTPStream.h>
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setConnectionProxyDictionary:")
@@ -411,6 +449,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * Specifies additional headers which will be set on outgoing requests.
      * Note that these headers are added to the request only if not already present.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setHTTPAdditionalHeaders:")
@@ -418,6 +458,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Policy for accepting cookies. This overrides the policy otherwise specified by the cookie storage.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setHTTPCookieAcceptPolicy:")
@@ -425,6 +467,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The cookie storage object to use, or nil to indicate that no cookies should be handled
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setHTTPCookieStorage:")
@@ -432,6 +476,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The maximum number of simultaneous persistent connections per host
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setHTTPMaximumConnectionsPerHost:")
@@ -439,6 +485,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Allow the session to set cookies on requests
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setHTTPShouldSetCookies:")
@@ -446,6 +494,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Allow the use of HTTP pipelining
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setHTTPShouldUsePipelining:")
@@ -453,6 +503,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * type of service for requests.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setNetworkServiceType:")
@@ -467,6 +519,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * than with an instance of NSURLSession.
      * Custom NSURLProtocol subclasses are not available to background
      * sessions.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setProtocolClasses:")
@@ -474,6 +528,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * default cache policy for requests
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setRequestCachePolicy:")
@@ -541,6 +597,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * default timeout for requests. This will cause a timeout if no data is transmitted for the given timeout value,
      * and is reset whenever data is transmitted.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTimeoutIntervalForRequest:")
@@ -549,6 +607,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * default timeout for requests. This will cause a timeout if a resource is not able to be retrieved within a given
      * timeout.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTimeoutIntervalForResource:")
@@ -556,6 +616,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The URL resource cache, or nil to indicate that no caching is to be performed
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setURLCache:")
@@ -563,6 +625,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The credential storage object, or nil to indicate that no credential storage is to be used
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setURLCredentialStorage:")
@@ -595,6 +659,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * default timeout for requests. This will cause a timeout if no data is transmitted for the given timeout value,
      * and is reset whenever data is transmitted.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("timeoutIntervalForRequest")
@@ -603,6 +669,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * default timeout for requests. This will cause a timeout if a resource is not able to be retrieved within a given
      * timeout.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("timeoutIntervalForResource")

@@ -77,6 +77,8 @@ public class CATransaction extends NSObject {
      * Accessors for the "animationDuration" per-thread transaction
      * property. Defines the default duration of animations added to
      * layers. Defaults to 1/4s.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("animationDuration")
@@ -87,6 +89,8 @@ public class CATransaction extends NSObject {
      * property. The default value is nil, when set to a non-nil value any
      * animations added to layers will have this value set as their
      * "timingFunction" property. Added in Mac OS X 10.6.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -99,6 +103,8 @@ public class CATransaction extends NSObject {
 
     /**
      * Begin a new transaction for the current thread; nests.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("begin")
@@ -126,13 +132,25 @@ public class CATransaction extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * Commit all changes made during the current transaction. Raises an
-     * exception if no current transaction exists.
+     * Commit all changes made during the current transaction.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("commit")
     public static native void commit();
 
+    /**
+     * Accessors for the "completionBlock" per-thread transaction property.
+     * Once set to a non-nil value the block is guaranteed to be called (on
+     * the main thread) as soon as all animations subsequently added by
+     * this transaction group have completed (or been removed). If no
+     * animations are added before the current transaction group is
+     * committed (or the completion block is set to a different value), the
+     * block will be invoked immediately. Added in Mac OS X 10.6.
+     * 
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("completionBlock")
@@ -152,6 +170,8 @@ public class CATransaction extends NSObject {
      * Defines whether or not the layer's -actionForKey: method is used to
      * find an action (aka. implicit animation) for each layer property
      * change. Defaults to NO, i.e. implicit animations enabled.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("disableActions")
@@ -160,6 +180,8 @@ public class CATransaction extends NSObject {
     /**
      * Commits any extant implicit transaction. Will delay the actual commit
      * until any nested explicit transactions have completed.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("flush")
@@ -197,6 +219,8 @@ public class CATransaction extends NSObject {
      * obtain this while modifying shared state, but callers may need to lock
      * around multiple operations to ensure consistency. The lock is a
      * recursive spin-lock (i.e shouldn't be held for extended periods).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("lock")
@@ -215,23 +239,38 @@ public class CATransaction extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration(double dur);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setAnimationTimingFunction:")
     public static native void setAnimationTimingFunction(@Nullable CAMediaTimingFunction function);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setCompletionBlock:")
     public static native void setCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDisableActions:")
     public static native void setDisableActions(boolean flag);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setValue:forKey:")
     public static native void setValueForKey_static(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject,
@@ -245,6 +284,9 @@ public class CATransaction extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("unlock")
     public static native void unlock();
@@ -264,6 +306,8 @@ public class CATransaction extends NSObject {
      * 
      * Attempting to set a property to a type other than its document type
      * has an undefined result.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

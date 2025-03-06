@@ -97,6 +97,8 @@ public class HKAttachment extends NSObject implements NSSecureCoding, NSCopying 
      * [@property] contentType
      * 
      * The Uniform Type of the file.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -114,6 +116,8 @@ public class HKAttachment extends NSObject implements NSSecureCoding, NSCopying 
      * [@property] creationDate
      * 
      * The date the receiver was created.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -141,6 +145,8 @@ public class HKAttachment extends NSObject implements NSSecureCoding, NSCopying 
      * [@property] identifier
      * 
      * A unique identifier of the receiver in the HealthKit database.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -183,6 +189,8 @@ public class HKAttachment extends NSObject implements NSSecureCoding, NSCopying 
      * Extra information describing the attachment.
      * 
      * Keys must be NSString and values must be either NSString, NSNumber, or NSDate.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -193,6 +201,8 @@ public class HKAttachment extends NSObject implements NSSecureCoding, NSCopying 
      * [@property] name
      * 
      * Represents the name of the file.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -220,6 +230,8 @@ public class HKAttachment extends NSObject implements NSSecureCoding, NSCopying 
      * [@property] size
      * 
      * The size in bytes of the file.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("size")

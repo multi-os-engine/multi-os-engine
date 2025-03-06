@@ -163,6 +163,8 @@ public class HMCameraAudioControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to mute setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -171,6 +173,8 @@ public class HMCameraAudioControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to volume setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

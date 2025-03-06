@@ -45,6 +45,8 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.uikit.NSAdaptiveImageGlyph;
 
 @Generated
 @Library("UIKit")
@@ -519,6 +521,117 @@ public interface UITextInput extends UIKeyInput {
     @Selector("willPresentEditMenuWithAnimator:")
     default void willPresentEditMenuWithAnimator(
             @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 12.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("attributedTextInRange:")
+    @NotNull
+    default NSAttributedString attributedTextInRange(@NotNull UITextRange range) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Similar to `-caretRectForPosition:`, optionally provide a transform for the caret at `position`. As with all
+     * geometry information in this protocol,
+     * transforms are assumed to be relative to the `textInputView` coordinate space. If unimplemented, the identity
+     * transform is assumed.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("caretTransformForPosition:")
+    @ByValue
+    default CGAffineTransform caretTransformForPosition(@NotNull UITextPosition position) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("didDismissWritingTools")
+    default void didDismissWritingTools() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("insertAdaptiveImageGlyph:replacementRange:")
+    default void insertAdaptiveImageGlyphReplacementRange(@NotNull NSAdaptiveImageGlyph adaptiveImageGlyph,
+            @NotNull UITextRange replacementRange) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 12.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("insertAttributedText:")
+    default void insertAttributedText(@NotNull NSAttributedString string) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("isEditable")
+    default boolean isEditable() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 13.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("replaceRange:withAttributedText:")
+    default void replaceRangeWithAttributedText(@NotNull UITextRange range,
+            @NotNull NSAttributedString attributedText) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("setSupportsAdaptiveImageGlyph:")
+    default void setSupportsAdaptiveImageGlyph(boolean value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("supportsAdaptiveImageGlyph")
+    default boolean supportsAdaptiveImageGlyph() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * These methods are called when the Writing Tools panel is presented and dismissed
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("willPresentWritingTools")
+    default void willPresentWritingTools() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

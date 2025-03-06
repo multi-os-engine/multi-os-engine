@@ -92,6 +92,8 @@ public class SRFetchRequest extends NSObject {
      * Fetch data generated on this device
      * 
      * If this is not specified, the current device will be used.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -108,6 +110,8 @@ public class SRFetchRequest extends NSObject {
      * The time range for fetching will be exclusive of start time and inclusive of end time:
      * (start, end] . An SRSensorReader can use this to continue fetching a stream of
      * data based on the last sample timestamp they have read.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("from")
@@ -161,6 +165,8 @@ public class SRFetchRequest extends NSObject {
      * Fetch data generated on this device
      * 
      * If this is not specified, the current device will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDevice:")
@@ -176,6 +182,8 @@ public class SRFetchRequest extends NSObject {
      * The time range for fetching will be exclusive of start time and inclusive of end time:
      * (start, end] . An SRSensorReader can use this to continue fetching a stream of
      * data based on the last sample timestamp they have read.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setFrom:")
@@ -187,6 +195,8 @@ public class SRFetchRequest extends NSObject {
      * This value must be specified for a valid request to be performed.
      * If it is not specified, this will result in a SRErrorInvalidRequest error in the
      * -sensorReader:fetchingRequest:failedWithError: SRSensorReaderDelegate callback.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTo:")
@@ -206,6 +216,8 @@ public class SRFetchRequest extends NSObject {
      * This value must be specified for a valid request to be performed.
      * If it is not specified, this will result in a SRErrorInvalidRequest error in the
      * -sensorReader:fetchingRequest:failedWithError: SRSensorReaderDelegate callback.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("to")

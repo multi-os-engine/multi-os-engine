@@ -87,6 +87,8 @@ public class SNClassificationResult extends NSObject implements SNResult {
 
     /**
      * All classification candidates, sorted with highest confidence first.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -160,6 +162,8 @@ public class SNClassificationResult extends NSObject implements SNResult {
      * to precisely identify the frame range in the original audio stream to which this result corresponds. Time ranges
      * will often be in the past compared to the frame count of the most recent audio buffer provided to the analyzer,
      * due to the inherent audio buffering operations required to deliver a full block of audio to an MLModel.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("timeRange")
@@ -174,13 +178,14 @@ public class SNClassificationResult extends NSObject implements SNResult {
     /**
      * Retrieves the classification candidate with the specified identifier.
      * 
-     * @param identifier An identifier on which to query for a particular classification candidate. The query will match
-     *                   to any classification candidate whose `identifier` property (see `identifier` property of
-     *                   `SNClassification`) contains a value equal to the provided argument.
-     * @return The classification candidate which has the specified identifier, if it exists. If no such candidate
-     *         exists, `nil` will be returned.
+     * - Parameter identifier: An identifier on which to query for a particular classification candidate. The query will
+     * match to any classification candidate whose `identifier` property (see `identifier` property of
+     * `SNClassification`) contains a value equal to the provided argument.
      * 
-     *         API-Since: 15.0
+     * - Returns: The classification candidate which has the specified identifier, if it exists. If no such candidate
+     * exists, `nil` will be returned.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

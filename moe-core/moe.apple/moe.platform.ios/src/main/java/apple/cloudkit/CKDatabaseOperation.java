@@ -163,6 +163,8 @@ public class CKDatabaseOperation extends CKOperation {
      * If no database is set, @code [self.container privateCloudDatabase] @endcode is used.
      * This will also set the container property of the operation's configuration to match the container of the
      * passed-in database.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -179,6 +181,8 @@ public class CKDatabaseOperation extends CKOperation {
      * If no database is set, @code [self.container privateCloudDatabase] @endcode is used.
      * This will also set the container property of the operation's configuration to match the container of the
      * passed-in database.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDatabase:")

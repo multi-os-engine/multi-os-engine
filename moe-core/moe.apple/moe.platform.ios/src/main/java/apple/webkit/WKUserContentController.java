@@ -173,6 +173,8 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
      * Calling this method is equivalent to calling addScriptMessageHandler:contentWorld:name:
      * with [WKContentWorld pageWorld] as the contentWorld argument.
      * 
+     * API-Since: 8.0
+     * 
      * @param scriptMessageHandler The script message handler to add.
      * @param name                 The name of the message handler.
      */
@@ -185,6 +187,8 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
      * Adds a user script.
      * 
      * @param userScript The user script to add.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("addUserScript:")
@@ -204,6 +208,8 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Removes all associated user scripts.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("removeAllUserScripts")
@@ -215,6 +221,8 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
      * Calling this method is equivalent to calling removeScriptMessageHandlerForName:contentWorld:
      * with [WKContentWorld pageWorld] as the contentWorld argument.
      * 
+     * API-Since: 8.0
+     * 
      * @param name The name of the message handler to remove.
      */
     @Generated
@@ -224,6 +232,8 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
     /**
      * The user scripts associated with this user content
      * controller.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

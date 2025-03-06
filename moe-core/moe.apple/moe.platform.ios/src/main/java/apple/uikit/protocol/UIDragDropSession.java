@@ -32,6 +32,8 @@ public interface UIDragDropSession {
      * 
      * If true, then the delegate of UIDropInteraction is allowed to return `UIDropOperationMove`
      * from `-dropInteraction:sessionDidUpdate:`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsMoveOperation")
@@ -39,6 +41,8 @@ public interface UIDragDropSession {
 
     /**
      * Returns true if any of the session's items could create any objects of the specified class.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("canLoadObjectsOfClass:")
@@ -48,6 +52,8 @@ public interface UIDragDropSession {
      * Convenience methods to iterate through this session's `items`.
      * 
      * Returns true if any of the session's items conforms to any of the specified UTIs.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hasItemsConformingToTypeIdentifiers:")
@@ -58,6 +64,8 @@ public interface UIDragDropSession {
      * 
      * This is determined based on the UIDragInteraction's delegate's
      * `-dragInteraction:sessionIsRestrictedToDraggingApplication:`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isRestrictedToDraggingApplication")
@@ -74,6 +82,8 @@ public interface UIDragDropSession {
      * 
      * When handling the drop, if you display dropped items in a linear order,
      * place them in this order, first to last.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -82,6 +92,8 @@ public interface UIDragDropSession {
 
     /**
      * The location of the drag in the specified view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("locationInView:")

@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * The order of source tensors of the layer must be condition tensor, tensor x, and tensor y.
  * 
  * API-Since: 14.5
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -133,7 +132,11 @@ public class MLCSelectionLayer extends MLCLayer {
      * Create a select layer
      * 
      * @return A new layer for selecting elements between two tensors.
+     * 
+     *         API-Since: 14.5
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layer")
     public static native MLCSelectionLayer layer();
@@ -159,6 +162,7 @@ public class MLCSelectionLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

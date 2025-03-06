@@ -161,11 +161,17 @@ public class MTLVertexAttributeDescriptorArray extends NSObject {
     @Selector("init")
     public native MTLVertexAttributeDescriptorArray init();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLVertexAttributeDescriptor objectAtIndexedSubscript(@NUInt long index);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Nullable MTLVertexAttributeDescriptor attributeDesc,

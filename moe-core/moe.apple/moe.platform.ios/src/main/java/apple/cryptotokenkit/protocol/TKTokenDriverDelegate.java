@@ -29,6 +29,8 @@ import org.jetbrains.annotations.Nullable;
 public interface TKTokenDriverDelegate {
     /**
      * Terminates previously created token, should release all resources associated with it.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

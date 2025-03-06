@@ -98,6 +98,8 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     /**
      * Create a new difference by mapping over this difference's members
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -114,6 +116,9 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
                 @NotNull NSOrderedCollectionChange<Object> arg0);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("hasChanges")
     public native boolean hasChanges();
@@ -140,18 +145,26 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
      * 1) All insertion offsets are unique
      * 2) All removal offsets are unique
      * 3) All associated indexes match a change with the opposite parity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithChanges:")
     public native NSOrderedCollectionDifference<?> initWithChanges(
             @NotNull NSArray<? extends NSOrderedCollectionChange<_ObjectType>> changes);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithInsertIndexes:insertedObjects:removeIndexes:removedObjects:")
     public native NSOrderedCollectionDifference<?> initWithInsertIndexesInsertedObjectsRemoveIndexesRemovedObjects(
             @NotNull NSIndexSet inserts, @Nullable NSArray<_ObjectType> insertedObjects, @NotNull NSIndexSet removes,
             @Nullable NSArray<_ObjectType> removedObjects);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithInsertIndexes:insertedObjects:removeIndexes:removedObjects:additionalChanges:")
     public native NSOrderedCollectionDifference<?> initWithInsertIndexesInsertedObjectsRemoveIndexesRemovedObjectsAdditionalChanges(

@@ -33,6 +33,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INGetRideStatusIntentResponseObserver")
 public interface INGetRideStatusIntentResponseObserver {
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("getRideStatusResponseDidUpdate:")
     void getRideStatusResponseDidUpdate(@NotNull INGetRideStatusIntentResponse response);

@@ -64,6 +64,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * 
      * [@c] CNContactIdentifierKey will always be fetched, whether you
      * request it or not.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -123,6 +125,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * If set, transactions made by the specified authors will be excluded
      * from the results. Use this, in conjunction with @c CNSaveRequest.transactionAuthor,
      * to suppress processing of changes you already know about.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -136,6 +140,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
 
     /**
      * Set to @c YES to also fetch group changes. Default is @c NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("includeGroupChanges")
@@ -175,6 +181,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * To return mutable contacts and groups.
      * 
      * If @c YES returns mutable contacts and groups. Default is @c NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mutableObjects")
@@ -202,6 +210,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * 
      * [@c] CNContactIdentifierKey will always be fetched, whether you
      * request it or not.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAdditionalContactKeyDescriptors:")
@@ -213,6 +223,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * If set, transactions made by the specified authors will be excluded
      * from the results. Use this, in conjunction with @c CNSaveRequest.transactionAuthor,
      * to suppress processing of changes you already know about.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setExcludedTransactionAuthors:")
@@ -220,6 +232,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
 
     /**
      * Set to @c YES to also fetch group changes. Default is @c NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setIncludeGroupChanges:")
@@ -229,6 +243,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * To return mutable contacts and groups.
      * 
      * If @c YES returns mutable contacts and groups. Default is @c NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMutableObjects:")
@@ -241,6 +257,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * 
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts.
      * If an individual contact is not linked then the unified contact is simply that individual contact.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShouldUnifyResults:")
@@ -253,6 +271,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * 
      * If nil, a @c CNChangeHistoryDropEverythingEvent will be returned, followed by an add event
      * for every contact and group currently in the contacts database.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStartingToken:")
@@ -269,6 +289,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * 
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts.
      * If an individual contact is not linked then the unified contact is simply that individual contact.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("shouldUnifyResults")
@@ -281,6 +303,8 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * 
      * If nil, a @c CNChangeHistoryDropEverythingEvent will be returned, followed by an add event
      * for every contact and group currently in the contacts database.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

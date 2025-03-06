@@ -103,6 +103,9 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("init")
     public native ARFaceTrackingConfiguration init();

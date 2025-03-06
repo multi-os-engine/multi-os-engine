@@ -100,6 +100,9 @@ public class MTRProductIdentity extends NSObject {
     @Selector("init")
     public native MTRProductIdentity init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithVendorID:productID:")
     public native MTRProductIdentity initWithVendorIDProductID(@NotNull NSNumber vendorID, @NotNull NSNumber productID);
@@ -131,6 +134,9 @@ public class MTRProductIdentity extends NSObject {
     @Selector("new")
     public static native MTRProductIdentity new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("productID")
     @NotNull
@@ -157,6 +163,9 @@ public class MTRProductIdentity extends NSObject {
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("vendorID")
     @NotNull

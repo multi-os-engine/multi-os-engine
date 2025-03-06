@@ -29,7 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: This command has been removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -60,7 +63,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The attributeId field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("attributeId")
     @NotNull
@@ -144,7 +150,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The numberOfIntervals field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("numberOfIntervals")
     @NotNull
@@ -165,7 +174,12 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("serverSideProcessingTimeout")
     @Nullable
@@ -173,14 +187,20 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The attributeId field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setAttributeId:")
     public native void setAttributeId(@NotNull NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The numberOfIntervals field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setNumberOfIntervals:")
     public native void setNumberOfIntervals(@NotNull NSNumber value);
@@ -192,14 +212,22 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("setServerSideProcessingTimeout:")
     public native void setServerSideProcessingTimeout(@Nullable NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The startTime field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setStartTime:")
     public native void setStartTime(@NotNull NSNumber value);
@@ -216,7 +244,13 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("setTimedInvokeTimeoutMs:")
     public native void setTimedInvokeTimeoutMs(@Nullable NSNumber value);
@@ -227,7 +261,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The startTime field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("startTime")
     @NotNull
@@ -249,7 +286,13 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileCommandParams e
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("timedInvokeTimeoutMs")
     @Nullable

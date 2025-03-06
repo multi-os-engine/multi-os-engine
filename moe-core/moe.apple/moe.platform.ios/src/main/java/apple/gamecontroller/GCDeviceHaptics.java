@@ -98,6 +98,8 @@ public class GCDeviceHaptics extends NSObject {
      * 
      * @see CHHapticEngine
      * @see GCHapticsLocality
+     * 
+     *      API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -171,6 +173,8 @@ public class GCDeviceHaptics extends NSObject {
      * equivalent.
      * 
      * @see GCHapticsLocality
+     * 
+     *      API-Since: 14.0
      */
     @NotNull
     @Generated

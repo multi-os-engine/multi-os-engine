@@ -83,6 +83,9 @@ public class INSetTaskAttributeIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -113,6 +116,8 @@ public class INSetTaskAttributeIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -145,6 +150,9 @@ public class INSetTaskAttributeIntentResponse extends INIntentResponse {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("modifiedTask")
@@ -163,6 +171,9 @@ public class INSetTaskAttributeIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setModifiedTask:")
     public native void setModifiedTask(@Nullable INTask value);

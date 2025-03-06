@@ -162,10 +162,16 @@ public class UIPreviewInteraction extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("cancelInteraction")
     public native void cancelInteraction();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -176,12 +182,17 @@ public class UIPreviewInteraction extends NSObject {
     @Selector("init")
     public native UIPreviewInteraction init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithView:")
     public native UIPreviewInteraction initWithView(@NotNull UIView view);
 
     /**
      * returns the current location of the touch that started the interaction
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("locationInCoordinateSpace:")
@@ -189,10 +200,16 @@ public class UIPreviewInteraction extends NSObject {
     public native CGPoint locationInCoordinateSpace(
             @Nullable @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIPreviewInteractionDelegate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPreviewInteractionDelegate value) {
         Object __old = delegate();
@@ -205,6 +222,9 @@ public class UIPreviewInteraction extends NSObject {
         }
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("view")

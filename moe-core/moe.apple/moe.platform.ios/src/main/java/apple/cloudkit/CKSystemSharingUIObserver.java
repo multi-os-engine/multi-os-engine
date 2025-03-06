@@ -101,6 +101,9 @@ public class CKSystemSharingUIObserver extends NSObject {
     @Selector("init")
     public native CKSystemSharingUIObserver init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithContainer:")
     public native CKSystemSharingUIObserver initWithContainer(@NotNull CKContainer container);
@@ -149,6 +152,8 @@ public class CKSystemSharingUIObserver extends NSObject {
      * be invoked with a nonnull @c recordID, a nil @c share, and a nonnull @c error
      * Each @c CKSystemSharingUIObserver instance has a private serial queue. This queue is used for all callback block
      * invocations.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSystemSharingUIDidSaveShareBlock:")
@@ -169,6 +174,8 @@ public class CKSystemSharingUIObserver extends NSObject {
      * 
      * Each @c CKSystemSharingUIObserver instance has a private serial queue. This queue is used for all callback block
      * invocations.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSystemSharingUIDidStopSharingBlock:")
@@ -199,6 +206,8 @@ public class CKSystemSharingUIObserver extends NSObject {
      * be invoked with a nonnull @c recordID, a nil @c share, and a nonnull @c error
      * Each @c CKSystemSharingUIObserver instance has a private serial queue. This queue is used for all callback block
      * invocations.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -220,6 +229,8 @@ public class CKSystemSharingUIObserver extends NSObject {
      * 
      * Each @c CKSystemSharingUIObserver instance has a private serial queue. This queue is used for all callback block
      * invocations.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

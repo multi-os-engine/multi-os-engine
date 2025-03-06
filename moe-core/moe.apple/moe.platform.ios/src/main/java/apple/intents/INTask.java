@@ -93,6 +93,9 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("createdDateComponents")
@@ -115,6 +118,9 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("identifier")
@@ -128,6 +134,9 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INTask initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithTitle:status:taskType:spatialEventTrigger:temporalEventTrigger:createdDateComponents:modifiedDateComponents:identifier:")
     public native INTask initWithTitleStatusTaskTypeSpatialEventTriggerTemporalEventTriggerCreatedDateComponentsModifiedDateComponentsIdentifier(
@@ -158,6 +167,9 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("modifiedDateComponents")
@@ -180,11 +192,17 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("spatialEventTrigger")
     public native INSpatialEventTrigger spatialEventTrigger();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("status")
     @NInt
@@ -204,16 +222,25 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("taskType")
     @NInt
     public native long taskType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("temporalEventTrigger")
     public native INTemporalEventTrigger temporalEventTrigger();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("title")

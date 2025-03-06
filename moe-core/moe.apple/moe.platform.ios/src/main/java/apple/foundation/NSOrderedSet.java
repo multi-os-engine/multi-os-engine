@@ -50,6 +50,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * Immutable Ordered Set ***************
@@ -146,48 +147,78 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @Selector("new")
     public static native NSOrderedSet<?> new_objc();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSet")
     public static native <_ObjectType> NSOrderedSet<?> orderedSet();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithArray:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArray(@NotNull NSArray<_ObjectType> array);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithArray:range:copyItems:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArrayRangeCopyItems(
             @NotNull NSArray<_ObjectType> array, @ByValue NSRange range, boolean flag);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithObject:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObject(
             @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Variadic()
     @Selector("orderedSetWithObjects:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjects(
             @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithObjects:count:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjectsCount(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithOrderedSet:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSet(@NotNull NSOrderedSet<_ObjectType> set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithOrderedSet:range:copyItems:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
             @NotNull NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithSet:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSet(@NotNull NSSet<_ObjectType> set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("orderedSetWithSet:copyItems:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSetCopyItems(@NotNull NSSet<_ObjectType> set,
@@ -222,6 +253,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
      * NSOrderedSets are not observable, so these methods raise exceptions when invoked on NSOrderedSets. Instead of
      * observing an ordered set, observe the ordered to-many relationship for which the ordered set is the collection of
      * related objects.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
@@ -235,12 +268,17 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
      * to the original ordered set will "show through" the facade and it will
      * appear to change spontaneously, since a copy of the ordered set is not
      * being made.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
     @Selector("array")
     public native NSArray<_ObjectType> array();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("containsObject:")
     public native boolean containsObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
@@ -252,6 +290,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -263,16 +304,25 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
             @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("description")
     public native String description();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("descriptionWithLocale:")
     public native String descriptionWithLocale(@Nullable @Mapped(ObjCObjectMapper.class) Object locale);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("descriptionWithLocale:indent:")
@@ -283,16 +333,25 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
     public native void enumerateObjectsAtIndexesOptionsUsingBlock(@NotNull NSIndexSet s, @NUInt long opts,
             @NotNull @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
             @NotNull @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
@@ -308,6 +367,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @Selector("filteredOrderedSetUsingPredicate:")
     public native NSOrderedSet<_ObjectType> filteredOrderedSetUsingPredicate(@NotNull NSPredicate p);
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("firstObject")
@@ -319,6 +381,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     public native void getObjectsRange(@Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
             @ByValue NSRange range);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("indexOfObject:")
     @NUInt
@@ -326,6 +391,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
 
     /**
      * binary search
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
@@ -334,54 +401,84 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
             @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object, @ByValue NSRange range, @NUInt long opts,
             @NotNull @ObjCBlock(name = "call_indexOfObjectInSortedRangeOptionsUsingComparator") Block_indexOfObjectInSortedRangeOptionsUsingComparator cmp);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("indexOfObjectAtIndexes:options:passingTest:")
     @NUInt
     public native long indexOfObjectAtIndexesOptionsPassingTest(@NotNull NSIndexSet s, @NUInt long opts,
             @NotNull @ObjCBlock(name = "call_indexOfObjectAtIndexesOptionsPassingTest") Block_indexOfObjectAtIndexesOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("indexOfObjectPassingTest:")
     @NUInt
     public native long indexOfObjectPassingTest(
             @NotNull @ObjCBlock(name = "call_indexOfObjectPassingTest") Block_indexOfObjectPassingTest predicate);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("indexOfObjectWithOptions:passingTest:")
     @NUInt
     public native long indexOfObjectWithOptionsPassingTest(@NUInt long opts,
             @NotNull @ObjCBlock(name = "call_indexOfObjectWithOptionsPassingTest") Block_indexOfObjectWithOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("indexesOfObjectsAtIndexes:options:passingTest:")
     public native NSIndexSet indexesOfObjectsAtIndexesOptionsPassingTest(@NotNull NSIndexSet s, @NUInt long opts,
             @NotNull @ObjCBlock(name = "call_indexesOfObjectsAtIndexesOptionsPassingTest") Block_indexesOfObjectsAtIndexesOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("indexesOfObjectsPassingTest:")
     public native NSIndexSet indexesOfObjectsPassingTest(
             @NotNull @ObjCBlock(name = "call_indexesOfObjectsPassingTest") Block_indexesOfObjectsPassingTest predicate);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("indexesOfObjectsWithOptions:passingTest:")
     public native NSIndexSet indexesOfObjectsWithOptionsPassingTest(@NUInt long opts,
             @NotNull @ObjCBlock(name = "call_indexesOfObjectsWithOptionsPassingTest") Block_indexesOfObjectsWithOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("init")
     public native NSOrderedSet<?> init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithArray:")
     public native NSOrderedSet<?> initWithArray(@NotNull NSArray<_ObjectType> array);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithArray:copyItems:")
     public native NSOrderedSet<?> initWithArrayCopyItems(@NotNull NSArray<_ObjectType> set, boolean flag);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithArray:range:copyItems:")
     public native NSOrderedSet<?> initWithArrayRangeCopyItems(@NotNull NSArray<_ObjectType> set, @ByValue NSRange range,
@@ -391,62 +488,104 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @Selector("initWithCoder:")
     public native NSOrderedSet<?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithObject:")
     public native NSOrderedSet<?> initWithObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
     public native NSOrderedSet<?> initWithObjects(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
             Object... varargs);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithObjects:count:")
     public native NSOrderedSet<?> initWithObjectsCount(
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithOrderedSet:")
     public native NSOrderedSet<?> initWithOrderedSet(@NotNull NSOrderedSet<_ObjectType> set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithOrderedSet:copyItems:")
     public native NSOrderedSet<?> initWithOrderedSetCopyItems(@NotNull NSOrderedSet<_ObjectType> set, boolean flag);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithOrderedSet:range:copyItems:")
     public native NSOrderedSet<?> initWithOrderedSetRangeCopyItems(@NotNull NSOrderedSet<_ObjectType> set,
             @ByValue NSRange range, boolean flag);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithSet:")
     public native NSOrderedSet<?> initWithSet(@NotNull NSSet<_ObjectType> set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithSet:copyItems:")
     public native NSOrderedSet<?> initWithSetCopyItems(@NotNull NSSet<_ObjectType> set, boolean flag);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("intersectsOrderedSet:")
     public native boolean intersectsOrderedSet(@NotNull NSOrderedSet<_ObjectType> other);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("intersectsSet:")
     public native boolean intersectsSet(@NotNull NSSet<_ObjectType> set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isEqualToOrderedSet:")
     public native boolean isEqualToOrderedSet(@NotNull NSOrderedSet<_ObjectType> other);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isSubsetOfOrderedSet:")
     public native boolean isSubsetOfOrderedSet(@NotNull NSOrderedSet<_ObjectType> other);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isSubsetOfSet:")
     public native boolean isSubsetOfSet(@NotNull NSSet<_ObjectType> set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("lastObject")
@@ -460,6 +599,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("objectAtIndex:")
@@ -475,16 +617,25 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("objectsAtIndexes:")
     public native NSArray<_ObjectType> objectsAtIndexes(@NotNull NSIndexSet indexes);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(@NotNull NSObject observer, @NotNull String keyPath);
@@ -497,16 +648,25 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     public native void removeObserverForKeyPathContext(@NotNull NSObject observer, @NotNull String keyPath,
             @Nullable VoidPtr context);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("reverseObjectEnumerator")
     public native NSEnumerator<_ObjectType> reverseObjectEnumerator();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("reversedOrderedSet")
     public native NSOrderedSet<_ObjectType> reversedOrderedSet();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("set")
@@ -521,6 +681,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("sortedArrayUsingComparator:")
@@ -538,6 +701,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(
             @NotNull NSArray<? extends NSSortDescriptor> sortDescriptors);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("sortedArrayWithOptions:usingComparator:")
@@ -664,6 +830,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
 
     /**
      * Uses isEqual: to determine the difference between the parameter and the receiver
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -671,12 +839,18 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSet(
             @NotNull NSOrderedSet<_ObjectType> other);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("differenceFromOrderedSet:withOptions:")
     public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSetWithOptions(
             @NotNull NSOrderedSet<_ObjectType> other, @NUInt long options);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("differenceFromOrderedSet:withOptions:usingEquivalenceTest:")
@@ -693,6 +867,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
                 @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("orderedSetByApplyingDifference:")

@@ -98,6 +98,9 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("init")
     public native ARImageTrackingConfiguration init();
@@ -119,6 +122,8 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
      * Enable or disable continuous auto focus.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("isAutoFocusEnabled")
@@ -145,6 +150,8 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Default value is one.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("maximumNumberOfTrackedImages")
@@ -168,6 +175,8 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
      * Enable or disable continuous auto focus.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAutoFocusEnabled:")
@@ -181,6 +190,8 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Default value is one.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMaximumNumberOfTrackedImages:")
@@ -188,6 +199,8 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to track in the scene.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setTrackingImages:")
@@ -212,6 +225,8 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to track in the scene.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

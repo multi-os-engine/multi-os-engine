@@ -66,6 +66,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("addressCheckingResultWithRange:components:")
@@ -107,6 +110,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("correctionCheckingResultWithRange:replacementString:")
@@ -122,18 +128,27 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSTextCheckingResult correctionCheckingResultWithRangeReplacementStringAlternativeStrings(
             @ByValue NSRange range, @NotNull String replacementString, @NotNull NSArray<String> alternativeStrings);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("dashCheckingResultWithRange:replacementString:")
     public static native NSTextCheckingResult dashCheckingResultWithRangeReplacementString(@ByValue NSRange range,
             @NotNull String replacementString);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("dateCheckingResultWithRange:date:")
     public static native NSTextCheckingResult dateCheckingResultWithRangeDate(@ByValue NSRange range,
             @NotNull NSDate date);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("dateCheckingResultWithRange:date:timeZone:duration:")
@@ -148,6 +163,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("grammarCheckingResultWithRange:details:")
@@ -181,6 +199,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("linkCheckingResultWithRange:URL:")
@@ -194,6 +215,8 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     /**
      * Methods for creating instances of the various types of results.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -210,6 +233,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSTextCheckingResult phoneNumberCheckingResultWithRangePhoneNumber(@ByValue NSRange range,
             @NotNull String phoneNumber);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("quoteCheckingResultWithRange:replacementString:")
@@ -226,6 +252,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
             @NotNull @ReferenceInfo(type = NSRange.class) Ptr<NSRange> ranges, @NUInt long count,
             @NotNull NSRegularExpression regularExpression);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("replacementCheckingResultWithRange:replacementString:")
@@ -244,6 +273,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("spellCheckingResultWithRange:")
@@ -271,6 +303,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("URL")
@@ -278,6 +313,8 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     /**
      * Deprecated in favor of components
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -307,11 +344,17 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("date")
     public native NSDate date();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -320,6 +363,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("grammarDetails")
@@ -347,6 +393,8 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     /**
      * Optional properties, used with certain types of results.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -361,6 +409,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("phoneNumber")
     public native String phoneNumber();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("range")
     @ByValue
@@ -382,6 +433,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("regularExpression")
     public native NSRegularExpression regularExpression();
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("replacementString")
@@ -397,6 +451,8 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     /**
      * Mandatory properties, used with all types of results.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("resultType")
@@ -408,6 +464,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("timeZone")

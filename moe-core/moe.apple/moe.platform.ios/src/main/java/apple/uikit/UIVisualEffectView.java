@@ -448,12 +448,17 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
 
     /**
      * Do not add subviews directly to UIVisualEffectView, use this view instead.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("contentView")
     public native UIView contentView();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("effect")
@@ -471,6 +476,9 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native UIVisualEffectView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithEffect:")
     public native UIVisualEffectView initWithEffect(@Nullable UIVisualEffect effect);
@@ -479,6 +487,9 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @Selector("initWithFrame:")
     public native UIVisualEffectView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setEffect:")
     public native void setEffect(@Nullable UIVisualEffect value);

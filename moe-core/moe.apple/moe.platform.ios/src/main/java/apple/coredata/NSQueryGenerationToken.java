@@ -106,6 +106,8 @@ public class NSQueryGenerationToken extends NSObject implements NSCopying, NSSec
 
     /**
      * Used to inform a context that it should use the current generation
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

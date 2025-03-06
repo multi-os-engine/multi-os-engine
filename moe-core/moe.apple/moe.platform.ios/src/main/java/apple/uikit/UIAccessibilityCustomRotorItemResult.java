@@ -162,6 +162,9 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
     @Selector("init")
     public native UIAccessibilityCustomRotorItemResult init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithTargetElement:targetRange:")
     public native UIAccessibilityCustomRotorItemResult initWithTargetElementTargetRange(
@@ -171,6 +174,8 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
     /**
      * A UIAccessibilityCustomRotorItemResult references a real element that will be messaged for other accessibility
      * properties.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTargetElement:")
@@ -179,6 +184,8 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
     /**
      * A UIAccessibilityCustomRotorItemResult references a real element that will be messaged for other accessibility
      * properties.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setTargetElement(@Nullable @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject value) {
@@ -196,6 +203,8 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
      * Optionally, a target range can be used to search within an element (like a UITextView).
      * If targetRange is nil, the search should begin from the start/end of the element depending on the search
      * direction.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTargetRange:")
@@ -204,6 +213,8 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
     /**
      * A UIAccessibilityCustomRotorItemResult references a real element that will be messaged for other accessibility
      * properties.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -215,6 +226,8 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
      * Optionally, a target range can be used to search within an element (like a UITextView).
      * If targetRange is nil, the search should begin from the start/end of the element depending on the search
      * direction.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

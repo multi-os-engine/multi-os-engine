@@ -8,6 +8,6 @@ public final class SparseTriangle_t {
     private SparseTriangle_t() {
     }
 
-    @Generated public static final byte SparseUpperTriangle = 0;
-    @Generated public static final byte SparseLowerTriangle = 1;
+    @Generated public static final byte UpperTriangle = 0;
+    @Generated public static final byte LowerTriangle = 1;
 }

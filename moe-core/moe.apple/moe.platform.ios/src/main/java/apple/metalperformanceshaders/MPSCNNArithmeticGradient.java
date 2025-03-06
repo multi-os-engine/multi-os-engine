@@ -127,6 +127,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
 
     /**
      * bias is ignored in the backward pass
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("bias")
@@ -201,6 +203,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
      * 
      * The isSecondarySourceFilter property is used to indicate whether the arithmetic gradient
      * filter is operating on the primary or secondary source image from the forward pass.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isSecondarySourceFilter")
@@ -221,6 +225,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("maximumValue")
@@ -232,6 +238,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("minimumValue")
@@ -242,6 +250,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     @Selector("new")
     public static native MPSCNNArithmeticGradient new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("primaryScale")
     public native float primaryScale();
@@ -254,6 +265,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("secondaryScale")
     public native float secondaryScale();
@@ -263,6 +277,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
      * 
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryStrideInFeatureChannels")
@@ -271,6 +287,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
 
     /**
      * bias is ignored in the backward pass
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setBias:")
@@ -282,6 +300,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setMaximumValue:")
@@ -293,15 +313,23 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setMinimumValue:")
     public native void setMinimumValue(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setPrimaryScale:")
     public native void setPrimaryScale(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setSecondaryScale:")
     public native void setSecondaryScale(float value);
@@ -311,6 +339,8 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
      * 
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSecondaryStrideInFeatureChannels:")

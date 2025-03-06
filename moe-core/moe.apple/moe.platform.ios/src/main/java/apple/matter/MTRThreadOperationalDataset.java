@@ -32,6 +32,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  * The latter can be used to pass Thread network credentials via
  * MTRCommissioningParameters.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
@@ -49,6 +51,8 @@ public class MTRThreadOperationalDataset extends NSObject {
 
     /**
      * The Thread PSKc
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("PSKc")
@@ -117,6 +121,8 @@ public class MTRThreadOperationalDataset extends NSObject {
     /**
      * Get the underlying data that represents the Thread Active Operational Dataset
      * This can be used for the threadOperationalDataset of MTRCommissioningParameters.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("data")
@@ -133,6 +139,8 @@ public class MTRThreadOperationalDataset extends NSObject {
 
     /**
      * The Thread Network extendended PAN ID
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("extendedPANID")
@@ -151,6 +159,8 @@ public class MTRThreadOperationalDataset extends NSObject {
     /**
      * Create a Thread Operational Dataset object with a RCP formatted active operational dataset.
      * This initializer will return nil if the input data cannot be parsed correctly
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("initWithData:")
@@ -214,6 +224,8 @@ public class MTRThreadOperationalDataset extends NSObject {
 
     /**
      * The 16 byte Master Key
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("masterKey")
@@ -222,6 +234,8 @@ public class MTRThreadOperationalDataset extends NSObject {
 
     /**
      * The Thread Network name
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("networkName")
@@ -235,6 +249,8 @@ public class MTRThreadOperationalDataset extends NSObject {
 
     /**
      * A uint16_t stored as 2-bytes in host order representing the Thread PAN ID
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("panID")

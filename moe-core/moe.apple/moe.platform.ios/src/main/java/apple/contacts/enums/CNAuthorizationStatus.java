@@ -56,4 +56,11 @@ public final class CNAuthorizationStatus {
     @Generated
     private CNAuthorizationStatus() {
     }
+
+    /**
+     * This application is authorized to access some contact data.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long Limited = 0x0000000000000004L;
 }

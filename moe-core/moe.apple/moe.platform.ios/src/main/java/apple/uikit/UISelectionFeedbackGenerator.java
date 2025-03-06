@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGPoint;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * UISelectionFeedbackGenerator is used to give user feedback when a selection changes
@@ -165,6 +167,8 @@ public class UISelectionFeedbackGenerator extends UIFeedbackGenerator {
 
     /**
      * call when the selection changes (not on initial selection)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("selectionChanged")
@@ -174,4 +178,18 @@ public class UISelectionFeedbackGenerator extends UIFeedbackGenerator {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("feedbackGeneratorForView:")
+    public static native UISelectionFeedbackGenerator feedbackGeneratorForView(@NotNull UIView view);
+
+    /**
+     * call when the selection changes (not on initial selection)
+     * provide the location in the `view` the change occured at
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("selectionChangedAtLocation:")
+    public native void selectionChangedAtLocation(@ByValue CGPoint location);
 }

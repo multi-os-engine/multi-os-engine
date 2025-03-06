@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * This class defines an polymorphic interface for them.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -145,7 +144,11 @@ public class MLCLayer extends NSObject {
      * If this is set, we will make sure that the result tensor and gradient tensors are available for reading on CPU
      * The default is NO. If isDebuggingEnabled is set to YES, make sure to set options to enable debugging when
      * compiling the graph. Otherwise this property may be ignored.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("isDebuggingEnabled")
     public native boolean isDebuggingEnabled();
@@ -163,7 +166,11 @@ public class MLCLayer extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("label")
@@ -175,7 +182,11 @@ public class MLCLayer extends NSObject {
      * The layer ID
      * 
      * A unique number to identify each layer. Assigned when the layer is created.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerID")
     @NUInt
@@ -202,7 +213,11 @@ public class MLCLayer extends NSObject {
      * If this is set, we will make sure that the result tensor and gradient tensors are available for reading on CPU
      * The default is NO. If isDebuggingEnabled is set to YES, make sure to set options to enable debugging when
      * compiling the graph. Otherwise this property may be ignored.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setIsDebuggingEnabled:")
     public native void setIsDebuggingEnabled(boolean value);
@@ -211,7 +226,11 @@ public class MLCLayer extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setLabel:")
     public native void setLabel(@NotNull String value);
@@ -230,7 +249,11 @@ public class MLCLayer extends NSObject {
      * @param dataType A data type of a possible input tensor to the layer
      * @param device   A device
      * @return A boolean indicating whether the data type is supported
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

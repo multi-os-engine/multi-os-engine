@@ -131,6 +131,8 @@ public class SWHighlightMembershipEvent extends NSObject implements SWHighlightE
      * 
      * @param highlight The object on which the event occurred.
      * @param trigger   The trigger membership event for the highlight.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("initWithHighlight:trigger:")
@@ -161,6 +163,8 @@ public class SWHighlightMembershipEvent extends NSObject implements SWHighlightE
 
     /**
      * The type of membership event for the highlight.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("membershipEventTrigger")

@@ -169,11 +169,17 @@ public class UIMotionEffectGroup extends UIMotionEffect {
     @Selector("initWithCoder:")
     public native UIMotionEffectGroup initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("motionEffects")
     public native NSArray<? extends UIMotionEffect> motionEffects();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setMotionEffects:")
     public native void setMotionEffects(@Nullable NSArray<? extends UIMotionEffect> value);

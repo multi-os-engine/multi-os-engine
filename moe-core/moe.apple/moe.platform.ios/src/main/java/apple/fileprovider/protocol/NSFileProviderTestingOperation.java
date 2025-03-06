@@ -111,6 +111,8 @@ public interface NSFileProviderTestingOperation {
 
     /**
      * The operation type
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("type")

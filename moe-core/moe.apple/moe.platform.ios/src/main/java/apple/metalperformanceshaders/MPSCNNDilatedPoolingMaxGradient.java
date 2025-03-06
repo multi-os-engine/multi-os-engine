@@ -118,6 +118,8 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingMaxGradient
      * @param device   The MTLDevice on which to make the MPSCNNPoolingMaxGradient
      * @return A new MPSCNNPoolingMaxGradient object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -146,6 +148,9 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNDilatedPoolingMax object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:dilationRateX:dilationRateY:strideInPixelsX:strideInPixelsY:")

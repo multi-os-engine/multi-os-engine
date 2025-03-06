@@ -65,6 +65,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     /**
      * Create the searchable attributes for the managed object. Override to return nil if you do not want the object
      * included in the index.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -106,6 +108,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * CoreSpotlight domain identifer; default is the store's identifier
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -119,6 +123,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * CoreSpotlight index name; default nil
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -176,6 +182,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * CSSearchableIndexDelegate conformance
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
@@ -190,6 +198,9 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
         void call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
     public native void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(

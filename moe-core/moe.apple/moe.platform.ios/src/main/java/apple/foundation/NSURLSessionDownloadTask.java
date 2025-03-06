@@ -172,6 +172,8 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
      * with -downloadTaskWithResumeData: to attempt to resume the download.
      * If resume data cannot be created, the completion handler will be
      * called with nil resumeData.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("cancelByProducingResumeData:")

@@ -76,6 +76,8 @@ public class MPSNNOptimizer extends MPSKernel {
      * A bool which decides if gradient will be clipped
      * 
      * The default value is NO
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("applyGradientClipping")
@@ -118,6 +120,8 @@ public class MPSNNOptimizer extends MPSKernel {
      * [@property] gradientClipMax
      * 
      * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("gradientClipMax")
@@ -127,6 +131,8 @@ public class MPSNNOptimizer extends MPSKernel {
      * [@property] gradientClipMin
      * 
      * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("gradientClipMin")
@@ -138,6 +144,8 @@ public class MPSNNOptimizer extends MPSKernel {
      * The gradientRescale at which we apply to incoming gradient values
      * 
      * The default value is 1.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("gradientRescale")
@@ -193,6 +201,8 @@ public class MPSNNOptimizer extends MPSKernel {
      * The learningRate at which we update values
      * 
      * The default value is 1e-3
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("learningRate")
@@ -209,6 +219,8 @@ public class MPSNNOptimizer extends MPSKernel {
      * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
      * 
      * The default value is 0.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("regularizationScale")
@@ -220,6 +232,8 @@ public class MPSNNOptimizer extends MPSKernel {
      * The regularizationType which we apply.
      * 
      * The default value is MPSRegularizationTypeNone
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("regularizationType")
@@ -240,11 +254,16 @@ public class MPSNNOptimizer extends MPSKernel {
      * A bool which decides if gradient will be clipped
      * 
      * The default value is NO
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setApplyGradientClipping:")
     public native void setApplyGradientClipping(boolean value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setLearningRate:")
     public native void setLearningRate(float newLearningRate);

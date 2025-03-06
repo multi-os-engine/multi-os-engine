@@ -101,6 +101,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * The data source the batch normalization was initialized with
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -127,6 +129,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      *                                is temporary its read count will be decremented.
      * @param destinationImage        An MPSImage to contain the resulting normalized and scaled
      *                                image.
+     * 
+     *                                API-Since: 11.3
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:batchNormalizationState:destinationImage:")
@@ -139,6 +143,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      * 
      * The epsilon value used in the batch normalization formula to
      * bias the variance when normalizing.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("epsilon")
@@ -171,6 +177,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNBatchNormalization object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -190,6 +198,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      *                   image statistics which may be used to perform the normalization.
      * 
      * @return A valid MPSCNNBatchNormalization object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:dataSource:")
@@ -249,6 +259,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      * [@property] numberOfFeatureChannels
      * 
      * The number of feature channels in an image to be normalized.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("numberOfFeatureChannels")
@@ -287,6 +299,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      * 
      * @param gammaAndBetaState The state containing the updated weights which are to
      *                          be reloaded.
+     * 
+     *                          API-Since: 11.3
      */
     @Generated
     @Selector("reloadGammaAndBetaWithCommandBuffer:gammaAndBetaState:")
@@ -330,6 +344,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * Return an MPSCNNBatchNormalizationState object which may be used with a MPSCNNBatchNormalization filter.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -343,6 +359,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      * 
      * The epsilon value used in the batch normalization formula to
      * bias the variance when normalizing.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setEpsilon:")
@@ -369,6 +387,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     /**
      * Return a temporary MPSCNNBatchNormalizationState object which may be used with
      * a MPSCNNBatchNormalization filter.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated

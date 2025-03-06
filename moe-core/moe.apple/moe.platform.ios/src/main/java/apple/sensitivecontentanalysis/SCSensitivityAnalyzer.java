@@ -64,6 +64,8 @@ public class SCSensitivityAnalyzer extends NSObject {
 
     /**
      * Current SCSensitivityAnalysisPolicy set on device. Can be used to determine whether analysis is available or not
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("analysisPolicy")
@@ -75,6 +77,8 @@ public class SCSensitivityAnalyzer extends NSObject {
      * 
      * @param image             CGImage reference
      * @param completionHandler Block to be called on completion (callback is called on unspecified queue)
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("analyzeCGImage:completionHandler:")
@@ -93,6 +97,8 @@ public class SCSensitivityAnalyzer extends NSObject {
      * 
      * @param fileURL           Image file location on disk
      * @param completionHandler Block to be called on completion (callback is called on unspecified queue)
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("analyzeImageFile:completionHandler:")
@@ -112,6 +118,8 @@ public class SCSensitivityAnalyzer extends NSObject {
      * @param fileURL           Video file location on disk
      * @param completionHandler Block to be called on completion (callback is called on unspecified queue)
      * @return An NSProgress instance for tracking video file analysis progress
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("analyzeVideoFile:completionHandler:")
@@ -164,6 +172,9 @@ public class SCSensitivityAnalyzer extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("init")
     public native SCSensitivityAnalyzer init();

@@ -50,6 +50,8 @@ public class MSServiceAccount extends NSObject {
 
     /**
      * The user’s display name, email address, or other identifier in a streaming media service.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -71,6 +73,8 @@ public class MSServiceAccount extends NSObject {
      * 
      * The authorization scope is an optional OAuth 2.0 scope parameter the system provides
      * when requesting a token.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -82,6 +86,8 @@ public class MSServiceAccount extends NSObject {
      * 
      * The authorization token URL is an OAuth 2.0 token service endpoint that provides a
      * Bearer Token for retrieving configuration.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -120,6 +126,8 @@ public class MSServiceAccount extends NSObject {
      * token request. You can choose the identifier format, but the identifier must
      * be unique to the current account. You can provide a new identifier each time
      * the user begins the home setup.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -131,6 +139,8 @@ public class MSServiceAccount extends NSObject {
      * 
      * The Media Setup framework uses the `clientSecret` to create a token request.
      * Hashed passwords are acceptable, but plaintext passwords aren't.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -142,6 +152,8 @@ public class MSServiceAccount extends NSObject {
      * service for the home.
      * 
      * The device retrieves the configuration with the OAuth 2.0 Bearer token.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -172,6 +184,8 @@ public class MSServiceAccount extends NSObject {
      * - serviceName: The name of the streaming media service.
      * 
      * - accountName: The user’s display name in the streaming media service.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithServiceName:accountName:")
@@ -215,6 +229,8 @@ public class MSServiceAccount extends NSObject {
 
     /**
      * The localized name of the streaming media service.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -226,6 +242,8 @@ public class MSServiceAccount extends NSObject {
      * 
      * The authorization scope is an optional OAuth 2.0 scope parameter the system provides
      * when requesting a token.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAuthorizationScope:")
@@ -236,6 +254,8 @@ public class MSServiceAccount extends NSObject {
      * 
      * The authorization token URL is an OAuth 2.0 token service endpoint that provides a
      * Bearer Token for retrieving configuration.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAuthorizationTokenURL:")
@@ -248,6 +268,8 @@ public class MSServiceAccount extends NSObject {
      * token request. You can choose the identifier format, but the identifier must
      * be unique to the current account. You can provide a new identifier each time
      * the user begins the home setup.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setClientID:")
@@ -258,6 +280,8 @@ public class MSServiceAccount extends NSObject {
      * 
      * The Media Setup framework uses the `clientSecret` to create a token request.
      * Hashed passwords are acceptable, but plaintext passwords aren't.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setClientSecret:")
@@ -268,6 +292,8 @@ public class MSServiceAccount extends NSObject {
      * service for the home.
      * 
      * The device retrieves the configuration with the OAuth 2.0 Bearer token.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setConfigurationURL:")

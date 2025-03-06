@@ -65,7 +65,12 @@ public class ARHitTestResult extends NSObject {
      * The anchor that the hit-test intersected.
      * 
      * An anchor will only be provided for existing plane result types.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use raycasting
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("anchor")
@@ -106,7 +111,12 @@ public class ARHitTestResult extends NSObject {
 
     /**
      * The distance from the camera to the intersection in meters.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use raycasting
      */
+    @Deprecated
     @Generated
     @Selector("distance")
     @NFloat
@@ -166,7 +176,12 @@ public class ARHitTestResult extends NSObject {
 
     /**
      * The type of the hit-test result.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use raycasting
      */
+    @Deprecated
     @Generated
     @Selector("type")
     @NUInt

@@ -51,7 +51,11 @@ import org.jetbrains.annotations.Nullable;
  * NWEndpoint is a generic class to represent network endpoints, such as a port on a remote server.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use nw_endpoint_t in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWEndpoint.h>
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)

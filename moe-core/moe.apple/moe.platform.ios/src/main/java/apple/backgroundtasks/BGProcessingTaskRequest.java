@@ -105,6 +105,8 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
      * 
      * - Parameters:
      * - identifier: The string identifier of the processing task associated with the request.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -139,6 +141,8 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     /**
      * A Boolean specifying if the processing task requires a device connected to power.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requiresExternalPower")
@@ -146,6 +150,8 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     /**
      * A Boolean specifying if the processing task requires network connectivity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requiresNetworkConnectivity")
@@ -161,6 +167,8 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     /**
      * A Boolean specifying if the processing task requires a device connected to power.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRequiresExternalPower:")
@@ -168,6 +176,8 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     /**
      * A Boolean specifying if the processing task requires network connectivity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRequiresNetworkConnectivity:")

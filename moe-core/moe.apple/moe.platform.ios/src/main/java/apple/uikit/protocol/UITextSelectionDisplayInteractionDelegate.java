@@ -24,6 +24,8 @@ public interface UITextSelectionDisplayInteractionDelegate {
      * If different than the view that the interaction is installed onto, one can return a container view here for
      * selection views that draw _below_ text. Includes selection highlight view, etc. The default is assumed
      * that all views are to be installed onto the interaction's view.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @IsOptional

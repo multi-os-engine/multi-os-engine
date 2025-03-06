@@ -168,6 +168,8 @@ public class PKPaymentToken extends NSObject {
      * UTF-8 encoded JSON dictionary of encrypted payment data. Ready for transmission to
      * merchant's e-commerce backend for decryption and submission to a payment processor's
      * gateway.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -214,6 +216,8 @@ public class PKPaymentToken extends NSObject {
     /**
      * A string that describes a globally unique identifier for this transaction that can be used
      * for receipt purposes.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

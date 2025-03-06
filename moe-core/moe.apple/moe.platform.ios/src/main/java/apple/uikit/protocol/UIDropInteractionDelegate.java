@@ -39,6 +39,8 @@ public interface UIDropInteractionDelegate {
      * This method is commonly used to check whether the session contains any
      * items that this delegate can consume. Use `UIDropSession`'s convenience methods
      * `-hasItemsConformingToTypeIdentifiers:`, `-canLoadObjectsOfClass:`, etc.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -54,6 +56,8 @@ public interface UIDropInteractionDelegate {
      * and all resulting drop animations have completed.
      * 
      * The delegate should cause the interaction's view to draw in its final post-drop state.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -67,6 +71,8 @@ public interface UIDropInteractionDelegate {
      * Called when the drop animation is about to start, once for each item,
      * whether it is visible or not.
      * Use the animator to animate your own changes alongside the system animation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -81,6 +87,8 @@ public interface UIDropInteractionDelegate {
      * The delegate should now request data from the session's
      * items' item providers. Data may be requested *only* during
      * the scope of this method.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -99,6 +107,8 @@ public interface UIDropInteractionDelegate {
      * - nil, to fade and shrink the drag item in place
      * - [defaultPreview retargetedPreviewWithTarget:] to move the preview to a different target
      * - a UITargetedDragPreview that you create however you like
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -116,6 +126,8 @@ public interface UIDropInteractionDelegate {
      * `-dropInteraction:sessionDidUpdate:`, or `-dropInteraction:sessionDidExit:`.
      * 
      * If you were keeping track of the session for any reason, you may now forget it.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -127,6 +139,8 @@ public interface UIDropInteractionDelegate {
 
     /**
      * Called when a drag enters the view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -138,6 +152,8 @@ public interface UIDropInteractionDelegate {
 
     /**
      * Called when the drag has exited the interaction's view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -160,6 +176,8 @@ public interface UIDropInteractionDelegate {
      * of the drag over this view.
      * 
      * Use the session's `-locationInView:` to get a point to use for hit testing.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

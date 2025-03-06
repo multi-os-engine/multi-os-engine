@@ -164,6 +164,9 @@ public class INGetUserCurrentRestaurantReservationBookingsIntentResponse extends
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -177,12 +180,18 @@ public class INGetUserCurrentRestaurantReservationBookingsIntentResponse extends
     @Selector("initWithCoder:")
     public native INGetUserCurrentRestaurantReservationBookingsIntentResponse initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithUserCurrentBookings:code:userActivity:")
     public native INGetUserCurrentRestaurantReservationBookingsIntentResponse initWithUserCurrentBookingsCodeUserActivity(
             @NotNull NSArray<? extends INRestaurantReservationUserBooking> userCurrentBookings, @NInt long code,
             @Nullable NSUserActivity userActivity);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setUserCurrentBookings:")
     public native void setUserCurrentBookings(@NotNull NSArray<? extends INRestaurantReservationUserBooking> value);
@@ -193,6 +202,9 @@ public class INGetUserCurrentRestaurantReservationBookingsIntentResponse extends
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("userCurrentBookings")

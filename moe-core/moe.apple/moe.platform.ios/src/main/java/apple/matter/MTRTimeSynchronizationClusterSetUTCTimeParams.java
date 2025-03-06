@@ -157,6 +157,8 @@ public class MTRTimeSynchronizationClusterSetUTCTimeParams extends NSObject impl
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("serverSideProcessingTimeout")
@@ -177,6 +179,8 @@ public class MTRTimeSynchronizationClusterSetUTCTimeParams extends NSObject impl
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("setServerSideProcessingTimeout:")
@@ -201,6 +205,9 @@ public class MTRTimeSynchronizationClusterSetUTCTimeParams extends NSObject impl
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("setTimedInvokeTimeoutMs:")
@@ -241,6 +248,9 @@ public class MTRTimeSynchronizationClusterSetUTCTimeParams extends NSObject impl
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("timedInvokeTimeoutMs")

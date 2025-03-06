@@ -97,6 +97,8 @@ public class DDMatchEmailAddress extends DDMatch {
 
     /**
      * A string that represents an email address.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -136,6 +138,8 @@ public class DDMatchEmailAddress extends DDMatch {
 
     /**
      * A string that categorizes an email address, such as Home or Work.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

@@ -120,6 +120,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * and/or a drop shadow, as appropriate for the platform.
      * If set to NO, this will generate a raw undecorated thumbnail.
      * Defaults to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("iconMode")
@@ -143,6 +145,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      *                            different screen scale.
      * @param representationTypes The desired successive representations of the thumbnail that should be generated when
      *                            possible.
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @Selector("initWithFileAtURL:size:scale:representationTypes:")
@@ -175,6 +179,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * Defaults to 0. If set, the thumbnail will have a width and height greater or equal to minimumDimension * scale.
      * If set and it is not possible to generate thumbnails of minimumDimension for any of the requested
      * QLThumbnailGenerationRequestRepresentationTypes, no thumbnail will be provided.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimumDimension")
@@ -186,6 +192,9 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     @Selector("new")
     public static native QLThumbnailGenerationRequest new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("representationTypes")
     @NUInt
@@ -199,6 +208,9 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("scale")
     @NFloat
@@ -210,6 +222,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * and/or a drop shadow, as appropriate for the platform.
      * If set to NO, this will generate a raw undecorated thumbnail.
      * Defaults to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setIconMode:")
@@ -219,6 +233,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * Defaults to 0. If set, the thumbnail will have a width and height greater or equal to minimumDimension * scale.
      * If set and it is not possible to generate thumbnails of minimumDimension for any of the requested
      * QLThumbnailGenerationRequestRepresentationTypes, no thumbnail will be provided.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMinimumDimension:")
@@ -228,6 +244,9 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("size")
     @ByValue

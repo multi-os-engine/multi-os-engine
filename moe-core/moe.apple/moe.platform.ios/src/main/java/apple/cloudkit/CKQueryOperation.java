@@ -159,6 +159,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("cursor")
@@ -170,6 +173,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -179,19 +184,30 @@ public class CKQueryOperation extends CKDatabaseOperation {
     /**
      * Queries invoked within a sharedCloudDatabase must specify a zoneID. Cross-zone queries are not supported in a
      * sharedCloudDatabase
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("init")
     public native CKQueryOperation init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithCursor:")
     public native CKQueryOperation initWithCursor(@NotNull CKQueryCursor cursor);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithQuery:")
     public native CKQueryOperation initWithQuery(@NotNull CKQuery query);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("query")
@@ -207,6 +223,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -243,12 +261,17 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * the current user.
      * When determining if there are more records to fetch, always check for the presence of a cursor in @c
      * queryCompletionBlock.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("resultsLimit")
     @NUInt
     public native long resultsLimit();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setCursor:")
     public native void setCursor(@Nullable CKQueryCursor value);
@@ -259,11 +282,16 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setQuery:")
     public native void setQuery(@Nullable CKQuery value);
@@ -278,6 +306,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setQueryCompletionBlock:")
@@ -312,6 +342,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * the current user.
      * When determining if there are more records to fetch, always check for the presence of a cursor in @c
      * queryCompletionBlock.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setResultsLimit:")
@@ -323,6 +355,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the
      * record zone in which the cursor was originally created.
      * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setZoneID:")
@@ -334,6 +368,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the
      * record zone in which the cursor was originally created.
      * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

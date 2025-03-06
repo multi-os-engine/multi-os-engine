@@ -176,6 +176,8 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * A ISO 4217 currency code. For a list of currency codes, see +[NSLocale ISOCurrencyCodes].
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -196,6 +198,8 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * "Up to (amount)."
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithMaximumPrice:currencyCode:")
@@ -204,6 +208,8 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * "Starting from (amount)."
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithMinimumPrice:currencyCode:")
@@ -212,6 +218,8 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * "(amount)". Convenience initializer.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithPrice:currencyCode:")
@@ -219,6 +227,8 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * "(min amount) to (max amount)"
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithRangeBetweenPrice:andPrice:currencyCode:")
@@ -227,6 +237,8 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * The highest of the two prices used to construct this range.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -235,6 +247,8 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * The lowest of the two prices used to construct this range.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

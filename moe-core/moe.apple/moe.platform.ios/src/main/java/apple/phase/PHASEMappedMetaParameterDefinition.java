@@ -96,6 +96,8 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
      * [@property] envelope
      * 
      * An Envelope to define segments of curves
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -122,6 +124,8 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
      *                                     The envelope to use.
      * @return
      *         The new PHASEMappedMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithInputMetaParameterDefinition:envelope:")
@@ -141,6 +145,8 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
      *                                     An optional custom identifier to give to this object
      * @return
      *         The new PHASEMappedMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithInputMetaParameterDefinition:envelope:identifier:")
@@ -170,6 +176,8 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
      * [@property] inputMetaParameterDefinition
      * 
      * The readonly PHASENumberMetaParameterDefinition that this metaparameter definition was initialized with
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

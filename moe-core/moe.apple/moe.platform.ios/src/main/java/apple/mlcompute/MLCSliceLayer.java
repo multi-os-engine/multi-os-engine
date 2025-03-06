@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * Only positive stride is supported.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -102,7 +101,11 @@ public class MLCSliceLayer extends MLCLayer {
      * [@property] end
      * 
      * A vector of length equal to that of source. The element at index i specifies the end of slice in dimension i.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("end")
@@ -161,7 +164,11 @@ public class MLCSliceLayer extends MLCLayer {
      * 
      * @param stride If set to nil, it will be set to 1.
      * @return A new layer for slicing tensors.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("sliceLayerWithStart:end:stride:")
     public static native MLCSliceLayer sliceLayerWithStartEndStride(@NotNull NSArray<? extends NSNumber> start,
@@ -172,7 +179,11 @@ public class MLCSliceLayer extends MLCLayer {
      * 
      * A vector of length equal to that of source. The element at index i specifies the beginning of slice in dimension
      * i.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("start")
@@ -182,7 +193,11 @@ public class MLCSliceLayer extends MLCLayer {
      * [@property] stride
      * 
      * A vector of length equal to that of source. The element at index i specifies the stride of slice in dimension i.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("stride")
@@ -192,6 +207,7 @@ public class MLCSliceLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

@@ -173,6 +173,8 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      *                      events.
      * @param delegateQueue
      *                      The queue to receive delegate callbacks on. If nil, a serial queue will be provided.
+     * 
+     *                      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -227,7 +229,10 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      *                    Using this parameter is required for downloading non-default media selections for HLS assets.
      * 
      *                    API-Since: 10.0
+     *                    Deprecated-Since: 100000.0
+     *                    Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:")
@@ -290,7 +295,10 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      *                        See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
      * 
      *                        API-Since: 11.0
+     *                        Deprecated-Since: 100000.0
+     *                        Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:")

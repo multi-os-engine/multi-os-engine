@@ -114,6 +114,8 @@ public class SKRenderer extends NSObject {
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("ignoresSiblingOrder")
@@ -156,6 +158,8 @@ public class SKRenderer extends NSObject {
      * @param viewport             The pixel dimensions in which to render.
      * @param commandBuffer        The Metal command buffer in which SpriteKit should schedule rendering commands.
      * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
+     * 
+     *                             API-Since: 11.0
      */
     @Generated
     @Selector("renderWithViewport:commandBuffer:renderPassDescriptor:")
@@ -171,6 +175,8 @@ public class SKRenderer extends NSObject {
      *                             commands. This method will not call endEncoding.
      * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
      * @param commandQueue         The Metal command queue.
+     * 
+     *                             API-Since: 11.0
      */
     @Generated
     @Selector("renderWithViewport:renderCommandEncoder:renderPassDescriptor:commandQueue:")
@@ -184,6 +190,8 @@ public class SKRenderer extends NSObject {
      * 
      * @param device A Metal device.
      * @return A new renderer object.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -200,6 +208,8 @@ public class SKRenderer extends NSObject {
 
     /**
      * The currently presented scene, otherwise nil. If in a transition, the 'incoming' scene is returned.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -218,6 +228,8 @@ public class SKRenderer extends NSObject {
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setIgnoresSiblingOrder:")
@@ -225,6 +237,8 @@ public class SKRenderer extends NSObject {
 
     /**
      * The currently presented scene, otherwise nil. If in a transition, the 'incoming' scene is returned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScene:")
@@ -232,6 +246,8 @@ public class SKRenderer extends NSObject {
 
     /**
      * A boolean that indicated whether non-visible nodes should be automatically culled when rendering.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setShouldCullNonVisibleNodes:")
@@ -239,23 +255,37 @@ public class SKRenderer extends NSObject {
 
     /**
      * Toggles display of performance stats when rendering. All default to false.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setShowsDrawCount:")
     public native void setShowsDrawCount(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setShowsFields:")
     public native void setShowsFields(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setShowsNodeCount:")
     public native void setShowsNodeCount(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setShowsPhysics:")
     public native void setShowsPhysics(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setShowsQuadCount:")
     public native void setShowsQuadCount(boolean value);
@@ -266,6 +296,8 @@ public class SKRenderer extends NSObject {
 
     /**
      * A boolean that indicated whether non-visible nodes should be automatically culled when rendering.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("shouldCullNonVisibleNodes")
@@ -273,23 +305,37 @@ public class SKRenderer extends NSObject {
 
     /**
      * Toggles display of performance stats when rendering. All default to false.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("showsDrawCount")
     public native boolean showsDrawCount();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("showsFields")
     public native boolean showsFields();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("showsNodeCount")
     public native boolean showsNodeCount();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("showsPhysics")
     public native boolean showsPhysics();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("showsQuadCount")
     public native boolean showsQuadCount();
@@ -302,6 +348,8 @@ public class SKRenderer extends NSObject {
      * Update the scene at the specified system time.
      * 
      * @param currentTime The timestamp in seconds.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("updateAtTime:")

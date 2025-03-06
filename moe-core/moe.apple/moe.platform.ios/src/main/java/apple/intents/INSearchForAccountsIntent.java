@@ -47,11 +47,17 @@ public class INSearchForAccountsIntent extends INIntent {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("accountNickname")
     public native INSpeakableString accountNickname();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("accountType")
     @NInt
@@ -109,6 +115,9 @@ public class INSearchForAccountsIntent extends INIntent {
     @Selector("init")
     public native INSearchForAccountsIntent init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAccountNickname:accountType:organizationName:requestedBalanceType:")
     public native INSearchForAccountsIntent initWithAccountNicknameAccountTypeOrganizationNameRequestedBalanceType(
@@ -146,11 +155,17 @@ public class INSearchForAccountsIntent extends INIntent {
     @Selector("new")
     public static native INSearchForAccountsIntent new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("organizationName")
     public native INSpeakableString organizationName();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("requestedBalanceType")
     @NInt

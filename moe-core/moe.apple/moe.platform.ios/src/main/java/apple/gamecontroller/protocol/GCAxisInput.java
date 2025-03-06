@@ -31,6 +31,8 @@ public interface GCAxisInput {
      * that represents their maximum value causing the reported value to roll over.
      * 
      * Defaults to \c NO for most axis elements.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("canWrap")
@@ -40,6 +42,8 @@ public interface GCAxisInput {
      * Check if the axis can support more than just digital values.
      * 
      * Defaults to \c YES for most axis inputs.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isAnalog")
@@ -52,6 +56,8 @@ public interface GCAxisInput {
      * This should be treated as a lower bound of the event latency. It may not
      * include (wired or wireless) transmission latency, or latency accrued on
      * the device before the event was transmitted to the host.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastValueLatency")
@@ -63,6 +69,8 @@ public interface GCAxisInput {
      * This time interval is not relative to any specific point in time. You can
      * subtract a previous timestamp from the current timestamp to determine the time
      * (in seconds) between changes to the value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastValueTimestamp")
@@ -74,6 +82,8 @@ public interface GCAxisInput {
      * @param element the element that has been modified.
      * @param input   the input that has been modified.
      * @param value   the value the axis was set to at the time the valueChangedHandler fired.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("setValueDidChangeHandler:")
@@ -97,6 +107,8 @@ public interface GCAxisInput {
      * As an axis is often used in a digital sense, you can rely on a value of 0
      * meaning the axis is inside the deadzone. Any value greater than or less than
      * zero is not in the deadzone.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("value")
@@ -108,6 +120,8 @@ public interface GCAxisInput {
      * @param element the element that has been modified.
      * @param input   the input that has been modified.
      * @param value   the value the axis was set to at the time the valueChangedHandler fired.
+     * 
+     *                API-Since: 16.0
      */
     @Nullable
     @Generated

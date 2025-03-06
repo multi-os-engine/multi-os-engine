@@ -26,6 +26,8 @@ import org.jetbrains.annotations.NotNull;
 public interface SRSensorReaderDelegate {
     /**
      * Invoked when authorization status has changed
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -37,6 +39,8 @@ public interface SRSensorReaderDelegate {
 
     /**
      * Invoked when a fetch has been completed successfully
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -45,6 +49,9 @@ public interface SRSensorReaderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("sensorReader:didFetchDevices:")
@@ -53,6 +60,9 @@ public interface SRSensorReaderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("sensorReader:fetchDevicesDidFailWithError:")
@@ -75,6 +85,8 @@ public interface SRSensorReaderDelegate {
      * 
      * @return
      *         The delegate should return YES if the fetch should continue, NO if the fetch should stop
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -86,6 +98,8 @@ public interface SRSensorReaderDelegate {
 
     /**
      * Invoked when a fetch has completed with an error
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -97,6 +111,8 @@ public interface SRSensorReaderDelegate {
 
     /**
      * Invoked if there was an error starting recording for a given sensor
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -107,6 +123,8 @@ public interface SRSensorReaderDelegate {
 
     /**
      * Invoked if there was an error starting recording for a given sensor
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -118,6 +136,8 @@ public interface SRSensorReaderDelegate {
     /**
      * Invoked after a SRSensorReader has request that recording be
      * stopped for a sensor
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -129,6 +149,8 @@ public interface SRSensorReaderDelegate {
     /**
      * Invoked after a SRSensorReader has request that recording be
      * started for a sensor
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

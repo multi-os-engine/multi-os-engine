@@ -83,6 +83,9 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -111,6 +114,8 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
      * If the the app is launched, an NSUserActivity will be passed in with the private state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -148,6 +153,9 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
     @Selector("new")
     public static native INGetReservationDetailsIntentResponse new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservations")
@@ -161,6 +169,9 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setReservations:")
     public native void setReservations(@Nullable NSArray<? extends INReservation> value);

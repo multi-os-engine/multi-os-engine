@@ -38,6 +38,9 @@ public interface INCancelRideIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INCancelRideIntentResponse
+     * 
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -64,6 +67,8 @@ public interface INCancelRideIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INCancelRideIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("handleCancelRide:completion:")

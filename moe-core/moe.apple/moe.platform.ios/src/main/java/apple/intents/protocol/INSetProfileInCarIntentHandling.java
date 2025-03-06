@@ -63,7 +63,12 @@ public interface INSetProfileInCarIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSetProfileInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetProfileInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSetProfileInCar:completion:")
@@ -82,7 +87,12 @@ public interface INSetProfileInCarIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSetProfileInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetProfileInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSetProfileInCar:completion:")
     void handleSetProfileInCarCompletion(@NotNull INSetProfileInCarIntent intent,
@@ -123,7 +133,12 @@ public interface INSetProfileInCarIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetProfileInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveProfileNumberForSetProfileInCar:withCompletion:")

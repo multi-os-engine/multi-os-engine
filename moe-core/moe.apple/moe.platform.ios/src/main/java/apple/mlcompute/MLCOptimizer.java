@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCOptimizer specifies a base optimizer.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -68,7 +67,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] appliesGradientClipping
      * 
      * Whether gradient clipping should be applied or not.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("appliesGradientClipping")
     public native boolean appliesGradientClipping();
@@ -128,7 +131,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] gradientClipMax
      * 
      * The maximum gradient value if gradient clipping is enabled before gradient is rescaled.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("gradientClipMax")
     public native float gradientClipMax();
@@ -137,7 +144,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] gradientClipMin
      * 
      * The minimum gradient value if gradient clipping is enabled before gradient is rescaled.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("gradientClipMin")
     public native float gradientClipMin();
@@ -157,7 +168,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] gradientRescale
      * 
      * The rescale value applied to gradients during optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("gradientRescale")
     public native float gradientRescale();
@@ -197,7 +212,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] learningRate
      * 
      * The learning rate. This property is 'readwrite' so that callers can implement a 'decay' during training
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("learningRate")
     public native float learningRate();
@@ -222,7 +241,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] regularizationScale
      * 
      * The regularization scale.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("regularizationScale")
     public native float regularizationScale();
@@ -231,7 +254,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] regularizationType
      * 
      * The regularization type.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("regularizationType")
     public native int regularizationType();
@@ -248,7 +275,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] appliesGradientClipping
      * 
      * Whether gradient clipping should be applied or not.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setAppliesGradientClipping:")
     public native void setAppliesGradientClipping(boolean value);
@@ -257,7 +288,11 @@ public class MLCOptimizer extends NSObject implements NSCopying {
      * [@property] learningRate
      * 
      * The learning rate. This property is 'readwrite' so that callers can implement a 'decay' during training
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setLearningRate:")
     public native void setLearningRate(float value);

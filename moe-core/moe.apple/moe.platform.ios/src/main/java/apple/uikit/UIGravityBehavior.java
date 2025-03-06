@@ -161,10 +161,16 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("angle")
     @NFloat
@@ -174,6 +180,8 @@ public class UIGravityBehavior extends UIDynamicBehavior {
      * The default value for the gravity vector is (0.0, 1.0)
      * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per
      * second².
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("gravityDirection")
@@ -184,28 +192,46 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIGravityBehavior init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItems:")
     public native UIGravityBehavior initWithItems(@NotNull NSArray<?> items);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("magnitude")
     @NFloat
     public native double magnitude();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setAngle:")
     public native void setAngle(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setAngle:magnitude:")
     public native void setAngleMagnitude(@NFloat double angle, @NFloat double magnitude);
@@ -214,11 +240,16 @@ public class UIGravityBehavior extends UIDynamicBehavior {
      * The default value for the gravity vector is (0.0, 1.0)
      * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per
      * second².
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setGravityDirection:")
     public native void setGravityDirection(@ByValue CGVector value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setMagnitude:")
     public native void setMagnitude(@NFloat double value);

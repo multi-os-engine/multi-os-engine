@@ -61,6 +61,8 @@ public class UISceneOpenURLOptions extends NSObject {
     /**
      * A property-list typed object corresponding to what the originating application passed in
      * UIDocumentInteractionController's annotation property
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -139,6 +141,8 @@ public class UISceneOpenURLOptions extends NSObject {
 
     /**
      * Copy the file before use if this value is NO
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("openInPlace")
@@ -159,6 +163,8 @@ public class UISceneOpenURLOptions extends NSObject {
     /**
      * A NSString containing the bundle ID of the originating application.
      * non-nil if the originating application and this application share the same team identifier.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

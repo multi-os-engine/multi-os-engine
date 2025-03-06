@@ -19,15 +19,27 @@ public final class SFSpeechErrorCode {
      */
     @Generated @NInt public static final long InternalServiceError = 0x0000000000000001L;
     /**
-     * Templates were malformed *
+     * Templates were malformed
      * 
      * API-Since: 17.0
      */
     @Generated @NInt public static final long UndefinedTemplateClassName = 0x0000000000000007L;
     /**
-     * A custom language model file was malformed *
+     * A custom language model file was malformed
      * 
      * API-Since: 17.0
      */
     @Generated @NInt public static final long MalformedSupplementalModel = 0x0000000000000008L;
+    /**
+     * Failed to read audio file
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long AudioReadFailed = 0x0000000000000002L;
+    /**
+     * Operation timed out
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long Timeout = 0x000000000000000AL;
 }

@@ -153,6 +153,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Expression that returns a constant value
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -161,6 +163,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Expression that returns the object being evaluated
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -170,6 +174,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Expression that invokes one of the predefined functions. Will throw immediately if the selector is bad; will
      * throw at runtime if the parameters are incorrect.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -202,6 +208,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Expression that invokes valueForKeyPath with keyPath
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -246,6 +254,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Expression that pulls a value from the variable bindings dictionary
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -347,6 +357,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * array of expressions which will be passed as parameters during invocation of the selector on the operand of a
      * function expression
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -362,6 +374,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object collection();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("constantValue")
@@ -390,6 +405,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * accessors for individual parameters - raise if not applicable
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("expressionType")
@@ -399,6 +416,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * evaluate the expression using the object and bindings- note that context is mutable here and can be used by
      * expressions to store temporary state for one predicate evaluation
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -417,6 +436,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("falseExpression")
     public native NSExpression falseExpression();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("function")
@@ -430,10 +452,16 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithCoder:")
     public native NSExpression initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithExpressionType:")
     public native NSExpression initWithExpressionType(@NUInt long type);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("keyPath")
@@ -452,6 +480,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * the object on which the selector will be invoked (the result of evaluating a key path or one of the defined
      * functions)
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -492,6 +522,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("trueExpression")
     public native NSExpression trueExpression();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("variable")

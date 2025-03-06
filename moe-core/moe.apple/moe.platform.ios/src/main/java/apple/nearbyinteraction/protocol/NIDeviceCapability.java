@@ -17,6 +17,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface NIDeviceCapability {
     /**
      * Whether or not this device is capable of participating in a nearby interaction session with camera assistance
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("supportsCameraAssistance")
@@ -25,6 +27,8 @@ public interface NIDeviceCapability {
     /**
      * Whether or not this device is capable of participating in a nearby interaction session with instantaneous
      * direction
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("supportsDirectionMeasurement")
@@ -32,6 +36,8 @@ public interface NIDeviceCapability {
 
     /**
      * Whether or not this device is capable of participating in a nearby interaction session with precise ranging
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("supportsPreciseDistanceMeasurement")

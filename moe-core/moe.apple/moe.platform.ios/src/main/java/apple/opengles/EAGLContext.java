@@ -102,6 +102,12 @@ public class EAGLContext extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("currentContext")
@@ -155,6 +161,12 @@ public class EAGLContext extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setCurrentContext:")
     public static native boolean setCurrentContext(@Nullable EAGLContext context);
@@ -172,6 +184,12 @@ public class EAGLContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("API")
     @NUInt
@@ -189,10 +207,22 @@ public class EAGLContext extends NSObject {
     @Selector("init")
     public native EAGLContext init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("initWithAPI:")
     public native EAGLContext initWithAPI(@NUInt long api);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("initWithAPI:sharegroup:")
     public native EAGLContext initWithAPISharegroup(@NUInt long api, @NotNull EAGLSharegroup sharegroup);
@@ -213,21 +243,36 @@ public class EAGLContext extends NSObject {
 
     /**
      * Request the native window system display the OpenGL ES renderbuffer bound to <target>
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("presentRenderbuffer:")
     public native boolean presentRenderbuffer(@NUInt long target);
 
     /**
      * Request the native window system display the OpenGL ES renderbuffer bound to <target> at specified time
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("presentRenderbuffer:atTime:")
     public native boolean presentRenderbufferAtTime(@NUInt long target, double presentationTime);
 
     /**
      * Attaches an EAGLDrawable as storage for the OpenGL ES renderbuffer object bound to <target>
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("renderbufferStorage:fromDrawable:")
     public native boolean renderbufferStorageFromDrawable(@NUInt long target,
@@ -240,6 +285,12 @@ public class EAGLContext extends NSObject {
     @Selector("setDebugLabel:")
     public native void setDebugLabel(@Nullable String value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sharegroup")
@@ -248,7 +299,12 @@ public class EAGLContext extends NSObject {
     /**
      * Request the native window system display the OpenGL ES renderbuffer bound to <target> after the previous frame is
      * presented for at least duration time
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("presentRenderbuffer:afterMinimumDuration:")
     public native boolean presentRenderbufferAfterMinimumDuration(@NUInt long target, double duration);

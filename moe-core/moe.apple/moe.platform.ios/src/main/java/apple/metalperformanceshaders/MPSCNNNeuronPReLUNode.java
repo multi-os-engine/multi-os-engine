@@ -121,6 +121,8 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param aData      An array of single precision floating-point alpha values to use
      * @return A new MPSNNFilter node for a MPSCNNNeuronTanH kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:aData:")
@@ -153,6 +155,9 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
     @Selector("new")
     public static native MPSCNNNeuronPReLUNode new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:aData:")
     public static native MPSCNNNeuronPReLUNode nodeWithSourceAData(@NotNull MPSNNImageNode sourceNode,

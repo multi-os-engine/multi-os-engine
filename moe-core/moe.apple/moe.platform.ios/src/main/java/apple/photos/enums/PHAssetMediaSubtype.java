@@ -87,4 +87,10 @@ public final class PHAssetMediaSubtype {
      * API-Since: 15.0
      */
     @Generated @NUInt public static final long VideoCinematic = 0x0000000000200000L;
+    /**
+     * Photo subtypes
+     * 
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long SpatialMedia = 0x0000000000000400L;
 }

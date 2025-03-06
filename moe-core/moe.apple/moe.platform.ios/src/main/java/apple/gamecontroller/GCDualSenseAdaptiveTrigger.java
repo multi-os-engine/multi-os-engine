@@ -73,6 +73,8 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
      * the maximum trigger arm position.
      * 
      * @see GCDualSenseAdaptiveTriggerStatus
+     * 
+     *      API-Since: 14.5
      */
     @Generated
     @Selector("armPosition")
@@ -148,6 +150,8 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
      * It does not update immediately after calling -[GCDualSenseAdaptiveTrigger setMode...].
      * 
      * @see GCDualSenseAdaptiveTriggerMode
+     * 
+     *      API-Since: 14.5
      */
     @Generated
     @Selector("mode")
@@ -176,6 +180,8 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
      *                          depression and 1 representing the maximum trigger depression.
      * @param resistiveStrength - A normalized float from [0-1], with 0 representing the minimum effect strength (off
      *                          entirely) and 1 representing the maximum effect strength.
+     * 
+     *                          API-Since: 14.5
      */
     @Generated
     @Selector("setModeFeedbackWithStartPosition:resistiveStrength:")
@@ -183,6 +189,8 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
 
     /**
      * Sets the adaptive trigger to off mode. This turns off the adaptive trigger effect.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setModeOff")
@@ -200,6 +208,8 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
      *                      entirely) and 1 representing the maximum effect strength.
      * @param frequency     - A normalized float from [0-1], with 0 representing the minimum frequency and 1
      *                      representing the maximum frequency of the vibration effect.
+     * 
+     *                      API-Since: 14.5
      */
     @Generated
     @Selector("setModeVibrationWithStartPosition:amplitude:frequency:")
@@ -222,6 +232,8 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
      *                          The effect will end once the trigger is depressed beyond this point.
      * @param resistiveStrength - A normalized float from [0-1], with 0 representing the minimum effect strength (off
      *                          entirely) and 1 representing the maximum effect strength.
+     * 
+     *                          API-Since: 14.5
      */
     @Generated
     @Selector("setModeWeaponWithStartPosition:endPosition:resistiveStrength:")
@@ -237,6 +249,8 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
      * or has finished applying a load.
      * 
      * @see GCDualSenseAdaptiveTriggerStatus
+     * 
+     *      API-Since: 14.5
      */
     @Generated
     @Selector("status")

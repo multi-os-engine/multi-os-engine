@@ -109,6 +109,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -140,6 +142,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * @param resultMatrix        The MPSMatrix object to hold the resulting gradient values
      *                            with respect to the forward operation's input. dL_dX in the
      *                            class description.
+     * 
+     *                            API-Since: 12.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:gradientMatrix:forwardOutputMatrix:resultMatrix:")
@@ -168,6 +172,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixSoftMaxGradient
      * @param device   The MTLDevice on which to make the MPSMatrixSoftMaxGradient
      * @return A new MPSMatrixSoftMaxGradient object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -180,6 +186,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * @param device The device on which the kernel will execute.
      * 
      * @return A valid MPSMatrixSoftMaxGradient object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -236,6 +244,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * NOTE: primarySourceMatrixOrigin, secondarySourceMatrixOrigin and resultMatrixOrigin
      * from MPSMatrixBinaryKernel can be used to control the starting points in the primary
      * source, secondary source, and result matrices respectively.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceColumns:")
@@ -257,6 +267,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * NOTE: primarySourceMatrixOrigin, secondarySourceMatrixOrigin and resultMatrixOrigin
      * from MPSMatrixBinaryKernel can be used to control the starting points in the primary
      * source, secondary source, and result matrices respectively.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceRows:")
@@ -282,6 +294,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * NOTE: primarySourceMatrixOrigin, secondarySourceMatrixOrigin and resultMatrixOrigin
      * from MPSMatrixBinaryKernel can be used to control the starting points in the primary
      * source, secondary source, and result matrices respectively.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceColumns")
@@ -304,6 +318,8 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
      * NOTE: primarySourceMatrixOrigin, secondarySourceMatrixOrigin and resultMatrixOrigin
      * from MPSMatrixBinaryKernel can be used to control the starting points in the primary
      * source, secondary source, and result matrices respectively.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceRows")

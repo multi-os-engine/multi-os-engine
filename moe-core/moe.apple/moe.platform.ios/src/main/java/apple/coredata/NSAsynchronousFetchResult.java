@@ -157,11 +157,17 @@ public class NSAsynchronousFetchResult<_ResultType> extends NSPersistentStoreAsy
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("fetchRequest")
     public native NSAsynchronousFetchRequest<Object> fetchRequest();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("finalResult")

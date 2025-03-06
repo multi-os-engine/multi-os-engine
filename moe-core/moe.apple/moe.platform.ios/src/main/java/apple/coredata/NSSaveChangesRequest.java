@@ -159,6 +159,8 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
 
     /**
      * Objects that were deleted from the calling context.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -171,6 +173,8 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
 
     /**
      * Default initializer.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:")
@@ -182,6 +186,8 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
 
     /**
      * Objects that were inserted into the calling context.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -190,6 +196,8 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
 
     /**
      * Objects that were flagged for optimistic locking on the calling context via detectConflictsForObject:.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -198,6 +206,8 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
 
     /**
      * Objects that were modified in the calling context.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated

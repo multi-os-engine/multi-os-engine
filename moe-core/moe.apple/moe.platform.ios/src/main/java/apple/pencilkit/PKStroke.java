@@ -112,6 +112,9 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("init")
     public native PKStroke init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithInk:strokePath:transform:mask:")
     public native PKStroke initWithInkStrokePathTransformMask(@NotNull PKInk ink, @NotNull PKStrokePath strokePath,
@@ -119,6 +122,8 @@ public class PKStroke extends NSObject implements NSCopying {
 
     /**
      * The ink used to render this stroke.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -147,6 +152,9 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("mask")
@@ -155,6 +163,8 @@ public class PKStroke extends NSObject implements NSCopying {
     /**
      * These are the parametric parameter ranges of points in `strokePath`
      * that intersect the stroke's mask.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -168,6 +178,8 @@ public class PKStroke extends NSObject implements NSCopying {
 
     /**
      * The B-spline path that describes this stroke.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -178,6 +190,8 @@ public class PKStroke extends NSObject implements NSCopying {
      * The bounds of the rendered stroke.
      * This includes the width & ink of the stroke after the transform
      * is applied.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("renderBounds")
@@ -202,6 +216,8 @@ public class PKStroke extends NSObject implements NSCopying {
 
     /**
      * The affine transform of the stroke when rendered.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("transform")

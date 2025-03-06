@@ -95,6 +95,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * The cursor view (also known as "caret" view). Shown when the selection is not ranged.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("cursorView")
@@ -107,6 +109,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * See @c UITextSelectionDisplayInteractionDelegate.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("delegate")
@@ -128,6 +132,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
      * If you are replacing these system-provided handle views with your own, you must provide exactly two handle views,
      * one to be used as the leading handle,
      * and another to be used as the trailing handle.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("handleViews")
@@ -141,6 +147,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * The highlight view. This is the blue/tinted highlight drawn behind the rendered text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("highlightView")
@@ -154,6 +162,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
     /**
      * Creates a UITextSelectionDisplayInteractionDelegate for a given object that implements the UITextInput protocol.
      * `textInput` may be the same as the view this interaction is installed onto.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithTextInput:delegate:")
@@ -176,6 +186,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * Controls both the hidden sate of contained selection views as well as interactions that follow.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isActivated")
@@ -192,6 +204,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * Loads the selection from `-[UITextInput selectedTextRange]` and applies the selection to all managed subviews.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("layoutManagedSubviews")
@@ -212,6 +226,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * Controls both the hidden sate of contained selection views as well as interactions that follow.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setActivated:")
@@ -219,6 +235,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * The cursor view (also known as "caret" view). Shown when the selection is not ranged.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCursorView:")
@@ -230,6 +248,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
      * If you are replacing these system-provided handle views with your own, you must provide exactly two handle views,
      * one to be used as the leading handle,
      * and another to be used as the trailing handle.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setHandleViews:")
@@ -237,6 +257,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * The highlight view. This is the blue/tinted highlight drawn behind the rendered text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setHighlightView:")
@@ -244,6 +266,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * Call this whenever the selection changes, or needs to be re-laid out.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setNeedsSelectionUpdate")
@@ -259,6 +283,8 @@ public class UITextSelectionDisplayInteraction extends NSObject implements UIInt
 
     /**
      * The object the selection is being managed for.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("textInput")

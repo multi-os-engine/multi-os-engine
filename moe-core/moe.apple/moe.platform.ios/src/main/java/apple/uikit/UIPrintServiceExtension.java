@@ -124,6 +124,9 @@ public class UIPrintServiceExtension extends NSObject {
     @Selector("new")
     public static native UIPrintServiceExtension new_objc();
 
+    /**
+     * API-Since: 14.5
+     */
     @NotNull
     @Generated
     @Selector("printerDestinationsForPrintInfo:")

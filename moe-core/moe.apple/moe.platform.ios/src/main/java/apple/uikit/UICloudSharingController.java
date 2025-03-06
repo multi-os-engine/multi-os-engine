@@ -179,6 +179,8 @@ public class UICloudSharingController extends UIViewController {
      * Returns an activity item source for use with UIActivityViewController.
      * If the activity is selected, delegate methods will be called for the original instance of
      * the sharing controller.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -189,12 +191,17 @@ public class UICloudSharingController extends UIViewController {
     /**
      * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified
      * combinations of permissions are selectable.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("availablePermissions")
     @NUInt
     public native long availablePermissions();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -216,6 +223,8 @@ public class UICloudSharingController extends UIViewController {
 
     /**
      * Use this initializer when you already have an active CKShare that was set up previously.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithShare:container:")
@@ -225,16 +234,24 @@ public class UICloudSharingController extends UIViewController {
     /**
      * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified
      * combinations of permissions are selectable.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAvailablePermissions:")
     public native void setAvailablePermissions(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value) {
         Object __old = delegate();
@@ -247,6 +264,9 @@ public class UICloudSharingController extends UIViewController {
         }
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("share")

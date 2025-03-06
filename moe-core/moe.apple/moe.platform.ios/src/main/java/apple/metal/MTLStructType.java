@@ -161,11 +161,17 @@ public class MTLStructType extends MTLType {
     @Selector("init")
     public native MTLStructType init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("memberByName:")
     public native MTLStructMember memberByName(@NotNull String name);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("members")

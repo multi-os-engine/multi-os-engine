@@ -114,6 +114,8 @@ public class AVMusicUserEvent extends AVMusicEvent {
      * 
      * @param data
      *             An NSData object containing the contents to be returned via the AVMusicTrack's user callback.
+     * 
+     *             API-Since: 16.0
      */
     @Generated
     @Selector("initWithData:")
@@ -161,6 +163,8 @@ public class AVMusicUserEvent extends AVMusicEvent {
     /**
      * [@property] sizeInBytes
      * The size of the data associated with this user event.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("sizeInBytes")

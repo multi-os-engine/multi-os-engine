@@ -108,6 +108,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Caclulates a dot product (aka 'scalar product' or 'inner product') of two vectors v1 and v2 and returns dot
      * product value.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dotProductOfVector:vector:")
@@ -134,6 +136,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
      * Initializes a vector in polar coordinate space, using R and Theta (radians), where R is the length of the vector
      * and
      * Theta is the ange that the vector forms with the positive direction of X axis.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithR:theta:")
@@ -141,6 +145,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes a vector in Cartesian Coordinate space, using two VNPoints - the head and the tail of the vector.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithVectorHead:tail:")
@@ -148,6 +154,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes a vector in Cartesian Coordinate space, using its X and Y axis projections.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithXComponent:yComponent:")
@@ -177,6 +185,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a length, or absolute value, of the vector.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("length")
@@ -189,6 +199,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Radius, or absolute value, or length of the vector.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("r")
@@ -208,6 +220,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a length ^ 2 of a vector.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("squaredLength")
@@ -229,6 +243,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Angle between the vector direction and positive direction of X axis.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("theta")
@@ -236,6 +252,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a vector that is normalized by preserving direction, such as |v|, or vector length = 1.0.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -244,6 +262,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Adds two vectors v1 and v2 and returns a resulting vector v, such as v = v1 + v2.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -252,6 +272,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a vector that whose X and Y projections multiplied by a scalar value.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -260,6 +282,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Substructs vector v1 from v2 and returns a resulting vector v, such as v = v2 - v1.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -274,6 +298,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Signed projection on X-axis, or X component of the vector. Sign determines direction the vector is facing in X
      * direction.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("x")
@@ -282,6 +308,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Signed projection on Y-axis, or Y component of the vector. Sign determines direction the vector is facing in Y
      * direction.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("y")
@@ -289,6 +317,8 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a VNVector object with zero length. The theta for zeroVector is not defined (NaN).
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

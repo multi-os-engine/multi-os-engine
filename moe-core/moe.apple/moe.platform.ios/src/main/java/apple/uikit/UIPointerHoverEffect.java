@@ -133,6 +133,8 @@ public class UIPointerHoverEffect extends UIPointerEffect {
 
     /**
      * Defaults to UIPointerEffectTintModeOverlay
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("preferredTintMode")
@@ -141,6 +143,8 @@ public class UIPointerHoverEffect extends UIPointerEffect {
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("prefersScaledContent")
@@ -148,6 +152,8 @@ public class UIPointerHoverEffect extends UIPointerEffect {
 
     /**
      * Defaults to NO
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("prefersShadow")
@@ -163,6 +169,8 @@ public class UIPointerHoverEffect extends UIPointerEffect {
 
     /**
      * Defaults to UIPointerEffectTintModeOverlay
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setPreferredTintMode:")
@@ -170,6 +178,8 @@ public class UIPointerHoverEffect extends UIPointerEffect {
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setPrefersScaledContent:")
@@ -177,6 +187,8 @@ public class UIPointerHoverEffect extends UIPointerEffect {
 
     /**
      * Defaults to NO
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setPrefersShadow:")

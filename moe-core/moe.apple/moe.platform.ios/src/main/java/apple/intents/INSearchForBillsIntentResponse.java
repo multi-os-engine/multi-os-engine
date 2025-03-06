@@ -65,6 +65,12 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("bills")
@@ -91,6 +97,12 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -121,7 +133,12 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INSearchForBillsIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -166,6 +183,12 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setBills:")
     public native void setBills(@Nullable NSArray<? extends INBillDetails> value);

@@ -26,6 +26,8 @@ import org.jetbrains.annotations.Nullable;
 public interface GCButtonElement extends GCPhysicalInputElement {
     /**
      * Get the input containing the pressed state of the button.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -38,6 +40,8 @@ public interface GCButtonElement extends GCPhysicalInputElement {
      * 
      * Some buttons feature capacitive touch capabilities where the user can touch the
      * button without pressing it.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

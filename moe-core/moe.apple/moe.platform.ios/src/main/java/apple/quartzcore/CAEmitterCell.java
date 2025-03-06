@@ -113,6 +113,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * Emitter cells implement the same property model as defined by CALayer.
      * See CALayer.h for more details.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -124,6 +126,9 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("emitterCell")
     public static native CAEmitterCell emitterCell();
@@ -181,10 +186,16 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("alphaRange")
     public native float alphaRange();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("alphaSpeed")
     public native float alphaSpeed();
@@ -200,15 +211,23 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The number of emitted objects created every second. Default value is
      * zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("birthRate")
     public native float birthRate();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("blueRange")
     public native float blueRange();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("blueSpeed")
     public native float blueSpeed();
@@ -217,6 +236,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The mean color of each emitted object, and the range from that mean
      * color. `color' defaults to opaque white, `colorRange' to (0, 0, 0,
      * 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -226,6 +247,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The cell contents, typically a CGImageRef. Defaults to nil.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -237,6 +260,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The sub-rectangle of the contents image that will be drawn. See
      * CALayer.h for more details. Defaults to the unit rectangle [0 0 1 1].
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("contentsRect")
@@ -246,6 +271,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * Defines the scale factor applied to the contents of the cell. See
      * CALayer.h for more details.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("contentsScale")
@@ -265,12 +292,17 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * theta. Both values default to zero, which translates to no change
      * relative to the emission shape's direction. Both values are
      * animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("emissionLatitude")
     @NFloat
     public native double emissionLatitude();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("emissionLongitude")
     @NFloat
@@ -280,6 +312,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * An angle (in radians) defining a cone around the emission angle.
      * Emitted objects are uniformly distributed across this cone. Defaults
      * to zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("emissionRange")
@@ -292,6 +326,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * an emitter for each of the cell's sub-cells. The emission point is
      * the current particle position and the emission angle is relative to
      * the current direction of the particle. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -307,10 +343,16 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @Selector("fillMode")
     public native String fillMode();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("greenRange")
     public native float greenRange();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("greenSpeed")
     public native float greenSpeed();
@@ -325,6 +367,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     /**
      * Controls whether or not cells from this emitter are rendered.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isEnabled")
@@ -332,6 +376,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     /**
      * Controls whether or not cells from this emitter are rendered.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -341,15 +387,23 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The lifetime of each emitted object in seconds, specified as a mean
      * value and a range about the mean. Both values default to zero.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("lifetime")
     public native float lifetime();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("lifetimeRange")
     public native float lifetimeRange();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("magnificationFilter")
@@ -358,24 +412,34 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The filter parameters used when rendering the `contents' image. See
      * CALayer.h for more details.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
     @Selector("minificationFilter")
     public native String minificationFilter();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("minificationFilterBias")
     public native float minificationFilterBias();
 
     /**
      * The name of the cell. Used to construct key paths. Defaults to nil.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("redRange")
     public native float redRange();
@@ -384,6 +448,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The speed at which color components of emitted objects change over
      * their lifetime, defined as the rate of change per second. Defaults
      * to (0, 0, 0, 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("redSpeed")
@@ -401,26 +467,40 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The scale factor applied to each emitted object, defined as mean and
      * range about the mean. Scale defaults to one, range to zero.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("scale")
     @NFloat
     public native double scale();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("scaleRange")
     @NFloat
     public native double scaleRange();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("scaleSpeed")
     @NFloat
     public native double scaleSpeed();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setAlphaRange:")
     public native void setAlphaRange(float value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setAlphaSpeed:")
     public native void setAlphaSpeed(float value);
@@ -436,15 +516,23 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The number of emitted objects created every second. Default value is
      * zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setBirthRate:")
     public native void setBirthRate(float value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setBlueRange:")
     public native void setBlueRange(float value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setBlueSpeed:")
     public native void setBlueSpeed(float value);
@@ -453,6 +541,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The mean color of each emitted object, and the range from that mean
      * color. `color' defaults to opaque white, `colorRange' to (0, 0, 0,
      * 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setColor:")
@@ -461,6 +551,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The cell contents, typically a CGImageRef. Defaults to nil.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContents:")
@@ -470,6 +562,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The sub-rectangle of the contents image that will be drawn. See
      * CALayer.h for more details. Defaults to the unit rectangle [0 0 1 1].
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContentsRect:")
@@ -478,6 +572,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * Defines the scale factor applied to the contents of the cell. See
      * CALayer.h for more details.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContentsScale:")
@@ -496,11 +592,16 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * theta. Both values default to zero, which translates to no change
      * relative to the emission shape's direction. Both values are
      * animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmissionLatitude:")
     public native void setEmissionLatitude(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setEmissionLongitude:")
     public native void setEmissionLongitude(@NFloat double value);
@@ -509,6 +610,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * An angle (in radians) defining a cone around the emission angle.
      * Emitted objects are uniformly distributed across this cone. Defaults
      * to zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmissionRange:")
@@ -520,6 +623,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * an emitter for each of the cell's sub-cells. The emission point is
      * the current particle position and the emission angle is relative to
      * the current direction of the particle. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmitterCells:")
@@ -529,10 +634,16 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @Selector("setFillMode:")
     public native void setFillMode(@NotNull String value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setGreenRange:")
     public native void setGreenRange(float value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setGreenSpeed:")
     public native void setGreenSpeed(float value);
@@ -541,15 +652,23 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The lifetime of each emitted object in seconds, specified as a mean
      * value and a range about the mean. Both values default to zero.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setLifetime:")
     public native void setLifetime(float value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setLifetimeRange:")
     public native void setLifetimeRange(float value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setMagnificationFilter:")
     public native void setMagnificationFilter(@NotNull String value);
@@ -557,22 +676,32 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The filter parameters used when rendering the `contents' image. See
      * CALayer.h for more details.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setMinificationFilter:")
     public native void setMinificationFilter(@NotNull String value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setMinificationFilterBias:")
     public native void setMinificationFilterBias(float value);
 
     /**
      * The name of the cell. Used to construct key paths. Defaults to nil.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setName:")
     public native void setName(@Nullable String value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setRedRange:")
     public native void setRedRange(float value);
@@ -581,6 +710,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The speed at which color components of emitted objects change over
      * their lifetime, defined as the rate of change per second. Defaults
      * to (0, 0, 0, 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setRedSpeed:")
@@ -598,15 +729,23 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The scale factor applied to each emitted object, defined as mean and
      * range about the mean. Scale defaults to one, range to zero.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setScaleRange:")
     public native void setScaleRange(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setScaleSpeed:")
     public native void setScaleSpeed(@NFloat double value);
@@ -618,17 +757,24 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The rotation speed applied to each emitted object, defined as mean
      * and range about the mean. Defaults to zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSpin:")
     public native void setSpin(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setSpinRange:")
     public native void setSpinRange(@NFloat double value);
 
     /**
      * Inherited attributes similar to in layers.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setStyle:")
@@ -641,11 +787,16 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The initial mean velocity of each emitted object, and its range. Both
      * values default to zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setVelocity:")
     public native void setVelocity(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setVelocityRange:")
     public native void setVelocityRange(@NFloat double value);
@@ -653,19 +804,30 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The acceleration vector applied to emitted objects. Defaults to
      * (0, 0, 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setXAcceleration:")
     public native void setXAcceleration(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setYAcceleration:")
     public native void setYAcceleration(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setZAcceleration:")
     public native void setZAcceleration(@NFloat double value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("shouldArchiveValueForKey:")
     public native boolean shouldArchiveValueForKey(@NotNull String key);
@@ -677,12 +839,17 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The rotation speed applied to each emitted object, defined as mean
      * and range about the mean. Defaults to zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("spin")
     @NFloat
     public native double spin();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("spinRange")
     @NFloat
@@ -690,6 +857,8 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     /**
      * Inherited attributes similar to in layers.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -703,12 +872,17 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The initial mean velocity of each emitted object, and its range. Both
      * values default to zero. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("velocity")
     @NFloat
     public native double velocity();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("velocityRange")
     @NFloat
@@ -717,17 +891,25 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The acceleration vector applied to emitted objects. Defaults to
      * (0, 0, 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("xAcceleration")
     @NFloat
     public native double xAcceleration();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("yAcceleration")
     @NFloat
     public native double yAcceleration();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("zAcceleration")
     @NFloat

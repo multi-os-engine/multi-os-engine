@@ -77,6 +77,8 @@ public class MXAppExitMetric extends MXMetric {
      * Cumulative background exit data.
      * 
      * This includes application exit data when the application was off screen and not visible to the user.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -118,6 +120,8 @@ public class MXAppExitMetric extends MXMetric {
      * Cumulative foreground exit data.
      * 
      * This includes application exit data when the application was on screen and visible to the user.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

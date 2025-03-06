@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface ASCredentialRequest extends NSSecureCoding, NSCopying {
     /**
      * The credential identity selected by the user to authenticate.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("credentialIdentity")
@@ -37,6 +39,8 @@ public interface ASCredentialRequest extends NSSecureCoding, NSCopying {
 
     /**
      * The type of credential used for this request.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("type")

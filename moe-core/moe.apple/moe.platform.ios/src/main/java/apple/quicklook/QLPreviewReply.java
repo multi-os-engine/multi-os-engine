@@ -72,6 +72,8 @@ public class QLPreviewReply extends NSObject {
     /**
      * Attachments for HTML data previews. The keys of the dictionary are the attachment identifiers (eg foo) that can
      * be referenced with the cid:id URL (eg cid:foo).
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -131,6 +133,8 @@ public class QLPreviewReply extends NSObject {
      *                              and is provided for convenience for any further updates to its properties during
      *                              document creation. Return the PDFDocument if successfully created. Populate error if
      *                              unsuccessful.
+     * 
+     *                              API-Since: 15.0
      */
     @Generated
     @Selector("initForPDFWithPageSize:documentCreationBlock:")
@@ -155,6 +159,8 @@ public class QLPreviewReply extends NSObject {
      *                     into this block is the same as the one created by this method and is provided for convenience
      *                     for any further updates to its properties during the drawing block. Return YES if the preview
      *                     was successfully drawn into the context. Return NO and populate error otherwise.
+     * 
+     *                     API-Since: 15.0
      */
     @Generated
     @Selector("initWithContextSize:isBitmap:drawingBlock:")
@@ -185,6 +191,8 @@ public class QLPreviewReply extends NSObject {
      *                          by this method and is provided for convenience for any further updates to its
      *                          properties, such as attachments, during the data generation. Return the data if
      *                          successful. Populate error if unsuccessful.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("initWithDataOfContentType:contentSize:dataCreationBlock:")
@@ -207,6 +215,8 @@ public class QLPreviewReply extends NSObject {
      * @param fileURL A file URL representing a preview of the previewed URL. Currently supported types include:
      *                UTTypeImage, UTTypePDF, UTTypeHTML, UTTypeXML, UTTypePlainText, UTTypeRTF, UTTypeRTFD,
      *                UTTypeMovie, UTTypeAudio
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("initWithFileURL:")
@@ -250,6 +260,8 @@ public class QLPreviewReply extends NSObject {
     /**
      * Attachments for HTML data previews. The keys of the dictionary are the attachment identifiers (eg foo) that can
      * be referenced with the cid:id URL (eg cid:foo).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAttachments:")
@@ -257,6 +269,8 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * String encoding for text or html based previews. Defaults to NSUTF8StringEncoding.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setStringEncoding:")
@@ -264,6 +278,8 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * Custom display title for the preview. If left as the empty string, QuickLook will use the file name.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTitle:")
@@ -275,6 +291,8 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * String encoding for text or html based previews. Defaults to NSUTF8StringEncoding.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("stringEncoding")
@@ -287,6 +305,8 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * Custom display title for the preview. If left as the empty string, QuickLook will use the file name.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

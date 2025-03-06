@@ -107,10 +107,16 @@ public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCo
     @Selector("init")
     public native SFSpeechLanguageModelConfiguration init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithLanguageModel:")
     public native SFSpeechLanguageModelConfiguration initWithLanguageModel(@NotNull NSURL languageModel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithLanguageModel:vocabulary:")
     public native SFSpeechLanguageModelConfiguration initWithLanguageModelVocabulary(@NotNull NSURL languageModel,
@@ -138,6 +144,9 @@ public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCo
     @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("languageModel")
     @NotNull
@@ -174,6 +183,9 @@ public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCo
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("vocabulary")
     @Nullable

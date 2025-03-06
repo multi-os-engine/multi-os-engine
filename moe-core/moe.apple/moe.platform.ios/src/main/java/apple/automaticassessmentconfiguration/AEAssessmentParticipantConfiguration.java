@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
  * API-Since: 15.0
@@ -102,6 +103,9 @@ public class AEAssessmentParticipantConfiguration extends NSObject implements NS
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 17.5
+     */
     @Generated
     @Selector("init")
     public native AEAssessmentParticipantConfiguration init();
@@ -128,6 +132,9 @@ public class AEAssessmentParticipantConfiguration extends NSObject implements NS
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 17.5
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -158,4 +165,33 @@ public class AEAssessmentParticipantConfiguration extends NSObject implements NS
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("allowsNetworkAccess")
+    public native boolean allowsNetworkAccess();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("configurationInfo")
+    @NotNull
+    public native NSDictionary<String, ?> configurationInfo();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("setAllowsNetworkAccess:")
+    public native void setAllowsNetworkAccess(boolean value);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setConfigurationInfo:")
+    public native void setConfigurationInfo(@NotNull NSDictionary<String, ?> value);
 }

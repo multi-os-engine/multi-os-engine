@@ -60,6 +60,9 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("acreFeet")
@@ -84,6 +87,9 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("baseUnit")
     public static native NSUnitVolume baseUnit();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("bushels")
@@ -100,6 +106,9 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("centiliters")
@@ -115,51 +124,81 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicCentimeters")
     public static native NSUnitVolume cubicCentimeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicDecimeters")
     public static native NSUnitVolume cubicDecimeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicFeet")
     public static native NSUnitVolume cubicFeet();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicInches")
     public static native NSUnitVolume cubicInches();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicKilometers")
     public static native NSUnitVolume cubicKilometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicMeters")
     public static native NSUnitVolume cubicMeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicMiles")
     public static native NSUnitVolume cubicMiles();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicMillimeters")
     public static native NSUnitVolume cubicMillimeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cubicYards")
     public static native NSUnitVolume cubicYards();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("cups")
@@ -169,6 +208,9 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("deciliters")
@@ -178,11 +220,17 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("fluidOunces")
     public static native NSUnitVolume fluidOunces();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("gallons")
@@ -193,31 +241,49 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("imperialFluidOunces")
     public static native NSUnitVolume imperialFluidOunces();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("imperialGallons")
     public static native NSUnitVolume imperialGallons();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("imperialPints")
     public static native NSUnitVolume imperialPints();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("imperialQuarts")
     public static native NSUnitVolume imperialQuarts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("imperialTablespoons")
     public static native NSUnitVolume imperialTablespoons();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("imperialTeaspoons")
@@ -245,11 +311,17 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kiloliters")
     public static native NSUnitVolume kiloliters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("liters")
@@ -257,17 +329,25 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - liters
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("megaliters")
     public static native NSUnitVolume megaliters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("metricCups")
     public static native NSUnitVolume metricCups();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milliliters")
@@ -278,11 +358,17 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitVolume new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("pints")
     public static native NSUnitVolume pints();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("quarts")
@@ -308,11 +394,17 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("tablespoons")
     public static native NSUnitVolume tablespoons();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("teaspoons")

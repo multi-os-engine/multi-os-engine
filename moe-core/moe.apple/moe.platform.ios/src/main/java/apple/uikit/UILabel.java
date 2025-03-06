@@ -379,6 +379,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
@@ -464,12 +466,17 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is UIBaselineAdjustmentAlignBaselines
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("baselineAdjustment")
     @NInt
     public native long baselineAdjustment();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("drawTextInRect:")
     public native void drawTextInRect(@ByValue CGRect rect);
@@ -480,6 +487,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil (system font 17 plain)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("font")
@@ -487,6 +496,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -507,6 +518,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is YES. changes how the label is drawn
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isEnabled")
@@ -514,6 +527,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is YES. changes how the label is drawn
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -521,6 +536,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isHighlighted")
@@ -528,6 +545,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHighlighted:")
@@ -535,6 +554,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isUserInteractionEnabled")
@@ -542,6 +563,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setUserInteractionEnabled:")
@@ -549,6 +572,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NSLineBreakByTruncatingTail. used for single and multiple lines of text
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("lineBreakMode")
@@ -583,6 +608,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
      * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed,
      * the text will be
      * truncated using the line break mode.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("numberOfLines")
@@ -606,6 +633,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
@@ -643,6 +672,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is UIBaselineAdjustmentAlignBaselines
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBaselineAdjustment:")
@@ -650,6 +681,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil (system font 17 plain)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFont:")
@@ -657,6 +690,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHighlightedTextColor:")
@@ -664,6 +699,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NSLineBreakByTruncatingTail. used for single and multiple lines of text
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLineBreakMode:")
@@ -695,6 +732,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
      * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed,
      * the text will be
      * truncated using the line break mode.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setNumberOfLines:")
@@ -712,6 +751,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil (no shadow)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setShadowColor:")
@@ -719,6 +760,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is CGSizeMake(0, -1) -- a top shadow
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setShadowOffset:")
@@ -726,6 +769,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setText:")
@@ -733,6 +778,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NSTextAlignmentNatural (before iOS 9, the default was NSTextAlignmentLeft)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTextAlignment:")
@@ -740,6 +787,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is labelColor
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTextColor:")
@@ -747,6 +796,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil (no shadow)
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -755,6 +806,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is CGSizeMake(0, -1) -- a top shadow
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("shadowOffset")
@@ -763,6 +816,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -771,6 +826,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NSTextAlignmentNatural (before iOS 9, the default was NSTextAlignmentLeft)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("textAlignment")
@@ -779,6 +836,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is labelColor
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("textColor")
@@ -787,6 +846,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     /**
      * override points. can adjust rect before calling super.
      * label has default content mode of UIViewContentModeRedraw
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("textRectForBounds:limitedToNumberOfLines:")

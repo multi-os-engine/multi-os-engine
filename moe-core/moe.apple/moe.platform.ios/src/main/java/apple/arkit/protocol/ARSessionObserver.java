@@ -28,6 +28,8 @@ public interface ARSessionObserver {
      * 
      * @param session The session being run.
      * @param camera  The camera that changed tracking states.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -43,6 +45,8 @@ public interface ARSessionObserver {
      * 
      * @param session The session that failed.
      * @param error   The error being reported (see ARError.h).
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -56,6 +60,8 @@ public interface ARSessionObserver {
      * 
      * @param session           The session being run.
      * @param audioSampleBuffer The captured audio sample buffer.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -74,6 +80,8 @@ public interface ARSessionObserver {
      * or attempt to relocalize (see `-[ARSessionObserver sessionShouldAttemptRelocalization:]`).
      * 
      * @param session The session that was interrupted.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -92,6 +100,8 @@ public interface ARSessionObserver {
      * No additional frame updates will be delivered until the interruption has ended.
      * 
      * @param session The session that was interrupted.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional

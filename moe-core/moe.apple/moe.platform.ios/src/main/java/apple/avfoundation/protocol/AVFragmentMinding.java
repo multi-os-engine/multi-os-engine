@@ -39,6 +39,7 @@ import org.moe.natj.objc.ann.Selector;
  * While associated with an AVFragmentedAssetMinder, AVFragmentedAsset posts AVAssetDurationDidChangeNotification
  * whenever new fragments are detected, as appropriate. It may also post AVAssetContainsFragmentsDidChangeNotification
  * and AVAssetWasDefragmentedNotification, as discussed in documentation of those notifications.
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  */
 @Generated
 @Library("AVFoundation")

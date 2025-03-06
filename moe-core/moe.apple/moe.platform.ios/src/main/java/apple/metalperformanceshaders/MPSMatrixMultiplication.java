@@ -206,6 +206,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * a valid set of matrices within leftMatrix, rightMatrix, and resultMatrix, will
      * be processed.
      * 
+     * API-Since: 10.0
+     * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
      * 
      * @param leftMatrix    A valid MPSMatrix object which specifies the left input matrix.
@@ -260,6 +262,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      *                        implementation subject to rounding and/or clamping as necessary.
      * 
      * @return A valid MPSMatrixMultiplication object or nil, if failure.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:transposeLeft:transposeRight:resultRows:resultColumns:interiorColumns:alpha:beta:")
@@ -275,6 +279,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("leftMatrixOrigin")
@@ -289,6 +295,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * modifiable and defaults to [0, 0] at initialization time. If a
      * different origin is desired then this should be modified prior to
      * encoding the kernel. The z value must be 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("resultMatrixOrigin")
@@ -303,6 +311,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("rightMatrixOrigin")
@@ -317,6 +327,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLeftMatrixOrigin:")
@@ -330,6 +342,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * modifiable and defaults to [0, 0] at initialization time. If a
      * different origin is desired then this should be modified prior to
      * encoding the kernel. The z value must be 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setResultMatrixOrigin:")
@@ -343,6 +357,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRightMatrixOrigin:")
@@ -354,6 +370,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("batchSize")
@@ -367,6 +385,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
      * should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("batchStart")
@@ -413,6 +433,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBatchSize:")
@@ -425,6 +447,8 @@ public class MPSMatrixMultiplication extends MPSKernel {
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
      * should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBatchStart:")

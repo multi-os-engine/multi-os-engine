@@ -19,17 +19,26 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFunctionHandle")
 public interface MTLFunctionHandle {
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     MTLDevice device();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("functionType")
     @NUInt
     long functionType();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("name")

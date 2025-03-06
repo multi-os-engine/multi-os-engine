@@ -92,6 +92,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * Fabric identifier (scoped to the root public key) for the fabric.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("fabricID")
@@ -100,6 +102,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * The fabric index which identifies the fabric on the node.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("fabricIndex")
@@ -132,6 +136,8 @@ public class MTRFabricInfo extends NSObject {
      * The intermediate certificate for the node. This might be nil if there is
      * no intermediate certificate, or if the node is not on a fabric we have
      * access to.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("intermediateCertificate")
@@ -140,6 +146,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * The same intermediate certificate as intermediateCertificate, in Matter TLV format.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("intermediateCertificateTLV")
@@ -157,6 +165,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * The string label for the fabric. May be empty.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("label")
@@ -170,6 +180,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * Node identifier for the given node on the fabric.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("nodeID")
@@ -179,6 +191,8 @@ public class MTRFabricInfo extends NSObject {
     /**
      * The operational certificate for the node. This might be nil if
      * the node is not on a fabric we have access to.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("operationalCertificate")
@@ -187,6 +201,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * The same operational certificate as operationalCertificate, in Matter TLV format.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("operationalCertificateTLV")
@@ -205,6 +221,8 @@ public class MTRFabricInfo extends NSObject {
      * The root certificate for the fabric. This might be nil if a root
      * certificate is not available (e.g. if this is information about some remote
      * node that we don't have root certificate information for).
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("rootCertificate")
@@ -213,6 +231,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * The same root certificate as rootCertificate, in Matter TLV format.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("rootCertificateTLV")
@@ -221,6 +241,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * Root public key for the fabric.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("rootPublicKey")
@@ -242,6 +264,8 @@ public class MTRFabricInfo extends NSObject {
 
     /**
      * Vendor identifier for the fabric.
+     * 
+     * API-Since: 16.5
      */
     @Generated
     @Selector("vendorID")

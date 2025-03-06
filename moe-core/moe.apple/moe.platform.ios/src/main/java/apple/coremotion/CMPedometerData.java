@@ -246,6 +246,8 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * Discussion:
      * Estimated distance in meters traveled by the user while walking and
      * running. Value is nil unsupported platforms.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -264,6 +266,8 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * For updates this is the time for the most recent update. For historical
      * queries this is the end time requested.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -276,6 +280,9 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * Discussion:
      * Approximate number of floors ascended by way of stairs. Value is nil
      * on unsupported platforms.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -288,6 +295,8 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * Discussion:
      * Approximate number of floors descended by way of stairs. Value is nil
      * on unsupported platforms.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -307,6 +316,8 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * Discussion:
      * Number of steps taken by the user.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -320,6 +331,8 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * The start time of the period for which the pedometer data is valid.
      * 
      * This is the start time requested for the session or historical query.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

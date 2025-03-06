@@ -375,4 +375,18 @@ public class NSProcessInfo extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("hasPerformanceProfile:")
+    public native boolean hasPerformanceProfile(@NInt long performanceProfile);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isDeviceCertifiedFor:")
+    public native boolean isDeviceCertifiedFor(@NInt long performanceTier);
 }

@@ -89,6 +89,8 @@ public class TKTokenKeychainItem extends NSObject {
 
     /**
      * Contains access constraints for this object keyed by TKTOpenOperation wrapped in NSNumber.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -114,6 +116,8 @@ public class TKTokenKeychainItem extends NSObject {
 
     /**
      * Initializes item with objectID.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithObjectID:")
@@ -143,6 +147,8 @@ public class TKTokenKeychainItem extends NSObject {
 
     /**
      * Contains the user-visible label for this item. This property is an equivalent of kSecAttrLabel in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -156,6 +162,8 @@ public class TKTokenKeychainItem extends NSObject {
 
     /**
      * object ID for item identification
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -173,6 +181,8 @@ public class TKTokenKeychainItem extends NSObject {
 
     /**
      * Contains access constraints for this object keyed by TKTOpenOperation wrapped in NSNumber.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setConstraints:")
@@ -180,6 +190,8 @@ public class TKTokenKeychainItem extends NSObject {
 
     /**
      * Contains the user-visible label for this item. This property is an equivalent of kSecAttrLabel in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLabel:")

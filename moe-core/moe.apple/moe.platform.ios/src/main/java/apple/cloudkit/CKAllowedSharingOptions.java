@@ -62,11 +62,17 @@ public class CKAllowedSharingOptions extends NSObject implements NSSecureCoding,
     @Selector("allocWithZone:")
     public static native CKAllowedSharingOptions allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("allowedParticipantAccessOptions")
     @NUInt
     public native long allowedParticipantAccessOptions();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("allowedParticipantPermissionOptions")
     @NUInt
@@ -125,6 +131,9 @@ public class CKAllowedSharingOptions extends NSObject implements NSSecureCoding,
     @Selector("init")
     public native CKAllowedSharingOptions init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithAllowedParticipantPermissionOptions:allowedParticipantAccessOptions:")
     public native CKAllowedSharingOptions initWithAllowedParticipantPermissionOptionsAllowedParticipantAccessOptions(
@@ -169,10 +178,16 @@ public class CKAllowedSharingOptions extends NSObject implements NSSecureCoding,
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setAllowedParticipantAccessOptions:")
     public native void setAllowedParticipantAccessOptions(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setAllowedParticipantPermissionOptions:")
     public native void setAllowedParticipantPermissionOptions(@NUInt long value);
@@ -185,6 +200,8 @@ public class CKAllowedSharingOptions extends NSObject implements NSSecureCoding,
      * Standard allowed options are most permissive i.e. @c allowedParticipantPermissionOptions = @c
      * CKSharingParticipantPermissionOptionAny
      * and @c allowedParticipantAccessOptions = @c CKSharingParticipantAccessOptionAny
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

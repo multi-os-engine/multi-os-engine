@@ -299,6 +299,8 @@ public class CPWindow extends UIWindow {
     /**
      * [@c] mapButtonSafeAreaLayoutGuide can be used to layout content that appears above the map buttons presented on
      * the map template.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -402,6 +404,8 @@ public class CPWindow extends UIWindow {
 
     /**
      * [@c] back-reference to the CPTemplateApplicationScene containing this CPWindow
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setTemplateApplicationScene:")
@@ -409,6 +413,8 @@ public class CPWindow extends UIWindow {
 
     /**
      * [@c] back-reference to the CPTemplateApplicationScene containing this CPWindow
+     * 
+     * API-Since: 12.0
      */
     @Generated
     public void setTemplateApplicationScene(@Nullable CPTemplateApplicationScene value) {
@@ -432,6 +438,8 @@ public class CPWindow extends UIWindow {
 
     /**
      * [@c] back-reference to the CPTemplateApplicationScene containing this CPWindow
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

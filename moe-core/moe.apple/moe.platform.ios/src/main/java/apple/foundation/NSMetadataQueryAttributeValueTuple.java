@@ -155,11 +155,17 @@ public class NSMetadataQueryAttributeValueTuple extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("attribute")
     public native String attribute();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -169,6 +175,9 @@ public class NSMetadataQueryAttributeValueTuple extends NSObject {
     @Selector("init")
     public native NSMetadataQueryAttributeValueTuple init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("value")

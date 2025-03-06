@@ -52,6 +52,8 @@ public class TKTokenDriverConfiguration extends NSObject {
      * Creates new configuration object for token with specified instanceID and adds it into tokenConfigurations
      * dictionary. If configuration with specified instanceID already exists, it is replaced with new empty
      * configuration.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -95,6 +97,8 @@ public class TKTokenDriverConfiguration extends NSObject {
 
     /**
      * ClassID of the token configuration. ClassID is taken from @p com.apple.ctk.class-id token extension attribute.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -116,6 +120,8 @@ public class TKTokenDriverConfiguration extends NSObject {
      * other callers will get an empty array. This means that only token's hosting application can actually modify
      * token's configuration. Typically, hosting application will contain only one token extension, therefore this
      * dictionary will have one element.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -160,6 +166,8 @@ public class TKTokenDriverConfiguration extends NSObject {
 
     /**
      * Removes configuration with specified tokenID. Does nothing if no such token configuration exists.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("removeTokenConfigurationForTokenInstanceID:")
@@ -183,6 +191,8 @@ public class TKTokenDriverConfiguration extends NSObject {
 
     /**
      * Dictionary of all currently configured tokens for this token class, keyed by instanceID.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

@@ -97,6 +97,9 @@ public class EKVirtualConferenceRoomTypeDescriptor extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("identifier")
@@ -118,6 +121,8 @@ public class EKVirtualConferenceRoomTypeDescriptor extends NSObject {
      *                   provides. This is chosen by your extension and is passed back to your
      *                   extension if the user chooses to create a virtual conference of the
      *                   associated room type.
+     * 
+     *                   API-Since: 15.0
      */
     @Generated
     @Selector("initWithTitle:identifier:")
@@ -167,6 +172,9 @@ public class EKVirtualConferenceRoomTypeDescriptor extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("title")

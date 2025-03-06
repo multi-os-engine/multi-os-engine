@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterBridgedDeviceBasicInformation extends MTRCluster {
+public class MTRClusterBridgedDeviceBasicInformation extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -108,8 +108,8 @@ public class MTRClusterBridgedDeviceBasicInformation extends MTRCluster {
     public native MTRClusterBridgedDeviceBasicInformation init();
 
     /**
-     * The queue is currently unused, but may be used in the future for calling completions
-     * for command invocations if commands are added to this cluster.
+     * For all instance methods that take a completion (i.e. command invocations),
+     * the completion will be called on the provided queue.
      * 
      * API-Since: 16.4
      */

@@ -93,6 +93,8 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
 
     /**
      * The date component that specifies the time when the event is fired
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -153,6 +155,8 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
 
     /**
      * The date component that specifies the time when the event is fired
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFireDateComponents:")

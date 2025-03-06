@@ -90,11 +90,17 @@ public class NSDiffableDataSourceSectionTransaction<_SectionIdentifierType, _Ite
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("difference")
     public native NSOrderedCollectionDifference<_ItemIdentifierType> difference();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("finalSnapshot")
@@ -109,6 +115,9 @@ public class NSDiffableDataSourceSectionTransaction<_SectionIdentifierType, _Ite
     @Selector("init")
     public native NSDiffableDataSourceSectionTransaction<?, ?> init();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("initialSnapshot")
@@ -149,6 +158,9 @@ public class NSDiffableDataSourceSectionTransaction<_SectionIdentifierType, _Ite
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("sectionIdentifier")

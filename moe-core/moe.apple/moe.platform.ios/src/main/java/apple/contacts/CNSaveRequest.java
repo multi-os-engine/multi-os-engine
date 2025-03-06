@@ -181,6 +181,8 @@ public class CNSaveRequest extends NSObject {
      * 
      * @param contact    The new contact to add.
      * @param identifier The container identifier to add the new contact to. Set to nil for the default container.
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("addContact:toContainerWithIdentifier:")
@@ -194,6 +196,8 @@ public class CNSaveRequest extends NSObject {
      * 
      * @param group      The new group to add.
      * @param identifier The container identifier to add the new group to. Set to nil for the default container.
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("addGroup:toContainerWithIdentifier:")
@@ -206,6 +210,8 @@ public class CNSaveRequest extends NSObject {
      * 
      * @param contact The new member to add to the group.
      * @param group   The group to add the member to.
+     * 
+     *                API-Since: 9.0
      */
     @Generated
     @Selector("addMember:toGroup:")
@@ -215,6 +221,8 @@ public class CNSaveRequest extends NSObject {
      * Delete a contact from the contact store.
      * 
      * If the contact was previously specified to be added in the save request that will no longer occur.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("deleteContact:")
@@ -225,6 +233,8 @@ public class CNSaveRequest extends NSObject {
      * 
      * The contacts in the group are not deleted. If the group was previously specified to be added in the save request
      * that will no longer occur.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("deleteGroup:")
@@ -242,6 +252,8 @@ public class CNSaveRequest extends NSObject {
      * 
      * @param contact The member to remove from the group.
      * @param group   The group to remove the member from.
+     * 
+     *                API-Since: 9.0
      */
     @Generated
     @Selector("removeMember:fromGroup:")
@@ -251,6 +263,8 @@ public class CNSaveRequest extends NSObject {
      * Update an existing contact in the contact store.
      * 
      * The contact must already exist in the contact store. The contact may be modified by the executing save request.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("updateContact:")
@@ -260,6 +274,8 @@ public class CNSaveRequest extends NSObject {
      * Update an existing group in the contact store.
      * 
      * The group must already exist in the contact store.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("updateGroup:")

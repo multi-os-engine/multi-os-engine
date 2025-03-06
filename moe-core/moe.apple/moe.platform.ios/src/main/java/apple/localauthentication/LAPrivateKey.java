@@ -71,6 +71,8 @@ public class LAPrivateKey extends NSObject {
      * 
      * @param algorithm Cryptographic algorithm
      * @return @c YES in case the key supports the provided algorithm with the specified operation.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("canDecryptUsingSecKeyAlgorithm:")
@@ -81,6 +83,8 @@ public class LAPrivateKey extends NSObject {
      * 
      * @param algorithm Cryptographic algorithm
      * @return @c YES in case the key supports the provided algorithm with the specified operation.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("canExchangeKeysUsingSecKeyAlgorithm:")
@@ -91,6 +95,8 @@ public class LAPrivateKey extends NSObject {
      * 
      * @param algorithm Cryptographic algorithm
      * @return @c YES in case the key supports the provided algorithm with the specified operation.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("canSignUsingSecKeyAlgorithm:")
@@ -129,6 +135,8 @@ public class LAPrivateKey extends NSObject {
      * @param algorithm A @c SecKeyAlgorithm suitable for decrypting data with this key –e.g: @c
      *                  kSecKeyAlgorithmECIESEncryptionStandardVariableIVX963SHA256AESGCM
      * @param handler   Completion handler with plaintext or an error on failure.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("decryptData:secKeyAlgorithm:completion:")
@@ -155,6 +163,8 @@ public class LAPrivateKey extends NSObject {
      * @param parameters Dictionary with parameters, see @c SecKeyKeyExchangeParameter constants. Used algorithm
      *                   determines the set of required and optional parameters to be used.
      * @param handler    Completion handler with the result of the key exchange or an error on failure.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("exchangeKeysWithPublicKey:secKeyAlgorithm:secKeyParameters:completion:")
@@ -208,6 +218,8 @@ public class LAPrivateKey extends NSObject {
 
     /**
      * Offers the public key counterpart of a @c LAPrivateKey instance
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -233,6 +245,8 @@ public class LAPrivateKey extends NSObject {
      * @param algorithm A @c SecKeyAlgorithm suitable for generating signatures with this key – e.g: @c
      *                  kSecKeyAlgorithmECDSASignatureMessageX962SHA256
      * @param handler   Completion handler with the signature of given data or an error on failure.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("signData:secKeyAlgorithm:completion:")

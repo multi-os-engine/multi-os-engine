@@ -102,6 +102,8 @@ public class NSDataDetector extends NSRegularExpression {
      * argument should contain one or more of the types NSTextCheckingTypeDate, NSTextCheckingTypeAddress,
      * NSTextCheckingTypeLink, NSTextCheckingTypePhoneNumber, and NSTextCheckingTypeTransitInformation. The
      * NSTextCheckingResult instances returned will be of the appropriate types from that list.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -190,6 +192,9 @@ public class NSDataDetector extends NSRegularExpression {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("checkingTypes")
     public native long checkingTypes();
@@ -207,6 +212,9 @@ public class NSDataDetector extends NSRegularExpression {
     public native NSDataDetector initWithPatternOptionsError(@NotNull String pattern, @NUInt long options,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithTypes:error:")
     public native NSDataDetector initWithTypesError(long checkingTypes,

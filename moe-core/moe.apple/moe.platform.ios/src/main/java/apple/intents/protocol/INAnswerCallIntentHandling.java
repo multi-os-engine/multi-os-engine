@@ -40,6 +40,8 @@ public interface INAnswerCallIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INAnswerCallIntentResponse
+     * 
+     *      API-Since: 16.2
      */
     @Generated
     @IsOptional
@@ -66,6 +68,8 @@ public interface INAnswerCallIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INAnswerCallIntentResponse
+     * 
+     *      API-Since: 16.2
      */
     @Generated
     @Selector("handleAnswerCall:completion:")

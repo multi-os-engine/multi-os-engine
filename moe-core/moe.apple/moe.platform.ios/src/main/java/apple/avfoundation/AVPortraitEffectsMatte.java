@@ -113,6 +113,8 @@ public class AVPortraitEffectsMatte extends NSObject {
      * JPEG file, you may use this method to generate a dictionary of primitive map information consumed by
      * CGImageDestinationAddAuxiliaryDataInfo.
      * 
+     * API-Since: 12.0
+     * 
      * @param outAuxDataType
      *                       On output, the auxiliary data type to be used when calling
      *                       CGImageDestinationAddAuxiliaryDataInfo. Currently the only supported auxiliary data type is
@@ -164,6 +166,8 @@ public class AVPortraitEffectsMatte extends NSObject {
      * Provides access to the portrait effects matte's internal image.
      * 
      * The pixel format can be queried using the pixelFormatType property.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -181,6 +185,8 @@ public class AVPortraitEffectsMatte extends NSObject {
      * Specifies the pixel format type of this object's internal matting image.
      * 
      * Currently the only supported CV pixel format type for the matting image is kCVPixelFormatType_OneComponent8.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("pixelFormatType")
@@ -194,6 +200,8 @@ public class AVPortraitEffectsMatte extends NSObject {
      * When applying simple 90 degree rotation or mirroring edits to media containing a portrait effects matte, you may
      * use this initializer to create a derivative copy of the portrait effects matte in which the specified orientation
      * is applied. This method throws an NSInvalidArgumentException if you pass an unrecognized exifOrientation.
+     * 
+     * API-Since: 12.0
      * 
      * @param exifOrientation
      *                        One of the 8 standard Exif orientation tags expressing how the portrait effects matte
@@ -213,6 +221,8 @@ public class AVPortraitEffectsMatte extends NSObject {
      * 
      * When applying complex edits to media containing a portrait effects matte, you may create a derivative matte with
      * arbitrary transforms applied to it, then use this initializer to create a new AVPortraitEffectsMatte.
+     * 
+     * API-Since: 12.0
      * 
      * @param pixelBuffer
      *                    A pixel buffer containing a portrait effects matting image, represented as
@@ -238,6 +248,8 @@ public class AVPortraitEffectsMatte extends NSObject {
      * When using ImageIO framework's CGImageSource API to read from a HEIF or JPEG file containing a portrait effects
      * matte, AVPortraitEffectsMatte can be instantiated using the result of CGImageSourceCopyAuxiliaryDataInfoAtIndex,
      * which returns a CFDictionary of primitive map information.
+     * 
+     * API-Since: 12.0
      * 
      * @param imageSourceAuxDataInfoDictionary
      *                                         A dictionary of primitive portrait effects matte related information

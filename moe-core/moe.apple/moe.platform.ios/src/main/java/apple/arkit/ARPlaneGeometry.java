@@ -70,6 +70,8 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * The number of boundary vertices of the geometry.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("boundaryVertexCount")
@@ -177,6 +179,8 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * The number of texture coordinates of the geometry.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("textureCoordinateCount")
@@ -185,6 +189,8 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * The number of triangles of the geometry.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("triangleCount")
@@ -193,6 +199,8 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * The triangle indices of the geometry.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -206,6 +214,8 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * The number of mesh vertices of the geometry.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("vertexCount")

@@ -21,6 +21,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MLFeatureProvider")
 public interface MLFeatureProvider {
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("featureNames")
@@ -28,6 +31,8 @@ public interface MLFeatureProvider {
 
     /**
      * Returns nil if the provided featureName is not in the set of featureNames
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

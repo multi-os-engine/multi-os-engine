@@ -100,6 +100,8 @@ public class AVAssetVariantAudioAttributes extends NSObject {
      * 
      * Provides an array of audio formats present in the variant's renditions if any are declared. Each value in the
      * array is a NSNumber representation of AudioFormatID.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -150,6 +152,8 @@ public class AVAssetVariantAudioAttributes extends NSObject {
      * 
      * @param mediaSelectionOption
      *                             The option to return rendition specific information for.
+     * 
+     *                             API-Since: 15.0
      */
     @Nullable
     @Generated

@@ -163,6 +163,9 @@ public class INSendPaymentIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("currencyAmount")
@@ -176,16 +179,25 @@ public class INSendPaymentIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSendPaymentIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithPayee:currencyAmount:note:")
     public native INSendPaymentIntent initWithPayeeCurrencyAmountNote(@Nullable INPerson payee,
             @Nullable INCurrencyAmount currencyAmount, @Nullable String note);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("note")
     public native String note();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("payee")

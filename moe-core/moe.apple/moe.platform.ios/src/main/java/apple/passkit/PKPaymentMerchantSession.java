@@ -98,6 +98,9 @@ public class PKPaymentMerchantSession extends NSObject {
     @Selector("init")
     public native PKPaymentMerchantSession init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithDictionary:")
     public native PKPaymentMerchantSession initWithDictionary(@NotNull NSDictionary<?, ?> dictionary);

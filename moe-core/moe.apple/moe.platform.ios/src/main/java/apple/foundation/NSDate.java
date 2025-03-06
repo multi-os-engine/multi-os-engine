@@ -304,14 +304,23 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Selector("now")
     public static native NSDate now();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("dateWithSRAbsoluteTime:")
     public static native NSDate dateWithSRAbsoluteTime(double time);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithSRAbsoluteTime:")
     public native NSDate initWithSRAbsoluteTime(double time);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("srAbsoluteTime")
     public native double srAbsoluteTime();

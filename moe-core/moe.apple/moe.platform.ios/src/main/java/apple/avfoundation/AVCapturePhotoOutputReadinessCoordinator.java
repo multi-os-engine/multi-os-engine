@@ -95,6 +95,8 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
      * documentation for a discussion of how to update shutter availability and appearance based on the captureReadiness
      * value. This property is key-value observable and all change notifications are delivered on the main queue,
      * allowing UI updates to be done directly in the callback.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("captureReadiness")
@@ -124,6 +126,8 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
      * protocol that will receive a callback when the captureReadiness property changes. Callbacks are delivered on the
      * main queue, allowing UI updates to be done directly in the callback. A callback with the initial value of
      * captureReadiness is delivered when delegate is set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("delegate")
@@ -144,6 +148,9 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
     @Selector("init")
     public native AVCapturePhotoOutputReadinessCoordinator init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithPhotoOutput:")
     public native AVCapturePhotoOutputReadinessCoordinator initWithPhotoOutput(
@@ -193,6 +200,8 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
      * protocol that will receive a callback when the captureReadiness property changes. Callbacks are delivered on the
      * main queue, allowing UI updates to be done directly in the callback. A callback with the initial value of
      * captureReadiness is delivered when delegate is set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -208,6 +217,8 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
      * protocol that will receive a callback when the captureReadiness property changes. Callbacks are delivered on the
      * main queue, allowing UI updates to be done directly in the callback. A callback with the initial value of
      * captureReadiness is delivered when delegate is set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     public void setDelegate(
@@ -241,6 +252,8 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
      * state to allow the shutter button to be interactive while the session is being started on a background queue. An
      * NSInvalidArgumentException is thrown if the photo settings are invalid.
      * 
+     * API-Since: 17.0
+     * 
      * @param settings
      *                 The AVCapturePhotoSettings which will be passed to -[AVCapturePhotoOutput
      *                 capturePhotoWithSettings:delegate] for this capture request.
@@ -260,6 +273,8 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
      * calling -capturePhotoWithSettings:delegate tracking should be explictly stopped to ensure the captureReadiness
      * value is up to date. When called on the main queue the delegate callback is invoked synchronously before
      * returning to ensure shutter availability is updated immediately.
+     * 
+     * API-Since: 17.0
      * 
      * @param settingsUniqueID
      *                         The AVCapturePhotoSettings.uniqueID of the settings passed to

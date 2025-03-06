@@ -32,6 +32,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVContentKeyRequest
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 10.3
  */
 @Generated
@@ -77,6 +81,8 @@ public class AVContentKeyRequest extends NSObject {
      * have an AVContentKeyRequest for which the value of canProvidePersistableContentKey is NO, but you wish to obtain
      * a persistable content key, send the AVContentKeyRequest the message
      * -respondByRequestingPersistableContentKeyRequest.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("canProvidePersistableContentKey")
@@ -118,6 +124,8 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * The value of this property is an NSError that describes what caused the content key request to fail. If the
      * receiver's status is not AVContentKeyRequestStatusFailed, the value of this property is nil.
+     * 
+     * API-Since: 10.3
      */
     @Nullable
     @Generated
@@ -136,6 +144,8 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * In order to use a key with an HTTP Live Streaming AVURLAsset, the identifier must be an NSURL that matches a key
      * URI in the Media Playlist.
+     * 
+     * API-Since: 10.3
      */
     @Nullable
     @Generated
@@ -151,6 +161,8 @@ public class AVContentKeyRequest extends NSObject {
      * [@property] initializationData
      * 
      * Container- and protocol-specific data to be used to obtain a key response.
+     * 
+     * API-Since: 10.3
      */
     @Nullable
     @Generated
@@ -185,6 +197,8 @@ public class AVContentKeyRequest extends NSObject {
      * Obtains a content key request data for a specific combination of application and content.
      * 
      * If option AVContentKeyRequestProtocolVersionsKey is not specified the default protocol version of 1 is assumed.
+     * 
+     * API-Since: 10.3
      * 
      * @param appIdentifier
      *                          An opaque identifier for the application. The value of this identifier depends on the
@@ -231,6 +245,8 @@ public class AVContentKeyRequest extends NSObject {
      * protected content available for processing. If obtaining the content key response fails, use
      * -processContentKeyResponseError:.
      * 
+     * API-Since: 10.3
+     * 
      * @param keyResponse
      *                    An instance of AVContentKeyResponse carrying a response to a content key request.
      */
@@ -245,6 +261,8 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * @param error
      *              An instance of NSError that describes the specific failure that occurred.
+     * 
+     *              API-Since: 10.3
      */
     @Generated
     @Selector("processContentKeyResponseError:")
@@ -255,6 +273,8 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * Indicates whether the receiver represents a request to renew previously provided response data that is expiring
      * or has expired.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("renewsExpiringResponseData")
@@ -298,6 +318,8 @@ public class AVContentKeyRequest extends NSObject {
      * [@property] status
      * 
      * This describes the state of the AVContentKeyRequest, value is one of AVContentKeyRequestStatus.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("status")

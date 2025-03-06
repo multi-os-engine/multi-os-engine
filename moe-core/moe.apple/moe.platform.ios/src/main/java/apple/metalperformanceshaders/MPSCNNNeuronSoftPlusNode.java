@@ -106,6 +106,8 @@ public class MPSCNNNeuronSoftPlusNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:")
@@ -118,6 +120,8 @@ public class MPSCNNNeuronSoftPlusNode extends MPSCNNNeuronNode {
      * @param a          See discussion above.
      * @param b          See discussion above.
      * @return A new MPSNNFilter node for a MPSCNNNeuronSoftPlus kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:a:b:")
@@ -152,11 +156,16 @@ public class MPSCNNNeuronSoftPlusNode extends MPSCNNNeuronNode {
 
     /**
      * Create an autoreleased node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronSoftPlusNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:a:b:")
     public static native MPSCNNNeuronSoftPlusNode nodeWithSourceAB(@NotNull MPSNNImageNode sourceNode, float a,

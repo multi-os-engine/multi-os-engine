@@ -28,6 +28,8 @@ import org.jetbrains.annotations.NotNull;
 public interface GCDirectionPadElement extends GCPhysicalInputElement {
     /**
      * The negative y-component of the dpad input.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -37,6 +39,8 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
 
     /**
      * The negative x-component of the dpad input.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -46,6 +50,8 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
 
     /**
      * The positive x-component of the dpad input.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -55,6 +61,8 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
 
     /**
      * The positive y-component of the dpad input.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -64,6 +72,8 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
 
     /**
      * The horizontal/x-component of the dpad input.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -73,10 +83,23 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
 
     /**
      * The vertical/y-component of the dpad input.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
     @Selector("yAxis")
     @MappedReturn(ObjCObjectMapper.class)
     GCAxisInput yAxis();
+
+    /**
+     * The x,y position of the dpad input.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("xyAxes")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    GCAxis2DInput xyAxes();
 }

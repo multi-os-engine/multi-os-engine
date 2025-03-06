@@ -53,6 +53,8 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
 
     /**
      * An access token used to access other systems with the authorized scopes.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -74,6 +76,8 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
      * technology used by the Authorization Server instance and AuthenticationServices Extension.
      * [@note] for some operations all properties can be null and the response will indicate just successful result of
      * the operation.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -84,6 +88,8 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
      * This value will contain a list of scopes for which the user provided authorization. These may contain a subset of
      * the requested scopes on @see ASAuthorizationOpenIDRequest. The application should query this value to identify
      * which scopes were returned as it maybe different from ones requested.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -141,6 +147,8 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
 
     /**
      * A JSON Web Token (JWT) used to communicate information about the identity of the user in a secure way to the app.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -196,6 +204,8 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
 
     /**
      * A state returned from the AuthenticationServices extension.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

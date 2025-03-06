@@ -162,21 +162,33 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("ambientOcclusion")
     public native MDLMaterialProperty ambientOcclusion();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("ambientOcclusionScale")
     public native MDLMaterialProperty ambientOcclusionScale();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("baseColor")
     public native MDLMaterialProperty baseColor();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("emission")
@@ -186,11 +198,17 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Selector("init")
     public native MDLScatteringFunction init();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("interfaceIndexOfRefraction")
     public native MDLMaterialProperty interfaceIndexOfRefraction();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("materialIndexOfRefraction")
@@ -201,6 +219,9 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("normal")
@@ -210,6 +231,9 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Selector("setName:")
     public native void setName(@NotNull String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("specular")

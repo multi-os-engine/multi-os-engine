@@ -157,6 +157,9 @@ public class UITextRange extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.2
+     */
     @NotNull
     @Generated
     @Selector("end")
@@ -168,11 +171,16 @@ public class UITextRange extends NSObject {
 
     /**
      * Whether the range is zero-length.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("isEmpty")
     public native boolean isEmpty();
 
+    /**
+     * API-Since: 3.2
+     */
     @NotNull
     @Generated
     @Selector("start")

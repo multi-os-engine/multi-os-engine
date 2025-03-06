@@ -180,6 +180,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns the identifier of the receiver.
      * Could be used to keep track of the entire transaction for resolve, confirm and handleIntent
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -221,6 +223,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * The image most relevant for display to the receiver, accounting for both parameter-associated images and other
      * images defined in the receiver.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

@@ -162,6 +162,9 @@ public class UNTimeIntervalNotificationTrigger extends UNNotificationTrigger {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("triggerWithTimeInterval:repeats:")
     public static native UNTimeIntervalNotificationTrigger triggerWithTimeIntervalRepeats(double timeInterval,
@@ -180,6 +183,9 @@ public class UNTimeIntervalNotificationTrigger extends UNNotificationTrigger {
     @Selector("initWithCoder:")
     public native UNTimeIntervalNotificationTrigger initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("nextTriggerDate")
@@ -191,6 +197,9 @@ public class UNTimeIntervalNotificationTrigger extends UNNotificationTrigger {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("timeInterval")
     public native double timeInterval();

@@ -97,6 +97,8 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     /**
      * [@c] MKMapItem representing the destination for the trip.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -122,6 +124,8 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     /**
      * Initialize a @c CPTrip with an origin item, destination item, and route choices.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithOrigin:destination:routeChoices:")
@@ -157,6 +161,8 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     /**
      * [@c] MKMapItem representing the origin for the trip.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -173,6 +179,8 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     /**
      * Array of @c CPRouteChoices for the trip.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -181,6 +189,8 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     /**
      * Any custom user info related to this trip.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -206,6 +216,8 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     /**
      * Any custom user info related to this trip.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -222,4 +234,27 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * destinationNameVariants is an array of @c NSString representing the name of the destination for
+     * this trip, arranged from most to least preferred. You must provide at least one variant.
+     * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("destinationNameVariants")
+    @Nullable
+    public native NSArray<String> destinationNameVariants();
+
+    /**
+     * destinationNameVariants is an array of @c NSString representing the name of the destination for
+     * this trip, arranged from most to least preferred. You must provide at least one variant.
+     * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("setDestinationNameVariants:")
+    public native void setDestinationNameVariants(@Nullable NSArray<String> value);
 }

@@ -35,6 +35,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WKPreviewActionItem")
 public interface WKPreviewActionItem extends UIPreviewActionItem {
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: This API will be replaced
+     */
+    @Deprecated
     @Generated
     @Selector("identifier")
     String identifier();

@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCMatMulDescriptor specifies a batched matrix multiplication descriptor
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -66,7 +65,11 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
 
     /**
      * a scalar to scale the result in C=alpha x X x Y. Default = 1.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("alpha")
     public native float alpha();
@@ -115,7 +118,11 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
      * [@property] descriptor
      * 
      * A matrix multiplication layer descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptor")
     public static native MLCMatMulDescriptor descriptor();
@@ -127,7 +134,11 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
      * @param transposesX if true, transposes the last two dimensions of X
      * @param transposesY if true, transposes the last two dimensions of Y
      * @return A new matrix multiplication layer descriptor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithAlpha:transposesX:transposesY:")
     public static native MLCMatMulDescriptor descriptorWithAlphaTransposesXTransposesY(float alpha, boolean transposesX,
@@ -187,14 +198,22 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
 
     /**
      * if true, transposes the last two dimensions of X. Default = False
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("transposesX")
     public native boolean transposesX();
 
     /**
      * if true, transposes the last two dimensions of Y. Default = False
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("transposesY")
     public native boolean transposesY();

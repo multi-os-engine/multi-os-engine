@@ -43,6 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * SCNTube
@@ -331,4 +332,11 @@ public class SCNTube extends SCNGeometry {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("geometryWithSources:elements:sourceChannels:")
+    public static native SCNTube geometryWithSourcesElementsSourceChannels(
+            @NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements,
+            @Nullable NSArray<? extends NSNumber> sourceChannels);
 }

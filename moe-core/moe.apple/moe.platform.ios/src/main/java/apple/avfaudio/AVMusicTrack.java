@@ -111,12 +111,17 @@ public class AVMusicTrack extends NSObject {
      * attached to an audio engine, and the track must be part of the AVAudioSequencer associated
      * with that engine. When playing, the track will send its events to that AVAudioUnit. The
      * destination AU cannot be changed while the track's sequence is playing.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("destinationAudioUnit")
     public native AVAudioUnit destinationAudioUnit();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("destinationMIDIEndpoint")
     public native int destinationMIDIEndpoint();
@@ -149,6 +154,8 @@ public class AVMusicTrack extends NSObject {
      * Determines whether or not the track is looped.
      * 
      * If loopRange has not been set, the full track will be looped.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isLoopingEnabled")
@@ -158,6 +165,8 @@ public class AVMusicTrack extends NSObject {
      * [@property] muted
      * 
      * Whether the track is muted
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isMuted")
@@ -167,6 +176,8 @@ public class AVMusicTrack extends NSObject {
      * [@property] soloed
      * 
      * Whether the track is soloed
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isSoloed")
@@ -192,6 +203,8 @@ public class AVMusicTrack extends NSObject {
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * 
      * The property will return the maximum of the user-set track length, or the calculated length.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("lengthInBeats")
@@ -208,6 +221,8 @@ public class AVMusicTrack extends NSObject {
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * 
      * The property will return the maximum of the user-set track length, or the calculated length.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("lengthInSeconds")
@@ -219,6 +234,8 @@ public class AVMusicTrack extends NSObject {
      * The timestamp range in beats for the loop
      * 
      * The loop is set by specifying its beat range.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("loopRange")
@@ -237,6 +254,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * If set to AVMusicTrackLoopCountForever, the track will loop forever.
      * Otherwise, legal values start with 1.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("numberOfLoops")
@@ -249,6 +268,8 @@ public class AVMusicTrack extends NSObject {
      * Offset the track's start time to the specified time in beats
      * 
      * By default this value is zero.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("offsetTime")
@@ -271,11 +292,16 @@ public class AVMusicTrack extends NSObject {
      * attached to an audio engine, and the track must be part of the AVAudioSequencer associated
      * with that engine. When playing, the track will send its events to that AVAudioUnit. The
      * destination AU cannot be changed while the track's sequence is playing.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDestinationAudioUnit:")
     public native void setDestinationAudioUnit(@Nullable AVAudioUnit value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDestinationMIDIEndpoint:")
     public native void setDestinationMIDIEndpoint(int value);
@@ -291,6 +317,8 @@ public class AVMusicTrack extends NSObject {
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * 
      * The property will return the maximum of the user-set track length, or the calculated length.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLengthInBeats:")
@@ -307,6 +335,8 @@ public class AVMusicTrack extends NSObject {
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * 
      * The property will return the maximum of the user-set track length, or the calculated length.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLengthInSeconds:")
@@ -318,6 +348,8 @@ public class AVMusicTrack extends NSObject {
      * The timestamp range in beats for the loop
      * 
      * The loop is set by specifying its beat range.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLoopRange:")
@@ -329,6 +361,8 @@ public class AVMusicTrack extends NSObject {
      * Determines whether or not the track is looped.
      * 
      * If loopRange has not been set, the full track will be looped.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLoopingEnabled:")
@@ -338,6 +372,8 @@ public class AVMusicTrack extends NSObject {
      * [@property] muted
      * 
      * Whether the track is muted
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMuted:")
@@ -350,6 +386,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * If set to AVMusicTrackLoopCountForever, the track will loop forever.
      * Otherwise, legal values start with 1.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNumberOfLoops:")
@@ -361,6 +399,8 @@ public class AVMusicTrack extends NSObject {
      * Offset the track's start time to the specified time in beats
      * 
      * By default this value is zero.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOffsetTime:")
@@ -370,6 +410,8 @@ public class AVMusicTrack extends NSObject {
      * [@property] soloed
      * 
      * Whether the track is soloed
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSoloed:")
@@ -397,6 +439,8 @@ public class AVMusicTrack extends NSObject {
      * file if the sequence was created from a MIDI file.
      * 
      * This can only be retrieved from the tempo track.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("timeResolution")
@@ -425,6 +469,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * - All other event subclasses cannot be added to tempo or automation tracks.
      * 
+     * API-Since: 16.0
+     * 
      * @param event the event to be added
      * @param beat  the AVMusicTimeStamp
      */
@@ -438,6 +484,8 @@ public class AVMusicTrack extends NSObject {
      * Removes all events in the given beat range, erasing that portion of the AVMusicTrack.
      * 
      * All events outside of the specified range left unmodified.
+     * 
+     * API-Since: 16.0
      * 
      * @param range the range of beats. Must be a valid AVBeatRange.
      */
@@ -455,6 +503,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * Copying events from track to track follows the same type-exclusion rules as adding
      * events: The operation will generate an exception.
+     * 
+     * API-Since: 16.0
      * 
      * @param range           the range of beats. Must be a valid AVBeatRange.
      * @param sourceTrack     the AVMusicTrack to copy the events from.
@@ -474,6 +524,8 @@ public class AVMusicTrack extends NSObject {
      * All events originally at or past insertStartBeat will be shifted forward by the duration
      * of the copied-in range.
      * 
+     * API-Since: 16.0
+     * 
      * @param range           the range of beats. Must be a valid AVBeatRange.
      * @param sourceTrack     the AVMusicTrack to copy the events from.
      * @param insertStartBeat the start beat at which the copied events should be spliced in.
@@ -489,6 +541,8 @@ public class AVMusicTrack extends NSObject {
      * Removes all events in the given beat range, splicing out that portion of the AVMusicTrack.
      * 
      * All events past the end of the specified range will be shifted backward by the duration of the range.
+     * 
+     * API-Since: 16.0
      * 
      * @param range the range of beats. Must be a valid AVBeatRange.
      */
@@ -509,6 +563,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * The event objects returned via the block will not be the same instances
      * which were added to the AVMusicTrack, though their contents will be identical.
+     * 
+     * API-Since: 16.0
      * 
      * @param block the AVMusicEventEnumerationBlock to call for each event.
      */
@@ -532,6 +588,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * @param range      the range of beats. Must be a valid AVBeatRange.
      * @param beatAmount the amount in beats to shift each event. The amount may be positive or negative.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("moveEventsInRange:byAmount:")
@@ -547,6 +605,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * If a track already contains non-parameter events, setting this to YES will
      * generate an exception.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setUsesAutomatedParameters:")
@@ -562,6 +622,8 @@ public class AVMusicTrack extends NSObject {
      * 
      * If a track already contains non-parameter events, setting this to YES will
      * generate an exception.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("usesAutomatedParameters")

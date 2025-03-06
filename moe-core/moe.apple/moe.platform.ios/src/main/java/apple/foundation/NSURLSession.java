@@ -157,12 +157,17 @@ public class NSURLSession extends NSObject {
      * configuration options it is not necessary to specify a delegate.
      * If you do specify a delegate, the delegate will be retained until after
      * the delegate has been sent the URLSession:didBecomeInvalidWithError: message.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("sessionWithConfiguration:")
     public static native NSURLSession sessionWithConfiguration(@NotNull NSURLSessionConfiguration configuration);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("sessionWithConfiguration:delegate:delegateQueue:")
@@ -177,6 +182,8 @@ public class NSURLSession extends NSObject {
     /**
      * The shared session uses the currently set global NSURLCache,
      * NSHTTPCookieStorage and NSURLCredentialStorage objects.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -192,6 +199,9 @@ public class NSURLSession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("configuration")
@@ -199,6 +209,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * Creates a data task with the given request. The request may have a body stream.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -212,6 +224,8 @@ public class NSURLSession extends NSObject {
      * data. Errors will be returned in the NSURLErrorDomain,
      * see <Foundation/NSURLError.h>. The delegate, if any, will still be
      * called for authentication challenges.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -221,24 +235,35 @@ public class NSURLSession extends NSObject {
 
     /**
      * Creates a data task to retrieve the contents of the given URL.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("dataTaskWithURL:")
     public native NSURLSessionDataTask dataTaskWithURL(@NotNull NSURL url);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("dataTaskWithURL:completionHandler:")
     public native NSURLSessionDataTask dataTaskWithURLCompletionHandler(@NotNull NSURL url,
             @NotNull @ObjCBlock(name = "call_dataTaskWithURLCompletionHandler") Block_dataTaskWithURLCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSURLSessionDelegate delegate();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("delegateQueue")
@@ -246,6 +271,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * Creates a download task with the given request.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -257,6 +284,8 @@ public class NSURLSession extends NSObject {
      * completes, the NSURL will point to a file that must be read or
      * copied during the invocation of the completion routine. The file
      * will be removed automatically.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -267,12 +296,17 @@ public class NSURLSession extends NSObject {
     /**
      * Creates a download task with the resume data. If the download cannot be successfully resumed,
      * URLSession:task:didCompleteWithError: will be called.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("downloadTaskWithResumeData:")
     public native NSURLSessionDownloadTask downloadTaskWithResumeData(@NotNull NSData resumeData);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("downloadTaskWithResumeData:completionHandler:")
@@ -281,12 +315,17 @@ public class NSURLSession extends NSObject {
 
     /**
      * Creates a download task to download the contents of the given URL.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("downloadTaskWithURL:")
     public native NSURLSessionDownloadTask downloadTaskWithURL(@NotNull NSURL url);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("downloadTaskWithURL:completionHandler:")
@@ -300,11 +339,13 @@ public class NSURLSession extends NSObject {
      * has been issued.
      * 
      * -finishTasksAndInvalidate and -invalidateAndCancel do not
-     * have any effect on the shared session singleton.
+     * have any effect on the shared session instance.
      * 
      * When invalidating a background session, it is not safe to create another background
      * session with the same identifier until URLSession:didBecomeInvalidWithError: has
      * been issued.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("finishTasksAndInvalidate")
@@ -312,6 +353,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * flush storage to disk and clear transient network caches. Invokes completionHandler() on the delegate queue.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("flushWithCompletionHandler:")
@@ -330,6 +373,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * invokes completionHandler with outstanding data, upload and download tasks.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("getTasksWithCompletionHandler:")
@@ -352,6 +397,8 @@ public class NSURLSession extends NSObject {
      * -cancel to all outstanding tasks for this session. Note task
      * cancellation is subject to the state of the task, and some tasks may
      * have already have completed at the time they are sent -cancel.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidateAndCancel")
@@ -360,6 +407,8 @@ public class NSURLSession extends NSObject {
     /**
      * empty all cookies, cache and credential stores, removes disk files, issues -flushWithCompletionHandler:. Invokes
      * completionHandler() on the delegate queue.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("resetWithCompletionHandler:")
@@ -369,6 +418,8 @@ public class NSURLSession extends NSObject {
     /**
      * The sessionDescription property is available for the developer to
      * provide a descriptive label for the session.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -378,6 +429,8 @@ public class NSURLSession extends NSObject {
     /**
      * The sessionDescription property is available for the developer to
      * provide a descriptive label for the session.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSessionDescription:")
@@ -409,6 +462,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * Creates an upload task with the given request. The body of the request is provided from the bodyData.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -416,6 +471,9 @@ public class NSURLSession extends NSObject {
     public native NSURLSessionUploadTask uploadTaskWithRequestFromData(@NotNull NSURLRequest request,
             @NotNull NSData bodyData);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("uploadTaskWithRequest:fromData:completionHandler:")
@@ -426,6 +484,8 @@ public class NSURLSession extends NSObject {
     /**
      * Creates an upload task with the given request. The body of the request will be created from the file referenced
      * by fileURL
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -435,6 +495,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * upload convenience method.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -446,6 +508,8 @@ public class NSURLSession extends NSObject {
     /**
      * Creates an upload task with the given request. The previously set body stream of the request (if any) is ignored
      * and the URLSession:task:needNewBodyStream: delegate will be called when the body payload is required.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

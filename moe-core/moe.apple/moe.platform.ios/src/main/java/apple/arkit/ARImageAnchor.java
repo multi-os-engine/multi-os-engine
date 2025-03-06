@@ -158,6 +158,8 @@ public class ARImageAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * Reference to the detected image.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated

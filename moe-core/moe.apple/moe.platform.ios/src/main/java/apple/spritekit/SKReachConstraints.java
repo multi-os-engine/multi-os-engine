@@ -173,6 +173,9 @@ public class SKReachConstraints extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native SKReachConstraints initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithLowerAngleLimit:upperAngleLimit:")
     public native SKReachConstraints initWithLowerAngleLimitUpperAngleLimit(@NFloat double lowerAngleLimit,
@@ -180,6 +183,8 @@ public class SKReachConstraints extends NSObject implements NSSecureCoding {
 
     /**
      * Lower angle limit in radians
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("lowerAngleLimit")
@@ -188,6 +193,8 @@ public class SKReachConstraints extends NSObject implements NSSecureCoding {
 
     /**
      * Lower angle limit in radians
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLowerAngleLimit:")
@@ -195,6 +202,8 @@ public class SKReachConstraints extends NSObject implements NSSecureCoding {
 
     /**
      * Upper angle limit in radians
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUpperAngleLimit:")
@@ -202,6 +211,8 @@ public class SKReachConstraints extends NSObject implements NSSecureCoding {
 
     /**
      * Upper angle limit in radians
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("upperAngleLimit")

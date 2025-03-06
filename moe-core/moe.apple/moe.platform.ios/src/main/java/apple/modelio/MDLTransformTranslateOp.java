@@ -60,6 +60,9 @@ public class MDLTransformTranslateOp extends NSObject implements MDLTransformOp 
     @Selector("allocWithZone:")
     public static native MDLTransformTranslateOp allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("animatedValue")

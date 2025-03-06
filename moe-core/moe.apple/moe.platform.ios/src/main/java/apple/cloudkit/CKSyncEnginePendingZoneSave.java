@@ -99,6 +99,9 @@ public class CKSyncEnginePendingZoneSave extends CKSyncEnginePendingDatabaseChan
     @Selector("init")
     public native CKSyncEnginePendingZoneSave init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithZone:")
     public native CKSyncEnginePendingZoneSave initWithZone(@NotNull CKRecordZone zone);
@@ -156,6 +159,9 @@ public class CKSyncEnginePendingZoneSave extends CKSyncEnginePendingDatabaseChan
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("zone")
     @NotNull

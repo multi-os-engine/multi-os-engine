@@ -50,6 +50,9 @@ public class INAirportGate extends NSObject implements NSCopying, NSSecureCoding
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("airport")
@@ -109,6 +112,9 @@ public class INAirportGate extends NSObject implements NSCopying, NSSecureCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("gate")
@@ -123,6 +129,9 @@ public class INAirportGate extends NSObject implements NSCopying, NSSecureCoding
     @Selector("init")
     public native INAirportGate init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithAirport:terminal:gate:")
     public native INAirportGate initWithAirportTerminalGate(@NotNull INAirport airport, @Nullable String terminal,
@@ -185,6 +194,9 @@ public class INAirportGate extends NSObject implements NSCopying, NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("terminal")

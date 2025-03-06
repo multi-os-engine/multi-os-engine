@@ -60,6 +60,9 @@ public class CSUserQuery extends CSSearchQuery {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -96,6 +99,8 @@ public class CSUserQuery extends CSSearchQuery {
     /**
      * The query will update the count before each foundSuggestionsHandler invocation to reflect
      * the number of suggestions found so far; if foundSuggestionsHandler is nil then the count will be zero.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("foundSuggestionCount")
@@ -106,6 +111,8 @@ public class CSUserQuery extends CSSearchQuery {
      * The foundSuggestionsHandler may be invoked additional times as new suggestions are generated,
      * but the value will always be a complete, ordered list. The query serializes all the foundSuggestionsHandler
      * invocations. If no handler is set, suggestions will not be generated.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -129,6 +136,7 @@ public class CSUserQuery extends CSSearchQuery {
     @Selector("init")
     public native CSUserQuery init();
 
+    @Deprecated
     @Generated
     @Selector("initWithQueryString:attributes:")
     public native CSUserQuery initWithQueryStringAttributes(@NotNull String queryString,
@@ -139,6 +147,9 @@ public class CSUserQuery extends CSSearchQuery {
     public native CSUserQuery initWithQueryStringQueryContext(@NotNull String queryString,
             @Nullable CSSearchQueryContext queryContext);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithUserQueryString:userQueryContext:")
     public native CSUserQuery initWithUserQueryStringUserQueryContext(@Nullable String userQueryString,
@@ -183,6 +194,8 @@ public class CSUserQuery extends CSSearchQuery {
      * The foundSuggestionsHandler may be invoked additional times as new suggestions are generated,
      * but the value will always be a complete, ordered list. The query serializes all the foundSuggestionsHandler
      * invocations. If no handler is set, suggestions will not be generated.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setFoundSuggestionsHandler:")
@@ -200,6 +213,9 @@ public class CSUserQuery extends CSSearchQuery {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("start")
     public native void start();
@@ -217,4 +233,34 @@ public class CSUserQuery extends CSSearchQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prepare")
+    public static native void prepare();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prepareProtectionClasses:")
+    public static native void prepareProtectionClasses(@NotNull NSArray<String> protectionClasses);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("userEngagedWithItem:visibleItems:userInteractionType:")
+    public native void userEngagedWithItemVisibleItemsUserInteractionType(@NotNull CSSearchableItem item,
+            @NotNull NSArray<? extends CSSearchableItem> visibleItems, @NInt long userInteractionType);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("userEngagedWithSuggestion:visibleSuggestions:userInteractionType:")
+    public native void userEngagedWithSuggestionVisibleSuggestionsUserInteractionType(@NotNull CSSuggestion suggestion,
+            @NotNull NSArray<? extends CSSuggestion> visibleSuggestions, @NInt long userInteractionType);
 }

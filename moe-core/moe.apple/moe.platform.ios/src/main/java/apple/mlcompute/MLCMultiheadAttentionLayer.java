@@ -38,8 +38,7 @@ import org.jetbrains.annotations.Nullable;
  * For details refer to: https://pytorch.org/docs/stable/nn.html#multiheadattention
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -74,7 +73,11 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * [@property] attentionBiases
      * 
      * The biases added to key and value
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("attentionBiases")
@@ -88,7 +91,11 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * [@property] biases
      * 
      * The biases of query, key, value and output projections
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biases")
@@ -98,7 +105,11 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * [@property] biasesParameters
      * 
      * The biases tensor parameters used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biasesParameters")
@@ -137,7 +148,11 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * [@property] descriptor
      * 
      * The multi-head attention descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -181,7 +196,11 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * @param biases          Optional, biases corresponding to query, key, value and output projections for all heads
      * @param attentionBiases Optional, An array of biases added to the key and value respectively
      * @return A new MultiheadAttention layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:weights:biases:attentionBiases:")
     public static native MLCMultiheadAttentionLayer layerWithDescriptorWeightsBiasesAttentionBiases(
@@ -209,6 +228,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -222,7 +242,11 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * [@property] weights
      * 
      * The weights of query, key, value and output projections
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weights")
@@ -232,7 +256,11 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * [@property] weightsParameters
      * 
      * The weights tensor parameters used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weightsParameters")

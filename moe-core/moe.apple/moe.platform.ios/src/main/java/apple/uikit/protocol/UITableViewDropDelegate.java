@@ -27,6 +27,8 @@ public interface UITableViewDropDelegate {
     /**
      * If NO is returned no further delegate methods will be called for this drop session.
      * If not implemented, a default value of YES is assumed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -39,6 +41,8 @@ public interface UITableViewDropDelegate {
     /**
      * Allows customization of the preview used when dropping to a newly inserted row.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -51,6 +55,8 @@ public interface UITableViewDropDelegate {
 
     /**
      * Called when the drop session completed, regardless of outcome. Useful for performing any cleanup.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -62,6 +68,8 @@ public interface UITableViewDropDelegate {
 
     /**
      * Called when the drop session begins tracking in the table view's coordinate space.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -73,6 +81,8 @@ public interface UITableViewDropDelegate {
 
     /**
      * Called when the drop session is no longer being tracked inside the table view's coordinate space.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -91,6 +101,8 @@ public interface UITableViewDropDelegate {
      * no cells).
      * Note that in some cases your proposal may not be allowed and the system will enforce a different proposal.
      * You may perform your own hit testing via -[session locationInView:]
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -110,6 +122,8 @@ public interface UITableViewDropDelegate {
      * If your implementation of this method does nothing, default drop animations will be supplied and the table view
      * will
      * revert back to its initial state before the drop session entered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("tableView:performDropWithCoordinator:")

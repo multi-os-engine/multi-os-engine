@@ -76,6 +76,8 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
 
     /**
      * Used to either ask for user interaction in a request or to fail a request.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("cancelRequestWithError:")
@@ -97,6 +99,8 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
      * @param updatedCredential contains the account username and new password.
      * @param userInfo          For upgrades invoked within the extension's containing app, any
      *                          information the extension wants to pass back to the app.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("completeChangePasswordRequestWithUpdatedCredential:userInfo:")
@@ -108,6 +112,8 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
      * 
      * Once a Sign in with Apple upgrade is completed, the system will delete
      * the password-based credential from the Keychain, if it is saved there.
+     * 
+     * API-Since: 14.0
      * 
      * @param userInfo For upgrades invoked within the extension's containing app, any
      *                 information the extension wants to pass back to the app.
@@ -130,6 +136,8 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
      * Calling this method will cause the system Sign in with Apple upgrade sheet
      * to appear. If extension UI is showing when this method is called, the extension UI will be
      * dismissed before the sheet is presented.
+     * 
+     * API-Since: 14.0
      * 
      * @param state Can be specified to enhance security. State is returned in the ASAuthorizationAppleIDCredential.
      * @param nonce Can be specified to enhance security. The returned identityToken on the

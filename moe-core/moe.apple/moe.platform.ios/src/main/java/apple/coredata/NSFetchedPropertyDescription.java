@@ -164,6 +164,8 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     /**
      * As part of the predicate for a fetched property, you can use the two variables $FETCH_SOURCE (which is the
      * managed object fetching the property) and $FETCHED_PROPERTY (which is the NSFetchedPropertyDescription instance).
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -181,6 +183,8 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     /**
      * As part of the predicate for a fetched property, you can use the two variables $FETCH_SOURCE (which is the
      * managed object fetching the property) and $FETCHED_PROPERTY (which is the NSFetchedPropertyDescription instance).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setFetchRequest:")

@@ -69,6 +69,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * Supplementaries associated with the boundary edges of the section
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -96,6 +98,9 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("contentInsets")
     @ByValue
@@ -114,6 +119,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * decoration views anchored to the section's geometry (e.g. background decoration view)
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -146,6 +153,9 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("interGroupSpacing")
     @NFloat
@@ -167,6 +177,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * default is .none
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("orthogonalScrollingBehavior")
@@ -181,35 +193,50 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("sectionWithGroup:")
     public static native NSCollectionLayoutSection sectionWithGroup(@NotNull NSCollectionLayoutGroup group);
 
     /**
      * Supplementaries associated with the boundary edges of the section
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBoundarySupplementaryItems:")
     public native void setBoundarySupplementaryItems(
             @NotNull NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setContentInsets:")
     public native void setContentInsets(@ByValue NSDirectionalEdgeInsets value);
 
     /**
      * decoration views anchored to the section's geometry (e.g. background decoration view)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDecorationItems:")
     public native void setDecorationItems(@NotNull NSArray<? extends NSCollectionLayoutDecorationItem> value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setInterGroupSpacing:")
     public native void setInterGroupSpacing(@NFloat double value);
 
     /**
      * default is .none
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOrthogonalScrollingBehavior:")
@@ -232,6 +259,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * Called for each layout pass to allow modification of item properties right before they are displayed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setVisibleItemsInvalidationHandler:")
@@ -268,6 +297,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * Called for each layout pass to allow modification of item properties right before they are displayed.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

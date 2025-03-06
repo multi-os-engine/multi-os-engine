@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * A helper class to provide static utility methods for quick access to settings related to credential providers.
+ * 
  * API-Since: 17.0
  */
 @Generated
@@ -128,6 +130,8 @@ public class ASSettingsHelper extends NSObject {
 
     /**
      * Calling this method will open the Settings app and navigate directly to the AutoFill provider settings.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("openCredentialProviderAppSettingsWithCompletionHandler:")
@@ -143,6 +147,8 @@ public class ASSettingsHelper extends NSObject {
 
     /**
      * Calling this method will open the Settings app and navigate directly to the Verification Code provider settings.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("openVerificationCodeAppSettingsWithCompletionHandler:")
@@ -181,4 +187,24 @@ public class ASSettingsHelper extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Call this method from your containing app to request to turn on a contained Credential Provider Extension.
+     * If the extension is not currently enabled, a prompt will be shown to allow it to be turned on.
+     * The completion handler is called with YES or NO depending on whether the credential provider is enabled.
+     * You need to wait 10 seconds in order to make additional request to this API.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("requestToTurnOnCredentialProviderExtensionWithCompletionHandler:")
+    public static native void requestToTurnOnCredentialProviderExtensionWithCompletionHandler(
+            @ObjCBlock(name = "call_requestToTurnOnCredentialProviderExtensionWithCompletionHandler") @NotNull Block_requestToTurnOnCredentialProviderExtensionWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestToTurnOnCredentialProviderExtensionWithCompletionHandler {
+        @Generated
+        void call_requestToTurnOnCredentialProviderExtensionWithCompletionHandler(boolean appWasEnabledForAutoFill);
+    }
 }

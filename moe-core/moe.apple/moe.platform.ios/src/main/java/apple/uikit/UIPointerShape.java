@@ -69,6 +69,8 @@ public class UIPointerShape extends NSObject implements NSCopying {
      * 
      * @param length The beam's length. Limited to the region's width or height, depending on the beam's axis.
      * @param axis   The axis along which to draw the beam. Axis must be either UIAxisVertical or UIAxisHorizontal.
+     * 
+     *               API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -163,6 +165,8 @@ public class UIPointerShape extends NSObject implements NSCopying {
      * UIBezierPath describing the pointer's shape. If used alongside a content effect, the shape must be
      * in the effect's preview's container view's coordinate space. When used as a standalone shape,
      * The path's bounds' origin corresponds to the pointer's physical location.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("shapeWithPath:")
@@ -176,6 +180,8 @@ public class UIPointerShape extends NSObject implements NSCopying {
      *             preview's container view's coordinate space. Otherwise, it is centered about the pointer's current
      *             location
      *             and the rect's origin is interpreted as an offset.
+     * 
+     *             API-Since: 13.4
      */
     @Generated
     @Selector("shapeWithRoundedRect:")
@@ -189,6 +195,8 @@ public class UIPointerShape extends NSObject implements NSCopying {
      *                     the effect's preview's container view's coordinate space. Otherwise, it is centered about the
      *                     pointer's current location and the rect's origin is interpreted as an offset.
      * @param cornerRadius Corner radius to apply to the pointer.
+     * 
+     *                     API-Since: 13.4
      */
     @Generated
     @Selector("shapeWithRoundedRect:cornerRadius:")

@@ -170,28 +170,46 @@ public class MTLBufferLayoutDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLBufferLayoutDescriptor init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setStepFunction:")
     public native void setStepFunction(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setStepRate:")
     public native void setStepRate(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setStride:")
     public native void setStride(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("stepFunction")
     @NUInt
     public native long stepFunction();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("stepRate")
     @NUInt
     public native long stepRate();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("stride")
     @NUInt

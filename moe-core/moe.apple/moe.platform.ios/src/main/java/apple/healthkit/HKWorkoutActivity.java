@@ -57,6 +57,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * [@property] UUID
      * 
      * A unique identifier of the activity in the HealthKit database.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -134,6 +136,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * The duration is derived from the start and end dates of the activity and takes
      * into account periods that the activity was paused. Periods that the activity was
      * paused are based off of the workoutEvents property of the parent workout object.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("duration")
@@ -145,6 +149,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * The point in time when the workout activity was ended.
      * 
      * This value is nil when a workout activity is in progress.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -169,6 +175,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * @param startDate            The point in time when the workout activity was started.
      * @param endDate              The point in time when the workout activity was ended.
      * @param metadata             Metadata for the workout activity. (Optional)
+     * 
+     *                             API-Since: 16.0
      */
     @Generated
     @Selector("initWithWorkoutConfiguration:startDate:endDate:metadata:")
@@ -205,6 +213,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * 
      * Keys must be NSString and values must be either NSString, NSNumber, NSDate, or
      * HKQuantity. See HKMetadata.h for potential metadata keys and values.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -232,6 +242,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * [@property] startDate
      * 
      * The point in time when the workout activity was started.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -246,6 +258,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * the given type then nil is returned.
      * 
      * @param quantityType The quantity type to gather statistics about.
+     * 
+     *                     API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -265,6 +279,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * [@property] workoutConfiguration
      * 
      * The configuration object describing the workout activity.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -280,6 +296,8 @@ public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCop
      * of the workout events that take place between the start date and end date of the
      * activity. This includes any event that overlaps the activity, even partially.
      * Consequently, some events may be included in more than one activity.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

@@ -86,6 +86,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
 
     /**
      * The default for colorProcessingMode is MTLFXSpatialScalerColorProcessingMode_Perceptual
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("colorProcessingMode")
@@ -95,6 +97,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     /**
      * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
      * scaler.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("colorTextureFormat")
@@ -118,11 +122,17 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     @Selector("init")
     public native MTLFXSpatialScalerDescriptor init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputHeight")
     @NUInt
     public native long inputHeight();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputWidth")
     @NUInt
@@ -158,6 +168,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     /**
      * The following method is used to instantiate the effect encoder for a given
      * Metal device.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -166,16 +178,25 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native MTLFXSpatialScaler newSpatialScalerWithDevice(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputHeight")
     @NUInt
     public native long outputHeight();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputTextureFormat")
     @NUInt
     public native long outputTextureFormat();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputWidth")
     @NUInt
@@ -191,6 +212,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
 
     /**
      * The default for colorProcessingMode is MTLFXSpatialScalerColorProcessingMode_Perceptual
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setColorProcessingMode:")
@@ -199,27 +222,44 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     /**
      * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
      * scaler.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setColorTextureFormat:")
     public native void setColorTextureFormat(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setInputHeight:")
     public native void setInputHeight(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setInputWidth:")
     public native void setInputWidth(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOutputHeight:")
     public native void setOutputHeight(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOutputTextureFormat:")
     public native void setOutputTextureFormat(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOutputWidth:")
     public native void setOutputWidth(@NUInt long value);
@@ -234,6 +274,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
 
     /**
      * Class method for determining support
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("supportsDevice:")

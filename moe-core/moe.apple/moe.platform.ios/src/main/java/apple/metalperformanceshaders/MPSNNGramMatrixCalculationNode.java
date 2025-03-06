@@ -63,6 +63,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * [@property] alpha
      * 
      * Scaling factor for the output. Default: 1.0f.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("alpha")
@@ -115,6 +117,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSource:")
@@ -126,6 +130,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @param alpha      Scaling factor for the output.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSource:alpha:")
@@ -163,6 +169,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSource:")
@@ -174,6 +182,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @param alpha      Scaling factor for the output.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSource:alpha:")
@@ -185,6 +195,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * 
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
      * Default value: nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -205,6 +217,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * 
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
      * Default value: nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPropertyCallBack:")

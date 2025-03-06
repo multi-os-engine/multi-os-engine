@@ -168,6 +168,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     /**
      * Method is called when the RPBroadcastController finishBroadcast method is called from the broadcasting
      * application.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("broadcastFinished")
@@ -176,6 +178,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     /**
      * Method is called when the RPBroadcastController pauseBroadcast method is called from the broadcasting
      * application.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("broadcastPaused")
@@ -184,6 +188,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     /**
      * Method is called when the RPBroadcastController resumeBroadcast method is called from the broadcasting
      * application.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("broadcastResumed")
@@ -194,6 +200,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
      * application.
      * 
      * @param setupInfo Dictionary that can be supplied by the UI extension to the sample handler.
+     * 
+     *                  API-Since: 10.0
      */
     @Generated
     @Selector("broadcastStartedWithSetupInfo:")
@@ -205,6 +213,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
      * 
      * @param error NSError object that will be passed back to the broadcasting app through
      *              RPBroadcastControllerDelegate's broadcastController:didFinishWithError: method.
+     * 
+     *              API-Since: 10.0
      */
     @Generated
     @Selector("finishBroadcastWithError:")
@@ -220,6 +230,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
      * 
      * @param sampleBuffer     CMSampleBuffer object which contains either video or audio data.
      * @param sampleBufferType Determine's the type of the sample buffer defined by the RPSampleBufferType enum.
+     * 
+     *                         API-Since: 10.0
      */
     @Generated
     @Selector("processSampleBuffer:withType:")

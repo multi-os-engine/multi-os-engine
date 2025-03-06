@@ -466,7 +466,11 @@ public class AVCaptureConnection extends NSObject {
      * 
      * This property is only applicable to AVCaptureConnection instances involving video. if -isVideoMirroringSupported
      * returns YES, videoMirrored may be set to flip the video about its vertical axis and produce a mirror-image
-     * effect.
+     * effect. This property may not be set unless -isVideoMirroringSupported returns YES, otherwise a
+     * NSInvalidArgumentException is thrown. This property may not be set if -automaticallyAdjustsVideoMirroring returns
+     * YES, otherwise an NSInvalidArgumentException is thrown.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isVideoMirrored")
@@ -479,7 +483,11 @@ public class AVCaptureConnection extends NSObject {
      * 
      * This property is only applicable to AVCaptureConnection instances involving video. if -isVideoMirroringSupported
      * returns YES, videoMirrored may be set to flip the video about its vertical axis and produce a mirror-image
-     * effect.
+     * effect. This property may not be set unless -isVideoMirroringSupported returns YES, otherwise a
+     * NSInvalidArgumentException is thrown. This property may not be set if -automaticallyAdjustsVideoMirroring returns
+     * YES, otherwise an NSInvalidArgumentException is thrown.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVideoMirrored:")
@@ -493,6 +501,8 @@ public class AVCaptureConnection extends NSObject {
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * videoMirrored property may only be set if
      * -isVideoMirroringSupported returns YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isVideoMirroringSupported")
@@ -710,7 +720,8 @@ public class AVCaptureConnection extends NSObject {
      * 
      * Indicates whether the video flowing through the connection should be rotated to a given orientation.
      * 
-     * This property is deprecated. Use -videoRotationAngle instead.
+     * This property is deprecated. Use -videoRotationAngle instead. This property may only be set if
+     * -isVideoOrientationSupported returns YES, otherwise an NSInvalidArgumentException is thrown.
      * 
      * API-Since: 4.0
      * Deprecated-Since: 17.0
@@ -811,7 +822,8 @@ public class AVCaptureConnection extends NSObject {
      * 
      * Indicates whether the video flowing through the connection should be rotated to a given orientation.
      * 
-     * This property is deprecated. Use -videoRotationAngle instead.
+     * This property is deprecated. Use -videoRotationAngle instead. This property may only be set if
+     * -isVideoOrientationSupported returns YES, otherwise an NSInvalidArgumentException is thrown.
      * 
      * API-Since: 4.0
      * Deprecated-Since: 17.0
@@ -942,6 +954,15 @@ public class AVCaptureConnection extends NSObject {
      * rotation angle for an output that does physically rotate buffers requires a lengthy configuration of the capture
      * render pipeline and should be done before calling -[AVCaptureSession startRunning].
      * 
+     * Starting with the Spring 2024 iPad line, the default value of videoRotationAngle is 180 degrees for video data on
+     * Front Camera as compared to 0 degrees on previous devices. So clients using AVCaptureVideoDataOutput and
+     * AVCaptureDepthDataOutput should set videoRotationAngle to 0 to avoid the physical buffer rotation described
+     * above. And clients rotating video data by themselves must account for the default value of videoRotationAngle
+     * when applying angles (videoRotationAngleForHorizonLevelPreview, videoRotationAngleForHorizonLevelCapture) from
+     * AVCaptureDeviceRotationCoordinator. Note that this change in default value is currently limited to these iPads,
+     * however it is recommended that clients rotating video data themselves incorporate the default rotation value into
+     * their workflows for all devices.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -967,6 +988,15 @@ public class AVCaptureConnection extends NSObject {
      * AVCaptureVideoDataOutput and AVCaptureDepthDataOutput do output physically rotated video buffers. Setting a video
      * rotation angle for an output that does physically rotate buffers requires a lengthy configuration of the capture
      * render pipeline and should be done before calling -[AVCaptureSession startRunning].
+     * 
+     * Starting with the Spring 2024 iPad line, the default value of videoRotationAngle is 180 degrees for video data on
+     * Front Camera as compared to 0 degrees on previous devices. So clients using AVCaptureVideoDataOutput and
+     * AVCaptureDepthDataOutput should set videoRotationAngle to 0 to avoid the physical buffer rotation described
+     * above. And clients rotating video data by themselves must account for the default value of videoRotationAngle
+     * when applying angles (videoRotationAngleForHorizonLevelPreview, videoRotationAngleForHorizonLevelCapture) from
+     * AVCaptureDeviceRotationCoordinator. Note that this change in default value is currently limited to these iPads,
+     * however it is recommended that clients rotating video data themselves incorporate the default rotation value into
+     * their workflows for all devices.
      * 
      * API-Since: 17.0
      */

@@ -36,6 +36,8 @@ import org.jetbrains.annotations.NotNull;
 public interface SFSpeechRecognizerDelegate {
     /**
      * Called when the availability of the given recognizer changes
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

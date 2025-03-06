@@ -120,6 +120,8 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
      * 
      * Initializer for an AVCaptureEventInteraction.
      * 
+     * API-Since: 17.2
+     * 
      * @param handler
      *                An event handler called when either the primary or secondary events are triggered.
      */
@@ -140,6 +142,8 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
      * [@returns] An AVCaptureEventInteraction.
      * 
      * Initializer for an AVCaptureEventInteraction.
+     * 
+     * API-Since: 17.2
      * 
      * @param primaryHandler
      *                         An event handler called when a primary capture event is triggered.
@@ -186,6 +190,8 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
      * 
      * Set this value to NO when your application cannot or will not respond to the action callbacks to avoid
      * non-interactive buttons or UI elements.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("isEnabled")
@@ -220,6 +226,8 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
      * 
      * Set this value to NO when your application cannot or will not respond to the action callbacks to avoid
      * non-interactive buttons or UI elements.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("setEnabled:")

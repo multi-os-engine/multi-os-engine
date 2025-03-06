@@ -161,11 +161,17 @@ public class MTLVertexBufferLayoutDescriptorArray extends NSObject {
     @Selector("init")
     public native MTLVertexBufferLayoutDescriptorArray init();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLVertexBufferLayoutDescriptor objectAtIndexedSubscript(@NUInt long index);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Nullable MTLVertexBufferLayoutDescriptor bufferDesc,

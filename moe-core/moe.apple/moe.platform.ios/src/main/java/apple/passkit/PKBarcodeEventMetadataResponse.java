@@ -98,6 +98,9 @@ public class PKBarcodeEventMetadataResponse extends NSObject {
     @Selector("init")
     public native PKBarcodeEventMetadataResponse init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithPaymentInformation:")
     public native PKBarcodeEventMetadataResponse initWithPaymentInformation(@NotNull NSData paymentInformation);
@@ -129,6 +132,9 @@ public class PKBarcodeEventMetadataResponse extends NSObject {
     @Selector("new")
     public static native PKBarcodeEventMetadataResponse new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("paymentInformation")
@@ -142,6 +148,9 @@ public class PKBarcodeEventMetadataResponse extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setPaymentInformation:")
     public native void setPaymentInformation(@NotNull NSData value);

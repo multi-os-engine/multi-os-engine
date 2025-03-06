@@ -113,6 +113,8 @@ public class AVMIDIPitchBendEvent extends AVMIDIChannelEvent {
      *                The MIDI channel for the message. Range: 0-15.
      * @param value
      *                The pitch bend value. Range: 0-16383 (midpoint 8192).
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("initWithChannel:value:")
@@ -156,6 +158,8 @@ public class AVMIDIPitchBendEvent extends AVMIDIChannelEvent {
     /**
      * [@property] value
      * The value of the pitch bend event. Range: 0-16383 (midpoint 8192).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setValue:")
@@ -172,6 +176,8 @@ public class AVMIDIPitchBendEvent extends AVMIDIChannelEvent {
     /**
      * [@property] value
      * The value of the pitch bend event. Range: 0-16383 (midpoint 8192).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("value")

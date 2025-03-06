@@ -52,6 +52,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * accelerationConstraint
      * 
      * Creates and returns a SCNAccelerationConstraint object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("accelerationConstraint")
@@ -101,6 +103,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * 
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
      * fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("damping")
@@ -115,6 +119,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * [@property] decelerationDistance
      * 
      * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("decelerationDistance")
@@ -166,6 +172,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
      * 
      * The maximum linear acceleration is in m.s^-2
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumLinearAcceleration")
@@ -178,6 +186,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
      * 
      * The maximum linear velocity is in m.s
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumLinearVelocity")
@@ -202,6 +212,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * 
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
      * fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDamping:")
@@ -211,6 +223,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * [@property] decelerationDistance
      * 
      * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDecelerationDistance:")
@@ -222,6 +236,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
      * 
      * The maximum linear acceleration is in m.s^-2
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumLinearAcceleration:")
@@ -233,6 +249,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
      * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
      * 
      * The maximum linear velocity is in m.s
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumLinearVelocity:")

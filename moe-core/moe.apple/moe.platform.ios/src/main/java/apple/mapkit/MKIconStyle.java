@@ -61,6 +61,9 @@ public class MKIconStyle extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("backgroundColor")
@@ -100,6 +103,9 @@ public class MKIconStyle extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("image")

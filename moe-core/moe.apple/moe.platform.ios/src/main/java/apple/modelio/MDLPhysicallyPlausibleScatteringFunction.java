@@ -159,6 +159,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * shape of specular highlight
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -167,6 +169,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * shape of specular highlight
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -175,6 +179,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * like clear acrylic on a car
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -183,6 +189,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * 0 = satin, 1 = glossy
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -195,6 +203,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * 0 = dielectric, 1 = metallic
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -203,6 +213,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * diffuse and specular response
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -211,6 +223,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * like velvet
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -219,6 +233,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * bias towards surface color
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -227,6 +243,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * specular value
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -235,6 +253,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * bias towards surface color
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -243,6 +263,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * diffuse shape
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -251,6 +273,8 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     /**
      * currently 1
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("version")

@@ -393,8 +393,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * If this property is set to YES then all network traffic is routed through the tunnel, with some exclusions.
      * Several of the exclusions
-     * can be controlled with the excludeLocalNetworks, excludeCellularServices, and excludeAPNs properties. See the
-     * documentation for those properties.
+     * can be controlled with the excludeLocalNetworks, excludeCellularServices, excludeAPNs and
+     * excludeDeviceCommunication properties. See the documentation for those properties.
      * The following traffic is always excluded from the tunnel:
      * - Traffic necessary for connecting and maintaining the device's network connection, such as DHCP.
      * - Traffic necessary for connecting to captive networks.
@@ -415,8 +415,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * If this property is set to YES then all network traffic is routed through the tunnel, with some exclusions.
      * Several of the exclusions
-     * can be controlled with the excludeLocalNetworks, excludeCellularServices, and excludeAPNs properties. See the
-     * documentation for those properties.
+     * can be controlled with the excludeLocalNetworks, excludeCellularServices, excludeAPNs and
+     * excludeDeviceCommunication properties. See the documentation for those properties.
      * The following traffic is always excluded from the tunnel:
      * - Traffic necessary for connecting and maintaining the device's network connection, such as DHCP.
      * - Traffic necessary for connecting to captive networks.
@@ -542,4 +542,61 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] excludeDeviceCommunication
+     * 
+     * If includeAllNetworks is set to YES and this property is set to YES, then network traffic used for communicating
+     * with devices connected via USB or Wi-Fi is excluded
+     * from the tunnel. For example, Xcode uses a network tunnel to communicate with connected development devices like
+     * iPhone, iPad and TV. The default value of this
+     * property is YES.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("excludeDeviceCommunication")
+    public native boolean excludeDeviceCommunication();
+
+    /**
+     * [@property] excludeDeviceCommunication
+     * 
+     * If includeAllNetworks is set to YES and this property is set to YES, then network traffic used for communicating
+     * with devices connected via USB or Wi-Fi is excluded
+     * from the tunnel. For example, Xcode uses a network tunnel to communicate with connected development devices like
+     * iPhone, iPad and TV. The default value of this
+     * property is YES.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setExcludeDeviceCommunication:")
+    public native void setExcludeDeviceCommunication(boolean value);
+
+    /**
+     * [@property] sliceUUID
+     * 
+     * Identification string of the associated Cellular slice. If present, VPN tunnel will be scoped to the associated
+     * Cellular slice whenever slice is active.
+     * Otherwise, VPN tunnel will fallback onto the primary interface.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSliceUUID:")
+    public native void setSliceUUID(@Nullable String value);
+
+    /**
+     * [@property] sliceUUID
+     * 
+     * Identification string of the associated Cellular slice. If present, VPN tunnel will be scoped to the associated
+     * Cellular slice whenever slice is active.
+     * Otherwise, VPN tunnel will fallback onto the primary interface.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("sliceUUID")
+    @Nullable
+    public native String sliceUUID();
 }

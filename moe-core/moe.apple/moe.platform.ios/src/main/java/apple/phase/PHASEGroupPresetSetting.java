@@ -101,6 +101,8 @@ public class PHASEGroupPresetSetting extends NSObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gain")
@@ -110,6 +112,8 @@ public class PHASEGroupPresetSetting extends NSObject {
      * [@property] gainCurveType
      * 
      * The type of curve to apply to the gain as the preset changes to this new setting.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gainCurveType")
@@ -140,6 +144,8 @@ public class PHASEGroupPresetSetting extends NSObject {
      *                      The type of curve to apply to the gain as the preset changes to this new setting.
      * @param rateCurveType
      *                      The type of curve to apply to the rate as the preset changes to this new setting.
+     * 
+     *                      API-Since: 15.0
      */
     @Generated
     @Selector("initWithGain:rate:gainCurveType:rateCurveType:")
@@ -177,6 +183,8 @@ public class PHASEGroupPresetSetting extends NSObject {
      * [@property] rate
      * 
      * Linear rate scalar.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("rate")
@@ -186,6 +194,8 @@ public class PHASEGroupPresetSetting extends NSObject {
      * [@property] rateCurveType
      * 
      * The type of curve to apply to the rate as the preset changes to this new setting.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("rateCurveType")

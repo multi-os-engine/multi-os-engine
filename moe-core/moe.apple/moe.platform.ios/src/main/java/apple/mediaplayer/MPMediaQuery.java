@@ -71,6 +71,8 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Base queries which can be used directly or as the basis for custom queries.
      * The groupingType for these queries is preset to the appropriate type for the query.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -87,11 +89,17 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("allocWithZone:")
     public static native MPMediaQuery allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("artistsQuery")
     public static native MPMediaQuery artistsQuery();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("audiobooksQuery")
@@ -122,11 +130,17 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("compilationsQuery")
     public static native MPMediaQuery compilationsQuery();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("composersQuery")
@@ -140,6 +154,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("genresQuery")
@@ -177,11 +194,17 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("new")
     public static native MPMediaQuery new_objc();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("playlistsQuery")
     public static native MPMediaQuery playlistsQuery();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("podcastsQuery")
@@ -199,6 +222,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("songsQuery")
@@ -217,6 +243,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("addFilterPredicate:")
     public native void addFilterPredicate(@NotNull MPMediaPredicate predicate);
@@ -232,6 +261,8 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Returns an array of MPMediaItemCollections matching the query filter predicates. The collections are grouped by
      * the groupingType.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -249,6 +280,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("filterPredicates")
@@ -256,6 +290,8 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * The property used to group collections, defaults to MPMediaGroupingTitle.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("groupingType")
@@ -270,6 +306,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithCoder:")
     public native MPMediaQuery initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithFilterPredicates:")
     public native MPMediaQuery initWithFilterPredicates(@Nullable NSSet<? extends MPMediaPredicate> filterPredicates);
@@ -290,22 +329,32 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
      * Returns an array of MPMediaItems matching the query filter predicates.
      * If no items match this method returns an empty array, otherwise returns nil if an error prevents the items from
      * being fetched.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
     @Selector("items")
     public native NSArray<? extends MPMediaItem> items();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("removeFilterPredicate:")
     public native void removeFilterPredicate(@NotNull MPMediaPredicate predicate);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setFilterPredicates:")
     public native void setFilterPredicates(@Nullable NSSet<? extends MPMediaPredicate> value);
 
     /**
      * The property used to group collections, defaults to MPMediaGroupingTitle.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setGroupingType:")

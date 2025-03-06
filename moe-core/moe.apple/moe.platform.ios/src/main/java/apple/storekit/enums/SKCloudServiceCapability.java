@@ -21,25 +21,36 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * API-Since: 9.3
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use MusicSubscription from MusicKit
  */
+@Deprecated
 @Generated
 public final class SKCloudServiceCapability {
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscription from MusicKit
      */
-    @Generated @NUInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscription from MusicKit
      */
-    @Generated @NUInt public static final long MusicCatalogPlayback = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long MusicCatalogPlayback = 0x0000000000000001L;
     /**
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the canBecomeSubscriber property of MusicSubscription from MusicKit
      */
-    @Generated @NUInt public static final long MusicCatalogSubscriptionEligible = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long MusicCatalogSubscriptionEligible = 0x0000000000000002L;
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscription from MusicKit
      */
-    @Generated @NUInt public static final long AddToCloudMusicLibrary = 0x0000000000000100L;
+    @Deprecated @Generated @NUInt public static final long AddToCloudMusicLibrary = 0x0000000000000100L;
 
     @Generated
     private SKCloudServiceCapability() {

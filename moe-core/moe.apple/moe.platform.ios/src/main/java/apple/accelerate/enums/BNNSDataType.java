@@ -20,117 +20,124 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class BNNSDataType {
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeFloatBit = 0x00010000;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeFloat16 = 0x00010010;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeFloat32 = 0x00010020;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeIntBit = 0x00020000;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeInt8 = 0x00020008;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeInt16 = 0x00020010;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeInt32 = 0x00020020;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeIndexedBit = 0x00080000;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSDataTypeIndexed8 = 0x00080008;
-
     @Generated
     private BNNSDataType() {
     }
 
     /**
-     * API-Since: 11.0
+     * API-Since: 10.0
      */
-    @Generated public static final int BNNSDataTypeUIntBit = 0x00040000;
+    @Generated public static final int FloatBit = 0x00010000;
     /**
-     * API-Since: 11.0
+     * API-Since: 10.0
      */
-    @Generated public static final int BNNSDataTypeUInt8 = 0x00040008;
+    @Generated public static final int Float16 = 0x00010010;
     /**
-     * API-Since: 11.0
+     * API-Since: 10.0
      */
-    @Generated public static final int BNNSDataTypeUInt16 = 0x00040010;
-    /**
-     * API-Since: 11.0
-     */
-    @Generated public static final int BNNSDataTypeUInt32 = 0x00040020;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeInt1 = 0x00020001;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeInt2 = 0x00020002;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeInt4 = 0x00020004;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeUInt1 = 0x00040001;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeUInt2 = 0x00040002;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeUInt4 = 0x00040004;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeIndexed1 = 0x00080001;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeIndexed2 = 0x00080002;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeIndexed4 = 0x00080004;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeMiscellaneousBit = 0x00100000;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSDataTypeBoolean = 0x00100008;
+    @Generated public static final int Float32 = 0x00010020;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSDataTypeBFloat16 = 0x00018010;
+    @Generated public static final int BFloat16 = 0x00018010;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int IntBit = 0x00020000;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Int1 = 0x00020001;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Int2 = 0x00020002;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Int4 = 0x00020004;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int Int8 = 0x00020008;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int Int16 = 0x00020010;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int Int32 = 0x00020020;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSDataTypeInt64 = 0x00020040;
+    @Generated public static final int Int64 = 0x00020040;
+    /**
+     * API-Since: 11.0
+     */
+    @Generated public static final int UIntBit = 0x00040000;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int UInt1 = 0x00040001;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int UInt2 = 0x00040002;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int UInt3 = 0x00040003;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int UInt4 = 0x00040004;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int UInt6 = 0x00040006;
+    /**
+     * API-Since: 11.0
+     */
+    @Generated public static final int UInt8 = 0x00040008;
+    /**
+     * API-Since: 11.0
+     */
+    @Generated public static final int UInt16 = 0x00040010;
+    /**
+     * API-Since: 11.0
+     */
+    @Generated public static final int UInt32 = 0x00040020;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSDataTypeUInt64 = 0x00040040;
+    @Generated public static final int UInt64 = 0x00040040;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int IndexedBit = 0x00080000;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Indexed1 = 0x00080001;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Indexed2 = 0x00080002;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Indexed4 = 0x00080004;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int Indexed8 = 0x00080008;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int MiscellaneousBit = 0x00100000;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Boolean = 0x00100008;
 }

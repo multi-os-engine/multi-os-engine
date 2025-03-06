@@ -424,6 +424,12 @@ public class CAInterAppAudioSwitcherView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("contentWidth")
     @NFloat
@@ -443,14 +449,24 @@ public class CAInterAppAudioSwitcherView extends UIView {
 
     /**
      * Defaults to NO
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
      */
+    @Deprecated
     @Generated
     @Selector("isShowingAppNames")
     public native boolean isShowingAppNames();
 
     /**
      * Defaults to NO
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
      */
+    @Deprecated
     @Generated
     @Selector("setShowingAppNames:")
     public native void setShowingAppNames(boolean value);
@@ -458,7 +474,12 @@ public class CAInterAppAudioSwitcherView extends UIView {
     /**
      * Node apps should pass their output audio unit
      * Host apps should pass null
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
      */
+    @Deprecated
     @Generated
     @Selector("setOutputAudioUnit:")
     public native void setOutputAudioUnit(@Nullable AudioComponentInstance au);

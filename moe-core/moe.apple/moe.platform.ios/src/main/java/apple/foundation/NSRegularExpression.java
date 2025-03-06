@@ -114,6 +114,8 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     /**
      * This class method will produce a string by adding backslash escapes as necessary to the given string, to escape
      * any characters that would otherwise be treated as pattern metacharacters.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -123,6 +125,8 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     /**
      * This class method will produce a string by adding backslash escapes as necessary to the given string, to escape
      * any characters that would otherwise be treated as template metacharacters.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -165,6 +169,8 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
      * An instance of NSRegularExpression is created from a regular expression pattern and a set of options. If the
      * pattern is invalid, nil will be returned and an NSError will be returned by reference. The pattern syntax
      * currently supported is that specified by ICU.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -215,6 +221,8 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
      * NSTextCheckingTypeRegularExpression) in which the overall match range is given by the range property (equivalent
      * to rangeAtIndex:0) and any capture group ranges are given by rangeAtIndex: for indexes from 1 to
      * numberOfCaptureGroups. {NSNotFound, 0} is used if a particular capture group does not participate in the match.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("enumerateMatchesInString:options:range:usingBlock:")
@@ -222,6 +230,9 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
             @ByValue NSRange range,
             @NotNull @ObjCBlock(name = "call_enumerateMatchesInStringOptionsRangeUsingBlock") Block_enumerateMatchesInStringOptionsRangeUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("firstMatchInString:options:range:")
@@ -236,44 +247,68 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Selector("initWithCoder:")
     public native NSRegularExpression initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithPattern:options:error:")
     public native NSRegularExpression initWithPatternOptionsError(@NotNull String pattern, @NUInt long options,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("matchesInString:options:range:")
     public native NSArray<? extends NSTextCheckingResult> matchesInStringOptionsRange(@NotNull String string,
             @NUInt long options, @ByValue NSRange range);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("numberOfCaptureGroups")
     @NUInt
     public native long numberOfCaptureGroups();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("numberOfMatchesInString:options:range:")
     @NUInt
     public native long numberOfMatchesInStringOptionsRange(@NotNull String string, @NUInt long options,
             @ByValue NSRange range);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("options")
     @NUInt
     public native long options();
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("pattern")
     public native String pattern();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("rangeOfFirstMatchInString:options:range:")
     @ByValue
     public native NSRange rangeOfFirstMatchInStringOptionsRange(@NotNull String string, @NUInt long options,
             @ByValue NSRange range);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("replaceMatchesInString:options:range:withTemplate:")
     @NUInt
@@ -285,6 +320,8 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
      * for a single result, given the string from which the result was matched, an offset to be added to the location of
      * the result in the string (for example, in case modifications to the string moved the result since it was
      * matched), and a replacement template.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -298,6 +335,8 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
      * contents of the first capture group, and so on. Additional digits beyond the maximum required to represent the
      * number of capture groups will be treated as ordinary characters, as will a $ not followed by digits. Backslash
      * will escape both $ and itself.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated

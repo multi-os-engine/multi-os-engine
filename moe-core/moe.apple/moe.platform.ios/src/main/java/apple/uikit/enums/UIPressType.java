@@ -19,14 +19,38 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class UIPressType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long UpArrow = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long DownArrow = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long LeftArrow = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long RightArrow = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Select = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Menu = 0x0000000000000005L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long PlayPause = 0x0000000000000006L;
 
     @Generated

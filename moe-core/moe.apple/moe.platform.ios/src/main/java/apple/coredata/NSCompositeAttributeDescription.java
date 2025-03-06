@@ -92,6 +92,8 @@ public class NSCompositeAttributeDescription extends NSAttributeDescription {
     /**
      * Elements expects an Attribute or an Array of Attributes
      * Will throw if the new value is invalid (ie includes NSRelationshipDescription).
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("elements")
@@ -149,6 +151,8 @@ public class NSCompositeAttributeDescription extends NSAttributeDescription {
     /**
      * Elements expects an Attribute or an Array of Attributes
      * Will throw if the new value is invalid (ie includes NSRelationshipDescription).
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setElements:")

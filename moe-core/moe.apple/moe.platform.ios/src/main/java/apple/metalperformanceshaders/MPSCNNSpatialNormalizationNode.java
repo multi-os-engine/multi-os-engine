@@ -112,10 +112,16 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
     @Selector("init")
     public native MPSCNNSpatialNormalizationNode init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNSpatialNormalizationNode initWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:kernelSize:")
     public native MPSCNNSpatialNormalizationNode initWithSourceKernelSize(@NotNull MPSNNImageNode sourceNode,
@@ -138,11 +144,17 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("kernelHeight")
     @NUInt
     public native long kernelHeight();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("kernelWidth")
     @NUInt
@@ -162,6 +174,9 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
     @Selector("nodeWithSource:")
     public static native MPSCNNSpatialNormalizationNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:kernelSize:")
     public static native MPSCNNSpatialNormalizationNode nodeWithSourceKernelSize(@NotNull MPSNNImageNode sourceNode,
@@ -175,10 +190,16 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setKernelHeight:")
     public native void setKernelHeight(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setKernelWidth:")
     public native void setKernelWidth(@NUInt long value);

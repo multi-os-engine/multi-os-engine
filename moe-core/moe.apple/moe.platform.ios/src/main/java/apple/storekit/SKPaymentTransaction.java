@@ -45,7 +45,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use PurchaseResult from Product.purchase(confirmIn:options:)
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -177,7 +180,10 @@ public class SKPaymentTransaction extends NSObject {
      * Only set if state is SKPaymentTransactionFailed
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("error")
@@ -191,7 +197,10 @@ public class SKPaymentTransaction extends NSObject {
      * Only valid if state is SKPaymentTransactionStateRestored.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("originalTransaction")
@@ -199,7 +208,10 @@ public class SKPaymentTransaction extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("payment")
@@ -210,7 +222,10 @@ public class SKPaymentTransaction extends NSObject {
      * SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionDate")
@@ -221,7 +236,10 @@ public class SKPaymentTransaction extends NSObject {
      * SKPaymentTransactionStateRestored.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionIdentifier")
@@ -241,7 +259,10 @@ public class SKPaymentTransaction extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("transactionState")
     @NInt

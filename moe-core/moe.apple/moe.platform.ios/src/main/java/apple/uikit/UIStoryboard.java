@@ -151,6 +151,9 @@ public class UIStoryboard extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("storyboardWithName:bundle:")
@@ -170,11 +173,17 @@ public class UIStoryboard extends NSObject {
     @Selector("init")
     public native UIStoryboard init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("instantiateInitialViewController")
     public native UIViewController instantiateInitialViewController();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("instantiateViewControllerWithIdentifier:")

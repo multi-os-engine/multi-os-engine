@@ -3,8 +3,16 @@ package apple.matter.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
+ * ColorControl used to have HueMoveMode/SaturationMoveMode and HueStepMode/SaturationStepMode that had
+ * identical values. Those got replaced with MoveModeEnum and StepModeEnum respectively. We codegen
+ * HueMoveMode and HueStepMode as aliases of MoveModeEnum and StepModeEnum, but we need manual shims for
+ * SaturationMoveMode and SaturationStepMode.
+ * 
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: Please use MTRColorControlMoveMode
  */
+@Deprecated
 @Generated
 public final class MTRColorControlSaturationMoveMode {
     @Generated
@@ -13,14 +21,20 @@ public final class MTRColorControlSaturationMoveMode {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlMoveModeStop
      */
-    @Generated public static final byte Stop = 0;
+    @Deprecated @Generated public static final byte Stop = 0;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlMoveModeUp
      */
-    @Generated public static final byte Up = 1;
+    @Deprecated @Generated public static final byte Up = 1;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlMoveModeDown
      */
-    @Generated public static final byte Down = 3;
+    @Deprecated @Generated public static final byte Down = 3;
 }

@@ -183,11 +183,17 @@ public class UISearchContainerViewController extends UIViewController {
     public native UISearchContainerViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("initWithSearchController:")
     public native UISearchContainerViewController initWithSearchController(
             @NotNull UISearchController searchController);
 
+    /**
+     * API-Since: 9.1
+     */
     @NotNull
     @Generated
     @Selector("searchController")

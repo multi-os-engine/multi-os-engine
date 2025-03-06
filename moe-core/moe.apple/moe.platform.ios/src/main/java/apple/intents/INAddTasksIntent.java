@@ -153,6 +153,9 @@ public class INAddTasksIntent extends INIntent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("spatialEventTrigger")
@@ -172,16 +175,25 @@ public class INAddTasksIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("targetTaskList")
     public native INTaskList targetTaskList();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("taskTitles")
     public native NSArray<? extends INSpeakableString> taskTitles();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("temporalEventTrigger")

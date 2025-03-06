@@ -61,6 +61,9 @@ public class MTLFunctionStitchingInputNode extends NSObject implements MTLFuncti
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingInputNode allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("argumentIndex")
     @NUInt
@@ -115,6 +118,9 @@ public class MTLFunctionStitchingInputNode extends NSObject implements MTLFuncti
     @Selector("init")
     public native MTLFunctionStitchingInputNode init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithArgumentIndex:")
     public native MTLFunctionStitchingInputNode initWithArgumentIndex(@NUInt long argument);
@@ -154,6 +160,9 @@ public class MTLFunctionStitchingInputNode extends NSObject implements MTLFuncti
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setArgumentIndex:")
     public native void setArgumentIndex(@NUInt long value);

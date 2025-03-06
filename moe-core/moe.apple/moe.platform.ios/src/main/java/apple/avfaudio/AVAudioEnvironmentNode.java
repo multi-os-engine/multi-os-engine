@@ -95,6 +95,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * 
      * This information should be retrieved after a successful connection to the destination node
      * via the engine's connect method.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -143,6 +145,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * [@property] distanceAttenuationParameters
      * 
      * The distance attenuation parameters for the environment
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -154,6 +158,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native AVAudioEnvironmentNode init();
@@ -192,6 +199,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * yaw: 0.0
      * pitch: 0.0
      * roll: 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("listenerAngularOrientation")
@@ -209,6 +218,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * x: 0.0
      * y: 0.0
      * z: 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("listenerPosition")
@@ -225,6 +236,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * The default orientation is with the listener looking directly along the negative Z axis.
      * forward: (0, 0, -1)
      * up: (0, 1, 0)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("listenerVectorOrientation")
@@ -242,6 +255,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * Find an unused input bus
      * 
      * This will find and return the first input bus to which no other node is connected.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("nextAvailableInputBus")
@@ -284,6 +299,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * The mixer's output volume.
      * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("outputVolume")
@@ -328,6 +345,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * [@property] reverbParameters
      * 
      * The reverb parameters for the environment
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -346,6 +365,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * yaw: 0.0
      * pitch: 0.0
      * roll: 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setListenerAngularOrientation:")
@@ -362,6 +383,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * x: 0.0
      * y: 0.0
      * z: 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setListenerPosition:")
@@ -377,6 +400,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * The default orientation is with the listener looking directly along the negative Z axis.
      * forward: (0, 0, -1)
      * up: (0, 1, 0)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setListenerVectorOrientation:")
@@ -417,6 +442,8 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * The mixer's output volume.
      * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setOutputVolume:")
@@ -480,4 +507,28 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] listenerHeadTrackingEnabled
+     * 
+     * On capable devices, listener orientation will be automatically rotated based on user's head-orientation if
+     * enabled.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isListenerHeadTrackingEnabled")
+    public native boolean isListenerHeadTrackingEnabled();
+
+    /**
+     * [@property] listenerHeadTrackingEnabled
+     * 
+     * On capable devices, listener orientation will be automatically rotated based on user's head-orientation if
+     * enabled.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setListenerHeadTrackingEnabled:")
+    public native void setListenerHeadTrackingEnabled(boolean value);
 }

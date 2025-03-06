@@ -21,25 +21,36 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * API-Since: 9.3
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use MusicAuthorization.Status from MusicKit
  */
+@Deprecated
 @Generated
 public final class SKCloudServiceAuthorizationStatus {
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicAuthorization.Status from MusicKit
      */
-    @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicAuthorization.Status from MusicKit
      */
-    @Generated @NInt public static final long Denied = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Denied = 0x0000000000000001L;
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicAuthorization.Status from MusicKit
      */
-    @Generated @NInt public static final long Restricted = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Restricted = 0x0000000000000002L;
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicAuthorization.Status from MusicKit
      */
-    @Generated @NInt public static final long Authorized = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 
     @Generated
     private SKCloudServiceAuthorizationStatus() {

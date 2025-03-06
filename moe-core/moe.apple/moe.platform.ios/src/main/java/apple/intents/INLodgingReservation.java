@@ -121,6 +121,9 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
     @Selector("initWithCoder:")
     public native INLodgingReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:lodgingBusinessLocation:reservationDuration:numberOfAdults:numberOfChildren:")
     public native INLodgingReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsLodgingBusinessLocationReservationDurationNumberOfAdultsNumberOfChildren(
@@ -152,6 +155,9 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("lodgingBusinessLocation")
@@ -162,16 +168,25 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
     @Selector("new")
     public static native INLodgingReservation new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("numberOfAdults")
     public native NSNumber numberOfAdults();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("numberOfChildren")
     public native NSNumber numberOfChildren();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("reservationDuration")

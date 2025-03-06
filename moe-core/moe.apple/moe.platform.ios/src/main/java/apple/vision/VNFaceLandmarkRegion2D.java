@@ -143,6 +143,8 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
      * is owned by the target object and is guaranteed to exist as long as the VNFaceLandmarkRegion2D does.
      * 
      * @return the address of the array of pointCount points.
+     * 
+     *         API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -160,6 +162,8 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
      * @param imageSize The pixel dimensions of the image in which the landmark points are being presented.
      * 
      * @return the address of the array of pointCount points, or NULL if the conversion could not take place.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated

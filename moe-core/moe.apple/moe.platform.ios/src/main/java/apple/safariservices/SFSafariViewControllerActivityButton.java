@@ -111,6 +111,8 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
      * and present a UIViewController, just as if it was selected from the UIActivityViewController in Safari or
      * SFSafariViewController.
      * This extension must be part of your app or another app with the same Team ID.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -144,6 +146,8 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
      *                            JavaScript and present a view controller, as if it were selected from the
      *                            UIActivityViewController in Safari or SFSafariViewController.
      *                            This extension must be part of your app or another app with the same Team ID.
+     * 
+     *                            API-Since: 15.0
      */
     @Generated
     @Selector("initWithTemplateImage:extensionIdentifier:")
@@ -208,6 +212,8 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
      * SFSafariViewController's buttons,
      * and be close to a 1:1 aspect ratio. The button will inherit the tint color set by @link -[SFSafariViewController
      * preferredControlTintColor] @/link.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

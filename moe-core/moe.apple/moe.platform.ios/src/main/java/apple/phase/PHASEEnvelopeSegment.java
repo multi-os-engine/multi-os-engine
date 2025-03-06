@@ -93,6 +93,8 @@ public class PHASEEnvelopeSegment extends NSObject {
      * The curve type of the envelope segment.
      * 
      * The default value is PHASECurveTypeLinear.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("curveType")
@@ -157,6 +159,8 @@ public class PHASEEnvelopeSegment extends NSObject {
      * The curve type of the envelope segment.
      * 
      * The default value is PHASECurveTypeLinear.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCurveType:")

@@ -173,6 +173,9 @@ public class INPaymentRecord extends NSObject implements NSCopying, NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("currencyAmount")
@@ -182,6 +185,9 @@ public class INPaymentRecord extends NSObject implements NSCopying, NSSecureCodi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("feeAmount")
@@ -195,12 +201,18 @@ public class INPaymentRecord extends NSObject implements NSCopying, NSSecureCodi
     @Selector("initWithCoder:")
     public native INPaymentRecord initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithPayee:payer:currencyAmount:paymentMethod:note:status:")
     public native INPaymentRecord initWithPayeePayerCurrencyAmountPaymentMethodNoteStatus(@Nullable INPerson payee,
             @Nullable INPerson payer, @Nullable INCurrencyAmount currencyAmount,
             @Nullable INPaymentMethod paymentMethod, @Nullable String note, @NInt long status);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithPayee:payer:currencyAmount:paymentMethod:note:status:feeAmount:")
     public native INPaymentRecord initWithPayeePayerCurrencyAmountPaymentMethodNoteStatusFeeAmount(
@@ -208,26 +220,41 @@ public class INPaymentRecord extends NSObject implements NSCopying, NSSecureCodi
             @Nullable INPaymentMethod paymentMethod, @Nullable String note, @NInt long status,
             @Nullable INCurrencyAmount feeAmount);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("note")
     public native String note();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("payee")
     public native INPerson payee();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("payer")
     public native INPerson payer();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("paymentMethod")
     public native INPaymentMethod paymentMethod();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("status")
     @NInt

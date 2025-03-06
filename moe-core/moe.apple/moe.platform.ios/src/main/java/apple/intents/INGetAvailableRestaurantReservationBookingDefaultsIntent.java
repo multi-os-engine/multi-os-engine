@@ -173,6 +173,8 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
 
     /**
      * an optional restaurant that the extension may or may not use to tailor reservation defaults
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -181,6 +183,8 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
 
     /**
      * an optional restaurant that the extension may or may not use to tailor reservation defaults
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRestaurant:")

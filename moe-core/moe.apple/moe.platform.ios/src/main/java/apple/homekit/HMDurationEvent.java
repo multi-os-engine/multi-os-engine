@@ -106,6 +106,8 @@ public class HMDurationEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     /**
      * duration The duration of time in seconds.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("duration")
@@ -126,6 +128,8 @@ public class HMDurationEvent extends HMTimeEvent implements NSCopying, NSMutable
      * @param duration The duration of time in seconds.
      * 
      * @return Instance object representing the duration event.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDuration:")

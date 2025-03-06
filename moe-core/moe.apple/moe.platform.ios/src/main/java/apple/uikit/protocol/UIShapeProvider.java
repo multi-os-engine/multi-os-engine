@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIShapeProvider {
     /**
      * Resolves this shape in the provided `context`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("resolvedShapeInContext:")

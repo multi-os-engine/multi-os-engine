@@ -112,6 +112,8 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
      * @param handler The handler to be performed when springloading is activated.
      * @return An initialized springloaded interaction object or `nil` if the springloaded interaction could not be
      *         initialized.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithActivationHandler:")
@@ -136,6 +138,8 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
      * @param handler             The handler to be performed when springloading is activated.
      * @return An initialized springloaded interaction object or `nil` if the springloaded interaction could not be
      *         initialized.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithInteractionBehavior:interactionEffect:activationHandler:")
@@ -166,12 +170,18 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("interactionBehavior")
     @MappedReturn(ObjCObjectMapper.class)
     public native UISpringLoadedInteractionBehavior interactionBehavior();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("interactionEffect")

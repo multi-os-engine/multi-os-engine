@@ -181,6 +181,8 @@ public class HMHomeManager extends NSObject {
 
     /**
      * Delegate that receives updates on the collection of homes.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -194,12 +196,17 @@ public class HMHomeManager extends NSObject {
      * When a new home manager is created, this array is initialized as an empty array. It is
      * not guaranteed to be filled with the list of homes, represented as HMHome objects,
      * until the homeManagerDidUpdateHomes: delegate method has been invoked.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("homes")
     public native NSArray<? extends HMHome> homes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native HMHomeManager init();
@@ -233,6 +240,8 @@ public class HMHomeManager extends NSObject {
 
     /**
      * Delegate that receives updates on the collection of homes.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -240,6 +249,8 @@ public class HMHomeManager extends NSObject {
 
     /**
      * Delegate that receives updates on the collection of homes.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {

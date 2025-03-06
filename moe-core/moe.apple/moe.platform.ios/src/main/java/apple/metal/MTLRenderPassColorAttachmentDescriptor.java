@@ -163,6 +163,8 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
      * [@property] clearColor
      * 
      * The clear color to be used if the loadAction property is MTLLoadActionClear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("clearColor")
@@ -177,6 +179,8 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
      * [@property] clearColor
      * 
      * The clear color to be used if the loadAction property is MTLLoadActionClear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setClearColor:")

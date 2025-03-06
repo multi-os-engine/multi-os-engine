@@ -112,6 +112,8 @@ public class AVAudioUnitComponentManager extends NSObject {
      * This method provides a mechanism to search for AudioComponents using AudioComponentDescription
      * structure. The type, subtype and manufacturer fields are used to search for audio units. A
      * value of 0 for any of these fields is a wildcard and returns the first match found.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -126,6 +128,8 @@ public class AVAudioUnitComponentManager extends NSObject {
      * 
      * AudioComponent's information or tags can be used to build a search criteria.
      * For example, "typeName CONTAINS 'Effect'" or tags IN {'Sampler', 'MIDI'}"
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -140,6 +144,8 @@ public class AVAudioUnitComponentManager extends NSObject {
      * For each AudioComponent found by the manager, the block method will be called. If the return
      * value is YES then the AudioComponent is added to the resulting array else it will excluded.
      * This gives more control to the block provider to filter out the components returned.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -212,6 +218,8 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     /**
      * returns singleton instance of AVAudioUnitComponentManager
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -220,6 +228,8 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     /**
      * returns the localized standard system tags defined by the audio unit(s).
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -233,6 +243,8 @@ public class AVAudioUnitComponentManager extends NSObject {
     /**
      * returns all tags associated with the current user as well as all system tags defined by
      * the audio unit(s).
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

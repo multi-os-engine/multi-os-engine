@@ -492,6 +492,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * get/set visible UIBarButtonItem. default is nil. changes not animated. shown in order
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -560,6 +562,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * get/set visible UIBarButtonItem. default is nil. changes not animated. shown in order
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setItems:")
@@ -567,6 +571,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * will fade in or out or reorder and adjust spacing
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setItems:animated:")
@@ -588,6 +594,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
      * and behaves as described for the tintColor property added to UIView.
      * To tint the bar's background, please use -barTintColor.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -605,6 +613,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
      * and behaves as described for the tintColor property added to UIView.
      * To tint the bar's background, please use -barTintColor.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tintColor")

@@ -124,6 +124,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Creates a relevant shortcut for the given shortcut.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithShortcut:")
@@ -163,6 +165,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
      * has not previously performed.
      * 
      * @see INRelevanceProvider
+     * 
+     *      API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -184,6 +188,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
      * has not previously performed.
      * 
      * @see INRelevanceProvider
+     * 
+     *      API-Since: 12.0
      */
     @Generated
     @Selector("setRelevanceProviders:")
@@ -195,6 +201,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
      * Provides a hint to Siri about the expected user experience. The default is @c INRelevantShortcutRoleAction.
      * 
      * @see INRelevantShortcutRole
+     * 
+     *      API-Since: 12.0
      */
     @Generated
     @Selector("setShortcutRole:")
@@ -211,6 +219,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
      * In certain situations, it may be desirable to override this behavior and provide a custom template.
      * 
      * @see INDefaultCardTemplate
+     * 
+     *      API-Since: 12.0
      */
     @Generated
     @Selector("setWatchTemplate:")
@@ -220,6 +230,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
      * The shortcut that will be performed when this relevant shortcut is invoked.
      * 
      * @see INShortcut
+     * 
+     *      API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -232,6 +244,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
      * Provides a hint to Siri about the expected user experience. The default is @c INRelevantShortcutRoleAction.
      * 
      * @see INRelevantShortcutRole
+     * 
+     *      API-Since: 12.0
      */
     @Generated
     @Selector("shortcutRole")
@@ -264,6 +278,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
      * In certain situations, it may be desirable to override this behavior and provide a custom template.
      * 
      * @see INDefaultCardTemplate
+     * 
+     *      API-Since: 12.0
      */
     @Nullable
     @Generated

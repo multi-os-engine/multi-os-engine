@@ -102,12 +102,17 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
     @Selector("init")
     public native UICellAccessoryPopUpMenu init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UICellAccessoryPopUpMenu initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a new pop-up menu accessory using the provided menu.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithMenu:")
@@ -135,6 +140,9 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("menu")
@@ -155,6 +163,8 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
 
     /**
      * An optional handler to call when the selected element in the menu changes.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -171,6 +181,8 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
 
     /**
      * An optional handler to call when the selected element in the menu changes.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelectedElementDidChangeHandler:")

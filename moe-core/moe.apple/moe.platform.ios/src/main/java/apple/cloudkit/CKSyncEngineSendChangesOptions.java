@@ -111,6 +111,8 @@ public class CKSyncEngineSendChangesOptions extends NSObject implements NSCopyin
     /**
      * Initializes a set of options with the specific scope.
      * If no scope is provided, the default scope will include everything.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithScope:")
@@ -149,6 +151,8 @@ public class CKSyncEngineSendChangesOptions extends NSObject implements NSCopyin
      * You might set an operation group with a particular name in order to help you analyze telemetry in the CloudKit
      * Console.
      * If you don't provide an operation group, a default one will be created for you.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("operationGroup")
@@ -165,6 +169,8 @@ public class CKSyncEngineSendChangesOptions extends NSObject implements NSCopyin
 
     /**
      * The scope in which to send changes to the server.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("scope")
@@ -177,6 +183,8 @@ public class CKSyncEngineSendChangesOptions extends NSObject implements NSCopyin
      * You might set an operation group with a particular name in order to help you analyze telemetry in the CloudKit
      * Console.
      * If you don't provide an operation group, a default one will be created for you.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setOperationGroup:")
@@ -184,6 +192,8 @@ public class CKSyncEngineSendChangesOptions extends NSObject implements NSCopyin
 
     /**
      * The scope in which to send changes to the server.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setScope:")

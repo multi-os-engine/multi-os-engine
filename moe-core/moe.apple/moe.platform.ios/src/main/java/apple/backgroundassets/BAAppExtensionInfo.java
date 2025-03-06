@@ -153,6 +153,8 @@ public class BAAppExtensionInfo extends NSObject implements NSSecureCoding {
      * 
      * @return The result is `nil` if downloads are not restricted. It returns a valid number with the remaining
      *         available download size otherwise.
+     * 
+     *         API-Since: 16.1
      */
     @Generated
     @Selector("restrictedDownloadSizeRemaining")

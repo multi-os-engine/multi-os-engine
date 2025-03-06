@@ -107,6 +107,9 @@ public class PKFloatRange extends NSObject implements NSCopying {
     @Selector("init")
     public native PKFloatRange init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithLowerBound:upperBound:")
     public native PKFloatRange initWithLowerBoundUpperBound(@NFloat double lowerBound, @NFloat double upperBound);
@@ -133,6 +136,9 @@ public class PKFloatRange extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("lowerBound")
     @NFloat
@@ -159,6 +165,9 @@ public class PKFloatRange extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("upperBound")
     @NFloat

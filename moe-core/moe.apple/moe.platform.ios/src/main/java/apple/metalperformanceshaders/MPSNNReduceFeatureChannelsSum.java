@@ -115,6 +115,8 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSNNReduceFeatureChannelsSum object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -126,6 +128,8 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceFeatureChannelsSum object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")
@@ -177,6 +181,8 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
      * 
      * Each feature channel is multiplied by the weight value to compute a weighted sum or mean across feature channels
      * The default value is 1.0.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setWeight:")
@@ -208,6 +214,8 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
      * 
      * Each feature channel is multiplied by the weight value to compute a weighted sum or mean across feature channels
      * The default value is 1.0.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("weight")

@@ -67,6 +67,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
 
     /**
      * All of the joint names available in the observation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("availableJointNames")
@@ -75,6 +77,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
 
     /**
      * All of the joints group names available in the observation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("availableJointsGroupNames")
@@ -86,6 +90,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
      * [@note] A measured height will be returned in meters if `heightEstimation` is
      * `VNHumanBodyPose3DObservationHeightEstimationMeasured`, otherwise reference height of 1.8 meters is returned for
      * `VNHumanBodyPose3DObservationHeightEstimationReference`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("bodyHeight")
@@ -127,6 +133,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
      *                         relative to the camera if successful
      * @param jointName        The name of the human body joint
      * @return BOOL indicating success of determing position
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("getCameraRelativePosition:forJointName:error:")
@@ -142,6 +150,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
      * Technique used to estimate body height. `VNHumanBodyPose3DObservationHeightEstimationMeasured`
      * indicates`bodyHeight` returns measured height in meters more accurate to true world height.
      * `VNHumanBodyPose3DObservationHeightEstimationReference` indicates `bodyHeight` returns reference height of 1.8 m
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("heightEstimation")
@@ -188,6 +198,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
      * 
      * @param jointName The name of the human body joint
      * @return The name of the parent joint
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("parentJointNameForJointName:")
@@ -200,6 +212,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
      * @param jointName The name of the human body joint
      * @return A projection of the determined 3D position onto the original 2D image in normalized, lower left origin
      *         coordinates
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("pointInImageForJointName:error:")
@@ -218,6 +232,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
      * @param error     The address of a variable that will be populated with the error that describes the failure. If
      *                  the caller does not require this information, NULL can be passed.
      * @return The recognized point, or nil if the point could not be obtained.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("recognizedPointForJointName:error:")
@@ -234,6 +250,8 @@ public class VNHumanBodyPose3DObservation extends VNRecognizedPoints3DObservatio
      * @param error           The address of a variable that will be populated with the error that describes the
      *                        failure. If the caller does not require this information, NULL can be passed.
      * @return a dictionary of recognized points in the group, or nil if an error was encountered.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("recognizedPointsForJointsGroupName:error:")

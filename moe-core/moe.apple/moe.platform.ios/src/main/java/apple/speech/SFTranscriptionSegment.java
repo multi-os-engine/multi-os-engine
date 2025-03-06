@@ -172,6 +172,8 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
 
     /**
      * Other possible interpretations of this segment
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -180,6 +182,8 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
 
     /**
      * Confidence in the accuracy of transcription. Scale is 0 (least confident) to 1.0 (most confident)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("confidence")
@@ -192,6 +196,9 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -208,11 +215,17 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native SFTranscriptionSegment initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("substring")
     public native String substring();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("substringRange")
     @ByValue
@@ -226,6 +239,8 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
 
     /**
      * Relative to start of audio
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("timestamp")

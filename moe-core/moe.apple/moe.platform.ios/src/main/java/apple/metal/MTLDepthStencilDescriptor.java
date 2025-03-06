@@ -159,6 +159,9 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("backFaceStencil")
     public native MTLStencilDescriptor backFaceStencil();
@@ -172,6 +175,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * Defaults to MTLCompareFuncAlways, which effectively skips the depth test
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("depthCompareFunction")
@@ -181,6 +186,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     /**
      * Separate stencil state for front and back state. Both front and back can be made to track the same state by
      * assigning the same MTLStencilDescriptor to both.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("frontFaceStencil")
@@ -192,6 +199,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * Defaults to NO, so no depth writes are performed
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDepthWriteEnabled")
@@ -199,6 +208,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * Defaults to NO, so no depth writes are performed
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDepthWriteEnabled:")
@@ -208,18 +219,25 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
      * [@property] label
      * 
      * A string to help identify the created object.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("label")
     public native String label();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setBackFaceStencil:")
     public native void setBackFaceStencil(MTLStencilDescriptor value);
 
     /**
      * Defaults to MTLCompareFuncAlways, which effectively skips the depth test
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDepthCompareFunction:")
@@ -228,6 +246,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     /**
      * Separate stencil state for front and back state. Both front and back can be made to track the same state by
      * assigning the same MTLStencilDescriptor to both.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFrontFaceStencil:")
@@ -237,6 +257,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
      * [@property] label
      * 
      * A string to help identify the created object.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLabel:")

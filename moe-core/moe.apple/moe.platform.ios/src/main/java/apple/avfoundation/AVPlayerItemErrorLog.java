@@ -183,6 +183,8 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
      * An ordered collection of AVPlayerItemErrorLogEvent instances that represent the chronological
      * sequence of events contained in the error log.
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @NotNull
     @Generated
@@ -199,6 +201,8 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
      * 
      * @return An autoreleased NSData instance.
+     * 
+     *         API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -212,6 +216,8 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
      * 
      * A string suitable for console output is obtainable by:
      * [[NSString alloc] initWithData:[myLog extendedLogData] encoding:[myLog extendedLogDataStringEncoding]]
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("extendedLogDataStringEncoding")

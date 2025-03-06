@@ -92,6 +92,12 @@ public class MTRAsyncCallbackWorkQueue extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("enqueueWorkItem:")
     public native void enqueueWorkItem(@NotNull MTRAsyncCallbackQueueWorkItem item);
@@ -105,6 +111,12 @@ public class MTRAsyncCallbackWorkQueue extends NSObject {
     @Selector("init")
     public native MTRAsyncCallbackWorkQueue init();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContext:queue:")
     public native MTRAsyncCallbackWorkQueue initWithContextQueue(
@@ -123,6 +135,12 @@ public class MTRAsyncCallbackWorkQueue extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("invalidate")
     public native void invalidate();

@@ -356,50 +356,66 @@ public final class MTLPixelFormat {
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGB_2BPP = 0x00000000000000A0L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGB_2BPP = 0x00000000000000A0L;
     /**
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGB_2BPP_sRGB = 0x00000000000000A1L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGB_2BPP_sRGB = 0x00000000000000A1L;
     /**
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGB_4BPP = 0x00000000000000A2L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGB_4BPP = 0x00000000000000A2L;
     /**
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGB_4BPP_sRGB = 0x00000000000000A3L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGB_4BPP_sRGB = 0x00000000000000A3L;
     /**
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGBA_2BPP = 0x00000000000000A4L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGBA_2BPP = 0x00000000000000A4L;
     /**
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGBA_2BPP_sRGB = 0x00000000000000A5L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGBA_2BPP_sRGB = 0x00000000000000A5L;
     /**
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGBA_4BPP = 0x00000000000000A6L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGBA_4BPP = 0x00000000000000A6L;
     /**
      * PVRTC
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Usage of ASTC/ETC2/BC formats is recommended instead.
      */
-    @Generated @NUInt public static final long PVRTC_RGBA_4BPP_sRGB = 0x00000000000000A7L;
+    @Deprecated @Generated @NUInt public static final long PVRTC_RGBA_4BPP_sRGB = 0x00000000000000A7L;
     /**
      * ETC2
      * 

@@ -99,6 +99,8 @@ public class NSFileProviderDomainVersion extends NSObject implements NSSecureCod
      * - NSOrderedSame if both versions are equal
      * 
      * In Swift, NSFileProviderDomainVersion is comparable.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("compare:")
@@ -159,6 +161,8 @@ public class NSFileProviderDomainVersion extends NSObject implements NSSecureCod
 
     /**
      * Build a version that is strictly greater than the receiver.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

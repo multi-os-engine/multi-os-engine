@@ -163,6 +163,8 @@ public class GCControllerElement extends NSObject {
      * Each element can be part of a wider collection of inputs that map to a single logical element. A directional pad
      * (dpad)
      * is a logical collection of two axis inputs and thus each axis belongs to the same collection element - the dpad.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -176,6 +178,8 @@ public class GCControllerElement extends NSObject {
     /**
      * Check if the element can support more than just digital values, such as decimal ranges between 0 and 1.
      * Defaults to YES for most elements.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isAnalog")

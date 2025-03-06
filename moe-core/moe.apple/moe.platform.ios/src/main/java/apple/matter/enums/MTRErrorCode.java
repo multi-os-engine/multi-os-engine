@@ -159,4 +159,10 @@ public final class MTRErrorCode {
      * API-Since: 17.2
      */
     @Generated @NInt public static final long DNSSDUnauthorized = 0x000000000000000FL;
+    /**
+     * The operation was cancelled.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated @NInt public static final long Cancelled = 0x0000000000000010L;
 }

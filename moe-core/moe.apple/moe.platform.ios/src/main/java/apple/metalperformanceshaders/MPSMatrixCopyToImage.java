@@ -101,6 +101,8 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * describes the order in which the image values are to be stored in the buffer associated
      * with the MPSMatrix.
      * Default: MPSDataLayoutFeatureChannelsxHeightxWidth
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("dataLayout")
@@ -128,6 +130,9 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * @param commandBuffer    A valid MTLCommandBuffer.
      * @param sourceMatrix     A valid MPSMatrix or MPSTemporaryMatrix object describing the source matrix.
      * @param destinationImage A valid MPSImage describing the image to copy to.
+     * 
+     * 
+     *                         API-Since: 12.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:destinationImage:")
@@ -160,6 +165,8 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -176,6 +183,8 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * @param device     The device the kernel will run on
      * @param dataLayout The data layout
      * @return A valid MPSMatrixCopyToImage object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:dataLayout:")
@@ -222,6 +231,8 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * 
      * The index of the source matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceMatrixBatchIndex:")
@@ -235,6 +246,8 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceMatrixOrigin:")
@@ -249,6 +262,8 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * 
      * The index of the source matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceMatrixBatchIndex")
@@ -263,6 +278,8 @@ public class MPSMatrixCopyToImage extends MPSKernel {
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceMatrixOrigin")

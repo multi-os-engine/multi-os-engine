@@ -42,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.network.opaque.nw_endpoint_t;
 
 /**
  * [@interface] NEAppProxyTCPFlow
@@ -198,7 +199,9 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
      * An NWEndpoint object containing information about the intended remote endpoint of the flow.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("remoteEndpoint")
@@ -240,4 +243,16 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] remoteFlowEndpoint
+     * 
+     * An `nw_endpoint_t` object containing information about the intended remote endpoint of the flow.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("remoteFlowEndpoint")
+    @NotNull
+    public native nw_endpoint_t remoteFlowEndpoint();
 }

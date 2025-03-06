@@ -148,9 +148,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
      * 
      * Creates and returns a new geometry built from geometry sources and geometry elements.
      * 
-     * A geometry is made of geometry sources (at least vertices) and at least one geometry element. Multiple sources
-     * for texture coordinates are accepted. In that case the mappingChannel is implicitly set based on the order of the
-     * texture sources, starting at index 0.
+     * A geometry is made of geometry sources (at least `SCNGeometrySourceSemanticVertex`) and at least one geometry
+     * element. Multiple sources for texture coordinates are accepted. In that case the `mappingChannel` is implicitly
+     * set based on the order of the texture sources, starting at index 0.
      * 
      * @param sources  An array of geometry sources. If several geometry sources have the same semantic, only the first
      *                 one is taken into account.
@@ -680,4 +680,92 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] geometrySourceChannels
+     * 
+     * An array of indices that describes, for each geometry source, which channel of the geometry elements to use.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("geometrySourceChannels")
+    @Nullable
+    public native NSArray<? extends NSNumber> geometrySourceChannels();
+
+    /**
+     * geometryWithSources:elements:sourceChannels:
+     * 
+     * Creates and returns a new geometry built from geometry sources and geometry elements, with per-source indexed
+     * geometry data.
+     * 
+     * ```
+     * Example: geometry made of 3 primitives (2 quads, 1 pentagon) using different indices to reference position and UV
+     * data (2 channels)
+     * 
+     * Positions ┆ POS0 POS3 POS4 ┆ quad quad pentagon quad quad pentagon ┆ SCNGeometryElement *element =
+     * [SCNGeometryElement geometryElementWithData:…
+     * 0 │ (0.0, 0.0, 0.0) ┆ ┌───────────┬───────────┐ ┆ ┌─────┐ ┌─────┐ ┌───────┐ ┌─────┐ ┌─────┐ ┌───────┐ ┆
+     * primitiveType:SCNGeometryPrimitiveTypePolygon
+     * 1 │ (0.0, 1.0, 0.0) ┆ │UV0 UV3│UV0 UV3│ ┆ 4 4 5 0 1 2 3 5 4 3 2 7 6 5 2 1 0 1 2 3 2 3 0 1 1 2 3 4 0 ┆
+     * primitiveCount:3
+     * 2 │ (1.0, 0.0, 0.0) ┆ │ │ │ ┆ └───┘ └───────────────────────┘ └───────────────────────┘ ┆ indicesChannelCount:2
+     * 3 │ (1.0, 1.0, 0.0) ┆ │ A │ B │ ┆ polygons channel 0 channel 1 ┆ interleavedIndicesChannels:…
+     * 4 │ (2.0, 0.0, 0.0) ┆ │ │ │ ┆ (positions) (UVs) ┆ bytesPerIndex:…];
+     * 5 │ (2.0, 1.0, 0.0) ┆ │UV1 UV2│UV1 UV2│ ┆ ┆
+     * 6 │ (2.0, 2.0, 0.0) ┆ POS1 ├───────────┴───────────┤ POS5 ┆ ┆ SCNGeometry *geometry = [SCNGeometry
+     * geometryWithSources:@[positionSource, texcoordsSource]
+     * 7 │ (0.0, 2.0, 0.0) ┆ │UVO UV4 UV3│ ┆ ┆ elements:@[element]
+     * ┆ │ POS2 │ ┆ quad A quad B pentagon C ┆ sourceChannels:@[0, 1]];
+     * UVs ┆ │ │ ┆ ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐ ┆
+     * 0 │ (0.0, 0.0) ┆ │ C │ ┆ 4 4 5 0 0 1 1 2 2 3 3 5 2 4 3 3 0 2 1 7 1 6 2 5 3 2 4 1 0 ┆
+     * 1 │ (0.0, 1.0) ┆ │ │ ┆ └───┘└──────────────────────────────────────────────────┘ ┆
+     * 2 │ (1.0, 1.0) ┆ │UV1 UV2│ ┆ polygons interleaved channels ┆
+     * 3 │ (1.0, 0.0) ┆ └───────────────────────┘ ┆ (positions and UVs) ┆
+     * 4 │ (0.5, 0.0) ┆ POS7 POS6 ┆ ┆
+     * 
+     * 
+     * Example: geometry made of 3 primitives (2 quads, 1 pentagon) using the same indices to reference position and UV
+     * data (1 channel)
+     * 
+     * Positions ┆ POS0 POS3 POS4 ┆ quad A quad B pentagon C ┆ SCNGeometryElement *element = [SCNGeometryElement
+     * geometryElementWithData:…
+     * 0 │ (0.0, 4.0, 0.0) ┆ ┌───────────┬───────────┐ ┆ ┌────────┐ ┌────────┐ ┌───────────┐ ┆
+     * primitiveType:SCNGeometryPrimitiveTypePolygon
+     * 1 │ (0.0, 2.0, 0.0) ┆ │UV0 UV3│UV3 UV4│ ┆ 4 4 5 0 1 2 3 5 4 3 2 7 6 5 2 1 ┆ primitiveCount:3
+     * 2 │ (2.0, 2.0, 0.0) ┆ │ │ │ ┆ └───┘ └───────────────────────────────────┘ ┆ bytesPerIndex:…];
+     * 3 │ (2.0, 4.0, 0.0) ┆ │ A │ B │ ┆ polygons channel 0 ┆
+     * 4 │ (4.0, 4.0, 0.0) ┆ │ │ │ ┆ (positions and UVs) ┆ SCNGeometry *geometry = [SCNGeometry
+     * geometryWithSources:@[positionSource, texcoordsSource]
+     * 5 │ (4.0, 2.0, 0.0) ┆ │UV1 UV2│UV2 UV5│ ┆ ┆ elements:@[element]];
+     * 6 │ (4.0, 0.0, 0.0) ┆ POS1 ├───────────┴───────────┤ POS5 ┆ ┆
+     * 7 │ (0.0, 0.0, 0.0) ┆ │UV1 UV2 UV5│ ┆ ┆ === or equivalently ===
+     * ┆ │ POS2 │ ┆ ┆
+     * UVs ┆ │ │ ┆ ┆ SCNGeometryElement *element = [SCNGeometryElement geometryElementWithData:…
+     * 0 │ (0.0, 0.0) ┆ │ C │ ┆ ┆ primitiveType:SCNGeometryPrimitiveTypePolygon
+     * 1 │ (0.0, 0.5) ┆ │ │ ┆ ┆ primitiveCount:3
+     * 2 │ (0.5, 0.5) ┆ │UV7 UV6│ ┆ ┆ indicesChannelCount:1
+     * 3 │ (0.5, 0.0) ┆ └───────────────────────┘ ┆ ┆ interleavedIndicesChannels:…
+     * 4 │ (1.0, 0.0) ┆ POS7 POS6 ┆ ┆ bytesPerIndex:…];
+     * 5 │ (1.0, 0.5) ┆ ┆ ┆
+     * 6 │ (1.0, 1.0) ┆ ┆ ┆ SCNGeometry *geometry = [SCNGeometry geometryWithSources:@[positionSource, texcoordsSource]
+     * 7 │ (0.0, 1.0) ┆ ┆ ┆ elements:@[element]
+     * ┆ ┆ ┆ sourceChannels:@[0, 0]]; ┆
+     * ```
+     * 
+     * API-Since: 16.0
+     * 
+     * @param sources        An array of geometry sources. If several geometry sources have the same semantic, only the
+     *                       first one is taken into account.
+     * @param elements       An array of geometry elements. The sort order in the array determines the mapping between
+     *                       materials and geometry elements.
+     * @param sourceChannels An array of indices that describes, for each geometry source, which channel of the geometry
+     *                       elements to use.
+     */
+    @Generated
+    @Selector("geometryWithSources:elements:sourceChannels:")
+    public static native SCNGeometry geometryWithSourcesElementsSourceChannels(
+            @NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements,
+            @Nullable NSArray<? extends NSNumber> sourceChannels);
 }

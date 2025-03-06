@@ -131,6 +131,9 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("localizedStringFromDateComponents:unitsStyle:")
@@ -180,6 +183,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * NSCalendarUnitSecond
      * 
      * Specifying any other NSCalendarUnits will result in an exception.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("allowedUnits")
@@ -190,6 +195,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Choose whether non-integer units should be used to handle display of values that can't be exactly represented
      * with the allowed units. For example, if minutes aren't allowed, then "1h 30m" could be formatted as "1.5h".
      * Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("allowsFractionalUnits")
@@ -199,6 +206,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Specifies the locale and calendar to use for formatting date components that do not themselves have calendars.
      * Defaults to NSAutoupdatingCurrentCalendar. If set to nil, uses the gregorian calendar with the en_US_POSIX
      * locale.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -208,6 +217,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
     /**
      * Choose whether to express largest units just above the threshold for the next lowest unit as a larger quantity of
      * the lower unit. For example: "1m 3s" vs "63s". Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("collapsesLargestUnit")
@@ -215,6 +226,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     /**
      * Not yet supported.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("formattingContext")
@@ -224,6 +237,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
     /**
      * NSDateComponentsFormatter currently only implements formatting, not parsing. Until it implements parsing, this
      * will always return NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
@@ -235,6 +250,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Choose whether to indicate that the allowed units/insignificant units choices lead to inexact results. In some
      * languages, simply prepending "about " to the string will produce incorrect results; this handles those cases
      * correctly. Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("includesApproximationPhrase")
@@ -242,6 +259,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     /**
      * Choose whether to produce strings like "35 minutes remaining". Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("includesTimeRemainingPhrase")
@@ -264,6 +283,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 10m 30s, maximumUnitCount set to 2: "10m 30s"
      * 
      * Default is 0, which is interpreted as unlimited.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("maximumUnitCount")
@@ -287,6 +308,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * NSCalendarUnitSecond
      * 
      * Specifying any other NSCalendarUnits will result in an exception.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAllowedUnits:")
@@ -296,6 +319,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Choose whether non-integer units should be used to handle display of values that can't be exactly represented
      * with the allowed units. For example, if minutes aren't allowed, then "1h 30m" could be formatted as "1.5h".
      * Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAllowsFractionalUnits:")
@@ -305,6 +330,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Specifies the locale and calendar to use for formatting date components that do not themselves have calendars.
      * Defaults to NSAutoupdatingCurrentCalendar. If set to nil, uses the gregorian calendar with the en_US_POSIX
      * locale.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCalendar:")
@@ -313,6 +340,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
     /**
      * Choose whether to express largest units just above the threshold for the next lowest unit as a larger quantity of
      * the lower unit. For example: "1m 3s" vs "63s". Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCollapsesLargestUnit:")
@@ -320,6 +349,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     /**
      * Not yet supported.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFormattingContext:")
@@ -329,6 +360,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Choose whether to indicate that the allowed units/insignificant units choices lead to inexact results. In some
      * languages, simply prepending "about " to the string will produce incorrect results; this handles those cases
      * correctly. Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIncludesApproximationPhrase:")
@@ -336,6 +369,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     /**
      * Choose whether to produce strings like "35 minutes remaining". Default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIncludesTimeRemainingPhrase:")
@@ -350,6 +385,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 10m 30s, maximumUnitCount set to 2: "10m 30s"
      * 
      * Default is 0, which is interpreted as unlimited.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMaximumUnitCount:")
@@ -358,6 +395,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
     /**
      * Choose how to indicate units. For example, 1h 10m vs 1:10. Default is
      * NSDateComponentsFormatterUnitsStylePositional.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUnitsStyle:")
@@ -370,6 +409,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 
      * If the combination of zero formatting behavior and style would lead to ambiguous date formats (for example, 1:10
      * meaning 1 hour, 10 seconds), NSDateComponentsFormatter will throw an exception.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setZeroFormattingBehavior:")
@@ -377,6 +418,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     /**
      * 'obj' must be an instance of NSDateComponents.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -392,6 +435,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 
      * Note that this is still formatting the quantity of time between the dates, not the pair of dates itself. For
      * strings like "Feb 22nd - Feb 28th", use NSDateIntervalFormatter.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -401,6 +446,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
     /**
      * Convenience method for formatting an NSDateComponents object. This calculates the count of the unit(s) starting
      * from referenceDate.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -411,6 +458,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Convenience method for formatting a number of seconds. See 'allowedUnits' for how the default set of allowed
      * units differs from -stringFromDateComponents:. This calculates the count of the unit(s) from referenceDate to the
      * passed-in time interval.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -420,6 +469,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
     /**
      * Choose how to indicate units. For example, 1h 10m vs 1:10. Default is
      * NSDateComponentsFormatterUnitsStylePositional.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("unitsStyle")
@@ -433,6 +484,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 
      * If the combination of zero formatting behavior and style would lead to ambiguous date formats (for example, 1:10
      * meaning 1 hour, 10 seconds), NSDateComponentsFormatter will throw an exception.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("zeroFormattingBehavior")

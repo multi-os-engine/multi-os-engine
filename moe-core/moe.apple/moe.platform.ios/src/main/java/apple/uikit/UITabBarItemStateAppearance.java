@@ -64,6 +64,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * The color to use for the badge background
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -72,6 +74,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the badge's position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("badgePositionAdjustment")
@@ -81,6 +85,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     /**
      * Text attributes to be used for rendering badge text. If the font and color are unspecified, appropriate defaults
      * are supplied.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -89,6 +95,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the badge's title position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("badgeTitlePositionAdjustment")
@@ -131,6 +139,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * The color to use for item icons. If not specified, a suitable color will be derived.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -178,6 +188,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * The color to use for the badge background
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBadgeBackgroundColor:")
@@ -185,6 +197,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the badge's position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBadgePositionAdjustment:")
@@ -193,6 +207,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     /**
      * Text attributes to be used for rendering badge text. If the font and color are unspecified, appropriate defaults
      * are supplied.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBadgeTextAttributes:")
@@ -200,6 +216,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the badge's title position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBadgeTitlePositionAdjustment:")
@@ -207,6 +225,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * The color to use for item icons. If not specified, a suitable color will be derived.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setIconColor:")
@@ -214,6 +234,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the UITabBarItem's title position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitlePositionAdjustment:")
@@ -222,6 +244,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     /**
      * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
      * are supplied.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitleTextAttributes:")
@@ -237,6 +261,8 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the UITabBarItem's title position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("titlePositionAdjustment")
@@ -246,6 +272,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     /**
      * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
      * are supplied.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

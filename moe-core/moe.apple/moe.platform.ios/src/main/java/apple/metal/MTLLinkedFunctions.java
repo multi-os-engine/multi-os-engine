@@ -120,6 +120,8 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * [@property] functions
      * 
      * The array of functions to be AIR linked.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -130,6 +132,8 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * [@property] groups
      * 
      * Groups of functions, grouped to match callsites in the shader code.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -171,6 +175,8 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * linkedFunctions
      * 
      * Create an autoreleased MTLLinkedFunctions object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -205,6 +211,8 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * [@property] functions
      * 
      * The array of functions to be AIR linked.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setFunctions:")
@@ -214,6 +222,8 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * [@property] groups
      * 
      * Groups of functions, grouped to match callsites in the shader code.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setGroups:")

@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCActivationDescriptor specifies a neuron descriptor.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -54,7 +53,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * [@property] a
      * 
      * Parameter to the activation function
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("a")
     public native float a();
@@ -67,7 +70,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * [@property] activationType
      * 
      * The type of activation function
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("activationType")
     public native int activationType();
@@ -90,7 +97,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * [@property] b
      * 
      * Parameter to the activation function
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("b")
     public native float b();
@@ -99,7 +110,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * [@property] c
      * 
      * Parameter to the activation function
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("c")
     public native float c();
@@ -145,7 +160,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * 
      * @param activationType A type of activation function.
      * @return A new neuron descriptor or nil if failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:")
     public static native MLCActivationDescriptor descriptorWithType(int activationType);
@@ -156,7 +175,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * @param activationType A type of activation function.
      * @param a              Parameter "a".
      * @return A new neuron descriptor or nil if failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:a:")
     public static native MLCActivationDescriptor descriptorWithTypeA(int activationType, float a);
@@ -168,7 +191,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * @param a              Parameter "a".
      * @param b              Parameter "b".
      * @return A new neuron descriptor or nil if failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:a:b:")
     public static native MLCActivationDescriptor descriptorWithTypeAB(int activationType, float a, float b);
@@ -181,7 +208,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
      * @param b              Parameter "b".
      * @param c              Parameter "c".
      * @return A new neuron descriptor or nil if failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:a:b:c:")
     public static native MLCActivationDescriptor descriptorWithTypeABC(int activationType, float a, float b, float c);

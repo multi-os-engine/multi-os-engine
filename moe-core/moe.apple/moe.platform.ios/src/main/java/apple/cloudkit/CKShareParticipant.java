@@ -169,6 +169,9 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("acceptanceStatus")
     @NInt
@@ -195,6 +198,8 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The default permission for a new participant is @c CKShareParticipantPermissionReadOnly.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("permission")
@@ -203,6 +208,8 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The default permission for a new participant is @c CKShareParticipantPermissionReadOnly.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPermission:")
@@ -237,6 +244,9 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("userIdentity")
@@ -265,4 +275,14 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A unique identifier for this participant.
+     * 
+     * API-Since: 10.0
+     */
+    @Generated
+    @Selector("participantID")
+    @NotNull
+    public native String participantID();
 }

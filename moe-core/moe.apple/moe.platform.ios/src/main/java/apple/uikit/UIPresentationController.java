@@ -179,6 +179,8 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
      * UIPopoverPresentationController override this implementation to return UIModalPresentationStyleFullscreen if the
      * delegate does not provide an
      * implementation for adaptivePresentationStyleForPresentationController:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("adaptivePresentationStyle")
@@ -197,20 +199,31 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
      * The view in which a presentation occurs. It is an ancestor of both the presenting and presented view controller's
      * views.
      * This view is being passed to the animation controller.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("containerView")
     public native UIView containerView();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("containerViewDidLayoutSubviews")
     public native void containerViewDidLayoutSubviews();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("containerViewWillLayoutSubviews")
     public native void containerViewWillLayoutSubviews();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -222,10 +235,16 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     public native void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
             @NotNull UIFocusAnimationCoordinator coordinator);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("dismissalTransitionDidEnd:")
     public native void dismissalTransitionDidEnd(boolean completed);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("dismissalTransitionWillBegin")
     public native void dismissalTransitionWillBegin();
@@ -233,6 +252,8 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     /**
      * Position of the presented view in the container view by the end of the presentation transition.
      * (Default: container view bounds)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("frameOfPresentedViewInContainerView")
@@ -243,6 +264,9 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Selector("init")
     public native UIPresentationController init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithPresentedViewController:presentingViewController:")
     public native UIPresentationController initWithPresentedViewControllerPresentingViewController(
@@ -283,15 +307,24 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Selector("preferredFocusedView")
     public native UIView preferredFocusedView();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("presentationStyle")
     @NInt
     public native long presentationStyle();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("presentationTransitionDidEnd:")
     public native void presentationTransitionDidEnd(boolean completed);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("presentationTransitionWillBegin")
     public native void presentationTransitionWillBegin();
@@ -301,26 +334,40 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
      * view
      * or a presented view controller's view itself.
      * (Default: presented view controller's view)
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("presentedView")
     public native UIView presentedView();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("presentedViewController")
     public native UIViewController presentedViewController();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("presentingViewController")
     public native UIViewController presentingViewController();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -353,6 +400,8 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
      * By default each new presentation is full screen.
      * This behavior can be overridden with the following method to force a current context presentation.
      * (Default: YES)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shouldPresentInFullscreen")
@@ -363,6 +412,8 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
      * of the
      * presentation transition
      * (Default: NO)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shouldRemovePresentersView")
@@ -447,6 +498,9 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
             @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("traitOverrides")
     @MappedReturn(ObjCObjectMapper.class)

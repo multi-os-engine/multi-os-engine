@@ -86,6 +86,12 @@ public class INDeleteTasksIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -95,6 +101,12 @@ public class INDeleteTasksIntentResponse extends INIntentResponse {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("deletedTasks")
@@ -121,7 +133,12 @@ public class INDeleteTasksIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INDeleteTasksIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -166,6 +183,12 @@ public class INDeleteTasksIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setDeletedTasks:")
     public native void setDeletedTasks(@Nullable NSArray<? extends INTask> value);

@@ -47,7 +47,12 @@ public interface INTransferMoneyIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INTransferMoneyIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INTransferMoneyIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmTransferMoney:completion:")
@@ -73,7 +78,12 @@ public interface INTransferMoneyIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INTransferMoneyIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INTransferMoneyIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleTransferMoney:completion:")
     void handleTransferMoneyCompletion(@NotNull INTransferMoneyIntent intent,
@@ -96,7 +106,12 @@ public interface INTransferMoneyIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INTransferMoneyIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveFromAccountForTransferMoney:withCompletion:")
@@ -113,6 +128,12 @@ public interface INTransferMoneyIntentHandling {
                 @NotNull INPaymentAccountResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveToAccountForTransferMoney:withCompletion:")
@@ -129,6 +150,12 @@ public interface INTransferMoneyIntentHandling {
                 @NotNull INPaymentAccountResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTransactionAmountForTransferMoney:withCompletion:")
@@ -145,6 +172,12 @@ public interface INTransferMoneyIntentHandling {
                 @NotNull INPaymentAmountResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTransactionNoteForTransferMoney:withCompletion:")
@@ -161,6 +194,12 @@ public interface INTransferMoneyIntentHandling {
                 @NotNull INStringResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTransactionScheduledDateForTransferMoney:withCompletion:")

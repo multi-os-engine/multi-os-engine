@@ -24,6 +24,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UISearchSuggestion {
     /**
      * Icon that represents this search suggestion item
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -45,6 +47,8 @@ public interface UISearchSuggestion {
 
     /**
      * The localized description used as accessibility string
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -56,6 +60,8 @@ public interface UISearchSuggestion {
 
     /**
      * The localized suggestion that will be displayed as the search string
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

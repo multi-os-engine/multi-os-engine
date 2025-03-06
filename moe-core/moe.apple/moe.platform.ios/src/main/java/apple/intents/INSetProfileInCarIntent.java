@@ -167,6 +167,12 @@ public class INSetProfileInCarIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetProfileInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("defaultProfile")
@@ -218,6 +224,12 @@ public class INSetProfileInCarIntent extends INIntent {
     @Selector("profileName")
     public native String profileName();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetProfileInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("profileNumber")

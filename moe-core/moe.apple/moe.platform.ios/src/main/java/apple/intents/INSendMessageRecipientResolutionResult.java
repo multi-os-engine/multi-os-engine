@@ -109,6 +109,9 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Selector("init")
     public native INSendMessageRecipientResolutionResult init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithPersonResolutionResult:")
     public native INSendMessageRecipientResolutionResult initWithPersonResolutionResult(
@@ -178,6 +181,9 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Selector("unsupported")
     public static native INSendMessageRecipientResolutionResult unsupported();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

@@ -84,6 +84,9 @@ public class CNChangeHistoryUpdateContactEvent extends CNChangeHistoryEvent {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("contact")

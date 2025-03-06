@@ -39,6 +39,8 @@ public interface SKViewDelegate {
      * 
      * return YES to initiate an update and render for the target time.
      * return NO to skip update and render for this target time.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

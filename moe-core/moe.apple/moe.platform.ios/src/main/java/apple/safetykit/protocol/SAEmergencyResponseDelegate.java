@@ -29,6 +29,8 @@ public interface SAEmergencyResponseDelegate {
      * Voice call can be requested when running in the foreground or background within a limited time window of a
      * detected emergency event,
      * Use this delegate to monitor the status of the requested voice call.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional

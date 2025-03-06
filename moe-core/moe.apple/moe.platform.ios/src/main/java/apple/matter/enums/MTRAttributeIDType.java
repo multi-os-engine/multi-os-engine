@@ -261,160 +261,6 @@ public final class MTRAttributeIDType {
      */
     @Generated public static final int AttributeIDTypeClusterGroupsAttributeClusterRevisionID = 0x0000FFFD;
     /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeSceneCountID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeSceneCountID = 0x00000000;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeCurrentSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeCurrentSceneID = 0x00000001;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeCurrentGroupID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeCurrentGroupID = 0x00000002;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeSceneValidID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeSceneValidID = 0x00000003;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeNameSupportID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeNameSupportID = 0x00000004;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeLastConfiguredByID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeLastConfiguredByID = 0x00000005;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeGeneratedCommandListID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeGeneratedCommandListID = 0x0000FFF8;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeAcceptedCommandListID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeAcceptedCommandListID = 0x0000FFF9;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeAttributeListID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeAttributeListID = 0x0000FFFB;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeFeatureMapID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeFeatureMapID = 0x0000FFFC;
-    /**
-     * Cluster Scenes deprecated attribute names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRAttributeIDTypeClusterScenesAttributeClusterRevisionID
-     */
-    @Generated @Deprecated public static final int ClusterScenesAttributeClusterRevisionID = 0x0000FFFD;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeSceneCountID = 0x00000000;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeCurrentSceneID = 0x00000001;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeCurrentGroupID = 0x00000002;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeSceneValidID = 0x00000003;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeNameSupportID = 0x00000004;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeLastConfiguredByID = 0x00000005;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeGeneratedCommandListID = 0x0000FFF8;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeAcceptedCommandListID = 0x0000FFF9;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeAttributeListID = 0x0000FFFB;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeFeatureMapID = 0x0000FFFC;
-    /**
-     * Cluster Scenes attributes
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int AttributeIDTypeClusterScenesAttributeClusterRevisionID = 0x0000FFFD;
-    /**
      * Cluster OnOff deprecated attribute names
      * 
      * API-Since: 16.1
@@ -614,44 +460,58 @@ public final class MTRAttributeIDType {
      * Cluster OnOffSwitchConfiguration attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The SwitchType attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeSwitchTypeID = 0x00000000;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeSwitchTypeID = 0x00000000;
     /**
      * Cluster OnOffSwitchConfiguration attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The SwitchActions attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeSwitchActionsID = 0x00000010;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeSwitchActionsID = 0x00000010;
     /**
      * Cluster OnOffSwitchConfiguration attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GeneratedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeGeneratedCommandListID = 0x0000FFF8;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeGeneratedCommandListID = 0x0000FFF8;
     /**
      * Cluster OnOffSwitchConfiguration attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcceptedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeAcceptedCommandListID = 0x0000FFF9;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeAcceptedCommandListID = 0x0000FFF9;
     /**
      * Cluster OnOffSwitchConfiguration attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AttributeList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeAttributeListID = 0x0000FFFB;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeAttributeListID = 0x0000FFFB;
     /**
      * Cluster OnOffSwitchConfiguration attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The FeatureMap attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeFeatureMapID = 0x0000FFFC;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeFeatureMapID = 0x0000FFFC;
     /**
      * Cluster OnOffSwitchConfiguration attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ClusterRevision attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeClusterRevisionID = 0x0000FFFD;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterOnOffSwitchConfigurationAttributeClusterRevisionID = 0x0000FFFD;
     /**
      * Cluster LevelControl deprecated attribute names
      * 
@@ -1034,86 +894,114 @@ public final class MTRAttributeIDType {
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActiveText attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeActiveTextID = 0x00000004;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeActiveTextID = 0x00000004;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Description attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeDescriptionID = 0x0000001C;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeDescriptionID = 0x0000001C;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The InactiveText attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeInactiveTextID = 0x0000002E;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeInactiveTextID = 0x0000002E;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The OutOfService attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeOutOfServiceID = 0x00000051;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeOutOfServiceID = 0x00000051;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Polarity attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributePolarityID = 0x00000054;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributePolarityID = 0x00000054;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The PresentValue attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributePresentValueID = 0x00000055;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributePresentValueID = 0x00000055;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Reliability attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeReliabilityID = 0x00000067;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeReliabilityID = 0x00000067;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The StatusFlags attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeStatusFlagsID = 0x0000006F;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeStatusFlagsID = 0x0000006F;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ApplicationType attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeApplicationTypeID = 0x00000100;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeApplicationTypeID = 0x00000100;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GeneratedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeGeneratedCommandListID = 0x0000FFF8;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeGeneratedCommandListID = 0x0000FFF8;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcceptedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeAcceptedCommandListID = 0x0000FFF9;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeAcceptedCommandListID = 0x0000FFF9;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AttributeList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeAttributeListID = 0x0000FFFB;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeAttributeListID = 0x0000FFFB;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The FeatureMap attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeFeatureMapID = 0x0000FFFC;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeFeatureMapID = 0x0000FFFC;
     /**
      * Cluster BinaryInputBasic attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ClusterRevision attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeClusterRevisionID = 0x0000FFFD;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBinaryInputBasicAttributeClusterRevisionID = 0x0000FFFD;
     /**
      * Cluster PulseWidthModulation deprecated attribute names
      * 
@@ -7725,92 +7613,122 @@ public final class MTRAttributeIDType {
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierMovingState attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierMovingStateID = 0x00000001;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierMovingStateID = 0x00000001;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierSafetyStatus attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierSafetyStatusID = 0x00000002;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierSafetyStatusID = 0x00000002;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierCapabilities attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCapabilitiesID = 0x00000003;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCapabilitiesID = 0x00000003;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierOpenEvents attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierOpenEventsID = 0x00000004;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierOpenEventsID = 0x00000004;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierCloseEvents attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCloseEventsID = 0x00000005;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCloseEventsID = 0x00000005;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierCommandOpenEvents attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCommandOpenEventsID = 0x00000006;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCommandOpenEventsID = 0x00000006;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierCommandCloseEvents attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCommandCloseEventsID = 0x00000007;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierCommandCloseEventsID = 0x00000007;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierOpenPeriod attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierOpenPeriodID = 0x00000008;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierOpenPeriodID = 0x00000008;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierClosePeriod attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierClosePeriodID = 0x00000009;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierClosePeriodID = 0x00000009;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierPosition attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierPositionID = 0x0000000A;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeBarrierPositionID = 0x0000000A;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GeneratedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeGeneratedCommandListID = 0x0000FFF8;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeGeneratedCommandListID = 0x0000FFF8;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcceptedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeAcceptedCommandListID = 0x0000FFF9;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeAcceptedCommandListID = 0x0000FFF9;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AttributeList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeAttributeListID = 0x0000FFFB;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeAttributeListID = 0x0000FFFB;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The FeatureMap attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeFeatureMapID = 0x0000FFFC;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeFeatureMapID = 0x0000FFFC;
     /**
      * Cluster BarrierControl attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ClusterRevision attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeClusterRevisionID = 0x0000FFFD;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterBarrierControlAttributeClusterRevisionID = 0x0000FFFD;
     /**
      * Cluster PumpConfigurationAndControl deprecated attribute names
      * 
@@ -13676,800 +13594,1066 @@ public final class MTRAttributeIDType {
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The MeasurementType attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasurementTypeID = 0x00000000;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasurementTypeID = 0x00000000;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcVoltage attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageID = 0x00000100;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageID = 0x00000100;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcVoltageMin attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageMinID = 0x00000101;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageMinID = 0x00000101;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcVoltageMax attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageMaxID = 0x00000102;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageMaxID = 0x00000102;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentID = 0x00000103;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentID = 0x00000103;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcCurrentMin attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentMinID = 0x00000104;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentMinID = 0x00000104;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcCurrentMax attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentMaxID = 0x00000105;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentMaxID = 0x00000105;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcPower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerID = 0x00000106;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerID = 0x00000106;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcPowerMin attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerMinID = 0x00000107;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerMinID = 0x00000107;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcPowerMax attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerMaxID = 0x00000108;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerMaxID = 0x00000108;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcVoltageMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageMultiplierID = 0x00000200;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageMultiplierID = 0x00000200;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcVoltageDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageDivisorID = 0x00000201;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcVoltageDivisorID = 0x00000201;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcCurrentMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentMultiplierID = 0x00000202;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentMultiplierID = 0x00000202;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcCurrentDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentDivisorID = 0x00000203;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcCurrentDivisorID = 0x00000203;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcPowerMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerMultiplierID = 0x00000204;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerMultiplierID = 0x00000204;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The DcPowerDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerDivisorID = 0x00000205;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeDcPowerDivisorID = 0x00000205;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcFrequency attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyID = 0x00000300;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyID = 0x00000300;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcFrequencyMin attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyMinID = 0x00000301;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyMinID = 0x00000301;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcFrequencyMax attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyMaxID = 0x00000302;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyMaxID = 0x00000302;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The NeutralCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeNeutralCurrentID = 0x00000303;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeNeutralCurrentID = 0x00000303;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The TotalActivePower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeTotalActivePowerID = 0x00000304;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeTotalActivePowerID = 0x00000304;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The TotalReactivePower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeTotalReactivePowerID = 0x00000305;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeTotalReactivePowerID = 0x00000305;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The TotalApparentPower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeTotalApparentPowerID = 0x00000306;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeTotalApparentPowerID = 0x00000306;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Measured1stHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured1stHarmonicCurrentID = 0x00000307;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured1stHarmonicCurrentID = 0x00000307;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Measured3rdHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured3rdHarmonicCurrentID = 0x00000308;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured3rdHarmonicCurrentID = 0x00000308;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Measured5thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured5thHarmonicCurrentID = 0x00000309;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured5thHarmonicCurrentID = 0x00000309;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Measured7thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured7thHarmonicCurrentID = 0x0000030A;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured7thHarmonicCurrentID = 0x0000030A;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Measured9thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured9thHarmonicCurrentID = 0x0000030B;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured9thHarmonicCurrentID = 0x0000030B;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The Measured11thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured11thHarmonicCurrentID = 0x0000030C;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasured11thHarmonicCurrentID = 0x0000030C;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The MeasuredPhase1stHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase1stHarmonicCurrentID = 0x0000030D;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase1stHarmonicCurrentID = 0x0000030D;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The MeasuredPhase3rdHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase3rdHarmonicCurrentID = 0x0000030E;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase3rdHarmonicCurrentID = 0x0000030E;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The MeasuredPhase5thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase5thHarmonicCurrentID = 0x0000030F;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase5thHarmonicCurrentID = 0x0000030F;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The MeasuredPhase7thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase7thHarmonicCurrentID = 0x00000310;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase7thHarmonicCurrentID = 0x00000310;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The MeasuredPhase9thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase9thHarmonicCurrentID = 0x00000311;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase9thHarmonicCurrentID = 0x00000311;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The MeasuredPhase11thHarmonicCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase11thHarmonicCurrentID = 0x00000312;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeMeasuredPhase11thHarmonicCurrentID = 0x00000312;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcFrequencyMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyMultiplierID = 0x00000400;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyMultiplierID = 0x00000400;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcFrequencyDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyDivisorID = 0x00000401;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcFrequencyDivisorID = 0x00000401;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The PowerMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerMultiplierID = 0x00000402;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerMultiplierID = 0x00000402;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The PowerDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerDivisorID = 0x00000403;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerDivisorID = 0x00000403;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The HarmonicCurrentMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeHarmonicCurrentMultiplierID = 0x00000404;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeHarmonicCurrentMultiplierID = 0x00000404;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The PhaseHarmonicCurrentMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePhaseHarmonicCurrentMultiplierID = 0x00000405;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePhaseHarmonicCurrentMultiplierID = 0x00000405;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The InstantaneousVoltage attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousVoltageID = 0x00000500;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousVoltageID = 0x00000500;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The InstantaneousLineCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousLineCurrentID = 0x00000501;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousLineCurrentID = 0x00000501;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The InstantaneousActiveCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousActiveCurrentID = 0x00000502;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousActiveCurrentID = 0x00000502;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The InstantaneousReactiveCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousReactiveCurrentID = 0x00000503;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousReactiveCurrentID = 0x00000503;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The InstantaneousPower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousPowerID = 0x00000504;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeInstantaneousPowerID = 0x00000504;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltage attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageID = 0x00000505;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageID = 0x00000505;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageMin attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMinID = 0x00000506;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMinID = 0x00000506;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageMax attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMaxID = 0x00000507;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMaxID = 0x00000507;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrent attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentID = 0x00000508;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentID = 0x00000508;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentMin attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMinID = 0x00000509;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMinID = 0x00000509;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentMax attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMaxID = 0x0000050A;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMaxID = 0x0000050A;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerID = 0x0000050B;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerID = 0x0000050B;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerMin attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMinID = 0x0000050C;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMinID = 0x0000050C;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerMax attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMaxID = 0x0000050D;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMaxID = 0x0000050D;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ReactivePower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactivePowerID = 0x0000050E;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactivePowerID = 0x0000050E;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ApparentPower attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeApparentPowerID = 0x0000050F;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeApparentPowerID = 0x0000050F;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The PowerFactor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerFactorID = 0x00000510;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerFactorID = 0x00000510;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsVoltageMeasurementPeriod attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsVoltageMeasurementPeriodID = 0x00000511;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsVoltageMeasurementPeriodID = 0x00000511;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsUnderVoltageCounter attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageCounterID = 0x00000513;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageCounterID = 0x00000513;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeOverVoltagePeriod attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltagePeriodID = 0x00000514;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltagePeriodID = 0x00000514;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeUnderVoltagePeriod attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltagePeriodID = 0x00000515;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltagePeriodID = 0x00000515;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSagPeriod attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagPeriodID = 0x00000516;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagPeriodID = 0x00000516;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSwellPeriod attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellPeriodID = 0x00000517;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellPeriodID = 0x00000517;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcVoltageMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcVoltageMultiplierID = 0x00000600;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcVoltageMultiplierID = 0x00000600;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcVoltageDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcVoltageDivisorID = 0x00000601;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcVoltageDivisorID = 0x00000601;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcCurrentMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcCurrentMultiplierID = 0x00000602;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcCurrentMultiplierID = 0x00000602;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcCurrentDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcCurrentDivisorID = 0x00000603;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcCurrentDivisorID = 0x00000603;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcPowerMultiplier attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcPowerMultiplierID = 0x00000604;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcPowerMultiplierID = 0x00000604;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcPowerDivisor attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcPowerDivisorID = 0x00000605;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcPowerDivisorID = 0x00000605;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The OverloadAlarmsMask attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeOverloadAlarmsMaskID = 0x00000700;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeOverloadAlarmsMaskID = 0x00000700;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The VoltageOverload attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeVoltageOverloadID = 0x00000701;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeVoltageOverloadID = 0x00000701;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The CurrentOverload attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeCurrentOverloadID = 0x00000702;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeCurrentOverloadID = 0x00000702;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcOverloadAlarmsMask attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcOverloadAlarmsMaskID = 0x00000800;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcOverloadAlarmsMaskID = 0x00000800;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcVoltageOverload attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcVoltageOverloadID = 0x00000801;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcVoltageOverloadID = 0x00000801;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcCurrentOverload attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcCurrentOverloadID = 0x00000802;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcCurrentOverloadID = 0x00000802;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcActivePowerOverload attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcActivePowerOverloadID = 0x00000803;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcActivePowerOverloadID = 0x00000803;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcReactivePowerOverload attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcReactivePowerOverloadID = 0x00000804;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcReactivePowerOverloadID = 0x00000804;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsOverVoltage attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsOverVoltageID = 0x00000805;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsOverVoltageID = 0x00000805;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsUnderVoltage attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageID = 0x00000806;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageID = 0x00000806;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeOverVoltage attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltageID = 0x00000807;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltageID = 0x00000807;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeUnderVoltage attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltageID = 0x00000808;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltageID = 0x00000808;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSag attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagID = 0x00000809;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagID = 0x00000809;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSwell attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellID = 0x0000080A;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellID = 0x0000080A;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The LineCurrentPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeLineCurrentPhaseBID = 0x00000901;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeLineCurrentPhaseBID = 0x00000901;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActiveCurrentPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActiveCurrentPhaseBID = 0x00000902;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActiveCurrentPhaseBID = 0x00000902;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ReactiveCurrentPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactiveCurrentPhaseBID = 0x00000903;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactiveCurrentPhaseBID = 0x00000903;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltagePhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltagePhaseBID = 0x00000905;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltagePhaseBID = 0x00000905;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageMinPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMinPhaseBID = 0x00000906;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMinPhaseBID = 0x00000906;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageMaxPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMaxPhaseBID = 0x00000907;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMaxPhaseBID = 0x00000907;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentPhaseBID = 0x00000908;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentPhaseBID = 0x00000908;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentMinPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMinPhaseBID = 0x00000909;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMinPhaseBID = 0x00000909;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentMaxPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMaxPhaseBID = 0x0000090A;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMaxPhaseBID = 0x0000090A;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerPhaseBID = 0x0000090B;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerPhaseBID = 0x0000090B;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerMinPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMinPhaseBID = 0x0000090C;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMinPhaseBID = 0x0000090C;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerMaxPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMaxPhaseBID = 0x0000090D;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMaxPhaseBID = 0x0000090D;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ReactivePowerPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactivePowerPhaseBID = 0x0000090E;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactivePowerPhaseBID = 0x0000090E;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ApparentPowerPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeApparentPowerPhaseBID = 0x0000090F;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeApparentPowerPhaseBID = 0x0000090F;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The PowerFactorPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerFactorPhaseBID = 0x00000910;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerFactorPhaseBID = 0x00000910;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsVoltageMeasurementPeriodPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsVoltageMeasurementPeriodPhaseBID = 0x00000911;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsVoltageMeasurementPeriodPhaseBID = 0x00000911;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsOverVoltageCounterPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsOverVoltageCounterPhaseBID = 0x00000912;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsOverVoltageCounterPhaseBID = 0x00000912;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsUnderVoltageCounterPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageCounterPhaseBID = 0x00000913;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageCounterPhaseBID = 0x00000913;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeOverVoltagePeriodPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltagePeriodPhaseBID = 0x00000914;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltagePeriodPhaseBID = 0x00000914;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeUnderVoltagePeriodPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltagePeriodPhaseBID = 0x00000915;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltagePeriodPhaseBID = 0x00000915;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSagPeriodPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagPeriodPhaseBID = 0x00000916;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagPeriodPhaseBID = 0x00000916;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSwellPeriodPhaseB attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellPeriodPhaseBID = 0x00000917;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellPeriodPhaseBID = 0x00000917;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The LineCurrentPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeLineCurrentPhaseCID = 0x00000A01;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeLineCurrentPhaseCID = 0x00000A01;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActiveCurrentPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActiveCurrentPhaseCID = 0x00000A02;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActiveCurrentPhaseCID = 0x00000A02;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ReactiveCurrentPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactiveCurrentPhaseCID = 0x00000A03;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactiveCurrentPhaseCID = 0x00000A03;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltagePhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltagePhaseCID = 0x00000A05;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltagePhaseCID = 0x00000A05;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageMinPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMinPhaseCID = 0x00000A06;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMinPhaseCID = 0x00000A06;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageMaxPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMaxPhaseCID = 0x00000A07;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageMaxPhaseCID = 0x00000A07;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentPhaseCID = 0x00000A08;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentPhaseCID = 0x00000A08;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentMinPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMinPhaseCID = 0x00000A09;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMinPhaseCID = 0x00000A09;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsCurrentMaxPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMaxPhaseCID = 0x00000A0A;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsCurrentMaxPhaseCID = 0x00000A0A;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerPhaseCID = 0x00000A0B;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerPhaseCID = 0x00000A0B;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerMinPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMinPhaseCID = 0x00000A0C;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMinPhaseCID = 0x00000A0C;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ActivePowerMaxPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMaxPhaseCID = 0x00000A0D;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeActivePowerMaxPhaseCID = 0x00000A0D;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ReactivePowerPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactivePowerPhaseCID = 0x00000A0E;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeReactivePowerPhaseCID = 0x00000A0E;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ApparentPowerPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeApparentPowerPhaseCID = 0x00000A0F;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeApparentPowerPhaseCID = 0x00000A0F;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The PowerFactorPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerFactorPhaseCID = 0x00000A10;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributePowerFactorPhaseCID = 0x00000A10;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsVoltageMeasurementPeriodPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsVoltageMeasurementPeriodPhaseCID = 0x00000A11;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsVoltageMeasurementPeriodPhaseCID = 0x00000A11;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsOverVoltageCounterPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsOverVoltageCounterPhaseCID = 0x00000A12;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsOverVoltageCounterPhaseCID = 0x00000A12;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AverageRmsUnderVoltageCounterPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageCounterPhaseCID = 0x00000A13;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAverageRmsUnderVoltageCounterPhaseCID = 0x00000A13;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeOverVoltagePeriodPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltagePeriodPhaseCID = 0x00000A14;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeOverVoltagePeriodPhaseCID = 0x00000A14;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsExtremeUnderVoltagePeriodPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltagePeriodPhaseCID = 0x00000A15;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsExtremeUnderVoltagePeriodPhaseCID = 0x00000A15;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSagPeriodPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagPeriodPhaseCID = 0x00000A16;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSagPeriodPhaseCID = 0x00000A16;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The RmsVoltageSwellPeriodPhaseC attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellPeriodPhaseCID = 0x00000A17;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeRmsVoltageSwellPeriodPhaseCID = 0x00000A17;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GeneratedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AcceptedCommandList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The AttributeList attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAttributeListID = 0x0000FFFB;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeAttributeListID = 0x0000FFFB;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The FeatureMap attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeFeatureMapID = 0x0000FFFC;
     /**
      * Cluster ElectricalMeasurement attributes
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ClusterRevision attribute will be removed
      */
-    @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    @Deprecated @Generated public static final int AttributeIDTypeClusterElectricalMeasurementAttributeClusterRevisionID = 0x0000FFFD;
     /**
      * Cluster TestCluster deprecated attribute names
      * 
@@ -15688,4 +15872,1852 @@ public final class MTRAttributeIDType {
      * API-Since: 16.4
      */
     @Generated public static final int AttributeIDTypeClusterUnitTestingAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster PowerSource attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerSourceAttributeEndpointListID = 0x0000001F;
+    /**
+     * Cluster RVCRunMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCRunModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster RVCRunMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCRunModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster RVCRunMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCRunModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster RVCRunMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCRunModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster RVCRunMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCRunModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster RVCRunMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCRunModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster RVCRunMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCRunModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster RVCCleanMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCCleanModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster RVCCleanMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCCleanModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster RVCCleanMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCCleanModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster RVCCleanMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCCleanModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster RVCCleanMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCCleanModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster RVCCleanMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCCleanModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster RVCCleanMode attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCCleanModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster AirQuality attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterAirQualityAttributeAirQualityID = 0x00000000;
+    /**
+     * Cluster AirQuality attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterAirQualityAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster AirQuality attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterAirQualityAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster AirQuality attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterAirQualityAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster AirQuality attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterAirQualityAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster AirQuality attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterAirQualityAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeExpressedStateID = 0x00000000;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeSmokeStateID = 0x00000001;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeCOStateID = 0x00000002;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeBatteryAlertID = 0x00000003;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeDeviceMutedID = 0x00000004;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeTestInProgressID = 0x00000005;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeHardwareFaultAlertID = 0x00000006;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeEndOfServiceAlertID = 0x00000007;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeInterconnectSmokeAlarmID = 0x00000008;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeInterconnectCOAlarmID = 0x00000009;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeContaminationStateID = 0x0000000A;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeSmokeSensitivityLevelID = 0x0000000B;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeExpiryDateID = 0x0000000C;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster SmokeCOAlarm attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterSmokeCOAlarmAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributePhaseListID = 0x00000000;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeCurrentPhaseID = 0x00000001;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeCountdownTimeID = 0x00000002;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeOperationalStateListID = 0x00000003;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeOperationalStateID = 0x00000004;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeOperationalErrorID = 0x00000005;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster OperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOperationalStateAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributePhaseListID = 0x00000000;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeCurrentPhaseID = 0x00000001;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeCountdownTimeID = 0x00000002;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeOperationalStateListID = 0x00000003;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeOperationalStateID = 0x00000004;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeOperationalErrorID = 0x00000005;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster RVCOperationalState attributes
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRVCOperationalStateAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeConditionID = 0x00000000;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeDegradationDirectionID = 0x00000001;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeChangeIndicationID = 0x00000002;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeInPlaceIndicatorID = 0x00000003;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeLastChangedTimeID = 0x00000004;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeReplacementProductListID = 0x00000005;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster HEPAFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterHEPAFilterMonitoringAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeConditionID = 0x00000000;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeDegradationDirectionID = 0x00000001;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeChangeIndicationID = 0x00000002;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeInPlaceIndicatorID = 0x00000003;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeLastChangedTimeID = 0x00000004;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeReplacementProductListID = 0x00000005;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterActivatedCarbonFilterMonitoringAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeCurrentSensitivityLevelID = 0x00000000;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeSupportedSensitivityLevelsID = 0x00000001;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeDefaultSensitivityLevelID = 0x00000002;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeAlarmsActiveID = 0x00000003;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeAlarmsSuppressedID = 0x00000004;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeAlarmsEnabledID = 0x00000005;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeAlarmsSupportedID = 0x00000006;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeSensorFaultID = 0x00000007;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster BooleanStateConfiguration attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterBooleanStateConfigurationAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeOpenDurationID = 0x00000000;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeDefaultOpenDurationID = 0x00000001;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeAutoCloseTimeID = 0x00000002;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeRemainingDurationID = 0x00000003;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeCurrentStateID = 0x00000004;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeTargetStateID = 0x00000005;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeCurrentLevelID = 0x00000006;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeTargetLevelID = 0x00000007;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeDefaultOpenLevelID = 0x00000008;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeValveFaultID = 0x00000009;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeLevelStepID = 0x0000000A;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ValveConfigurationAndControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterValveConfigurationAndControlAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributePowerModeID = 0x00000000;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeNumberOfMeasurementTypesID = 0x00000001;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeAccuracyID = 0x00000002;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeRangesID = 0x00000003;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeVoltageID = 0x00000004;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeActiveCurrentID = 0x00000005;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeReactiveCurrentID = 0x00000006;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeApparentCurrentID = 0x00000007;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeActivePowerID = 0x00000008;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeReactivePowerID = 0x00000009;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeApparentPowerID = 0x0000000A;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeRMSVoltageID = 0x0000000B;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeRMSCurrentID = 0x0000000C;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeRMSPowerID = 0x0000000D;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeFrequencyID = 0x0000000E;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeHarmonicCurrentsID = 0x0000000F;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeHarmonicPhasesID = 0x00000010;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributePowerFactorID = 0x00000011;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeNeutralCurrentID = 0x00000012;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ElectricalPowerMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalPowerMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeAccuracyID = 0x00000000;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeCumulativeEnergyImportedID = 0x00000001;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeCumulativeEnergyExportedID = 0x00000002;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributePeriodicEnergyImportedID = 0x00000003;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributePeriodicEnergyExportedID = 0x00000004;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeCumulativeEnergyResetID = 0x00000005;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ElectricalEnergyMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterElectricalEnergyMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster FanControl attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFanControlAttributeAirflowDirectionID = 0x0000000B;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster CarbonMonoxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonMonoxideConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster CarbonDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterCarbonDioxideConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster NitrogenDioxideConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterNitrogenDioxideConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster OzoneConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterOzoneConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster PM25ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM25ConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster FormaldehydeConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterFormaldehydeConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster PM1ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM1ConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster PM10ConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterPM10ConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster TotalVolatileOrganicCompoundsConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterTotalVolatileOrganicCompoundsConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeMeasuredValueID = 0x00000000;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeMinMeasuredValueID = 0x00000001;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeMaxMeasuredValueID = 0x00000002;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributePeakMeasuredValueID = 0x00000003;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributePeakMeasuredValueWindowID = 0x00000004;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeAverageMeasuredValueID = 0x00000005;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeAverageMeasuredValueWindowID = 0x00000006;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeUncertaintyID = 0x00000007;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeMeasurementUnitID = 0x00000008;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeMeasurementMediumID = 0x00000009;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeLevelValueID = 0x0000000A;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster RadonConcentrationMeasurement attributes
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
 }

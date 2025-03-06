@@ -33,6 +33,8 @@ public interface UITableViewDropCoordinator {
      * to the number of rows in that section), where an inserted row would append to the end of the section.
      * This index path may be nil in some circumstances (e.g. when dragging over empty space where there are no cells),
      * and if it is nil, the proposal's intent will always be UITableViewDropIntentUnspecified.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -44,6 +46,8 @@ public interface UITableViewDropCoordinator {
      * The rect is in the coordinate space of the cell at this index path.
      * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to
      * shrink the item to a single point.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -57,6 +61,8 @@ public interface UITableViewDropCoordinator {
      * Once the dragItem data is available, you can exchange the temporary placeholder cell with the final cell using
      * the placeholder context
      * method -commitInsertionWithDataSourceUpdates:
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -71,6 +77,8 @@ public interface UITableViewDropCoordinator {
      * view prior to calling this method.
      * If desired, use the drop delegate method -tableView:dropPreviewParametersForRowAtIndexPath: to provide preview
      * parameters.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -81,6 +89,8 @@ public interface UITableViewDropCoordinator {
     /**
      * Animate the dragItem to a location specified by the UIDragPreviewTarget.
      * The -[UITableViewDropItem previewSize] may be helpful to compute an appropriate transform.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -90,6 +100,8 @@ public interface UITableViewDropCoordinator {
 
     /**
      * Ordered list of items available for this drop.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -98,6 +110,8 @@ public interface UITableViewDropCoordinator {
 
     /**
      * The current drop proposal at the time of the drop.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -106,6 +120,8 @@ public interface UITableViewDropCoordinator {
 
     /**
      * The drop session.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

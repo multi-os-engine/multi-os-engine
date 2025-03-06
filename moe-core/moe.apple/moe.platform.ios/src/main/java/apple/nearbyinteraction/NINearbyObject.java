@@ -106,6 +106,8 @@ public class NINearbyObject extends NSObject implements NSCopying, NSSecureCodin
      * Nearby interaction discovery token
      * 
      * This discovery token will be equal to the token provided in the configuration with which the session was run.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class NINearbyObject extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Distance to the nearby object in meters. If not available in this update, the value of this property will be
      * equal to NINearbyObjectDistanceNotAvailable in Objective C, or nil in Swift.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("distance")

@@ -94,6 +94,8 @@ public class AVAssetVariantVideoAttributes extends NSObject {
      * 
      * Provides an array of video sample codec types present in the variant's renditions if any are declared. Each value
      * in the array is a NSNumber representation of CMVideoCodecType.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -148,6 +150,8 @@ public class AVAssetVariantVideoAttributes extends NSObject {
      * [@property] nominalFrameRate
      * 
      * If it is not declared, the value will be negative.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("nominalFrameRate")
@@ -157,6 +161,8 @@ public class AVAssetVariantVideoAttributes extends NSObject {
      * [@property] presentationSize
      * 
      * If it is not declared, it will be CGSizeZero.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("presentationSize")
@@ -188,6 +194,8 @@ public class AVAssetVariantVideoAttributes extends NSObject {
      * [@property] videoRange
      * 
      * Provides the video range of the variant. If it is not declared, it will be AVVideoRangeSDR.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

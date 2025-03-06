@@ -86,6 +86,8 @@ public class ARPointCloud extends NSObject implements NSSecureCoding {
 
     /**
      * The number of points in the point cloud.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("count")
@@ -107,6 +109,8 @@ public class ARPointCloud extends NSObject implements NSSecureCoding {
 
     /**
      * The 3D point identifiers comprising the point cloud.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

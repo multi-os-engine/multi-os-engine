@@ -8,7 +8,7 @@ public final class mach_vm_range_tag_t {
     private mach_vm_range_tag_t() {
     }
 
-    @Generated public static final char MACH_VM_RANGE_DEFAULT = 0x0000;
-    @Generated public static final char MACH_VM_RANGE_DATA = 0x0001;
-    @Generated public static final char MACH_VM_RANGE_FIXED = 0x0002;
+    @Generated public static final char DEFAULT = 0x0000;
+    @Generated public static final char DATA = 0x0001;
+    @Generated public static final char FIXED = 0x0002;
 }

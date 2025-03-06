@@ -102,6 +102,8 @@ public class PHASEMetaParameter extends NSObject {
      * [@property] identifier
      * 
      * The identifier that uniquely represents this metaparameter.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -151,6 +153,8 @@ public class PHASEMetaParameter extends NSObject {
      * [@property] value
      * 
      * The value of this metaparameter
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setValue:")
@@ -168,6 +172,8 @@ public class PHASEMetaParameter extends NSObject {
      * [@property] value
      * 
      * The value of this metaparameter
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

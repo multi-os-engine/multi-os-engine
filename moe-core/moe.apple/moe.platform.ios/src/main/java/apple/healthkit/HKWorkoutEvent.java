@@ -246,6 +246,8 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
      * [@property] workoutEventType
      * 
      * Represents the type of event that occurred during a workout.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("type")

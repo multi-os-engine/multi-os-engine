@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A dropout layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -132,7 +131,11 @@ public class MLCDropoutLayer extends MLCLayer {
      * @param rate A scalar float value. The probability that each element is dropped.
      * @param seed The seed used to generate random numbers.
      * @return A new dropout layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithRate:seed:")
     public static native MLCDropoutLayer layerWithRateSeed(float rate, @NUInt long seed);
@@ -146,7 +149,11 @@ public class MLCDropoutLayer extends MLCLayer {
      * [@property] rate
      * 
      * The probability that each element is dropped
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("rate")
     public native float rate();
@@ -163,7 +170,11 @@ public class MLCDropoutLayer extends MLCLayer {
      * [@property] seed
      * 
      * The initial seed used to generate random numbers
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("seed")
     @NUInt
@@ -177,6 +188,7 @@ public class MLCDropoutLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

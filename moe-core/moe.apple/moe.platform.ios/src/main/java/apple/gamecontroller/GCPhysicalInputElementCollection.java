@@ -92,6 +92,8 @@ public class GCPhysicalInputElementCollection<_Key, _Element> extends NSObject i
 
     /**
      * The number of elements in the collection.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("count")
@@ -112,6 +114,9 @@ public class GCPhysicalInputElementCollection<_Key, _Element> extends NSObject i
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("elementEnumerator")
@@ -127,6 +132,8 @@ public class GCPhysicalInputElementCollection<_Key, _Element> extends NSObject i
      * @return
      *         The element associated with \a alias, or nil if no element is associated
      *         with \a alias.
+     * 
+     *         API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -170,6 +177,9 @@ public class GCPhysicalInputElementCollection<_Key, _Element> extends NSObject i
     @Selector("new")
     public static native GCPhysicalInputElementCollection<?, ?> new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")

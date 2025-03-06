@@ -61,6 +61,8 @@ import apple.uikit.UIAction;
 import apple.uikit.UITextItem;
 import apple.uikit.UITextItemMenuConfiguration;
 import apple.uikit.protocol.UIContextMenuInteractionAnimating;
+import apple.foundation.NSValue;
+import apple.uikit.UITextFormattingViewController;
 
 /**
  * API-Since: 8.0
@@ -196,6 +198,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * and animates sheet size changes as necessary.
      * Set it to nil to remove your view controller, thus restoring the configuration item table.
      * SLComposeServiceViewController animates the addition/removal of the view controller's view, as appropriate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("autoCompletionViewController")
@@ -206,6 +210,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * Subclasses do not typically need to call this manually, but may choose to in response to a catastrophic failure
      * during the user's interaction with the sheet.
      * Subclasses should not need to override this.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("cancel")
@@ -214,6 +220,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
     /**
      * Set/change this to something non-nil to cause the character count view to appear/redraw. This is useful for
      * services that have a character count limit on their posts. Defaults to nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("charactersRemaining")
@@ -222,6 +230,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
     /**
      * Subclasses should implement this, and return an array of SLComposeSheetConfigurationItem instances, if if needs
      * to display configuration items in the sheet. Defaults to nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("configurationItems")
@@ -229,6 +239,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
 
     /**
      * Convenience. This returns the current text from the textView.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("contentText")
@@ -240,6 +252,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * The default implementation calls the extensionContext's -cancelRequestWithError: method with an
      * NSError/NSUserCancelledError.
      * Subclasses may override this in order to customize the extensionContext completion.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("didSelectCancel")
@@ -252,6 +266,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * Subclasses must override this in order to peform the post, based on contentText and any attachments.
      * Subclasses may call super in order to leverage the default completion behavior; if a subclass does not call
      * super, it must call extensionContext's completion method manually.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("didSelectPost")
@@ -275,6 +291,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * the subclass a chance to update charactersRemaining.
      * Defaults to YES.
      * Subclasses should override this, and return whether contentText and attachments are currently valid for posting.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isContentValid")
@@ -286,6 +304,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * a preview is unneccessary for the extensionContext.
      * Subclasses can override this to supply a preview view of their own choosing for the set of attachments on the
      * extensionContext.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("loadPreviewView")
@@ -294,6 +314,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
     /**
      * When textView is empty, this string is displayed instead.
      * NOTE: This uses the iOS naming convention: "placeholder" vs. "placeholderString" on OS X.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("placeholder")
@@ -301,6 +323,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
 
     /**
      * Dismisses the current configuration view controller.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("popConfigurationViewController")
@@ -310,6 +334,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * Called when the sheet presentation animation is finished.
      * Subclasses should implement this to begin performing any expensive work (e.g., messaging a server), instead of
      * during initialization, -viewWillAppear, or -viewDidAppear.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentationAnimationDidFinish")
@@ -320,6 +346,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * configuration view controller is allowed at a time.
      * The pushed view controller should set preferredContentSize appropriately. SLComposeServiceViewController observes
      * changes to that property and animates sheet size changes as necessary.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pushConfigurationViewController:")
@@ -331,6 +359,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * (for example, in -presentationAnimationDidFinish).
      * You do not need to call this after changing a configuration item property; the base class detects and reacts to
      * that automatically.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("reloadConfigurationItems")
@@ -406,6 +436,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * and animates sheet size changes as necessary.
      * Set it to nil to remove your view controller, thus restoring the configuration item table.
      * SLComposeServiceViewController animates the addition/removal of the view controller's view, as appropriate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAutoCompletionViewController:")
@@ -414,6 +446,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
     /**
      * Set/change this to something non-nil to cause the character count view to appear/redraw. This is useful for
      * services that have a character count limit on their posts. Defaults to nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCharactersRemaining:")
@@ -422,11 +456,16 @@ public class SLComposeServiceViewController extends UIViewController implements 
     /**
      * When textView is empty, this string is displayed instead.
      * NOTE: This uses the iOS naming convention: "placeholder" vs. "placeholderString" on OS X.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPlaceholder:")
     public native void setPlaceholder(String value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("textView")
     public native UITextView textView();
@@ -500,6 +539,8 @@ public class SLComposeServiceViewController extends UIViewController implements 
      * button appropriately.
      * Subclasses should call this whenever they change data used as part of validity checking in their implementation
      * of -isContentValid.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("validateContent")
@@ -567,4 +608,45 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("textView:didBeginFormattingWithViewController:")
+    public native void textViewDidBeginFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:didEndFormattingWithViewController:")
+    public native void textViewDidEndFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:willBeginFormattingWithViewController:")
+    public native void textViewWillBeginFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:willEndFormattingWithViewController:")
+    public native void textViewWillEndFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:writingToolsIgnoredRangesInEnclosingRange:")
+    @NotNull
+    public native NSArray<? extends NSValue> textViewWritingToolsIgnoredRangesInEnclosingRange(
+            @NotNull UITextView textView, @ByValue NSRange enclosingRange);
+
+    @Generated
+    @IsOptional
+    @Selector("textViewWritingToolsDidEnd:")
+    public native void textViewWritingToolsDidEnd(@NotNull UITextView textView);
+
+    @Generated
+    @IsOptional
+    @Selector("textViewWritingToolsWillBegin:")
+    public native void textViewWritingToolsWillBegin(@NotNull UITextView textView);
 }

@@ -116,6 +116,8 @@ public class SHMatchedMediaItem extends SHMediaItem implements NSSecureCoding {
      * 
      * A value of 0.0 indicates the matched audio at the original frequency,
      * a value of 0.1 indicates 100hz is now 110hz
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("frequencySkew")
@@ -159,6 +161,8 @@ public class SHMatchedMediaItem extends SHMediaItem implements NSSecureCoding {
     /**
      * The difference between the start of the reference audio and the start of the sample audio
      * [@note] This value can be negative if the source audio starts before the reference audio
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("matchOffset")
@@ -175,6 +179,8 @@ public class SHMatchedMediaItem extends SHMediaItem implements NSSecureCoding {
 
     /**
      * The auto updating playback position in the reference signature
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("predictedCurrentMatchOffset")

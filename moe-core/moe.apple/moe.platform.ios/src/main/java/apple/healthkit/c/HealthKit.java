@@ -193,7 +193,11 @@ public final class HealthKit {
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
+     * HKQuantityType for the desired distance type
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -202,7 +206,11 @@ public final class HealthKit {
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
+     * HKQuantityType for HKQuantityTypeIdentifierActiveEnergyBurned
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -220,7 +228,11 @@ public final class HealthKit {
 
     /**
      * API-Since: 10.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
+     * HKQuantityType for HKQuantityTypeIdentifierSwimmingStrokeCount
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -1754,7 +1766,7 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierOvulationTestResult();
 
     /**
-     * HKCategoryValueMenstrualFlow
+     * HKCategoryValueVaginalBleeding
      * 
      * API-Since: 9.0
      */
@@ -1909,7 +1921,11 @@ public final class HealthKit {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
+     * HKQuantityType for HKQuantityTypeIdentifierFlightsClimbed
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4361,4 +4377,235 @@ public final class HealthKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String HKMetadataKeyMaximumLightIntensity();
+
+    @Generated
+    @CFunction
+    @Nullable
+    public static native NSNumber HKStateOfMindValenceClassificationForValence(double valence);
+
+    /**
+     * Determines the Breathing Disturbances classification for the provided BD value.
+     * 
+     * @param value Breathing Disturbances quantity
+     * @return A Breathing Disturbances classification if one can be created, otherwise nil.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native NSNumber HKAppleSleepingBreathingDisturbancesClassificationForQuantity(
+            @NotNull HKQuantity value);
+
+    /**
+     * Retrieves the minimum quantity for a Breathing Disturbances classification.
+     * 
+     * @param classification Breathing Disturbances classification for desired minimum value.
+     * 
+     *                       API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native HKQuantity HKAppleSleepingBreathingDisturbancesMinimumQuantityForClassification(
+            @NInt long classification);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKPredicateKeyPathWorkoutEffortRelationship();
+
+    /**
+     * m/s, Discrete (Arithmetic)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierCrossCountrySkiingSpeed();
+
+    /**
+     * m, Cumulative
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierDistanceCrossCountrySkiing();
+
+    /**
+     * m, Cumulative
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierDistancePaddleSports();
+
+    /**
+     * m, Cumulative
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierDistanceRowing();
+
+    /**
+     * m, Cumulative
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierDistanceSkatingSports();
+
+    /**
+     * appleEffortScore, Discrete (Arithmetic)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierEstimatedWorkoutEffortScore();
+
+    /**
+     * m/s, Discrete (Arithmetic)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierPaddleSportsSpeed();
+
+    /**
+     * m/s, Discrete (Arithmetic)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierRowingSpeed();
+
+    /**
+     * appleEffortScore, Discrete (Arithmetic)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierWorkoutEffortScore();
+
+    /**
+     * count, Discrete (Arithmetic)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierAppleSleepingBreathingDisturbances();
+
+    /**
+     * HKCategoryValueVaginalBleeding
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKCategoryTypeIdentifierBleedingAfterPregnancy();
+
+    /**
+     * HKCategoryValueVaginalBleeding
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKCategoryTypeIdentifierBleedingDuringPregnancy();
+
+    /**
+     * HKCategoryValue
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKCategoryTypeIdentifierSleepApneaEvent();
+
+    /**
+     * Mindfulness
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKScoredAssessmentTypeIdentifierGAD7();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKScoredAssessmentTypeIdentifierPHQ9();
+
+    /**
+     * Mindfulness
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKDataTypeIdentifierStateOfMind();
+
+    /**
+     * [@constant] HKMetadataKeyAppleFitnessPlusCatalogIdentifier
+     * 
+     * Contains the catalog identifier of the Fitness+ workout.
+     * 
+     * This key only exists if the workout was completed in Fitness+. The expected value type is an NSString containing
+     * the Fitness+ catalog identifier.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyAppleFitnessPlusCatalogIdentifier();
 }

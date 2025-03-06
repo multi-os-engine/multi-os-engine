@@ -59,6 +59,8 @@ public class PHASEGroupPreset extends NSObject {
      * 
      * Activate this preset in the PHASEEngine object it was initialized with. The internal timeToTarget value is used.
      * The current preset will be deactivated automatically.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("activate")
@@ -72,6 +74,8 @@ public class PHASEGroupPreset extends NSObject {
      * [@note]
      * The timeToTargetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time
      * scale.
+     * 
+     * API-Since: 15.0
      * 
      * @param timeToTargetOverride
      *                             Override the timeToTarget value in the preset with this value.
@@ -119,6 +123,8 @@ public class PHASEGroupPreset extends NSObject {
      * deactivate
      * 
      * Deactivate this preset and return the system to default unity values. The internal timeToReset value is used.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("deactivate")
@@ -131,6 +137,8 @@ public class PHASEGroupPreset extends NSObject {
      * [@note]
      * The timeToResetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time
      * scale.
+     * 
+     * API-Since: 15.0
      * 
      * @param timeToResetOverride
      *                            Override the timeToReset value in the preset with this value.
@@ -163,6 +171,8 @@ public class PHASEGroupPreset extends NSObject {
      * [@note]
      * The timeToTarget and timeToReset are scaled by unitsPerSecond internally, so can be provided at the client's
      * native time scale.
+     * 
+     * API-Since: 15.0
      * 
      * @param engine
      *                     The PHASEEngine object to register this preset with.
@@ -225,6 +235,8 @@ public class PHASEGroupPreset extends NSObject {
      * [@property] settings
      * 
      * The collection of PHASEGroupPresetSetting objects to apply when this preset is activated.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -241,6 +253,8 @@ public class PHASEGroupPreset extends NSObject {
      * The time interval that all group settings in this preset will take to gradually fade to the unity value
      * [@note]
      * The timeToReset is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("timeToReset")
@@ -252,6 +266,8 @@ public class PHASEGroupPreset extends NSObject {
      * The time interval that all group settings in this preset will take to gradually fade to the new value
      * [@note]
      * The timeToTarget is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("timeToTarget")

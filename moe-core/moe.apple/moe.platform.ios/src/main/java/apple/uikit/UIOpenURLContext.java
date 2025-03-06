@@ -44,6 +44,9 @@ public class UIOpenURLContext extends NSObject {
         super(peer);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("URL")
@@ -132,6 +135,9 @@ public class UIOpenURLContext extends NSObject {
     @Selector("new")
     public static native UIOpenURLContext new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("options")

@@ -101,6 +101,9 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
      * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the mean value is written.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("clipRectSource")
@@ -140,6 +143,8 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -151,6 +156,8 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSImageStatisticsMean object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -203,6 +210,9 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
      * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the mean value is written.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setClipRectSource:")

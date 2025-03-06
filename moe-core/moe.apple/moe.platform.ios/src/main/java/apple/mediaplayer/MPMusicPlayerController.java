@@ -79,6 +79,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Playing items with applicationMusicPlayer does not affect Music's playback state.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -178,6 +180,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Playing media items with the systemMusicPlayer will replace the user's current Music state.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -192,6 +196,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * These methods determine whether playback notifications will be generated.
      * Calls to begin/endGeneratingPlaybackNotifications are nestable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("beginGeneratingPlaybackNotifications")
@@ -213,6 +219,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("currentPlaybackTime")
     public native double currentPlaybackTime();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("endGeneratingPlaybackNotifications")
     public native void endGeneratingPlaybackNotifications();
@@ -243,6 +252,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * Returns the currently playing media item, or nil if none is playing.
      * Setting the nowPlayingItem to an item in the current queue will begin playback at that item.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -259,6 +270,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Returns the current playback state of the music player
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("playbackState")
@@ -285,6 +298,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how music repeats after playback completes. Defaults to MPMusicRepeatModeDefault.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("repeatMode")
@@ -302,6 +317,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * Returns the currently playing media item, or nil if none is playing.
      * Setting the nowPlayingItem to an item in the current queue will begin playback at that item.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setNowPlayingItem:")
@@ -335,6 +352,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how music repeats after playback completes. Defaults to MPMusicRepeatModeDefault.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setRepeatMode:")
@@ -342,6 +361,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how music is shuffled when playing. Defaults to MPMusicShuffleModeDefault.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setShuffleMode:")
@@ -362,6 +383,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how music is shuffled when playing. Defaults to MPMusicShuffleModeDefault.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("shuffleMode")
@@ -370,6 +393,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Restarts playback at the beginning of the currently playing media item.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("skipToBeginning")
@@ -378,6 +403,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * Skips to the next item in the queue.
      * If already at the last item, this resets the queue to the first item in a paused playback state.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("skipToNextItem")
@@ -385,6 +412,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Skips to the previous item in the queue. If already at the first item, this will end playback.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("skipToPreviousItem")

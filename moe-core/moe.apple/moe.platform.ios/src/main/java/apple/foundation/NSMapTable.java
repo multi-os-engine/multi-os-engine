@@ -137,6 +137,9 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("mapTableWithKeyOptions:valueOptions:")
@@ -212,6 +215,9 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -225,6 +231,8 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
 
     /**
      * create a dictionary of contents
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -243,17 +251,26 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("initWithCoder:")
     public native NSMapTable<?, ?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithKeyOptions:valueOptions:capacity:")
     public native NSMapTable<?, ?> initWithKeyOptionsValueOptionsCapacity(@NUInt long keyOptions,
             @NUInt long valueOptions, @NUInt long initialCapacity);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithKeyPointerFunctions:valuePointerFunctions:capacity:")
     public native NSMapTable<?, ?> initWithKeyPointerFunctionsValuePointerFunctionsCapacity(
             @NotNull NSPointerFunctions keyFunctions, @NotNull NSPointerFunctions valueFunctions,
             @NUInt long initialCapacity);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("keyEnumerator")
@@ -262,39 +279,58 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     /**
      * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
      * be subsequently modified and/or used directly in the creation of other pointer "collections".
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
     @Selector("keyPointerFunctions")
     public native NSPointerFunctions keyPointerFunctions();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectForKey(@Nullable @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
     /**
      * add/replace value (CFDictionarySetValue, NSMapInsert)
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @Nullable @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("valuePointerFunctions")

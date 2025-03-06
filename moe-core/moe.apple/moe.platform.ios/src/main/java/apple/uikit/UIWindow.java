@@ -421,6 +421,8 @@ public class UIWindow extends UIView {
      * key window. In apps built against the iOS 15 or tvOS 15 SDK (or later), this method will
      * be called when the window becomes its scene's key window. For apps built against earlier
      * SDKs, this method will be called when the window becomes the application's key window.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("becomeKeyWindow")
@@ -428,6 +430,8 @@ public class UIWindow extends UIView {
 
     /**
      * pass in nil to mean screen
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("convertPoint:fromWindow:")
@@ -436,17 +440,25 @@ public class UIWindow extends UIView {
 
     /**
      * can be used to convert to another window
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("convertPoint:toWindow:")
     @ByValue
     public native CGPoint convertPointToWindow(@ByValue CGPoint point, @Nullable UIWindow window);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("convertRect:fromWindow:")
     @ByValue
     public native CGRect convertRectFromWindow(@ByValue CGRect rect, @Nullable UIWindow window);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("convertRect:toWindow:")
     @ByValue
@@ -468,6 +480,8 @@ public class UIWindow extends UIView {
      * In apps built against the iOS 15 or tvOS 15 SDK (or later), this property returns YES if
      * the window is its scene's key window. For apps built against earlier SDKs, this property
      * returns YES if the window is the application's key window.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isKeyWindow")
@@ -476,6 +490,8 @@ public class UIWindow extends UIView {
     /**
      * Convenience. Most apps call this to show a window and also make it key.
      * To make the window visible without becoming key, just use UIView's hidden property.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("makeKeyAndVisible")
@@ -483,6 +499,8 @@ public class UIWindow extends UIView {
 
     /**
      * Make the window key without changing visibility.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("makeKeyWindow")
@@ -493,6 +511,8 @@ public class UIWindow extends UIView {
      * window status. In apps built against the iOS 15 or tvOS 15 SDK (or later), this method will
      * be called when the window resigns key in its scene. For apps built against earlier SDKs,
      * this method will be called when the window resigns key in the application.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("resignKeyWindow")
@@ -521,6 +541,8 @@ public class UIWindow extends UIView {
 
     /**
      * called by UIApplication to dispatch events to views inside the window
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sendEvent:")
@@ -546,6 +568,8 @@ public class UIWindow extends UIView {
 
     /**
      * default = 0.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setWindowLevel:")
@@ -553,6 +577,8 @@ public class UIWindow extends UIView {
 
     /**
      * default = 0.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("windowLevel")

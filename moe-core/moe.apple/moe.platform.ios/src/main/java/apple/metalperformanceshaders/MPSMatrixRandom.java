@@ -70,6 +70,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * [@property] batchSize
      * 
      * The size of the batch to process.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("batchSize")
@@ -80,6 +82,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * [@property] batchStart
      * 
      * The starting index in the destination batch.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("batchStart")
@@ -124,6 +128,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * MPSDataTypeFloat32
      * 
      * Default is MPSDataTypeUInt32
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("destinationDataType")
@@ -135,6 +141,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * The distribution from which to generate random values.
      * 
      * Default is MPSMatrixRandomDistributionDefault
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("distributionType")
@@ -146,6 +154,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * 
      * @param commandBuffer     A valid MTLCommandBuffer to receive the encoded filter
      * @param destinationMatrix A valid MPSMatrix to contain the result.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:destinationMatrix:")
@@ -158,6 +168,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * 
      * @param commandBuffer     A valid MTLCommandBuffer to receive the encoded filter
      * @param destinationVector A valid MPSVector to contain the result.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:destinationVector:")
@@ -226,6 +238,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * [@property] batchSize
      * 
      * The size of the batch to process.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBatchSize:")
@@ -235,6 +249,8 @@ public class MPSMatrixRandom extends MPSKernel {
      * [@property] batchStart
      * 
      * The starting index in the destination batch.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBatchStart:")

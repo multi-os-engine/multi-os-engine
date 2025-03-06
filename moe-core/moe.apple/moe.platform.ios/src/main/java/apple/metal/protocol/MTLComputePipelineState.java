@@ -37,6 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NInt;
 
 /**
  * [@protocol] MTLComputePipelineState
@@ -57,6 +58,8 @@ public interface MTLComputePipelineState {
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -68,6 +71,8 @@ public interface MTLComputePipelineState {
      * [@property] maxTotalThreadsPerThreadgroup
      * 
      * The maximum total number of threads that can be in a single compute threadgroup.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
@@ -78,6 +83,8 @@ public interface MTLComputePipelineState {
      * [@property] threadExecutionWidth
      * 
      * For most efficient execution, the threadgroup size should be a multiple of this when executing the kernel.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("threadExecutionWidth")
@@ -193,4 +200,16 @@ public interface MTLComputePipelineState {
     @Selector("gpuResourceID")
     @ByValue
     MTLResourceID gpuResourceID();
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Current state of Shader Validation for the pipeline.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("shaderValidation")
+    @NInt
+    long shaderValidation();
 }

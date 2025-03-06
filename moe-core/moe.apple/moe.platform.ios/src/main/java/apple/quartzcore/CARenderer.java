@@ -53,6 +53,8 @@ public class CARenderer extends NSObject {
 
     /**
      * Add rectangle 'r' to the update region of the current frame.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("addUpdateRect:")
@@ -75,6 +77,8 @@ public class CARenderer extends NSObject {
     /**
      * Begin rendering a frame at time 't'. If 'ts' is non-null it defines
      * the host time and update frequency of the target device.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("beginFrameAtTime:timeStamp:")
@@ -83,6 +87,8 @@ public class CARenderer extends NSObject {
 
     /**
      * The bounds rect of the render target.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("bounds")
@@ -120,6 +126,8 @@ public class CARenderer extends NSObject {
 
     /**
      * Release any data associated with the current frame.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("endFrame")
@@ -158,6 +166,8 @@ public class CARenderer extends NSObject {
 
     /**
      * The root layer associated with the renderer.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -174,6 +184,8 @@ public class CARenderer extends NSObject {
      * no update needs to be scheduled yet. If the current frame time, a
      * continuous animation is running and an update should be scheduled
      * after a "natural" delay.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("nextFrameTime")
@@ -181,6 +193,8 @@ public class CARenderer extends NSObject {
 
     /**
      * Render the update region of the current frame to the target context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("render")
@@ -208,6 +222,8 @@ public class CARenderer extends NSObject {
 
     /**
      * The bounds rect of the render target.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBounds:")
@@ -215,6 +231,8 @@ public class CARenderer extends NSObject {
 
     /**
      * Change the renderer's destination Metal texture.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDestination:")
@@ -222,6 +240,8 @@ public class CARenderer extends NSObject {
 
     /**
      * The root layer associated with the renderer.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLayer:")
@@ -240,6 +260,8 @@ public class CARenderer extends NSObject {
      * pixels that will be rendered by the current frame. Initially this
      * will include all differences between the current frame and the
      * previously rendered frame.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("updateBounds")

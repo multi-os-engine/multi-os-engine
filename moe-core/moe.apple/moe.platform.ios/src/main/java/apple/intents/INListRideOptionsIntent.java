@@ -164,6 +164,9 @@ public class INListRideOptionsIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("dropOffLocation")
@@ -177,11 +180,17 @@ public class INListRideOptionsIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INListRideOptionsIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:")
     public native INListRideOptionsIntent initWithPickupLocationDropOffLocation(@Nullable CLPlacemark pickupLocation,
             @Nullable CLPlacemark dropOffLocation);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("pickupLocation")

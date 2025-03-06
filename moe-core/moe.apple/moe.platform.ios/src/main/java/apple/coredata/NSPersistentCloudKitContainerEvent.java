@@ -100,11 +100,17 @@ public class NSPersistentCloudKitContainerEvent extends NSObject implements NSCo
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("error")
@@ -115,6 +121,9 @@ public class NSPersistentCloudKitContainerEvent extends NSObject implements NSCo
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("identifier")
@@ -163,16 +172,25 @@ public class NSPersistentCloudKitContainerEvent extends NSObject implements NSCo
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("storeIdentifier")
     public native String storeIdentifier();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("succeeded")
     public native boolean succeeded();
@@ -181,6 +199,9 @@ public class NSPersistentCloudKitContainerEvent extends NSObject implements NSCo
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("type")
     @NInt

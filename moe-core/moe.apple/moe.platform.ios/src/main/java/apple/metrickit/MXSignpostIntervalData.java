@@ -86,6 +86,8 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
      * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -120,6 +122,8 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
      * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -133,6 +137,8 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
      * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -161,6 +167,8 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
      * 
      * A histogram of signpost intervals durations associated with the given signposts with signpostName and
      * signpostCategory.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

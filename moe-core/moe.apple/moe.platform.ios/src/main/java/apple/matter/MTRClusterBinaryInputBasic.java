@@ -32,12 +32,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An interface for reading the value of a binary measurement and accessing various characteristics of that measurement.
  * 
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: BinaryInputBasic is deprecated and will be removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterBinaryInputBasic extends MTRCluster {
+public class MTRClusterBinaryInputBasic extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -119,7 +122,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
      * for command invocations if commands are added to this cluster.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: BinaryInputBasic is deprecated and will be removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:endpointID:queue:")
     public native MTRClusterBinaryInputBasic initWithDeviceEndpointIDQueue(@NotNull MTRDevice device,
@@ -154,7 +160,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithParams:")
     @Nullable
@@ -162,7 +171,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActiveTextWithParams:")
     @Nullable
@@ -170,7 +182,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApplicationTypeWithParams:")
     @Nullable
@@ -178,7 +193,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithParams:")
     @Nullable
@@ -186,7 +204,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithParams:")
     @Nullable
@@ -194,7 +215,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDescriptionWithParams:")
     @Nullable
@@ -202,7 +226,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithParams:")
     @Nullable
@@ -210,7 +237,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithParams:")
     @Nullable
@@ -218,7 +248,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInactiveTextWithParams:")
     @Nullable
@@ -226,7 +259,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeOutOfServiceWithParams:")
     @Nullable
@@ -234,7 +270,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePolarityWithParams:")
     @Nullable
@@ -242,7 +281,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePresentValueWithParams:")
     @Nullable
@@ -250,7 +292,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReliabilityWithParams:")
     @Nullable
@@ -258,7 +303,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeStatusFlagsWithParams:")
     @Nullable
@@ -292,7 +340,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeActiveTextWithValue:expectedValueInterval:")
     public native void writeAttributeActiveTextWithValueExpectedValueInterval(
@@ -300,7 +351,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeActiveTextWithValue:expectedValueInterval:params:")
     public native void writeAttributeActiveTextWithValueExpectedValueIntervalParams(
@@ -309,7 +363,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeDescriptionWithValue:expectedValueInterval:")
     public native void writeAttributeDescriptionWithValueExpectedValueInterval(
@@ -317,7 +374,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeDescriptionWithValue:expectedValueInterval:params:")
     public native void writeAttributeDescriptionWithValueExpectedValueIntervalParams(
@@ -326,7 +386,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeInactiveTextWithValue:expectedValueInterval:")
     public native void writeAttributeInactiveTextWithValueExpectedValueInterval(
@@ -334,7 +397,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeInactiveTextWithValue:expectedValueInterval:params:")
     public native void writeAttributeInactiveTextWithValueExpectedValueIntervalParams(
@@ -343,7 +409,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeOutOfServiceWithValue:expectedValueInterval:")
     public native void writeAttributeOutOfServiceWithValueExpectedValueInterval(
@@ -351,7 +420,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeOutOfServiceWithValue:expectedValueInterval:params:")
     public native void writeAttributeOutOfServiceWithValueExpectedValueIntervalParams(
@@ -360,7 +432,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributePresentValueWithValue:expectedValueInterval:")
     public native void writeAttributePresentValueWithValueExpectedValueInterval(
@@ -368,7 +443,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributePresentValueWithValue:expectedValueInterval:params:")
     public native void writeAttributePresentValueWithValueExpectedValueIntervalParams(
@@ -377,7 +455,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeReliabilityWithValue:expectedValueInterval:")
     public native void writeAttributeReliabilityWithValueExpectedValueInterval(
@@ -385,7 +466,10 @@ public class MTRClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeReliabilityWithValue:expectedValueInterval:params:")
     public native void writeAttributeReliabilityWithValueExpectedValueIntervalParams(

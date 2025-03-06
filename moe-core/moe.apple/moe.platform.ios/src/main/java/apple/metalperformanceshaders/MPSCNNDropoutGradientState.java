@@ -171,6 +171,8 @@ public class MPSCNNDropoutGradientState extends MPSNNGradientState {
      *         In order to gaurantee that the mask data is correctly synchronized for CPU side access,
      *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
      *         method before accessing the mask data.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated

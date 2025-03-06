@@ -87,6 +87,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * An object that defines the delegate of the page control progress.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("delegate")
@@ -101,6 +103,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
     /**
      * Returns the duration for the specified page, and `preferredDuration` when there is no custom duration set
      * for the specified page.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("durationForPage:")
@@ -117,6 +121,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * Creates a time interval progress with a specified preferred duration.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithPreferredDuration:")
@@ -137,6 +143,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * Returns YES if the timer is currently active.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isRunning")
@@ -158,6 +166,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * Pause the timer if it is active.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("pauseTimer")
@@ -167,6 +177,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
      * The preferred duration for the time interval progress, used when there is no custom page duration set for the
      * current page.
      * The preferred duration must be greater than 0.0
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preferredDuration")
@@ -174,6 +186,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * Determines if the page control should loop back to page 0 after the last page. Default is NO.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("resetsToInitialPageAfterEnd")
@@ -189,6 +203,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * Resume the timer if it is not currently active.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("resumeTimer")
@@ -196,6 +212,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * An object that defines the delegate of the page control progress.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -203,6 +221,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * An object that defines the delegate of the page control progress.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable Object value) {
@@ -218,6 +238,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * Sets a custom duration for the specified page. Set 0.0 to remove the custom duration for the specified page.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDuration:forPage:")
@@ -227,6 +249,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
      * The preferred duration for the time interval progress, used when there is no custom page duration set for the
      * current page.
      * The preferred duration must be greater than 0.0
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPreferredDuration:")
@@ -234,6 +258,8 @@ public class UIPageControlTimerProgress extends UIPageControlProgress {
 
     /**
      * Determines if the page control should loop back to page 0 after the last page. Default is NO.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setResetsToInitialPageAfterEnd:")

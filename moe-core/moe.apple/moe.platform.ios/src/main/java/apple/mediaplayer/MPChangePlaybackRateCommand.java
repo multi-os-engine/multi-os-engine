@@ -165,6 +165,8 @@ public class MPChangePlaybackRateCommand extends MPRemoteCommand {
     /**
      * An array of NSNumbers (floats) that contain supported playback rates that
      * the command can send.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setSupportedPlaybackRates:")
@@ -173,6 +175,8 @@ public class MPChangePlaybackRateCommand extends MPRemoteCommand {
     /**
      * An array of NSNumbers (floats) that contain supported playback rates that
      * the command can send.
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated

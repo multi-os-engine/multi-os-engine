@@ -163,6 +163,8 @@ public class HMCameraStreamControl extends HMCameraControl {
 
     /**
      * Represents the current camera stream.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -171,6 +173,8 @@ public class HMCameraStreamControl extends HMCameraControl {
 
     /**
      * Delegate that receives updates on the camera stream changes.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -178,12 +182,21 @@ public class HMCameraStreamControl extends HMCameraControl {
     @MappedReturn(ObjCObjectMapper.class)
     public native HMCameraStreamControlDelegate delegate();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: HMCameraStreamControl objects are created by their parent container objects. Directly
+     * creating them is not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMCameraStreamControl init();
 
     /**
      * Delegate that receives updates on the camera stream changes.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -192,6 +205,8 @@ public class HMCameraStreamControl extends HMCameraControl {
 
     /**
      * Delegate that receives updates on the camera stream changes.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMCameraStreamControlDelegate value) {
@@ -208,6 +223,8 @@ public class HMCameraStreamControl extends HMCameraControl {
     /**
      * Starts the camera stream. 'currentCameraStream' will be updated upon
      * successfully starting the stream.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("startStream")
@@ -215,6 +232,9 @@ public class HMCameraStreamControl extends HMCameraControl {
 
     /**
      * Stops the camera stream.
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("stopStream")
@@ -222,6 +242,8 @@ public class HMCameraStreamControl extends HMCameraControl {
 
     /**
      * Represents the current streaming state.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("streamState")

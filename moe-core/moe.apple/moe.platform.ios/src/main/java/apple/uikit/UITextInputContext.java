@@ -82,6 +82,9 @@ public class UITextInputContext extends NSObject {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("current")
     public static native UITextInputContext current();
@@ -116,14 +119,23 @@ public class UITextInputContext extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("isDictationInputExpected")
     public native boolean isDictationInputExpected();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("isHardwareKeyboardInputExpected")
     public native boolean isHardwareKeyboardInputExpected();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("isPencilInputExpected")
     public native boolean isPencilInputExpected();
@@ -150,14 +162,23 @@ public class UITextInputContext extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("setDictationInputExpected:")
     public native void setDictationInputExpected(boolean value);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("setHardwareKeyboardInputExpected:")
     public native void setHardwareKeyboardInputExpected(boolean value);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("setPencilInputExpected:")
     public native void setPencilInputExpected(boolean value);

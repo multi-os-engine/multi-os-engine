@@ -75,6 +75,8 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
      * not be modified, though you may modify buffer contents.
      * 
      * The mDataByteSize fields of this AudioBufferList express the buffer's current frameLength.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -125,6 +127,8 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
      * [@property] format
      * 
      * The format of the audio in the buffer.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -172,6 +176,8 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
      * 
      * The mDataByteSize fields of this AudioBufferList express the buffer's current frameCapacity.
      * If they are altered, you should modify the buffer's frameLength to match.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

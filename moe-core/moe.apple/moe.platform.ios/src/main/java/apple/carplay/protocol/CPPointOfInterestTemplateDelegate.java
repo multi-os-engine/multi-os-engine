@@ -24,6 +24,8 @@ public interface CPPointOfInterestTemplateDelegate {
     /**
      * The user has changed the map region on the @c CPPointOfInterestTemplate. Your application
      * should respond by updating @c pointsOfInterest to show new points of interest for the new region.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("pointOfInterestTemplate:didChangeMapRegion:")
@@ -32,6 +34,8 @@ public interface CPPointOfInterestTemplateDelegate {
 
     /**
      * The user has selected the @c pointOfInterest and the details are being shown.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

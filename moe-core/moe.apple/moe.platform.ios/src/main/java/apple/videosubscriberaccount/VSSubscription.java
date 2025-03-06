@@ -30,7 +30,9 @@ import org.jetbrains.annotations.Nullable;
  * access to content.
  * 
  * API-Since: 11.0
+ * Deprecated-Since: 18.0
  */
+@Deprecated
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -55,7 +57,11 @@ public class VSSubscription extends NSObject {
      * It is an error to provide a subscription with an unknown access level as
      * the current subscription. Instead, choose the access level that describes
      * the content that the subscriber can play.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("accessLevel")
     @NInt
@@ -120,7 +126,11 @@ public class VSSubscription extends NSObject {
      * 
      * This might also be useful if the subscription only grants access to content
      * that is time-limited, e.g. a single season of games for a sports league.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("expirationDate")
     public native NSDate expirationDate();
@@ -175,7 +185,11 @@ public class VSSubscription extends NSObject {
      * It is an error to provide a subscription with an unknown access level as
      * the current subscription. Instead, choose the access level that describes
      * the content that the subscriber can play.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("setAccessLevel:")
     public native void setAccessLevel(@NInt long value);
@@ -196,7 +210,11 @@ public class VSSubscription extends NSObject {
      * 
      * This might also be useful if the subscription only grants access to content
      * that is time-limited, e.g. a single season of games for a sports league.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("setExpirationDate:")
     public native void setExpirationDate(NSDate value);
@@ -205,7 +223,11 @@ public class VSSubscription extends NSObject {
      * Identifies a subset of content from your catalog that subscriber can play.
      * 
      * Only provide values that are used in your availability feed's tier restrictions.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("setTierIdentifiers:")
     public native void setTierIdentifiers(NSArray<String> value);
@@ -222,7 +244,11 @@ public class VSSubscription extends NSObject {
      * Identifies a subset of content from your catalog that subscriber can play.
      * 
      * Only provide values that are used in your availability feed's tier restrictions.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("tierIdentifiers")
     public native NSArray<String> tierIdentifiers();

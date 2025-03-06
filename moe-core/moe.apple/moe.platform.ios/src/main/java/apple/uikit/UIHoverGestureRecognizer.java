@@ -218,4 +218,15 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Roll angle in radians. Devices that do not support roll angle will always return 0. The roll angle
+     * for the Pencil Pro is relative to the angle it has when the pencil becomes active/wakes up.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("rollAngle")
+    @NFloat
+    public native double rollAngle();
 }

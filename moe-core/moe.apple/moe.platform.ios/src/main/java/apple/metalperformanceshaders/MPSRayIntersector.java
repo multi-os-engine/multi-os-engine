@@ -459,7 +459,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     /**
      * Ray/bounding box intersection test type. Defaults to
      * MPSBoundingBoxIntersectionTestTypeDefault.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("boundingBoxIntersectionTestType")
     @NUInt
@@ -500,7 +504,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * @param device The Metal device for the new MPSRayIntersector
      * 
      * @return A pointer to a copy of this MPSRayIntersector
+     * 
+     *         API-Since: 12.0
+     *         Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Owned
@@ -521,7 +529,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * frontFacingWinding property.
      * 
      * Backface culling is necessary for some scenes but can reduce raytracing performance.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("cullMode")
     @NUInt
@@ -553,7 +565,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      *                                 multiple of the intersection stride.
      * @param rayCount                 Number of rays
      * @param accelerationStructure    Acceleration structure to test against
+     * 
+     *                                 API-Since: 12.0
+     *                                 Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:intersectionBuffer:intersectionBufferOffset:rayCount:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetIntersectionBufferIntersectionBufferOffsetRayCountAccelerationStructure(
@@ -583,7 +599,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * @param rayCountBufferOffset     Offset, in bytes, into the ray count buffer. Must be a multiple
      *                                 of 4 bytes.
      * @param accelerationStructure    Acceleration structure to test against
+     * 
+     *                                 API-Since: 12.0
+     *                                 Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:intersectionBuffer:intersectionBufferOffset:rayCountBuffer:rayCountBufferOffset:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetIntersectionBufferIntersectionBufferOffsetRayCountBufferRayCountBufferOffsetAccelerationStructure(
@@ -738,6 +758,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
             @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture intersectionTexture,
             @NotNull MPSAccelerationStructure accelerationStructure);
 
+    @Deprecated
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
@@ -751,7 +772,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * clockwise order when viewed from that direction. Otherwise, if the front facing winding is set
      * to MTLWindingCounterClockwise, the triangle or quadrilateral normal is considered to point in
      * the opposite direction.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("frontFacingWinding")
     @NUInt
@@ -772,7 +797,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
 
     /**
      * Initialize the raytracer with an NSCoder and a Metal device
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSRayIntersector initWithCoderDevice(@NotNull NSCoder aDecoder,
@@ -780,7 +809,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
 
     /**
      * Initialize the raytracer with a Metal device
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:")
     public native MPSRayIntersector initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -801,7 +834,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     /**
      * Intersection data type. Defaults to
      * MPSIntersectionDataTypeDistancePrimitiveIndexCoordinates.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("intersectionDataType")
     @NUInt
@@ -814,7 +851,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * This can be used to skip past any additional per-intersection that which may be
      * stored alongside the MPSRayIntersection struct such as the surface normal at the point
      * of intersection. Must be aligned to the alignment of the intersection data type.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("intersectionStride")
     @NUInt
@@ -836,7 +877,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
 
     /**
      * Ray data type. Defaults to MPSRayDataTypeOriginDirection.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rayDataType")
     @NUInt
@@ -895,7 +940,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * shadow rays.
      * 
      * Enabling this option may reduce raytracing performance.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rayMaskOptions")
     @NUInt
@@ -908,7 +957,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * This can be used to skip past any additional per-ray data that may be stored
      * alongside the MPSRay struct such as the current radiance along the ray or the source pixel
      * coordinates. Must be aligned to the alignment of the ray data type.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rayStride")
     @NUInt
@@ -928,7 +981,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * @param rayCount The total number of rays to be submitted
      * 
      * @return The recommended minimum ray batch size
+     * 
+     *         API-Since: 12.0
+     *         Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("recommendedMinimumRayBatchSizeForRayCount:")
     @NUInt
@@ -945,7 +1002,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     /**
      * Ray/bounding box intersection test type. Defaults to
      * MPSBoundingBoxIntersectionTestTypeDefault.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setBoundingBoxIntersectionTestType:")
     public native void setBoundingBoxIntersectionTestType(@NUInt long value);
@@ -963,7 +1024,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * frontFacingWinding property.
      * 
      * Backface culling is necessary for some scenes but can reduce raytracing performance.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setCullMode:")
     public native void setCullMode(@NUInt long value);
@@ -977,7 +1042,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * clockwise order when viewed from that direction. Otherwise, if the front facing winding is set
      * to MTLWindingCounterClockwise, the triangle or quadrilateral normal is considered to point in
      * the opposite direction.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setFrontFacingWinding:")
     public native void setFrontFacingWinding(@NUInt long value);
@@ -985,7 +1054,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     /**
      * Intersection data type. Defaults to
      * MPSIntersectionDataTypeDistancePrimitiveIndexCoordinates.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setIntersectionDataType:")
     public native void setIntersectionDataType(@NUInt long value);
@@ -997,14 +1070,22 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * This can be used to skip past any additional per-intersection that which may be
      * stored alongside the MPSRayIntersection struct such as the surface normal at the point
      * of intersection. Must be aligned to the alignment of the intersection data type.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setIntersectionStride:")
     public native void setIntersectionStride(@NUInt long value);
 
     /**
      * Ray data type. Defaults to MPSRayDataTypeOriginDirection.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setRayDataType:")
     public native void setRayDataType(@NUInt long value);
@@ -1061,7 +1142,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * shadow rays.
      * 
      * Enabling this option may reduce raytracing performance.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setRayMaskOptions:")
     public native void setRayMaskOptions(@NUInt long value);
@@ -1073,7 +1158,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * This can be used to skip past any additional per-ray data that may be stored
      * alongside the MPSRay struct such as the current radiance along the ray or the source pixel
      * coordinates. Must be aligned to the alignment of the ray data type.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setRayStride:")
     public native void setRayStride(@NUInt long value);
@@ -1082,7 +1171,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * Ray/triangle intersection test type. Defaults to MPSTriangleIntersectionTestTypeDefault.
      * Quads are broken into two triangles for intersection testing, so this property also applies to
      * quadrilateral intersections.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setTriangleIntersectionTestType:")
     public native void setTriangleIntersectionTestType(@NUInt long value);
@@ -1109,7 +1202,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * Ray/triangle intersection test type. Defaults to MPSTriangleIntersectionTestTypeDefault.
      * Quads are broken into two triangles for intersection testing, so this property also applies to
      * quadrilateral intersections.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("triangleIntersectionTestType")
     @NUInt

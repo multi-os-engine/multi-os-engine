@@ -164,6 +164,11 @@ public class HKCumulativeQuantitySeriesSample extends HKCumulativeQuantitySample
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sum")

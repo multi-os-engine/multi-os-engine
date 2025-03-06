@@ -27,6 +27,8 @@ public interface AVAudioStereoMixing {
      * Range: -1.0 -> 1.0
      * Default: 0.0
      * Mixer: AVAudioMixerNode
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pan")
@@ -40,6 +42,8 @@ public interface AVAudioStereoMixing {
      * Range: -1.0 -> 1.0
      * Default: 0.0
      * Mixer: AVAudioMixerNode
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPan:")

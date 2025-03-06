@@ -17,15 +17,24 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIInteraction")
 public interface UIInteraction {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("didMoveToView:")
     void didMoveToView(@Nullable UIView view);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("view")
     UIView view();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("willMoveToView:")
     void willMoveToView(@Nullable UIView view);

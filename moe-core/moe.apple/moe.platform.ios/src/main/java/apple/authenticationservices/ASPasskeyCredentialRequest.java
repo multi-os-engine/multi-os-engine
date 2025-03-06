@@ -32,7 +32,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * This class encapsulates a password assertion request made to a credential provider extension.
+ * This class encapsulates a passkey assertion request made to a credential provider extension.
  * 
  * API-Since: 17.0
  */
@@ -91,6 +91,8 @@ public class ASPasskeyCredentialRequest extends NSObject implements ASCredential
 
     /**
      * Hash of client data for credential provider to sign as part of the assertion/registration operation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("clientDataHash")
@@ -141,6 +143,8 @@ public class ASPasskeyCredentialRequest extends NSObject implements ASCredential
      * @param credentialIdentity         credential identity to used for this request.
      * @param clientDataHash             the client data to be signed for this assertion request.
      * @param userVerificationPreference user verification preference setting of this assertion request.
+     * 
+     *                                   API-Since: 17.0
      */
     @Generated
     @Selector("initWithCredentialIdentity:clientDataHash:userVerificationPreference:supportedAlgorithms:")
@@ -181,6 +185,8 @@ public class ASPasskeyCredentialRequest extends NSObject implements ASCredential
      * @param credentialIdentity         credential identity to used for this request.
      * @param clientDataHash             the client data to be signed for this assertion request.
      * @param userVerificationPreference user verification preference setting of this assertion request.
+     * 
+     *                                   API-Since: 17.0
      */
     @Generated
     @Selector("requestWithCredentialIdentity:clientDataHash:userVerificationPreference:supportedAlgorithms:")
@@ -199,6 +205,8 @@ public class ASPasskeyCredentialRequest extends NSObject implements ASCredential
     /**
      * A preference for whether the authenticator should attempt to verify that
      * it is being used by its owner, such as through a PIN or biometrics.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setUserVerificationPreference:")
@@ -214,6 +222,8 @@ public class ASPasskeyCredentialRequest extends NSObject implements ASCredential
 
     /**
      * A list of signing algorithms supported by the relying party. Will be empty for assertion requests.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("supportedAlgorithms")
@@ -243,6 +253,8 @@ public class ASPasskeyCredentialRequest extends NSObject implements ASCredential
     /**
      * A preference for whether the authenticator should attempt to verify that
      * it is being used by its owner, such as through a PIN or biometrics.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userVerificationPreference")
@@ -253,4 +265,68 @@ public class ASPasskeyCredentialRequest extends NSObject implements ASCredential
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Inputs for WebAuthn extensions used for passkey assertion. Will be nil for registration requests.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("assertionExtensionInput")
+    @Nullable
+    public native ASPasskeyAssertionCredentialExtensionInput assertionExtensionInput();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("excludedCredentials")
+    @Nullable
+    public native NSArray<? extends ASAuthorizationPlatformPublicKeyCredentialDescriptor> excludedCredentials();
+
+    /**
+     * Initializes an instance of ASPasskeyCredentialRequest.
+     * 
+     * @param credentialIdentity         credential identity to used for this request.
+     * @param clientDataHash             the client data to be signed for this assertion request.
+     * @param userVerificationPreference user verification preference setting of this assertion request.
+     * @param supportedAlgorithms        the set of support algorithms for the credential's key.
+     * @param assertionExtensionInput    input for any requested passkey extensions.
+     * 
+     *                                   API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithCredentialIdentity:clientDataHash:userVerificationPreference:supportedAlgorithms:assertionExtensionInput:")
+    public native ASPasskeyCredentialRequest initWithCredentialIdentityClientDataHashUserVerificationPreferenceSupportedAlgorithmsAssertionExtensionInput(
+            @NotNull ASPasskeyCredentialIdentity credentialIdentity, @NotNull NSData clientDataHash,
+            @NotNull String userVerificationPreference, @NotNull NSArray<? extends NSNumber> supportedAlgorithms,
+            @Nullable ASPasskeyAssertionCredentialExtensionInput assertionExtensionInput);
+
+    /**
+     * Initializes an instance of ASPasskeyCredentialRequest.
+     * 
+     * @param credentialIdentity         credential identity to used for this request.
+     * @param clientDataHash             the client data to be signed for this assertion request.
+     * @param userVerificationPreference user verification preference setting of this assertion request.
+     * @param supportedAlgorithms        the set of support algorithms for the credential's key.
+     * @param registrationExtensionInput input for any requested passkey extensions.
+     * 
+     *                                   API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithCredentialIdentity:clientDataHash:userVerificationPreference:supportedAlgorithms:registrationExtensionInput:")
+    public native ASPasskeyCredentialRequest initWithCredentialIdentityClientDataHashUserVerificationPreferenceSupportedAlgorithmsRegistrationExtensionInput(
+            @NotNull ASPasskeyCredentialIdentity credentialIdentity, @NotNull NSData clientDataHash,
+            @NotNull String userVerificationPreference, @NotNull NSArray<? extends NSNumber> supportedAlgorithms,
+            @Nullable ASPasskeyRegistrationCredentialExtensionInput registrationExtensionInput);
+
+    /**
+     * Inputs for WebAuthn extensions used for passkey registration. Will be nil for assertion requests.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("registrationExtensionInput")
+    @Nullable
+    public native ASPasskeyRegistrationCredentialExtensionInput registrationExtensionInput();
 }

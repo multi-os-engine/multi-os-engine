@@ -167,17 +167,26 @@ public class UIStoryboardUnwindSegueSource extends NSObject {
     @Selector("init")
     public native UIStoryboardUnwindSegueSource init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("sender")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object sender();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("sourceViewController")
     public native UIViewController sourceViewController();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("unwindAction")

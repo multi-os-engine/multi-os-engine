@@ -316,6 +316,8 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
 
     /**
      * VNImageHomographicAlignmentObservation results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

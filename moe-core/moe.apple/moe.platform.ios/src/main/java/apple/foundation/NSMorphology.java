@@ -113,6 +113,9 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("grammaticalGender")
     @NInt
@@ -167,11 +170,17 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("new")
     public static native NSMorphology new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("number")
     @NInt
     public native long number();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("partOfSpeech")
     @NInt
@@ -196,14 +205,23 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
     public native boolean setCustomPronounForLanguageError(@Nullable NSMorphologyCustomPronoun features,
             @NotNull String language, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setGrammaticalGender:")
     public native void setGrammaticalGender(@NInt long value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setNumber:")
     public native void setNumber(@NInt long value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setPartOfSpeech:")
     public native void setPartOfSpeech(@NInt long value);

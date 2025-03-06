@@ -66,6 +66,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -110,6 +112,9 @@ public class PKRecurringPaymentRequest extends NSObject {
     @Selector("init")
     public native PKRecurringPaymentRequest init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithPaymentDescription:regularBilling:managementURL:")
     public native PKRecurringPaymentRequest initWithPaymentDescriptionRegularBillingManagementURL(
@@ -141,6 +146,8 @@ public class PKRecurringPaymentRequest extends NSObject {
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * recurring payment, including deleting it.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -154,6 +161,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * A description of the recurring payment, for example "Apple News+".
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -162,6 +171,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * The regular billing cycle, for example "$9.99 monthly".
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -178,6 +189,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setBillingAgreement:")
@@ -186,6 +199,8 @@ public class PKRecurringPaymentRequest extends NSObject {
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * recurring payment, including deleting it.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setManagementURL:")
@@ -193,6 +208,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * A description of the recurring payment, for example "Apple News+".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPaymentDescription:")
@@ -200,6 +217,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * The regular billing cycle, for example "$9.99 monthly".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setRegularBilling:")
@@ -209,6 +228,8 @@ public class PKRecurringPaymentRequest extends NSObject {
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTokenNotificationURL:")
@@ -216,6 +237,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * Optional, trial billing cycle, for example "$1.99 for the first six months".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTrialBilling:")
@@ -233,6 +256,8 @@ public class PKRecurringPaymentRequest extends NSObject {
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -241,6 +266,8 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     /**
      * Optional, trial billing cycle, for example "$1.99 for the first six months".
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

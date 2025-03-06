@@ -264,11 +264,17 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("anchorPoint")
     @ByValue
     public native CGPoint anchorPoint();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("attachedBehaviorType")
     @NInt
@@ -286,6 +292,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * 1: critical damping
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("damping")
@@ -294,6 +302,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * in Hertz
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("frequency")
@@ -314,39 +324,60 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIAttachmentBehavior init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItem:attachedToAnchor:")
     public native UIAttachmentBehavior initWithItemAttachedToAnchor(
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItem:attachedToItem:")
     public native UIAttachmentBehavior initWithItemAttachedToItem(
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItem:offsetFromCenter:attachedToAnchor:")
     public native UIAttachmentBehavior initWithItemOffsetFromCenterAttachedToAnchor(
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue UIOffset offset,
             @ByValue CGPoint point);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
     public native UIAttachmentBehavior initWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("length")
     @NFloat
     public native double length();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
@@ -362,6 +393,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * 1: critical damping
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDamping:")
@@ -369,6 +402,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * in Hertz
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setFrequency:")
@@ -383,6 +418,9 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Selector("setFrictionTorque:")
     public native void setFrictionTorque(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setLength:")
     public native void setLength(@NFloat double value);

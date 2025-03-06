@@ -82,6 +82,8 @@ public class UIFocusDebugger extends NSObject {
      * - To use in Swift, enter `po UIFocusDebugger.checkFocusability(for: <item reference>)` when paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger checkFocusabilityForItem:<item reference>]` when paused in
      * lldb.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -117,6 +119,8 @@ public class UIFocusDebugger extends NSObject {
      * Outputs an overview of all supported debugging utilities and other relevant information.
      * - To use in Swift, enter `po UIFocusDebugger.help()` when paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger help]` when paused in lldb.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -168,12 +172,15 @@ public class UIFocusDebugger extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Simulates a fake focus update requested by the specified environment (e.g. `[environment setNeedsFocusUpdate]`),
-     * outlining each step of the process for determining the next focused item.
+     * Simulates a fake focus update requested by the specified environment (e.g. `[focusSystem
+     * requestFocusUpdateToEnvironment:environment]`), outlining each step of the process for determining the next
+     * focused item.
      * - To use in Swift, enter `po UIFocusDebugger.simulateFocusUpdateRequest(from: <environment reference>)` when
      * paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger simulateFocusUpdateRequestFromEnvironment:<environment
      * reference>]` when paused in lldb.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -186,6 +193,8 @@ public class UIFocusDebugger extends NSObject {
      * Outputs information for the currently focused item.
      * - To use in Swift, enter `po UIFocusDebugger.status()` when paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger status]` when paused in lldb.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -208,6 +217,8 @@ public class UIFocusDebugger extends NSObject {
      * - To use in Swift, enter `po UIFocusDebugger.focusGroups(for: <environment reference>)` when paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger focusGroupsForEnvironment:<environment reference>]` when
      * paused in lldb.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -222,6 +233,8 @@ public class UIFocusDebugger extends NSObject {
      * paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger preferredFocusEnvironmentsForEnvironment:<environment
      * reference>]` when paused in lldb.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

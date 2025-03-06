@@ -198,6 +198,9 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     public native CKQuerySubscription initWithRecordTypePredicateOptions(@NotNull String recordType,
             @NotNull NSPredicate predicate, @NUInt long querySubscriptionOptions);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithRecordType:predicate:subscriptionID:options:")
     public native CKQuerySubscription initWithRecordTypePredicateSubscriptionIDOptions(@NotNull String recordType,
@@ -205,6 +208,8 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     /**
      * A predicate that determines when the subscription fires.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -219,6 +224,8 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordUpdate, or
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordDeletion must be specified or an @c NSInvalidArgumentException will
      * be thrown.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("querySubscriptionOptions")
@@ -227,6 +234,8 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     /**
      * The record type that this subscription watches
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -237,6 +246,8 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
      * Optional property. If set, a query subscription is scoped to only record changes in the indicated zone.
      * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the
      * database.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setZoneID:")
@@ -252,6 +263,8 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
      * Optional property. If set, a query subscription is scoped to only record changes in the indicated zone.
      * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the
      * database.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

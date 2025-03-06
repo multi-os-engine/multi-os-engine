@@ -99,6 +99,8 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the placemark with which the user wants to continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided placemarks.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -183,6 +187,8 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
      * fill-in details about the CLPlacemark, as appropriate. To make a new CLPlacemark, see
      * <Intents/CLPlacemark+IntentsAdditions.h>.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

@@ -47,6 +47,8 @@ public interface INSetTaskAttributeIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSetTaskAttributeIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -73,6 +75,8 @@ public interface INSetTaskAttributeIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSetTaskAttributeIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("handleSetTaskAttribute:completion:")
@@ -86,6 +90,9 @@ public interface INSetTaskAttributeIntentHandling {
         void call_handleSetTaskAttributeCompletion(@NotNull INSetTaskAttributeIntentResponse response);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveSpatialEventTriggerForSetTaskAttribute:withCompletion:")
@@ -102,6 +109,9 @@ public interface INSetTaskAttributeIntentHandling {
                 @NotNull INSpatialEventTriggerResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveStatusForSetTaskAttribute:withCompletion:")
@@ -128,6 +138,8 @@ public interface INSetTaskAttributeIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional

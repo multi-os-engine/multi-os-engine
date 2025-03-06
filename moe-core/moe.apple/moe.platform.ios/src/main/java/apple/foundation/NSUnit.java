@@ -183,6 +183,9 @@ public class NSUnit extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSUnit initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithSymbol:")
     public native NSUnit initWithSymbol(@NotNull String symbol);
@@ -193,6 +196,9 @@ public class NSUnit extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("symbol")

@@ -518,6 +518,9 @@ public final class PassKit {
         void call_PKPayLaterValidateAmount(boolean eligible);
     }
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -561,4 +564,35 @@ public final class PassKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String PKDisbursementErrorContactFieldUserInfoKey();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkMeeza();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkNAPAS();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkBankAxept();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    public static native short PKMerchantCategoryCodeNone();
 }

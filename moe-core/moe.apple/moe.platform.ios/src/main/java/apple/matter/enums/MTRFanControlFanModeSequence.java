@@ -29,10 +29,22 @@ public final class MTRFanControlFanModeSequence {
     @Generated public static final byte LowHighAuto = 3;
     /**
      * API-Since: 17.0
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRFanControlFanModeSequenceOffHighAuto
      */
-    @Generated public static final byte OnAuto = 4;
+    @Deprecated @Generated public static final byte OnAuto = 4;
     /**
      * API-Since: 17.0
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRFanControlFanModeSequenceOffHigh
      */
-    @Generated public static final byte On = 5;
+    @Deprecated @Generated public static final byte On = 5;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated public static final byte HighAuto = 4;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated public static final byte High = 5;
 }

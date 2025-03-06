@@ -116,10 +116,16 @@ public class MPSCNNCrossChannelNormalizationNode extends MPSCNNNormalizationNode
     @Selector("init")
     public native MPSCNNCrossChannelNormalizationNode init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNCrossChannelNormalizationNode initWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:kernelSize:")
     public native MPSCNNCrossChannelNormalizationNode initWithSourceKernelSize(@NotNull MPSNNImageNode sourceNode,
@@ -142,6 +148,9 @@ public class MPSCNNCrossChannelNormalizationNode extends MPSCNNNormalizationNode
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("kernelSizeInFeatureChannels")
     @NUInt
@@ -161,6 +170,9 @@ public class MPSCNNCrossChannelNormalizationNode extends MPSCNNNormalizationNode
     @Selector("nodeWithSource:")
     public static native MPSCNNCrossChannelNormalizationNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:kernelSize:")
     public static native MPSCNNCrossChannelNormalizationNode nodeWithSourceKernelSize(
@@ -174,6 +186,9 @@ public class MPSCNNCrossChannelNormalizationNode extends MPSCNNNormalizationNode
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setKernelSizeInFeatureChannels:")
     public native void setKernelSizeInFeatureChannels(@NUInt long value);

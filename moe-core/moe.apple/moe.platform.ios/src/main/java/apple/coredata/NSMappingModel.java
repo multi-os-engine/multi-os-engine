@@ -158,6 +158,8 @@ public class NSMappingModel extends NSObject {
      * to the mergedModelFromBundles: methods; in this case, the framework uses the version information from the models
      * to locate the appropriate mapping model in the available bundles. If the mapping model for the models cannot be
      * found, this method returns nil.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -195,6 +197,8 @@ public class NSMappingModel extends NSObject {
     /**
      * Returns/sets the collection of entity mappings for the model. The order of the mappings dictates the order in
      * which they will be processed during migration.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("entityMappings")
@@ -203,6 +207,8 @@ public class NSMappingModel extends NSObject {
     /**
      * Returns a dictionary of the entity mappings for the model, keyed by their respective name. (This API is provided
      * for quick access to a mapping by name, rather than iterating the ordered entityMapping array.)
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -215,6 +221,8 @@ public class NSMappingModel extends NSObject {
 
     /**
      * Loads the mapping model from the specified URL.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithContentsOfURL:")
@@ -223,6 +231,8 @@ public class NSMappingModel extends NSObject {
     /**
      * Returns/sets the collection of entity mappings for the model. The order of the mappings dictates the order in
      * which they will be processed during migration.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setEntityMappings:")

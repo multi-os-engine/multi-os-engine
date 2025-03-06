@@ -133,6 +133,12 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Generated
     @Selector("isSupportedForLanguage:")
     public static native boolean isSupportedForLanguage(@NotNull String language);
@@ -147,26 +153,56 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
     @Selector("new")
     public static native NSMorphologyCustomPronoun new_objc();
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("objectForm")
     public native String objectForm();
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("possessiveAdjectiveForm")
     public native String possessiveAdjectiveForm();
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("possessiveForm")
     public native String possessiveForm();
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("reflexiveForm")
     public native String reflexiveForm();
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("requiredKeysForLanguage:")
@@ -180,22 +216,52 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Generated
     @Selector("setObjectForm:")
     public native void setObjectForm(@Nullable String value);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Generated
     @Selector("setPossessiveAdjectiveForm:")
     public native void setPossessiveAdjectiveForm(@Nullable String value);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Generated
     @Selector("setPossessiveForm:")
     public native void setPossessiveForm(@Nullable String value);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Generated
     @Selector("setReflexiveForm:")
     public native void setReflexiveForm(@Nullable String value);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Generated
     @Selector("setSubjectForm:")
     public native void setSubjectForm(@Nullable String value);
@@ -204,6 +270,12 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("subjectForm")

@@ -121,6 +121,8 @@ public class MPSImageEDLines extends MPSKernel {
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("clipRectSource")
@@ -140,6 +142,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the detailRatio to use in the EDLines algorithm
      * Default is 32
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("detailRatio")
@@ -168,6 +172,8 @@ public class MPSImageEDLines extends MPSKernel {
      *                       single line segment will consist of two pairs, or four total unsigned shorts. The endpoint
      *                       buffer size must
      *                       be >= 4 * maxLines * sizeof(unsigned short) + sizeof(uint32_t).
+     * 
+     *                       API-Since: 13.4
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:endpointBuffer:endpointOffset:")
@@ -182,6 +188,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-only sigma value used in performing Gaussian blur of the image.
      * Default is 2.0
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("gaussianSigma")
@@ -192,6 +200,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the threshold for a pixel to be considered an edge
      * Default is 0.2
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("gradientThreshold")
@@ -222,6 +232,8 @@ public class MPSImageEDLines extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 13.4
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -261,6 +273,8 @@ public class MPSImageEDLines extends MPSKernel {
      *                               merged.
      *                               This value is normalized to the diagonal length of the image.
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 13.4
      */
     @Generated
     @Selector("initWithDevice:gaussianSigma:minLineLength:maxLines:detailRatio:gradientThreshold:lineErrorThreshold:mergeLocalityThreshold:")
@@ -296,6 +310,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the limit on error for a line segment relative to the edge it fits
      * Default is 0.05
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("lineErrorThreshold")
@@ -307,6 +323,8 @@ public class MPSImageEDLines extends MPSKernel {
      * Read-write value used to set the max number of line segments to be written out.
      * The endpointBuffer at encode must be >= maxLines * 4 * sizeof(unsigned short) + sizeof(uint32_t).
      * Default is 256
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("maxLines")
@@ -318,6 +336,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set how many pixels apart two lines can deviate spatially and still be merged.
      * Default is 0.0025
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("mergeLocalityThreshold")
@@ -328,6 +348,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the minimum length of a line segment.
      * Default is 32
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("minLineLength")
@@ -355,6 +377,8 @@ public class MPSImageEDLines extends MPSKernel {
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setClipRectSource:")
@@ -365,6 +389,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the detailRatio to use in the EDLines algorithm
      * Default is 32
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setDetailRatio:")
@@ -375,6 +401,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the threshold for a pixel to be considered an edge
      * Default is 0.2
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setGradientThreshold:")
@@ -385,6 +413,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the limit on error for a line segment relative to the edge it fits
      * Default is 0.05
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setLineErrorThreshold:")
@@ -396,6 +426,8 @@ public class MPSImageEDLines extends MPSKernel {
      * Read-write value used to set the max number of line segments to be written out.
      * The endpointBuffer at encode must be >= maxLines * 4 * sizeof(unsigned short) + sizeof(uint32_t).
      * Default is 256
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setMaxLines:")
@@ -406,6 +438,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set how many pixels apart two lines can deviate spatially and still be merged.
      * Default is 0.0025
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setMergeLocalityThreshold:")
@@ -416,6 +450,8 @@ public class MPSImageEDLines extends MPSKernel {
      * 
      * Read-write value used to set the minimum length of a line segment.
      * Default is 32
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setMinLineLength:")

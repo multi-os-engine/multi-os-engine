@@ -181,6 +181,8 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
      * of the convolution effect. It can also just be used to increase the brightness of the image.
      * 
      * Default value is 0.0f.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("bias")
@@ -205,6 +207,8 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
      * of the convolution effect. It can also just be used to increase the brightness of the image.
      * 
      * Default value is 0.0f.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBias:")

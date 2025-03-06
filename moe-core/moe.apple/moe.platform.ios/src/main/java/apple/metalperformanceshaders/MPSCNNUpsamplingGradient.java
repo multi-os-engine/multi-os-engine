@@ -192,6 +192,8 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
      * [@property] scaleFactorX
      * 
      * The downsampling scale factor for the x dimension. The default value is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("scaleFactorX")
@@ -201,6 +203,8 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
      * [@property] scaleFactorY
      * 
      * The downsampling scale factor for the y dimension. The default value is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("scaleFactorY")

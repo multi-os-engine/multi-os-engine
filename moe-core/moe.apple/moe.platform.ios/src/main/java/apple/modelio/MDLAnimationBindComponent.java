@@ -125,6 +125,9 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("jointAnimation")
@@ -133,6 +136,8 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
 
     /**
      * optional. If set, jointIndices vertex buffers index into this list of joints.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -157,17 +162,25 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setJointAnimation:")
     public native void setJointAnimation(@Nullable @Mapped(ObjCObjectMapper.class) MDLJointAnimation value);
 
     /**
      * optional. If set, jointIndices vertex buffers index into this list of joints.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setJointPaths:")
     public native void setJointPaths(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSkeleton:")
     public native void setSkeleton(@Nullable MDLSkeleton value);
@@ -176,6 +189,9 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("skeleton")

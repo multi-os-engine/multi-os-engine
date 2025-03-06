@@ -138,18 +138,27 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("lookupInfosWithEmails:")
     public static native NSArray<? extends CKUserIdentityLookupInfo> lookupInfosWithEmails(
             @NotNull NSArray<String> emails);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("lookupInfosWithPhoneNumbers:")
     public static native NSArray<? extends CKUserIdentityLookupInfo> lookupInfosWithPhoneNumbers(
             @NotNull NSArray<String> phoneNumbers);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("lookupInfosWithRecordIDs:")
@@ -193,6 +202,9 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("emailAddress")
@@ -210,18 +222,30 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
     @Selector("initWithCoder:")
     public native CKUserIdentityLookupInfo initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithEmailAddress:")
     public native CKUserIdentityLookupInfo initWithEmailAddress(@NotNull String emailAddress);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithPhoneNumber:")
     public native CKUserIdentityLookupInfo initWithPhoneNumber(@NotNull String phoneNumber);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithUserRecordID:")
     public native CKUserIdentityLookupInfo initWithUserRecordID(@NotNull CKRecordID userRecordID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("phoneNumber")
@@ -233,6 +257,9 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("userRecordID")

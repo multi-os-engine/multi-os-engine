@@ -291,6 +291,9 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("anchorDate")
@@ -300,38 +303,59 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     @Selector("init")
     public native HKStatisticsCollectionQuery init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithQuantityType:quantitySamplePredicate:options:anchorDate:intervalComponents:")
     public native HKStatisticsCollectionQuery initWithQuantityTypeQuantitySamplePredicateOptionsAnchorDateIntervalComponents(
             @NotNull HKQuantityType quantityType, @Nullable NSPredicate quantitySamplePredicate, @NUInt long options,
             @NotNull NSDate anchorDate, @NotNull NSDateComponents intervalComponents);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("initialResultsHandler")
     @ObjCBlock(name = "call_initialResultsHandler_ret")
     public native Block_initialResultsHandler_ret initialResultsHandler();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("intervalComponents")
     public native NSDateComponents intervalComponents();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("options")
     @NUInt
     public native long options();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setInitialResultsHandler:")
     public native void setInitialResultsHandler(
             @Nullable @ObjCBlock(name = "call_setInitialResultsHandler") Block_setInitialResultsHandler value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setStatisticsUpdateHandler:")
     public native void setStatisticsUpdateHandler(
             @Nullable @ObjCBlock(name = "call_setStatisticsUpdateHandler") Block_setStatisticsUpdateHandler value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("statisticsUpdateHandler")
@@ -491,4 +515,31 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

@@ -179,6 +179,9 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("data")
@@ -199,6 +202,8 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
      * 
      * @param type the intended use of the buffer
      * @param data the data to be used as a mesh buffer. It will be copied.
+     * 
+     *             API-Since: 9.0
      */
     @Generated
     @Selector("initWithType:data:")
@@ -211,6 +216,8 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
      * 
      * @param type   the intended use of the buffer
      * @param length the size of buffer to allocate, in bytes
+     * 
+     *               API-Since: 9.0
      */
     @Generated
     @Selector("initWithType:length:")

@@ -88,6 +88,9 @@ public class CNRenderingSession extends NSObject {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -107,6 +110,9 @@ public class CNRenderingSession extends NSObject {
      * 
      * Use with kCVPixelBufferPixelFormatTypeKey in the video compositor's requiredPixelBufferAttributesForRenderContext
      * dictionary when implementing AVVideoCompositing.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("destinationPixelFormatTypes")
@@ -122,6 +128,8 @@ public class CNRenderingSession extends NSObject {
      * - sourceDisparity: a pixel buffer read from the cinematicDisparityTrack
      * - destinationImage: the pixel buffer to which the SDoF image is rendered
      * - Returns: whether encoding the render command was successful
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("encodeRenderToCommandBuffer:frameAttributes:sourceImage:sourceDisparity:destinationImage:")
@@ -140,6 +148,8 @@ public class CNRenderingSession extends NSObject {
      * - destinationLuma: a metal texture to which the luma of the SDoF image is rendered
      * - destinationChroma: a metal texture to which the chroma of the SDoF image is rendered
      * - Returns: whether encoding the render command was successful
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("encodeRenderToCommandBuffer:frameAttributes:sourceImage:sourceDisparity:destinationLuma:destinationChroma:")
@@ -158,6 +168,8 @@ public class CNRenderingSession extends NSObject {
      * - sourceDisparity: a pixel buffer read from the cinematicDisparityTrack
      * - destinationRGBA: a metal texture to which the SDoF image is rendered in RGBA format
      * - Returns: whether encoding the render command was successful
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("encodeRenderToCommandBuffer:frameAttributes:sourceImage:sourceDisparity:destinationRGBA:")
@@ -175,6 +187,9 @@ public class CNRenderingSession extends NSObject {
     @Selector("init")
     public native CNRenderingSession init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithCommandQueue:sessionAttributes:preferredTransform:quality:")
     public native CNRenderingSession initWithCommandQueueSessionAttributesPreferredTransformQuality(
@@ -209,11 +224,17 @@ public class CNRenderingSession extends NSObject {
     @Selector("new")
     public static native CNRenderingSession new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("preferredTransform")
     @ByValue
     public native CGAffineTransform preferredTransform();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("quality")
     @NInt
@@ -227,6 +248,9 @@ public class CNRenderingSession extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("sessionAttributes")
     @NotNull
@@ -241,6 +265,9 @@ public class CNRenderingSession extends NSObject {
      * 
      * Use with kCVPixelBufferPixelFormatTypeKey in the video compositor's sourcePixelBufferAttributes dictionary when
      * implementing AVVideoCompositing.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sourcePixelFormatTypes")

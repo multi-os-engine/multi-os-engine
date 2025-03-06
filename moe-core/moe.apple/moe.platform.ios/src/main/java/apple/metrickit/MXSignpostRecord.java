@@ -62,6 +62,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * Convenience method to return a JSON representation of this SignpostRecord.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("JSONRepresentation")
@@ -90,6 +92,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * [@property] beginTimeStamp
      * 
      * An NSDate representation of the begin time stamp of the signpost instance.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("beginTimeStamp")
@@ -111,6 +115,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * [@property] category
      * 
      * An NSString representation of the category of the signpost instance.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("category")
@@ -141,6 +147,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * Convenience method to return a NSDictionary representation of this SignpostRecord.
      * 
      * @return An NSDictionary object containing the dictionary representation
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("dictionaryRepresentation")
@@ -152,6 +160,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * 
      * An NSMeasurement representing the duration in milliseconds of signpost instances which are intervals and will be
      * nil for signpost events.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("duration")
@@ -167,6 +177,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * 
      * An NSDate representation of the end time stamp of the signpost instances which are intervals and will be nil for
      * signpost events.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("endTimeStamp")
@@ -203,6 +215,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * [@property] isInterval
      * 
      * A BOOL denoting whether the signpost instance is an interval or not..
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isInterval")
@@ -221,6 +235,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * [@property] name
      * 
      * An NSString representation of the name of the signpost instance.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("name")
@@ -248,6 +264,8 @@ public class MXSignpostRecord extends NSObject implements NSSecureCoding {
      * [@property] subsystem
      * 
      * An NSString representation of the subsystem of the signpost instance.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("subsystem")

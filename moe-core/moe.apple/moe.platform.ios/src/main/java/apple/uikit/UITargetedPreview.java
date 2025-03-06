@@ -112,6 +112,8 @@ public class UITargetedPreview extends NSObject implements NSCopying {
      * To use this initializer, the view must be in a window.
      * Sets the parameters to defaults.
      * Sets the target based on the view's current superview, center, and transform.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithView:")
@@ -120,6 +122,8 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     /**
      * To use this initializer, the view must be in a window.
      * Sets the target based on the view's current superview, center, and transform.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithView:parameters:")
@@ -128,6 +132,8 @@ public class UITargetedPreview extends NSObject implements NSCopying {
 
     /**
      * To use this initializer, the view need not be in a window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithView:parameters:target:")
@@ -161,6 +167,9 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @Selector("new")
     public static native UITargetedPreview new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("parameters")
@@ -181,6 +190,8 @@ public class UITargetedPreview extends NSObject implements NSCopying {
      * -dropInteraction:previewForDroppingItem:withDefault:, or in
      * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,
      * to direct the default UITargetedPreview to a different target.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -195,6 +206,8 @@ public class UITargetedPreview extends NSObject implements NSCopying {
      * Provide the size of the item.
      * You might use this size to create an appropriately-sized gap in your view,
      * where this item will land when it is dropped.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("size")
@@ -205,6 +218,9 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("target")
@@ -215,6 +231,9 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("view")

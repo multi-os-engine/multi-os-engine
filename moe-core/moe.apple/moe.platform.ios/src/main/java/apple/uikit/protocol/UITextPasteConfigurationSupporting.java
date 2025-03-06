@@ -19,12 +19,18 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextPasteConfigurationSupporting")
 public interface UITextPasteConfigurationSupporting extends UIPasteConfigurationSupporting {
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("pasteDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     UITextPasteDelegate pasteDelegate();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPasteDelegate:")
     void setPasteDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);

@@ -84,6 +84,9 @@ public class CPImageSet extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("darkContentImage")
@@ -114,6 +117,9 @@ public class CPImageSet extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPImageSet initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithLightContentImage:darkContentImage:")
     public native CPImageSet initWithLightContentImageDarkContentImage(@NotNull UIImage lightImage,
@@ -141,6 +147,9 @@ public class CPImageSet extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("lightContentImage")

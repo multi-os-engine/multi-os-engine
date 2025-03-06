@@ -55,6 +55,8 @@ public interface AVCaptureMetadataOutputObjectsDelegate {
      * Clients that need to reference metadata objects outside of the scope of this method must retain them and then
      * release them when they are finished with them.
      * 
+     * API-Since: 6.0
+     * 
      * @param output
      *                        The AVCaptureMetadataOutput instance that emitted the objects.
      * @param metadataObjects

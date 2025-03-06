@@ -189,6 +189,8 @@ public class CAEmitterLayer extends CALayer {
      * The birth rate of each cell is multiplied by this number to give the
      * actual number of particles created every second. Default value is one.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("birthRate")
@@ -197,12 +199,17 @@ public class CAEmitterLayer extends CALayer {
     /**
      * The array of emitter cells attached to the layer. Each object must
      * have the CAEmitterCell class.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
     @Selector("emitterCells")
     public native NSArray<? extends CAEmitterCell> emitterCells();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("emitterDepth")
     @NFloat
@@ -212,6 +219,8 @@ public class CAEmitterLayer extends CALayer {
      * A string defining how particles are created relative to the emission
      * shape. Current options are `points', `outline', `surface' and
      * `volume' (the default).
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -220,6 +229,8 @@ public class CAEmitterLayer extends CALayer {
 
     /**
      * The center of the emission shape. Defaults to (0, 0, 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("emitterPosition")
@@ -230,6 +241,8 @@ public class CAEmitterLayer extends CALayer {
      * A string defining the type of emission shape used. Current options are:
      * `point' (the default), `line', `rectangle', `circle', `cuboid' and
      * `sphere'.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -240,12 +253,17 @@ public class CAEmitterLayer extends CALayer {
      * The size of the emission shape. Defaults to (0, 0, 0). Animatable.
      * Depending on the `emitterShape' property some of the values may be
      * ignored.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("emitterSize")
     @ByValue
     public native CGSize emitterSize();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("emitterZPosition")
     @NFloat
@@ -266,6 +284,8 @@ public class CAEmitterLayer extends CALayer {
     /**
      * The cell lifetime range is multiplied by this value when particles are
      * created. Defaults to one. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("lifetime")
@@ -277,6 +297,8 @@ public class CAEmitterLayer extends CALayer {
      * than being flattened into the layer's plane first. Defaults to NO.
      * If true, the effect of the `filters', `backgroundFilters' and shadow-
      * related properties of the layer is undefined.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("preservesDepth")
@@ -288,6 +310,8 @@ public class CAEmitterLayer extends CALayer {
      * `oldestLast', `backToFront' (i.e. sorted into Z order) and
      * `additive'. The first four use source-over compositing, the last
      * uses additive compositing.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -296,6 +320,8 @@ public class CAEmitterLayer extends CALayer {
 
     /**
      * Multiplies the cell-defined particle scale. Defaults to one. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("scale")
@@ -306,6 +332,8 @@ public class CAEmitterLayer extends CALayer {
      * zero. Each layer has its own RNG state. For properties with a mean M
      * and a range R, random values of the properties are uniformly
      * distributed in the interval [M - R/2, M + R/2].
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("seed")
@@ -315,6 +343,8 @@ public class CAEmitterLayer extends CALayer {
      * The birth rate of each cell is multiplied by this number to give the
      * actual number of particles created every second. Default value is one.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setBirthRate:")
@@ -323,11 +353,16 @@ public class CAEmitterLayer extends CALayer {
     /**
      * The array of emitter cells attached to the layer. Each object must
      * have the CAEmitterCell class.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmitterCells:")
     public native void setEmitterCells(@Nullable NSArray<? extends CAEmitterCell> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setEmitterDepth:")
     public native void setEmitterDepth(@NFloat double value);
@@ -336,6 +371,8 @@ public class CAEmitterLayer extends CALayer {
      * A string defining how particles are created relative to the emission
      * shape. Current options are `points', `outline', `surface' and
      * `volume' (the default).
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmitterMode:")
@@ -343,6 +380,8 @@ public class CAEmitterLayer extends CALayer {
 
     /**
      * The center of the emission shape. Defaults to (0, 0, 0). Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmitterPosition:")
@@ -352,6 +391,8 @@ public class CAEmitterLayer extends CALayer {
      * A string defining the type of emission shape used. Current options are:
      * `point' (the default), `line', `rectangle', `circle', `cuboid' and
      * `sphere'.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmitterShape:")
@@ -361,11 +402,16 @@ public class CAEmitterLayer extends CALayer {
      * The size of the emission shape. Defaults to (0, 0, 0). Animatable.
      * Depending on the `emitterShape' property some of the values may be
      * ignored.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEmitterSize:")
     public native void setEmitterSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setEmitterZPosition:")
     public native void setEmitterZPosition(@NFloat double value);
@@ -373,6 +419,8 @@ public class CAEmitterLayer extends CALayer {
     /**
      * The cell lifetime range is multiplied by this value when particles are
      * created. Defaults to one. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setLifetime:")
@@ -384,6 +432,8 @@ public class CAEmitterLayer extends CALayer {
      * than being flattened into the layer's plane first. Defaults to NO.
      * If true, the effect of the `filters', `backgroundFilters' and shadow-
      * related properties of the layer is undefined.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPreservesDepth:")
@@ -395,6 +445,8 @@ public class CAEmitterLayer extends CALayer {
      * `oldestLast', `backToFront' (i.e. sorted into Z order) and
      * `additive'. The first four use source-over compositing, the last
      * uses additive compositing.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setRenderMode:")
@@ -402,6 +454,8 @@ public class CAEmitterLayer extends CALayer {
 
     /**
      * Multiplies the cell-defined particle scale. Defaults to one. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setScale:")
@@ -412,6 +466,8 @@ public class CAEmitterLayer extends CALayer {
      * zero. Each layer has its own RNG state. For properties with a mean M
      * and a range R, random values of the properties are uniformly
      * distributed in the interval [M - R/2, M + R/2].
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSeed:")
@@ -419,6 +475,8 @@ public class CAEmitterLayer extends CALayer {
 
     /**
      * Multiplies the cell-defined particle spin. Defaults to one. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSpin:")
@@ -427,6 +485,8 @@ public class CAEmitterLayer extends CALayer {
     /**
      * Multiplies the cell-defined particle velocity. Defaults to one.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setVelocity:")
@@ -434,6 +494,8 @@ public class CAEmitterLayer extends CALayer {
 
     /**
      * Multiplies the cell-defined particle spin. Defaults to one. Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("spin")
@@ -442,6 +504,8 @@ public class CAEmitterLayer extends CALayer {
     /**
      * Multiplies the cell-defined particle velocity. Defaults to one.
      * Animatable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("velocity")

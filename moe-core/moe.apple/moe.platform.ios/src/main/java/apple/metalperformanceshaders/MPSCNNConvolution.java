@@ -175,6 +175,8 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * [@property] groups
      * 
      * Number of groups input and output channels are divided into.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("groups")
@@ -225,6 +227,8 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels per pixel in the input image.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -250,6 +254,8 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the output image.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -262,6 +268,8 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * For convolution created with MPSCNNDepthWiseConvolutionDescriptor, it is the number of
      * output feature channels for each input channel. See MPSCNNDepthWiseConvolutionDescriptor for more details.
      * Default is 0 which means regular CNN convolution.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("channelMultiplier")
@@ -354,6 +362,8 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * 
      * Sub pixel scale factor which was passed in as part of MPSCNNConvolutionDescriptor when creating this
      * MPSCNNConvolution object.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("subPixelScaleFactor")
@@ -386,6 +396,8 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * [@property] dataSource
      * 
      * dataSource with which convolution object was created
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

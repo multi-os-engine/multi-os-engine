@@ -156,6 +156,8 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * Range: 3.0 -> 32.0
      * Default: 8.0
      * Unit: Generic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("overlap")
@@ -172,6 +174,8 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * Range: -2400 -> 2400
      * Default: 0.0
      * Unit: Cents
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pitch")
@@ -185,6 +189,8 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * Range: 1/32 -> 32.0
      * Default: 1.0
      * Unit: Generic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("rate")
@@ -209,6 +215,8 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * Range: 3.0 -> 32.0
      * Default: 8.0
      * Unit: Generic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setOverlap:")
@@ -225,6 +233,8 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * Range: -2400 -> 2400
      * Default: 0.0
      * Unit: Cents
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPitch:")
@@ -238,6 +248,8 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * Range: 1/32 -> 32.0
      * Default: 1.0
      * Unit: Generic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRate:")

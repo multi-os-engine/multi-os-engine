@@ -115,6 +115,8 @@ public class MPSNNReduceColumnMean extends MPSNNReduceUnary {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSNNReduceColumnMean object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -126,6 +128,8 @@ public class MPSNNReduceColumnMean extends MPSNNReduceUnary {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceColumnMean object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

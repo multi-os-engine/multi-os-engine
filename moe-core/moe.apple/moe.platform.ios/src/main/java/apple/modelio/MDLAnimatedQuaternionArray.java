@@ -89,27 +89,42 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementCount")
     @NUInt
     public native long elementCount();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getDoubleQuaternionArray:maxCount:")
     @NUInt
     public native long getDoubleQuaternionArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getDoubleQuaternionArray:maxCount:atTime:")
     @NUInt
     public native long getDoubleQuaternionArrayMaxCountAtTime(@NotNull VoidPtr array, @NUInt long maxCount,
             double time);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFloatQuaternionArray:maxCount:")
     @NUInt
     public native long getFloatQuaternionArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFloatQuaternionArray:maxCount:atTime:")
     @NUInt
@@ -124,6 +139,9 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
     @Selector("init")
     public native MDLAnimatedQuaternionArray init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithElementCount:")
     public native MDLAnimatedQuaternionArray initWithElementCount(@NUInt long arrayElementCount);
@@ -155,11 +173,17 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
     @Selector("new")
     public static native MDLAnimatedQuaternionArray new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithDoubleQuaternionArray:count:atTimes:count:")
     public native void resetWithDoubleQuaternionArrayCountAtTimesCount(@NotNull VoidPtr valuesArray,
             @NUInt long valuesCount, @NotNull ConstDoublePtr timesArray, @NUInt long timesCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithFloatQuaternionArray:count:atTimes:count:")
     public native void resetWithFloatQuaternionArrayCountAtTimesCount(@NotNull VoidPtr valuesArray,
@@ -173,10 +197,16 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDoubleQuaternionArray:count:atTime:")
     public native void setDoubleQuaternionArrayCountAtTime(@NotNull VoidPtr array, @NUInt long count, double time);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setFloatQuaternionArray:count:atTime:")
     public native void setFloatQuaternionArrayCountAtTime(@NotNull VoidPtr array, @NUInt long count, double time);

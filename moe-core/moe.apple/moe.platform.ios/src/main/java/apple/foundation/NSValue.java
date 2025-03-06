@@ -62,6 +62,7 @@ import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.gamecontroller.struct.GCPoint2;
 
 @Generated
 @Library("Foundation")
@@ -188,6 +189,9 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSValue valueWithBytesObjCType(@NotNull ConstVoidPtr value,
             @NotNull @Mapped(CStringMapper.class) String type);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("valueWithCATransform3D:")
@@ -300,6 +304,9 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("CATransform3DValue")
     @ByValue
@@ -519,4 +526,19 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("GCPoint2Value")
+    @ByValue
+    public native GCPoint2 GCPoint2Value();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("valueWithGCPoint2:")
+    public static native NSValue valueWithGCPoint2(@ByValue GCPoint2 point);
 }

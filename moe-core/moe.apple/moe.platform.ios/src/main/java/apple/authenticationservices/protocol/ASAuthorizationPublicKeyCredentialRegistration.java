@@ -19,6 +19,8 @@ import org.jetbrains.annotations.Nullable;
 public interface ASAuthorizationPublicKeyCredentialRegistration extends ASPublicKeyCredential {
     /**
      * The raw data containing the authenticator's attestation statement, if one was provided.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

@@ -122,6 +122,8 @@ public class MPSNNReshapeGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -134,6 +136,8 @@ public class MPSNNReshapeGradient extends MPSCNNGradientKernel {
      * @param device The MTLDevice on which this filter will be used
      * 
      * @return A valid MPSNNReshapeGradient object or nil, if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithDevice:")

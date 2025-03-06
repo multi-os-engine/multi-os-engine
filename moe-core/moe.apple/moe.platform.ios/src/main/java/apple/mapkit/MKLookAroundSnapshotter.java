@@ -61,6 +61,9 @@ public class MKLookAroundSnapshotter extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -96,6 +99,8 @@ public class MKLookAroundSnapshotter extends NSObject {
 
     /**
      * defaults to the main queue
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("getSnapshotWithCompletionHandler:")
@@ -118,6 +123,9 @@ public class MKLookAroundSnapshotter extends NSObject {
     @Selector("init")
     public native MKLookAroundSnapshotter init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithScene:options:")
     public native MKLookAroundSnapshotter initWithSceneOptions(@NotNull MKLookAroundScene scene,
@@ -136,6 +144,9 @@ public class MKLookAroundSnapshotter extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();

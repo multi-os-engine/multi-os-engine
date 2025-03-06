@@ -61,6 +61,7 @@ import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.gamecontroller.struct.GCPoint2;
 
 @Generated
 @Library("Foundation")
@@ -646,4 +647,8 @@ public class NSDecimalNumber extends NSNumber {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("valueWithGCPoint2:")
+    public static native NSDecimalNumber valueWithGCPoint2(@ByValue GCPoint2 point);
 }

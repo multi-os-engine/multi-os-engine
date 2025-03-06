@@ -181,6 +181,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * moreComing is YES in a @c recordZoneFetchCompletionBlock invocation.
      * 
      * [@c] fetchAllChanges is YES by default
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("fetchAllChanges")
@@ -197,6 +199,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -204,6 +208,9 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_fetchRecordZoneChangesCompletionBlock_ret")
     public native Block_fetchRecordZoneChangesCompletionBlock_ret fetchRecordZoneChangesCompletionBlock();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native CKFetchRecordZoneChangesOperation init();
@@ -250,6 +257,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -273,6 +282,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -280,12 +291,18 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_recordZoneChangeTokensUpdatedBlock_ret")
     public native Block_recordZoneChangeTokensUpdatedBlock_ret recordZoneChangeTokensUpdatedBlock();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("recordZoneFetchCompletionBlock")
     @ObjCBlock(name = "call_recordZoneFetchCompletionBlock_ret")
     public native Block_recordZoneFetchCompletionBlock_ret recordZoneFetchCompletionBlock();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("recordZoneIDs")
@@ -303,6 +320,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * moreComing is YES in a @c recordZoneFetchCompletionBlock invocation.
      * 
      * [@c] fetchAllChanges is YES by default
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFetchAllChanges:")
@@ -319,6 +338,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFetchRecordZoneChangesCompletionBlock:")
@@ -355,6 +376,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRecordWithIDWasDeletedBlock:")
@@ -377,17 +400,25 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRecordZoneChangeTokensUpdatedBlock:")
     public native void setRecordZoneChangeTokensUpdatedBlock(
             @Nullable @ObjCBlock(name = "call_setRecordZoneChangeTokensUpdatedBlock") Block_setRecordZoneChangeTokensUpdatedBlock value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRecordZoneFetchCompletionBlock:")
     public native void setRecordZoneFetchCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setRecordZoneFetchCompletionBlock") Block_setRecordZoneFetchCompletionBlock value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRecordZoneIDs:")
     public native void setRecordZoneIDs(@Nullable NSArray<? extends CKRecordZoneID> value);

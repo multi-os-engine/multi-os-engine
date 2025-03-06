@@ -61,6 +61,9 @@ public class NSCollectionLayoutEdgeSpacing extends NSObject implements NSCopying
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("bottom")
@@ -133,6 +136,9 @@ public class NSCollectionLayoutEdgeSpacing extends NSObject implements NSCopying
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("leading")
@@ -181,6 +187,8 @@ public class NSCollectionLayoutEdgeSpacing extends NSObject implements NSCopying
      * | |
      * |*forces items to align to the top of their group's geometry |
      * +-----------------------------------------------------------------------------------------+
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("spacingForLeading:top:trailing:bottom:")
@@ -192,11 +200,17 @@ public class NSCollectionLayoutEdgeSpacing extends NSObject implements NSCopying
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("top")
     public native NSCollectionLayoutSpacing top();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("trailing")

@@ -79,6 +79,9 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.accelerate.opaque.la_object_t;
+import org.moe.natj.c.map.CStringArrayMapper;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.ReferenceInfo;
 
 @Generated
 @Library("Accelerate")
@@ -31536,7 +31539,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 10.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFilterApply(@Nullable VoidPtr filter, @NotNull ConstVoidPtr in, @NotNull VoidPtr out);
@@ -31559,7 +31565,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 10.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -31574,7 +31583,10 @@ public final class Accelerate {
      * 
      * 
      *               API-Since: 10.0
+     *               Deprecated-Since: 18.0
+     *               Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void BNNSFilterDestroy(@Nullable VoidPtr filter);
@@ -48502,7 +48514,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48524,7 +48539,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48545,7 +48563,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48566,7 +48587,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48587,7 +48611,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48607,7 +48634,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48628,7 +48658,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48648,7 +48681,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48668,7 +48704,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48689,7 +48728,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48710,7 +48752,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48730,7 +48775,10 @@ public final class Accelerate {
      * @return A new non-NULL filter on success, and NULL on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48750,7 +48798,10 @@ public final class Accelerate {
      * @return A new non-NULL filter on success, and NULL on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48771,7 +48822,10 @@ public final class Accelerate {
      * @return A new non-NULL filter on success, and NULL on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48791,7 +48845,10 @@ public final class Accelerate {
      * @return A new non-NULL filter on success, and NULL on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48811,7 +48868,10 @@ public final class Accelerate {
      * @return A new non-NULL filter on success, and NULL on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48831,7 +48891,10 @@ public final class Accelerate {
      * @return A new non-NULL filter on success, and NULL on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48864,7 +48927,7 @@ public final class Accelerate {
      * layer_params: [pointer to BNNSLayerParametersFullyConnected, pointer to BNNSLayerParametersNormalization]
      * 
      * Configuration 3: Transposed Convolution -> Normalization
-     * filter0 is tranposed convolution and filter1 is normalization. for example, the filter_type and layer_params
+     * filter0 is transposed convolution and filter1 is normalization. for example, the filter_type and layer_params
      * arrays when using batchnorm should be as follows:
      * filter_type: [BNNSTransposedConvolution, BNNSBatchNorm]
      * layer_params: [pointer to BNNSLayerParametersConvolution, pointer to BNNSLayerParametersNormalization]
@@ -48889,7 +48952,7 @@ public final class Accelerate {
      * recreated.
      * 
      * Configuration 6: Transposed Convolution -> Quantization
-     * filter0 is tranposed convolution and filter1 is quantization. The filter_type and layer_params arrays should be
+     * filter0 is transposed convolution and filter1 is quantization. The filter_type and layer_params arrays should be
      * as follows:
      * filter_type: [BNNSTransposedConvolution, BNNSQuantization]
      * layer_params: [pointer to BNNSLayerParametersConvolution, pointer to BNNSLayerParametersQuantization]
@@ -48918,7 +48981,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -48950,7 +49016,10 @@ public final class Accelerate {
      * @param idx_stride Increment (in values) between indices
      * 
      *                   API-Since: 14.0
+     *                   Deprecated-Since: 18.0
+     *                   Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSPoolingFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -48968,7 +49037,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFilterApplyTwoInput(@Nullable VoidPtr filter, @NotNull ConstVoidPtr inA,
@@ -48994,7 +49066,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFilterApplyTwoInputBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49033,7 +49108,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSNormalizationFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49061,7 +49139,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFusedFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49117,7 +49198,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSArithmeticFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49193,7 +49277,10 @@ public final class Accelerate {
      * @param workspace           Is used as a scratch buffer during the calculation.
      * 
      *                            API-Since: 14.0
+     *                            Deprecated-Since: 18.0
+     *                            Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSApplyMultiheadAttention(@Nullable VoidPtr F, @NUInt long batch_size,
@@ -49264,6 +49351,8 @@ public final class Accelerate {
      * [@returns] 0 on success, nonzero on failure
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param function             Optimization function (algorithm) to use
      * @param OptimizerAlgFields   Parameters for optimization function, pointer to a struct whose type is determined by
@@ -49278,6 +49367,7 @@ public final class Accelerate {
      *                             call optimization step.
      * @param filter_params        Filter runtime parameters, may be NULL for default parameters.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSOptimizerStep(int function, @NotNull ConstVoidPtr OptimizerAlgFields,
@@ -49392,7 +49482,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49436,7 +49529,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSPoolingFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49548,7 +49644,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFilterApplyBackwardTwoInputBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49594,7 +49693,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSNormalizationFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49649,7 +49751,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFusedFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49691,7 +49796,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSArithmeticFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49715,7 +49823,10 @@ public final class Accelerate {
      * 
      * 
      *                         API-Since: 14.0
+     *                         Deprecated-Since: 18.0
+     *                         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSPermuteFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49769,7 +49880,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSLossFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49811,7 +49925,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSLossFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -49888,7 +50005,10 @@ public final class Accelerate {
      * @param workspace           Is used as a scratch buffer during the calculation.
      * 
      *                            API-Since: 14.0
+     *                            Deprecated-Since: 18.0
+     *                            Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSApplyMultiheadAttentionBackward(@Nullable VoidPtr F, @NUInt long batch_size,
@@ -49915,7 +50035,10 @@ public final class Accelerate {
      * @return minimum bytes capacity of the training cache buffer
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     @NUInt
@@ -49940,7 +50063,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSDirectApplyLSTMBatchTrainingCaching(
@@ -49965,7 +50091,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSDirectApplyActivationBatch(
@@ -50090,7 +50219,10 @@ public final class Accelerate {
      *         information
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSCompareTensor(
@@ -50191,7 +50323,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 14.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSDirectApplyLSTMBatchBackward(
@@ -50214,10 +50349,13 @@ public final class Accelerate {
      * On failure, a BNNSNDArrayDescriptor with data member set to NULL.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param filter Filter to obtain pointer into
      * @param target enum specifying what a pointer is required to
      */
+    @Deprecated
     @Generated
     @CFunction
     @ByValue
@@ -52831,7 +52969,10 @@ public final class Accelerate {
      * @return A new non-NULL filter on success, and NULL on failure.
      * 
      *         API-Since: 15.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -52864,7 +53005,10 @@ public final class Accelerate {
      * 
      * 
      *         API-Since: 15.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFusedFilterApplyMultiInputBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -52885,7 +53029,10 @@ public final class Accelerate {
      * @return Zero on success, nonzero on failure.
      * 
      *         API-Since: 15.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSDirectApplyQuantizer(
@@ -52902,12 +53049,15 @@ public final class Accelerate {
      * [@returns] 0 on success, nonzero on failure
      * 
      * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param dest    descriptor for the destination tensor
      * @param src     descriptor for the source tensor, must be of the same type and shape as the dest descriptor.
      * @param min_val The minimum value.
      * @param max_val The maximum value.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSClipByValue(
@@ -52925,12 +53075,15 @@ public final class Accelerate {
      * [@returns] 0 on success, nonzero on failure
      * 
      * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param dest       descriptor for the destination tensor
      * @param src        descriptor for the source tensor, must be of the same type and shape as the dest descriptor.
      * @param max_norm   The maximum L2-norm.
      * @param axis_flags The dimensions to use for computing the L2-norm. If 0, uses all dimensions.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSClipByNorm(
@@ -52948,6 +53101,8 @@ public final class Accelerate {
      * [@returns] 0 on success, nonzero on failure
      * 
      * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param dest     array of destination tensor descriptors
      * @param src      array of source tensor descriptors. Each descriptor data in the array must be the same size as
@@ -52956,6 +53111,7 @@ public final class Accelerate {
      * @param max_norm maximum global L2-norm
      * @param use_norm The global norm to use. If zero, global norm is computed based on src.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSClipByGlobalNorm(@NotNull Ptr<Ptr<BNNSNDArrayDescriptor>> dest,
@@ -52969,6 +53125,8 @@ public final class Accelerate {
      * [@returns] 0 on success, nonzero on failure
      * 
      * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param dest       descriptor for the destination tensor. The dimensions in axis_flags are removed from the
      *                   destination shape.
@@ -52978,6 +53136,7 @@ public final class Accelerate {
      * @param norm_type  Type of the norm. Currently only L2-norm is supported.
      * @param axis_flags The dimensions to use for computing the L2-norm. If 0, uses all dimensions.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSComputeNorm(
@@ -52994,6 +53153,8 @@ public final class Accelerate {
      * [@returns] 0 on success, nonzero on failure
      * 
      * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param in         Pointer to the forward pass input data
      * @param in_delta   Pointer to the input delta descriptor
@@ -53002,6 +53163,7 @@ public final class Accelerate {
      * @param norm_type  Type of the norm. Currently only L2-norm is supported.
      * @param axis_flags The dimensions to use for computing the L2-norm. If 0, uses all dimensions.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSComputeNormBackward(@NotNull ConstVoidPtr in,
@@ -53053,7 +53215,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 15.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSFusedFilterApplyBackwardMultiInputBatch(@Nullable VoidPtr filter,
@@ -53346,7 +53511,10 @@ public final class Accelerate {
      * @param idx_stride Increment (in values) between indices
      * 
      *                   API-Since: 16.0
+     *                   Deprecated-Since: 18.0
+     *                   Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSPoolingFilterApplyBatchEx(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -53387,7 +53555,10 @@ public final class Accelerate {
      * @return 0 on success, and -1 on failure.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSPoolingFilterApplyBackwardBatchEx(@Nullable VoidPtr filter, @NUInt long batch_size,
@@ -53408,6 +53579,8 @@ public final class Accelerate {
      * If parameters are invalid, a negative value is returned.
      * 
      * API-Since: 16.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param transA        - if true, transposes the last two dimensions of A
      * @param transB        - if true, transposes the last two dimensions of B
@@ -53417,6 +53590,7 @@ public final class Accelerate {
      * @param output        - descriptor for tensor C
      * @param filter_params - filter runtime parameters, may be NULL for default parameters
      */
+    @Deprecated
     @Generated
     @CFunction
     @NInt
@@ -53447,6 +53621,8 @@ public final class Accelerate {
      * [@returns] 0 on success, non-zero on failure
      * 
      * API-Since: 16.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use BNNSGraph* APIs
      * 
      * @param transA        - if true, transposes the last two dimensions of A
      * @param transB        - if true, transposes the last two dimensions of B
@@ -53458,6 +53634,7 @@ public final class Accelerate {
      *                      the value returned by BNNSMatMulWorkspaceSize
      * @param filter_params - filter runtime parameters, may be NULL for default parameters
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSMatMul(boolean transA, boolean transB, float alpha,
@@ -53479,7 +53656,10 @@ public final class Accelerate {
      * @return Zero on success, nonzero on failure.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSTile(
@@ -53508,7 +53688,10 @@ public final class Accelerate {
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
      * 
      *                      API-Since: 16.0
+     *                      Deprecated-Since: 18.0
+     *                      Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSGather(@NUInt long axis,
@@ -53544,7 +53727,10 @@ public final class Accelerate {
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
      * 
      *                      API-Since: 16.0
+     *                      Deprecated-Since: 18.0
+     *                      Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSScatter(@NUInt long axis, int op,
@@ -53580,7 +53766,10 @@ public final class Accelerate {
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
      * 
      *                      API-Since: 16.0
+     *                      Deprecated-Since: 18.0
+     *                      Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSGatherND(
@@ -53622,7 +53811,10 @@ public final class Accelerate {
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
      * 
      *                      API-Since: 16.0
+     *                      Deprecated-Since: 18.0
+     *                      Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSScatterND(int op,
@@ -53641,7 +53833,10 @@ public final class Accelerate {
      * @return Zero on success, nonzero on failure.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSShuffle(int type,
@@ -53665,7 +53860,10 @@ public final class Accelerate {
      * @return Zero on success, nonzero on failure.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSBandPart(int num_lower, int num_upper,
@@ -53687,7 +53885,10 @@ public final class Accelerate {
      * @return Zero on success, nonzero on failure.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSCropResize(
@@ -53709,7 +53910,10 @@ public final class Accelerate {
      * @return Zero on success, nonzero on failure.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSTileBackward(
@@ -53730,7 +53934,10 @@ public final class Accelerate {
      * @return Zero on success, nonzero on failure.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSCropResizeBackward(
@@ -53794,7 +54001,10 @@ public final class Accelerate {
      * @return 0 for success, non 0 on failure (failure reason will reported in os logs)
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSNDArrayFullyConnectedSparsifySparseCOO(
@@ -53845,7 +54055,10 @@ public final class Accelerate {
      * @return 0 for success, non 0 on failure (failure reason will reported in os logs)
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use BNNSGraph* APIs
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int BNNSNDArrayFullyConnectedSparsifySparseCSR(
@@ -54770,8 +54983,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcDest,
             VoidPtr tempBuffer, @NUInt long seedX, @NUInt long seedY, char newValue, int connectivity, int flags);
 
-    @Generated public static final double vDSP_Version0 = 1041.0;
-    @Generated public static final double vDSP_Version1 = 0.0;
+    @Generated public static final double vDSP_Version0 = 1068.0;
+    @Generated public static final double vDSP_Version1 = 60.0;
     @Generated public static final double USE_NON_APPLE_STANDARD_DATATYPES = 1.0;
     @Generated public static final double LA_L1_NORM = 1.0;
     @Generated public static final double LA_L2_NORM = 2.0;
@@ -54898,4 +55111,1008 @@ public final class Accelerate {
     @CFunction
     public static native int BNNSNearestNeighborsGetInfo(@Nullable VoidPtr knn, int sample_number,
             @Nullable IntPtr indices, @Nullable VoidPtr distances);
+
+    /**
+     * Set the threading model to use for BLAS and LAPACK
+     * 
+     * Set the threading model to use for the subsequent calls into BLAS and LAPACK.
+     * This setting is per thread, saved in a thread local variable.
+     * 
+     * @param threading (input) The desired threading model.
+     * 
+     * @return
+     *         0: Success <br>
+     *         -1: Option is not supported on this platform
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BLASSetThreading(int threading);
+
+    /**
+     * Query what the currently selected threading model is.
+     * 
+     * This routine will return what the currently selected threading model is.
+     * This setting is per thread, saved in a thread local variable.
+     * 
+     * @return An enum representing the currently selected threading model.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BLASGetThreading();
+
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
+     */
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int xerbla_(BytePtr srname, IntPtr info);
+
+    /**
+     * Allocates and returns a new `bnns_graph_compile_options_t` object initialized to default values.
+     * The user is responsible for calling `BNNSGraphCompileOptionsDestroy` on this object once it is no longer
+     * required.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native bnns_graph_compile_options_t BNNSGraphCompileOptionsMakeDefault();
+
+    /**
+     * Destroys the given options object
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsDestroy(@ByValue bnns_graph_compile_options_t options);
+
+    /**
+     * Sets option for compiled graph to execute on only one thread.
+     * Default behavior is to execute on multiple threads.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsSetTargetSingleThread(
+            @ByValue bnns_graph_compile_options_t options, boolean value);
+
+    /**
+     * Returns true if execution is set to use a single thread, false otherwise.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean BNNSGraphCompileOptionsGetTargetSingleThread(
+            @ByValue bnns_graph_compile_options_t options);
+
+    /**
+     * Sets whether the generated `bnns_graph_t` object includes debug info.
+     * Default behavior is *not* to include debug info.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsSetGenerateDebugInfo(@ByValue bnns_graph_compile_options_t options,
+            boolean value);
+
+    /**
+     * Returns true if the generated `bnns_graph_t` will contain the debug info, false otherwise.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean BNNSGraphCompileOptionsGetGenerateDebugInfo(
+            @ByValue bnns_graph_compile_options_t options);
+
+    /**
+     * Specifies the optimization preference to compile with
+     * Default is `BNNSGraphOptimizationPreferencePerformance`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsSetOptimizationPreference(
+            @ByValue bnns_graph_compile_options_t options, int preference);
+
+    /**
+     * Returns the current optimization preference.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphCompileOptionsGetOptimizationPreference(
+            @ByValue bnns_graph_compile_options_t options);
+
+    /**
+     * Graph Compile-time Message Callback Setter
+     * 
+     * Specifies customized callback function for compile time message reporting.
+     * When unspecified, default callback functions log messages onto `os_log`.
+     * 
+     * - `options`: graph compile options
+     * - `log_callback`: routine that customizes the graph compile time message logging callback of type
+     * `bnns_graph_compile_message_fn_t`
+     * - `additional_logging_arguments`: additional user-set data for the message logging functions to pass onto the
+     * callback functions unaltered
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsSetMessageLogCallback(
+            @ByValue bnns_graph_compile_options_t options,
+            @FunctionPtr(name = "call_BNNSGraphCompileOptionsSetMessageLogCallback") @NotNull Function_BNNSGraphCompileOptionsSetMessageLogCallback log_callback,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable bnns_user_message_data_t additional_logging_arguments);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_BNNSGraphCompileOptionsSetMessageLogCallback {
+        @Generated
+        void call_BNNSGraphCompileOptionsSetMessageLogCallback(int arg0,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String arg1,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String arg2,
+                @UncertainArgument("Options: reference, array Fallback: reference") @Nullable bnns_user_message_data_t arg3);
+    }
+
+    /**
+     * Sets mask for log messages that are logged (either via `os_log` or the user specified callback)
+     * 
+     * - `options`: graph compile options
+     * - `log_level_mask`: bitmask of levels to log for
+     * (Default is BNNSGraphMessageLevelUnsupported | BNNSGraphMessageLevelWarning | BNNSGraphMessageLevelError)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsSetMessageLogMask(@ByValue bnns_graph_compile_options_t options,
+            int log_level_mask);
+
+    /**
+     * Specifies that the `bnns_graph_t` object should be generated directly to the given file
+     * This is intended to reduce memory required for compilation, as the full set of graph weights need not be memory
+     * resident all at once
+     * This option will be ignored if a file descriptor is supplied by calling `BNNSGraphCompileOptionsSetOutputFD`.
+     * If this option is used, the `bnns_graph_t` returned BNNSCompileFromFile() will be a read-only mmap'd version of
+     * the result.
+     * Passing NULL will reset to the default behavior of generating strictly in memory.
+     * The file will be created with 0600 permissions (read/write by user only).
+     * 
+     * @see BNNSGraphCompileOptionsSetOutputFD
+     * 
+     *      API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsSetOutputPath(@ByValue bnns_graph_compile_options_t options,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String path);
+
+    /**
+     * Returns the path used if the `bnns_graph_t` object is generated directly to a file, or NULL if this option is not
+     * enabled
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String BNNSGraphCompileOptionsGetOutputPath(@ByValue bnns_graph_compile_options_t options);
+
+    /**
+     * Specifies that the `bnns_graph_t` object should be generated directly to the given file descriptor
+     * This is intended to reduce memory required for compilation, as the full set of graph weights need not be memory
+     * resident all at once
+     * This option will override any previously set output path option.
+     * The file indicated by the desriptor must be open for writing, and will be truncated and completely overwritten.
+     * If this option is used, the `bnns_graph_t` returned BNNSCompileFromFile() will be a read-only mmap'd version of
+     * the result.
+     * Passing -1 will reset to the default behavior of generating strictly in memory (or the file specified via
+     * `BNNSGraphCompileOptionsSetOutputPath`).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphCompileOptionsSetOutputFD(@ByValue bnns_graph_compile_options_t options, int fd);
+
+    /**
+     * Return the file descriptor to be used for output, or -1 it none has been set.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphCompileOptionsGetOutputFD(@ByValue bnns_graph_compile_options_t options);
+
+    /**
+     * Compiles the given mlmodelc to a `bnns_graph_t` object.
+     * The resulting object may be written to disk and then mmap'd in and executed in a new process at a later time or
+     * consumed
+     * immediately.
+     * 
+     * The user is responsible for calling `free` (by default) or `munmap` (if a file was specified via one of the
+     * `BNNSGraphCompileOptionsSetOutputPath*` calls) once they are ready to release the object.
+     * 
+     * Arguments:
+     * - `filename`: specifies the path to the mlmodelc.
+     * - `function`: specifies the name of a specific function to be compiled. If all functions in the source file are
+     * to be compiled,
+     * `NULL` or the empty string may be passed.
+     * - `options`: specifies compilation options. If the user passes `NULL`, options are the default set of options.
+     * 
+     * Returns:
+     * - Compiled graph on success, or `(bnns_graph_t) { .data = NULL, .size = 0 }` on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native bnns_graph_t BNNSGraphCompileFromFile(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String filename,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @ByValue bnns_graph_compile_options_t options);
+
+    /**
+     * Returns number of input arguments from a graph function.
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * 
+     * Returns:
+     * The number of input arguments on success, or `SIZE_T_MAX` on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSGraphGetInputCount(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function);
+
+    /**
+     * Returns number of output arguments from a graph function.
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * 
+     * Returns:
+     * The number of output arguments on success, or `SIZE_T_MAX` on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSGraphGetOutputCount(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function);
+
+    /**
+     * Returns total number of arguments for a graph function.
+     * 
+     * This will be the sum of values returned by `BNNSGraphGetInputCount` and `BNNSGraphGetOutputCount`.
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * 
+     * Returns:
+     * The number of output arguments on success, or `SIZE_T_MAX` on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSGraphGetArgumentCount(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function);
+
+    /**
+     * Returns number of callable functions in this graph.
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * 
+     * Returns:
+     * The number of callable functions on success, or `SIZE_T_MAX` on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSGraphGetFunctionCount(@ByValue bnns_graph_t graph);
+
+    /**
+     * Extracts argument names of inputs to a graph function
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `input_names_count`: number of elements in `input_names`.
+     * - `input_names`: array of string pointers to populate.
+     * On exit `input_names[i]` will be set to a read-only pointer to a string containing
+     * the i-th argument name, for i in [0, min(num_inputs, input_names_count)).
+     * 
+     * Returns:
+     * 0 on success, nonzero on failure.
+     * Failure may be caused by either invalid values of `graph` or `function`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphGetInputNames(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long input_names_count,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) @NotNull String[] input_names);
+
+    /**
+     * Extracts argument names of outputs to a graph function
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `output_names_count`: number of elements in `output_names`.
+     * - `output_names`: array of string pointers to populate.
+     * On exit `output_names[i]` will be set to a read-only pointer to a string containing
+     * the i-th argument name, for i in [0, min(num_outputs, output_names_count)).
+     * 
+     * Returns:
+     * 0 on success, nonzero on failure.
+     * Failure may be caused by either invalid values of `graph` or `function`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphGetOutputNames(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long output_names_count,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) @NotNull String[] output_names);
+
+    /**
+     * Extracts names of argument to a graph function
+     * 
+     * This will be the concatenation of the results from `BNNSGraphGetOutputNames` and `BNNSGraphGetInputNames`
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `argument_names_count`: number of elements in `argument_names`.
+     * - `argument_names`: array of string pointers to populate.
+     * On exit `argument_names[i]` will be set to a read-only pointer to a string containing
+     * the i-th argument name, for i in [0, min(num_argument, argument_names_count)).
+     * 
+     * Returns:
+     * 0 on success, nonzero on failure.
+     * Failure may be caused by either invalid values of `graph` or `function`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphGetArgumentNames(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long argument_names_count,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) @NotNull String[] argument_names);
+
+    /**
+     * Extracts names of callable functions in the graph
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function_name_count`: number of elements in `function_names`
+     * - `function_names`: array of string pointers to populate.
+     * On exit `function_names[i]` will be set to a read-only pointer to a string containing
+     * the i-th function name, for i in [0, min(num_functions, function_name_length)).
+     * 
+     * Returns:
+     * 0 on success, nonzero on failure.
+     * Failure may be caused by either invalid values of `graph`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphGetFunctionNames(@ByValue bnns_graph_t graph, @NUInt long function_name_count,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) @NotNull String[] function_names);
+
+    /**
+     * Returns intents of arguments
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `argument_intents_count`: number of elements in `argument_intents`.
+     * - `argument_intents`: array of intents to populate.
+     * On exit `argument_intents[i]` will be set to a value indicating the intent of
+     * the i-th argument name, for i in [0, min(num_argument, argument_intents_count)).
+     * 
+     * Returns:
+     * 0 on success, nonzero on failure.
+     * Failure may be caused by either invalid values of `graph` or `function`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphGetArgumentIntents(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long argument_intents_count, @NotNull IntPtr argument_intents);
+
+    /**
+     * Returns index into arguments[] array for given function argument.
+     * 
+     * Returns the position in the arguments[] array for a call to `BNNSGraphExecute` or `BNNSGraphContextExecute` for
+     * the given argument.
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `argument`: name of input/output argument to query
+     * 
+     * Returns:
+     * Index of argument on success, or `SIZE_T_MAX` on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSGraphGetArgumentPosition(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String argument);
+
+    /**
+     * Returns the interleave factors for arguments, if present
+     * 
+     * If any arguments to the function are specified with an interleave factor (e.g. using
+     * the `interleave` option to `tensor_buffer` in MIL), this function can be
+     * used to retrieve the interleave factor array.
+     * 
+     * Arguments:
+     * - `graph`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `argument_count`: number of elements in `argument_interleave` and in `argument_interleave_counts`.
+     * - `argument_interleave`: array of pointers to interleave factors to populate.
+     * On exit `argument_interleave[i]` will be set to either:
+     * - `NULL` if argument `i` has no interleave factor; or
+     * - a pointer into the graph object containing the interleave factors that contains `argument_interleave_counts[i]`
+     * elements.
+     * Only the first [0, min(argument_count, argument_interleave)) entries are set.
+     * - `argument_interleave_counts`: gives the size of the array pointed to by `argument_interleave[i]`, or is set to
+     * 0
+     * if `argument_interleave[i]` is set to `NULL`.
+     * 
+     * Returns:
+     * 0 on success, nonzero on failure.
+     * Failure may be caused by either invalid values of `graph` or `function`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphGetArgumentInterleaveFactors(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long argument_count, @NotNull Ptr<ConstCharPtr> argument_interleave,
+            @NotNull NUIntPtr argument_interleave_counts);
+
+    /**
+     * Allocates and initializes a `bnns_graph_context_t`
+     * 
+     * Arguments:
+     * - `graph`: object to be wrapped into the context. Must remain valid for the lifetime of returned context.
+     * 
+     * Returns:
+     * - New context on success, or `(bnns_graph_context_t) { .data = NULL, .size = 0 }` on failure.
+     * The object must be destroyed through a call to `BNNSGraphContextDestroy`.
+     * 
+     * @see `BNNSGraphContextDestroy`
+     * 
+     *      API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native bnns_graph_context_t BNNSGraphContextMake(@ByValue bnns_graph_t graph);
+
+    /**
+     * Make a new graph context with streaming support for the given function
+     * 
+     * Use this function in place of `BNNSGraphContextMake` to create a context for use with a model
+     * compiled with the `BNNSOption` attribute `StateMode=Streaming` enabled. In addition to the
+     * regular work performed by `BNNSGraphContextMake`, this call will also allocate ring-buffer
+     * backed memory for all inout (i.e. CoreML `state`) arguments of the given function. Calls to
+     * `BNNSGraphContextExecute()` with this function will ignore any user-provided pointers for
+     * inout arguments and will use the internal ring-buffer instead. Upon return from the call, any
+     * user-provided `bnns_argument_t` will be set to point to the ring-buffer memory.
+     * The internal ring buffer will then be advanced by the distance determined by analysis of the compiled
+     * program ready for use in the next frame.
+     * 
+     * If the function was not compiled with the BNNSOption parameter StateMode=Streaming, this call will fail.
+     * 
+     * If a state does not appear in the `initial_states` list, it will be initialized to all zeros.
+     * 
+     * Arguments:
+     * - `graph`: object to be wrapped into the context. Must remain valid for the lifetime of returned context.
+     * - `function`: function to initialize state for. It may be `NULL` if there is only one function.
+     * - `initial_states_count`: Number of initial states contained in the array `inital_states`. May be 0.
+     * - `initial_states`: Array of BNNSTensors describing data to be used to initialize each state.
+     * `initial_state[i]` is used to intialize the state with name
+     * `initial_state[i]->name`.
+     * 
+     * Returns:
+     * - New context on success, or `(bnns_graph_context_t) { .data = NULL, .size = 0 }` on failure.
+     * The object must be destroyed through a call to `BNNSGraphContextDestroy`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native bnns_graph_context_t BNNSGraphContextMakeStreaming(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long initial_states_count,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable BNNSTensor initial_states);
+
+    /**
+     * Destroys a graph context created through a call to `BNNSGraphContextCreate`
+     * 
+     * Arguments:
+     * `context`: object to be destroyed
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphContextDestroy(@ByValue bnns_graph_context_t context);
+
+    /**
+     * Specifies the dynamic shapes for a graph and infers (if possible) output shapes
+     * 
+     * Notes:
+     * - It is an error to call this function before all existing calls to `BNNSGraphContextExecute()` using the same
+     * context complete.
+     * - Required workspace size for `BNNSGraphContextExecute()` may change as a result of this call.
+     * - This function does not set dynamic strides as required by some arguments.
+     * Arguments with dynamic strides must be provided as `BNNSTensor`s.
+     * Use `BNNSGraphContextSetArgumentType` to set the argument type to `BNNSGraphArgumentTypeTensor`, and provide
+     * `BNNSTensor` pointers in `bnns_graph_argument_t`.
+     * 
+     * Arguments:
+     * - `context`: context for which to set dynamic shapes
+     * - `function`: specific function to be set shapes for. It may be `NULL` if there is only one function.
+     * - `shapes_count`: number of elements in array shapes
+     * - `shapes`: array of shapes for outputs and inputs, in the same order as will be passed for
+     * `BNNSGraphContextExecute()`
+     * On entry, input shapes are read from this array, unless indicated otherwise by setting `shapes[idx].rank = 0`, in
+     * which
+     * case the constant or default value from the source model will be used. If a non-zero value is specified that does
+     * not match a constant
+     * size in the source model, an error is generated. Output shapes are not read.
+     * On exit, output shapes that have `shapes[idx].rank != 0` will be set to an upper bound on the expected output
+     * shape.
+     * If the output shape cannot be deduced as it depends on input data values, the value of `shapes[idx].size[d]` will
+     * be set
+     * to zero for that dimension.
+     * 
+     * Returns:
+     * - `0` on success if all tensor shapes were exactly determined (workspace size is exact)
+     * - `1` on success if one or more tensor shapes are merely bounds, but no tensor is unbounded (workspace size is
+     * bounded)
+     * - `2` on success if one or more tensor shapes are unbounded (BNNS will need to allocate during execution)
+     * - `< 0` on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetDynamicShapes(@ByValue bnns_graph_context_t context,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long shapes_count,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull bnns_graph_shape_t shapes);
+
+    /**
+     * Sets the batch size for a graph
+     * 
+     * This is a special case of `BNNSGraphContextSetDynamicShapes()` where the only dynamic sizes that occur are the
+     * first index
+     * of their tensor (i.e. the batch dimension) and are all equal. This allows just passing a single `batch_size`
+     * constant.
+     * 
+     * Notes:
+     * - It is an error to call this function before all existing calls to `BNNSGraphContextExecute()` complete.
+     * - Required workspace size for `BNNSGraphContextExecute()` may change as a result of this call.
+     * - If the graph has dynamic sizes other than batch size, then `BNNSGraphContextSetDynamicShapes()` must be used
+     * instead
+     * - This function does not set dynamic strides as required by some arguments.
+     * Arguments with dynamic strides must be provided as `BNNSTensor`s.
+     * Use `BNNSGraphContextSetArgumentType` to set the argument type to `BNNSGraphArgumentTypeTensor`, and provide
+     * `BNNSTensor` pointers in `bnns_graph_argument_t`.
+     * 
+     * Arguments:
+     * - `context`: context for which to set dynamic shapes
+     * - `function`: specific function to be set shapes for. It may be `NULL` if there is only one function.
+     * - `batch_size`: the batch size to set
+     * 
+     * Returns:
+     * - 0 on success, non-zero on failure
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetBatchSize(@ByValue bnns_graph_context_t context,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            long batch_size);
+
+    /**
+     * Sets the type used to interpret the `arguments` argument to `BNNSGraphContextExecute()`.
+     * 
+     * Notes:
+     * - Some arguments require dynamic strides. These must be provided as `BNNSTensor`s.
+     * Use `BNNSGraphContextSetArgumentType` to set the argument type to `BNNSGraphArgumentTypeTensor`, and provide
+     * `BNNSTensor` pointers in `bnns_graph_argument_t`.
+     * 
+     * Arguments:
+     * - `context`: for which to enable signposts
+     * - `argument_type`: argument type to set, default is `BNNSGraphArgumentTypePointer`
+     * 
+     * Returns:
+     * - 0 on success, non-zero on failure
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetArgumentType(@ByValue bnns_graph_context_t context, int argument_type);
+
+    /**
+     * Enables debug mode, checks intermediate tensors for nans and infs.
+     * Not for use in production code.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSGraphContextEnableNanAndInfChecks(@ByValue bnns_graph_context_t context,
+            boolean enable_check_for_nans_inf);
+
+    /**
+     * Executes the specified function with the provided context
+     * 
+     * The same context must only be used by a single thread at a time.
+     * 
+     * If the underlying model contains dynamic shaped inputs or outputs, these must be set prior to calling this
+     * routine through a call
+     * to either `BNNSGraphContextSetDynamicShapes` or `BNNSGraphContextSetBatchSize`. The shapes should not
+     * be modified again until this routine has returned.
+     * 
+     * This routine performs no memory allocation if the following conditions are met:
+     * - workspace is not `NULL`.
+     * - the graph does not contain tensors whose shape BNNS could not bound prior to this call.
+     * - no new shape information is supplied via `arguments`.
+     * - all output storage is provided explicitly by the user.
+     * If any of these points is not the case, the user may control allocation by registering suitable callbacks via the
+     * functions
+     * `BNNSGraphContextSetWorkspaceAllocationCallback` and `BNNSGraphContextSetOutputAllocationCallback`.
+     * 
+     * If the output allocation policy has been set to `bnns_managed=true`, the context must not be used in another call
+     * to
+     * `BNNSGraphContextExecute` until the outputs are no longer needed (as they may be reused or deallocated).
+     * 
+     * Arguments:
+     * - `context`: is the context to be executed.
+     * - `function`: specific function to be executed. It may be `NULL` if there is only one function.
+     * - `argument_count`: number of elements in `arguments`.
+     * - `arguments`: array of `bnns_graph_argument_t` objects supply input data and memory allocated to hold the
+     * output.
+     * Arguments are ordered such that outputs precede inputs, in the same order as they appear the source function's
+     * output and input
+     * blocks. The position of an argument can be looked up by its source name using the BNNSGraphGetArgumentPosition()
+     * function.
+     * If `.data_ptr=NULL` or `.tensor.data=NULL` for an output, one will be allocated for the user.
+     * - `workspace_size`: size in bytes of `workspace`, or zero if `workspace==NULL`.
+     * - `workspace`: scratch memory to be used during execution. MUST be page-aligned.
+     * May be freed or reused by the user upon return.
+     * If `NULL` is passed, the routine will allocate its own workspace.
+     * 
+     * Returns:
+     * - 0 on success, non-zero on failure
+     * 
+     * @see `BNNSGraphContextMake`, `BNNSGraphContextGetWorkspaceSize`,
+     *      `BNNSGraphContextSetArgumentType`, `BNNSGraphContextSetDynamicShapes`
+     * 
+     *      API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextExecute(@ByValue bnns_graph_context_t context,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @NUInt long argument_count,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull bnns_graph_argument_t arguments,
+            @NUInt long workspace_size, @Nullable BytePtr workspace);
+
+    /**
+     * Returns the minimum size in bytes of the workspace argument that should be passed to `BNNSGraphContextExecute()`.
+     * 
+     * If `BNNSGraphContextSetBatchSize` or `BNNSGraphContextSetDynamicShapes` is called, then this function
+     * should be call afterwards to obtain a new workspace size.
+     * Due to memory layout algorithms being heuristic in nature, there is no guarantee that workspace size is monotonic
+     * with any dynamic size. That is to say that the case with the maximum dynamic size may not be an upper bound on
+     * workspace
+     * required for smaller sizes.
+     * 
+     * Arguments:
+     * - `graph`: is the graph to be executed
+     * - `function`: specific function to be executed. It may be `NULL` if there is only one function.
+     * 
+     * Returns:
+     * - size in bytes of required workspace, or `SIZE_T_MAX` on failure (invalid graph, invalid function, or function
+     * contains dynamic shapes).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSGraphContextGetWorkspaceSize(@ByValue bnns_graph_context_t context,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function);
+
+    /**
+     * Fills tensor descriptor for a given function argument.
+     * 
+     * If the shape has been modified for this context, such as by calling `BNNSGraphContextSetDynamicShapes()`,
+     * then this routine will return that modified shape.
+     * 
+     * Arguments:
+     * - `context`: object to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `argument`: name of input/output argument to query
+     * - `fill_known_dynamic_shapes`: if `true`, any dynamic shapes are replaced with shapes that will be used on next
+     * execution of `context`, either drawn from default shapes in the source model or supplied by a preceding call to
+     * `BNNSGraphContextSetDynamicShapes()` or `BNNSGraphContextSetBatchSize()`.
+     * Otherwise dynamically-sized dimensions are indicated by a value of -1 in shape/stride as appropriate.
+     * - `tensor`: pointer to `BNNSTensor` to be filled by this routine.
+     * On return all fields except `.data` and `.data_size_in_bytes` will have been populated.
+     * 
+     * Returns:
+     * 0 on success and a non-zero on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextGetTensor(@ByValue bnns_graph_context_t context,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String argument,
+            boolean fill_known_dynamic_shapes,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull BNNSTensor tensor);
+
+    /**
+     * Fills the strides member of a BNNSTensor for compatibility with a given model input or output based on its
+     * current shape
+     * 
+     * All sizes must be fully specified (i.e. not `< 0`). If the input or output is a tensor, contiguous strides will
+     * be filled in.
+     * If the input or output is a tensor buffer, the strides will be filled in according to the specification in the
+     * model that was
+     * compiled to the given graph.
+     * 
+     * Arguments:
+     * - `graph`: ir to query.
+     * - `function`: function to query. It may be `NULL` if there is only one function.
+     * - `argument`: name of input/output argument to query
+     * - `tensor`: pointer to `BNNSTensor` to be filled by this routine.
+     * On return the first `tensor.rank` elements will have been overwritten with the strides BNNS expects.
+     * 
+     * Returns:
+     * 0 on success and a non-zero on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphTensorFillStrides(@ByValue bnns_graph_t graph,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String function,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String argument,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull BNNSTensor tensor);
+
+    /**
+     * Sets allocation/free callbacks for internal workspace
+     * 
+     * In the case that the required workspace cannot be bounded prior to execution (for example if tensor sizes depend
+     * on the
+     * input data), BNNS will need to allocate workspace during execution. If the user wishes to override BNNS's default
+     * memory
+     * allocation mechanism, they may provide allocation and free routines here.
+     * 
+     * Note that the `free` function will typically only be called when the context is destroyed, however workspace is
+     * only
+     * required during the actual execution. As such users may wish to make memory in this allocation purgable or free
+     * it
+     * between calls to `BNNSGraphContextExecute()`.
+     * 
+     * If the same value of `user_memory_context` is supplied to both `BNNSGraphContextSetWorkspaceAllocationCallback`
+     * and to `BNNSGraphContextSetOutputAllocationCallback`, the `free` function will only be called once rather than
+     * twice.
+     * 
+     * Arguments:
+     * - `context`: context to set callbacks for
+     * - `realloc`: routine for (re)allocation of workspace. If `NULL` is passed then `free` must also be `NULL`, and
+     * routine will
+     * reset context to the default BNNS allocation mechanism.
+     * - `free`: routine to free all previous allocated data. Must match nullity of `realloc`. If `NULL` is passed then
+     * `realloc`
+     * must also be `NULL`, and routine will reset context to the default BNNS allocation mechanism.
+     * - `user_memory_context_size`: size in bytes of `user_memory_context`
+     * - `user_memory_context`: pointer that will be passed unmodified by BNNS in all calls to `realloc` and `free`
+     * 
+     * Returns:
+     * - 0 on success, non-zero on failure
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetWorkspaceAllocationCallback(@ByValue bnns_graph_context_t context,
+            @FunctionPtr(name = "call_BNNSGraphContextSetWorkspaceAllocationCallback_1") @Nullable Function_BNNSGraphContextSetWorkspaceAllocationCallback_1 realloc,
+            @FunctionPtr(name = "call_BNNSGraphContextSetWorkspaceAllocationCallback_2") @Nullable Function_BNNSGraphContextSetWorkspaceAllocationCallback_2 free,
+            @NUInt long user_memory_context_size, @Nullable VoidPtr user_memory_context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_BNNSGraphContextSetWorkspaceAllocationCallback_1 {
+        @Generated
+        int call_BNNSGraphContextSetWorkspaceAllocationCallback_1(@Nullable VoidPtr arg0, @NUInt long arg1,
+                @ReferenceInfo(type = Void.class, depth = 2) @NotNull Ptr<VoidPtr> arg2, @NUInt long arg3,
+                @NUInt long arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_BNNSGraphContextSetWorkspaceAllocationCallback_2 {
+        @Generated
+        void call_BNNSGraphContextSetWorkspaceAllocationCallback_2(@Nullable VoidPtr arg0, @NUInt long arg1);
+    }
+
+    /**
+     * Sets allocation/free callbacks for function outputs
+     * 
+     * In the case that the output shape cannot be bounded prior to execution, the user may pass a NULL data pointer,
+     * and BNNS
+     * will allocation the memory within the given context. If the user wishes to override BNNS's default memory
+     * allocation mechanism for outputs, they may provide allocation and free routines here.
+     * 
+     * If the same value of `user_memory_context` is supplied to both `BNNSGraphContextSetWorkspaceAllocationCallback`
+     * and to `BNNSGraphContextSetOutputAllocationCallback`, the `free` function will only be called once rather than
+     * twice.
+     * 
+     * Arguments:
+     * - `context`: context to set callbacks for
+     * - `realloc`: routine for (re)allocation of outputs. If `NULL` is passed then `free` must also be `NULL`, and
+     * routine will
+     * reset context to the default BNNS allocation mechanism.
+     * - `free`: routine to free all previous allocated data. Must match nullity of `realloc`. If `NULL` is passed then
+     * `realloc`
+     * must also be `NULL`, and routine will reset context to the default BNNS allocation mechanism.
+     * - `user_memory_context_size`: size in bytes of `user_memory_context`
+     * - `user_memory_context`: pointer that will be passed unmodified by BNNS in all calls to `realloc` and `free`
+     * 
+     * Returns:
+     * - 0 on success, non-zero on failure
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetOutputAllocationCallback(@ByValue bnns_graph_context_t context,
+            @FunctionPtr(name = "call_BNNSGraphContextSetOutputAllocationCallback_1") @Nullable Function_BNNSGraphContextSetOutputAllocationCallback_1 realloc,
+            @FunctionPtr(name = "call_BNNSGraphContextSetOutputAllocationCallback_2") @Nullable Function_BNNSGraphContextSetOutputAllocationCallback_2 free,
+            @NUInt long user_memory_context_size, @Nullable VoidPtr user_memory_context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_BNNSGraphContextSetOutputAllocationCallback_1 {
+        @Generated
+        int call_BNNSGraphContextSetOutputAllocationCallback_1(@Nullable VoidPtr arg0, @NUInt long arg1,
+                @ReferenceInfo(type = Void.class, depth = 2) @NotNull Ptr<VoidPtr> arg2, @NUInt long arg3,
+                @NUInt long arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_BNNSGraphContextSetOutputAllocationCallback_2 {
+        @Generated
+        void call_BNNSGraphContextSetOutputAllocationCallback_2(@Nullable VoidPtr arg0, @NUInt long arg1);
+    }
+
+    /**
+     * Execution time message logging callback setter
+     * 
+     * Specifies customized callback function for execution-time message reporting.
+     * When unspecified, default callback functions log messages onto `os_log`.
+     * 
+     * - `context`: context to set callbacks for
+     * - `log_callback_fn`: routine that customizes the message reporting for all execution-time routines
+     * - `additional_logging_arguments`: additional user-set data for the message logging functions to pass onto the
+     * callback functions unaltered
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetMessageLogCallback(@ByValue bnns_graph_context_t context,
+            @FunctionPtr(name = "call_BNNSGraphContextSetMessageLogCallback") @NotNull Function_BNNSGraphContextSetMessageLogCallback log_callback_fn,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable bnns_user_message_data_t additional_logging_arguments);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_BNNSGraphContextSetMessageLogCallback {
+        @Generated
+        void call_BNNSGraphContextSetMessageLogCallback(int arg0,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String arg1,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String arg2,
+                @UncertainArgument("Options: reference, array Fallback: reference") @Nullable bnns_user_message_data_t arg3);
+    }
+
+    /**
+     * Sets mask for log messages that are logged (either via `os_log` or the user specified callback)
+     * 
+     * - `context`: context to set callbacks for
+     * - `log_level_mask`: bitmask of levels to log for
+     * (Default is BNNSGraphMessageLevelUnsupported | BNNSGraphMessageLevelWarning | BNNSGraphMessageLevelError)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetMessageLogMask(@ByValue bnns_graph_context_t context,
+            int log_level_mask);
+
+    /**
+     * calculate the minimum size in bytes of the array data given the shape and stride
+     * 
+     * @return size of allocation sufficient to hold the tensor data, or `SIZE_T_MAX` if unable to
+     *         determine the size (e.g. due to dynamic shape or overflow)
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSTensorGetAllocationSize(
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull BNNSTensor tensor);
+
+    /**
+     * Determine the rank of the given layout
+     * 
+     * @return The number of dimensions represented by `layout`, or `SIZE_T_MAX` if unable to determine
+     * 
+     *         API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSDataLayoutGetRank(int layout);
 }

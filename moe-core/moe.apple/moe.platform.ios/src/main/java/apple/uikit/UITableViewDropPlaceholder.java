@@ -135,6 +135,8 @@ public class UITableViewDropPlaceholder extends UITableViewPlaceholder {
     /**
      * Allows customization of the preview used when dropping to a placeholder.
      * If no block is set, or if nil is returned, the entire cell will be used for the preview.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -161,6 +163,8 @@ public class UITableViewDropPlaceholder extends UITableViewPlaceholder {
     /**
      * Allows customization of the preview used when dropping to a placeholder.
      * If no block is set, or if nil is returned, the entire cell will be used for the preview.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPreviewParametersProvider:")

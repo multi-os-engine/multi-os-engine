@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSError;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * Cluster Fan Control
@@ -37,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterFanControl extends MTRCluster {
+public class MTRClusterFanControl extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -405,6 +407,49 @@ public class MTRClusterFanControl extends MTRCluster {
     @Generated
     @Selector("writeAttributeWindSettingWithValue:expectedValueInterval:params:")
     public native void writeAttributeWindSettingWithValueExpectedValueIntervalParams(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
+            @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("readAttributeAirflowDirectionWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAirflowDirectionWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("stepWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void stepWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRFanControlClusterStepParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_stepWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_stepWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stepWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_stepWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("writeAttributeAirflowDirectionWithValue:expectedValueInterval:")
+    public native void writeAttributeAirflowDirectionWithValueExpectedValueInterval(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs);
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("writeAttributeAirflowDirectionWithValue:expectedValueInterval:params:")
+    public native void writeAttributeAirflowDirectionWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
 }

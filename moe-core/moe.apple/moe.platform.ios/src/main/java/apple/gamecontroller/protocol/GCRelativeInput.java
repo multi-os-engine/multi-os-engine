@@ -28,6 +28,8 @@ import apple.foundation.NSSet;
 public interface GCRelativeInput {
     /**
      * The last reported delta for the input.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("delta")
@@ -39,6 +41,8 @@ public interface GCRelativeInput {
      * @param delta
      *              The amount that the input has changed since the last time
      *              \c deltaDidChangeHandler fired.
+     * 
+     *              API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -58,6 +62,8 @@ public interface GCRelativeInput {
      * Check if the input can support more than just digital values.
      * 
      * Defaults to \c YES for most relative inputs.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isAnalog")
@@ -70,6 +76,8 @@ public interface GCRelativeInput {
      * This should be treated as a lower bound of the event latency. It may not
      * include (wired or wireless) transmission latency, or latency accrued on
      * the device before the event was transmitted to the host.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastDeltaLatency")
@@ -81,6 +89,8 @@ public interface GCRelativeInput {
      * This time interval is not relative to any specific point in time. You can
      * subtract a previous timestamp from the current timestamp to determine the time
      * (in seconds) between changes to the value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastDeltaTimestamp")
@@ -92,6 +102,8 @@ public interface GCRelativeInput {
      * @param delta
      *              The amount that the input has changed since the last time
      *              \c deltaDidChangeHandler fired.
+     * 
+     *              API-Since: 16.0
      */
     @Generated
     @Selector("setDeltaDidChangeHandler:")

@@ -69,6 +69,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Identifier to communicate with the device via Bluetooth.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -88,6 +90,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Category of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("category")
@@ -114,6 +118,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Name of the device. Should be suitable for displaying to a user.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -127,6 +133,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Identifier of the device.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -139,6 +147,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Initializes a DD device with display name, category, protocol type, and identifier.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithDisplayName:category:protocolType:identifier:")
@@ -170,6 +180,8 @@ public class DDDevice extends NSObject {
     /**
      * Subtitle of the media content being played. It can be used to display extra information about the content, such
      * as the name of the artist.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -178,6 +190,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Title of the media content being played.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -186,6 +200,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Current state of media playback on this device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("mediaPlaybackState")
@@ -194,6 +210,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Endpoint to communicate with the device via networking.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -207,6 +225,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Protocol of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("protocol")
@@ -215,6 +235,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Uniform Type for the protocol.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -231,6 +253,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Identifier to communicate with the device via Bluetooth.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setBluetoothIdentifier:")
@@ -238,6 +262,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Category of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setCategory:")
@@ -245,6 +271,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Name of the device. Should be suitable for displaying to a user.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDisplayName:")
@@ -252,6 +280,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Identifier of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setIdentifier:")
@@ -260,6 +290,8 @@ public class DDDevice extends NSObject {
     /**
      * Subtitle of the media content being played. It can be used to display extra information about the content, such
      * as the name of the artist.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMediaContentSubtitle:")
@@ -267,6 +299,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Title of the media content being played.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMediaContentTitle:")
@@ -274,6 +308,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Current state of media playback on this device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMediaPlaybackState:")
@@ -281,6 +317,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Endpoint to communicate with the device via networking.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setNetworkEndpoint:")
@@ -288,6 +326,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Protocol of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setProtocol:")
@@ -295,6 +335,8 @@ public class DDDevice extends NSObject {
 
     /**
      * Uniform Type for the protocol.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setProtocolType:")
@@ -302,6 +344,8 @@ public class DDDevice extends NSObject {
 
     /**
      * State of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setState:")
@@ -309,6 +353,8 @@ public class DDDevice extends NSObject {
 
     /**
      * TXT record of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTxtRecordData:")
@@ -317,6 +363,8 @@ public class DDDevice extends NSObject {
     /**
      * URL used for SSDP connection.
      * The URL must have a valid hostname, no query parameters, and a maximum size of 100 bytes.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setUrl:")
@@ -328,6 +376,8 @@ public class DDDevice extends NSObject {
 
     /**
      * State of the device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("state")
@@ -340,6 +390,8 @@ public class DDDevice extends NSObject {
 
     /**
      * TXT record of the device.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -349,6 +401,8 @@ public class DDDevice extends NSObject {
     /**
      * URL used for SSDP connection.
      * The URL must have a valid hostname, no query parameters, and a maximum size of 100 bytes.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -382,4 +436,61 @@ public class DDDevice extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Device's WiFi Hotspot SSID.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("SSID")
+    @Nullable
+    public native String SSID();
+
+    /**
+     * Device supported capabilities.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("deviceSupports")
+    @NUInt
+    public native long deviceSupports();
+
+    /**
+     * Device's custom asset for product image name in the main App bundle.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("displayImageName")
+    @Nullable
+    public native String displayImageName();
+
+    /**
+     * Device supported capabilities.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDeviceSupports:")
+    public native void setDeviceSupports(@NUInt long value);
+
+    /**
+     * Device's custom asset for product image name in the main App bundle.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDisplayImageName:")
+    public native void setDisplayImageName(@Nullable String value);
+
+    /**
+     * Device's WiFi Hotspot SSID.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSSID:")
+    public native void setSSID(@Nullable String value);
 }

@@ -11,41 +11,41 @@ public final class BNNSLossFunction {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionSoftmaxCrossEntropy = 0x00000001;
+    @Generated public static final int SoftmaxCrossEntropy = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionSigmoidCrossEntropy = 0x00000002;
+    @Generated public static final int SigmoidCrossEntropy = 0x00000002;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionMeanSquareError = 0x00000003;
+    @Generated public static final int MeanSquareError = 0x00000003;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionHuber = 0x00000004;
+    @Generated public static final int Huber = 0x00000004;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionYolo = 0x00000005;
+    @Generated public static final int Yolo = 0x00000005;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionLog = 0x00000006;
+    @Generated public static final int Log = 0x00000006;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionCosineDistance = 0x00000007;
+    @Generated public static final int CosineDistance = 0x00000007;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionHinge = 0x00000008;
+    @Generated public static final int Hinge = 0x00000008;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionMeanAbsoluteError = 0x00000009;
+    @Generated public static final int MeanAbsoluteError = 0x00000009;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossFunctionCategoricalCrossEntropy = 0x0000000A;
+    @Generated public static final int CategoricalCrossEntropy = 0x0000000A;
 }

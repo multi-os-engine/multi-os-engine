@@ -97,6 +97,8 @@ public class PHASEMixer extends NSObject {
      * 
      * Linear gain scalar.
      * [@note] Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gain")
@@ -106,6 +108,8 @@ public class PHASEMixer extends NSObject {
      * [@property] gainMetaParameter
      * 
      * The metaparameter that can be used to adjust the gain during playback
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -121,6 +125,8 @@ public class PHASEMixer extends NSObject {
      * [@property] identifier
      * 
      * The identifier that uniquely represents this mixer.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

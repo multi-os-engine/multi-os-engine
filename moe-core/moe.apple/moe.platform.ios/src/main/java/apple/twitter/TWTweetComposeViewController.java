@@ -98,7 +98,11 @@ public class TWTweetComposeViewController extends UIViewController {
 
     /**
      * Returns if Twitter is accessible and at least one account has been setup.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("canSendTweet")
     public static native boolean canSendTweet();
@@ -193,7 +197,11 @@ public class TWTweetComposeViewController extends UIViewController {
      * Adds an image to the tweet. Returns NO if the additional image will not fit
      * within the character space currently available, or if the sheet has already
      * been presented to the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("addImage:")
     public native boolean addImage(UIImage image);
@@ -202,7 +210,11 @@ public class TWTweetComposeViewController extends UIViewController {
      * Adds a URL to the tweet. Returns NO if the additional URL will not fit
      * within the character space currently available, or if the sheet has already
      * been presented to the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("addURL:")
     public native boolean addURL(NSURL url);
@@ -210,7 +222,11 @@ public class TWTweetComposeViewController extends UIViewController {
     /**
      * Specify a block to be called when the user is finished. This block is not guaranteed
      * to be called on any particular thread. It is cleared after being called.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
@@ -232,7 +248,11 @@ public class TWTweetComposeViewController extends UIViewController {
     /**
      * Removes all images from the tweet. Returns NO and does not perform an operation
      * if the sheet has already been presented to the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("removeAllImages")
     public native boolean removeAllImages();
@@ -240,7 +260,11 @@ public class TWTweetComposeViewController extends UIViewController {
     /**
      * Removes all URLs from the tweet. Returns NO and does not perform an operation
      * if the sheet has already been presented to the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("removeAllURLs")
     public native boolean removeAllURLs();
@@ -248,7 +272,11 @@ public class TWTweetComposeViewController extends UIViewController {
     /**
      * Specify a block to be called when the user is finished. This block is not guaranteed
      * to be called on any particular thread. It is cleared after being called.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
@@ -260,7 +288,11 @@ public class TWTweetComposeViewController extends UIViewController {
      * will not fit within the character space currently available; on iOS 7.0 and
      * later, you may supply text with a length greater than the service supports,
      * and the sheet will allow the user to edit it accordingly.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("setInitialText:")
     public native boolean setInitialText(String text);

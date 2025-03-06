@@ -39,11 +39,13 @@ import org.jetbrains.annotations.Nullable;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLResource")
-public interface MTLResource {
+public interface MTLResource extends MTLAllocation {
     /**
      * [@property] cpuCacheMode
      * 
      * The cache mode used for the CPU mapping for this resource
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("cpuCacheMode")
@@ -54,6 +56,8 @@ public interface MTLResource {
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -95,6 +99,8 @@ public interface MTLResource {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -122,6 +128,8 @@ public interface MTLResource {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLabel:")
@@ -135,6 +143,8 @@ public interface MTLResource {
      * Synchronously set the purgeability state of a resource and return what the prior (or current) state is.
      * FIXME: If the device is keeping a cached copy of the resource, both the shared copy and cached copy are made
      * purgeable. Any access to the resource by either the CPU or device will be undefined.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPurgeableState:")
@@ -206,4 +216,15 @@ public interface MTLResource {
     @Selector("resourceOptions")
     @NUInt
     long resourceOptions();
+
+    /**
+     * setOwnerWithIdentity:
+     * 
+     * Assigns ownership of the resource's underlying memory to another task for the purposes of VM accounting.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setOwnerWithIdentity:")
+    int setOwnerWithIdentity(int task_id_token);
 }

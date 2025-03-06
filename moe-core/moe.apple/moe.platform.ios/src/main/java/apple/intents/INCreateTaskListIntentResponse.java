@@ -86,11 +86,23 @@ public class INCreateTaskListIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
     public native long code();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("createdTaskList")
@@ -121,7 +133,12 @@ public class INCreateTaskListIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INCreateTaskListIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -166,6 +183,12 @@ public class INCreateTaskListIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setCreatedTaskList:")
     public native void setCreatedTaskList(@Nullable INTaskList value);

@@ -106,6 +106,8 @@ public class PHASEShape extends NSObject implements NSCopying {
      * [@property] elements
      * 
      * List of all the shape elements associated with this shape.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -138,6 +140,8 @@ public class PHASEShape extends NSObject implements NSCopying {
      *               A Model I/O mesh object.
      * @return
      *         A new shape object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithEngine:mesh:")
@@ -156,6 +160,8 @@ public class PHASEShape extends NSObject implements NSCopying {
      * assigned to the element will be the index of the element modulo the number of materials. IE: given a mesh with 6
      * submeshes and an array
      * of 3 materials, the element at index 5 will be assigned the material at index: 5 % 3 = 2.
+     * 
+     * API-Since: 15.0
      * 
      * @param engine
      *                  The engine this shape will be used with

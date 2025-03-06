@@ -157,6 +157,9 @@ public class UIPressesEvent extends UIEvent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("allPresses")
@@ -166,6 +169,9 @@ public class UIPressesEvent extends UIEvent {
     @Selector("init")
     public native UIPressesEvent init();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("pressesForGestureRecognizer:")

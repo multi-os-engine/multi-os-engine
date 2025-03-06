@@ -33,6 +33,8 @@ public interface AVAssetWriterDelegate {
      * If clients implement the -assetWriter:didOutputSegmentData:segmentType:segmentReport: method, that method is
      * called instead of this one.
      * 
+     * API-Since: 14.0
+     * 
      * @param writer
      *                    An AVAssetWriter instance.
      * @param segmentData
@@ -99,6 +101,8 @@ public interface AVAssetWriterDelegate {
      * Only one input of each media type can be added.
      * The client should call -flushSegment prior to a sync sample so that the next segment can start with the sync
      * sample. Otherwise, it is an error.
+     * 
+     * API-Since: 14.0
      * 
      * @param writer
      *                      An AVAssetWriter instance.

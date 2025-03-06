@@ -18,21 +18,21 @@ public final class nw_endpoint_type_t {
     /**
      * [@const] nw_endpoint_type_invalid An invalid endpoint
      */
-    @Generated public static final int nw_endpoint_type_invalid = 0x00000000;
+    @Generated public static final int _invalid = 0x00000000;
     /**
      * [@const] nw_endpoint_type_address An IP Address + Port
      */
-    @Generated public static final int nw_endpoint_type_address = 0x00000001;
+    @Generated public static final int _address = 0x00000001;
     /**
      * [@const] nw_endpoint_type_host A Hostname + Port
      */
-    @Generated public static final int nw_endpoint_type_host = 0x00000002;
+    @Generated public static final int _host = 0x00000002;
     /**
      * [@const] nw_endpoint_type_bonjour_service A Bonjour Service Name + Type + Domain
      */
-    @Generated public static final int nw_endpoint_type_bonjour_service = 0x00000003;
+    @Generated public static final int _bonjour_service = 0x00000003;
     /**
      * [@const] nw_endpoint_type_url A URL endpoint
      */
-    @Generated public static final int nw_endpoint_type_url = 0x00000004;
+    @Generated public static final int _url = 0x00000004;
 }

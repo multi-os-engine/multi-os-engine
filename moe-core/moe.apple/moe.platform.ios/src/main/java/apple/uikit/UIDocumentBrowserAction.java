@@ -64,6 +64,9 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("availability")
     @NInt
@@ -103,11 +106,17 @@ public class UIDocumentBrowserAction extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("image")
@@ -117,6 +126,9 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("init")
     public native UIDocumentBrowserAction init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithIdentifier:localizedTitle:availability:handler:")
     public native UIDocumentBrowserAction initWithIdentifierLocalizedTitleAvailabilityHandler(
@@ -152,6 +164,9 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("localizedTitle")
@@ -170,12 +185,17 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(@Nullable UIImage value);
 
     /**
      * Allows clients to restrict the action to only a specific set of content types. Default: [UTTypeItem.identifier]
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSupportedContentTypes:")
@@ -183,6 +203,8 @@ public class UIDocumentBrowserAction extends NSObject {
 
     /**
      * If NO, the action is only available, if there is only one item selected. Default: YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSupportsMultipleItems:")
@@ -198,6 +220,8 @@ public class UIDocumentBrowserAction extends NSObject {
 
     /**
      * Allows clients to restrict the action to only a specific set of content types. Default: [UTTypeItem.identifier]
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -206,6 +230,8 @@ public class UIDocumentBrowserAction extends NSObject {
 
     /**
      * If NO, the action is only available, if there is only one item selected. Default: YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("supportsMultipleItems")

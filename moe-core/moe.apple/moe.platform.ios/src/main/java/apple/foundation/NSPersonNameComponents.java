@@ -175,6 +175,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Name passed from one generation to another to indicate lineage, e.g. Appleseed
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -183,6 +185,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Name bestowed upon an individual by one's parents, e.g. Johnathan
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -199,6 +203,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Secondary given name chosen to differentiate those with the same first name, e.g. Maple
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -207,6 +213,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -215,6 +223,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -223,6 +233,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Name substituted for the purposes of familiarity, e.g. "Johnny"
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -234,6 +246,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
      * instance.
      * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be
      * instantiated.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -242,6 +256,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Name passed from one generation to another to indicate lineage, e.g. Appleseed
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFamilyName:")
@@ -249,6 +265,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Name bestowed upon an individual by one's parents, e.g. Johnathan
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setGivenName:")
@@ -256,6 +274,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Secondary given name chosen to differentiate those with the same first name, e.g. Maple
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMiddleName:")
@@ -263,6 +283,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNamePrefix:")
@@ -270,6 +292,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNameSuffix:")
@@ -277,6 +301,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     /**
      * Name substituted for the purposes of familiarity, e.g. "Johnny"
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNickname:")
@@ -287,6 +313,8 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
      * instance.
      * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be
      * instantiated.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPhoneticRepresentation:")

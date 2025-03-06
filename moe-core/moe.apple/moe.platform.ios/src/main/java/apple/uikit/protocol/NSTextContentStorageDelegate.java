@@ -26,6 +26,8 @@ public interface NSTextContentStorageDelegate extends NSTextContentManagerDelega
      * Returns a custom NSTextParagraph for range in NSTextContentStorage.attributedString. When non-nil,
      * textContentStorage uses the text paragraph instead of creating the standard NSTextParagraph with the attributed
      * substring in range. The attributed string for a custom text paragraph must have range.length.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

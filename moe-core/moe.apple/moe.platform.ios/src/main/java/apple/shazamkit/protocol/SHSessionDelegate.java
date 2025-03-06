@@ -29,6 +29,8 @@ public interface SHSessionDelegate {
      * 
      * @param session The @c SHSession that made the match
      * @param match   The @c SHMatch of the matching audio
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -44,6 +46,8 @@ public interface SHSessionDelegate {
      * @param signature The @c SHSignature that did not match
      * @param error     An optional error. If simply no match was found this will be set to nil. It will be populated if
      *                  there was an issue performing the match
+     * 
+     *                  API-Since: 15.0
      */
     @Generated
     @IsOptional

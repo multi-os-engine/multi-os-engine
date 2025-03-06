@@ -479,6 +479,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * weak reference. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -592,6 +594,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -608,6 +612,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -757,6 +763,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * weak reference. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -764,6 +772,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * weak reference. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISearchBarDelegate value) {
@@ -808,6 +818,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setPlaceholder:")
@@ -824,6 +836,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setPrompt:")
@@ -976,6 +990,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * current/starting search text
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setText:")
@@ -990,6 +1006,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
      * and behaves as described for the tintColor property added to UIView.
      * To tint the bar's background, please use -barTintColor.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -1035,6 +1053,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * current/starting search text
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1050,6 +1070,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
      * and behaves as described for the tintColor property added to UIView.
      * To tint the bar's background, please use -barTintColor.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tintColor")
@@ -1168,4 +1190,37 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("allowedWritingToolsResultOptions")
+    @NUInt
+    public native long allowedWritingToolsResultOptions();
+
+    @Generated
+    @IsOptional
+    @Selector("mathExpressionCompletionType")
+    @NInt
+    public native long mathExpressionCompletionType();
+
+    @Generated
+    @IsOptional
+    @Selector("setAllowedWritingToolsResultOptions:")
+    public native void setAllowedWritingToolsResultOptions(@NUInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setMathExpressionCompletionType:")
+    public native void setMathExpressionCompletionType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setWritingToolsBehavior:")
+    public native void setWritingToolsBehavior(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("writingToolsBehavior")
+    @NInt
+    public native long writingToolsBehavior();
 }

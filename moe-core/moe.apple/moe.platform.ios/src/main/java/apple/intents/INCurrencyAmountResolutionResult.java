@@ -99,6 +99,8 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the currencyAmount with which the user wants to
      * continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INCurrencyAmount.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -182,6 +186,8 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
      * INCurrencyAmount. The resolvedCurrencyAmount can be different than the original INCurrencyAmount. This allows app
      * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

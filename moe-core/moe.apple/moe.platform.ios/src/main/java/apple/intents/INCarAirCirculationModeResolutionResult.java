@@ -202,7 +202,12 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAirCirculationModeResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithCarAirCirculationModeToConfirm:")
@@ -214,7 +219,12 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
      * INCarAirCirculationMode. The resolvedValue can be different than the original INCarAirCirculationMode. This
      * allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAirCirculationModeResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("successWithResolvedCarAirCirculationMode:")

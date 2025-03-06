@@ -44,6 +44,8 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
      * copy or move the file at the given location to a new location as it will be
      * removed when the delegate message returns. URLSession:task:didCompleteWithError: will
      * still be called.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("URLSession:downloadTask:didFinishDownloadingToURL:")
@@ -55,6 +57,8 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
      * error, the -userInfo dictionary of the error will contain an
      * NSURLSessionDownloadTaskResumeData key, whose value is the resume
      * data.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -66,6 +70,8 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
 
     /**
      * Sent periodically to notify the delegate of download progress.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

@@ -101,6 +101,8 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
      * [@property] dateOfBirthComponents
      * 
      * The subject's date of birth components.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -123,6 +125,8 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
      * [@property] fullName
      * 
      * The subject's full name.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

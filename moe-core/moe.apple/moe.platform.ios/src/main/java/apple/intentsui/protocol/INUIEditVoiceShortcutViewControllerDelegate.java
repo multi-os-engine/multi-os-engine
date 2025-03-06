@@ -25,6 +25,8 @@ public interface INUIEditVoiceShortcutViewControllerDelegate {
      * Called if the user deletes the voice shortcut.
      * 
      * Your implementation of this method should dismiss the view controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("editVoiceShortcutViewController:didDeleteVoiceShortcutWithIdentifier:")
@@ -35,6 +37,8 @@ public interface INUIEditVoiceShortcutViewControllerDelegate {
      * Called if the user updates the voice shortcut, with either the successfully-updated voice shortcut, or an error.
      * 
      * Your implementation of this method should dismiss the view controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("editVoiceShortcutViewController:didUpdateVoiceShortcut:error:")
@@ -46,6 +50,8 @@ public interface INUIEditVoiceShortcutViewControllerDelegate {
      * Called if the user cancelled; no changes were made to the voice shortcut.
      * 
      * Your implementation of this method should dismiss the view controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("editVoiceShortcutViewControllerDidCancel:")

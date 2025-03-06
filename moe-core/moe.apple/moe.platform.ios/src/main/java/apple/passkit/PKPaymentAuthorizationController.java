@@ -85,6 +85,8 @@ public class PKPaymentAuthorizationController extends NSObject {
      * Determine whether this device can process payment requests.
      * YES if the device is generally capable of making in-app payments.
      * NO if the device cannot make in-app payments or if the user is restricted from authorizing payments.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canMakePayments")
@@ -99,6 +101,8 @@ public class PKPaymentAuthorizationController extends NSObject {
      * by the merchant.
      * NO if the user cannot authorize payments on these networks or if the user is restricted from
      * authorizing payments.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:")
@@ -107,6 +111,8 @@ public class PKPaymentAuthorizationController extends NSObject {
     /**
      * Determine whether this device can process payments using the specified networks and capabilities bitmask
      * See +canMakePaymentsUsingNetworks:
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:capabilities:")
@@ -197,6 +203,8 @@ public class PKPaymentAuthorizationController extends NSObject {
 
     /**
      * The controller's delegate.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -207,6 +215,8 @@ public class PKPaymentAuthorizationController extends NSObject {
     /**
      * Dismisses the Apple Pay UI. Call this when you receive the paymentAuthorizationControllerDidFinish delegate
      * callback, or otherwise wish a dismissal to occur
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dismissWithCompletion:")
@@ -219,6 +229,8 @@ public class PKPaymentAuthorizationController extends NSObject {
 
     /**
      * Initialize the controller with a payment request.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithPaymentRequest:")
@@ -226,6 +238,8 @@ public class PKPaymentAuthorizationController extends NSObject {
 
     /**
      * Presents the Apple Pay UI modally over your app. You are responsible for dismissal
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("presentWithCompletion:")
@@ -234,6 +248,8 @@ public class PKPaymentAuthorizationController extends NSObject {
 
     /**
      * The controller's delegate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -242,6 +258,8 @@ public class PKPaymentAuthorizationController extends NSObject {
 
     /**
      * The controller's delegate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationControllerDelegate value) {

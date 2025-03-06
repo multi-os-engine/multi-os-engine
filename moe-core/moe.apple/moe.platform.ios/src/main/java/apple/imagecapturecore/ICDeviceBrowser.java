@@ -101,6 +101,8 @@ public class ICDeviceBrowser extends NSObject {
      * 
      * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to
      * receive are described by ICDeviceBrowserDelegate protocol.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -158,6 +160,8 @@ public class ICDeviceBrowser extends NSObject {
      * [@property] browsing
      * 
      * Indicates whether the device browser is browsing for devices.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isBrowsing")
@@ -190,6 +194,8 @@ public class ICDeviceBrowser extends NSObject {
      * 
      * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to
      * receive are described by ICDeviceBrowserDelegate protocol.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -200,6 +206,8 @@ public class ICDeviceBrowser extends NSObject {
      * 
      * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to
      * receive are described by ICDeviceBrowserDelegate protocol.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ICDeviceBrowserDelegate value) {
@@ -254,9 +262,9 @@ public class ICDeviceBrowser extends NSObject {
     public static native long version_static();
 
     /**
-     * contentsAuthorizationStatus
+     * [@property] contentsAuthorizationStatus
      * 
-     * This method returns a constant indicating whether the app has permission to acces the contents of an attached
+     * This property returns a constant indicating whether the app has permission to acces the contents of an attached
      * media device.
      * 
      * A constant indicating authorization status.
@@ -269,9 +277,9 @@ public class ICDeviceBrowser extends NSObject {
     public native String contentsAuthorizationStatus();
 
     /**
-     * controlAuthorizationStatus
+     * [@property] controlAuthorizationStatus
      * 
-     * This method returns a constant indicating whether the app has permission to control the attached camera device.
+     * This property returns a constant indicating whether the app has permission to control the attached camera device.
      * 
      * API-Since: 14.0
      */

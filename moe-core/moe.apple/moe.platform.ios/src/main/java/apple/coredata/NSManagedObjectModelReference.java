@@ -106,21 +106,33 @@ public class NSManagedObjectModelReference extends NSObject {
     @Selector("init")
     public native NSManagedObjectModelReference init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithEntityVersionHashes:inBundle:versionChecksum:")
     public native NSManagedObjectModelReference initWithEntityVersionHashesInBundleVersionChecksum(
             @NotNull NSDictionary<?, ?> versionHash, @Nullable NSBundle bundle, @NotNull String versionChecksum);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithFileURL:versionChecksum:")
     public native NSManagedObjectModelReference initWithFileURLVersionChecksum(@NotNull NSURL fileURL,
             @NotNull String versionChecksum);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithModel:versionChecksum:")
     public native NSManagedObjectModelReference initWithModelVersionChecksum(@NotNull NSManagedObjectModel model,
             @NotNull String versionChecksum);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithName:inBundle:versionChecksum:")
     public native NSManagedObjectModelReference initWithNameInBundleVersionChecksum(@NotNull String modelName,
@@ -161,6 +173,9 @@ public class NSManagedObjectModelReference extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("resolvedModel")
     @NotNull
@@ -184,6 +199,9 @@ public class NSManagedObjectModelReference extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("versionChecksum")
     @NotNull

@@ -77,6 +77,8 @@ public class PHASEAssetRegistry extends NSObject {
      *                   The identifier of this asset
      * @return
      *         A PHASEAsset object, or nil if one could not be found.
+     * 
+     *         API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -120,6 +122,8 @@ public class PHASEAssetRegistry extends NSObject {
      * [@property] globalMetaParameters
      * 
      * A dictionary of global metaparameters
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -177,6 +181,8 @@ public class PHASEAssetRegistry extends NSObject {
      *                                The error object in case of an error.
      * @return
      *         A PHASEGlobalMetaParameterAsset object.
+     * 
+     *         API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -213,6 +219,8 @@ public class PHASEAssetRegistry extends NSObject {
      *                          The error object in case of an error
      * @return
      *         A PHASESoundAsset object
+     * 
+     *         API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -244,6 +252,8 @@ public class PHASEAssetRegistry extends NSObject {
      *                          The error object in case of an error.
      * @return
      *         A PHASESoundAsset object.
+     * 
+     *         API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -269,6 +279,8 @@ public class PHASEAssetRegistry extends NSObject {
      *                   The error object in case of an error
      * @return
      *         A PHASESoundEventNodeAsset object
+     * 
+     *         API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -303,6 +315,8 @@ public class PHASEAssetRegistry extends NSObject {
      * @param handler
      *                   An optional completion block that will be called when the asset has been unregistered.
      *                   Once you receive this callback, it's safe to deallocate external resources, if applicable.
+     * 
+     *                   API-Since: 15.0
      */
     @Generated
     @Selector("unregisterAssetWithIdentifier:completion:")

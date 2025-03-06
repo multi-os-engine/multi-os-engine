@@ -107,6 +107,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * The decay at which we update sumOfSquares
      * 
      * Default value is 0.9
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("decay")
@@ -128,6 +131,10 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
+     * 
+     * 
+     * 
+     * API-Since: 12.0
      * 
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
@@ -165,6 +172,10 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
      * 
+     * 
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationState  A valid MPSCNNBatchNormalizationState object which specifies the input state with
      *                                 gradients and original gamma/beta for this update.
@@ -197,6 +208,10 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
+     * 
+     * 
+     * 
+     * API-Since: 12.0
      * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
@@ -244,6 +259,10 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
      * 
+     * 
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputGradientVector     A valid MPSVector object which specifies the input vector of gradients for this
      *                                update.
@@ -266,6 +285,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * The epsilon at which we update values
      * 
      * This value is usually used to ensure to avoid divide by 0, default value is 1e-8
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("epsilon")
@@ -303,6 +325,8 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * 
      * 
      * @return A valid MPSNNOptimizerRMSProp object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:decay:epsilon:optimizerDescriptor:")
@@ -317,6 +341,8 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      * @param learningRate The learningRate which will be applied
      * 
      * @return A valid MPSNNOptimizerRMSProp object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:learningRate:")

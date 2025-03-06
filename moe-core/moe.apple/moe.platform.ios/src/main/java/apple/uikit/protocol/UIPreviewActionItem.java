@@ -32,6 +32,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPreviewActionItem")
 public interface UIPreviewActionItem {
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("title")

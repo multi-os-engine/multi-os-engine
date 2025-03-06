@@ -166,6 +166,8 @@ public class MDLMeshBufferMap extends NSObject {
      * [@property] bytes
      * 
      * Mutable pointer to data in a MDLMeshBuffer object.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -181,6 +183,8 @@ public class MDLMeshBufferMap extends NSObject {
      * 
      * Called by implementor of MDLMeshBuffer protocol to create the map
      * and arrange for unmapping on deallocation.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithBytes:deallocator:")

@@ -62,13 +62,13 @@ public class MAFlashingLightsProcessor extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@function] canProcessSurface:
-     * 
      * Determines whether the flashing lights processor is able to process the content in the surface for flashing
      * lights. This might be false on
      * unsupported hardware or unsupported color spaces.
      * 
      * @return A boolean result.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("canProcessSurface:")
@@ -140,8 +140,6 @@ public class MAFlashingLightsProcessor extends NSObject {
     public static native MAFlashingLightsProcessor new_objc();
 
     /**
-     * [@function] processSurface:outSurface:timestamp:options:
-     * 
      * Processes an inSurface by analyzing pixels for sequences of flashing lights and then darkens content to reduce
      * the risk of discomfort from some users.
      * The outSurface will contain the mitigated content.
@@ -151,6 +149,8 @@ public class MAFlashingLightsProcessor extends NSObject {
      * 
      * @return An object which indicates whether the surface was able to be processed, the amount of mitigation that was
      *         applied, and the intensitry level that was detected.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("processSurface:outSurface:timestamp:options:")

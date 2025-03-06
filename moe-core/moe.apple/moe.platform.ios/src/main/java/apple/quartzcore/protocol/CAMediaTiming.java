@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -32,6 +35,8 @@ public interface CAMediaTiming {
     /**
      * When true, the object plays backwards after playing forwards. Defaults
      * to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("autoreverses")
@@ -40,6 +45,8 @@ public interface CAMediaTiming {
     /**
      * The begin time of the object, in relation to its parent object, if
      * applicable. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("beginTime")
@@ -47,6 +54,8 @@ public interface CAMediaTiming {
 
     /**
      * The basic duration of the object. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("duration")
@@ -58,6 +67,8 @@ public interface CAMediaTiming {
      * the element may be removed from the presentation. The legal values
      * are `backwards', `forwards', `both' and `removed'. Defaults to
      * `removed'.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -66,6 +77,8 @@ public interface CAMediaTiming {
 
     /**
      * The repeat count of the object. May be fractional. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("repeatCount")
@@ -73,6 +86,8 @@ public interface CAMediaTiming {
 
     /**
      * The repeat duration of the object. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("repeatDuration")
@@ -81,6 +96,8 @@ public interface CAMediaTiming {
     /**
      * When true, the object plays backwards after playing forwards. Defaults
      * to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAutoreverses:")
@@ -89,6 +106,8 @@ public interface CAMediaTiming {
     /**
      * The begin time of the object, in relation to its parent object, if
      * applicable. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBeginTime:")
@@ -96,6 +115,8 @@ public interface CAMediaTiming {
 
     /**
      * The basic duration of the object. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDuration:")
@@ -107,6 +128,8 @@ public interface CAMediaTiming {
      * the element may be removed from the presentation. The legal values
      * are `backwards', `forwards', `both' and `removed'. Defaults to
      * `removed'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFillMode:")
@@ -114,6 +137,8 @@ public interface CAMediaTiming {
 
     /**
      * The repeat count of the object. May be fractional. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setRepeatCount:")
@@ -121,6 +146,8 @@ public interface CAMediaTiming {
 
     /**
      * The repeat duration of the object. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setRepeatDuration:")
@@ -130,6 +157,8 @@ public interface CAMediaTiming {
      * The rate of the layer. Used to scale parent time to local time, e.g.
      * if rate is 2, local time progresses twice as fast as parent time.
      * Defaults to 1.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSpeed:")
@@ -140,6 +169,8 @@ public interface CAMediaTiming {
      * time tp to active local time t: t = (tp - begin) * speed + offset.
      * One use of this is to "pause" a layer by setting `speed' to zero and
      * `offset' to a suitable value. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTimeOffset:")
@@ -149,6 +180,8 @@ public interface CAMediaTiming {
      * The rate of the layer. Used to scale parent time to local time, e.g.
      * if rate is 2, local time progresses twice as fast as parent time.
      * Defaults to 1.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("speed")
@@ -159,6 +192,8 @@ public interface CAMediaTiming {
      * time tp to active local time t: t = (tp - begin) * speed + offset.
      * One use of this is to "pause" a layer by setting `speed' to zero and
      * `offset' to a suitable value. Defaults to 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("timeOffset")

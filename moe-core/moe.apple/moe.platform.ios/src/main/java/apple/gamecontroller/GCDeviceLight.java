@@ -82,6 +82,9 @@ public class GCDeviceLight extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("color")
@@ -139,6 +142,9 @@ public class GCDeviceLight extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setColor:")
     public native void setColor(@NotNull GCColor value);

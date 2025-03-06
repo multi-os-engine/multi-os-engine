@@ -48,7 +48,11 @@ import org.jetbrains.annotations.Nullable;
  * if the path status is NWPathStatusSatisfied, then a connection could use that path.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `nw_path_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWPath.h>
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -174,7 +178,11 @@ public class NWPath extends NSObject {
      * @return YES if the two path objects have the same content, NO otherwise.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use `nw_path_is_equal` in Network framework instead, see deprecation notice in
+     *         <NetworkExtension/NWPath.h>
      */
+    @Deprecated
     @Generated
     @Selector("isEqualToPath:")
     public native boolean isEqualToPath(@NotNull NWPath path);
@@ -185,7 +193,11 @@ public class NWPath extends NSObject {
      * Returns YES if the path is considered expensive, as when using a cellular data plan.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_is_expensive` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWPath.h>
      */
+    @Deprecated
     @Generated
     @Selector("isExpensive")
     public native boolean isExpensive();
@@ -196,7 +208,11 @@ public class NWPath extends NSObject {
      * The evaluated NWPathStatus of the NWPath.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_get_status` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWPath.h>
      */
+    @Deprecated
     @Generated
     @Selector("status")
     @NInt
@@ -207,8 +223,12 @@ public class NWPath extends NSObject {
      * 
      * Returns YES if the path is considered constrained, as when it is in save data mode.
      * 
-     * API-Since: 13.0
+     * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_is_constrained` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWPath.h>
      */
+    @Deprecated
     @Generated
     @Selector("isConstrained")
     public native boolean isConstrained();

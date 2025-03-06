@@ -131,6 +131,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * use file to determine UTI. assumes file is complete
+     * 
+     * API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -174,6 +176,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * default is nil. if set, updates UTI, icon and name
+     * 
+     * API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -183,6 +187,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     /**
      * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be
      * determined automatically
+     * 
+     * API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -216,6 +222,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * additional plist information for application to pass to receiver (must be a plist object). default is nil.
+     * 
+     * API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -225,6 +233,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * default is nil
+     * 
+     * API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -240,6 +250,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * Dismiss any visible menus.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("dismissMenuAnimated:")
@@ -247,6 +259,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * Dismiss the full screen quick look window if it is visible.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("dismissPreviewAnimated:")
@@ -256,6 +270,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      * Returns an array of gesture recognizers preconfigured to manage the quick look and options menu.
      * These gesture recognizers should only be installed on your view when the file has been copied locally and is
      * present at URL.
+     * 
+     * API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -265,6 +281,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     /**
      * determined from name if set, URL otherwise. will return a generic document icon if an icon cannot be determined.
      * returns an array of icons sorted from smallest to largest.
+     * 
+     * API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -277,12 +295,17 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * determined from URL, override if the URL uses a custom scheme and the name can't be determined automatically
+     * 
+     * API-Since: 3.2
      */
     @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("presentOpenInMenuFromBarButtonItem:animated:")
     public native boolean presentOpenInMenuFromBarButtonItemAnimated(@NotNull UIBarButtonItem item, boolean animated);
@@ -291,12 +314,17 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      * Presents a menu allowing the user to open the document in another application. The menu
      * will contain all applications that can open the item at URL.
      * Returns NO if there are no applications that can open the item at URL.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("presentOpenInMenuFromRect:inView:animated:")
     public native boolean presentOpenInMenuFromRectInViewAnimated(@ByValue CGRect rect, @NotNull UIView view,
             boolean animated);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("presentOptionsMenuFromBarButtonItem:animated:")
     public native boolean presentOptionsMenuFromBarButtonItemAnimated(@NotNull UIBarButtonItem item, boolean animated);
@@ -309,6 +337,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      * Returns NO if the options menu contained no options and was not opened.
      * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to get
      * the Quick Look menu item.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("presentOptionsMenuFromRect:inView:animated:")
@@ -320,6 +350,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      * be previewed.
      * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to
      * preview the document.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("presentPreviewAnimated:")
@@ -327,6 +359,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * additional plist information for application to pass to receiver (must be a plist object). default is nil.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setAnnotation:")
@@ -334,6 +368,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * default is nil
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setDelegate:")
@@ -342,6 +378,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * default is nil
+     * 
+     * API-Since: 3.2
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value) {
@@ -357,6 +395,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * determined from URL, override if the URL uses a custom scheme and the name can't be determined automatically
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setName:")
@@ -364,6 +404,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * default is nil. if set, updates UTI, icon and name
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setURL:")
@@ -372,6 +414,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     /**
      * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be
      * determined automatically
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setUTI:")

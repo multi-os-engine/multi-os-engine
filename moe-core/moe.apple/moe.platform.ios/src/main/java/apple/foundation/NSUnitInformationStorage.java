@@ -70,6 +70,8 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
 
     /**
      * One byte is 8 bits; one nibble is 4 bits.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -78,6 +80,8 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
 
     /**
      * Bytes are defined by IEC 80000-13: one byte is 8 bits.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -117,41 +121,65 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("exabits")
     public static native NSUnitInformationStorage exabits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("exabytes")
     public static native NSUnitInformationStorage exabytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("exbibits")
     public static native NSUnitInformationStorage exbibits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("exbibytes")
     public static native NSUnitInformationStorage exbibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gibibits")
     public static native NSUnitInformationStorage gibibits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gibibytes")
     public static native NSUnitInformationStorage gibibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gigabits")
     public static native NSUnitInformationStorage gigabits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gigabytes")
@@ -201,41 +229,65 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("kibibits")
     public static native NSUnitInformationStorage kibibits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("kibibytes")
     public static native NSUnitInformationStorage kibibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("kilobits")
     public static native NSUnitInformationStorage kilobits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("kilobytes")
     public static native NSUnitInformationStorage kilobytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("mebibits")
     public static native NSUnitInformationStorage mebibits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("mebibytes")
     public static native NSUnitInformationStorage mebibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("megabits")
     public static native NSUnitInformationStorage megabits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("megabytes")
@@ -246,26 +298,41 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Selector("new")
     public static native NSUnitInformationStorage new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("nibbles")
     public static native NSUnitInformationStorage nibbles();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("pebibits")
     public static native NSUnitInformationStorage pebibits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("pebibytes")
     public static native NSUnitInformationStorage pebibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("petabits")
     public static native NSUnitInformationStorage petabits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("petabytes")
@@ -297,21 +364,33 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("tebibits")
     public static native NSUnitInformationStorage tebibits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("tebibytes")
     public static native NSUnitInformationStorage tebibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("terabits")
     public static native NSUnitInformationStorage terabits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("terabytes")
@@ -322,6 +401,9 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("yobibits")
@@ -330,12 +412,17 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     /**
      * IEC-prefixed units (i.e. base 2):
      * 1 kibibyte = 1024¹ bytes; 1 mebibyte = 1024² bytes; etc.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
     @Selector("yobibytes")
     public static native NSUnitInformationStorage yobibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("yottabits")
@@ -344,27 +431,41 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     /**
      * SI-prefixed units (i.e. base 10):
      * 1 kilobyte = 1000¹ bytes; 1 megabyte = 1000² bytes; etc.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
     @Selector("yottabytes")
     public static native NSUnitInformationStorage yottabytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("zebibits")
     public static native NSUnitInformationStorage zebibits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("zebibytes")
     public static native NSUnitInformationStorage zebibytes();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("zettabits")
     public static native NSUnitInformationStorage zettabits();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("zettabytes")

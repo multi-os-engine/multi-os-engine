@@ -28,6 +28,8 @@ public interface UICalendarViewDelegate {
      * @param dateComponents The date for which the decoration is prepared for.
      * 
      * @return A @c UICalendarViewDecoration to annotate the specific date. Return @c nil for no decoration.
+     * 
+     *         API-Since: 16.0
      */
     @Nullable
     @Generated

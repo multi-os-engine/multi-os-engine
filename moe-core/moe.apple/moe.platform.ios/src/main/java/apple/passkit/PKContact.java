@@ -160,6 +160,9 @@ public class PKContact extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("emailAddress")
@@ -169,33 +172,54 @@ public class PKContact extends NSObject {
     @Selector("init")
     public native PKContact init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("name")
     public native NSPersonNameComponents name();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("phoneNumber")
     public native CNPhoneNumber phoneNumber();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("postalAddress")
     public native CNPostalAddress postalAddress();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setEmailAddress:")
     public native void setEmailAddress(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(@Nullable NSPersonNameComponents value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setPhoneNumber:")
     public native void setPhoneNumber(@Nullable CNPhoneNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setPostalAddress:")
     public native void setPostalAddress(@Nullable CNPostalAddress value);

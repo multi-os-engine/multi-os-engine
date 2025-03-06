@@ -59,6 +59,7 @@ import apple.videotoolbox.opaque.VTPixelTransferSessionRef;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.coremedia.opaque.CMTaggedBufferGroupRef;
+import apple.videotoolbox.opaque.VTHDRPerFrameMetadataGenerationSessionRef;
 
 @Generated
 @Library("VideoToolbox")
@@ -2135,6 +2136,8 @@ public final class VideoToolbox {
 
     /**
      * CFBoolean, false by default. Provided for use when debugging video encoders.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -2504,6 +2507,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber, Optional
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -2512,6 +2517,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber, Optional
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -2520,6 +2527,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumberRef, Read;
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -2528,6 +2537,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber (see kCMFormatDescriptionExtension_GammaLevel), Optional
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -2573,6 +2584,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber, Optional
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -2581,6 +2594,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber, Optional
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -2588,7 +2603,9 @@ public final class VideoToolbox {
     public static native CFStringRef kVTVideoDecoderSpecification_PreferredDecoderGPURegistryID();
 
     /**
-     * CFNumberRef, Read;
+     * CFNumberRef, Read
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -2598,6 +2615,8 @@ public final class VideoToolbox {
     /**
      * optional. CFNumberRef. If encoder is associated with a specific GPU, this corresponds to the GPU registryID as
      * reported by [MTLDevice registryID].
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -2661,6 +2680,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, default NULL
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -2872,6 +2893,9 @@ public final class VideoToolbox {
      *                                An allocator for the session. Pass NULL to use the default allocator.
      * @param pixelTransferSessionOut
      *                                Points to a variable to receive the new pixel transfer session.
+     * 
+     * 
+     *                                API-Since: 16.0
      */
     @Generated
     @CFunction
@@ -2888,6 +2912,8 @@ public final class VideoToolbox {
      * When a pixel transfer session's retain count reaches zero, it is automatically invalidated, but
      * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
      * Calling VTPixelTransferSessionInvalidate ensures a deterministic, orderly teardown.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @CFunction
@@ -2897,6 +2923,8 @@ public final class VideoToolbox {
      * [@function] VTPixelTransferSessionGetTypeID
      * 
      * Returns the CFTypeID for pixel transfer sessions.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @CFunction
@@ -2923,6 +2951,8 @@ public final class VideoToolbox {
      *                          The destination buffer.
      * @return
      *         If the transfer was successful, noErr; otherwise an error code, such as kVTPixelTransferNotSupportedErr.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @CFunction
@@ -3496,4 +3526,225 @@ public final class VideoToolbox {
     @CVariable()
     @NotNull
     public static native CFStringRef kVTDecompressionPropertyKey_RequestedMVHEVCVideoLayerIDs();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long VTHDRPerFrameMetadataGenerationSessionGetTypeID();
+
+    /**
+     * [@function] VTHDRPerFrameMetadataGenerationSessionCreate
+     * 
+     * Creates a VTHDRPerFrameMetadataGenerationSession object.
+     * 
+     * The returned VTHDRPerFrameMetadataGenerationSession object may be used to perform HDR Per Frame Metadata
+     * Generation
+     * Call CFRelease to release your object reference.
+     * 
+     * @param framesPerSecond
+     *                        Value must be greater than 0.0
+     * @param options
+     *                        CFDictionary may contain the key kVTHDRPerFrameMetadataGenerationOptionsHDRFormatsKey.
+     * 
+     *                        API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTHDRPerFrameMetadataGenerationSessionCreate(@Nullable CFAllocatorRef allocator,
+            float framesPerSecond, @Nullable CFDictionaryRef options,
+            @NotNull Ptr<VTHDRPerFrameMetadataGenerationSessionRef> hdrPerFrameMetadataGenerationSessionOut);
+
+    /**
+     * [@function] VTHDRPerFrameMetadataGenerationSessionAttachMetadata
+     * 
+     * Attaches the Per Frame Metadata to the CVPixelBuffer and the backing IOSurface
+     * 
+     * Call this to analyze and attach HDR Metadata. This call will change CVPixelBuffer attachments and backing
+     * IOSurface attachments.
+     * 
+     * @param hdrPerFrameMetadataGenerationSession
+     * @param pixelBuffer
+     * @param sceneChange
+     *                                             If this frame changes significantly in brightness from the previous
+     *                                             frame, for example going from an indoor scene to an outdoor scene or
+     *                                             from a night scene to a daytime scene, set this to true.
+     * 
+     *                                             API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTHDRPerFrameMetadataGenerationSessionAttachMetadata(
+            @NotNull VTHDRPerFrameMetadataGenerationSessionRef hdrPerFrameMetadataGenerationSession,
+            @NotNull CVBufferRef pixelBuffer, byte sceneChange);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTProfileLevel_HEVC_Monochrome_AutoLevel();
+
+    /**
+     * API-Since: 13.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTProfileLevel_HEVC_Monochrome10_AutoLevel();
+
+    /**
+     * Read/write, CFNumber, Optional
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_MaximumRealTimeFrameRate();
+
+    /**
+     * Read/write, CFBoolean
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_CalculateMeanSquaredError();
+
+    /**
+     * CFDictionary
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTSampleAttachmentKey_QualityMetrics();
+
+    /**
+     * CFNumber, CFArray
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTSampleAttachmentQualityMetricsKey_LumaMeanSquaredError();
+
+    /**
+     * CFNumber, CFArray
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTSampleAttachmentQualityMetricsKey_ChromaBlueMeanSquaredError();
+
+    /**
+     * CFNumber, CFArray
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTSampleAttachmentQualityMetricsKey_ChromaRedMeanSquaredError();
+
+    /**
+     * CFBoolean, Optional, true by default
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder();
+
+    /**
+     * CFBoolean, Optional
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTVideoEncoderSpecification_RequireHardwareAcceleratedVideoEncoder();
+
+    /**
+     * CFBoolean, Read; assumed false by default
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_UsingHardwareAcceleratedVideoEncoder();
+
+    /**
+     * CFNumber(uint32) as millidegrees
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_HorizontalFieldOfView();
+
+    /**
+     * CFString, see kCMFormatDescriptionExtension_ProjectionKind.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_ProjectionKind();
+
+    /**
+     * CFString, see kCMFormatDescriptionExtension_ViewPackingKind.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_ViewPackingKind();
+
+    /**
+     * Read/Write, CFBoolean, Optional
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTDecompressionPropertyKey_AllowBitstreamToChangeFrameDimensions();
+
+    /**
+     * [@constant] kVTHDRPerFrameMetadataGenerationHDRFormatType_DolbyVision
+     * 
+     * Specifies that DolbyVision data should be generated and attached for each pixel buffer.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTHDRPerFrameMetadataGenerationHDRFormatType_DolbyVision();
+
+    /**
+     * Write-only, Optional, CFArray
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTHDRPerFrameMetadataGenerationOptionsKey_HDRFormats();
 }

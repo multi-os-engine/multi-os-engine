@@ -140,6 +140,9 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("new")
     public static native NSURLQueryItem new_objc();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("queryItemWithName:value:")
     public static native NSURLQueryItem queryItemWithNameValue(@NotNull String name, @Nullable String value);
@@ -188,10 +191,16 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native NSURLQueryItem initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithName:value:")
     public native NSURLQueryItem initWithNameValue(@NotNull String name, @Nullable String value);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("name")
@@ -203,6 +212,9 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("value")

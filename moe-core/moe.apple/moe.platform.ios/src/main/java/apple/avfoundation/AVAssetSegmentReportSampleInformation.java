@@ -126,6 +126,8 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
      * [@property] isSyncSample
      * 
      * Indicates whether the sample is a sync sample.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isSyncSample")
@@ -140,6 +142,8 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
      * [@property] length
      * 
      * The length of the sample.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("length")
@@ -155,6 +159,8 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
      * [@property] offset
      * 
      * The offset of the sample in the segment.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("offset")
@@ -168,6 +174,8 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
      * 
      * This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame
      * reordering.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("presentationTimeStamp")

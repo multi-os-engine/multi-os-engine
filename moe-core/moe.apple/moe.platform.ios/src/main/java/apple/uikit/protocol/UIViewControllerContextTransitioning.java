@@ -84,7 +84,8 @@ public interface UIViewControllerContextTransitioning {
      * UIViewControllerAnimatedTransitioning protocol that was vended by the transitioning
      * delegate. For purely interactive transitions it should be called by the
      * interaction controller. This method effectively updates internal view
-     * controller state at the end of the transition.
+     * controller state at the end of the transition. On iOS 17 and later, this may safely
+     * be called multiple times, but only the first call will have any effect.
      */
     @Generated
     @Selector("completeTransition:")

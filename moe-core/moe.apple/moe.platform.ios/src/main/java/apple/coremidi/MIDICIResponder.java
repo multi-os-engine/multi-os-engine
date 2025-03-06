@@ -35,7 +35,10 @@ import org.jetbrains.annotations.Nullable;
  * operations for the Responder role.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported for CoreMIDI
  */
+@Deprecated
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +100,12 @@ public class MIDICIResponder extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("deviceInfo")
@@ -111,6 +120,12 @@ public class MIDICIResponder extends NSObject {
     @Selector("init")
     public native MIDICIResponder init();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("initiators")
@@ -145,12 +160,23 @@ public class MIDICIResponder extends NSObject {
 
     /**
      * Spontaneously enable or disable a profile and notify all connected Initiators
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("notifyProfile:onChannel:isEnabled:")
     public native boolean notifyProfileOnChannelIsEnabled(@NotNull MIDICIProfile aProfile, byte channel,
             boolean enabledState);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("profileDelegate")
@@ -167,7 +193,12 @@ public class MIDICIResponder extends NSObject {
 
     /**
      * Send profile-specific data for a profile to all connected Initiators
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("sendProfile:onChannel:profileData:")
     public native boolean sendProfileOnChannelProfileData(@NotNull MIDICIProfile aProfile, byte channel,
@@ -179,14 +210,24 @@ public class MIDICIResponder extends NSObject {
 
     /**
      * Begin receiving Initiator requests
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("start")
     public native boolean start();
 
     /**
      * Stop receiving Initiator requests and disconnect all connected Initiators
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("stop")
     public native void stop();

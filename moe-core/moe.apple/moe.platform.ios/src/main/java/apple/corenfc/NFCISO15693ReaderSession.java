@@ -37,7 +37,7 @@ import apple.opaque.dispatch_queue_t;
  * NOTE:
  * Only one NFCReaderSession can be active at any time in the system. Subsequent opened sessions will get queued up and
  * processed by the system in FIFO order.
- * The NFCISO15693 tag object returned by this session will only respond to the legacy APIs that are introducted in
+ * The NFCISO15693 tag object returned by this session will only respond to the legacy APIs that are introduced in
  * iOS11.
  * 
  * API-Since: 11.0

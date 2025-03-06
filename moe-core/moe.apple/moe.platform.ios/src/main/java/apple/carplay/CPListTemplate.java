@@ -128,6 +128,8 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Initialize a list template with one or more sections of items and an optional title.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithTitle:sections:")
@@ -176,6 +178,8 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The sections displayed in this list.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -244,6 +248,8 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Title shown in the navigation bar while this template is visible.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -258,6 +264,8 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * Update the list of sections displayed in this list template, reloading
      * the table view displaying this list.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("updateSections:")

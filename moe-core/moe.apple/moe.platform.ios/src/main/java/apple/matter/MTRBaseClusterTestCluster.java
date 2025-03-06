@@ -10203,4 +10203,41 @@ public class MTRBaseClusterTestCluster extends MTRBaseClusterUnitTesting {
         @Generated
         void call_writeAttributeWriteOnlyInt8uWithValueParamsCompletionHandler(@Nullable NSError error);
     }
+
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use testNullableOptionalRequestWithCompletion:
+     */
+    @Generated
+    @Deprecated
+    @Selector("testNullableOptionalRequestWithCompletionHandler:")
+    public native void testNullableOptionalRequestWithCompletionHandler(
+            @ObjCBlock(name = "call_testNullableOptionalRequestWithCompletionHandler") @NotNull Block_testNullableOptionalRequestWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testNullableOptionalRequestWithCompletionHandler {
+        @Generated
+        void call_testNullableOptionalRequestWithCompletionHandler(
+                @Nullable MTRTestClusterClusterTestNullableOptionalResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use testSimpleOptionalArgumentRequestWithCompletion:
+     */
+    @Generated
+    @Deprecated
+    @Selector("testSimpleOptionalArgumentRequestWithCompletionHandler:")
+    public native void testSimpleOptionalArgumentRequestWithCompletionHandler(
+            @ObjCBlock(name = "call_testSimpleOptionalArgumentRequestWithCompletionHandler") @NotNull Block_testSimpleOptionalArgumentRequestWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testSimpleOptionalArgumentRequestWithCompletionHandler {
+        @Generated
+        void call_testSimpleOptionalArgumentRequestWithCompletionHandler(@Nullable NSError error);
+    }
 }

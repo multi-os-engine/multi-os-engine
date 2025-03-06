@@ -63,6 +63,9 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
     @Selector("allocWithZone:")
     public static native MDLRelativeAssetResolver allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("asset")
@@ -114,6 +117,9 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
     @Selector("init")
     public native MDLRelativeAssetResolver init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAsset:")
     public native MDLRelativeAssetResolver initWithAsset(@NotNull MDLAsset asset);
@@ -158,10 +164,16 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAsset:")
     public native void setAsset_unsafe(@Nullable MDLAsset value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setAsset(@Nullable MDLAsset value) {
         Object __old = asset();

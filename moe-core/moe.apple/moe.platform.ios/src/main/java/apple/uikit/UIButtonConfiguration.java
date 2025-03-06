@@ -56,6 +56,9 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("activityIndicatorColorTransformer")
@@ -80,11 +83,17 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("allocWithZone:")
     public static native UIButtonConfiguration allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("attributedSubtitle")
     public native NSAttributedString attributedSubtitle();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("attributedTitle")
@@ -97,6 +106,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * If the style should automatically update when the button is selected. Default varies by style. Disable to
      * customize selection behavior.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("automaticallyUpdateForSelection")
@@ -105,6 +116,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * A UIBackgroundConfiguration describing the button's background. UIKit provides a value by default with values
      * appropriate for a UIButton.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -115,6 +128,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      * The base color to use for background elements. This color may be modified before being passed to a transformer,
      * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
      * color appropriate to the style.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -125,27 +140,41 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      * The base color to use for foreground elements. This color may be modified before being passed to a transformer,
      * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
      * color appropriate to the style.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
     @Selector("baseForegroundColor")
     public native UIColor baseForegroundColor();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("borderedButtonConfiguration")
     public static native UIButtonConfiguration borderedButtonConfiguration();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("borderedProminentButtonConfiguration")
     public static native UIButtonConfiguration borderedProminentButtonConfiguration();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("borderedTintedButtonConfiguration")
     public static native UIButtonConfiguration borderedTintedButtonConfiguration();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("borderlessButtonConfiguration")
@@ -154,6 +183,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this
      * value.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("buttonSize")
@@ -184,6 +215,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Insets from the bounds of the button to create the content region. Defaults styles provide insets based on the
      * button size.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("contentInsets")
@@ -199,6 +232,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * The corner style controls how background.cornerRadius is interpreted by the button. Defaults to `Dynamic`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("cornerStyle")
@@ -217,11 +252,17 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("filledButtonConfiguration")
     public static native UIButtonConfiguration filledButtonConfiguration();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("grayButtonConfiguration")
@@ -232,11 +273,17 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("imageColorTransformer")
@@ -253,6 +300,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * When a button has both image and text content, this value is the padding between the image and the text.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("imagePadding")
@@ -261,6 +310,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * Defaults to Leading, only single edge values (top/leading/bottom/trailing) are supported.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("imagePlacement")
@@ -299,6 +350,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * Button style to use when running under the Mac idiom.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("macIdiomStyle")
@@ -310,11 +363,17 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("new")
     public static native UIButtonConfiguration new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("plainButtonConfiguration")
     public static native UIButtonConfiguration plainButtonConfiguration();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("preferredSymbolConfigurationForImage")
@@ -328,6 +387,9 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setActivityIndicatorColorTransformer:")
     public native void setActivityIndicatorColorTransformer(
@@ -341,10 +403,16 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
         UIColor call_setActivityIndicatorColorTransformer(@NotNull UIColor color);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setAttributedSubtitle:")
     public native void setAttributedSubtitle(@Nullable NSAttributedString value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setAttributedTitle:")
     public native void setAttributedTitle(@Nullable NSAttributedString value);
@@ -352,6 +420,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * If the style should automatically update when the button is selected. Default varies by style. Disable to
      * customize selection behavior.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAutomaticallyUpdateForSelection:")
@@ -360,6 +430,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * A UIBackgroundConfiguration describing the button's background. UIKit provides a value by default with values
      * appropriate for a UIButton.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBackground:")
@@ -369,6 +441,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      * The base color to use for background elements. This color may be modified before being passed to a transformer,
      * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
      * color appropriate to the style.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBaseBackgroundColor:")
@@ -378,6 +452,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      * The base color to use for foreground elements. This color may be modified before being passed to a transformer,
      * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
      * color appropriate to the style.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBaseForegroundColor:")
@@ -386,6 +462,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this
      * value.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setButtonSize:")
@@ -394,6 +472,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Insets from the bounds of the button to create the content region. Defaults styles provide insets based on the
      * button size.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setContentInsets:")
@@ -401,6 +481,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * The corner style controls how background.cornerRadius is interpreted by the button. Defaults to `Dynamic`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCornerStyle:")
@@ -408,15 +490,23 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * Restore the default content insets.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDefaultContentInsets")
     public native void setDefaultContentInsets();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(@Nullable UIImage value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setImageColorTransformer:")
     public native void setImageColorTransformer(
@@ -432,6 +522,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * When a button has both image and text content, this value is the padding between the image and the text.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setImagePadding:")
@@ -439,6 +531,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * Defaults to Leading, only single edge values (top/leading/bottom/trailing) are supported.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setImagePlacement:")
@@ -446,26 +540,39 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * Button style to use when running under the Mac idiom.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMacIdiomStyle:")
     public native void setMacIdiomStyle(@NInt long value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setPreferredSymbolConfigurationForImage:")
     public native void setPreferredSymbolConfigurationForImage(@Nullable UIImageSymbolConfiguration value);
 
     /**
      * Shows an activity indicator in place of an image. Its placement is controlled by the imagePlacement property.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setShowsActivityIndicator:")
     public native void setShowsActivityIndicator(boolean value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(@Nullable String value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setSubtitleTextAttributesTransformer:")
     public native void setSubtitleTextAttributesTransformer(
@@ -480,12 +587,17 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
                 @NotNull NSDictionary<String, ?> textAttributes);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@Nullable String value);
 
     /**
      * The alignment to use for relative layout between title & subtitle.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTitleAlignment:")
@@ -493,11 +605,16 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * When a button has both a title & subtitle, this value is the padding between those titles.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTitlePadding:")
     public native void setTitlePadding(@NFloat double value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setTitleTextAttributesTransformer:")
     public native void setTitleTextAttributesTransformer(
@@ -517,16 +634,24 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * Shows an activity indicator in place of an image. Its placement is controlled by the imagePlacement property.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("showsActivityIndicator")
     public native boolean showsActivityIndicator();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("subtitleTextAttributesTransformer")
@@ -556,11 +681,17 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("tintedButtonConfiguration")
     public static native UIButtonConfiguration tintedButtonConfiguration();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("title")
@@ -568,6 +699,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * The alignment to use for relative layout between title & subtitle.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("titleAlignment")
@@ -576,12 +709,17 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     /**
      * When a button has both a title & subtitle, this value is the padding between those titles.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("titlePadding")
     @NFloat
     public native double titlePadding();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("titleTextAttributesTransformer")
@@ -600,6 +738,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Returns a copy of the configuration updated based on the given button, by applying the configuration's default
      * values for that button's state to any properties that have not been customized.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -666,6 +806,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
      * the subtitle to a single line of text.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSubtitleLineBreakMode:")
@@ -674,6 +816,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
      * the title to a single line of text.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTitleLineBreakMode:")
@@ -682,6 +826,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
      * the subtitle to a single line of text.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("subtitleLineBreakMode")
@@ -691,6 +837,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     /**
      * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
      * the title to a single line of text.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("titleLineBreakMode")

@@ -203,15 +203,24 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("init")
     public native UITableViewController init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UITableViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithNibName:bundle:")
     public native UITableViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithStyle:")
     public native UITableViewController initWithStyle(@NInt long style);
@@ -314,10 +323,16 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("setRefreshControl:")
     public native void setRefreshControl(@Nullable UIRefreshControl value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setTableView:")
     public native void setTableView(UITableView value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("tableView")
     public native UITableView tableView();

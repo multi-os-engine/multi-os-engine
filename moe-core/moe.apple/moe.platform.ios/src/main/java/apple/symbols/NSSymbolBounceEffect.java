@@ -68,6 +68,8 @@ public class NSSymbolBounceEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer for a bounce effect that bounces down.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("bounceDownEffect")
@@ -76,6 +78,8 @@ public class NSSymbolBounceEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer for a bounce effect that bounces up.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("bounceUpEffect")
@@ -113,6 +117,8 @@ public class NSSymbolBounceEffect extends NSSymbolEffect {
 
     /**
      * The default bounce effect, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -120,6 +126,8 @@ public class NSSymbolBounceEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates incrementally, by layer.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithByLayer")
@@ -128,6 +136,8 @@ public class NSSymbolBounceEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates all layers of the symbol simultaneously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithWholeSymbol")

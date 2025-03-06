@@ -118,6 +118,8 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
      * The height of the view, measured in points.
      * 
      * Setting the height to 0 will match any height.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("height")
@@ -129,6 +131,8 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
      * 
      * Boolean property specifying whether the host displays its own control surface
      * when showing the view of the audio unit.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hostHasController")
@@ -155,6 +159,8 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
      *                          This property controls whether the host shows its own control surface in this view
      *                          configuration.
      * @return Returns the newly created view configuration object.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithWidth:height:hostHasController:")
@@ -225,6 +231,8 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
      * The width of the view, measured in points.
      * 
      * Setting the width to 0 will match any width.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("width")

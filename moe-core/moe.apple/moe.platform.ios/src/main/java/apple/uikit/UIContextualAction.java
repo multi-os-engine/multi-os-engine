@@ -62,6 +62,8 @@ public class UIContextualAction extends NSObject {
 
     /**
      * a default background color is set from the action style
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("backgroundColor")
@@ -101,6 +103,9 @@ public class UIContextualAction extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("image")
@@ -147,15 +152,23 @@ public class UIContextualAction extends NSObject {
 
     /**
      * a default background color is set from the action style
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(@Nullable UIImage value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@Nullable String value);
@@ -164,6 +177,9 @@ public class UIContextualAction extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("style")
     @NInt
@@ -173,6 +189,9 @@ public class UIContextualAction extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("title")
@@ -183,6 +202,9 @@ public class UIContextualAction extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("contextualActionWithStyle:title:handler:")
     public static native UIContextualAction contextualActionWithStyleTitleHandler(@NInt long style,
@@ -204,6 +226,9 @@ public class UIContextualAction extends NSObject {
                 @NotNull @ObjCBlock(name = "call_Block_contextualActionWithStyleTitleHandler") Block_Block_contextualActionWithStyleTitleHandler completionHandler);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("handler")

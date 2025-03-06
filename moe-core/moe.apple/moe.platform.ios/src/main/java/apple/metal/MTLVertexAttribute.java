@@ -157,6 +157,9 @@ public class MTLVertexAttribute extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("attributeIndex")
     @NUInt
@@ -174,6 +177,9 @@ public class MTLVertexAttribute extends NSObject {
     @Selector("init")
     public native MTLVertexAttribute init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
@@ -192,6 +198,9 @@ public class MTLVertexAttribute extends NSObject {
     @Selector("isPatchData")
     public native boolean isPatchData();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("name")

@@ -166,6 +166,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
     /**
      * Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns
      * UIPopoverArrowDirectionUnknown.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("arrowDirection")
@@ -201,6 +203,9 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("canOverlapSourceViewRect")
     public native boolean canOverlapSourceViewRect();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -220,12 +225,17 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
      * This property allows the specification of an array of UIView instances which the user is allowed to interact with
      * while the popover is up.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("passthroughViews")
     public native NSArray<? extends UIView> passthroughViews();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("permittedArrowDirections")
     @NUInt
@@ -235,6 +245,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * Clients may customize the popover background chrome by providing a class which subclasses
      * `UIPopoverBackgroundView`
      * and which implements the required instance and class methods on that class.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -282,10 +294,16 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("setCanOverlapSourceViewRect:")
     public native void setCanOverlapSourceViewRect(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -302,11 +320,16 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
      * This property allows the specification of an array of UIView instances which the user is allowed to interact with
      * while the popover is up.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPassthroughViews:")
     public native void setPassthroughViews(@Nullable NSArray<? extends UIView> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setPermittedArrowDirections:")
     public native void setPermittedArrowDirections(@NUInt long value);
@@ -315,6 +338,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * Clients may customize the popover background chrome by providing a class which subclasses
      * `UIPopoverBackgroundView`
      * and which implements the required instance and class methods on that class.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
@@ -340,11 +365,16 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not
      * supported.
      * The default value in iOS 13.2 is CGRectNull. Prior to iOS 13.2, the default value was CGRectZero.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSourceRect:")
     public native void setSourceRect(@ByValue CGRect value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setSourceView:")
     public native void setSourceView(@Nullable UIView value);
@@ -356,12 +386,17 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not
      * supported.
      * The default value in iOS 13.2 is CGRectNull. Prior to iOS 13.2, the default value was CGRectZero.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sourceRect")
     @ByValue
     public native CGRect sourceRect();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("sourceView")

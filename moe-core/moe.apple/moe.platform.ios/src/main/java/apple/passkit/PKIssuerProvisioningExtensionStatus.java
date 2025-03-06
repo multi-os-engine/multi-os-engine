@@ -93,6 +93,9 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("init")
     public native PKIssuerProvisioningExtensionStatus init();
@@ -126,6 +129,8 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
 
     /**
      * passes will be available to add (at least one)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("passEntriesAvailable")
@@ -133,6 +138,8 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
 
     /**
      * passes will be available to add on the remote device (at least one)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("remotePassEntriesAvailable")
@@ -140,6 +147,8 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
 
     /**
      * authorization required before passes can be added
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("requiresAuthentication")
@@ -155,6 +164,8 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
 
     /**
      * passes will be available to add (at least one)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPassEntriesAvailable:")
@@ -162,6 +173,8 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
 
     /**
      * passes will be available to add on the remote device (at least one)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setRemotePassEntriesAvailable:")
@@ -169,6 +182,8 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
 
     /**
      * authorization required before passes can be added
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setRequiresAuthentication:")

@@ -176,6 +176,11 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("category")
     public native String category();
@@ -202,20 +207,40 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Selector("initWithRootViewController:")
     public native GKLeaderboardViewController initWithRootViewController(@NotNull UIViewController rootViewController);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("leaderboardDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKLeaderboardViewControllerDelegate leaderboardDelegate();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("setCategory:")
     public native void setCategory(String value);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("setLeaderboardDelegate:")
     public native void setLeaderboardDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) GKLeaderboardViewControllerDelegate value);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     public void setLeaderboardDelegate(@Mapped(ObjCObjectMapper.class) GKLeaderboardViewControllerDelegate value) {
         Object __old = leaderboardDelegate();
@@ -228,10 +253,20 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
         }
     }
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("setTimeScope:")
     public native void setTimeScope(@NInt long value);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("timeScope")
     @NInt
@@ -259,4 +294,12 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("initWithLeaderboardSetID:")
+    public native GKLeaderboardViewController initWithLeaderboardSetID(@NotNull String leaderboardSetID);
+
+    @Generated
+    @Selector("initWithPlayer:")
+    public native GKLeaderboardViewController initWithPlayer(@NotNull GKPlayer player);
 }

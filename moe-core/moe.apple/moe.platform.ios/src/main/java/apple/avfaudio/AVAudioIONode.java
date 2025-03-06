@@ -78,6 +78,8 @@ public class AVAudioIONode extends AVAudioNode {
      * The node's underlying AudioUnit, if any.
      * 
      * This is only necessary for certain advanced usages.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -172,6 +174,8 @@ public class AVAudioIONode extends AVAudioNode {
      * 
      * This corresponds to kAudioDevicePropertyLatency and kAudioStreamPropertyLatency.
      * See <CoreAudio/AudioHardwareBase.h>.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentationLatency")

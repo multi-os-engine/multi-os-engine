@@ -130,14 +130,23 @@ public class UICellConfigurationState extends UIViewConfigurationState {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isExpanded")
     public native boolean isExpanded();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isReordering")
     public native boolean isReordering();
@@ -146,6 +155,9 @@ public class UICellConfigurationState extends UIViewConfigurationState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isSwiped")
     public native boolean isSwiped();
@@ -176,18 +188,30 @@ public class UICellConfigurationState extends UIViewConfigurationState {
     @Selector("setCellDropState:")
     public native void setCellDropState(@NInt long value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setEditing:")
     public native void setEditing(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setExpanded:")
     public native void setExpanded(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setReordering:")
     public native void setReordering(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSwiped:")
     public native void setSwiped(boolean value);

@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * An object to encapsulate memory to be used as tensor data
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -72,7 +71,11 @@ public class MLCTensorData extends NSObject {
      * [@property] bytes
      * 
      * Pointer to memory that contains or will be used for tensor data
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("bytes")
@@ -107,7 +110,11 @@ public class MLCTensorData extends NSObject {
      * @param bytes  A buffer containing data for the new object.
      * @param length The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
      * @return A new \p MLCTensorData object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dataWithBytesNoCopy:length:")
     public static native MLCTensorData dataWithBytesNoCopyLength(@NotNull VoidPtr bytes, @NUInt long length);
@@ -143,7 +150,11 @@ public class MLCTensorData extends NSObject {
      * @param bytes  A buffer containing data for the new object.
      * @param length The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
      * @return A new \p MLCTensorData object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dataWithImmutableBytesNoCopy:length:")
     public static native MLCTensorData dataWithImmutableBytesNoCopyLength(@NotNull ConstVoidPtr bytes,
@@ -192,7 +203,11 @@ public class MLCTensorData extends NSObject {
      * [@property] length
      * 
      * The size in bytes of the tensor data
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("length")
     @NUInt

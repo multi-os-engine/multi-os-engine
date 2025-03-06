@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * API-Since: 16.1
  * Deprecated-Since: 16.4
- * Deprecated-Message: Please use [MTRSetupPayload setupPayloadWithOnboardingPayload:error:]
+ * Deprecated-Message: Please use [MTRSetupPayload -initWithPayload:]
  */
 @Generated
 @Deprecated
@@ -103,6 +103,12 @@ public class MTRQRCodeSetupPayloadParser extends NSObject {
     @Selector("init")
     public native MTRQRCodeSetupPayloadParser init();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use [MTRSetupPayload -initWithPayload:]
+     */
+    @Deprecated
     @Generated
     @Selector("initWithBase38Representation:")
     public native MTRQRCodeSetupPayloadParser initWithBase38Representation(@NotNull String base38Representation);
@@ -134,6 +140,12 @@ public class MTRQRCodeSetupPayloadParser extends NSObject {
     @Selector("new")
     public static native MTRQRCodeSetupPayloadParser new_objc();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use [MTRSetupPayload -initWithPayload:]
+     */
+    @Deprecated
     @Generated
     @Selector("populatePayload:")
     @Nullable

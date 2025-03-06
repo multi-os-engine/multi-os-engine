@@ -34,6 +34,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      * and AVPictureInPictureController.isPictureInPictureActive into account when choosing media variants in order to
      * avoid uncessary decoding overhead.
      * 
+     * API-Since: 15.0
+     * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
      * @param newRenderSize
@@ -48,6 +50,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      * pictureInPictureController:setPlaying:
      * 
      * Informs delegate that the user initiated a request to play or pause the content.
+     * 
+     * API-Since: 15.0
      * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
@@ -69,6 +73,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      * indicate the seek operation has finished or failed. By the time the completion handler has been invoked, the
      * timebase should reflect the current time and playback rate. Failure to invoke this completion handler is an
      * application error and will result in playback UI permanently stuck in a “seeking” state.
+     * 
+     * API-Since: 15.0
      * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
@@ -102,6 +108,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      * [@returns] A boolean value indicating whether or not the playback UI should indicate playback has been paused or
      * is playing.
      * 
+     * API-Since: 15.0
+     * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
      */
@@ -122,6 +130,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      * Note that background in this context has a seperate meaning from application background used in UIKit. Here,
      * background defines the state of the picture in picture window itself rather than the application.
      * [@returns] A boolean value indicating whether or not background audio playback is always prohibited.
+     * 
+     * API-Since: 15.0
      * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
@@ -145,6 +155,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      * content to play, they should return kCMTimeRangeInvalid. This method will be called whenever
      * -[AVPictureInPictureController invalidatePlaybackState] is called and at other times as needed by the system.
      * [@returns] A CMTimeRange indicating the content's time range.
+     * 
+     * API-Since: 15.0
      * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.

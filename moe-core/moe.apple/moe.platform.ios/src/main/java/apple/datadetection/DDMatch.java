@@ -132,6 +132,8 @@ public class DDMatch extends NSObject {
      * 
      * Use `DDMatch` subclasses that the data detection system provides for a
      * semantic interpretation of this string.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

@@ -164,6 +164,9 @@ public class INSearchForMessagesIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -181,6 +184,8 @@ public class INSearchForMessagesIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -191,11 +196,17 @@ public class INSearchForMessagesIntentResponse extends INIntentResponse {
     @Selector("initWithCoder:")
     public native INSearchForMessagesIntentResponse initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("messages")
     public native NSArray<? extends INMessage> messages();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setMessages:")
     public native void setMessages(@Nullable NSArray<? extends INMessage> value);

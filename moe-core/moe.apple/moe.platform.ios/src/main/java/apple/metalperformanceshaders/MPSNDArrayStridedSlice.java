@@ -166,6 +166,8 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
      * [@property] strides
      * 
      * The strides to use when slicing the input array.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStrides:")
@@ -179,6 +181,8 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
      * [@property] strides
      * 
      * The strides to use when slicing the input array.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("strides")

@@ -106,6 +106,12 @@ public class INGetVisualCodeIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INGetVisualCodeIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INGetVisualCodeIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithVisualCodeType:")
     public native INGetVisualCodeIntent initWithVisualCodeType(@NInt long visualCodeType);
@@ -168,6 +174,12 @@ public class INGetVisualCodeIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INGetVisualCodeIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("visualCodeType")
     @NInt

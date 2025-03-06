@@ -97,6 +97,8 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
      * The end date of the relevant time interval.
      * [@note] If @c endDate is @c nil, the relevant time interval will be assumed to represent a single point in time
      * instead of a time interval.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -118,6 +120,8 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
 
     /**
      * Initializes a date relevance provider with the specified relevant date interval.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithStartDate:endDate:")
@@ -164,6 +168,8 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
 
     /**
      * The start date of the relevant time interval.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

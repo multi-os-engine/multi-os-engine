@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A lasso tool for selection parts of a drawing.
+ * A lasso tool for selecting parts of a drawing.
  * 
  * API-Since: 13.0
  */
@@ -95,6 +95,9 @@ public class PKLassoTool extends PKTool {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("init")
     public native PKLassoTool init();

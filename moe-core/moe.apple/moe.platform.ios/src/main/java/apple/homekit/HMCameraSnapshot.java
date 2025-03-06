@@ -162,12 +162,21 @@ public class HMCameraSnapshot extends HMCameraSource {
 
     /**
      * Time corresponding to the snapshot request.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("captureDate")
     public native NSDate captureDate();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: HMCameraSnapshot objects are created by their parent container objects. Directly creating
+     * them is not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMCameraSnapshot init();

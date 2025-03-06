@@ -138,6 +138,8 @@ public class ARObjectAnchor extends ARAnchor {
 
     /**
      * Reference to the detected object.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

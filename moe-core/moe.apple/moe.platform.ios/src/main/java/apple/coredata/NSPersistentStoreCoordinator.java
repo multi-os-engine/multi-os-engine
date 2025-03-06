@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.c.map.CStringMapper;
+import org.moe.natj.general.ann.UncertainArgument;
 
 /**
  * API-Since: 3.0
@@ -253,6 +255,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("URLForPersistentStore:")
@@ -271,6 +276,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * Adds the store at the specified URL (of the specified type) to the coordinator with the model configuration and
      * options. The configuration can be nil -- then it's the complete model; storeURL is usually the file location of
      * the database
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -313,6 +320,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("init")
     public native NSPersistentStoreCoordinator init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithManagedObjectModel:")
     public native NSPersistentStoreCoordinator initWithManagedObjectModel(@NotNull NSManagedObjectModel model);
@@ -326,12 +336,17 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * Given a URI representation of an object ID, returns an object ID if a matching store is available or nil if a
      * matching store cannot be found (the URI representation contains a UUID of the store the ID is coming from, and
      * the coordinator can match it against the stores added to it)
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
     @Selector("managedObjectIDForURIRepresentation:")
     public native NSManagedObjectID managedObjectIDForURIRepresentation(@NotNull NSURL url);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("managedObjectModel")
@@ -339,6 +354,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
 
     /**
      * Returns the metadata currently stored or to-be-stored in the persistent store
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -349,6 +366,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * Used for save as - performance may vary depending on the type of old and new store; the old store is usually
      * removed from the coordinator by the migration operation, and therefore is no longer a useful reference after
      * invoking this method
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -387,16 +406,25 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public native void performBlockAndWait(
             @NotNull @ObjCBlock(name = "call_performBlockAndWait") Block_performBlockAndWait block);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("persistentStoreForURL:")
     public native NSPersistentStore persistentStoreForURL(@NotNull NSURL URL);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("persistentStores")
     public native NSArray<? extends NSPersistentStore> persistentStores();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("removePersistentStore:error:")
     public native boolean removePersistentStoreError(@NotNull NSPersistentStore store,
@@ -420,6 +448,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * Sets the metadata stored in the persistent store during the next save operation executed on it; the store type
      * and UUID (NSStoreTypeKey and NSStoreUUIDKey) are always added automatically (but NSStoreUUIDKey is only added if
      * it is not set manually as part of the dictionary argument)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMetadata:forPersistentStore:")
@@ -519,4 +549,14 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 5.0
+     */
+    @Generated
+    @Selector("managedObjectIDFromUTF8String:length:")
+    @NotNull
+    public native NSManagedObjectID managedObjectIDFromUTF8StringLength(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) @NotNull String utf8string,
+            @NUInt long len);
 }

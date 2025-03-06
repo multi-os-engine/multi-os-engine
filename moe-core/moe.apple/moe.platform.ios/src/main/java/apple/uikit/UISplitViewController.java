@@ -171,6 +171,9 @@ public class UISplitViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.2
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -207,10 +210,16 @@ public class UISplitViewController extends UIViewController {
     @Selector("init")
     public native UISplitViewController init();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UISplitViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("initWithNibName:bundle:")
     public native UISplitViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
@@ -286,11 +295,17 @@ public class UISplitViewController extends UIViewController {
     @NFloat
     public native double primaryColumnWidth();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value) {
         Object __old = delegate();
@@ -352,6 +367,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * -setViewController:forColumn:/-viewControllerForColumn: recommended for column-style UISplitViewController
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setViewControllers:")
@@ -385,6 +402,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * -setViewController:forColumn:/-viewControllerForColumn: recommended for column-style UISplitViewController
+     * 
+     * API-Since: 3.2
      */
     @NotNull
     @Generated

@@ -187,6 +187,7 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     @NInt
     public static native long version_static();
 
+    @Deprecated
     @Nullable
     @Generated
     @Selector("drawableProperties")
@@ -216,6 +217,7 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     @Selector("presentsWithTransaction")
     public native boolean presentsWithTransaction();
 
+    @Deprecated
     @Generated
     @Selector("setDrawableProperties:")
     public native void setDrawableProperties(@Nullable NSDictionary<String, ?> value);

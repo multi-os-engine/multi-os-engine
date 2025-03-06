@@ -91,6 +91,8 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
 
     /**
      * The dashboardController object for this scene.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -99,6 +101,8 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
 
     /**
      * The UIWindow created for this CPTemplateApplicationDashboardScene
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -112,6 +116,8 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     /**
      * The delegate for a CPTemplateApplicationDashboardScene must conform to the
      * CPTemplateApplicationDashboardSceneDelegate protocol.
+     * 
+     * API-Since: 13.4
      */
     @Nullable
     @Generated
@@ -175,6 +181,8 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     /**
      * The delegate for a CPTemplateApplicationDashboardScene must conform to the
      * CPTemplateApplicationDashboardSceneDelegate protocol.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setDelegate:")

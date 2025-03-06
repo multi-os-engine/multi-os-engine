@@ -148,6 +148,8 @@ public class UIManagedDocument extends UIDocument {
      * The name for the persistent store file inside the document's file wrapper. When working with the Core Data APIs,
      * this path component is appended to the document URL provided by the UIDocument APIs. The default name
      * is @"documentpersistentstore.db"
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -178,6 +180,8 @@ public class UIManagedDocument extends UIDocument {
     /**
      * An optional call out by contentsForType:error: to handle non-Core Data content in the document's file wrapper.
      * The returned object will be passed to -writeAdditionalContent: It is not necessary to call super.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -188,6 +192,8 @@ public class UIManagedDocument extends UIDocument {
 
     /**
      * Customize the loading or creation of a persistent store to the coordinator.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:")
@@ -209,6 +215,8 @@ public class UIManagedDocument extends UIDocument {
      * context. The managed object context is required to be initialized with the concurrency type
      * NSMainQueueConcurrencyType and it must have a parent context initialized with the concurrency type
      * NSPrivateQueueConcurrencyType.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -218,6 +226,8 @@ public class UIManagedDocument extends UIDocument {
     /**
      * Persistent documents always have a managed object model. The default model is the union of all models in the main
      * bundle.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -226,6 +236,8 @@ public class UIManagedDocument extends UIDocument {
 
     /**
      * Optionally specify a model configuration name to be passed when configuring the persistent store
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -234,6 +246,8 @@ public class UIManagedDocument extends UIDocument {
 
     /**
      * Optionally provide a collection of store options to be passed when configuring the persistent store
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -243,6 +257,8 @@ public class UIManagedDocument extends UIDocument {
     /**
      * Returns the Core Data store type string for the given document fileType. The default returns NSSQLiteStoreType.
      * See NSPersistentStoreCoordinator.h for store type information.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -252,6 +268,8 @@ public class UIManagedDocument extends UIDocument {
     /**
      * An optional call out by readFromURL:error: to handle non-Core Data content in the document's file wrapper. It is
      * not necessary to call super.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("readAdditionalContentFromURL:error:")
@@ -260,6 +278,8 @@ public class UIManagedDocument extends UIDocument {
 
     /**
      * Optionally specify a model configuration name to be passed when configuring the persistent store
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setModelConfiguration:")
@@ -267,6 +287,8 @@ public class UIManagedDocument extends UIDocument {
 
     /**
      * Optionally provide a collection of store options to be passed when configuring the persistent store
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPersistentStoreOptions:")
@@ -276,6 +298,8 @@ public class UIManagedDocument extends UIDocument {
      * An optional call out by writeContents:andAttributes:safelyToURL:forSaveOperation:error: to handle non-Core Data
      * content in the document's file wrapper. The Core Data content is handled by the primary UIDocument
      * -writeContents:andAttributes:safelyToURL:forSaveOperation:error: method. It is not necessary to call super.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("writeAdditionalContent:toURL:originalContentsURL:error:")

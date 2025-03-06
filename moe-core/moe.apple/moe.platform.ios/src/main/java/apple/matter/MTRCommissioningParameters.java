@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Information that can be provided to commissionWithNodeID to commision devices.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
@@ -75,6 +77,8 @@ public class MTRCommissioningParameters extends NSObject {
      * If nil, a random nonce will be generated automatically.
      * 
      * If not nil, must be 32 bytes of data.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("attestationNonce")
@@ -148,6 +152,8 @@ public class MTRCommissioningParameters extends NSObject {
      * details.
      * 
      * The delegate methods will be invoked on an arbitrary thread.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("deviceAttestationDelegate")
@@ -229,6 +235,8 @@ public class MTRCommissioningParameters extends NSObject {
      * If nil, a random nonce will be generated automatically.
      * 
      * If not nil, must be 32 bytes of data.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setAttestationNonce:")
@@ -275,6 +283,8 @@ public class MTRCommissioningParameters extends NSObject {
      * details.
      * 
      * The delegate methods will be invoked on an arbitrary thread.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setDeviceAttestationDelegate:")
@@ -317,6 +327,8 @@ public class MTRCommissioningParameters extends NSObject {
 
     /**
      * The Thread operational dataset, if available.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setThreadOperationalDataset:")
@@ -329,6 +341,8 @@ public class MTRCommissioningParameters extends NSObject {
     /**
      * The Wi-Fi Credentials. Allowed to be nil or 0-length data for an open
      * network, as long as wifiSSID is not nil.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setWifiCredentials:")
@@ -336,6 +350,8 @@ public class MTRCommissioningParameters extends NSObject {
 
     /**
      * The Wi-Fi SSID, if available.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setWifiSSID:")
@@ -359,6 +375,8 @@ public class MTRCommissioningParameters extends NSObject {
 
     /**
      * The Thread operational dataset, if available.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("threadOperationalDataset")
@@ -378,6 +396,8 @@ public class MTRCommissioningParameters extends NSObject {
     /**
      * The Wi-Fi Credentials. Allowed to be nil or 0-length data for an open
      * network, as long as wifiSSID is not nil.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("wifiCredentials")
@@ -386,6 +406,8 @@ public class MTRCommissioningParameters extends NSObject {
 
     /**
      * The Wi-Fi SSID, if available.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("wifiSSID")

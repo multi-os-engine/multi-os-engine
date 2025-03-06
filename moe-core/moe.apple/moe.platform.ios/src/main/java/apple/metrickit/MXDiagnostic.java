@@ -58,6 +58,8 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
      * Convenience method to return a JSON representation of this diagnostic.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -82,6 +84,8 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
      * [@property] applicationVersion
      * 
      * An NSString representation of the application version from which this diagnostic was generated.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -127,6 +131,8 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
      * Convenience method to return a NSDictionary representation of this diagnostic.
      * 
      * @return An NSDictionary object containing the dictionary representation
+     * 
+     *         API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -172,6 +178,9 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("metaData")

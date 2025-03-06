@@ -34,6 +34,8 @@ public interface CMWaterSubmersionManagerDelegate {
      * Delegate method is called when there is a new event available.
      * When the delegate is first set, this method will invoked immediately so
      * that the client always has the current state.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("manager:didUpdateEvent:")
@@ -46,6 +48,10 @@ public interface CMWaterSubmersionManagerDelegate {
      * Delegate method is called when there is a new depth/pressure measurement available. When
      * the device is not in the Submerged state, the measurement will only include the surface
      * pressure and submersion state.
+     * 
+     * 
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("manager:didUpdateMeasurement:")
@@ -58,6 +64,8 @@ public interface CMWaterSubmersionManagerDelegate {
      * Discussion:
      * Delegate method is called when there is a new temperature measurement available.
      * New measurements will only be available while device is in the WaterSubmerged state.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("manager:didUpdateTemperature:")
@@ -68,6 +76,8 @@ public interface CMWaterSubmersionManagerDelegate {
      * manager:errorOccurred:
      * Discussion:
      * Delegate method is called when an error has occurred.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("manager:errorOccurred:")

@@ -82,6 +82,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * 
      * These certificates are used in addition to, not replacing, the default set of
      * well-known certification declaration signing keys.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("certificationDeclarationCertificates")
@@ -119,6 +121,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * Initialize the device controller factory with storage. In this mode, the
      * storage will be used to store various information needed by the Matter
      * framework.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("initWithStorage:")
@@ -158,6 +162,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * 
      * Calls to this delegate can happen on an arbitrary thread, but will not happen
      * concurrently.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("otaProviderDelegate")
@@ -168,6 +174,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
     /**
      * The network port to bind to. If not specified, an ephemeral port will be
      * used.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("port")
@@ -180,6 +188,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * Intermediate certificates, which then sign Device Attestation Certificates).
      * 
      * Defaults to nil.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("productAttestationAuthorityCertificates")
@@ -201,6 +211,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * 
      * These certificates are used in addition to, not replacing, the default set of
      * well-known certification declaration signing keys.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setCertificationDeclarationCertificates:")
@@ -212,6 +224,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * 
      * Calls to this delegate can happen on an arbitrary thread, but will not happen
      * concurrently.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setOtaProviderDelegate:")
@@ -220,6 +234,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
     /**
      * The network port to bind to. If not specified, an ephemeral port will be
      * used.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setPort:")
@@ -231,6 +247,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * Intermediate certificates, which then sign Device Attestation Certificates).
      * 
      * Defaults to nil.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setProductAttestationAuthorityCertificates:")
@@ -239,6 +257,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
     /**
      * Whether to run a server capable of accepting incoming CASE
      * connections. Defaults to NO.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setShouldStartServer:")
@@ -251,6 +271,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
     /**
      * Whether to run a server capable of accepting incoming CASE
      * connections. Defaults to NO.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("shouldStartServer")
@@ -262,6 +284,8 @@ public class MTRDeviceControllerFactoryParams extends NSObject {
      * is used to initialize the MTRDeviceControllerFactoryParams. If "init" is
      * used, this property will contain a dummy storage that will not be used for
      * anything.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("storage")

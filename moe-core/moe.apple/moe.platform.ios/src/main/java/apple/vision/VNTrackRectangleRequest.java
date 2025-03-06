@@ -118,6 +118,8 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
      * Create a new rectangle tracking request with rectangle observation.
      * 
      * @param observation Rectangle observation with bounding box and rectangle corners location info.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("initWithRectangleObservation:")
@@ -128,6 +130,8 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
      * 
      * @param observation       Rectangle observation with bounding box and rectangle corners location info.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithRectangleObservation:completionHandler:")

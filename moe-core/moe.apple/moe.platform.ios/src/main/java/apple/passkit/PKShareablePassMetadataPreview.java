@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PKShareablePassMetadataPreview extends NSObject {
+public class PKShareablePassMetadataPreview extends PKAddPassMetadataPreview {
     static {
         NatJ.register();
     }
@@ -103,6 +103,9 @@ public class PKShareablePassMetadataPreview extends NSObject {
     public native PKShareablePassMetadataPreview initWithPassThumbnailLocalizedDescription(
             @NotNull CGImageRef passThumbnail, @NotNull String description);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithTemplateIdentifier:")
     public native PKShareablePassMetadataPreview initWithTemplateIdentifier(@NotNull String templateIdentifier);
@@ -129,38 +132,35 @@ public class PKShareablePassMetadataPreview extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
-    @Nullable
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
     @Generated
     @Owned
     @Selector("new")
     public static native PKShareablePassMetadataPreview new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("ownerDisplayName")
     public native String ownerDisplayName();
 
-    @Nullable
-    @Generated
-    @Selector("passThumbnailImage")
-    public native CGImageRef passThumbnailImage();
-
-    @NotNull
     @Generated
     @Selector("previewWithPassThumbnail:localizedDescription:")
     public static native PKShareablePassMetadataPreview previewWithPassThumbnailLocalizedDescription(
             @NotNull CGImageRef passThumbnail, @NotNull String description);
 
-    @NotNull
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("previewWithTemplateIdentifier:")
     public static native PKShareablePassMetadataPreview previewWithTemplateIdentifier(
             @NotNull String templateIdentifier);
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("provisioningTemplateIdentifier")
@@ -174,6 +174,9 @@ public class PKShareablePassMetadataPreview extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOwnerDisplayName:")
     public native void setOwnerDisplayName(@Nullable String value);

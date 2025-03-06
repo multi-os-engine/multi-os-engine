@@ -172,6 +172,8 @@ public class UITargetedDragPreview extends UITargetedPreview {
      * -dropInteraction:previewForDroppingItem:withDefault:, or in
      * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,
      * to direct the default UITargetedDragPreview to a different target.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

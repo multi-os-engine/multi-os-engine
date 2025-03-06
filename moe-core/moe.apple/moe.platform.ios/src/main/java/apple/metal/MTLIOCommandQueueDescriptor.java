@@ -137,6 +137,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * [@property] maxCommandBufferCount
      * 
      * The maximum number of commandBuffers that can be in flight at a given time for the queue.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxCommandBufferCount")
@@ -150,6 +152,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * 
      * A zero value defaults to the system dependent maximum value, a smaller number can be
      * provided to bound the utilization of the storage device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxCommandsInFlight")
@@ -165,6 +169,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * [@property] priority
      * 
      * The priority of the commands executed by this queue.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("priority")
@@ -186,6 +192,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * 
      * An application can manage scratch buffers manually by implemeting a class conforming
      * to the MTLIOScratchBufferAllocator protocol and creating an instance that is passed in here.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -197,6 +205,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * [@property] maxCommandBufferCount
      * 
      * The maximum number of commandBuffers that can be in flight at a given time for the queue.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxCommandBufferCount:")
@@ -209,6 +219,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * 
      * A zero value defaults to the system dependent maximum value, a smaller number can be
      * provided to bound the utilization of the storage device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxCommandsInFlight:")
@@ -218,6 +230,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * [@property] priority
      * 
      * The priority of the commands executed by this queue.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPriority:")
@@ -230,6 +244,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * 
      * An application can manage scratch buffers manually by implemeting a class conforming
      * to the MTLIOScratchBufferAllocator protocol and creating an instance that is passed in here.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setScratchBufferAllocator:")
@@ -240,6 +256,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * [@property] type
      * 
      * The type (serial or concurrent) of the queue.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setType:")
@@ -257,6 +275,8 @@ public class MTLIOCommandQueueDescriptor extends NSObject implements NSCopying {
      * [@property] type
      * 
      * The type (serial or concurrent) of the queue.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("type")

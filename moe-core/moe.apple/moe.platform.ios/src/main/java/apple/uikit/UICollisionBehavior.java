@@ -163,36 +163,57 @@ public class UICollisionBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addBoundaryWithIdentifier:forPath:")
     public native void addBoundaryWithIdentifierForPath(@NotNull @Mapped(ObjCObjectMapper.class) Object identifier,
             @NotNull UIBezierPath bezierPath);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addBoundaryWithIdentifier:fromPoint:toPoint:")
     public native void addBoundaryWithIdentifierFromPointToPoint(
             @NotNull @Mapped(ObjCObjectMapper.class) Object identifier, @ByValue CGPoint p1, @ByValue CGPoint p2);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("boundaryIdentifiers")
     public native NSArray<?> boundaryIdentifiers();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("boundaryWithIdentifier:")
     public native UIBezierPath boundaryWithIdentifier(@NotNull @Mapped(ObjCObjectMapper.class) Object identifier);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("collisionDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollisionBehaviorDelegate collisionDelegate();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("collisionMode")
     @NUInt
@@ -202,32 +223,53 @@ public class UICollisionBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UICollisionBehavior init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItems:")
     public native UICollisionBehavior initWithItems(@NotNull NSArray<?> items);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeAllBoundaries")
     public native void removeAllBoundaries();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeBoundaryWithIdentifier:")
     public native void removeBoundaryWithIdentifier(@NotNull @Mapped(ObjCObjectMapper.class) Object identifier);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCollisionDelegate:")
     public native void setCollisionDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     public void setCollisionDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value) {
         Object __old = collisionDelegate();
@@ -240,18 +282,30 @@ public class UICollisionBehavior extends UIDynamicBehavior {
         }
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCollisionMode:")
     public native void setCollisionMode(@NUInt long value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setTranslatesReferenceBoundsIntoBoundary:")
     public native void setTranslatesReferenceBoundsIntoBoundary(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setTranslatesReferenceBoundsIntoBoundaryWithInsets:")
     public native void setTranslatesReferenceBoundsIntoBoundaryWithInsets(@ByValue UIEdgeInsets insets);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("translatesReferenceBoundsIntoBoundary")
     public native boolean translatesReferenceBoundsIntoBoundary();

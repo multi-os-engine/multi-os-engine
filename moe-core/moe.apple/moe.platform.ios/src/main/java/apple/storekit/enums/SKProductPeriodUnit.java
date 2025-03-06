@@ -5,7 +5,10 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * API-Since: 11.2
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.SubscriptionPeriod.Unit
  */
+@Deprecated
 @Generated
 public final class SKProductPeriodUnit {
     @Generated
@@ -14,18 +17,26 @@ public final class SKProductPeriodUnit {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionPeriod.Unit
      */
-    @Generated @NUInt public static final long Day = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Day = 0x0000000000000000L;
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionPeriod.Unit
      */
-    @Generated @NUInt public static final long Week = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Week = 0x0000000000000001L;
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionPeriod.Unit
      */
-    @Generated @NUInt public static final long Month = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long Month = 0x0000000000000002L;
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionPeriod.Unit
      */
-    @Generated @NUInt public static final long Year = 0x0000000000000003L;
+    @Deprecated @Generated @NUInt public static final long Year = 0x0000000000000003L;
 }

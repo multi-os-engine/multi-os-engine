@@ -4,7 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: Please use MTRColorControlUpdateFlagsBitmap
  */
+@Deprecated
 @Generated
 public final class MTRColorControlColorLoopUpdateFlags {
     @Generated
@@ -13,18 +16,26 @@ public final class MTRColorControlColorLoopUpdateFlags {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlUpdateFlagsBitmapUpdateAction
      */
-    @Generated public static final byte Action = 1;
+    @Deprecated @Generated public static final byte Action = 1;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlUpdateFlagsBitmapUpdateDirection
      */
-    @Generated public static final byte Direction = 2;
+    @Deprecated @Generated public static final byte Direction = 2;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlUpdateFlagsBitmapUpdateTime
      */
-    @Generated public static final byte Time = 4;
+    @Deprecated @Generated public static final byte Time = 4;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlUpdateFlagsBitmapUpdateStartHue
      */
-    @Generated public static final byte StartHue = 8;
+    @Deprecated @Generated public static final byte StartHue = 8;
 }

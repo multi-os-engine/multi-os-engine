@@ -159,6 +159,8 @@ public class NSURLCredentialStorage extends NSObject {
      * Get the shared singleton authentication storage
      * 
      * @return the shared authentication storage
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -180,6 +182,8 @@ public class NSURLCredentialStorage extends NSObject {
      * @return an NSDictionary where the keys are NSURLProtectionSpaces
      *         and the values are dictionaries, in which the keys are usernames
      *         and the values are NSURLCredentials
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -193,6 +197,8 @@ public class NSURLCredentialStorage extends NSObject {
      * 
      * @param space An NSURLProtectionSpace indicating the protection space for which to get credentials
      * @return A dictionary where the keys are usernames and the values are the corresponding NSURLCredentials.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -206,6 +212,8 @@ public class NSURLCredentialStorage extends NSObject {
      * Get the default credential for the specified protection space.
      * 
      * @param space The protection space for which to get the default credential.
+     * 
+     *              API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -242,6 +250,8 @@ public class NSURLCredentialStorage extends NSObject {
      * The credential is removed from both persistent and temporary storage. A credential that
      * has a persistence policy of NSURLCredentialPersistenceSynchronizable will fail.
      * See removeCredential:forProtectionSpace:options.
+     * 
+     * API-Since: 2.0
      * 
      * @param credential The credential to remove.
      * @param space      The protection space for which a credential should be removed
@@ -292,6 +302,8 @@ public class NSURLCredentialStorage extends NSObject {
      * a distinct user. If a credential with the same user is already set for the protection space,
      * the new one will replace it.
      * 
+     * API-Since: 2.0
+     * 
      * @param credential The credential to set.
      * @param space      The protection space for which to add it.
      */
@@ -314,6 +326,8 @@ public class NSURLCredentialStorage extends NSObject {
      * Set the default credential for the specified protection space.
      * 
      * If the credential is not yet in the set for the protection space, it will be added to it.
+     * 
+     * API-Since: 2.0
      * 
      * @param credential The credential to set as default.
      * @param space      The protection space for which the credential should be set as default.

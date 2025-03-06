@@ -33,7 +33,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: This command has been removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -122,7 +125,10 @@ public class MTRElectricalMeasurementClusterGetProfileInfoResponseCommandParams 
      * schema for this command.
      * 
      * API-Since: 17.0
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithResponseValue:error:")
     public native MTRElectricalMeasurementClusterGetProfileInfoResponseCommandParams initWithResponseValueError(
@@ -153,7 +159,10 @@ public class MTRElectricalMeasurementClusterGetProfileInfoResponseCommandParams 
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The listOfAttributes field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("listOfAttributes")
     @NotNull
@@ -161,7 +170,10 @@ public class MTRElectricalMeasurementClusterGetProfileInfoResponseCommandParams 
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The maxNumberOfIntervals field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("maxNumberOfIntervals")
     @NotNull
@@ -174,7 +186,10 @@ public class MTRElectricalMeasurementClusterGetProfileInfoResponseCommandParams 
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The profileCount field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("profileCount")
     @NotNull
@@ -182,7 +197,10 @@ public class MTRElectricalMeasurementClusterGetProfileInfoResponseCommandParams 
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The profileIntervalPeriod field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("profileIntervalPeriod")
     @NotNull
@@ -198,28 +216,40 @@ public class MTRElectricalMeasurementClusterGetProfileInfoResponseCommandParams 
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The listOfAttributes field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setListOfAttributes:")
     public native void setListOfAttributes(@NotNull NSArray<?> value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The maxNumberOfIntervals field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setMaxNumberOfIntervals:")
     public native void setMaxNumberOfIntervals(@NotNull NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The profileCount field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setProfileCount:")
     public native void setProfileCount(@NotNull NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The profileIntervalPeriod field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setProfileIntervalPeriod:")
     public native void setProfileIntervalPeriod(@NotNull NSNumber value);

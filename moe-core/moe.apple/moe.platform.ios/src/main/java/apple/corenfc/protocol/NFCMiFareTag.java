@@ -69,7 +69,7 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
      * sendMiFareCommand:completionHandler:
      * 
      * Send native MIFARE command to a tag. Support MIFARE UltraLight, Plus, and DESFire products.
-     * Crypto1 protocol is not supported. Command chainning is handled internally by the method and the full response
+     * Crypto1 protocol is not supported. Command chaining is handled internally by the method and the full response
      * composed of the
      * individual fragment is returned in the completion handler.
      * 

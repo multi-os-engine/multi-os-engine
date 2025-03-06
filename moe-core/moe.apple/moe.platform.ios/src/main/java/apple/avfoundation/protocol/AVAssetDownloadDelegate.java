@@ -40,6 +40,7 @@ import org.jetbrains.annotations.NotNull;
  * [@protocol] AVAssetDownloadDelegate
  * 
  * Delegate methods to implement when adopting AVAssetDownloadTask.
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 9.0
  */
@@ -65,7 +66,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
      *                          The location the asset has been downloaded to.
      * 
      *                          API-Since: 10.0
+     *                          Deprecated-Since: 100000.0
+     *                          Deprecated-Message: Use URLSession:assetDownloadTask:willDownloadToURL: instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("URLSession:assetDownloadTask:didFinishDownloadingToURL:")
@@ -94,7 +98,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
      *                                the download is complete.
      * 
      *                                API-Since: 9.0
+     *                                Deprecated-Since: 100000.0
+     *                                Deprecated-Message: Use NSURLSessionTask.progress instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("URLSession:assetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:")
@@ -142,7 +149,11 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
      *                                   The AVMediaSelection which is now fully available for offline use.
      * 
      *                                   API-Since: 11.0
+     *                                   Deprecated-Since: 100000.0
+     *                                   Deprecated-Message: Use the NSURLSessionDownloadDelegate method instead,
+     *                                   URLSession:task:didCompleteWithError:
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("URLSession:aggregateAssetDownloadTask:didCompleteForMediaSelection:")
@@ -174,7 +185,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
      *                                   The media selection which has additional media data loaded for offline use.
      * 
      *                                   API-Since: 11.0
+     *                                   Deprecated-Since: 100000.0
+     *                                   Deprecated-Message: Use NSURLSessionTask.progress: instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("URLSession:aggregateAssetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:forMediaSelection:")
@@ -201,7 +215,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
      *                                   The file URL this task will download media data to.
      * 
      *                                   API-Since: 11.0
+     *                                   Deprecated-Since: 100000.0
+     *                                   Deprecated-Message: Use URLSession:assetDownloadTask:willDownloadToURL: instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("URLSession:aggregateAssetDownloadTask:willDownloadToURL:")
@@ -229,6 +246,31 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @Selector("URLSession:assetDownloadTask:willDownloadVariants:")
     default void URLSessionAssetDownloadTaskWillDownloadVariants(@NotNull NSURLSession session,
             @NotNull AVAssetDownloadTask assetDownloadTask, @NotNull NSArray<? extends AVAssetVariant> variants) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * URLSession:assetDownloadTask:willDownloadToURL:
+     * 
+     * Method called when the asset download task determines the location this asset will be downloaded to.
+     * 
+     * This URL should be saved for future instantiations of AVAsset. While an AVAsset already exists for this content,
+     * it is advisable to re-use that instance.
+     * 
+     * @param session
+     *                          The session the asset download task is on.
+     * @param assetDownloadTask
+     *                          The AVAssetDownloadTask.
+     * @param location
+     *                          The file URL this task will download media data to.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("URLSession:assetDownloadTask:willDownloadToURL:")
+    default void URLSessionAssetDownloadTaskWillDownloadToURL(@NotNull NSURLSession session,
+            @NotNull AVAssetDownloadTask assetDownloadTask, @NotNull NSURL location) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

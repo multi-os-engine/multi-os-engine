@@ -38,6 +38,8 @@ public interface UIContentSizeCategoryAdjusting {
      * - a font vended using +preferredFontForTextStyle: or +preferredFontForTextStyle:compatibleWithTraitCollection:
      * with a valid UIFontTextStyle
      * - a font vended using - [UIFontMetrics scaledFontForFont:] or one of its variants
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("adjustsFontForContentSizeCategory")
@@ -50,6 +52,8 @@ public interface UIContentSizeCategoryAdjusting {
      * - a font vended using +preferredFontForTextStyle: or +preferredFontForTextStyle:compatibleWithTraitCollection:
      * with a valid UIFontTextStyle
      * - a font vended using - [UIFontMetrics scaledFontForFont:] or one of its variants
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")

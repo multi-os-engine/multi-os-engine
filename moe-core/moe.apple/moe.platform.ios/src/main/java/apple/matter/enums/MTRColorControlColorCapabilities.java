@@ -4,7 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: Please use MTRColorControlColorCapabilitiesBitmap
  */
+@Deprecated
 @Generated
 public final class MTRColorControlColorCapabilities {
     @Generated
@@ -13,22 +16,32 @@ public final class MTRColorControlColorCapabilities {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlColorCapabilitiesBitmapHueSaturation
      */
-    @Generated public static final char HueSaturationSupported = 0x0001;
+    @Deprecated @Generated public static final char HueSaturationSupported = 0x0001;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlColorCapabilitiesBitmapEnhancedHue
      */
-    @Generated public static final char EnhancedHueSupported = 0x0002;
+    @Deprecated @Generated public static final char EnhancedHueSupported = 0x0002;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlColorCapabilitiesBitmapColorLoop
      */
-    @Generated public static final char ColorLoopSupported = 0x0004;
+    @Deprecated @Generated public static final char ColorLoopSupported = 0x0004;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlColorCapabilitiesBitmapXY
      */
-    @Generated public static final char XYAttributesSupported = 0x0008;
+    @Deprecated @Generated public static final char XYAttributesSupported = 0x0008;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlColorCapabilitiesBitmapColorTemperature
      */
-    @Generated public static final char ColorTemperatureSupported = 0x0010;
+    @Deprecated @Generated public static final char ColorTemperatureSupported = 0x0010;
 }

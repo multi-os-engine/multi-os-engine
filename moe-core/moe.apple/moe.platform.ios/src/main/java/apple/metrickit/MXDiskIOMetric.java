@@ -94,6 +94,8 @@ public class MXDiskIOMetric extends MXMetric {
      * Cumulative amount of logical writes.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

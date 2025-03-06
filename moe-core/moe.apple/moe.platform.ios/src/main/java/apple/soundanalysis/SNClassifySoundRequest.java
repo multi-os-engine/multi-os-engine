@@ -115,10 +115,12 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     /**
      * Initializes a sound classification request with the provided MLModel
      * 
+     * - Parameter mlModel: The CoreML audio classification model to be used with this request
+     * 
      * The provided model must accept audio data as input, and output a classification dictionary containing the
      * probability of each category.
      * 
-     * @param mlModel The CoreML audio classification model to be used with this request
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithMLModel:error:")
@@ -162,6 +164,8 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
      * windows by 50% ensures each sound will fall near the center of at least one analysis window. The supported range
      * is [0.0, 1.0), and the default value is 0.5. Increasing the overlap factor increases computational complexity, so
      * values greater than 0.5 should be used with care.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("overlapFactor")
@@ -185,6 +189,8 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
      * windows by 50% ensures each sound will fall near the center of at least one analysis window. The supported range
      * is [0.0, 1.0), and the default value is 0.5. Increasing the overlap factor increases computational complexity, so
      * values greater than 0.5 should be used with care.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOverlapFactor:")
@@ -206,18 +212,21 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     /**
      * Initializes a sound classification request with a known classifier.
      * 
+     * - Parameters:
+     * 
+     * - classifierIdentifier: An identifier identifying the particular classifier to use for labeling sounds.
+     * 
+     * - error: An output parameter which, in the case of an error, will be populated with details about that error.
+     * Upon success, the contents of this output parameter are undefined. Please use the return value of this method to
+     * determine whether or not an error occurred before using the value assigned to this output parameter.
+     * 
+     * - Returns Upon failure, `nil`; upon success, an `SNClassifySoundRequest` instance which can be added to an
+     * analyzer to classify sounds using a recognized classifier.
+     * 
      * This initializer may be used to classify sounds using Apple-provided sound classifiers. Note that Apple may add
      * new classifiers in the future, but it commits to ensuring the consistent performance of existing classifiers.
      * 
      * API-Since: 15.0
-     * 
-     * @param classifierIdentifier An identifier identifying the particular classifier to use for labeling sounds.
-     * @param error                An output parameter which, in the case of an error, will be populated with details
-     *                             about that error. Upon success, the contents of this output parameter are undefined.
-     *                             Please use the return value of this method to determine whether or not an error
-     *                             occurred before using the value assigned to this output parameter.
-     * @return Upon failure, `nil`; upon success, an `SNClassifySoundRequest` instance which can be added to an analyzer
-     *         to classify sounds using a recognized classifier.
      */
     @Generated
     @Selector("initWithClassifierIdentifier:error:")
@@ -227,9 +236,9 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     /**
      * Lists all labels that can be produced by this request.
      * 
-     * @return An array of strings containing all sound identifiers which can be produced by this request.
+     * - Returns: An array of strings containing all sound identifiers which can be produced by this request.
      * 
-     *         API-Since: 15.0
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -245,7 +254,7 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
      * conform to one of several different duration options. Larger window durations allow classification to execute
      * less frequently over larger contexts of audio, potentially improving classification performance. Smaller window
      * durations allow classification to execute more frequently over smaller contexts of audio, producing results with
-     * sharper time resolution. Depending on the use-case, a larger or smaller window may be preferrable. When
+     * sharper time resolution. Depending on the use-case, a larger or smaller window may be preferable. When
      * configuring the window duration, it is important to respect the capabilities of the classifier. A classifier's
      * supported window durations can be discovered using the `windowDurationConstraint` property. If an unsupported
      * window duration is selected, the window duration will be automatically rounded down to the nearest supported
@@ -266,7 +275,7 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
      * conform to one of several different duration options. Larger window durations allow classification to execute
      * less frequently over larger contexts of audio, potentially improving classification performance. Smaller window
      * durations allow classification to execute more frequently over smaller contexts of audio, producing results with
-     * sharper time resolution. Depending on the use-case, a larger or smaller window may be preferrable. When
+     * sharper time resolution. Depending on the use-case, a larger or smaller window may be preferable. When
      * configuring the window duration, it is important to respect the capabilities of the classifier. A classifier's
      * supported window durations can be discovered using the `windowDurationConstraint` property. If an unsupported
      * window duration is selected, the window duration will be automatically rounded down to the nearest supported

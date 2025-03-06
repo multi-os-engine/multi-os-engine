@@ -141,6 +141,8 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
 
     /**
      * comparisonType is MPMediaPredicateComparisonEqualTo
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -148,6 +150,9 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     public static native MPMediaPropertyPredicate predicateWithValueForProperty(
             @Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String property);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("predicateWithValue:forProperty:comparisonType:")
@@ -180,6 +185,9 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("comparisonType")
     @NInt
@@ -193,6 +201,9 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @Selector("initWithCoder:")
     public native MPMediaPropertyPredicate initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("property")
@@ -204,6 +215,9 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("value")

@@ -175,6 +175,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether the email address field should be user editable, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("emailAddressEditable")
@@ -182,6 +184,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether email address input field should be displayed, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("emailAddressFieldShouldBeDisplayed")
@@ -201,6 +205,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether the name field should be user editable, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("nameEditable")
@@ -208,6 +214,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether first name field is marked optional, defaults to NO
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("nameFieldFirstNameOptional")
@@ -215,6 +223,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether last name field is marked optional, defaults to NO
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("nameFieldLastNameOptional")
@@ -222,6 +232,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether name input field should be displayed, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("nameFieldShouldBeDisplayed")
@@ -229,6 +241,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether the phone number field should be user editable, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("phoneNumberEditable")
@@ -236,6 +250,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether phone number field should be displayed, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("phoneNumberFieldShouldBeDisplayed")
@@ -243,6 +259,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether the email address field should be user editable, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setEmailAddressEditable:")
@@ -250,6 +268,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether email address input field should be displayed, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setEmailAddressFieldShouldBeDisplayed:")
@@ -257,6 +277,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether the name field should be user editable, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setNameEditable:")
@@ -264,6 +286,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether first name field is marked optional, defaults to NO
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setNameFieldFirstNameOptional:")
@@ -271,6 +295,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether last name field is marked optional, defaults to NO
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setNameFieldLastNameOptional:")
@@ -278,6 +304,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether name input field should be displayed, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setNameFieldShouldBeDisplayed:")
@@ -285,6 +313,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether the phone number field should be user editable, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPhoneNumberEditable:")
@@ -292,6 +322,8 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     /**
      * indicates whether phone number field should be displayed, defaults to YES
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPhoneNumberFieldShouldBeDisplayed:")

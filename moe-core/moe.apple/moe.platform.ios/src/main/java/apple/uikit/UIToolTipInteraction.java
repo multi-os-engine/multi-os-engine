@@ -89,6 +89,8 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * The interaction's default tool tip string.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -97,6 +99,8 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * The interaction's delegate.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -119,11 +123,16 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * Creates a UIToolTipInteraction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("init")
     public native UIToolTipInteraction init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithDefaultToolTip:")
     public native UIToolTipInteraction initWithDefaultToolTip(@NotNull String defaultToolTip);
@@ -143,6 +152,8 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * Indicates whether the interaction is enabled. Defaults to YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isEnabled")
@@ -172,6 +183,8 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * The interaction's default tool tip string.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDefaultToolTip:")
@@ -179,6 +192,8 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * The interaction's delegate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -186,6 +201,8 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * The interaction's delegate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIToolTipInteractionDelegate value) {
@@ -201,6 +218,8 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     /**
      * Indicates whether the interaction is enabled. Defaults to YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setEnabled:")

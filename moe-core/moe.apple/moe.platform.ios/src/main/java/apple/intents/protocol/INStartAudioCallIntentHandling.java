@@ -62,7 +62,12 @@ public interface INStartAudioCallIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INStartAudioCallIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmStartAudioCall:completion:")
@@ -81,12 +86,23 @@ public interface INStartAudioCallIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INStartAudioCallIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Generated
     @Selector("handleStartAudioCall:completion:")
     void handleStartAudioCallCompletion(@NotNull INStartAudioCallIntent intent,
             @NotNull @ObjCBlock(name = "call_handleStartAudioCallCompletion") Block_handleStartAudioCallCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveContactsForStartAudioCall:withCompletion:")

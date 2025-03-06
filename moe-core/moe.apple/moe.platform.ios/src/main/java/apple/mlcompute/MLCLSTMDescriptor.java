@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCLSTMDescriptor specifies a LSTM descriptor
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -73,7 +72,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * 
      * LSTM only supports batchFirst=YES. This means the input and output will have shape [batch size, time steps,
      * feature]. Default is YES.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("batchFirst")
     public native boolean batchFirst();
@@ -121,18 +124,32 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * @param hiddenSize The number of features in the hidden state
      * @param layerCount Number of recurrent layers
      * @return A valid MLCLSTMDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithInputSize:hiddenSize:layerCount:")
     public static native MLCLSTMDescriptor descriptorWithInputSizeHiddenSizeLayerCount(@NUInt long inputSize,
             @NUInt long hiddenSize, @NUInt long layerCount);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @Generated
     @Selector("descriptorWithInputSize:hiddenSize:layerCount:usesBiases:batchFirst:isBidirectional:dropout:")
     public static native MLCLSTMDescriptor descriptorWithInputSizeHiddenSizeLayerCountUsesBiasesBatchFirstIsBidirectionalDropout(
             @NUInt long inputSize, @NUInt long hiddenSize, @NUInt long layerCount, boolean usesBiases,
             boolean batchFirst, boolean isBidirectional, float dropout);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @Generated
     @Selector("descriptorWithInputSize:hiddenSize:layerCount:usesBiases:batchFirst:isBidirectional:returnsSequences:dropout:")
     public static native MLCLSTMDescriptor descriptorWithInputSizeHiddenSizeLayerCountUsesBiasesBatchFirstIsBidirectionalReturnsSequencesDropout(
@@ -159,7 +176,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      *                         output data, last hidden state h_n, and last cell state c_n. Default:
      *                         MLCLSTMResultModeOutput.
      * @return A valid MLCLSTMDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithInputSize:hiddenSize:layerCount:usesBiases:batchFirst:isBidirectional:returnsSequences:dropout:resultMode:")
     public static native MLCLSTMDescriptor descriptorWithInputSizeHiddenSizeLayerCountUsesBiasesBatchFirstIsBidirectionalReturnsSequencesDropoutResultMode(
@@ -178,7 +199,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      *                        layer
      *                        with dropout probability equal to dropout.
      * @return A valid MLCLSTMDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithInputSize:hiddenSize:layerCount:usesBiases:isBidirectional:dropout:")
     public static native MLCLSTMDescriptor descriptorWithInputSizeHiddenSizeLayerCountUsesBiasesIsBidirectionalDropout(
@@ -190,7 +215,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * 
      * If non-zero, intrdouces a dropout layer on the outputs of each LSTM layer
      * except the last layer, with dropout probablity equal to dropout. Default is 0.0.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dropout")
     public native float dropout();
@@ -204,7 +233,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * [@property] hiddenSize
      * 
      * The number of feature channels in the hidden state
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("hiddenSize")
     @NUInt
@@ -218,7 +251,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * [@property] inputSize
      * 
      * The number of expected feature channels in the input
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("inputSize")
     @NUInt
@@ -241,7 +278,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * [@property] isBidirectional
      * 
      * If YES, becomes a bidirectional LSTM. Default is NO.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("isBidirectional")
     public native boolean isBidirectional();
@@ -259,7 +300,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * [@property] layerCount
      * 
      * The number of recurrent layers. Default is 1.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerCount")
     @NUInt
@@ -283,7 +328,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * 
      * MLCLSTMResultModeOutput returns output data. MLCLSTMResultModeOutputAndStates returns
      * output data, last hidden state h_n, and last cell state c_n. Default MLCLSTMResultModeOutput.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("resultMode")
     public native long resultMode();
@@ -292,7 +341,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * [@property] returnsSequences
      * 
      * if YES return output for all sequences else return output only for the last sequences. Default: YES
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("returnsSequences")
     public native boolean returnsSequences();
@@ -309,7 +362,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * [@property] usesBiases
      * 
      * If NO, the layer does not use bias terms. Default is YES.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("usesBiases")
     public native boolean usesBiases();

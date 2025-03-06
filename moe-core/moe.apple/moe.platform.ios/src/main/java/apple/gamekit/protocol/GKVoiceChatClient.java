@@ -44,12 +44,21 @@ import org.jetbrains.annotations.Nullable;
 public interface GKVoiceChatClient {
     /**
      * must be sent within some reasonble period of time and should accept at least 512 bytes.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("participantID")
     String participantID();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("voiceChatService:didNotStartWithParticipantID:error:")
@@ -58,6 +67,11 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("voiceChatService:didReceiveInvitationFromParticipantID:callID:")
@@ -66,6 +80,11 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("voiceChatService:didStartWithParticipantID:")
@@ -74,6 +93,11 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("voiceChatService:didStopWithParticipantID:error:")
@@ -85,7 +109,11 @@ public interface GKVoiceChatClient {
     /**
      * this channel will only be used to setup voice chat, and not to send audio data. The only requirement is that
      * messages are sent and received within a few (1-2) seconds time.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("voiceChatService:sendData:toParticipantID:")
     void voiceChatServiceSendDataToParticipantID(@NotNull GKVoiceChatService voiceChatService, @NotNull NSData data,
@@ -95,7 +123,11 @@ public interface GKVoiceChatClient {
      * should be sent immediately with no delay on a UDP peer-to-peer connection.
      * If this method is implemented, then the Voice Chat Service will not attempt to set up a peer-to-peer connection.
      * And will rely on this one. To transmit audio.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("voiceChatService:sendRealTimeData:toParticipantID:")

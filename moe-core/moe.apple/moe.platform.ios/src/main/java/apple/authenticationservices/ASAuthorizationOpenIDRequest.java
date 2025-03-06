@@ -135,6 +135,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * part of successful ASAuthorization response.
      * [@note] The nonce size may depend on the actual technology used and an error might be returned by the request
      * execution.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -144,6 +146,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     /**
      * Operation to be executed by the request. The ASAuthorizationOperationImplicit operation interpretation depends on
      * the credential provider implementation.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -153,6 +157,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     /**
      * The contact information to be requested from the user. Only scopes for which this app was authorized for will be
      * returned.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -172,6 +178,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * part of successful ASAuthorization response.
      * [@note] The nonce size may depend on the actual technology used and an error might be returned by the request
      * execution.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNonce:")
@@ -180,6 +188,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     /**
      * Operation to be executed by the request. The ASAuthorizationOperationImplicit operation interpretation depends on
      * the credential provider implementation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRequestedOperation:")
@@ -188,6 +198,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     /**
      * The contact information to be requested from the user. Only scopes for which this app was authorized for will be
      * returned.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRequestedScopes:")
@@ -198,6 +210,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * response.
      * [@note] The state size may depend on the actual technology used and an error might be returned by the request
      * execution.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setState:")
@@ -212,6 +226,8 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * response.
      * [@note] The state size may depend on the actual technology used and an error might be returned by the request
      * execution.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

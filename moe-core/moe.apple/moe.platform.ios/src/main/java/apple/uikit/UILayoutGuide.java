@@ -168,16 +168,25 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("bottomAnchor")
     public native NSLayoutYAxisAnchor bottomAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("centerXAnchor")
     public native NSLayoutXAxisAnchor centerXAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("centerYAnchor")
@@ -217,6 +226,9 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     @Selector("hasAmbiguousLayout")
     public native boolean hasAmbiguousLayout();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("heightAnchor")
@@ -225,6 +237,8 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     /**
      * For ease of debugging.
      * 'UI' prefix is reserved for UIKit-created layout guides.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -242,6 +256,8 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     /**
      * The frame of the UILayoutGuide in its owningView's coordinate system.
      * Valid by the time the owningView receives -layoutSubviews.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("layoutFrame")
@@ -250,12 +266,17 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
 
     /**
      * Constraint creation conveniences. See NSLayoutAnchor.h for details.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("leadingAnchor")
     public native NSLayoutXAxisAnchor leadingAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("leftAnchor")
@@ -266,12 +287,17 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      * Do not use this property directly to change the owningView of a layout guide. Instead, use
      * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to
      * change the owningView.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("owningView")
     public native UIView owningView();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("rightAnchor")
@@ -280,6 +306,8 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     /**
      * For ease of debugging.
      * 'UI' prefix is reserved for UIKit-created layout guides.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIdentifier:")
@@ -290,6 +318,8 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      * Do not use this property directly to change the owningView of a layout guide. Instead, use
      * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to
      * change the owningView.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOwningView:")
@@ -300,6 +330,8 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      * Do not use this property directly to change the owningView of a layout guide. Instead, use
      * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to
      * change the owningView.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     public void setOwningView(@Nullable UIView value) {
@@ -313,16 +345,25 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
         }
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("topAnchor")
     public native NSLayoutYAxisAnchor topAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("trailingAnchor")
     public native NSLayoutXAxisAnchor trailingAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("widthAnchor")

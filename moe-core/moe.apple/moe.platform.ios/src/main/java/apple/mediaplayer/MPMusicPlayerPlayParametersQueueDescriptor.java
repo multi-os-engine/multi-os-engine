@@ -97,6 +97,9 @@ public class MPMusicPlayerPlayParametersQueueDescriptor extends MPMusicPlayerQue
     @Selector("init")
     public native MPMusicPlayerPlayParametersQueueDescriptor init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithPlayParametersQueue:")
     public native MPMusicPlayerPlayParametersQueueDescriptor initWithPlayParametersQueue(
@@ -129,6 +132,9 @@ public class MPMusicPlayerPlayParametersQueueDescriptor extends MPMusicPlayerQue
     @Selector("new")
     public static native MPMusicPlayerPlayParametersQueueDescriptor new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("playParametersQueue")
@@ -142,19 +148,31 @@ public class MPMusicPlayerPlayParametersQueueDescriptor extends MPMusicPlayerQue
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setEndTime:forItemWithPlayParameters:")
     public native void setEndTimeForItemWithPlayParameters(double endTime,
             @NotNull MPMusicPlayerPlayParameters playParameters);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPlayParametersQueue:")
     public native void setPlayParametersQueue(@NotNull NSArray<? extends MPMusicPlayerPlayParameters> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setStartItemPlayParameters:")
     public native void setStartItemPlayParameters(@Nullable MPMusicPlayerPlayParameters value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setStartTime:forItemWithPlayParameters:")
     public native void setStartTimeForItemWithPlayParameters(double startTime,
@@ -164,6 +182,9 @@ public class MPMusicPlayerPlayParametersQueueDescriptor extends MPMusicPlayerQue
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("startItemPlayParameters")

@@ -19,18 +19,27 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 public final class UIPrintInfoOutputType {
     /**
      * B&W or color, normal quality output for mixed text, graphics, and images
+     * 
+     * API-Since: 4.2
      */
     @Generated @NInt public static final long General = 0x0000000000000000L;
     /**
      * B&W or color, best quality output for images
+     * 
+     * API-Since: 4.2
      */
     @Generated @NInt public static final long Photo = 0x0000000000000001L;
     /**
      * B&W content only
+     * 
+     * API-Since: 4.2
      */
     @Generated @NInt public static final long Grayscale = 0x0000000000000002L;
     /**

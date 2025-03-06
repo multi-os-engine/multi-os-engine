@@ -24,16 +24,26 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
- * An optional information item present in the QR code the setup payload was
- * initialized from.
+ * An optional information item present in the setup payload.
+ * 
+ * Note that while the Matter specification allows elements containing
+ * arbitrary TLV data types, this implementation currently only supports
+ * String and Int32 values.
+ * 
+ * Objects of this type are immutable; calling any deprecated property
+ * setters has no effect.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTROptionalQRCodeInfo extends NSObject {
+public class MTROptionalQRCodeInfo extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -106,6 +116,12 @@ public class MTROptionalQRCodeInfo extends NSObject {
     @NotNull
     public native NSNumber infoType();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: Please use -initWithTag:...value:
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native MTROptionalQRCodeInfo init();
@@ -124,8 +140,10 @@ public class MTROptionalQRCodeInfo extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * Exactly one of integerValue and stringValue will be non-nil, depending on the
-     * the value of "type".
+     * The value held in this extension element,
+     * if `type` is an integer type, or nil otherwise.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("integerValue")
@@ -165,35 +183,55 @@ public class MTROptionalQRCodeInfo extends NSObject {
     public native void setInfoType(@NotNull NSNumber value);
 
     /**
-     * Exactly one of integerValue and stringValue will be non-nil, depending on the
-     * the value of "type".
+     * API-Since: 16.1
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: MTROptionalQRCodeInfo is immutable
      */
+    @Deprecated
     @Generated
     @Selector("setIntegerValue:")
-    public native void setIntegerValue(@Nullable NSNumber value);
+    public native void setIntegerValue(@NotNull NSNumber integerValue);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: MTROptionalQRCodeInfo is immutable
+     */
+    @Deprecated
     @Generated
     @Selector("setStringValue:")
-    public native void setStringValue(@Nullable String value);
+    public native void setStringValue(@NotNull String stringValue);
 
     /**
-     * The numeric value of the TLV tag for this information item.
+     * API-Since: 16.1
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: MTROptionalQRCodeInfo is immutable
      */
+    @Deprecated
     @Generated
     @Selector("setTag:")
-    public native void setTag(@NotNull NSNumber value);
+    public native void setTag(@NotNull NSNumber tag);
 
     /**
-     * API-Since: 16.4
+     * API-Since: 16.1
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: MTROptionalQRCodeInfo is immutable
      */
+    @Deprecated
     @Generated
     @Selector("setType:")
-    public native void setType(@NUInt long value);
+    public native void setType(@NUInt long type);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The value held in this extension element,
+     * if `type` is `MTROptionalQRCodeInfoTypeString`, or nil otherwise.
+     * 
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("stringValue")
     @Nullable
@@ -204,7 +242,11 @@ public class MTROptionalQRCodeInfo extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * The numeric value of the TLV tag for this information item.
+     * The vendor-specific TLV tag number for this information item.
+     * 
+     * Vendor-specific elements have tags in the range 0x80 - 0xFF.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("tag")
@@ -228,4 +270,31 @@ public class MTROptionalQRCodeInfo extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    /**
+     * Initializes the object with a tag and int32 value.
+     * The tag must be in the range 0x80 - 0xFF.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("initWithTag:int32Value:")
+    public native MTROptionalQRCodeInfo initWithTagInt32Value(@NotNull NSNumber tag, int value);
+
+    /**
+     * Initializes the object with a tag and string value.
+     * The tag must be in the range 0x80 - 0xFF.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("initWithTag:stringValue:")
+    public native MTROptionalQRCodeInfo initWithTagStringValue(@NotNull NSNumber tag, @NotNull String value);
 }

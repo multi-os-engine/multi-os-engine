@@ -139,6 +139,8 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
 
     /**
      * Properties for a given pass, or nil if the pass doesn’t support the set of properties being requested
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("passPropertiesForPass:")
@@ -178,26 +180,40 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
     @Selector("isBlacklisted")
     public native boolean isBlacklisted();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("isGreenCarTicketUsed")
     public native boolean isGreenCarTicketUsed();
 
     /**
      * Note: isInShinkansenStation is not a subset of isInStation.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("isInShinkansenStation")
     public native boolean isInShinkansenStation();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("isInStation")
     public native boolean isInStation();
 
+    /**
+     * API-Since: 10.1
+     */
     @NotNull
     @Generated
     @Selector("transitBalance")
     public native NSDecimalNumber transitBalance();
 
+    /**
+     * API-Since: 10.1
+     */
     @NotNull
     @Generated
     @Selector("transitBalanceCurrencyCode")

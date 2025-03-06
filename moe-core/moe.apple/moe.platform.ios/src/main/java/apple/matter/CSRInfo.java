@@ -84,6 +84,12 @@ public class CSRInfo extends NSObject {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("csr")
     @NotNull
@@ -97,11 +103,23 @@ public class CSRInfo extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("elements")
     @NotNull
     public native NSData elements();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("elementsSignature")
     @NotNull
@@ -116,6 +134,12 @@ public class CSRInfo extends NSObject {
     @Selector("init")
     public native CSRInfo init();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("initWithNonce:elements:elementsSignature:csr:")
     public native CSRInfo initWithNonceElementsElementsSignatureCsr(@NotNull NSData nonce, @NotNull NSData elements,
@@ -148,6 +172,12 @@ public class CSRInfo extends NSObject {
     @Selector("new")
     public static native CSRInfo new_objc();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("nonce")
     @NotNull
@@ -161,18 +191,42 @@ public class CSRInfo extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setCsr:")
     public native void setCsr(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setElements:")
     public native void setElements(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setElementsSignature:")
     public native void setElementsSignature(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCSRInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setNonce:")
     public native void setNonce(@NotNull NSData value);

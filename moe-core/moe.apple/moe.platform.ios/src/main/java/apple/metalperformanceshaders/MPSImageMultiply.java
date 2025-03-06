@@ -120,6 +120,8 @@ public class MPSImageMultiply extends MPSImageArithmetic {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSImageMultiply object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:")

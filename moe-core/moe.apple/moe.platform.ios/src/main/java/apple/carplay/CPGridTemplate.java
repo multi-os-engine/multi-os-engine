@@ -98,6 +98,8 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Array of grid buttons displayed on the template
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -122,6 +124,8 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
      * 
      * [@note] A grid template will only display the first @c CPGridTemplateMaximumItems buttons in the provided @c
      * gridButtons array.
+     * 
+     * API-Since: 12.0
      * 
      * @param title       Title shown in template's navigation bar.
      * @param gridButtons A list of grid buttons on the template. The maximum button count is @c
@@ -204,6 +208,8 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Title shown in template's navigation bar
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

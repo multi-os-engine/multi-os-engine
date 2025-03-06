@@ -96,6 +96,8 @@ public class MXAppRunTimeMetric extends MXMetric {
      * Cumulative time the application spent running in the background to play audio
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -108,6 +110,8 @@ public class MXAppRunTimeMetric extends MXMetric {
      * Cumulative time the application spent running in the background to acquire or process location.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -122,6 +126,8 @@ public class MXAppRunTimeMetric extends MXMetric {
      * Time spent off screen and in the background, invisible to the user.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -136,6 +142,8 @@ public class MXAppRunTimeMetric extends MXMetric {
      * Time spent on screen and visible to the user.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

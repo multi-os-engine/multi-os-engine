@@ -69,6 +69,8 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
 
     /**
      * The active input modes.
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -201,6 +203,8 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
 
     /**
      * The primary language, if any, of the input mode. A BCP 47 language identifier such as en-US
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated

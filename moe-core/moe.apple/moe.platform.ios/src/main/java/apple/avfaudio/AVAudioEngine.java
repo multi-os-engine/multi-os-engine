@@ -106,6 +106,8 @@ public class AVAudioEngine extends NSObject {
      *             // when destroying engine (without ARC)
      *             [_player release];
      *             ```
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @Selector("attachNode:")
@@ -156,6 +158,8 @@ public class AVAudioEngine extends NSObject {
      * This calls connect:to:fromBus:toBus:format: using bus 0 on the source node,
      * and bus 0 on the destination node, except in the case of a destination which is a mixer,
      * in which case the destination is the mixer's nextAvailableInputBus.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("connect:to:format:")
@@ -186,6 +190,8 @@ public class AVAudioEngine extends NSObject {
      * 
      *               Note that any pre-existing connection(s) involving the source's output bus or the
      *               destination's input bus will be broken.
+     * 
+     *               API-Since: 8.0
      */
     @Generated
     @Selector("connect:to:fromBus:toBus:format:")
@@ -355,6 +361,8 @@ public class AVAudioEngine extends NSObject {
      * Detach a node previously attached to the engine.
      * 
      * If necessary, the engine will safely disconnect the node before detaching it.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("detachNode:")
@@ -457,6 +465,8 @@ public class AVAudioEngine extends NSObject {
      *             The node whose inputs are to be disconnected
      * 
      *             Connections are broken on each of the node's input busses.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @Selector("disconnectNodeInput:")
@@ -471,6 +481,8 @@ public class AVAudioEngine extends NSObject {
      *             The node whose input is to be disconnected
      * @param bus
      *             The destination's input bus to disconnect
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @Selector("disconnectNodeInput:bus:")
@@ -485,6 +497,8 @@ public class AVAudioEngine extends NSObject {
      *             The node whose outputs are to be disconnected
      * 
      *             Connections are broken on each of the node's output busses.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @Selector("disconnectNodeOutput:")
@@ -499,6 +513,8 @@ public class AVAudioEngine extends NSObject {
      *             The node whose output is to be disconnected
      * @param bus
      *             The source's output bus to disconnect
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @Selector("disconnectNodeOutput:bus:")
@@ -569,6 +585,8 @@ public class AVAudioEngine extends NSObject {
      * On creation, the engine is by default connected to an audio device and automatically renders
      * in realtime. It can be configured to operate in manual rendering mode through
      * `enableManualRenderingMode:format:maximumFrameCount:error:`.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("init")
@@ -686,6 +704,8 @@ public class AVAudioEngine extends NSObject {
      * [@property] running
      * 
      * The engine's running state.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isRunning")
@@ -716,6 +736,8 @@ public class AVAudioEngine extends NSObject {
      * 
      * By default, the mixer's output format (sample rate and channel count) will track the format
      * of the output node. You may however make the connection explicitly with a different format.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -821,6 +843,8 @@ public class AVAudioEngine extends NSObject {
      * [@property] musicSequence
      * 
      * The MusicSequence previously attached to the engine (if any).
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -876,6 +900,8 @@ public class AVAudioEngine extends NSObject {
      * In manual rendering mode, the output format of the output node will determine the
      * render format of the engine. It can be changed through
      * `enableManualRenderingMode:format:maximumFrameCount:error:`.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -893,6 +919,8 @@ public class AVAudioEngine extends NSObject {
      * 
      * Pausing the engine does not deallocate the resources allocated by prepare. Resume the
      * engine by invoking start again.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pause")
@@ -913,6 +941,8 @@ public class AVAudioEngine extends NSObject {
      * See
      * https://developer.apple.com/library/archive/documentation/Audio/Conceptual/AudioSessionProgrammingGuide/Introduction/Introduction.html
      * for details.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("prepare")
@@ -970,6 +1000,8 @@ public class AVAudioEngine extends NSObject {
      * reverb and delay tails.
      * 
      * In manual rendering mode, the render timeline is reset to a sample time of zero.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("reset")
@@ -1013,6 +1045,8 @@ public class AVAudioEngine extends NSObject {
      * [@property] musicSequence
      * 
      * The MusicSequence previously attached to the engine (if any).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMusicSequence:")
@@ -1046,6 +1080,8 @@ public class AVAudioEngine extends NSObject {
      *         On AVAudioSession supported platforms, this method may cause the audio session to be implicitly
      *         activated. It is recommended to configure and activate the app's audio session before starting the
      *         engine. For more information, see the `prepare` method above.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("startAndReturnError:")
@@ -1059,6 +1095,8 @@ public class AVAudioEngine extends NSObject {
      * (as applicable) when not in use, to minimize power consumption.
      * 
      * Stopping the engine releases the resources allocated by prepare.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stop")

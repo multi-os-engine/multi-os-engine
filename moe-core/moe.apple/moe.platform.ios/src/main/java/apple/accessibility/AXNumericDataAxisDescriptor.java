@@ -107,6 +107,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     /**
      * The positions of any gridlines along this axis.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -122,6 +124,9 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Selector("init")
     public native AXNumericDataAxisDescriptor init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAttributedTitle:lowerBound:upperBound:gridlinePositions:valueDescriptionProvider:")
     public native AXNumericDataAxisDescriptor initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider(
@@ -137,6 +142,9 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
         String call_initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider(double arg0);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithTitle:lowerBound:upperBound:gridlinePositions:valueDescriptionProvider:")
     public native AXNumericDataAxisDescriptor initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider(
@@ -176,6 +184,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     /**
      * The minimum displayable value for the axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("lowerBound")
@@ -197,6 +207,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     /**
      * The scale to use for this axis. This should match the visual representation in the chart.
      * If not set explicitly, this will default to `linear`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("scaleType")
@@ -209,6 +221,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     /**
      * The positions of any gridlines along this axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGridlinePositions:")
@@ -216,6 +230,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     /**
      * The minimum displayable value for the axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLowerBound:")
@@ -224,6 +240,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     /**
      * The scale to use for this axis. This should match the visual representation in the chart.
      * If not set explicitly, this will default to `linear`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setScaleType:")
@@ -235,6 +253,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     /**
      * The maximum displayable value for the axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUpperBound:")
@@ -243,6 +263,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     /**
      * Provides a value description to be spoken for a particular data value on this axis.
      * Use this to format data values to string representations that include units, dates, times, etc.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setValueDescriptionProvider:")
@@ -272,6 +294,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     /**
      * The maximum displayable value for the axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("upperBound")
@@ -280,6 +304,8 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     /**
      * Provides a value description to be spoken for a particular data value on this axis.
      * Use this to format data values to string representations that include units, dates, times, etc.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

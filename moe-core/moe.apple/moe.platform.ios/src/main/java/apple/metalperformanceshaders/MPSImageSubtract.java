@@ -120,6 +120,8 @@ public class MPSImageSubtract extends MPSImageArithmetic {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSImageSubtract object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:")

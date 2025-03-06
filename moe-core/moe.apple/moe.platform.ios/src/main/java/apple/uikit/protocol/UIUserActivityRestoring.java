@@ -17,6 +17,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIUserActivityRestoring")
 public interface UIUserActivityRestoring {
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("restoreUserActivityState:")
     void restoreUserActivityState(@NotNull NSUserActivity userActivity);

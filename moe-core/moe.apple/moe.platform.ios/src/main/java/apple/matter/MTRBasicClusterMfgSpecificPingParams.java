@@ -152,7 +152,12 @@ public class MTRBasicClusterMfgSpecificPingParams extends NSObject implements NS
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("serverSideProcessingTimeout")
     @Nullable
@@ -165,7 +170,12 @@ public class MTRBasicClusterMfgSpecificPingParams extends NSObject implements NS
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("setServerSideProcessingTimeout:")
     public native void setServerSideProcessingTimeout(@Nullable NSNumber value);
@@ -182,7 +192,13 @@ public class MTRBasicClusterMfgSpecificPingParams extends NSObject implements NS
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("setTimedInvokeTimeoutMs:")
     public native void setTimedInvokeTimeoutMs(@Nullable NSNumber value);
@@ -207,7 +223,13 @@ public class MTRBasicClusterMfgSpecificPingParams extends NSObject implements NS
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("timedInvokeTimeoutMs")
     @Nullable

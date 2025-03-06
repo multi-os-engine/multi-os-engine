@@ -85,6 +85,8 @@ public class UITextItem extends NSObject {
 
     /**
      * The content type of the text item.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("contentType")
@@ -132,6 +134,8 @@ public class UITextItem extends NSObject {
 
     /**
      * The link represented by the text item. This value is `nil` if the `contentType != UITextItemContentTypeLink`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("link")
@@ -145,6 +149,8 @@ public class UITextItem extends NSObject {
 
     /**
      * The range of the text item.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("range")
@@ -170,6 +176,8 @@ public class UITextItem extends NSObject {
     /**
      * The custom tag identifier represented by the text item. This value is `nil` if the `contentType !=
      * UITextItemContentTypeTag`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("tagIdentifier")
@@ -179,6 +187,8 @@ public class UITextItem extends NSObject {
     /**
      * The text attachment represented by the text item. This value is `nil` if the `contentType !=
      * UITextItemContentTypeTextAttachment`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("textAttachment")

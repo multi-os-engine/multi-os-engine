@@ -43,6 +43,8 @@ public interface INSnoozeTasksIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSnoozeTasksIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -69,6 +71,8 @@ public interface INSnoozeTasksIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INSnoozeTasksIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("handleSnoozeTasks:completion:")
@@ -82,6 +86,9 @@ public interface INSnoozeTasksIntentHandling {
         void call_handleSnoozeTasksCompletion(@NotNull INSnoozeTasksIntentResponse response);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveNextTriggerTimeForSnoozeTasks:withCompletion:")
@@ -108,6 +115,8 @@ public interface INSnoozeTasksIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional

@@ -44,6 +44,8 @@ public interface INGetCarPowerLevelStatusIntentHandling {
      *                   handling.
      * 
      * @see INGetCarPowerLevelStatusIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional
@@ -70,6 +72,8 @@ public interface INGetCarPowerLevelStatusIntentHandling {
      *                   details of the result of having executed the intent
      * 
      * @see INGetCarPowerLevelStatusIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @Selector("handleGetCarPowerLevelStatus:completion:")
@@ -93,6 +97,8 @@ public interface INGetCarPowerLevelStatusIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional

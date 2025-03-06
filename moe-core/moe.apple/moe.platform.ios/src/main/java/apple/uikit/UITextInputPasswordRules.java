@@ -144,11 +144,17 @@ public class UITextInputPasswordRules extends NSObject implements NSSecureCoding
     @Selector("new")
     public static native UITextInputPasswordRules new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("passwordRulesDescriptor")
     public native String passwordRulesDescriptor();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("passwordRulesWithDescriptor:")
     public static native UITextInputPasswordRules passwordRulesWithDescriptor(@NotNull String passwordRulesDescriptor);

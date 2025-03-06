@@ -113,6 +113,8 @@ public class PHASEAmbientMixerDefinition extends PHASEMixerDefinition {
      * [@property] inputChannelLayout
      * 
      * A readonly value of the input channel layout this mixer was initialized with.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

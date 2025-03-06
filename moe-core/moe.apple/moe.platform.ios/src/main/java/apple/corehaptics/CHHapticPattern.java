@@ -104,6 +104,8 @@ public class CHHapticPattern extends NSObject {
      * [@property] duration
      * Pattern duration is calculated as the start time of the pattern's last event or parameter, plus that event's
      * duration if present.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("duration")
@@ -116,6 +118,8 @@ public class CHHapticPattern extends NSObject {
      * 
      * Patterns containing custom audio resource IDs cannot be exported and will return nil
      * with the error code set to CHHapticErrorCodeOperationNotPermitted.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -139,6 +143,8 @@ public class CHHapticPattern extends NSObject {
      * 
      * @param patternDict
      *                    NSDictionary containing a pattern property list.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @Selector("initWithDictionary:error:")
@@ -154,6 +160,8 @@ public class CHHapticPattern extends NSObject {
      *                        An NSArray of CHHapticEvents. Can be empty.
      * @param parameterCurves
      *                        An NSArray of CHHapticParameterCurves. Can be empty.
+     * 
+     *                        API-Since: 13.0
      */
     @Generated
     @Selector("initWithEvents:parameterCurves:error:")
@@ -170,6 +178,8 @@ public class CHHapticPattern extends NSObject {
      *                   An NSArray of CHHapticEvents. Can be empty.
      * @param parameters
      *                   An NSArray of CHHapticDynamicParameters. Can be empty.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @Selector("initWithEvents:parameters:error:")

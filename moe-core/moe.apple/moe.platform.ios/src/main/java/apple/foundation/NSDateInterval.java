@@ -180,12 +180,17 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
      * 
      * If both the start dates and the durations are equal, then the intervals are considered equal and NSOrderedSame is
      * returned as the result.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("compare:")
     @NInt
     public native long compare(@NotNull NSDateInterval dateInterval);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("containsDate:")
     public native boolean containsDate(@NotNull NSDate date);
@@ -197,6 +202,9 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -205,6 +213,9 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("endDate")
@@ -213,6 +224,8 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
     /**
      * This method initializes an NSDateInterval object with start and end dates set to the current date and the
      * duration set to 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("init")
@@ -224,6 +237,8 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * This method will throw an exception if the duration is less than 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithStartDate:duration:")
@@ -231,6 +246,8 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * This method will throw an exception if the end date comes before the start date.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithStartDate:endDate:")
@@ -239,16 +256,24 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
     /**
      * This method returns an NSDateInterval object that represents the interval where the given date interval and the
      * current instance intersect. In the event that there is no intersection, the method returns nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("intersectionWithDateInterval:")
     public native NSDateInterval intersectionWithDateInterval(@NotNull NSDateInterval dateInterval);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("intersectsDateInterval:")
     public native boolean intersectsDateInterval(@NotNull NSDateInterval dateInterval);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isEqualToDateInterval:")
     public native boolean isEqualToDateInterval(@NotNull NSDateInterval dateInterval);
@@ -257,6 +282,8 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
      * NSDateInterval represents a closed date interval in the form of [startDate, endDate]. It is possible for the
      * start and end dates to be the same with a duration of 0. NSDateInterval does not support reverse intervals i.e.
      * intervals where the duration is less than 0 and the end date occurs earlier in time than the start date.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

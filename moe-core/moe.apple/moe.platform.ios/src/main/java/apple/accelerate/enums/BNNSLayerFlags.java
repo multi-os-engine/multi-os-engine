@@ -11,9 +11,9 @@ public final class BNNSLayerFlags {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLayerFlagsLSTMBidirectional = 0x00000001;
+    @Generated public static final int Bidirectional = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLayerFlagsLSTMDefaultActivations = 0x00000002;
+    @Generated public static final int DefaultActivations = 0x00000002;
 }

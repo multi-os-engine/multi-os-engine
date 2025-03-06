@@ -62,6 +62,8 @@ public class PKPayLaterView extends UIView {
     /**
      * The kind of Pay Later Merchandising Modal informational, such as a learnMore modal. Can be learnMore, or
      * calculator. Default is learnMore
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("action")
@@ -86,6 +88,8 @@ public class PKPayLaterView extends UIView {
 
     /**
      * The users bag price or item pricing
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("amount")
@@ -260,6 +264,8 @@ public class PKPayLaterView extends UIView {
 
     /**
      * The ISO 4217 code for the country or region of the merchant’s principle place of business.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("currencyCode")
@@ -272,6 +278,8 @@ public class PKPayLaterView extends UIView {
 
     /**
      * Delegate used to receive callbacks about size changes
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("delegate")
@@ -286,6 +294,8 @@ public class PKPayLaterView extends UIView {
     /**
      * The kind of Pay Later Merchandising widget look, such as a standalone product item view. Can be badge, plain,
      * price or checkout.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("displayStyle")
@@ -310,6 +320,8 @@ public class PKPayLaterView extends UIView {
      * - Parameters:
      * - amount: The users bag price or item pricing
      * - currencyCode: The ISO 4217 code for the country or region of the merchant’s principle place of business.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithAmount:currencyCode:")
@@ -389,6 +401,8 @@ public class PKPayLaterView extends UIView {
     /**
      * The kind of Pay Later Merchandising Modal informational, such as a learnMore modal. Can be learnMore, or
      * calculator. Default is learnMore
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAction:")
@@ -396,6 +410,8 @@ public class PKPayLaterView extends UIView {
 
     /**
      * The users bag price or item pricing
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAmount:")
@@ -463,6 +479,8 @@ public class PKPayLaterView extends UIView {
 
     /**
      * The ISO 4217 code for the country or region of the merchant’s principle place of business.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCurrencyCode:")
@@ -470,6 +488,8 @@ public class PKPayLaterView extends UIView {
 
     /**
      * Delegate used to receive callbacks about size changes
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -477,6 +497,8 @@ public class PKPayLaterView extends UIView {
 
     /**
      * Delegate used to receive callbacks about size changes
+     * 
+     * API-Since: 17.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @NotNull PKPayLaterViewDelegate value) {
@@ -493,6 +515,8 @@ public class PKPayLaterView extends UIView {
     /**
      * The kind of Pay Later Merchandising widget look, such as a standalone product item view. Can be badge, plain,
      * price or checkout.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDisplayStyle:")

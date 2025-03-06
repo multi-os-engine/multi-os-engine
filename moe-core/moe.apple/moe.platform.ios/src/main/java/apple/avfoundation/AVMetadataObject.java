@@ -178,6 +178,8 @@ public class AVMetadataObject extends NSObject {
      * picture in which it resides. The rectangle's origin is top left. If the metadata originates from video, bounds
      * may be expressed as scalar values from 0. - 1. If the original video has been scaled down, the bounds of the
      * metadata object still are meaningful. This property may return CGRectZero if the metadata has no bounds.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("bounds")
@@ -192,6 +194,8 @@ public class AVMetadataObject extends NSObject {
      * The value of this property is a CMTime representing the duration of the metadata object. If this metadata object
      * originates from a CMSampleBuffer, its duration matches the sample buffer's duration. This property may return
      * kCMTimeInvalid.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("duration")
@@ -210,6 +214,8 @@ public class AVMetadataObject extends NSObject {
      * The value of this property is a CMTime associated with the metadata object. For capture, it is the time at which
      * this object was captured. If this metadata object originates from a CMSampleBuffer, its time matches the sample
      * buffer's presentation time. This property may return kCMTimeInvalid.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("time")
@@ -223,6 +229,8 @@ public class AVMetadataObject extends NSObject {
      * 
      * The value of this property is an AVMetadataObjectType representing the type of the metadata object. Clients
      * inspecting a collection of metadata objects can use this property to filter objects with a matching type.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated

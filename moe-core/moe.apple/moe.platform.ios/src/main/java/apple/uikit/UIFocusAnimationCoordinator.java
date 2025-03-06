@@ -170,6 +170,8 @@ public class UIFocusAnimationCoordinator extends NSObject {
      * not inherited.)
      * 
      * It is perfectly legitimate to only specify a completion block.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addCoordinatedAnimations:completion:")

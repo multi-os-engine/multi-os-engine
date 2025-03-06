@@ -417,6 +417,9 @@ public class UIRefreshControl extends UIControl {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("attributedTitle")
@@ -445,6 +448,9 @@ public class UIRefreshControl extends UIControl {
      * This initializes a UIRefreshControl with a default height and width.
      * Once assigned to a UITableViewController, the frame of the control is managed automatically.
      * When a user has pulled-to-refresh, the UIRefreshControl fires its UIControlEventValueChanged event.
+     * 
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("init")
@@ -458,18 +464,30 @@ public class UIRefreshControl extends UIControl {
     @Selector("initWithFrame:")
     public native UIRefreshControl initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("isRefreshing")
     public native boolean isRefreshing();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setAttributedTitle:")
     public native void setAttributedTitle(@Nullable NSAttributedString value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();

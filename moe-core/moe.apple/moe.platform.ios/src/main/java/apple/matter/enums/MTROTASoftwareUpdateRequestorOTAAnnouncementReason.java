@@ -10,10 +10,6 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Deprecated
 public final class MTROTASoftwareUpdateRequestorOTAAnnouncementReason {
-    @Generated
-    private MTROTASoftwareUpdateRequestorOTAAnnouncementReason() {
-    }
-
     /**
      * API-Since: 16.4
      * Deprecated-Since: 17.2
@@ -32,4 +28,8 @@ public final class MTROTASoftwareUpdateRequestorOTAAnnouncementReason {
      * Deprecated-Message: Please use MTROTASoftwareUpdateRequestorAnnouncementReasonUrgentUpdateAvailable
      */
     @Generated @Deprecated public static final byte UrgentUpdateAvailable = 2;
+
+    @Generated
+    private MTROTASoftwareUpdateRequestorOTAAnnouncementReason() {
+    }
 }

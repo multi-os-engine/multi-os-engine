@@ -135,6 +135,8 @@ public class QLThumbnailProvider extends NSObject {
      *                NSError if you cannot.
      *                If an error is passed or reply is nil, no thumbnail will be drawn.
      *                The handler can be called asynchronously after the method has returned.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @Selector("provideThumbnailForFileRequest:completionHandler:")

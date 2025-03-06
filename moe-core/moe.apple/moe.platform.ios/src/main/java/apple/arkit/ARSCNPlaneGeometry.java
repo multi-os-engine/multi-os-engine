@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * A SceneKit geometry representing a plane.
@@ -156,6 +157,8 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
      * 
      * @param device A Metal device.
      * @return A new plane geometry.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("planeGeometryWithDevice:")
@@ -192,6 +195,8 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
      * Updates the geometry with the vertices of a plane geometry.
      * 
      * @param planeGeometry A plane geometry.
+     * 
+     *                      API-Since: 11.3
      */
     @Generated
     @Selector("updateFromPlaneGeometry:")
@@ -206,4 +211,11 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("geometryWithSources:elements:sourceChannels:")
+    public static native ARSCNPlaneGeometry geometryWithSourcesElementsSourceChannels(
+            @NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements,
+            @Nullable NSArray<? extends NSNumber> sourceChannels);
 }

@@ -59,6 +59,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] allTagNames
      * 
      * represent the tags from the current user and the system tags defined by AudioComponent.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -79,6 +81,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] audioComponent
      * 
      * the audioComponent that can be used in AudioComponent APIs.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -89,6 +93,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] audioComponentDescription
      * 
      * description of the audio component that can be used in AudioComponent APIs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("audioComponentDescription")
@@ -132,6 +138,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] hasMIDIInput
      * 
      * YES if AudioComponent has midi input, otherwise NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hasMIDIInput")
@@ -141,6 +149,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] hasMIDIOutput
      * 
      * YES if AudioComponent has midi output, otherwise NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hasMIDIOutput")
@@ -173,6 +183,8 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * On OSX, YES if the AudioComponent can be loaded into a sandboxed process otherwise NO.
      * On iOS, this is always YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isSandboxSafe")
@@ -191,6 +203,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] localizedTypeName
      * 
      * localized string of typeName for display
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -201,6 +215,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] manufacturerName
      * 
      * the manufacturer name, extracted from the manufacturer key defined in Info.plist dictionary
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -211,6 +227,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] name
      * 
      * the name of an audio component
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -242,6 +260,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] typeName
      * 
      * standard audio component types returned as strings
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -252,6 +272,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] version
      * 
      * version number comprised of a hexadecimal number with major, minor, dot-release format: 0xMMMMmmDD
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("version")
@@ -262,6 +284,8 @@ public class AVAudioUnitComponent extends NSObject {
      * [@property] versionString
      * 
      * version number as string
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

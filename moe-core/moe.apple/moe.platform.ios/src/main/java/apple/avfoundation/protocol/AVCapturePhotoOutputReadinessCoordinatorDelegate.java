@@ -27,6 +27,8 @@ public interface AVCapturePhotoOutputReadinessCoordinatorDelegate {
      * This callback is always delivered on the main queue and is suitable for updating shutter button availability and
      * appearance.
      * 
+     * API-Since: 17.0
+     * 
      * @param coordinator
      *                         The calling instance of AVCapturePhotoOutputReadinessCoordinator.
      * @param captureReadiness

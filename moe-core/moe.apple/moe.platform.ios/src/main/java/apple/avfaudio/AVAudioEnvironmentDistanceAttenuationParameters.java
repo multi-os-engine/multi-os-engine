@@ -101,6 +101,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * Type of distance attenuation model
      * 
      * Default: AVAudioEnvironmentDistanceAttenuationModelInverse
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("distanceAttenuationModel")
@@ -145,6 +147,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * 
      * Default: 100000.0 meters
      * Models: AVAudioEnvironmentDistanceAttenuationModelLinear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("maximumDistance")
@@ -163,6 +167,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * Default: 1.0 meter
      * Models: AVAudioEnvironmentDistanceAttenuationModelInverse,
      * AVAudioEnvironmentDistanceAttenuationModelLinear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("referenceDistance")
@@ -187,6 +193,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * Models: AVAudioEnvironmentDistanceAttenuationModelExponential
      * AVAudioEnvironmentDistanceAttenuationModelInverse
      * AVAudioEnvironmentDistanceAttenuationModelLinear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("rolloffFactor")
@@ -198,6 +206,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * Type of distance attenuation model
      * 
      * Default: AVAudioEnvironmentDistanceAttenuationModelInverse
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDistanceAttenuationModel:")
@@ -210,6 +220,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * 
      * Default: 100000.0 meters
      * Models: AVAudioEnvironmentDistanceAttenuationModelLinear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMaximumDistance:")
@@ -223,6 +235,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * Default: 1.0 meter
      * Models: AVAudioEnvironmentDistanceAttenuationModelInverse,
      * AVAudioEnvironmentDistanceAttenuationModelLinear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setReferenceDistance:")
@@ -239,6 +253,8 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
      * Models: AVAudioEnvironmentDistanceAttenuationModelExponential
      * AVAudioEnvironmentDistanceAttenuationModelInverse
      * AVAudioEnvironmentDistanceAttenuationModelLinear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRolloffFactor:")

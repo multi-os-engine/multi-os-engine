@@ -115,6 +115,9 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Selector("init")
     public native INStartCallCallRecordToCallBackResolutionResult init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithCallRecordResolutionResult:")
     public native INStartCallCallRecordToCallBackResolutionResult initWithCallRecordResolutionResult(
@@ -184,6 +187,9 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Selector("unsupported")
     public static native INStartCallCallRecordToCallBackResolutionResult unsupported();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

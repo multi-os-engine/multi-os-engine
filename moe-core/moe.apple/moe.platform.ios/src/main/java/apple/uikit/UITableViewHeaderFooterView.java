@@ -422,12 +422,17 @@ public class UITableViewHeaderFooterView extends UIView {
 
     /**
      * This property is always nil when a non-nil `backgroundConfiguration` is set.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("contentView")
@@ -450,6 +455,9 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("init")
     public native UITableViewHeaderFooterView init();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UITableViewHeaderFooterView initWithCoder(@NotNull NSCoder coder);
@@ -458,6 +466,9 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("initWithFrame:")
     public native UITableViewHeaderFooterView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithReuseIdentifier:")
     public native UITableViewHeaderFooterView initWithReuseIdentifier(@Nullable String reuseIdentifier);
@@ -465,11 +476,16 @@ public class UITableViewHeaderFooterView extends UIView {
     /**
      * if the view is reusable (has a reuse identifier), this is called just before the view is returned from the table
      * view method dequeueReusableHeaderFooterViewWithIdentifier:. If you override, you MUST call super.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("reuseIdentifier")
@@ -477,6 +493,8 @@ public class UITableViewHeaderFooterView extends UIView {
 
     /**
      * This property is always nil when a non-nil `backgroundConfiguration` is set.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setBackgroundView:")

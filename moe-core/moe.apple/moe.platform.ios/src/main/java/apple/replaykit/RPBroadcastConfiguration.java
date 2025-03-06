@@ -172,7 +172,12 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     /**
      * Specify the duration of a movie clip before it is delivered to the movie clip handler extension. Default is 5
      * seconds.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("clipDuration")
     public native double clipDuration();
@@ -192,7 +197,12 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     /**
      * Specify the duration of a movie clip before it is delivered to the movie clip handler extension. Default is 5
      * seconds.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setClipDuration:")
     public native void setClipDuration(double value);
@@ -200,7 +210,12 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     /**
      * Override the video compression properties used to encode movie clips. See AVVideoCompressionPropertiesKey in
      * <AVFoundation/AVVideoSettings.h> for available properties.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setVideoCompressionProperties:")
     public native void setVideoCompressionProperties(@Nullable NSDictionary<String, ? extends NSObject> value);
@@ -214,7 +229,12 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     /**
      * Override the video compression properties used to encode movie clips. See AVVideoCompressionPropertiesKey in
      * <AVFoundation/AVVideoSettings.h> for available properties.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("videoCompressionProperties")

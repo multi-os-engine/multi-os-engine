@@ -163,11 +163,17 @@ public class INSetMessageAttributeIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("attribute")
     @NInt
     public native long attribute();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("identifiers")
@@ -181,6 +187,9 @@ public class INSetMessageAttributeIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetMessageAttributeIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithIdentifiers:attribute:")
     public native INSetMessageAttributeIntent initWithIdentifiersAttribute(@Nullable NSArray<String> identifiers,

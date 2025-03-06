@@ -176,6 +176,8 @@ public class AVAssetWriterInputPassDescription extends NSObject {
      * 
      * The value of this property is suitable for using as a parameter for -[AVAssetReaderOutput
      * resetForReadingTimeRanges:].
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

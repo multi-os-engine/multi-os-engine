@@ -65,7 +65,12 @@ public interface INSetSeatSettingsInCarIntentHandling {
      *                   handling.
      * 
      * @see INSetSeatSettingsInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSetSeatSettingsInCar:completion:")
@@ -84,12 +89,23 @@ public interface INSetSeatSettingsInCarIntentHandling {
      *                   of the result of having executed the intent
      * 
      * @see INSetSeatSettingsInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSetSeatSettingsInCar:completion:")
     void handleSetSeatSettingsInCarCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
             @NotNull @ObjCBlock(name = "call_handleSetSeatSettingsInCarCompletion") Block_handleSetSeatSettingsInCarCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableCoolingForSetSeatSettingsInCar:withCompletion:")
@@ -108,7 +124,12 @@ public interface INSetSeatSettingsInCarIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableHeatingForSetSeatSettingsInCar:withCompletion:")
@@ -117,6 +138,12 @@ public interface INSetSeatSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableMassageForSetSeatSettingsInCar:withCompletion:")
@@ -125,6 +152,12 @@ public interface INSetSeatSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveLevelForSetSeatSettingsInCar:withCompletion:")
@@ -133,6 +166,12 @@ public interface INSetSeatSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveRelativeLevelSettingForSetSeatSettingsInCar:withCompletion:")
@@ -142,6 +181,12 @@ public interface INSetSeatSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveSeatForSetSeatSettingsInCar:withCompletion:")

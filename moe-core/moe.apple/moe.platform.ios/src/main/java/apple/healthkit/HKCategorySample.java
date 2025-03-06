@@ -105,6 +105,8 @@ public class HKCategorySample extends HKSample {
      * @param value     The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
      * @param startDate The start date of the sample.
      * @param endDate   The end date of the sample.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:")
@@ -141,6 +143,8 @@ public class HKCategorySample extends HKSample {
      * @param startDate The start date of the sample.
      * @param endDate   The end date of the sample.
      * @param metadata  Metadata for the sample (optional).
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:metadata:")
@@ -223,6 +227,9 @@ public class HKCategorySample extends HKSample {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("categoryType")
@@ -246,6 +253,8 @@ public class HKCategorySample extends HKSample {
      * [@property] value
      * 
      * The preferred enum for the value is determined by the receiver's category type.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("value")

@@ -112,6 +112,8 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Image to be displayed alongside the element's title.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -181,6 +183,8 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The element's title.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

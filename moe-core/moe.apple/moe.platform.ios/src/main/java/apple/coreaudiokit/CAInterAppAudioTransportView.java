@@ -426,6 +426,12 @@ public class CAInterAppAudioTransportView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("currentTimeLabelFont")
@@ -443,81 +449,181 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("initWithFrame:")
     public native CAInterAppAudioTransportView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("isConnected")
     public native boolean isConnected();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("isRecording")
     public native boolean isRecording();
 
     /**
      * Appearance properties
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("labelColor")
     public native UIColor labelColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("pauseButtonColor")
     public native UIColor pauseButtonColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("playButtonColor")
     public native UIColor playButtonColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("recordButtonColor")
     public native UIColor recordButtonColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("rewindButtonColor")
     public native UIColor rewindButtonColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("setCurrentTimeLabelFont:")
     public native void setCurrentTimeLabelFont(@NotNull UIFont value);
 
     /**
      * Appearance properties
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
      */
+    @Deprecated
     @Generated
     @Selector("setLabelColor:")
     public native void setLabelColor(@NotNull UIColor value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("setOutputAudioUnit:")
     public native void setOutputAudioUnit(@NotNull AudioComponentInstance au);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("setPauseButtonColor:")
     public native void setPauseButtonColor(@NotNull UIColor value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("setPlayButtonColor:")
     public native void setPlayButtonColor(@NotNull UIColor value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("setRecordButtonColor:")
     public native void setRecordButtonColor(@NotNull UIColor value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
+     */
+    @Deprecated
     @Generated
     @Selector("setRewindButtonColor:")
     public native void setRewindButtonColor(@NotNull UIColor value);

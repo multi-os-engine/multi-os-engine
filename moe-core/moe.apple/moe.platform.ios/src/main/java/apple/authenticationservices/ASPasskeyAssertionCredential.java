@@ -64,6 +64,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
 
     /**
      * The authenticator data of the application that created this credential.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("authenticatorData")
@@ -97,6 +99,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
 
     /**
      * The hash of the client data for this assertion result.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("clientDataHash")
@@ -112,6 +116,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
 
     /**
      * The raw credential ID for this passkey credential.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("credentialID")
@@ -124,6 +130,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
      * @param userHandle   The identifier for the account the passkey is associated with.
      * @param relyingParty the relying party.
      * @param signature    the signature for the assertion challenge.
+     * 
+     *                     API-Since: 17.0
      */
     @Generated
     @Selector("credentialWithUserHandle:relyingParty:signature:clientDataHash:authenticatorData:credentialID:")
@@ -162,6 +170,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
      * @param userHandle   The identifier for the account the passkey is associated with.
      * @param relyingParty the relying party.
      * @param signature    the signature for the assertion challenge.
+     * 
+     *                     API-Since: 17.0
      */
     @Generated
     @Selector("initWithUserHandle:relyingParty:signature:clientDataHash:authenticatorData:credentialID:")
@@ -198,6 +208,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
 
     /**
      * The relying party of this credential.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("relyingParty")
@@ -218,6 +230,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
 
     /**
      * The signature of this credential.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("signature")
@@ -245,6 +259,8 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
 
     /**
      * The user handle of this passkey.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userHandle")
@@ -255,4 +271,40 @@ public class ASPasskeyAssertionCredential extends NSObject implements ASAuthoriz
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The outputs of WebAuthn extensions processed by the credential provider.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("extensionOutput")
+    @Nullable
+    public native ASPasskeyAssertionCredentialExtensionOutput extensionOutput();
+
+    /**
+     * Initializes an ASPasskeyCredential object.
+     * 
+     * @param userHandle      The identifier for the account the passkey is associated with.
+     * @param relyingParty    The relying party.
+     * @param signature       The signature for the assertion challenge.
+     * @param extensionOutput The outputs of WebAuthn extensions processed by the credential provider.
+     * 
+     *                        API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithUserHandle:relyingParty:signature:clientDataHash:authenticatorData:credentialID:extensionOutput:")
+    public native ASPasskeyAssertionCredential initWithUserHandleRelyingPartySignatureClientDataHashAuthenticatorDataCredentialIDExtensionOutput(
+            @NotNull NSData userHandle, @NotNull String relyingParty, @NotNull NSData signature,
+            @NotNull NSData clientDataHash, @NotNull NSData authenticatorData, @NotNull NSData credentialID,
+            @Nullable ASPasskeyAssertionCredentialExtensionOutput extensionOutput);
+
+    /**
+     * The outputs of WebAuthn extensions processed by the credential provider.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setExtensionOutput:")
+    public native void setExtensionOutput(@Nullable ASPasskeyAssertionCredentialExtensionOutput value);
 }

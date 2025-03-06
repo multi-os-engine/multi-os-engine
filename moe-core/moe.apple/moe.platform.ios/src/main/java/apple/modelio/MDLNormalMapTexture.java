@@ -180,6 +180,9 @@ public class MDLNormalMapTexture extends MDLTexture {
     @Selector("init")
     public native MDLNormalMapTexture init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initByGeneratingNormalMapWithTexture:name:smoothness:contrast:")
     public native MDLNormalMapTexture initByGeneratingNormalMapWithTextureNameSmoothnessContrast(

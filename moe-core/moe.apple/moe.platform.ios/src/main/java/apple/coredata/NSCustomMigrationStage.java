@@ -88,6 +88,9 @@ public class NSCustomMigrationStage extends NSMigrationStage {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("currentModel")
     @NotNull
@@ -105,6 +108,8 @@ public class NSCustomMigrationStage extends NSMigrationStage {
      * This handler will be called immediately after to migrating the store schema. Use this handler to
      * execute any tasks your app may need. Access to the persistent container may be obtained from the
      * NSStagedMigrationManager.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("didMigrateHandler")
@@ -129,6 +134,9 @@ public class NSCustomMigrationStage extends NSMigrationStage {
     @Selector("init")
     public native NSCustomMigrationStage init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithCurrentModelReference:nextModelReference:")
     public native NSCustomMigrationStage initWithCurrentModelReferenceNextModelReference(
@@ -161,6 +169,9 @@ public class NSCustomMigrationStage extends NSMigrationStage {
     @Selector("new")
     public static native NSCustomMigrationStage new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("nextModel")
     @NotNull
@@ -178,6 +189,8 @@ public class NSCustomMigrationStage extends NSMigrationStage {
      * This handler will be called immediately after to migrating the store schema. Use this handler to
      * execute any tasks your app may need. Access to the persistent container may be obtained from the
      * NSStagedMigrationManager.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDidMigrateHandler:")
@@ -200,6 +213,8 @@ public class NSCustomMigrationStage extends NSMigrationStage {
      * This handler will be called immediately prior to migrating the store schema. Use this handler to
      * execute any tasks your app may need. Access to the persistent container may be obtained from the
      * NSStagedMigrationManager.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setWillMigrateHandler:")
@@ -232,6 +247,8 @@ public class NSCustomMigrationStage extends NSMigrationStage {
      * This handler will be called immediately prior to migrating the store schema. Use this handler to
      * execute any tasks your app may need. Access to the persistent container may be obtained from the
      * NSStagedMigrationManager.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("willMigrateHandler")

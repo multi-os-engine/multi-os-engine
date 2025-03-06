@@ -127,6 +127,8 @@ public class CATiledLayer extends CALayer {
      * The time in seconds that newly added images take to "fade-in" to the
      * rendered representation of the tiled layer. The default implementation
      * returns 0.25 seconds.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("fadeDuration")
@@ -211,6 +213,8 @@ public class CATiledLayer extends CALayer {
      * many levels are specified for the current size of the layer, then
      * the number of levels is clamped to the maximum value (the bottom
      * most LOD must contain at least a single pixel in each dimension).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("levelsOfDetail")
@@ -223,6 +227,8 @@ public class CATiledLayer extends CALayer {
      * later. E.g. specifying 'levelsOfDetailBias' of two means that the
      * layer devotes two of its specified levels of detail to
      * magnification, i.e. 2x and 4x.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("levelsOfDetailBias")
@@ -235,6 +241,8 @@ public class CATiledLayer extends CALayer {
      * many levels are specified for the current size of the layer, then
      * the number of levels is clamped to the maximum value (the bottom
      * most LOD must contain at least a single pixel in each dimension).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLevelsOfDetail:")
@@ -246,6 +254,8 @@ public class CATiledLayer extends CALayer {
      * later. E.g. specifying 'levelsOfDetailBias' of two means that the
      * layer devotes two of its specified levels of detail to
      * magnification, i.e. 2x and 4x.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLevelsOfDetailBias:")
@@ -256,6 +266,8 @@ public class CATiledLayer extends CALayer {
      * Defaults to (256, 256). Note that there is a maximum tile size, and
      * requests for tiles larger than that limit will cause a suitable
      * value to be substituted.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTileSize:")
@@ -266,6 +278,8 @@ public class CATiledLayer extends CALayer {
      * Defaults to (256, 256). Note that there is a maximum tile size, and
      * requests for tiles larger than that limit will cause a suitable
      * value to be substituted.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tileSize")

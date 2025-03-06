@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coremedia.struct.CMTime;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * [@protocol] AVCaptureFileOutputRecordingDelegate
@@ -57,6 +59,8 @@ public interface AVCaptureFileOutputRecordingDelegate {
      * Clients should not assume that this method will be called on a specific thread.
      * 
      * Delegates are required to implement this method.
+     * 
+     * API-Since: 4.0
      * 
      * @param output
      *                      The capture file output that has finished writing the file.
@@ -88,6 +92,8 @@ public interface AVCaptureFileOutputRecordingDelegate {
      * Clients should not assume that this method will be called on a specific thread, and should also try to make this
      * method as efficient as possible.
      * 
+     * API-Since: 4.0
+     * 
      * @param output
      *                    The capture file output that started writing the file.
      * @param fileURL
@@ -101,6 +107,108 @@ public interface AVCaptureFileOutputRecordingDelegate {
     @Selector("captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:")
     default void captureOutputDidStartRecordingToOutputFileAtURLFromConnections(@NotNull AVCaptureFileOutput output,
             @NotNull NSURL fileURL, @NotNull NSArray<? extends AVCaptureConnection> connections) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * captureOutput:didPauseRecordingToOutputFileAtURL:fromConnections:
+     * 
+     * Called whenever the output is recording to a file and successfully pauses the recording at the request of the
+     * client.
+     * 
+     * Delegates can use this method to be informed when a request to pause recording is actually respected. It is safe
+     * for delegates to change what the file output is currently doing (starting a new file, for example) from within
+     * this method. If recording to a file is stopped, either manually or due to an error, this method is not guaranteed
+     * to be called, even if a previous call to pauseRecording was made.
+     * 
+     * Clients should not assume that this method will be called on a specific thread, and should also try to make this
+     * method as efficient as possible.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param output
+     *                    The capture file output that has paused its file recording.
+     * @param fileURL
+     *                    The file URL of the file that is being written.
+     * @param connections
+     *                    An array of AVCaptureConnection objects attached to the file output that provided the data
+     *                    that is being written to the file.
+     */
+    @Generated
+    @IsOptional
+    @Selector("captureOutput:didPauseRecordingToOutputFileAtURL:fromConnections:")
+    default void captureOutputDidPauseRecordingToOutputFileAtURLFromConnections(@NotNull AVCaptureFileOutput output,
+            @NotNull NSURL fileURL, @NotNull NSArray<? extends AVCaptureConnection> connections) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * captureOutput:didResumeRecordingToOutputFileAtURL:fromConnections:
+     * 
+     * Called whenever the output, at the request of the client, successfully resumes a file recording that was paused.
+     * 
+     * Delegates can use this method to be informed when a request to resume recording is actually respected. It is safe
+     * for delegates to change what the file output is currently doing (starting a new file, for example) from within
+     * this method. If recording to a file is stopped, either manually or due to an error, this method is not guaranteed
+     * to be called, even if a previous call to resumeRecording was made.
+     * 
+     * Clients should not assume that this method will be called on a specific thread, and should also try to make this
+     * method as efficient as possible.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param output
+     *                    The capture file output that has resumed its paused file recording.
+     * @param fileURL
+     *                    The file URL of the file that is being written.
+     * @param connections
+     *                    An array of AVCaptureConnection objects attached to the file output that provided the data
+     *                    that is being written to the file.
+     */
+    @Generated
+    @IsOptional
+    @Selector("captureOutput:didResumeRecordingToOutputFileAtURL:fromConnections:")
+    default void captureOutputDidResumeRecordingToOutputFileAtURLFromConnections(@NotNull AVCaptureFileOutput output,
+            @NotNull NSURL fileURL, @NotNull NSArray<? extends AVCaptureConnection> connections) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * captureOutput:didStartRecordingToOutputFileAtURL:startPTS:fromConnections:
+     * 
+     * Informs the delegate when the output has started writing to a file.
+     * 
+     * This method is called when the file output has started writing data to a file. If an error condition prevents any
+     * data from being written, this method may not be called.
+     * captureOutput:willFinishRecordingToOutputFileAtURL:fromConnections:error: and
+     * captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: will always be called, even if no data
+     * is written.
+     * 
+     * If this method is implemented, the alternative delegate callback
+     * -captureOutput:didStartRecordingToOutputFileAtURL:fromConnections will not be called.
+     * 
+     * Clients should not assume that this method will be called on a specific thread, and should also try to make this
+     * method as efficient as possible.
+     * 
+     * API-Since: 18.2
+     * 
+     * @param output
+     *                    The capture file output that started writing the file.
+     * @param fileURL
+     *                    The file URL of the file that is being written.
+     * @param startPTS
+     *                    The timestamp of the first buffer written to the file, synced with
+     *                    AVCaptureSession.synchronizationClock
+     * @param connections
+     *                    An array of AVCaptureConnection objects attached to the file output that provided the data
+     *                    that is being written to the file.
+     */
+    @Generated
+    @IsOptional
+    @Selector("captureOutput:didStartRecordingToOutputFileAtURL:startPTS:fromConnections:")
+    default void captureOutputDidStartRecordingToOutputFileAtURLStartPTSFromConnections(
+            @NotNull AVCaptureFileOutput output, @NotNull NSURL fileURL, @ByValue CMTime startPTS,
+            @NotNull NSArray<? extends AVCaptureConnection> connections) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

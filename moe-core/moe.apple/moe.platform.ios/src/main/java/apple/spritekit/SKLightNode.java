@@ -206,6 +206,8 @@ public class SKLightNode extends SKNode {
      * affected by falloff or surface normals.
      * 
      * @see lightColor
+     * 
+     *      API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -220,6 +222,8 @@ public class SKLightNode extends SKNode {
      * @see SKSpriteNode.lightingBitMask
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("categoryBitMask")
@@ -230,6 +234,8 @@ public class SKLightNode extends SKNode {
      * The falloff does not affect the ambient color nor the shadow color.
      * 
      * @see lightColor
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("falloff")
@@ -259,6 +265,8 @@ public class SKLightNode extends SKNode {
      * @see lightColor
      * @see falloff
      * @see categoryBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("isEnabled")
@@ -279,6 +287,8 @@ public class SKLightNode extends SKNode {
      * @see lightColor
      * @see falloff
      * @see categoryBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -293,6 +303,8 @@ public class SKLightNode extends SKNode {
      * 
      * @see SKUniform
      * @see falloff
+     * 
+     *      API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -310,6 +322,8 @@ public class SKLightNode extends SKNode {
      * affected by falloff or surface normals.
      * 
      * @see lightColor
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setAmbientColor:")
@@ -323,6 +337,8 @@ public class SKLightNode extends SKNode {
      * @see SKSpriteNode.lightingBitMask
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setCategoryBitMask:")
@@ -333,6 +349,8 @@ public class SKLightNode extends SKNode {
      * The falloff does not affect the ambient color nor the shadow color.
      * 
      * @see lightColor
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setFalloff:")
@@ -347,6 +365,8 @@ public class SKLightNode extends SKNode {
      * 
      * @see SKUniform
      * @see falloff
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setLightColor:")
@@ -359,6 +379,8 @@ public class SKLightNode extends SKNode {
      * 
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setShadowColor:")
@@ -371,6 +393,8 @@ public class SKLightNode extends SKNode {
      * 
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
+     * 
+     *      API-Since: 8.0
      */
     @NotNull
     @Generated

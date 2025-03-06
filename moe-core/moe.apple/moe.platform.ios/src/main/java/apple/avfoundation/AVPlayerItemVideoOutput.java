@@ -171,8 +171,8 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * 
      * The client is responsible for calling CVBufferRelease on the returned CVPixelBuffer when finished with it.
      * 
-     * Typically you would call this method in response to a CVDisplayLink callback or CADisplayLink delegate invocation
-     * and if hasNewPixelBufferForItemTime: also returns YES.
+     * Typically you would call this method in response to a CADisplayLink delegate invocation and if
+     * hasNewPixelBufferForItemTime: also returns YES.
      * 
      * The buffer reference retrieved from copyPixelBufferForItemTime:itemTimeForDisplay: may itself be NULL. A
      * reference to a NULL pixel buffer communicates that nothing should be displayed for the supplied item time.
@@ -182,6 +182,8 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * @param itemTimeForDisplay
      *                           A CMTime pointer whose value will contain the true display deadline for the copied
      *                           pixel buffer. Can be NULL.
+     * 
+     *                           API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -193,6 +195,8 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * [@property] delegate
      * 
      * The receiver's delegate.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -204,6 +208,8 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * [@property] delegateQueue
      * 
      * The dispatch queue where the delegate is messaged.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -223,6 +229,8 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * @param itemTime
      *                 The item time to query.
      * @return A BOOL indicating if there is newer output.
+     * 
+     *         API-Since: 6.0
      */
     @Generated
     @Selector("hasNewPixelBufferForItemTime:")
@@ -273,6 +281,8 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      *                              The client requirements for output CVPixelBuffers, expressed using the constants in
      *                              <CoreVideo/CVPixelBuffer.h>.
      * @return An instance of AVPlayerItemVideoOutput.
+     * 
+     *         API-Since: 6.0
      */
     @Generated
     @Selector("initWithPixelBufferAttributes:")
@@ -284,11 +294,12 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * 
      * Informs the receiver that the AVPlayerItemVideoOutput client is entering a quiescent state.
      * 
-     * Message this method before you suspend your use of a CVDisplayLink or CADisplayLink. The interval you provide
-     * will be used to message your delegate, in advance, that it should resume the display link. If the interval you
-     * provide is large, effectively requesting wakeup earlier than the AVPlayerItemVideoOutput is prepared to act, the
-     * delegate will be invoked as soon as possible. Do not use this method to force a delegate invocation for each
-     * sample.
+     * Message this method before you suspend your use of a CADisplayLink. The interval you provide will be used to
+     * message your delegate, in advance, that it should resume the display link. If the interval you provide is large,
+     * effectively requesting wakeup earlier than the AVPlayerItemVideoOutput is prepared to act, the delegate will be
+     * invoked as soon as possible. Do not use this method to force a delegate invocation for each sample.
+     * 
+     * API-Since: 6.0
      * 
      * @param interval
      *                 A wall clock time interval.
@@ -306,6 +317,8 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      *                      An object conforming to AVPlayerItemOutputPullDelegate protocol.
      * @param delegateQueue
      *                      A dispatch queue on which all delegate methods will be called.
+     * 
+     *                      API-Since: 6.0
      */
     @Generated
     @Selector("setDelegate:queue:")

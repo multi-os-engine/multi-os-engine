@@ -163,6 +163,8 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
      * 
      * The position within the resource of the next byte within the resource following the bytes that have already been
      * provided via prior invocations of -respondWithData.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("currentOffset")
@@ -189,6 +191,8 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
      * finished loading request, the value of requestedLength is set to NSIntegerMax. Starting in macOS 10.11 and iOS
      * 9.0, in 32-bit applications requestedLength is also set to NSIntegerMax when all of the remaining resource data
      * is being requested and the known length of the remaining data exceeds NSIntegerMax.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("requestedLength")
@@ -199,6 +203,8 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
      * [@property] requestedOffset
      * 
      * The position within the resource of the first byte requested.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("requestedOffset")
@@ -235,6 +241,8 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
      * should avoid mutating it further after sharing its contents. If you are managing your own memory pool for I/O and
      * resource loading, consider using -[NSData initWithBytesNoCopy:length:deallocator:] in order to receive
      * notification of the earliest opportunity for safe recycling of the underlying memory.
+     * 
+     * API-Since: 7.0
      * 
      * @param data
      *             An instance of NSData containing some or all of the requested bytes.

@@ -109,6 +109,8 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
 
     /**
      * Dictionary holding the feature values
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -139,6 +141,8 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
      * or from a dictionary with values already stored as MLFeatureValues.
      * 
      * An error results if the values are not or cannot be represented as MLFeatureValues.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithDictionary:error:")
@@ -174,6 +178,8 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
 
     /**
      * Get the value for specified feature
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

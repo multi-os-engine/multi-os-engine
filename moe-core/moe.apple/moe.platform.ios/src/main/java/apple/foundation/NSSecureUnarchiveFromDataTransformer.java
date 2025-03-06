@@ -61,6 +61,8 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
      * NSDictionary, \c NSSet, \c NSString, \c NSNumber, \c NSDate, \c NSData, \c NSURL, \c NSUUID, and \c NSNull.
      * 
      * Can be overridden by subclasses to provide an expanded or different set of allowed transformation classes.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

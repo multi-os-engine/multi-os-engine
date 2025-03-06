@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGPoint;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * UINotificationFeedbackGenerator is used to give user feedback when an notification is displayed
@@ -165,6 +167,8 @@ public class UINotificationFeedbackGenerator extends UIFeedbackGenerator {
 
     /**
      * call when a notification is displayed, passing the corresponding type
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("notificationOccurred:")
@@ -174,4 +178,15 @@ public class UINotificationFeedbackGenerator extends UIFeedbackGenerator {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("feedbackGeneratorForView:")
+    public static native UINotificationFeedbackGenerator feedbackGeneratorForView(@NotNull UIView view);
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("notificationOccurred:atLocation:")
+    public native void notificationOccurredAtLocation(@NInt long notificationType, @ByValue CGPoint location);
 }

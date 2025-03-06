@@ -196,6 +196,9 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @Selector("initWithZoneID:")
     public native CKRecordZoneSubscription initWithZoneID(@NotNull CKRecordZoneID zoneID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithZoneID:subscriptionID:")
     public native CKRecordZoneSubscription initWithZoneIDSubscriptionID(@NotNull CKRecordZoneID zoneID,
@@ -203,6 +206,8 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
 
     /**
      * Optional property. If set, a zone subscription is scoped to record changes for this record type
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -211,6 +216,8 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
 
     /**
      * Optional property. If set, a zone subscription is scoped to record changes for this record type
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRecordType:")
@@ -222,6 +229,9 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("zoneID")

@@ -172,6 +172,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * The parameter's address.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("address")
@@ -182,6 +184,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
      * changing.
      * 
      * Each array value is an NSNumber representing AUParameterAddress.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -194,6 +198,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * Various details of the parameter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("flags")
@@ -209,6 +215,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * The parameter's maximum value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maxValue")
@@ -216,6 +224,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * The parameter's minimum value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("minValue")
@@ -223,6 +233,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * The parameter's current value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setValue:")
@@ -232,6 +244,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
      * Set the parameter's value, avoiding redundant notifications to the originator.
      * 
      * Bridged to the v2 function AudioUnitSetParameter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setValue:originator:")
@@ -241,6 +255,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
      * Convenience for setValue:originator:atHostTime:eventType:
      * 
      * Bridged to the v2 function AudioUnitSetParameter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setValue:originator:atHostTime:")
@@ -273,6 +289,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
      * 
      * This is currently only supported for parameters whose flags include
      * kAudioUnitParameterFlag_ValuesHaveStrings.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -287,6 +305,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * The parameter's unit of measurement.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("unit")
@@ -295,6 +315,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     /**
      * A localized name for the parameter's unit. Supplied by the AU if kAudioUnitParameterUnit_CustomUnit; else by the
      * framework.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -303,6 +325,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * The parameter's current value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("value")
@@ -313,6 +337,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
      * 
      * This is currently only supported for parameters whose flags include
      * kAudioUnitParameterFlag_ValuesHaveStrings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("valueFromString:")
@@ -321,6 +347,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     /**
      * For parameters with kAudioUnitParameterUnit_Indexed, localized strings corresponding
      * to the values.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

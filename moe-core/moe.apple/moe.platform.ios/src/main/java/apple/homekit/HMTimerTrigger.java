@@ -175,6 +175,8 @@ public class HMTimerTrigger extends HMTrigger {
      * recurrence fire date, depending on how the system is managing its resources.
      * 
      * [@note] Should be at least 1 minute ahead for reliable firing.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -207,6 +209,9 @@ public class HMTimerTrigger extends HMTrigger {
      * recurrence to 1. The minimum recurrence interval is 5 minutes, maximum recurrence
      * interval is 5 weeks and the recurrence interval must be specified in multiples of
      * whole minutes. Examples are 5 minutes, 6 minutes, 1 day, 2 weeks.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

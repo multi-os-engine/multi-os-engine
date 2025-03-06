@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A gather layer
  * 
  * API-Since: 14.5
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -99,7 +98,11 @@ public class MLCGatherLayer extends MLCLayer {
      * [@property] dimension
      * 
      * The dimension along which to index
+     * 
+     * API-Since: 14.5
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dimension")
     @NUInt
@@ -141,7 +144,11 @@ public class MLCGatherLayer extends MLCLayer {
      * 
      * @param dimension The dimension along which to index
      * @return A new gather layer
+     * 
+     *         API-Since: 14.5
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDimension:")
     public static native MLCGatherLayer layerWithDimension(@NUInt long dimension);
@@ -167,6 +174,7 @@ public class MLCGatherLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

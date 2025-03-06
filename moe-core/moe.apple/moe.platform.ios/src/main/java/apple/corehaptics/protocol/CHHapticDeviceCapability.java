@@ -34,6 +34,8 @@ public interface CHHapticDeviceCapability {
      * 
      * These values may vary across different device types.
      * 
+     * API-Since: 13.0
+     * 
      * @param inParameter
      *                    A CHHapticDynamicParameter to be queried.
      * @param outError
@@ -53,6 +55,8 @@ public interface CHHapticDeviceCapability {
      * 
      * These values may vary across different device types.
      * 
+     * API-Since: 13.0
+     * 
      * @param inParameter
      *                    A CHHapticEventParameter to be queried.
      * @param type
@@ -71,6 +75,8 @@ public interface CHHapticDeviceCapability {
      * [@property] supportsAudio
      * 
      * Returns YES if the hardware supports audio event playback.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsAudio")
@@ -80,6 +86,8 @@ public interface CHHapticDeviceCapability {
      * [@property] supportsHaptics
      * 
      * Returns YES if the hardware supports haptic event playback.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsHaptics")

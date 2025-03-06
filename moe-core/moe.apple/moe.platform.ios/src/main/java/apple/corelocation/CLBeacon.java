@@ -176,6 +176,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
      * Represents an one sigma horizontal accuracy in meters where the measuring device's location is
      * referenced at the beaconing device. This value is heavily subject to variations in an RF environment.
      * A negative accuracy value indicates the proximity is unknown.
+     * 
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("accuracy")
@@ -205,6 +208,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Most significant value associated with the beacon.
+     * 
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -216,6 +222,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Least significant value associated with the beacon.
+     * 
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -227,6 +236,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Proximity of the beacon from the device.
+     * 
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("proximity")
@@ -249,6 +261,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
      * Discussion:
      * Received signal strength in decibels of the specified beacon.
      * This value is an average of the RSSI samples collected since this beacon was last reported.
+     * 
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("rssi")

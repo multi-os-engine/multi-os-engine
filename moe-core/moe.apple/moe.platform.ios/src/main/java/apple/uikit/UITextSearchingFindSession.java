@@ -109,6 +109,9 @@ public class UITextSearchingFindSession extends UIFindSession {
     @Selector("init")
     public native UITextSearchingFindSession init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithSearchableObject:")
     public native UITextSearchingFindSession initWithSearchableObject(
@@ -152,6 +155,8 @@ public class UITextSearchingFindSession extends UIFindSession {
     /**
      * The object responsible for actually performing the search operation and decorating found text results.
      * See `UITextSearching.h` for more information.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

@@ -103,6 +103,8 @@ public class MPSRNNRecurrentImageState extends MPSState {
      * 
      * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
      * @return For valid layerIndex the memory cell image data, otherwise nil.
+     * 
+     *         API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -114,6 +116,8 @@ public class MPSRNNRecurrentImageState extends MPSState {
      * 
      * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
      * @return For valid layerIndex the recurrent output image data, otherwise nil.
+     * 
+     *         API-Since: 11.0
      */
     @Nullable
     @Generated

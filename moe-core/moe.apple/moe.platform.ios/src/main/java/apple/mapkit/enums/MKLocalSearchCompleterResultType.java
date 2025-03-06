@@ -24,4 +24,8 @@ public final class MKLocalSearchCompleterResultType {
      * API-Since: 13.0
      */
     @Generated @NUInt public static final long Query = 0x0000000000000004L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NUInt public static final long PhysicalFeature = 0x0000000000000008L;
 }

@@ -137,17 +137,25 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
 
     /**
      * Base unit - litersPer100Kilometers
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("litersPer100Kilometers")
     public static native NSUnitFuelEfficiency litersPer100Kilometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milesPerGallon")
     public static native NSUnitFuelEfficiency milesPerGallon();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milesPerImperialGallon")

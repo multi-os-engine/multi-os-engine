@@ -161,6 +161,9 @@ public class CKDatabase extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("addOperation:")
     public native void addOperation(@NotNull CKDatabaseOperation operation);
@@ -173,11 +176,17 @@ public class CKDatabase extends NSObject {
     @NInt
     public native long databaseScope();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("deleteRecordWithID:completionHandler:")
     public native void deleteRecordWithIDCompletionHandler(@NotNull CKRecordID recordID,
             @NotNull @ObjCBlock(name = "call_deleteRecordWithIDCompletionHandler") Block_deleteRecordWithIDCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("deleteRecordZoneWithID:completionHandler:")
     public native void deleteRecordZoneWithIDCompletionHandler(@NotNull CKRecordZoneID zoneID,
@@ -194,6 +203,8 @@ public class CKDatabase extends NSObject {
     /**
      * [@c] CKFetchRecordZonesOperation and @c CKModifyRecordZonesOperation are the more configurable, @c CKOperation
      * -based alternatives to these methods
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchAllRecordZonesWithCompletionHandler:")
@@ -211,12 +222,17 @@ public class CKDatabase extends NSObject {
     /**
      * [@c] CKFetchRecordsOperation and @c CKModifyRecordsOperation are the more configurable, @c CKOperation -based
      * alternatives to these methods
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchRecordWithID:completionHandler:")
     public native void fetchRecordWithIDCompletionHandler(@NotNull CKRecordID recordID,
             @NotNull @ObjCBlock(name = "call_fetchRecordWithIDCompletionHandler") Block_fetchRecordWithIDCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchRecordZoneWithID:completionHandler:")
     public native void fetchRecordZoneWithIDCompletionHandler(@NotNull CKRecordZoneID zoneID,
@@ -246,6 +262,8 @@ public class CKDatabase extends NSObject {
      * Queries invoked within a @c sharedCloudDatabase must specify a @c zoneID. Cross-zone queries are not supported in
      * a @c sharedCloudDatabase
      * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("performQuery:inZoneWithID:completionHandler:")
@@ -253,11 +271,17 @@ public class CKDatabase extends NSObject {
             @Nullable CKRecordZoneID zoneID,
             @NotNull @ObjCBlock(name = "call_performQueryInZoneWithIDCompletionHandler") Block_performQueryInZoneWithIDCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("saveRecord:completionHandler:")
     public native void saveRecordCompletionHandler(@NotNull CKRecord record,
             @NotNull @ObjCBlock(name = "call_saveRecordCompletionHandler") Block_saveRecordCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("saveRecordZone:completionHandler:")
     public native void saveRecordZoneCompletionHandler(@NotNull CKRecordZone zone,

@@ -88,6 +88,8 @@ public class TKTLVRecord extends NSObject {
 
     /**
      * Data object containing whole encoded record, including tag, length and value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -143,6 +145,8 @@ public class TKTLVRecord extends NSObject {
      * 
      * @param data Data block containing serialized form of TLV record.
      * @return newly parsed record instance or nil if data do not represent valid record.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("recordFromData:")
@@ -163,6 +167,8 @@ public class TKTLVRecord extends NSObject {
      * @param data Data block containing zero or more serialized forms of TLV record.
      * @return An array of TLV record instances parsed from input data block or nil if data do not form valid TLV record
      *         sequence.
+     * 
+     *         API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -179,6 +185,8 @@ public class TKTLVRecord extends NSObject {
 
     /**
      * Tag value of the record.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("tag")
@@ -186,6 +194,8 @@ public class TKTLVRecord extends NSObject {
 
     /**
      * Value field of the record.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

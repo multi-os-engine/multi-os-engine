@@ -44,6 +44,8 @@ public interface HMCameraStreamControlDelegate {
      * @param cameraStreamControl Sender of this message.
      * 
      * @param error               When stream stops because of an error, 'error' will be populated.
+     * 
+     *                            API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -57,6 +59,8 @@ public interface HMCameraStreamControlDelegate {
      * Informs the delegate that the stream has started.
      * 
      * @param cameraStreamControl Sender of this message.
+     * 
+     *                            API-Since: 10.0
      */
     @Generated
     @IsOptional

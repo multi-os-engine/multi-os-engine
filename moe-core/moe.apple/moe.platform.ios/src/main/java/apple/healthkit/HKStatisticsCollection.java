@@ -167,6 +167,8 @@ public class HKStatisticsCollection extends NSObject {
      * 
      * Statistics objects will be enumerated in chronological order. If there are no samples for an interval
      * between the start and end date, then the HKStatistics object for that interval will have nil quantities.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("enumerateStatisticsFromDate:toDate:withBlock:")
@@ -184,6 +186,8 @@ public class HKStatisticsCollection extends NSObject {
      * 
      * Sources will be empty unless HKStatisticsOptionSeparateBySource is specified in the
      * HKStatisticsCollectionQuery options.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -196,6 +200,8 @@ public class HKStatisticsCollection extends NSObject {
      * Returns a copy of the populated statistics objects.
      * 
      * The statistics objects are ordered chronologically.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -208,6 +214,8 @@ public class HKStatisticsCollection extends NSObject {
      * Returns the statistics object that this date is inside of
      * 
      * If there are no samples for the given date, an HKStatistics instance with nil quantities will be returned.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

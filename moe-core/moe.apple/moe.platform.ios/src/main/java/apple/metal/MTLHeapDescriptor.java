@@ -175,6 +175,8 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * 
      * All resources created from this heap share the same cache mode.
      * CPU cache mode is ignored for MTLStorageModePrivate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("cpuCacheMode")
@@ -192,6 +194,8 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * 
      * All resources created from this heap share the same cache mode.
      * CPU cache mode is ignored for MTLStorageModePrivate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setCpuCacheMode:")
@@ -203,6 +207,8 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * Requested size of the heap's backing memory.
      * 
      * The size may be rounded up to GPU page granularity.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSize:")
@@ -215,6 +221,8 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * 
      * All resources created from this heap share the same storage mode.
      * MTLStorageModeManaged and MTLStorageModeMemoryless are disallowed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStorageMode:")
@@ -226,6 +234,8 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * Requested size of the heap's backing memory.
      * 
      * The size may be rounded up to GPU page granularity.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("size")
@@ -239,6 +249,8 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * 
      * All resources created from this heap share the same storage mode.
      * MTLStorageModeManaged and MTLStorageModeMemoryless are disallowed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("storageMode")

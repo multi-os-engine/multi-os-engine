@@ -61,7 +61,12 @@ public interface INStartVideoCallIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INStartVideoCallIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: INStartVideoCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmStartVideoCall:completion:")
@@ -80,7 +85,12 @@ public interface INStartVideoCallIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INStartVideoCallIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: INStartVideoCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Generated
     @Selector("handleStartVideoCall:completion:")
     void handleStartVideoCallCompletion(@NotNull INStartVideoCallIntent intent,
@@ -96,7 +106,12 @@ public interface INStartVideoCallIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: INStartVideoCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveContactsForStartVideoCall:withCompletion:")

@@ -174,6 +174,13 @@ public class GKScoreChallenge extends GKChallenge {
     @Selector("initWithCoder:")
     public native GKScoreChallenge initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * The score to meet to satisfy this challenge
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("score")
@@ -189,4 +196,14 @@ public class GKScoreChallenge extends GKChallenge {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The leaderboard entry to meet to satisfy this challenge
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("leaderboardEntry")
+    @Nullable
+    public native GKLeaderboardEntry leaderboardEntry();
 }

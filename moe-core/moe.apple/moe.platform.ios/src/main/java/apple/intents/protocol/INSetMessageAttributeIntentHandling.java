@@ -58,6 +58,8 @@ public interface INSetMessageAttributeIntentHandling {
      *                   handling.
      * 
      * @see INSetMessageAttributeIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -77,6 +79,8 @@ public interface INSetMessageAttributeIntentHandling {
      *                   of the result of having executed the intent
      * 
      * @see INSetMessageAttributeIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleSetMessageAttribute:completion:")
@@ -93,6 +97,8 @@ public interface INSetMessageAttributeIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

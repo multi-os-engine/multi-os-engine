@@ -177,6 +177,13 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     public native UIStoryboardPopoverSegue initWithIdentifierSourceDestination(@Nullable String identifier,
             @NotNull UIViewController source, @NotNull UIViewController destination);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Access destinationViewController.popoverPresentationController from your segue's
+     * performHandler or override of -perform
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("popoverController")

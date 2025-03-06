@@ -64,6 +64,8 @@ public class ILCallClassificationRequest extends ILClassificationRequest impleme
 
     /**
      * An array of call communications sorted by date received
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

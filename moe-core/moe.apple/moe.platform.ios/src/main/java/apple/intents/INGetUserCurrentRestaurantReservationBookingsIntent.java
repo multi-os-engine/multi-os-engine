@@ -176,6 +176,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     /**
      * specifies the earliest booking date desired for results, including dates in the past
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -193,6 +195,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     /**
      * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
      * to the extension
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -201,6 +205,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     /**
      * optional filter to reservation with exact ID
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -209,6 +215,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     /**
      * optional filter to just reservations at restaurant
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -217,6 +225,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     /**
      * specifies the earliest booking date desired for results, including dates in the past
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setEarliestBookingDateForResults:")
@@ -225,6 +235,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     /**
      * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
      * to the extension
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMaximumNumberOfResults:")
@@ -232,6 +244,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     /**
      * optional filter to reservation with exact ID
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setReservationIdentifier:")
@@ -239,6 +253,8 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     /**
      * optional filter to just reservations at restaurant
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRestaurant:")

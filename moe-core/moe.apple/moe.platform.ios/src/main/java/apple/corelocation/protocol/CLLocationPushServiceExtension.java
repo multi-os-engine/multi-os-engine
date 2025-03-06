@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 public interface CLLocationPushServiceExtension {
     /**
      * Call the completion handler once the location push has been handled.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("didReceiveLocationPushPayload:completion:")
@@ -36,6 +38,8 @@ public interface CLLocationPushServiceExtension {
 
     /**
      * Called just before this extension is terminated by the system.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional

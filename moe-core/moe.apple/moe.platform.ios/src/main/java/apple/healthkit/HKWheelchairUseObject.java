@@ -195,6 +195,9 @@ public class HKWheelchairUseObject extends NSObject implements NSCopying, NSSecu
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("wheelchairUse")
     @NInt

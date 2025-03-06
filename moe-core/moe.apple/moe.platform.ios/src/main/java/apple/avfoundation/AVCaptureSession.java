@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfoundation.protocol.AVCaptureSessionControlsDelegate;
+import apple.opaque.dispatch_queue_t;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
  * AVCaptureSession
@@ -173,9 +176,9 @@ public class AVCaptureSession extends NSObject {
      * Adds an AVCaptureConnection to the session.
      * 
      * An AVCaptureConnection instance can only be added to a session using -addConnection: if canAddConnection: returns
-     * YES. When using -addInput: or -addOutput:, connections are formed automatically between all compatible inputs and
-     * outputs. Manually adding connections is only necessary when adding an input or output with no connections.
-     * -addConnection: may be called while the session is running.
+     * YES, otherwise an NSInvalidArgumentException is thrown. When using -addInput: or -addOutput:, connections are
+     * formed automatically between all compatible inputs and outputs. Manually adding connections is only necessary
+     * when adding an input or output with no connections. -addConnection: may be called while the session is running.
      * 
      * API-Since: 8.0
      * 
@@ -191,8 +194,10 @@ public class AVCaptureSession extends NSObject {
      * 
      * Adds an AVCaptureInput to the session.
      * 
-     * An AVCaptureInput instance can only be added to a session using -addInput: if -canAddInput: returns YES.
-     * -addInput: may be called while the session is running.
+     * An AVCaptureInput instance can only be added to a session using -addInput: if -canAddInput: returns YES,
+     * otherwise an NSInvalidArgumentException is thrown. -addInput: may be called while the session is running.
+     * 
+     * API-Since: 4.0
      * 
      * @param input
      *              An AVCaptureInput instance.
@@ -206,9 +211,11 @@ public class AVCaptureSession extends NSObject {
      * 
      * Adds an AVCaptureInput to the session without forming any connections.
      * 
-     * -addInputWithNoConnections: may be called while the session is running. The -addInput: method is the preferred
-     * method for adding an input to an AVCaptureSession. -addInputWithNoConnections: may be called if you need
-     * fine-grained control over which inputs are connected to which outputs.
+     * An AVCaptureInput instance can only be added to a session using -addInputWithNoConnections: if -canAddInput:
+     * returns YES, otherwise an NSInvalidArgumentException is thrown. -addInputWithNoConnections: may be called while
+     * the session is running. The -addInput: method is the preferred method for adding an input to an AVCaptureSession.
+     * -addInputWithNoConnections: may be called if you need fine-grained control over which inputs are connected to
+     * which outputs.
      * 
      * API-Since: 8.0
      * 
@@ -224,8 +231,10 @@ public class AVCaptureSession extends NSObject {
      * 
      * Adds an AVCaptureOutput to the session.
      * 
-     * An AVCaptureOutput instance can only be added to a session using -addOutput: if -canAddOutput: returns YES.
-     * -addOutput: may be called while the session is running.
+     * An AVCaptureOutput instance can only be added to a session using -addOutput: if -canAddOutput: returns YES,
+     * otherwise an NSInvalidArgumentException is thrown. -addOutput: may be called while the session is running.
+     * 
+     * API-Since: 4.0
      * 
      * @param output
      *               An AVCaptureOutput instance.
@@ -239,9 +248,11 @@ public class AVCaptureSession extends NSObject {
      * 
      * Adds an AVCaptureOutput to the session without forming any connections.
      * 
-     * -addOutputWithNoConnections: may be called while the session is running. The -addOutput: method is the preferred
-     * method for adding an output to an AVCaptureSession. -addOutputWithNoConnections: may be called if you need
-     * fine-grained control over which inputs are connected to which outputs.
+     * An AVCaptureOutput instance can only be added to a session using -addOutputWithNoConnections: if -canAddOutput:
+     * returns YES, otherwise an NSInvalidArgumentException is thrown. -addOutputWithNoConnections: may be called while
+     * the session is running. The -addOutput: method is the preferred method for adding an output to an
+     * AVCaptureSession. -addOutputWithNoConnections: may be called if you need fine-grained control over which inputs
+     * are connected to which outputs.
      * 
      * API-Since: 8.0
      * 
@@ -301,7 +312,10 @@ public class AVCaptureSession extends NSObject {
      * or remove outputs, alter the sessionPreset, or configure individual AVCaptureInput or Output properties. All
      * changes will be pended until the client calls [session commitConfiguration], at which time they will be applied
      * together. -beginConfiguration / -commitConfiguration pairs may be nested, and will only be applied when the
-     * outermost commit is invoked.
+     * outermost commit is invoked. If you've called -beginConfiguration, you must call -commitConfiguration before
+     * invoking -startRunning or -stopRunning, otherwise an NSGenericException is thrown.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("beginConfiguration")
@@ -312,9 +326,10 @@ public class AVCaptureSession extends NSObject {
      * 
      * Returns whether the proposed connection can be added to the receiver.
      * 
-     * An AVCaptureConnection instance can only be added to a session using -addConnection: if canAddConnection: returns
-     * YES. When using -addInput: or -addOutput:, connections are formed automatically between all compatible inputs and
-     * outputs. Manually adding connections is only necessary when adding an input or output with no connections.
+     * An AVCaptureConnection instance can only be added to a session using -addConnection: if -canAddConnection:
+     * returns YES, otherwise an NSInvalidArgumentException is thrown. When using -addInput: or -addOutput:, connections
+     * are formed automatically between all compatible inputs and outputs. Manually adding connections is only necessary
+     * when adding an input or output with no connections.
      * 
      * API-Since: 8.0
      * 
@@ -330,7 +345,10 @@ public class AVCaptureSession extends NSObject {
      * 
      * Returns whether the proposed input can be added to the receiver.
      * 
-     * An AVCaptureInput instance can only be added to a session using -addInput: if -canAddInput: returns YES.
+     * An AVCaptureInput instance can only be added to a session using -addInput: if -canAddInput: returns YES,
+     * otherwise an NSInvalidArgumentException is thrown.
+     * 
+     * API-Since: 4.0
      * 
      * @param input
      *              An AVCaptureInput instance.
@@ -346,7 +364,8 @@ public class AVCaptureSession extends NSObject {
      * 
      * Returns whether the proposed output can be added to the receiver.
      * 
-     * An AVCaptureOutput instance can only be added to a session using -addOutput: if -canAddOutput: returns YES.
+     * An AVCaptureOutput instance can only be added to a session using -addOutput: if -canAddOutput: returns YES,
+     * otherwise an NSInvalidArgumentException is thrown.
      * 
      * On iOS and Mac Catalyst, some limitations to adding combinations of different types of outputs apply:
      * - A maximum of one output of each type may be added. For applications linked on or after iOS 16.0, this
@@ -363,6 +382,8 @@ public class AVCaptureSession extends NSObject {
      * same session, but only one may have its connection active. When both have their connections enabled, the
      * AVCaptureMovieFileOutput "wins" and the AVCaptureAudioDataOutput's connection becomes inactive. For applications
      * linked on or after iOS 16.0, this restriction has been lifted.
+     * 
+     * API-Since: 4.0
      * 
      * @param output
      *               An AVCaptureOutput instance.
@@ -403,7 +424,10 @@ public class AVCaptureSession extends NSObject {
      * or remove outputs, alter the sessionPreset, or configure individual AVCaptureInput or Output properties. All
      * changes will be pended until the client calls [session commitConfiguration], at which time they will be applied
      * together. -beginConfiguration / -commitConfiguration pairs may be nested, and will only be applied when the
-     * outermost commit is invoked.
+     * outermost commit is invoked. If you've called -beginConfiguration, you must call -commitConfiguration before
+     * invoking -startRunning or -stopRunning, otherwise an NSGenericException is thrown.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("commitConfiguration")
@@ -420,6 +444,8 @@ public class AVCaptureSession extends NSObject {
      * 
      * The value of this property is an NSArray of AVCaptureInputs currently added to the receiver. Clients can add
      * AVCaptureInputs to a session by calling -addInput:.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -448,6 +474,8 @@ public class AVCaptureSession extends NSObject {
      * 
      * The value of this property is a BOOL indicating whether the receiver is running. Clients can key value observe
      * the value of this property to be notified when the session automatically starts or stops running.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isRunning")
@@ -476,6 +504,8 @@ public class AVCaptureSession extends NSObject {
      * 
      * The value of this property is an NSArray of AVCaptureOutputs currently added to the receiver. Clients can add
      * AVCaptureOutputs to a session by calling -addOutput:.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -505,6 +535,8 @@ public class AVCaptureSession extends NSObject {
      * 
      * -removeInput: may be called while the session is running.
      * 
+     * API-Since: 4.0
+     * 
      * @param input
      *              An AVCaptureInput instance.
      */
@@ -518,6 +550,8 @@ public class AVCaptureSession extends NSObject {
      * Removes an AVCaptureOutput from the session.
      * 
      * -removeOutput: may be called while the session is running.
+     * 
+     * API-Since: 4.0
      * 
      * @param output
      *               An AVCaptureOutput instance.
@@ -614,7 +648,11 @@ public class AVCaptureSession extends NSObject {
      * 
      * Clients invoke -startRunning to start the flow of data from inputs to outputs connected to the AVCaptureSession
      * instance. This call blocks until the session object has completely started up or failed. A failure to start
-     * running is reported through the AVCaptureSessionRuntimeErrorNotification mechanism.
+     * running is reported through the AVCaptureSessionRuntimeErrorNotification mechanism. If you've called
+     * -beginConfiguration, you must call -commitConfiguration before invoking -startRunning, otherwise an
+     * NSGenericException is thrown.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("startRunning")
@@ -626,7 +664,11 @@ public class AVCaptureSession extends NSObject {
      * Stops an AVCaptureSession instance that is currently running.
      * 
      * Clients invoke -stopRunning to stop the flow of data from inputs to outputs connected to the AVCaptureSession
-     * instance. This call blocks until the session object has completely stopped.
+     * instance. This call blocks until the session object has completely stopped. -stopRunning may not be called while
+     * the session is being configured. If you've called -beginConfiguration, you must call -commitConfiguration before
+     * invoking -stopRunning, otherwise an NSGenericException is thrown.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("stopRunning")
@@ -678,14 +720,15 @@ public class AVCaptureSession extends NSObject {
      * running. Default value is 0.
      * 
      * Contributors to hardwareCost include:
-     * - Whether the source devices' active formats use the full sensor (4:3) or a crop (16:9). Cropped formats require
+     * - Whether the source device's active format uses the full sensor (4:3) or a crop (16:9). Cropped formats require
      * lower hardware bandwidth, and therefore lower the cost.
-     * - The max frame rate supported by the source devices' active formats. The higher the max frame rate, the higher
+     * - The max frame rate supported by the source device's active format. The higher the max frame rate, the higher
      * the cost.
-     * - Whether the source devices' active formats are binned or not. Binned formats require substantially less
-     * hardware bandwidth, and therefore result in a lower cost.
+     * - Whether the source device's active format is binned or not. Binned formats require substantially less hardware
+     * bandwidth, and therefore result in a lower cost.
      * - The number of sources configured to deliver streaming disparity / depth via AVCaptureDepthDataOutput. The
      * higher the number of cameras configured to produce depth, the higher the cost.
+     * For AVCaptureMultiCamSessions, all of the source devices' active formats contribute to hardwareCost.
      * In order to reduce hardwareCost, consider picking a sensor-cropped activeFormat, or a binned format. You may also
      * use AVCaptureDeviceInput's videoMinFrameDurationOverride property to artificially limit the max frame rate (which
      * is the reciprocal of the min frame duration) of a source device to a lower value. By doing so, you only pay the
@@ -735,9 +778,14 @@ public class AVCaptureSession extends NSObject {
      * This property can be used to determine whether multitaskingCameraAccessEnabled may be set to YES. When this
      * property changes from YES to NO, multitaskingCameraAccessEnabled also reverts to NO.
      * 
-     * This property returns true on iPads that support Stage Manager with an extended display.
+     * Prior to iOS 18, this property returns YES on iPads that support Stage Manager with an extended display. In
+     * applications linked on or after iOS 18, this property returns YES for video conferencing applications (apps that
+     * use "voip" as one of their UIBackgroundModes).
      * 
-     * This property returns true on Apple TV.
+     * This property also returns YES for iOS applications that have the
+     * com.apple.developer.avfoundation.multitasking-camera-access entitlement.
+     * 
+     * This property returns YES on Apple TV.
      * 
      * This property is key-value observable.
      * 
@@ -804,4 +852,194 @@ public class AVCaptureSession extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * addControl:
+     * 
+     * Adds an `AVCaptureControl` instance to the session.
+     * 
+     * An `AVCaptureControl` instance can only be added to a session using `-addControl:` if `-canAddControl:` returns
+     * `YES`, otherwise an `NSInvalidArgumentException` is thrown. `-addControl:` may be called while the session is
+     * running.
+     * 
+     * For an `AVCaptureControl` instance to become active, an `AVCaptureSessionControlsDelegate` must be set on the
+     * session.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param control
+     *                An `AVCaptureControl` instance.
+     */
+    @Generated
+    @Selector("addControl:")
+    public native void addControl(@NotNull AVCaptureControl control);
+
+    /**
+     * canAddControl:
+     * 
+     * Returns whether the proposed control can be added to the session.
+     * 
+     * An `AVCaptureControl` instance can only be added to a session using `-addControl:` if `-canAddControl:` returns
+     * `YES`. For example, some platforms do not support controls. Instances of `AVCaptureSlider`, `AVCaptureToggle` and
+     * `AVCaptureIndexPicker` must have an action and an action queue set before being added to a session.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param control
+     *                An `AVCaptureControl` instance.
+     * @return
+     *         `YES` if the proposed control can be added to the session, `NO` otherwise.
+     */
+    @Generated
+    @Selector("canAddControl:")
+    public native boolean canAddControl(@NotNull AVCaptureControl control);
+
+    /**
+     * [@property] configuresApplicationAudioSessionToMixWithOthers
+     * 
+     * Indicates whether the receiver should configure the application's audio session to mix with others.
+     * 
+     * The value of this property is a BOOL indicating whether the receiver should configure the application's audio
+     * session to mix with, instead of interrupting, any ongoing audio sessions. It has no effect when
+     * usesApplicationAudioSession is set to NO. It also has no effect on Live Photo movie complement capture (where
+     * music is always mixed with). The default value is NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("configuresApplicationAudioSessionToMixWithOthers")
+    public native boolean configuresApplicationAudioSessionToMixWithOthers();
+
+    /**
+     * [@property] controls
+     * 
+     * An `NSArray` of `AVCaptureControl`s currently added to the session.
+     * 
+     * The value of this property is an `NSArray` of `AVCaptureControl`s currently added to the session. Clients can add
+     * `AVCaptureControl`s to a session by calling `-addControl:`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("controls")
+    @NotNull
+    public native NSArray<? extends AVCaptureControl> controls();
+
+    /**
+     * [@property] controlsDelegate
+     * 
+     * The receiver's controls delegate.
+     * 
+     * The value of this property is an object conforming to the `AVCaptureSessionControlsDelegate` protocol that
+     * receives events about the session's controls. The delegate is set using the `-setControlsDelegate:queue:` method.
+     * 
+     * A controls delegate must be specified for controls to become active.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("controlsDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native AVCaptureSessionControlsDelegate controlsDelegate();
+
+    /**
+     * [@property] controlsDelegateCallbackQueue
+     * 
+     * The dispatch queue on which all controls delegate methods will be called.
+     * 
+     * The value of this property is a `dispatch_queue_t`. The queue is set using the `-setControlsDelegate:queue:`
+     * method.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("controlsDelegateCallbackQueue")
+    @Nullable
+    public native dispatch_queue_t controlsDelegateCallbackQueue();
+
+    /**
+     * [@property] maxControlsCount
+     * 
+     * Specifies the maximum number of controls that can be added to a session.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("maxControlsCount")
+    @NInt
+    public native long maxControlsCount();
+
+    /**
+     * removeControl:
+     * 
+     * Removes an `AVCaptureControl` instance from the session.
+     * 
+     * `-removeControl:` may be called while the session is running.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param control
+     *                An `AVCaptureControl` instance.
+     */
+    @Generated
+    @Selector("removeControl:")
+    public native void removeControl(@NotNull AVCaptureControl control);
+
+    /**
+     * [@property] configuresApplicationAudioSessionToMixWithOthers
+     * 
+     * Indicates whether the receiver should configure the application's audio session to mix with others.
+     * 
+     * The value of this property is a BOOL indicating whether the receiver should configure the application's audio
+     * session to mix with, instead of interrupting, any ongoing audio sessions. It has no effect when
+     * usesApplicationAudioSession is set to NO. It also has no effect on Live Photo movie complement capture (where
+     * music is always mixed with). The default value is NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setConfiguresApplicationAudioSessionToMixWithOthers:")
+    public native void setConfiguresApplicationAudioSessionToMixWithOthers(boolean value);
+
+    /**
+     * setControlsDelegate:queue:
+     * 
+     * Sets the receiver's controls delegate that receives events about the session's controls and the dispatch queue on
+     * which the delegate is called.
+     * 
+     * Users can interact with an `AVCaptureSession`'s controls by performing specific gestures to enable their
+     * visibility. A delegate may be specified to be informed when the controls can be interacted with and are
+     * dismissed. All delegate methods will be called on the specified dispatch queue.
+     * 
+     * A serial dispatch queue must be used to guarantee that delegate callbacks will be delivered in order. The
+     * `controlsDelegateCallbackQueue` parameter may not be `NULL`, except when setting the `controlsDelegate` to `nil`
+     * otherwise `-setControlsDelegate:queue:` throws an `NSInvalidArgumentException`.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param controlsDelegate
+     *                                      An object conforming to the `AVCaptureSessionControlsDelegate` protocol that
+     *                                      receives events about the session's controls.
+     * @param controlsDelegateCallbackQueue
+     *                                      A dispatch queue on which all delegate methods are called.
+     */
+    @Generated
+    @Selector("setControlsDelegate:queue:")
+    public native void setControlsDelegateQueue(
+            @Mapped(ObjCObjectMapper.class) @Nullable AVCaptureSessionControlsDelegate controlsDelegate,
+            @Nullable dispatch_queue_t controlsDelegateCallbackQueue);
+
+    /**
+     * [@property] supportsControls
+     * 
+     * Indicates whether session controls are supported on this platform.
+     * 
+     * `AVCaptureControl`s are only supported on platforms with necessary hardware.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("supportsControls")
+    public native boolean supportsControls();
 }

@@ -91,6 +91,8 @@ public class SHSession extends NSObject {
 
     /**
      * The @c SHCatalog used to initialize this session and which all matches will be made against
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -113,6 +115,8 @@ public class SHSession extends NSObject {
 
     /**
      * A delegate for communicating the results of matching
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -131,6 +135,8 @@ public class SHSession extends NSObject {
 
     /**
      * Create A new @c SHSession that searches the Shazam Catalog
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("init")
@@ -140,6 +146,8 @@ public class SHSession extends NSObject {
      * Create A new @c SHSession based upon the supplied @c SHCatalog
      * 
      * @param catalog The store of signatures to match against
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("initWithCatalog:")
@@ -171,6 +179,8 @@ public class SHSession extends NSObject {
      * Match the @c SHSignature against the provided @c SHCatalog
      * 
      * @param signature a @c SHSignature to be matched
+     * 
+     *                  API-Since: 15.0
      */
     @Generated
     @Selector("matchSignature:")
@@ -191,6 +201,8 @@ public class SHSession extends NSObject {
      * is contiguous and mitigate the effect of discontiguous audio.
      * [@note] This method only accepts PCM audio formats. The following sample rates are recommended but not required:
      * 48000, 44100, 32000, 16000.
+     * 
+     * API-Since: 15.0
      * 
      * @param buffer A buffer of audio to be used for recognition
      * @param time   Where in the stream the audio occurs
@@ -214,6 +226,8 @@ public class SHSession extends NSObject {
 
     /**
      * A delegate for communicating the results of matching
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -221,6 +235,8 @@ public class SHSession extends NSObject {
 
     /**
      * A delegate for communicating the results of matching
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SHSessionDelegate value) {

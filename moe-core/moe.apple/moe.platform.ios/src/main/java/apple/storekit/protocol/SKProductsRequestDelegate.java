@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Get products using Product.products(for:)
+ */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -35,7 +41,10 @@ public interface SKProductsRequestDelegate extends SKRequestDelegate {
      * Sent immediately before -requestDidFinish:
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Get products using Product.products(for:)
      */
+    @Deprecated
     @Generated
     @Selector("productsRequest:didReceiveResponse:")
     void productsRequestDidReceiveResponse(@NotNull SKProductsRequest request, @NotNull SKProductsResponse response);

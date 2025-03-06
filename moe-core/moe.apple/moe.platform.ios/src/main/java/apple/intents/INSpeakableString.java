@@ -208,6 +208,9 @@ public class INSpeakableString extends NSObject implements INSpeakable, NSCopyin
     @Selector("alternativeSpeakableMatches")
     public native NSArray<?> alternativeSpeakableMatches();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithVocabularyIdentifier:spokenPhrase:pronunciationHint:")
     public native INSpeakableString initWithVocabularyIdentifierSpokenPhrasePronunciationHint(

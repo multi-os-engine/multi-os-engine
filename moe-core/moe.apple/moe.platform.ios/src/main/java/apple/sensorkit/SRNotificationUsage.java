@@ -61,6 +61,8 @@ public class SRNotificationUsage extends NSObject {
 
     /**
      * The bundle identifier of the application that corresponds to the notification. Only populated for Apple apps.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -96,6 +98,9 @@ public class SRNotificationUsage extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("event")
     @NInt

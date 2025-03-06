@@ -90,6 +90,8 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the speed with which the user wants to continue.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -107,6 +109,8 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided speed.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -177,6 +181,8 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
      * resolvedSpeed can be different than the original speed. This allows app extensions to apply business logic
      * constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

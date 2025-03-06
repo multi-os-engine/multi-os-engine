@@ -164,6 +164,9 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -173,6 +176,9 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
     @Selector("init")
     public native INBookRestaurantReservationIntentResponse init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INBookRestaurantReservationIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -184,6 +190,8 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
 
     /**
      * the userBooking that has been confirmed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUserBooking:")
@@ -197,6 +205,8 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
 
     /**
      * the userBooking that has been confirmed
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

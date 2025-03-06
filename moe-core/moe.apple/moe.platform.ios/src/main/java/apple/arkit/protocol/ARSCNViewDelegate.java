@@ -30,6 +30,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
      * @param renderer The renderer that will render the scene.
      * @param node     The node that maps to the anchor.
      * @param anchor   The added anchor.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -45,6 +47,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
      * @param renderer The renderer that will render the scene.
      * @param node     The node that was removed.
      * @param anchor   The anchor that was removed.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -60,6 +64,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
      * @param renderer The renderer that will render the scene.
      * @param node     The node that was updated.
      * @param anchor   The anchor that was updated.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -79,6 +85,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
      * @param renderer The renderer that will render the scene.
      * @param anchor   The added anchor.
      * @return Node that will be mapped to the anchor or nil.
+     * 
+     *         API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -95,6 +103,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
      * @param renderer The renderer that will render the scene.
      * @param node     The node that will be updated.
      * @param anchor   The anchor that was updated.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @IsOptional

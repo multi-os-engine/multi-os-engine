@@ -93,6 +93,12 @@ public class INTransferMoneyIntent extends INIntent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fromAccount")
@@ -111,6 +117,12 @@ public class INTransferMoneyIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INTransferMoneyIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithFromAccount:toAccount:transactionAmount:transactionScheduledDate:transactionNote:")
     public native INTransferMoneyIntent initWithFromAccountToAccountTransactionAmountTransactionScheduledDateTransactionNote(
@@ -171,21 +183,45 @@ public class INTransferMoneyIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("toAccount")
     public native INPaymentAccount toAccount();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionAmount")
     public native INPaymentAmount transactionAmount();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionNote")
     public native String transactionNote();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionScheduledDate")

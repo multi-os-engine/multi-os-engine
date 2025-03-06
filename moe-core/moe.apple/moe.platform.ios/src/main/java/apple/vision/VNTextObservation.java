@@ -86,6 +86,8 @@ public class VNTextObservation extends VNRectangleObservation {
      * If the associated request indicated that it is interested in character boxes by setting the
      * VNDetectTextRectanglesRequest reportCharacterBoxes property to @YES, this property will be non-nil (but may still
      * be empty, depending on the detection results).
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

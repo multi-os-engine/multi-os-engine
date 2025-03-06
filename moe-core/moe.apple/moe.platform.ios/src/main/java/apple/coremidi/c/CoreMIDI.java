@@ -54,6 +54,7 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.coremidi.struct.MIDISysexSendRequestUMP;
+import apple.coremidi.struct.MIDIMessage_128;
 
 @Generated
 @Library("CoreMIDI")
@@ -2520,8 +2521,9 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyNameConfigurationDictionary();
 
     /**
-     * All MIDI-CI methods involving a channel number use 0x7f to mean "the whole port", i.e. all
-     * channels.
+     * [@constant] MIDIChannelsWholePort
+     * 
+     * An outdated MIDI-CI constant indicating "the whole port", i.e. all channels.
      */
     @Generated public static final byte MIDIChannelsWholePort = 127;
 
@@ -2791,7 +2793,7 @@ public final class CoreMIDI {
      * Drivers call this function to specify one of the entities that
      * comprise a device.
      * 
-     * Non-drivers may call this function as of macOS 10.16 & iOS 14 to
+     * Non-drivers may call this function as of macOS 11.0 & iOS 14 to
      * add entities to external devices.
      * 
      * @param device
@@ -3198,4 +3200,380 @@ public final class CoreMIDI {
     @CVariable()
     @NotNull
     public static native CFStringRef kMIDIPropertyUMPCanTransmitGroupless();
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPPolyPressure(byte group, byte channel, byte noteNumber, byte pressure);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPProgramChange(byte group, byte channel, byte program);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPChannelPressure(byte group, byte channel, byte value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2StreamMessage(byte format, int status, char data1, int data2, int data3,
+            int data4);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2StreamMessageFromData(byte format, int status,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String data,
+            @NUInt long length);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2EndpointDiscoveryMessage(byte versionMajor, byte versionMinor,
+            boolean endpointInfoRequest, boolean deviceIdentityRequest, boolean endpointNameRequest,
+            boolean productInstanceIDRequest, boolean streamConfigurationRequest);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2EndpointInfoNotificationMessage(byte versionMajor, byte versionMinor,
+            boolean staticFunctionBlocks, byte numberOfFunctionBlocks, boolean m1, boolean m2,
+            boolean receiveJRTimestamp, boolean transmitJRTimestamp);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2EndpointDeviceIdentityNotificationMessage(byte deviceManufacturer1,
+            byte deviceManufacturer2, byte deviceManufacturer3, char deviceFamily, char deviceFamilyModel,
+            int revisionLevel);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2EndpointNameNotificationMessage(byte format,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String data,
+            @NUInt long length);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2EndpointProductInstanceIDNotificationMessage(byte format,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String data,
+            @NUInt long length);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2StreamConfigurationRequestMessage(byte protocol,
+            boolean receiveJRTimestamp, boolean transmitJRTimestamp);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2StreamConfigurationNotificationMessage(byte protocol,
+            boolean receiveJRTimestamp, boolean transmitJRTimestamp);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2FunctionBlockDiscoveryMessage(byte functionBlockNumber,
+            boolean infoRequest, boolean nameRequest);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2FunctionBlockInfoNotificationMessage(boolean active, byte blockNumber,
+            int UIHint, int MIDI1, int direction, byte firstGroup, byte numberOfGroupsSpanned, byte CIVersion,
+            byte maxSysex8Streams);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2FunctionBlockNameNotificationMessage(byte format, byte blockNumber,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String data,
+            @NUInt long length);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2StartOfClipMessage();
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2EndOfClipMessage();
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDINoOpMessage();
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDIJitterReductionClockMessage(char senderClockTime);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDIJitterReductionTimestampMessage(char senderClockTimestamp);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDIDeltaClockstampTicksPerQuarterNoteMessage(char ticksPerQuarterNote);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDITicksSinceLastEventMessage(int ticksSinceLastEvent);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_128 MIDI2FlexDataMessage(byte group, byte format, byte address, byte channel,
+            byte statusBank, byte status, int data1, int data2, int data3);
+
+    /**
+     * constant kMIDIPropertyAssociatedEndpoint
+     * 
+     * endpoint property, MIDIUniqueID. If this property is present, the indicated endpoint should be
+     * used for bidirectional communication purposes, (e.g. UMP Endpoint pairing or MIDI-CI devices).
+     * When setting this property on an endpoint, it should also be set on the assocated endpoint to
+     * create a bidirectional mapping.
+     * 
+     * Note: This value is a MIDIUniqueID, use MIDIObjectFindByUniqueID to resolve it to a MIDIObjectRef.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kMIDIPropertyAssociatedEndpoint();
+
+    /**
+     * ! 28 bits usable; allowed values 0x0~0xFFFFFFF;
+     */
+    @Generated public static final byte kMIDIUInteger2Max = 3;
+    @Generated public static final byte kMIDIUInteger4Max = 15;
+    @Generated public static final byte kMIDIUInteger7Max = 127;
+    @Generated public static final char kMIDIUInteger14Max = 0x3FFF;
+    @Generated public static final int kMIDIUInteger28Max = 0x0FFFFFFF;
+    /**
+     * Device ID value used to specify that a message is to/from a UMP group.
+     */
+    @Generated public static final byte kMIDIDeviceIDUMPGroup = 126;
+    /**
+     * Device ID used for to/from Function Block; also used when Function Blocks are not supported.
+     */
+    @Generated public static final byte kMIDIDeviceIDFunctionBlock = 127;
+    /**
+     * [@constant] kMIDICIPropertyExchangeBadRequestID
+     * 
+     * Returned when MIDI-CI Property Messages were not dispatched due to an error.
+     */
+    @Generated public static final byte kMIDICIPropertyExchangeBadRequestID = -1;
+
+    /**
+     * [@constant] MIDIUMPEndpointWasAddedNotification
+     * 
+     * A notification posted when a MIDI UMP Endpoint has been added to the subsystem.
+     * 
+     * The MIDIUMPEndpoint sent in userInfo is the endpoint which was recently discovered.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDIUMPEndpointWasAddedNotification();
+
+    /**
+     * [@constant] MIDIUMPEndpointWasRemovedNotification
+     * 
+     * A notification posted when a MIDI UMP Endpoint has been removed from the subsystem.
+     * 
+     * Any MIDIUMPEndpoint sent with this notification is no longer available to the system. Any
+     * attempt to perform I/O with its source or destination may fail, as the MIDIEndpointRef
+     * associated with the UMP endpoint may no longer be valid. If this notification is posted,
+     * any resources related to communication with this UMP endpoint may be safely
+     * disposed.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDIUMPEndpointWasRemovedNotification();
+
+    /**
+     * [@constant] MIDIUMPEndpointWasUpdatedNotification
+     * 
+     * A notification posted when an UMP endpoint updates its stream configuration or changes the
+     * state of one of its Function Blocks.
+     * 
+     * If this notification is posted, an Endpoint Info Notification was sent from the UMP endpoint in userInfo.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDIUMPEndpointWasUpdatedNotification();
+
+    /**
+     * [@constant] MIDIUMPFunctionBlockWasUpdatedNotification
+     * 
+     * A notification posted when a Function Block is updated.
+     * 
+     * If this notification is posted, the supplied Function Block in userInfo has had a change to its
+     * enabled state, Group configuration, UI hint, MIDI 1.0 status, etc..
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDIUMPFunctionBlockWasUpdatedNotification();
+
+    /**
+     * [@constant] MIDIUMPEndpointObjectKey
+     * 
+     * Value is a MIDIUMPEndpoint
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDIUMPEndpointObjectKey();
+
+    /**
+     * [@constant] MIDIUMPFunctionBlockObjectKey
+     * 
+     * Value is a MIDIUMPFunctionBlock
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDIUMPFunctionBlockObjectKey();
+
+    /**
+     * [@constant] MIDICIDeviceWasAddedNotification
+     * 
+     * A notification posted when a MIDI-CI Device has been added to the subsystem.
+     * 
+     * The userInfo dictionary will contain a MIDICIDeviceObjectKey with the
+     * MIDI-CI Device which has been added to the subsystem.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDICIDeviceWasAddedNotification();
+
+    /**
+     * [@constant] MIDICIDeviceWasRemovedNotification
+     * 
+     * A notification posted when a MIDI-CI Device has been removed or has had its MUID invalidated.
+     * 
+     * Any previously discovered MIDICIDevice that fails to respond to a discovery message
+     * will be removed. The userInfo dictionary will contain a MIDICIDeviceObjectKey with the
+     * MIDI-CI Device which has been removed or has had its MUID invalidated.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDICIDeviceWasRemovedNotification();
+
+    /**
+     * [@constant] MIDICIProfileWasUpdatedNotification
+     * 
+     * A notification posted when a MIDI-CI Device has been enabled/disabled or updated.
+     * 
+     * The userInfo dictionary will contain a MIDICIDeviceObjectKey and
+     * MIDICIProfileObjectKey with the MIDICIDevice and MIDI-CI Profile which
+     * was recently enabled or disabled.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDICIProfileWasUpdatedNotification();
+
+    /**
+     * [@constant] MIDICIProfileWasRemovedNotification
+     * 
+     * A notification posted when a MIDI-CI Device has been removed.
+     * 
+     * The userInfo dictionary will contain a MIDICIDeviceObjectKey and
+     * MIDICIProfileObjectKey with the MIDICIDevice and MIDI-CI Profile which
+     * has been removed.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDICIProfileWasRemovedNotification();
+
+    /**
+     * [@constant] MIDICIDeviceObjectKey
+     * 
+     * Value is an MIDIUMPEndpoint.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDICIDeviceObjectKey();
+
+    /**
+     * [@constant] MIDICIProfileObjectKey
+     * 
+     * Value is an MIDIUMPCIProfile
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MIDICIProfileObjectKey();
 }

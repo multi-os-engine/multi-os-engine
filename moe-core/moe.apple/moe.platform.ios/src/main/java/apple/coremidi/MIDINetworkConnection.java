@@ -101,6 +101,9 @@ public class MIDINetworkConnection extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("connectionWithHost:")
     public static native MIDINetworkConnection connectionWithHost(@NotNull MIDINetworkHost host);
@@ -166,6 +169,9 @@ public class MIDINetworkConnection extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @Selector("host")

@@ -169,6 +169,8 @@ public class CMMotionActivity extends CMLogItem {
      * 
      * Discussion:
      * True if the device is in a vehicle.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("automotive")
@@ -182,6 +184,8 @@ public class CMMotionActivity extends CMLogItem {
      * 
      * CoreMotion always provides the most likely state. Confidence represents
      * how likely that the state is to be correct.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("confidence")
@@ -213,6 +217,8 @@ public class CMMotionActivity extends CMLogItem {
      * 
      * Discussion:
      * True if the device is on a running person.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("running")
@@ -223,6 +229,8 @@ public class CMMotionActivity extends CMLogItem {
      * 
      * Discussion:
      * Time at which the activity started.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -234,6 +242,8 @@ public class CMMotionActivity extends CMLogItem {
      * 
      * Discussion:
      * True if the device is not moving.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("stationary")
@@ -251,6 +261,8 @@ public class CMMotionActivity extends CMLogItem {
      * Discussion:
      * True if there is no estimate of the current state. This can happen if
      * the device was turned off.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("unknown")
@@ -261,6 +273,8 @@ public class CMMotionActivity extends CMLogItem {
      * 
      * Discussion:
      * True if the device is on a walking person.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("walking")

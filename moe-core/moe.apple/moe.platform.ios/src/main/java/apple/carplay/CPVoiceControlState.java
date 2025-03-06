@@ -107,11 +107,17 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("image")
@@ -137,6 +143,8 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
      *                      Voice Control state images may be a maximum of 150 by 150 points.
      * @param repeats       For an animated image, YES if the animation should repeat indefinitely, NO
      *                      to run the animation only once.
+     * 
+     *                      API-Since: 12.0
      */
     @Generated
     @Selector("initWithIdentifier:titleVariants:image:repeats:")
@@ -170,6 +178,9 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native CPVoiceControlState new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("repeats")
     public native boolean repeats();
@@ -200,6 +211,9 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("titleVariants")

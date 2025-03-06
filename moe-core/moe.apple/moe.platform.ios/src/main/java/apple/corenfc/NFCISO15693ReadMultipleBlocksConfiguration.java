@@ -128,7 +128,7 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
      * 
      * @param range          Read range specify by the starting block index and the total number of blocks.
      * @param chunkSize      Specify number of blocks parameter for the Read multiple blocks command.
-     * @param maximumRetries Maximum number of retry attempt when tag response is not recevied.
+     * @param maximumRetries Maximum number of retry attempt when tag response is not received.
      * @param retryInterval  Time interval wait between each retry attempt.
      * 
      *                       API-Since: 11.0

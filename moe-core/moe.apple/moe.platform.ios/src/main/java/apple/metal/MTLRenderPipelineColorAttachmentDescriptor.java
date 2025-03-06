@@ -161,6 +161,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendOperationAdd
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("alphaBlendOperation")
@@ -176,6 +178,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("destinationAlphaBlendFactor")
@@ -184,6 +188,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("destinationRGBBlendFactor")
@@ -196,6 +202,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Enable blending. Defaults to NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isBlendingEnabled")
@@ -203,6 +211,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Enable blending. Defaults to NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBlendingEnabled:")
@@ -210,6 +220,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Pixel format. Defaults to MTLPixelFormatInvalid
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pixelFormat")
@@ -218,6 +230,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendOperationAdd
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("rgbBlendOperation")
@@ -226,6 +240,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendOperationAdd
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAlphaBlendOperation:")
@@ -233,6 +249,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDestinationAlphaBlendFactor:")
@@ -240,6 +258,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDestinationRGBBlendFactor:")
@@ -247,6 +267,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Pixel format. Defaults to MTLPixelFormatInvalid
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPixelFormat:")
@@ -254,6 +276,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendOperationAdd
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRgbBlendOperation:")
@@ -261,6 +285,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorOne
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSourceAlphaBlendFactor:")
@@ -268,6 +294,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorOne
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSourceRGBBlendFactor:")
@@ -275,6 +303,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLColorWriteMaskAll
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setWriteMask:")
@@ -282,6 +312,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorOne
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sourceAlphaBlendFactor")
@@ -290,6 +322,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLBlendFactorOne
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sourceRGBBlendFactor")
@@ -298,6 +332,8 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
 
     /**
      * Defaults to MTLColorWriteMaskAll
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("writeMask")

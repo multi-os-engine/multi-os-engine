@@ -77,6 +77,8 @@ public class AVMIDIChannelEvent extends AVMusicEvent {
     /**
      * [@property] channel
      * The MIDI channel for the event. Range: 0-15.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("channel")
@@ -147,6 +149,8 @@ public class AVMIDIChannelEvent extends AVMusicEvent {
     /**
      * [@property] channel
      * The MIDI channel for the event. Range: 0-15.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setChannel:")

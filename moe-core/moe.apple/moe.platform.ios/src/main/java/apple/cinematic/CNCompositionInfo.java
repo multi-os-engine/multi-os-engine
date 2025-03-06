@@ -121,6 +121,8 @@ public class CNCompositionInfo extends CNAssetInfo {
      * used to append at the end.
      * - error: AVError if it fails, as with `-[AVMutableCompositionTrack insertTimeRange:ofTrack:atTime:error:]`
      * - Returns: whether the insertion was successful
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("insertTimeRange:ofCinematicAssetInfo:atTime:error:")

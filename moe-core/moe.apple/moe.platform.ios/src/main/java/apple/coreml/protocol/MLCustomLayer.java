@@ -37,6 +37,8 @@ public interface MLCustomLayer {
      * GPU evaluation for each prediction. If not provided, the execution of this layer will always be
      * on the CPU. Should return 'YES' on sucessfully encoding, or 'NO' and set an error if the encoding
      * fails.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @IsOptional
@@ -53,6 +55,8 @@ public interface MLCustomLayer {
      * The memory for both input and output arrays are preallocated, and should not be copied or moved. The
      * implementation should not alter the inputs. Should return 'YES' on sucess, or 'NO' and set the error on
      * failure.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @Selector("evaluateOnCPUWithInputs:outputs:error:")
@@ -65,6 +69,8 @@ public interface MLCustomLayer {
      * 'parameters' map from the model specification. This function is called once on model load.
      * We expect the implementation to return 'nil' and set an error in the event of failure
      * initializing the object.
+     * 
+     * API-Since: 11.2
      */
     @Nullable
     @Generated
@@ -79,6 +85,8 @@ public interface MLCustomLayer {
      * Batch, Channel Height, Width). See the Core ML neural network protobuf specification for more details
      * about how layers use these dimensions. This will get called at load and run time. In the event of an error
      * the implementation should return 'nil' and set an error.
+     * 
+     * API-Since: 11.2
      */
     @Nullable
     @Generated
@@ -94,6 +102,8 @@ public interface MLCustomLayer {
      * but is a separate call from the initialization. The pointer to weights should be stored, but modifying
      * or copying its contents can significantly increase an app's memory footprint. The implementation
      * should return 'YES' on success, or return 'NO' and set an error in the event of a failure.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @Selector("setWeightData:error:")

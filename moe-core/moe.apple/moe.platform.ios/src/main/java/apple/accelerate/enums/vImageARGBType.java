@@ -27,26 +27,26 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class vImageARGBType {
+    @Generated
+    private vImageARGBType() {
+    }
+
     /**
      * Any 8-bit four channel interleaved buffer [0,255]=[0,1.0]. Does not specify channel order.
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImageARGB8888 = 0x00000000;
+    @Generated public static final int ARGB8888 = 0x00000000;
     /**
      * Any 16-bit unsigned four channel interleaved buffer [0,65535]=[0,1.0]. Does not specify channel order.
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImageARGB16U = 0x00000001;
+    @Generated public static final int ARGB16U = 0x00000001;
     /**
      * Any 16-bit signed fixedpoint four channel interleaved buffer [0,4096]=[0,1.0]. Does not specify channel order.
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImageARGB16Q12 = 0x00000002;
-
-    @Generated
-    private vImageARGBType() {
-    }
+    @Generated public static final int ARGB16Q12 = 0x00000002;
 }

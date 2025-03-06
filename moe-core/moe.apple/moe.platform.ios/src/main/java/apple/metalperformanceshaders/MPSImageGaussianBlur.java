@@ -193,6 +193,8 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
      *               ceil (sqrt(-log(0.01)*2)*sigma) ~ ceil(3.7*sigma)
      *               as rough estimate of filter width
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:sigma:")
@@ -203,6 +205,8 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
      * [@property] sigma
      * 
      * Read-only sigma value with which filter was created
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("sigma")

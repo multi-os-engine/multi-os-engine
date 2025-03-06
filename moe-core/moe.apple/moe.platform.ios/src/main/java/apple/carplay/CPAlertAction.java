@@ -106,6 +106,9 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("handler")
@@ -135,6 +138,8 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     /**
      * Create an alert action with a title, display style, and a callback handler that is invoked
      * when the user taps this action.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithTitle:style:handler:")
@@ -187,6 +192,9 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("style")
     @NUInt
@@ -206,6 +214,9 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("title")

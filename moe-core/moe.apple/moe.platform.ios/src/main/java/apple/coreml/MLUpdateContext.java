@@ -94,6 +94,8 @@ public class MLUpdateContext extends NSObject {
     /**
      * Indicates the event the progress handler invocation corresponds to. This will be one of the events app registered
      * via MLUpdateProgressHandlers.interestedEvents.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("event")
@@ -133,6 +135,8 @@ public class MLUpdateContext extends NSObject {
 
     /**
      * Metrics computed on the training input during the update process.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -141,6 +145,8 @@ public class MLUpdateContext extends NSObject {
 
     /**
      * Reference to the updated model that can be used for additional validation or evaluation.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -154,6 +160,8 @@ public class MLUpdateContext extends NSObject {
 
     /**
      * A snapshot of parameters (including their values) used during the update process.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -178,6 +186,8 @@ public class MLUpdateContext extends NSObject {
 
     /**
      * Reference to the update task that invokved the progress or completion handlers.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

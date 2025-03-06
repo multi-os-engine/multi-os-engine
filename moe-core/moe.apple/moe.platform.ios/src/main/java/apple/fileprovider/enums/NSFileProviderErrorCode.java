@@ -175,4 +175,26 @@ public final class NSFileProviderErrorCode {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long DomainDisabled = 0xFFFFFFFFFFFFF825L;
+    /**
+     * Returned by the system to indicate that it is temporarily unable to service requests for this domain.
+     * The caller should expect the same API call to succeed at a later time.
+     * 
+     * API-Since: 17.1
+     */
+    @Generated @NInt public static final long ProviderDomainTemporarilyUnavailable = 0xFFFFFFFFFFFFF824L;
+    /**
+     * Returned by the system to indicate that there is no NSFileProviderDomain registered in the
+     * system which has the same identifier that was used to construct the NSFileProviderManager
+     * which made the API call.
+     * 
+     * API-Since: 17.1
+     */
+    @Generated @NInt public static final long ProviderDomainNotFound = 0xFFFFFFFFFFFFF823L;
+    /**
+     * Returned by the system to indicate that the system does not have any launchable
+     * `com.apple.fileprovider-nonui` application extension for this domain's app bundle.
+     * 
+     * API-Since: 17.1
+     */
+    @Generated @NInt public static final long ApplicationExtensionNotFound = 0xFFFFFFFFFFFFF822L;
 }

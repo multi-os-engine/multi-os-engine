@@ -186,6 +186,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("clipRect")
@@ -205,6 +207,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * would produce unexpected results.)
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("edgeMode")
@@ -299,6 +303,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * @return On success, YES is returned. The texture may have been replaced with a new
      *         texture if a copyAllocator was provided. On failure, NO is returned. The
      *         texture is unmodified.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:")
@@ -314,6 +320,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * @param sourceTexture      A valid MTLTexture containing the source image.
      * @param destinationTexture A valid MTLTexture to be overwritten by result image. DestinationTexture may not alias
      *                           sourceTexture.
+     * 
+     *                           API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:")
@@ -333,6 +341,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * @return a pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -347,6 +357,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and source image align.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("offset")
@@ -363,6 +375,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setClipRect:")
@@ -381,6 +395,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * would produce unexpected results.)
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEdgeMode:")
@@ -395,6 +411,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and source image align.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOffset:")
@@ -426,6 +444,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * 
      * @param destinationSize The size of the full virtual destination image.
      * @return The area in the virtual source image that will be read.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("sourceRegionForDestinationSize:")
@@ -450,6 +470,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      * @param sourceImage      A valid MPSImage containing the source image.
      * @param destinationImage A valid MPSImage to be overwritten by result image. DestinationImage may not alias
      *                         sourceImage.
+     * 
+     *                         API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationImage:")

@@ -52,6 +52,8 @@ public class ILMessageFilterQueryResponse extends NSObject implements NSSecureCo
 
     /**
      * Action to take for the received message.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("action")
@@ -155,6 +157,8 @@ public class ILMessageFilterQueryResponse extends NSObject implements NSSecureCo
 
     /**
      * Action to take for the received message.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAction:")

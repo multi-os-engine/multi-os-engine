@@ -4,7 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 17.4
+ * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmap
  */
+@Deprecated
 @Generated
 public final class MTRThermostatDayOfWeek {
     @Generated
@@ -13,40 +16,56 @@ public final class MTRThermostatDayOfWeek {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapSunday
      */
-    @Generated public static final byte Sunday = 1;
+    @Deprecated @Generated public static final byte Sunday = 1;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapMonday
      */
-    @Generated public static final byte Monday = 2;
+    @Deprecated @Generated public static final byte Monday = 2;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapTuesday
      */
-    @Generated public static final byte Tuesday = 4;
+    @Deprecated @Generated public static final byte Tuesday = 4;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapWednesday
      */
-    @Generated public static final byte Wednesday = 8;
+    @Deprecated @Generated public static final byte Wednesday = 8;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapThursday
      */
-    @Generated public static final byte Thursday = 16;
+    @Deprecated @Generated public static final byte Thursday = 16;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapFriday
      */
-    @Generated public static final byte Friday = 32;
+    @Deprecated @Generated public static final byte Friday = 32;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapSaturday
      */
-    @Generated public static final byte Saturday = 64;
+    @Deprecated @Generated public static final byte Saturday = 64;
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapAway
      */
-    @Generated public static final byte Away = -128;
+    @Deprecated @Generated public static final byte Away = -128;
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRThermostatDayOfWeekAway
+     * Deprecated-Message: Please use MTRThermostatScheduleDayOfWeekBitmapAway
      */
     @Generated @Deprecated public static final byte AwayOrVacation = -128;
 }

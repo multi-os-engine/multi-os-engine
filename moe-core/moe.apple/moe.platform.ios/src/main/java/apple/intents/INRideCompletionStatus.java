@@ -94,6 +94,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * The ride was canceled by the service (e.g. because the driver asked to cancel)
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -102,6 +104,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * The ride was canceled by the user (e.g. by doing so through your application)
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -111,6 +115,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * The ride was canceled by the service because the passenger was not present for pickup and the vehicle maximum
      * wait time elapsed.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -129,6 +135,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * The ride completed.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -138,6 +146,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * The ride completed but there is a payment outstanding that the user needs to settle in the application.
      * The .completionUserActivity should be set, and will be continued in your application to perform payment tasks.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -148,6 +158,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * The ride completed. The fare in the provided amount was successfully paid; this amount may be displayed to the
      * user.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -223,6 +235,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding
      * payment). Acting on that UI will continue this activity in your application.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -250,6 +264,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * YES if the ride was canceled.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isCanceled")
@@ -257,6 +273,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * YES if the ride was completed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isCompleted")
@@ -264,6 +282,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * YES if the user missed the pickup. This is only YES if .canceled is YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isMissedPickup")
@@ -271,6 +291,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * Whether the payment is outstanding (YES) or settled (NO).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isOutstanding")
@@ -278,6 +300,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * The payment amount, if any.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -287,6 +311,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding
      * payment). Acting on that UI will continue this activity in your application.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setCompletionUserActivity:")

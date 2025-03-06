@@ -76,6 +76,9 @@ public class AXDataPointValue extends NSObject implements NSCopying {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("category")
@@ -142,6 +145,9 @@ public class AXDataPointValue extends NSObject implements NSCopying {
     @Selector("new")
     public static native AXDataPointValue new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("number")
     public native double number();
@@ -154,10 +160,16 @@ public class AXDataPointValue extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setCategory:")
     public native void setCategory(@NotNull String value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setNumber:")
     public native void setNumber(double value);
@@ -170,10 +182,16 @@ public class AXDataPointValue extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("valueWithCategory:")
     public static native AXDataPointValue valueWithCategory(@NotNull String category);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("valueWithNumber:")
     public static native AXDataPointValue valueWithNumber(double number);

@@ -93,6 +93,8 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * Data Type of the MPSNDArray elements
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("dataType")
@@ -125,6 +127,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      *                           The product of all dimension lengths must be less than 2**31.
      *                           Additional system memory limits may apply
      * @return A valid MPSNDArrayDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("descriptorWithDataType:dimensionCount:dimensionSizes:")
@@ -149,6 +153,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      *                   The product of all dimension sizes must be less than 2**31.
      *                   Additional system memory limits may apply
      * @return A valid MPSNDArrayDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Variadic()
@@ -174,6 +180,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      *                 The product of all dimension lengths must be less than 2**31.
      *                 Additional system memory limits may apply
      * @return A valid MPSNDArrayDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("descriptorWithDataType:shape:")
@@ -218,6 +226,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      * 
      * @param dimensionIndex dimension the MPSNDArray for which to return the length
      * @return The number of elements in that dimension.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("lengthOfDimension:")
@@ -234,6 +244,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      * 
      * May not exceed 16. A 0-diumension MPSNDArray is a single scalar value.
      * Undefined dimensions are implicitly length 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("numberOfDimensions")
@@ -248,6 +260,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      *                           moving to slowest moving dimension.
      *                           The product of all dimension lengths must be less than 2**31.
      *                           Additional system memory limits may apply
+     * 
+     *                           API-Since: 13.0
      */
     @Generated
     @Selector("reshapeWithDimensionCount:dimensionSizes:")
@@ -262,6 +276,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      *              in Python
      *              The product of all dimension lengths must be less than 2**31.
      *              Additional system memory limits may apply
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("reshapeWithShape:")
@@ -277,6 +293,8 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * Data Type of the MPSNDArray elements
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDataType:")
@@ -287,6 +305,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      * 
      * May not exceed 16. A 0-diumension MPSNDArray is a single scalar value.
      * Undefined dimensions are implicitly length 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNumberOfDimensions:")
@@ -305,6 +325,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      * 
      * @param subRange       The region of the slice, start value is wrt dimensionLength of the NDArray.
      * @param dimensionIndex The index of the dimension. Must be < numberOfDimensions
+     * 
+     *                       API-Since: 13.0
      */
     @Generated
     @Selector("sliceDimension:withSubrange:")
@@ -318,6 +340,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      * @param dimensionIndex The index of the dimension
      * @return Returns the slice range for the index. If the
      *         dimensionIndex >= numberOfDimensions, {0,1} is returned.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("sliceRangeForDimension:")
@@ -334,6 +358,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      * 
      * @param dimensionIndex  The first dimension. Must be < numberOfDimensions
      * @param dimensionIndex2 The second dimension. Must be < number of Dimensions.
+     * 
+     *                        API-Since: 13.0
      */
     @Generated
     @Selector("transposeDimension:withDimension:")
@@ -348,4 +374,57 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns the shape of the NDArray as MPSShape
+     * 
+     * The length of the array is the number of dimensions and the size of the fastest running dimension is the last
+     * element in the array.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("getShape")
+    @NotNull
+    public native NSArray<? extends NSNumber> getShape();
+
+    /**
+     * Permutes the dimensions of the current descriptor
+     * 
+     * This permutation is applied on top of whatever transpostions/permutations that may have been performed on the
+     * descriptor before.
+     * 
+     * 
+     * API-Since: 18.0
+     * 
+     * @param dimensionOrder A permutation of the dimensions of the NDArray.
+     *                       dimensionOrder[i] must contain the new postion of dimenson i.
+     *                       Size of the array must be equal to the original number of dimensions in the descriptor.
+     *                       Must have all the indices in [0, numberOfDimensions) present uniquely.
+     */
+    @Generated
+    @Selector("permuteWithDimensionOrder:")
+    public native void permuteWithDimensionOrder(@NotNull NUIntPtr dimensionOrder);
+
+    /**
+     * [@property] preferPackedRows
+     * 
+     * If YES, then new NDArrays created with this descriptor will pack the rows. Default: NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("preferPackedRows")
+    public native boolean preferPackedRows();
+
+    /**
+     * [@property] preferPackedRows
+     * 
+     * If YES, then new NDArrays created with this descriptor will pack the rows. Default: NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setPreferPackedRows:")
+    public native void setPreferPackedRows(boolean value);
 }

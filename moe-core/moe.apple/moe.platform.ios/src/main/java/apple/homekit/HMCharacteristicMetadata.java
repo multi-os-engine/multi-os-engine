@@ -164,18 +164,25 @@ public class HMCharacteristicMetadata extends NSObject {
 
     /**
      * The format of the value. Refer to HMCharacteristicMetadataFormat constants for supported units.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("format")
     public native String format();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native HMCharacteristicMetadata init();
 
     /**
      * Manufacturer provided description for the characteristic to present to the user.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -185,6 +192,8 @@ public class HMCharacteristicMetadata extends NSObject {
     /**
      * Max length value for the characteristic that indicates the maximum number of UTF-8 characters allowed if it has a
      * format of "string".
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -193,6 +202,8 @@ public class HMCharacteristicMetadata extends NSObject {
 
     /**
      * The maximum value for the characteristic if it has a format of "int" or "float".
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -201,6 +212,8 @@ public class HMCharacteristicMetadata extends NSObject {
 
     /**
      * The minimum value for the characteristic if it has a format of "int" or "float".
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -210,6 +223,8 @@ public class HMCharacteristicMetadata extends NSObject {
     /**
      * Step value for the characteristic that indicates the minimum step value allowed if it has a format of "int" or
      * "float".
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -218,6 +233,8 @@ public class HMCharacteristicMetadata extends NSObject {
 
     /**
      * The units of the value. Refer to HMCharacteristicMetadataUnits constants for supported units.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

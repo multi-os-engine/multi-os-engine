@@ -112,6 +112,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * This class property returns a shared and cached NSParagraphStyle instance with the default style settings, with
      * same value as the result of [[NSParagraphStyle alloc] init].
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -120,6 +122,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     /**
      * languageName is in ISO lang region format
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("defaultWritingDirectionForLanguage:")
@@ -187,6 +191,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("alignment")
     @NInt
@@ -203,6 +210,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("allowsDefaultTighteningForTruncation")
     public native boolean allowsDefaultTighteningForTruncation();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("baseWritingDirection")
     @NInt
@@ -231,6 +241,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     /**
      * Distance from margin to edge appropriate for text direction
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("firstLineHeadIndent")
@@ -239,6 +251,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     /**
      * Distance from margin to front edge of paragraph
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("headIndent")
@@ -250,6 +264,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
      * attempted when the ratio of the text width as broken without hyphenation to the width of the line fragment is
      * less than the hyphenation factor. When this takes on its default value of 0.0, the layout manager's hyphenation
      * factor is used instead. When both are 0.0, hyphenation is disabled.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("hyphenationFactor")
@@ -263,6 +279,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("initWithCoder:")
     public native NSParagraphStyle initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("lineBreakMode")
     @NInt
@@ -271,6 +290,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * Natural line height is multiplied by this factor (if positive) before being constrained by minimum and maximum
      * line height.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("lineHeightMultiple")
@@ -280,6 +301,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * "Leading": distance between the bottom of one line fragment and top of next (applied between lines in the same
      * container). This value is included in the line fragment heights in layout manager.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("lineSpacing")
@@ -288,6 +311,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     /**
      * 0 implies no maximum.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("maximumLineHeight")
@@ -297,6 +322,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * Line height is the distance from bottom of descenders to top of ascenders; basically the line fragment height.
      * Does not include lineSpacing (which is added after this computation).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("minimumLineHeight")
@@ -313,6 +340,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * Distance between the bottom of this paragraph and top of next (or the beginning of its paragraphSpacingBefore, if
      * any).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("paragraphSpacing")
@@ -322,6 +351,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * Distance between the bottom of the previous paragraph (or the end of its paragraphSpacing, if any) and the top of
      * this paragraph.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("paragraphSpacingBefore")
@@ -347,6 +378,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     /**
      * Distance from margin to back edge of paragraph; if negative or 0, from other margin
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("tailIndent")

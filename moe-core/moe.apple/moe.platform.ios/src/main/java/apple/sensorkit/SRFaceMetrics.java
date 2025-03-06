@@ -91,6 +91,8 @@ public class SRFaceMetrics extends NSObject implements NSCopying, NSSecureCoding
      * 
      * Indicates system context during a camera session, e.g., if the device was unlocked or (and) a messaging app was
      * used
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("context")
@@ -116,6 +118,9 @@ public class SRFaceMetrics extends NSObject implements NSCopying, NSSecureCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("faceAnchor")
     @NotNull
@@ -165,6 +170,8 @@ public class SRFaceMetrics extends NSObject implements NSCopying, NSSecureCoding
      * [@property] partialFaceExpressions
      * 
      * Detected partial face expressions
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("partialFaceExpressions")
@@ -183,6 +190,8 @@ public class SRFaceMetrics extends NSObject implements NSCopying, NSSecureCoding
      * [@property] sessionIdentifier
      * 
      * Identifier of a camera session
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sessionIdentifier")
@@ -216,6 +225,8 @@ public class SRFaceMetrics extends NSObject implements NSCopying, NSSecureCoding
      * [@property] version
      * 
      * Algorithm version
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("version")
@@ -226,6 +237,8 @@ public class SRFaceMetrics extends NSObject implements NSCopying, NSSecureCoding
      * [@property] wholeFaceExpressions
      * 
      * Detected whole face expressions
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("wholeFaceExpressions")

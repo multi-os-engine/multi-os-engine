@@ -19,6 +19,22 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Configures the minimum required number of digits preceding the first separator before the separator is shown.
+ * Grouping starts happening when the number of digits reaches `kCFNumberFormatterGroupingSize +
+ * kCFNumberFormatterMinGroupingDigits`.
+ * If `kCFNumberFormatterUseGroupingSeparator == false` the separator will not be shown and this property is ignored.
+ * Set `kCFNumberFormatterMinGroupingDigits == 1` to always show separators.
+ * Set `kCFNumberFormatterMinGroupingDigits == -1` to use the locale default minimum grouping digits.
+ * Note: `0` is an invalid value and the behavior is undefined.
+ * Example:
+ * `kCFNumberFormatterUseGroupingSeparator == true` and `kCFNumberFormatterGroupingSize == 3` and locale identifier is
+ * `en_US`
+ * Formatting values of 1000 and 10000 results in:
+ * `kCFNumberFormatterMinGroupingDigits == 1` 1,000 10,000
+ * `kCFNumberFormatterMinGroupingDigits == 2` 1000 10,000
+ * `kCFNumberFormatterMinGroupingDigits == -1` 1,000 10,000 (default for US English)
+ */
 @Generated
 public final class CFNumberFormatterRoundingMode {
     @Generated @NInt public static final long Ceiling = 0x0000000000000000L;

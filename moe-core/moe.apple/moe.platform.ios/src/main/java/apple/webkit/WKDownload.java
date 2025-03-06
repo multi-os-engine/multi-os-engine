@@ -73,6 +73,8 @@ public class WKDownload extends NSObject implements NSProgressReporting {
      * completionHandler.
      * If no resume attempt is possible with this server, completionHandler will be called with nil.
      * 
+     * API-Since: 14.5
+     * 
      * @param completionHandler A block to invoke when cancellation is finished.
      */
     @Generated
@@ -113,6 +115,8 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     /**
      * The delegate that receives progress updates for this download.
+     * 
+     * API-Since: 14.5
      */
     @Nullable
     @Generated
@@ -165,6 +169,8 @@ public class WKDownload extends NSObject implements NSProgressReporting {
      * 
      * If the original request redirected to a different URL, originalRequest
      * will be unchanged after the download follows the redirect.
+     * 
+     * API-Since: 14.5
      */
     @Nullable
     @Generated
@@ -186,6 +192,8 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     /**
      * The delegate that receives progress updates for this download.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setDelegate:")
@@ -193,6 +201,8 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     /**
      * The delegate that receives progress updates for this download.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WKDownloadDelegate value) {
@@ -221,6 +231,8 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     /**
      * The web view that originated this download.
+     * 
+     * API-Since: 14.5
      */
     @Nullable
     @Generated
@@ -231,4 +243,23 @@ public class WKDownload extends NSObject implements NSProgressReporting {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A boolean value indicating whether this download was initiated by the user.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("isUserInitiated")
+    public native boolean isUserInitiated();
+
+    /**
+     * The frame that originated this download.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("originatingFrame")
+    @NotNull
+    public native WKFrameInfo originatingFrame();
 }

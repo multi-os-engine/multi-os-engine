@@ -61,11 +61,17 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("allocWithZone:")
     public static native AXCustomContent allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("attributedLabel")
     public native NSAttributedString attributedLabel();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("attributedValue")
@@ -103,11 +109,17 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("customContentWithAttributedLabel:attributedValue:")
     public static native AXCustomContent customContentWithAttributedLabelAttributedValue(
             @NotNull NSAttributedString label, @NotNull NSAttributedString value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("customContentWithLabel:value:")
     public static native AXCustomContent customContentWithLabelValue(@NotNull String label, @NotNull String value);
@@ -133,6 +145,8 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
      * Changing this property allows the user to choose when they experience this content, based on preference.
      * For example, this content may be spoken all the time, or only in a "verbose" mode.
      * Default: AXCustomContentImportanceDefault
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("importance")
@@ -172,6 +186,8 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     /**
      * A localized string that describes how to name this content.
      * For example, 'Orientation' would be an appropriate name used for photo information.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -195,6 +211,8 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
      * Changing this property allows the user to choose when they experience this content, based on preference.
      * For example, this content may be spoken all the time, or only in a "verbose" mode.
      * Default: AXCustomContentImportanceDefault
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setImportance:")
@@ -221,6 +239,8 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     /**
      * A localized string that describes the content.
      * For example, 'Portrait' or 'Landscape' would be an appropriate content value for 'Orientation.'
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

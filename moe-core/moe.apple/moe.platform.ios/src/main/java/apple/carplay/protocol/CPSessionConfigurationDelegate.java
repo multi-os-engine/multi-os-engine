@@ -32,6 +32,8 @@ public interface CPSessionConfigurationDelegate {
 
     /**
      * This delegate is called whenever the types of limited user interfaces have changed.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional

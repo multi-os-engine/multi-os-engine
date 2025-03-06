@@ -3,7 +3,7 @@ package apple.corenfc.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * API-Since: 14.0
+ * API-Since: 11.0
  */
 @Generated
 public final class NFCISO15693RequestFlag {

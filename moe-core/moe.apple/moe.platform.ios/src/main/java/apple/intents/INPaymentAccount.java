@@ -50,11 +50,17 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("accountNumber")
     public native String accountNumber();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("accountType")
     @NInt
@@ -185,11 +191,17 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("new")
     public static native INPaymentAccount new_objc();
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("nickname")
     public native INSpeakableString nickname();
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("organizationName")

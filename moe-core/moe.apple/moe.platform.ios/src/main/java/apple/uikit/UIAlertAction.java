@@ -65,6 +65,9 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("actionWithTitle:style:handler:")
     public static native UIAlertAction actionWithTitleStyleHandler(@Nullable String title, @NInt long style,
@@ -177,19 +180,31 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @Selector("init")
     public native UIAlertAction init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("style")
     @NInt
     public native long style();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("title")

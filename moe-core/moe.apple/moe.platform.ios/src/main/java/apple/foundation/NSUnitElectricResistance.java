@@ -135,6 +135,9 @@ public class NSUnitElectricResistance extends NSDimension implements NSSecureCod
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kiloohms")
@@ -142,17 +145,25 @@ public class NSUnitElectricResistance extends NSDimension implements NSSecureCod
 
     /**
      * Base unit - ohms
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("megaohms")
     public static native NSUnitElectricResistance megaohms();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("microohms")
     public static native NSUnitElectricResistance microohms();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milliohms")
@@ -163,6 +174,9 @@ public class NSUnitElectricResistance extends NSDimension implements NSSecureCod
     @Selector("new")
     public static native NSUnitElectricResistance new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("ohms")

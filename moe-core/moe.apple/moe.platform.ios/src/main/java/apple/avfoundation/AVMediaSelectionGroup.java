@@ -172,6 +172,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      *                              output array.
      * @return An instance of NSArray containing the media selection options of the specified NSArray that match the
      *         specified locale.
+     * 
+     *         API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -192,6 +194,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * @return An instance of NSArray containing the media selection options of the specified NSArray that match the
      *         specified
      *         media characteristics.
+     * 
+     *         API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -213,6 +217,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * @return An instance of NSArray containing the media selection options of the specified NSArray that lack the
      *         specified
      *         media characteristics.
+     * 
+     *         API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -235,6 +241,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      *                              An array of AVMediaSelectionOption to be filtered according to whether they are
      *                              playable.
      * @return An instance of NSArray containing the media selection options of the specified NSArray that are playable.
+     * 
+     *         API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -271,6 +279,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * 
      * If allowsEmptySelection is YES, all of the available media options in the group can be deselected by passing nil
      * as the specified AVMediaSelectionOption to -[AVPlayerItem selectMediaOption:inMediaSelectionGroup:].
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("allowsEmptySelection")
@@ -307,6 +317,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * Will create a language option group from the AVMediaSelectionGroup
      * Any AVMediaSelectionOptions in the AVMediaSelectionGroup not representing
      * Audible or Legible selection options will be ignored.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -323,6 +335,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      *              propertyList].
      * @return If the specified properties match those of an option in the group, an instance of AVMediaSelectionOption.
      *         Otherwise nil.
+     * 
+     *         API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -336,6 +350,8 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * A collection of mutually exclusive media selection options.
      * 
      * An NSArray of AVMediaSelectionOption*.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated

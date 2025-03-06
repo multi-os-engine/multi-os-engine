@@ -89,6 +89,8 @@ public class UICalendarSelectionSingleDate extends UICalendarSelection {
 
     /**
      * The object that acts as the delegate of the calendar view selection
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -111,6 +113,8 @@ public class UICalendarSelectionSingleDate extends UICalendarSelection {
 
     /**
      * Creates a new single selection with the specified delegate.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithDelegate:")
@@ -155,6 +159,8 @@ public class UICalendarSelectionSingleDate extends UICalendarSelection {
     /**
      * The currently selected dates in the Calendar view. If this property is @c nil then nothing in the calendar
      * view is currently selected. The default value is @c nil.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -164,6 +170,8 @@ public class UICalendarSelectionSingleDate extends UICalendarSelection {
     /**
      * The currently selected dates in the Calendar view. If this property is @c nil then nothing in the calendar
      * view is currently selected. The default value is @c nil.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelectedDate:")
@@ -171,6 +179,8 @@ public class UICalendarSelectionSingleDate extends UICalendarSelection {
 
     /**
      * Sets the selected date to be displayed in the calendar, with an option to animate the setting.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelectedDate:animated:")

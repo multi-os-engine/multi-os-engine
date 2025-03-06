@@ -131,6 +131,8 @@ public class AVAudioNode extends NSObject {
      * [@property] engine
      * 
      * The engine to which the node is attached (or nil).
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -150,6 +152,8 @@ public class AVAudioNode extends NSObject {
      * inputFormatForBus:
      * 
      * Obtain an input bus's format.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -180,6 +184,8 @@ public class AVAudioNode extends NSObject {
      * ....
      * // start engine
      * </pre>
+     * 
+     * API-Since: 8.0
      * 
      * @param bus
      *                   the node output bus to which to attach the tap
@@ -236,6 +242,8 @@ public class AVAudioNode extends NSObject {
      * 
      * Will return nil if the engine is not running or if the node is not connected to an input or
      * output node.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -262,6 +270,8 @@ public class AVAudioNode extends NSObject {
      * nameForInputBus:
      * 
      * Return the name of an input bus.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -272,6 +282,8 @@ public class AVAudioNode extends NSObject {
      * nameForOutputBus:
      * 
      * Return the name of an output bus.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -287,6 +299,8 @@ public class AVAudioNode extends NSObject {
      * [@property] numberOfInputs
      * 
      * The node's number of input busses.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("numberOfInputs")
@@ -297,6 +311,8 @@ public class AVAudioNode extends NSObject {
      * [@property] numberOfOutputs
      * 
      * The node's number of output busses.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("numberOfOutputs")
@@ -307,6 +323,8 @@ public class AVAudioNode extends NSObject {
      * outputFormatForBus:
      * 
      * Obtain an output bus's format.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -350,6 +368,8 @@ public class AVAudioNode extends NSObject {
      * 
      * @param bus
      *            the node output bus whose tap is to be destroyed
+     * 
+     *            API-Since: 8.0
      */
     @Generated
     @Selector("removeTapOnBus:")
@@ -359,6 +379,8 @@ public class AVAudioNode extends NSObject {
      * reset
      * 
      * Clear a unit's previous processing state.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("reset")

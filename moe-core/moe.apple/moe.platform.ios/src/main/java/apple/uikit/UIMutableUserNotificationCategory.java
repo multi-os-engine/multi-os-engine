@@ -168,7 +168,12 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
 
     /**
      * The category identifier passed in a UILocalNotification or a remote notification payload
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationCategory
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("identifier")
@@ -184,7 +189,12 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
 
     /**
      * Sets the UIUserNotificationActions in the order to be displayed for the specified context
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationCategory
      */
+    @Deprecated
     @Generated
     @Selector("setActions:forContext:")
     public native void setActionsForContext(@Nullable NSArray<? extends UIUserNotificationAction> actions,
@@ -192,7 +202,12 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
 
     /**
      * The category identifier passed in a UILocalNotification or a remote notification payload
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationCategory
      */
+    @Deprecated
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(@Nullable String value);

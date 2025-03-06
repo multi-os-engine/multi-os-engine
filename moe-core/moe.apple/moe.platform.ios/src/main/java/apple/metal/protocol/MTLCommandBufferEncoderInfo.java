@@ -22,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 public interface MTLCommandBufferEncoderInfo {
     /**
      * The debug signposts inserted into the associated Metal command encoder.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -30,6 +32,8 @@ public interface MTLCommandBufferEncoderInfo {
 
     /**
      * The error state of the associated Metal command encoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("errorState")
@@ -38,6 +42,8 @@ public interface MTLCommandBufferEncoderInfo {
 
     /**
      * The debug label given to the associated Metal command encoder at command buffer submission.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

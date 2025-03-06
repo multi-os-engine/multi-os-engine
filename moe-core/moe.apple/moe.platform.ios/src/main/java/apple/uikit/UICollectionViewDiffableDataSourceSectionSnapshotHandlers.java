@@ -143,6 +143,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setShouldCollapseItemHandler:")
     public native void setShouldCollapseItemHandler(
@@ -155,6 +158,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         boolean call_setShouldCollapseItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setShouldExpandItemHandler:")
     public native void setShouldExpandItemHandler(
@@ -167,6 +173,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         boolean call_setShouldExpandItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSnapshotForExpandingParentItemHandler:")
     public native void setSnapshotForExpandingParentItemHandler(
@@ -186,6 +195,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setWillCollapseItemHandler:")
     public native void setWillCollapseItemHandler(
@@ -198,6 +210,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         void call_setWillCollapseItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setWillExpandItemHandler:")
     public native void setWillExpandItemHandler(
@@ -210,6 +225,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         void call_setWillExpandItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("shouldCollapseItemHandler")
@@ -223,6 +241,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         boolean call_shouldCollapseItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("shouldExpandItemHandler")
@@ -236,6 +257,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         boolean call_shouldExpandItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("snapshotForExpandingParentItemHandler")
@@ -261,6 +285,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("willCollapseItemHandler")
@@ -274,6 +301,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         void call_willCollapseItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("willExpandItemHandler")

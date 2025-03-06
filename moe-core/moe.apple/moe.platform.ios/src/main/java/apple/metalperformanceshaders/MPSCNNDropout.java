@@ -118,6 +118,8 @@ public class MPSCNNDropout extends MPSCNNKernel {
 
     /**
      * <NSSecureCoding> support
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -141,6 +143,8 @@ public class MPSCNNDropout extends MPSCNNKernel {
      *                           broadcasting, set the values for each dimension to 1.
      *                           For broadcasting, set desired values to 0.
      * @return A valid MPSCNNDropout object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
@@ -170,6 +174,8 @@ public class MPSCNNDropout extends MPSCNNKernel {
      * 
      * The probability that each element in the input is kept.
      * The valid range is (0.0f, 1.0f).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("keepProbability")
@@ -189,6 +195,8 @@ public class MPSCNNDropout extends MPSCNNKernel {
      * The only valid values are 0 and 1 for each dimension.
      * For no broadcasting, set the values for each dimension
      * to 1. For broadcasting, set desired values to 0.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("maskStrideInPixels")
@@ -208,6 +216,9 @@ public class MPSCNNDropout extends MPSCNNKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Nullable
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
@@ -219,6 +230,8 @@ public class MPSCNNDropout extends MPSCNNKernel {
      * [@property] seed
      * 
      * The seed used to generate random numbers.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("seed")
@@ -243,6 +256,9 @@ public class MPSCNNDropout extends MPSCNNKernel {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.3
+     */
     @Nullable
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")

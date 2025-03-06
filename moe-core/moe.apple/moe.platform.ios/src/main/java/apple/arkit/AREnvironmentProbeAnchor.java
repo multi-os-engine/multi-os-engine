@@ -101,6 +101,8 @@ public class AREnvironmentProbeAnchor extends ARAnchor {
      * The environment texture of the probe.
      * 
      * The texture is provided as a cube using MTLTextureTypeCube.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

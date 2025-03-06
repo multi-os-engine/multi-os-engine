@@ -45,6 +45,8 @@ public interface AVPictureInPictureControllerDelegate {
      * 
      * Delegate can implement this method to be notified when Picture in Picture failed to start.
      * 
+     * API-Since: 9.0
+     * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
      * @param error
@@ -62,6 +64,8 @@ public interface AVPictureInPictureControllerDelegate {
      * pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
      * 
      * Delegate can implement this method to restore the user interface before Picture in Picture stops.
+     * 
+     * API-Since: 9.0
      * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
@@ -82,6 +86,8 @@ public interface AVPictureInPictureControllerDelegate {
      * 
      * Delegate can implement this method to be notified when Picture in Picture did start.
      * 
+     * API-Since: 9.0
+     * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
      */
@@ -97,6 +103,8 @@ public interface AVPictureInPictureControllerDelegate {
      * pictureInPictureControllerDidStopPictureInPicture:
      * 
      * Delegate can implement this method to be notified when Picture in Picture did stop.
+     * 
+     * API-Since: 9.0
      * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
@@ -114,6 +122,8 @@ public interface AVPictureInPictureControllerDelegate {
      * 
      * Delegate can implement this method to be notified when Picture in Picture will start.
      * 
+     * API-Since: 9.0
+     * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.
      */
@@ -129,6 +139,8 @@ public interface AVPictureInPictureControllerDelegate {
      * pictureInPictureControllerWillStopPictureInPicture:
      * 
      * Delegate can implement this method to be notified when Picture in Picture will stop.
+     * 
+     * API-Since: 9.0
      * 
      * @param pictureInPictureController
      *                                   The Picture in Picture controller.

@@ -87,6 +87,9 @@ public class UITextInteraction extends NSObject implements UIInteraction {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -101,6 +104,9 @@ public class UITextInteraction extends NSObject implements UIInteraction {
     @Selector("didMoveToView:")
     public native void didMoveToView(@Nullable UIView view);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gesturesForFailureRequirements")
@@ -150,10 +156,16 @@ public class UITextInteraction extends NSObject implements UIInteraction {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextInteractionDelegate value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextInteractionDelegate value) {
         Object __old = delegate();
@@ -166,10 +178,16 @@ public class UITextInteraction extends NSObject implements UIInteraction {
         }
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setTextInput:")
     public native void setTextInput_unsafe(@Nullable UIResponder value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     public void setTextInput(@Nullable UIResponder value) {
         Object __old = textInput();
@@ -190,15 +208,24 @@ public class UITextInteraction extends NSObject implements UIInteraction {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("textInput")
     public native UIResponder textInput();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("textInteractionForMode:")
     public static native UITextInteraction textInteractionForMode(@NInt long mode);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("textInteractionMode")
     @NInt

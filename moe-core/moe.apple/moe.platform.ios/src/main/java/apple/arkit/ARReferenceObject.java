@@ -113,6 +113,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      * @param previewImage An optional preview image to include in the archive.
      * @param error        The error to populate if the write is not successful.
      * @return YES if the location is written successfully, otherwise NO.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("exportObjectToURL:previewImage:error:")
@@ -133,6 +135,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      * 
      * @param url   The URL from which to read data (.arobject archive).
      * @param error The error to populate if the object could not be initialized.
+     * 
+     *              API-Since: 12.0
      */
     @Generated
     @Selector("initWithArchiveURL:error:")
@@ -167,6 +171,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * An optional name used to identify the object.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -180,6 +186,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * The feature points of the object.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -196,6 +204,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      * @param object The reference object to align and merge.
      * @param error  The error to populate if the merge is not successful.
      * @return A new reference object combining features of both scans or nil if the merge was not successful.
+     * 
+     *         API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -209,6 +219,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      * @param name   The name of the resource group.
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference objects or nil on error.
+     * 
+     *         API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -240,6 +252,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * An optional name used to identify the object.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setName:")

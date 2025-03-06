@@ -194,6 +194,9 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
@@ -230,6 +233,8 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setZeroPadSizeX:")
@@ -244,6 +249,8 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setZeroPadSizeY:")
@@ -268,6 +275,8 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("zeroPadSizeX")
@@ -283,6 +292,8 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("zeroPadSizeY")

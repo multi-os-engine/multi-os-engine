@@ -1253,4 +1253,39 @@ public final class QuartzCore {
     public static native String kCARendererMetalCommandQueue();
 
     @Generated public static final double CA_WARN_DEPRECATED = 1.0;
+
+    /**
+     * Let the OS decide whether to tone map.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CAToneMapModeAutomatic();
+
+    /**
+     * Never tone map contents.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CAToneMapModeNever();
+
+    /**
+     * Tone map whenever supported by the OS. This includes
+     * PQ, HLG and extended-range contents for CALayer
+     * and CAMetalLayers.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CAToneMapModeIfSupported();
 }

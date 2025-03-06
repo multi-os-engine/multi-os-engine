@@ -200,6 +200,9 @@ public class HKSeriesType extends HKSampleType {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("workoutRouteType")
@@ -242,4 +245,14 @@ public class HKSeriesType extends HKSampleType {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("scoredAssessmentTypeForIdentifier:")
+    @Nullable
+    public static native HKScoredAssessmentType scoredAssessmentTypeForIdentifier(@NotNull String identifier);
+
+    @Generated
+    @Selector("stateOfMindType")
+    @NotNull
+    public static native HKStateOfMindType stateOfMindType();
 }

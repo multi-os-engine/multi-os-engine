@@ -65,6 +65,8 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      * [@property] assetIdentifier
      * 
      * The identifier that uniquely represents the registered sound asset this sampler will play.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -102,6 +104,8 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      * The cull option for the sampler.
      * 
      * The default value is PHASECullOptionTerminate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("cullOption")
@@ -136,6 +140,8 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      *                             The mixer definition this sampler will be assigned to
      * @return
      *         A new PHASESamplerNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithSoundAssetIdentifier:mixerDefinition:")
@@ -155,6 +161,8 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      *                             An optional custom identifier to give to this object
      * @return
      *         A new PHASESamplerNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithSoundAssetIdentifier:mixerDefinition:identifier:")
@@ -203,6 +211,8 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      * loops smoothly from the end sample to the start sample. Please verify this during authoring. Failing to do so
      * will result in audible clicks at loop boundaries.
      * The default value is PHASEPlaybackModeOneShot.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("playbackMode")
@@ -223,6 +233,8 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      * The cull option for the sampler.
      * 
      * The default value is PHASECullOptionTerminate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCullOption:")
@@ -242,6 +254,8 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      * loops smoothly from the end sample to the start sample. Please verify this during authoring. Failing to do so
      * will result in audible clicks at loop boundaries.
      * The default value is PHASEPlaybackModeOneShot.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPlaybackMode:")

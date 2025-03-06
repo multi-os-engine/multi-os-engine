@@ -640,7 +640,11 @@ public final class AVFAudio {
      * Only valid with AVAudioSessionCategoryPlayAndRecord. Appropriate for Voice over IP
      * (VoIP) applications. Reduces the number of allowable audio routes to be only those
      * that are appropriate for VoIP applications and may engage appropriate system-supplied
-     * signal processing. Has the side effect of setting AVAudioSessionCategoryOptionAllowBluetooth
+     * signal processing. Has the side effect of setting AVAudioSessionCategoryOptionAllowBluetooth.
+     * Using this mode without the VoiceProcessing IO unit or AVAudioEngine with voice processing enabled will result in
+     * the following:
+     * - Chat-specific signal processing such as echo cancellation or automatic gain correction will not be loaded
+     * - Dynamic processing on input and output will be disabled resulting in a lower output playback level.
      * 
      * API-Since: 5.0
      */
@@ -686,8 +690,9 @@ public final class AVFAudio {
     public static native String AVAudioSessionModeMeasurement();
 
     /**
-     * Engages appropriate output signal processing for movie playback scenarios. Currently
-     * only applied during playback over built-in speaker.
+     * Appropriate for applications playing movie content. Only valid with AVAudioSessionCategoryPlayback.
+     * Setting this mode engages appropriate output signal processing for movie playback scenarios.
+     * Content using this mode is eligible for Enhance Dialogue processing on supported routes with capable hardware
      * 
      * API-Since: 6.0
      */
@@ -701,6 +706,10 @@ public final class AVFAudio {
      * routes to be only those that are appropriate for video chat applications. May engage appropriate
      * system-supplied signal processing. Has the side effect of setting
      * AVAudioSessionCategoryOptionAllowBluetooth and AVAudioSessionCategoryOptionDefaultToSpeaker.
+     * Using this mode without the VoiceProcessing IO unit or AVAudioEngine with voice processing enabled will result in
+     * the following:
+     * - Chat-specific signal processing such as echo cancellation or automatic gain correction will not be loaded
+     * - Dynamic processing on input and output will be disabled resulting in a lower output playback level.
      * 
      * API-Since: 7.0
      */
@@ -1546,4 +1555,34 @@ public final class AVFAudio {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String AVAudioApplicationMuteStateKey();
+
+    /**
+     * Notification sent to registered listeners when the system's capability to inject audio into input stream is
+     * changed
+     * 
+     * Check the notification's userInfo dictionary for AVAudioSessionMicrophoneInjectionIsAvailableKey to check if
+     * microphone
+     * injection is available. Use AVAudioSession's isMicrophoneInjectionAvailable property to check if microphone
+     * injection is available
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAudioSessionMicrophoneInjectionCapabilitiesChangeNotification();
+
+    /**
+     * Keys for AVAudioSessionMicrophoneInjectionCapabilitiesChangeNotification
+     * Indicates if microphone injection is available.
+     * Value is an NSNumber whose boolean value indicates if microphone injection is available.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAudioSessionMicrophoneInjectionIsAvailableKey();
 }

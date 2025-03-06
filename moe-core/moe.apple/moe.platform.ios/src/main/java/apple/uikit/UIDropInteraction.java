@@ -64,6 +64,8 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
      * but many will find it challenging, so the default value is false.
      * If false, then after one session has entered the view, other sessions will
      * be ignored until the first session exits and the other session enters again.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsSimultaneousDropSessions")
@@ -98,6 +100,9 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -121,6 +126,9 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
     @Selector("init")
     public native UIDropInteraction init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDelegate:")
     public native UIDropInteraction initWithDelegate(
@@ -167,6 +175,8 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
      * but many will find it challenging, so the default value is false.
      * If false, then after one session has entered the view, other sessions will
      * be ignored until the first session exits and the other session enters again.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAllowsSimultaneousDropSessions:")

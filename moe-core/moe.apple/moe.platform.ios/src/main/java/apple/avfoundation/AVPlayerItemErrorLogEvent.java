@@ -177,6 +177,8 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the URI is unknown. Corresponds to "uri".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -197,6 +199,8 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the date is unknown. Corresponds to "date".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -210,6 +214,8 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned further information is not available. Corresponds to "comment".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -223,6 +229,8 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * Corresponds to "domain".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @NotNull
     @Generated
@@ -236,6 +244,8 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * Corresponds to "status".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("errorStatusCode")
@@ -253,6 +263,8 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the GUID is unknown. Corresponds to "cs-guid".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -266,6 +278,8 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -279,7 +293,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * 
      * See -[NSHTTPURLResponse allHeaderFields] for more information.
      * 
-     * API-Since: 17.2
+     * API-Since: 17.5
      */
     @Generated
     @Selector("allHTTPResponseHeaderFields")

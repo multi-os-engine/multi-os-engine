@@ -98,6 +98,8 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
      * The number of items in the collection.
      * 
      * Returns the number of data output / synchronized data pairs present in the collection.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("count")
@@ -163,6 +165,8 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
      * a given data output, simply:
      * AVCaptureSynchronizedData *synchronizedData = synchronizedDataCollection[dataOutput];
      * 
+     * API-Since: 11.0
+     * 
      * @param key
      *            The data output whose synchronized data you'd like to inspect.
      * @return
@@ -198,6 +202,8 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
      *                      The data output whose synchronized data you'd like to inspect.
      * @return
      *         The synchronized data object associated with the provided output, or nil, if there is none.
+     * 
+     *         API-Since: 11.0
      */
     @Nullable
     @Generated

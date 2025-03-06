@@ -65,6 +65,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
 
     /**
      * Bounding box buffer containing MTLAxisAlignedBoundingBoxes. Must not be nil.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -75,6 +77,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
     /**
      * Bounding box buffer offset. Must be a multiple of the bounding box stride and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("boundingBoxBufferOffset")
@@ -83,6 +87,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
 
     /**
      * Number of bounding boxes
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("boundingBoxCount")
@@ -92,6 +98,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
     /**
      * Stride, in bytes, between bounding boxes in the bounding box buffer. Must be at least 24
      * bytes and must be a multiple of 4 bytes. Defaults to 24 bytes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("boundingBoxStride")
@@ -127,6 +135,9 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("descriptor")
     public static native MTLAccelerationStructureBoundingBoxGeometryDescriptor descriptor();
@@ -177,6 +188,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
 
     /**
      * Bounding box buffer containing MTLAxisAlignedBoundingBoxes. Must not be nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBoundingBoxBuffer:")
@@ -185,6 +198,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
     /**
      * Bounding box buffer offset. Must be a multiple of the bounding box stride and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBoundingBoxBufferOffset:")
@@ -192,6 +207,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
 
     /**
      * Number of bounding boxes
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBoundingBoxCount:")
@@ -200,6 +217,8 @@ public class MTLAccelerationStructureBoundingBoxGeometryDescriptor extends MTLAc
     /**
      * Stride, in bytes, between bounding boxes in the bounding box buffer. Must be at least 24
      * bytes and must be a multiple of 4 bytes. Defaults to 24 bytes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBoundingBoxStride:")

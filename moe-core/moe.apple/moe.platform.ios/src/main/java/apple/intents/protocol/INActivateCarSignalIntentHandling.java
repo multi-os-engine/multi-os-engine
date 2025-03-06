@@ -42,6 +42,8 @@ public interface INActivateCarSignalIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INActivateCarSignalIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional
@@ -68,6 +70,8 @@ public interface INActivateCarSignalIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INActivateCarSignalIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @Selector("handleActivateCarSignal:completion:")
@@ -91,6 +95,8 @@ public interface INActivateCarSignalIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional
@@ -108,6 +114,9 @@ public interface INActivateCarSignalIntentHandling {
                 @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @IsOptional
     @Selector("resolveSignalsForActivateCarSignal:withCompletion:")

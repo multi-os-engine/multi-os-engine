@@ -11,17 +11,17 @@ public final class BNNSBoxCoordinateMode {
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSCornersHeightFirst = 0x00000000;
+    @Generated public static final int CornersHeightFirst = 0x00000000;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSCornersWidthFirst = 0x00000001;
+    @Generated public static final int CornersWidthFirst = 0x00000001;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSCenterSizeHeightFirst = 0x00000002;
+    @Generated public static final int CenterSizeHeightFirst = 0x00000002;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSCenterSizeWidthFirst = 0x00000003;
+    @Generated public static final int CenterSizeWidthFirst = 0x00000003;
 }

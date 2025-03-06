@@ -99,6 +99,9 @@ public class CKSyncEnginePendingRecordZoneChange extends NSObject {
     @Selector("init")
     public native CKSyncEnginePendingRecordZoneChange init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithRecordID:type:")
     public native CKSyncEnginePendingRecordZoneChange initWithRecordIDType(@NotNull CKRecordID recordID,
@@ -131,6 +134,9 @@ public class CKSyncEnginePendingRecordZoneChange extends NSObject {
     @Selector("new")
     public static native CKSyncEnginePendingRecordZoneChange new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("recordID")
     @NotNull
@@ -152,6 +158,9 @@ public class CKSyncEnginePendingRecordZoneChange extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("type")
     @NInt

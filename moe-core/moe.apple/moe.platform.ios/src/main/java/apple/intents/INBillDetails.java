@@ -64,6 +64,12 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("allocWithZone:")
     public static native INBillDetails allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("amountDue")
@@ -73,11 +79,23 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("billPayee")
     public native INBillPayee billPayee();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("billType")
     @NInt
@@ -119,6 +137,12 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("dueDate")
@@ -137,6 +161,12 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("init")
     public native INBillDetails init();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithBillType:paymentStatus:billPayee:amountDue:minimumDue:lateFee:dueDate:paymentDate:")
     public native INBillDetails initWithBillTypePaymentStatusBillPayeeAmountDueMinimumDueLateFeeDueDatePaymentDate(
@@ -171,11 +201,23 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("lateFee")
     public native INCurrencyAmount lateFee();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("minimumDue")
@@ -186,11 +228,23 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("new")
     public static native INBillDetails new_objc();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("paymentDate")
     public native NSDateComponents paymentDate();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("paymentStatus")
     @NInt
@@ -204,34 +258,82 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setAmountDue:")
     public native void setAmountDue(@Nullable INCurrencyAmount value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setBillPayee:")
     public native void setBillPayee(@Nullable INBillPayee value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setBillType:")
     public native void setBillType(@NInt long value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setDueDate:")
     public native void setDueDate(@Nullable NSDateComponents value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setLateFee:")
     public native void setLateFee(@Nullable INCurrencyAmount value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setMinimumDue:")
     public native void setMinimumDue(@Nullable INCurrencyAmount value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setPaymentDate:")
     public native void setPaymentDate(@Nullable NSDateComponents value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setPaymentStatus:")
     public native void setPaymentStatus(@NInt long value);

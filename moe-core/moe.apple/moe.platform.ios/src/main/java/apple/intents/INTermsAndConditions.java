@@ -186,6 +186,9 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
     @Selector("initWithCoder:")
     public native INTermsAndConditions initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithLocalizedTermsAndConditionsText:privacyPolicyURL:termsAndConditionsURL:")
     public native INTermsAndConditions initWithLocalizedTermsAndConditionsTextPrivacyPolicyURLTermsAndConditionsURL(
@@ -194,6 +197,8 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
 
     /**
      * A string that contains a summary of the vendor's terms and conditions.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -202,6 +207,8 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
 
     /**
      * An optional URL that links to the vendor's privacy policy.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -216,6 +223,8 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
 
     /**
      * An optional URL that links to the vendor's full terms and conditions.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

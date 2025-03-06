@@ -7,7 +7,6 @@ import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -15,6 +14,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * API-Since: 14.0
@@ -43,6 +43,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      *                              contents may be overwritten and are undefined after the build has
      *                              started/completed.
      * @param scratchBufferOffset   Offset into the scratch buffer
+     * 
+     *                              API-Since: 14.0
      */
     @Generated
     @Selector("buildAccelerationStructure:descriptor:scratchBuffer:scratchBufferOffset:")
@@ -62,6 +64,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * 
      * @param sourceAccelerationStructure      Acceleration structure to copy from
      * @param destinationAccelerationStructure Acceleration structure to copy to
+     * 
+     *                                         API-Since: 14.0
      */
     @Generated
     @Selector("copyAccelerationStructure:toAccelerationStructure:")
@@ -79,6 +83,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * 
      * @param sourceAccelerationStructure      Acceleration structure to copy and compact
      * @param destinationAccelerationStructure Acceleration structure to copy to
+     * 
+     *                                         API-Since: 14.0
      */
     @Generated
     @Selector("copyAndCompactAccelerationStructure:toAccelerationStructure:")
@@ -111,6 +117,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      *                                         structure. The contents may be overwritten and are undefined
      *                                         after the refit has started/completed.
      * @param scratchBufferOffset              Offset into the scratch buffer.
+     * 
+     *                                         API-Since: 14.0
      */
     @Generated
     @Selector("refitAccelerationStructure:descriptor:destination:scratchBuffer:scratchBufferOffset:")
@@ -153,6 +161,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * The fence is updated at build submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
      * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateFence:")
@@ -171,6 +181,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * attachments instead, with a minimal (i.e. read-only) usage.
      * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
      * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("useHeap:")
@@ -189,10 +201,12 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * attachments instead, with a minimal (i.e. read-only) usage.
      * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
      * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("useHeaps:count:")
-    void useHeapsCount(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
+    void useHeapsCount(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> heaps, @NUInt long count);
 
     /**
      * useResource:usage:
@@ -203,6 +217,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * any acceleration structure commands which may access the resource through an argument buffer.
      * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
      * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("useResource:usage:")
@@ -217,10 +233,12 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * any acceleration structure commands which may access the resources through an argument buffer.
      * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
      * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("useResources:count:usage:")
-    void useResourcesCountUsage(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
+    void useResourcesCountUsage(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> resources,
             @NUInt long count, @NUInt long usage);
 
     /**
@@ -231,6 +249,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * The fence is evaluated at build submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
      * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("waitForFence:")
@@ -248,6 +268,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * @param buffer                Destination size buffer. The compacted size will be written as a 32 bit
      *                              unsigned integer representing the compacted size in bytes.
      * @param offset                Offset into the size buffer
+     * 
+     *                              API-Since: 14.0
      */
     @Generated
     @Selector("writeCompactedAccelerationStructureSize:toBuffer:offset:")

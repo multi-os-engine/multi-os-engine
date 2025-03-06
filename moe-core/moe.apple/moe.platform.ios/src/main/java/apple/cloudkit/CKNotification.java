@@ -140,6 +140,9 @@ public class CKNotification extends NSObject {
     @Selector("new")
     public static native CKNotification new_objc();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("notificationFromRemoteNotificationDictionary:")
     public static native CKNotification notificationFromRemoteNotificationDictionary(
@@ -246,6 +249,9 @@ public class CKNotification extends NSObject {
     @Selector("category")
     public native String category();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("containerIdentifier")
@@ -263,11 +269,16 @@ public class CKNotification extends NSObject {
      * In those cases, `isPruned` returns `true`.
      * The order in which properties are dropped from a push notification is defined in each `CKNotification` subclass
      * below.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isPruned")
     public native boolean isPruned();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("notificationID")
@@ -276,6 +287,8 @@ public class CKNotification extends NSObject {
     /**
      * When you instantiate a `CKNotification` from a remote notification dictionary, you will get back a concrete
      * subclass defined below. Use `notificationType` to avoid `as?` or `-isKindOfClass:` checks.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("notificationType")

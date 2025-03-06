@@ -254,6 +254,8 @@ public class MPSImage extends NSObject {
      * [@property] device
      * 
      * The device on which the MPSImage will be used
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -265,6 +267,8 @@ public class MPSImage extends NSObject {
      * [@property] featureChannels
      * 
      * The number of feature channels per pixel.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("featureChannels")
@@ -275,6 +279,8 @@ public class MPSImage extends NSObject {
      * [@property] height
      * 
      * The formal height of the image in pixels.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("height")
@@ -290,6 +296,9 @@ public class MPSImage extends NSObject {
      * 
      * Storage to store data needed is allocated lazily on first use of MPSImage or
      * when application calls MPSImage.texture
+     * 
+     * 
+     * API-Since: 10.0
      * 
      * @param device          The device that the image will be used. May not be NULL.
      * @param imageDescriptor The MPSImageDescriptor. May not be NULL.
@@ -323,6 +332,9 @@ public class MPSImage extends NSObject {
      * be set to number of valid color channel e.g. for RGB data, even thought MTLPixelFormat will be
      * MTLPixelFormatRGBA, featureChannels should be set to 3.
      * 
+     * 
+     * API-Since: 10.0
+     * 
      * @param texture         The MTLTexture allocated by the user to be used as backing for MPSImage.
      * @param featureChannels Number of feature channels this texture contains.
      * @return A valid MPSImage object or nil, if failure.
@@ -336,6 +348,8 @@ public class MPSImage extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -346,6 +360,8 @@ public class MPSImage extends NSObject {
      * [@property] numberOfImages
      * 
      * numberOfImages for batch processing
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("numberOfImages")
@@ -360,6 +376,8 @@ public class MPSImage extends NSObject {
      * Note that in some cases, this value may be misleading. For example,
      * float16 data (BFloat16) is sometimes stored in MTLPixelFormatRGBA16Unorm
      * Please consult the featureChannelFormat.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("pixelFormat")
@@ -371,6 +389,8 @@ public class MPSImage extends NSObject {
      * 
      * Number of bytes from the first byte of one pixel to the first byte of the next
      * pixel in storage order. (Includes padding.)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("pixelSize")
@@ -387,6 +407,8 @@ public class MPSImage extends NSObject {
      * bit of precision for the sign bit, etc. For formats like MTLPixelFormatB5G6R5Unorm
      * it is the precision of the most precise channel, in this case 6. When this
      * information is unavailable, typically compressed formats, 0 will be returned.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("precision")
@@ -397,6 +419,8 @@ public class MPSImage extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLabel:")
@@ -408,6 +432,8 @@ public class MPSImage extends NSObject {
      * Usage is per [MTLResource setPurgeableState:], except that the MTLTexture might be
      * MPSPurgeableStateAllocationDeferred, which means there is no texture to mark volatile / nonvolatile.
      * Attempts to set purgeability on MTLTextures that have not been allocated will be ignored.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPurgeableState:")
@@ -425,6 +451,8 @@ public class MPSImage extends NSObject {
      * property except when strictly necessary. [MPSCNNKernel encode...] calls typically cause
      * their arguments to become allocated. Likewise, MPSImages initialized with -initWithTexture:
      * featureChannels: have already been allocated.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -437,6 +465,8 @@ public class MPSImage extends NSObject {
      * 
      * The type of the underlying texture, typically MTLTextureType2D
      * or MTLTextureType2DArray
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("textureType")
@@ -447,6 +477,8 @@ public class MPSImage extends NSObject {
      * [@property] usage
      * 
      * Description of texture usage.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("usage")
@@ -457,6 +489,8 @@ public class MPSImage extends NSObject {
      * [@property] width
      * 
      * The formal width of the image in pixels.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("width")
@@ -465,6 +499,8 @@ public class MPSImage extends NSObject {
 
     /**
      * Get a well known MPSImageAllocator that makes MPSImages
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -588,6 +624,8 @@ public class MPSImage extends NSObject {
      * [@property] featureChannelFormat
      * 
      * The true encoding of the feature channels
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("featureChannelFormat")
@@ -607,6 +645,8 @@ public class MPSImage extends NSObject {
      *                        is inferred.
      * @return A MPSImage that references a subregion of the texel storage in parent instead of
      *         using its own storage.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithParentImage:sliceRange:featureChannels:")
@@ -619,6 +659,8 @@ public class MPSImage extends NSObject {
      * This will point to the original image if this image was created using
      * -batchRepresentation, -batchRepresentationWithRange: or
      * -subImageWithFeatureChannelRange:.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -718,6 +760,8 @@ public class MPSImage extends NSObject {
      *              to make the subImage within. The location and length
      *              must be multiples of 4. If the length is too big, it
      *              will be reduced to fit in the image.
+     * 
+     *              API-Since: 10.0
      */
     @NotNull
     @Generated

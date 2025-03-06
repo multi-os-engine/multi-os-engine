@@ -105,6 +105,9 @@ public class PKDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("endDateComponents")
@@ -125,6 +128,8 @@ public class PKDateComponentsRange extends NSObject implements NSCopying, NSSecu
 
     /**
      * The date components must have valid dates and a calendar.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithStartDateComponents:endDateComponents:")
@@ -170,6 +175,9 @@ public class PKDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("startDateComponents")

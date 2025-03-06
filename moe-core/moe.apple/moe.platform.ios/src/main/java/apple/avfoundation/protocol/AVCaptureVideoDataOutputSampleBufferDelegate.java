@@ -96,6 +96,8 @@ public interface AVCaptureVideoDataOutputSampleBufferDelegate {
      * into a new buffer and then calling CFRelease on the sample buffer if it was previously retained so that the
      * memory it references can be reused.
      * 
+     * API-Since: 4.0
+     * 
      * @param output
      *                     The AVCaptureVideoDataOutput instance that output the frame.
      * @param sampleBuffer

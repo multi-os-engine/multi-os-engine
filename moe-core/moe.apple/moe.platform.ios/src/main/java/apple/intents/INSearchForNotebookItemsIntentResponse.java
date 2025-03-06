@@ -83,6 +83,9 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -113,6 +116,8 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -150,6 +155,9 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
     @Selector("new")
     public static native INSearchForNotebookItemsIntentResponse new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("notes")
@@ -163,18 +171,30 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setNotes:")
     public native void setNotes(@Nullable NSArray<? extends INNote> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSortType:")
     public native void setSortType(@NInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTaskLists:")
     public native void setTaskLists(@Nullable NSArray<? extends INTaskList> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTasks:")
     public native void setTasks(@Nullable NSArray<? extends INTask> value);
@@ -183,6 +203,9 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("sortType")
     @NInt
@@ -202,11 +225,17 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("taskLists")
     public native NSArray<? extends INTaskList> taskLists();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("tasks")

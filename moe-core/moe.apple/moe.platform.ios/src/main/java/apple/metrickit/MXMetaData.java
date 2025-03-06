@@ -72,6 +72,8 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
      * Convenience method to return a JSON representation of this metadata.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -96,6 +98,8 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
      * [@property] applicationBuildVersion
      * 
      * An NSString designating the app build version.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -139,6 +143,8 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
      * [@property] deviceType
      * 
      * An NSString designating the device type associated with this device.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -193,6 +199,8 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
      * [@property] osVersion
      * 
      * An NSString designating the OS version associated with the device.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -203,6 +211,8 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
      * [@property] regionFormat
      * 
      * An NSString designating the region format associated with the application.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

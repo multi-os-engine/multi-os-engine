@@ -408,7 +408,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     /**
      * This API allows one to get the value of a specific component of NSDateComponents, by enum constant value rather
      * than property name.
-     * The calendar and timeZone and isLeapMonth property values cannot be gotten by this method.
+     * The calendar and timeZone and isLeapMonth property values cannot be retrieved by this method.
      * 
      * API-Since: 8.0
      */
@@ -471,4 +471,19 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("dayOfYear")
+    @NInt
+    public native long dayOfYear();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDayOfYear:")
+    public native void setDayOfYear(@NInt long value);
 }

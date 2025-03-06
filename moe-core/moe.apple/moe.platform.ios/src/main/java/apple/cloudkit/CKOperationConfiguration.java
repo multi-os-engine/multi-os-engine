@@ -59,6 +59,8 @@ public class CKOperationConfiguration extends NSObject {
 
     /**
      * Defaults to @c YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsCellularAccess")
@@ -91,6 +93,8 @@ public class CKOperationConfiguration extends NSObject {
 
     /**
      * If no container is set, [CKContainer defaultContainer] is used
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -132,7 +136,8 @@ public class CKOperationConfiguration extends NSObject {
      * lifetime of the long lived operation its behavior is the same as a regular operation.
      * 
      * Long lived operations can be fetched and replayed from the container via the @c fetchAllLongLivedOperations:
-     * and @c fetchLongLivedOperationsWithIDs: APIs.
+     * and @c fetchLongLivedOperationsWithIDs: APIs. Your code should only fetch and re-enqueue long lived operations on
+     * app launch.
      * 
      * Long lived operations persist until their -[NSOperation completionBlock] returns or until the operation is
      * cancelled.
@@ -140,6 +145,8 @@ public class CKOperationConfiguration extends NSObject {
      * 
      * The default value for longLived is NO. Changing the value of longLived on an already started operation or on an
      * outstanding long lived operation fetched from CKContainer has no effect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isLongLived")
@@ -185,6 +192,8 @@ public class CKOperationConfiguration extends NSObject {
      * - discretionary network requests are scheduled at the description of the system for optimal performance
      * 
      * CKOperations have a default qualityOfService of Default.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("qualityOfService")
@@ -201,6 +210,8 @@ public class CKOperationConfiguration extends NSObject {
 
     /**
      * Defaults to @c YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAllowsCellularAccess:")
@@ -208,6 +219,8 @@ public class CKOperationConfiguration extends NSObject {
 
     /**
      * If no container is set, [CKContainer defaultContainer] is used
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setContainer:")
@@ -218,7 +231,8 @@ public class CKOperationConfiguration extends NSObject {
      * lifetime of the long lived operation its behavior is the same as a regular operation.
      * 
      * Long lived operations can be fetched and replayed from the container via the @c fetchAllLongLivedOperations:
-     * and @c fetchLongLivedOperationsWithIDs: APIs.
+     * and @c fetchLongLivedOperationsWithIDs: APIs. Your code should only fetch and re-enqueue long lived operations on
+     * app launch.
      * 
      * Long lived operations persist until their -[NSOperation completionBlock] returns or until the operation is
      * cancelled.
@@ -226,6 +240,8 @@ public class CKOperationConfiguration extends NSObject {
      * 
      * The default value for longLived is NO. Changing the value of longLived on an already started operation or on an
      * outstanding long lived operation fetched from CKContainer has no effect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLongLived:")
@@ -257,6 +273,8 @@ public class CKOperationConfiguration extends NSObject {
      * - discretionary network requests are scheduled at the description of the system for optimal performance
      * 
      * CKOperations have a default qualityOfService of Default.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setQualityOfService:")
@@ -267,6 +285,8 @@ public class CKOperationConfiguration extends NSObject {
      * The default value is 60.
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForRequest
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("setTimeoutIntervalForRequest:")
@@ -277,6 +297,8 @@ public class CKOperationConfiguration extends NSObject {
      * If not explicitly set, defaults to a value based on the operation's @c qualityOfService
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForResource
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("setTimeoutIntervalForResource:")
@@ -295,6 +317,8 @@ public class CKOperationConfiguration extends NSObject {
      * The default value is 60.
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForRequest
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("timeoutIntervalForRequest")
@@ -305,6 +329,8 @@ public class CKOperationConfiguration extends NSObject {
      * If not explicitly set, defaults to a value based on the operation's @c qualityOfService
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForResource
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("timeoutIntervalForResource")

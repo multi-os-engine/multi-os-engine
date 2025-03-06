@@ -131,6 +131,8 @@ public class CMMotionActivityManager extends NSObject {
      * 
      * Discussion:
      * Determines whether activity estimation is available.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isActivityAvailable")
@@ -186,6 +188,9 @@ public class CMMotionActivityManager extends NSObject {
      * 
      * The first activity returned may have a startDate before start. This
      * activity represents what the state was at the start time.
+     * 
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("queryActivityStartingFromDate:toDate:toQueue:withHandler:")
@@ -210,6 +215,8 @@ public class CMMotionActivityManager extends NSObject {
      * application may use
      * queryActivityStartingFromDate:toDate:toQueue:withHandler: to get
      * activities from the time when the application was suspended.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("startActivityUpdatesToQueue:withHandler:")
@@ -221,6 +228,8 @@ public class CMMotionActivityManager extends NSObject {
      * 
      * Discussion:
      * Stop delivering live updates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("stopActivityUpdates")

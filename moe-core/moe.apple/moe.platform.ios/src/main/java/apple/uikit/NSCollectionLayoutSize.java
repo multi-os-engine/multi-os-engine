@@ -102,6 +102,9 @@ public class NSCollectionLayoutSize extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("heightDimension")
@@ -150,6 +153,9 @@ public class NSCollectionLayoutSize extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("sizeWithWidthDimension:heightDimension:")
     public static native NSCollectionLayoutSize sizeWithWidthDimensionHeightDimension(
@@ -164,6 +170,9 @@ public class NSCollectionLayoutSize extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("widthDimension")

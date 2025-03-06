@@ -61,6 +61,9 @@ public class MKMapItemRequest extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -94,11 +97,19 @@ public class MKMapItemRequest extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     * Deprecated-Since: 18.0
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("featureAnnotation")
     public native MKMapFeatureAnnotation featureAnnotation();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("getMapItemWithCompletionHandler:")
     public native void getMapItemWithCompletionHandler(
@@ -120,6 +131,9 @@ public class MKMapItemRequest extends NSObject {
     @Selector("init")
     public native MKMapItemRequest init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithMapFeatureAnnotation:")
     public native MKMapItemRequest initWithMapFeatureAnnotation(@NotNull MKMapFeatureAnnotation mapFeatureAnnotation);
@@ -137,10 +151,16 @@ public class MKMapItemRequest extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
@@ -184,4 +204,27 @@ public class MKMapItemRequest extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithMapItemIdentifier:")
+    public native MKMapItemRequest initWithMapItemIdentifier(@NotNull MKMapItemIdentifier identifier);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("mapFeatureAnnotation")
+    @Nullable
+    public native MKMapFeatureAnnotation mapFeatureAnnotation();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("mapItemIdentifier")
+    @Nullable
+    public native MKMapItemIdentifier mapItemIdentifier();
 }

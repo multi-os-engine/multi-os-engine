@@ -98,6 +98,8 @@ public class NSSymbolPulseEffect extends NSSymbolEffect {
 
     /**
      * The default pulse effect, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -105,6 +107,8 @@ public class NSSymbolPulseEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that only animates annotated pulse layers.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithByLayer")
@@ -113,6 +117,8 @@ public class NSSymbolPulseEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates all layers of the symbol simultaneously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithWholeSymbol")

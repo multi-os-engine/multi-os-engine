@@ -722,7 +722,11 @@ public final class Intents {
 
     /**
      * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: INCarChargingConnectorTypeTesla is deprecated. Please adopt INCarChargingConnectorTypeNACSDC
+     * instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -763,4 +767,20 @@ public final class Intents {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INHangUpCallIntentIdentifier();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeNACSDC();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeNACSAC();
 }

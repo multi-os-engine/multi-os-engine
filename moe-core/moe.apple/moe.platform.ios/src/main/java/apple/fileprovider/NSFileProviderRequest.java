@@ -131,6 +131,8 @@ public class NSFileProviderRequest extends NSObject {
      * 
      * For sync up methods (createItem/modifyItem/deleteItem), the system does not know which actor made the
      * modifications to the file, so it cannot supply this information.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isFileViewerRequest")
@@ -150,6 +152,8 @@ public class NSFileProviderRequest extends NSObject {
      * 
      * For sync up methods (createItem/modifyItem/deleteItem), the system does not know which actor made the
      * modifications to the file, so it cannot supply this information.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isSystemRequest")

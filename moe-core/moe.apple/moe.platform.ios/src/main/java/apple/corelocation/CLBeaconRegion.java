@@ -219,7 +219,12 @@ public class CLBeaconRegion extends CLRegion {
      * 
      * Discussion:
      * Most significant value associated with the region. If a major value wasn't specified, this will be nil.
+     * 
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("major")
@@ -230,7 +235,12 @@ public class CLBeaconRegion extends CLRegion {
      * 
      * Discussion:
      * Least significant value associated with the region. If a minor value wasn't specified, this will be nil.
+     * 
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("minor")
@@ -242,7 +252,11 @@ public class CLBeaconRegion extends CLRegion {
      * Discussion:
      * App will be launched and the delegate will be notified via locationManager:didDetermineState:forRegion:
      * when the device's screen is turned on and the user is in the region. By default, this is NO.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("notifyEntryStateOnDisplay")
     public native boolean notifyEntryStateOnDisplay();
@@ -258,7 +272,12 @@ public class CLBeaconRegion extends CLRegion {
      * measuredPower is the RSSI of the device observed from one meter in its intended environment.
      * This value is optional, but should be specified to achieve the best ranging performance.
      * If not specified, it will default to a pre-determined value for the device.
+     * 
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("peripheralDataWithMeasuredPower:")
@@ -280,7 +299,11 @@ public class CLBeaconRegion extends CLRegion {
      * Discussion:
      * App will be launched and the delegate will be notified via locationManager:didDetermineState:forRegion:
      * when the device's screen is turned on and the user is in the region. By default, this is NO.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setNotifyEntryStateOnDisplay:")
     public native void setNotifyEntryStateOnDisplay(boolean value);

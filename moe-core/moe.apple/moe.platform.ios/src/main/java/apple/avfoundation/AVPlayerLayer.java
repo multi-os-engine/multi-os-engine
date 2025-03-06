@@ -172,6 +172,8 @@ public class AVPlayerLayer extends CALayer {
      * Returns an instance of AVPlayerLayer to display the visual output of the specified AVPlayer.
      * 
      * @return An instance of AVPlayerLayer.
+     * 
+     *         API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -222,6 +224,8 @@ public class AVPlayerLayer extends CALayer {
      * before it becomes readyForDisplay the video image displayed inside might not animate with the receiver.
      * This property remains NO for an AVPlayer currentItem whose AVAsset contains no enabled video tracks.
      * This property is key-value observable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isReadyForDisplay")
@@ -246,6 +250,8 @@ public class AVPlayerLayer extends CALayer {
      * [@property] player
      * 
      * Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -270,6 +276,8 @@ public class AVPlayerLayer extends CALayer {
      * [@property] player
      * 
      * Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setPlayer:")
@@ -282,6 +290,8 @@ public class AVPlayerLayer extends CALayer {
      * [@discusssion] Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
      * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      * See <AVFoundation/AVAnimation.h> for a description of these options.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVideoGravity:")
@@ -294,6 +304,8 @@ public class AVPlayerLayer extends CALayer {
      * [@discusssion] Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
      * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      * See <AVFoundation/AVAnimation.h> for a description of these options.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated

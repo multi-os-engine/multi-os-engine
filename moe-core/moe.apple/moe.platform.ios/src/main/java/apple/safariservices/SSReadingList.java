@@ -112,6 +112,8 @@ public class SSReadingList extends NSObject {
      * 
      * This class method to obtain the instance of SSReadingList should used instead of direct alloc and init.
      * 
+     * API-Since: 7.0
+     * 
      * @return Returns a pointer to a shared instance of SSReadingList, or nil if access to Reading List is not
      *         permitted.
      */
@@ -179,6 +181,8 @@ public class SSReadingList extends NSObject {
      * 
      * @param URL The URL to be tested for Reading List support.
      * @return Returns YES if the URL is supported by Reading List, NO if not.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @Selector("supportsURL:")
@@ -195,6 +199,8 @@ public class SSReadingList extends NSObject {
      * Adds an item to the Reading List.
      * 
      * Only URLs with http:// or https:// schemes are supported by Reading List.
+     * 
+     * API-Since: 7.0
      * 
      * @param URL         The URL of the item.
      * @param title       The title string of the item, or nil.

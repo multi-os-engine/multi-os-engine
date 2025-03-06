@@ -120,6 +120,8 @@ public class MPSCNNMultiply extends MPSCNNArithmetic {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSCNNMultiply object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

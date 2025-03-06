@@ -63,6 +63,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
     /**
      * An attributed version of the name of this data series.
      * When set, this will be used instead of `name`.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -103,6 +105,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
 
     /**
      * The data points that make up the series.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -126,12 +130,18 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native AXDataSeriesDescriptor init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAttributedName:isContinuous:dataPoints:")
     public native AXDataSeriesDescriptor initWithAttributedNameIsContinuousDataPoints(
             @NotNull NSAttributedString attributedName, boolean isContinuous,
             @NotNull NSArray<? extends AXDataPoint> dataPoints);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithName:isContinuous:dataPoints:")
     public native AXDataSeriesDescriptor initWithNameIsContinuousDataPoints(@NotNull String name, boolean isContinuous,
@@ -152,6 +162,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
 
     /**
      * Whether or not this data series should be treated as continuous.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isContinuous")
@@ -168,6 +180,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
 
     /**
      * The name or title of this data series.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -190,6 +204,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
     /**
      * An attributed version of the name of this data series.
      * When set, this will be used instead of `name`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAttributedName:")
@@ -197,6 +213,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
 
     /**
      * The data points that make up the series.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDataPoints:")
@@ -204,6 +222,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
 
     /**
      * Whether or not this data series should be treated as continuous.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIsContinuous:")
@@ -211,6 +231,8 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
 
     /**
      * The name or title of this data series.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setName:")

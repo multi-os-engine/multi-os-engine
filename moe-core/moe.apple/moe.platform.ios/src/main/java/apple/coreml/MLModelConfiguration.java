@@ -66,6 +66,8 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     /**
      * Set to YES to allow low precision accumulation on GPU when available. Defaults to NO
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowLowPrecisionAccumulationOnGPU")
@@ -96,6 +98,9 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("computeUnits")
     @NInt
@@ -162,6 +167,8 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     /**
      * Optional dictionary with any requested changes to model or update parameters
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -170,6 +177,8 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     /**
      * Set to specify a preferred Metal device. Defaults to nil which indicates automatic selection
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -187,17 +196,24 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     /**
      * Set to YES to allow low precision accumulation on GPU when available. Defaults to NO
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowLowPrecisionAccumulationOnGPU:")
     public native void setAllowLowPrecisionAccumulationOnGPU(boolean value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setComputeUnits:")
     public native void setComputeUnits(@NInt long value);
 
     /**
      * Optional dictionary with any requested changes to model or update parameters
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setParameters:")
@@ -205,6 +221,8 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     /**
      * Set to specify a preferred Metal device. Defaults to nil which indicates automatic selection
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredMetalDevice:")
@@ -272,4 +290,62 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Function name that `MLModel` will use.
+     * 
+     * Some model types (e.g. ML Program) supports multiple functions in a model asset, where each `MLModel` instance is
+     * associated with a particular function.
+     * 
+     * Use `MLModelAsset` to get the list of available functions. Use `nil` to use a default function.
+     * 
+     * ```swift
+     * let configuration = MLModelConfiguration()
+     * configuration.functionName = "my_function"
+     * ```
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("functionName")
+    @Nullable
+    public native String functionName();
+
+    /**
+     * A group of hints for CoreML to optimize
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("optimizationHints")
+    @NotNull
+    public native MLOptimizationHints optimizationHints();
+
+    /**
+     * Function name that `MLModel` will use.
+     * 
+     * Some model types (e.g. ML Program) supports multiple functions in a model asset, where each `MLModel` instance is
+     * associated with a particular function.
+     * 
+     * Use `MLModelAsset` to get the list of available functions. Use `nil` to use a default function.
+     * 
+     * ```swift
+     * let configuration = MLModelConfiguration()
+     * configuration.functionName = "my_function"
+     * ```
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setFunctionName:")
+    public native void setFunctionName(@Nullable String value);
+
+    /**
+     * A group of hints for CoreML to optimize
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setOptimizationHints:")
+    public native void setOptimizationHints(@NotNull MLOptimizationHints value);
 }

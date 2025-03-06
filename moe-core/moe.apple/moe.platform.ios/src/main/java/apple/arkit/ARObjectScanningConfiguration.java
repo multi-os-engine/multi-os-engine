@@ -101,6 +101,9 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("init")
     public native ARObjectScanningConfiguration init();
@@ -122,6 +125,8 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
      * Enable or disable continuous auto focus.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("isAutoFocusEnabled")
@@ -152,6 +157,8 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("planeDetection")
@@ -170,6 +177,8 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
      * Enable or disable continuous auto focus.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAutoFocusEnabled:")
@@ -182,6 +191,8 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setPlaneDetection:")

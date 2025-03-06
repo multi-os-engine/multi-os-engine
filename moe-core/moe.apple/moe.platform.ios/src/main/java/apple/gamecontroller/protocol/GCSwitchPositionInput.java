@@ -29,6 +29,8 @@ public interface GCSwitchPositionInput {
      * bounds.
      * 
      * This will always be \c YES for non-sequential switch inputs.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("canWrap")
@@ -37,6 +39,8 @@ public interface GCSwitchPositionInput {
     /**
      * \c YES if the switch input can only transition to positions that are adjacent
      * to the current position.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isSequential")
@@ -49,6 +53,8 @@ public interface GCSwitchPositionInput {
      * This should be treated as a lower bound of the event latency. It may not
      * include (wired or wireless) transmission latency, or latency accrued on
      * the device before the event was transmitted to the host.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastPositionLatency")
@@ -60,6 +66,8 @@ public interface GCSwitchPositionInput {
      * This time interval is not relative to any specific point in time. You can
      * subtract a previous timestamp from the returned timestamp to determine the time
      * (in seconds) between changes to the value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastPositionTimestamp")
@@ -69,6 +77,8 @@ public interface GCSwitchPositionInput {
      * The switch's position.
      * 
      * @see valueDidChangeHandler
+     * 
+     *      API-Since: 16.0
      */
     @Generated
     @Selector("position")
@@ -80,6 +90,8 @@ public interface GCSwitchPositionInput {
      * 
      * @param input the element that has been modified.
      * @see value
+     * 
+     *      API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -97,6 +109,8 @@ public interface GCSwitchPositionInput {
 
     /**
      * The (inclusive) bounds of possible position values for the switch.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("positionRange")
@@ -108,6 +122,8 @@ public interface GCSwitchPositionInput {
      * 
      * @param input the element that has been modified.
      * @see value
+     * 
+     *      API-Since: 16.0
      */
     @Generated
     @Selector("setPositionDidChangeHandler:")

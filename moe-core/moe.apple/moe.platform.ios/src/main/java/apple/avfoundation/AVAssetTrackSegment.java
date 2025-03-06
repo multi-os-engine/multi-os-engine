@@ -165,6 +165,8 @@ public class AVAssetTrackSegment extends NSObject {
 
     /**
      * indicates whether the AVAssetTrackSegment is an empty segment
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isEmpty")
@@ -172,6 +174,8 @@ public class AVAssetTrackSegment extends NSObject {
 
     /**
      * indicates the timeRange of the track of the container file of the media presented by the AVAssetTrackSegment
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("timeMapping")

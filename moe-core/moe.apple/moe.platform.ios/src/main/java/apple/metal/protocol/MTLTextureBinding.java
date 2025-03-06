@@ -16,6 +16,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLTextureBinding")
 public interface MTLTextureBinding extends MTLBinding {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("arrayLength")
     @NUInt
@@ -23,6 +26,8 @@ public interface MTLTextureBinding extends MTLBinding {
 
     /**
      * true for depth textures
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isDepthTexture")
@@ -30,6 +35,8 @@ public interface MTLTextureBinding extends MTLBinding {
 
     /**
      * half, float, int, or uint.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("textureDataType")
@@ -38,6 +45,8 @@ public interface MTLTextureBinding extends MTLBinding {
 
     /**
      * texture1D, texture2D...
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("textureType")

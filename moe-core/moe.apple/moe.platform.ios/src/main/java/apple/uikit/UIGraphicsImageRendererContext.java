@@ -159,6 +159,8 @@ public class UIGraphicsImageRendererContext extends UIGraphicsRendererContext {
 
     /**
      * Returns a UIImage representing the current state of the renderer's CGContext
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

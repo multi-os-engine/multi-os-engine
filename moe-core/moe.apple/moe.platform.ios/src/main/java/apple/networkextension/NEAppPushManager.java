@@ -102,6 +102,8 @@ public class NEAppPushManager extends NSObject {
      * [@property] delegate
      * 
      * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -329,6 +331,8 @@ public class NEAppPushManager extends NSObject {
      * [@property] delegate
      * 
      * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -338,6 +342,8 @@ public class NEAppPushManager extends NSObject {
      * [@property] delegate
      * 
      * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NEAppPushDelegate value) {

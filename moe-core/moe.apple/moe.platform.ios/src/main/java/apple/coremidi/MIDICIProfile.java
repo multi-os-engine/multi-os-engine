@@ -122,6 +122,9 @@ public class MIDICIProfile extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MIDICIProfile initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithData:name:")
     public native MIDICIProfile initWithDataName(@NotNull NSData data, @NotNull String inName);
@@ -150,6 +153,8 @@ public class MIDICIProfile extends NSObject implements NSSecureCoding {
 
     /**
      * An NSString describing the profile.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -163,6 +168,8 @@ public class MIDICIProfile extends NSObject implements NSSecureCoding {
 
     /**
      * always 5 bytes
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

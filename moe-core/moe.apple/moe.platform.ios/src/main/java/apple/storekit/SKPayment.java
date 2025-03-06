@@ -46,7 +46,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.purchase(confirmIn:options:)
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -142,7 +145,10 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("paymentWithProduct:")
     public static native SKPayment paymentWithProduct(@NotNull SKProduct product);
@@ -181,7 +187,11 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
      * Application-specific user identifier. Optional.
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.appAccountToken to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("applicationUsername")
@@ -209,7 +219,10 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
      * Identifier agreed upon with the store. Required.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("productIdentifier")
@@ -219,7 +232,10 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
      * default: 1. Must be at least 1.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.quantity to use in Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("quantity")
     @NInt
@@ -229,7 +245,10 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
      * Payment request data agreed upon with the store. Optional.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create Product.PurchaseOption.custom values to use in Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("requestData")
@@ -239,7 +258,11 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
      * Force an "ask to buy" flow for this payment, in the sandbox
      * 
      * API-Since: 8.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.simulatesAskToBuyInSandbox to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
     public native boolean simulatesAskToBuyInSandbox();
@@ -248,7 +271,11 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
      * The relevant data for specifying a discount to be applied to this payment. Optional.
      * 
      * API-Since: 12.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.promotionalOffer to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("paymentDiscount")

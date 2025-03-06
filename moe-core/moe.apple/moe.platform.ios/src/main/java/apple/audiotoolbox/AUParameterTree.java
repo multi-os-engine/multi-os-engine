@@ -124,6 +124,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
      * @param name          The new group's human-readable name (localized).
      * @param addressOffset The new group's parameters' addresses will be offset from those in
      *                      the template by this value.
+     * 
+     *                      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -139,6 +141,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
      * groups, sharing certain immutable state between the instances.
      * 
      * Template groups may not appear in trees except at the root.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -151,6 +155,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
      * @param identifier An identifier for the group (non-localized, persistent).
      * @param name       The group's human-readable name (localized).
      * @param children   The group's child nodes.
+     * 
+     *                   API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -161,6 +167,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
     /**
      * Create an AUParameter.
      * See AUParameter's properties for descriptions of the arguments.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -174,6 +182,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
      * Create an AUParameterTree.
      * 
      * @param children The tree's top-level child nodes.
+     * 
+     *                 API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -264,6 +274,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
      * 
      * @return
      *         The parameter corresponding to the supplied address, or nil if no such parameter exists.
+     * 
+     *         API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -282,6 +294,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
      * @return
      *         The parameter corresponding to the supplied ID/scope/element, or nil if no such parameter
      *         exists, or if the audio unit is not a v2 unit.
+     * 
+     *         API-Since: 9.0
      */
     @Nullable
     @Generated

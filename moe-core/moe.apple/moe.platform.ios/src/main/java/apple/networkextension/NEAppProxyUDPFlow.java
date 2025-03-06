@@ -42,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.network.opaque.nw_endpoint_t;
 
 /**
  * [@interface] NEAppProxyUDPFlow
@@ -179,33 +180,36 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
      * An NWEndpoint object containing the local endpoint of the flow's corresponding socket.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
 
     /**
-     * readDatagramWithCompletionHandler:
+     * readDatagramsWithCompletionHandler:
      * 
-     * Read a datagram from the flow.
+     * Read datagrams from the flow.
      * 
      * @param completionHandler A block that will be executed when datagrams have been read from the flow. The block
      *                          takes the datagrams that were read, the destination endpoints of the datagrams, and an
-     *                          NSError. If an error occurred while reading then the error parameter will be non-nil. If
-     *                          the datagrams and remoteEndpoints arrays are non-nill but
+     *                          NSError. If an error occurred while reading then the error parameter will be non-nil.
      * 
      *                          API-Since: 9.0
+     *                          Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("readDatagramsWithCompletionHandler:")
     public native void readDatagramsWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
 
     /**
-     * writeDatagram:sentByEndpoint:completionHandler:
+     * writeDatagrams:sentByEndpoint:completionHandler:
      * 
-     * Write a datagram to the flow.
+     * Write datagrams to the flow.
      * 
      * @param datagrams         An array of NSData objects containing the data to be written.
      * @param remoteEndpoints   The source endpoints of the datagrams.
@@ -213,7 +217,9 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
      *                          socket's receive buffer.
      * 
      *                          API-Since: 9.0
+     *                          Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("writeDatagrams:sentByEndpoints:completionHandler:")
     public native void writeDatagramsSentByEndpointsCompletionHandler(@NotNull NSArray<? extends NSData> datagrams,
@@ -239,4 +245,16 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] localFlowEndpoint
+     * 
+     * An `nw_endpoint_t` object containing the local endpoint of the flow's corresponding socket.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("localFlowEndpoint")
+    @Nullable
+    public native nw_endpoint_t localFlowEndpoint();
 }

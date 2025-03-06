@@ -164,18 +164,42 @@ public class UIAcceleration extends NSObject {
     @Selector("init")
     public native UIAcceleration init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAcceleration has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @Generated
     @Selector("timestamp")
     public native double timestamp();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAcceleration has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @Generated
     @Selector("x")
     public native double x();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAcceleration has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @Generated
     @Selector("y")
     public native double y();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAcceleration has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @Generated
     @Selector("z")
     public native double z();

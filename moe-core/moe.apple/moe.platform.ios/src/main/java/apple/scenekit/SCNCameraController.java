@@ -65,6 +65,8 @@ public class SCNCameraController extends NSObject {
     /**
      * Automatically update the target in beginInteraction
      * Defaults to NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("automaticTarget")
@@ -77,6 +79,8 @@ public class SCNCameraController extends NSObject {
     /**
      * Begin/Continue/End interaction using an input location relative to viewport.
      * The behavior depends on the current interactionMode.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("beginInteraction:withViewport:")
@@ -105,11 +109,16 @@ public class SCNCameraController extends NSObject {
 
     /**
      * clear the camera roll if any
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("clearRoll")
     public native void clearRoll();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("continueInteraction:withViewport:sensitivity:")
     public native void continueInteractionWithViewportSensitivity(@ByValue CGPoint location, @ByValue CGSize viewport,
@@ -119,6 +128,9 @@ public class SCNCameraController extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -131,6 +143,8 @@ public class SCNCameraController extends NSObject {
 
     /**
      * Zoom by moving the camera along the axis by a screen space point.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dollyBy:onScreenPoint:viewport:")
@@ -138,11 +152,16 @@ public class SCNCameraController extends NSObject {
 
     /**
      * Zoom by moving the camera along the axis from the camera position to the target.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dollyToTarget:")
     public native void dollyToTarget(float delta);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("endInteraction:withViewport:velocity:")
     public native void endInteractionWithViewportVelocity(@ByValue CGPoint location, @ByValue CGSize viewport,
@@ -151,6 +170,8 @@ public class SCNCameraController extends NSObject {
     /**
      * Move the camera to a position where the bounding sphere of all nodes is fully visible.
      * Also set the camera target as the center of the bounding sphere.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("frameNodes:")
@@ -164,6 +185,8 @@ public class SCNCameraController extends NSObject {
     /**
      * Set to YES to enable inertia on endInteraction.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("inertiaEnabled")
@@ -172,6 +195,8 @@ public class SCNCameraController extends NSObject {
     /**
      * The friction coefficient applied to the inertia.
      * Defaults to 0.05.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("inertiaFriction")
@@ -194,6 +219,9 @@ public class SCNCameraController extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("interactionMode")
     @NInt
@@ -201,6 +229,8 @@ public class SCNCameraController extends NSObject {
 
     /**
      * Returns YES if inertia is running.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isInertiaRunning")
@@ -215,10 +245,16 @@ public class SCNCameraController extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("maximumHorizontalAngle")
     public native float maximumHorizontalAngle();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("maximumVerticalAngle")
     public native float maximumVerticalAngle();
@@ -231,6 +267,8 @@ public class SCNCameraController extends NSObject {
      * The minimum angle must be inferior to the maximum angle.
      * Angles are in world space and within the range [-180, 180].
      * Defaults to 0.0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumHorizontalAngle")
@@ -245,6 +283,8 @@ public class SCNCameraController extends NSObject {
      * Angles are in world space and within the range [-90, 90].
      * Defaults to 0.0.
      * For example: set to minimum to 0 and maximum to 90 to only allow orbit around the top hemisphere.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumVerticalAngle")
@@ -255,6 +295,9 @@ public class SCNCameraController extends NSObject {
     @Selector("new")
     public static native SCNCameraController new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("pointOfView")
@@ -271,6 +314,8 @@ public class SCNCameraController extends NSObject {
     /**
      * Rotate the camera around the axis from the camera position to the target.
      * Delta is in degrees.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rollAroundTarget:")
@@ -278,6 +323,8 @@ public class SCNCameraController extends NSObject {
 
     /**
      * Rotate the camera around the given screen space point. Delta is in degrees.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rollBy:aroundScreenPoint:viewport:")
@@ -285,6 +332,8 @@ public class SCNCameraController extends NSObject {
 
     /**
      * Rotate delta is in degrees.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rotateByX:Y:")
@@ -293,15 +342,23 @@ public class SCNCameraController extends NSObject {
     /**
      * Automatically update the target in beginInteraction
      * Defaults to NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAutomaticTarget:")
     public native void setAutomaticTarget(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SCNCameraControllerDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SCNCameraControllerDelegate value) {
         Object __old = delegate();
@@ -317,6 +374,8 @@ public class SCNCameraController extends NSObject {
     /**
      * Set to YES to enable inertia on endInteraction.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInertiaEnabled:")
@@ -325,19 +384,30 @@ public class SCNCameraController extends NSObject {
     /**
      * The friction coefficient applied to the inertia.
      * Defaults to 0.05.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInertiaFriction:")
     public native void setInertiaFriction(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setInteractionMode:")
     public native void setInteractionMode(@NInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMaximumHorizontalAngle:")
     public native void setMaximumHorizontalAngle(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMaximumVerticalAngle:")
     public native void setMaximumVerticalAngle(float value);
@@ -350,6 +420,8 @@ public class SCNCameraController extends NSObject {
      * The minimum angle must be inferior to the maximum angle.
      * Angles are in world space and within the range [-180, 180].
      * Defaults to 0.0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumHorizontalAngle:")
@@ -364,17 +436,24 @@ public class SCNCameraController extends NSObject {
      * Angles are in world space and within the range [-90, 90].
      * Defaults to 0.0.
      * For example: set to minimum to 0 and maximum to 90 to only allow orbit around the top hemisphere.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumVerticalAngle:")
     public native void setMinimumVerticalAngle(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPointOfView:")
     public native void setPointOfView(@Nullable SCNNode value);
 
     /**
      * The camera target in world space for orbit rotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTarget:")
@@ -388,6 +467,8 @@ public class SCNCameraController extends NSObject {
      * The up vector in world space used as reference for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable
      * camera modes.
      * Defaults to (0, 1, 0).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWorldUp:")
@@ -395,6 +476,8 @@ public class SCNCameraController extends NSObject {
 
     /**
      * Stop current inertia.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("stopInertia")
@@ -406,6 +489,8 @@ public class SCNCameraController extends NSObject {
 
     /**
      * The camera target in world space for orbit rotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("target")
@@ -414,6 +499,8 @@ public class SCNCameraController extends NSObject {
 
     /**
      * Translate the camera along the local X/Y/Z axis.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("translateInCameraSpaceByX:Y:Z:")
@@ -428,6 +515,8 @@ public class SCNCameraController extends NSObject {
      * The up vector in world space used as reference for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable
      * camera modes.
      * Defaults to (0, 1, 0).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("worldUp")

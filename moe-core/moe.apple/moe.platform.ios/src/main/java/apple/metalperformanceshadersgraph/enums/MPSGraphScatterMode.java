@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Scatter mode
+ * The scatter mode.
  */
 @Generated
 public final class MPSGraphScatterMode {

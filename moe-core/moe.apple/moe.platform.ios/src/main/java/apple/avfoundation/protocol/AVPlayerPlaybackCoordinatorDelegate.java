@@ -33,6 +33,8 @@ public interface AVPlayerPlaybackCoordinatorDelegate {
      * Implementing this method allows the coordinator to establish identity of two items created from different URLs,
      * e.g., because one participant is using a local cache and the other a remote URL.
      * If the method is not implemented, the coordinator will derive the identifier from the item's asset.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

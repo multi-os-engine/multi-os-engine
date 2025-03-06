@@ -151,6 +151,8 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      * The collection of barcode symbologies that are to be detected in the image. The default is to scan for all
      * possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the
      * specified revision.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSymbologies:")
@@ -185,6 +187,8 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      * The collection of barcode symbologies that are to be detected in the image. The default is to scan for all
      * possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the
      * specified revision.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -213,6 +217,8 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
 
     /**
      * VNBarcodeObservation results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

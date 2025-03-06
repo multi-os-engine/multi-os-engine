@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Common base class for all MPSGraph objects.
+ * The common base class for all Metal Performance Shaders Graph objects.
  * 
  * Only the child classes should be used.
  * 

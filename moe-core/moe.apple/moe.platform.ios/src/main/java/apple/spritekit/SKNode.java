@@ -67,12 +67,14 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UICoordinateSpace;
 
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UIFocusItem {
+public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UIFocusItem, UIFocusItemContainer,
+        UICoordinateSpace {
     static {
         NatJ.register();
     }
@@ -885,4 +887,50 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("bounds")
+    @ByValue
+    public native CGRect bounds();
+
+    @Generated
+    @Selector("convertPoint:fromCoordinateSpace:")
+    @ByValue
+    public native CGPoint convertPointFromCoordinateSpace(@ByValue CGPoint point,
+            @Mapped(ObjCObjectMapper.class) @NotNull UICoordinateSpace coordinateSpace);
+
+    @Generated
+    @Selector("convertPoint:toCoordinateSpace:")
+    @ByValue
+    public native CGPoint convertPointToCoordinateSpace(@ByValue CGPoint point,
+            @Mapped(ObjCObjectMapper.class) @NotNull UICoordinateSpace coordinateSpace);
+
+    @Generated
+    @Selector("convertRect:fromCoordinateSpace:")
+    @ByValue
+    public native CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect,
+            @Mapped(ObjCObjectMapper.class) @NotNull UICoordinateSpace coordinateSpace);
+
+    @Generated
+    @Selector("convertRect:toCoordinateSpace:")
+    @ByValue
+    public native CGRect convertRectToCoordinateSpace(@ByValue CGRect rect,
+            @Mapped(ObjCObjectMapper.class) @NotNull UICoordinateSpace coordinateSpace);
+
+    @Generated
+    @Selector("coordinateSpace")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UICoordinateSpace coordinateSpace();
+
+    @Generated
+    @IsOptional
+    @Selector("focusItemDeferralMode")
+    @NInt
+    public native long focusItemDeferralMode();
+
+    @Generated
+    @Selector("focusItemsInRect:")
+    @NotNull
+    public native NSArray<?> focusItemsInRect(@ByValue CGRect rect);
 }

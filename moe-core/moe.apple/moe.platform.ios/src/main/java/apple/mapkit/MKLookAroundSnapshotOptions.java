@@ -127,6 +127,9 @@ public class MKLookAroundSnapshotOptions extends NSObject {
     @Selector("new")
     public static native MKLookAroundSnapshotOptions new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
@@ -140,12 +143,17 @@ public class MKLookAroundSnapshotOptions extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);
 
     /**
      * The size of the image to create. Defaults to 256x256
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSize:")
@@ -153,6 +161,8 @@ public class MKLookAroundSnapshotOptions extends NSObject {
 
     /**
      * Set traitCollection.displayScale to specify the scale factor to use when creating the image
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTraitCollection:")
@@ -164,6 +174,8 @@ public class MKLookAroundSnapshotOptions extends NSObject {
 
     /**
      * The size of the image to create. Defaults to 256x256
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("size")
@@ -176,6 +188,8 @@ public class MKLookAroundSnapshotOptions extends NSObject {
 
     /**
      * Set traitCollection.displayScale to specify the scale factor to use when creating the image
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

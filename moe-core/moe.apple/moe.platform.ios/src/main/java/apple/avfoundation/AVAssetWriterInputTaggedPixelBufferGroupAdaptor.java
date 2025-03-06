@@ -117,6 +117,8 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * CMTaggedBufferGroupCreate(.., tagCollectionArray, pixelBufferArray, &taggedBufferGroup);
      * [assetWriterInputAdaptor appendTaggedPixelBufferGroup:taggedBufferGroup ..];
      * 
+     * API-Since: 17.0
+     * 
      * @param taggedPixelBufferGroup
      *                               The CMTaggedBufferGroup to be appended. All of the buffers in
      *                               taggedPixelBufferGroup should be CVPixelBuffers, and they should correspond to tag
@@ -142,6 +144,8 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * [@property] assetWriterInput
      * 
      * The asset writer input to which the receiver should append tagged buffer groups.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("assetWriterInput")
@@ -169,6 +173,8 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * This method throws an exception if the input is already attached to another asset writer input tagged buffer
      * group adaptor or if the input has already started writing (the asset writer has progressed beyond
      * AVAssetWriterStatusUnknown).
+     * 
+     * API-Since: 17.0
      * 
      * @param input
      *                                    An instance of AVAssetWriterInput to which the receiver should append tagged
@@ -250,6 +256,8 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * an error to initialize an instance of AVAssetWriterInputTaggedPixelBufferGroupAdaptor with an asset writer input
      * whose asset writer has progressed beyond AVAssetWriterStatusUnknown.
      * 
+     * API-Since: 17.0
+     * 
      * @param input
      *                                    An instance of AVAssetWriterInput to which the receiver should append tagged
      *                                    buffer groups. In addition to the pixel buffer adaptor, asset writer inputs
@@ -308,6 +316,8 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * non-NULL value.
      * 
      * This property is not key value observable.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("pixelBufferPool")
@@ -333,6 +343,8 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * 
      * The value of this property is a dictionary containing pixel buffer attributes keys defined in
      * <CoreVideo/CVPixelBuffer.h>.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sourcePixelBufferAttributes")

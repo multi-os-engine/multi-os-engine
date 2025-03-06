@@ -61,6 +61,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * Convenience method to return a JSON representation of this MXCrashDiagnosticObjectiveCExceptionReason object.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("JSONRepresentation")
@@ -85,6 +87,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * [@property] arguments
      * 
      * An NSArray of strings representing arguments passed to the formatString.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("arguments")
@@ -120,6 +124,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * [@property] className
      * 
      * A string representing the class name of the exception, for example NSException.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("className")
@@ -130,6 +136,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * [@property] composedMessage
      * 
      * A human-readable message string summarizing the reason for the exception.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("composedMessage")
@@ -151,6 +159,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * object.
      * 
      * @return An NSDictionary object containing the dictionary representation
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("dictionaryRepresentation")
@@ -167,6 +177,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * A string representing name of the exception
      * 
      * This will align with the "name" field of the NSException
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("exceptionName")
@@ -177,6 +189,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * [@property] exceptionType
      * 
      * A human-readable string denoting type of the exception
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("exceptionType")
@@ -187,6 +201,8 @@ public class MXCrashDiagnosticObjectiveCExceptionReason extends NSObject impleme
      * [@property] formatString
      * 
      * A string representing the exception message before arguments are substituted into the message
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("formatString")

@@ -79,6 +79,8 @@ public class TKTokenKeychainContents extends NSObject {
     /**
      * Returns certificate with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such
      * certificate exists.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -110,6 +112,8 @@ public class TKTokenKeychainContents extends NSObject {
      * and then the keychain is populated with new items.
      * 
      * @param items New items to be stored into the keychain.
+     * 
+     *              API-Since: 10.0
      */
     @Generated
     @Selector("fillWithItems:")
@@ -143,6 +147,8 @@ public class TKTokenKeychainContents extends NSObject {
 
     /**
      * All items related to this token in the keychain.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -151,6 +157,8 @@ public class TKTokenKeychainContents extends NSObject {
 
     /**
      * Returns key with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such key exists.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

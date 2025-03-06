@@ -6,6 +6,8 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * NSTextList represents a stylistic format of a group of text list items belonging to the same nested level. It
  * supports both ordered and unordered lists. The type of marker is defined by markerFormat.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class NSTextListOptions {

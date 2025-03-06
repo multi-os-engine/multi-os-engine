@@ -27,6 +27,8 @@ public interface ARAnchorCopying extends NSCopying {
      * This method must be implemented for any ARAnchor subclasses that adds properties.
      * 
      * @param anchor The anchor from which to copy values.
+     * 
+     *               API-Since: 12.0
      */
     @NotNull
     @Generated

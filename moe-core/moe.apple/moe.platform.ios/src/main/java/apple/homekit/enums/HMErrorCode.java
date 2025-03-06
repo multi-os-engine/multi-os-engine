@@ -449,4 +449,8 @@ public final class HMErrorCode {
      * API-Since: 15.0
      */
     @Generated @NInt public static final long AccessoryIsSuspended = 0x0000000000000067L;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated @NInt public static final long PartialCommunicationFailure = 0x0000000000000068L;
 }

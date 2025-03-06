@@ -71,6 +71,8 @@ public class MXAppLaunchDiagnostic extends MXDiagnostic {
      * [@property] callStackTree
      * 
      * The application call stack tree associated with the app launch.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -147,6 +149,8 @@ public class MXAppLaunchDiagnostic extends MXDiagnostic {
      * Total app launch duration.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

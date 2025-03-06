@@ -35,6 +35,8 @@ public interface GCTouchedStateInput {
      * 
      * @see touchedDidChangeHandler
      * @see GCPressedStateInput
+     * 
+     *      API-Since: 16.0
      */
     @Generated
     @Selector("isTouched")
@@ -47,6 +49,8 @@ public interface GCTouchedStateInput {
      * This should be treated as a lower bound of the event latency. It may not
      * include (wired or wireless) transmission latency, or latency accrued on
      * the device before the event was transmitted to the host.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastTouchedStateLatency")
@@ -58,6 +62,8 @@ public interface GCTouchedStateInput {
      * This time interval is not relative to any specific point in time. You can
      * subtract a previous timestamp from the returned timestamp to determine the time
      * (in seconds) between changes to the value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastTouchedStateTimestamp")
@@ -65,6 +71,8 @@ public interface GCTouchedStateInput {
 
     /**
      * Set this block if you want to be notified when the touched state changes.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTouchedDidChangeHandler:")
@@ -81,6 +89,8 @@ public interface GCTouchedStateInput {
 
     /**
      * Set this block if you want to be notified when the touched state changes.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

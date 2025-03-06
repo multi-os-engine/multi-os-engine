@@ -31,8 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * An upsample layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -61,7 +60,11 @@ public class MLCUpsampleLayer extends MLCLayer {
      * If True, the corner pixels of the source and result tensors are aligned, and thus preserving the values at those
      * pixels.
      * This only has effect when mode is 'bilinear'. Default is NO.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("alignsCorners")
     public native boolean alignsCorners();
@@ -145,7 +148,11 @@ public class MLCUpsampleLayer extends MLCLayer {
      * 
      * @param shape A NSArray<NSNumber *> representing the dimensions of the result tensor
      * @return A new upsample layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithShape:")
     public static native MLCUpsampleLayer layerWithShape(@NotNull NSArray<? extends NSNumber> shape);
@@ -157,7 +164,11 @@ public class MLCUpsampleLayer extends MLCLayer {
      * @param sampleMode    The upsampling algorithm to use. Default is nearest.
      * @param alignsCorners Whether the corner pixels of the input and output tensors are aligned or not.
      * @return A new upsample layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithShape:sampleMode:alignsCorners:")
     public static native MLCUpsampleLayer layerWithShapeSampleModeAlignsCorners(
@@ -180,7 +191,11 @@ public class MLCUpsampleLayer extends MLCLayer {
      * [@property] sampleMode
      * 
      * The sampling mode to use when performing the upsample.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("sampleMode")
     public native int sampleMode();
@@ -194,7 +209,11 @@ public class MLCUpsampleLayer extends MLCLayer {
      * 
      * A NSArray<NSNumber *> representing just the width if number of entries in shape array is 1 or
      * the height followed by width of result tensor if the number of entries in shape array is 2.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("shape")
@@ -204,6 +223,7 @@ public class MLCUpsampleLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

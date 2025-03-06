@@ -89,6 +89,8 @@ public class CLMonitoringEvent extends NSObject implements NSSecureCoding {
      * 
      * Discussion:
      * An instance of NSDate indicating the time of the event.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("date")
@@ -118,6 +120,9 @@ public class CLMonitoringEvent extends NSObject implements NSSecureCoding {
      * Discussion:
      * An `NSString` representing the identifier under which the condition
      * was added for monitoring.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("identifier")
@@ -166,6 +171,9 @@ public class CLMonitoringEvent extends NSObject implements NSSecureCoding {
      * An optional instance of CLCondition that represents the most specific
      * condition to which this event could apply. The type of the refinement
      * condition depends onthe monitored condition itself.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("refinement")
@@ -189,6 +197,8 @@ public class CLMonitoringEvent extends NSObject implements NSSecureCoding {
      * 
      * Discussion:
      * State of the condition at the time of the event.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("state")
@@ -218,4 +228,147 @@ public class CLMonitoringEvent extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * accuracyLimited
+     * 
+     * Discussion:
+     * True if events will not be delivered because the app is subject
+     * to accuracy limitation.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("accuracyLimited")
+    public native boolean accuracyLimited();
+
+    /**
+     * authorizationDenied
+     * 
+     * Discussion:
+     * True if events will be suspended while the app has been denied
+     * location authorization.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationDenied")
+    public native boolean authorizationDenied();
+
+    /**
+     * authorizationDeniedGlobally
+     * 
+     * Discussion:
+     * True if events will be suspended while the user has disabled Location
+     * Services system-wide.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationDeniedGlobally")
+    public native boolean authorizationDeniedGlobally();
+
+    /**
+     * authorizationRequestInProgress
+     * 
+     * Discussion:
+     * True if the system is requesting authorization from the user on behalf of the app, but no response has been
+     * received yet.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationRequestInProgress")
+    public native boolean authorizationRequestInProgress();
+
+    /**
+     * authorizationRestricted
+     * 
+     * Discussion:
+     * True if events will be suspended while the app lacks authorization,
+     * and authorization changes are prevented by parental restrictions,
+     * MDM configuration, or other factors.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationRestricted")
+    public native boolean authorizationRestricted();
+
+    /**
+     * conditionLimitExceeded
+     * 
+     * Discussion:
+     * True if events will be suspended for this condition while the app
+     * has too many other conditions of this type monitored.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("conditionLimitExceeded")
+    public native boolean conditionLimitExceeded();
+
+    /**
+     * conditionUnsupported
+     * 
+     * Discussion:
+     * True if events will be suspended for this condition because
+     * monitoring is not supported for conditions of its type.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("conditionUnsupported")
+    public native boolean conditionUnsupported();
+
+    /**
+     * insufficientlyInUse
+     * 
+     * Discussion:
+     * True if events will be suspended while the app is not sufficiently
+     * in-use.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("insufficientlyInUse")
+    public native boolean insufficientlyInUse();
+
+    /**
+     * persistenceUnavailable
+     * 
+     * Discussion:
+     * True if monitoring is not possible due to persistence failure.
+     * Some or all properties of the condition, if identified, or all conditions,
+     * and events associated with the monitoring of affected conditions may not
+     * be stored persistently.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("persistenceUnavailable")
+    public native boolean persistenceUnavailable();
+
+    /**
+     * serviceSessionRequired
+     * 
+     * Discussion:
+     * True if LocationServices are disabled because the app has adopted CLRequireExplicitServiceSession
+     * info.plist key but no CLServiceSession requiring authorization is outstanding yet.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("serviceSessionRequired")
+    public native boolean serviceSessionRequired();
 }

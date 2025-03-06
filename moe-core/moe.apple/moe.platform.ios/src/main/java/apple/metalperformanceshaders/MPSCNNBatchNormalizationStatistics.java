@@ -124,6 +124,8 @@ public class MPSCNNBatchNormalizationStatistics extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNBatchNormalizationStatistics object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -134,6 +136,8 @@ public class MPSCNNBatchNormalizationStatistics extends MPSCNNKernel {
      * Initialize this kernel on a device.
      * 
      * @param device The MTLDevice on which to initialize the kernel.
+     * 
+     *               API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

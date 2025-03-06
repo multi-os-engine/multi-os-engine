@@ -167,6 +167,12 @@ public class INSetClimateSettingsInCarIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -184,7 +190,12 @@ public class INSetClimateSettingsInCarIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INSetClimateSettingsInCarIntentResponse initWithCodeUserActivity(@NInt long code,

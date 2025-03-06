@@ -43,7 +43,13 @@ public interface GKChallengeEventHandlerDelegate {
     /**
      * Called when the local player has completed one of their challenges, triggered by a push notification from the
      * server. Received only while the game is running.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+     * GKLocalPlayer.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("localPlayerDidCompleteChallenge:")
@@ -54,7 +60,13 @@ public interface GKChallengeEventHandlerDelegate {
     /**
      * Called when the local player has received a challenge, triggered by a push notification from the server. Received
      * only while the game is running.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+     * GKLocalPlayer.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("localPlayerDidReceiveChallenge:")
@@ -65,7 +77,13 @@ public interface GKChallengeEventHandlerDelegate {
     /**
      * Called when the user taps a challenge notification banner or the "Play Now" button for a challenge inside Game
      * Center, causing the game to launch. Also called when the user taps a challenge banner inside the game.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+     * GKLocalPlayer.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("localPlayerDidSelectChallenge:")
@@ -77,7 +95,13 @@ public interface GKChallengeEventHandlerDelegate {
      * Called when a non-local player has completed a challenge issued by the local player. Triggered by a push
      * notification from the server. Received when a challenge notification banner is tapped, or while the game is
      * running.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+     * GKLocalPlayer.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("remotePlayerDidCompleteChallenge:")
@@ -88,7 +112,13 @@ public interface GKChallengeEventHandlerDelegate {
     /**
      * If the method returns YES, a challenge banner (like an achievement or welcome banner -- not a notification center
      * banner) is displayed. If NO, then no banner is displayed. Default behavior for non-implementing apps is YES.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+     * GKLocalPlayer.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForLocallyCompletedChallenge:")
@@ -101,7 +131,13 @@ public interface GKChallengeEventHandlerDelegate {
      * banner) is displayed when a challenge is received in-game for the local player. If NO, then no banner is
      * displayed, and localPlayerDidSelectChallenge: will not be called for that challenge. Default behavior for
      * non-implementing apps is YES.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+     * GKLocalPlayer.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForLocallyReceivedChallenge:")
@@ -112,7 +148,13 @@ public interface GKChallengeEventHandlerDelegate {
     /**
      * If the method returns YES, a challenge banner (like an achievement or welcome banner -- not a notification center
      * banner) is displayed. If NO, then no banner is displayed. Default behavior for non-implementing apps is YES.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+     * GKLocalPlayer.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForRemotelyCompletedChallenge:")

@@ -34,8 +34,7 @@ import org.jetbrains.annotations.Nullable;
  * A tensor object
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -84,7 +83,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param device The compute device
      * @return A Boolean value indicating whether the data is successfully associated with the tensor and copied to the
      *         device.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("bindAndWriteData:toDevice:")
     public native boolean bindAndWriteDataToDevice(@NotNull MLCTensorData data, @NotNull MLCDevice device);
@@ -100,7 +103,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param data       The optimizer data to be associated with the tensor
      * @param deviceData The optimizer device data to be associated with the tensor
      * @return A Boolean value indicating whether the data is successfully associated with the tensor .
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("bindOptimizerData:deviceData:")
     public native boolean bindOptimizerDataDeviceData(@NotNull NSArray<? extends MLCTensorData> data,
@@ -142,7 +149,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param length                The size in bytes to copy
      * @param synchronizeWithDevice Whether to synchronize device memory if device is GPU
      * @return Returns YES if success, NO if there is a failure to synchronize
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("copyDataFromDeviceMemoryToBytes:length:synchronizeWithDevice:")
     public native boolean copyDataFromDeviceMemoryToBytesLengthSynchronizeWithDevice(@NotNull VoidPtr bytes,
@@ -159,7 +170,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * [@property] data
      * 
      * The tensor data
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("data")
@@ -177,7 +192,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * [@property] descriptor
      * 
      * The tensor descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -187,7 +206,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * [@property] device
      * 
      * The device associated with this tensor.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("device")
@@ -196,7 +219,11 @@ public class MLCTensor extends NSObject implements NSCopying {
     /**
      * Returns a Boolean value indicating whether the underlying data has valid floating-point numerics, i.e. it
      * does not contain NaN or INF floating-point values.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("hasValidNumerics")
     public native boolean hasValidNumerics();
@@ -236,7 +263,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("label")
@@ -254,7 +285,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      * When customizing optimizer data, the contents of these buffers must be initialized before executing optimizer
      * update for a graph.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("optimizerData")
@@ -264,7 +299,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * [@property] optimizer device buffers to use if tensor is used as a parameter
      * 
      * These are the device side optimizer (momentum and velocity) buffers which developers can query
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("optimizerDeviceData")
@@ -282,7 +321,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setLabel:")
     public native void setLabel(@NotNull String value);
@@ -304,7 +347,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * NOTE: This method should not be called from a completion callback when device is the GPU.
      * 
      * @return Returns YES if success, NO if there is a failure to synchronize
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("synchronizeData")
     public native boolean synchronizeData();
@@ -318,7 +365,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * NOTE: This method should not be called from a completion callback when device is the GPU.
      * 
      * @return Returns YES if success, NO if there is a failure to synchronize
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("synchronizeOptimizerData")
     public native boolean synchronizeOptimizerData();
@@ -398,7 +449,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * The tensor ID
      * 
      * A unique number to identify each tensor. Assigned when the tensor is created.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorID")
     @NUInt
@@ -410,7 +465,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * Create a tensor object without any data
      * 
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithDescriptor:")
     public static native MLCTensor tensorWithDescriptor(@NotNull MLCTensorDescriptor tensorDescriptor);
@@ -423,7 +482,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param tensorDescriptor The tensor descriptor
      * @param data             The random initializer type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithDescriptor:data:")
     public static native MLCTensor tensorWithDescriptorData(@NotNull MLCTensorDescriptor tensorDescriptor,
@@ -437,7 +500,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param tensorDescriptor The tensor descriptor
      * @param fillData         The scalar data to fill to tensor with
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithDescriptor:fillWithData:")
     public static native MLCTensor tensorWithDescriptorFillWithData(@NotNull MLCTensorDescriptor tensorDescriptor,
@@ -451,7 +518,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param tensorDescriptor      The tensor descriptor
      * @param randomInitializerType The random initializer type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithDescriptor:randomInitializerType:")
     public static native MLCTensor tensorWithDescriptorRandomInitializerType(
@@ -467,7 +538,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param featureChannelCount Number of feature channels
      * @param batchSize           The tensor batch size
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithSequenceLength:featureChannelCount:batchSize:")
     public static native MLCTensor tensorWithSequenceLengthFeatureChannelCountBatchSize(@NUInt long sequenceLength,
@@ -484,7 +559,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param batchSize           The tensor batch size
      * @param data                The tensor data
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithSequenceLength:featureChannelCount:batchSize:data:")
     public static native MLCTensor tensorWithSequenceLengthFeatureChannelCountBatchSizeData(@NUInt long sequenceLength,
@@ -501,7 +580,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param batchSize             The tensor batch size
      * @param randomInitializerType The random initializer type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithSequenceLength:featureChannelCount:batchSize:randomInitializerType:")
     public static native MLCTensor tensorWithSequenceLengthFeatureChannelCountBatchSizeRandomInitializerType(
@@ -521,7 +604,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param batchSize           The tensor batch size
      * @param data                The tensor data
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:data:")
     public static native MLCTensor tensorWithSequenceLengthsSortedSequencesFeatureChannelCountBatchSizeData(
@@ -541,7 +628,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param batchSize             The tensor batch size
      * @param randomInitializerType The random initializer type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:randomInitializerType:")
     public static native MLCTensor tensorWithSequenceLengthsSortedSequencesFeatureChannelCountBatchSizeRandomInitializerType(
@@ -555,7 +646,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      * @param shape The tensor shape
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithShape:")
     public static native MLCTensor tensorWithShape(@NotNull NSArray<? extends NSNumber> shape);
@@ -569,7 +664,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param data     The tensor data
      * @param dataType The tensor data type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithShape:data:dataType:")
     public static native MLCTensor tensorWithShapeDataDataType(@NotNull NSArray<? extends NSNumber> shape,
@@ -583,7 +682,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param shape    The tensor shape
      * @param dataType The tensor data type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithShape:dataType:")
     public static native MLCTensor tensorWithShapeDataType(@NotNull NSArray<? extends NSNumber> shape, int dataType);
@@ -597,7 +700,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param fillData The scalar value to initialize the tensor data with
      * @param dataType The tensor data type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithShape:fillWithData:dataType:")
     public static native MLCTensor tensorWithShapeFillWithDataDataType(@NotNull NSArray<? extends NSNumber> shape,
@@ -612,7 +719,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param shape                 The tensor shape
      * @param randomInitializerType The random initializer type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithShape:randomInitializerType:")
     public static native MLCTensor tensorWithShapeRandomInitializerType(@NotNull NSArray<? extends NSNumber> shape,
@@ -628,7 +739,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param randomInitializerType The random initializer type
      * @param dataType              The tensor data type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithShape:randomInitializerType:dataType:")
     public static native MLCTensor tensorWithShapeRandomInitializerTypeDataType(
@@ -644,7 +759,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param featureChannelCount Number of feature channels
      * @param batchSize           The tensor batch size
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithWidth:height:featureChannelCount:batchSize:")
     public static native MLCTensor tensorWithWidthHeightFeatureChannelCountBatchSize(@NUInt long width,
@@ -662,7 +781,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param batchSize           The tensor batch size
      * @param data                The tensor data
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithWidth:height:featureChannelCount:batchSize:data:")
     public static native MLCTensor tensorWithWidthHeightFeatureChannelCountBatchSizeData(@NUInt long width,
@@ -681,7 +804,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param data                The tensor data
      * @param dataType            The tensor data type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithWidth:height:featureChannelCount:batchSize:data:dataType:")
     public static native MLCTensor tensorWithWidthHeightFeatureChannelCountBatchSizeDataDataType(@NUInt long width,
@@ -700,7 +827,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param fillData            The scalar value to initialize the tensor data with
      * @param dataType            The tensor data type
      * @return A new MLCTensorData object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithWidth:height:featureChannelCount:batchSize:fillWithData:dataType:")
     public static native MLCTensor tensorWithWidthHeightFeatureChannelCountBatchSizeFillWithDataDataType(
@@ -719,7 +850,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * @param batchSize             The tensor batch size
      * @param randomInitializerType The random initializer type
      * @return A new MLCTensor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorWithWidth:height:featureChannelCount:batchSize:randomInitializerType:")
     public static native MLCTensor tensorWithWidthHeightFeatureChannelCountBatchSizeRandomInitializerType(

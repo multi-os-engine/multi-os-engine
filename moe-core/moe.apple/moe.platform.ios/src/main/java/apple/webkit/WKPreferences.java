@@ -182,6 +182,8 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
      * windows without user interaction.
      * 
      * The default value is NO in iOS and YES in OS X.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("javaScriptCanOpenWindowsAutomatically")
@@ -202,6 +204,8 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
      * The minimum font size in points.
      * 
      * The default value is 0.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("minimumFontSize")
@@ -213,6 +217,8 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
      * windows without user interaction.
      * 
      * The default value is NO in iOS and YES in OS X.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setJavaScriptCanOpenWindowsAutomatically:")
@@ -233,6 +239,8 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
      * The minimum font size in points.
      * 
      * The default value is 0.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMinimumFontSize:")

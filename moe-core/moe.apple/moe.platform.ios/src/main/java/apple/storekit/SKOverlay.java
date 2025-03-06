@@ -85,6 +85,8 @@ public class SKOverlay extends NSObject {
 
     /**
      * The overlay configuration.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -97,6 +99,8 @@ public class SKOverlay extends NSObject {
 
     /**
      * A delegate for overlay events.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -130,6 +134,8 @@ public class SKOverlay extends NSObject {
      * Creates an overlay with the provided configuration.
      * 
      * @param configuration the configuration for the overlay.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @Selector("initWithConfiguration:")
@@ -181,6 +187,8 @@ public class SKOverlay extends NSObject {
 
     /**
      * A delegate for overlay events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -188,6 +196,8 @@ public class SKOverlay extends NSObject {
 
     /**
      * A delegate for overlay events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKOverlayDelegate value) {

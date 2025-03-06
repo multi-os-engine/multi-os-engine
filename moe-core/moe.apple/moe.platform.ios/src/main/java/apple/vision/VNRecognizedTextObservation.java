@@ -185,6 +185,8 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
      * 
      * This will return no more than N but can be less than N candidates. The maximum number of candidates returned
      * cannot exceed 10 candidates.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

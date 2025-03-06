@@ -81,6 +81,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput extends N
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("dataToWrite")
     @Nullable
@@ -103,6 +106,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput extends N
     @Selector("init")
     public native ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithOperation:")
     public native ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput initWithOperation(@NInt long operation);
@@ -134,6 +140,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput extends N
     @Selector("new")
     public static native ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("operation")
     @NInt
@@ -147,6 +156,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput extends N
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setDataToWrite:")
     public native void setDataToWrite(@Nullable NSData value);

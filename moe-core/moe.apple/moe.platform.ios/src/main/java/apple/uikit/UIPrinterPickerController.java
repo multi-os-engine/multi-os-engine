@@ -149,6 +149,8 @@ public class UIPrinterPickerController extends NSObject {
      * UI that allows the user to select a printer. This is only used with the
      * UIPrintInteractionController's printWithoutUIToPrinter: method.
      * If no printer should be preselected, use a value of nil for the parameter.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -177,12 +179,18 @@ public class UIPrinterPickerController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPrinterPickerControllerDelegate delegate();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("dismissAnimated:")
     public native void dismissAnimated(boolean animated);
@@ -193,6 +201,8 @@ public class UIPrinterPickerController extends NSObject {
 
     /**
      * iPhone
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentAnimated:completionHandler:")
@@ -201,6 +211,8 @@ public class UIPrinterPickerController extends NSObject {
 
     /**
      * iPad
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentFromBarButtonItem:animated:completionHandler:")
@@ -210,6 +222,8 @@ public class UIPrinterPickerController extends NSObject {
 
     /**
      * iPad
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentFromRect:inView:animated:completionHandler:")
@@ -220,17 +234,25 @@ public class UIPrinterPickerController extends NSObject {
     /**
      * The selected printer. Set this before presenting the UI to show the currently
      * selected printer. Use this to determine which printer the user selected.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("selectedPrinter")
     public native UIPrinter selectedPrinter();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value) {
         Object __old = delegate();

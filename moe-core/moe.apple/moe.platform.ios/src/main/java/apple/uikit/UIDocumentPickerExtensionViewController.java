@@ -179,19 +179,35 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
      * extension.
      * In Export mode, the URL needs to be below the documentStorageURL and should point to a duplicate of the object at
      * originalURL.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
      */
+    @Deprecated
     @Generated
     @Selector("dismissGrantingAccessToURL:")
     public native void dismissGrantingAccessToURL(@Nullable NSURL url);
 
     /**
      * only valid after prepareForDocumentSelectionInMode: has been called
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
      */
+    @Deprecated
     @Generated
     @Selector("documentPickerMode")
     @NUInt
     public native long documentPickerMode();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("documentStorageURL")
@@ -212,12 +228,23 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
 
     /**
      * Contains the URL to duplicate if in mode UIDocumentPickerModeExportToService. nil otherwise.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("originalURL")
     public native NSURL originalURL();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
+     */
+    @Deprecated
     @Generated
     @Selector("prepareForPresentationInMode:")
     public native void prepareForPresentationInMode(@NUInt long mode);
@@ -227,7 +254,12 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
      * methods
      * in the non-UI component. Otherwise, they will return the values corresponding to the default implementation of a
      * non-UI picker.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("providerIdentifier")
@@ -236,7 +268,12 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     /**
      * Contains the list of valid types if in mode UIDocumentPickerModeImport or UIDocumentPickerModeOpen. nil
      * otherwise.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("validTypes")

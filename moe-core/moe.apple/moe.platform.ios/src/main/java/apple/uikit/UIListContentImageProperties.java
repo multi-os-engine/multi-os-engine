@@ -56,6 +56,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     /**
      * Prevents the image from inverting its colors when the accessibility setting is enabled.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("accessibilityIgnoresInvertColors")
@@ -107,6 +109,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * The preferred corner radius (using a continuous corner curve) for the image.
      * Default is 0. If the image is too small to fit the requested radius, the corner curve
      * and radius will be adjusted to fit.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("cornerRadius")
@@ -164,6 +168,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * Enforces a maximum size for the image. The default value is CGSizeZero. A zero width or
      * height means the size is unconstrained on that dimension. If the image exceeds this size
      * on either dimension, its size will be reduced proportionately (maintaining aspect ratio).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumSize")
@@ -177,6 +183,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     /**
      * The symbol configuration to use.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -201,6 +209,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * reservedLayoutSize.width is ignored by content views at Accessibility Dynamic Type
      * sizes, and the reservedLayoutSize.height is ignored when using the special Accessibility
      * Dynamic Type layout where text wraps around the image.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("reservedLayoutSize")
@@ -218,6 +228,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     /**
      * Returns the resolved image tint color for the specified tint color of the view, based on the `tintColor` and
      * `tintColorTransformer`.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -226,6 +238,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     /**
      * Prevents the image from inverting its colors when the accessibility setting is enabled.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAccessibilityIgnoresInvertColors:")
@@ -235,6 +249,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * The preferred corner radius (using a continuous corner curve) for the image.
      * Default is 0. If the image is too small to fit the requested radius, the corner curve
      * and radius will be adjusted to fit.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCornerRadius:")
@@ -244,6 +260,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * Enforces a maximum size for the image. The default value is CGSizeZero. A zero width or
      * height means the size is unconstrained on that dimension. If the image exceeds this size
      * on either dimension, its size will be reduced proportionately (maintaining aspect ratio).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumSize:")
@@ -251,6 +269,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     /**
      * The symbol configuration to use.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPreferredSymbolConfiguration:")
@@ -274,6 +294,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * reservedLayoutSize.width is ignored by content views at Accessibility Dynamic Type
      * sizes, and the reservedLayoutSize.height is ignored when using the special Accessibility
      * Dynamic Type layout where text wraps around the image.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setReservedLayoutSize:")
@@ -281,6 +303,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     /**
      * The tintColor to apply to the image view. Nil will use the image view's normal inherited tintColor.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -289,6 +313,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     /**
      * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used
      * as-is.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTintColorTransformer:")
@@ -323,6 +349,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     /**
      * The tintColor to apply to the image view. Nil will use the image view's normal inherited tintColor.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -332,6 +360,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     /**
      * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used
      * as-is.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -356,4 +386,94 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns the resolved stroke color for the specified tint color, based on the `strokeColor` and
+     * `strokeColorTransformer`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("resolvedStrokeColorForTintColor:")
+    @NotNull
+    public native UIColor resolvedStrokeColorForTintColor(@NotNull UIColor tintColor);
+
+    /**
+     * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color
+     * (transparent).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setStrokeColor:")
+    public native void setStrokeColor(@Nullable UIColor value);
+
+    /**
+     * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
+     * as-is.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setStrokeColorTransformer:")
+    public native void setStrokeColorTransformer(
+            @ObjCBlock(name = "call_setStrokeColorTransformer") @Nullable Block_setStrokeColorTransformer value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setStrokeColorTransformer {
+        @Generated
+        @NotNull
+        UIColor call_setStrokeColorTransformer(@NotNull UIColor color);
+    }
+
+    /**
+     * The width of the stroke to draw around the image. Default is `0.0`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setStrokeWidth:")
+    public native void setStrokeWidth(@NFloat double value);
+
+    /**
+     * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color
+     * (transparent).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("strokeColor")
+    @Nullable
+    public native UIColor strokeColor();
+
+    /**
+     * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
+     * as-is.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("strokeColorTransformer")
+    @ObjCBlock(name = "call_strokeColorTransformer_ret")
+    @Nullable
+    public native Block_strokeColorTransformer_ret strokeColorTransformer();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_strokeColorTransformer_ret {
+        @Generated
+        @NotNull
+        UIColor call_strokeColorTransformer_ret(@NotNull UIColor color);
+    }
+
+    /**
+     * The width of the stroke to draw around the image. Default is `0.0`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("strokeWidth")
+    @NFloat
+    public native double strokeWidth();
 }

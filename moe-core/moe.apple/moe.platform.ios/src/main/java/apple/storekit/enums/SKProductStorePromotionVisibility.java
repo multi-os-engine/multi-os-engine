@@ -5,7 +5,10 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * API-Since: 11.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.PromotionInfo.Visibility
  */
+@Deprecated
 @Generated
 public final class SKProductStorePromotionVisibility {
     @Generated
@@ -14,14 +17,20 @@ public final class SKProductStorePromotionVisibility {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.PromotionInfo.Visibility
      */
-    @Generated @NInt public static final long Default = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Default = 0x0000000000000000L;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.PromotionInfo.Visibility
      */
-    @Generated @NInt public static final long Show = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Show = 0x0000000000000001L;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.PromotionInfo.Visibility
      */
-    @Generated @NInt public static final long Hide = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Hide = 0x0000000000000002L;
 }

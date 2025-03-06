@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCEmbeddingDescriptor specifies an embedding layer descriptor
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -105,11 +104,21 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @Generated
     @Selector("descriptorWithEmbeddingCount:embeddingDimension:")
     public static native MLCEmbeddingDescriptor descriptorWithEmbeddingCountEmbeddingDimension(
             @NotNull NSNumber embeddingCount, @NotNull NSNumber embeddingDimension);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @Generated
     @Selector("descriptorWithEmbeddingCount:embeddingDimension:paddingIndex:maximumNorm:pNorm:scalesGradientByFrequency:")
     public static native MLCEmbeddingDescriptor descriptorWithEmbeddingCountEmbeddingDimensionPaddingIndexMaximumNormPNormScalesGradientByFrequency(
@@ -120,7 +129,11 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
      * [@property] embeddingCount
      * 
      * The size of the dictionary
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("embeddingCount")
@@ -130,7 +143,11 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
      * [@property] embeddingDimension
      * 
      * The dimension of embedding vectors
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("embeddingDimension")
@@ -172,7 +189,11 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
      * 
      * A float, if set, in the forward pass only, the selected embedding vectors will be re-normalized to have an Lp
      * norm of less than maximumNorm in the dictionary, Default=nil
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("maximumNorm")
@@ -187,7 +208,11 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
      * [@property] pNorm
      * 
      * A float, the p of the Lp norm, can be set to infinity norm by [NSNumber numberWithFloat:INFINITY]. Default=2.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("pNorm")
@@ -198,7 +223,11 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
      * 
      * If set, the embedding vector at paddingIndex is initialized with zero and will not be updated in gradient pass,
      * Default=nil
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("paddingIndex")
@@ -217,7 +246,11 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
      * 
      * If set, the gradients are scaled by the inverse of the frequency of the words in batch before the weight update.
      * Default=NO
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("scalesGradientByFrequency")
     public native boolean scalesGradientByFrequency();

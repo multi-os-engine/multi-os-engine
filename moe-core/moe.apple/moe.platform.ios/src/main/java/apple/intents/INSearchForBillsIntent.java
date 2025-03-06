@@ -64,11 +64,23 @@ public class INSearchForBillsIntent extends INIntent {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("billPayee")
     public native INBillPayee billPayee();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("billType")
     @NInt
@@ -103,6 +115,12 @@ public class INSearchForBillsIntent extends INIntent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("dueDateRange")
@@ -117,6 +135,12 @@ public class INSearchForBillsIntent extends INIntent {
     @Selector("init")
     public native INSearchForBillsIntent init();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithBillPayee:paymentDateRange:billType:status:dueDateRange:")
     public native INSearchForBillsIntent initWithBillPayeePaymentDateRangeBillTypeStatusDueDateRange(
@@ -154,6 +178,12 @@ public class INSearchForBillsIntent extends INIntent {
     @Selector("new")
     public static native INSearchForBillsIntent new_objc();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("paymentDateRange")
@@ -171,6 +201,12 @@ public class INSearchForBillsIntent extends INIntent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("status")
     @NInt

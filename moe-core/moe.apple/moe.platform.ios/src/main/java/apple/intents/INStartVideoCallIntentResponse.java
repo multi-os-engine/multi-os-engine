@@ -167,6 +167,12 @@ public class INStartVideoCallIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartVideoCallIntent is deprecated. Please adopt INStartCallIntent instead
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -184,7 +190,12 @@ public class INStartVideoCallIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartVideoCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INStartVideoCallIntentResponse initWithCodeUserActivity(@NInt long code,

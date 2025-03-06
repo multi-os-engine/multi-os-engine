@@ -20,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPInstrumentClusterControllerDelegate")
 public interface CPInstrumentClusterControllerDelegate {
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @IsOptional
     @Selector("instrumentClusterController:didChangeCompassSetting:")
@@ -28,6 +31,9 @@ public interface CPInstrumentClusterControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @IsOptional
     @Selector("instrumentClusterController:didChangeSpeedLimitSetting:")
@@ -36,14 +42,23 @@ public interface CPInstrumentClusterControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @Selector("instrumentClusterControllerDidConnectWindow:")
     void instrumentClusterControllerDidConnectWindow(@NotNull UIWindow instrumentClusterWindow);
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @Selector("instrumentClusterControllerDidDisconnectWindow:")
     void instrumentClusterControllerDidDisconnectWindow(@NotNull UIWindow instrumentClusterWindow);
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @IsOptional
     @Selector("instrumentClusterControllerDidZoomIn:")
@@ -52,6 +67,9 @@ public interface CPInstrumentClusterControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @IsOptional
     @Selector("instrumentClusterControllerDidZoomOut:")

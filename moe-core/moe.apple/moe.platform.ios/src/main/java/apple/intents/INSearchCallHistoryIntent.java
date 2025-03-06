@@ -167,6 +167,12 @@ public class INSearchCallHistoryIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchCallHistoryIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("callCapabilities")
     @NUInt
@@ -187,7 +193,12 @@ public class INSearchCallHistoryIntent extends INIntent {
 
     /**
      * Date of the call to search for in the call history.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchCallHistoryIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("dateCreated")
@@ -212,6 +223,12 @@ public class INSearchCallHistoryIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSearchCallHistoryIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchCallHistoryIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("recipient")

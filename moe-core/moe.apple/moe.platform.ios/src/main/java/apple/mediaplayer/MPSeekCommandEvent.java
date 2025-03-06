@@ -164,6 +164,8 @@ public class MPSeekCommandEvent extends MPRemoteCommandEvent {
     /**
      * The type of seek command event, which specifies whether an external player
      * began or ended seeking.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("type")

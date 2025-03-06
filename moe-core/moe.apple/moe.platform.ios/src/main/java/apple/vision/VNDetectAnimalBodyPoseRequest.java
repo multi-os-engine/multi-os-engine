@@ -159,6 +159,8 @@ public class VNDetectAnimalBodyPoseRequest extends VNImageBasedRequest {
 
     /**
      * VNAnimalBodyPoseObservation results.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("results")
@@ -181,6 +183,8 @@ public class VNDetectAnimalBodyPoseRequest extends VNImageBasedRequest {
      *              need this information, NULL can be passed.
      * @return An array of VNAnimalBodyPoseObservationJointName symbols that are supported by the request, or nil if a
      *         failure occurs.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("supportedJointNamesAndReturnError:")
@@ -196,6 +200,8 @@ public class VNDetectAnimalBodyPoseRequest extends VNImageBasedRequest {
      *              need this information, NULL can be passed.
      * @return An array of VNAnimalBodyPoseObservationJointsGroupName symbols that are supported by the request, or nil
      *         if a failure occurs.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("supportedJointsGroupNamesAndReturnError:")

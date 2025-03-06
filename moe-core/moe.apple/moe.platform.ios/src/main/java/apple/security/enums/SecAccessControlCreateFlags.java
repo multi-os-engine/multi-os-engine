@@ -48,7 +48,10 @@ import org.moe.natj.general.ann.NUInt;
  * Constraint: Device passcode
  * 
  * [@constant] kSecAccessControlWatch
- * Constraint: Watch
+ * Deprecated, please use kSecAccessControlCompanion instead.
+ * 
+ * [@constant] kSecAccessControlCompanion
+ * Constraint: Paired companion device
  * 
  * [@constant] kSecAccessControlOr
  * Constraint logic operation: when using more than one constraint, at least one of them must be satisfied.
@@ -115,4 +118,8 @@ public final class SecAccessControlCreateFlags {
      * API-Since: 11.3
      */
     @Generated @NUInt public static final long BiometryCurrentSet = 0x0000000000000008L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NUInt public static final long Companion = 0x0000000000000020L;
 }

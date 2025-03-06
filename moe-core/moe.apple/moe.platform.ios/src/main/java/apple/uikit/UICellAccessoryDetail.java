@@ -52,6 +52,8 @@ public class UICellAccessoryDetail extends UICellAccessory {
 
     /**
      * An optional handler to call when the detail accessory is tapped. If nil, taps on the accessory are ignored.
+     * 
+     * API-Since: 15.4
      */
     @Nullable
     @Generated
@@ -159,6 +161,8 @@ public class UICellAccessoryDetail extends UICellAccessory {
 
     /**
      * An optional handler to call when the detail accessory is tapped. If nil, taps on the accessory are ignored.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("setActionHandler:")

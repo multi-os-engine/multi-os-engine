@@ -117,6 +117,9 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
     @Selector("initWithCoder:")
     public native INTextNoteContent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithText:")
     public native INTextNoteContent initWithText(@NotNull String text);
@@ -176,6 +179,8 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
 
     /**
      * The text that comprises the note content
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

@@ -190,6 +190,8 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
      * initWithSource:version:
      * 
      * Initializes a new HKSourceRevision with the given source and version.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithSource:version:")
@@ -199,6 +201,8 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
      * [@property] source
      * 
      * The HKSource of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -217,6 +221,8 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
      * The version of the source property.
      * 
      * This value is taken from the CFBundleVersion of the source. May be nil for older data.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

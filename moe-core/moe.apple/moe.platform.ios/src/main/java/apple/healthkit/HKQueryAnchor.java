@@ -85,6 +85,8 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
      * 
      * Creates an HKQueryAnchor with an integer anchor which was previously obtained from an
      * HKAnchoredObjectQuery prior to iOS 9.0.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("anchorFromValue:")

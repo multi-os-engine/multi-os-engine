@@ -41,6 +41,8 @@ public interface INGetCarLockStatusIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INGetCarLockStatusIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional
@@ -67,6 +69,8 @@ public interface INGetCarLockStatusIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INGetCarLockStatusIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @Selector("handleGetCarLockStatus:completion:")
@@ -90,6 +94,8 @@ public interface INGetCarLockStatusIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional

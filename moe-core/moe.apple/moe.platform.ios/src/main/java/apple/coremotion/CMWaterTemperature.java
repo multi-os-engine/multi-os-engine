@@ -100,6 +100,9 @@ public class CMWaterTemperature extends NSObject implements NSSecureCoding, NSCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("date")
@@ -183,11 +186,17 @@ public class CMWaterTemperature extends NSObject implements NSSecureCoding, NSCo
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("temperature")
     public native NSMeasurement<NSUnitTemperature> temperature();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("temperatureUncertainty")

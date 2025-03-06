@@ -57,6 +57,8 @@ public class VNInstanceMaskObservation extends VNObservation {
 
     /**
      * *The IndexSet that encompases all instances except the background
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("allInstances")
@@ -115,6 +117,8 @@ public class VNInstanceMaskObservation extends VNObservation {
      * @param error     The address of a variable that will be populated with the error that describes the failure. If
      *                  the caller does not require this information, NULL can be passed.
      *                  The pixel format of kCVPixelFormatType_OneComponent32Float
+     * 
+     *                  API-Since: 17.0
      */
     @Generated
     @Selector("generateMaskForInstances:error:")
@@ -131,6 +135,8 @@ public class VNInstanceMaskObservation extends VNObservation {
      *                                 Setting this value to NO does not perform any cropping.
      * @param error                    The address of a variable that will be populated with the error that describes
      *                                 the failure. If the caller does not require this information, NULL can be passed.
+     * 
+     *                                 API-Since: 17.0
      */
     @Generated
     @Selector("generateMaskedImageOfInstances:fromRequestHandler:croppedToInstancesExtent:error:")
@@ -146,6 +152,8 @@ public class VNInstanceMaskObservation extends VNObservation {
      * @param forInstances An NSIndexSet of selected instances where 0 is the background.
      * @param error        The address of a variable that will be populated with the error that describes the failure.
      *                     If the caller does not require this information, NULL can be passed.
+     * 
+     *                     API-Since: 17.0
      */
     @Generated
     @Selector("generateScaledMaskForImageForInstances:fromRequestHandler:error:")
@@ -171,6 +179,8 @@ public class VNInstanceMaskObservation extends VNObservation {
      * *@brief The resulting mask represents all instances in a mask image where 0 represents the background and all
      * other values represent the indices of the instances identified.
      * Note that a pixel can only correspond to one instance and not multiple instances.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceMask")

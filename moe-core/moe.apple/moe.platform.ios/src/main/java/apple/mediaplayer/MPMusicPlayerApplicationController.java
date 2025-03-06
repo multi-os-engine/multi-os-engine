@@ -142,6 +142,9 @@ public class MPMusicPlayerApplicationController extends MPMusicPlayerController 
     @Selector("new")
     public static native MPMusicPlayerApplicationController new_objc();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("performQueueTransaction:completionHandler:")
     public native void performQueueTransactionCompletionHandler(

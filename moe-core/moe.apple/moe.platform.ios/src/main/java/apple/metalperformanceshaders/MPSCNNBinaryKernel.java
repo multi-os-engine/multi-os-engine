@@ -110,6 +110,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * is the number of images to process in batch processing mode.
      * 
      * See Also: @ref subsubsection_clipRect
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("clipRect")
@@ -141,6 +143,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * image with insufficient number of feature channels result in an error.
      * E.g. if the MPSCNNConvolution outputs 32 channels, and destination has 64 channels, then it is an error to set
      * destinationFeatureChannelOffset > 32.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("destinationFeatureChannelOffset")
@@ -151,6 +155,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
      * 
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -178,6 +184,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      *         graph.
      *         The returned image will be automatically released when the command buffer completes. If you want to
      *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -197,6 +205,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * @param secondaryImage   A valid MPSImage object containing the secondary source image.
      * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias
      *                         primarySourceImage or secondarySourceImage.
+     * 
+     *                         API-Since: 11.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:")
@@ -229,6 +239,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -242,6 +254,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * @return A pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -266,6 +280,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * YES if the filter operates backwards.
      * 
      * This influences how strideInPixelsX/Y should be interpreted.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isBackwards")
@@ -294,6 +310,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Default: MPSNNPaddingMethodAlignCentered | MPSNNPaddingMethodAddRemainderToTopLeft | MPSNNPaddingMethodSizeSame
      * Some object types (e.g. MPSCNNFullyConnected) may override this default with something appropriate to its
      * operation.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -312,6 +330,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Convolution filter. Default: MPSImageEdgeModeZero.
      * 
      * See Also: @ref subsubsection_edgemode
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primaryEdgeMode")
@@ -328,6 +348,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * offset.z is the index of starting source image in batch processing mode.
      * 
      * See Also: @ref subsubsection_mpsoffset
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primaryOffset")
@@ -383,6 +405,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Convolution filter. Default: MPSImageEdgeModeZero.
      * 
      * See Also: @ref subsubsection_edgemode
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("secondaryEdgeMode")
@@ -399,6 +423,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * offset.z is the index of starting source image in batch processing mode.
      * 
      * See Also: @ref subsubsection_mpsoffset
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("secondaryOffset")
@@ -447,6 +473,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * is the number of images to process in batch processing mode.
      * 
      * See Also: @ref subsubsection_clipRect
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setClipRect:")
@@ -469,6 +497,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * image with insufficient number of feature channels result in an error.
      * E.g. if the MPSCNNConvolution outputs 32 channels, and destination has 64 channels, then it is an error to set
      * destinationFeatureChannelOffset > 32.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDestinationFeatureChannelOffset:")
@@ -478,6 +508,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
      * 
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDestinationImageAllocator:")
@@ -492,6 +524,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Default: MPSNNPaddingMethodAlignCentered | MPSNNPaddingMethodAddRemainderToTopLeft | MPSNNPaddingMethodSizeSame
      * Some object types (e.g. MPSCNNFullyConnected) may override this default with something appropriate to its
      * operation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPadding:")
@@ -508,6 +542,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Convolution filter. Default: MPSImageEdgeModeZero.
      * 
      * See Also: @ref subsubsection_edgemode
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrimaryEdgeMode:")
@@ -523,6 +559,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * offset.z is the index of starting source image in batch processing mode.
      * 
      * See Also: @ref subsubsection_mpsoffset
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrimaryOffset:")
@@ -539,6 +577,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * Convolution filter. Default: MPSImageEdgeModeZero.
      * 
      * See Also: @ref subsubsection_edgemode
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSecondaryEdgeMode:")
@@ -554,6 +594,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * offset.z is the index of starting source image in batch processing mode.
      * 
      * See Also: @ref subsubsection_mpsoffset
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSecondaryOffset:")
@@ -682,6 +724,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      *                     Since MPSCNNBinaryKernel is a binary kernel, it is an array of length 2.
      * @param sourceStates An optional array of source states that will be passed into the -encode call
      * @return an image descriptor allocated on the autorelease pool
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -830,6 +874,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
      * is taken into account. Default: ULONG_MAX
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primarySourceFeatureChannelMaxCount")
@@ -975,6 +1021,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
      * is taken into account. Default: ULONG_MAX
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("secondarySourceFeatureChannelMaxCount")
@@ -1017,6 +1065,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
      * is taken into account. Default: ULONG_MAX
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrimarySourceFeatureChannelMaxCount:")
@@ -1084,6 +1134,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
      * is taken into account. Default: ULONG_MAX
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSecondarySourceFeatureChannelMaxCount:")

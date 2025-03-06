@@ -169,6 +169,8 @@ public class NSMigrationManager extends NSObject {
      * for relationship creation/fixup after the creation pass. This method is called in the default
      * implementation of NSEntityMigrationPolicy's
      * createDestinationInstancesForSourceInstance:entityMapping:manager:error: method.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("associateSourceInstance:withDestinationInstance:forEntityMapping:")
@@ -180,6 +182,8 @@ public class NSMigrationManager extends NSObject {
      * Cancels the migration with the specified error. Calling this method causes
      * migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error: to
      * abort the migration and return the specified error.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("cancelMigrationWithError:")
@@ -189,17 +193,25 @@ public class NSMigrationManager extends NSObject {
      * Observable property that can be used to determine progress of the migration process. Returns the current entity
      * mapping being processed. Each entity is processed a total of three times (instance creation, relationship
      * creation, validation)
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
     @Selector("currentEntityMapping")
     public native NSEntityMapping currentEntityMapping();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("destinationContext")
     public native NSManagedObjectContext destinationContext();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("destinationEntityForEntityMapping:")
@@ -208,6 +220,8 @@ public class NSMigrationManager extends NSObject {
     /**
      * Returns the managed object instances created in the destination store for the given entity mapping for the
      * specified source instances.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -215,6 +229,9 @@ public class NSMigrationManager extends NSObject {
     public native NSArray<? extends NSManagedObject> destinationInstancesForEntityMappingNamedSourceInstances(
             @NotNull String mappingName, @Nullable NSArray<? extends NSManagedObject> sourceInstances);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("destinationModel")
@@ -228,6 +245,8 @@ public class NSMigrationManager extends NSObject {
      * Creates a migration manager instance with the corresponding source and destination models. (All validation of the
      * arguments is performed during migrateStoreFromURL:toURL:) As with the NSPersistentStoreCoordinator, once models
      * are added to the migration manager they are immutable and cannot be altered.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithSourceModel:destinationModel:")
@@ -236,6 +255,8 @@ public class NSMigrationManager extends NSObject {
 
     /**
      * Accessors for the mapping model, source model, and destination model
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -248,6 +269,8 @@ public class NSMigrationManager extends NSObject {
      * URL, one will be created (otherwise the migration will append to the existing store.) Invoking this method will
      * perform compatibility checks on the source and destination models (and the mapping model.) If an error occurs
      * during the validation or migration, this method will return NO.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error:")
@@ -259,6 +282,8 @@ public class NSMigrationManager extends NSObject {
     /**
      * Observable property that can be used to determine progress of the migration process. Returns the percentage
      * complete of the migration process. The progress value is a number from 0 to 1 indicating percent complete.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("migrationProgress")
@@ -266,6 +291,8 @@ public class NSMigrationManager extends NSObject {
 
     /**
      * Resets the association tables for the migration. (Note this does NOT reset the source or destination contexts).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("reset")
@@ -273,6 +300,8 @@ public class NSMigrationManager extends NSObject {
 
     /**
      * Returns/sets the user info for the migration manager
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -294,6 +323,8 @@ public class NSMigrationManager extends NSObject {
      * Accessors for the managed object contexts used for reading the source and destination stores. These contexts are
      * created lazily, as part of the initialization of two Core Data stacks (one for reading, the other for writing
      * data.)
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -304,6 +335,8 @@ public class NSMigrationManager extends NSObject {
      * Returns the NSEntityDescription for the source and destination entities, respectively, of the entity mapping.
      * (Entity mappings do not store the actual description objects, but rather the name and version information of the
      * entity.)
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -313,6 +346,8 @@ public class NSMigrationManager extends NSObject {
     /**
      * Returns the managed object instances in the source store used to create the specified destination instances for
      * the given entity mapping.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -320,6 +355,9 @@ public class NSMigrationManager extends NSObject {
     public native NSArray<? extends NSManagedObject> sourceInstancesForEntityMappingNamedDestinationInstances(
             @NotNull String mappingName, @Nullable NSArray<? extends NSManagedObject> destinationInstances);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("sourceModel")
@@ -327,6 +365,8 @@ public class NSMigrationManager extends NSObject {
 
     /**
      * Returns/sets the user info for the migration manager
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated

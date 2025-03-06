@@ -124,11 +124,17 @@ public class CKSyncEngineFetchedRecordDeletion extends NSObject {
     @Selector("new")
     public static native CKSyncEngineFetchedRecordDeletion new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("recordID")
     @NotNull
     public native CKRecordID recordID();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("recordType")
     @NotNull

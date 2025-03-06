@@ -27,6 +27,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A class that describes the compute device.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -91,11 +93,14 @@ public class MPSGraphDevice extends MPSGraphObject {
     public static native String description_static();
 
     /**
-     * Creates a device from given metal device.
+     * Creates a device from a given Metal device.
      * 
      * - Parameters:
      * - metalDevice: `MTLDevice` to create an MPSGraphDevice from.
      * - Returns: A valid device.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("deviceWithMTLDevice:")
@@ -135,6 +140,8 @@ public class MPSGraphDevice extends MPSGraphObject {
 
     /**
      * If device type is Metal then returns the corresponding MTLDevice else nil.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -165,6 +172,8 @@ public class MPSGraphDevice extends MPSGraphObject {
 
     /**
      * Device of the MPSGraphDevice.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("type")

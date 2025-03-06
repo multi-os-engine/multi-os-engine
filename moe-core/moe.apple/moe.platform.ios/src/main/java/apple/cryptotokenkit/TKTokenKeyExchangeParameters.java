@@ -130,6 +130,8 @@ public class TKTokenKeyExchangeParameters extends NSObject {
     /**
      * Requested output size of key exchange result. Should be ignored if output size is not configurable for specified
      * key exchange algorithm.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requestedSize")
@@ -151,6 +153,8 @@ public class TKTokenKeyExchangeParameters extends NSObject {
     /**
      * Additional shared information input, typically used for key derivation (KDF) step of key exchange algorithm.
      * Should be ignored if shared info is not used for specified key exchange algorithm.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

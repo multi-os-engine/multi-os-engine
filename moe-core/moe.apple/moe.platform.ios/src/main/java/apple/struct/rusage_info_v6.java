@@ -370,10 +370,50 @@ public final class rusage_info_v6 extends StructObject {
     public native void setRi_penergy_nj(long value);
 
     @Generated
-    @StructureField(order = 43, isGetter = true, count = 14)
+    @StructureField(order = 43, isGetter = true)
+    public native long ri_secure_time_in_system();
+
+    @Generated
+    @StructureField(order = 43, isGetter = false)
+    public native void setRi_secure_time_in_system(long value);
+
+    @Generated
+    @StructureField(order = 44, isGetter = true)
+    public native long ri_secure_ptime_in_system();
+
+    @Generated
+    @StructureField(order = 44, isGetter = false)
+    public native void setRi_secure_ptime_in_system(long value);
+
+    @Generated
+    @StructureField(order = 45, isGetter = true)
+    public native long ri_neural_footprint();
+
+    @Generated
+    @StructureField(order = 45, isGetter = false)
+    public native void setRi_neural_footprint(long value);
+
+    @Generated
+    @StructureField(order = 46, isGetter = true)
+    public native long ri_lifetime_max_neural_footprint();
+
+    @Generated
+    @StructureField(order = 46, isGetter = false)
+    public native void setRi_lifetime_max_neural_footprint(long value);
+
+    @Generated
+    @StructureField(order = 47, isGetter = true)
+    public native long ri_interval_max_neural_footprint();
+
+    @Generated
+    @StructureField(order = 47, isGetter = false)
+    public native void setRi_interval_max_neural_footprint(long value);
+
+    @Generated
+    @StructureField(order = 48, isGetter = true, count = 9)
     public native long ri_reserved(int field_idx);
 
     @Generated
-    @StructureField(order = 43, isGetter = false, count = 14)
+    @StructureField(order = 48, isGetter = false, count = 9)
     public native void setRi_reserved(long value, int field_idx);
 }

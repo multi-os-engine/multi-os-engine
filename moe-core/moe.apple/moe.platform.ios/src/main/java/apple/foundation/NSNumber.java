@@ -61,6 +61,7 @@ import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.gamecontroller.struct.GCPoint2;
 
 @Generated
 @Library("Foundation")
@@ -570,4 +571,8 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("valueWithGCPoint2:")
+    public static native NSNumber valueWithGCPoint2(@ByValue GCPoint2 point);
 }

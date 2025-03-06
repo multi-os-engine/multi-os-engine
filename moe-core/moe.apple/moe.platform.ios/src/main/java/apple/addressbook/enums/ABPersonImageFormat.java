@@ -23,16 +23,16 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class ABPersonImageFormat {
-    /**
-     * deprecated
-     */
-    @Generated public static final int kABPersonImageFormatThumbnail = 0x00000000;
-    /**
-     * deprecated
-     */
-    @Generated public static final int kABPersonImageFormatOriginalSize = 0x00000002;
-
     @Generated
     private ABPersonImageFormat() {
     }
+
+    /**
+     * deprecated
+     */
+    @Generated public static final int Thumbnail = 0x00000000;
+    /**
+     * deprecated
+     */
+    @Generated public static final int OriginalSize = 0x00000002;
 }

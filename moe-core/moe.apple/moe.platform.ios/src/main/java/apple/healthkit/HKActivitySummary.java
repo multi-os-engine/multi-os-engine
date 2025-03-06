@@ -178,6 +178,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * The amount of active energy that the user burned.
      * 
      * This quantity is compatible with energy units.
+     * 
+     * API-Since: 9.3
      */
     @NotNull
     @Generated
@@ -190,6 +192,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * The user's active energy goal for the day.
      * 
      * This quantity is compatible with energy units.
+     * 
+     * API-Since: 9.3
      */
     @NotNull
     @Generated
@@ -203,6 +207,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * 
      * This quantity is compatible with time units. The measurement criteria of
      * exercise time is defined by Apple.
+     * 
+     * API-Since: 9.3
      */
     @NotNull
     @Generated
@@ -232,6 +238,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * 
      * This quantity is compatible with the count unit. The measurement criteria of
      * stand hours is defined by Apple.
+     * 
+     * API-Since: 9.3
      */
     @NotNull
     @Generated
@@ -267,6 +275,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * The date components representing the day for this particular HKActivitySummary.
      * 
      * These date components will contain era, year, month, and day components in the provided calendar.
+     * 
+     * API-Since: 9.3
      */
     @NotNull
     @Generated
@@ -291,6 +301,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * The amount of active energy that the user burned.
      * 
      * This quantity is compatible with energy units.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setActiveEnergyBurned:")
@@ -302,6 +314,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * The user's active energy goal for the day.
      * 
      * This quantity is compatible with energy units.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setActiveEnergyBurnedGoal:")
@@ -314,6 +328,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * 
      * This quantity is compatible with time units. The measurement criteria of
      * exercise time is defined by Apple.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setAppleExerciseTime:")
@@ -341,6 +357,8 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
      * 
      * This quantity is compatible with the count unit. The measurement criteria of
      * stand hours is defined by Apple.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setAppleStandHours:")
@@ -510,4 +528,30 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] paused
+     * 
+     * The paused state of this activity summary
+     * 
+     * The paused state of an activity summary indicates if the user is tracking their rings for the given day.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isPaused")
+    public native boolean isPaused();
+
+    /**
+     * [@property] paused
+     * 
+     * The paused state of this activity summary
+     * 
+     * The paused state of an activity summary indicates if the user is tracking their rings for the given day.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setPaused:")
+    public native void setPaused(boolean value);
 }

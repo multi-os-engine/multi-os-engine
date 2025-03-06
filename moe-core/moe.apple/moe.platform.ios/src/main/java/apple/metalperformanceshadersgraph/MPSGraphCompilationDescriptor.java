@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
 
 /**
- * This is a class that consists of all the levers for compiling graphs.
+ * A class that consists of all the levers for compiling graphs.
  * 
  * API-Since: 15.0
  */
@@ -97,6 +97,8 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
 
     /**
      * Turns off type inference and relies on type inference during runtime.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("disableTypeInference")
@@ -160,7 +162,9 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
     public static native long version_static();
 
     /**
-     * The graph calls this handler at the completion of the compilation, default value is nil.
+     * The handler that the graph calls when the compilation completes.
+     * 
+     * Default value is nil.
      * 
      * API-Since: 16.0
      */
@@ -185,7 +189,9 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * The dispatch queue used for the compilation, default value is nil.
+     * The dispatch queue used for the compilation.
+     * 
+     * Default value is nil.
      * 
      * API-Since: 16.0
      */
@@ -204,7 +210,9 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
     public native long optimizationLevel();
 
     /**
-     * The optimization profile for the graph optimization, default is MPSGraphOptimizationProfilePerformance.
+     * The optimization profile for the graph optimization.
+     * 
+     * Default is MPSGraphOptimizationProfilePerformance.
      * 
      * API-Since: 15.4
      * Deprecated-Since: 17.0
@@ -215,7 +223,9 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
     public native long optimizationProfile();
 
     /**
-     * The graph calls this handler at the completion of the compilation, default value is nil.
+     * The handler that the graph calls when the compilation completes.
+     * 
+     * Default value is nil.
      * 
      * API-Since: 16.0
      */
@@ -232,7 +242,9 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
     }
 
     /**
-     * The dispatch queue used for the compilation, default value is nil.
+     * The dispatch queue used for the compilation.
+     * 
+     * Default value is nil.
      * 
      * API-Since: 16.0
      */
@@ -250,7 +262,9 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
     public native void setOptimizationLevel(long value);
 
     /**
-     * The optimization profile for the graph optimization, default is MPSGraphOptimizationProfilePerformance.
+     * The optimization profile for the graph optimization.
+     * 
+     * Default is MPSGraphOptimizationProfilePerformance.
      * 
      * API-Since: 15.4
      * Deprecated-Since: 17.0

@@ -21,6 +21,8 @@ import org.jetbrains.annotations.Nullable;
 public interface MTLBufferBinding extends MTLBinding {
     /**
      * min alignment of starting offset in the buffer
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("bufferAlignment")
@@ -29,6 +31,8 @@ public interface MTLBufferBinding extends MTLBinding {
 
     /**
      * sizeof(T) for T *argName
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("bufferDataSize")
@@ -37,17 +41,25 @@ public interface MTLBufferBinding extends MTLBinding {
 
     /**
      * MTLDataTypeFloat, MTLDataTypeFloat4, MTLDataTypeStruct, ...
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("bufferDataType")
     @NUInt
     long bufferDataType();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("bufferPointerType")
     MTLPointerType bufferPointerType();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("bufferStructType")

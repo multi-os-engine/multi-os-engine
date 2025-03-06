@@ -123,6 +123,9 @@ public class ASAuthorizationPlatformPublicKeyCredentialDescriptor extends NSObje
     @Selector("initWithCoder:")
     public native ASAuthorizationPlatformPublicKeyCredentialDescriptor initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithCredentialID:")
     public native ASAuthorizationPlatformPublicKeyCredentialDescriptor initWithCredentialID(

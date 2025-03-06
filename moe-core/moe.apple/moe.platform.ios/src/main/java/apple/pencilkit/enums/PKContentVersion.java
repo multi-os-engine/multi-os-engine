@@ -27,5 +27,11 @@ public final class PKContentVersion {
     /**
      * The latest version including all features.
      */
-    @Generated @NInt public static final long VersionLatest = 0x0000000000000002L;
+    @Generated @NInt public static final long VersionLatest = 0x0000000000000003L;
+    /**
+     * New Fountain Pen
+     * 
+     * API-Since: 17.5
+     */
+    @Generated @NInt public static final long Version3 = 0x0000000000000003L;
 }

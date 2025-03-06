@@ -8,6 +8,6 @@ public final class nw_framer_start_result_t {
     private nw_framer_start_result_t() {
     }
 
-    @Generated public static final int nw_framer_start_result_ready = 0x00000001;
-    @Generated public static final int nw_framer_start_result_will_mark_ready = 0x00000002;
+    @Generated public static final int _ready = 0x00000001;
+    @Generated public static final int _will_mark_ready = 0x00000002;
 }

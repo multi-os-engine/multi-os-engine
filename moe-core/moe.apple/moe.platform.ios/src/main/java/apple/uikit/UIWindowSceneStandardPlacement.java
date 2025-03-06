@@ -140,6 +140,8 @@ public class UIWindowSceneStandardPlacement extends UIWindowScenePlacement {
 
     /**
      * Creates a standard placement.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("standardPlacement")

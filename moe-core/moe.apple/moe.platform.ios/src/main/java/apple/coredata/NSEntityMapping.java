@@ -163,6 +163,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the array of attribute mappings for the entity mapping. The order of mappings in this collection
      * dictates the order in which the mappings will be processed during a migration.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -173,6 +175,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the destination entity name for the mapping. (Mappings are not directly bound to
      * NSEntityDescriptions; developers can use the destinationEntityForEntityMapping: API on the NSMigrationManager to
      * retrieve the entity description for this name.)
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -183,6 +187,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the version hash for the destination entity for the mapping. VersionHashes are calculated by the
      * Core Data framework (see NSEntityDescrition's versionHash method). The destinationEntityVersionHash must equal
      * the version hash of the destination entity represented by the mapping.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -192,6 +198,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the class name of the migration policy for the class. If not specified, the default migration class
      * name is NSEntityMigrationPolicy, though developers can specify a subclass for specific behavior.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -205,6 +213,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the mapping type. (If a custom entity mapping type is utilized, the developer must specify a
      * migrationPolicyClassName as well.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("mappingType")
@@ -215,6 +225,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the name of the mapping. The name is used only as a means of distinguishing mappings in a model. If
      * not specified, defaults to the string composed by the source entity name followed by the destination entity name
      * (ex. SourceName->DestinationName)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("name")
@@ -223,6 +235,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the array of relationship mappings for the entity mapping. The order of mappings in this collection
      * dictates the order in which the mappings will be processed during a migration.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -232,6 +246,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the array of attribute mappings for the entity mapping. The order of mappings in this collection
      * dictates the order in which the mappings will be processed during a migration.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setAttributeMappings:")
@@ -241,6 +257,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the destination entity name for the mapping. (Mappings are not directly bound to
      * NSEntityDescriptions; developers can use the destinationEntityForEntityMapping: API on the NSMigrationManager to
      * retrieve the entity description for this name.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setDestinationEntityName:")
@@ -250,6 +268,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the version hash for the destination entity for the mapping. VersionHashes are calculated by the
      * Core Data framework (see NSEntityDescrition's versionHash method). The destinationEntityVersionHash must equal
      * the version hash of the destination entity represented by the mapping.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setDestinationEntityVersionHash:")
@@ -258,6 +278,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the class name of the migration policy for the class. If not specified, the default migration class
      * name is NSEntityMigrationPolicy, though developers can specify a subclass for specific behavior.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setEntityMigrationPolicyClassName:")
@@ -266,6 +288,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the mapping type. (If a custom entity mapping type is utilized, the developer must specify a
      * migrationPolicyClassName as well.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMappingType:")
@@ -275,6 +299,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the name of the mapping. The name is used only as a means of distinguishing mappings in a model. If
      * not specified, defaults to the string composed by the source entity name followed by the destination entity name
      * (ex. SourceName->DestinationName)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setName:")
@@ -283,6 +309,8 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the array of relationship mappings for the entity mapping. The order of mappings in this collection
      * dictates the order in which the mappings will be processed during a migration.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setRelationshipMappings:")
@@ -292,6 +320,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the source entity name for the mapping. (Mappings are not directly bound to NSEntityDescriptions;
      * developers can use the sourceEntityForEntityMapping: API on the NSMigrationManager to retrieve the entity
      * description for this name.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setSourceEntityName:")
@@ -301,6 +331,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the version hash for the source entity for the mapping. VersionHashes are calculated by the Core
      * Data framework (see NSEntityDescrition's versionHash method). The sourceEntityVersionHash must equal the version
      * hash of the source entity represented by the mapping.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setSourceEntityVersionHash:")
@@ -310,6 +342,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the source expression for the mapping. The source expression is used to obtain the collection of
      * managed object instances to process through the mapping. The expression can be a fetch request expression, or any
      * other expression which evaluates to a collection.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setSourceExpression:")
@@ -317,6 +351,8 @@ public class NSEntityMapping extends NSObject {
 
     /**
      * Returns/sets the user info dictionary for the mapping
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -326,6 +362,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the source entity name for the mapping. (Mappings are not directly bound to NSEntityDescriptions;
      * developers can use the sourceEntityForEntityMapping: API on the NSMigrationManager to retrieve the entity
      * description for this name.)
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -336,6 +374,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the version hash for the source entity for the mapping. VersionHashes are calculated by the Core
      * Data framework (see NSEntityDescrition's versionHash method). The sourceEntityVersionHash must equal the version
      * hash of the source entity represented by the mapping.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -346,6 +386,8 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the source expression for the mapping. The source expression is used to obtain the collection of
      * managed object instances to process through the mapping. The expression can be a fetch request expression, or any
      * other expression which evaluates to a collection.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -354,6 +396,8 @@ public class NSEntityMapping extends NSObject {
 
     /**
      * Returns/sets the user info dictionary for the mapping
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated

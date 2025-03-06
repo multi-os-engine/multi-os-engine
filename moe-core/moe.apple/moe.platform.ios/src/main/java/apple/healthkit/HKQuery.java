@@ -184,6 +184,9 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForActivitySummaryWithDateComponents(
             @NotNull NSDateComponents dateComponents);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("predicateForCategorySamplesWithOperatorType:value:")
@@ -198,6 +201,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches the object saved with a particular UUID.
      * 
      * @param UUID The UUID of the object.
+     * 
+     *             API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -230,6 +235,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches objects saved by a given source.
      * 
      * @param source The source.
+     * 
+     *               API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -261,6 +268,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches objects saved by any of the given sources.
      * 
      * @param sources The list of sources.
+     * 
+     *                API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -275,6 +284,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches the objects that have been added to the given workout.
      * 
      * @param workout The HKWorkout that the object was added to.
+     * 
+     *                API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -310,6 +321,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches objects with metadata that contains a given key.
      * 
      * @param key The metadata key.
+     * 
+     *            API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -326,6 +339,8 @@ public class HKQuery extends NSObject {
      * 
      * @param key           The metadata key.
      * @param allowedValues The list of values that the metadata value can be equal to.
+     * 
+     *                      API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -344,6 +359,8 @@ public class HKQuery extends NSObject {
      * @param key          The metadata key.
      * @param operatorType The comparison operator type for the expression.
      * @param value        The value to be compared against.
+     * 
+     *                     API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -357,6 +374,8 @@ public class HKQuery extends NSObject {
      * Creates a predicate for use with HKQuery subclasses.
      * 
      * Creates a query predicate that matches the objects that are not associated with an HKCorrelation.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -371,6 +390,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches the objects saved with one of the given UUIDs.
      * 
      * @param UUIDs The set of NSUUIDs.
+     * 
+     *              API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -388,6 +409,8 @@ public class HKQuery extends NSObject {
      * @param operatorType The operator type for the expression.
      * @param quantity     The quantity that the sample's quantity is being compared to. It is the right hand side
      *                     of the expression.
+     * 
+     *                     API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -406,6 +429,8 @@ public class HKQuery extends NSObject {
      * @param startDate The start date of the predicate's time interval.
      * @param endDate   The end date of the predicate's time interval.
      * @param options   The rules for how a sample's time interval overlaps with the predicate's time interval.
+     * 
+     *                  API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -423,6 +448,8 @@ public class HKQuery extends NSObject {
      * @param operatorType The operator type for the expression.
      * @param duration     The value that the workout's duration is being compared to. It is the right hand side of the
      *                     expression.
+     * 
+     *                     API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -444,9 +471,8 @@ public class HKQuery extends NSObject {
      * 
      *                      API-Since: 8.0
      *                      Deprecated-Since: 100000.0
-     *                      Deprecated-Message: Use
-     *                      predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
-     *                      HKQuantityType for the desired distance type
+     *                      Deprecated-Message: Use predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:
+     *                      passing the HKQuantityType for the desired distance type
      */
     @NotNull
     @Deprecated
@@ -468,10 +494,9 @@ public class HKQuery extends NSObject {
      *                          expression. The unit for this value should be of type Energy.
      * 
      *                          API-Since: 8.0
-     *                          Deprecated-Since: 100000.0
-     *                          Deprecated-Message: Use
-     *                          predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
-     *                          HKQuantityType for HKQuantityTypeIdentifierActiveEnergyBurned
+     *                          Deprecated-Since: 18.0
+     *                          Deprecated-Message: Use predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:
+     *                          passing the HKQuantityType for HKQuantityTypeIdentifierActiveEnergyBurned
      */
     @NotNull
     @Deprecated
@@ -493,9 +518,10 @@ public class HKQuery extends NSObject {
      *                                 be of type Count.
      * 
      *                                 API-Since: 10.0
-     *                                 Deprecated-Since: 100000.0
+     *                                 Deprecated-Since: 18.0
      *                                 Deprecated-Message: Use
-     *                                 predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:
+     *                                 predicateForWorkoutsWithOperatorType:quantityType:sumQuantity: passing the
+     *                                 HKQuantityType for HKQuantityTypeIdentifierSwimmingStrokeCount
      */
     @NotNull
     @Deprecated
@@ -512,6 +538,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches HKWorkouts with the given HKWorkoutActivityType.
      * 
      * @param workoutActivityType The HKWorkoutActivity type of the workout
+     * 
+     *                            API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -551,6 +579,9 @@ public class HKQuery extends NSObject {
     @Selector("objectType")
     public native HKObjectType objectType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("predicate")
@@ -579,10 +610,9 @@ public class HKQuery extends NSObject {
      *                            be of type Count.
      * 
      *                            API-Since: 11.0
-     *                            Deprecated-Since: 100000.0
-     *                            Deprecated-Message: Use
-     *                            predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
-     *                            HKQuantityType for HKQuantityTypeIdentifierSwimmingStrokeCount
+     *                            Deprecated-Since: 18.0
+     *                            Deprecated-Message: Use predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:
+     *                            passing the HKQuantityType for HKQuantityTypeIdentifierFlightsClimbed
      */
     @NotNull
     @Deprecated
@@ -699,6 +729,8 @@ public class HKQuery extends NSObject {
      * Creates a predicate for use with HKQuery subclasses.
      * 
      * Creates a query predicate that matches all specified category values.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -980,4 +1012,90 @@ public class HKQuery extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * predicateForStatesOfMindWithAssociation:
+     * 
+     * Creates a predicate for use with HKStateOfMind
+     * 
+     * Creates a query predicate that matches HKStateOfMind samples that have the specified association.
+     * 
+     * @param association The association to be compared against.
+     * 
+     *                    API-Since: 8.0
+     */
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    /**
+     * predicateForStatesOfMindWithKind:
+     * 
+     * Creates a predicate for use with HKStateOfMind
+     * 
+     * Creates a query predicate that matches HKStateOfMind samples that have the specified kind of feeling type.
+     * 
+     * @param kind The kind of feeling type to be compared against.
+     * 
+     *             API-Since: 8.0
+     */
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    /**
+     * predicateForStatesOfMindWithLabel:
+     * 
+     * Creates a predicate for use with HKStateOfMind
+     * 
+     * Creates a query predicate that matches HKStateOfMind samples that have the specified label.
+     * 
+     * @param label The label to be compared against.
+     * 
+     *              API-Since: 8.0
+     */
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    /**
+     * predicateForStatesOfMindWithValence:operatorType:
+     * 
+     * Creates a predicate for use with HKStateOfMind
+     * 
+     * Creates a query predicate that matches HKStateOfMind samples that have a valence property matching the operator
+     * type and valence.
+     * 
+     * @param valence      The value to be compared against.
+     * @param operatorType The comparison operator type for the expression.
+     * 
+     *                     API-Since: 8.0
+     */
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    /**
+     * predicateForWorkoutEffortSamplesRelatedToWorkout:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches Workout Effort samples that have been related to the given workout
+     * 
+     * @param workout  The HKWorkout that the object is related to.
+     * @param activity The HKWorkoutActivity that the object is related to.
+     * 
+     * 
+     *                 API-Since: 18.0
+     */
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

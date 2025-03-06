@@ -164,16 +164,25 @@ public class INGetRestaurantGuestIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("code")
     @NInt
     public native long code();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("guest")
     public native INRestaurantGuest guest();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("guestDisplayPreferences")
@@ -183,6 +192,9 @@ public class INGetRestaurantGuestIntentResponse extends INIntentResponse {
     @Selector("init")
     public native INGetRestaurantGuestIntentResponse init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INGetRestaurantGuestIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -192,10 +204,16 @@ public class INGetRestaurantGuestIntentResponse extends INIntentResponse {
     @Selector("initWithCoder:")
     public native INGetRestaurantGuestIntentResponse initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setGuest:")
     public native void setGuest(@Nullable INRestaurantGuest value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setGuestDisplayPreferences:")
     public native void setGuestDisplayPreferences(@Nullable INRestaurantGuestDisplayPreferences value);

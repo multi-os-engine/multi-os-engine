@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Tensor Padding mode
+ * The tensor padding mode.
  */
 @Generated
 public final class MPSGraphPaddingMode {

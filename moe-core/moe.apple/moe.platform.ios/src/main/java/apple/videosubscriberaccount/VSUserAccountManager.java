@@ -131,6 +131,8 @@ public class VSUserAccountManager extends NSObject {
      * By default, this will return VSUserAccounts registered by your application on the current
      * device only. To query the VSUserAccounts registered on all of the devices signed into the
      * users iCloud account, use the query flag VSUserAccountQueryAllDevices.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("queryUserAccountsWithOptions:completion:")
@@ -157,6 +159,9 @@ public class VSUserAccountManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.4
+     */
     @NotNull
     @Generated
     @Selector("sharedUserAccountManager")
@@ -168,6 +173,8 @@ public class VSUserAccountManager extends NSObject {
 
     /**
      * Register a new VSUserAccount.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("updateUserAccount:completion:")

@@ -80,6 +80,8 @@ public class UIFindSession extends NSObject {
      * of the "replace" button in the find navigator, as well as various hardware keyboard shortcuts involving
      * replacement.
      * Default is YES, if supportsReplacement is YES.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("allowsReplacementForCurrentlyHighlightedResult")
@@ -128,6 +130,8 @@ public class UIFindSession extends NSObject {
      * search field.
      * 
      * @param direction Which direction the user intends to move, either forward or backward.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("highlightNextResultInDirection:")
@@ -137,6 +141,8 @@ public class UIFindSession extends NSObject {
      * Returns the index of the currently highlighted result, out of @c resultCount.
      * If no result is currently highlighted, return NSNotFound.
      * You may call UIFindInteraction's @c updateResultCount to update the system find panel's UI if already visible.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("highlightedResultIndex")
@@ -165,6 +171,8 @@ public class UIFindSession extends NSObject {
      * For instance,
      * when the search query is cleared, options changed, or any other event where we may not perform another search
      * right away.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("invalidateFoundResults")
@@ -189,6 +197,8 @@ public class UIFindSession extends NSObject {
      * 
      * @param query   The search string entered into the search text field in the system find panel.
      * @param options Object representing all configured search options for this search.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("performSearchWithQuery:options:")
@@ -200,6 +210,8 @@ public class UIFindSession extends NSObject {
      * @param searchQuery       The search string entered into the search text field in the system find panel.
      * @param replacementString The replacement string entered into the replace text field in the system find panel.
      * @param options           Object representing all configured search options for this replacement.
+     * 
+     *                          API-Since: 16.0
      */
     @Generated
     @Selector("performSingleReplacementWithSearchQuery:replacementString:options:")
@@ -212,6 +224,8 @@ public class UIFindSession extends NSObject {
      * @param searchQuery       The search string entered into the search text field in the system find panel.
      * @param replacementString The replacement string entered into the replace text field in the system find panel.
      * @param options           Object representing all configured search options for this replacement.
+     * 
+     *                          API-Since: 16.0
      */
     @Generated
     @Selector("replaceAllInstancesOfSearchQuery:withReplacementString:options:")
@@ -229,6 +243,8 @@ public class UIFindSession extends NSObject {
     /**
      * Returns the total number of results.
      * You may call UIFindInteraction's @c updateResultCount to update the system find panel's UI if already visible.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("resultCount")
@@ -237,6 +253,8 @@ public class UIFindSession extends NSObject {
 
     /**
      * Defines how results are reported through the find panel's UI. The default style is @c CurrentAndTotal.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("searchResultDisplayStyle")
@@ -245,6 +263,8 @@ public class UIFindSession extends NSObject {
 
     /**
      * Defines how results are reported through the find panel's UI. The default style is @c CurrentAndTotal.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSearchResultDisplayStyle:")
@@ -261,6 +281,8 @@ public class UIFindSession extends NSObject {
     /**
      * Return YES if replacement is supported. This gates the appearance of replace UI in the find navigator panel.
      * Default is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("supportsReplacement")

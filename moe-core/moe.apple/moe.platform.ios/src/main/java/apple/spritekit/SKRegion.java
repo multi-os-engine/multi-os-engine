@@ -120,6 +120,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A shared infinite region
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -176,6 +178,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Test for containment
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("containsPoint:")
@@ -203,6 +207,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create a region bounded by a CGPath. Note that this option can be
      * costly to evaluate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithPath:")
@@ -210,6 +216,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a circular region with radius
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithRadius:")
@@ -217,6 +225,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a rectangular region of size
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithSize:")
@@ -226,12 +236,17 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
      * Create a new region that is the inverse of the current region.
      * The inverse of the infiniteRegion is an empty region.
      * Subclasses of SKRegion need to provide an implementation of inverseRegion.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("inverseRegion")
     public native SKRegion inverseRegion();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("path")
@@ -239,6 +254,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a new region that is the original region minus the supplied region
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -247,6 +264,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a new region that is the region covered by the original region and the supplied region
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -255,6 +274,8 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a new region that is the original region plus the supplied region
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

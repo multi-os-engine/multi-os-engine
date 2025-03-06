@@ -34,6 +34,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CXCallObserverDelegate")
 public interface CXCallObserverDelegate {
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("callObserver:callChanged:")
     void callObserverCallChanged(@NotNull CXCallObserver callObserver, @NotNull CXCall call);

@@ -86,6 +86,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     /**
      * Container view in which to place the effect. When not set, the container is determined automatically
      * from the focus item that provided this effect and the @c referenceView (if present).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -106,6 +108,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
 
     /**
      * Creates a halo with the given bezier path.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("effectWithPath:")
@@ -113,6 +117,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
 
     /**
      * Creates a rectangular halo.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("effectWithRect:")
@@ -120,6 +126,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
 
     /**
      * Creates a rounded rect halo using the specified corner radius and corner curve.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("effectWithRoundedRect:cornerRadius:curve:")
@@ -164,6 +172,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
 
     /**
      * Position of the halo relative to the specified shape. Defaults to @c UIFocusHaloEffectPositionAutomatic.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("position")
@@ -175,6 +185,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      * descendant
      * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c
      * referenceView.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -192,6 +204,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     /**
      * Container view in which to place the effect. When not set, the container is determined automatically
      * from the focus item that provided this effect and the @c referenceView (if present).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setContainerView:")
@@ -200,6 +214,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     /**
      * Container view in which to place the effect. When not set, the container is determined automatically
      * from the focus item that provided this effect and the @c referenceView (if present).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setContainerView(@Nullable UIView value) {
@@ -215,6 +231,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
 
     /**
      * Position of the halo relative to the specified shape. Defaults to @c UIFocusHaloEffectPositionAutomatic.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPosition:")
@@ -225,6 +243,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      * descendant
      * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c
      * referenceView.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setReferenceView:")
@@ -235,6 +255,8 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      * descendant
      * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c
      * referenceView.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setReferenceView(@Nullable UIView value) {

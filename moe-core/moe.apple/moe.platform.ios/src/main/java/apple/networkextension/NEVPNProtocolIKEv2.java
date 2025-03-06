@@ -544,4 +544,27 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] ppkConfiguration
+     * 
+     * Configuration for the use of a Post-quantum Pre-shared Key (PPK).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("ppkConfiguration")
+    @Nullable
+    public native NEVPNIKEv2PPKConfiguration ppkConfiguration();
+
+    /**
+     * [@property] ppkConfiguration
+     * 
+     * Configuration for the use of a Post-quantum Pre-shared Key (PPK).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setPpkConfiguration:")
+    public native void setPpkConfiguration(@Nullable NEVPNIKEv2PPKConfiguration value);
 }

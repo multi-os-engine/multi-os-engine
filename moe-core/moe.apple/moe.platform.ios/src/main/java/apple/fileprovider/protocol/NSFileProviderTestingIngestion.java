@@ -28,6 +28,8 @@ public interface NSFileProviderTestingIngestion extends NSFileProviderTestingOpe
      * The metadata of the item.
      * 
      * This will be nil if the item is being deleted.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -37,6 +39,8 @@ public interface NSFileProviderTestingIngestion extends NSFileProviderTestingOpe
 
     /**
      * Identifier of the affected item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -45,6 +49,8 @@ public interface NSFileProviderTestingIngestion extends NSFileProviderTestingOpe
 
     /**
      * Side of the event.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("side")

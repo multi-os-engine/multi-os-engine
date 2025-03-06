@@ -32,6 +32,8 @@ public interface AVContentKeyRecipient {
      * When the value of mayRequireContentKeysForMediaDataProcessing is YES, adding the receiver to an
      * AVContentKeySession allows it to employ the session's already existing keys and also enables the handling of new
      * key requests by the AVContentKeySession's delegate.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("mayRequireContentKeysForMediaDataProcessing")

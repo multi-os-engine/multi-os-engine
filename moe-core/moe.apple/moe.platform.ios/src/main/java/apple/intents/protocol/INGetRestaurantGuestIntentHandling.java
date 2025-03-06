@@ -50,6 +50,9 @@ public interface INGetRestaurantGuestIntentHandling {
      *                    handling.
      * 
      * @see INGetRestaurantGuestIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -69,6 +72,9 @@ public interface INGetRestaurantGuestIntentHandling {
      * @param completion The response handling block to invoke with the response to handling the intent.
      * 
      * @see INGetRestaurantGuestIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleGetRestaurantGuest:completion:")

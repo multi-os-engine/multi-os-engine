@@ -18,32 +18,32 @@ public final class nw_ws_opcode_t {
     /**
      * [@const] nw_ws_opcode_invalid Denotes an invalid frame.
      */
-    @Generated public static final int nw_ws_opcode_invalid = 0xFFFFFFFF;
+    @Generated public static final int _invalid = 0xFFFFFFFF;
     /**
      * [@const] nw_ws_opcode_cont Denotes a continuation frame.
      * 
      * Protocol WebSocket handles continuation frames internally,
      * so clients will not see or use continuation frames.
      */
-    @Generated public static final int nw_ws_opcode_cont = 0x00000000;
+    @Generated public static final int _cont = 0x00000000;
     /**
      * [@const] nw_ws_opcode_text Denotes a text frame.
      */
-    @Generated public static final int nw_ws_opcode_text = 0x00000001;
+    @Generated public static final int _text = 0x00000001;
     /**
      * [@const] nw_ws_opcode_text Denotes a binary frame.
      */
-    @Generated public static final int nw_ws_opcode_binary = 0x00000002;
+    @Generated public static final int _binary = 0x00000002;
     /**
      * [@const] nw_ws_opcode_text Denotes a close frame.
      */
-    @Generated public static final int nw_ws_opcode_close = 0x00000008;
+    @Generated public static final int _close = 0x00000008;
     /**
      * [@const] nw_ws_opcode_text Denotes a ping frame.
      */
-    @Generated public static final int nw_ws_opcode_ping = 0x00000009;
+    @Generated public static final int _ping = 0x00000009;
     /**
      * [@const] nw_ws_opcode_text Denotes a pong frame.
      */
-    @Generated public static final int nw_ws_opcode_pong = 0x0000000A;
+    @Generated public static final int _pong = 0x0000000A;
 }

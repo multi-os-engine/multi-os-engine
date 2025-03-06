@@ -173,11 +173,16 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("allowsPickingMultipleItems")
     public native boolean allowsPickingMultipleItems();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -192,6 +197,9 @@ public class MPMediaPickerController extends UIViewController {
     @Selector("initWithCoder:")
     public native MPMediaPickerController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithMediaTypes:")
     public native MPMediaPickerController initWithMediaTypes(@NUInt long mediaTypes);
@@ -201,6 +209,9 @@ public class MPMediaPickerController extends UIViewController {
     public native MPMediaPickerController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("mediaTypes")
     @NUInt
@@ -208,6 +219,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * displays a prompt for the user above the navigation bar buttons
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -216,16 +229,24 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setAllowsPickingMultipleItems:")
     public native void setAllowsPickingMultipleItems(boolean value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value) {
         Object __old = delegate();
@@ -240,6 +261,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * displays a prompt for the user above the navigation bar buttons
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setPrompt:")

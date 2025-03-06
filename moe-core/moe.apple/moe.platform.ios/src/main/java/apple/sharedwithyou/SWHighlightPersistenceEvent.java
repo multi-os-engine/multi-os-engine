@@ -131,6 +131,8 @@ public class SWHighlightPersistenceEvent extends NSObject implements SWHighlight
      * 
      * @param highlight The object on which the event occurred.
      * @param trigger   The trigger persistence event for the highlight.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("initWithHighlight:trigger:")
@@ -166,6 +168,8 @@ public class SWHighlightPersistenceEvent extends NSObject implements SWHighlight
 
     /**
      * The type of persistence event for the highlight.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("persistenceEventTrigger")

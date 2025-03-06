@@ -174,7 +174,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * used in UIAlert button or 'slide to unlock...' slider in place of unlock
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertAction")
@@ -182,7 +187,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * defaults to nil. pass a string or localized string key to show an alert
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertBody")
@@ -190,7 +200,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * used as the launch image (UILaunchImageFile) when launch button is tapped
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertLaunchImage")
@@ -208,7 +223,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * 0 means no change. defaults to 0
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("applicationIconBadgeNumber")
     @NInt
@@ -238,7 +258,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * timer-based scheduling
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fireDate")
@@ -246,15 +271,27 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * defaults to YES. pass NO to hide launching button/slider
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("hasAction")
     public native boolean hasAction();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native UILocalNotification init();
 
+    @Deprecated
     @Generated
     @Selector("initWithCoder:")
     public native UILocalNotification initWithCoder(@NotNull NSCoder coder);
@@ -284,6 +321,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("regionTriggersOnce")
     public native boolean regionTriggersOnce();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("repeatCalendar")
@@ -291,7 +334,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * 0 means don't repeat
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("repeatInterval")
     @NUInt
@@ -299,21 +347,36 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * used in UIAlert button or 'slide to unlock...' slider in place of unlock
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setAlertAction:")
     public native void setAlertAction(@Nullable String value);
 
     /**
      * defaults to nil. pass a string or localized string key to show an alert
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setAlertBody:")
     public native void setAlertBody(@Nullable String value);
 
     /**
      * used as the launch image (UILaunchImageFile) when launch button is tapped
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setAlertLaunchImage:")
     public native void setAlertLaunchImage(@Nullable String value);
@@ -329,7 +392,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * 0 means no change. defaults to 0
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setApplicationIconBadgeNumber:")
     public native void setApplicationIconBadgeNumber(@NInt long value);
@@ -346,14 +414,24 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * timer-based scheduling
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setFireDate:")
     public native void setFireDate(@Nullable NSDate value);
 
     /**
      * defaults to YES. pass NO to hide launching button/slider
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setHasAction:")
     public native void setHasAction(boolean value);
@@ -382,20 +460,36 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("setRegionTriggersOnce:")
     public native void setRegionTriggersOnce(boolean value);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
+     */
+    @Deprecated
     @Generated
     @Selector("setRepeatCalendar:")
     public native void setRepeatCalendar(@Nullable NSCalendar value);
 
     /**
      * 0 means don't repeat
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setRepeatInterval:")
     public native void setRepeatInterval(@NUInt long value);
 
     /**
      * name of resource in app's bundle to play or UILocalNotificationDefaultSoundName
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setSoundName:")
     public native void setSoundName(@Nullable String value);
@@ -404,21 +498,36 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * the time zone to interpret fireDate in. pass nil if fireDate is an absolute GMT time (e.g. for an egg timer).
      * pass a time zone to interpret fireDate as a wall time to be adjusted automatically upon time zone changes (e.g.
      * for an alarm clock).
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(@Nullable NSTimeZone value);
 
     /**
      * throws if contains non-property list types
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     /**
      * name of resource in app's bundle to play or UILocalNotificationDefaultSoundName
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("soundName")
@@ -428,7 +537,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * the time zone to interpret fireDate in. pass nil if fireDate is an absolute GMT time (e.g. for an egg timer).
      * pass a time zone to interpret fireDate as a wall time to be adjusted automatically upon time zone changes (e.g.
      * for an alarm clock).
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("timeZone")
@@ -436,7 +550,12 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * throws if contains non-property list types
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("userInfo")

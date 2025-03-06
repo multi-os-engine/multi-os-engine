@@ -724,4 +724,10 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("accommodatePresentedItemEvictionWithCompletionHandler:")
+    public native void accommodatePresentedItemEvictionWithCompletionHandler(
+            @ObjCBlock(name = "call_accommodatePresentedItemEvictionWithCompletionHandler") @NotNull NSFilePresenter.Block_accommodatePresentedItemEvictionWithCompletionHandler completionHandler);
 }

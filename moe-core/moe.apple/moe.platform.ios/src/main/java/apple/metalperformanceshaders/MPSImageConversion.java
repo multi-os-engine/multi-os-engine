@@ -176,6 +176,8 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
      * Use this property to tag cases where premultiplied results are required.
      * If MPSPixelAlpha_AlphaIsOne is used, the alpha channel will be set to 1.
      * Default: MPSPixelAlpha_AlphaIsOne
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("destinationAlpha")
@@ -206,6 +208,8 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
      *                        color space conversions need to be done.
      * 
      * @return An initialized MPSImageConversion object.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:srcAlpha:destAlpha:backgroundColor:conversionInfo:")
@@ -222,6 +226,8 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
      * Use this property to tag premultiplied data so that the source texture can
      * be unpremultiplied prior to application of these transforms.
      * Default: MPSPixelAlpha_AlphaIsOne
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("sourceAlpha")

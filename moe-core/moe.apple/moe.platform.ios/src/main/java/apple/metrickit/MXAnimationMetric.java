@@ -154,6 +154,8 @@ public class MXAnimationMetric extends MXMetric {
      * This metric only applies to UIScrollViews.
      * 
      * Dimensionless.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

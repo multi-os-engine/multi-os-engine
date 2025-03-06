@@ -183,6 +183,8 @@ public class NSIncrementalStoreNode extends NSObject {
      * -newValueForRelationship:forObjectWithID:withContext:error: on the NSPersistentStore
      * 
      * version -> The revision number of this state; used for conflict detection and merging
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithObjectID:withValues:version:")
@@ -191,6 +193,8 @@ public class NSIncrementalStoreNode extends NSObject {
 
     /**
      * Return the object ID that identifies the data stored by this node
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -200,6 +204,8 @@ public class NSIncrementalStoreNode extends NSObject {
     /**
      * Update the values and version to reflect new data being saved to or loaded from the external store.
      * The values dictionary is in the same format as the initializer
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("updateWithValues:version:")
@@ -208,6 +214,8 @@ public class NSIncrementalStoreNode extends NSObject {
     /**
      * May return NSNull for to-one relationships. If a relationship is nil, clients should invoke
      * -newValueForRelationship:forObjectWithID:withContext:error: on the NSPersistentStore
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -217,6 +225,8 @@ public class NSIncrementalStoreNode extends NSObject {
 
     /**
      * Return the version of data in this node.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("version")

@@ -86,6 +86,8 @@ public class ASAuthorization extends NSObject {
     /**
      * The credential that was returned by the authorization provider. Authorization provider type should be used to
      * determine how to introspect the credential.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -139,6 +141,8 @@ public class ASAuthorization extends NSObject {
 
     /**
      * Provider which was used to generate this authorization response.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

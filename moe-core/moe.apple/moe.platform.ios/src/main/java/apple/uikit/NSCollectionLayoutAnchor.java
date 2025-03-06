@@ -99,6 +99,9 @@ public class NSCollectionLayoutAnchor extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("edges")
     @NUInt
@@ -126,10 +129,16 @@ public class NSCollectionLayoutAnchor extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isAbsoluteOffset")
     public native boolean isAbsoluteOffset();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isFractionalOffset")
     public native boolean isFractionalOffset();
@@ -170,6 +179,8 @@ public class NSCollectionLayoutAnchor extends NSObject implements NSCopying {
      * +-------------------+ +---------+ +-------------------+
      * 
      * Edges are specified as shown above.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("layoutAnchorWithEdges:")
@@ -188,12 +199,17 @@ public class NSCollectionLayoutAnchor extends NSObject implements NSCopying {
      * +-------------------------------+
      * 
      * To specify additional offsets, combine edges with absoluteOffset or unitOffset.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("layoutAnchorWithEdges:absoluteOffset:")
     public static native NSCollectionLayoutAnchor layoutAnchorWithEdgesAbsoluteOffset(@NUInt long edges,
             @ByValue CGPoint absoluteOffset);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("layoutAnchorWithEdges:fractionalOffset:")
     public static native NSCollectionLayoutAnchor layoutAnchorWithEdgesFractionalOffset(@NUInt long edges,
@@ -204,6 +220,9 @@ public class NSCollectionLayoutAnchor extends NSObject implements NSCopying {
     @Selector("new")
     public static native NSCollectionLayoutAnchor new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("offset")
     @ByValue

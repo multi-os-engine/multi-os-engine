@@ -176,6 +176,8 @@ public class AVAssetCache extends NSObject {
      * 
      * An answer of YES does not indicate that any given media selection is available for offline playback. To determine
      * if a specific media selection is available offline, see mediaSelectionOptionsInMediaSelectionGroup:.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isPlayableOffline")
@@ -186,6 +188,8 @@ public class AVAssetCache extends NSObject {
      * 
      * Returns an array of AVMediaSelectionOptions in an AVMediaSelectionGroup that are available for offline
      * operations, e.g. playback.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

@@ -93,6 +93,9 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("coordinateSpace")
@@ -170,6 +173,8 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
      * The screenshot object associated with the scene
      * 
      * This is non-null if the screenshot service is available for this window scene
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -215,6 +220,8 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
 
     /**
      * The array of all windows associated with this UIWindowScene
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -358,6 +365,9 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
     @Selector("traitCollectionDidChange:")
     public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("traitOverrides")
     @MappedReturn(ObjCObjectMapper.class)

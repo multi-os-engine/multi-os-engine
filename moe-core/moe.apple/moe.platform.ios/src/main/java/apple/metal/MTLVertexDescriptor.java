@@ -161,11 +161,17 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("vertexDescriptor")
     public static native MTLVertexDescriptor vertexDescriptor();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("attributes")
@@ -182,11 +188,17 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLVertexDescriptor init();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("layouts")
     public native MTLVertexBufferLayoutDescriptorArray layouts();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("reset")
     public native void reset();

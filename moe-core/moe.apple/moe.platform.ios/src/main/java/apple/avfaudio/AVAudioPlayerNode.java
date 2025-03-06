@@ -177,6 +177,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native AVAudioPlayerNode init();
@@ -198,6 +201,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * [@property] playing
      * 
      * Indicates whether or not the player is playing.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isPlaying")
@@ -226,6 +231,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * introduction to this class.
      * 
      * If the player is not playing when this method is called, nil is returned.
+     * 
+     * API-Since: 8.0
      * 
      * @param playerTime
      *                   a time relative to the player's start time
@@ -259,6 +266,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * Note that pausing or stopping all the players connected to an engine does not pause or stop
      * the engine or the underlying hardware. The engine must be explicitly paused or stopped for
      * the hardware to stop.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pause")
@@ -270,6 +279,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * Start or resume playback immediately.
      * 
      * equivalent to playAtTime:nil
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("play")
@@ -302,6 +313,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * }
      * </pre>
      * 
+     * API-Since: 8.0
+     * 
      * @param when
      *             the node time at which to start or resume playback. nil signifies "now".
      */
@@ -318,6 +331,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * introduction to this class.
      * 
      * If the player is not playing when this method is called, nil is returned.
+     * 
+     * API-Since: 8.0
      * 
      * @param nodeTime
      *                 a node time
@@ -346,6 +361,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * 
      * @param frameCount
      *                   The number of sample frames of data to be prepared before returning.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("prepareWithFrameCount:")
@@ -412,6 +429,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * It is possible for the completionHandler to be called before rendering begins
      * or before the buffer is played completely.
      * 
+     * API-Since: 8.0
+     * 
      * @param buffer
      *                          the buffer to play
      * @param when
@@ -475,6 +494,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * It is possible for the completionHandler to be called before rendering begins
      * or before the buffer is played completely.
      * 
+     * API-Since: 8.0
+     * 
      * @param buffer
      *                          the buffer to play
      * @param completionHandler
@@ -530,6 +551,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * 
      * It is possible for the completionHandler to be called before rendering begins
      * or before the file is played completely.
+     * 
+     * API-Since: 8.0
      * 
      * @param file
      *                          the file to play
@@ -594,6 +617,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * 
      * It is possible for the completionHandler to be called before rendering begins
      * or before the segment is played completely.
+     * 
+     * API-Since: 8.0
      * 
      * @param file
      *                          the file to play
@@ -682,6 +707,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * Note that pausing or stopping all the players connected to an engine does not pause or stop
      * the engine or the underlying hardware. The engine must be explicitly paused or stopped for
      * the hardware to stop.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stop")

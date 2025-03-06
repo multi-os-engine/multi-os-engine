@@ -169,7 +169,12 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
 
     /**
      * { 0.2, 0.2, 0.2, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("ambientColor")
     @ByValue
@@ -177,7 +182,12 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
 
     /**
      * { 0.8, 0.8, 0.8, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("diffuseColor")
     @ByValue
@@ -185,7 +195,12 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
 
     /**
      * { 0.0, 0.0, 0.0, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("emissiveColor")
     @ByValue
@@ -197,49 +212,84 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
 
     /**
      * { 0.2, 0.2, 0.2, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setAmbientColor:")
     public native void setAmbientColor(@ByValue GLKVector4 value);
 
     /**
      * { 0.8, 0.8, 0.8, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setDiffuseColor:")
     public native void setDiffuseColor(@ByValue GLKVector4 value);
 
     /**
      * { 0.0, 0.0, 0.0, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setEmissiveColor:")
     public native void setEmissiveColor(@ByValue GLKVector4 value);
 
     /**
      * 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setShininess:")
     public native void setShininess(float value);
 
     /**
      * { 0.0, 0.0, 0.0, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setSpecularColor:")
     public native void setSpecularColor(@ByValue GLKVector4 value);
 
     /**
      * 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("shininess")
     public native float shininess();
 
     /**
      * { 0.0, 0.0, 0.0, 1.0}
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("specularColor")
     @ByValue

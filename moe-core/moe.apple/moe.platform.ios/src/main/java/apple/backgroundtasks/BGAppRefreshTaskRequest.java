@@ -104,6 +104,8 @@ public class BGAppRefreshTaskRequest extends BGTaskRequest {
      * 
      * - Parameters:
      * - identifier: The string identifier of the refresh task associated with the request.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithIdentifier:")

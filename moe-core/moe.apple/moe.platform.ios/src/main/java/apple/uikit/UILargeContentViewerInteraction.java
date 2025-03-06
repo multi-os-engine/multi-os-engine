@@ -91,6 +91,9 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -108,6 +111,8 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     /**
      * Returns a gesture recognizer that can be used to set up simultaneous recognition or failure relationships with
      * other gesture recognizers.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -123,6 +128,9 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Selector("init")
     public native UILargeContentViewerInteraction init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDelegate:")
     public native UILargeContentViewerInteraction initWithDelegate(
@@ -147,6 +155,8 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
      * but it may be helpful if you need to adjust the behavior of coexisting gesture handlers.
      * For example, a button with a long press handler might increase its long press duration,
      * so that a user can read text in the large content viewer first.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isEnabled")

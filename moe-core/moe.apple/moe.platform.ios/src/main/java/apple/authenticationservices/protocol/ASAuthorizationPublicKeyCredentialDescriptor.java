@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 public interface ASAuthorizationPublicKeyCredentialDescriptor extends NSSecureCoding, NSCopying {
     /**
      * An identifier that uniquely identifies a specific credential.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -29,6 +31,8 @@ public interface ASAuthorizationPublicKeyCredentialDescriptor extends NSSecureCo
 
     /**
      * An identifier that uniquely identifies a specific credential.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCredentialID:")

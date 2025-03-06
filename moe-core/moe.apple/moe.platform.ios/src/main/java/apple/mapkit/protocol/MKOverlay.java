@@ -39,6 +39,8 @@ public interface MKOverlay extends MKAnnotation {
      * boundingMapRect should be the smallest rectangle that completely contains the overlay.
      * For overlays that span the 180th meridian, boundingMapRect should have either a negative MinX or a MaxX that is
      * greater than MKMapSizeWorld.width.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("boundingMapRect")
@@ -60,6 +62,8 @@ public interface MKOverlay extends MKAnnotation {
 
     /**
      * From MKAnnotation, for areas this should return the centroid of the area.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("coordinate")
@@ -69,6 +73,8 @@ public interface MKOverlay extends MKAnnotation {
     /**
      * Implement intersectsMapRect to provide more precise control over when the view for the overlay should be shown.
      * If omitted, MKMapRectIntersectsRect([overlay boundingRect], mapRect) will be used instead.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @IsOptional

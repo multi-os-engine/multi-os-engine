@@ -99,6 +99,9 @@ public class MPSCNNInstanceNormalizationNode extends MPSNNFilterNode implements 
     @Selector("init")
     public native MPSCNNInstanceNormalizationNode init();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSource:dataSource:")
     public native MPSCNNInstanceNormalizationNode initWithSourceDataSource(@NotNull MPSNNImageNode source,
@@ -131,6 +134,9 @@ public class MPSCNNInstanceNormalizationNode extends MPSNNFilterNode implements 
     @Selector("new")
     public static native MPSCNNInstanceNormalizationNode new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSource:dataSource:")
     public static native MPSCNNInstanceNormalizationNode nodeWithSourceDataSource(@NotNull MPSNNImageNode source,

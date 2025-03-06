@@ -195,6 +195,8 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
 
     /**
      * VNClassificationObservation results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

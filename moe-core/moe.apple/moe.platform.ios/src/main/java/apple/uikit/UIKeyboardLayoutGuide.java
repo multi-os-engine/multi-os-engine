@@ -92,6 +92,8 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
 
     /**
      * Defaults to @c NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("followsUndockedKeyboard")
@@ -147,6 +149,8 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
 
     /**
      * Defaults to @c NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFollowsUndockedKeyboard:")

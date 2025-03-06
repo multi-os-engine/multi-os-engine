@@ -49,7 +49,11 @@ import org.jetbrains.annotations.Nullable;
  * Establish TCP connections to an endpoint, and send and receive data on the TCP connection.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `nw_connection_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWTCPConnection.h>
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -171,7 +175,11 @@ public class NWTCPConnection extends NSObject {
      * and transition this object to NWTCPConnectionStateCancelled state.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_cancel` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -187,7 +195,11 @@ public class NWTCPConnection extends NSObject {
      * might not reflect the path for other connections that might be established at different times.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_copy_current_path` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("connectedPath")
@@ -199,7 +211,11 @@ public class NWTCPConnection extends NSObject {
      * The destination endpoint with which this connection was created.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_copy_endpoint` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("endpoint")
@@ -212,7 +228,11 @@ public class NWTCPConnection extends NSObject {
      * processing the connection or performing data reading or writing.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_set_state_changed_handler` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("error")
@@ -227,7 +247,11 @@ public class NWTCPConnection extends NSObject {
      * Use KVO to watch this property to get updates.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_set_better_path_available_handler` in Network framework instead, see
+     * deprecation notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("hasBetterPath")
     public native boolean hasBetterPath();
@@ -259,7 +283,11 @@ public class NWTCPConnection extends NSObject {
      * @return An initialized NWTCPConnection
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use `nw_connection_create` in Network framework instead, see deprecation notice in
+     *         <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("initWithUpgradeForConnection:")
     public native NWTCPConnection initWithUpgradeForConnection(@NotNull NWTCPConnection connection);
@@ -270,7 +298,11 @@ public class NWTCPConnection extends NSObject {
      * YES if the connection can read and write data, NO otherwise. Use KVO to watch this property.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_set_viability_changed_handler` in Network framework instead, see
+     * deprecation notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("isViable")
     public native boolean isViable();
@@ -281,7 +313,11 @@ public class NWTCPConnection extends NSObject {
      * The IP address endpoint from which the connection was connected.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_copy_effective_local_endpoint` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("localAddress")
@@ -297,7 +333,11 @@ public class NWTCPConnection extends NSObject {
      * @param completion The completion handler to be invoked when there is data to read or an error occurred
      * 
      *                   API-Since: 9.0
+     *                   Deprecated-Since: 18.0
+     *                   Deprecated-Message: Use `nw_connection_receive` in Network framework instead, see deprecation
+     *                   notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("readLength:completionHandler:")
     public native void readLengthCompletionHandler(@NUInt long length,
@@ -329,7 +369,11 @@ public class NWTCPConnection extends NSObject {
      * @param completion The completion handler to be invoked when there is data to read or an error occurred
      * 
      *                   API-Since: 9.0
+     *                   Deprecated-Since: 18.0
+     *                   Deprecated-Message: Use `nw_connection_receive` in Network framework instead, see deprecation
+     *                   notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("readMinimumLength:maximumLength:completionHandler:")
     public native void readMinimumLengthMaximumLengthCompletionHandler(@NUInt long minimum, @NUInt long maximum,
@@ -341,7 +385,11 @@ public class NWTCPConnection extends NSObject {
      * The IP address endpoint to which the connection was connected.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_copy_effective_remote_endpoint` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("remoteAddress")
@@ -353,7 +401,11 @@ public class NWTCPConnection extends NSObject {
      * The status of the connection. Use KVO to watch this property to get updates.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_set_state_changed_handler` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("state")
     @NInt
@@ -367,7 +419,11 @@ public class NWTCPConnection extends NSObject {
      * the network. Care must be taken when parsing this potentially malicious value.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_endpoint_copy_txt_record` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("txtRecord")
@@ -385,7 +441,11 @@ public class NWTCPConnection extends NSObject {
      *                   If the error is nil, the write succeeded and the caller can write more data.
      * 
      *                   API-Since: 9.0
+     *                   Deprecated-Since: 18.0
+     *                   Deprecated-Message: Use `nw_connection_send` in Network framework instead, see deprecation
+     *                   notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("write:completionHandler:")
     public native void writeCompletionHandler(@NotNull NSData data,
@@ -400,7 +460,11 @@ public class NWTCPConnection extends NSObject {
      * disconnected and will transition to the appropriate state.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_send` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @Selector("writeClose")
     public native void writeClose();

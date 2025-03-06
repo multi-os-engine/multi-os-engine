@@ -129,6 +129,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
      * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("computationAccuracy")
@@ -162,6 +164,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
      * Create a new request that can statefully track the optical from from one image to another.
      * 
      * This is a convenience initializer for a frame analysis spacing of kCMTimeZero and a nil completion handler.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("init")
@@ -171,6 +175,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
      * Create a new request that can statefully track the optical from from one image to another.
      * 
      * This is a convenience initializer for a frame analysis spacing of kCMTimeZero.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithCompletionHandler:")
@@ -211,6 +217,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
      * Setting this to `YES` will keep the raw pixel buffer coming from the the ML network. The default is `NO`.
      * 
      * When set to `YES`, the outputPixelFormat is ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("keepNetworkOutput")
@@ -229,6 +237,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
     /**
      * Pixel format type of the output buffer. Valid values are `kCVPixelFormatType_TwoComponent32Float` and
      * `kCVPixelFormatType_TwoComponent16Half`. Default is `kCVPixelFormatType_TwoComponent32Float`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("outputPixelFormat")
@@ -244,6 +254,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
 
     /**
      * VNPixelBufferObservation results.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("results")
@@ -256,6 +268,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
      * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setComputationAccuracy:")
@@ -265,6 +279,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
      * Setting this to `YES` will keep the raw pixel buffer coming from the the ML network. The default is `NO`.
      * 
      * When set to `YES`, the outputPixelFormat is ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setKeepNetworkOutput:")
@@ -273,6 +289,8 @@ public class VNTrackOpticalFlowRequest extends VNStatefulRequest {
     /**
      * Pixel format type of the output buffer. Valid values are `kCVPixelFormatType_TwoComponent32Float` and
      * `kCVPixelFormatType_TwoComponent16Half`. Default is `kCVPixelFormatType_TwoComponent32Float`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setOutputPixelFormat:")

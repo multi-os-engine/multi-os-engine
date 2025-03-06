@@ -19,11 +19,17 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SWCollaborationActionHandler")
 public interface SWCollaborationActionHandler {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("collaborationCoordinator:handleStartCollaborationAction:")
     void collaborationCoordinatorHandleStartCollaborationAction(@NotNull SWCollaborationCoordinator coordinator,
             @NotNull SWStartCollaborationAction action);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("collaborationCoordinator:handleUpdateCollaborationParticipantsAction:")
     void collaborationCoordinatorHandleUpdateCollaborationParticipantsAction(

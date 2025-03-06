@@ -209,6 +209,8 @@ public class MPSCNNNeuron extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -225,14 +227,23 @@ public class MPSCNNNeuron extends MPSCNNKernel {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("a")
     public native float a();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("b")
     public native float b();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("c")
     public native float c();

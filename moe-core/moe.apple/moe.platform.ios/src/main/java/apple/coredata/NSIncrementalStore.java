@@ -121,6 +121,8 @@ public class NSIncrementalStore extends NSPersistentStore {
 
     /**
      * API methods that may be overriden:
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -205,6 +207,8 @@ public class NSIncrementalStore extends NSPersistentStore {
      * Note that subclasses of NSIncrementalStore should implement this method conservatively,
      * and expect that unknown request types may at some point be passed to the
      * method. The correct behavior in these cases would be to return nil and an error.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -232,6 +236,8 @@ public class NSIncrementalStore extends NSPersistentStore {
      * with a URL pointing to a zero-length file. This serves as an indicator that a new store is to be
      * constructed at the specified location and allows applications using the store to securly create
      * reservation files in known locations.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("loadMetadata:")
@@ -239,6 +245,8 @@ public class NSIncrementalStore extends NSPersistentStore {
 
     /**
      * Inform the store that the objects with ids in objectIDs are in use in a client NSManagedObjectContext
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("managedObjectContextDidRegisterObjectsWithIDs:")
@@ -247,6 +255,8 @@ public class NSIncrementalStore extends NSPersistentStore {
 
     /**
      * Inform the store that the objects with ids in objectIDs are no longer in use in a client NSManagedObjectContext
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("managedObjectContextDidUnregisterObjectsWithIDs:")
@@ -255,6 +265,8 @@ public class NSIncrementalStore extends NSPersistentStore {
 
     /**
      * Returns a new objectID with retain count 1 that uses data as the key.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -269,6 +281,8 @@ public class NSIncrementalStore extends NSPersistentStore {
      * If the relationship is a to-many, should return an NSSet or NSArray containing the NSManagedObjectIDs of the
      * related objects.
      * Should return nil and set the error if the source object cannot be found.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -283,6 +297,8 @@ public class NSIncrementalStore extends NSPersistentStore {
      * Returns an NSIncrementalStoreNode encapsulating the persistent external values for the object for an objectID.
      * It should include all attributes values and may include to-one relationship values as NSManagedObjectIDs.
      * Should return nil and set the error if the object cannot be found.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -293,6 +309,8 @@ public class NSIncrementalStore extends NSPersistentStore {
     /**
      * Called before executeRequest with a save request, to assign permanent IDs to newly inserted objects;
      * must return the objectIDs in the same order as the objects appear in array.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -305,6 +323,8 @@ public class NSIncrementalStore extends NSPersistentStore {
      * Returns the reference data used to construct the objectID. Will raise an NSInvalidArgumentException if the
      * objectID was not created
      * by this store.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated

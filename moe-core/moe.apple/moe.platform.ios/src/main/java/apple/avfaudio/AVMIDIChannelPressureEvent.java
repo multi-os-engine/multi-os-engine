@@ -113,6 +113,8 @@ public class AVMIDIChannelPressureEvent extends AVMIDIChannelEvent {
      *                 The MIDI channel for the message. Range: 0-15.
      * @param pressure
      *                 The MIDI channel pressure. Range: 0-127.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @Selector("initWithChannel:pressure:")
@@ -148,6 +150,8 @@ public class AVMIDIChannelPressureEvent extends AVMIDIChannelEvent {
     /**
      * [@property] pressure
      * The MIDI channel pressure.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("pressure")
@@ -164,6 +168,8 @@ public class AVMIDIChannelPressureEvent extends AVMIDIChannelEvent {
     /**
      * [@property] pressure
      * The MIDI channel pressure.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPressure:")

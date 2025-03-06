@@ -28,7 +28,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.PromotionInfo
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -88,7 +91,10 @@ public class SKProductStorePromotionController extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.PromotionInfo
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("defaultController")
@@ -100,7 +106,10 @@ public class SKProductStorePromotionController extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.PromotionInfo.currentOrder
      */
+    @Deprecated
     @Generated
     @Selector("fetchStorePromotionOrderWithCompletionHandler:")
     public native void fetchStorePromotionOrderWithCompletionHandler(
@@ -116,7 +125,10 @@ public class SKProductStorePromotionController extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Get visibility from Product.PromotionInfo.currentOrder
      */
+    @Deprecated
     @Generated
     @Selector("fetchStorePromotionVisibilityForProduct:completionHandler:")
     public native void fetchStorePromotionVisibilityForProductCompletionHandler(@NotNull SKProduct product,
@@ -184,7 +196,10 @@ public class SKProductStorePromotionController extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.PromotionInfo.updateProductOrder(byID:)
      */
+    @Deprecated
     @Generated
     @Selector("updateStorePromotionOrder:completionHandler:")
     public native void updateStorePromotionOrderCompletionHandler(@NotNull NSArray<? extends SKProduct> promotionOrder,
@@ -199,7 +214,10 @@ public class SKProductStorePromotionController extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.PromotionInfo.updateProductVisibility(_:for:)
      */
+    @Deprecated
     @Generated
     @Selector("updateStorePromotionVisibility:forProduct:completionHandler:")
     public native void updateStorePromotionVisibilityForProductCompletionHandler(@NInt long promotionVisibility,

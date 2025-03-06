@@ -63,11 +63,17 @@ public class UIPasteControlConfiguration extends NSObject implements NSSecureCod
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("baseBackgroundColor")
     public native UIColor baseBackgroundColor();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("baseForegroundColor")
@@ -94,11 +100,17 @@ public class UIPasteControlConfiguration extends NSObject implements NSSecureCod
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("cornerRadius")
     @NFloat
     public native double cornerRadius();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("cornerStyle")
     @NInt
@@ -112,6 +124,9 @@ public class UIPasteControlConfiguration extends NSObject implements NSSecureCod
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("displayMode")
     @NUInt
@@ -169,22 +184,37 @@ public class UIPasteControlConfiguration extends NSObject implements NSSecureCod
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setBaseBackgroundColor:")
     public native void setBaseBackgroundColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setBaseForegroundColor:")
     public native void setBaseForegroundColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setCornerStyle:")
     public native void setCornerStyle(@NInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setDisplayMode:")
     public native void setDisplayMode(@NUInt long value);
@@ -216,4 +246,19 @@ public class UIPasteControlConfiguration extends NSObject implements NSSecureCod
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("imagePlacement")
+    @NUInt
+    public native long imagePlacement();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setImagePlacement:")
+    public native void setImagePlacement(@NUInt long value);
 }

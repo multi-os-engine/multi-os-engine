@@ -99,6 +99,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * An array of strings that will be used at the word recognition stage in addition to the recognition languages. The
      * customWords list takes precedence over the standard lexicon.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -165,6 +167,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * to 0.0 the image gets processed at the highest possible resolution with no downscaling. With that the processing
      * time will be the longest and the memory usage the highest but the smallest technically readable text will be
      * recognized. The default value for this is 0.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimumTextHeight")
@@ -185,6 +189,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * Specify the languages used for the detection. The order of the languages in the array defines the order in which
      * languages will be used during the language processing.
      * The languages are specified as ISO language codes.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -194,6 +200,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * The recognition level selects which techniques will be used during the text recognition. There are trade-offs
      * between performance and accuracy.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("recognitionLevel")
@@ -211,6 +219,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * An array of strings that will be used at the word recognition stage in addition to the recognition languages. The
      * customWords list takes precedence over the standard lexicon.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCustomWords:")
@@ -223,6 +233,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * to 0.0 the image gets processed at the highest possible resolution with no downscaling. With that the processing
      * time will be the longest and the memory usage the highest but the smallest technically readable text will be
      * recognized. The default value for this is 0.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMinimumTextHeight:")
@@ -237,6 +249,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * Specify the languages used for the detection. The order of the languages in the array defines the order in which
      * languages will be used during the language processing.
      * The languages are specified as ISO language codes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRecognitionLanguages:")
@@ -245,6 +259,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * The recognition level selects which techniques will be used during the text recognition. There are trade-offs
      * between performance and accuracy.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRecognitionLevel:")
@@ -253,6 +269,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * Determines whether language correction should be applied during the recognition process. Disabling this will
      * return the raw recognition results providing performance benefits but less accurate results.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUsesLanguageCorrection:")
@@ -289,6 +307,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * Determines whether language correction should be applied during the recognition process. Disabling this will
      * return the raw recognition results providing performance benefits but less accurate results.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("usesLanguageCorrection")
@@ -301,6 +321,8 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
 
     /**
      * VNRecognizedTextObservation results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

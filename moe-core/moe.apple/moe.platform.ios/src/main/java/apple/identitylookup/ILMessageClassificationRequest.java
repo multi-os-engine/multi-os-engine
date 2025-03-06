@@ -132,6 +132,8 @@ public class ILMessageClassificationRequest extends ILClassificationRequest impl
 
     /**
      * An array of message communications sorted by date received
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

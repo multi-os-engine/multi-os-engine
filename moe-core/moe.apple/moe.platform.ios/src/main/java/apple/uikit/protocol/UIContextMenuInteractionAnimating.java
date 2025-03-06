@@ -19,6 +19,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIContextMenuInteractionAnimating")
 public interface UIContextMenuInteractionAnimating {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("addAnimations:")
     void addAnimations(@NotNull @ObjCBlock(name = "call_addAnimations") Block_addAnimations animations);
@@ -30,6 +33,9 @@ public interface UIContextMenuInteractionAnimating {
         void call_addAnimations();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("addCompletion:")
     void addCompletion(@NotNull @ObjCBlock(name = "call_addCompletion") Block_addCompletion completion);
@@ -43,6 +49,8 @@ public interface UIContextMenuInteractionAnimating {
 
     /**
      * Displayed preview view controller.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

@@ -95,6 +95,8 @@ public class MPSCNNNeuronGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * The neuron descriptor
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class MPSCNNNeuronGradientNode extends MPSNNGradientFilterNode {
      * 
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      * for an easier way to do this
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:descriptor:")
@@ -154,6 +158,8 @@ public class MPSCNNNeuronGradientNode extends MPSNNGradientFilterNode {
      * 
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      * for an easier way to do this
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:descriptor:")

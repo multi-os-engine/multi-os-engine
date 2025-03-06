@@ -172,6 +172,8 @@ public class AVMutableMediaSelection extends AVMediaSelection {
      * If the value of the property allowsEmptySelection of the AVMediaSelectionGroup is YES, you can pass nil for
      * mediaSelectionOption to deselect all media selection options in the group.
      * 
+     * API-Since: 9.0
+     * 
      * @param mediaSelectionOption
      *                             The option to select.
      * @param mediaSelectionGroup

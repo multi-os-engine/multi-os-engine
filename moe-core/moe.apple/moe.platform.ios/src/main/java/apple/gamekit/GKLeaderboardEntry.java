@@ -104,11 +104,17 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("context")
     @NUInt
     public native long context();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("date")
@@ -122,6 +128,9 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("formattedScore")
@@ -163,11 +172,17 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("new")
     public static native GKLeaderboardEntry new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("rank")
     @NInt
@@ -181,6 +196,9 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("score")
     @NInt

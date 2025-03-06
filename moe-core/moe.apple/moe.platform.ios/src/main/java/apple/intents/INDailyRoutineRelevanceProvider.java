@@ -109,6 +109,8 @@ public class INDailyRoutineRelevanceProvider extends INRelevanceProvider {
 
     /**
      * Initializes a daily routine relevance provider with the specified situation.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithSituation:")
@@ -155,6 +157,8 @@ public class INDailyRoutineRelevanceProvider extends INRelevanceProvider {
 
     /**
      * The relevant daily routine situation of the provider.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("situation")

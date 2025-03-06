@@ -120,6 +120,8 @@ public class MPSNNImageNode extends NSObject {
      * further work and recomputing it is prohibitively costly.
      * 
      * Default: NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("exportFromGraph")
@@ -129,6 +131,8 @@ public class MPSNNImageNode extends NSObject {
      * Create a autoreleased MPSNNImageNode with exportFromGraph = YES.
      * 
      * Note: image is still temporary. See MPSNNImageNode.imageAllocator parameter.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -140,6 +144,8 @@ public class MPSNNImageNode extends NSObject {
      * 
      * Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
      * Typically, this is 16-bit floating-point.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("format")
@@ -150,6 +156,8 @@ public class MPSNNImageNode extends NSObject {
      * MPS resource identifier
      * 
      * See MPSHandle protocol description. Default: nil
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -167,6 +175,8 @@ public class MPSNNImageNode extends NSObject {
      * 
      * Allows you to influence how the image is allocated
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -178,6 +188,9 @@ public class MPSNNImageNode extends NSObject {
     @Selector("init")
     public native MPSNNImageNode init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithHandle:")
     public native MPSNNImageNode initWithHandle(@Nullable NSObject handle);
@@ -209,6 +222,9 @@ public class MPSNNImageNode extends NSObject {
     @Selector("new")
     public static native MPSNNImageNode new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithHandle:")
     public static native MPSNNImageNode nodeWithHandle(@Nullable NSObject handle);
@@ -238,6 +254,8 @@ public class MPSNNImageNode extends NSObject {
      * further work and recomputing it is prohibitively costly.
      * 
      * Default: NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setExportFromGraph:")
@@ -248,6 +266,8 @@ public class MPSNNImageNode extends NSObject {
      * 
      * Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
      * Typically, this is 16-bit floating-point.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFormat:")
@@ -257,6 +277,8 @@ public class MPSNNImageNode extends NSObject {
      * MPS resource identifier
      * 
      * See MPSHandle protocol description. Default: nil
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setHandle:")
@@ -267,6 +289,8 @@ public class MPSNNImageNode extends NSObject {
      * 
      * Allows you to influence how the image is allocated
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setImageAllocator:")

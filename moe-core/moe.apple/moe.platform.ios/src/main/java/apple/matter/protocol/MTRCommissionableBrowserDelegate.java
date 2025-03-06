@@ -20,6 +20,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface MTRCommissionableBrowserDelegate {
     /**
      * Tells the delegate the commissionable manager discovered a device while scanning for devices.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("controller:didFindCommissionableDevice:")
@@ -28,6 +30,8 @@ public interface MTRCommissionableBrowserDelegate {
 
     /**
      * Tells the delegate a previously discovered device is is no longer available.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("controller:didRemoveCommissionableDevice:")

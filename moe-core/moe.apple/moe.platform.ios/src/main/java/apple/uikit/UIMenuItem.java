@@ -160,6 +160,12 @@ public class UIMenuItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuItem is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("action")
@@ -169,18 +175,42 @@ public class UIMenuItem extends NSObject {
     @Selector("init")
     public native UIMenuItem init();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuItem is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTitle:action:")
     public native UIMenuItem initWithTitleAction(@NotNull String title, @NotNull SEL action);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuItem is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setAction:")
     public native void setAction(@NotNull SEL value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuItem is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@NotNull String value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuItem is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("title")

@@ -89,6 +89,9 @@ public class PKPaymentRequestCouponCodeUpdate extends PKPaymentRequestUpdate {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("errors")
     public native NSArray<? extends NSError> errors();
@@ -105,6 +108,8 @@ public class PKPaymentRequestCouponCodeUpdate extends PKPaymentRequestUpdate {
     /**
      * You may optionally supply errors here.
      * See PKError for specific NSError keys to use.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithErrors:paymentSummaryItems:shippingMethods:")
@@ -153,6 +158,9 @@ public class PKPaymentRequestCouponCodeUpdate extends PKPaymentRequestUpdate {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setErrors:")
     public native void setErrors(NSArray<? extends NSError> value);

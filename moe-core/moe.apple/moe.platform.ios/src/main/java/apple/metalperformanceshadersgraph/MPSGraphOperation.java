@@ -27,10 +27,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Symbolic representation of a compute operation, all tensors are created, owned and destroyed by the MPSGraph
+ * A symbolic representation of a compute operation.
  * 
- * NSCopy will cause a refrence to be taken, this is so NSDictionary can work with the tensor.
- * All operations are created, owned and destroyed by the MPSGraph
+ * `NSCopy` will take a refrence, this is so `NSDictionary` can work with the tensor.
+ * All operations are created, owned and destroyed by the graph.
  * 
  * API-Since: 14.0
  */
@@ -88,7 +88,9 @@ public class MPSGraphOperation extends MPSGraphObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * operations guaranteed to execute before this operation
+     * The set of operations guaranteed to execute before this operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -111,7 +113,9 @@ public class MPSGraphOperation extends MPSGraphObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * graph on which the operation is defined
+     * The graph on which the operation is defined.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -128,7 +132,9 @@ public class MPSGraphOperation extends MPSGraphObject implements NSCopying {
     public native MPSGraphOperation init();
 
     /**
-     * inputTensors of the operation
+     * The input tensors of the operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -158,7 +164,9 @@ public class MPSGraphOperation extends MPSGraphObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * name of the operation
+     * Name of the operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -171,7 +179,9 @@ public class MPSGraphOperation extends MPSGraphObject implements NSCopying {
     public static native MPSGraphOperation new_objc();
 
     /**
-     * outputTensors of the operation
+     * The output tensors of the operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

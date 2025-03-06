@@ -151,6 +151,12 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated
     @Generated
     @Selector("rowActionWithStyle:title:handler:")
     public static native UITableViewRowAction rowActionWithStyleTitleHandler(@NInt long style, @Nullable String title,
@@ -171,12 +177,23 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
 
     /**
      * default background color is dependent on style
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("backgroundEffect")
@@ -195,24 +212,53 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
 
     /**
      * default background color is dependent on style
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
      */
+    @Deprecated
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setBackgroundEffect:")
     public native void setBackgroundEffect(@Nullable UIVisualEffect value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@Nullable String value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated
     @Generated
     @Selector("style")
     @NInt
     public native long style();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("title")

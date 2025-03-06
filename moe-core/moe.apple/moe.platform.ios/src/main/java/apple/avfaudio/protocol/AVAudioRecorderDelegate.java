@@ -51,6 +51,8 @@ public interface AVAudioRecorderDelegate {
      * This callback method is called when a recording has been finished or stopped.
      * 
      * This method is NOT called if the recorder is stopped due to an interruption.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -65,6 +67,8 @@ public interface AVAudioRecorderDelegate {
      * This callback method is called when an error occurs while encoding.
      * 
      * If an error occurs while encoding it will be reported to the delegate.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional

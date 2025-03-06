@@ -77,6 +77,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * The played animation
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -103,6 +105,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
      * Initialize an animation player with an animation
      * 
      * @param animation The animation to play
+     * 
+     *                  API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -117,6 +121,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
      * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When
      * set to less than 1, the animation value is blent with the current presentation value of the animated property.
      * Defaults to 1.0. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("blendFactor")
@@ -215,6 +221,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Specifies if the animation is paused. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("paused")
@@ -222,6 +230,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Set paused to NO and restart playing from the beginning of the animation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("play")
@@ -261,6 +271,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
      * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When
      * set to less than 1, the animation value is blent with the current presentation value of the animated property.
      * Defaults to 1.0. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBlendFactor:")
@@ -268,6 +280,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Specifies if the animation is paused. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPaused:")
@@ -275,6 +289,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * The speed to play the animation at. Defaults to 1.0. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSpeed:")
@@ -291,6 +307,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * The speed to play the animation at. Defaults to 1.0. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("speed")
@@ -299,6 +317,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Stop the animation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("stop")
@@ -306,6 +326,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Stop the animation and smoothly blend out the animation over the specified duration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("stopWithBlendOutDuration:")

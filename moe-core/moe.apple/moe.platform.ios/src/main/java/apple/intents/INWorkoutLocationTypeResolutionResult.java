@@ -199,6 +199,8 @@ public class INWorkoutLocationTypeResolutionResult extends INIntentResolutionRes
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -211,6 +213,8 @@ public class INWorkoutLocationTypeResolutionResult extends INIntentResolutionRes
      * INWorkoutLocationType. The resolvedValue can be different than the original INWorkoutLocationType. This allows
      * app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCPoolingDescriptor specifies a pooling descriptor.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -79,7 +78,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes         The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @param countIncludesPadding Whether to include zero padding in the averaging calculation
      * @return A new MLCPoolingDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("averagePoolingDescriptorWithKernelSizes:strides:dilationRates:paddingPolicy:paddingSizes:countIncludesPadding:")
@@ -97,7 +100,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes         The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @param countIncludesPadding Whether to include zero padding in the averaging calculation
      * @return A new MLCPoolingDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("averagePoolingDescriptorWithKernelSizes:strides:paddingPolicy:paddingSizes:countIncludesPadding:")
@@ -137,7 +144,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] countIncludesPadding
      * 
      * Include the zero-padding in the averaging calculation if true. Used only with average pooling.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("countIncludesPadding")
     public native boolean countIncludesPadding();
@@ -154,7 +165,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] dilationRateInX
      * 
      * The dilation rate i.e. stride of elements in the kernel in x.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dilationRateInX")
     @NUInt
@@ -164,7 +179,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] dilationRateInY
      * 
      * The dilation rate i.e. stride of elements in the kernel in y.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dilationRateInY")
     @NUInt
@@ -200,7 +219,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] kernelHeight
      * 
      * The pooling kernel size in y.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("kernelHeight")
     @NUInt
@@ -210,7 +233,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] kernelWidth
      * 
      * The pooling kernel size in x.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("kernelWidth")
     @NUInt
@@ -230,7 +257,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy The padding policy
      * @param paddingSizes  The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCPoolingDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("l2NormPoolingDescriptorWithKernelSizes:strides:dilationRates:paddingPolicy:paddingSizes:")
@@ -247,7 +278,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy The padding policy
      * @param paddingSizes  The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCPoolingDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("l2NormPoolingDescriptorWithKernelSizes:strides:paddingPolicy:paddingSizes:")
@@ -264,7 +299,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy The padding policy
      * @param paddingSizes  The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCPoolingDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("maxPoolingDescriptorWithKernelSizes:strides:dilationRates:paddingPolicy:paddingSizes:")
@@ -281,7 +320,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy The padding policy
      * @param paddingSizes  The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCPoolingDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("maxPoolingDescriptorWithKernelSizes:strides:paddingPolicy:paddingSizes:")
@@ -298,7 +341,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] paddingPolicy
      * 
      * The padding policy to use.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingPolicy")
     public native int paddingPolicy();
@@ -307,7 +354,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] paddingSizeInX
      * 
      * The padding size in x (left and right) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingSizeInX")
     @NUInt
@@ -317,7 +368,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] paddingSizeInY
      * 
      * The padding size in y (top and bottom) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingSizeInY")
     @NUInt
@@ -330,7 +385,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * @param kernelSize  The kernel sizes in x and y
      * @param stride      The kernel strides in x and y
      * @return A new MLCPoolingDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("poolingDescriptorWithType:kernelSize:stride:")
     public static native MLCPoolingDescriptor poolingDescriptorWithTypeKernelSizeStride(int poolingType,
@@ -340,7 +399,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] poolingType
      * 
      * The pooling operation
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("poolingType")
     public native int poolingType();
@@ -361,7 +424,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] strideInX
      * 
      * The stride of the kernel in x.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("strideInX")
     @NUInt
@@ -371,7 +438,11 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      * [@property] strideInY
      * 
      * The stride of the kernel in y.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("strideInY")
     @NUInt

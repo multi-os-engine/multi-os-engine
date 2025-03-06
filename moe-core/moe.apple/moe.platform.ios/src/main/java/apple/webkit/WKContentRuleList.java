@@ -95,6 +95,8 @@ public class WKContentRuleList extends NSObject {
 
     /**
      * A copy of the identifier of the content extension.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("identifier")

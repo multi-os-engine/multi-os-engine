@@ -64,6 +64,8 @@ public class INAnswerCallIntentResponse extends INIntentResponse {
 
     /**
      * The call that was targeted, if found, otherwise empty. The call type should be in-progress or missed.
+     * 
+     * API-Since: 16.2
      */
     @Nullable
     @Generated
@@ -91,6 +93,9 @@ public class INAnswerCallIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.2
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -121,6 +126,8 @@ public class INAnswerCallIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 16.2
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -168,6 +175,8 @@ public class INAnswerCallIntentResponse extends INIntentResponse {
 
     /**
      * The call that was targeted, if found, otherwise empty. The call type should be in-progress or missed.
+     * 
+     * API-Since: 16.2
      */
     @Generated
     @Selector("setCallRecords:")

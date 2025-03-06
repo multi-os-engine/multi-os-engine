@@ -167,7 +167,13 @@ public class ACAccount extends NSObject {
     /**
      * A human readable description of the account.
      * This property is only available to applications that have been granted access to the account by the user.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accountDescription")
     public native String accountDescription();
@@ -176,7 +182,13 @@ public class ACAccount extends NSObject {
      * Accounts are stored with a particular account type. All available accounts of a particular type
      * can be looked up using [ACAccountStore accountsWithAccountType:]. When creating new accounts
      * this property is required.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accountType")
     public native ACAccountType accountType();
@@ -193,14 +205,26 @@ public class ACAccount extends NSObject {
      * items.
      * 
      * WARNING: Backed by a synchronous xpc call to accountsd, not appropriate to call on a UI Application's main thread
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("credential")
     public native ACAccountCredential credential();
 
     /**
      * This identifier can be used to look up the account using [ACAccountStore accountWithIdentifier:].
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -211,7 +235,13 @@ public class ACAccount extends NSObject {
 
     /**
      * Creates a new account object with a specified account type.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithAccountType:")
     public native ACAccount initWithAccountType(ACAccountType type);
@@ -219,7 +249,13 @@ public class ACAccount extends NSObject {
     /**
      * A human readable description of the account.
      * This property is only available to applications that have been granted access to the account by the user.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setAccountDescription:")
     public native void setAccountDescription(String value);
@@ -228,7 +264,13 @@ public class ACAccount extends NSObject {
      * Accounts are stored with a particular account type. All available accounts of a particular type
      * can be looked up using [ACAccountStore accountsWithAccountType:]. When creating new accounts
      * this property is required.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setAccountType:")
     public native void setAccountType(ACAccountType value);
@@ -245,7 +287,13 @@ public class ACAccount extends NSObject {
      * items.
      * 
      * WARNING: Backed by a synchronous xpc call to accountsd, not appropriate to call on a UI Application's main thread
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setCredential:")
     public native void setCredential(ACAccountCredential value);
@@ -253,7 +301,13 @@ public class ACAccount extends NSObject {
     /**
      * The username for the account. This property can be set and saved during account creation. The username is
      * only available to applications that have been granted access to the account by the user.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setUsername:")
     public native void setUsername(String value);
@@ -271,7 +325,13 @@ public class ACAccount extends NSObject {
     /**
      * The username for the account. This property can be set and saved during account creation. The username is
      * only available to applications that have been granted access to the account by the user.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("username")
     public native String username();

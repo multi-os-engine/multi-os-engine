@@ -91,10 +91,16 @@ public class NSCollectionLayoutGroupCustomItem extends NSObject implements NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("customItemWithFrame:")
     public static native NSCollectionLayoutGroupCustomItem customItemWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("customItemWithFrame:zIndex:")
     public static native NSCollectionLayoutGroupCustomItem customItemWithFrameZIndex(@ByValue CGRect frame,
@@ -108,6 +114,9 @@ public class NSCollectionLayoutGroupCustomItem extends NSObject implements NSCop
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("frame")
     @ByValue
@@ -170,6 +179,9 @@ public class NSCollectionLayoutGroupCustomItem extends NSObject implements NSCop
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("zIndex")
     @NInt

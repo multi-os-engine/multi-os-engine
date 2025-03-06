@@ -395,6 +395,8 @@ public class UIStackView extends UIView {
      * necessary.
      * Does not affect the subview ordering if view is already a subview
      * of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addArrangedSubview:")
@@ -403,6 +405,8 @@ public class UIStackView extends UIView {
     /**
      * The layout of the arrangedSubviews transverse to the axis;
      * e.g., leading/trailing edges in a vertical stack
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("alignment")
@@ -456,6 +460,9 @@ public class UIStackView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("arrangedSubviews")
@@ -464,6 +471,8 @@ public class UIStackView extends UIView {
     /**
      * A stack with a horizontal axis is a row of arrangedSubviews,
      * and a stack with a vertical axis is a column of arrangedSubviews.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("axis")
@@ -472,6 +481,8 @@ public class UIStackView extends UIView {
 
     /**
      * The layout of the arrangedSubviews along the axis
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("distribution")
@@ -484,15 +495,23 @@ public class UIStackView extends UIView {
 
     /**
      * Adds views as subviews of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithArrangedSubviews:")
     public native UIStackView initWithArrangedSubviews(@NotNull NSArray<? extends UIView> views);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIStackView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UIStackView initWithFrame(@ByValue CGRect frame);
@@ -501,6 +520,8 @@ public class UIStackView extends UIView {
      * Adds the view as a subview of the container if it isn't already.
      * Updates the stack index (but not the subview index) of the
      * arranged subview if it's already in the arrangedSubviews list.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("insertArrangedSubview:atIndex:")
@@ -515,6 +536,8 @@ public class UIStackView extends UIView {
      * This property is ignored in horizontal stacks. Use the alignment property
      * to specify baseline alignment in horizontal stacks.
      * Defaults to NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isBaselineRelativeArrangement")
@@ -529,6 +552,8 @@ public class UIStackView extends UIView {
      * This property is ignored in horizontal stacks. Use the alignment property
      * to specify baseline alignment in horizontal stacks.
      * Defaults to NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBaselineRelativeArrangement:")
@@ -537,6 +562,8 @@ public class UIStackView extends UIView {
     /**
      * Uses margin layout attributes for edge constraints where applicable.
      * Defaults to NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isLayoutMarginsRelativeArrangement")
@@ -545,6 +572,8 @@ public class UIStackView extends UIView {
     /**
      * Uses margin layout attributes for edge constraints where applicable.
      * Defaults to NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLayoutMarginsRelativeArrangement:")
@@ -556,6 +585,8 @@ public class UIStackView extends UIView {
      * To remove the view as a subview, send it -removeFromSuperview as usual;
      * the relevant UIStackView will remove it from its arrangedSubviews list
      * automatically.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("removeArrangedSubview:")
@@ -564,6 +595,8 @@ public class UIStackView extends UIView {
     /**
      * The layout of the arrangedSubviews transverse to the axis;
      * e.g., leading/trailing edges in a vertical stack
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAlignment:")
@@ -572,6 +605,8 @@ public class UIStackView extends UIView {
     /**
      * A stack with a horizontal axis is a row of arrangedSubviews,
      * and a stack with a vertical axis is a column of arrangedSubviews.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAxis:")
@@ -579,6 +614,8 @@ public class UIStackView extends UIView {
 
     /**
      * The layout of the arrangedSubviews along the axis
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDistribution:")
@@ -599,6 +636,8 @@ public class UIStackView extends UIView {
      * 
      * In vertical stack views with baselineRelativeArrangement == YES, the spacing between
      * text-containing views (such as UILabels) will depend on the fonts involved.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSpacing:")
@@ -619,6 +658,8 @@ public class UIStackView extends UIView {
      * 
      * In vertical stack views with baselineRelativeArrangement == YES, the spacing between
      * text-containing views (such as UILabels) will depend on the fonts involved.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("spacing")

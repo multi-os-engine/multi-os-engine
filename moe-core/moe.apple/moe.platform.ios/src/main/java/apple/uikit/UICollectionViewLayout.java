@@ -151,6 +151,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * override this method to provide a custom class to be used when instantiating instances of
      * UICollectionViewLayoutAttributes
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -187,6 +189,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * Methods in this class are meant to be overridden and will be called by its collection view to gather layout
      * information.
      * To get the truth on the current state of the collection view, call methods on UICollectionView rather than these.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -197,6 +201,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * Subclasses must override this method and use it to return the width and height of the collection view’s content.
      * These values represent the width and height of all the content, not just the content that is currently visible.
      * The collection view uses this information to configure its own content size to facilitate scrolling.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("collectionViewContentSize")
@@ -207,18 +213,27 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("finalLayoutAttributesForDisappearingDecorationElementOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes finalLayoutAttributesForDisappearingDecorationElementOfKindAtIndexPath(
             @NotNull String elementKind, @NotNull NSIndexPath decorationIndexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("finalLayoutAttributesForDisappearingItemAtIndexPath:")
     public native UICollectionViewLayoutAttributes finalLayoutAttributesForDisappearingItemAtIndexPath(
             @NotNull NSIndexPath itemIndexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("finalLayoutAttributesForDisappearingSupplementaryElementOfKind:atIndexPath:")
@@ -227,6 +242,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * also called inside the animation block
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("finalizeAnimatedBoundsChange")
@@ -234,6 +251,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * called inside an animation block after the update
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("finalizeCollectionViewUpdates")
@@ -286,6 +305,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public native NSArray<? extends NSIndexPath> indexPathsToInsertForSupplementaryViewOfKind(
             @NotNull String elementKind);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("init")
     public native UICollectionViewLayout init();
@@ -294,6 +316,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native UICollectionViewLayout initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("initialLayoutAttributesForAppearingDecorationElementOfKind:atIndexPath:")
@@ -307,6 +332,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * animation setup from what is on screen to those final attributes.
      * For each element on screen after the invalidation, initialLayoutAttributesForAppearingXXX will be called and an
      * animation setup from those initial attributes to what ends up on screen.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -314,6 +341,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public native UICollectionViewLayoutAttributes initialLayoutAttributesForAppearingItemAtIndexPath(
             @NotNull NSIndexPath itemIndexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("initialLayoutAttributesForAppearingSupplementaryElementOfKind:atIndexPath:")
@@ -323,6 +353,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * Call -invalidateLayout to indicate that the collection view needs to requery the layout information.
      * Subclasses must always call super if they override.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("invalidateLayout")
@@ -374,6 +406,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
             @NotNull UICollectionViewLayoutAttributes preferredAttributes,
             @NotNull UICollectionViewLayoutAttributes originalAttributes);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:atIndexPath:")
@@ -382,6 +417,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * return an array layout attributes instances for all the views in the given rect
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -398,11 +435,17 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public native UICollectionViewLayoutAttributes layoutAttributesForInteractivelyMovingItemAtIndexPathWithTargetPosition(
             @NotNull NSIndexPath indexPath, @ByValue CGPoint position);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("layoutAttributesForItemAtIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:atIndexPath:")
@@ -412,6 +455,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * UICollectionView calls this when its bounds have changed inside an animation block before displaying cells in its
      * new bounds
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("prepareForAnimatedBoundsChange:")
@@ -423,6 +468,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * opportunity to do batch computations for the insertion and deletion layout attributes.
      * The updateItems parameter is an array of UICollectionViewUpdateItem instances for each element that is moving to
      * a new index path.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("prepareForCollectionViewUpdates:")
@@ -450,11 +497,16 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * The collection view calls -prepareLayout again after layout is invalidated and before requerying the layout
      * information.
      * Subclasses should always call super if they override.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("prepareLayout")
     public native void prepareLayout();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("registerClass:forDecorationViewOfKind:")
     public native void registerClassForDecorationViewOfKind(@Nullable Class viewClass, @NotNull String elementKind);
@@ -465,6 +517,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * return YES to cause the collection view to requery the layout for geometry information
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("shouldInvalidateLayoutForBoundsChange:")
@@ -491,6 +545,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * return a point at which to rest after scrolling - for layouts that want snap-to-point scrolling behavior
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("targetContentOffsetForProposedContentOffset:withScrollingVelocity:")
@@ -510,6 +566,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * Default implementation returns the layout direction of the main bundle's development region; FlowLayout returns
      * leftToRight. Subclasses may override this to specify the implementation-time layout direction of the layout.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("developmentLayoutDirection")
@@ -520,6 +578,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * Base implementation returns false. If your subclass’s implementation overrides this property to return true, a
      * UICollectionView showing this layout will ensure its bounds.origin is always found at the leading edge, flipping
      * its coordinate system horizontally if necessary.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("flipsHorizontallyInOppositeLayoutDirection")

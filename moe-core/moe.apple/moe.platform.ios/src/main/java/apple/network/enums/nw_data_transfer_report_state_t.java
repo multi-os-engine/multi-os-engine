@@ -17,9 +17,9 @@ public final class nw_data_transfer_report_state_t {
     /**
      * [@const] nw_data_transfer_report_state_collecting The report is outstanding; values cannot be accessed.
      */
-    @Generated public static final int nw_data_transfer_report_state_collecting = 0x00000001;
+    @Generated public static final int _collecting = 0x00000001;
     /**
      * [@const] nw_data_transfer_report_state_collected The report is complete; values can now be accessed.
      */
-    @Generated public static final int nw_data_transfer_report_state_collected = 0x00000002;
+    @Generated public static final int _collected = 0x00000002;
 }

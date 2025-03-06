@@ -11,9 +11,9 @@ public final class BNNSQuantizerFunction {
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSQuantizerFunctionQuantize = 0x00000000;
+    @Generated public static final int Quantize = 0x00000000;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSQuantizerFunctionDequantize = 0x00000001;
+    @Generated public static final int Dequantize = 0x00000001;
 }

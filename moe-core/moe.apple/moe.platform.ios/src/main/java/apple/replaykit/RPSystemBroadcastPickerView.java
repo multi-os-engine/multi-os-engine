@@ -325,6 +325,8 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     /**
      * Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions
      * will be presented
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -406,6 +408,8 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     /**
      * Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions
      * will be presented
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setPreferredExtension:")
@@ -413,6 +417,8 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
 
     /**
      * Indicates whether the Microphone button is visible in broadcast picker view. Default is YES.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setShowsMicrophoneButton:")
@@ -424,6 +430,8 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
 
     /**
      * Indicates whether the Microphone button is visible in broadcast picker view. Default is YES.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("showsMicrophoneButton")

@@ -86,6 +86,8 @@ public class CMHighFrequencyHeartRateData extends CMLogItem {
     /**
      * confidence
      * Indicates the confidence level of the heart rate value
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("confidence")
@@ -95,6 +97,8 @@ public class CMHighFrequencyHeartRateData extends CMLogItem {
     /**
      * date
      * Corresponding date for the heart rate value
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("date")
@@ -117,6 +121,8 @@ public class CMHighFrequencyHeartRateData extends CMLogItem {
     /**
      * heartRate
      * The heart rate value in units of beats per minute (BPM)
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("heartRate")

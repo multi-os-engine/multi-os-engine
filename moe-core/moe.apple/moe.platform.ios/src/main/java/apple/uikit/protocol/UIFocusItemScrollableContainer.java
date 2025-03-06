@@ -24,6 +24,8 @@ public interface UIFocusItemScrollableContainer extends UIFocusItemContainer {
     /**
      * The current content offset of this scrollable container. If the scrollable container has a `bounds` property,
      * `bounds.origin` must be equal to `contentOffset`.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("contentOffset")
@@ -33,6 +35,8 @@ public interface UIFocusItemScrollableContainer extends UIFocusItemContainer {
     /**
      * The total size of the content contained by this container. If this size exceeds the size of
      * this container's visible size, then scrolling is possible.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("contentSize")
@@ -42,6 +46,8 @@ public interface UIFocusItemScrollableContainer extends UIFocusItemContainer {
     /**
      * The current content offset of this scrollable container. If the scrollable container has a `bounds` property,
      * `bounds.origin` must be equal to `contentOffset`.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setContentOffset:")
@@ -49,6 +55,8 @@ public interface UIFocusItemScrollableContainer extends UIFocusItemContainer {
 
     /**
      * The visible size of this scrollable container.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("visibleSize")

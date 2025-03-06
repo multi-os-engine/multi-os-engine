@@ -4725,21 +4725,21 @@ public final class CoreFoundation {
     @CFunction
     public static native CFCalendarRef CFCalendarCopyCurrent();
 
+    /**
+     * Creates a calendar. The identifiers are the `kCF*Calendar` constants in CFLocale.h.
+     * *
+     */
     @Generated
     @CFunction
     public static native CFCalendarRef CFCalendarCreateWithIdentifier(CFAllocatorRef allocator, CFStringRef identifier);
 
     /**
-     * Create a calendar. The identifiers are the kCF*Calendar
-     * constants in CFLocale.h.
+     * Returns the calendar's identifier.
      */
     @Generated
     @CFunction
     public static native CFStringRef CFCalendarGetIdentifier(CFCalendarRef calendar);
 
-    /**
-     * Returns the calendar's identifier.
-     */
     @Generated
     @CFunction
     public static native CFLocaleRef CFCalendarCopyLocale(CFCalendarRef calendar);
@@ -11816,4 +11816,65 @@ public final class CoreFoundation {
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeMountFromLocationKey();
+
+    /**
+     * Typed allocator interfaces
+     * 
+     * These interfaces are provided to either serve as rewrite targets for the
+     * compiler, or to be invoked internally to Foundation/CoreFoundation to
+     * manually interfact with the typed allocator.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr CFAllocatorAllocateTyped(CFAllocatorRef allocator, @NInt long size, long descriptor,
+            @NUInt long hint);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr CFAllocatorReallocateTyped(CFAllocatorRef allocator, VoidPtr ptr, @NInt long newsize,
+            long descriptor, @NUInt long hint);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr CFAllocatorAllocateBytes(CFAllocatorRef allocator, @NInt long size, @NUInt long hint);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr CFAllocatorReallocateBytes(CFAllocatorRef allocator, VoidPtr ptr, @NInt long newsize,
+            @NUInt long hint);
+
+    /**
+     * [@function] CFAttributedStringGetBidiLevelsAndResolvedDirections
+     * Fills bidiLevels by applying the Unicode Bidi Algorithm (P, X, W, N, and I) to the characters in range. Returns
+     * true if the result is not uni-level LTR (in other words, needing further Bidi processing). baseDirection is
+     * NSWritingDirection (NSWritingDirectionNatural, NSWritingDirectionLeftToRight, and NSWritingDirectionRightToLeft).
+     * Understands NSWritingDirectionAttributeName values.
+     */
+    @Generated
+    @CFunction
+    public static native boolean CFAttributedStringGetBidiLevelsAndResolvedDirections(
+            CFAttributedStringRef attributedString, @ByValue CFRange range, byte baseDirection, BytePtr bidiLevels,
+            BytePtr baseDirections);
+
+    /**
+     * CFNumber
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFNumberFormatterMinGroupingDigits();
+
+    @Generated public static final double CF_HAS_TYPED_ALLOCATOR = 0.0;
 }

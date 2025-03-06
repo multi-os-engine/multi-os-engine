@@ -22,6 +22,8 @@ public interface GCAxisElement extends GCPhysicalInputElement {
     /**
      * The input reporting the value of the axis as the position between a lower and
      * upper bound, if available.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -37,6 +39,8 @@ public interface GCAxisElement extends GCPhysicalInputElement {
      * change in position since the last event is reported. Some freely-rotating
      * dials may also only report a value indicating which direction the dial was
      * turned.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

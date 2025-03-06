@@ -163,6 +163,8 @@ public class MPRatingCommand extends MPRemoteCommand {
 
     /**
      * Maximum rating for the command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("maximumRating")
@@ -170,6 +172,8 @@ public class MPRatingCommand extends MPRemoteCommand {
 
     /**
      * Minimum rating for the command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("minimumRating")
@@ -177,6 +181,8 @@ public class MPRatingCommand extends MPRemoteCommand {
 
     /**
      * Maximum rating for the command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setMaximumRating:")
@@ -184,6 +190,8 @@ public class MPRatingCommand extends MPRemoteCommand {
 
     /**
      * Minimum rating for the command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setMinimumRating:")

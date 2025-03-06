@@ -108,6 +108,8 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
      * the upgrade. The authorization check should ideally be done with information in userInfo, but may involve
      * communicating with a backend server or using a shared data container between the app and extension.
      * 
+     * API-Since: 14.0
+     * 
      * @param user              The username for the account to upgrade.
      * @param serviceIdentifier The service identifier of the credential the user wishes to upgrade.
      * @param userInfo          A dictionary the app can use to pass information to the extension, most likely to help
@@ -154,6 +156,9 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("serviceIdentifier")
@@ -167,11 +172,17 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("user")
     public native String user();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("userInfo")

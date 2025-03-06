@@ -85,6 +85,8 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     /**
      * Setting this property will invalidate the layout immediately to affect any changes
      * Note: any changes made to properties directly will have no effect.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -112,16 +114,25 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("initWithCoder:")
     public native UICollectionViewCompositionalLayout initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSection:")
     public native UICollectionViewCompositionalLayout initWithSection(@NotNull NSCollectionLayoutSection section);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSection:configuration:")
     public native UICollectionViewCompositionalLayout initWithSectionConfiguration(
             @NotNull NSCollectionLayoutSection section,
             @NotNull UICollectionViewCompositionalLayoutConfiguration configuration);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSectionProvider:")
     public native UICollectionViewCompositionalLayout initWithSectionProvider(
@@ -136,6 +147,9 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
                 @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSectionProvider:configuration:")
     public native UICollectionViewCompositionalLayout initWithSectionProviderConfiguration(
@@ -199,6 +213,8 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     /**
      * Setting this property will invalidate the layout immediately to affect any changes
      * Note: any changes made to properties directly will have no effect.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setConfiguration:")

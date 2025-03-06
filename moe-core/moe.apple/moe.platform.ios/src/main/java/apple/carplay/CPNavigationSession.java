@@ -76,6 +76,8 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * Cancel the trip.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("cancelTrip")
@@ -101,6 +103,8 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * Finish the trip.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("finishTrip")
@@ -147,6 +151,8 @@ public class CPNavigationSession extends NSObject {
      * 
      * @param reason      The reason navigation was paused.
      * @param description An optional description of the pause reason. If @c nil, a system-provided string will be used.
+     * 
+     *                    API-Since: 12.0
      */
     @Generated
     @Selector("pauseTripForReason:description:")
@@ -164,6 +170,8 @@ public class CPNavigationSession extends NSObject {
      * The next maneuvers that should be performed to follow the current route.
      * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at
      * the same time.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setUpcomingManeuvers:")
@@ -179,6 +187,8 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * The trip associated with this navigation session.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -189,6 +199,8 @@ public class CPNavigationSession extends NSObject {
      * The next maneuvers that should be performed to follow the current route.
      * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at
      * the same time.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -200,6 +212,8 @@ public class CPNavigationSession extends NSObject {
      * 
      * @param estimates The updated travel estimates.
      * @param maneuver  The maneuver pertaining to this update.
+     * 
+     *                  API-Since: 12.0
      */
     @Generated
     @Selector("updateTravelEstimates:forManeuver:")
@@ -232,4 +246,97 @@ public class CPNavigationSession extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Use this method to add CPLaneGuidances in chronological order to the navigation session.
+     * CPLaneGuidance objects must be added as soon as they are available.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("addLaneGuidances:")
+    public native void addLaneGuidances(@NotNull NSArray<? extends CPLaneGuidance> laneGuidances);
+
+    /**
+     * Use this method to add CPManeuvers in chronological order to the navigation session.
+     * The application must provide as many maneuvers as possible, as soon as they are available. All
+     * maneuvers set in upcomingManeuvers must be first added using this method.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("addManeuvers:")
+    public native void addManeuvers(@NotNull NSArray<? extends CPManeuver> maneuvers);
+
+    /**
+     * The current lane guidance to be used for navigation metdata.
+     * Must be set to nil if there is no current lane guidance. CPLaneGuidances set here must first be added to the
+     * session using addLaneGuidances:
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("currentLaneGuidance")
+    @Nullable
+    public native CPLaneGuidance currentLaneGuidance();
+
+    /**
+     * Set this property with variants of the current road name. From most to least verbose.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("currentRoadNameVariants")
+    @NotNull
+    public native NSArray<String> currentRoadNameVariants();
+
+    /**
+     * Set this property with the current maneuver state based on how close the maneuver is.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("maneuverState")
+    @NInt
+    public native long maneuverState();
+
+    /**
+     * Resume the current trip with updated route information
+     * 
+     * @param routeInformation The updated route information for the current trip
+     * 
+     *                         API-Since: 17.4
+     */
+    @Generated
+    @Selector("resumeTripWithUpdatedRouteInformation:")
+    public native void resumeTripWithUpdatedRouteInformation(@NotNull CPRouteInformation routeInformation);
+
+    /**
+     * The current lane guidance to be used for navigation metdata.
+     * Must be set to nil if there is no current lane guidance. CPLaneGuidances set here must first be added to the
+     * session using addLaneGuidances:
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("setCurrentLaneGuidance:")
+    public native void setCurrentLaneGuidance(@Nullable CPLaneGuidance value);
+
+    /**
+     * Set this property with variants of the current road name. From most to least verbose.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("setCurrentRoadNameVariants:")
+    public native void setCurrentRoadNameVariants(@NotNull NSArray<String> value);
+
+    /**
+     * Set this property with the current maneuver state based on how close the maneuver is.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("setManeuverState:")
+    public native void setManeuverState(@NInt long value);
 }

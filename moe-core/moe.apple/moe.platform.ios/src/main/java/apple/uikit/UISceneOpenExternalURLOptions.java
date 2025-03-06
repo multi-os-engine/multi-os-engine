@@ -136,6 +136,8 @@ public class UISceneOpenExternalURLOptions extends NSObject {
 
     /**
      * URLs must be universal links and have an app configured to open them.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUniversalLinksOnly:")
@@ -151,6 +153,8 @@ public class UISceneOpenExternalURLOptions extends NSObject {
 
     /**
      * URLs must be universal links and have an app configured to open them.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("universalLinksOnly")

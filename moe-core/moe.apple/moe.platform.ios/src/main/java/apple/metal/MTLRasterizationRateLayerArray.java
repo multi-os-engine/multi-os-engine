@@ -133,6 +133,8 @@ public class MTLRasterizationRateLayerArray extends NSObject {
      * 
      * Use setObject:atIndexedSubscript: to set the layer
      * 
+     * API-Since: 13.0
+     * 
      * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't
      *         been set for this index.
      */
@@ -155,6 +157,8 @@ public class MTLRasterizationRateLayerArray extends NSObject {
      * Sets the MTLRasterizationRateLayerDescriptor instance for the given layerIndex.
      * 
      * The previous instance at this index will be overwritten.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")

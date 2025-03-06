@@ -50,6 +50,9 @@ public class INFlight extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("airline")
@@ -65,6 +68,9 @@ public class INFlight extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("allocWithZone:")
     public static native INFlight allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("arrivalAirportGate")
@@ -74,6 +80,9 @@ public class INFlight extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("boardingTime")
@@ -111,6 +120,9 @@ public class INFlight extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("departureAirportGate")
@@ -124,11 +136,17 @@ public class INFlight extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("flightDuration")
     public native INDateComponentsRange flightDuration();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("flightNumber")
@@ -143,6 +161,9 @@ public class INFlight extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("init")
     public native INFlight init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithAirline:flightNumber:boardingTime:flightDuration:departureAirportGate:arrivalAirportGate:")
     public native INFlight initWithAirlineFlightNumberBoardingTimeFlightDurationDepartureAirportGateArrivalAirportGate(

@@ -73,6 +73,8 @@ public class NSFileCoordinator extends NSObject {
      * because it hasn't received a -relinquish... method it owns the item. To avoid that race condition you can invoke
      * +addFilePresenter: in the same block that you pass to -coordinateReadingItemAtURL:options:error:byAccessor: to
      * read what the file presenter will present.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("addFilePresenter:")
@@ -121,6 +123,9 @@ public class NSFileCoordinator extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("filePresenters")
@@ -158,6 +163,9 @@ public class NSFileCoordinator extends NSObject {
     @Selector("new")
     public static native NSFileCoordinator new_objc();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeFilePresenter:")
     public static native void removeFilePresenter(
@@ -197,6 +205,8 @@ public class NSFileCoordinator extends NSObject {
      * Cancellation is racy; you usually cannot assume that no block passed into a -coordinate... or -prepare... method
      * is already being invoked, so the code inside those blocks typically still has to check for cancellation, whatever
      * that means in your application.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("cancel")
@@ -310,6 +320,8 @@ public class NSFileCoordinator extends NSObject {
      * success. If the waiting fails then the invoked method sets the error reference to an NSError that describes what
      * went wrong, your block will not be invoked, your __block variable will not be set to a value that signals
      * success, and all will be as it should be, with failure signaled and an NSError that describes the failure.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("coordinateReadingItemAtURL:options:error:byAccessor:")
@@ -317,6 +329,9 @@ public class NSFileCoordinator extends NSObject {
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @NotNull @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsErrorByAccessor reader);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
     public native void coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(
@@ -324,12 +339,18 @@ public class NSFileCoordinator extends NSObject {
             @NUInt long writingOptions, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @NotNull @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor readerWriter);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("coordinateWritingItemAtURL:options:error:byAccessor:")
     public native void coordinateWritingItemAtURLOptionsErrorByAccessor(@NotNull NSURL url, @NUInt long options,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @NotNull @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsErrorByAccessor writer);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
     public native void coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(@NotNull NSURL url1,
@@ -380,6 +401,8 @@ public class NSFileCoordinator extends NSObject {
      * For example, NSDocument creates a single NSFileCoordinator for all of the coordinated reading and writing it does
      * during the saving of a document. It always creates the NSFileCoordinator in the main queue even when it is doing
      * the actual coordinated reading and writing in a background queue to implement asynchronous saving.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithFilePresenter:")
@@ -404,6 +427,8 @@ public class NSFileCoordinator extends NSObject {
      * equality, which is not straightforward. This method must be invoked from within the block passed to an invocation
      * of -coordinateAccessWithIntents:queue:byAccessory:, -coordinateWritingItemAtURL:options:error:byAccessor:, or
      * -coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("itemAtURL:didMoveToURL:")
@@ -568,6 +593,8 @@ public class NSFileCoordinator extends NSObject {
      * away, but it does pass it when doing the nested invocations of -coordinate... methods because it is not necessary
      * to trigger saving again, even if the user changes the document before the Finder proceeds far enough to actually
      * copy that document's file.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("prepareForReadingItemsAtURLs:options:writingItemsAtURLs:options:error:byAccessor:")

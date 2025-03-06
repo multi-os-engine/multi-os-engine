@@ -91,6 +91,8 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
     /**
      * The contact currently displayed by this template. Assigning a new contact
      * will update the template.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -120,6 +122,8 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
 
     /**
      * Initialize a @c CPContactTemplate by providing a @c CPContact.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithContact:")
@@ -172,6 +176,8 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
     /**
      * The contact currently displayed by this template. Assigning a new contact
      * will update the template.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContact:")

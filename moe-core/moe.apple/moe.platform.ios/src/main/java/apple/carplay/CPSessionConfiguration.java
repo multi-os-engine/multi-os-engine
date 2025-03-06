@@ -96,6 +96,9 @@ public class CPSessionConfiguration extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -115,6 +118,9 @@ public class CPSessionConfiguration extends NSObject {
     @Selector("init")
     public native CPSessionConfiguration init();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithDelegate:")
     public native CPSessionConfiguration initWithDelegate(
@@ -144,6 +150,8 @@ public class CPSessionConfiguration extends NSObject {
 
     /**
      * A bitmask of what type of user interfaces are limited
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("limitedUserInterfaces")
@@ -163,11 +171,17 @@ public class CPSessionConfiguration extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) CPSessionConfigurationDelegate value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPSessionConfigurationDelegate value) {
         Object __old = delegate();

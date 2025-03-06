@@ -99,6 +99,9 @@ public class PHASEGeometricSpreadingDistanceModelParameters extends PHASEDistanc
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native PHASEGeometricSpreadingDistanceModelParameters init();
@@ -146,6 +149,8 @@ public class PHASEGeometricSpreadingDistanceModelParameters extends PHASEDistanc
      * Values are clamped to the range [0.0, DBL_MAX].
      * Default value is 1.0.
      * 0.0 is no effect. 0.5 is half the effect. 1.0 is normal. 2.0 is double the effect.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("rolloffFactor")
@@ -159,6 +164,8 @@ public class PHASEGeometricSpreadingDistanceModelParameters extends PHASEDistanc
      * Values are clamped to the range [0.0, DBL_MAX].
      * Default value is 1.0.
      * 0.0 is no effect. 0.5 is half the effect. 1.0 is normal. 2.0 is double the effect.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRolloffFactor:")

@@ -163,6 +163,8 @@ public class MPChangePlaybackPositionCommandEvent extends MPRemoteCommandEvent {
 
     /**
      * The desired playback position to use when setting the current time of the player.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("positionTime")

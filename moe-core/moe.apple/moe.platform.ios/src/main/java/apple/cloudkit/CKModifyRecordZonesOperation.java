@@ -159,10 +159,16 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native CKModifyRecordZonesOperation init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithRecordZonesToSave:recordZoneIDsToDelete:")
     public native CKModifyRecordZonesOperation initWithRecordZonesToSaveRecordZoneIDsToDelete(
@@ -180,6 +186,8 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -187,11 +195,17 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_modifyRecordZonesCompletionBlock_ret")
     public native Block_modifyRecordZonesCompletionBlock_ret modifyRecordZonesCompletionBlock();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordZoneIDsToDelete")
     public native NSArray<? extends CKRecordZoneID> recordZoneIDsToDelete();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordZonesToSave")
@@ -208,16 +222,24 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setModifyRecordZonesCompletionBlock:")
     public native void setModifyRecordZonesCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setModifyRecordZonesCompletionBlock") Block_setModifyRecordZonesCompletionBlock value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRecordZoneIDsToDelete:")
     public native void setRecordZoneIDsToDelete(@Nullable NSArray<? extends CKRecordZoneID> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRecordZonesToSave:")
     public native void setRecordZonesToSave(@Nullable NSArray<? extends CKRecordZone> value);

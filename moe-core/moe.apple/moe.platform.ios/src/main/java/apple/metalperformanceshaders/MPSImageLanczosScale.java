@@ -177,6 +177,9 @@ public class MPSImageLanczosScale extends MPSImageScale {
     @Selector("init")
     public native MPSImageLanczosScale init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSImageLanczosScale initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);

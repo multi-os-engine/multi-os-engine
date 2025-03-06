@@ -84,7 +84,11 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the billPayee with which the user wants to continue.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithBillPayeeToConfirm:")
@@ -101,7 +105,11 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INBillPayee.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("disambiguationWithBillPayeesToDisambiguate:")
@@ -171,7 +179,11 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
      * resolvedBillPayee can be different than the original INBillPayee. This allows app extensions to apply business
      * logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("successWithResolvedBillPayee:")

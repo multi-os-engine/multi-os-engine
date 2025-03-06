@@ -69,6 +69,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * Sets the rendering attribute. Passing nil value indicates overriding the specified attribute by removing from the
      * final attributes passed to the layout and rendering engine. This is a convenience over
      * -setRenderingAttributes:forTextRange:.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("addRenderingAttribute:value:forTextRange:")
@@ -119,6 +121,9 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -140,6 +145,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Performs the layout for filling bounds inside the last text container.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("ensureLayoutForBounds:")
@@ -147,6 +154,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Performs the layout for textRange.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("ensureLayoutForRange:")
@@ -168,6 +177,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * Enumerates the rendering attributes from location. It enumerates only ranges with rendering attributes specified.
      * Returning NO from block breaks out of the enumeration.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("enumerateRenderingAttributesFromLocation:reverse:usingBlock:")
@@ -198,6 +209,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * the range of the last element returned. It enumerates the elements in the sequence, but it can skip a range (it
      * can limit the maximum number of text elements enumerated for a single invocation or hide some elements from the
      * layout). Returning NO from block breaks out of the enumeration.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -219,6 +232,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * Enumerates text segments of type in textRange. A text segment is both logically and visually contiguous portion
      * of the text content inside a line fragment. It can be defined with a single text range. The segments are
      * enumerated visually from left to right. Returning NO from block breaks out of the enumeration.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("enumerateTextSegmentsInRange:type:options:usingBlock:")
@@ -240,6 +255,9 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native NSTextLayoutManager init();
@@ -263,6 +281,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Invalidates layout information for textRange
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("invalidateLayoutForRange:")
@@ -271,6 +291,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * Invalidates the rendering attributes in textRange. Enumerating rendering attributes will skip the invalidated
      * range.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("invalidateRenderingAttributesForTextRange:")
@@ -287,6 +309,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * If non-nil, it performs layout in the specified queue until estimatedUsageBounds=NO.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -297,6 +321,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * When YES, enables internal security analysis for malicious inputs and activates defensive behaviors. By enabling
      * this functionality, it's possible certain text such as a very long paragraph might result in unexpected layout.
      * NO by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("limitsLayoutForSuspiciousContents")
@@ -312,6 +338,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * The default set of attributes for rendering NSLinkAttributeName. The base NSTextLayoutManager class returns with
      * NSUnderlineStyleSingle for NSUnderlineStyleAttributeName and the platform link color for
      * NSForegroundColorAttributeName. The platform color for macOS is +linkColor. Other platforms uses +blueColor.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -338,6 +366,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Removes attribute from textRange. This is a convenience over -setRenderingAttributes:forTextRange:.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("removeRenderingAttribute:forTextRange:")
@@ -348,6 +378,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * Returns a dictionary of rendering attributes for rendering NSLinkAttributeName. Just as other rendering
      * attributes, specifying NSNull removes the attribute from the final attributes used for rendering. It has priority
      * over the general rendering attributes.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -360,6 +392,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * A callback block invoked whenever NSTextLayoutManager needs to validate the rendering attributes for the range.
      * The validator should use -setRenderingAttributes:forTextRange: to fill the rendering attributes appropriate for
      * the range inside textLayoutFragment.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -375,11 +409,17 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
                 @NotNull NSTextLayoutFragment arg1);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("replaceContentsInRange:withAttributedString:")
     public native void replaceContentsInRangeWithAttributedString(@NotNull NSTextRange range,
             @NotNull NSAttributedString attributedString);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("replaceContentsInRange:withTextElements:")
     public native void replaceContentsInRangeWithTextElements(@NotNull NSTextRange range,
@@ -389,6 +429,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * This method should be used in order to replace an NSTextContentManager with a new one, leaving all related
      * objects intact. This method makes sure the NSTextLayoutManager doesn't get deallocated while migrating to the new
      * manager.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("replaceTextContentManager:")
@@ -402,10 +444,16 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSTextLayoutManagerDelegate value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSTextLayoutManagerDelegate value) {
         Object __old = delegate();
@@ -420,6 +468,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * If non-nil, it performs layout in the specified queue until estimatedUsageBounds=NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLayoutQueue:")
@@ -429,6 +479,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * When YES, enables internal security analysis for malicious inputs and activates defensive behaviors. By enabling
      * this functionality, it's possible certain text such as a very long paragraph might result in unexpected layout.
      * NO by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLimitsLayoutForSuspiciousContents:")
@@ -436,6 +488,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Sets the rendering attributes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRenderingAttributes:forTextRange:")
@@ -446,6 +500,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * A callback block invoked whenever NSTextLayoutManager needs to validate the rendering attributes for the range.
      * The validator should use -setRenderingAttributes:forTextRange: to fill the rendering attributes appropriate for
      * the range inside textLayoutFragment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRenderingAttributesValidator:")
@@ -464,6 +520,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * The text container object providing geometric information for the layout destination. If
      * isSimpleRectangularTextContainer=NO, NSTextLayoutManager always fill from the top instead of allowing
      * non-contiguous layout support.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTextContainer:")
@@ -471,6 +529,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Returns an NSTextSelectionNavigation configured to have the text layout manager as NSTextSelectionDataSource
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTextSelectionNavigation:")
@@ -480,6 +540,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * An array of NSTextSelections associated by the text layout manager. Each NSTextSelection represents an insertion
      * point. The selection state is shared among all view ports connected to the text layout manager via text
      * containers.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTextSelections:")
@@ -488,6 +550,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * If YES, uses the leading as specified by the font. However, this is not appropriate for most UI text. YES by
      * default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUsesFontLeading:")
@@ -498,6 +562,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * basis by the NSParagraphStyle's usesDefaultHyphenation. The receiver makes the best effort to decide the exact
      * logic including the hyphenation factor based on the context. The default value is NO. Can be overridden by the
      * preference key @"NSUsesDefaultHyphenation".
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUsesHyphenation:")
@@ -525,6 +591,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * The text container object providing geometric information for the layout destination. If
      * isSimpleRectangularTextContainer=NO, NSTextLayoutManager always fill from the top instead of allowing
      * non-contiguous layout support.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -533,6 +601,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Pointing to the NSTextContentManager object strongly referencing the text layout manager.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -541,6 +611,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Returns the text layout fragment containing the document location, location.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -550,6 +622,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Returns the text layout fragment containing position inside the coordinate system for textContainer.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -571,6 +645,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Returns an NSTextSelectionNavigation configured to have the text layout manager as NSTextSelectionDataSource
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -581,6 +657,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * An array of NSTextSelections associated by the text layout manager. Each NSTextSelection represents an insertion
      * point. The selection state is shared among all view ports connected to the text layout manager via text
      * containers.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -589,6 +667,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     /**
      * Returns NSTextViewportLayoutController associated with textContainer.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -598,6 +678,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * The usage bounds for textContainer. KVO-compliant. Views can observe this property in order to trigger a resize
      * operation. For example, UIView/NSView should call setNeedsUpdateConstraints() when the usage bounds changes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("usageBoundsForTextContainer")
@@ -607,6 +689,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * If YES, uses the leading as specified by the font. However, this is not appropriate for most UI text. YES by
      * default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("usesFontLeading")
@@ -617,6 +701,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * basis by the NSParagraphStyle's usesDefaultHyphenation. The receiver makes the best effort to decide the exact
      * logic including the hyphenation factor based on the context. The default value is NO. Can be overridden by the
      * preference key @"NSUsesDefaultHyphenation".
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("usesHyphenation")

@@ -162,14 +162,23 @@ public class UIGraphicsPDFRendererContext extends UIGraphicsRendererContext {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("addDestinationWithName:atPoint:")
     public native void addDestinationWithNameAtPoint(@NotNull String name, @ByValue CGPoint point);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("beginPage")
     public native void beginPage();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("beginPageWithBounds:pageInfo:")
     public native void beginPageWithBoundsPageInfo(@ByValue CGRect bounds, @NotNull NSDictionary<String, ?> pageInfo);
@@ -178,15 +187,24 @@ public class UIGraphicsPDFRendererContext extends UIGraphicsRendererContext {
     @Selector("init")
     public native UIGraphicsPDFRendererContext init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("pdfContextBounds")
     @ByValue
     public native CGRect pdfContextBounds();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDestinationWithName:forRect:")
     public native void setDestinationWithNameForRect(@NotNull String name, @ByValue CGRect rect);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setURL:forRect:")
     public native void setURLForRect(@NotNull NSURL url, @ByValue CGRect rect);

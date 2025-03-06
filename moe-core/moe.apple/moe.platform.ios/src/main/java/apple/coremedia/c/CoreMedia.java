@@ -4711,7 +4711,7 @@ public final class CoreMedia {
      * @return The buffer. Will be NULL if the queue is empty.
      * 
      *         API-Since: 4.0
-     *         Deprecated-Since: 100000.0
+     *         Deprecated-Since: 18.0
      */
     @Deprecated
     @Nullable
@@ -11073,4 +11073,122 @@ public final class CoreMedia {
     @CVariable()
     @NotNull
     public static native CFStringRef kCMTagCollectionTagsArrayKey();
+
+    /**
+     * [@constant] `kCMFormatDescriptionExtension_ProjectionKind`
+     * 
+     * Indicates the projection that should be applied to presented decoded video frames.
+     * [@constant] `kCMFormatDescriptionProjectionKind_Rectilinear`
+     * Indicates rectilinear projection. Generally less than 90 degree field of view with no barrel distortion.
+     * 
+     * The value is a CFString holding one of the kCMFormatDescriptionProjectionKind_* constants.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_ProjectionKind();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionProjectionKind_Rectilinear();
+
+    /**
+     * [@constant] `kCMFormatDescriptionExtension_ViewPackingKind`
+     * 
+     * Indicates the packing type of stereoscopic video frames.
+     * [@constant] `kCMFormatDescriptionViewPackingKind_SideBySide`
+     * Indicates that frames are packed side-by-side.
+     * [@constant] `kCMFormatDescriptionViewPackingKind_OverUnder`
+     * Indicates that frames are packed over under.
+     * 
+     * The value is a CFString holding one of the kCMFormatDescriptionViewPackingKind_* constants.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_ViewPackingKind();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionViewPackingKind_SideBySide();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionViewPackingKind_OverUnder();
+
+    /**
+     * [@constant] kCMTagProjectionTypeHalfEquirectangular
+     * 
+     * A CMTag of category kCMTagCategory_ProjectionType and the value kCMProjectionType_HalfEquirectangular (OSType).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagProjectionTypeHalfEquirectangular();
+
+    /**
+     * [@const] kCMMetadataIdentifier_QuickTimeMetadataSegmentIdentifier
+     * A segment identifier, used to support movies where pause/resume has been used.
+     * Expected data type is kCMMetadataDataType_QuickTimeMetadataUUID.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataSegmentIdentifier();
+
+    /**
+     * [@const] kCMMetadataIdentifier_QuickTimeMetadataSceneIlluminance
+     * Scene illuminance measured in units of Lux.
+     * Expected data type is kCMMetadataDataType_QuickTimeMetadataMilliLux.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataSceneIlluminance();
+
+    /**
+     * [@const] kCMMetadataDataType_QuickTimeMetadataUUID
+     * A string supplying a universally unique identifier. Conforms to
+     * kCMMetadataBaseDataType_UTF8.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataDataType_QuickTimeMetadataUUID();
+
+    /**
+     * [@const] kCMMetadataDataType_QuickTimeMetadataMilliLux
+     * 1/1000 of a Lux. An unsigned value between 0 - 100,000,000. Conforms to
+     * kCMMetadataBaseDataType_UInt32.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataDataType_QuickTimeMetadataMilliLux();
 }

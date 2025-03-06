@@ -115,6 +115,9 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
     @Selector("init")
     public native INStartCallContactResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithPersonResolutionResult:")
     public native INStartCallContactResolutionResult initWithPersonResolutionResult(
@@ -183,6 +186,9 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
     @Selector("unsupported")
     public static native INStartCallContactResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

@@ -30,6 +30,8 @@ public interface MPSSVGFTextureAllocator {
      * Return a texture to the allocator. The allocator operate in such a way as to reduce the
      * allocation cost should another texture be requested with the same width, height, and pixel
      * format.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("returnTexture:")
@@ -37,6 +39,8 @@ public interface MPSSVGFTextureAllocator {
 
     /**
      * Returns an autoreleased Metal 2D texture with a matching pixel format, width, and height.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

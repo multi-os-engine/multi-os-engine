@@ -109,6 +109,9 @@ public class MPSImageReduceUnary extends MPSUnaryImageKernel {
      * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("clipRectSource")
@@ -192,6 +195,9 @@ public class MPSImageReduceUnary extends MPSUnaryImageKernel {
      * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setClipRectSource:")

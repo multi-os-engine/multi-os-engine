@@ -68,6 +68,8 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * A Metal buffer containing per-vector data for the source.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -98,6 +100,8 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * The number of scalar components in each vector.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("componentsPerVector")
@@ -106,6 +110,8 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * The number of vectors in the source.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("count")
@@ -126,6 +132,8 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * The type of per-vector data in the buffer.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("format")
@@ -174,6 +182,8 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * The offset (in bytes) from the beginning of the buffer.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("offset")
@@ -194,6 +204,8 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * The number of bytes from a vector to the next one in the buffer.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("stride")

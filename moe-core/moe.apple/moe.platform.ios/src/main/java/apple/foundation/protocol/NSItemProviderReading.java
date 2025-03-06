@@ -25,6 +25,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSItemProviderReading")
 public interface NSItemProviderReading {
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
@@ -32,6 +35,9 @@ public interface NSItemProviderReading {
     NSItemProviderReading _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
             @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")

@@ -168,6 +168,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     /**
      * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types,
      * but instead a collection to include in a social media post for example.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -176,6 +178,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * (optional) content text
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -184,6 +188,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * (optional) title for the item
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -212,6 +218,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     /**
      * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types,
      * but instead a collection to include in a social media post for example.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAttachments:")
@@ -219,6 +227,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * (optional) content text
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAttributedContentText:")
@@ -226,6 +236,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * (optional) title for the item
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAttributedTitle:")
@@ -234,6 +246,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     /**
      * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified
      * in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -248,6 +262,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     /**
      * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified
      * in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

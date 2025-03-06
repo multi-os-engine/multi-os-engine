@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -254,6 +257,9 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * 
      * * Otherwise the fabric will not use an intermediate certificate. This
      * allows switching from using an intermediate CA to not using one.
+     * 
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("intermediateCertificate")
@@ -264,6 +270,8 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * IPK to use for the controller's fabric. Allowed to change from the last time
      * a controller was started on this fabric if a new IPK has been distributed to
      * all the devices the controller wants to interact with.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("ipk")
@@ -293,6 +301,8 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * object must be initialized using
      * initWithIPK:operationalKeypair:operationalCertificate:intermediateCertificate:rootCertificate:
      * (to provide the operational credentials for t2he controller itself).
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("nocSigner")
@@ -354,6 +364,8 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * 
      * If nil, an operational certificate will be determined as described in the
      * documentation for nodeID.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("operationalCertificate")
@@ -393,6 +405,8 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * certificate will be generated for the given operationalKeypair. The node id
      * for that certificate will be determined as described in the documentation for
      * nodeID.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("operationalKeypair")
@@ -438,6 +452,8 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * certificate.
      * 2) The subject DN must match the subject DN of the existing root
      * certificate.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("rootCertificate")
@@ -488,6 +504,9 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * 
      * * Otherwise the fabric will not use an intermediate certificate. This
      * allows switching from using an intermediate CA to not using one.
+     * 
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setIntermediateCertificate:")
@@ -568,6 +587,8 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * certificate will be generated for the given operationalKeypair. The node id
      * for that certificate will be determined as described in the documentation for
      * nodeID.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setOperationalKeypair:")
@@ -603,6 +624,8 @@ public class MTRDeviceControllerStartupParams extends NSObject {
      * certificate.
      * 2) The subject DN must match the subject DN of the existing root
      * certificate.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setRootCertificate:")

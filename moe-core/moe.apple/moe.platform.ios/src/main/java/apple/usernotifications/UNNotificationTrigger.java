@@ -185,6 +185,9 @@ public class UNNotificationTrigger extends NSObject implements NSCopying, NSSecu
     @Selector("initWithCoder:")
     public native UNNotificationTrigger initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("repeats")
     public native boolean repeats();

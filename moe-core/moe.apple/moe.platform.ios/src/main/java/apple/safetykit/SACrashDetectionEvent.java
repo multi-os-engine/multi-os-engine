@@ -101,6 +101,8 @@ public class SACrashDetectionEvent extends NSObject implements NSSecureCoding, N
      * date
      * 
      * The time a crash was detected
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("date")
@@ -160,6 +162,8 @@ public class SACrashDetectionEvent extends NSObject implements NSSecureCoding, N
      * Location information describing the geographical location of where the Crash Detection occurred.
      * 
      * [@sa] CLLocation
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("location")
@@ -185,6 +189,8 @@ public class SACrashDetectionEvent extends NSObject implements NSSecureCoding, N
      * enum value representing the emergency response to the Crash Detection event
      * 
      * [@sa] SACrashDetectionEventResponse
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("response")

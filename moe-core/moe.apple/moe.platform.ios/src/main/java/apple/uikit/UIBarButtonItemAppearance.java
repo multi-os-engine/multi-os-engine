@@ -87,11 +87,16 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
 
     /**
      * Reset this appearance to that of a given style.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configureWithDefaultForStyle:")
     public native void configureWithDefaultForStyle(@NInt long style);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Owned
@@ -116,6 +121,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     /**
      * The appearance when the bar button item is in the disabled control state. If unspecified, then synthesized from
      * the normal state.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -129,6 +136,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     /**
      * The appearance when the bar button item is in the focused control state. If unspecified, then synthesized from
      * the highlighted state.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -143,6 +152,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     /**
      * The appearance when the bar button item is in the highlighted control state. If unspecified, then synthesized
      * from the normal state.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -151,6 +162,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
 
     /**
      * Construct an appearance for the UIBarButtonItemStylePlain style.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("init")
@@ -162,6 +175,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
 
     /**
      * Construct an appearance with default values for the given style.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithStyle:")
@@ -196,6 +211,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
 
     /**
      * The appearance when the bar button item is in the normal control state.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

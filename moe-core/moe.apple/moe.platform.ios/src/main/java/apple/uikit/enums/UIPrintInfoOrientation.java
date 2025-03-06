@@ -19,9 +19,18 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 public final class UIPrintInfoOrientation {
+    /**
+     * API-Since: 4.2
+     */
     @Generated @NInt public static final long Portrait = 0x0000000000000000L;
+    /**
+     * API-Since: 4.2
+     */
     @Generated @NInt public static final long Landscape = 0x0000000000000001L;
 
     @Generated

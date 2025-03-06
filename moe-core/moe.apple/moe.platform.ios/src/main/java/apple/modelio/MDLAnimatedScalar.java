@@ -94,19 +94,31 @@ public class MDLAnimatedScalar extends MDLAnimatedValue {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("doubleAtTime:")
     public native double doubleAtTime(double time);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("floatAtTime:")
     public native float floatAtTime(double time);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getDoubleArray:maxCount:")
     @NUInt
     public native long getDoubleArrayMaxCount(@NotNull DoublePtr valuesArray, @NUInt long maxCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFloatArray:maxCount:")
     @NUInt
@@ -148,11 +160,17 @@ public class MDLAnimatedScalar extends MDLAnimatedValue {
     @Selector("new")
     public static native MDLAnimatedScalar new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithDoubleArray:atTimes:count:")
     public native void resetWithDoubleArrayAtTimesCount(@NotNull ConstDoublePtr valuesArray,
             @NotNull ConstDoublePtr timesArray, @NUInt long count);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithFloatArray:atTimes:count:")
     public native void resetWithFloatArrayAtTimesCount(@NotNull ConstFloatPtr valuesArray,
@@ -166,10 +184,16 @@ public class MDLAnimatedScalar extends MDLAnimatedValue {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDouble:atTime:")
     public native void setDoubleAtTime(double value, double time);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setFloat:atTime:")
     public native void setFloatAtTime(float value, double time);

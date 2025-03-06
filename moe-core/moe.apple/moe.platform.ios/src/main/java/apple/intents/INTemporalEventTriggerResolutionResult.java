@@ -83,6 +83,8 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
     /**
      * This resolution result is to ask Siri to confirm if this is the temporalEventTrigger with which the user wants to
      * continue.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -100,6 +102,8 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INTemporalEventTrigger.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -170,6 +174,8 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
      * INTemporalEventTrigger. The resolvedTemporalEventTrigger can be different than the original
      * INTemporalEventTrigger. This allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

@@ -178,6 +178,8 @@ public class WKUserScript extends NSObject implements NSCopying {
      * Calling this method is the same as calling `initWithSource:injectionTime:forMainFrameOnly:inContentWorld:` with a
      * `contentWorld` value of `WKContentWorld.pageWorld`
      * 
+     * API-Since: 8.0
+     * 
      * @param source           The script source.
      * @param injectionTime    When the script should be injected.
      * @param forMainFrameOnly Whether the script should be injected into all frames or just the main frame.
@@ -189,6 +191,8 @@ public class WKUserScript extends NSObject implements NSCopying {
 
     /**
      * When the script should be injected.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("injectionTime")
@@ -197,6 +201,8 @@ public class WKUserScript extends NSObject implements NSCopying {
 
     /**
      * Whether the script should be injected into all frames or just the main frame.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isForMainFrameOnly")
@@ -204,6 +210,8 @@ public class WKUserScript extends NSObject implements NSCopying {
 
     /**
      * The script source code.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

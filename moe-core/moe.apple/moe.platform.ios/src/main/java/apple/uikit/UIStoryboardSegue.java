@@ -169,11 +169,17 @@ public class UIStoryboardSegue extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("destinationViewController")
     public native UIViewController destinationViewController();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("identifier")
@@ -183,6 +189,9 @@ public class UIStoryboardSegue extends NSObject {
     @Selector("init")
     public native UIStoryboardSegue init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithIdentifier:source:destination:")
     public native UIStoryboardSegue initWithIdentifierSourceDestination(@Nullable String identifier,
@@ -194,11 +203,16 @@ public class UIStoryboardSegue extends NSObject {
      * -animateAlongsideTransition:completion: to the transitionCoordinator of the destinationViewController.
      * The segue runtime will call +[UIView setAnimationsAreEnabled:] prior to invoking this method, based on the value
      * of the Animates checkbox in the Properties Inspector for the segue.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("perform")
     public native void perform();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("sourceViewController")

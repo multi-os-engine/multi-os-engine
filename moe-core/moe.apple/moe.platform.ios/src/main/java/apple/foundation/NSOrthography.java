@@ -225,6 +225,8 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
      * These are the primitive properties which a subclass must implement. The dominantScript should be a script tag
      * (such as Latn, Cyrl, and so forth) and the languageMap should be a dictionary whose keys are script tags and
      * whose values are arrays of language tags (such as en, fr, de, and so forth).
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -251,6 +253,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     public native NSOrthography initWithDominantScriptLanguageMap(@NotNull String script,
             @NotNull NSDictionary<String, ? extends NSArray<String>> map);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("languageMap")

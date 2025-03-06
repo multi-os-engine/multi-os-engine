@@ -75,6 +75,9 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("center")
     @ByValue
@@ -90,6 +93,9 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("container")
@@ -121,6 +127,8 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
 
     /**
      * As above, but with transform = CGAffineTransformIdentity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithContainer:center:")
@@ -135,6 +143,8 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
      * `transform` is an additional transform to apply to the preview,
      * for special effects like rotating or scaling the preview.
      * Use CGAffineTransformIdentity if you only want the preview to move.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithContainer:center:transform:")
@@ -184,6 +194,9 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("transform")
     @ByValue

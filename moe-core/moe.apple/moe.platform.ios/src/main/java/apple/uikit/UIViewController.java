@@ -419,6 +419,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Called when the parent application receives a memory warning. On iOS 6.0 it will no longer clear the view by
      * default.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("didReceiveMemoryWarning")
@@ -494,6 +496,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Return an Edit|Done button that can be used as a navigation item's custom view. Default action toggles the
      * editing state with animation.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -559,6 +563,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * invoke this method with a nil nib name, then this class' -loadView method will attempt to load a NIB whose
      * name is the same as your view controller's class. If no such NIB in fact exists then you must either call
      * -setView: before -view is invoked, or override the -loadView method to set up your views programatically.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -594,10 +600,16 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Selector("isBeingPresented")
     public native boolean isBeingPresented();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setEditing:")
     public native void setEditing(boolean value);
@@ -652,6 +664,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * This is where subclasses should create their custom view hierarchy if they aren't using a nib. Should never be
      * called directly.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("loadView")
@@ -681,9 +695,11 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * property on the view controller to be presented, not the presenter.
      * If this property has been set to UIModalPresentationAutomatic, reading it will always return a concrete
      * presentation style. By default UIViewController resolves UIModalPresentationAutomatic to
-     * UIModalPresentationPageSheet, but system-provided subclasses may resolve UIModalPresentationAutomatic to other
+     * UIModalPresentationFormSheet, but system-provided subclasses may resolve UIModalPresentationAutomatic to other
      * concrete presentation styles. Participation in the resolution of UIModalPresentationAutomatic is reserved for
      * system-provided view controllers.
+     * Prior to iOS 18.0, UIModalPresentationAutomatic resolves to UIModalPresentationPageSheet instead of
+     * UIModalPresentationFormSheet for standard view controllers.
      * Defaults to UIModalPresentationAutomatic on iOS starting in iOS 13.0, and UIModalPresentationFullScreen on
      * previous versions. Defaults to UIModalPresentationFullScreen on all other platforms.
      * 
@@ -720,6 +736,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * If this view controller has been pushed onto a navigation controller, return it.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -728,6 +746,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Created on-demand so that a view controller may customize its navigation appearance.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -773,6 +793,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * If this view controller is a child of a containing view controller (e.g. a navigation controller or tab bar
      * controller,) this is the containing view controller. Note that as of 5.0 this no longer will return the
      * presenting view controller.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1137,6 +1159,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Updates the appearance of the Edit|Done button item as necessary. Clients who override it must call super first.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEditing:animated:")
@@ -1174,9 +1198,11 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * property on the view controller to be presented, not the presenter.
      * If this property has been set to UIModalPresentationAutomatic, reading it will always return a concrete
      * presentation style. By default UIViewController resolves UIModalPresentationAutomatic to
-     * UIModalPresentationPageSheet, but system-provided subclasses may resolve UIModalPresentationAutomatic to other
+     * UIModalPresentationFormSheet, but system-provided subclasses may resolve UIModalPresentationAutomatic to other
      * concrete presentation styles. Participation in the resolution of UIModalPresentationAutomatic is reserved for
      * system-provided view controllers.
+     * Prior to iOS 18.0, UIModalPresentationAutomatic resolves to UIModalPresentationPageSheet instead of
+     * UIModalPresentationFormSheet for standard view controllers.
      * Defaults to UIModalPresentationAutomatic on iOS starting in iOS 13.0, and UIModalPresentationFullScreen on
      * previous versions. Defaults to UIModalPresentationFullScreen on all other platforms.
      * 
@@ -1287,6 +1313,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Automatically created lazily with the view controller's title if it's not set explicitly.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTabBarItem:")
@@ -1294,6 +1322,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Localized title for use by a parent controller.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitle:")
@@ -1341,6 +1371,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * The getter first invokes [self loadView] if the view hasn't been set yet. Subclasses must call super if they
      * override the setter or getter.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setView:")
@@ -1446,6 +1478,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * If the view controller has a split view controller as its ancestor, return it. Returns nil otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1475,6 +1509,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * If the view controller has a tab bar controller as its ancestor, return it. Returns nil otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1483,6 +1519,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Automatically created lazily with the view controller's title if it's not set explicitly.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tabBarItem")
@@ -1503,6 +1541,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Localized title for use by a parent controller.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1635,6 +1675,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * The getter first invokes [self loadView] if the view hasn't been set yet. Subclasses must call super if they
      * override the setter or getter.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("view")
@@ -1661,6 +1703,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Called after the view has fully transitioned to visible, when any transition animations have completed.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("viewDidAppear:")
@@ -1669,6 +1713,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Called after the view has fully been dismissed, covered, or otherwise hidden, when any transition animations have
      * completed.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("viewDidDisappear:")
@@ -1687,6 +1733,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Called after the view has been loaded. For view controllers created in code, this is after -loadView. For view
      * controllers unarchived from a nib, this is after the view is set.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("viewDidLoad")
@@ -1723,6 +1771,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * alongside animation with a transition coordinator, or as a counterpart for paired
      * code in a viewWillDisappear/viewDidDisappear callback that does not rely on the
      * view or view controller's trait collection or the view hierarchy.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("viewWillAppear:")
@@ -1730,6 +1780,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Called when the view is about to be dismissed, covered, or otherwise hidden.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("viewWillDisappear:")
@@ -2282,6 +2334,9 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Selector("setNeedsUpdateContentUnavailableConfiguration")
     public native void setNeedsUpdateContentUnavailableConfiguration();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("traitOverrides")
     @MappedReturn(ObjCObjectMapper.class)
@@ -2309,6 +2364,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Forces an immediate trait update for this view controller and its view, including any view
      * controllers and views in this subtree. Any trait change callbacks are sent synchronously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("updateTraitsIfNeeded")
@@ -2337,4 +2394,41 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Generated
     @Selector("viewIsAppearing:")
     public native void viewIsAppearing(boolean animated);
+
+    /**
+     * Preferred system provided transition to use when displaying this
+     * view controller. Note that this only indicates a preference.
+     * The provided transition may be ignored if not supported by the
+     * current context. For example, `UINavigationController` supports
+     * the .zoom transition, but not the .coverVertical transition.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("preferredTransition")
+    @Nullable
+    public native UIViewControllerTransition preferredTransition();
+
+    /**
+     * Preferred system provided transition to use when displaying this
+     * view controller. Note that this only indicates a preference.
+     * The provided transition may be ignored if not supported by the
+     * current context. For example, `UINavigationController` supports
+     * the .zoom transition, but not the .coverVertical transition.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setPreferredTransition:")
+    public native void setPreferredTransition(@Nullable UIViewControllerTransition value);
+
+    /**
+     * The `UITab` instance that was used to create the receiver, and represents the view controller. Default is nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("tab")
+    @Nullable
+    public native UITab tab();
 }

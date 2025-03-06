@@ -91,6 +91,8 @@ public class INFile extends NSObject implements NSSecureCoding {
     /**
      * The contents of the file.
      * If the file was created with a URL, accessing this property will memory map the file contents.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -111,18 +113,26 @@ public class INFile extends NSObject implements NSSecureCoding {
      * 
      * If the file was created elsewhere on the system, make sure to surround access to file contents
      * with `-[NSURL startAccessingSecurityScopedResource]` and `-[NSURL stopAccessingSecurityScopedResource]`.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("fileWithData:filename:typeIdentifier:")
     public static native INFile fileWithDataFilenameTypeIdentifier(@NotNull NSData data, @NotNull String filename,
             @Nullable String typeIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("fileWithFileURL:filename:typeIdentifier:")
@@ -131,6 +141,8 @@ public class INFile extends NSObject implements NSSecureCoding {
 
     /**
      * The human-readable name of the file, which will be displayed to the user.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -183,6 +195,8 @@ public class INFile extends NSObject implements NSSecureCoding {
 
     /**
      * The human-readable name of the file, which will be displayed to the user.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setFilename:")
@@ -199,6 +213,8 @@ public class INFile extends NSObject implements NSSecureCoding {
     /**
      * The uniform type identifier of the file. (i.e. "public.json", "public.png", or any custom type)
      * More information about uniform type identifiers can be found in <CoreServices/UTCoreTypes.h>
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

@@ -36,18 +36,26 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLObjectContainerComponent")
 public interface MDLObjectContainerComponent extends MDLComponent, NSFastEnumeration {
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("addObject:")
     void addObject(@NotNull MDLObject object);
 
     /**
      * returns an array of this object's contained objects, aka children
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("objects")
     NSArray<? extends MDLObject> objects();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("removeObject:")
     void removeObject(@NotNull MDLObject object);

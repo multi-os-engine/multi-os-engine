@@ -18,6 +18,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SWCollaborationViewDelegate")
 public interface SWCollaborationViewDelegate {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("collaborationViewDidDismissPopover:")
@@ -25,6 +28,9 @@ public interface SWCollaborationViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("collaborationViewShouldPresentPopover:")
@@ -32,6 +38,9 @@ public interface SWCollaborationViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("collaborationViewWillPresentPopover:")

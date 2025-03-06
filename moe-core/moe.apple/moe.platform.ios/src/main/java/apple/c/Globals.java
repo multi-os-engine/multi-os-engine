@@ -110,6 +110,36 @@ import apple.opaque.dispatch_semaphore_t;
 import apple.opaque.dispatch_source_t;
 import apple.opaque.os_log_t;
 import apple.opaque.os_workgroup_t;
+import apple.opaque.voucher_mach_msg_state_t;
+import apple.opaque.xpc_connection_t;
+import apple.opaque.xpc_endpoint_t;
+import apple.opaque.xpc_rich_error_t;
+import apple.opaque.xpc_session_t;
+import apple.opaque.xpc_type_t;
+import apple.struct.NDR_record_t;
+import apple.struct.dyld_kernel_image_info;
+import apple.struct.dyld_kernel_process_info;
+import apple.struct.hash_info_bucket;
+import apple.struct.ipc_info_name;
+import apple.struct.ipc_info_port;
+import apple.struct.ipc_info_space;
+import apple.struct.ipc_info_space_basic;
+import apple.struct.ipc_info_tree_name;
+import apple.struct.lockgroup_info;
+import apple.struct.mach_memory_info;
+import apple.struct.mach_port_options;
+import apple.struct.mach_service_port_info;
+import apple.struct.mach_timespec;
+import apple.struct.mach_zone_info_data;
+import apple.struct.mach_zone_name;
+import apple.struct.mig_reply_error_t;
+import apple.struct.task_zone_info_data;
+import apple.struct.vm_info_object;
+import apple.struct.vm_info_region;
+import apple.struct.vm_info_region_64;
+import apple.struct.vm_purgeable_info;
+import org.moe.natj.c.map.CStringMapper;
+import org.moe.natj.general.ptr.ConstDoublePtr;
 
 @Generated
 @Runtime(CRuntime.class)
@@ -1009,7 +1039,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native VoidPtr valloc(@NUInt long arg1);
+    public static native VoidPtr valloc(@NUInt long __size);
 
     /**
      * Deprecated-Since: 10.0
@@ -5456,6 +5486,8 @@ public final class Globals {
             @NUInt long arg3);
 
     /**
+     * rdar://120689514
+     * 
      * API-Since: 3.0
      */
     @Generated
@@ -7397,8 +7429,8 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_data_apply {
         @Generated
-        boolean call_dispatch_data_apply(@NotNull dispatch_data_t arg0, @NUInt long arg1, @NotNull ConstVoidPtr arg2,
-                @NUInt long arg3);
+        boolean call_dispatch_data_apply(@NotNull dispatch_data_t region, @NUInt long offset,
+                @NotNull ConstVoidPtr buffer, @NUInt long size);
     }
 
     @Runtime(CRuntime.class)
@@ -7440,14 +7472,14 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_io_read {
         @Generated
-        void call_dispatch_io_read(boolean arg0, @Nullable dispatch_data_t arg1, int arg2);
+        void call_dispatch_io_read(boolean done, @Nullable dispatch_data_t data, int error);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_dispatch_io_write {
         @Generated
-        void call_dispatch_io_write(boolean arg0, @Nullable dispatch_data_t arg1, int arg2);
+        void call_dispatch_io_write(boolean done, @Nullable dispatch_data_t data, int error);
     }
 
     @Runtime(CRuntime.class)
@@ -8545,135 +8577,6 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int audit_session_port(int asid, IntPtr portname);
-
-    /**
-     * Computes accum + x*y by the most efficient means available;
-     * either a fused multiply add or separate multiply and add instructions.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_muladd(float x, float y, float z);
-
-    /**
-     * -1 if x is negative, +1 if x is positive, and 0 otherwise.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_sign(float x);
-
-    /**
-     * Linearly interpolates between x and y, taking the value x when
-     * t=0 and y when t=1
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_mix(float x, float y, float t);
-
-    /**
-     * A good approximation to 1/x.
-     * 
-     * If x is very close to the limits of representation, the
-     * result may overflow or underflow; otherwise this function is accurate to
-     * a few units in the last place (ULPs).
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_precise_recip(float x);
-
-    /**
-     * A fast approximation to 1/x.
-     * 
-     * If x is very close to the limits of representation, the
-     * result may overflow or underflow; otherwise this function is accurate to
-     * at least 11 bits for float and 22 bits for double.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_fast_recip(float x);
-
-    /**
-     * An approximation to 1/x.
-     * 
-     * If x is very close to the limits of representation, the
-     * result may overflow or underflow. This function maps to
-     * simd_fast_recip(x) if -ffast-math is specified, and to
-     * simd_precise_recip(x) otherwise.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_recip(float x);
-
-    /**
-     * A good approximation to 1/sqrt(x).
-     * 
-     * This function is accurate to a few units in the last place
-     * (ULPs).
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_precise_rsqrt(float x);
-
-    /**
-     * A fast approximation to 1/sqrt(x).
-     * 
-     * This function is accurate to at least 11 bits for float and
-     * 22 bits for double.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_fast_rsqrt(float x);
-
-    /**
-     * An approximation to 1/sqrt(x).
-     * 
-     * This function maps to simd_fast_recip(x) if -ffast-math is
-     * specified, and to simd_precise_recip(x) otherwise.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_rsqrt(float x);
-
-    /**
-     * The "fractional part" of x, lying in the range [0, 1).
-     * 
-     * floor(x) + fract(x) is *approximately* equal to x. If x is
-     * positive and finite, then the two values are exactly equal.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_fract(float x);
-
-    /**
-     * 0 if x < edge, and 1 otherwise.
-     * 
-     * Use a scalar value for edge if you want to apply the same
-     * threshold to all lanes.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_step(float edge, float x);
-
-    /**
-     * Interpolates smoothly between 0 at edge0 and 1 at edge1
-     * 
-     * You can use a scalar value for edge0 and edge1 if you want
-     * to clamp all lanes at the same points.
-     */
-    @Generated
-    @Inline
-    @CFunction
-    public static native float simd_smoothstep(float edge0, float edge1, float x);
 
     /**
      * API-Since: 12.0
@@ -10989,6 +10892,8 @@ public final class Globals {
     public static native VoidPtr aligned_alloc(@NUInt long __alignment, @NUInt long __size);
 
     /**
+     * reallocf is now declared in _malloc.h
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -11344,6 +11249,10 @@ public final class Globals {
      * 
      * The worker thread will be a member of the specified os_workgroup_t while executing
      * work items submitted to the workloop.
+     * 
+     * Using both dispatch_workloop_set_scheduler_priority() and
+     * dispatch_workloop_set_os_workgroup() will prefer scheduling policies
+     * from the workgroup, if they exist.
      * 
      * @param workloop
      *                  The dispatch workloop to modify.
@@ -13212,7 +13121,7 @@ public final class Globals {
     @Generated public static final double AU_IPv6 = 16.0;
     @Generated public static final double AU_CLASS_MASK_RESERVED = 2.68435456E8;
     @Generated public static final double SIMD_COMPILER_HAS_REQUIRED_FEATURES = 1.0;
-    @Generated public static final double SIMD_LIBRARY_VERSION = 0.0;
+    @Generated public static final double SIMD_LIBRARY_VERSION = 6.0;
     @Generated public static final double KEV_INET_SUBCLASS = 1.0;
     @Generated public static final double KEV_INET_NEW_ADDR = 1.0;
     @Generated public static final double KEV_INET_CHANGED_ADDR = 2.0;
@@ -13404,7 +13313,7 @@ public final class Globals {
     @Generated public static final double SHUT_RD = 0.0;
     @Generated public static final double SHUT_WR = 1.0;
     @Generated public static final double SHUT_RDWR = 2.0;
-    @Generated public static final double _DNS_SD_H = 2.200062001E9;
+    @Generated public static final double _DNS_SD_H = 2.559060039E9;
     @Generated public static final double DNS_SD_ORIGINAL_ENCODING_VERSION_NUMBER_MAX = 1.661E7;
     @Generated public static final double _DNS_SD_LIBDISPATCH = 1.0;
     @Generated public static final double kDNSServiceMaxServiceName = 64.0;
@@ -14033,7 +13942,6 @@ public final class Globals {
     @Generated public static final double API_TO_BE_DEPRECATED_VISIONOS = 100000.0;
     @Generated public static final double MACH_PORT_SERVICE_THROTTLED = 9.0;
     @Generated public static final double MACH_PORT_SERVICE_THROTTLED_COUNT = 1.0;
-    @Generated public static final double MPO_PROVISIONAL_ID_PROT_OPTOUT = 32768.0;
     @Generated public static final double F_OFD_SETLK = 90.0;
     @Generated public static final double F_OFD_SETLKW = 91.0;
     @Generated public static final double F_OFD_GETLK = 92.0;
@@ -14051,4 +13959,5885 @@ public final class Globals {
     @Generated public static final double LC_ATOM_INFO = 54.0;
     @Generated public static final double PLATFORM_VISIONOS = 11.0;
     @Generated public static final double PLATFORM_VISIONOSSIMULATOR = 12.0;
+
+    /**
+     * <malloc/_malloc.h>
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_malloc(long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_calloc(long count, long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native void malloc_type_free(VoidPtr ptr, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_realloc(VoidPtr ptr, long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_valloc(long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_aligned_alloc(long alignment, long size, long type_id);
+
+    /**
+     * rdar://120689514
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int malloc_type_posix_memalign(Ptr<VoidPtr> memptr, long alignment, long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_zone_malloc(VoidPtr zone, long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_zone_calloc(VoidPtr zone, long count, long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native void malloc_type_zone_free(VoidPtr zone, VoidPtr ptr, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_zone_realloc(VoidPtr zone, VoidPtr ptr, long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_zone_valloc(VoidPtr zone, long size, long type_id);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr malloc_type_zone_memalign(VoidPtr zone, long alignment, long size, long type_id);
+
+    @Generated
+    @CFunction
+    public static native int at_quick_exit(@FunctionPtr(name = "call_at_quick_exit") Function_at_quick_exit arg1);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_at_quick_exit {
+        @Generated
+        void call_at_quick_exit();
+    }
+
+    @Generated
+    @CFunction
+    public static native void quick_exit(int arg1);
+
+    /**
+     * [@function] dispatch_allow_send_signals
+     * 
+     * This function provides the calling process an ability to send signals to
+     * it's pthread worker threads created to service incoming work to dispatch,
+     * including those which were already created prior to this function call
+     * and those who may be created in the future. After a call to this function
+     * returns successfully, this ability is retained for the lifetime of the
+     * calling process.
+     * Regular UNIX calls still need to be used to manipulate signal mask of
+     * each individual pthread worker thread to allow delivery of a specific
+     * signal to that thread.
+     * 
+     * @param preserve_signum
+     *                        Dispatch and its kernel runtime subsystem manages a pool of pthread
+     *                        worker threads which are reused for handling incoming work to dispatch.
+     *                        The signal number specified here is used internally by this subsystem to
+     *                        preserve sigmask of the pthread worker threads across their reuse.
+     * 
+     *                        In other words, if a pthread worker thread unblocks delivery of
+     * @preserve_signum using regular UNIX calls after a call to this
+     *                  function using the same @preserve_signum returns successfully,
+     *                  that @preserve_signum remains unblocked across that thread's
+     *                  reuse until it is further modified by regular UNIX calls.
+     *                  Therefore, it avoids the need to call regular UNIX calls to
+     *                  unblock delivery of @preserve_signum every time that thread
+     *                  is reused. The specific signal @preserve_signum can be sent
+     *                  to that specific pthread worker thread using pthread_kill().
+     * 
+     *                  The following code illustrates an expected usage of this API.
+     * 
+     *                  <code>
+     * 
+     *                  // Enable sending signals to dispatch pthread worker threads.
+     *                  int ret = dispatch_allow_send_signals(sig);
+     *                  // Validate ret.
+     * 
+     *                  dispatch_async(q, ^{
+     *                  // Unblock sig for this worker thread if not already done.
+     *                  // Such a state could be saved in TSD or globally.
+     *                  mask = sigmask(sig);
+     *                  pthread_sigmask(SIG_UNBLOCK, &mask, NULL);
+     *                  // busy with some work. Can receive signal sig.
+     *                  // If this worker thread is re-used later, it does not
+     *                  // not need to call pthread_sigmask again to unblock delivery
+     *                  // of signal sig.
+     *                  }
+     * 
+     *                  This function returns 0 upon success and -1 with an errno otherwise.
+     *                  Possible error codes are as below :
+     * 
+     *                  EINVAL : @preserve_signum is prohibited and is not allowed to be preserved
+     *                  across the thread's reuse.
+     *                  ENOTSUP : The underlying kernel does not support this functionality.
+     * 
+     *                  </code>
+     * 
+     *                  API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    public static native int dispatch_allow_send_signals(int preserve_signum);
+
+    /**
+     * [ML]
+     */
+    @Generated
+    @CFunction
+    public static native int mlockall(int arg1);
+
+    @Generated
+    @CFunction
+    public static native int munlockall();
+
+    /**
+     * [MR]
+     */
+    @Generated
+    @CFunction
+    public static native int mlock(ConstVoidPtr arg1, @NUInt long arg2);
+
+    /**
+     * [MC3]
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr mmap(VoidPtr arg1, @NUInt long arg2, int arg3, int arg4, int arg5, long arg6);
+
+    /**
+     * [MPR]
+     */
+    @Generated
+    @CFunction
+    public static native int mprotect(VoidPtr arg1, @NUInt long arg2, int arg3);
+
+    /**
+     * [MF|SIO]
+     */
+    @Generated
+    @CFunction
+    public static native int msync(VoidPtr arg1, @NUInt long arg2, int arg3);
+
+    /**
+     * [MR]
+     */
+    @Generated
+    @CFunction
+    public static native int munlock(ConstVoidPtr arg1, @NUInt long arg2);
+
+    /**
+     * [MC3]
+     */
+    @Generated
+    @CFunction
+    public static native int munmap(VoidPtr arg1, @NUInt long arg2);
+
+    /**
+     * [SHM]
+     */
+    @Generated
+    @Variadic()
+    @CFunction
+    public static native int shm_open(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2,
+            Object... varargs);
+
+    @Generated
+    @CFunction
+    public static native int shm_unlink(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
+
+    /**
+     * [ADV]
+     */
+    @Generated
+    @CFunction
+    public static native int posix_madvise(VoidPtr arg1, @NUInt long arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int madvise(VoidPtr arg1, @NUInt long arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int mincore(ConstVoidPtr arg1, @NUInt long arg2, BytePtr arg3);
+
+    @Generated
+    @CFunction
+    public static native int minherit(VoidPtr arg1, @NUInt long arg2, int arg3);
+
+    /**
+     * [@function] xpc_endpoint_create
+     * Creates a new endpoint from a connection that is suitable for embedding into
+     * messages.
+     * 
+     * @param connection
+     *                   Only connections obtained through calls to xpc_connection_create*() may be
+     *                   given to this API. Passing any other type of connection is not supported and
+     *                   will result in undefined behavior.
+     * 
+     * @return
+     *         A new endpoint object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native xpc_endpoint_t xpc_endpoint_create(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_debugger_api_misuse_info
+     * Returns a pointer to a string describing the reason XPC aborted the calling
+     * process. On OS X, this will be the same string present in the "Application
+     * Specific Information" section of the crash report.
+     * 
+     * This function is only callable from within a debugger. It is not meant to be
+     * called by the program directly.
+     * 
+     * @return
+     *         A pointer to the human-readable string describing the reason the caller was
+     *         aborted. If XPC was not responsible for the program's termination, NULL will
+     *         be returned.
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String xpc_debugger_api_misuse_info();
+
+    /**
+     * [@function] xpc_connection_create
+     * Creates a new connection object.
+     * 
+     * This method will succeed even if the named service does not exist. This is
+     * because the XPC namespace is not queried for the service name until the
+     * connection has been activated. See {@link xpc_connection_activate()}.
+     * 
+     * XPC connections, like dispatch sources, are returned in an inactive state, so
+     * you must call {@link xpc_connection_activate()} in order to begin receiving
+     * events from the connection. Also like dispatch sources, connections must be
+     * activated and not suspended in order to be safely released. It is
+     * a programming error to release an inactive or suspended connection.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param name
+     *                If non-NULL, the name of the service with which to connect. The returned
+     *                connection will be a peer.
+     * 
+     *                If NULL, an anonymous listener connection will be created. You can embed the
+     *                ability to create new peer connections in an endpoint, which can be inserted
+     *                into a message and sent to another process .
+     * 
+     * @param targetq
+     *                The GCD queue to which the event handler block will be submitted. This
+     *                parameter may be NULL, in which case the connection's target queue will be
+     *                libdispatch's default target queue, defined as DISPATCH_TARGET_QUEUE_DEFAULT.
+     *                The target queue may be changed later with a call to
+     *                xpc_connection_set_target_queue().
+     * 
+     * @return
+     *         A new connection object. The caller is responsible for disposing of the
+     *         returned object with {@link xpc_release} when it is no longer needed.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native xpc_connection_t xpc_connection_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String name,
+            @Nullable dispatch_queue_t targetq);
+
+    /**
+     * [@function] xpc_connection_create_from_endpoint
+     * Creates a new connection from the given endpoint.
+     * 
+     * @param endpoint
+     *                 The endpoint from which to create the new connection.
+     * 
+     * @return
+     *         A new peer connection to the listener represented by the given endpoint.
+     * 
+     *         The same responsibilities of setting an event handler and activating the
+     *         connection after calling xpc_connection_create() apply to the connection
+     *         returned by this API. Since the connection yielded by this API is not
+     *         associated with a name (and therefore is not rediscoverable), this connection
+     *         will receive XPC_ERROR_CONNECTION_INVALID if the listening side crashes,
+     *         exits or cancels the listener connection.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native xpc_connection_t xpc_connection_create_from_endpoint(@NotNull xpc_endpoint_t endpoint);
+
+    /**
+     * [@function] xpc_connection_set_target_queue
+     * Sets the target queue of the given connection.
+     * 
+     * Setting the target queue is asynchronous and non-preemptive and therefore
+     * this method will not interrupt the execution of an already-running event
+     * handler block. Setting the target queue may be likened to issuing a barrier
+     * to the connection which does the actual work of changing the target queue.
+     * 
+     * The XPC runtime guarantees this non-preemptiveness even for concurrent target
+     * queues. If the target queue is a concurrent queue, then XPC still guarantees
+     * that there will never be more than one invocation of the connection's event
+     * handler block executing concurrently. If you wish to process events
+     * concurrently, you can dispatch_async(3) to a concurrent queue from within
+     * the event handler.
+     * 
+     * IMPORTANT: When called from within the event handler block,
+     * dispatch_get_current_queue(3) is NOT guaranteed to return a pointer to the
+     * queue set with this method.
+     * 
+     * Despite this seeming inconsistency, the XPC runtime guarantees that, when the
+     * target queue is a serial queue, the event handler block will execute
+     * synchronously with respect to other blocks submitted to that same queue. When
+     * the target queue is a concurrent queue, the event handler block may run
+     * concurrently with other blocks submitted to that queue, but it will never run
+     * concurrently with other invocations of itself for the same connection, as
+     * discussed previously.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection object which is to be manipulated.
+     * 
+     * @param targetq
+     *                   The GCD queue to which the event handler block will be submitted. This
+     *                   parameter may be NULL, in which case the connection's target queue will be
+     *                   libdispatch's default target queue, defined as DISPATCH_TARGET_QUEUE_DEFAULT.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_set_target_queue(@NotNull xpc_connection_t connection,
+            @Nullable dispatch_queue_t targetq);
+
+    /**
+     * [@function] xpc_connection_set_event_handler
+     * Sets the event handler block for the connection.
+     * 
+     * Setting the event handler is asynchronous and non-preemptive, and therefore
+     * this method will not interrupt the execution of an already-running event
+     * handler block. If the event handler is executing at the time of this call, it
+     * will finish, and then the connection's event handler will be changed before
+     * the next invocation of the event handler. The XPC runtime guarantees this
+     * non-preemptiveness even for concurrent target queues.
+     * 
+     * Connection event handlers are non-reentrant, so it is safe to call
+     * xpc_connection_set_event_handler() from within the event handler block.
+     * 
+     * The event handler's execution should be treated as a barrier to all
+     * connection activity. When it is executing, the connection will not attempt to
+     * send or receive messages, including reply messages. Thus, it is not safe to
+     * call xpc_connection_send_message_with_reply_sync() on the connection from
+     * within the event handler.
+     * 
+     * You do not hold a reference on the object received as the event handler's
+     * only argument. Regardless of the type of object received, it is safe to call
+     * xpc_retain() on the object to obtain a reference to it.
+     * 
+     * A connection may receive different events depending upon whether it is a
+     * listener or not. Any connection may receive an error in its event handler.
+     * But while normal connections may receive messages in addition to errors,
+     * listener connections will receive connections and and not messages.
+     * 
+     * Connections received by listeners are equivalent to those returned by
+     * xpc_connection_create() with a non-NULL name argument and a NULL targetq
+     * argument with the exception that you do not hold a reference on them.
+     * You must set an event handler and activate the connection. If you do not wish
+     * to accept the connection, you may simply call xpc_connection_cancel() on it
+     * and return. The runtime will dispose of it for you.
+     * 
+     * If there is an error in the connection, this handler will be invoked with the
+     * error dictionary as its argument. This dictionary will be one of the well-
+     * known XPC_ERROR_* dictionaries.
+     * 
+     * Regardless of the type of event, ownership of the event object is NOT
+     * implicitly transferred. Thus, the object will be released and deallocated at
+     * some point in the future after the event handler returns. If you wish the
+     * event's lifetime to persist, you must retain it with xpc_retain().
+     * 
+     * Connections received through the event handler will be released and
+     * deallocated after the connection has gone invalid and delivered that event to
+     * its event handler.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection object which is to be manipulated.
+     * 
+     * @param handler
+     *                   The event handler block.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_set_event_handler(@NotNull xpc_connection_t connection,
+            @ObjCBlock(name = "call_xpc_connection_set_event_handler") @NotNull Block_xpc_connection_set_event_handler handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_connection_set_event_handler {
+        @Generated
+        void call_xpc_connection_set_event_handler(@NotNull VoidPtr object);
+    }
+
+    /**
+     * [@function] xpc_connection_activate
+     * Activates the connection. Connections start in an inactive state, so you must
+     * call xpc_connection_activate() on a connection before it will send or receive
+     * any messages.
+     * 
+     * Calling xpc_connection_activate() on an active connection has no effect.
+     * Releasing the last reference on an inactive connection that was created with
+     * an xpc_connection_create*() call is undefined.
+     * 
+     * For backward compatibility reasons, xpc_connection_resume() on an inactive
+     * and not otherwise suspended xpc connection has the same effect as calling
+     * xpc_connection_activate(). For new code, using xpc_connection_activate()
+     * is preferred.
+     * 
+     * API-Since: 10.0
+     * 
+     * @param connection
+     *                   The connection object which is to be manipulated.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_activate(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_suspend
+     * Suspends the connection so that the event handler block will not fire and
+     * that the connection will not attempt to send any messages it has in its
+     * queue. All calls to xpc_connection_suspend() must be balanced with calls to
+     * xpc_connection_resume() before releasing the last reference to the
+     * connection.
+     * 
+     * Suspension is asynchronous and non-preemptive, and therefore this method will
+     * not interrupt the execution of an already-running event handler block. If
+     * the event handler is executing at the time of this call, it will finish, and
+     * then the connection will be suspended before the next scheduled invocation
+     * of the event handler. The XPC runtime guarantees this non-preemptiveness even
+     * for concurrent target queues.
+     * 
+     * Connection event handlers are non-reentrant, so it is safe to call
+     * xpc_connection_suspend() from within the event handler block.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection object which is to be manipulated.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_suspend(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_resume
+     * Resumes the connection.
+     * 
+     * In order for a connection to become live, every call to
+     * xpc_connection_suspend() must be balanced with a call to
+     * xpc_connection_resume().
+     * 
+     * For backward compatibility reasons, xpc_connection_resume() on an inactive
+     * and not otherwise suspended xpc connection has the same effect as calling
+     * xpc_connection_activate(). For new code, using xpc_connection_activate()
+     * is preferred.
+     * 
+     * Calling xpc_connection_resume() more times than xpc_connection_suspend()
+     * has been called is otherwise considered an error.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection object which is to be manipulated.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_resume(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_send_message
+     * Sends a message over the connection to the destination service.
+     * 
+     * Messages are delivered in FIFO order. This API is safe to call from multiple
+     * GCD queues. There is no indication that a message was delivered successfully.
+     * This is because even once the message has been successfully enqueued on the
+     * remote end, there are no guarantees about when the runtime will dequeue the
+     * message and invoke the other connection's event handler block.
+     * 
+     * If this API is used to send a message that is in reply to another message,
+     * there is no guarantee of ordering between the invocations of the connection's
+     * event handler and the reply handler for that message, even if they are
+     * targeted to the same queue.
+     * 
+     * After extensive study, we have found that clients who are interested in
+     * the state of the message on the server end are typically holding open
+     * transactions related to that message. And the only reliable way to track the
+     * lifetime of that transaction is at the protocol layer. So the server should
+     * send a reply message, which upon receiving, will cause the client to close
+     * its transaction.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection over which the message shall be sent.
+     * 
+     * @param message
+     *                   The message to send. This must be a dictionary object. This dictionary is
+     *                   logically copied by the connection, so it is safe to modify the dictionary
+     *                   after this call.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_send_message(@NotNull xpc_connection_t connection,
+            @NotNull VoidPtr message);
+
+    /**
+     * [@function] xpc_connection_send_barrier
+     * Issues a barrier against the connection's message-send activity.
+     * 
+     * XPC guarantees that, even if the connection's target queue is a concurrent
+     * queue, there are no other messages being sent concurrently while the barrier
+     * block is executing. XPC does not guarantee that the receipt of messages
+     * (either through the connection's event handler or through reply handlers)
+     * will be suspended while the barrier is executing.
+     * 
+     * A barrier is issued relative to the message-send queue. Thus, if you call
+     * xpc_connection_send_message() five times and then call
+     * xpc_connection_send_barrier(), the barrier will be invoked after the fifth
+     * message has been sent and its memory disposed of. You may safely cancel a
+     * connection from within a barrier block.
+     * 
+     * If a barrier is issued after sending a message which expects a reply, the
+     * behavior is the same as described above. The receipt of a reply message will
+     * not influence when the barrier runs.
+     * 
+     * A barrier block can be useful for throttling resource consumption on the
+     * connected side of a connection. For example, if your connection sends many
+     * large messages, you can use a barrier to limit the number of messages that
+     * are inflight at any given time. This can be particularly useful for messages
+     * that contain kernel resources (like file descriptors) which have a system-
+     * wide limit.
+     * 
+     * If a barrier is issued on a canceled connection, it will be invoked
+     * immediately. If a connection has been canceled and still has outstanding
+     * barriers, those barriers will be invoked as part of the connection's
+     * unwinding process.
+     * 
+     * It is important to note that a barrier block's execution order is not
+     * guaranteed with respect to other blocks that have been scheduled on the
+     * target queue of the connection. Or said differently,
+     * xpc_connection_send_barrier(3) is not equivalent to dispatch_async(3).
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection against which the barrier is to be issued.
+     * 
+     * @param barrier
+     *                   The barrier block to issue. This barrier prevents concurrent message-send
+     *                   activity on the connection. No messages will be sent while the barrier block
+     *                   is executing.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_send_barrier(@NotNull xpc_connection_t connection,
+            @ObjCBlock(name = "call_xpc_connection_send_barrier") @NotNull Block_xpc_connection_send_barrier barrier);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_connection_send_barrier {
+        @Generated
+        void call_xpc_connection_send_barrier();
+    }
+
+    /**
+     * [@function] xpc_connection_send_message_with_reply
+     * Sends a message over the connection to the destination service and associates
+     * a handler to be invoked when the remote service sends a reply message.
+     * 
+     * If the given GCD queue is a concurrent queue, XPC cannot guarantee that there
+     * will not be multiple reply handlers being invoked concurrently. XPC does not
+     * guarantee any ordering for the invocation of reply handlers. So if multiple
+     * messages are waiting for replies and the connection goes invalid, there is no
+     * guarantee that the reply handlers will be invoked in FIFO order. Similarly,
+     * XPC does not guarantee that reply handlers will not run concurrently with
+     * the connection's event handler in the case that the reply queue and the
+     * connection's target queue are the same concurrent queue.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection over which the message shall be sent.
+     * 
+     * @param message
+     *                   The message to send. This must be a dictionary object.
+     * 
+     * @param replyq
+     *                   The GCD queue to which the reply handler will be submitted. This may be a
+     *                   concurrent queue.
+     * 
+     * @param handler
+     *                   The handler block to invoke when a reply to the message is received from
+     *                   the connection. If the remote service exits prematurely before the reply was
+     *                   received, the XPC_ERROR_CONNECTION_INTERRUPTED error will be returned.
+     *                   If the connection went invalid before the message could be sent, the
+     *                   XPC_ERROR_CONNECTION_INVALID error will be returned.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_send_message_with_reply(@NotNull xpc_connection_t connection,
+            @NotNull VoidPtr message, @Nullable dispatch_queue_t replyq,
+            @ObjCBlock(name = "call_xpc_connection_send_message_with_reply") @NotNull Block_xpc_connection_send_message_with_reply handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_connection_send_message_with_reply {
+        @Generated
+        void call_xpc_connection_send_message_with_reply(@NotNull VoidPtr object);
+    }
+
+    /**
+     * [@function] xpc_connection_send_message_with_reply_sync
+     * Sends a message over the connection and blocks the caller until a reply is
+     * received.
+     * 
+     * This API supports priority inversion avoidance, and should be used instead of
+     * combining xpc_connection_send_message_with_reply() with a semaphore.
+     * 
+     * Invoking this API from a queue that is a part of the target queue hierarchy
+     * results in deadlocks under certain conditions.
+     * 
+     * Be judicious about your use of this API. It can block indefinitely, so if you
+     * are using it to implement an API that can be called from the main thread, you
+     * may wish to consider allowing the API to take a queue and callback block so
+     * that results may be delivered asynchronously if possible.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection over which the message shall be sent.
+     * 
+     * @param message
+     *                   The message to send. This must be a dictionary object.
+     * 
+     * @return
+     *         The message that the remote service sent in reply to the original message.
+     *         If the remote service exits prematurely before the reply was received, the
+     *         XPC_ERROR_CONNECTION_INTERRUPTED error will be returned. If the connection
+     *         went invalid before the message could be sent, the
+     *         XPC_ERROR_CONNECTION_INVALID error will be returned.
+     * 
+     *         You are responsible for releasing the returned object.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_connection_send_message_with_reply_sync(@NotNull xpc_connection_t connection,
+            @NotNull VoidPtr message);
+
+    /**
+     * [@function] xpc_connection_cancel
+     * Cancels the connection and ensures that its event handler will not fire
+     * again. After this call, any messages that have not yet been sent will be
+     * discarded, and the connection will be unwound. If there are messages that are
+     * awaiting replies, they will have their reply handlers invoked with the
+     * XPC_ERROR_CONNECTION_INVALID error.
+     * 
+     * Cancellation is asynchronous and non-preemptive and therefore this method
+     * will not interrupt the execution of an already-running event handler block.
+     * If the event handler is executing at the time of this call, it will finish,
+     * and then the connection will be canceled, causing a final invocation of the
+     * event handler to be scheduled with the XPC_ERROR_CONNECTION_INVALID error.
+     * After that invocation, there will be no further invocations of the event
+     * handler.
+     * 
+     * The XPC runtime guarantees this non-preemptiveness even for concurrent target
+     * queues.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection object which is to be manipulated.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_cancel(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_get_name
+     * Returns the name of the service with which the connections was created.
+     * 
+     * @param connection
+     *                   The connection object which is to be examined.
+     * 
+     * @return
+     *         The name of the remote service. If you obtained the connection through an
+     *         invocation of another connection's event handler, NULL is returned.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String xpc_connection_get_name(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_get_euid
+     * Returns the EUID of the remote peer.
+     * 
+     * @param connection
+     *                   The connection object which is to be examined.
+     * 
+     * @return
+     *         The EUID of the remote peer at the time the connection was made.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_connection_get_euid(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_get_egid
+     * Returns the EGID of the remote peer.
+     * 
+     * @param connection
+     *                   The connection object which is to be examined.
+     * 
+     * @return
+     *         The EGID of the remote peer at the time the connection was made.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_connection_get_egid(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_set_context
+     * Sets context on an connection.
+     * 
+     * If you must manage the memory of the context object, you must set a finalizer
+     * to dispose of it. If this method is called on a connection which already has
+     * context associated with it, the finalizer will NOT be invoked. The finalizer
+     * is only invoked when the connection is being deallocated.
+     * 
+     * It is recommended that, instead of changing the actual context pointer
+     * associated with the object, you instead change the state of the context
+     * object itself.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection which is to be manipulated.
+     * 
+     * @param context
+     *                   The context to associate with the connection.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_set_context(@NotNull xpc_connection_t connection,
+            @Nullable VoidPtr context);
+
+    /**
+     * [@function] xpc_connection_get_context
+     * Returns the context associated with the connection.
+     * 
+     * @param connection
+     *                   The connection which is to be examined.
+     * 
+     * @return
+     *         The context associated with the connection. NULL if there has been no context
+     *         associated with the object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_connection_get_context(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_connection_set_finalizer_f
+     * Sets the finalizer for the given connection.
+     * 
+     * This method disposes of the context value associated with a connection, as
+     * set by {@link xpc_connection_set_context}.
+     * 
+     * For many uses of context objects, this API allows for a convenient shorthand
+     * for freeing them. For example, for a context object allocated with malloc(3):
+     * 
+     * xpc_connection_set_finalizer_f(object, free);
+     * 
+     * API-Since: 5.0
+     * 
+     * @param connection
+     *                   The connection on which to set the finalizer.
+     * 
+     * @param finalizer
+     *                   The function that will be invoked when the connection's retain count has
+     *                   dropped to zero and is being torn down.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_set_finalizer_f(@NotNull xpc_connection_t connection,
+            @FunctionPtr(name = "call_xpc_connection_set_finalizer_f") @Nullable Function_xpc_connection_set_finalizer_f finalizer);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_xpc_connection_set_finalizer_f {
+        @Generated
+        void call_xpc_connection_set_finalizer_f(@Nullable VoidPtr arg0);
+    }
+
+    /**
+     * [@function] xpc_connection_set_peer_entitlement_exists_requirement
+     * Requires that the connection peer has the specified entitlement
+     * 
+     * This function will return an error promptly if the entitlement requirement is invalid.
+     * 
+     * It is a programming error to call multiple of the `xpc_connection_set_peer_*_requirement` family of functions on
+     * the same
+     * connection. If more complex combinations of requirements are required, use
+     * `xpc_connection_set_peer_lightweight_code_requirement`.
+     * 
+     * All messages received on this connection will be checked to ensure that they come from a peer who satisfies the
+     * requirement. For a listener connection, requests that do not satisfy the requirement are dropped. When a reply
+     * is expected on the connection and the peer does not satisfy the requirement
+     * `XPC_ERROR_PEER_CODE_SIGNING_REQUIREMENT`
+     * will be delivered instead of the reply.
+     * 
+     * API-Since: 17.4
+     * 
+     * @param connection
+     *                    The connection object which is to be modified
+     * 
+     * @param entitlement
+     *                    The entitlement the peer must have
+     *                    It is safe to deallocate the entitlement string after calling
+     *                    `xpc_connection_set_peer_entitlement_exists_requirement`
+     * 
+     * @return
+     *         0 on success, non-zero on error
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_connection_set_peer_entitlement_exists_requirement(
+            @NotNull xpc_connection_t connection,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String entitlement);
+
+    /**
+     * [@function] xpc_connection_set_peer_entitlement_matches_value_requirement
+     * Requires that the connection peer has the specified entitlement with the matching value
+     * 
+     * This function will return an error promptly if the entitlement requirement is invalid.
+     * 
+     * It is a programming error to call multiple of the `xpc_connection_set_peer_*_requirement` family of functions on
+     * the same
+     * connection. If more complex combinations of requirements are required, use
+     * `xpc_connection_set_peer_lightweight_code_requirement`.
+     * 
+     * All messages received on this connection will be checked to ensure that they come from a peer who satisfies the
+     * requirement. For a listener connection, requests that do not satisfy the requirement are dropped. When a reply
+     * is expected on the connection and the peer does not satisfy the requirement
+     * `XPC_ERROR_PEER_CODE_SIGNING_REQUIREMENT`
+     * will be delivered instead of the reply.
+     * 
+     * API-Since: 17.4
+     * 
+     * @param connection
+     *                    The connection object which is to be modified
+     * 
+     * @param entitlement
+     *                    The entitlement the peer must have
+     *                    It is safe to deallocate the entitlement string after calling
+     *                    `xpc_connection_set_peer_entitlement_matches_value_requirement`
+     * 
+     * @param value
+     *                    The value that the entitlement must match
+     *                    It is safe to deallocate the value object after calling
+     *                    `xpc_connection_set_peer_entitlement_matches_value_requirement`.
+     *                    Valid xpc types for this object are `XPC_TYPE_BOOL`, `XPC_TYPE_STRING` and `XPC_TYPE_INT64`.
+     * 
+     * @return
+     *         0 on success, non-zero on error
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_connection_set_peer_entitlement_matches_value_requirement(
+            @NotNull xpc_connection_t connection,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String entitlement,
+            @NotNull VoidPtr value);
+
+    /**
+     * [@function] xpc_connection_set_peer_team_identity_requirement
+     * Requires that the connection peer has the specified identity and is signed with the same team identifier
+     * as the current process
+     * 
+     * This function will return an error promptly if the identity requirement is invalid.
+     * 
+     * The peer process must be signed as either a Testflight app or an App store app,
+     * or be signed by an apple issued development certificate, an enterprise distributed
+     * certificate (embedded only), or a Developer ID certificate (macOS only)
+     * 
+     * It is a programming error to call multiple of the `xpc_connection_set_peer_*_requirement` family of functions on
+     * the same
+     * connection. If more complex combinations of requirements are required, use
+     * `xpc_connection_set_peer_lightweight_code_requirement`.
+     * 
+     * All messages received on this connection will be checked to ensure that they come from a peer who satisfies the
+     * requirement. For a listener connection, requests that do not satisfy the requirement are dropped. When a reply
+     * is expected on the connection and the peer does not satisfy the requirement
+     * `XPC_ERROR_PEER_CODE_SIGNING_REQUIREMENT`
+     * will be delivered instead of the reply.
+     * 
+     * API-Since: 17.4
+     * 
+     * @param connection
+     *                           The connection object which is to be modified
+     * 
+     * @param signing_identifier
+     *                           The optional signing identifier the peer must have
+     *                           It is safe to deallocate the signing identifier string after calling
+     *                           `xpc_connection_set_peer_identity_requirement`
+     * 
+     * @return
+     *         0 on success, non-zero on error
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_connection_set_peer_team_identity_requirement(@NotNull xpc_connection_t connection,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String signing_identifier);
+
+    /**
+     * [@function] xpc_connection_set_peer_platform_identity_requirement
+     * Requires that the connection peer has the specified identity and is signed by Apple
+     * 
+     * This function will return an error promptly if the identity requirement is invalid.
+     * 
+     * The peer process must be signed by Apple. Use `xpc_connection_set_peer_identity_requirement` if the peer
+     * is not part of the OS.
+     * 
+     * It is a programming error to call multiple of the `xpc_connection_set_peer_*_requirement` family of functions on
+     * the same
+     * connection. If more complex combinations of requirements are required, use
+     * `xpc_connection_set_peer_lightweight_code_requirement`.
+     * 
+     * All messages received on this connection will be checked to ensure that they come from a peer who satisfies the
+     * requirement. For a listener connection, requests that do not satisfy the requirement are dropped. When a reply
+     * is expected on the connection and the peer does not satisfy the requirement
+     * `XPC_ERROR_PEER_CODE_SIGNING_REQUIREMENT`
+     * will be delivered instead of the reply.
+     * 
+     * API-Since: 17.4
+     * 
+     * @param connection
+     *                           The connection object which is to be modified
+     * 
+     * @param signing_identifier
+     *                           The optional signing identifier the peer must have. If not specified, this function
+     *                           ensures that the peer is signed by Apple
+     *                           It is safe to deallocate the signing identifier string after calling
+     *                           `xpc_connection_set_peer_identity_requirement`
+     * 
+     * @return
+     *         0 on success, non-zero on error
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_connection_set_peer_platform_identity_requirement(@NotNull xpc_connection_t connection,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String signing_identifier);
+
+    /**
+     * [@function] xpc_connection_set_peer_lightweight_code_requirement
+     * Requires that the connection peer has the specified lightweight code requirement
+     * 
+     * This function will return an error promptly if the lightweight code requirement is invalid.
+     * 
+     * The lightweight code requirement must be an `xpc_dictionary_t` equivalent of an LWCR constraint (see
+     * https://developer.apple.com/documentation/security/defining_launch_environment_and_library_constraints
+     * for details on the contents of the dictionary)
+     * 
+     * The lightweight code requirement in the example below uses the $or operator to require that an
+     * executable’s either signed with the Team ID 8XCUU22SN2, or is an operating system executable:
+     * ```c
+     * xpc_object_t or_val = xpc_dictionary_create_empty();
+     * xpc_dictionary_set_string(or_val, "team-identifier", "8XCUU22SN2");
+     * xpc_dictionary_set_int64(or_val, "validation-category", 1);
+     * 
+     * xpc_object_t lwcr = xpc_dictionary_create_empty();
+     * xpc_dictionary_set_value(lwcr, "$or", or_val);
+     * 
+     * xpc_connection_set_peer_lightweight_code_requirement(connection, lwcr);
+     * ```
+     * 
+     * It is a programming error to call multiple of the `xpc_connection_set_peer_*_requirement` family of functions on
+     * the same
+     * connection.
+     * 
+     * All messages received on this connection will be checked to ensure that they come from a peer who satisfies the
+     * requirement. For a listener connection, requests that do not satisfy the requirement are dropped. When a reply
+     * is expected on the connection and the peer does not satisfy the requirement
+     * `XPC_ERROR_PEER_CODE_SIGNING_REQUIREMENT`
+     * will be delivered instead of the reply.
+     * 
+     * API-Since: 17.4
+     * 
+     * @param connection
+     *                   The connection object which is to be modified
+     * 
+     * @param lwcr
+     *                   The lightweight code requirement the peer must have
+     *                   It is safe to deallocate the lightweight code requirement object after calling
+     *                   `xpc_connection_set_peer_lightweight_code_requirement`
+     * 
+     * @return
+     *         0 on success, non-zero on error
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_connection_set_peer_lightweight_code_requirement(@NotNull xpc_connection_t connection,
+            @NotNull VoidPtr lwcr);
+
+    /**
+     * [@function] xpc_connection_copy_invalidation_reason
+     * Returns a description of why the connection was invalidated.
+     * 
+     * @param connection
+     *                   The connection object to inspect
+     * 
+     * @return
+     *         Null if the connection has not been invalidated, otherwise a description for why the connection was
+     *         invalidated.
+     * 
+     *         API-Since: 15.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native BytePtr xpc_connection_copy_invalidation_reason(@NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_rich_error_copy_description
+     * Copy the string description of an error.
+     * 
+     * @param error
+     *              The error to be examined.
+     * 
+     * @return
+     *         The underlying C string for the provided error. This string should be
+     *         disposed of with free(3) when done.
+     * 
+     *         This will return NULL if a string description could not be generated.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native BytePtr xpc_rich_error_copy_description(@NotNull xpc_rich_error_t error);
+
+    /**
+     * [@function] xpc_rich_error_can_retry
+     * Whether the operation the error originated from can be retried.
+     * 
+     * @param error
+     *              The error to be inspected.
+     * 
+     * @return
+     *         Whether the operation the error originated from can be retried.
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_rich_error_can_retry(@NotNull xpc_rich_error_t error);
+
+    /**
+     * [@function] xpc_session_copy_description
+     * Copy the string description of the session.
+     * 
+     * @param session
+     *                The session to be examined.
+     * 
+     * @return
+     *         The underlying C string description for the provided session. This string
+     *         should be disposed of with free(3) when done. This will return NULL if a
+     *         string description could not be generated.
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native BytePtr xpc_session_copy_description(@NotNull xpc_session_t session);
+
+    /**
+     * [@function] xpc_session_set_incoming_message_handler
+     * Set an incoming message handler for a session.
+     * 
+     * This can only be called on an inactive session. Calling this on a session
+     * with an existing event handler will replace it.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session
+     *                The session to set the handler for.
+     * 
+     * @param handler
+     *                The handler block to be called when a message originated by the peer is
+     *                received through the provided session.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_session_set_incoming_message_handler(@NotNull xpc_session_t session,
+            @ObjCBlock(name = "call_xpc_session_set_incoming_message_handler") @NotNull Block_xpc_session_set_incoming_message_handler handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_session_set_incoming_message_handler {
+        @Generated
+        void call_xpc_session_set_incoming_message_handler(@NotNull VoidPtr message);
+    }
+
+    /**
+     * [@function] xpc_session_set_cancel_handler
+     * Set the cancel handler for a session.
+     * 
+     * This can only be called on an inactive session. Calling this on a session
+     * with an existing cancel handler will replace the existing cancel handler with
+     * the one provided.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session
+     *                       The session to set the cancel handler for.
+     * 
+     * @param cancel_handler
+     *                       The cancel handler block that will be executed when this session is canceled.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_session_set_cancel_handler(@NotNull xpc_session_t session,
+            @ObjCBlock(name = "call_xpc_session_set_cancel_handler") @NotNull Block_xpc_session_set_cancel_handler cancel_handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_session_set_cancel_handler {
+        @Generated
+        void call_xpc_session_set_cancel_handler(@NotNull xpc_rich_error_t error);
+    }
+
+    /**
+     * [@function] xpc_session_set_target_queue
+     * Set the target queue for a session.
+     * 
+     * This can only be called on an inactive session. Calling this on a session
+     * with an existing target queue will replace the existing target queue with
+     * the one provided.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param session
+     *                     The session to set the target queue for.
+     * 
+     * @param target_queue
+     *                     The GCD queue onto which session events will be submitted. This may be a
+     *                     concurrent queue. This parameter may be NULL, in which case the target queue
+     *                     will be libdispatch's default target queue, defined as
+     *                     DISPATCH_TARGET_QUEUE_DEFAULT.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_session_set_target_queue(@NotNull xpc_session_t session,
+            @Nullable dispatch_queue_t target_queue);
+
+    /**
+     * [@function] xpc_session_activate
+     * Activates a session.
+     * 
+     * xpc_session_activate must not be called on a session that has been already
+     * activated. Releasing the last reference on an inactive session that was
+     * created with an xpc_session_create*() will trigger an API misuse crash.
+     * 
+     * If activation fails, the session is automatically cancelled.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session
+     *                  The session object to activate.
+     * 
+     * @param error_out
+     *                  An out-parameter that, if set and in the event of an error, will point to an
+     *                  {@link xpc_rich_error_t} describing the details of any errors that occurred.
+     * 
+     * @return
+     *         Returns whether session activation succeeded.
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_session_activate(@NotNull xpc_session_t session,
+            @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_session_cancel
+     * Cancels the session. After this call, any messages that have not yet been
+     * sent will be discarded, and the connection will be unwound. If there are
+     * messages that are awaiting replies, they will have their reply handlers
+     * invoked with an appropriate {@link xpc_rich_error_t}.
+     * 
+     * Session must have been activated to be canceled. Cancellation is asynchronous
+     * and non-preemptive.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session
+     *                The session object to cancel.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_session_cancel(@NotNull xpc_session_t session);
+
+    /**
+     * [@function] xpc_session_send_message
+     * Sends a message over the session to the destination service.
+     * 
+     * Messages are delivered in FIFO order. This API is safe to call from multiple
+     * GCD queues. There is no indication that a message was delivered successfully.
+     * This is because even once the message has been successfully enqueued on the
+     * remote end, there are no guarantees about when the runtime will dequeue the
+     * message and invoke the other session's event handler block.
+     * 
+     * If this is invoked on an inactive session, one created using the
+     * XPC_SESSION_CREATE_INACTIVE flag and hasn't yet been activated, the process
+     * will crash.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session
+     *                The session to send the message over.
+     * 
+     * @param message
+     *                The message to send. This must be a dictionary object.
+     * 
+     * @return
+     *         In the event of an error this will return an {@link xpc_rich_error_t}
+     *         detailing the reasons for the failure. On success this return value will be
+     *         NULL.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_rich_error_t xpc_session_send_message(@NotNull xpc_session_t session,
+            @NotNull VoidPtr message);
+
+    /**
+     * [@function] xpc_session_send_message_with_reply_sync
+     * Sends a message over the session to the destination service and blocks the
+     * caller until a reply is received.
+     * 
+     * This API supports priority inversion avoidance and should be used instead of
+     * combining xpc_session_send_message_with_reply_async with a semaphore.
+     * 
+     * If this is invoked on an inactive session, for example one created using the
+     * XPC_SESSION_CREATE_INACTIVE flag that hasn't yet been activated, the process
+     * will crash.
+     * 
+     * Invoking this API while the target queue is blocked would lead to deadlocks
+     * in certain scenarios. For that reason, invoking it from the target queue
+     * results in a crash.
+     * 
+     * Be judicious about your use of this API. It can block indefinitely, so if you
+     * are using it to implement an API that can be called from the main queue, you
+     * may wish to consider allowing the API to take a queue and callback block so
+     * that results may be delivered asynchronously if possible.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session
+     *                  The session over which the message will be sent.
+     * 
+     * @param message
+     *                  The message to send. This must be a dictionary object.
+     * 
+     * @param error_out
+     *                  If this parameter is provided, in the event of a failure it will point to an
+     *                  {@link xpc_rich_error_t} describing the details of the error.
+     * 
+     * @return
+     *         On success, this will return the reply message as an {@link xpc_object_t}.
+     *         Otherwise NULL is returned.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_session_send_message_with_reply_sync(@NotNull xpc_session_t session,
+            @NotNull VoidPtr message, @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_session_send_message_with_reply_async
+     * Sends a message over the session to the destination service and executes the
+     * provided callback when a reply is received.
+     * 
+     * If this is invoked on an inactive session, for example one created using the
+     * XPC_SESSION_CREATE_INACTIVE flag that hasn't yet been activated, the process
+     * will crash.
+     * 
+     * If this is invoked on a cancelled session, this will generate a simulated
+     * crash.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session
+     *                      The session over which the message will be sent.
+     * 
+     * @param message
+     *                      The message to send. This must be a dictionary object.
+     * 
+     * @param reply_handler
+     *                      The handler block to invoke when a reply to the message is received from the
+     *                      session. If the session is torn down before the reply was received, for
+     *                      example if the remote service exits prematurely, this handler will be
+     *                      executed and passed an appropriate {@link xpc_rich_error_t} object describing
+     *                      the failure.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_session_send_message_with_reply_async(@NotNull xpc_session_t session,
+            @NotNull VoidPtr message,
+            @ObjCBlock(name = "call_xpc_session_send_message_with_reply_async") @NotNull Block_xpc_session_send_message_with_reply_async reply_handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_session_send_message_with_reply_async {
+        @Generated
+        void call_xpc_session_send_message_with_reply_async(@Nullable VoidPtr reply, @Nullable xpc_rich_error_t error);
+    }
+
+    /**
+     * [@function] xpc_retain
+     * 
+     * Increments the reference count of an object.
+     * 
+     * Calls to xpc_retain() must be balanced with calls to xpc_release()
+     * to avoid leaking memory.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param object
+     *               The object which is to be manipulated.
+     * 
+     * @return
+     *         The object which was given.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_retain(@NotNull VoidPtr object);
+
+    /**
+     * [@function] xpc_release
+     * 
+     * Decrements the reference count of an object.
+     * 
+     * The caller must take care to balance retains and releases. When creating or
+     * retaining XPC objects, the creator obtains a reference on the object. Thus,
+     * it is the caller's responsibility to call xpc_release() on those objects when
+     * they are no longer needed.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param object
+     *               The object which is to be manipulated.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_release(@NotNull VoidPtr object);
+
+    /**
+     * [@function] xpc_get_type
+     * 
+     * Returns the type of an object.
+     * 
+     * @param object
+     *               The object to examine.
+     * 
+     * @return
+     *         An opaque pointer describing the type of the object. This pointer is suitable
+     *         direct comparison to exported type constants with the equality operator.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native xpc_type_t xpc_get_type(@NotNull VoidPtr object);
+
+    /**
+     * [@function] xpc_type_get_name
+     * 
+     * Returns a string describing an XPC object type.
+     * 
+     * @param type
+     *             The type to describe.
+     * 
+     * @return
+     *         A string describing the type of an object, like "string" or "int64".
+     *         This string should not be freed or modified.
+     * 
+     *         API-Since: 13.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @NotNull
+    public static native String xpc_type_get_name(@NotNull xpc_type_t type);
+
+    /**
+     * [@function] xpc_copy
+     * 
+     * Creates a copy of the object.
+     * 
+     * When called on an array or dictionary, xpc_copy() will perform a deep copy.
+     * 
+     * The object returned is not necessarily guaranteed to be a new object, and
+     * whether it is will depend on the implementation of the object being copied.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param object
+     *               The object to copy.
+     * 
+     * @return
+     *         The new object. NULL if the object type does not support copying or if
+     *         sufficient memory for the copy could not be allocated. Service objects do
+     *         not support copying.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_copy(@NotNull VoidPtr object);
+
+    /**
+     * [@function] xpc_equal
+     * 
+     * Compares two objects for equality.
+     * 
+     * @param object1
+     *                The first object to compare.
+     * 
+     * @param object2
+     *                The second object to compare.
+     * 
+     * @return
+     *         Returns true if the objects are equal, otherwise false. Two objects must be
+     *         of the same type in order to be equal.
+     * 
+     *         For two arrays to be equal, they must contain the same values at the
+     *         same indexes. For two dictionaries to be equal, they must contain the same
+     *         values for the same keys.
+     * 
+     *         Two objects being equal implies that their hashes (as returned by xpc_hash())
+     *         are also equal.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_equal(@NotNull VoidPtr object1, @NotNull VoidPtr object2);
+
+    /**
+     * [@function] xpc_hash
+     * 
+     * Calculates a hash value for the given object.
+     * 
+     * Note that the computed hash values for any particular type and value of an
+     * object can change from across releases and platforms and should not be
+     * assumed to be constant across all time and space or stored persistently.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param object
+     *               The object for which to calculate a hash value. This value may be modded
+     *               with a table size for insertion into a dictionary-like data structure.
+     * 
+     * @return
+     *         The calculated hash value.
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long xpc_hash(@NotNull VoidPtr object);
+
+    /**
+     * [@function] xpc_copy_description
+     * 
+     * Copies a debug string describing the object.
+     * 
+     * @param object
+     *               The object which is to be examined.
+     * 
+     * @return
+     *         A string describing object which contains information useful for debugging.
+     *         This string should be disposed of with free(3) when done.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native BytePtr xpc_copy_description(@NotNull VoidPtr object);
+
+    /**
+     * [@function] xpc_null_create
+     * 
+     * Creates an XPC object representing the null object.
+     * 
+     * @return
+     *         A new null object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_null_create();
+
+    /**
+     * [@function] xpc_bool_create
+     * 
+     * Creates an XPC Boolean object.
+     * 
+     * @param value
+     *              The Boolean primitive value which is to be boxed.
+     * 
+     * @return
+     *         A new Boolean object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_bool_create(boolean value);
+
+    /**
+     * [@function] xpc_bool_get_value
+     * 
+     * Returns the underlying Boolean value from the object.
+     * 
+     * @param xbool
+     *              The Boolean object which is to be examined.
+     * 
+     * @return
+     *         The underlying Boolean value or false if the given object was not an XPC
+     *         Boolean object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_bool_get_value(@NotNull VoidPtr xbool);
+
+    /**
+     * [@function] xpc_int64_create
+     * 
+     * Creates an XPC signed integer object.
+     * 
+     * @param value
+     *              The signed integer value which is to be boxed.
+     * 
+     * @return
+     *         A new signed integer object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_int64_create(long value);
+
+    /**
+     * [@function] xpc_int64_get_value
+     * 
+     * Returns the underlying signed 64-bit integer value from an object.
+     * 
+     * @param xint
+     *             The signed integer object which is to be examined.
+     * 
+     * @return
+     *         The underlying signed 64-bit value or 0 if the given object was not an XPC
+     *         integer object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_int64_get_value(@NotNull VoidPtr xint);
+
+    /**
+     * [@function] xpc_uint64_create
+     * 
+     * Creates an XPC unsigned integer object.
+     * 
+     * @param value
+     *              The unsigned integer value which is to be boxed.
+     * 
+     * @return
+     *         A new unsigned integer object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_uint64_create(long value);
+
+    /**
+     * [@function] xpc_uint64_get_value
+     * 
+     * Returns the underlying unsigned 64-bit integer value from an object.
+     * 
+     * @param xuint
+     *              The unsigned integer object which is to be examined.
+     * 
+     * @return
+     *         The underlying unsigned integer value or 0 if the given object was not an XPC
+     *         unsigned integer object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_uint64_get_value(@NotNull VoidPtr xuint);
+
+    /**
+     * [@function] xpc_double_create
+     * 
+     * Creates an XPC double object.
+     * 
+     * @param value
+     *              The floating point quantity which is to be boxed.
+     * 
+     * @return
+     *         A new floating point object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_double_create(double value);
+
+    /**
+     * [@function] xpc_double_get_value
+     * 
+     * Returns the underlying double-precision floating point value from an object.
+     * 
+     * @param xdouble
+     *                The floating point object which is to be examined.
+     * 
+     * @return
+     *         The underlying floating point value or NAN if the given object was not an XPC
+     *         floating point object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native double xpc_double_get_value(@NotNull VoidPtr xdouble);
+
+    /**
+     * [@function] xpc_date_create
+     * 
+     * Creates an XPC date object.
+     * 
+     * @param interval
+     *                 The date interval which is to be boxed. Negative values indicate the number
+     *                 of nanoseconds before the epoch. Positive values indicate the number of
+     *                 nanoseconds after the epoch.
+     * 
+     * @return
+     *         A new date object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_date_create(long interval);
+
+    /**
+     * [@function] xpc_date_create_from_current
+     * 
+     * Creates an XPC date object representing the current date.
+     * 
+     * @return
+     *         A new date object representing the current date.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_date_create_from_current();
+
+    /**
+     * [@function] xpc_date_get_value
+     * 
+     * Returns the underlying date interval from an object.
+     * 
+     * @param xdate
+     *              The date object which is to be examined.
+     * 
+     * @return
+     *         The underlying date interval or 0 if the given object was not an XPC date
+     *         object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_date_get_value(@NotNull VoidPtr xdate);
+
+    /**
+     * [@function] xpc_data_create
+     * 
+     * Creates an XPC object representing buffer of bytes.
+     * 
+     * This method will copy the buffer given into internal storage. After calling
+     * this method, it is safe to dispose of the given buffer.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param bytes
+     *               The buffer of bytes which is to be boxed. You may create an empty data object
+     *               by passing NULL for this parameter and 0 for the length. Passing NULL with
+     *               any other length will result in undefined behavior.
+     * 
+     * @param length
+     *               The number of bytes which are to be boxed.
+     * 
+     * @return
+     *         A new data object.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_data_create(@Nullable ConstVoidPtr bytes, @NUInt long length);
+
+    /**
+     * [@function] xpc_data_create_with_dispatch_data
+     * 
+     * Creates an XPC object representing buffer of bytes described by the given GCD
+     * data object.
+     * 
+     * The object returned by this method will refer to the buffer returned by
+     * dispatch_data_create_map(). The point where XPC will make the call to
+     * dispatch_data_create_map() is undefined.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param ddata
+     *              The GCD data object containing the bytes which are to be boxed. This object
+     *              is retained by the data object.
+     * 
+     * @return
+     *         A new data object.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_data_create_with_dispatch_data(@NotNull dispatch_data_t ddata);
+
+    /**
+     * [@function] xpc_data_get_length
+     * 
+     * Returns the length of the data encapsulated by an XPC data object.
+     * 
+     * @param xdata
+     *              The data object which is to be examined.
+     * 
+     * @return
+     *         The length of the underlying boxed data or 0 if the given object was not an
+     *         XPC data object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long xpc_data_get_length(@NotNull VoidPtr xdata);
+
+    /**
+     * [@function] xpc_data_get_bytes_ptr
+     * 
+     * Returns a pointer to the internal storage of a data object.
+     * 
+     * @param xdata
+     *              The data object which is to be examined.
+     * 
+     * @return
+     *         A pointer to the underlying boxed data or NULL if the given object was not an
+     *         XPC data object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native ConstVoidPtr xpc_data_get_bytes_ptr(@NotNull VoidPtr xdata);
+
+    /**
+     * [@function] xpc_data_get_bytes
+     * 
+     * Copies the bytes stored in an data objects into the specified buffer.
+     * 
+     * @param xdata
+     *               The data object which is to be examined.
+     * 
+     * @param buffer
+     *               The buffer in which to copy the data object's bytes.
+     * 
+     * @param off
+     *               The offset at which to begin the copy. If this offset is greater than the
+     *               length of the data element, nothing is copied. Pass 0 to start the copy
+     *               at the beginning of the buffer.
+     * 
+     * @param length
+     *               The length of the destination buffer.
+     * 
+     * @return
+     *         The number of bytes that were copied into the buffer or 0 if the given object
+     *         was not an XPC data object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long xpc_data_get_bytes(@NotNull VoidPtr xdata, @NotNull VoidPtr buffer, @NUInt long off,
+            @NUInt long length);
+
+    /**
+     * [@function] xpc_string_create
+     * 
+     * Creates an XPC object representing a NUL-terminated C-string.
+     * 
+     * @param string
+     *               The C-string which is to be boxed.
+     * 
+     * @return
+     *         A new string object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_string_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String string);
+
+    /**
+     * [@function] xpc_string_create_with_format
+     * 
+     * Creates an XPC object representing a C-string that is generated from the
+     * given format string and arguments.
+     * 
+     * @param fmt
+     *            The printf(3)-style format string from which to construct the final C-string
+     *            to be boxed.
+     * 
+     * @param ...
+     *            The arguments which correspond to those specified in the format string.
+     * 
+     * @return
+     *         A new string object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @Variadic()
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_string_create_with_format(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String fmt,
+            Object... varargs);
+
+    /**
+     * [@function] xpc_string_create_with_format_and_arguments
+     * 
+     * Creates an XPC object representing a C-string that is generated from the
+     * given format string and argument list pointer.
+     * 
+     * @param fmt
+     *            The printf(3)-style format string from which to construct the final C-string
+     *            to be boxed.
+     * 
+     * @param ap
+     *            A pointer to the arguments which correspond to those specified in the format
+     *            string.
+     * 
+     * @return
+     *         A new string object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_string_create_with_format_and_arguments(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String fmt,
+            BytePtr ap);
+
+    /**
+     * [@function] xpc_string_get_length
+     * 
+     * Returns the length of the underlying string.
+     * 
+     * @param xstring
+     *                The string object which is to be examined.
+     * 
+     * @return
+     *         The length of the underlying string, not including the NUL-terminator, or 0
+     *         if the given object was not an XPC string object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long xpc_string_get_length(@NotNull VoidPtr xstring);
+
+    /**
+     * [@function] xpc_string_get_string_ptr
+     * 
+     * Returns a pointer to the internal storage of a string object.
+     * 
+     * @param xstring
+     *                The string object which is to be examined.
+     * 
+     * @return
+     *         A pointer to the string object's internal storage or NULL if the given object
+     *         was not an XPC string object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String xpc_string_get_string_ptr(@NotNull VoidPtr xstring);
+
+    /**
+     * [@function] xpc_uuid_get_bytes
+     * 
+     * Returns a pointer to the the boxed UUID bytes in an XPC UUID object.
+     * 
+     * @param xuuid
+     *              The UUID object which is to be examined.
+     * 
+     * @return
+     *         The underlying <code>uuid_t</code> bytes or NULL if the given object was not
+     *         an XPC UUID object. The returned pointer may be safely passed to the uuid(3)
+     *         APIs.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String xpc_uuid_get_bytes(@NotNull VoidPtr xuuid);
+
+    /**
+     * [@function] xpc_fd_create
+     * 
+     * Creates an XPC object representing a POSIX file descriptor.
+     * 
+     * This method performs the equivalent of a dup(2) on the descriptor, and thus
+     * it is safe to call close(2) on the descriptor after boxing it with a file
+     * descriptor object.
+     * 
+     * IMPORTANT: Pointer equality is the ONLY valid test for equality between two
+     * file descriptor objects. There is no reliable way to determine whether two
+     * file descriptors refer to the same inode with the same capabilities, so two
+     * file descriptor objects created from the same underlying file descriptor
+     * number will not compare equally with xpc_equal(). This is also true of a
+     * file descriptor object created using xpc_copy() and the original.
+     * 
+     * This also implies that two collections containing file descriptor objects
+     * cannot be equal unless the exact same object was inserted into both.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param fd
+     *           The file descriptor which is to be boxed.
+     * 
+     * @return
+     *         A new file descriptor object. NULL if sufficient memory could not be
+     *         allocated or if the given file descriptor was not valid.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_fd_create(int fd);
+
+    /**
+     * [@function] xpc_fd_dup
+     * 
+     * Returns a file descriptor that is equivalent to the one boxed by the file
+     * file descriptor object.
+     * 
+     * Multiple invocations of xpc_fd_dup() will not return the same file descriptor
+     * number, but they will return descriptors that are equivalent, as though they
+     * had been created by dup(2).
+     * 
+     * The caller is responsible for calling close(2) on the returned descriptor.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param xfd
+     *            The file descriptor object which is to be examined.
+     * 
+     * @return
+     *         A file descriptor that is equivalent to the one originally given to
+     *         xpc_fd_create(). If the descriptor could not be created or if the given
+     *         object was not an XPC file descriptor, -1 is returned.
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_fd_dup(@NotNull VoidPtr xfd);
+
+    /**
+     * [@function] xpc_shmem_create
+     * 
+     * Creates an XPC object representing the given shared memory region.
+     * 
+     * Only memory regions whose exact characteristics are known to the caller
+     * should be boxed using this API. Memory returned from malloc(3) may not be
+     * safely shared on either OS X or iOS because the underlying virtual memory
+     * objects for malloc(3)ed allocations are owned by the malloc(3) subsystem and
+     * not the caller of malloc(3).
+     * 
+     * If you wish to share a memory region that you receive from another subsystem,
+     * part of the interface contract with that other subsystem must include how to
+     * create the region of memory, or sharing it may be unsafe.
+     * 
+     * Certain operations may internally fragment a region of memory in a way that
+     * would truncate the range detected by the shared memory object. vm_copy(), for
+     * example, may split the region into multiple parts to avoid copying certain
+     * page ranges. For this reason, it is recommended that you delay all VM
+     * operations until the shared memory object has been created so that the VM
+     * system knows that the entire range is intended for sharing.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param region
+     *               A pointer to a region of shared memory, created through a call to mmap(2)
+     *               with the MAP_SHARED flag, which is to be boxed.
+     * 
+     * @param length
+     *               The length of the region.
+     * 
+     * @return
+     *         A new shared memory object.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_shmem_create(@NotNull VoidPtr region, @NUInt long length);
+
+    /**
+     * [@function] xpc_shmem_map
+     * 
+     * Maps the region boxed by the XPC shared memory object into the caller's
+     * address space.
+     * 
+     * The resulting region must be disposed of with munmap(2).
+     * 
+     * It is the responsibility of the caller to manage protections on the new
+     * region accordingly.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param xshmem
+     *               The shared memory object to be examined.
+     * 
+     * @param region
+     *               On return, this will point to the region at which the shared memory was
+     *               mapped.
+     * 
+     * @return
+     *         The length of the region that was mapped. If the mapping failed or if the
+     *         given object was not an XPC shared memory object, 0 is returned. The length
+     *         of the mapped region will always be an integral page size, even if the
+     *         creator of the region specified a non-integral page size.
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long xpc_shmem_map(@NotNull VoidPtr xshmem, @NotNull Ptr<VoidPtr> region);
+
+    /**
+     * [@function] xpc_array_create
+     * 
+     * Creates an XPC object representing an array of XPC objects.
+     * 
+     * This array must be contiguous and cannot contain any NULL values. If you
+     * wish to insert the equivalent of a NULL value, you may use the result of
+     * {@link xpc_null_create}.
+     * 
+     * @param objects
+     *                An array of XPC objects which is to be boxed. The order of this array is
+     *                preserved in the object. If this array contains a NULL value, the behavior
+     *                is undefined. This parameter may be NULL only if the count is 0.
+     * 
+     * @param count
+     *                The number of objects in the given array. If the number passed is less than
+     *                the actual number of values in the array, only the specified number of items
+     *                are inserted into the resulting array. If the number passed is more than
+     *                the the actual number of values, the behavior is undefined.
+     * 
+     * @return
+     *         A new array object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_array_create(@Nullable ConstPtr<VoidPtr> objects, @NUInt long count);
+
+    /**
+     * [@function] xpc_array_create_empty
+     * 
+     * Creates an XPC object representing an array of XPC objects.
+     * 
+     * @return
+     *         A new array object.
+     * 
+     * @see
+     *      xpc_array_create
+     * 
+     *      API-Since: 14.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_array_create_empty();
+
+    /**
+     * [@function] xpc_array_set_value
+     * 
+     * Inserts the specified object into the array at the specified index.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array).
+     *               If the index is outside that range, the behavior is undefined.
+     * 
+     * @param value
+     *               The object to insert. This value is retained by the array and cannot be
+     *               NULL. If there is already a value at the specified index, it is released,
+     *               and the new value is inserted in its place.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_value(@NotNull VoidPtr xarray, @NUInt long index, @NotNull VoidPtr value);
+
+    /**
+     * [@function] xpc_array_append_value
+     * 
+     * Appends an object to an XPC array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param value
+     *               The object to append. This object is retained by the array.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_append_value(@NotNull VoidPtr xarray, @NotNull VoidPtr value);
+
+    /**
+     * [@function] xpc_array_get_count
+     * 
+     * Returns the count of values currently in the array.
+     * 
+     * @param xarray
+     *               The array object which is to be examined.
+     * 
+     * @return
+     *         The count of values in the array or 0 if the given object was not an XPC
+     *         array.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long xpc_array_get_count(@NotNull VoidPtr xarray);
+
+    /**
+     * [@function] xpc_array_get_value
+     * 
+     * Returns the value at the specified index in the array.
+     * 
+     * This method does not grant the caller a reference to the underlying object,
+     * and thus the caller is not responsible for releasing the object.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param xarray
+     *               The array object which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the range of
+     *               indexes as specified in xpc_array_set_value().
+     * 
+     * @return
+     *         The object at the specified index within the array or NULL if the given
+     *         object was not an XPC array.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_array_get_value(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_array_apply(@NotNull VoidPtr xarray,
+            @ObjCBlock(name = "call_xpc_array_apply") @NotNull Block_xpc_array_apply applier);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_array_apply {
+        @Generated
+        boolean call_xpc_array_apply(@NUInt long index, @NotNull VoidPtr value);
+    }
+
+    /**
+     * [@function] xpc_array_set_bool
+     * 
+     * Inserts a <code>bool</code> (primitive) value into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param value
+     *               The <code>bool</code> value to insert. After calling this method, the XPC
+     *               object corresponding to the primitive value inserted may be safely retrieved
+     *               with {@link xpc_array_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_bool(@NotNull VoidPtr xarray, @NUInt long index, boolean value);
+
+    /**
+     * [@function] xpc_array_set_int64
+     * 
+     * Inserts an <code>int64_t</code> (primitive) value into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param value
+     *               The <code>int64_t</code> value to insert. After calling this method, the XPC
+     *               object corresponding to the primitive value inserted may be safely retrieved
+     *               with {@link xpc_array_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_int64(@NotNull VoidPtr xarray, @NUInt long index, long value);
+
+    /**
+     * [@function] xpc_array_set_uint64
+     * 
+     * Inserts a <code>uint64_t</code> (primitive) value into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param value
+     *               The <code>uint64_t</code> value to insert. After calling this method, the XPC
+     *               object corresponding to the primitive value inserted may be safely retrieved
+     *               with {@link xpc_array_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_uint64(@NotNull VoidPtr xarray, @NUInt long index, long value);
+
+    /**
+     * [@function] xpc_array_set_double
+     * 
+     * Inserts a <code>double</code> (primitive) value into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param value
+     *               The <code>double</code> value to insert. After calling this method, the XPC
+     *               object corresponding to the primitive value inserted may be safely retrieved
+     *               with {@link xpc_array_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_double(@NotNull VoidPtr xarray, @NUInt long index, double value);
+
+    /**
+     * [@function] xpc_array_set_date
+     * 
+     * Inserts a date value into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param value
+     *               The date value to insert, represented as an <code>int64_t</code>. After
+     *               calling this method, the XPC object corresponding to the primitive value
+     *               inserted may be safely retrieved with {@link xpc_array_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_date(@NotNull VoidPtr xarray, @NUInt long index, long value);
+
+    /**
+     * [@function] xpc_array_set_data
+     * 
+     * Inserts a raw data value into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param bytes
+     *               The raw data to insert. After calling this method, the XPC object
+     *               corresponding to the primitive value inserted may be safely retrieved with
+     *               {@link xpc_array_get_value()}.
+     * 
+     * @param length
+     *               The length of the data.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_data(@NotNull VoidPtr xarray, @NUInt long index,
+            @NotNull ConstVoidPtr bytes, @NUInt long length);
+
+    /**
+     * [@function] xpc_array_set_string
+     * 
+     * Inserts a C string into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param string
+     *               The C string to insert. After calling this method, the XPC object
+     *               corresponding to the primitive value inserted may be safely retrieved with
+     *               {@link xpc_array_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_string(@NotNull VoidPtr xarray, @NUInt long index,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String string);
+
+    /**
+     * [@function] xpc_array_set_fd
+     * 
+     * Inserts a file descriptor into an array.
+     * 
+     * @param xarray
+     *               The array object which is to be manipulated.
+     * 
+     * @param index
+     *               The index at which to insert the value. This value must lie within the index
+     *               space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *               be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *               undefined.
+     * 
+     * @param fd
+     *               The file descriptor to insert. After calling this method, the XPC object
+     *               corresponding to the primitive value inserted may be safely retrieved with
+     *               {@link xpc_array_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_fd(@NotNull VoidPtr xarray, @NUInt long index, int fd);
+
+    /**
+     * [@function] xpc_array_set_connection
+     * 
+     * Inserts a connection into an array.
+     * 
+     * @param xarray
+     *                   The array object which is to be manipulated.
+     * 
+     * @param index
+     *                   The index at which to insert the value. This value must lie within the index
+     *                   space of the array (0 to N-1 inclusive, where N is the count of the array) or
+     *                   be XPC_ARRAY_APPEND. If the index is outside that range, the behavior is
+     *                   undefined.
+     * 
+     * @param connection
+     *                   The connection to insert. After calling this method, the XPC object
+     *                   corresponding to the primitive value inserted may be safely retrieved with
+     *                   {@link xpc_array_get_value()}. The connection is NOT retained by the array.
+     * 
+     *                   API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_array_set_connection(@NotNull VoidPtr xarray, @NUInt long index,
+            @NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_array_get_bool
+     * 
+     * Gets a <code>bool</code> primitive value from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         The underlying <code>bool</code> value at the specified index. false if the
+     *         value at the specified index is not a Boolean value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_array_get_bool(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_int64
+     * 
+     * Gets an <code>int64_t</code> primitive value from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         The underlying <code>int64_t</code> value at the specified index. 0 if the
+     *         value at the specified index is not a signed integer value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_array_get_int64(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_uint64
+     * 
+     * Gets a <code>uint64_t</code> primitive value from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         The underlying <code>uint64_t</code> value at the specified index. 0 if the
+     *         value at the specified index is not an unsigned integer value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_array_get_uint64(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_double
+     * 
+     * Gets a <code>double</code> primitive value from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         The underlying <code>double</code> value at the specified index. NAN if the
+     *         value at the specified index is not a floating point value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native double xpc_array_get_double(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_date
+     * 
+     * Gets a date interval from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         The underlying date interval at the specified index. 0 if the value at the
+     *         specified index is not a date value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_array_get_date(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_data
+     * 
+     * Gets a pointer to the raw bytes of a data object from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @param length
+     *               Upon return output, will contain the length of the data corresponding to the
+     *               specified key.
+     * 
+     * @return
+     *         The underlying bytes at the specified index. NULL if the value at the
+     *         specified index is not a data value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native ConstVoidPtr xpc_array_get_data(@NotNull VoidPtr xarray, @NUInt long index,
+            @Nullable NUIntPtr length);
+
+    /**
+     * [@function] xpc_array_get_string
+     * 
+     * Gets a C string value from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         The underlying C string at the specified index. NULL if the value at the
+     *         specified index is not a C string value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String xpc_array_get_string(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_uuid
+     * 
+     * Gets a <code>uuid_t</code> value from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         The underlying <code>uuid_t</code> value at the specified index. The null
+     *         UUID if the value at the specified index is not a UUID value. The returned
+     *         pointer may be safely passed to the uuid(3) APIs.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String xpc_array_get_uuid(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_dup_fd
+     * 
+     * Gets a file descriptor from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         A new file descriptor created from the value at the specified index. You are
+     *         responsible for close(2)ing this descriptor. -1 if the value at the specified
+     *         index is not a file descriptor value.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_array_dup_fd(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_create_connection
+     * 
+     * Creates a connection object from an array directly.
+     * 
+     * @param xarray
+     *               The array which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the index space
+     *               of the array (0 to N-1 inclusive, where N is the count of the array). If the
+     *               index is outside that range, the behavior is undefined.
+     * 
+     * @return
+     *         A new connection created from the value at the specified index. You are
+     *         responsible for calling xpc_release() on the returned connection. NULL if the
+     *         value at the specified index is not an endpoint containing a connection. Each
+     *         call to this method for the same index in the same array will yield a
+     *         different connection. See {@link xpc_connection_create_from_endpoint()} for
+     *         discussion as to the responsibilities when dealing with the returned
+     *         connection.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_connection_t xpc_array_create_connection(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_dictionary
+     * 
+     * Returns the dictionary at the specified index in the array.
+     * 
+     * This method does not grant the caller a reference to the underlying object,
+     * and thus the caller is not responsible for releasing the object.
+     * 
+     * API-Since: 9.0
+     * 
+     * @param xarray
+     *               The array object which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the range of
+     *               indexes as specified in xpc_array_set_value().
+     * 
+     * @return
+     *         The object at the specified index within the array or NULL if the given
+     *         object was not an XPC array or if the the value at the specified index was
+     *         not a dictionary.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_array_get_dictionary(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_array_get_array
+     * 
+     * Returns the array at the specified index in the array.
+     * 
+     * This method does not grant the caller a reference to the underlying object,
+     * and thus the caller is not responsible for releasing the object.
+     * 
+     * API-Since: 9.0
+     * 
+     * @param xarray
+     *               The array object which is to be examined.
+     * 
+     * @param index
+     *               The index of the value to obtain. This value must lie within the range of
+     *               indexes as specified in xpc_array_set_value().
+     * 
+     * @return
+     *         The object at the specified index within the array or NULL if the given
+     *         object was not an XPC array or if the the value at the specified index was
+     *         not an array.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_array_get_array(@NotNull VoidPtr xarray, @NUInt long index);
+
+    /**
+     * [@function] xpc_dictionary_create
+     * 
+     * Creates an XPC object representing a dictionary of XPC objects keyed to
+     * C-strings.
+     * 
+     * @param keys
+     *               An array of C-strings that are to be the keys for the values to be inserted.
+     *               Each element of this array is copied into the dictionary's internal storage.
+     *               Elements of this array may NOT be NULL.
+     * 
+     * @param values
+     *               A C-array that is parallel to the array of keys, consisting of objects that
+     *               are to be inserted. Each element in this array is retained. Elements in this
+     *               array may be NULL.
+     * 
+     * @param count
+     *               The number of key/value pairs in the given arrays. If the count is less than
+     *               the actual count of values, only that many key/value pairs will be inserted
+     *               into the dictionary.
+     * 
+     *               If the count is more than the the actual count of key/value pairs, the
+     *               behavior is undefined. If one array is NULL and the other is not, the
+     *               behavior is undefined. If both arrays are NULL and the count is non-0, the
+     *               behavior is undefined.
+     * 
+     * @return
+     *         The new dictionary object.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_dictionary_create(
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) @Nullable String[] keys,
+            @Nullable ConstPtr<VoidPtr> values, @NUInt long count);
+
+    /**
+     * [@function] xpc_dictionary_create_empty
+     * 
+     * Creates an XPC object representing a dictionary of XPC objects keyed to
+     * C-strings.
+     * 
+     * @return
+     *         The new dictionary object.
+     * 
+     * @see
+     *      xpc_dictionary_create
+     * 
+     *      API-Since: 14.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native VoidPtr xpc_dictionary_create_empty();
+
+    /**
+     * [@function] xpc_dictionary_create_reply
+     * 
+     * Creates a dictionary that is in reply to the given dictionary.
+     * 
+     * After completing successfully on a dictionary, this method may not be called
+     * again on that same dictionary. Attempts to do so will return NULL.
+     * 
+     * When this dictionary is sent across the reply connection, the remote end's
+     * reply handler is invoked.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param original
+     *                 The original dictionary that is to be replied to.
+     * 
+     * @return
+     *         The new dictionary object. NULL if the object was not a dictionary with a
+     *         reply context.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_dictionary_create_reply(@NotNull VoidPtr original);
+
+    /**
+     * [@function] xpc_dictionary_set_value
+     * 
+     * Sets the value for the specified key to the specified object.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the value shall be set.
+     * 
+     * @param value
+     *              The object to insert. The object is retained by the dictionary. If there
+     *              already exists a value for the specified key, the old value is released
+     *              and overwritten by the new value. This parameter may be NULL, in which case
+     *              the value corresponding to the specified key is deleted if present.
+     * 
+     *              API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_value(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            @Nullable VoidPtr value);
+
+    /**
+     * [@function] xpc_dictionary_get_value
+     * 
+     * Returns the value for the specified key.
+     * 
+     * This method does not grant the caller a reference to the underlying object,
+     * and thus the caller is not responsible for releasing the object.
+     * 
+     * API-Since: 5.0
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The object for the specified key within the dictionary. NULL if there is no
+     *         value associated with the specified key or if the given object was not an
+     *         XPC dictionary.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_dictionary_get_value(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_count
+     * 
+     * Returns the number of values stored in the dictionary.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @return
+     *         The number of values stored in the dictionary or 0 if the given object was
+     *         not an XPC dictionary. Calling xpc_dictionary_set_value() with a non-NULL
+     *         value will increment the count. Calling xpc_dictionary_set_value() with a
+     *         NULL value will decrement the count.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long xpc_dictionary_get_count(@NotNull VoidPtr xdict);
+
+    /**
+     * API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_dictionary_apply(@NotNull VoidPtr xdict,
+            @ObjCBlock(name = "call_xpc_dictionary_apply") @NotNull Block_xpc_dictionary_apply applier);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_xpc_dictionary_apply {
+        @Generated
+        boolean call_xpc_dictionary_apply(
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) @NotNull String key,
+                @NotNull VoidPtr value);
+    }
+
+    /**
+     * [@function] xpc_dictionary_get_remote_connection
+     * 
+     * Returns the connection from which the dictionary was received.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @return
+     *         If the dictionary was received by a connection event handler or a dictionary
+     *         created through xpc_dictionary_create_reply(), a connection object over which
+     *         a reply message can be sent is returned. For any other dictionary, NULL is
+     *         returned.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_connection_t xpc_dictionary_get_remote_connection(@NotNull VoidPtr xdict);
+
+    /**
+     * [@function] xpc_dictionary_set_bool
+     * 
+     * Inserts a <code>bool</code> (primitive) value into a dictionary.
+     * 
+     * @param xdict
+     *              The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the primitive value shall be set.
+     * 
+     * @param value
+     *              The <code>bool</code> value to insert. After calling this method, the XPC
+     *              object corresponding to the primitive value inserted may be safely retrieved
+     *              with {@link xpc_dictionary_get_value()}.
+     * 
+     *              API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_bool(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            boolean value);
+
+    /**
+     * [@function] xpc_dictionary_set_int64
+     * 
+     * Inserts an <code>int64_t</code> (primitive) value into a dictionary.
+     * 
+     * @param xdict
+     *              The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the primitive value shall be set.
+     * 
+     * @param value
+     *              The <code>int64_t</code> value to insert. After calling this method, the XPC
+     *              object corresponding to the primitive value inserted may be safely retrieved
+     *              with {@link xpc_dictionary_get_value()}.
+     * 
+     *              API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_int64(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            long value);
+
+    /**
+     * [@function] xpc_dictionary_set_uint64
+     * 
+     * Inserts a <code>uint64_t</code> (primitive) value into a dictionary.
+     * 
+     * @param xdict
+     *              The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the primitive value shall be set.
+     * 
+     * @param value
+     *              The <code>uint64_t</code> value to insert. After calling this method, the XPC
+     *              object corresponding to the primitive value inserted may be safely retrieved
+     *              with {@link xpc_dictionary_get_value()}.
+     * 
+     *              API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_uint64(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            long value);
+
+    /**
+     * [@function] xpc_dictionary_set_double
+     * 
+     * Inserts a <code>double</code> (primitive) value into a dictionary.
+     * 
+     * @param xdict
+     *              The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the primitive value shall be set.
+     * 
+     * @param value
+     *              The <code>double</code> value to insert. After calling this method, the XPC
+     *              object corresponding to the primitive value inserted may be safely retrieved
+     *              with {@link xpc_dictionary_get_value()}.
+     * 
+     *              API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_double(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            double value);
+
+    /**
+     * [@function] xpc_dictionary_set_date
+     * 
+     * Inserts a date (primitive) value into a dictionary.
+     * 
+     * @param xdict
+     *              The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the primitive value shall be set.
+     * 
+     * @param value
+     *              The date value to insert. After calling this method, the XPC object
+     *              corresponding to the primitive value inserted may be safely retrieved with
+     *              {@link xpc_dictionary_get_value()}.
+     * 
+     *              API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_date(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            long value);
+
+    /**
+     * [@function] xpc_dictionary_set_data
+     * 
+     * Inserts a raw data value into a dictionary.
+     * 
+     * @param xdict
+     *               The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *               The key for which the primitive value shall be set.
+     * 
+     * @param bytes
+     *               The bytes to insert. After calling this method, the XPC object corresponding
+     *               to the primitive value inserted may be safely retrieved with
+     *               {@link xpc_dictionary_get_value()}.
+     * 
+     * @param length
+     *               The length of the data.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_data(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            @NotNull ConstVoidPtr bytes, @NUInt long length);
+
+    /**
+     * [@function] xpc_dictionary_set_string
+     * 
+     * Inserts a C string value into a dictionary.
+     * 
+     * @param xdict
+     *               The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *               The key for which the primitive value shall be set.
+     * 
+     * @param string
+     *               The C string to insert. After calling this method, the XPC object
+     *               corresponding to the primitive value inserted may be safely retrieved with
+     *               {@link xpc_dictionary_get_value()}.
+     * 
+     *               API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_string(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String string);
+
+    /**
+     * [@function] xpc_dictionary_set_fd
+     * 
+     * Inserts a file descriptor into a dictionary.
+     * 
+     * @param xdict
+     *              The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the primitive value shall be set.
+     * 
+     * @param fd
+     *              The file descriptor to insert. After calling this method, the XPC object
+     *              corresponding to the primitive value inserted may be safely retrieved
+     *              with {@link xpc_dictionary_get_value()}.
+     * 
+     *              API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_fd(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            int fd);
+
+    /**
+     * [@function] xpc_dictionary_set_connection
+     * 
+     * Inserts a connection into a dictionary.
+     * 
+     * @param xdict
+     *                   The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *                   The key for which the primitive value shall be set.
+     * 
+     * @param connection
+     *                   The connection to insert. After calling this method, the XPC object
+     *                   corresponding to the primitive value inserted may be safely retrieved
+     *                   with {@link xpc_dictionary_get_value()}. The connection is NOT retained by
+     *                   the dictionary.
+     * 
+     *                   API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_connection(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            @NotNull xpc_connection_t connection);
+
+    /**
+     * [@function] xpc_dictionary_set_mach_send
+     * 
+     * Inserts a send right into a dictionary.
+     * 
+     * The XPC runtime sends the port with disposition `MACH_MSG_TYPE_COPY_SEND`
+     * 
+     * API-Since: 5.0
+     * 
+     * @param xdict
+     *              The dictionary which is to be manipulated.
+     * 
+     * @param key
+     *              The key for which the primitive value shall be set.
+     * 
+     * @param p
+     *              The port to insert. After calling this method, the XPC object
+     *              corresponding to the primitive value inserted may be safely retrieved
+     *              with {@link xpc_dictionary_copy_mach_send()}.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_dictionary_set_mach_send(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            int p);
+
+    /**
+     * [@function] xpc_dictionary_get_bool
+     * 
+     * Gets a <code>bool</code> primitive value from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The underlying <code>bool</code> value for the specified key. false if the
+     *         the value for the specified key is not a Boolean value or if there is no
+     *         value for the specified key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_dictionary_get_bool(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_int64
+     * 
+     * Gets an <code>int64</code> primitive value from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The underlying <code>int64_t</code> value for the specified key. 0 if the
+     *         value for the specified key is not a signed integer value or if there is no
+     *         value for the specified key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_dictionary_get_int64(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_uint64
+     * 
+     * Gets a <code>uint64</code> primitive value from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The underlying <code>uint64_t</code> value for the specified key. 0 if the
+     *         value for the specified key is not an unsigned integer value or if there is
+     *         no value for the specified key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_dictionary_get_uint64(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_double
+     * 
+     * Gets a <code>double</code> primitive value from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The underlying <code>double</code> value for the specified key. NAN if the
+     *         value for the specified key is not a floating point value or if there is no
+     *         value for the specified key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native double xpc_dictionary_get_double(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_date
+     * 
+     * Gets a date value from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The underlying date interval for the specified key. 0 if the value for the
+     *         specified key is not a date value or if there is no value for the specified
+     *         key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native long xpc_dictionary_get_date(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_data
+     * 
+     * Gets a raw data value from a dictionary directly.
+     * 
+     * @param xdict
+     *               The dictionary object which is to be examined.
+     * 
+     * @param key
+     *               The key whose value is to be obtained.
+     * 
+     * @param length
+     *               For the data type, the third parameter, upon output, will contain the length
+     *               of the data corresponding to the specified key. May be NULL.
+     * 
+     * @return
+     *         The underlying raw data for the specified key. NULL if the value for the
+     *         specified key is not a data value or if there is no value for the specified
+     *         key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native ConstVoidPtr xpc_dictionary_get_data(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key,
+            @Nullable NUIntPtr length);
+
+    /**
+     * [@function] xpc_dictionary_get_string
+     * 
+     * Gets a C string value from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The underlying C string for the specified key. NULL if the value for the
+     *         specified key is not a C string value or if there is no value for the
+     *         specified key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String xpc_dictionary_get_string(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_uuid
+     * 
+     * Gets a uuid value from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The underlying <code>uuid_t</code> value for the specified key. NULL if the
+     *         value at the specified index is not a UUID value. The returned pointer may be
+     *         safely passed to the uuid(3) APIs.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String xpc_dictionary_get_uuid(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_dup_fd
+     * 
+     * Creates a file descriptor from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         A new file descriptor created from the value for the specified key. You are
+     *         responsible for close(2)ing this descriptor. -1 if the value for the
+     *         specified key is not a file descriptor value or if there is no value for the
+     *         specified key.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_dictionary_dup_fd(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_create_connection
+     * 
+     * Creates a connection from a dictionary directly.
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         A new connection created from the value for the specified key. You are
+     *         responsible for calling xpc_release() on the returned connection. NULL if the
+     *         value for the specified key is not an endpoint containing a connection or if
+     *         there is no value for the specified key. Each call to this method for the
+     *         same key in the same dictionary will yield a different connection. See
+     *         {@link xpc_connection_create_from_endpoint()} for discussion as to the
+     *         responsibilities when dealing with the returned connection.
+     * 
+     *         API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_connection_t xpc_dictionary_create_connection(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_dictionary
+     * 
+     * Returns the dictionary value for the specified key.
+     * 
+     * This method does not grant the caller a reference to the underlying object,
+     * and thus the caller is not responsible for releasing the object.
+     * 
+     * API-Since: 9.0
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The object for the specified key within the dictionary. NULL if there is no
+     *         value associated with the specified key, if the given object was not an
+     *         XPC dictionary, or if the object for the specified key is not a dictionary.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_dictionary_get_dictionary(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_get_array
+     * 
+     * Returns the array value for the specified key.
+     * 
+     * This method does not grant the caller a reference to the underlying object,
+     * and thus the caller is not responsible for releasing the object.
+     * 
+     * API-Since: 9.0
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The object for the specified key within the dictionary. NULL if there is no
+     *         value associated with the specified key, if the given object was not an
+     *         XPC dictionary, or if the object for the specified key is not an array.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr xpc_dictionary_get_array(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    /**
+     * [@function] xpc_dictionary_copy_mach_send
+     * 
+     * Returns a send right to the mach port.
+     * 
+     * The XPC runtime will copy the send right using `mach_port_mod_refs`
+     * before returning the port
+     * 
+     * API-Since: 5.0
+     * 
+     * @param xdict
+     *              The dictionary object which is to be examined.
+     * 
+     * @param key
+     *              The key whose value is to be obtained.
+     * 
+     * @return
+     *         The object for the specified key within the dictionary. `MACH_PORT_NULL`
+     *         if there is no value associated with the specified key, if the given object
+     *         was not an XPC dictionary, or if the object for the specified key is not a send
+     *         right.
+     */
+    @Generated
+    @CFunction
+    public static native int xpc_dictionary_copy_mach_send(@NotNull VoidPtr xdict,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String key);
+
+    @Generated
+    @CFunction
+    public static native int vm_stats(VoidPtr info, IntPtr count);
+
+    /**
+     * The double3 variants of these functions take their arguments in a buffer
+     * to workaround the fact that double3 calling conventions are different
+     * depending on whether or not the executable has been compiled with AVX
+     * enabled.
+     */
+    @Generated
+    @CFunction
+    public static native double _simd_orient_vd3(ConstDoublePtr arg1);
+
+    @Generated
+    @CFunction
+    public static native double _simd_orient_pd3(ConstDoublePtr arg1);
+
+    @Generated
+    @CFunction
+    public static native double _simd_insphere_pd3(ConstDoublePtr arg1);
+
+    /**
+     * Client side reply port allocate
+     */
+    @Generated
+    @CFunction
+    public static native int mig_get_reply_port();
+
+    /**
+     * Client side reply port deallocate
+     */
+    @Generated
+    @CFunction
+    public static native void mig_dealloc_reply_port(int reply_port);
+
+    /**
+     * Client side reply port "deallocation"
+     */
+    @Generated
+    @CFunction
+    public static native void mig_put_reply_port(int reply_port);
+
+    /**
+     * Bounded string copy
+     */
+    @Generated
+    @CFunction
+    public static native int mig_strncpy(BytePtr dest,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String src, int len);
+
+    @Generated
+    @CFunction
+    public static native int mig_strncpy_zerofill(BytePtr dest,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String src, int len);
+
+    /**
+     * Allocate memory for out-of-line mig structures
+     */
+    @Generated
+    @CFunction
+    public static native void mig_allocate(NUIntPtr arg1, @NUInt long arg2);
+
+    /**
+     * Deallocate memory used for out-of-line mig structures
+     */
+    @Generated
+    @CFunction
+    public static native void mig_deallocate(@NUInt long arg1, @NUInt long arg2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void __NDR_convert__mig_reply_error_t(
+            @UncertainArgument("Options: reference, array Fallback: reference") mig_reply_error_t x);
+
+    @Generated
+    @CFunction
+    public static native int clock_set_time(int clock_ctrl, @ByValue mach_timespec new_time);
+
+    @Generated
+    @CFunction
+    public static native int clock_set_attributes(int clock_ctrl, int flavor, IntPtr clock_attr, int clock_attrCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_reboot(int host_priv, int options);
+
+    @Generated
+    @CFunction
+    public static native int host_priv_statistics(int host_priv, int flavor, IntPtr host_info_out,
+            IntPtr host_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_default_memory_manager(int host_priv, IntPtr default_manager, int cluster_size);
+
+    @Generated
+    @CFunction
+    public static native int vm_wire(int host_priv, int task, @NUInt long address, @NUInt long size,
+            int desired_access);
+
+    @Generated
+    @CFunction
+    public static native int thread_wire(int host_priv, int thread, int wired);
+
+    @Generated
+    @CFunction
+    public static native int vm_allocate_cpm(int host_priv, int task, NUIntPtr address, @NUInt long size, int flags);
+
+    @Generated
+    @CFunction
+    public static native int host_processors(int host_priv, Ptr<IntPtr> out_processor_list,
+            IntPtr out_processor_listCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_get_clock_control(int host_priv, int clock_id, IntPtr clock_ctrl);
+
+    @Generated
+    @CFunction
+    public static native int kmod_create(int host_priv, @NUInt long info, IntPtr module);
+
+    @Generated
+    @CFunction
+    public static native int kmod_destroy(int host_priv, int module);
+
+    @Generated
+    @CFunction
+    public static native int kmod_control(int host_priv, int module, int flavor, Ptr<VoidPtr> data, IntPtr dataCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_get_special_port(int host_priv, int node, int which, IntPtr port);
+
+    @Generated
+    @CFunction
+    public static native int host_set_special_port(int host_priv, int which, int port);
+
+    @Generated
+    @CFunction
+    public static native int host_set_exception_ports(int host_priv, int exception_mask, int new_port, int behavior,
+            int new_flavor);
+
+    @Generated
+    @CFunction
+    public static native int host_get_exception_ports(int host_priv, int exception_mask, IntPtr masks, IntPtr masksCnt,
+            IntPtr old_handlers, IntPtr old_behaviors, IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int host_swap_exception_ports(int host_priv, int exception_mask, int new_port, int behavior,
+            int new_flavor, IntPtr masks, IntPtr masksCnt, IntPtr old_handlerss, IntPtr old_behaviors,
+            IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int mach_vm_wire(int host_priv, int task, @NUInt long address, @NUInt long size,
+            int desired_access);
+
+    @Generated
+    @CFunction
+    public static native int host_processor_sets(int host_priv, Ptr<IntPtr> processor_sets, IntPtr processor_setsCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_processor_set_priv(int host_priv, int set_name, IntPtr set);
+
+    @Generated
+    @CFunction
+    public static native int host_set_UNDServer(int host, int server);
+
+    @Generated
+    @CFunction
+    public static native int host_get_UNDServer(int host, IntPtr server);
+
+    @Generated
+    @CFunction
+    public static native int kext_request(int host_priv, int user_log_flags, @NUInt long request_data,
+            int request_dataCnt, NUIntPtr response_data, IntPtr response_dataCnt, NUIntPtr log_data, IntPtr log_dataCnt,
+            IntPtr op_result);
+
+    @Generated
+    @CFunction
+    public static native int host_security_create_task_token(int host_security, int parent_task,
+            @ByValue security_token_t sec_token, @ByValue audit_token_t audit_token, int host, IntPtr ledgers,
+            int ledgersCnt, int inherit_memory, IntPtr child_task);
+
+    @Generated
+    @CFunction
+    public static native int host_security_set_task_token(int host_security, int target_task,
+            @ByValue security_token_t sec_token, @ByValue audit_token_t audit_token, int host);
+
+    @Generated
+    @CFunction
+    public static native int processor_start(int processor);
+
+    @Generated
+    @CFunction
+    public static native int processor_exit(int processor);
+
+    @Generated
+    @CFunction
+    public static native int processor_info(int processor, int flavor, IntPtr host, IntPtr processor_info_out,
+            IntPtr processor_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int processor_control(int processor, IntPtr processor_cmd, int processor_cmdCnt);
+
+    @Generated
+    @CFunction
+    public static native int processor_assign(int processor, int new_set, int wait_);
+
+    @Generated
+    @CFunction
+    public static native int processor_get_assignment(int processor, IntPtr assigned_set);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_statistics(int pset, int flavor, IntPtr info_out, IntPtr info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_destroy(int set);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_max_priority(int processor_set, int max_priority, int change_threads);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_policy_enable(int processor_set, int policy);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_policy_disable(int processor_set, int policy, int change_threads);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_tasks(int processor_set, Ptr<IntPtr> task_list, IntPtr task_listCnt);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_threads(int processor_set, Ptr<IntPtr> thread_list, IntPtr thread_listCnt);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_policy_control(int pset, int flavor, IntPtr policy_info, int policy_infoCnt,
+            int change);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_stack_usage(int pset, IntPtr ltotal, NUIntPtr space, NUIntPtr resident,
+            NUIntPtr maxusage, NUIntPtr maxstack);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_info(int set_name, int flavor, IntPtr host, IntPtr info_out,
+            IntPtr info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_tasks_with_flavor(int processor_set, int flavor, Ptr<IntPtr> task_list,
+            IntPtr task_listCnt);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_signal(int semaphore);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_signal_all(int semaphore);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_wait(int semaphore);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_timedwait(int semaphore, @ByValue mach_timespec wait_time);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_timedwait_signal(int wait_semaphore, int signal_semaphore,
+            @ByValue mach_timespec wait_time);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_wait_signal(int wait_semaphore, int signal_semaphore);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_signal_thread(int semaphore, int thread);
+
+    @Generated
+    @CFunction
+    public static native int task_create(int target_task, IntPtr ledgers, int ledgersCnt, int inherit_memory,
+            IntPtr child_task);
+
+    @Generated
+    @CFunction
+    public static native int task_terminate(int target_task);
+
+    @Generated
+    @CFunction
+    public static native int task_threads(int target_task, Ptr<IntPtr> act_list, IntPtr act_listCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_ports_register(int target_task, IntPtr init_port_set, int init_port_setCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_ports_lookup(int target_task, Ptr<IntPtr> init_port_set, IntPtr init_port_setCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_info(int target_task, int flavor, IntPtr task_info_out, IntPtr task_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_set_info(int target_task, int flavor, IntPtr task_info_in, int task_info_inCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_suspend(int target_task);
+
+    @Generated
+    @CFunction
+    public static native int task_resume(int target_task);
+
+    @Generated
+    @CFunction
+    public static native int task_get_special_port(int task, int which_port, IntPtr special_port);
+
+    @Generated
+    @CFunction
+    public static native int task_set_special_port(int task, int which_port, int special_port);
+
+    @Generated
+    @CFunction
+    public static native int thread_create(int parent_task, IntPtr child_act);
+
+    @Generated
+    @CFunction
+    public static native int thread_create_running(int parent_task, int flavor, IntPtr new_state, int new_stateCnt,
+            IntPtr child_act);
+
+    @Generated
+    @CFunction
+    public static native int task_set_exception_ports(int task, int exception_mask, int new_port, int behavior,
+            int new_flavor);
+
+    @Generated
+    @CFunction
+    public static native int task_get_exception_ports(int task, int exception_mask, IntPtr masks, IntPtr masksCnt,
+            IntPtr old_handlers, IntPtr old_behaviors, IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int task_swap_exception_ports(int task, int exception_mask, int new_port, int behavior,
+            int new_flavor, IntPtr masks, IntPtr masksCnt, IntPtr old_handlers, IntPtr old_behaviors,
+            IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int lock_set_create(int task, IntPtr new_lock_set, int n_ulocks, int policy);
+
+    @Generated
+    @CFunction
+    public static native int lock_set_destroy(int task, int lock_set);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_create(int task, IntPtr semaphore, int policy, int value);
+
+    @Generated
+    @CFunction
+    public static native int semaphore_destroy(int task, int semaphore);
+
+    @Generated
+    @CFunction
+    public static native int task_policy_set(int task, int flavor, IntPtr policy_info, int policy_infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_policy_get(int task, int flavor, IntPtr policy_info, IntPtr policy_infoCnt,
+            IntPtr get_default);
+
+    @Generated
+    @CFunction
+    public static native int task_sample(int task, int reply);
+
+    @Generated
+    @CFunction
+    public static native int task_policy(int task, int policy, IntPtr base, int baseCnt, int set_limit, int change);
+
+    @Generated
+    @CFunction
+    public static native int task_set_emulation(int target_port, @NUInt long routine_entry_pt, int routine_number);
+
+    @Generated
+    @CFunction
+    public static native int task_get_emulation_vector(int task, IntPtr vector_start, Ptr<NUIntPtr> emulation_vector,
+            IntPtr emulation_vectorCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_set_emulation_vector(int task, int vector_start, NUIntPtr emulation_vector,
+            int emulation_vectorCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_set_ras_pc(int target_task, @NUInt long basepc, @NUInt long boundspc);
+
+    @Generated
+    @CFunction
+    public static native int task_zone_info(int target_task, Ptr<Ptr<mach_zone_name>> names, IntPtr namesCnt,
+            Ptr<Ptr<task_zone_info_data>> info, IntPtr infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_assign(int task, int new_set, int assign_threads);
+
+    @Generated
+    @CFunction
+    public static native int task_assign_default(int task, int assign_threads);
+
+    @Generated
+    @CFunction
+    public static native int task_get_assignment(int task, IntPtr assigned_set);
+
+    @Generated
+    @CFunction
+    public static native int task_set_policy(int task, int pset, int policy, IntPtr base, int baseCnt, IntPtr limit,
+            int limitCnt, int change);
+
+    @Generated
+    @CFunction
+    public static native int task_get_state(int task, int flavor, IntPtr old_state, IntPtr old_stateCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_set_state(int task, int flavor, IntPtr new_state, int new_stateCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_set_phys_footprint_limit(int task, int new_limit, IntPtr old_limit);
+
+    @Generated
+    @CFunction
+    public static native int task_suspend2(int target_task, IntPtr suspend_token);
+
+    @Generated
+    @CFunction
+    public static native int task_resume2(int suspend_token);
+
+    @Generated
+    @CFunction
+    public static native int task_purgable_info(int task,
+            @UncertainArgument("Options: reference, array Fallback: reference") vm_purgeable_info stats);
+
+    @Generated
+    @CFunction
+    public static native int task_get_mach_voucher(int task, int which, IntPtr voucher);
+
+    @Generated
+    @CFunction
+    public static native int task_set_mach_voucher(int task, int voucher);
+
+    @Generated
+    @CFunction
+    public static native int task_swap_mach_voucher(int task, int new_voucher, IntPtr old_voucher);
+
+    @Generated
+    @CFunction
+    public static native int task_generate_corpse(int task, IntPtr corpse_task_port);
+
+    @Generated
+    @CFunction
+    public static native int task_map_corpse_info(int task, int corspe_task, NUIntPtr kcd_addr_begin, IntPtr kcd_size);
+
+    @Generated
+    @CFunction
+    public static native int task_register_dyld_image_infos(int task,
+            @UncertainArgument("Options: reference, array Fallback: reference") dyld_kernel_image_info dyld_images,
+            int dyld_imagesCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_unregister_dyld_image_infos(int task,
+            @UncertainArgument("Options: reference, array Fallback: reference") dyld_kernel_image_info dyld_images,
+            int dyld_imagesCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_get_dyld_image_infos(int task, Ptr<Ptr<dyld_kernel_image_info>> dyld_images,
+            IntPtr dyld_imagesCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_register_dyld_shared_cache_image_info(int task,
+            @ByValue dyld_kernel_image_info dyld_cache_image, int no_cache, int private_cache);
+
+    @Generated
+    @CFunction
+    public static native int task_register_dyld_set_dyld_state(int task, byte dyld_state);
+
+    @Generated
+    @CFunction
+    public static native int task_register_dyld_get_process_state(int task,
+            @UncertainArgument("Options: reference, array Fallback: reference") dyld_kernel_process_info dyld_process_state);
+
+    @Generated
+    @CFunction
+    public static native int task_map_corpse_info_64(int task, int corspe_task, NUIntPtr kcd_addr_begin,
+            NUIntPtr kcd_size);
+
+    @Generated
+    @CFunction
+    public static native int task_inspect(int task, int flavor, IntPtr info_out, IntPtr info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int task_get_exc_guard_behavior(int task, IntPtr behavior);
+
+    @Generated
+    @CFunction
+    public static native int task_set_exc_guard_behavior(int task, int behavior);
+
+    @Generated
+    @CFunction
+    public static native int task_dyld_process_info_notify_register(int target_task, int notify_);
+
+    @Generated
+    @CFunction
+    public static native int task_create_identity_token(int task, IntPtr token);
+
+    @Generated
+    @CFunction
+    public static native int task_identity_token_get_task_port(int token, int flavor, IntPtr task_port);
+
+    @Generated
+    @CFunction
+    public static native int task_dyld_process_info_notify_deregister(int target_task, int notify_);
+
+    @Generated
+    @CFunction
+    public static native int task_get_exception_ports_info(int port, int exception_mask, IntPtr masks, IntPtr masksCnt,
+            @UncertainArgument("Options: reference, array Fallback: reference") ipc_info_port old_handlers_info,
+            IntPtr old_behaviors, IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int task_test_sync_upcall(int task, int port);
+
+    @Generated
+    @CFunction
+    public static native int task_set_corpse_forking_behavior(int task, int behavior);
+
+    @Generated
+    @CFunction
+    public static native int task_test_async_upcall_propagation(int task, int port, int qos, int iotier);
+
+    @Generated
+    @CFunction
+    public static native int task_map_kcdata_object_64(int task, int kcdata_object, NUIntPtr kcd_addr_begin,
+            NUIntPtr kcd_size);
+
+    @Generated
+    @CFunction
+    public static native int task_register_hardened_exception_handler(int task, int signed_pc_key,
+            int exceptions_allowed, int behaviors_allowed, int flavors_allowed, int new_exception_port);
+
+    @Generated
+    @CFunction
+    public static native int thread_terminate(int target_act);
+
+    @Generated
+    @CFunction
+    public static native int act_get_state(int target_act, int flavor, IntPtr old_state, IntPtr old_stateCnt);
+
+    @Generated
+    @CFunction
+    public static native int act_set_state(int target_act, int flavor, IntPtr new_state, int new_stateCnt);
+
+    @Generated
+    @CFunction
+    public static native int thread_get_state(int target_act, int flavor, IntPtr old_state, IntPtr old_stateCnt);
+
+    @Generated
+    @CFunction
+    public static native int thread_set_state(int target_act, int flavor, IntPtr new_state, int new_stateCnt);
+
+    @Generated
+    @CFunction
+    public static native int thread_suspend(int target_act);
+
+    @Generated
+    @CFunction
+    public static native int thread_resume(int target_act);
+
+    @Generated
+    @CFunction
+    public static native int thread_abort(int target_act);
+
+    @Generated
+    @CFunction
+    public static native int thread_abort_safely(int target_act);
+
+    @Generated
+    @CFunction
+    public static native int thread_depress_abort(int thread);
+
+    @Generated
+    @CFunction
+    public static native int thread_get_special_port(int thr_act, int which_port, IntPtr special_port);
+
+    @Generated
+    @CFunction
+    public static native int thread_set_special_port(int thr_act, int which_port, int special_port);
+
+    @Generated
+    @CFunction
+    public static native int thread_info(int target_act, int flavor, IntPtr thread_info_out, IntPtr thread_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int thread_set_exception_ports(int thread, int exception_mask, int new_port, int behavior,
+            int new_flavor);
+
+    @Generated
+    @CFunction
+    public static native int thread_get_exception_ports(int thread, int exception_mask, IntPtr masks, IntPtr masksCnt,
+            IntPtr old_handlers, IntPtr old_behaviors, IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int thread_swap_exception_ports(int thread, int exception_mask, int new_port, int behavior,
+            int new_flavor, IntPtr masks, IntPtr masksCnt, IntPtr old_handlers, IntPtr old_behaviors,
+            IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int thread_policy(int thr_act, int policy, IntPtr base, int baseCnt, int set_limit);
+
+    @Generated
+    @CFunction
+    public static native int thread_policy_set(int thread, int flavor, IntPtr policy_info, int policy_infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int thread_policy_get(int thread, int flavor, IntPtr policy_info, IntPtr policy_infoCnt,
+            IntPtr get_default);
+
+    @Generated
+    @CFunction
+    public static native int thread_sample(int thread, int reply);
+
+    @Generated
+    @CFunction
+    public static native int etap_trace_thread(int target_act, int trace_status);
+
+    @Generated
+    @CFunction
+    public static native int thread_assign(int thread, int new_set);
+
+    @Generated
+    @CFunction
+    public static native int thread_assign_default(int thread);
+
+    @Generated
+    @CFunction
+    public static native int thread_get_assignment(int thread, IntPtr assigned_set);
+
+    @Generated
+    @CFunction
+    public static native int thread_set_policy(int thr_act, int pset, int policy, IntPtr base, int baseCnt,
+            IntPtr limit, int limitCnt);
+
+    @Generated
+    @CFunction
+    public static native int thread_get_mach_voucher(int thr_act, int which, IntPtr voucher);
+
+    @Generated
+    @CFunction
+    public static native int thread_set_mach_voucher(int thr_act, int voucher);
+
+    @Generated
+    @CFunction
+    public static native int thread_swap_mach_voucher(int thr_act, int new_voucher, IntPtr old_voucher);
+
+    @Generated
+    @CFunction
+    public static native int thread_convert_thread_state(int thread, int direction, int flavor, IntPtr in_state,
+            int in_stateCnt, IntPtr out_state, IntPtr out_stateCnt);
+
+    @Generated
+    @CFunction
+    public static native int thread_get_exception_ports_info(int port, int exception_mask, IntPtr masks,
+            IntPtr masksCnt,
+            @UncertainArgument("Options: reference, array Fallback: reference") ipc_info_port old_handlers_info,
+            IntPtr old_behaviors, IntPtr old_flavors);
+
+    @Generated
+    @CFunction
+    public static native int thread_adopt_exception_handler(int thread, int exc_port, int exc_mask, int behavior_mask,
+            int flavor_mask);
+
+    @Generated
+    @CFunction
+    public static native int vm_region(int target_task, NUIntPtr address, NUIntPtr size, int flavor, IntPtr info,
+            IntPtr infoCnt, IntPtr object_name);
+
+    @Generated
+    @CFunction
+    public static native int vm_allocate(int target_task, NUIntPtr address, @NUInt long size, int flags);
+
+    @Generated
+    @CFunction
+    public static native int vm_deallocate(int target_task, @NUInt long address, @NUInt long size);
+
+    @Generated
+    @CFunction
+    public static native int vm_protect(int target_task, @NUInt long address, @NUInt long size, int set_maximum,
+            int new_protection);
+
+    @Generated
+    @CFunction
+    public static native int vm_inherit(int target_task, @NUInt long address, @NUInt long size, int new_inheritance);
+
+    @Generated
+    @CFunction
+    public static native int vm_read(int target_task, @NUInt long address, @NUInt long size, NUIntPtr data,
+            IntPtr dataCnt);
+
+    @Generated
+    @CFunction
+    public static native int vm_write(int target_task, @NUInt long address, @NUInt long data, int dataCnt);
+
+    @Generated
+    @CFunction
+    public static native int vm_copy(int target_task, @NUInt long source_address, @NUInt long size,
+            @NUInt long dest_address);
+
+    @Generated
+    @CFunction
+    public static native int vm_read_overwrite(int target_task, @NUInt long address, @NUInt long size, @NUInt long data,
+            NUIntPtr outsize);
+
+    @Generated
+    @CFunction
+    public static native int vm_msync(int target_task, @NUInt long address, @NUInt long size, int sync_flags);
+
+    @Generated
+    @CFunction
+    public static native int vm_behavior_set(int target_task, @NUInt long address, @NUInt long size, int new_behavior);
+
+    @Generated
+    @CFunction
+    public static native int vm_map(int target_task, NUIntPtr address, @NUInt long size, @NUInt long mask, int flags,
+            int object, @NUInt long offset, int copy, int cur_protection, int max_protection, int inheritance);
+
+    @Generated
+    @CFunction
+    public static native int vm_machine_attribute(int target_task, @NUInt long address, @NUInt long size, int attribute,
+            IntPtr value);
+
+    @Generated
+    @CFunction
+    public static native int vm_remap(int target_task, NUIntPtr target_address, @NUInt long size, @NUInt long mask,
+            int flags, int src_task, @NUInt long src_address, int copy, IntPtr cur_protection, IntPtr max_protection,
+            int inheritance);
+
+    @Generated
+    @CFunction
+    public static native int task_wire(int target_task, int must_wire);
+
+    @Generated
+    @CFunction
+    public static native int mach_make_memory_entry(int target_task, NUIntPtr size, @NUInt long offset, int permission,
+            IntPtr object_handle, int parent_entry);
+
+    @Generated
+    @CFunction
+    public static native int vm_map_page_query(int target_map, @NUInt long offset, IntPtr disposition,
+            IntPtr ref_count);
+
+    @Generated
+    @CFunction
+    public static native int mach_vm_region_info(int task, @NUInt long address,
+            @UncertainArgument("Options: reference, array Fallback: reference") vm_info_region region,
+            Ptr<Ptr<vm_info_object>> objects, IntPtr objectsCnt);
+
+    @Generated
+    @CFunction
+    public static native int vm_mapped_pages_info(int task, Ptr<NUIntPtr> pages, IntPtr pagesCnt);
+
+    @Generated
+    @CFunction
+    public static native int vm_region_recurse(int target_task, NUIntPtr address, NUIntPtr size, IntPtr nesting_depth,
+            IntPtr info, IntPtr infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int vm_region_recurse_64(int target_task, NUIntPtr address, NUIntPtr size,
+            IntPtr nesting_depth, IntPtr info, IntPtr infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_vm_region_info_64(int task, @NUInt long address,
+            @UncertainArgument("Options: reference, array Fallback: reference") vm_info_region_64 region,
+            Ptr<Ptr<vm_info_object>> objects, IntPtr objectsCnt);
+
+    @Generated
+    @CFunction
+    public static native int vm_region_64(int target_task, NUIntPtr address, NUIntPtr size, int flavor, IntPtr info,
+            IntPtr infoCnt, IntPtr object_name);
+
+    @Generated
+    @CFunction
+    public static native int mach_make_memory_entry_64(int target_task, LongPtr size, long offset, int permission,
+            IntPtr object_handle, int parent_entry);
+
+    @Generated
+    @CFunction
+    public static native int vm_map_64(int target_task, NUIntPtr address, @NUInt long size, @NUInt long mask, int flags,
+            int object, long offset, int copy, int cur_protection, int max_protection, int inheritance);
+
+    @Generated
+    @CFunction
+    public static native int vm_purgable_control(int target_task, @NUInt long address, int control, IntPtr state);
+
+    @Generated
+    @CFunction
+    public static native int vm_map_exec_lockdown(int target_task);
+
+    @Generated
+    @CFunction
+    public static native int vm_remap_new(int target_task, NUIntPtr target_address, @NUInt long size, @NUInt long mask,
+            int flags, int src_task, @NUInt long src_address, int copy, IntPtr cur_protection, IntPtr max_protection,
+            int inheritance);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_names(int task, Ptr<IntPtr> names, IntPtr namesCnt, Ptr<IntPtr> types,
+            IntPtr typesCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_type(int task, int name, IntPtr ptype);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_rename(int task, int old_name, int new_name);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_allocate_name(int task, int right, int name);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_allocate(int task, int right, IntPtr name);
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Inherently unsafe API: instead manage rights with mach_port_destruct(),
+     * mach_port_deallocate() or mach_port_mod_refs()
+     */
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int mach_port_destroy(int task, int name);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_deallocate(int task, int name);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_get_refs(int task, int name, int right, IntPtr refs);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_mod_refs(int task, int name, int right, int delta);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_peek(int task, int name, int trailer_type, IntPtr request_seqnop,
+            IntPtr msg_sizep, IntPtr msg_idp, BytePtr trailer_infop, IntPtr trailer_infopCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_set_mscount(int task, int name, int mscount);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_get_set_status(int task, int name, Ptr<IntPtr> members, IntPtr membersCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_move_member(int task, int member, int after);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_request_notification(int task, int name, int msgid, int sync, int notify_,
+            int notifyPoly, IntPtr previous);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_insert_right(int task, int name, int poly, int polyPoly);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_extract_right(int task, int name, int msgt_name, IntPtr poly, IntPtr polyPoly);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_set_seqno(int task, int name, int seqno);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_get_attributes(int task, int name, int flavor, IntPtr port_info_out,
+            IntPtr port_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_set_attributes(int task, int name, int flavor, IntPtr port_info,
+            int port_infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_allocate_qos(int task, int right, VoidPtr qos, IntPtr name);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_allocate_full(int task, int right, int proto, VoidPtr qos, IntPtr name);
+
+    @Generated
+    @CFunction
+    public static native int task_set_port_space(int task, int table_entries);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_get_srights(int task, int name, IntPtr srights);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_space_info(int space,
+            @UncertainArgument("Options: reference, array Fallback: reference") ipc_info_space space_info,
+            Ptr<Ptr<ipc_info_name>> table_info, IntPtr table_infoCnt, Ptr<Ptr<ipc_info_tree_name>> tree_info,
+            IntPtr tree_infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_dnrequest_info(int task, int name, IntPtr dnr_total, IntPtr dnr_used);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_kernel_object(int task, int name, IntPtr object_type, IntPtr object_addr);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_insert_member(int task, int name, int pset);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_extract_member(int task, int name, int pset);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_get_context(int task, int name, NUIntPtr context);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_set_context(int task, int name, @NUInt long context);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_kobject(int task, int name, IntPtr object_type, NUIntPtr object_addr);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_construct(int task,
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_port_options options,
+            @NUInt long context, IntPtr name);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_destruct(int task, int name, int srdelta, @NUInt long guard);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_guard(int task, int name, @NUInt long guard, int strict);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_unguard(int task, int name, @NUInt long guard);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_space_basic_info(int task,
+            @UncertainArgument("Options: reference, array Fallback: reference") ipc_info_space_basic basic_info);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_guard_with_flags(int task, int name, @NUInt long guard, long flags);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_swap_guard(int task, int name, @NUInt long old_guard, @NUInt long new_guard);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_is_connection_for_service(int task, int connection_port, int service_port,
+            LongPtr filter_policy_id);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_get_service_port_info(int task, int name,
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_service_port_info sp_info_out);
+
+    @Generated
+    @CFunction
+    public static native int mach_port_assert_attributes(int task, int name, int flavor, IntPtr info, int infoCnt);
+
+    /**
+     * Kernel-related ports; how a task/thread controls itself
+     */
+    @Generated
+    @CFunction
+    public static native int mach_host_self();
+
+    @Generated
+    @CFunction
+    public static native int mach_thread_self();
+
+    /**
+     * API-Since: 14.5
+     */
+    @Generated
+    @CFunction
+    public static native int mach_task_is_self(int task);
+
+    @Generated
+    @CFunction
+    public static native int host_page_size(int arg1, NUIntPtr arg2);
+
+    @Generated
+    @CFunction
+    public static native int clock_sleep_trap(int clock_name, int sleep_type, int sleep_sec, int sleep_nsec,
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_timespec wakeup_time);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_vm_allocate_trap(int target, NUIntPtr addr, @NUInt long size, int flags);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_vm_deallocate_trap(int target, @NUInt long address, @NUInt long size);
+
+    @Generated
+    @CFunction
+    public static native int task_dyld_process_info_notify_get(IntPtr names_addr, IntPtr names_count_addr);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_vm_protect_trap(int target, @NUInt long address, @NUInt long size,
+            int set_maximum, int new_protection);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_vm_map_trap(int target, NUIntPtr address, @NUInt long size,
+            @NUInt long mask, int flags, int cur_protection);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_vm_purgable_control_trap(int target, @NUInt long address, int control,
+            IntPtr state);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_allocate_trap(int target, int right, IntPtr name);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_deallocate_trap(int target, int name);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_mod_refs_trap(int target, int name, int right, int delta);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_move_member_trap(int target, int member, int after);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_insert_right_trap(int target, int name, int poly, int polyPoly);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_get_attributes_trap(int target, int name, int flavor,
+            IntPtr port_info_out, IntPtr port_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_insert_member_trap(int target, int name, int pset);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_extract_member_trap(int target, int name, int pset);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_construct_trap(int target,
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_port_options options, long context,
+            IntPtr name);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_destruct_trap(int target, int name, int srdelta, long guard);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_guard_trap(int target, int name, long guard, int strict);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_unguard_trap(int target, int name, long guard);
+
+    @Generated
+    @CFunction
+    public static native int mach_generate_activity_id(int target, int count, LongPtr activity_id);
+
+    @Generated
+    @CFunction
+    public static native int macx_swapon(long filename, int flags, int size, int priority);
+
+    @Generated
+    @CFunction
+    public static native int macx_swapoff(long filename, int flags);
+
+    @Generated
+    @CFunction
+    public static native int macx_triggers(int hi_water, int low_water, int flags, int alert_port);
+
+    @Generated
+    @CFunction
+    public static native int macx_backing_store_suspend(int suspend);
+
+    @Generated
+    @CFunction
+    public static native int macx_backing_store_recovery(int pid);
+
+    @Generated
+    @CFunction
+    public static native int swtch_pri(int pri);
+
+    @Generated
+    @CFunction
+    public static native int swtch();
+
+    @Generated
+    @CFunction
+    public static native int thread_switch(int thread_name, int option, int option_time);
+
+    @Generated
+    @CFunction
+    public static native int task_self_trap();
+
+    @Generated
+    @CFunction
+    public static native int host_create_mach_voucher_trap(int host, BytePtr recipes, int recipes_size, IntPtr voucher);
+
+    @Generated
+    @CFunction
+    public static native int mach_voucher_extract_attr_recipe_trap(int voucher_name, int key, BytePtr recipe,
+            IntPtr recipe_size);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_type_trap(int task, int name, IntPtr ptype);
+
+    @Generated
+    @CFunction
+    public static native int _kernelrpc_mach_port_request_notification_trap(int task, int name, int msgid, int sync,
+            int notify_, int notifyPoly, IntPtr previous);
+
+    /**
+     * Obsolete interfaces.
+     */
+    @Generated
+    @CFunction
+    public static native int task_for_pid(int target_tport, int pid, IntPtr t);
+
+    @Generated
+    @CFunction
+    public static native int task_name_for_pid(int target_tport, int pid, IntPtr tn);
+
+    @Generated
+    @CFunction
+    public static native int pid_for_task(int t, IntPtr x);
+
+    @Generated
+    @CFunction
+    public static native int debug_control_port_for_pid(int target_tport, int pid, IntPtr t);
+
+    @Generated
+    @CFunction
+    public static native int host_info(int host, int flavor, IntPtr host_info_out, IntPtr host_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int _host_page_size(int host, NUIntPtr out_page_size);
+
+    @Generated
+    @CFunction
+    public static native int mach_memory_object_memory_entry(int host, int internal, @NUInt long size, int permission,
+            int pager, IntPtr entry_handle);
+
+    @Generated
+    @CFunction
+    public static native int host_processor_info(int host, int flavor, IntPtr out_processor_count,
+            Ptr<IntPtr> out_processor_info, IntPtr out_processor_infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_get_io_main(int host, IntPtr io_main);
+
+    @Generated
+    @CFunction
+    public static native int host_get_clock_service(int host, int clock_id, IntPtr clock_serv);
+
+    @Generated
+    @CFunction
+    public static native int kmod_get_info(int host, Ptr<VoidPtr> modules, IntPtr modulesCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_virtual_physical_table_info(int host, Ptr<Ptr<hash_info_bucket>> info,
+            IntPtr infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_default(int host, IntPtr default_set);
+
+    @Generated
+    @CFunction
+    public static native int processor_set_create(int host, IntPtr new_set, IntPtr new_name);
+
+    @Generated
+    @CFunction
+    public static native int mach_memory_object_memory_entry_64(int host, int internal, long size, int permission,
+            int pager, IntPtr entry_handle);
+
+    @Generated
+    @CFunction
+    public static native int host_statistics(int host_priv, int flavor, IntPtr host_info_out, IntPtr host_info_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_request_notification(int host, int notify_type, int notify_port);
+
+    @Generated
+    @CFunction
+    public static native int host_lockgroup_info(int host, Ptr<Ptr<lockgroup_info>> lockgroup_info,
+            IntPtr lockgroup_infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_statistics64(int host_priv, int flavor, IntPtr host_info64_out,
+            IntPtr host_info64_outCnt);
+
+    @Generated
+    @CFunction
+    public static native int mach_zone_info(int host, Ptr<Ptr<mach_zone_name>> names, IntPtr namesCnt,
+            Ptr<Ptr<mach_zone_info_data>> info, IntPtr infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_create_mach_voucher(int host, BytePtr recipes, int recipesCnt, IntPtr voucher);
+
+    @Generated
+    @CFunction
+    public static native int host_register_mach_voucher_attr_manager(int host, int attr_manager, long default_value,
+            IntPtr new_key, IntPtr new_attr_control);
+
+    @Generated
+    @CFunction
+    public static native int host_register_well_known_mach_voucher_attr_manager(int host, int attr_manager,
+            long default_value, int key, IntPtr new_attr_control);
+
+    @Generated
+    @CFunction
+    public static native int host_set_atm_diagnostic_flag(int host, int diagnostic_flag);
+
+    @Generated
+    @CFunction
+    public static native int host_get_atm_diagnostic_flag(int host, IntPtr diagnostic_flag);
+
+    @Generated
+    @CFunction
+    public static native int mach_memory_info(int host, Ptr<Ptr<mach_zone_name>> names, IntPtr namesCnt,
+            Ptr<Ptr<mach_zone_info_data>> info, IntPtr infoCnt, Ptr<Ptr<mach_memory_info>> memory_info,
+            IntPtr memory_infoCnt);
+
+    @Generated
+    @CFunction
+    public static native int host_set_multiuser_config_flags(int host_priv, int multiuser_flags);
+
+    @Generated
+    @CFunction
+    public static native int host_get_multiuser_config_flags(int host, IntPtr multiuser_flags);
+
+    @Generated
+    @CFunction
+    public static native int host_check_multiuser_mode(int host, IntPtr multiuser_mode);
+
+    @Generated
+    @CFunction
+    public static native int mach_zone_info_for_zone(int host, @ByValue mach_zone_name name,
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_zone_info_data info);
+
+    @Generated
+    @CFunction
+    public static native BytePtr mach_error_string(int error_value);
+
+    @Generated
+    @CFunction
+    public static native void mach_error(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str,
+            int error_value);
+
+    @Generated
+    @CFunction
+    public static native BytePtr mach_error_type(int error_value);
+
+    /**
+     * Standard prototypes
+     */
+    @Generated
+    @CFunction
+    public static native void panic_init(int arg1);
+
+    @Generated
+    @Variadic()
+    @CFunction
+    public static native void panic(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            Object... varargs);
+
+    @Generated
+    @CFunction
+    public static native void slot_name(int arg1, int arg2, Ptr<BytePtr> arg3, Ptr<BytePtr> arg4);
+
+    @Generated
+    @CFunction
+    public static native void mig_reply_setup(
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg2);
+
+    @Generated
+    @CFunction
+    public static native void mach_msg_destroy(
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg1);
+
+    @Generated
+    @CFunction
+    public static native int mach_msg_receive(
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg1);
+
+    @Generated
+    @CFunction
+    public static native int mach_msg_send(
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg1);
+
+    @Generated
+    @CFunction
+    public static native int mach_msg_server_once(
+            @FunctionPtr(name = "call_mach_msg_server_once") Function_mach_msg_server_once arg1, int arg2, int arg3,
+            int arg4);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_mach_msg_server_once {
+        @Generated
+        int call_mach_msg_server_once(
+                @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native int mach_msg_server(@FunctionPtr(name = "call_mach_msg_server") Function_mach_msg_server arg1,
+            int arg2, int arg3, int arg4);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_mach_msg_server {
+        @Generated
+        int call_mach_msg_server(
+                @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native int mach_msg_server_importance(
+            @FunctionPtr(name = "call_mach_msg_server_importance") Function_mach_msg_server_importance arg1, int arg2,
+            int arg3, int arg4);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_mach_msg_server_importance {
+        @Generated
+        int call_mach_msg_server_importance(
+                @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t arg1);
+    }
+
+    /**
+     * Prototypes for compatibility
+     */
+    @Generated
+    @CFunction
+    public static native int clock_get_res(int arg1, IntPtr arg2);
+
+    @Generated
+    @CFunction
+    public static native int clock_set_res(int arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int clock_sleep(int arg1, int arg2, @ByValue mach_timespec arg3,
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_timespec arg4);
+
+    /**
+     * [@function] voucher_mach_msg_set
+     * 
+     * Change specified message header to contain current mach voucher with a
+     * COPY_SEND disposition.
+     * Does not change message if it already has non-zero MACH_MSGH_BITS_VOUCHER.
+     * 
+     * Borrows reference to current thread voucher so message should be sent
+     * immediately (without intervening calls that might change that voucher).
+     * 
+     * @param msg
+     *            The message to modify.
+     * 
+     * @return
+     *         True if header was changed.
+     */
+    @Generated
+    @CFunction
+    public static native int voucher_mach_msg_set(
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t msg);
+
+    /**
+     * [@function] voucher_mach_msg_clear
+     * 
+     * Removes changes made to specified message header by voucher_mach_msg_set()
+     * and any mach_msg() send operations (successful or not).
+     * If the message is not needed further, mach_msg_destroy() should be called
+     * instead.
+     * 
+     * Not intended to be called if voucher_mach_msg_set() returned false.
+     * Releases reference to message mach voucher if an extra reference was
+     * acquired due to an unsuccessful send operation (pseudo-receive).
+     * 
+     * @param msg
+     *            The message to modify.
+     */
+    @Generated
+    @CFunction
+    public static native void voucher_mach_msg_clear(
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t msg);
+
+    /**
+     * [@function] voucher_mach_msg_adopt
+     * 
+     * Adopt the voucher contained in the specified message on the current thread
+     * and return the previous thread voucher state.
+     * 
+     * Ownership of the mach voucher in the message is transferred to the current
+     * thread and the message header voucher fields are cleared.
+     * 
+     * @param msg
+     *            The message to query and modify.
+     * 
+     * @return
+     *         The previous thread voucher state or VOUCHER_MACH_MSG_STATE_UNCHANGED if no
+     *         state change occurred.
+     */
+    @Generated
+    @CFunction
+    public static native voucher_mach_msg_state_t voucher_mach_msg_adopt(
+            @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t msg);
+
+    /**
+     * [@function] voucher_mach_msg_revert
+     * 
+     * Restore thread voucher state previously modified by voucher_mach_msg_adopt().
+     * 
+     * Current thread voucher reference is released.
+     * No change to thread voucher state if passed VOUCHER_MACH_MSG_STATE_UNCHANGED.
+     * 
+     * @param state
+     *              The thread voucher state to restore.
+     */
+    @Generated
+    @CFunction
+    public static native void voucher_mach_msg_revert(voucher_mach_msg_state_t state);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceAttributeSetHostKeyHash(@NotNull DNSServiceAttributeRef attr, int hostkeyhash);
+
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     */
+    @Generated
+    @Variadic()
+    @Deprecated
+    @CFunction
+    public static native void os_trace_info_with_payload(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            Object... varargs);
+
+    /**
+     * [@function] os_unfair_lock_lock_with_flags
+     * 
+     * Locks an os_unfair_lock.
+     * 
+     * @param lock
+     *              Pointer to an os_unfair_lock.
+     * 
+     * @param flags
+     *              Flags to alter the behavior of the lock. See os_unfair_lock_flags_t.
+     * 
+     *              API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void os_unfair_lock_lock_with_flags(
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull os_unfair_lock_s lock,
+            int flags);
+
+    /**
+     * API-Since: 5.0
+     */
+    @Generated
+    @CVariable()
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @NotNull
+    public static native String _xpc_error_key_description();
+
+    /**
+     * API-Since: 5.0
+     */
+    @Generated
+    @CVariable()
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @NotNull
+    public static native String _xpc_event_key_name();
+
+    /**
+     * int (%)
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: REQUIRE_BATTERY_LEVEL is not implemented
+     */
+    @Generated
+    @Deprecated
+    @CVariable()
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @NotNull
+    public static native String XPC_ACTIVITY_REQUIRE_BATTERY_LEVEL();
+
+    /**
+     * bool
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: REQUIRE_HDD_SPINNING is not implemented
+     */
+    @Generated
+    @Deprecated
+    @CVariable()
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @NotNull
+    public static native String XPC_ACTIVITY_REQUIRE_HDD_SPINNING();
+
+    /**
+     * Globally interesting numbers.
+     * These macros assume vm_page_size is a power-of-2.
+     */
+    @Generated
+    @CVariable()
+    @NUInt
+    public static native long vm_page_size();
+
+    @Generated
+    @CVariable()
+    @NUInt
+    public static native long vm_page_mask();
+
+    @Generated
+    @CVariable()
+    public static native int vm_page_shift();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @NUInt
+    public static native long vm_kernel_page_size();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @NUInt
+    public static native long vm_kernel_page_mask();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    public static native int vm_kernel_page_shift();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NDR_record_t NDR_record();
+
+    @Generated
+    @CVariable()
+    public static native int mach_task_self_();
+
+    /**
+     * Other important ports in the Mach user environment
+     */
+    @Generated
+    @CVariable()
+    public static native int bootstrap_port();
+
+    @Generated public static final double __has_safe_buffers = 0.0;
+    @Generated public static final double USE_CLANG_TYPES = 0.0;
+    @Generated public static final double USE_CLANG_STDDEF = 0.0;
+    @Generated public static final double __MAC_14_3 = 140300.0;
+    @Generated public static final double __MAC_14_4 = 140400.0;
+    @Generated public static final double __MAC_14_5 = 140500.0;
+    @Generated public static final double __MAC_15_0 = 150000.0;
+    @Generated public static final double __MAC_15_1 = 150100.0;
+    @Generated public static final double __MAC_15_2 = 150200.0;
+    @Generated public static final double __IPHONE_15_7 = 150700.0;
+    @Generated public static final double __IPHONE_15_8 = 150800.0;
+    @Generated public static final double __IPHONE_17_3 = 170300.0;
+    @Generated public static final double __IPHONE_17_4 = 170400.0;
+    @Generated public static final double __IPHONE_17_5 = 170500.0;
+    @Generated public static final double __IPHONE_18_0 = 180000.0;
+    @Generated public static final double __IPHONE_18_1 = 180100.0;
+    @Generated public static final double __IPHONE_18_2 = 180200.0;
+    @Generated public static final double __WATCHOS_8_8 = 80800.0;
+    @Generated public static final double __WATCHOS_10_3 = 100300.0;
+    @Generated public static final double __WATCHOS_10_4 = 100400.0;
+    @Generated public static final double __WATCHOS_10_5 = 100500.0;
+    @Generated public static final double __WATCHOS_11_0 = 110000.0;
+    @Generated public static final double __WATCHOS_11_1 = 110100.0;
+    @Generated public static final double __WATCHOS_11_2 = 110200.0;
+    @Generated public static final double __TVOS_17_3 = 170300.0;
+    @Generated public static final double __TVOS_17_4 = 170400.0;
+    @Generated public static final double __TVOS_17_5 = 170500.0;
+    @Generated public static final double __TVOS_18_0 = 180000.0;
+    @Generated public static final double __TVOS_18_1 = 180100.0;
+    @Generated public static final double __TVOS_18_2 = 180200.0;
+    @Generated public static final double __BRIDGEOS_8_3 = 80300.0;
+    @Generated public static final double __BRIDGEOS_8_4 = 80400.0;
+    @Generated public static final double __BRIDGEOS_8_5 = 80500.0;
+    @Generated public static final double __BRIDGEOS_9_0 = 90000.0;
+    @Generated public static final double __BRIDGEOS_9_1 = 90100.0;
+    @Generated public static final double __BRIDGEOS_9_2 = 90200.0;
+    @Generated public static final double __DRIVERKIT_23_3 = 230300.0;
+    @Generated public static final double __DRIVERKIT_23_4 = 230400.0;
+    @Generated public static final double __DRIVERKIT_23_5 = 230500.0;
+    @Generated public static final double __DRIVERKIT_24_0 = 240000.0;
+    @Generated public static final double __DRIVERKIT_24_1 = 240100.0;
+    @Generated public static final double __DRIVERKIT_24_2 = 240200.0;
+    @Generated public static final double __VISIONOS_1_1 = 10100.0;
+    @Generated public static final double __VISIONOS_1_2 = 10200.0;
+    @Generated public static final double __VISIONOS_2_0 = 20000.0;
+    @Generated public static final double __VISIONOS_2_1 = 20100.0;
+    @Generated public static final double __VISIONOS_2_2 = 20200.0;
+    @Generated public static final double USE_CLANG_LIMITS = 0.0;
+    @Generated public static final double USE_CLANG_STDARG = 0.0;
+    @Generated public static final double MPO_EXCEPTION_PORT = 32768.0;
+    @Generated public static final double F_ADDSIGS_MAIN_BINARY = 113.0;
+    @Generated public static final double CPUFAMILY_ARM_DONAN = 1.86759006E9;
+    @Generated public static final double CPUFAMILY_ARM_BRAVA = 3.99882554E8;
+    @Generated public static final double CPUFAMILY_ARM_TAHITI = 1.976872121E9;
+    @Generated public static final double CPUFAMILY_ARM_TUPAI = 5.41402832E8;
+    @Generated public static final double PROT_NONE = 0.0;
+    @Generated public static final double PROT_READ = 1.0;
+    @Generated public static final double PROT_WRITE = 2.0;
+    @Generated public static final double PROT_EXEC = 4.0;
+    @Generated public static final double MAP_SHARED = 1.0;
+    @Generated public static final double MAP_PRIVATE = 2.0;
+    @Generated public static final double MAP_FIXED = 16.0;
+    @Generated public static final double MAP_RENAME = 32.0;
+    @Generated public static final double MAP_NORESERVE = 64.0;
+    @Generated public static final double MAP_RESERVED0080 = 128.0;
+    @Generated public static final double MAP_NOEXTEND = 256.0;
+    @Generated public static final double MAP_HASSEMAPHORE = 512.0;
+    @Generated public static final double MAP_NOCACHE = 1024.0;
+    @Generated public static final double MAP_JIT = 2048.0;
+    @Generated public static final double MAP_FILE = 0.0;
+    @Generated public static final double MAP_ANON = 4096.0;
+    @Generated public static final double MAP_RESILIENT_CODESIGN = 8192.0;
+    @Generated public static final double MAP_RESILIENT_MEDIA = 16384.0;
+    @Generated public static final double MAP_TRANSLATED_ALLOW_EXECUTE = 131072.0;
+    @Generated public static final double MAP_UNIX03 = 262144.0;
+    @Generated public static final double MAP_TPRO = 524288.0;
+    @Generated public static final double MCL_CURRENT = 1.0;
+    @Generated public static final double MCL_FUTURE = 2.0;
+    @Generated public static final double MS_ASYNC = 1.0;
+    @Generated public static final double MS_INVALIDATE = 2.0;
+    @Generated public static final double MS_SYNC = 16.0;
+    @Generated public static final double MS_KILLPAGES = 4.0;
+    @Generated public static final double MS_DEACTIVATE = 8.0;
+    @Generated public static final double POSIX_MADV_NORMAL = 0.0;
+    @Generated public static final double POSIX_MADV_RANDOM = 1.0;
+    @Generated public static final double POSIX_MADV_SEQUENTIAL = 2.0;
+    @Generated public static final double POSIX_MADV_WILLNEED = 3.0;
+    @Generated public static final double POSIX_MADV_DONTNEED = 4.0;
+    @Generated public static final double MADV_FREE = 5.0;
+    @Generated public static final double MADV_ZERO_WIRED_PAGES = 6.0;
+    @Generated public static final double MADV_FREE_REUSABLE = 7.0;
+    @Generated public static final double MADV_FREE_REUSE = 8.0;
+    @Generated public static final double MADV_CAN_REUSE = 9.0;
+    @Generated public static final double MADV_PAGEOUT = 10.0;
+    @Generated public static final double MADV_ZERO = 11.0;
+    @Generated public static final double MINCORE_INCORE = 1.0;
+    @Generated public static final double MINCORE_REFERENCED = 2.0;
+    @Generated public static final double MINCORE_MODIFIED = 4.0;
+    @Generated public static final double MINCORE_REFERENCED_OTHER = 8.0;
+    @Generated public static final double MINCORE_MODIFIED_OTHER = 16.0;
+    @Generated public static final double MINCORE_PAGED_OUT = 32.0;
+    @Generated public static final double MINCORE_COPIED = 64.0;
+    @Generated public static final double MINCORE_ANONYMOUS = 128.0;
+    @Generated public static final double IPHONE_SIMULATOR_HOST_MIN_VERSION_REQUIRED = 999999.0;
+    @Generated public static final double XPC_API_VERSION = 2.020061E7;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_PRESENT = 1.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_FICTITIOUS = 2.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_REF = 4.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_DIRTY = 8.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_PAGED_OUT = 16.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_COPIED = 32.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_SPECULATIVE = 64.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_EXTERNAL = 128.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_CS_VALIDATED = 256.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_CS_TAINTED = 512.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_CS_NX = 1024.0;
+    @Generated public static final double VM_PAGE_QUERY_PAGE_REUSABLE = 2048.0;
+    @Generated public static final double VM_FLAGS_FIXED = 0.0;
+    @Generated public static final double VM_FLAGS_ANYWHERE = 1.0;
+    @Generated public static final double VM_FLAGS_PURGABLE = 2.0;
+    @Generated public static final double VM_FLAGS_4GB_CHUNK = 4.0;
+    @Generated public static final double VM_FLAGS_RANDOM_ADDR = 8.0;
+    @Generated public static final double VM_FLAGS_NO_CACHE = 16.0;
+    @Generated public static final double VM_FLAGS_RESILIENT_CODESIGN = 32.0;
+    @Generated public static final double VM_FLAGS_RESILIENT_MEDIA = 64.0;
+    @Generated public static final double VM_FLAGS_PERMANENT = 128.0;
+    @Generated public static final double VM_FLAGS_TPRO = 4096.0;
+    @Generated public static final double VM_FLAGS_OVERWRITE = 16384.0;
+    @Generated public static final double VM_FLAGS_SUPERPAGE_MASK = 458752.0;
+    @Generated public static final double VM_FLAGS_RETURN_DATA_ADDR = 1048576.0;
+    @Generated public static final double VM_FLAGS_RETURN_4K_DATA_ADDR = 8388608.0;
+    @Generated public static final double VM_FLAGS_SUPERPAGE_SHIFT = 16.0;
+    @Generated public static final double SUPERPAGE_NONE = 0.0;
+    @Generated public static final double SUPERPAGE_SIZE_ANY = 1.0;
+    @Generated public static final double SUPERPAGE_SIZE_2MB = 2.0;
+    @Generated public static final double GUARD_TYPE_VIRT_MEMORY = 5.0;
+    @Generated public static final double __VM_LEDGER_ACCOUNTING_POSTMARK = 2.0190326E9;
+    @Generated public static final double VM_LEDGER_TAG_NONE = 0.0;
+    @Generated public static final double VM_LEDGER_TAG_DEFAULT = 1.0;
+    @Generated public static final double VM_LEDGER_TAG_NETWORK = 2.0;
+    @Generated public static final double VM_LEDGER_TAG_MEDIA = 3.0;
+    @Generated public static final double VM_LEDGER_TAG_GRAPHICS = 4.0;
+    @Generated public static final double VM_LEDGER_TAG_NEURAL = 5.0;
+    @Generated public static final double VM_LEDGER_TAG_MAX = 5.0;
+    @Generated public static final double VM_MEMORY_MALLOC = 1.0;
+    @Generated public static final double VM_MEMORY_MALLOC_SMALL = 2.0;
+    @Generated public static final double VM_MEMORY_MALLOC_LARGE = 3.0;
+    @Generated public static final double VM_MEMORY_MALLOC_HUGE = 4.0;
+    @Generated public static final double VM_MEMORY_SBRK = 5.0;
+    @Generated public static final double VM_MEMORY_REALLOC = 6.0;
+    @Generated public static final double VM_MEMORY_MALLOC_TINY = 7.0;
+    @Generated public static final double VM_MEMORY_MALLOC_LARGE_REUSABLE = 8.0;
+    @Generated public static final double VM_MEMORY_MALLOC_LARGE_REUSED = 9.0;
+    @Generated public static final double VM_MEMORY_ANALYSIS_TOOL = 10.0;
+    @Generated public static final double VM_MEMORY_MALLOC_NANO = 11.0;
+    @Generated public static final double VM_MEMORY_MALLOC_MEDIUM = 12.0;
+    @Generated public static final double VM_MEMORY_MALLOC_PROB_GUARD = 13.0;
+    @Generated public static final double VM_MEMORY_MACH_MSG = 20.0;
+    @Generated public static final double VM_MEMORY_IOKIT = 21.0;
+    @Generated public static final double VM_MEMORY_STACK = 30.0;
+    @Generated public static final double VM_MEMORY_GUARD = 31.0;
+    @Generated public static final double VM_MEMORY_SHARED_PMAP = 32.0;
+    @Generated public static final double VM_MEMORY_DYLIB = 33.0;
+    @Generated public static final double VM_MEMORY_OBJC_DISPATCHERS = 34.0;
+    @Generated public static final double VM_MEMORY_UNSHARED_PMAP = 35.0;
+    @Generated public static final double VM_MEMORY_APPKIT = 40.0;
+    @Generated public static final double VM_MEMORY_FOUNDATION = 41.0;
+    @Generated public static final double VM_MEMORY_COREGRAPHICS = 42.0;
+    @Generated public static final double VM_MEMORY_CORESERVICES = 43.0;
+    @Generated public static final double VM_MEMORY_JAVA = 44.0;
+    @Generated public static final double VM_MEMORY_COREDATA = 45.0;
+    @Generated public static final double VM_MEMORY_COREDATA_OBJECTIDS = 46.0;
+    @Generated public static final double VM_MEMORY_ATS = 50.0;
+    @Generated public static final double VM_MEMORY_LAYERKIT = 51.0;
+    @Generated public static final double VM_MEMORY_CGIMAGE = 52.0;
+    @Generated public static final double VM_MEMORY_TCMALLOC = 53.0;
+    @Generated public static final double VM_MEMORY_COREGRAPHICS_DATA = 54.0;
+    @Generated public static final double VM_MEMORY_COREGRAPHICS_SHARED = 55.0;
+    @Generated public static final double VM_MEMORY_COREGRAPHICS_FRAMEBUFFERS = 56.0;
+    @Generated public static final double VM_MEMORY_COREGRAPHICS_BACKINGSTORES = 57.0;
+    @Generated public static final double VM_MEMORY_COREGRAPHICS_XALLOC = 58.0;
+    @Generated public static final double VM_MEMORY_DYLD = 60.0;
+    @Generated public static final double VM_MEMORY_DYLD_MALLOC = 61.0;
+    @Generated public static final double VM_MEMORY_SQLITE = 62.0;
+    @Generated public static final double VM_MEMORY_JAVASCRIPT_CORE = 63.0;
+    @Generated public static final double VM_MEMORY_JAVASCRIPT_JIT_EXECUTABLE_ALLOCATOR = 64.0;
+    @Generated public static final double VM_MEMORY_JAVASCRIPT_JIT_REGISTER_FILE = 65.0;
+    @Generated public static final double VM_MEMORY_GLSL = 66.0;
+    @Generated public static final double VM_MEMORY_OPENCL = 67.0;
+    @Generated public static final double VM_MEMORY_COREIMAGE = 68.0;
+    @Generated public static final double VM_MEMORY_WEBCORE_PURGEABLE_BUFFERS = 69.0;
+    @Generated public static final double VM_MEMORY_IMAGEIO = 70.0;
+    @Generated public static final double VM_MEMORY_COREPROFILE = 71.0;
+    @Generated public static final double VM_MEMORY_ASSETSD = 72.0;
+    @Generated public static final double VM_MEMORY_OS_ALLOC_ONCE = 73.0;
+    @Generated public static final double VM_MEMORY_LIBDISPATCH = 74.0;
+    @Generated public static final double VM_MEMORY_ACCELERATE = 75.0;
+    @Generated public static final double VM_MEMORY_COREUI = 76.0;
+    @Generated public static final double VM_MEMORY_COREUIFILE = 77.0;
+    @Generated public static final double VM_MEMORY_GENEALOGY = 78.0;
+    @Generated public static final double VM_MEMORY_RAWCAMERA = 79.0;
+    @Generated public static final double VM_MEMORY_CORPSEINFO = 80.0;
+    @Generated public static final double VM_MEMORY_ASL = 81.0;
+    @Generated public static final double VM_MEMORY_SWIFT_RUNTIME = 82.0;
+    @Generated public static final double VM_MEMORY_SWIFT_METADATA = 83.0;
+    @Generated public static final double VM_MEMORY_DHMM = 84.0;
+    @Generated public static final double VM_MEMORY_SCENEKIT = 86.0;
+    @Generated public static final double VM_MEMORY_SKYWALK = 87.0;
+    @Generated public static final double VM_MEMORY_IOSURFACE = 88.0;
+    @Generated public static final double VM_MEMORY_LIBNETWORK = 89.0;
+    @Generated public static final double VM_MEMORY_AUDIO = 90.0;
+    @Generated public static final double VM_MEMORY_VIDEOBITSTREAM = 91.0;
+    @Generated public static final double VM_MEMORY_CM_XPC = 92.0;
+    @Generated public static final double VM_MEMORY_CM_RPC = 93.0;
+    @Generated public static final double VM_MEMORY_CM_MEMORYPOOL = 94.0;
+    @Generated public static final double VM_MEMORY_CM_READCACHE = 95.0;
+    @Generated public static final double VM_MEMORY_CM_CRABS = 96.0;
+    @Generated public static final double VM_MEMORY_QUICKLOOK_THUMBNAILS = 97.0;
+    @Generated public static final double VM_MEMORY_ACCOUNTS = 98.0;
+    @Generated public static final double VM_MEMORY_SANITIZER = 99.0;
+    @Generated public static final double VM_MEMORY_IOACCELERATOR = 100.0;
+    @Generated public static final double VM_MEMORY_CM_REGWARP = 101.0;
+    @Generated public static final double VM_MEMORY_EAR_DECODER = 102.0;
+    @Generated public static final double VM_MEMORY_COREUI_CACHED_IMAGE_DATA = 103.0;
+    @Generated public static final double VM_MEMORY_COLORSYNC = 104.0;
+    @Generated public static final double VM_MEMORY_BTINFO = 105.0;
+    @Generated public static final double VM_MEMORY_CM_HLS = 106.0;
+    @Generated public static final double VM_MEMORY_ROSETTA = 230.0;
+    @Generated public static final double VM_MEMORY_ROSETTA_THREAD_CONTEXT = 231.0;
+    @Generated public static final double VM_MEMORY_ROSETTA_INDIRECT_BRANCH_MAP = 232.0;
+    @Generated public static final double VM_MEMORY_ROSETTA_RETURN_STACK = 233.0;
+    @Generated public static final double VM_MEMORY_ROSETTA_EXECUTABLE_HEAP = 234.0;
+    @Generated public static final double VM_MEMORY_ROSETTA_USER_LDT = 235.0;
+    @Generated public static final double VM_MEMORY_ROSETTA_ARENA = 236.0;
+    @Generated public static final double VM_MEMORY_ROSETTA_10 = 239.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_1 = 240.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_16 = 255.0;
+    @Generated public static final double VM_MEMORY_COUNT = 256.0;
+    @Generated public static final double HOST_BASIC_INFO = 1.0;
+    @Generated public static final double HOST_SCHED_INFO = 3.0;
+    @Generated public static final double HOST_RESOURCE_SIZES = 4.0;
+    @Generated public static final double HOST_PRIORITY_INFO = 5.0;
+    @Generated public static final double HOST_SEMAPHORE_TRAPS = 7.0;
+    @Generated public static final double HOST_MACH_MSG_TRAP = 8.0;
+    @Generated public static final double HOST_VM_PURGABLE = 9.0;
+    @Generated public static final double HOST_DEBUG_INFO_INTERNAL = 10.0;
+    @Generated public static final double HOST_CAN_HAS_DEBUGGER = 11.0;
+    @Generated public static final double HOST_PREFERRED_USER_ARCH = 12.0;
+    @Generated public static final double HOST_LOAD_INFO = 1.0;
+    @Generated public static final double HOST_VM_INFO = 2.0;
+    @Generated public static final double HOST_CPU_LOAD_INFO = 3.0;
+    @Generated public static final double HOST_VM_INFO64 = 4.0;
+    @Generated public static final double HOST_EXTMOD_INFO64 = 5.0;
+    @Generated public static final double HOST_EXPIRED_TASK_INFO = 6.0;
+    @Generated public static final double HOST_NOTIFY_CALENDAR_CHANGE = 0.0;
+    @Generated public static final double HOST_NOTIFY_CALENDAR_SET = 1.0;
+    @Generated public static final double HOST_NOTIFY_TYPE_MAX = 1.0;
+    @Generated public static final double HOST_CALENDAR_CHANGED_REPLYID = 950.0;
+    @Generated public static final double HOST_CALENDAR_SET_REPLYID = 951.0;
+    @Generated public static final double HOST_SECURITY_PORT = 0.0;
+    @Generated public static final double HOST_PORT = 1.0;
+    @Generated public static final double HOST_PRIV_PORT = 2.0;
+    @Generated public static final double HOST_IO_MAIN_PORT = 3.0;
+    @Generated public static final double HOST_MAX_SPECIAL_KERNEL_PORT = 7.0;
+    @Generated public static final double HOST_LOCAL_NODE = -1.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_NONE = 0.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_CALL = 1.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_DELAY = 2.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_TEMPORARY = 3.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_SYMMETRIC = 4.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_INVALID = 5.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_DELAY_FORK = 6.0;
+    @Generated public static final double MEMORY_OBJECT_RETURN_NONE = 0.0;
+    @Generated public static final double MEMORY_OBJECT_RETURN_DIRTY = 1.0;
+    @Generated public static final double MEMORY_OBJECT_RETURN_ALL = 2.0;
+    @Generated public static final double MEMORY_OBJECT_RETURN_ANYTHING = 3.0;
+    @Generated public static final double MEMORY_OBJECT_DATA_FLUSH = 1.0;
+    @Generated public static final double MEMORY_OBJECT_DATA_NO_CHANGE = 2.0;
+    @Generated public static final double MEMORY_OBJECT_DATA_PURGE = 4.0;
+    @Generated public static final double MEMORY_OBJECT_COPY_SYNC = 8.0;
+    @Generated public static final double MEMORY_OBJECT_DATA_SYNC = 16.0;
+    @Generated public static final double MEMORY_OBJECT_IO_SYNC = 32.0;
+    @Generated public static final double MEMORY_OBJECT_DATA_FLUSH_ALL = 64.0;
+    @Generated public static final double MEMORY_OBJECT_PERFORMANCE_INFO = 11.0;
+    @Generated public static final double MEMORY_OBJECT_ATTRIBUTE_INFO = 14.0;
+    @Generated public static final double MEMORY_OBJECT_BEHAVIOR_INFO = 15.0;
+    @Generated public static final double MEMORY_OBJECT_TERMINATE_IDLE = 1.0;
+    @Generated public static final double MEMORY_OBJECT_RESPECT_CACHE = 2.0;
+    @Generated public static final double MEMORY_OBJECT_RELEASE_NO_OP = 4.0;
+    @Generated public static final double MAP_MEM_NOOP = 0.0;
+    @Generated public static final double MAP_MEM_COPYBACK = 1.0;
+    @Generated public static final double MAP_MEM_IO = 2.0;
+    @Generated public static final double MAP_MEM_WTHRU = 3.0;
+    @Generated public static final double MAP_MEM_WCOMB = 4.0;
+    @Generated public static final double MAP_MEM_INNERWBACK = 5.0;
+    @Generated public static final double MAP_MEM_POSTED = 6.0;
+    @Generated public static final double MAP_MEM_RT = 7.0;
+    @Generated public static final double MAP_MEM_POSTED_REORDERED = 8.0;
+    @Generated public static final double MAP_MEM_POSTED_COMBINED_REORDERED = 9.0;
+    @Generated public static final double MAP_MEM_PROT_MASK = 255.0;
+    @Generated public static final double MAP_MEM_LEDGER_TAGGED = 8192.0;
+    @Generated public static final double MAP_MEM_PURGABLE_KERNEL_ONLY = 16384.0;
+    @Generated public static final double MAP_MEM_GRAB_SECLUDED = 32768.0;
+    @Generated public static final double MAP_MEM_ONLY = 65536.0;
+    @Generated public static final double MAP_MEM_NAMED_CREATE = 131072.0;
+    @Generated public static final double MAP_MEM_PURGABLE = 262144.0;
+    @Generated public static final double MAP_MEM_NAMED_REUSE = 524288.0;
+    @Generated public static final double MAP_MEM_USE_DATA_ADDR = 1048576.0;
+    @Generated public static final double MAP_MEM_VM_COPY = 2097152.0;
+    @Generated public static final double MAP_MEM_VM_SHARE = 4194304.0;
+    @Generated public static final double MAP_MEM_4K_DATA_ADDR = 8388608.0;
+    @Generated public static final double MAP_MEM_FLAGS_MASK = 1.677696E7;
+    @Generated public static final double EXC_TYPES_COUNT = 14.0;
+    @Generated public static final double EXC_MASK_MACHINE = 0.0;
+    @Generated public static final double EXCEPTION_CODE_MAX = 2.0;
+    @Generated public static final double EXC_ARM_UNDEFINED = 1.0;
+    @Generated public static final double EXC_ARM_SME_DISALLOWED = 2.0;
+    @Generated public static final double EXC_ARM_FP_UNDEFINED = 0.0;
+    @Generated public static final double EXC_ARM_FP_IO = 1.0;
+    @Generated public static final double EXC_ARM_FP_DZ = 2.0;
+    @Generated public static final double EXC_ARM_FP_OF = 3.0;
+    @Generated public static final double EXC_ARM_FP_UF = 4.0;
+    @Generated public static final double EXC_ARM_FP_IX = 5.0;
+    @Generated public static final double EXC_ARM_FP_ID = 6.0;
+    @Generated public static final double EXC_ARM_DA_ALIGN = 257.0;
+    @Generated public static final double EXC_ARM_DA_DEBUG = 258.0;
+    @Generated public static final double EXC_ARM_SP_ALIGN = 259.0;
+    @Generated public static final double EXC_ARM_SWP = 260.0;
+    @Generated public static final double EXC_ARM_PAC_FAIL = 261.0;
+    @Generated public static final double EXC_ARM_BREAKPOINT = 1.0;
+    @Generated public static final double EXC_BAD_ACCESS = 1.0;
+    @Generated public static final double EXC_BAD_INSTRUCTION = 2.0;
+    @Generated public static final double EXC_ARITHMETIC = 3.0;
+    @Generated public static final double EXC_EMULATION = 4.0;
+    @Generated public static final double EXC_SOFTWARE = 5.0;
+    @Generated public static final double EXC_BREAKPOINT = 6.0;
+    @Generated public static final double EXC_SYSCALL = 7.0;
+    @Generated public static final double EXC_MACH_SYSCALL = 8.0;
+    @Generated public static final double EXC_RPC_ALERT = 9.0;
+    @Generated public static final double EXC_CRASH = 10.0;
+    @Generated public static final double EXC_RESOURCE = 11.0;
+    @Generated public static final double EXC_GUARD = 12.0;
+    @Generated public static final double EXC_CORPSE_NOTIFY = 13.0;
+    @Generated public static final double EXCEPTION_DEFAULT = 1.0;
+    @Generated public static final double EXCEPTION_STATE = 2.0;
+    @Generated public static final double EXCEPTION_STATE_IDENTITY = 3.0;
+    @Generated public static final double EXCEPTION_IDENTITY_PROTECTED = 4.0;
+    @Generated public static final double EXCEPTION_STATE_IDENTITY_PROTECTED = 5.0;
+    @Generated public static final double MACH_EXCEPTION_BACKTRACE_PREFERRED = 5.36870912E8;
+    @Generated public static final double MACH_EXCEPTION_ERRORS = 1.073741824E9;
+    @Generated public static final double FIRST_EXCEPTION = 1.0;
+    @Generated public static final double EXC_SOFT_SIGNAL = 65539.0;
+    @Generated public static final double EXC_MACF_MIN = 131072.0;
+    @Generated public static final double EXC_MACF_MAX = 196607.0;
+    @Generated public static final double ARM_EXCEPTION_STATE64_V2 = 10.0;
+    @Generated public static final double THREAD_STATE_FLAVORS = 29.0;
+    @Generated public static final double THREAD_STATE_FLAVOR_LIST = 0.0;
+    @Generated public static final double THREAD_STATE_FLAVOR_LIST_NEW = 128.0;
+    @Generated public static final double THREAD_STATE_FLAVOR_LIST_10_9 = 129.0;
+    @Generated public static final double THREAD_STATE_FLAVOR_LIST_10_13 = 130.0;
+    @Generated public static final double THREAD_STATE_FLAVOR_LIST_10_15 = 131.0;
+    @Generated public static final double THREAD_CONVERT_THREAD_STATE_TO_SELF = 1.0;
+    @Generated public static final double THREAD_CONVERT_THREAD_STATE_FROM_SELF = 2.0;
+    @Generated public static final double MACH_VOUCHER_ATTR_MAX_RAW_RECIPE_ARRAY_SIZE = 5120.0;
+    @Generated public static final double MACH_VOUCHER_TRAP_STACK_LIMIT = 256.0;
+    @Generated public static final double MACH_VOUCHER_IMPORTANCE_ATTR_ADD_EXTERNAL = 1.0;
+    @Generated public static final double MACH_VOUCHER_IMPORTANCE_ATTR_DROP_EXTERNAL = 2.0;
+    @Generated public static final double MACH_ACTIVITY_ID_COUNT_MAX = 16.0;
+    @Generated public static final double PROCESSOR_CPU_STAT = 2.68435459E8;
+    @Generated public static final double PROCESSOR_CPU_STAT64 = 2.6843546E8;
+    @Generated public static final double PROCESSOR_BASIC_INFO = 1.0;
+    @Generated public static final double PROCESSOR_CPU_LOAD_INFO = 2.0;
+    @Generated public static final double PROCESSOR_PM_REGS_INFO = 2.68435457E8;
+    @Generated public static final double PROCESSOR_TEMPERATURE = 2.68435458E8;
+    @Generated public static final double LOAD_SCALE = 1000.0;
+    @Generated public static final double PROCESSOR_SET_BASIC_INFO = 5.0;
+    @Generated public static final double PROCESSOR_SET_LOAD_INFO = 4.0;
+    @Generated public static final double POLICY_NULL = 0.0;
+    @Generated public static final double POLICY_TIMESHARE = 1.0;
+    @Generated public static final double POLICY_RR = 2.0;
+    @Generated public static final double POLICY_FIFO = 4.0;
+    @Generated public static final double TASK_BASIC_INFO_32 = 4.0;
+    @Generated public static final double TASK_BASIC2_INFO_32 = 6.0;
+    @Generated public static final double TASK_EVENTS_INFO = 2.0;
+    @Generated public static final double TASK_THREAD_TIMES_INFO = 3.0;
+    @Generated public static final double TASK_ABSOLUTETIME_INFO = 1.0;
+    @Generated public static final double TASK_KERNELMEMORY_INFO = 7.0;
+    @Generated public static final double TASK_SECURITY_TOKEN = 13.0;
+    @Generated public static final double TASK_AUDIT_TOKEN = 15.0;
+    @Generated public static final double TASK_AFFINITY_TAG_INFO = 16.0;
+    @Generated public static final double TASK_DYLD_INFO = 17.0;
+    @Generated public static final double TASK_DYLD_ALL_IMAGE_INFO_32 = 0.0;
+    @Generated public static final double TASK_DYLD_ALL_IMAGE_INFO_64 = 1.0;
+    @Generated public static final double TASK_BASIC_INFO_64_2 = 18.0;
+    @Generated public static final double TASK_EXTMOD_INFO = 19.0;
+    @Generated public static final double MACH_TASK_BASIC_INFO = 20.0;
+    @Generated public static final double TASK_POWER_INFO = 21.0;
+    @Generated public static final double TASK_VM_INFO = 22.0;
+    @Generated public static final double TASK_VM_INFO_PURGEABLE = 23.0;
+    @Generated public static final double TASK_TRACE_MEMORY_INFO = 24.0;
+    @Generated public static final double TASK_WAIT_STATE_INFO = 25.0;
+    @Generated public static final double TASK_POWER_INFO_V2 = 26.0;
+    @Generated public static final double TASK_VM_INFO_PURGEABLE_ACCOUNT = 27.0;
+    @Generated public static final double TASK_FLAGS_INFO = 28.0;
+    @Generated public static final double TF_LP64 = 1.0;
+    @Generated public static final double TF_64B_DATA = 2.0;
+    @Generated public static final double TASK_DEBUG_INFO_INTERNAL = 29.0;
+    @Generated public static final double TASK_EXC_GUARD_NONE = 0.0;
+    @Generated public static final double TASK_EXC_GUARD_VM_DELIVER = 1.0;
+    @Generated public static final double TASK_EXC_GUARD_VM_ONCE = 2.0;
+    @Generated public static final double TASK_EXC_GUARD_VM_CORPSE = 4.0;
+    @Generated public static final double TASK_EXC_GUARD_VM_FATAL = 8.0;
+    @Generated public static final double TASK_EXC_GUARD_VM_ALL = 15.0;
+    @Generated public static final double TASK_EXC_GUARD_MP_DELIVER = 16.0;
+    @Generated public static final double TASK_EXC_GUARD_MP_ONCE = 32.0;
+    @Generated public static final double TASK_EXC_GUARD_MP_CORPSE = 64.0;
+    @Generated public static final double TASK_EXC_GUARD_MP_FATAL = 128.0;
+    @Generated public static final double TASK_EXC_GUARD_MP_ALL = 240.0;
+    @Generated public static final double TASK_EXC_GUARD_ALL = 255.0;
+    @Generated public static final double TASK_CORPSE_FORKING_DISABLED_MEM_DIAG = 1.0;
+    @Generated public static final double TASK_SCHED_TIMESHARE_INFO = 10.0;
+    @Generated public static final double TASK_SCHED_RR_INFO = 11.0;
+    @Generated public static final double TASK_SCHED_FIFO_INFO = 12.0;
+    @Generated public static final double TASK_SCHED_INFO = 14.0;
+    @Generated public static final double TASK_CATEGORY_POLICY = 1.0;
+    @Generated public static final double TASK_SUPPRESSION_POLICY = 3.0;
+    @Generated public static final double TASK_POLICY_STATE = 4.0;
+    @Generated public static final double TASK_BASE_QOS_POLICY = 8.0;
+    @Generated public static final double TASK_OVERRIDE_QOS_POLICY = 9.0;
+    @Generated public static final double TASK_BASE_LATENCY_QOS_POLICY = 10.0;
+    @Generated public static final double TASK_BASE_THROUGHPUT_QOS_POLICY = 11.0;
+    @Generated public static final double PROC_FLAG_DARWINBG = 32768.0;
+    @Generated public static final double PROC_FLAG_EXT_DARWINBG = 65536.0;
+    @Generated public static final double PROC_FLAG_IOS_APPLEDAEMON = 131072.0;
+    @Generated public static final double PROC_FLAG_IOS_IMPPROMOTION = 524288.0;
+    @Generated public static final double PROC_FLAG_ADAPTIVE = 1048576.0;
+    @Generated public static final double PROC_FLAG_ADAPTIVE_IMPORTANT = 2097152.0;
+    @Generated public static final double PROC_FLAG_IMPORTANCE_DONOR = 4194304.0;
+    @Generated public static final double PROC_FLAG_SUPPRESSED = 8388608.0;
+    @Generated public static final double PROC_FLAG_APPLICATION = 1.6777216E7;
+    @Generated public static final double TASK_KERNEL_PORT = 1.0;
+    @Generated public static final double TASK_HOST_PORT = 2.0;
+    @Generated public static final double TASK_NAME_PORT = 3.0;
+    @Generated public static final double TASK_BOOTSTRAP_PORT = 4.0;
+    @Generated public static final double TASK_INSPECT_PORT = 5.0;
+    @Generated public static final double TASK_READ_PORT = 6.0;
+    @Generated public static final double TASK_ACCESS_PORT = 9.0;
+    @Generated public static final double TASK_DEBUG_CONTROL_PORT = 10.0;
+    @Generated public static final double TASK_RESOURCE_NOTIFY_PORT = 11.0;
+    @Generated public static final double THREAD_BASIC_INFO = 3.0;
+    @Generated public static final double THREAD_IDENTIFIER_INFO = 4.0;
+    @Generated public static final double TH_USAGE_SCALE = 1000.0;
+    @Generated public static final double TH_STATE_RUNNING = 1.0;
+    @Generated public static final double TH_STATE_STOPPED = 2.0;
+    @Generated public static final double TH_STATE_WAITING = 3.0;
+    @Generated public static final double TH_STATE_UNINTERRUPTIBLE = 4.0;
+    @Generated public static final double TH_STATE_HALTED = 5.0;
+    @Generated public static final double TH_FLAGS_SWAPPED = 1.0;
+    @Generated public static final double TH_FLAGS_IDLE = 2.0;
+    @Generated public static final double TH_FLAGS_GLOBAL_FORCED_IDLE = 4.0;
+    @Generated public static final double THREAD_EXTENDED_INFO = 5.0;
+    @Generated public static final double MAXTHREADNAMESIZE = 64.0;
+    @Generated public static final double THREAD_DEBUG_INFO_INTERNAL = 6.0;
+    @Generated public static final double IO_NUM_PRIORITIES = 4.0;
+    @Generated public static final double THREAD_SCHED_TIMESHARE_INFO = 10.0;
+    @Generated public static final double THREAD_SCHED_RR_INFO = 11.0;
+    @Generated public static final double THREAD_SCHED_FIFO_INFO = 12.0;
+    @Generated public static final double THREAD_STANDARD_POLICY = 1.0;
+    @Generated public static final double THREAD_STANDARD_POLICY_COUNT = 0.0;
+    @Generated public static final double THREAD_EXTENDED_POLICY = 1.0;
+    @Generated public static final double THREAD_TIME_CONSTRAINT_POLICY = 2.0;
+    @Generated public static final double THREAD_PRECEDENCE_POLICY = 3.0;
+    @Generated public static final double THREAD_AFFINITY_POLICY = 4.0;
+    @Generated public static final double THREAD_AFFINITY_TAG_NULL = 0.0;
+    @Generated public static final double THREAD_BACKGROUND_POLICY = 5.0;
+    @Generated public static final double THREAD_BACKGROUND_POLICY_DARWIN_BG = 4096.0;
+    @Generated public static final double THREAD_LATENCY_QOS_POLICY = 7.0;
+    @Generated public static final double THREAD_THROUGHPUT_QOS_POLICY = 8.0;
+    @Generated public static final double THREAD_KERNEL_PORT = 1.0;
+    @Generated public static final double THREAD_INSPECT_PORT = 2.0;
+    @Generated public static final double THREAD_READ_PORT = 3.0;
+    @Generated public static final double MATTR_CACHE = 1.0;
+    @Generated public static final double MATTR_MIGRATE = 2.0;
+    @Generated public static final double MATTR_REPLICATE = 4.0;
+    @Generated public static final double MATTR_VAL_OFF = 0.0;
+    @Generated public static final double MATTR_VAL_ON = 1.0;
+    @Generated public static final double MATTR_VAL_GET = 2.0;
+    @Generated public static final double MATTR_VAL_CACHE_FLUSH = 6.0;
+    @Generated public static final double MATTR_VAL_DCACHE_FLUSH = 7.0;
+    @Generated public static final double MATTR_VAL_ICACHE_FLUSH = 8.0;
+    @Generated public static final double MATTR_VAL_CACHE_SYNC = 9.0;
+    @Generated public static final double MATTR_VAL_GET_INFO = 10.0;
+    @Generated public static final double VM_PURGABLE_NO_AGING_SHIFT = 16.0;
+    @Generated public static final double VM_PURGABLE_DEBUG_SHIFT = 12.0;
+    @Generated public static final double VM_VOLATILE_GROUP_SHIFT = 8.0;
+    @Generated public static final double VM_PURGABLE_BEHAVIOR_SHIFT = 6.0;
+    @Generated public static final double VM_PURGABLE_ORDERING_SHIFT = 5.0;
+    @Generated public static final double VM_VOLATILE_ORDER_SHIFT = 4.0;
+    @Generated public static final double VM_PURGABLE_STATE_MIN = 0.0;
+    @Generated public static final double VM_PURGABLE_STATE_MAX = 3.0;
+    @Generated public static final double VM_PURGABLE_STATE_MASK = 3.0;
+    @Generated public static final double VM_PURGABLE_NONVOLATILE = 0.0;
+    @Generated public static final double VM_PURGABLE_VOLATILE = 1.0;
+    @Generated public static final double VM_PURGABLE_EMPTY = 2.0;
+    @Generated public static final double VM_PURGABLE_DENY = 3.0;
+    @Generated public static final double BYTE_SIZE = 8.0;
+    @Generated public static final double PAGE_MAX_SHIFT = 14.0;
+    @Generated public static final double PAGE_MIN_SHIFT = 12.0;
+    @Generated public static final double SWI_SYSCALL = 128.0;
+    @Generated public static final double VM_REGION_BASIC_INFO_64 = 9.0;
+    @Generated public static final double VM_REGION_BASIC_INFO = 10.0;
+    @Generated public static final double SM_COW = 1.0;
+    @Generated public static final double SM_PRIVATE = 2.0;
+    @Generated public static final double SM_EMPTY = 3.0;
+    @Generated public static final double SM_SHARED = 4.0;
+    @Generated public static final double SM_TRUESHARED = 5.0;
+    @Generated public static final double SM_PRIVATE_ALIASED = 6.0;
+    @Generated public static final double SM_SHARED_ALIASED = 7.0;
+    @Generated public static final double SM_LARGE_PAGE = 8.0;
+    @Generated public static final double VM_REGION_EXTENDED_INFO = 13.0;
+    @Generated public static final double VM_REGION_TOP_INFO = 12.0;
+    @Generated public static final double VM_PAGE_INFO_BASIC = 1.0;
+    @Generated public static final double KMOD_MAX_NAME = 64.0;
+    @Generated public static final double KMOD_INFO_VERSION = 1.0;
+    @Generated public static final double TASK_FLAVOR_CONTROL = 0.0;
+    @Generated public static final double TASK_FLAVOR_READ = 1.0;
+    @Generated public static final double TASK_FLAVOR_INSPECT = 2.0;
+    @Generated public static final double TASK_FLAVOR_NAME = 3.0;
+    @Generated public static final double THREAD_FLAVOR_CONTROL = 0.0;
+    @Generated public static final double THREAD_FLAVOR_READ = 1.0;
+    @Generated public static final double THREAD_FLAVOR_INSPECT = 2.0;
+    @Generated public static final double SIMD_CURRENT_LIBRARY_VERSION = 6.0;
+    @Generated public static final double NDR_PROTOCOL_2_0 = 0.0;
+    @Generated public static final double NDR_INT_BIG_ENDIAN = 0.0;
+    @Generated public static final double NDR_INT_LITTLE_ENDIAN = 1.0;
+    @Generated public static final double NDR_FLOAT_IEEE = 0.0;
+    @Generated public static final double NDR_FLOAT_VAX = 1.0;
+    @Generated public static final double NDR_FLOAT_CRAY = 2.0;
+    @Generated public static final double NDR_FLOAT_IBM = 3.0;
+    @Generated public static final double NDR_CHAR_ASCII = 0.0;
+    @Generated public static final double NDR_CHAR_EBCDIC = 1.0;
+    @Generated public static final double __NDR_convert__ = 0.0;
+    @Generated public static final double __NDR_convert__char_rep__ = 0.0;
+    @Generated public static final double __NDR_convert__float_rep__ = 0.0;
+    @Generated public static final double MACH_NOTIFY_FIRST = 100.0;
+    @Generated public static final double __MigTypeCheck = 1.0;
+    @Generated public static final double __MigPackStructs = 1.0;
+    @Generated public static final double MIG_TYPE_ERROR = -300.0;
+    @Generated public static final double MIG_REPLY_MISMATCH = -301.0;
+    @Generated public static final double MIG_REMOTE_ERROR = -302.0;
+    @Generated public static final double MIG_BAD_ID = -303.0;
+    @Generated public static final double MIG_BAD_ARGUMENTS = -304.0;
+    @Generated public static final double MIG_NO_REPLY = -305.0;
+    @Generated public static final double MIG_EXCEPTION = -306.0;
+    @Generated public static final double MIG_ARRAY_TOO_LARGE = -307.0;
+    @Generated public static final double MIG_SERVER_DIED = -308.0;
+    @Generated public static final double MIG_TRAILER_ERROR = -309.0;
+    @Generated public static final double clock_priv_MSG_COUNT = 2.0;
+    @Generated public static final double host_priv_MSG_COUNT = 26.0;
+    @Generated public static final double ZONE_NAME_MAX_LEN = 80.0;
+    @Generated public static final double MACH_ZONE_NAME_MAX_LEN = 80.0;
+    @Generated public static final double MACH_MEMORY_INFO_NAME_MAX_LEN = 80.0;
+    @Generated public static final double MAX_ZTRACE_DEPTH = 15.0;
+    @Generated public static final double ZOP_ALLOC = 1.0;
+    @Generated public static final double ZOP_FREE = 0.0;
+    @Generated public static final double LOCKGROUP_MAX_NAME = 64.0;
+    @Generated public static final double MACH_CORE_FILEHEADER_MAXFILES = 16.0;
+    @Generated public static final double MACH_CORE_FILEHEADER_NAMELEN = 16.0;
+    @Generated public static final double KOBJECT_DESCRIPTION_LENGTH = 512.0;
+    @Generated public static final double host_security_MSG_COUNT = 2.0;
+    @Generated public static final double processor_MSG_COUNT = 6.0;
+    @Generated public static final double processor_set_MSG_COUNT = 11.0;
+    @Generated public static final double SYNC_POLICY_FIFO = 0.0;
+    @Generated public static final double SYNC_POLICY_FIXED_PRIORITY = 1.0;
+    @Generated public static final double SYNC_POLICY_REVERSED = 2.0;
+    @Generated public static final double SYNC_POLICY_ORDER_MASK = 3.0;
+    @Generated public static final double task_MSG_COUNT = 66.0;
+    @Generated public static final double thread_act_MSG_COUNT = 32.0;
+    @Generated public static final double vm_map_MSG_COUNT = 33.0;
+    @Generated public static final double mach_port_MSG_COUNT = 43.0;
+    @Generated public static final double _MACH_INIT_ = 1.0;
+    @Generated public static final double NAME_SERVER_SLOT = 0.0;
+    @Generated public static final double ENVIRONMENT_SLOT = 1.0;
+    @Generated public static final double SERVICE_SLOT = 2.0;
+    @Generated public static final double MACH_PORTS_SLOTS_USED = 3.0;
+    @Generated public static final double mach_host_MSG_COUNT = 35.0;
+    @Generated public static final double SWITCH_OPTION_NONE = 0.0;
+    @Generated public static final double SWITCH_OPTION_DEPRESS = 1.0;
+    @Generated public static final double SWITCH_OPTION_WAIT = 2.0;
+    @Generated public static final double RPC_SIGBUF_SIZE = 8.0;
+    @Generated public static final double _MACH_ERROR_ = 1.0;
+    @Generated public static final double err_max_system = 63.0;
+    @Generated public static final double VOUCHER_MACH_MSG_API_VERSION = 2.0140205E7;
+    @Generated public static final double SO_BINDTODEVICE = 4404.0;
+    @Generated public static final double MH_IMPLICIT_PAGEZERO = 2.68435456E8;
+    @Generated public static final double DYLIB_USE_WEAK_LINK = 1.0;
+    @Generated public static final double DYLIB_USE_REEXPORT = 2.0;
+    @Generated public static final double DYLIB_USE_UPWARD = 4.0;
+    @Generated public static final double DYLIB_USE_DELAYED_INIT = 8.0;
+    @Generated public static final double DYLIB_USE_MARKER = 4.43815936E8;
 }

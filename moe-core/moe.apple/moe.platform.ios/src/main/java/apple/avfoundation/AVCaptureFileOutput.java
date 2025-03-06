@@ -189,6 +189,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * 
      * The value of this property is YES when the receiver currently has a file to which it is writing new samples, NO
      * otherwise.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isRecording")
@@ -203,6 +205,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * reached and the captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: delegate method is
      * invoked with an appropriate error. The default value of this property is kCMTimeInvalid, which indicates no
      * limit.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("maxRecordedDuration")
@@ -217,6 +221,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * This property specifies a hard limit on the data size of recorded files. Recording is stopped when the limit is
      * reached and the captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: delegate method is
      * invoked with an appropriate error. The default value of this property is 0, which indicates no limit.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("maxRecordedFileSize")
@@ -231,6 +237,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * recording to continue. Recording is stopped when the limit is reached and the
      * captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: delegate method is invoked with an
      * appropriate error.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("minFreeDiskSpaceLimit")
@@ -243,6 +251,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * 
      * The value of this property is an NSURL object containing the file URL of the file currently being written by the
      * receiver. Returns nil if the receiver is not recording to any file.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -255,6 +265,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * Indicates the duration of the media recorded to the current output file.
      * 
      * If recording is in progress, this property returns the total time recorded so far.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("recordedDuration")
@@ -267,6 +279,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * Indicates the size, in bytes, of the data recorded to the current output file.
      * 
      * If a recording is in progress, this property returns the size in bytes of the data recorded so far.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("recordedFileSize")
@@ -281,6 +295,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * reached and the captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: delegate method is
      * invoked with an appropriate error. The default value of this property is kCMTimeInvalid, which indicates no
      * limit.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMaxRecordedDuration:")
@@ -294,6 +310,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * This property specifies a hard limit on the data size of recorded files. Recording is stopped when the limit is
      * reached and the captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: delegate method is
      * invoked with an appropriate error. The default value of this property is 0, which indicates no limit.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMaxRecordedFileSize:")
@@ -308,6 +326,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * recording to continue. Recording is stopped when the limit is reached and the
      * captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: delegate method is invoked with an
      * appropriate error.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMinFreeDiskSpaceLimit:")
@@ -340,6 +360,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * Note: AVCaptureAudioFileOutput does not support -startRecordingToOutputFileURL:recordingDelegate:. Use
      * -startRecordingToOutputFileURL:outputFileType:recordingDelegate: instead.
      * 
+     * API-Since: 4.0
+     * 
      * @param outputFileURL
      *                      An NSURL object containing the URL of the output file. This method throws an
      *                      NSInvalidArgumentException if the URL is not a valid file URL.
@@ -371,6 +393,8 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
      * On macOS, if this method is called within the captureOutput:didOutputSampleBuffer:fromConnection: delegate
      * method, the last samples written to the current file are guaranteed to be those that were output immediately
      * before those in the sample buffer passed to that method.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("stopRecording")
@@ -380,4 +404,62 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] recordingPaused
+     * 
+     * Indicates whether recording to the current output file is paused.
+     * 
+     * This property indicates recording to the file returned by outputFileURL has been previously paused using the
+     * pauseRecording method. When a recording is paused, captured samples are not written to the output file, but new
+     * samples can be written to the same file in the future by calling resumeRecording.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isRecordingPaused")
+    public native boolean isRecordingPaused();
+
+    /**
+     * pauseRecording
+     * 
+     * Pauses recording to the current output file.
+     * 
+     * This method causes the receiver to stop writing captured samples to the current output file returned by
+     * outputFileURL, but leaves the file open so that samples can be written to it in the future, when resumeRecording
+     * is called. This allows clients to record multiple media segments that are not contiguous in time to a single
+     * file.
+     * 
+     * On macOS, if this method is called within the captureOutput:didOutputSampleBuffer:fromConnection: delegate
+     * method, the last samples written to the current file are guaranteed to be those that were output immediately
+     * before those in the sample buffer passed to that method.
+     * 
+     * A recording can be stopped as normal, even when it's paused.
+     * 
+     * A format or device change will result in the recording being stopped, even when it's paused.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("pauseRecording")
+    public native void pauseRecording();
+
+    /**
+     * resumeRecording
+     * 
+     * Resumes recording to the current output file after it was previously paused using pauseRecording.
+     * 
+     * This method causes the receiver to resume writing captured samples to the current output file returned by
+     * outputFileURL, after recording was previously paused using pauseRecording. This allows clients to record multiple
+     * media segments that are not contiguous in time to a single file.
+     * 
+     * On macOS, if this method is called within the captureOutput:didOutputSampleBuffer:fromConnection: delegate
+     * method, the first samples written to the current file are guaranteed to be those contained in the sample buffer
+     * passed to that method.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("resumeRecording")
+    public native void resumeRecording();
 }

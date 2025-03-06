@@ -106,6 +106,8 @@ public class CNRenderingSessionFrameAttributes extends NSObject implements NSCop
      * The f-stop value which inversely affects the aperture used to render the image.
      * 
      * A smaller f/ number results in larger bokeh and a shallower depth of field in the rendered image.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fNumber")
@@ -118,6 +120,8 @@ public class CNRenderingSessionFrameAttributes extends NSObject implements NSCop
      * not defined.
      * It is best practice to obtain disparity values from detections or by interpolation between known disparity
      * values.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("focusDisparity")
@@ -137,6 +141,8 @@ public class CNRenderingSessionFrameAttributes extends NSObject implements NSCop
      * - Parameters:
      * - sampleBuffer: A sample buffer read from the timed cinematic metadata track of a cinematic asset.
      * - sessionAttributes: Rendering session attributes loaded from a cinematic asset.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithSampleBuffer:sessionAttributes:")
@@ -148,6 +154,8 @@ public class CNRenderingSessionFrameAttributes extends NSObject implements NSCop
      * - Parameters:
      * - metadataGroup: An AVTimedMetadataGroup read from the timed cinematic metadata track of a cinematic asset.
      * - sessionAttributes: Rendering session attributes loaded from a cinematic asset.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithTimedMetadataGroup:sessionAttributes:")
@@ -200,6 +208,8 @@ public class CNRenderingSessionFrameAttributes extends NSObject implements NSCop
      * The f-stop value which inversely affects the aperture used to render the image.
      * 
      * A smaller f/ number results in larger bokeh and a shallower depth of field in the rendered image.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setFNumber:")
@@ -212,6 +222,8 @@ public class CNRenderingSessionFrameAttributes extends NSObject implements NSCop
      * not defined.
      * It is best practice to obtain disparity values from detections or by interpolation between known disparity
      * values.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setFocusDisparity:")

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASAuthorizationWebBrowserPlatformPublicKeyCredentialRegistrationRequest;
 
 /**
  * API-Since: 15.0
@@ -37,7 +38,8 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ASAuthorizationPlatformPublicKeyCredentialRegistrationRequest extends ASAuthorizationRequest implements
-        ASAuthorizationPublicKeyCredentialRegistrationRequest {
+        ASAuthorizationPublicKeyCredentialRegistrationRequest,
+        ASAuthorizationWebBrowserPlatformPublicKeyCredentialRegistrationRequest {
     static {
         NatJ.register();
     }
@@ -254,4 +256,49 @@ public class ASAuthorizationPlatformPublicKeyCredentialRegistrationRequest exten
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("clientData")
+    @Nullable
+    public native ASPublicKeyCredentialClientData clientData();
+
+    @Generated
+    @Selector("excludedCredentials")
+    @Nullable
+    public native NSArray<? extends ASAuthorizationPlatformPublicKeyCredentialDescriptor> excludedCredentials();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prf")
+    @Nullable
+    public native ASAuthorizationPublicKeyCredentialPRFRegistrationInput prf();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("requestStyle")
+    @NInt
+    public native long requestStyle();
+
+    @Generated
+    @Selector("setExcludedCredentials:")
+    public native void setExcludedCredentials(
+            @Nullable NSArray<? extends ASAuthorizationPlatformPublicKeyCredentialDescriptor> value);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setPrf:")
+    public native void setPrf(@Nullable ASAuthorizationPublicKeyCredentialPRFRegistrationInput value);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setRequestStyle:")
+    public native void setRequestStyle(@NInt long value);
 }

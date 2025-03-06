@@ -195,6 +195,8 @@ public class AUAudioUnit extends NSObject {
      * Note: Do not block the main thread while waiting for the completion handler to be called;
      * this can deadlock.
      * 
+     * API-Since: 9.0
+     * 
      * @param componentDescription
      *                             The AudioComponentDescription of the audio unit to instantiate.
      * @param options
@@ -234,6 +236,8 @@ public class AUAudioUnit extends NSObject {
      * -[AUAudioUnit initWithComponentDescription:options:error:], and via any other API's which
      * instantiate audio units via their component descriptions (e.g. <AudioToolbox/AUGraph.h>, or
      * <AVFoundation/AVAudioUnitEffect.h>).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("registerSubclass:asComponentDescription:name:version:")
@@ -261,6 +265,9 @@ public class AUAudioUnit extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("allParameterValues")
     public native boolean allParameterValues();
@@ -274,6 +281,8 @@ public class AUAudioUnit extends NSObject {
      * implementation.
      * 
      * Bridged to the v2 API AudioUnitInitialize().
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allocateRenderResourcesAndReturnError:")
@@ -284,6 +293,8 @@ public class AUAudioUnit extends NSObject {
      * [@property] audioUnitName
      * 
      * The audio unit's name.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -294,6 +305,8 @@ public class AUAudioUnit extends NSObject {
      * [@property] canPerformInput
      * 
      * Whether the I/O device can perform input.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canPerformInput")
@@ -303,6 +316,8 @@ public class AUAudioUnit extends NSObject {
      * [@property] canPerformOutput
      * 
      * Whether the I/O device can perform output.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canPerformOutput")
@@ -324,6 +339,8 @@ public class AUAudioUnit extends NSObject {
      * settable.
      * 
      * Defaults to NO. Subclassers can override to return YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canProcessInPlace")
@@ -353,6 +370,8 @@ public class AUAudioUnit extends NSObject {
      * elements on that side.
      * 
      * Bridged to the v2 property kAudioUnitProperty_SupportedNumChannels.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -387,6 +406,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * The AudioComponent which was found based on componentDescription when the
      * audio unit was created.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -397,6 +418,8 @@ public class AUAudioUnit extends NSObject {
      * [@property] componentDescription
      * 
      * The AudioComponentDescription with which the audio unit was created.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("componentDescription")
@@ -411,6 +434,8 @@ public class AUAudioUnit extends NSObject {
      * By convention, an audio unit's component name is its manufacturer's name, plus ": ",
      * plus the audio unit's name. The audioUnitName and manufacturerName properties are derived
      * from the component name.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -421,6 +446,8 @@ public class AUAudioUnit extends NSObject {
      * [@property] componentVersion
      * 
      * The unit's component's version.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("componentVersion")
@@ -436,6 +463,8 @@ public class AUAudioUnit extends NSObject {
      * then display to the user "My audio unit on track 3".
      * 
      * Bridged to the v2 property kAudioUnitProperty_ContextName.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -452,6 +481,8 @@ public class AUAudioUnit extends NSObject {
      * preset was selected.
      * 
      * Bridged to the v2 property kAudioUnitProperty_PresentPreset.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -467,6 +498,8 @@ public class AUAudioUnit extends NSObject {
      * implementation.
      * 
      * Bridged to the v2 API AudioUnitUninitialize().
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("deallocateRenderResources")
@@ -481,6 +514,8 @@ public class AUAudioUnit extends NSObject {
      * parameters provided by the developer. This property returns all of the available factory presets.
      * 
      * Bridged to the v2 property kAudioUnitProperty_FactoryPresets.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -503,6 +538,8 @@ public class AUAudioUnit extends NSObject {
      * preorder traversal of the tree.
      * 
      * Bridged to the v2 property kAudioUnitProperty_ClassInfo.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -524,6 +561,8 @@ public class AUAudioUnit extends NSObject {
      * the base class simply sets/gets fullState.
      * 
      * Bridged to the v2 property kAudioUnitProperty_ClassInfoFromDocument.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -538,6 +577,8 @@ public class AUAudioUnit extends NSObject {
      * initWithComponentDescription:error:
      * 
      * Convenience initializer (omits options).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithComponentDescription:error:")
@@ -558,6 +599,8 @@ public class AUAudioUnit extends NSObject {
      *                             Options for loading the unit in-process or out-of-process.
      * @param outError
      *                             Returned in the event of failure.
+     * 
+     *                             API-Since: 9.0
      */
     @Generated
     @Selector("initWithComponentDescription:options:error:")
@@ -572,6 +615,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Subclassers must override this property's getter. The implementation should return the same
      * object every time it is asked for it, since clients can install KVO observers on it.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -584,6 +629,8 @@ public class AUAudioUnit extends NSObject {
      * The block that the output unit will call to notify when input is available.
      * 
      * See discussion for AUInputHandler.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -598,6 +645,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Input is disabled by default. This must be set to YES if input audio is desired.
      * Setting to YES will have no effect if canPerformInput is false.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isInputEnabled")
@@ -610,6 +659,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Input is disabled by default. This must be set to YES if input audio is desired.
      * Setting to YES will have no effect if canPerformInput is false.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInputEnabled:")
@@ -622,6 +673,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * This is implemented in the base class and returns YES if the component type is music
      * device or music effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isMusicDeviceOrEffect")
@@ -634,6 +687,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Output is enabled by default.
      * Setting to YES will have no effect if canPerformOutput is false.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isOutputEnabled")
@@ -646,6 +701,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Output is enabled by default.
      * Setting to YES will have no effect if canPerformOutput is false.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOutputEnabled:")
@@ -663,6 +720,8 @@ public class AUAudioUnit extends NSObject {
      * (Normally, in a realtime thread, this data would have to be dropped).
      * 
      * Bridged to the v2 property kAudioUnitProperty_OfflineRender.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isRenderingOffline")
@@ -680,6 +739,8 @@ public class AUAudioUnit extends NSObject {
      * (Normally, in a realtime thread, this data would have to be dropped).
      * 
      * Bridged to the v2 property kAudioUnitProperty_OfflineRender.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRenderingOffline:")
@@ -704,6 +765,8 @@ public class AUAudioUnit extends NSObject {
      * with a value of 0).
      * 
      * Bridged to the v2 property kAudioUnitProperty_Latency.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("latency")
@@ -713,6 +776,8 @@ public class AUAudioUnit extends NSObject {
      * [@property] manufacturerName
      * 
      * The manufacturer's name.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -728,6 +793,8 @@ public class AUAudioUnit extends NSObject {
      * while render resources are allocated.
      * 
      * Bridged to the v2 property kAudioUnitProperty_MaximumFramesPerSlice.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumFramesToRender")
@@ -743,6 +810,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the HostCallback_GetBeatAndTempo and HostCallback_GetMusicalTimeLocation
      * callback members in kAudioUnitProperty_HostCallbacks.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -757,6 +826,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Subclassers must override this property's getter. The implementation should return the same
      * object every time it is asked for it, since clients can install KVO observers on it.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -769,6 +840,8 @@ public class AUAudioUnit extends NSObject {
      * The block that the output unit will call to get audio to send to the output.
      * 
      * This block must be set if output is enabled.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -800,6 +873,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Note that it is not safe to modify this property in a real-time context.
      * 
+     * API-Since: 9.0
+     * 
      * @return
      *         A parameter tree object, or nil if the unit has no parameters.
      */
@@ -823,6 +898,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Partially bridged to kAudioUnitProperty_ParametersForOverview (v2 hosts can use that
      * property to access this v3 method of an audio unit).
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -838,6 +915,8 @@ public class AUAudioUnit extends NSObject {
      *              The token previously returned by tokenByAddingRenderObserver:
      * 
      *              Bridged to the v2 API AudioUnitRemoveRenderNotify().
+     * 
+     *              API-Since: 9.0
      */
     @Generated
     @Selector("removeRenderObserver:")
@@ -851,6 +930,8 @@ public class AUAudioUnit extends NSObject {
      * The range of valid values is 0-127.
      * 
      * Bridged to the v2 property kAudioUnitProperty_RenderQuality.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("renderQuality")
@@ -861,6 +942,8 @@ public class AUAudioUnit extends NSObject {
      * [@property] renderResourcesAllocated
      * 
      * returns YES if the unit has render resources allocated.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("renderResourcesAllocated")
@@ -877,6 +960,8 @@ public class AUAudioUnit extends NSObject {
      * superclass implementation.
      * 
      * Bridged to the v2 API AudioUnitReset(), in the global scope.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("reset")
@@ -902,6 +987,8 @@ public class AUAudioUnit extends NSObject {
      * If AudioUnitMIDIProtocol is not set, events will be delivered as legacy MIDI.
      * 
      * This bridged to the v2 API MusicDeviceMIDIEvent.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -924,6 +1011,8 @@ public class AUAudioUnit extends NSObject {
      * the events to be provided to the internalRenderBlock.
      * 
      * Bridged to the v2 API AudioUnitScheduleParameters().
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -963,6 +1052,8 @@ public class AUAudioUnit extends NSObject {
      * then display to the user "My audio unit on track 3".
      * 
      * Bridged to the v2 property kAudioUnitProperty_ContextName.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContextName:")
@@ -978,6 +1069,8 @@ public class AUAudioUnit extends NSObject {
      * preset was selected.
      * 
      * Bridged to the v2 property kAudioUnitProperty_PresentPreset.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCurrentPreset:")
@@ -999,6 +1092,8 @@ public class AUAudioUnit extends NSObject {
      * preorder traversal of the tree.
      * 
      * Bridged to the v2 property kAudioUnitProperty_ClassInfo.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFullState:")
@@ -1019,6 +1114,8 @@ public class AUAudioUnit extends NSObject {
      * the base class simply sets/gets fullState.
      * 
      * Bridged to the v2 property kAudioUnitProperty_ClassInfoFromDocument.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFullStateForDocument:")
@@ -1030,6 +1127,8 @@ public class AUAudioUnit extends NSObject {
      * The block that the output unit will call to notify when input is available.
      * 
      * See discussion for AUInputHandler.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInputHandler:")
@@ -1044,6 +1143,8 @@ public class AUAudioUnit extends NSObject {
      * while render resources are allocated.
      * 
      * Bridged to the v2 property kAudioUnitProperty_MaximumFramesPerSlice.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaximumFramesToRender:")
@@ -1059,6 +1160,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the HostCallback_GetBeatAndTempo and HostCallback_GetMusicalTimeLocation
      * callback members in kAudioUnitProperty_HostCallbacks.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMusicalContextBlock:")
@@ -1071,6 +1174,8 @@ public class AUAudioUnit extends NSObject {
      * The block that the output unit will call to get audio to send to the output.
      * 
      * This block must be set if output is enabled.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOutputProvider:")
@@ -1085,6 +1190,8 @@ public class AUAudioUnit extends NSObject {
      * The range of valid values is 0-127.
      * 
      * Bridged to the v2 property kAudioUnitProperty_RenderQuality.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRenderQuality:")
@@ -1098,6 +1205,8 @@ public class AUAudioUnit extends NSObject {
      *             renderResourcesAllocated is set to YES.
      *             If allocateRenderResourcesAndReturnError: should fail in a subclass, subclassers must use this method
      *             to set renderResourcesAllocated to NO.
+     * 
+     *             API-Since: 9.0
      */
     @Generated
     @Selector("setRenderResourcesAllocated:")
@@ -1109,6 +1218,8 @@ public class AUAudioUnit extends NSObject {
      * Directs an effect to route input directly to output, without any processing.
      * 
      * Bridged to the v2 property kAudioUnitProperty_BypassEffect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShouldBypassEffect:")
@@ -1124,6 +1235,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the HostCallback_GetTransportState and HostCallback_GetTransportState2
      * callback members in kAudioUnitProperty_HostCallbacks.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTransportStateBlock:")
@@ -1136,6 +1249,8 @@ public class AUAudioUnit extends NSObject {
      * Directs an effect to route input directly to output, without any processing.
      * 
      * Bridged to the v2 property kAudioUnitProperty_BypassEffect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shouldBypassEffect")
@@ -1149,6 +1264,8 @@ public class AUAudioUnit extends NSObject {
      * The AU can override this method to check before allowing a new format to be set on the bus.
      * If this method returns NO, then the new format will not be set on the bus.
      * The default implementation returns NO if the unit has renderResourcesAllocated, otherwise it results YES.
+     * 
+     * API-Since: 9.0
      * 
      * @param format
      *               An AVAudioFormat which is proposed as the new format.
@@ -1166,6 +1283,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * @param outError
      *                 Returned in the event of failure.
+     * 
+     *                 API-Since: 9.0
      */
     @Generated
     @Selector("startHardwareAndReturnError:")
@@ -1176,6 +1295,8 @@ public class AUAudioUnit extends NSObject {
      * stopHardware
      * 
      * Stops the audio hardware.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("stopHardware")
@@ -1204,6 +1325,8 @@ public class AUAudioUnit extends NSObject {
      * should reflect the duration of a delay or reverb effect.
      * 
      * Bridged to the v2 property kAudioUnitProperty_TailTime.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("tailTime")
@@ -1225,6 +1348,8 @@ public class AUAudioUnit extends NSObject {
      *                 The block to call.
      * @return
      *         A token to be used when removing the observer.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("tokenByAddingRenderObserver:")
@@ -1242,6 +1367,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the HostCallback_GetTransportState and HostCallback_GetTransportState2
      * callback members in kAudioUnitProperty_HostCallbacks.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1256,6 +1383,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * A music device or MIDI effect can support up to 256 virtual MIDI cables of input; this
      * property expresses the number of cables supported by the audio unit.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("virtualMIDICableCount")
@@ -1851,6 +1980,8 @@ public class AUAudioUnit extends NSObject {
      * 
      * Note that it is not safe to modify this property in a real-time context.
      * 
+     * API-Since: 9.0
+     * 
      * @return
      *         A parameter tree object, or nil if the unit has no parameters.
      */
@@ -1941,6 +2072,8 @@ public class AUAudioUnit extends NSObject {
      * Subclassers should override internalRenderBlock, not this property.
      * 
      * Bridged to the v2 API AudioUnitRender().
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -2216,6 +2349,8 @@ public class AUAudioUnit extends NSObject {
 
     /**
      * Block which subclassers must provide (via a getter) to implement rendering.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -2273,4 +2408,23 @@ public class AUAudioUnit extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] migrateFromPlugin
+     * 
+     * Information for migrating data from other audio plug-ins to the v3 Audio Unit architecture.
+     * 
+     * This can be used to migrate settings from an older Audio Unit; this allows manufacturers
+     * to deprecate older Audio Units and replace them with new ones. The data for the older Audio Unit is
+     * an array of NSData representing byte encoded AudioUnitOtherPluginDescs to migrate from.
+     * Can also be used to migrate from a v2 to a v3 Audio Unit.
+     * 
+     * Bridged to the v2 property kAudioUnitMigrateProperty_FromPlugin.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("migrateFromPlugin")
+    @NotNull
+    public native NSArray<?> migrateFromPlugin();
 }

@@ -88,6 +88,9 @@ public class SRTextInputSession extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -136,6 +139,9 @@ public class SRTextInputSession extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("sessionType")
     @NInt

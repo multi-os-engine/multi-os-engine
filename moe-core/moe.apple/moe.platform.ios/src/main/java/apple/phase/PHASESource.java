@@ -102,6 +102,8 @@ public class PHASESource extends PHASEObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gain")
@@ -120,6 +122,8 @@ public class PHASESource extends PHASEObject {
      * initWithEngine:
      * 
      * Initialize a new point source.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithEngine:")
@@ -134,6 +138,8 @@ public class PHASESource extends PHASEObject {
      * [@note]
      * This function is thread-safe.
      * Clients can safely run this function to create multiple sources from multiple threads, if required.
+     * 
+     * API-Since: 15.0
      * 
      * @param shapes
      *               The shape(s) of the source within the world
@@ -184,6 +190,8 @@ public class PHASESource extends PHASEObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGain:")
@@ -197,6 +205,8 @@ public class PHASESource extends PHASEObject {
      * [@property] shapes
      * 
      * Array of shapes associated with this source.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

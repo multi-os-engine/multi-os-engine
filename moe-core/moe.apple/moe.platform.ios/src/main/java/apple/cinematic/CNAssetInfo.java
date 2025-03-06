@@ -56,6 +56,9 @@ public class CNAssetInfo extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("allCinematicTracks")
     @NotNull
@@ -71,6 +74,9 @@ public class CNAssetInfo extends NSObject {
     @Selector("allocWithZone:")
     public static native CNAssetInfo allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("asset")
     @NotNull
@@ -93,6 +99,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Check if asset is cinematic asynchronously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("checkIfCinematic:completionHandler:")
@@ -106,16 +114,25 @@ public class CNAssetInfo extends NSObject {
         void call_checkIfCinematicCompletionHandler(boolean result);
     }
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("cinematicDisparityTrack")
     @NotNull
     public native AVAssetTrack cinematicDisparityTrack();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("cinematicMetadataTrack")
     @NotNull
     public native AVAssetTrack cinematicMetadataTrack();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("cinematicVideoTrack")
     @NotNull
@@ -141,6 +158,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Track to be used for frame timing
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("frameTimingTrack")
@@ -180,6 +199,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Load cinematic asset information asynchronously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("loadFromAsset:completionHandler:")
@@ -195,6 +216,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Natural size at which cinematic video would be rendered
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("naturalSize")
@@ -209,6 +232,8 @@ public class CNAssetInfo extends NSObject {
     /**
      * Natural size at which cinematic video would be displayed.
      * Same as naturalSize with preferredTransform applied.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preferredSize")
@@ -218,6 +243,8 @@ public class CNAssetInfo extends NSObject {
     /**
      * The preferred transform of the rendered image for display purposes.
      * Always the identity transform or a multiple of a 90º rotation with no scaling.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preferredTransform")
@@ -234,6 +261,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Source metadata track IDs required to implement AVVideoCompositionInstruction protocol
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sampleDataTrackIDs")
@@ -250,6 +279,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Time range over which all cinematic tracks are valid.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timeRange")
@@ -268,6 +299,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Source video track IDs required to implement AVVideoCompositionInstruction protocol
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("videoCompositionTrackIDs")
@@ -276,6 +309,8 @@ public class CNAssetInfo extends NSObject {
 
     /**
      * Tracks required to construct AVAssetReaderVideoCompositionOutput.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("videoCompositionTracks")

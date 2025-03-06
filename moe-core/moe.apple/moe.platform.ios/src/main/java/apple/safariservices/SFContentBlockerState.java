@@ -161,6 +161,9 @@ public class SFContentBlockerState extends NSObject {
     @Selector("init")
     public native SFContentBlockerState init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();

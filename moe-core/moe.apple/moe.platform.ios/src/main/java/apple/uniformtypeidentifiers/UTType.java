@@ -723,6 +723,8 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A type representing the @c SHCustomCatalog file format with the .shazamcatalog extension
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -731,6 +733,8 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A type representing the @c SHSignature file format with the .shazamsignature extension
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

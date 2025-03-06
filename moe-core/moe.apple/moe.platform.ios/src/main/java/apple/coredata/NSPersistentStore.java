@@ -141,6 +141,8 @@ public class NSPersistentStore extends NSObject {
      * Subclasses should validate that the URL is the type of URL they are expecting, and
      * should verify that the file contents are appropriate for the store type before
      * attempting to read from it. This method should never raise an exception.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -175,6 +177,8 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * Set the metadata of the store at url to metadata. Must be overriden by subclasses.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
@@ -194,6 +198,9 @@ public class NSPersistentStore extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("URL")
@@ -201,6 +208,8 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * Which configuration does this store contain
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -209,11 +218,16 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * Gives the store a chance to do any post-init work that's necessary
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("didAddToPersistentStoreCoordinator:")
     public native void didAddToPersistentStoreCoordinator(@NotNull NSPersistentStoreCoordinator coordinator);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -224,6 +238,8 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * the designated initializer for object stores.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
@@ -233,6 +249,8 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * Do we know a priori the store is read only?
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isReadOnly")
@@ -240,6 +258,8 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * Do we know a priori the store is read only?
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setReadOnly:")
@@ -248,6 +268,8 @@ public class NSPersistentStore extends NSObject {
     /**
      * Store metadata must be accessible before -load: is called, but there is no way to return an error if the store is
      * invalid
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("loadMetadata:")
@@ -255,6 +277,8 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * includes store type and UUID
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("metadata")
@@ -262,6 +286,8 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * the options the store was initialized with
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -270,29 +296,41 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * the bridge between the control & access layers.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
     @Selector("persistentStoreCoordinator")
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
     /**
      * includes store type and UUID
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSDictionary<String, ?> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(@Nullable NSURL value);
 
     /**
      * stores always know their type
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -302,6 +340,8 @@ public class NSPersistentStore extends NSObject {
     /**
      * Gives the store a chance to do any non-dealloc teardown (for example, closing a network connection)
      * before removal.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willRemoveFromPersistentStoreCoordinator:")

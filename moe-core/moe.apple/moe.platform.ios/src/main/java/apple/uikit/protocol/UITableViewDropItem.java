@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UITableViewDropItem {
     /**
      * Retrieve drop data from the dragItem's itemProvider.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -32,6 +34,8 @@ public interface UITableViewDropItem {
     /**
      * May be useful for computing the UIDragPreviewTarget transform for UITableViewDropCoordinator dropItem:toTarget:
      * Returns CGSizeZero if the dragItem does not have a visible drop preview.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("previewSize")
@@ -44,6 +48,8 @@ public interface UITableViewDropItem {
      * table view is updated or reloaded after the drag begins, this index path will be nil.
      * This is useful for directly accessing the model object in your data source instead of using the item provider
      * to retrieve the data.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

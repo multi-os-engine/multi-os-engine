@@ -43,6 +43,8 @@ public interface SACrashDetectionDelegate {
      * 
      * Crash Detection events can be simulated with the iOS simulator. Use it to test the background functionality of
      * your app.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional

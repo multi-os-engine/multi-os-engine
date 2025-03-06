@@ -85,6 +85,8 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for the compact inline tab bar item layout
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -122,6 +124,8 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for the inline tab bar item layout
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -166,6 +170,8 @@ public class UITabBarAppearance extends UIBarAppearance {
     /**
      * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by
      * selectionIndicatorTintColor when appropriate.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -179,6 +185,8 @@ public class UITabBarAppearance extends UIBarAppearance {
      * selectionIndicatorImage is a template image, then the selectionIndicatorTintColor is used to tint the image; a
      * nil or clearColor selectionIndicatorTintColor will also result in no indicator. If the selectionIndicatorImage is
      * not a template image, then it will be rendered without respect to the value of selectionIndicatorTintColor.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -187,6 +195,8 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for the compact inline tab bar item layout
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCompactInlineLayoutAppearance:")
@@ -194,6 +204,8 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for the inline tab bar item layout
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInlineLayoutAppearance:")
@@ -202,6 +214,8 @@ public class UITabBarAppearance extends UIBarAppearance {
     /**
      * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by
      * selectionIndicatorTintColor when appropriate.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSelectionIndicatorImage:")
@@ -214,6 +228,8 @@ public class UITabBarAppearance extends UIBarAppearance {
      * selectionIndicatorImage is a template image, then the selectionIndicatorTintColor is used to tint the image; a
      * nil or clearColor selectionIndicatorTintColor will also result in no indicator. If the selectionIndicatorImage is
      * not a template image, then it will be rendered without respect to the value of selectionIndicatorTintColor.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSelectionIndicatorTintColor:")
@@ -221,21 +237,31 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     /**
      * Determines how items in the tab bar lay out in the stacked item layout
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStackedItemPositioning:")
     public native void setStackedItemPositioning(@NInt long value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setStackedItemSpacing:")
     public native void setStackedItemSpacing(@NFloat double value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setStackedItemWidth:")
     public native void setStackedItemWidth(@NFloat double value);
 
     /**
      * The appearance for the stacked tab bar item layout
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStackedLayoutAppearance:")
@@ -247,17 +273,25 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     /**
      * Determines how items in the tab bar lay out in the stacked item layout
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("stackedItemPositioning")
     @NInt
     public native long stackedItemPositioning();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("stackedItemSpacing")
     @NFloat
     public native double stackedItemSpacing();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("stackedItemWidth")
     @NFloat
@@ -265,6 +299,8 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for the stacked tab bar item layout
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

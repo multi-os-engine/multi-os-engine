@@ -156,6 +156,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is the calendar of the locale
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("calendar")
@@ -163,6 +165,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is NSDateIntervalFormatterNoStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("dateStyle")
@@ -171,6 +175,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is an empty string
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("dateTemplate")
@@ -186,6 +192,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is [NSLocale currentLocale]
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("locale")
@@ -193,6 +201,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is the calendar of the locale
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCalendar:")
@@ -200,6 +210,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is NSDateIntervalFormatterNoStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDateStyle:")
@@ -207,6 +219,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is an empty string
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDateTemplate:")
@@ -214,6 +228,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is [NSLocale currentLocale]
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocale:")
@@ -221,6 +237,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is NSDateIntervalFormatterNoStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTimeStyle:")
@@ -228,6 +246,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is [NSTimeZone defaultTimeZone]
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTimeZone:")
@@ -252,6 +272,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
      * - The pattern MMMd will produce
      * for en_US, "Mar 4-8"
      * for en_GB, "4-8 Mar"
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -268,6 +290,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is NSDateIntervalFormatterNoStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("timeStyle")
@@ -276,6 +300,8 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * default is [NSTimeZone defaultTimeZone]
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("timeZone")

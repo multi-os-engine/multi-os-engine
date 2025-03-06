@@ -99,6 +99,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * The number of control points in this stroke path.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("count")
@@ -108,6 +110,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
     /**
      * The time at which this stroke path was started.
      * The `timeOffset` of contained PKStrokePoints is relative to this date.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -132,6 +136,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      *                     stop A reference to a Boolean value. Setting the value to YES within the block stops further
      *                     enumeration of the array. If a block stops further enumeration, that block continues to run
      *                     until it’s finished.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByDistance:usingBlock:")
@@ -157,6 +163,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      *                       stop A reference to a Boolean value. Setting the value to YES within the block stops
      *                       further enumeration of the array. If a block stops further enumeration, that block
      *                       continues to run until it’s finished.
+     * 
+     *                       API-Since: 14.0
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByParametricStep:usingBlock:")
@@ -182,6 +190,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      *                 stop A reference to a Boolean value. Setting the value to YES within the block stops further
      *                 enumeration of the array. If a block stops further enumeration, that block continues to run until
      *                 it’s finished.
+     * 
+     *                 API-Since: 14.0
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByTime:usingBlock:")
@@ -211,6 +221,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * 
      * @param controlPoints An array of control points for a cubic B-spline.
      * @param creationDate  The start time of this path.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @Selector("initWithControlPoints:creationDate:")
@@ -235,6 +247,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * 
      * This has better performance than `[self interpolatedPointAt: parametricValue].location`
      * for when only the location is required.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("interpolatedLocationAt:")
@@ -243,6 +257,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * The on-curve point for the floating point [0, count-1] `parametricValue` parameter.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -265,6 +281,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Returns B-spline control point at index `i`.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -277,6 +295,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * @param parametricValue The floating point [0, count-1] parametric value.
      * @param distanceStep    The distance to offset `parametricValue`. `distanceStep` can be positive or negative.
      * @return A parametric value offset by `distanceStep` from `parametricValue`.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("parametricValue:offsetByDistance:")
@@ -289,6 +309,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * @param parametricValue The floating point [0, count-1] parametric value.
      * @param timeStep        The time to offset `parametricValue`. `timeStep` can be positive or negative.
      * @return A parametric value offset by `timeStep` from `parametricValue`.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("parametricValue:offsetByTime:")
@@ -297,6 +319,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Returns B-spline control point at index `i`.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

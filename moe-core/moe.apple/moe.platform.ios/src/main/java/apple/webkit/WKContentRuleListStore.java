@@ -83,6 +83,9 @@ public class WKContentRuleListStore extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("compileContentRuleListForIdentifier:encodedContentRuleList:completionHandler:")
     public native void compileContentRuleListForIdentifierEncodedContentRuleListCompletionHandler(String identifier,
@@ -101,6 +104,9 @@ public class WKContentRuleListStore extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("defaultStore")
     public static native WKContentRuleListStore defaultStore();
@@ -109,6 +115,9 @@ public class WKContentRuleListStore extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getAvailableContentRuleListIdentifiers:")
     public native void getAvailableContentRuleListIdentifiers(
@@ -152,6 +161,9 @@ public class WKContentRuleListStore extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("lookUpContentRuleListForIdentifier:completionHandler:")
     public native void lookUpContentRuleListForIdentifierCompletionHandler(String identifier,
@@ -169,6 +181,9 @@ public class WKContentRuleListStore extends NSObject {
     @Selector("new")
     public static native WKContentRuleListStore new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("removeContentRuleListForIdentifier:completionHandler:")
     public native void removeContentRuleListForIdentifierCompletionHandler(String identifier,
@@ -193,6 +208,9 @@ public class WKContentRuleListStore extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("storeWithURL:")
     public static native WKContentRuleListStore storeWithURL(NSURL url);

@@ -170,6 +170,8 @@ public class HKObject extends NSObject implements NSSecureCoding {
      * [@property] UUID
      * 
      * A unique identifier of the receiver in the HealthKit database.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -207,6 +209,8 @@ public class HKObject extends NSObject implements NSSecureCoding {
      * 
      * Keys must be NSString and values must be either NSString, NSNumber, NSDate, or
      * HKQuantity. See HKMetadata.h for potential metadata keys and values.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

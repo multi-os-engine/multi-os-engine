@@ -186,7 +186,8 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTrackWithTrackID:completionHandler: instead
      * 
      * @param trackID
      *                The trackID of the requested AVFragmentedMovieTrack.
@@ -205,6 +206,8 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * 
      * The value of this property is an array of tracks the movie contains; the tracks are of type
      * AVFragmentedMovieTrack.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -219,7 +222,7 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: loadTracksWithMediaCharacteristic:completionHandler:
      * 
      * @param mediaCharacteristic
@@ -243,7 +246,8 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTracksWithMediaType:completionHandler: instead
      * 
      * @param mediaType
      *                  The media type according to which the receiver filters its AVFragmentedMovieTracks. (Media types

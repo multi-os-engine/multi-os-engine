@@ -150,6 +150,8 @@ public class AVMetadataSalientObject extends AVMetadataObject implements NSCopyi
      * The value of this property is an NSInteger indicating the unique identifier of this object in the picture. When a
      * new object enters the picture, it is assigned a new unique identifier. objectIDs are not re-used as object leave
      * the picture and new ones enter. Objects that leave the picture then re-enter are assigned a new objectID.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("objectID")

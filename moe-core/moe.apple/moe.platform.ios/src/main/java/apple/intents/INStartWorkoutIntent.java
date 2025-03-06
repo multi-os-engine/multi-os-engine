@@ -164,6 +164,9 @@ public class INStartWorkoutIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("goalValue")
@@ -179,6 +182,8 @@ public class INStartWorkoutIntent extends INIntent {
 
     /**
      * Designated initializer. The `workoutName` can use `INWorkoutNameIdentifier` as its `identifier` parameter.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithWorkoutName:goalValue:workoutGoalUnitType:workoutLocationType:isOpenEnded:")
@@ -186,6 +191,9 @@ public class INStartWorkoutIntent extends INIntent {
             @Nullable INSpeakableString workoutName, @Nullable NSNumber goalValue, @NInt long workoutGoalUnitType,
             @NInt long workoutLocationType, @Nullable NSNumber isOpenEnded);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("isOpenEnded")
@@ -197,16 +205,25 @@ public class INStartWorkoutIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("workoutGoalUnitType")
     @NInt
     public native long workoutGoalUnitType();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("workoutLocationType")
     @NInt
     public native long workoutLocationType();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("workoutName")

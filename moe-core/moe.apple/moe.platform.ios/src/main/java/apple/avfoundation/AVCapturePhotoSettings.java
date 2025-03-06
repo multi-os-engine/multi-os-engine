@@ -162,6 +162,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * A default AVCapturePhotoSettings object has a format of AVVideoCodecTypeJPEG, a fileType of AVFileTypeJPEG, and
      * photoQualityPrioritization set to AVCapturePhotoQualityPrioritizationBalanced.
      * 
+     * API-Since: 10.0
+     * 
      * @return
      *         An instance of AVCapturePhotoSettings.
      */
@@ -177,6 +179,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * Use this factory method to create a clone of an existing photo settings instance, but with a new uniqueID that
      * can safely be passed to AVCapturePhotoOutput -capturePhotoWithSettings:delegate:.
+     * 
+     * API-Since: 10.0
      * 
      * @param photoSettings
      *                      An existing AVCapturePhotoSettings instance.
@@ -200,6 +204,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * AVCapturePhotoOutput's -availablePhotoCodecTypes array. If you are specifying a compressed format, the
      * AVVideoCompressionPropertiesKey is also supported, with a payload dictionary containing a single
      * AVVideoQualityKey. Passing a nil format dictionary is analogous to calling +photoSettings.
+     * 
+     * API-Since: 10.0
      * 
      * @param format
      *               A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to
@@ -327,6 +333,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * outputSettings property.
      * 
      * The format dictionary you passed to one of the creation methods. May be nil if you've specified RAW-only capture.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -623,6 +631,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * When you create an instance of AVCapturePhotoSettings, a uniqueID is generated automatically. This uniqueID is
      * guaranteed to be unique for the life time of your process.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("uniqueID")
@@ -1471,4 +1481,129 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] constantColorEnabled
+     * 
+     * Specifies whether the photo will be captured with constant color.
+     * 
+     * Default is NO. Set to YES if you wish to capture a constant color photo. Throws an exception if
+     * -[AVCapturePhotoOutput constantColorEnabled] is not set to YES.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isConstantColorEnabled")
+    public native boolean isConstantColorEnabled();
+
+    /**
+     * [@property] constantColorFallbackPhotoDeliveryEnabled
+     * 
+     * Specifies whether a fallback photo is delivered when taking a constant color capture.
+     * 
+     * Default is NO. Set to YES if you wish to receive a fallback photo that can be used in case the main constant
+     * color photo's confidence level is too low for your use case.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isConstantColorFallbackPhotoDeliveryEnabled")
+    public native boolean isConstantColorFallbackPhotoDeliveryEnabled();
+
+    /**
+     * [@property] shutterSoundSuppressionEnabled
+     * 
+     * Specifies whether the built-in shutter sound should be suppressed when capturing a photo with these settings.
+     * 
+     * Default is NO. Set to YES if you wish to suppress AVCapturePhotoOutput's built-in shutter sound for this request.
+     * AVCapturePhotoOutput throws an NSInvalidArgumentException in `-capturePhotoWithSettings:` if its
+     * `shutterSoundSuppressionSupported` property returns NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isShutterSoundSuppressionEnabled")
+    public native boolean isShutterSoundSuppressionEnabled();
+
+    /**
+     * [@property] rawFileFormat
+     * 
+     * A dictionary of AVVideoSettings keys specifying the RAW file format to be used for the RAW photo.
+     * 
+     * One can specify desired format properties of the RAW file that will be created. Currently only the key
+     * AVVideoAppleProRAWBitDepthKey is allowed and the value to which it can be set should be from 8-16. The
+     * AVVideoCodecKey must be present in the receiver's -availableRawPhotoCodecTypes array as well as in
+     * -supportedRawPhotoCodecTypesForRawPhotoPixelFormatType:fileType:. AVVideoQualityKey (NSNumber in range [0.0,1.0])
+     * can be optionally set and a value between [0.0,1.0] will use lossy compression with lower values being more lossy
+     * resulting in smaller file sizes but lower image quality, while a value of 1.0 will use lossless compression
+     * resulting in the largest file size but also the best quality.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("rawFileFormat")
+    @Nullable
+    public native NSDictionary<String, ?> rawFileFormat();
+
+    /**
+     * [@property] constantColorEnabled
+     * 
+     * Specifies whether the photo will be captured with constant color.
+     * 
+     * Default is NO. Set to YES if you wish to capture a constant color photo. Throws an exception if
+     * -[AVCapturePhotoOutput constantColorEnabled] is not set to YES.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setConstantColorEnabled:")
+    public native void setConstantColorEnabled(boolean value);
+
+    /**
+     * [@property] constantColorFallbackPhotoDeliveryEnabled
+     * 
+     * Specifies whether a fallback photo is delivered when taking a constant color capture.
+     * 
+     * Default is NO. Set to YES if you wish to receive a fallback photo that can be used in case the main constant
+     * color photo's confidence level is too low for your use case.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setConstantColorFallbackPhotoDeliveryEnabled:")
+    public native void setConstantColorFallbackPhotoDeliveryEnabled(boolean value);
+
+    /**
+     * [@property] rawFileFormat
+     * 
+     * A dictionary of AVVideoSettings keys specifying the RAW file format to be used for the RAW photo.
+     * 
+     * One can specify desired format properties of the RAW file that will be created. Currently only the key
+     * AVVideoAppleProRAWBitDepthKey is allowed and the value to which it can be set should be from 8-16. The
+     * AVVideoCodecKey must be present in the receiver's -availableRawPhotoCodecTypes array as well as in
+     * -supportedRawPhotoCodecTypesForRawPhotoPixelFormatType:fileType:. AVVideoQualityKey (NSNumber in range [0.0,1.0])
+     * can be optionally set and a value between [0.0,1.0] will use lossy compression with lower values being more lossy
+     * resulting in smaller file sizes but lower image quality, while a value of 1.0 will use lossless compression
+     * resulting in the largest file size but also the best quality.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setRawFileFormat:")
+    public native void setRawFileFormat(@Nullable NSDictionary<String, ?> value);
+
+    /**
+     * [@property] shutterSoundSuppressionEnabled
+     * 
+     * Specifies whether the built-in shutter sound should be suppressed when capturing a photo with these settings.
+     * 
+     * Default is NO. Set to YES if you wish to suppress AVCapturePhotoOutput's built-in shutter sound for this request.
+     * AVCapturePhotoOutput throws an NSInvalidArgumentException in `-capturePhotoWithSettings:` if its
+     * `shutterSoundSuppressionSupported` property returns NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setShutterSoundSuppressionEnabled:")
+    public native void setShutterSoundSuppressionEnabled(boolean value);
 }

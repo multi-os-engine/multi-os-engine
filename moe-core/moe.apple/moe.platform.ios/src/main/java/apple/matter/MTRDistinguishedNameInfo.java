@@ -78,6 +78,8 @@ public class MTRDistinguishedNameInfo extends NSObject implements NSCopying {
     /**
      * The set of CASE Authenticated Tags contained in the DN. Maybe be non-empty for
      * the subject of a valid node operational certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("caseAuthenticatedTags")
@@ -113,6 +115,8 @@ public class MTRDistinguishedNameInfo extends NSObject implements NSCopying {
      * The Fabric ID contained in the DN, if any. Will be non-nil for the subject
      * of a valid node operational certificate, and may be non-nil for the subject
      * of a valid intermediate or root certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("fabricID")
@@ -144,6 +148,8 @@ public class MTRDistinguishedNameInfo extends NSObject implements NSCopying {
     /**
      * The `ICAC` ID contained in the DN, if any. Will be non-nil for the subject
      * of a valid intermediate certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("intermediateCACertificateID")
@@ -167,6 +173,8 @@ public class MTRDistinguishedNameInfo extends NSObject implements NSCopying {
     /**
      * The Node ID contained in the DN, if any. Will be non-nil for the subject of
      * a valid node operational certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("nodeID")
@@ -184,6 +192,8 @@ public class MTRDistinguishedNameInfo extends NSObject implements NSCopying {
     /**
      * The `RCAC` ID contained in the DN, if any. Will be non-nil for the subject
      * of a valid root certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("rootCACertificateID")

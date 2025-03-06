@@ -21,6 +21,8 @@ public interface CPNowPlayingTemplateObserver {
     /**
      * The user has selected the album/artist button on the now playing template. Your application
      * should push a new template displaying the content appearing in this container (album, playlist, or show).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -32,6 +34,8 @@ public interface CPNowPlayingTemplateObserver {
     /**
      * The user has selected the Up Next button on the now playing template. Your application
      * should push a new template displaying the list of upcoming or queued content.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

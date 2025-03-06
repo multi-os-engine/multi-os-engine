@@ -102,11 +102,17 @@ public class NSAttributedStringMarkdownSourcePosition extends NSObject implement
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("endColumn")
     @NInt
     public native long endColumn();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("endLine")
     @NInt
@@ -125,6 +131,9 @@ public class NSAttributedStringMarkdownSourcePosition extends NSObject implement
     @Selector("initWithCoder:")
     public native NSAttributedStringMarkdownSourcePosition initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithStartLine:startColumn:endLine:endColumn:")
     public native NSAttributedStringMarkdownSourcePosition initWithStartLineStartColumnEndLineEndColumn(
@@ -157,6 +166,9 @@ public class NSAttributedStringMarkdownSourcePosition extends NSObject implement
     @Selector("new")
     public static native NSAttributedStringMarkdownSourcePosition new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("rangeInString:")
     @ByValue
@@ -174,11 +186,17 @@ public class NSAttributedStringMarkdownSourcePosition extends NSObject implement
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("startColumn")
     @NInt
     public native long startColumn();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("startLine")
     @NInt

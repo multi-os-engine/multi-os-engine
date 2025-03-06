@@ -35,6 +35,8 @@ public interface NSFileProviderIncrementalContentFetching {
      * version.
      * 
      * The semantics of the requestedVersion parameter are the same as for the non-delta update method above.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

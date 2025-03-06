@@ -177,6 +177,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -184,10 +186,16 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @ObjCBlock(name = "call_fetchShareMetadataCompletionBlock_ret")
     public native Block_fetchShareMetadataCompletionBlock_ret fetchShareMetadataCompletionBlock();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native CKFetchShareMetadataOperation init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithShareURLs:")
     public native CKFetchShareMetadataOperation initWithShareURLs(@NotNull NSArray<? extends NSURL> shareURLs);
@@ -198,6 +206,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -212,6 +222,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user
      * fields should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -228,6 +240,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFetchShareMetadataCompletionBlock:")
@@ -240,6 +254,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPerShareMetadataBlock:")
@@ -253,11 +269,16 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user
      * fields should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRootRecordDesiredKeys:")
     public native void setRootRecordDesiredKeys(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setShareURLs:")
     public native void setShareURLs(@Nullable NSArray<? extends NSURL> value);
@@ -267,11 +288,16 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * 
      * Defaults to @c NO.
      * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setShouldFetchRootRecord:")
     public native void setShouldFetchRootRecord(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("shareURLs")
@@ -282,6 +308,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * 
      * Defaults to @c NO.
      * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("shouldFetchRootRecord")

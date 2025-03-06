@@ -39,6 +39,9 @@ public interface INSendRideFeedbackIntentHandling {
      *                               user prior to handling.
      * 
      * @see INSendRideFeedbackIntentResponse
+     * 
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -65,6 +68,8 @@ public interface INSendRideFeedbackIntentHandling {
      *                               details of the result of having executed the intent
      * 
      * @see INSendRideFeedbackIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("handleSendRideFeedback:completion:")

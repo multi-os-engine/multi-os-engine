@@ -89,6 +89,9 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -118,6 +121,9 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("init")
     public native UITextFormattingCoordinator init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithWindowScene:")
     public native UITextFormattingCoordinator initWithWindowScene(@NotNull UIWindowScene windowScene);
@@ -135,6 +141,9 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isFontPanelVisible")
     public static native boolean isFontPanelVisible();
@@ -161,11 +170,17 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UITextFormattingCoordinatorDelegate value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextFormattingCoordinatorDelegate value) {
         Object __old = delegate();
@@ -181,6 +196,8 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     /**
      * Informs the paragraph and character formatting UI when text in a selection has changed attributes. `isMultiple:`
      * means that the attributes spans multiple text runs.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSelectedAttributes:isMultiple:")
@@ -194,6 +211,9 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("textFormattingCoordinatorForWindowScene:")
     public static native UITextFormattingCoordinator textFormattingCoordinatorForWindowScene(
@@ -201,6 +221,8 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
 
     /**
      * On macOS only, will toggle standard system Font Panel visibility.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("toggleFontPanel:")

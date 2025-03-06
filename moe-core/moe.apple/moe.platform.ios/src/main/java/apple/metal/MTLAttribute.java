@@ -157,11 +157,17 @@ public class MTLAttribute extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("attributeIndex")
     @NUInt
     public native long attributeIndex();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("attributeType")
     @NUInt
@@ -171,6 +177,9 @@ public class MTLAttribute extends NSObject {
     @Selector("init")
     public native MTLAttribute init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
@@ -189,6 +198,9 @@ public class MTLAttribute extends NSObject {
     @Selector("isPatchData")
     public native boolean isPatchData();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("name")

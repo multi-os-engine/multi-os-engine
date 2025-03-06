@@ -106,6 +106,8 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
      * 
      * This is the host clock time (see CMClockGetHostTimeClock()) defining when playback should start (or should have
      * started) at the given itemTime.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("hostClockTime")
@@ -147,6 +149,8 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
      * If data for the requested time cannot be loaded, or playback stalls later, the command handler may want to
      * indicate this to the coordinator by beginning a suspension with
      * AVCoordinatedPlaybackSuspensionReasonStallRecovery.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("itemTime")
@@ -167,6 +171,8 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
      * [@property] rate
      * 
      * Playback rate. Will always be non-zero.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("rate")

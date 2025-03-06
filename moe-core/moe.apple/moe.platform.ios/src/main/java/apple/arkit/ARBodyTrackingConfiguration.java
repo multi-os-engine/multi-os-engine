@@ -74,6 +74,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * estimatedScaleFactor on the ARImageAnchor.
      * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticImageScaleEstimationEnabled")
@@ -88,6 +90,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * estimatedScaleFactor on the ARBodyAnchor.
      * [@note] When set to true the transform of a returned ARBodyAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticSkeletonScaleEstimationEnabled")
@@ -131,6 +135,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -143,6 +149,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("environmentTexturing")
@@ -154,6 +162,9 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("init")
     public native ARBodyTrackingConfiguration init();
@@ -165,6 +176,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
      * and can again be saved using the `getCurrentWorldMap` method on the session.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -188,6 +201,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * Enable or disable continuous auto focus.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isAutoFocusEnabled")
@@ -214,6 +229,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximumNumberOfTrackedImages")
@@ -232,6 +249,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("planeDetection")
@@ -250,6 +269,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * Enable or disable continuous auto focus.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutoFocusEnabled:")
@@ -264,6 +285,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * estimatedScaleFactor on the ARImageAnchor.
      * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticImageScaleEstimationEnabled:")
@@ -278,6 +301,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * estimatedScaleFactor on the ARBodyAnchor.
      * [@note] When set to true the transform of a returned ARBodyAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticSkeletonScaleEstimationEnabled:")
@@ -288,6 +313,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDetectionImages:")
@@ -299,6 +326,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setEnvironmentTexturing:")
@@ -311,6 +340,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
      * and can again be saved using the `getCurrentWorldMap` method on the session.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInitialWorldMap:")
@@ -324,6 +355,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMaximumNumberOfTrackedImages:")
@@ -336,6 +369,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPlaneDetection:")
@@ -347,6 +382,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWantsHDREnvironmentTextures:")
@@ -372,6 +409,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("wantsHDREnvironmentTextures")

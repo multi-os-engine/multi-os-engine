@@ -50,6 +50,9 @@ public class CPAlertTemplate extends CPTemplate {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("actions")
@@ -120,6 +123,8 @@ public class CPAlertTemplate extends CPTemplate {
      * 
      * @param actions       An array of alert actions to display in this alert template. You must specify at
      *                      least one action.
+     * 
+     *                      API-Since: 12.0
      */
     @Generated
     @Selector("initWithTitleVariants:actions:")
@@ -179,6 +184,9 @@ public class CPAlertTemplate extends CPTemplate {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("titleVariants")

@@ -65,6 +65,8 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
 
     /**
      * The number of textures which have been allocated from this allocator
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allocatedTextureCount")
@@ -106,6 +108,8 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
 
     /**
      * Metal device this object was allocated from
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -124,6 +128,8 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
 
     /**
      * Initialize the MPSSVGFDefaultTextureAllocator with a Metal device
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -159,6 +165,8 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
 
     /**
      * Remove all textures from the cache
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("reset")

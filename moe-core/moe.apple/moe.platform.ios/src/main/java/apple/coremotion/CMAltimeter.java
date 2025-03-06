@@ -130,6 +130,8 @@ public class CMAltimeter extends NSObject {
      * 
      * Discussion:
      * Determines whether the device supports reporting relative altitude changes.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isRelativeAltitudeAvailable")
@@ -184,6 +186,8 @@ public class CMAltimeter extends NSObject {
      * 
      * Calls to start must be balanced with calls to stopRelativeAltitudeUpdates even if an error
      * is returned to the handler.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startRelativeAltitudeUpdatesToQueue:withHandler:")
@@ -195,6 +199,8 @@ public class CMAltimeter extends NSObject {
      * 
      * Discussion:
      * Stops relative altitude updates.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopRelativeAltitudeUpdates")

@@ -25,51 +25,73 @@ import org.moe.natj.general.ann.NInt;
  * Defined connection states. New types may be defined in the future.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `nw_connection_state_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWTCPConnection.h>
  */
+@Deprecated
 @Generated
 public final class NWTCPConnectionState {
     /**
      * [@constant] NWTCPConnectionStateInvalid The connection is in an invalid or uninitialized state
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_state_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
-    @Generated @NInt public static final long Invalid = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Invalid = 0x0000000000000000L;
     /**
      * [@constant] NWTCPConnectionStateConnecting The connection is attempting
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_state_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
-    @Generated @NInt public static final long Connecting = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Connecting = 0x0000000000000001L;
     /**
      * [@constant] NWTCPConnectionStateWaiting The connection has attempted but failed. It is now
      * waiting for better condition(s) before trying again.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_state_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
-    @Generated @NInt public static final long Waiting = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Waiting = 0x0000000000000002L;
     /**
      * [@constant] NWTCPConnectionStateConnected The connection is established. It is now possible
      * to transfer data. If TLS is in use, the TLS handshake would have finished when the connection
      * is in this state.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_state_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
-    @Generated @NInt public static final long Connected = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Connected = 0x0000000000000003L;
     /**
      * [@constant] NWTCPConnectionStateDisconnected The connection is disconnected. It is no longer
      * possible to transfer data. The application should call cancellation method to clean up resources
      * when the connection is in this state.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_state_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
-    @Generated @NInt public static final long Disconnected = 0x0000000000000004L;
+    @Deprecated @Generated @NInt public static final long Disconnected = 0x0000000000000004L;
     /**
      * [@constant] NWTCPConnectionStateCancelled The connection is cancelled. This is triggered by
      * the cancellation method.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_state_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWTCPConnection.h>
      */
-    @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
+    @Deprecated @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
 
     @Generated
     private NWTCPConnectionState() {

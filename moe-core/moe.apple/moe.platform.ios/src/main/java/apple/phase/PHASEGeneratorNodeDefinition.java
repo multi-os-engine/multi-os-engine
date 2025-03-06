@@ -67,6 +67,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] calibrationMode
      * 
      * The generator's calibration mode. The default value is PHASECalibrationModeNone.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("calibrationMode")
@@ -106,6 +108,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] gainMetaParameterDefinition
      * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the gain during playback.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -116,6 +120,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] group
      * 
      * The PHASEGroup object this generator should be associated with for gain and rate control.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -158,6 +164,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * 
      * The generator's level. The default value is 1.
      * [@note] The level's underlying unit and range are dependent on the calibrationMode.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("level")
@@ -167,6 +175,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] mixerDefinition
      * 
      * The readonly property that returns the PHASEMixerDefinition this generator was created with and assigned to.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -184,6 +194,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("rate")
@@ -193,6 +205,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] rateMetaParameterDefinition
      * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the rate during playback.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -214,6 +228,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@note]
      * The level, including its underlying unit and range, are dependent on the calibration mode.
      * 
+     * API-Since: 15.0
+     * 
      * @param calibrationMode
      *                        The calibration mode.
      * @param level
@@ -227,6 +243,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] gainMetaParameterDefinition
      * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the gain during playback.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGainMetaParameterDefinition:")
@@ -236,6 +254,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] group
      * 
      * The PHASEGroup object this generator should be associated with for gain and rate control.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGroup:")
@@ -245,6 +265,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] group
      * 
      * The PHASEGroup object this generator should be associated with for gain and rate control.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setGroup(@Nullable PHASEGroup value) {
@@ -264,6 +286,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRate:")
@@ -273,6 +297,8 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
      * [@property] rateMetaParameterDefinition
      * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the rate during playback.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRateMetaParameterDefinition:")

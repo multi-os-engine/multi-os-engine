@@ -80,6 +80,8 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
      * 
      * Returns a new instance of AVMutableAudioMixInputParameters with no volume ramps and a trackID initialized to
      * kCMPersistentTrackID_Invalid.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("audioMixInputParameters")
@@ -93,6 +95,8 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
      * 
      * @param track
      *              A reference to an AVAssetTrack.
+     * 
+     *              API-Since: 4.0
      */
     @Generated
     @Selector("audioMixInputParametersWithTrack:")
@@ -249,6 +253,8 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
      * [@property] trackID
      * 
      * Indicates the trackID of the audio track to which the parameters should be applied.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTrackID:")
@@ -260,6 +266,8 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
      * Sets the value of the audio volume at a specific time.
      * 
      * This method throws an exception if the time is not numeric.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVolume:atTime:")
@@ -271,6 +279,8 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
      * Sets a volume ramp to apply during the specified timeRange.
      * 
      * This method throws an exception if the time range's start or duration is not numeric.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVolumeRampFromStartVolume:toEndVolume:timeRange:")
@@ -281,6 +291,8 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
      * [@property] trackID
      * 
      * Indicates the trackID of the audio track to which the parameters should be applied.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("trackID")

@@ -125,6 +125,8 @@ public class NSMigrationStage extends NSObject {
     /**
      * Describe the purpose of this migration stage. This label will be available when accessing persistent history
      * for the store
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("label")
@@ -146,6 +148,8 @@ public class NSMigrationStage extends NSObject {
     /**
      * Describe the purpose of this migration stage. This label will be available when accessing persistent history
      * for the store
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setLabel:")

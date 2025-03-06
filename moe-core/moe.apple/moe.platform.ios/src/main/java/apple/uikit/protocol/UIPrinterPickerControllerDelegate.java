@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -44,6 +47,8 @@ public interface UIPrinterPickerControllerDelegate {
      * (the contactPrinter: method need not be called).
      * This method may be called from threads other than the main thread,
      * and may be called simultaneously from several different threads.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -53,6 +58,9 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidDismiss:")
@@ -60,6 +68,9 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidPresent:")
@@ -67,6 +78,9 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidSelectPrinter:")
@@ -74,6 +88,9 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -83,6 +100,9 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerWillDismiss:")
@@ -90,6 +110,9 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerWillPresent:")

@@ -133,6 +133,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wc_ij', bias 'bc_i' and neuron 'gc' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -147,6 +149,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -159,6 +163,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uc_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -170,6 +176,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronParamA
      * 
      * Neuron parameter A for 'gh'. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("cellToOutputNeuronParamA")
@@ -179,6 +187,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronParamB
      * 
      * Neuron parameter B for 'gh'. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("cellToOutputNeuronParamB")
@@ -188,6 +198,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronType
      * 
      * Neuron type definition for 'gh', see @ref MPSCNNNeuronType. Defaults to MPSCNNNeuronTypeTanH.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("cellToOutputNeuronType")
@@ -231,6 +243,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wf_ij', bias 'bf_i' and neuron 'gf' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -245,6 +259,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -257,6 +273,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uf_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -278,6 +296,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wi_ij', bias 'bi_i' and neuron 'gi' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -292,6 +312,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -304,6 +326,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Ui_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -340,6 +364,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * vectors of length the number of features in memory cells, that will be multiplied pointwise
      * with the peephole matrix or image in order to achieve the diagonal (nonmixing) update.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("memoryWeightsAreDiagonal")
@@ -355,6 +381,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wo_ij', bias 'bo_i' and neuron 'go' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -369,6 +397,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -381,6 +411,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uo_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -401,6 +433,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wc_ij', bias 'bc_i' and neuron 'gc' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellGateInputWeights:")
@@ -414,6 +448,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellGateMemoryWeights:")
@@ -425,6 +461,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uc_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellGateRecurrentWeights:")
@@ -435,6 +473,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronParamA
      * 
      * Neuron parameter A for 'gh'. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellToOutputNeuronParamA:")
@@ -444,6 +484,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronParamB
      * 
      * Neuron parameter B for 'gh'. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellToOutputNeuronParamB:")
@@ -453,6 +495,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronType
      * 
      * Neuron type definition for 'gh', see @ref MPSCNNNeuronType. Defaults to MPSCNNNeuronTypeTanH.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellToOutputNeuronType:")
@@ -463,6 +507,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wf_ij', bias 'bf_i' and neuron 'gf' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setForgetGateInputWeights:")
@@ -476,6 +522,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setForgetGateMemoryWeights:")
@@ -487,6 +535,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uf_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setForgetGateRecurrentWeights:")
@@ -498,6 +548,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wi_ij', bias 'bi_i' and neuron 'gi' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputGateInputWeights:")
@@ -511,6 +563,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputGateMemoryWeights:")
@@ -522,6 +576,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Ui_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputGateRecurrentWeights:")
@@ -535,6 +591,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * vectors of length the number of features in memory cells, that will be multiplied pointwise
      * with the peephole matrix or image in order to achieve the diagonal (nonmixing) update.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMemoryWeightsAreDiagonal:")
@@ -545,6 +603,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wo_ij', bias 'bo_i' and neuron 'go' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputGateInputWeights:")
@@ -558,6 +618,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputGateMemoryWeights:")
@@ -569,6 +631,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uo_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputGateRecurrentWeights:")
@@ -592,6 +656,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronParamC
      * 
      * Neuron parameter C for 'gh'. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("cellToOutputNeuronParamC")
@@ -601,6 +667,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * [@property] cellToOutputNeuronParamC
      * 
      * Neuron parameter C for 'gh'. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellToOutputNeuronParamC:")

@@ -166,6 +166,8 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
      * [@property] scaleFactorX
      * 
      * The upsampling scale factor for the x dimension. The default value is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("scaleFactorX")
@@ -175,6 +177,8 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
      * [@property] scaleFactorY
      * 
      * The upsampling scale factor for the y dimension. The default value is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("scaleFactorY")
@@ -209,6 +213,8 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
      * preserving the values at the corner pixels.
      * The default is NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alignCorners")

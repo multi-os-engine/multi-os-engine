@@ -247,4 +247,35 @@ public class WKWebpagePreferences extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A WKWebpagePreferencesUpgradeToHTTPSPolicy indicating the desired mode
+     * used when performing a top-level navigation to a webpage.
+     * 
+     * The default value is WKWebpagePreferencesUpgradeToHTTPSPolicyKeepAsRequested.
+     * The stated preference is ignored on subframe navigation, and it may be ignored based on
+     * system configuration. The upgradeKnownHostsToHTTPS property on WKWebViewConfiguration
+     * supercedes this policy for known hosts.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("preferredHTTPSNavigationPolicy")
+    @NInt
+    public native long preferredHTTPSNavigationPolicy();
+
+    /**
+     * A WKWebpagePreferencesUpgradeToHTTPSPolicy indicating the desired mode
+     * used when performing a top-level navigation to a webpage.
+     * 
+     * The default value is WKWebpagePreferencesUpgradeToHTTPSPolicyKeepAsRequested.
+     * The stated preference is ignored on subframe navigation, and it may be ignored based on
+     * system configuration. The upgradeKnownHostsToHTTPS property on WKWebViewConfiguration
+     * supercedes this policy for known hosts.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("setPreferredHTTPSNavigationPolicy:")
+    public native void setPreferredHTTPSNavigationPolicy(@NInt long value);
 }

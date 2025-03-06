@@ -34,6 +34,8 @@ public interface CLSDataStoreDelegate {
      * @param parentIdentifierPath Ordered list of identifiers leading to the parent context.
      * 
      * @return The new context for the supplied identifier. The new context is automatically saved.
+     * 
+     *         API-Since: 11.3
      */
     @Nullable
     @Generated

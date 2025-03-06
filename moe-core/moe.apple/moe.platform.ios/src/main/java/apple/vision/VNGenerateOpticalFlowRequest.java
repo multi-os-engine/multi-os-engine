@@ -126,6 +126,8 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
      * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("computationAccuracy")
@@ -327,6 +329,8 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
      * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_TwoComponent32Float and
      * kCVPixelFormatType_TwoComponent16Half.
      * Default is kCVPixelFormatType_TwoComponent32Float.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("outputPixelFormat")
@@ -346,6 +350,8 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
      * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setComputationAccuracy:")
@@ -355,6 +361,8 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
      * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_TwoComponent32Float and
      * kCVPixelFormatType_TwoComponent16Half.
      * Default is kCVPixelFormatType_TwoComponent32Float.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOutputPixelFormat:")
@@ -380,6 +388,8 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
 
     /**
      * VNPixelBufferObservation results.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

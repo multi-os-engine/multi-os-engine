@@ -110,6 +110,8 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      *              The initial value of the metaparameter
      * @return
      *         The new PHASENumberMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithValue:")
@@ -126,6 +128,8 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      *                   An optional custom identifier to give to this object
      * @return
      *         The new PHASENumberMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithValue:identifier:")
@@ -146,6 +150,8 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      *                will be clamped.
      * @return
      *         The new PHASENumberMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithValue:minimum:maximum:")
@@ -169,6 +175,8 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      *                   An optional custom identifier to give to this object
      * @return
      *         The new PHASENumberMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithValue:minimum:maximum:identifier:")
@@ -201,6 +209,8 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      * [@property] maximum
      * 
      * The readonly maximum that this metaparameter definition was initialized with
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("maximum")
@@ -210,6 +220,8 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      * [@property] minimum
      * 
      * The readonly minimum that this metaparameter definition was initialized with
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("minimum")

@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * API-Since: 16.1
  * Deprecated-Since: 17.0
- * Deprecated-Message: Please use [MTRSetupPayload setupPayloadWithOnboardingPayload:error:]
+ * Deprecated-Message: Please use [MTRSetupPayload initWithPayload:]
  */
 @Generated
 @Deprecated
@@ -142,6 +142,12 @@ public class MTROnboardingPayloadParser extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Please use [MTRSetupPayload initWithPayload:]
+     */
+    @Deprecated
     @Generated
     @Selector("setupPayloadForOnboardingPayload:error:")
     @Nullable

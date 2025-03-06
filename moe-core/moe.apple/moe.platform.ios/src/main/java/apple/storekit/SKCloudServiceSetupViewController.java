@@ -50,7 +50,11 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.1
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use the musicSubscriptionOffer(isPresented:options:onLoadCompletion:) SwiftUI View Modifier from
+ * MusicKit
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -178,7 +182,11 @@ public class SKCloudServiceSetupViewController extends UIViewController {
      * Optional delegate.
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the musicSubscriptionOffer(isPresented:options:onLoadCompletion:) SwiftUI View Modifier
+     * from MusicKit
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -203,7 +211,11 @@ public class SKCloudServiceSetupViewController extends UIViewController {
      * Block is invoked on the main thread when the load finishes.
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the musicSubscriptionOffer(isPresented:options:onLoadCompletion:) SwiftUI View Modifier
+     * from MusicKit
      */
+    @Deprecated
     @Generated
     @Selector("loadWithOptions:completionHandler:")
     public native void loadWithOptionsCompletionHandler(@NotNull NSDictionary<String, ?> options,
@@ -213,7 +225,11 @@ public class SKCloudServiceSetupViewController extends UIViewController {
      * Optional delegate.
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the musicSubscriptionOffer(isPresented:options:onLoadCompletion:) SwiftUI View Modifier
+     * from MusicKit
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
@@ -223,7 +239,11 @@ public class SKCloudServiceSetupViewController extends UIViewController {
      * Optional delegate.
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the musicSubscriptionOffer(isPresented:options:onLoadCompletion:) SwiftUI View Modifier
+     * from MusicKit
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKCloudServiceSetupViewControllerDelegate value) {
         Object __old = delegate();

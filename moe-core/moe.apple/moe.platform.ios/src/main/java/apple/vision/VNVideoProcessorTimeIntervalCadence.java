@@ -99,6 +99,9 @@ public class VNVideoProcessorTimeIntervalCadence extends VNVideoProcessorCadence
     @Selector("init")
     public native VNVideoProcessorTimeIntervalCadence init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithTimeInterval:")
     public native VNVideoProcessorTimeIntervalCadence initWithTimeInterval(double timeInterval);
@@ -146,6 +149,9 @@ public class VNVideoProcessorTimeIntervalCadence extends VNVideoProcessorCadence
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("timeInterval")
     public native double timeInterval();

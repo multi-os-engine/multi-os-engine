@@ -159,6 +159,9 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("evaluationFunction")
@@ -169,6 +172,9 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @Selector("init")
     public native MDLMaterialPropertyNode init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithInputs:outputs:evaluationFunction:")
     public native MDLMaterialPropertyNode initWithInputsOutputsEvaluationFunction(
@@ -176,6 +182,9 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
             @NotNull NSArray<? extends MDLMaterialProperty> outputs,
             @NotNull @ObjCBlock(name = "call_initWithInputsOutputsEvaluationFunction") Block_initWithInputsOutputsEvaluationFunction function);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("inputs")
@@ -186,11 +195,17 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("outputs")
     public native NSArray<? extends MDLMaterialProperty> outputs();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setEvaluationFunction:")
     public native void setEvaluationFunction(

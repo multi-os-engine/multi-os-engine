@@ -51,6 +51,8 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
     /**
      * A Boolean value that determines if the thumbstick is acting as a touchpad
      * Only supported for thumbsticks
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("actsAsTouchpad")
@@ -123,6 +125,8 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
 
     /**
      * A Boolean value that determines whether the element is hidden
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isHidden")
@@ -145,6 +149,8 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
     /**
      * Path that defines custom element image
      * Only supported for button elements
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -162,6 +168,8 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
     /**
      * A Boolean value that determines if the thumbstick is acting as a touchpad
      * Only supported for thumbsticks
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setActsAsTouchpad:")
@@ -169,6 +177,8 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
 
     /**
      * A Boolean value that determines whether the element is hidden
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setHidden:")
@@ -177,6 +187,8 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
     /**
      * Path that defines custom element image
      * Only supported for button elements
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPath:")

@@ -55,6 +55,8 @@ public interface MDLMeshBufferAllocator {
      * 
      * @param length Size of buffer to be created in bytes
      * @param type   Type of data to be stored in this buffer
+     * 
+     *               API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -72,6 +74,8 @@ public interface MDLMeshBufferAllocator {
      * of the zone if the buffer could not be allocated with the current
      * zone size. Alternatively the implementation may return nil if the
      * buffer could not be allocated.
+     * 
+     * API-Since: 9.0
      * 
      * @return An object conforming to the MDLMeshBuffer protocol. Returns nil the
      *         buffer could not be allocated in the given zone
@@ -96,6 +100,9 @@ public interface MDLMeshBufferAllocator {
      * zone size. Alternatively the implementation may return nil if the
      * buffer could not be allocated.
      * 
+     * 
+     * API-Since: 9.0
+     * 
      * @return An object conforming to the MDLMeshBuffer protocol. Returns nil the
      *         buffer could not be allocated in the zone given.
      * @param zone Zone from which to allocate the memory
@@ -116,6 +123,8 @@ public interface MDLMeshBufferAllocator {
      * 
      * @param data Memory to fill the buffer with
      * @param type Type of data to be stored in this buffer
+     * 
+     *             API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -130,6 +139,8 @@ public interface MDLMeshBufferAllocator {
      * 
      * @param capacity Total size in bytes of all buffers which can be created from
      *                 this zone
+     * 
+     *                 API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -146,6 +157,8 @@ public interface MDLMeshBufferAllocator {
      * allocated. This will allocate a zone with enough capacity
      * for each of the buffers with sizes and types specified even taking
      * into any alignment restrictions necessary to use these buffers.
+     * 
+     * API-Since: 9.0
      * 
      * @param sizes Sizes of each buffer to be created in this zone
      * @param types Type of each buffer to be created in this zone. Values to be of

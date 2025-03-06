@@ -164,6 +164,9 @@ public class INRestaurantGuest extends INPerson {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("emailAddress")
@@ -196,6 +199,9 @@ public class INRestaurantGuest extends INPerson {
             @NotNull String handle, @Nullable NSPersonNameComponents nameComponents, @Nullable String displayName,
             @Nullable INImage image, @Nullable String contactIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithNameComponents:phoneNumber:emailAddress:")
     public native INRestaurantGuest initWithNameComponentsPhoneNumberEmailAddress(
@@ -217,15 +223,24 @@ public class INRestaurantGuest extends INPerson {
             @Nullable String customIdentifier, @Nullable NSArray<? extends INPersonHandle> aliases,
             @NInt long suggestionType);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setEmailAddress:")
     public native void setEmailAddress(@Nullable String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPhoneNumber:")
     public native void setPhoneNumber(@Nullable String value);

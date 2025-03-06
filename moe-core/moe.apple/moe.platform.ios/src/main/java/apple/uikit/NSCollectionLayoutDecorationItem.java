@@ -87,6 +87,8 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
      * | +----------------------------+ |
      * | |
      * +----------------------------------+
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -130,6 +132,9 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("elementKind")
@@ -196,6 +201,8 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
 
     /**
      * default is 0; all other section items will be automatically be promoted to zIndex=1
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setZIndex:")
@@ -212,6 +219,8 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
 
     /**
      * default is 0; all other section items will be automatically be promoted to zIndex=1
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("zIndex")

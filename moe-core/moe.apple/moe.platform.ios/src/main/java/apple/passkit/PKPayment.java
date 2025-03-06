@@ -218,6 +218,8 @@ public class PKPayment extends NSObject {
     /**
      * The shipping method that the user chose. This property is only set when the
      * application has set the shippingMethods property of the PKPaymentRequest.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -226,6 +228,8 @@ public class PKPayment extends NSObject {
 
     /**
      * A PKPaymentToken which contains an encrypted payment credential.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

@@ -63,6 +63,9 @@ public class MKLookAroundSceneRequest extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -88,6 +91,9 @@ public class MKLookAroundSceneRequest extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("coordinate")
     @ByValue
@@ -101,6 +107,9 @@ public class MKLookAroundSceneRequest extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("getSceneWithCompletionHandler:")
     public native void getSceneWithCompletionHandler(
@@ -122,10 +131,16 @@ public class MKLookAroundSceneRequest extends NSObject {
     @Selector("init")
     public native MKLookAroundSceneRequest init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithCoordinate:")
     public native MKLookAroundSceneRequest initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithMapItem:")
     public native MKLookAroundSceneRequest initWithMapItem(@NotNull MKMapItem mapItem);
@@ -143,10 +158,16 @@ public class MKLookAroundSceneRequest extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
@@ -160,6 +181,9 @@ public class MKLookAroundSceneRequest extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("mapItem")

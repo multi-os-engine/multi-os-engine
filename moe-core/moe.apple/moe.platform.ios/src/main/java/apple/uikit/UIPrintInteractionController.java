@@ -83,10 +83,16 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("canPrintData:")
     public static native boolean canPrintData(@NotNull NSData data);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("canPrintURL:")
     public static native boolean canPrintURL(@NotNull NSURL url);
@@ -140,6 +146,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * return YES if system supports printing. use this to hide HI for unsupported devices.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("isPrintingAvailable")
@@ -161,6 +169,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * return set of all document UTI types we can print
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -179,6 +189,9 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @Selector("sharedPrintController")
@@ -195,6 +208,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * not retained. default is nil
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -202,6 +217,9 @@ public class UIPrintInteractionController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPrintInteractionControllerDelegate delegate();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("dismissAnimated:")
     public native void dismissAnimated(boolean animated);
@@ -212,6 +230,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * iPhone
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("presentAnimated:completionHandler:")
@@ -220,6 +240,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * iPad
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("presentFromBarButtonItem:animated:completionHandler:")
@@ -229,6 +251,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * iPad
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("presentFromRect:inView:animated:completionHandler:")
@@ -238,6 +262,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * uses a single formatter to fill the pages
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -246,6 +272,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * changes to printInfo ignored while printing. default is nil
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -254,6 +282,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * calls class to render each page
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -262,6 +292,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * set after printer selection
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -272,6 +304,8 @@ public class UIPrintInteractionController extends NSObject {
      * Use to print without showing the standard print panel. Use with a
      * UIPrinter found using the UIPrinterPickerController.
      * The value for the duplex property on printInfo will be ignored.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("printToPrinter:completionHandler:")
@@ -280,6 +314,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * single NSData, NSURL, UIImage
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -289,6 +325,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * array of NSData, NSURL, UIImage. does not support page range
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -297,6 +335,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * not retained. default is nil
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setDelegate:")
@@ -305,6 +345,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * not retained. default is nil
+     * 
+     * API-Since: 4.2
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPrintInteractionControllerDelegate value) {
@@ -320,6 +362,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * uses a single formatter to fill the pages
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setPrintFormatter:")
@@ -327,6 +371,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * changes to printInfo ignored while printing. default is nil
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setPrintInfo:")
@@ -334,6 +380,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * calls class to render each page
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setPrintPageRenderer:")
@@ -341,6 +389,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * single NSData, NSURL, UIImage
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setPrintingItem:")
@@ -348,6 +398,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * array of NSData, NSURL, UIImage. does not support page range
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setPrintingItems:")

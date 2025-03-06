@@ -134,6 +134,8 @@ public class TKTokenPasswordAuthOperation extends TKTokenAuthOperation {
 
     /**
      * Password, which will be filled in by the system when 'finishWithError:' is called.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -150,6 +152,8 @@ public class TKTokenPasswordAuthOperation extends TKTokenAuthOperation {
 
     /**
      * Password, which will be filled in by the system when 'finishWithError:' is called.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPassword:")

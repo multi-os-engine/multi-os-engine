@@ -82,6 +82,9 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("clear")
     public native void clear();
@@ -101,16 +104,25 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementCount")
     @NUInt
     public native long elementCount();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getDouble4x4Array:maxCount:")
     @NUInt
     public native long getDouble4x4ArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFloat4x4Array:maxCount:")
     @NUInt
@@ -125,6 +137,9 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("init")
     public native MDLMatrix4x4Array init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithElementCount:")
     public native MDLMatrix4x4Array initWithElementCount(@NUInt long arrayElementCount);
@@ -156,6 +171,9 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("new")
     public static native MDLMatrix4x4Array new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("precision")
     @NUInt
@@ -169,10 +187,16 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDouble4x4Array:count:")
     public native void setDouble4x4ArrayCount(@NotNull VoidPtr valuesArray, @NUInt long count);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setFloat4x4Array:count:")
     public native void setFloat4x4ArrayCount(@NotNull VoidPtr valuesArray, @NUInt long count);

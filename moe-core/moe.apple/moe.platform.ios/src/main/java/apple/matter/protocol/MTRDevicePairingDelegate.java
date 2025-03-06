@@ -22,6 +22,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTRDevicePairingDelegate")
 public interface MTRDevicePairingDelegate {
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerDelegate
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("onCommissioningComplete:")
@@ -29,6 +35,12 @@ public interface MTRDevicePairingDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerDelegate
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("onPairingComplete:")
@@ -36,6 +48,12 @@ public interface MTRDevicePairingDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerDelegate
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("onPairingDeleted:")
@@ -43,6 +61,12 @@ public interface MTRDevicePairingDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerDelegate
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("onStatusUpdate:")

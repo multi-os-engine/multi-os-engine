@@ -179,6 +179,9 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("biasValues")
@@ -189,12 +192,17 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * `paced', `cubic' and `cubicPaced'. Defaults to `linear'. When set to
      * `paced' or `cubicPaced' the `keyTimes' and `timingFunctions'
      * properties of the animation are ignored and calculated implicitly.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
     @Selector("calculationMode")
     public native String calculationMode();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("continuityValues")
@@ -214,6 +222,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * and defines when the value should be used in the animation function.
      * Each value in the array is a floating point number in the range
      * [0,1].
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -227,6 +237,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * the purpose of timing and interpolation. Defaults to nil. For
      * constant velocity animation along the path, `calculationMode' should
      * be set to `paced'. Upon assignment the path is copied.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -239,12 +251,17 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * to nil. The effect of setting this property to a non-nil value when
      * no path object is supplied is undefined. `autoReverse' rotates to
      * match the tangent plus 180 degrees.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
     @Selector("rotationMode")
     public native String rotationMode();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setBiasValues:")
     public native void setBiasValues(@Nullable NSArray<? extends NSNumber> value);
@@ -254,11 +271,16 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * `paced', `cubic' and `cubicPaced'. Defaults to `linear'. When set to
      * `paced' or `cubicPaced' the `keyTimes' and `timingFunctions'
      * properties of the animation are ignored and calculated implicitly.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCalculationMode:")
     public native void setCalculationMode(@NotNull String value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setContinuityValues:")
     public native void setContinuityValues(@Nullable NSArray<? extends NSNumber> value);
@@ -269,6 +291,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * and defines when the value should be used in the animation function.
      * Each value in the array is a floating point number in the range
      * [0,1].
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setKeyTimes:")
@@ -281,6 +305,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * the purpose of timing and interpolation. Defaults to nil. For
      * constant velocity animation along the path, `calculationMode' should
      * be set to `paced'. Upon assignment the path is copied.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setPath:")
@@ -292,6 +318,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * to nil. The effect of setting this property to a non-nil value when
      * no path object is supplied is undefined. `autoReverse' rotates to
      * match the tangent plus 180 degrees.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setRotationMode:")
@@ -315,6 +343,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * the first control point, the second value controls the second
      * point's tangents, and so on. Any unspecified values default to zero
      * (giving a Catmull-Rom spline if all are unspecified).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTensionValues:")
@@ -325,6 +355,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * defines n keyframes, there should be n-1 objects in the
      * `timingFunctions' array. Each function describes the pacing of one
      * keyframe to keyframe segment.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTimingFunctions:")
@@ -333,6 +365,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     /**
      * An array of objects providing the value of the animation function for
      * each keyframe.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setValues:")
@@ -356,6 +390,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * the first control point, the second value controls the second
      * point's tangents, and so on. Any unspecified values default to zero
      * (giving a Catmull-Rom spline if all are unspecified).
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -367,6 +403,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * defines n keyframes, there should be n-1 objects in the
      * `timingFunctions' array. Each function describes the pacing of one
      * keyframe to keyframe segment.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -376,6 +414,8 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     /**
      * An array of objects providing the value of the animation function for
      * each keyframe.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

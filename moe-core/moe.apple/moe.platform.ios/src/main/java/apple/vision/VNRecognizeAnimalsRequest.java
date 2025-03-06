@@ -193,6 +193,8 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
 
     /**
      * VNRecognizedObjectObservation results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

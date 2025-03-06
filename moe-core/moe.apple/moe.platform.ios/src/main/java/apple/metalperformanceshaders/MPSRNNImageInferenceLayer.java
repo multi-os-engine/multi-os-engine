@@ -90,6 +90,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("bidirectionalCombineMode")
@@ -126,6 +128,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -179,6 +183,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      *                                  parameter is ignored
      *                                  and can be nil. destinationBackwardImages may not alias to any of the source
      *                                  images.
+     * 
+     *                                  API-Since: 11.0
      */
     @Generated
     @Selector("encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:")
@@ -220,6 +226,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * recurrentInputState: recurrent0
      * recurrentOutputState: nil];
      * [@endcode]
+     * 
+     * API-Since: 11.0
      * 
      * @param commandBuffer         A valid MTLCommandBuffer to receive the encoded filter
      * @param sourceImages          An array of valid MPSImage objects containing the sequence of source images.
@@ -316,6 +324,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels per pixel in the input image.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -355,6 +365,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * Number of layers in the filter-stack. This will be one when using initWithDevice:rnnDescriptor to initialize
      * this filter and the number of entries in the array 'rnnDescriptors' when initializing this filter with
      * initWithDevice:rnnDescriptors.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("numberOfLayers")
@@ -365,6 +377,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the output image.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -376,6 +390,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("recurrentOutputIsTemporary")
@@ -395,6 +411,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBidirectionalCombineMode:")
@@ -405,6 +423,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecurrentOutputIsTemporary:")
@@ -416,6 +436,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStoreAllIntermediateStates:")
@@ -431,6 +453,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("storeAllIntermediateStates")

@@ -125,6 +125,9 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor extends NSO
     @Selector("initWithCoder:")
     public native ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithCredentialID:transports:")
     public native ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor initWithCredentialIDTransports(
@@ -171,6 +174,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor extends NSO
 
     /**
      * An array indicating transports for the credential indicated by credentialID.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTransports:")
@@ -196,6 +201,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor extends NSO
 
     /**
      * An array indicating transports for the credential indicated by credentialID.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

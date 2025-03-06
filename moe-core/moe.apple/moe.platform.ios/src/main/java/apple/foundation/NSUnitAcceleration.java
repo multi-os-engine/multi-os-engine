@@ -108,6 +108,9 @@ public class NSUnitAcceleration extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("gravity")
@@ -142,6 +145,8 @@ public class NSUnitAcceleration extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - metersPerSecondSquared
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

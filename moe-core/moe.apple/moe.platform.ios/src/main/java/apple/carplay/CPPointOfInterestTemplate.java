@@ -111,6 +111,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
      * 
      * [@note] the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
      * 
+     * API-Since: 14.0
+     * 
      * @param title            Template title
      * @param pointsOfInterest Points of interest to be presented in the map.
      * @param selectedIndex    Index of selected point of interest instance referenced in the pointsOfInterest array.
@@ -150,6 +152,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     /**
      * The Point of Interest template's delegate is informed of user events.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -157,6 +161,9 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
     @MappedReturn(ObjCObjectMapper.class)
     public native CPPointOfInterestTemplateDelegate pointOfInterestDelegate();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("pointsOfInterest")
@@ -172,6 +179,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     /**
      * Designate an instance in the pointsOfInterest array to highlight. Use NSNotFound to indicate no selection.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("selectedIndex")
@@ -180,6 +189,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     /**
      * The Point of Interest template's delegate is informed of user events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPointOfInterestDelegate:")
@@ -188,6 +199,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     /**
      * The Point of Interest template's delegate is informed of user events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setPointOfInterestDelegate(
@@ -207,6 +220,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
      * 
      * [@note] the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
      * 
+     * API-Since: 14.0
+     * 
      * @param pointsOfInterest Points of interest to be presented in the map.
      * @param selectedIndex    Index of selected point of interest instance referenced in the pointsOfInterest array.
      *                         Use NSNotFound to indicate no selection.
@@ -218,6 +233,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     /**
      * Designate an instance in the pointsOfInterest array to highlight. Use NSNotFound to indicate no selection.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSelectedIndex:")
@@ -225,6 +242,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     /**
      * Template title appears on the template point of interest picker
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTitle:")
@@ -250,6 +269,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     /**
      * Template title appears on the template point of interest picker
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * API-Since: 13.0
@@ -34,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HKAudiogramSensitivityPoint extends NSObject {
+public class HKAudiogramSensitivityPoint extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -94,6 +97,8 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     /**
      * [@property] frequency Frequency where sensitivity was measured. The unit of measurement
      * is [HKUnit hertzUnit] or "Hz".
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -132,9 +137,15 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] sensitivity Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
-     * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
+     * [@property] sensitivity Left ear sensitivity measured in dB from a baseline of 0 dB. Reduced hearing sensitivity
+     * corresponds to an increase from 0 dB.
+     * The unit of measurement is `HKUnit.decibelHearingLevelUnit` or "dBHL".
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use tests object which will contain a value for left ear
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("leftEarSensitivity")
@@ -154,9 +165,15 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] sensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
-     * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
+     * [@property] sensitivity Right ear sensitivity measured in dB from a baseline of 0 dB. Reduced hearing sensitivity
+     * corresponds to an increase from 0 dB.
+     * The unit of measurement is `HKUnit.decibelHearingLevelUnit` or "dBHL".
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use tests object which will contain a value for right ear
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("rightEarSensitivity")
@@ -168,13 +185,20 @@ public class HKAudiogramSensitivityPoint extends NSObject {
      * Creates a point that can be included in a audiogram.
      * 
      * @param frequency           Frequency where sensitivity was measured.
-     * @param leftEarSensitivity  Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
-     * @param rightEarSensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
+     * @param leftEarSensitivity  Left ear sensitivity measured in dB from a baseline of 0 dB. Reduced hearing
+     *                            sensitivity corresponds to an increase from 0 dB.
+     * @param rightEarSensitivity Right ear sensitivity measured in dB from a baseline of 0 dB. Reduced hearing
+     *                            sensitivity corresponds to an increase from 0 dB.
      * @param error               If there was a problem creating this instance this will contain the error.
      * @return New instance of a sensitivity point or nil if there were problems
      *         creating the instance. Errors may include incorrect quantity units
      *         or data that is out of an expected range.
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 18.1
+     *         Deprecated-Message: Use +[HKAudiogramSensitivityPoint sensitivityPointWithFrequency:tests:error:]
      */
+    @Deprecated
     @Generated
     @Selector("sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:")
     public static native HKAudiogramSensitivityPoint sensitivityPointWithFrequencyLeftEarSensitivityRightEarSensitivityError(
@@ -199,4 +223,54 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKAudiogramSensitivityPoint initWithCoder(@NotNull NSCoder coder);
+
+    /**
+     * sensitivityPointWithFrequency:tests:error:
+     * 
+     * Creates a point that can be included in a audiogram.
+     * 
+     * @param frequency Frequency at which sensitivity was measured.
+     * @param tests     The tests conducted at the frequency
+     * @param errorOut  If there was a problem creating this instance this will contain the error.
+     * @return New instance of a sensitivity point or nil if there were problems
+     *         creating the instance. Errors may include incorrect quantity units
+     *         or data that is out of an expected range.
+     * 
+     *         API-Since: 18.1
+     */
+    @Generated
+    @Selector("sensitivityPointWithFrequency:tests:error:")
+    public static native HKAudiogramSensitivityPoint sensitivityPointWithFrequencyTestsError(
+            @NotNull HKQuantity frequency, @NotNull NSArray<? extends HKAudiogramSensitivityTest> tests,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> errorOut);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * [@property] tests
+     * 
+     * The tests conducted at this frequency
+     * 
+     * API-Since: 18.1
+     */
+    @Generated
+    @Selector("tests")
+    @NotNull
+    public native NSArray<? extends HKAudiogramSensitivityTest> tests();
 }

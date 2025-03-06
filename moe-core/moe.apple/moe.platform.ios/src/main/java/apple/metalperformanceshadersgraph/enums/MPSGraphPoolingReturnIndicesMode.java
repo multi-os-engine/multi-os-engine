@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * The flattening mode for returned indices with max pooling.
+ * The flattening mode for returned indices with max-pooling.
  */
 @Generated
 public final class MPSGraphPoolingReturnIndicesMode {

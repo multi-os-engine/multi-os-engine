@@ -43,6 +43,8 @@ public interface HMAccessoryBrowserDelegate {
      * @param browser   Sender of the message.
      * 
      * @param accessory New accessory that was discovered.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -59,6 +61,8 @@ public interface HMAccessoryBrowserDelegate {
      * 
      * @param accessory Accessory that was previously discovered but are no longer reachable.
      *                  This method is also invoked when an accessory is added to a home.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional

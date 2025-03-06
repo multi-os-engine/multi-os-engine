@@ -155,6 +155,9 @@ public class NSCondition extends NSObject implements NSLocking {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("broadcast")
     public native void broadcast();
@@ -182,6 +185,9 @@ public class NSCondition extends NSObject implements NSLocking {
     @Selector("setName:")
     public native void setName(@Nullable String value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("signal")
     public native void signal();
@@ -190,10 +196,16 @@ public class NSCondition extends NSObject implements NSLocking {
     @Selector("unlock")
     public native void unlock();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("wait")
     public native void wait_objc();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("waitUntilDate:")
     public native boolean waitUntilDate(@NotNull NSDate limit);

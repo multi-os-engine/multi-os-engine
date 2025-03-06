@@ -138,22 +138,33 @@ public class GCXboxGamepad extends GCExtendedGamepad {
      * the controller
      * is on its default mapping profile. Otherwise, the paddle buttons are directly bound to other inputs on the
      * controller.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
     @Selector("paddleButton1")
     public native GCControllerButtonInput paddleButton1();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("paddleButton2")
     public native GCControllerButtonInput paddleButton2();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("paddleButton3")
     public native GCControllerButtonInput paddleButton3();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("paddleButton4")

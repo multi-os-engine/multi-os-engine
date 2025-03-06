@@ -112,7 +112,7 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     @Generated
     @Selector("changeRequestForAssetCollection:assets:")
     public static native PHAssetCollectionChangeRequest changeRequestForAssetCollectionAssets(
-            @NotNull PHAssetCollection assetCollection, @NotNull PHFetchResult<? extends PHAsset> assets);
+            @NotNull PHAssetCollection assetCollection, @Nullable PHFetchResult<? extends PHAsset> assets);
 
     @NotNull
     @Generated

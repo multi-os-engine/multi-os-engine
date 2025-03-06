@@ -154,11 +154,17 @@ public class INSetTaskAttributeIntent extends INIntent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("spatialEventTrigger")
     public native INSpatialEventTrigger spatialEventTrigger();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("status")
     @NInt
@@ -178,11 +184,17 @@ public class INSetTaskAttributeIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("targetTask")
     public native INTask targetTask();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("temporalEventTrigger")

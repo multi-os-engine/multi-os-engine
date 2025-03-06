@@ -128,6 +128,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -139,6 +141,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceLocalCorrelation object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -155,6 +159,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * @param strideInX Specifies the stride for the offset in the x dimension.
      * @param strideInY Specifies the stride for the offset in the y dimension.
      * @return A valid MPSNNReduceLocalCorrelation object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:windowInX:windowInY:strideInX:strideInY:")
@@ -201,6 +207,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies the stride for the offset in the x dimension.
      * 
      * strideInX must be > 0. The default value for strideInX is 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStrideInX:")
@@ -210,6 +218,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies the stride for the offset in the y dimension.
      * 
      * strideInY must be > 0. The default value for strideInY is 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStrideInY:")
@@ -223,6 +233,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
      * 
      * The default value for windowInX is 0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWindowInX:")
@@ -232,6 +244,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
      * 
      * The default value for windowInY is 0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWindowInY:")
@@ -241,6 +255,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies the stride for the offset in the x dimension.
      * 
      * strideInX must be > 0. The default value for strideInX is 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("strideInX")
@@ -251,6 +267,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies the stride for the offset in the y dimension.
      * 
      * strideInY must be > 0. The default value for strideInY is 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("strideInY")
@@ -280,6 +298,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
      * 
      * The default value for windowInX is 0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("windowInX")
@@ -290,6 +310,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      * Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
      * 
      * The default value for windowInY is 0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("windowInY")

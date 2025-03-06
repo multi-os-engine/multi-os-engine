@@ -213,6 +213,12 @@ public class INSaveProfileInCarIntent extends INIntent {
     @Selector("profileName")
     public native String profileName();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSaveProfileInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("profileNumber")

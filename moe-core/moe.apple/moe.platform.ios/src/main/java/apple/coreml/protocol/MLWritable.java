@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 public interface MLWritable {
     /**
      * Writes the model to disk and returns YES if the write is successful.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("writeToURL:error:")

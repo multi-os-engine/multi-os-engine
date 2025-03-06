@@ -118,6 +118,8 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
      *                          call this block with nil for both arguments. Similarly, do not call this block with both
      *                          a non-nil array and a non-nil NSError. This block must be called when your extension has
      *                          finished its work.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("fetchAvailableRoomTypesWithCompletionHandler:")
@@ -157,6 +159,8 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
      *                          both arguments. Similarly, do not call this block with both a non-nil
      *                          EKVirtualConferenceDescriptor and a non-nil NSError. This block must be called when your
      *                          extension has finished its work.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("fetchVirtualConferenceForIdentifier:completionHandler:")

@@ -107,6 +107,9 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("fetchAllRecordZonesOperation")
@@ -176,6 +179,8 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -183,14 +188,23 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_fetchRecordZonesCompletionBlock_ret")
     public native Block_fetchRecordZonesCompletionBlock_ret fetchRecordZonesCompletionBlock();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native CKFetchRecordZonesOperation init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithRecordZoneIDs:")
     public native CKFetchRecordZonesOperation initWithRecordZoneIDs(@NotNull NSArray<? extends CKRecordZoneID> zoneIDs);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordZoneIDs")
@@ -207,12 +221,17 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFetchRecordZonesCompletionBlock:")
     public native void setFetchRecordZonesCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setFetchRecordZonesCompletionBlock") Block_setFetchRecordZonesCompletionBlock value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRecordZoneIDs:")
     public native void setRecordZoneIDs(@Nullable NSArray<? extends CKRecordZoneID> value);

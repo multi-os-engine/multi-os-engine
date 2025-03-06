@@ -118,6 +118,9 @@ public class INMessageLinkMetadata extends NSObject implements NSCopying, NSSecu
     @Selector("initWithCoder:")
     public native INMessageLinkMetadata initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithSiteName:summary:title:openGraphType:linkURL:")
     public native INMessageLinkMetadata initWithSiteNameSummaryTitleOpenGraphTypeLinkURL(@Nullable String siteName,
@@ -145,6 +148,9 @@ public class INMessageLinkMetadata extends NSObject implements NSCopying, NSSecu
     @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("linkURL")
     @Nullable
@@ -155,6 +161,9 @@ public class INMessageLinkMetadata extends NSObject implements NSCopying, NSSecu
     @Selector("new")
     public static native INMessageLinkMetadata new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("openGraphType")
     @Nullable
@@ -168,22 +177,37 @@ public class INMessageLinkMetadata extends NSObject implements NSCopying, NSSecu
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setLinkURL:")
     public native void setLinkURL(@Nullable NSURL value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setOpenGraphType:")
     public native void setOpenGraphType(@Nullable String value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setSiteName:")
     public native void setSiteName(@Nullable String value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setSummary:")
     public native void setSummary(@Nullable String value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@Nullable String value);
@@ -192,11 +216,17 @@ public class INMessageLinkMetadata extends NSObject implements NSCopying, NSSecu
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("siteName")
     @Nullable
     public native String siteName();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("summary")
     @Nullable
@@ -216,6 +246,9 @@ public class INMessageLinkMetadata extends NSObject implements NSCopying, NSSecu
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("title")
     @Nullable

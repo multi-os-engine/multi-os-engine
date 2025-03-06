@@ -73,6 +73,8 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
      * [@property] beginDate
      * 
      * The begin time of the suspension.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
      * 
      * If this is the last suspension, the coordinator will adjust timing of its playback object to match the group.
      * Also see endProposingNewTime: for a way to end a suspension and simultaneously proposing a new time to the group.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("end")
@@ -129,6 +133,8 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
      * groups playback rate.
      * If this is not the last suspension, the time will be ignored.
      * If the time is not numeric, this will behave like a call to [suspension end].
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("endProposingNewTime:")
@@ -174,6 +180,8 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
      * [@property] reason
      * 
      * The reason for the suspension. This will be communicated to other participants while coordination is suspended.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

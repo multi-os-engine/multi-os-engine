@@ -551,6 +551,8 @@ public class AVAudioSession extends NSObject {
      * Presenting playback UI (e.g. AVPlayerViewController) and commencing playback should be performed in the
      * completionHandler.
      * 
+     * API-Since: 13.0
+     * 
      * @param completionHandler
      *                          Once any potential routing is complete, the completion handler is called with the
      *                          selected route type and with a BOOL indicating whether playback should begin or not.
@@ -641,7 +643,7 @@ public class AVAudioSession extends NSObject {
     public native long routeSharingPolicy();
 
     /**
-     * The current hardware sample rate
+     * The current hardware sample rate. Is key-value observable (starting iOS 18.0).
      * 
      * API-Since: 6.0
      */
@@ -953,9 +955,9 @@ public class AVAudioSession extends NSObject {
      * ringtones and alerts. By setting this property to YES, clients will not be interrupted
      * by incoming call notifications and other alerts. Starting in iOS 14.0, users can set a global
      * preference for incoming call display style to "Banner" or "Full Screen". With "Banner" display style,
-     * if below property is set to YES then clients will not be interrupted on incoming call notification
-     * and user will have opportunity to accept or decline the call. If call is declined, the session
-     * will not be interrupted, but if user accepts the incoming call, the session will be interrupted.
+     * if below property is set to YES then system audio will be silenced. Thus, clients will not be interrupted
+     * on incoming call notification and user will have opportunity to accept or decline the call. If call is declined,
+     * the session will not be interrupted, but if user accepts the incoming call, the session will be interrupted.
      * With display style set as "Full Screen", below property will have no effect and clients will be
      * interrupted by incoming calls. Apps that record audio and/or video and apps that are used for
      * music performance are candidates for using this feature.
@@ -1050,7 +1052,8 @@ public class AVAudioSession extends NSObject {
 
     /**
      * Get an array of channel layouts that the current route supports.
-     * This property is only supported when the output is routed to ports of type AVAudioSessionPortCarAudio
+     * This property is only supported when the output is routed to ports of type AVAudioSessionPortCarAudio or
+     * AVAudioSessionPortAirPlay
      * Otherwise, an empty array will be returned. Note that this will return an empty array if session is inactive.
      * Clients should listen to AVAudioSessionRenderingCapabilitiesChangeNotification to be notified when this changes.
      * 
@@ -1065,4 +1068,93 @@ public class AVAudioSession extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Query whether built-in mic / built-in speaker route supports echo cancellation for the session's given category
+     * and mode.
+     * Returns YES if device model supports echo cancellation and the audio category is PlayAndRecord and the mode is
+     * Default.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("isEchoCancelledInputAvailable")
+    public native boolean isEchoCancelledInputAvailable();
+
+    /**
+     * Returns YES if echo cancelled input is successfully enabled on an active session.
+     * Please see `prefersEchoCancelledInput` above for more details.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("isEchoCancelledInputEnabled")
+    public native boolean isEchoCancelledInputEnabled();
+
+    /**
+     * Indicates if microphone injection is available.
+     * Observe AVAudioSessionMicrophoneInjectionCapabilitiesChangeNotification for changes to this property
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("isMicrophoneInjectionAvailable")
+    public native boolean isMicrophoneInjectionAvailable();
+
+    /**
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("preferredMicrophoneInjectionMode")
+    @NInt
+    public native long preferredMicrophoneInjectionMode();
+
+    /**
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("prefersEchoCancelledInput")
+    public native boolean prefersEchoCancelledInput();
+
+    /**
+     * Set the preferred form of audio injection into another app's input stream
+     * See AVAudioSessionMicrophoneInjectionMode for available modes
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("setPreferredMicrophoneInjectionMode:error:")
+    public native boolean setPreferredMicrophoneInjectionModeError(@NInt long inValue,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> outError);
+
+    /**
+     * Set a preference to enable echo cancelled input on supported hardware
+     * 
+     * Applications might want to record the built-in microphone's input while also playing audio out via the built-in
+     * speaker.
+     * Enabling echo cancelled input is useful when the application needs the input signal to be clear of any echoes
+     * from the audio playing out of the built-in speaker.
+     * 
+     * Audio sessions using Voice Processor don't need this option as echo cancellation is implicitly applied for those
+     * routes.
+     * The Voice Processor solution is tuned for voice signals, unlike this option, which is tuned for better capture
+     * of wider range of audio signals in the presence of built-in speaker echo.
+     * 
+     * This option is valid only when used with AVAudioSessionCategoryPlayAndRecord and AVAudioSessionModeDefault and is
+     * only available
+     * on certain 2024 or later iPhone models. Support can be queried using property `isEchoCancelledInputAvailable`.
+     * Other recording sessions might be interrupted if this option is not compatible with sessions that are already
+     * recording.
+     * 
+     * After an audio session goes active, `isEchoCancelledInputEnabled` property can be queried to check if the option
+     * was honored.
+     * Note that the enabled state may change after route changes, e.g. if user plugs in a headset, that route might not
+     * support echo cancellation.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("setPrefersEchoCancelledInput:error:")
+    public native boolean setPrefersEchoCancelledInputError(boolean value,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

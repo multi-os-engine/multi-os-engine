@@ -89,6 +89,8 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
      * Determine whether this device can process payment requests.
      * YES if the device is generally capable of making in-app payments.
      * NO if the device cannot make in-app payments or if the user is restricted from authorizing payments.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("canMakePayments")
@@ -103,6 +105,8 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
      * by the merchant.
      * NO if the user cannot authorize payments on these networks or if the user is restricted from
      * authorizing payments.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:")
@@ -207,6 +211,8 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
 
     /**
      * The view controller's delegate.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -231,6 +237,8 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
      * Initializes and returns a newly created view controller for the supplied payment.
      * It is your responsibility to present and dismiss the view controller using the
      * appropriate means for the given device idiom.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithPaymentRequest:")
@@ -238,6 +246,8 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
 
     /**
      * The view controller's delegate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -246,6 +256,8 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
 
     /**
      * The view controller's delegate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setDelegate(

@@ -42,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * Represents a service provided by an accessory.
@@ -168,6 +169,8 @@ public class HMService extends NSObject {
 
     /**
      * Accessory that provides this service.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -179,6 +182,8 @@ public class HMService extends NSObject {
      * 
      * This could be any of the HomeKit Accessory Profile defined services (except HMServiceTypeOutlet
      * or HMServiceTypeSwitch) that supports HMCharacteristicTypePowerState characteristic.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -188,12 +193,21 @@ public class HMService extends NSObject {
     /**
      * Array of HMCharacteristic objects that represents all the characteristics
      * provided by the service.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("characteristics")
     public native NSArray<? extends HMCharacteristic> characteristics();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: HMService objects are created by their parent container objects. Directly creating them is
+     * not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMService init();
@@ -249,6 +263,8 @@ public class HMService extends NSObject {
      * 
      * Returns the service's name that is associated with HomeKit. The initial value is the value of
      * the name characteristic of the service, if it has one.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -257,6 +273,8 @@ public class HMService extends NSObject {
 
     /**
      * The type of the service, e.g. HMServiceTypeLightbulb.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -331,4 +349,16 @@ public class HMService extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The Matter endpoint identifier that this service is mapped to.
+     * 
+     * This property is nil for HAP accessories, and set to a valid value for Matter devices.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("matterEndpointID")
+    @Nullable
+    public native NSNumber matterEndpointID();
 }

@@ -264,7 +264,7 @@ public class CIContext extends NSObject {
      * Render a CIImage to JPEG data. Image must have a finite non-empty extent.
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
-     * and the depth, disparity, and matte options.
+     * kCGImageDestinationEmbedThumbnail, and the depth, disparity, and matte options.
      * 
      * API-Since: 10.0
      */
@@ -482,7 +482,7 @@ public class CIContext extends NSObject {
      * Render a CIImage to JPEG file. Image must have a finite non-empty extent.
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
-     * and the depth, disparity, and matte options.
+     * kCGImageDestinationEmbedThumbnail, and the depth, disparity, and matte options.
      * 
      * API-Since: 10.0
      */
@@ -512,7 +512,7 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
      * and must match the specified CIFormat.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
-     * and the depth, disparity, and matte options.
+     * kCGImageDestinationEmbedThumbnail,and the depth, disparity, and matte options.
      * 
      * API-Since: 11.0
      */
@@ -636,7 +636,7 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
      * and must match the specified CIFormat.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
-     * and the depth, disparity, and matte options.
+     * kCGImageDestinationEmbedThumbnail, and the depth, disparity, and matte options.
      * 
      * API-Since: 11.0
      */

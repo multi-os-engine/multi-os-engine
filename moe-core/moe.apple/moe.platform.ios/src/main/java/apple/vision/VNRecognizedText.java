@@ -80,6 +80,8 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
      * 
      * The bounding boxes are not guaranteed to be an exact fit around the characters and are purely meant for UI
      * purposes and not for image processing.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -110,6 +112,8 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * The level of confidence normalized to [0.0, 1.0] where 1.0 is most confident
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("confidence")
@@ -190,6 +194,8 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
      * Field that contains recognized text.
      * 
      * This is the top candidate of the recognized text.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

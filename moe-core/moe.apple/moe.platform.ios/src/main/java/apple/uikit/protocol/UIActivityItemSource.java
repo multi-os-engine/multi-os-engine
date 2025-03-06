@@ -32,7 +32,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSArray;
+import apple.intents.INPerson;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -40,6 +45,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UIActivityItemSource {
     /**
      * UTI for item if it is an NSData. iOS 7.0. will be called with nil activity and then selected activity
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -52,6 +59,8 @@ public interface UIActivityItemSource {
 
     /**
      * called to fetch data after an activity is selected. you can return nil.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -62,6 +71,8 @@ public interface UIActivityItemSource {
 
     /**
      * if activity supports a Subject field. iOS 7.0
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -74,6 +85,8 @@ public interface UIActivityItemSource {
 
     /**
      * if activity supports preview image. iOS 7.0
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -88,6 +101,8 @@ public interface UIActivityItemSource {
     /**
      * called to determine data type. only the class of the return type is consulted. it should match what
      * -itemForActivityType: returns later
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -105,6 +120,24 @@ public interface UIActivityItemSource {
     @IsOptional
     @Selector("activityViewControllerLinkMetadata:")
     default LPLinkMetadata activityViewControllerLinkMetadata(
+            @NotNull UIActivityViewController activityViewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Allows the activity item source to provide recipients who will be filled in by default in the compose view if
+     * that sharing app supports it.
+     * 
+     * This might fail to pre-fill correctly if the sharing app chosen by the user can't recognize the provided person.
+     * Also, if a people suggestion is chosen, that suggestion will override this provided value.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("activityViewControllerShareRecipients:")
+    @NotNull
+    default NSArray<? extends INPerson> activityViewControllerShareRecipients(
             @NotNull UIActivityViewController activityViewController) {
         throw new java.lang.UnsupportedOperationException();
     }

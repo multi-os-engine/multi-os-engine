@@ -11,13 +11,13 @@ public final class BNNSPaddingMode {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSPaddingModeConstant = 0x00000000;
+    @Generated public static final int Constant = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSPaddingModeReflect = 0x00000001;
+    @Generated public static final int Reflect = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSPaddingModeSymmetric = 0x00000002;
+    @Generated public static final int Symmetric = 0x00000002;
 }

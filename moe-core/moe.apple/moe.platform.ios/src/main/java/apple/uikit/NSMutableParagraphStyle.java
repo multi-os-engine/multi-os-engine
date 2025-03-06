@@ -181,6 +181,9 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("addTabStop:")
     public native void addTabStop(@NotNull NSTextTab anObject);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("alignment")
     @NInt
@@ -193,6 +196,9 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("allowsDefaultTighteningForTruncation")
     public native boolean allowsDefaultTighteningForTruncation();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("baseWritingDirection")
     @NInt
@@ -206,16 +212,25 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @NFloat
     public native double defaultTabInterval();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("firstLineHeadIndent")
     @NFloat
     public native double firstLineHeadIndent();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("headIndent")
     @NFloat
     public native double headIndent();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("hyphenationFactor")
     public native float hyphenationFactor();
@@ -228,36 +243,57 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("initWithCoder:")
     public native NSMutableParagraphStyle initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("lineHeightMultiple")
     @NFloat
     public native double lineHeightMultiple();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("lineSpacing")
     @NFloat
     public native double lineSpacing();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("maximumLineHeight")
     @NFloat
     public native double maximumLineHeight();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("minimumLineHeight")
     @NFloat
     public native double minimumLineHeight();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("paragraphSpacing")
     @NFloat
     public native double paragraphSpacing();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("paragraphSpacingBefore")
     @NFloat
@@ -270,6 +306,9 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("removeTabStop:")
     public native void removeTabStop(@NotNull NSTextTab anObject);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setAlignment:")
     public native void setAlignment(@NInt long value);
@@ -281,6 +320,9 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("setAllowsDefaultTighteningForTruncation:")
     public native void setAllowsDefaultTighteningForTruncation(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setBaseWritingDirection:")
     public native void setBaseWritingDirection(@NInt long value);
@@ -292,42 +334,72 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("setDefaultTabInterval:")
     public native void setDefaultTabInterval(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setFirstLineHeadIndent:")
     public native void setFirstLineHeadIndent(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setHeadIndent:")
     public native void setHeadIndent(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setHyphenationFactor:")
     public native void setHyphenationFactor(float value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setLineHeightMultiple:")
     public native void setLineHeightMultiple(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setLineSpacing:")
     public native void setLineSpacing(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setMaximumLineHeight:")
     public native void setMaximumLineHeight(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setMinimumLineHeight:")
     public native void setMinimumLineHeight(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setParagraphSpacing:")
     public native void setParagraphSpacing(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setParagraphSpacingBefore:")
     public native void setParagraphSpacingBefore(@NFloat double value);
@@ -346,6 +418,9 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("setTabStops:")
     public native void setTabStops(NSArray<? extends NSTextTab> value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setTailIndent:")
     public native void setTailIndent(@NFloat double value);
@@ -363,6 +438,9 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("tabStops")
     public native NSArray<? extends NSTextTab> tabStops();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("tailIndent")
     @NFloat

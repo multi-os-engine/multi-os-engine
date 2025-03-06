@@ -64,6 +64,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
      * intersecting or following the current edited range, the method returns the range adjusted for the modification in
      * the editing session. Returns nil, when no adjustment necessary. forEditingTextSelection indicates if textRange is
      * for the text selection associated with the edit session.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -83,6 +85,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
 
     /**
      * The document contents. KVO-compliant
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -91,6 +95,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
 
     /**
      * Returns a new attributed string for textElement. Returns if textElement cannot be mapped to NSAttributedString.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -126,6 +132,9 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -174,6 +183,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     /**
      * Returns a new location from location with offset. The offset value could be positive or negative indicating the
      * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -190,6 +201,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     /**
      * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound
      * when the offset cannot be represented in an integer value (i.e. locations are not in the same document).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("offsetFromLocation:toLocation:")
@@ -218,15 +231,23 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
 
     /**
      * The document contents. KVO-compliant
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAttributedString:")
     public native void setAttributedString(@Nullable NSAttributedString value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -264,6 +285,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     /**
      * Returns NSTextElement corresponding to attributedString. Returns nil when attributedString contains attributes
      * not mappable to NSTextElement.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

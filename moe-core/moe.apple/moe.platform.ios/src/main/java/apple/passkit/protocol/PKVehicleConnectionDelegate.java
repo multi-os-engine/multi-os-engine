@@ -18,12 +18,17 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKVehicleConnectionDelegate")
 public interface PKVehicleConnectionDelegate {
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @Selector("sessionDidChangeConnectionState:")
     void sessionDidChangeConnectionState(@NInt long newState);
 
     /**
      * Called when the session receives the message from the destination.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("sessionDidReceiveData:")

@@ -47,6 +47,9 @@ public class CKSyncEngineEvent extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("accountChangeEvent")
     @NotNull
@@ -95,26 +98,41 @@ public class CKSyncEngineEvent extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("didFetchChangesEvent")
     @NotNull
     public native CKSyncEngineDidFetchChangesEvent didFetchChangesEvent();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("didFetchRecordZoneChangesEvent")
     @NotNull
     public native CKSyncEngineDidFetchRecordZoneChangesEvent didFetchRecordZoneChangesEvent();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("didSendChangesEvent")
     @NotNull
     public native CKSyncEngineDidSendChangesEvent didSendChangesEvent();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("fetchedDatabaseChangesEvent")
     @NotNull
     public native CKSyncEngineFetchedDatabaseChangesEvent fetchedDatabaseChangesEvent();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("fetchedRecordZoneChangesEvent")
     @NotNull
@@ -164,11 +182,17 @@ public class CKSyncEngineEvent extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("sentDatabaseChangesEvent")
     @NotNull
     public native CKSyncEngineSentDatabaseChangesEvent sentDatabaseChangesEvent();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("sentRecordZoneChangesEvent")
     @NotNull
@@ -181,6 +205,8 @@ public class CKSyncEngineEvent extends NSObject {
     /**
      * Helpers to cast an event to the proper subclass.
      * These will crash if used for the wrong event type.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("stateUpdateEvent")
@@ -191,6 +217,9 @@ public class CKSyncEngineEvent extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("type")
     @NInt
@@ -206,16 +235,25 @@ public class CKSyncEngineEvent extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("willFetchChangesEvent")
     @NotNull
     public native CKSyncEngineWillFetchChangesEvent willFetchChangesEvent();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("willFetchRecordZoneChangesEvent")
     @NotNull
     public native CKSyncEngineWillFetchRecordZoneChangesEvent willFetchRecordZoneChangesEvent();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("willSendChangesEvent")
     @NotNull

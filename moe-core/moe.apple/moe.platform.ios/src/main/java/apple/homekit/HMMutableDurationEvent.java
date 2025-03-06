@@ -92,6 +92,8 @@ public class HMMutableDurationEvent extends HMDurationEvent {
 
     /**
      * duration The duration of time in seconds.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("duration")
@@ -151,6 +153,8 @@ public class HMMutableDurationEvent extends HMDurationEvent {
 
     /**
      * duration The duration of time in seconds.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDuration:")

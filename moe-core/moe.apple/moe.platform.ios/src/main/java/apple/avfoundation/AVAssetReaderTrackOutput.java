@@ -125,6 +125,8 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * kCVPixelFormatType_64ARGB. To test whether your source contains an alpha channel check that the track's format
      * description has kCMFormatDescriptionExtension_Depth and that its value is 32.
      * 
+     * API-Since: 4.1
+     * 
      * @param track
      *                       The AVAssetTrack from which the resulting AVAssetReaderTrackOutput should read sample
      *                       buffers.
@@ -304,6 +306,8 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * - output settings are not compatible with track's media type
      * - track output settings would cause the output to yield compressed samples
      * 
+     * API-Since: 4.1
+     * 
      * @param track
      *                       The AVAssetTrack from which the resulting AVAssetReaderTrackOutput should read sample
      *                       buffers.
@@ -328,6 +332,8 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * The value of this property is an NSDictionary that contains values for keys as specified by either
      * AVAudioSettings.h for audio tracks or AVVideoSettings.h for video tracks. A value of nil indicates that the
      * receiver will vend samples in their original format as stored in the target track.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -362,6 +368,8 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * The track from which the receiver reads sample buffers.
      * 
      * The value of this property is an AVAssetTrack owned by the target AVAssetReader's asset.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated

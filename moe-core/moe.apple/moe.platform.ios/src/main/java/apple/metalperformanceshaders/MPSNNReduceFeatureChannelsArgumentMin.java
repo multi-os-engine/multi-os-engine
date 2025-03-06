@@ -116,6 +116,8 @@ public class MPSNNReduceFeatureChannelsArgumentMin extends MPSNNReduceUnary {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSNNReduceFeatureChannelsArgumentMin object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -127,6 +129,8 @@ public class MPSNNReduceFeatureChannelsArgumentMin extends MPSNNReduceUnary {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceFeatureChannelsArgumentMin object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:")

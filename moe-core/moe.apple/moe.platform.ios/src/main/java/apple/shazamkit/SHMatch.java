@@ -144,6 +144,8 @@ public class SHMatch extends NSObject implements NSSecureCoding {
      * One Signature may match multiple @c SHMediaItem, especially in the case of audio that uses samples. The array
      * of @c SHMatchedMediaItem
      * is ordered by the quality of the match. Use the first @c SHMatchedMediaItem if you intend to only show one result
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -158,6 +160,8 @@ public class SHMatch extends NSObject implements NSSecureCoding {
     /**
      * The @c SHSignature used to query the @c SHCatalog
      * [@note] This Signature is the query Signature, not the reference Signature contained in the @c SHCatalog
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

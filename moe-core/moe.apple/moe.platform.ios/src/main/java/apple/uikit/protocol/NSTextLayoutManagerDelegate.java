@@ -29,6 +29,8 @@ public interface NSTextLayoutManagerDelegate {
      * Returns a dictionary of rendering attributes for rendering NSLinkAttributeName. Just as other rendering
      * attributes, specifying NSNull removes the attribute from the final attributes used for rendering. It has priority
      * over the general rendering attributes.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -45,6 +47,8 @@ public interface NSTextLayoutManagerDelegate {
      * Layout behavior
      * Invoked while determining the soft line break point. When hyphenating=NO, NSTextLayoutManager tries to find the
      * next line break opportunity before location. When hyphenating=YES, it is an auto-hyphenation point.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -59,6 +63,8 @@ public interface NSTextLayoutManagerDelegate {
      * NSTextLayoutFragment management
      * Returns NSTextLayoutFragment for location in textElement. NSTextLayoutManagerDelegate could provide an
      * NSTextLayoutFragment specialized for an NSTextElement subclass targeted for the rendering surface.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

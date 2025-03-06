@@ -18,10 +18,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITraitOverrides")
 public interface UITraitOverrides extends UIMutableTraits {
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("containsTrait:")
     boolean containsTrait(@Mapped(ObjCObjectMapper.class) @NotNull UITraitDefinition trait);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("removeTrait:")
     void removeTrait(@Mapped(ObjCObjectMapper.class) @NotNull UITraitDefinition trait);

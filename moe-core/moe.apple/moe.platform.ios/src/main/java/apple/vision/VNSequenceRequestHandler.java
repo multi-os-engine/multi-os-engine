@@ -112,6 +112,8 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Creates a new object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("init")
@@ -154,6 +156,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error    On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                 error object containing the error information. You may specify NULL for this parameter if you do
      *                 not want the error information.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onCGImage:error:")
@@ -172,6 +176,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onCGImage:orientation:error:")
@@ -189,6 +195,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error    On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                 error object containing the error information. You may specify NULL for this parameter if you do
      *                 not want the error information.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onCIImage:error:")
@@ -207,6 +215,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onCIImage:orientation:error:")
@@ -223,6 +233,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:error:")
@@ -241,6 +253,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:orientation:error:")
@@ -258,6 +272,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error     On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                  error object containing the error information. You may specify NULL for this parameter if you do
      *                  not want the error information.
+     * 
+     *                  API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onImageData:error:")
@@ -276,6 +292,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onImageData:orientation:error:")
@@ -293,6 +311,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error    On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                 error object containing the error information. You may specify NULL for this parameter if you do
      *                 not want the error information.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onImageURL:error:")
@@ -311,6 +331,8 @@ public class VNSequenceRequestHandler extends NSObject {
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:onImageURL:orientation:error:")

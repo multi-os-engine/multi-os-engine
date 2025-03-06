@@ -90,11 +90,17 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("carats")
     public static native NSUnitMass carats();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("centigrams")
@@ -114,6 +120,9 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("decigrams")
@@ -123,6 +132,9 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("grams")
@@ -157,27 +169,41 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - kilograms
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("kilograms")
     public static native NSUnitMass kilograms();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("metricTons")
     public static native NSUnitMass metricTons();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("micrograms")
     public static native NSUnitMass micrograms();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milligrams")
     public static native NSUnitMass milligrams();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("nanograms")
@@ -188,21 +214,33 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitMass new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("ounces")
     public static native NSUnitMass ounces();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("ouncesTroy")
     public static native NSUnitMass ouncesTroy();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("picograms")
     public static native NSUnitMass picograms();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("poundsMass")
@@ -220,16 +258,25 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("shortTons")
     public static native NSUnitMass shortTons();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("slugs")
     public static native NSUnitMass slugs();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("stones")

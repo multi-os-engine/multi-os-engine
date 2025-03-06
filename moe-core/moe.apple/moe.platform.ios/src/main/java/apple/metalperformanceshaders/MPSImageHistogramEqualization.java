@@ -214,6 +214,8 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
      * @param histogramOffset A byte offset into the histogram MTLBuffer where the histogram starts. Must conform to
      *                        alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset
      *                        parameter.
+     * 
+     *                        API-Since: 9.0
      */
     @Generated
     @Selector("encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:")
@@ -236,6 +238,8 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
      * @param device        The device the filter will run on
      * @param histogramInfo Pointer to the MPSHistogramInfo struct
      * @return A valid MPSImageHistogramEqualization object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:histogramInfo:")

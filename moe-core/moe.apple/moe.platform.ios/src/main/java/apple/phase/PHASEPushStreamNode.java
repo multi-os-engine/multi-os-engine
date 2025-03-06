@@ -39,7 +39,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("PHASE")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHASEPushStreamNode extends NSObject {
+public class PHASEPushStreamNode extends PHASEStreamNode {
     static {
         NatJ.register();
     }
@@ -100,6 +100,8 @@ public class PHASEPushStreamNode extends NSObject {
      * [@property] format
      * 
      * The readonly property that returns the AVAudioFormat that this stream was initialized with.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -110,6 +112,8 @@ public class PHASEPushStreamNode extends NSObject {
      * [@property] gainMetaParameter
      * 
      * If specified during construction, the metaparameter for controlling gain will be available here
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -150,7 +154,9 @@ public class PHASEPushStreamNode extends NSObject {
     /**
      * [@property] mixer
      * 
-     * The readonly property that returns the PHASEMixer this sampler was created with and assigned to.
+     * The readonly property that returns the PHASEMixer this stream was created with and assigned to.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -166,6 +172,8 @@ public class PHASEPushStreamNode extends NSObject {
      * [@property] rateMetaParameter
      * 
      * If specified during construction, the metaparameter for controlling rate/pitch will be available here
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -188,6 +196,8 @@ public class PHASEPushStreamNode extends NSObject {
      * Schedules the buffer to be played following any previously scheduled buffer(s).
      * The buffer format must be same as format specified during player instantiation
      * 
+     * API-Since: 15.0
+     * 
      * @param buffer
      *               The buffer with PCM audio data.
      */
@@ -205,9 +215,11 @@ public class PHASEPushStreamNode extends NSObject {
      * @param buffer
      *                The buffer with PCM audio data.
      * @param when
-     *                The time at which to play the buffer. see the discussion of timestamps, above.
+     *                The time at which to play the buffer.
      * @param options
      *                Options for looping, interrupting other buffers, etc.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:")
@@ -224,7 +236,7 @@ public class PHASEPushStreamNode extends NSObject {
      * @param buffer
      *                               The buffer with PCM audio data.
      * @param when
-     *                               The time at which to play the buffer. see the discussion of timestamps, above.
+     *                               The time at which to play the buffer.
      * @param options
      *                               Options for looping, interrupting other buffers, etc.
      * @param completionCallbackType
@@ -232,6 +244,8 @@ public class PHASEPushStreamNode extends NSObject {
      * @param completionHandler
      *                               The completionHandler to be called as per the callback type specified or when
      *                               the player is stopped, at which point the buffer can be recycled.
+     * 
+     *                               API-Since: 15.0
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:completionCallbackType:completionHandler:")
@@ -262,6 +276,8 @@ public class PHASEPushStreamNode extends NSObject {
      * @param completionHandler
      *                               The completionHandler to be called as per the specified completion callback type
      *                               or when the player is stopped, at which point the buffer can be recycled.
+     * 
+     *                               API-Since: 15.0
      */
     @Generated
     @Selector("scheduleBuffer:completionCallbackType:completionHandler:")

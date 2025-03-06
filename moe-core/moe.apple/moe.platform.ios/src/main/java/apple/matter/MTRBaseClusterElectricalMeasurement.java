@@ -36,12 +36,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * cluster..
  * 
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: ElectricalMeasurement is deprecated and will be removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
+public class MTRBaseClusterElectricalMeasurement extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -105,7 +108,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
      * specific attribute Id requested.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("getMeasurementProfileCommandWithParams:completion:")
     public native void getMeasurementProfileCommandWithParamsCompletion(
@@ -140,7 +146,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("getProfileInfoCommandWithCompletion:")
     public native void getProfileInfoCommandWithCompletion(
@@ -177,7 +186,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
      * A function which retrieves the power profiling information from the electrical measurement server.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("getProfileInfoCommandWithParams:completion:")
     public native void getProfileInfoCommandWithParamsCompletion(
@@ -235,7 +247,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
      * the completion will be called on the provided queue.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: ElectricalMeasurement is deprecated and will be removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:endpointID:queue:")
     public native MTRBaseClusterElectricalMeasurement initWithDeviceEndpointIDQueue(@NotNull MTRBaseDevice device,
@@ -291,7 +306,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcActivePowerOverloadWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcActivePowerOverloadWithClusterStateCacheEndpointQueueCompletion(
@@ -309,7 +327,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcActivePowerOverloadWithCompletion:")
     public native void readAttributeAcActivePowerOverloadWithCompletion(
@@ -364,7 +385,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcCurrentDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcCurrentDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -382,7 +406,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcCurrentDivisorWithCompletion:")
     public native void readAttributeAcCurrentDivisorWithCompletion(
@@ -436,7 +463,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcCurrentMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcCurrentMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -454,7 +484,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcCurrentMultiplierWithCompletion:")
     public native void readAttributeAcCurrentMultiplierWithCompletion(
@@ -509,7 +542,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcCurrentOverloadWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcCurrentOverloadWithClusterStateCacheEndpointQueueCompletion(
@@ -527,7 +563,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcCurrentOverloadWithCompletion:")
     public native void readAttributeAcCurrentOverloadWithCompletion(
@@ -582,7 +621,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcFrequencyDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -600,7 +642,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyDivisorWithCompletion:")
     public native void readAttributeAcFrequencyDivisorWithCompletion(
@@ -655,7 +700,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyMaxWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcFrequencyMaxWithClusterStateCacheEndpointQueueCompletion(
@@ -673,7 +721,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyMaxWithCompletion:")
     public native void readAttributeAcFrequencyMaxWithCompletion(
@@ -727,7 +778,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyMinWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcFrequencyMinWithClusterStateCacheEndpointQueueCompletion(
@@ -745,7 +799,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyMinWithCompletion:")
     public native void readAttributeAcFrequencyMinWithCompletion(
@@ -799,7 +856,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcFrequencyMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -817,7 +877,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyMultiplierWithCompletion:")
     public native void readAttributeAcFrequencyMultiplierWithCompletion(
@@ -872,7 +935,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcFrequencyWithClusterStateCacheEndpointQueueCompletion(
@@ -890,7 +956,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcFrequencyWithCompletion:")
     public native void readAttributeAcFrequencyWithCompletion(
@@ -944,7 +1013,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcOverloadAlarmsMaskWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcOverloadAlarmsMaskWithClusterStateCacheEndpointQueueCompletion(
@@ -962,7 +1034,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcOverloadAlarmsMaskWithCompletion:")
     public native void readAttributeAcOverloadAlarmsMaskWithCompletion(
@@ -1017,7 +1092,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcPowerDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcPowerDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -1035,7 +1113,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcPowerDivisorWithCompletion:")
     public native void readAttributeAcPowerDivisorWithCompletion(
@@ -1089,7 +1170,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcPowerMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcPowerMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -1107,7 +1191,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcPowerMultiplierWithCompletion:")
     public native void readAttributeAcPowerMultiplierWithCompletion(
@@ -1162,7 +1249,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcReactivePowerOverloadWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcReactivePowerOverloadWithClusterStateCacheEndpointQueueCompletion(
@@ -1180,7 +1270,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcReactivePowerOverloadWithCompletion:")
     public native void readAttributeAcReactivePowerOverloadWithCompletion(
@@ -1235,7 +1328,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcVoltageDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcVoltageDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -1253,7 +1349,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcVoltageDivisorWithCompletion:")
     public native void readAttributeAcVoltageDivisorWithCompletion(
@@ -1307,7 +1406,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcVoltageMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcVoltageMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -1325,7 +1427,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcVoltageMultiplierWithCompletion:")
     public native void readAttributeAcVoltageMultiplierWithCompletion(
@@ -1380,7 +1485,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcVoltageOverloadWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcVoltageOverloadWithClusterStateCacheEndpointQueueCompletion(
@@ -1398,7 +1506,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcVoltageOverloadWithCompletion:")
     public native void readAttributeAcVoltageOverloadWithCompletion(
@@ -1453,7 +1564,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcceptedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -1471,7 +1585,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithCompletion:")
     public native void readAttributeAcceptedCommandListWithCompletion(
@@ -1526,7 +1643,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActiveCurrentPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActiveCurrentPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -1544,7 +1664,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActiveCurrentPhaseBWithCompletion:")
     public native void readAttributeActiveCurrentPhaseBWithCompletion(
@@ -1599,7 +1722,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActiveCurrentPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActiveCurrentPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -1617,7 +1743,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActiveCurrentPhaseCWithCompletion:")
     public native void readAttributeActiveCurrentPhaseCWithCompletion(
@@ -1672,7 +1801,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMaxPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerMaxPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -1690,7 +1822,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMaxPhaseBWithCompletion:")
     public native void readAttributeActivePowerMaxPhaseBWithCompletion(
@@ -1745,7 +1880,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMaxPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerMaxPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -1763,7 +1901,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMaxPhaseCWithCompletion:")
     public native void readAttributeActivePowerMaxPhaseCWithCompletion(
@@ -1818,7 +1959,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMaxWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerMaxWithClusterStateCacheEndpointQueueCompletion(
@@ -1836,7 +1980,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMaxWithCompletion:")
     public native void readAttributeActivePowerMaxWithCompletion(
@@ -1890,7 +2037,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMinPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerMinPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -1908,7 +2058,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMinPhaseBWithCompletion:")
     public native void readAttributeActivePowerMinPhaseBWithCompletion(
@@ -1963,7 +2116,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMinPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerMinPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -1981,7 +2137,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMinPhaseCWithCompletion:")
     public native void readAttributeActivePowerMinPhaseCWithCompletion(
@@ -2036,7 +2195,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMinWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerMinWithClusterStateCacheEndpointQueueCompletion(
@@ -2054,7 +2216,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerMinWithCompletion:")
     public native void readAttributeActivePowerMinWithCompletion(
@@ -2108,7 +2273,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -2126,7 +2294,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerPhaseBWithCompletion:")
     public native void readAttributeActivePowerPhaseBWithCompletion(
@@ -2181,7 +2352,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -2199,7 +2373,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerPhaseCWithCompletion:")
     public native void readAttributeActivePowerPhaseCWithCompletion(
@@ -2254,7 +2431,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActivePowerWithClusterStateCacheEndpointQueueCompletion(
@@ -2272,7 +2452,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActivePowerWithCompletion:")
     public native void readAttributeActivePowerWithCompletion(
@@ -2326,7 +2509,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApparentPowerPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeApparentPowerPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -2344,7 +2530,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApparentPowerPhaseBWithCompletion:")
     public native void readAttributeApparentPowerPhaseBWithCompletion(
@@ -2399,7 +2588,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApparentPowerPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeApparentPowerPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -2417,7 +2609,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApparentPowerPhaseCWithCompletion:")
     public native void readAttributeApparentPowerPhaseCWithCompletion(
@@ -2472,7 +2667,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApparentPowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeApparentPowerWithClusterStateCacheEndpointQueueCompletion(
@@ -2490,7 +2688,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApparentPowerWithCompletion:")
     public native void readAttributeApparentPowerWithCompletion(
@@ -2544,7 +2745,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAttributeListWithClusterStateCacheEndpointQueueCompletion(
@@ -2562,7 +2766,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithCompletion:")
     public native void readAttributeAttributeListWithCompletion(
@@ -2617,7 +2824,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsOverVoltageCounterPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsOverVoltageCounterPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -2635,7 +2845,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsOverVoltageCounterPhaseBWithCompletion:")
     public native void readAttributeAverageRmsOverVoltageCounterPhaseBWithCompletion(
@@ -2692,7 +2905,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsOverVoltageCounterPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsOverVoltageCounterPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -2710,7 +2926,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsOverVoltageCounterPhaseCWithCompletion:")
     public native void readAttributeAverageRmsOverVoltageCounterPhaseCWithCompletion(
@@ -2766,7 +2985,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsOverVoltageWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsOverVoltageWithClusterStateCacheEndpointQueueCompletion(
@@ -2784,7 +3006,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsOverVoltageWithCompletion:")
     public native void readAttributeAverageRmsOverVoltageWithCompletion(
@@ -2840,7 +3065,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageCounterPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsUnderVoltageCounterPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -2858,7 +3086,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageCounterPhaseBWithCompletion:")
     public native void readAttributeAverageRmsUnderVoltageCounterPhaseBWithCompletion(
@@ -2915,7 +3146,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageCounterPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsUnderVoltageCounterPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -2933,7 +3167,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageCounterPhaseCWithCompletion:")
     public native void readAttributeAverageRmsUnderVoltageCounterPhaseCWithCompletion(
@@ -2990,7 +3227,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageCounterWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsUnderVoltageCounterWithClusterStateCacheEndpointQueueCompletion(
@@ -3008,7 +3248,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageCounterWithCompletion:")
     public native void readAttributeAverageRmsUnderVoltageCounterWithCompletion(
@@ -3064,7 +3307,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsUnderVoltageWithClusterStateCacheEndpointQueueCompletion(
@@ -3082,7 +3328,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsUnderVoltageWithCompletion:")
     public native void readAttributeAverageRmsUnderVoltageWithCompletion(
@@ -3138,7 +3387,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsVoltageMeasurementPeriodPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsVoltageMeasurementPeriodPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -3156,7 +3408,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsVoltageMeasurementPeriodPhaseBWithCompletion:")
     public native void readAttributeAverageRmsVoltageMeasurementPeriodPhaseBWithCompletion(
@@ -3213,7 +3468,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsVoltageMeasurementPeriodPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsVoltageMeasurementPeriodPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -3231,7 +3489,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsVoltageMeasurementPeriodPhaseCWithCompletion:")
     public native void readAttributeAverageRmsVoltageMeasurementPeriodPhaseCWithCompletion(
@@ -3288,7 +3549,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsVoltageMeasurementPeriodWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAverageRmsVoltageMeasurementPeriodWithClusterStateCacheEndpointQueueCompletion(
@@ -3306,7 +3570,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAverageRmsVoltageMeasurementPeriodWithCompletion:")
     public native void readAttributeAverageRmsVoltageMeasurementPeriodWithCompletion(
@@ -3362,7 +3629,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeClusterRevisionWithClusterStateCacheEndpointQueueCompletion(
@@ -3380,7 +3650,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithCompletion:")
     public native void readAttributeClusterRevisionWithCompletion(
@@ -3434,7 +3707,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeCurrentOverloadWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeCurrentOverloadWithClusterStateCacheEndpointQueueCompletion(
@@ -3452,7 +3728,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeCurrentOverloadWithCompletion:")
     public native void readAttributeCurrentOverloadWithCompletion(
@@ -3506,7 +3785,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcCurrentDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -3524,7 +3806,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentDivisorWithCompletion:")
     public native void readAttributeDcCurrentDivisorWithCompletion(
@@ -3578,7 +3863,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentMaxWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcCurrentMaxWithClusterStateCacheEndpointQueueCompletion(
@@ -3596,7 +3884,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentMaxWithCompletion:")
     public native void readAttributeDcCurrentMaxWithCompletion(
@@ -3650,7 +3941,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentMinWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcCurrentMinWithClusterStateCacheEndpointQueueCompletion(
@@ -3668,7 +3962,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentMinWithCompletion:")
     public native void readAttributeDcCurrentMinWithCompletion(
@@ -3722,7 +4019,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcCurrentMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -3740,7 +4040,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentMultiplierWithCompletion:")
     public native void readAttributeDcCurrentMultiplierWithCompletion(
@@ -3795,7 +4098,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -3813,7 +4119,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcCurrentWithCompletion:")
     public native void readAttributeDcCurrentWithCompletion(
@@ -3867,7 +4176,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcPowerDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -3885,7 +4197,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerDivisorWithCompletion:")
     public native void readAttributeDcPowerDivisorWithCompletion(
@@ -3939,7 +4254,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerMaxWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcPowerMaxWithClusterStateCacheEndpointQueueCompletion(
@@ -3957,7 +4275,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerMaxWithCompletion:")
     public native void readAttributeDcPowerMaxWithCompletion(
@@ -4011,7 +4332,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerMinWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcPowerMinWithClusterStateCacheEndpointQueueCompletion(
@@ -4029,7 +4353,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerMinWithCompletion:")
     public native void readAttributeDcPowerMinWithCompletion(
@@ -4083,7 +4410,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcPowerMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -4101,7 +4431,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerMultiplierWithCompletion:")
     public native void readAttributeDcPowerMultiplierWithCompletion(
@@ -4156,7 +4489,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcPowerWithClusterStateCacheEndpointQueueCompletion(
@@ -4174,7 +4510,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcPowerWithCompletion:")
     public native void readAttributeDcPowerWithCompletion(
@@ -4228,7 +4567,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcVoltageDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -4246,7 +4588,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageDivisorWithCompletion:")
     public native void readAttributeDcVoltageDivisorWithCompletion(
@@ -4300,7 +4645,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageMaxWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcVoltageMaxWithClusterStateCacheEndpointQueueCompletion(
@@ -4318,7 +4666,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageMaxWithCompletion:")
     public native void readAttributeDcVoltageMaxWithCompletion(
@@ -4372,7 +4723,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageMinWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcVoltageMinWithClusterStateCacheEndpointQueueCompletion(
@@ -4390,7 +4744,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageMinWithCompletion:")
     public native void readAttributeDcVoltageMinWithCompletion(
@@ -4444,7 +4801,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcVoltageMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -4462,7 +4822,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageMultiplierWithCompletion:")
     public native void readAttributeDcVoltageMultiplierWithCompletion(
@@ -4517,7 +4880,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDcVoltageWithClusterStateCacheEndpointQueueCompletion(
@@ -4535,7 +4901,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDcVoltageWithCompletion:")
     public native void readAttributeDcVoltageWithCompletion(
@@ -4589,7 +4958,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeFeatureMapWithClusterStateCacheEndpointQueueCompletion(
@@ -4607,7 +4979,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithCompletion:")
     public native void readAttributeFeatureMapWithCompletion(
@@ -4661,7 +5036,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeGeneratedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -4679,7 +5057,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithCompletion:")
     public native void readAttributeGeneratedCommandListWithCompletion(
@@ -4735,7 +5116,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeHarmonicCurrentMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeHarmonicCurrentMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -4753,7 +5137,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeHarmonicCurrentMultiplierWithCompletion:")
     public native void readAttributeHarmonicCurrentMultiplierWithCompletion(
@@ -4810,7 +5197,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousActiveCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeInstantaneousActiveCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -4828,7 +5218,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousActiveCurrentWithCompletion:")
     public native void readAttributeInstantaneousActiveCurrentWithCompletion(
@@ -4884,7 +5277,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousLineCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeInstantaneousLineCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -4902,7 +5298,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousLineCurrentWithCompletion:")
     public native void readAttributeInstantaneousLineCurrentWithCompletion(
@@ -4958,7 +5357,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousPowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeInstantaneousPowerWithClusterStateCacheEndpointQueueCompletion(
@@ -4976,7 +5378,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousPowerWithCompletion:")
     public native void readAttributeInstantaneousPowerWithCompletion(
@@ -5032,7 +5437,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousReactiveCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeInstantaneousReactiveCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5050,7 +5458,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousReactiveCurrentWithCompletion:")
     public native void readAttributeInstantaneousReactiveCurrentWithCompletion(
@@ -5106,7 +5517,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousVoltageWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeInstantaneousVoltageWithClusterStateCacheEndpointQueueCompletion(
@@ -5124,7 +5538,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInstantaneousVoltageWithCompletion:")
     public native void readAttributeInstantaneousVoltageWithCompletion(
@@ -5179,7 +5596,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeLineCurrentPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeLineCurrentPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -5197,7 +5617,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeLineCurrentPhaseBWithCompletion:")
     public native void readAttributeLineCurrentPhaseBWithCompletion(
@@ -5252,7 +5675,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeLineCurrentPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeLineCurrentPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -5270,7 +5696,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeLineCurrentPhaseCWithCompletion:")
     public native void readAttributeLineCurrentPhaseCWithCompletion(
@@ -5326,7 +5755,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured11thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasured11thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5344,7 +5776,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured11thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasured11thHarmonicCurrentWithCompletion(
@@ -5401,7 +5836,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured1stHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasured1stHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5419,7 +5857,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured1stHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasured1stHarmonicCurrentWithCompletion(
@@ -5476,7 +5917,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured3rdHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasured3rdHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5494,7 +5938,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured3rdHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasured3rdHarmonicCurrentWithCompletion(
@@ -5551,7 +5998,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured5thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasured5thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5569,7 +6019,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured5thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasured5thHarmonicCurrentWithCompletion(
@@ -5626,7 +6079,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured7thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasured7thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5644,7 +6100,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured7thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasured7thHarmonicCurrentWithCompletion(
@@ -5701,7 +6160,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured9thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasured9thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5719,7 +6181,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasured9thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasured9thHarmonicCurrentWithCompletion(
@@ -5776,7 +6241,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase11thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasuredPhase11thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5794,7 +6262,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase11thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasuredPhase11thHarmonicCurrentWithCompletion(
@@ -5851,7 +6322,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase1stHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasuredPhase1stHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5869,7 +6343,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase1stHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasuredPhase1stHarmonicCurrentWithCompletion(
@@ -5926,7 +6403,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase3rdHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasuredPhase3rdHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -5944,7 +6424,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase3rdHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasuredPhase3rdHarmonicCurrentWithCompletion(
@@ -6001,7 +6484,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase5thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasuredPhase5thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -6019,7 +6505,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase5thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasuredPhase5thHarmonicCurrentWithCompletion(
@@ -6076,7 +6565,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase7thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasuredPhase7thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -6094,7 +6586,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase7thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasuredPhase7thHarmonicCurrentWithCompletion(
@@ -6151,7 +6646,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase9thHarmonicCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasuredPhase9thHarmonicCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -6169,7 +6667,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasuredPhase9thHarmonicCurrentWithCompletion:")
     public native void readAttributeMeasuredPhase9thHarmonicCurrentWithCompletion(
@@ -6225,7 +6726,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasurementTypeWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeMeasurementTypeWithClusterStateCacheEndpointQueueCompletion(
@@ -6243,7 +6747,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeMeasurementTypeWithCompletion:")
     public native void readAttributeMeasurementTypeWithCompletion(
@@ -6297,7 +6804,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeNeutralCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeNeutralCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -6315,7 +6825,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeNeutralCurrentWithCompletion:")
     public native void readAttributeNeutralCurrentWithCompletion(
@@ -6369,7 +6882,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeOverloadAlarmsMaskWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeOverloadAlarmsMaskWithClusterStateCacheEndpointQueueCompletion(
@@ -6387,7 +6903,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeOverloadAlarmsMaskWithCompletion:")
     public native void readAttributeOverloadAlarmsMaskWithCompletion(
@@ -6443,7 +6962,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePhaseHarmonicCurrentMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePhaseHarmonicCurrentMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -6461,7 +6983,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePhaseHarmonicCurrentMultiplierWithCompletion:")
     public native void readAttributePhaseHarmonicCurrentMultiplierWithCompletion(
@@ -6517,7 +7042,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerDivisorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePowerDivisorWithClusterStateCacheEndpointQueueCompletion(
@@ -6535,7 +7063,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerDivisorWithCompletion:")
     public native void readAttributePowerDivisorWithCompletion(
@@ -6589,7 +7120,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerFactorPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePowerFactorPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -6607,7 +7141,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerFactorPhaseBWithCompletion:")
     public native void readAttributePowerFactorPhaseBWithCompletion(
@@ -6662,7 +7199,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerFactorPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePowerFactorPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -6680,7 +7220,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerFactorPhaseCWithCompletion:")
     public native void readAttributePowerFactorPhaseCWithCompletion(
@@ -6735,7 +7278,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerFactorWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePowerFactorWithClusterStateCacheEndpointQueueCompletion(
@@ -6753,7 +7299,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerFactorWithCompletion:")
     public native void readAttributePowerFactorWithCompletion(
@@ -6807,7 +7356,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerMultiplierWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePowerMultiplierWithClusterStateCacheEndpointQueueCompletion(
@@ -6825,7 +7377,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePowerMultiplierWithCompletion:")
     public native void readAttributePowerMultiplierWithCompletion(
@@ -6879,7 +7434,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactiveCurrentPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeReactiveCurrentPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -6897,7 +7455,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactiveCurrentPhaseBWithCompletion:")
     public native void readAttributeReactiveCurrentPhaseBWithCompletion(
@@ -6952,7 +7513,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactiveCurrentPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeReactiveCurrentPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -6970,7 +7534,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactiveCurrentPhaseCWithCompletion:")
     public native void readAttributeReactiveCurrentPhaseCWithCompletion(
@@ -7025,7 +7592,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactivePowerPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeReactivePowerPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -7043,7 +7613,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactivePowerPhaseBWithCompletion:")
     public native void readAttributeReactivePowerPhaseBWithCompletion(
@@ -7098,7 +7671,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactivePowerPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeReactivePowerPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -7116,7 +7692,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactivePowerPhaseCWithCompletion:")
     public native void readAttributeReactivePowerPhaseCWithCompletion(
@@ -7171,7 +7750,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactivePowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeReactivePowerWithClusterStateCacheEndpointQueueCompletion(
@@ -7189,7 +7771,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReactivePowerWithCompletion:")
     public native void readAttributeReactivePowerWithCompletion(
@@ -7243,7 +7828,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMaxPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentMaxPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -7261,7 +7849,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMaxPhaseBWithCompletion:")
     public native void readAttributeRmsCurrentMaxPhaseBWithCompletion(
@@ -7316,7 +7907,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMaxPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentMaxPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -7334,7 +7928,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMaxPhaseCWithCompletion:")
     public native void readAttributeRmsCurrentMaxPhaseCWithCompletion(
@@ -7389,7 +7986,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMaxWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentMaxWithClusterStateCacheEndpointQueueCompletion(
@@ -7407,7 +8007,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMaxWithCompletion:")
     public native void readAttributeRmsCurrentMaxWithCompletion(
@@ -7461,7 +8064,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMinPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentMinPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -7479,7 +8085,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMinPhaseBWithCompletion:")
     public native void readAttributeRmsCurrentMinPhaseBWithCompletion(
@@ -7534,7 +8143,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMinPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentMinPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -7552,7 +8164,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMinPhaseCWithCompletion:")
     public native void readAttributeRmsCurrentMinPhaseCWithCompletion(
@@ -7607,7 +8222,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMinWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentMinWithClusterStateCacheEndpointQueueCompletion(
@@ -7625,7 +8243,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentMinWithCompletion:")
     public native void readAttributeRmsCurrentMinWithCompletion(
@@ -7679,7 +8300,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -7697,7 +8321,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentPhaseBWithCompletion:")
     public native void readAttributeRmsCurrentPhaseBWithCompletion(
@@ -7751,7 +8378,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -7769,7 +8399,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentPhaseCWithCompletion:")
     public native void readAttributeRmsCurrentPhaseCWithCompletion(
@@ -7823,7 +8456,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsCurrentWithClusterStateCacheEndpointQueueCompletion(
@@ -7841,7 +8477,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsCurrentWithCompletion:")
     public native void readAttributeRmsCurrentWithCompletion(
@@ -7896,7 +8535,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltagePeriodPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeOverVoltagePeriodPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -7914,7 +8556,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltagePeriodPhaseBWithCompletion:")
     public native void readAttributeRmsExtremeOverVoltagePeriodPhaseBWithCompletion(
@@ -7971,7 +8616,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltagePeriodPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeOverVoltagePeriodPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -7989,7 +8637,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltagePeriodPhaseCWithCompletion:")
     public native void readAttributeRmsExtremeOverVoltagePeriodPhaseCWithCompletion(
@@ -8046,7 +8697,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltagePeriodWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeOverVoltagePeriodWithClusterStateCacheEndpointQueueCompletion(
@@ -8064,7 +8718,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltagePeriodWithCompletion:")
     public native void readAttributeRmsExtremeOverVoltagePeriodWithCompletion(
@@ -8120,7 +8777,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltageWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeOverVoltageWithClusterStateCacheEndpointQueueCompletion(
@@ -8138,7 +8798,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeOverVoltageWithCompletion:")
     public native void readAttributeRmsExtremeOverVoltageWithCompletion(
@@ -8194,7 +8857,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltagePeriodPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeUnderVoltagePeriodPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -8212,7 +8878,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltagePeriodPhaseBWithCompletion:")
     public native void readAttributeRmsExtremeUnderVoltagePeriodPhaseBWithCompletion(
@@ -8269,7 +8938,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltagePeriodPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeUnderVoltagePeriodPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -8287,7 +8959,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltagePeriodPhaseCWithCompletion:")
     public native void readAttributeRmsExtremeUnderVoltagePeriodPhaseCWithCompletion(
@@ -8344,7 +9019,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltagePeriodWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeUnderVoltagePeriodWithClusterStateCacheEndpointQueueCompletion(
@@ -8362,7 +9040,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltagePeriodWithCompletion:")
     public native void readAttributeRmsExtremeUnderVoltagePeriodWithCompletion(
@@ -8418,7 +9099,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltageWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsExtremeUnderVoltageWithClusterStateCacheEndpointQueueCompletion(
@@ -8436,7 +9120,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsExtremeUnderVoltageWithCompletion:")
     public native void readAttributeRmsExtremeUnderVoltageWithCompletion(
@@ -8491,7 +9178,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMaxPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageMaxPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -8509,7 +9199,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMaxPhaseBWithCompletion:")
     public native void readAttributeRmsVoltageMaxPhaseBWithCompletion(
@@ -8564,7 +9257,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMaxPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageMaxPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -8582,7 +9278,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMaxPhaseCWithCompletion:")
     public native void readAttributeRmsVoltageMaxPhaseCWithCompletion(
@@ -8637,7 +9336,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMaxWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageMaxWithClusterStateCacheEndpointQueueCompletion(
@@ -8655,7 +9357,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMaxWithCompletion:")
     public native void readAttributeRmsVoltageMaxWithCompletion(
@@ -8709,7 +9414,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMinPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageMinPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -8727,7 +9435,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMinPhaseBWithCompletion:")
     public native void readAttributeRmsVoltageMinPhaseBWithCompletion(
@@ -8782,7 +9493,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMinPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageMinPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -8800,7 +9514,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMinPhaseCWithCompletion:")
     public native void readAttributeRmsVoltageMinPhaseCWithCompletion(
@@ -8855,7 +9572,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMinWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageMinWithClusterStateCacheEndpointQueueCompletion(
@@ -8873,7 +9593,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageMinWithCompletion:")
     public native void readAttributeRmsVoltageMinWithCompletion(
@@ -8927,7 +9650,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltagePhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltagePhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -8945,7 +9671,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltagePhaseBWithCompletion:")
     public native void readAttributeRmsVoltagePhaseBWithCompletion(
@@ -8999,7 +9728,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltagePhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltagePhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -9017,7 +9749,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltagePhaseCWithCompletion:")
     public native void readAttributeRmsVoltagePhaseCWithCompletion(
@@ -9072,7 +9807,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagPeriodPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSagPeriodPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -9090,7 +9828,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagPeriodPhaseBWithCompletion:")
     public native void readAttributeRmsVoltageSagPeriodPhaseBWithCompletion(
@@ -9147,7 +9888,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagPeriodPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSagPeriodPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -9165,7 +9909,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagPeriodPhaseCWithCompletion:")
     public native void readAttributeRmsVoltageSagPeriodPhaseCWithCompletion(
@@ -9221,7 +9968,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagPeriodWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSagPeriodWithClusterStateCacheEndpointQueueCompletion(
@@ -9239,7 +9989,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagPeriodWithCompletion:")
     public native void readAttributeRmsVoltageSagPeriodWithCompletion(
@@ -9294,7 +10047,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSagWithClusterStateCacheEndpointQueueCompletion(
@@ -9312,7 +10068,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSagWithCompletion:")
     public native void readAttributeRmsVoltageSagWithCompletion(
@@ -9367,7 +10126,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellPeriodPhaseBWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSwellPeriodPhaseBWithClusterStateCacheEndpointQueueCompletion(
@@ -9385,7 +10147,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellPeriodPhaseBWithCompletion:")
     public native void readAttributeRmsVoltageSwellPeriodPhaseBWithCompletion(
@@ -9442,7 +10207,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellPeriodPhaseCWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSwellPeriodPhaseCWithClusterStateCacheEndpointQueueCompletion(
@@ -9460,7 +10228,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellPeriodPhaseCWithCompletion:")
     public native void readAttributeRmsVoltageSwellPeriodPhaseCWithCompletion(
@@ -9516,7 +10287,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellPeriodWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSwellPeriodWithClusterStateCacheEndpointQueueCompletion(
@@ -9534,7 +10308,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellPeriodWithCompletion:")
     public native void readAttributeRmsVoltageSwellPeriodWithCompletion(
@@ -9589,7 +10366,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageSwellWithClusterStateCacheEndpointQueueCompletion(
@@ -9607,7 +10387,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageSwellWithCompletion:")
     public native void readAttributeRmsVoltageSwellWithCompletion(
@@ -9661,7 +10444,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeRmsVoltageWithClusterStateCacheEndpointQueueCompletion(
@@ -9679,7 +10465,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeRmsVoltageWithCompletion:")
     public native void readAttributeRmsVoltageWithCompletion(
@@ -9733,7 +10522,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeTotalActivePowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeTotalActivePowerWithClusterStateCacheEndpointQueueCompletion(
@@ -9751,7 +10543,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeTotalActivePowerWithCompletion:")
     public native void readAttributeTotalActivePowerWithCompletion(
@@ -9805,7 +10600,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeTotalApparentPowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeTotalApparentPowerWithClusterStateCacheEndpointQueueCompletion(
@@ -9823,7 +10621,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeTotalApparentPowerWithCompletion:")
     public native void readAttributeTotalApparentPowerWithCompletion(
@@ -9878,7 +10679,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeTotalReactivePowerWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeTotalReactivePowerWithClusterStateCacheEndpointQueueCompletion(
@@ -9896,7 +10700,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeTotalReactivePowerWithCompletion:")
     public native void readAttributeTotalReactivePowerWithCompletion(
@@ -9951,7 +10758,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeVoltageOverloadWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeVoltageOverloadWithClusterStateCacheEndpointQueueCompletion(
@@ -9969,7 +10779,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeVoltageOverloadWithCompletion:")
     public native void readAttributeVoltageOverloadWithCompletion(
@@ -10042,7 +10855,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcActivePowerOverloadWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcActivePowerOverloadWithParamsSubscriptionEstablishedReportHandler(
@@ -10095,7 +10911,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcCurrentDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcCurrentDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -10148,7 +10967,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcCurrentMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcCurrentMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -10201,7 +11023,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcCurrentOverloadWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcCurrentOverloadWithParamsSubscriptionEstablishedReportHandler(
@@ -10254,7 +11079,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcFrequencyDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcFrequencyDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -10307,7 +11135,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcFrequencyMaxWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcFrequencyMaxWithParamsSubscriptionEstablishedReportHandler(
@@ -10360,7 +11191,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcFrequencyMinWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcFrequencyMinWithParamsSubscriptionEstablishedReportHandler(
@@ -10413,7 +11247,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcFrequencyMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcFrequencyMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -10466,7 +11303,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcFrequencyWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcFrequencyWithParamsSubscriptionEstablishedReportHandler(
@@ -10519,7 +11359,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcOverloadAlarmsMaskWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcOverloadAlarmsMaskWithParamsSubscriptionEstablishedReportHandler(
@@ -10572,7 +11415,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcPowerDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcPowerDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -10625,7 +11471,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcPowerMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcPowerMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -10678,7 +11527,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcReactivePowerOverloadWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcReactivePowerOverloadWithParamsSubscriptionEstablishedReportHandler(
@@ -10731,7 +11583,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcVoltageDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcVoltageDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -10784,7 +11639,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcVoltageMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcVoltageMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -10837,7 +11695,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcVoltageOverloadWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcVoltageOverloadWithParamsSubscriptionEstablishedReportHandler(
@@ -10890,7 +11751,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcceptedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcceptedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -10943,7 +11807,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActiveCurrentPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActiveCurrentPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -10996,7 +11863,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActiveCurrentPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActiveCurrentPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -11049,7 +11919,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerMaxPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerMaxPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -11102,7 +11975,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerMaxPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerMaxPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -11155,7 +12031,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerMaxWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerMaxWithParamsSubscriptionEstablishedReportHandler(
@@ -11208,7 +12087,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerMinPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerMinPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -11261,7 +12143,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerMinPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerMinPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -11314,7 +12199,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerMinWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerMinWithParamsSubscriptionEstablishedReportHandler(
@@ -11367,7 +12255,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -11420,7 +12311,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -11473,7 +12367,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActivePowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActivePowerWithParamsSubscriptionEstablishedReportHandler(
@@ -11526,7 +12423,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeApparentPowerPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeApparentPowerPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -11579,7 +12479,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeApparentPowerPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeApparentPowerPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -11632,7 +12535,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeApparentPowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeApparentPowerWithParamsSubscriptionEstablishedReportHandler(
@@ -11685,7 +12591,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAttributeListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAttributeListWithParamsSubscriptionEstablishedReportHandler(
@@ -11739,7 +12648,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsOverVoltageCounterPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsOverVoltageCounterPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -11793,7 +12705,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsOverVoltageCounterPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsOverVoltageCounterPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -11846,7 +12761,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsOverVoltageWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsOverVoltageWithParamsSubscriptionEstablishedReportHandler(
@@ -11900,7 +12818,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsUnderVoltageCounterPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsUnderVoltageCounterPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -11954,7 +12875,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsUnderVoltageCounterPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsUnderVoltageCounterPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -12007,7 +12931,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsUnderVoltageCounterWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsUnderVoltageCounterWithParamsSubscriptionEstablishedReportHandler(
@@ -12060,7 +12987,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsUnderVoltageWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsUnderVoltageWithParamsSubscriptionEstablishedReportHandler(
@@ -12114,7 +13044,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsVoltageMeasurementPeriodPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsVoltageMeasurementPeriodPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -12168,7 +13101,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsVoltageMeasurementPeriodPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsVoltageMeasurementPeriodPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -12222,7 +13158,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAverageRmsVoltageMeasurementPeriodWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAverageRmsVoltageMeasurementPeriodWithParamsSubscriptionEstablishedReportHandler(
@@ -12275,7 +13214,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeClusterRevisionWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeClusterRevisionWithParamsSubscriptionEstablishedReportHandler(
@@ -12328,7 +13270,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeCurrentOverloadWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeCurrentOverloadWithParamsSubscriptionEstablishedReportHandler(
@@ -12381,7 +13326,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcCurrentDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcCurrentDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -12434,7 +13382,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcCurrentMaxWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcCurrentMaxWithParamsSubscriptionEstablishedReportHandler(
@@ -12487,7 +13438,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcCurrentMinWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcCurrentMinWithParamsSubscriptionEstablishedReportHandler(
@@ -12540,7 +13494,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcCurrentMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcCurrentMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -12593,7 +13550,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -12646,7 +13606,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcPowerDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcPowerDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -12699,7 +13662,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcPowerMaxWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcPowerMaxWithParamsSubscriptionEstablishedReportHandler(
@@ -12752,7 +13718,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcPowerMinWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcPowerMinWithParamsSubscriptionEstablishedReportHandler(
@@ -12805,7 +13774,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcPowerMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcPowerMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -12858,7 +13830,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcPowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcPowerWithParamsSubscriptionEstablishedReportHandler(
@@ -12911,7 +13886,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcVoltageDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcVoltageDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -12964,7 +13942,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcVoltageMaxWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcVoltageMaxWithParamsSubscriptionEstablishedReportHandler(
@@ -13017,7 +13998,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcVoltageMinWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcVoltageMinWithParamsSubscriptionEstablishedReportHandler(
@@ -13070,7 +14054,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcVoltageMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcVoltageMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -13123,7 +14110,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDcVoltageWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDcVoltageWithParamsSubscriptionEstablishedReportHandler(
@@ -13176,7 +14166,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeFeatureMapWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeFeatureMapWithParamsSubscriptionEstablishedReportHandler(
@@ -13229,7 +14222,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeGeneratedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeGeneratedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -13282,7 +14278,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeHarmonicCurrentMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeHarmonicCurrentMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -13335,7 +14334,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeInstantaneousActiveCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeInstantaneousActiveCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13388,7 +14390,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeInstantaneousLineCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeInstantaneousLineCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13441,7 +14446,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeInstantaneousPowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeInstantaneousPowerWithParamsSubscriptionEstablishedReportHandler(
@@ -13494,7 +14502,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeInstantaneousReactiveCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeInstantaneousReactiveCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13547,7 +14558,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeInstantaneousVoltageWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeInstantaneousVoltageWithParamsSubscriptionEstablishedReportHandler(
@@ -13600,7 +14614,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeLineCurrentPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeLineCurrentPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -13653,7 +14670,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeLineCurrentPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeLineCurrentPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -13706,7 +14726,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasured11thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasured11thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13759,7 +14782,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasured1stHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasured1stHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13812,7 +14838,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasured3rdHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasured3rdHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13865,7 +14894,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasured5thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasured5thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13918,7 +14950,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasured7thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasured7thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -13971,7 +15006,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasured9thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasured9thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14025,7 +15063,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasuredPhase11thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasuredPhase11thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14079,7 +15120,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasuredPhase1stHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasuredPhase1stHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14133,7 +15177,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasuredPhase3rdHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasuredPhase3rdHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14187,7 +15234,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasuredPhase5thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasuredPhase5thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14241,7 +15291,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasuredPhase7thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasuredPhase7thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14295,7 +15348,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasuredPhase9thHarmonicCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasuredPhase9thHarmonicCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14348,7 +15404,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeMeasurementTypeWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeMeasurementTypeWithParamsSubscriptionEstablishedReportHandler(
@@ -14401,7 +15460,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeNeutralCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeNeutralCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -14454,7 +15516,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeOverloadAlarmsMaskWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeOverloadAlarmsMaskWithParamsSubscriptionEstablishedReportHandler(
@@ -14508,7 +15573,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePhaseHarmonicCurrentMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePhaseHarmonicCurrentMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -14561,7 +15629,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePowerDivisorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePowerDivisorWithParamsSubscriptionEstablishedReportHandler(
@@ -14614,7 +15685,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePowerFactorPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePowerFactorPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -14667,7 +15741,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePowerFactorPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePowerFactorPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -14720,7 +15797,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePowerFactorWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePowerFactorWithParamsSubscriptionEstablishedReportHandler(
@@ -14773,7 +15853,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePowerMultiplierWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePowerMultiplierWithParamsSubscriptionEstablishedReportHandler(
@@ -14826,7 +15909,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeReactiveCurrentPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeReactiveCurrentPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -14879,7 +15965,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeReactiveCurrentPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeReactiveCurrentPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -14932,7 +16021,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeReactivePowerPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeReactivePowerPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -14985,7 +16077,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeReactivePowerPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeReactivePowerPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -15038,7 +16133,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeReactivePowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeReactivePowerWithParamsSubscriptionEstablishedReportHandler(
@@ -15091,7 +16189,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentMaxPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentMaxPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -15144,7 +16245,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentMaxPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentMaxPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -15197,7 +16301,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentMaxWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentMaxWithParamsSubscriptionEstablishedReportHandler(
@@ -15250,7 +16357,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentMinPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentMinPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -15303,7 +16413,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentMinPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentMinPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -15356,7 +16469,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentMinWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentMinWithParamsSubscriptionEstablishedReportHandler(
@@ -15409,7 +16525,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -15462,7 +16581,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -15515,7 +16637,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsCurrentWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsCurrentWithParamsSubscriptionEstablishedReportHandler(
@@ -15569,7 +16694,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeOverVoltagePeriodPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeOverVoltagePeriodPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -15623,7 +16751,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeOverVoltagePeriodPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeOverVoltagePeriodPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -15676,7 +16807,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeOverVoltagePeriodWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeOverVoltagePeriodWithParamsSubscriptionEstablishedReportHandler(
@@ -15729,7 +16863,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeOverVoltageWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeOverVoltageWithParamsSubscriptionEstablishedReportHandler(
@@ -15783,7 +16920,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeUnderVoltagePeriodPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeUnderVoltagePeriodPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -15837,7 +16977,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeUnderVoltagePeriodPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeUnderVoltagePeriodPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -15890,7 +17033,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeUnderVoltagePeriodWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeUnderVoltagePeriodWithParamsSubscriptionEstablishedReportHandler(
@@ -15943,7 +17089,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsExtremeUnderVoltageWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsExtremeUnderVoltageWithParamsSubscriptionEstablishedReportHandler(
@@ -15996,7 +17145,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageMaxPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageMaxPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -16049,7 +17201,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageMaxPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageMaxPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -16102,7 +17257,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageMaxWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageMaxWithParamsSubscriptionEstablishedReportHandler(
@@ -16155,7 +17313,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageMinPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageMinPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -16208,7 +17369,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageMinPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageMinPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -16261,7 +17425,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageMinWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageMinWithParamsSubscriptionEstablishedReportHandler(
@@ -16314,7 +17481,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltagePhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltagePhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -16367,7 +17537,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltagePhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltagePhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -16420,7 +17593,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSagPeriodPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSagPeriodPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -16473,7 +17649,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSagPeriodPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSagPeriodPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -16526,7 +17705,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSagPeriodWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSagPeriodWithParamsSubscriptionEstablishedReportHandler(
@@ -16579,7 +17761,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSagWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSagWithParamsSubscriptionEstablishedReportHandler(
@@ -16632,7 +17817,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSwellPeriodPhaseBWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSwellPeriodPhaseBWithParamsSubscriptionEstablishedReportHandler(
@@ -16685,7 +17873,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSwellPeriodPhaseCWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSwellPeriodPhaseCWithParamsSubscriptionEstablishedReportHandler(
@@ -16738,7 +17929,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSwellPeriodWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSwellPeriodWithParamsSubscriptionEstablishedReportHandler(
@@ -16791,7 +17985,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageSwellWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageSwellWithParamsSubscriptionEstablishedReportHandler(
@@ -16844,7 +18041,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeRmsVoltageWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeRmsVoltageWithParamsSubscriptionEstablishedReportHandler(
@@ -16897,7 +18097,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeTotalActivePowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeTotalActivePowerWithParamsSubscriptionEstablishedReportHandler(
@@ -16950,7 +18153,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeTotalApparentPowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeTotalApparentPowerWithParamsSubscriptionEstablishedReportHandler(
@@ -17003,7 +18209,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeTotalReactivePowerWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeTotalReactivePowerWithParamsSubscriptionEstablishedReportHandler(
@@ -17056,7 +18265,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeVoltageOverloadWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeVoltageOverloadWithParamsSubscriptionEstablishedReportHandler(
@@ -17095,7 +18307,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeAcOverloadAlarmsMaskWithValue:completion:")
     public native void writeAttributeAcOverloadAlarmsMaskWithValueCompletion(@NotNull NSNumber value,
@@ -17128,7 +18343,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeAcOverloadAlarmsMaskWithValue:params:completion:")
     public native void writeAttributeAcOverloadAlarmsMaskWithValueParamsCompletion(@NotNull NSNumber value,
@@ -17163,7 +18381,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeAverageRmsUnderVoltageCounterWithValue:completion:")
     public native void writeAttributeAverageRmsUnderVoltageCounterWithValueCompletion(@NotNull NSNumber value,
@@ -17196,7 +18417,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeAverageRmsUnderVoltageCounterWithValue:params:completion:")
     public native void writeAttributeAverageRmsUnderVoltageCounterWithValueParamsCompletion(@NotNull NSNumber value,
@@ -17231,7 +18455,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeAverageRmsVoltageMeasurementPeriodWithValue:completion:")
     public native void writeAttributeAverageRmsVoltageMeasurementPeriodWithValueCompletion(@NotNull NSNumber value,
@@ -17265,7 +18492,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeAverageRmsVoltageMeasurementPeriodWithValue:params:completion:")
     public native void writeAttributeAverageRmsVoltageMeasurementPeriodWithValueParamsCompletion(
@@ -17301,7 +18531,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeOverloadAlarmsMaskWithValue:completion:")
     public native void writeAttributeOverloadAlarmsMaskWithValueCompletion(@NotNull NSNumber value,
@@ -17334,7 +18567,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeOverloadAlarmsMaskWithValue:params:completion:")
     public native void writeAttributeOverloadAlarmsMaskWithValueParamsCompletion(@NotNull NSNumber value,
@@ -17369,7 +18605,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsExtremeOverVoltagePeriodWithValue:completion:")
     public native void writeAttributeRmsExtremeOverVoltagePeriodWithValueCompletion(@NotNull NSNumber value,
@@ -17402,7 +18641,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsExtremeOverVoltagePeriodWithValue:params:completion:")
     public native void writeAttributeRmsExtremeOverVoltagePeriodWithValueParamsCompletion(@NotNull NSNumber value,
@@ -17437,7 +18679,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsExtremeUnderVoltagePeriodWithValue:completion:")
     public native void writeAttributeRmsExtremeUnderVoltagePeriodWithValueCompletion(@NotNull NSNumber value,
@@ -17470,7 +18715,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsExtremeUnderVoltagePeriodWithValue:params:completion:")
     public native void writeAttributeRmsExtremeUnderVoltagePeriodWithValueParamsCompletion(@NotNull NSNumber value,
@@ -17505,7 +18753,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsVoltageSagPeriodWithValue:completion:")
     public native void writeAttributeRmsVoltageSagPeriodWithValueCompletion(@NotNull NSNumber value,
@@ -17538,7 +18789,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsVoltageSagPeriodWithValue:params:completion:")
     public native void writeAttributeRmsVoltageSagPeriodWithValueParamsCompletion(@NotNull NSNumber value,
@@ -17573,7 +18827,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsVoltageSwellPeriodWithValue:completion:")
     public native void writeAttributeRmsVoltageSwellPeriodWithValueCompletion(@NotNull NSNumber value,
@@ -17606,7 +18863,10 @@ public class MTRBaseClusterElectricalMeasurement extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeRmsVoltageSwellPeriodWithValue:params:completion:")
     public native void writeAttributeRmsVoltageSwellPeriodWithValueParamsCompletion(@NotNull NSNumber value,

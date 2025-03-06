@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCLossDescriptor specifies a loss filter descriptor.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -85,7 +84,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * The number of classes parameter. The default value is 1.
      * 
      * This parameter is valid only for the loss function MLCLossTypeSoftmaxCrossEntropy.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("classCount")
     @NUInt
@@ -118,7 +121,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * The delta parameter. The default value is 1.0f.
      * 
      * This parameter is valid only for the loss function MLCLossTypeHuber.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("delta")
     public native float delta();
@@ -133,7 +140,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * @param lossType      The loss function.
      * @param reductionType The reduction operation
      * @return A new MLCLossDescriptor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:reductionType:")
     public static native MLCLossDescriptor descriptorWithTypeReductionType(int lossType, int reductionType);
@@ -145,7 +156,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * @param reductionType The reduction operation
      * @param weight        The scale factor to apply to each element of a result.
      * @return A new MLCLossDescriptor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:reductionType:weight:")
     public static native MLCLossDescriptor descriptorWithTypeReductionTypeWeight(int lossType, int reductionType,
@@ -160,7 +175,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * @param labelSmoothing The label smoothing parameter.
      * @param classCount     The number of classes parameter.
      * @return A new MLCLossDescriptor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:reductionType:weight:labelSmoothing:classCount:")
     public static native MLCLossDescriptor descriptorWithTypeReductionTypeWeightLabelSmoothingClassCount(int lossType,
@@ -177,7 +196,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * @param epsilon        The epsilon used by LogLoss
      * @param delta          The delta parameter used by Huber loss
      * @return A new MLCLossDescriptor object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:reductionType:weight:labelSmoothing:classCount:epsilon:delta:")
     public static native MLCLossDescriptor descriptorWithTypeReductionTypeWeightLabelSmoothingClassCountEpsilonDelta(
@@ -190,7 +213,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * The epsilon parameter. The default value is 1e-7.
      * 
      * This parameter is valid only for the loss function MLCLossTypeLog.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("epsilon")
     public native float epsilon();
@@ -233,7 +260,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MLCLossTypeSoftmaxCrossEntropy and MLCLossTypeSigmoidCrossEntropy.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("labelSmoothing")
     public native float labelSmoothing();
@@ -242,7 +273,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * [@property] lossType
      * 
      * Specifies the loss function.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("lossType")
     public native int lossType();
@@ -256,7 +291,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * [@property] reductionType
      * 
      * The reduction operation performed by the loss function.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -286,7 +325,11 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
      * [@property] weight
      * 
      * The scale factor to apply to each element of a result. The default value is 1.0.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("weight")
     public native float weight();

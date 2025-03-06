@@ -102,6 +102,8 @@ public class VNRequest extends NSObject implements NSCopying {
      * [@property] completionHandler
      * 
      * The completion handler block that will be invoked after the request has completed processing.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -138,6 +140,8 @@ public class VNRequest extends NSObject implements NSCopying {
 
     /**
      * Creates a new VNRequest with no completion handler.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("init")
@@ -148,6 +152,8 @@ public class VNRequest extends NSObject implements NSCopying {
      * 
      * @param completionHandler The block to be invoked after the request has completed its processing. The completion
      *                          handler gets executed on the same dispatch queue as the request being executed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithCompletionHandler:")
@@ -192,6 +198,8 @@ public class VNRequest extends NSObject implements NSCopying {
      * A hint used to minimize the resource burden of the request. Memory footprint, processing footprint and/or CPU/GPU
      * contention will be reduced (depending on the request), at the potential cost of longer execution time. This can
      * help, for example, with ensuring UI updates and rendering are not getting blocked by Vision processing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("preferBackgroundProcessing")
@@ -213,6 +221,8 @@ public class VNRequest extends NSObject implements NSCopying {
      * The only valid time to access this property is after the request has been processed by a request handler. If the
      * request failed, this property will be nil; otherwise, it will be an array of zero or more VNObservation
      * subclasses specific to the VNRequest subclass.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -223,6 +233,8 @@ public class VNRequest extends NSObject implements NSCopying {
      * A hint used to minimize the resource burden of the request. Memory footprint, processing footprint and/or CPU/GPU
      * contention will be reduced (depending on the request), at the potential cost of longer execution time. This can
      * help, for example, with ensuring UI updates and rendering are not getting blocked by Vision processing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPreferBackgroundProcessing:")
@@ -336,6 +348,8 @@ public class VNRequest extends NSObject implements NSCopying {
      * @param computeStage The compute stage to be introspected.
      * 
      * @return The currently assigned compute device, or `nil` if there is no explicit assignment.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("computeDeviceForComputeStage:")
@@ -354,6 +368,8 @@ public class VNRequest extends NSObject implements NSCopying {
      *                      remove any explicit compute device assignment, allowing Vision to select which device to
      *                      use.
      * @param computeStage  The compute stage being configured.
+     * 
+     *                      API-Since: 17.0
      */
     @Generated
     @Selector("setComputeDevice:forComputeStage:")
@@ -371,6 +387,8 @@ public class VNRequest extends NSObject implements NSCopying {
      *              caller does not require this information, NULL can be passed.
      * 
      * @return A dictionary of per-stage supported compute devices, or `nil` if an error occurs.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("supportedComputeStageDevicesAndReturnError:")

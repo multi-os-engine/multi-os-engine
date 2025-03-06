@@ -95,6 +95,8 @@ public class PKIdentityRequest extends NSObject {
 
     /**
      * A descriptor describing the identity document to request.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -137,6 +139,8 @@ public class PKIdentityRequest extends NSObject {
      * Identifies the merchant making the request, as previously agreed with Apple.
      * This must match one of the merchant identifiers in the application's entitlement.
      * This property must be set when requestDocument is invoked.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -152,6 +156,8 @@ public class PKIdentityRequest extends NSObject {
      * A caller-specified nonce that will be included in the signed response payload.
      * This is treated as opaque by the PKIdentityAuthorizationController, and has a
      * maximum allowed size of 64 bytes.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -168,6 +174,8 @@ public class PKIdentityRequest extends NSObject {
 
     /**
      * A descriptor describing the identity document to request.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDescriptor:")
@@ -177,6 +185,8 @@ public class PKIdentityRequest extends NSObject {
      * Identifies the merchant making the request, as previously agreed with Apple.
      * This must match one of the merchant identifiers in the application's entitlement.
      * This property must be set when requestDocument is invoked.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMerchantIdentifier:")
@@ -186,6 +196,8 @@ public class PKIdentityRequest extends NSObject {
      * A caller-specified nonce that will be included in the signed response payload.
      * This is treated as opaque by the PKIdentityAuthorizationController, and has a
      * maximum allowed size of 64 bytes.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setNonce:")

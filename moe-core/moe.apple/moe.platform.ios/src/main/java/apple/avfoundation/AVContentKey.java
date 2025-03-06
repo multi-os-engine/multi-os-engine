@@ -25,6 +25,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVContentKey
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 14.5
  */
 @Generated
@@ -84,6 +88,8 @@ public class AVContentKey extends NSObject {
      * [@property] contentKeySpecifier
      * 
      * Specifies the content key.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -159,4 +165,36 @@ public class AVContentKey extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] externalContentProtectionStatus
+     * 
+     * The external protection status for the AVContentKey based on all attached displays.
+     * 
+     * This property is not key-value observable, instead the
+     * contentKeySession:externalProtectionStatusDidChangeForContentKey: delegate method should be used.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("externalContentProtectionStatus")
+    @NInt
+    public native long externalContentProtectionStatus();
+
+    /**
+     * revoke
+     * 
+     * Revokes the decryption context of the content key, and removes it from its associated AVContentKeySession.
+     * 
+     * Once revoked, the AVContentKey is no longer eligible to be used with any media.
+     * If the key is required again, or if the key is requested to be loaded by the application, a new
+     * AVContentKeyRequest will be dispatched to the delegate.
+     * If there is media playback occurring which is dependent on the content key it will fail and may result in an
+     * error being generated with the playback halting.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("revoke")
+    public native void revoke();
 }

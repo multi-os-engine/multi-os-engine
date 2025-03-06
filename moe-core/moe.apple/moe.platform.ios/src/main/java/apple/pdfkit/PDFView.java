@@ -519,10 +519,12 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate, UIFi
      * numbers,
      * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place.
      * These are
-     * temporary annotations and are not saved.
+     * temporary annotations and are not saved. It is deprecated in favor of -[PDFDocument enableDataDetectors].
      * 
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("enableDataDetectors")
     public native boolean enableDataDetectors();
@@ -1040,10 +1042,12 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate, UIFi
      * numbers,
      * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place.
      * These are
-     * temporary annotations and are not saved.
+     * temporary annotations and are not saved. It is deprecated in favor of -[PDFDocument enableDataDetectors].
      * 
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("setEnableDataDetectors:")
     public native void setEnableDataDetectors(boolean value);

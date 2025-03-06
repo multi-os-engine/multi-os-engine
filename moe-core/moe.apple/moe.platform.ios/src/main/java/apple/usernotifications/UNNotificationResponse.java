@@ -172,6 +172,8 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
      * * UNNotificationDismissActionIdentifier if the user dismissed the notification
      * * UNNotificationDefaultActionIdentifier if the user opened the application from the notification
      * * the identifier for a registered UNNotificationAction for other actions
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -199,6 +201,8 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
 
     /**
      * The notification to which the user responded.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

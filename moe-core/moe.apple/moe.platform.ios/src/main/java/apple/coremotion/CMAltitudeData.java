@@ -177,6 +177,9 @@ public class CMAltitudeData extends CMLogItem {
      * 
      * Discussion:
      * The pressure in kPa.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -188,6 +191,9 @@ public class CMAltitudeData extends CMLogItem {
      * 
      * Discussion:
      * The relative altitude in meters to the starting altitude.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

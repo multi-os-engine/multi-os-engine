@@ -193,6 +193,8 @@ public class GCEventViewController extends UIViewController {
      * 
      * @see GCController
      * @see UIView.userInteractionEnabled
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("controllerUserInteractionEnabled")
@@ -231,6 +233,8 @@ public class GCEventViewController extends UIViewController {
      * 
      * @see GCController
      * @see UIView.userInteractionEnabled
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setControllerUserInteractionEnabled:")

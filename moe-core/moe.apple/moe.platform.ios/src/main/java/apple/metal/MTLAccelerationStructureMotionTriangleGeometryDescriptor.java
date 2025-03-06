@@ -93,6 +93,9 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("descriptor")
     public static native MTLAccelerationStructureMotionTriangleGeometryDescriptor descriptor();
@@ -104,6 +107,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
 
     /**
      * Optional index buffer containing references to vertices in the vertex buffer. May be nil.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -114,6 +119,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     /**
      * Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
      * the index data type's alignment and the platform's buffer offset alignment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("indexBufferOffset")
@@ -122,6 +129,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
 
     /**
      * Index type
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("indexType")
@@ -169,6 +178,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
 
     /**
      * Optional index buffer containing references to vertices in the vertex buffer. May be nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIndexBuffer:")
@@ -177,6 +188,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     /**
      * Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
      * the index data type's alignment and the platform's buffer offset alignment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIndexBufferOffset:")
@@ -184,6 +197,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
 
     /**
      * Index type
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIndexType:")
@@ -191,6 +206,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
 
     /**
      * Number of triangles
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTriangleCount:")
@@ -203,6 +220,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     /**
      * Vertex buffer containing triangle vertices similar to what MTLAccelerationStructureTriangleGeometryDescriptor has
      * but array of the values.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexBuffers:")
@@ -213,6 +232,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
      * type size and must be aligned to
      * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
      * size.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexStride:")
@@ -224,6 +245,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
 
     /**
      * Number of triangles
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("triangleCount")
@@ -238,6 +261,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     /**
      * Vertex buffer containing triangle vertices similar to what MTLAccelerationStructureTriangleGeometryDescriptor has
      * but array of the values.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -249,6 +274,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
      * type size and must be aligned to
      * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
      * size.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("vertexStride")
@@ -325,4 +352,25 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Matrix layout for the transformation matrix in the transformation
+     * matrix buffer. Defaults to MTLMatrixLayoutColumnMajor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTransformationMatrixLayout:")
+    public native void setTransformationMatrixLayout(@NInt long value);
+
+    /**
+     * Matrix layout for the transformation matrix in the transformation
+     * matrix buffer. Defaults to MTLMatrixLayoutColumnMajor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("transformationMatrixLayout")
+    @NInt
+    public native long transformationMatrixLayout();
 }

@@ -176,6 +176,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * averageQuantity
      * 
      * Returns the average quantity in the time period represented by the receiver.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -188,6 +190,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * Returns the average quantity for the given source in the time period represented by the receiver.
      * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -205,6 +209,9 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("endDate")
@@ -222,6 +229,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * maximumQuantity
      * 
      * Returns the maximum quantity in the time period represented by the receiver.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -234,6 +243,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * Returns the maximum quantity for the given source in the time period represented by the receiver.
      * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -244,6 +255,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * minimumQuantity
      * 
      * Returns the minimum quantity in the time period represented by the receiver.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -256,22 +269,33 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * Returns the minimum quantity for the given source in the time period represented by the receiver.
      * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("minimumQuantityForSource:")
     public native HKQuantity minimumQuantityForSource(@NotNull HKSource source);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("quantityType")
     public native HKQuantityType quantityType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("sources")
     public native NSArray<? extends HKSource> sources();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("startDate")
@@ -281,6 +305,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * sumQuantity
      * 
      * Returns the sum of quantities in the time period represented by the receiver.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -293,6 +319,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
      * Returns the sum quantity for the given source in the time period represented by the receiver.
      * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

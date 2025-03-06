@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterGeneralDiagnostics extends MTRCluster {
+public class MTRClusterGeneralDiagnostics extends MTRGenericCluster {
     static {
         NatJ.register();
     }

@@ -19,6 +19,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UINSIntegerTraitDefinition extends UITraitDefinition {
     /**
      * The default value for this trait in a trait collection when no value has been set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("defaultValue")

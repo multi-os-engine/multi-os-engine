@@ -176,7 +176,12 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
      *                               an issue with the broadcast and to stop broadcasting. Note that once this is
      *                               called, regardles of the existence of an error, the current MP4 clip will no longer
      *                               be available.
+     * 
+     *                               API-Since: 10.0
+     *                               Deprecated-Since: 11.0
+     *                               Deprecated-Message: No longer supported, use RPBroadcastSampleHandler instead.
      */
+    @Deprecated
     @Generated
     @Selector("finishedProcessingMP4ClipWithUpdatedBroadcastConfiguration:error:")
     public native void finishedProcessingMP4ClipWithUpdatedBroadcastConfigurationError(
@@ -194,7 +199,12 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
      * @param setupInfo  Dictionary supplied by the UI extension that may contain setup information required for
      *                   processing. The values in this dictionary are to be defined by the extension developer.
      * @param finished   Boolean indicating that application requested the broadcast to end.
+     * 
+     *                   API-Since: 10.0
+     *                   Deprecated-Since: 11.0
+     *                   Deprecated-Message: No longer supported, use RPBroadcastSampleHandler instead.
      */
+    @Deprecated
     @Generated
     @Selector("processMP4ClipWithURL:setupInfo:finished:")
     public native void processMP4ClipWithURLSetupInfoFinished(@Nullable NSURL mp4ClipURL,

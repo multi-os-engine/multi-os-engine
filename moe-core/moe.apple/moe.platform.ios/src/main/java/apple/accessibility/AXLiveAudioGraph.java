@@ -138,6 +138,8 @@ public class AXLiveAudioGraph extends NSObject {
 
     /**
      * Begins a live audio graph session.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("start")
@@ -145,6 +147,8 @@ public class AXLiveAudioGraph extends NSObject {
 
     /**
      * Ends the live audio graph session.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("stop")
@@ -158,6 +162,8 @@ public class AXLiveAudioGraph extends NSObject {
      * Sets the pitch of the audio graph's tone. This should be a normalized value in the range [0.0, 1.0], where 0
      * represents the minimum displayable y-axis value for your series
      * and 1 represents the maximum displayable y-axis value for your series.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("updateValue:")

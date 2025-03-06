@@ -99,6 +99,9 @@ public class CKSyncEnginePendingZoneDelete extends CKSyncEnginePendingDatabaseCh
     @Selector("init")
     public native CKSyncEnginePendingZoneDelete init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithZoneID:")
     public native CKSyncEnginePendingZoneDelete initWithZoneID(@NotNull CKRecordZoneID zoneID);

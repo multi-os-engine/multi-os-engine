@@ -89,11 +89,17 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("fetchEventsAfterDate:")
     public static native NSPersistentCloudKitContainerEventRequest fetchEventsAfterDate(@NotNull NSDate date);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("fetchEventsAfterEvent:")
@@ -102,6 +108,8 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
 
     /**
      * Supports fetching instances of NSPersistentCloudKitContainerEvent matching a fetch request.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -112,6 +120,8 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
     /**
      * Returns an instance of NSFetchRequest configured with the correct entity for fetching instances
      * of NSPersistentCloudKitContainerEvent.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -162,11 +172,17 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("resultType")
     @NInt
     public native long resultType();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setResultType:")
     public native void setResultType(@NInt long value);

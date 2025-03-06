@@ -80,6 +80,9 @@ public class MTLType extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dataType")
     @NUInt

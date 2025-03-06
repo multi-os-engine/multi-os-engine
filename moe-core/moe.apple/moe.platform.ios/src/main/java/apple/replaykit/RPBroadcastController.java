@@ -183,6 +183,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * URL that can be used to redirect the user to the on-going or completed broadcast.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -191,6 +193,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Delegate which will be notified when an error occurs during broadcast.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -203,6 +207,8 @@ public class RPBroadcastController extends NSObject {
      * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
      *              finished successfully.
+     * 
+     *              API-Since: 10.0
      */
     @Generated
     @Selector("finishBroadcastWithHandler:")
@@ -215,6 +221,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Indicates whether the controller is currently broadcasting.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isBroadcasting")
@@ -222,6 +230,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Indicates whether the controller is currently paused.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isPaused")
@@ -229,6 +239,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Pause the broadcast. The broadcast will pause immediately.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("pauseBroadcast")
@@ -236,6 +248,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Resumes the broadcast. The broadcast will resume immediately.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("resumeBroadcast")
@@ -244,6 +258,8 @@ public class RPBroadcastController extends NSObject {
     /**
      * Dictionary updated by the service during a broadcast. The keys and values of this dictionary are defined by the
      * broadcast service. KVO observable.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -252,6 +268,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Delegate which will be notified when an error occurs during broadcast.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -260,6 +278,8 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Delegate which will be notified when an error occurs during broadcast.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value) {
@@ -278,6 +298,8 @@ public class RPBroadcastController extends NSObject {
      * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
      *              started successfully.
+     * 
+     *              API-Since: 10.0
      */
     @Generated
     @Selector("startBroadcastWithHandler:")

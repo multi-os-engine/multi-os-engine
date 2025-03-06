@@ -193,4 +193,10 @@ public final class PHAssetCollectionSubtype {
      * API-Since: 15.0
      */
     @Generated @NInt public static final long SmartAlbumCinematic = 0x00000000000000DAL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long SmartAlbumSpatial = 0x00000000000000DBL;
 }

@@ -78,6 +78,8 @@ public class AVMutableMovie extends AVMovie {
      * invalid.
      * Note that metadata will not be automatically copied.
      * 
+     * API-Since: 13.0
+     * 
      * @param mediaType
      *                  The media type of the new track (e.g. AVMediaTypeVideo for a video track).
      * @param track
@@ -104,6 +106,8 @@ public class AVMutableMovie extends AVMovie {
      * existingTracks array. Also, properties involving pairs of tracks (such as track references) are copied from the
      * source tracks to the target tracks.
      * This method throws an exception if any option is invalid.
+     * 
+     * API-Since: 13.0
      * 
      * @param existingTracks
      *                       An array of AVAssetTrack objects.
@@ -169,6 +173,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * The value of this property is an AVMediaDataStorage object that indicates where sample data that is added to a
      * movie should be written, for any track for whose mediaDataStorage property is nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -205,6 +211,8 @@ public class AVMutableMovie extends AVMovie {
      * append sample buffers to any of its tracks, you must first set one of these properties to indicate where the
      * sample data should be written.
      * 
+     * API-Since: 13.0
+     * 
      * @param data
      *                 An NSData object containing a movie header.
      * @param options
@@ -229,6 +237,8 @@ public class AVMutableMovie extends AVMovie {
      * property will be nil.
      * If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its
      * tracks, you must first set one of these properties to indicate where the sample data should be written.
+     * 
+     * API-Since: 13.0
      * 
      * @param movie
      *                 If you wish to transfer settings from an existing movie (including movie userdata and metadata,
@@ -264,6 +274,8 @@ public class AVMutableMovie extends AVMovie {
      * first set one of these properties
      * to indicate where the sample data should be written.
      * 
+     * API-Since: 13.0
+     * 
      * @param URL
      *                 An NSURL object that specifies a file containing a movie header.
      * @param options
@@ -286,6 +298,8 @@ public class AVMutableMovie extends AVMovie {
      * @param timeRange
      *                  The time range to be made empty. Note that you cannot add empty time ranges to the end of a
      *                  movie.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("insertEmptyTimeRange:")
@@ -300,6 +314,8 @@ public class AVMutableMovie extends AVMovie {
      * inserted timeRange.
      * Existing content at the specified startTime will be pushed out by the duration of timeRange.
      * Note that metadata will not be automatically copied.
+     * 
+     * API-Since: 13.0
      * 
      * @param timeRange
      *                       The time range of the asset to be inserted.
@@ -349,6 +365,8 @@ public class AVMutableMovie extends AVMovie {
      * A CMTime that indicates the duration for interleaving runs of samples of each track.
      * 
      * The default interleaving period is 0.5 seconds.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("interleavingPeriod")
@@ -362,6 +380,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * The value of this property is a BOOL that indicates whether the AVMutableMovie object has been modified since it
      * was created, was last written, or had its modified state cleared via a call to setModified:NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isModified")
@@ -383,6 +403,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the movie.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -439,6 +461,8 @@ public class AVMutableMovie extends AVMovie {
      * If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its
      * tracks, you must first set one of these properties to indicate where the sample data should be written.
      * 
+     * API-Since: 13.0
+     * 
      * @param movie
      *                 If you wish to transfer settings from an existing movie (including movie userdata and metadata,
      *                 preferred rate, preferred volume, etc.), pass a reference to an AVMovie object representing that
@@ -474,6 +498,8 @@ public class AVMutableMovie extends AVMovie {
      * first set one of these properties
      * to indicate where the sample data should be written.
      * 
+     * API-Since: 13.0
+     * 
      * @param URL
      *                 An NSURL object that specifies a file containing a movie header.
      * @param options
@@ -500,6 +526,8 @@ public class AVMutableMovie extends AVMovie {
      * serially, even from multiple assets, a single track of that media type should be used. This method,
      * -mutableTrackCompatibleWithTrack:, can help the client to identify an existing target track for an insertion.
      * 
+     * API-Since: 13.0
+     * 
      * @param track
      *              A reference to the AVAssetTrack from which a time range may be inserted.
      * @return An AVMutableMovieTrack that can accommodate the insertion.
@@ -521,6 +549,8 @@ public class AVMutableMovie extends AVMovie {
      * [@property] preferredRate
      * 
      * The natural rate at which the movie is to be played; often but not always 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredRate")
@@ -532,6 +562,8 @@ public class AVMutableMovie extends AVMovie {
      * A CGAffineTransform indicating the transform specified in the movie's storage container as the preferred
      * transformation of the visual media data for display purposes; the value is often but not always
      * CGAffineTransformIdentity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredTransform")
@@ -542,6 +574,8 @@ public class AVMutableMovie extends AVMovie {
      * [@property] preferredVolume
      * 
      * The preferred volume of the audible media data of the movie; often but not always 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredVolume")
@@ -554,6 +588,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * @param timeRange
      *                  The time range to be removed.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("removeTimeRange:")
@@ -566,6 +602,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * @param track
      *              The track to be removed.
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("removeTrack:")
@@ -588,6 +626,8 @@ public class AVMutableMovie extends AVMovie {
      *                  The time range to be scaled.
      * @param duration
      *                  The new duration of the time range.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("scaleTimeRange:toDuration:")
@@ -600,6 +640,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * The value of this property is an AVMediaDataStorage object that indicates where sample data that is added to a
      * movie should be written, for any track for whose mediaDataStorage property is nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDefaultMediaDataStorage:")
@@ -611,6 +653,8 @@ public class AVMutableMovie extends AVMovie {
      * A CMTime that indicates the duration for interleaving runs of samples of each track.
      * 
      * The default interleaving period is 0.5 seconds.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInterleavingPeriod:")
@@ -623,6 +667,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the movie.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMetadata:")
@@ -635,6 +681,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * The value of this property is a BOOL that indicates whether the AVMutableMovie object has been modified since it
      * was created, was last written, or had its modified state cleared via a call to setModified:NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setModified:")
@@ -644,6 +692,8 @@ public class AVMutableMovie extends AVMovie {
      * [@property] preferredRate
      * 
      * The natural rate at which the movie is to be played; often but not always 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredRate:")
@@ -655,6 +705,8 @@ public class AVMutableMovie extends AVMovie {
      * A CGAffineTransform indicating the transform specified in the movie's storage container as the preferred
      * transformation of the visual media data for display purposes; the value is often but not always
      * CGAffineTransformIdentity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredTransform:")
@@ -664,6 +716,8 @@ public class AVMutableMovie extends AVMovie {
      * [@property] preferredVolume
      * 
      * The preferred volume of the audible media data of the movie; often but not always 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredVolume:")
@@ -680,6 +734,8 @@ public class AVMutableMovie extends AVMovie {
      * track.
      * 
      * This property should be set on a new empty movie before any edits are performed on the movie.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTimescale:")
@@ -704,6 +760,8 @@ public class AVMutableMovie extends AVMovie {
      * track.
      * 
      * This property should be set on a new empty movie before any edits are performed on the movie.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("timescale")
@@ -715,6 +773,8 @@ public class AVMutableMovie extends AVMovie {
      * Provides an instance of AVMutableMovieTrack that represents the track of the specified trackID.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 13.0
      * 
      * @param trackID
      *                The trackID of the requested AVMutableMovieTrack.
@@ -732,6 +792,8 @@ public class AVMutableMovie extends AVMovie {
      * 
      * The value of this property is an array of tracks the mutable movie contains; the tracks are of type
      * AVMutableMovieTrack.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -744,6 +806,8 @@ public class AVMutableMovie extends AVMovie {
      * Provides an array of AVMutableMovieTracks of the asset that present media with the specified characteristic.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 13.0
      * 
      * @param mediaCharacteristic
      *                            The media characteristic according to which the receiver filters its
@@ -763,6 +827,8 @@ public class AVMutableMovie extends AVMovie {
      * Provides an array of AVMutableMovieTracks of the asset that present media of the specified media type.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 13.0
      * 
      * @param mediaType
      *                  The media type according to which the receiver filters its AVMutableMovieTracks. (Media types
@@ -859,28 +925,43 @@ public class AVMutableMovie extends AVMovie {
                 @Nullable NSError arg1);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("chapterMetadataGroupsBestMatchingPreferredLanguages:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsBestMatchingPreferredLanguages(
             @NotNull NSArray<String> preferredLanguages);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeys(
             @NotNull NSLocale locale, @Nullable NSArray<String> commonKeys);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaSelectionGroupForMediaCharacteristic:")
     public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("metadataForFormat:")
     public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("unusedTrackID")
     public native int unusedTrackID();

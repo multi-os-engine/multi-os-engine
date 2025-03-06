@@ -154,6 +154,8 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
      * 
      * This rect should be contained within WKWebView's bounds. If the rect is set to the
      * null rect, the view's bounds will be used. The initial value is the null rect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rect")
@@ -186,6 +188,8 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
      * 
      * This rect should be contained within WKWebView's bounds. If the rect is set to the
      * null rect, the view's bounds will be used. The initial value is the null rect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRect:")
@@ -197,6 +201,8 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
      * 
      * snapshotWidth represents the width in points. If the snapshotWidth is nil, rect's
      * width will be used.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSnapshotWidth:")
@@ -212,6 +218,8 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
      * 
      * snapshotWidth represents the width in points. If the snapshotWidth is nil, rect's
      * width will be used.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

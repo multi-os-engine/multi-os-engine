@@ -144,6 +144,8 @@ public class CMPedometer extends NSObject {
      * Discussion:
      * Determines whether the device supports distance estimation
      * in addition to step counting.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDistanceAvailable")
@@ -155,6 +157,8 @@ public class CMPedometer extends NSObject {
      * Discussion:
      * Determines whether the device supports counting flights of stairs
      * in addition to step counting.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isFloorCountingAvailable")
@@ -190,6 +194,8 @@ public class CMPedometer extends NSObject {
      * 
      * Discussion:
      * Determines whether the device supports step counting functionality.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isStepCountingAvailable")
@@ -242,6 +248,8 @@ public class CMPedometer extends NSObject {
      * is available for up to 7 days. The data returned is computed from a
      * system-wide history that is continuously being collected in the
      * background. The result is returned on a serial queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("queryPedometerDataFromDate:toDate:withHandler:")
@@ -274,6 +282,8 @@ public class CMPedometer extends NSObject {
      * at a later time, the app will receive all of the pedestrian
      * activity accumulated during the background period in the
      * very next update.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startPedometerUpdatesFromDate:withHandler:")
@@ -297,6 +307,8 @@ public class CMPedometer extends NSObject {
      * 
      * Discussion:
      * Stops pedometer updates.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopPedometerUpdates")

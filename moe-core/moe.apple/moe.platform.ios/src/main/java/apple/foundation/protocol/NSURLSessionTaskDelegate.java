@@ -50,6 +50,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     /**
      * Sent as the last message related to a specific task. Error may be
      * nil, which implies that no error occurred and this task is complete.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -77,6 +79,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
      * If this delegate is not implemented, the session specific authentication challenge
      * will *NOT* be called and the behavior will be the same as using the default handling
      * disposition.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -90,6 +94,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     /**
      * Sent periodically to notify the delegate of upload progress. This
      * information is also available as properties of the task.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -103,6 +109,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
      * Sent if a task requires a new, unopened body stream. This may be
      * necessary when authentication has failed for any request that
      * involves a body stream.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -121,6 +129,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
      * is to follow redirections.
      * 
      * For tasks in background sessions, redirections will always be followed and this method will not be called.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

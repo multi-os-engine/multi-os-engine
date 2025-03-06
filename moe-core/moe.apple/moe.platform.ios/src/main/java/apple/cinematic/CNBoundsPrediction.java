@@ -87,6 +87,8 @@ public class CNBoundsPrediction extends NSObject implements NSCopying, NSMutable
 
     /**
      * the probability that a well-defined object is within the bounds — a number between 0.0 and 1.0.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("confidence")
@@ -153,6 +155,8 @@ public class CNBoundsPrediction extends NSObject implements NSCopying, NSMutable
     /**
      * bounds of the detected object in normalized coordinates where (0.0, 0.0) is the upper left corner, and (1.0, 1.0)
      * is the lower right
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("normalizedBounds")
@@ -169,6 +173,8 @@ public class CNBoundsPrediction extends NSObject implements NSCopying, NSMutable
 
     /**
      * the probability that a well-defined object is within the bounds — a number between 0.0 and 1.0.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setConfidence:")
@@ -177,6 +183,8 @@ public class CNBoundsPrediction extends NSObject implements NSCopying, NSMutable
     /**
      * bounds of the detected object in normalized coordinates where (0.0, 0.0) is the upper left corner, and (1.0, 1.0)
      * is the lower right
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setNormalizedBounds:")

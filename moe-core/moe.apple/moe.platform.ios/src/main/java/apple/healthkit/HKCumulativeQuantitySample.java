@@ -170,6 +170,8 @@ public class HKCumulativeQuantitySample extends HKQuantitySample {
      * [@property] sumQuantity
      * 
      * The sum of quantities represented by the receiver.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

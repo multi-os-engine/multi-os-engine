@@ -81,6 +81,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("boldSystemFontOfSize:")
@@ -122,6 +125,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns an array of font family names for all installed fonts
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -130,6 +135,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns an array of font names for the specified family name
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -149,6 +156,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a font using CSS name matching semantics.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -177,6 +186,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("italicSystemFontOfSize:")
@@ -252,6 +264,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Think carefully before using these methods. In most cases, a font returned by +preferredFontForTextStyle: will be
      * more appropriate, and will respect the user's selected content size category.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -280,11 +294,17 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("ascender")
     @NFloat
     public native double ascender();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("capHeight")
     @NFloat
@@ -297,6 +317,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("descender")
     @NFloat
@@ -304,6 +327,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Font attributes
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -320,6 +345,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("fontDescriptor")
     public native UIFontDescriptor fontDescriptor();
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("fontName")
@@ -327,6 +355,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a new font that is identical to the current font except the specified size
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -337,6 +367,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("init")
     public native UIFont init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("leading")
     @NFloat
@@ -350,11 +383,17 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @NFloat
     public native double lineHeight();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("pointSize")
     @NFloat
     public native double pointSize();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("xHeight")
     @NFloat

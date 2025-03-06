@@ -127,6 +127,8 @@ public class PHASEShapeElement extends NSObject {
      * [@property] material
      * 
      * The shape's material defines the acoustical properties of this element.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -150,6 +152,8 @@ public class PHASEShapeElement extends NSObject {
      * [@property] material
      * 
      * The shape's material defines the acoustical properties of this element.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMaterial:")

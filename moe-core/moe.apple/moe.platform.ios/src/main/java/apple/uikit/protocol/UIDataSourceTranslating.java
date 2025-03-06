@@ -28,6 +28,8 @@ public interface UIDataSourceTranslating {
      * Translate (if needed) a Presentation index path to the Data Source index path.
      * If the item was inserted at the index path, this will return nil.
      * If no effective change took place, will return passed value.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -38,6 +40,8 @@ public interface UIDataSourceTranslating {
      * Translate (if needed) a Presentation section index to its Data Source section index value.
      * If section was inserted and not known the Data Source, this will return NSNotFound.
      * If no effective change took place, will return passed value.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dataSourceSectionIndexForPresentationSectionIndex:")
@@ -48,6 +52,8 @@ public interface UIDataSourceTranslating {
      * Arguments passed to actions performed inside the scope of this block will be interpreted as values in the
      * presentation state,
      * and the values returned from these actions will also be in the presentation state.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("performUsingPresentationValues:")
@@ -65,6 +71,8 @@ public interface UIDataSourceTranslating {
      * Translate (if needed) a Data Source index path to the Presentation index path.
      * If the item was deleted at the index path, this will return nil.
      * If no effective change took place, will return passed value.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -75,6 +83,8 @@ public interface UIDataSourceTranslating {
      * Translate (if needed) a Data Source section index to its Presentation section index value.
      * If section was deleted during a transaction, this will return NSNotFound.
      * If no effective change took place, will return passed value.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("presentationSectionIndexForDataSourceSectionIndex:")

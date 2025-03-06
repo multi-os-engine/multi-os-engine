@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A loss layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -85,7 +84,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param classCount     Number of classes
      * @param weight         A scalar floating point value
      * @return A new categorical cross entropy loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
@@ -100,7 +103,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param classCount     Number of classes
      * @param weights        The loss label weights tensor
      * @return A new categorical cross entropy loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
@@ -123,7 +130,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new cosine distance loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weight:")
@@ -135,7 +146,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new cosine distance loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weights:")
@@ -154,7 +169,11 @@ public class MLCLossLayer extends MLCLayer {
      * [@property] descriptor
      * 
      * The loss descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -171,7 +190,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new hinge loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weight:")
@@ -183,7 +206,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new hinge loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weights:")
@@ -196,7 +223,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param delta         The delta parameter
      * @param weight        A scalar floating-point value
      * @return A new huber loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weight:")
@@ -210,7 +241,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param delta         The delta parameter
      * @param weights       The loss label weights tensor
      * @return A new huber loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weights:")
@@ -248,7 +283,11 @@ public class MLCLossLayer extends MLCLayer {
      * 
      * @param lossDescriptor The loss descriptor
      * @return A new loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:")
     public static native MLCLossLayer layerWithDescriptor(@NotNull MLCLossDescriptor lossDescriptor);
@@ -259,7 +298,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param lossDescriptor The loss descriptor
      * @param weights        The loss label weights tensor
      * @return A new loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:weights:")
     public static native MLCLossLayer layerWithDescriptorWeights(@NotNull MLCLossDescriptor lossDescriptor,
@@ -272,7 +315,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param epsilon       The epsilon parameter
      * @param weight        A scalar floating-point value
      * @return A new log loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weight:")
@@ -286,7 +333,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param epsilon       The epsilon parameter
      * @param weights       The loss label weights tensor
      * @return A new log loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weights:")
@@ -299,7 +350,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new L1 i.e. mean absolute error loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weight:")
@@ -311,7 +366,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new L1 i.e. mean absolute error loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weights:")
@@ -324,7 +383,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new L2 i.e. mean squared error loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weight:")
@@ -336,7 +399,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new L2 i.e. mean squared error loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weights:")
@@ -367,7 +434,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param labelSmoothing Label smoothing value
      * @param weight         A scalar floating-point value
      * @return A new sigmoid cross entropy loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weight:")
@@ -381,7 +452,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param labelSmoothing Label smoothing value
      * @param weights        The loss label weights tensor
      * @return A new sigmoid cross entropy loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weights:")
@@ -396,7 +471,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param classCount     Number of classes
      * @param weight         A scalar floating point value
      * @return A new softmax cross entropy loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
@@ -411,7 +490,11 @@ public class MLCLossLayer extends MLCLayer {
      * @param classCount     Number of classes
      * @param weights        The loss label weights tensor
      * @return A new softmax cross entropy loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
@@ -422,6 +505,7 @@ public class MLCLossLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -435,7 +519,11 @@ public class MLCLossLayer extends MLCLayer {
      * [@property] weights
      * 
      * The loss label weights tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("weights")

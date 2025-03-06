@@ -32,6 +32,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Delegate methods. *
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("QuartzCore")
@@ -45,6 +47,8 @@ public interface CALayerDelegate {
      * a behavior for the current event. Returning the null object (i.e.
      * '[NSNull null]') explicitly forces no further search. (I.e. the
      * +defaultActionForKey: method will not be called.)
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -59,6 +63,8 @@ public interface CALayerDelegate {
      * If defined, called by the default implementation of the -display
      * method, in which case it should implement the entire display
      * process (typically by setting the `contents' property).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -69,6 +75,8 @@ public interface CALayerDelegate {
 
     /**
      * If defined, called by the default implementation of -drawInContext:
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -96,6 +104,8 @@ public interface CALayerDelegate {
      * Called by the default -layoutSublayers implementation before the layout
      * manager is checked. Note that if the delegate method is invoked, the
      * layout manager will be ignored.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

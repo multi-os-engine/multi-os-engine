@@ -26,6 +26,8 @@ public interface ARSessionDelegate extends ARSessionObserver {
      * 
      * @param session The session being run.
      * @param anchors An array of added anchors.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -39,6 +41,8 @@ public interface ARSessionDelegate extends ARSessionObserver {
      * 
      * @param session The session being run.
      * @param anchors An array of removed anchors.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -52,6 +56,8 @@ public interface ARSessionDelegate extends ARSessionObserver {
      * 
      * @param session The session being run.
      * @param anchors An array of updated anchors.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -65,6 +71,8 @@ public interface ARSessionDelegate extends ARSessionObserver {
      * 
      * @param session The session being run.
      * @param frame   The frame that has been updated.
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @IsOptional

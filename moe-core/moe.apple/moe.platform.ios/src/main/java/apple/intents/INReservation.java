@@ -52,6 +52,9 @@ public class INReservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("actions")
@@ -71,6 +74,9 @@ public class INReservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("bookingTime")
@@ -146,6 +152,9 @@ public class INReservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("itemReference")
@@ -161,16 +170,25 @@ public class INReservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("new")
     public static native INReservation new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservationHolderName")
     public native String reservationHolderName();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservationNumber")
     public native String reservationNumber();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reservationStatus")
     @NInt

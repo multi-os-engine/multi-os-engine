@@ -224,31 +224,52 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("brightness")
     public native float brightness();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("contrast")
     public native float contrast();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("exposure")
     public native float exposure();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("gamma")
     public native float gamma();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("groundAlbedo")
     public native float groundAlbedo();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("groundColor")
     public native CGColorRef groundColor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("horizonElevation")
     public native float horizonElevation();
@@ -257,69 +278,116 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("init")
     public native MDLSkyCubeTexture init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("saturation")
     public native float saturation();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setBrightness:")
     public native void setBrightness(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setContrast:")
     public native void setContrast(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setExposure:")
     public native void setExposure(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGamma:")
     public native void setGamma(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGroundAlbedo:")
     public native void setGroundAlbedo(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGroundColor:")
     public native void setGroundColor(@Nullable CGColorRef value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setHorizonElevation:")
     public native void setHorizonElevation(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setSaturation:")
     public native void setSaturation(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setSunElevation:")
     public native void setSunElevation(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setTurbidity:")
     public native void setTurbidity(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setUpperAtmosphereScattering:")
     public native void setUpperAtmosphereScattering(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("sunElevation")
     public native float sunElevation();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("turbidity")
     public native float turbidity();
 
     /**
      * Call updateTexture if parameters have been changed and a new sky is required.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("updateTexture")
     public native void updateTexture();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("upperAtmosphereScattering")
     public native float upperAtmosphereScattering();

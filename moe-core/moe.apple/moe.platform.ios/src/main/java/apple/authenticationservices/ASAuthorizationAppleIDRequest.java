@@ -143,6 +143,8 @@ public class ASAuthorizationAppleIDRequest extends ASAuthorizationOpenIDRequest 
      * provide additional context to identity provider.
      * 
      * @see ASAuthorizationAppleIDCredential doc for the description of this property in context of response.
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setUser:")
@@ -171,6 +173,8 @@ public class ASAuthorizationAppleIDRequest extends ASAuthorizationOpenIDRequest 
      * provide additional context to identity provider.
      * 
      * @see ASAuthorizationAppleIDCredential doc for the description of this property in context of response.
+     * 
+     *      API-Since: 13.0
      */
     @Nullable
     @Generated

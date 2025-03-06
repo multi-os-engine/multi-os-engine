@@ -175,6 +175,8 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
      * [@property] URLAsset
      * 
      * The asset supplied to the download task upon initialization.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -209,7 +211,12 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
      * and playable. The ranges provided might be discontinuous.
      * 
      * Returns an NSArray of NSValues containing CMTimeRanges.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use NSURLSessionTask.progress instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("loadedTimeRanges")
@@ -219,7 +226,12 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
      * [@property] options
      * 
      * The options supplied to the download task upon initialization.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use AVAssetDownloadConfiguration instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("options")

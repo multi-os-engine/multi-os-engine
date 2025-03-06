@@ -162,6 +162,8 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
 
     /**
      * Indicates whether a selection in this group is required at all times.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowEmptySelection")
@@ -169,6 +171,8 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
 
     /**
      * The default language option, if any, within this group.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -179,6 +183,9 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     @Selector("init")
     public native MPNowPlayingInfoLanguageOptionGroup init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithLanguageOptions:defaultLanguageOption:allowEmptySelection:")
     public native MPNowPlayingInfoLanguageOptionGroup initWithLanguageOptionsDefaultLanguageOptionAllowEmptySelection(
@@ -187,6 +194,8 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
 
     /**
      * The available language options within this group.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

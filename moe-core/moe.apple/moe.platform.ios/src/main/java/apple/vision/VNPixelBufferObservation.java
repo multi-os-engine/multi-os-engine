@@ -142,6 +142,9 @@ public class VNPixelBufferObservation extends VNObservation {
 
     /**
      * The resulting image from a request like VNCoreMLRequest where the model produces an image as an output.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

@@ -24,6 +24,8 @@ import org.moe.natj.general.ann.NInt;
  * [@const] NEHotspotConfigurationErrorAlreadyAssociated Wi-Fi is already associated.
  * [@const] NEHotspotConfigurationErrorApplicationIsNotInForeground The application is not in the foreground.
  * [@const] NEHotspotConfigurationErrorInvalidSSIDPrefix The given SSID Prefix string is invalid.
+ * [@const] NEHotspotConfigurationErrorUserUnauthorized The accessory is unauthorized by the user.
+ * [@const] NEHotspotConfigurationErrorSystemDenied System denied configuration of accessory network.
  * 
  * API-Since: 11.0
  */
@@ -97,4 +99,12 @@ public final class NEHotspotConfigurationError {
      * API-Since: 11.0
      */
     @Generated @NInt public static final long InvalidSSIDPrefix = 0x000000000000000FL;
+    /**
+     * API-Since: 11.0
+     */
+    @Generated @NInt public static final long UserUnauthorized = 0x0000000000000010L;
+    /**
+     * API-Since: 11.0
+     */
+    @Generated @NInt public static final long SystemDenied = 0x0000000000000011L;
 }

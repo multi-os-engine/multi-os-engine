@@ -40,6 +40,8 @@ public interface INShareFocusStatusIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INShareFocusStatusIntentResponse
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -66,6 +68,8 @@ public interface INShareFocusStatusIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INShareFocusStatusIntentResponse
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("handleShareFocusStatus:completion:")

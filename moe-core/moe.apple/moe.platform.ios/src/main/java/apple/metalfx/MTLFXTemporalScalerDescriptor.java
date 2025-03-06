@@ -87,6 +87,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     /**
      * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
      * scaler.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("colorTextureFormat")
@@ -97,6 +99,9 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("depthTextureFormat")
     @NUInt
@@ -115,19 +120,31 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     @Selector("init")
     public native MTLFXTemporalScalerDescriptor init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputContentMaxScale")
     public native float inputContentMaxScale();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputContentMinScale")
     public native float inputContentMinScale();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputHeight")
     @NUInt
     public native long inputHeight();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputWidth")
     @NUInt
@@ -150,6 +167,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
      * Auto exposure property, setting this to YES to indicate for MetalFX
      * to determine exposure per frame, which will ignore exposureTexture
      * property on the scaler object.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isAutoExposureEnabled")
@@ -161,6 +180,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
      * Scale value represents output resolution / input content resolution for either
      * width or height dimension. It's assumed that aspect ratio of input/output is
      * always the same.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isInputContentPropertiesEnabled")
@@ -175,6 +196,9 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("motionTextureFormat")
     @NUInt
@@ -188,6 +212,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     /**
      * The following method is used to instantiate the effect encoder for a given
      * Metal device.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -196,16 +222,25 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native MTLFXTemporalScaler newTemporalScalerWithDevice(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputHeight")
     @NUInt
     public native long outputHeight();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputTextureFormat")
     @NUInt
     public native long outputTextureFormat();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputWidth")
     @NUInt
@@ -223,6 +258,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
      * Auto exposure property, setting this to YES to indicate for MetalFX
      * to determine exposure per frame, which will ignore exposureTexture
      * property on the scaler object.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAutoExposureEnabled:")
@@ -231,19 +268,30 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     /**
      * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
      * scaler.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setColorTextureFormat:")
     public native void setColorTextureFormat(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setDepthTextureFormat:")
     public native void setDepthTextureFormat(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setInputContentMaxScale:")
     public native void setInputContentMaxScale(float value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setInputContentMinScale:")
     public native void setInputContentMinScale(float value);
@@ -254,31 +302,51 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
      * Scale value represents output resolution / input content resolution for either
      * width or height dimension. It's assumed that aspect ratio of input/output is
      * always the same.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInputContentPropertiesEnabled:")
     public native void setInputContentPropertiesEnabled(boolean value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setInputHeight:")
     public native void setInputHeight(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setInputWidth:")
     public native void setInputWidth(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setMotionTextureFormat:")
     public native void setMotionTextureFormat(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOutputHeight:")
     public native void setOutputHeight(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOutputTextureFormat:")
     public native void setOutputTextureFormat(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOutputWidth:")
     public native void setOutputWidth(@NUInt long value);
@@ -293,6 +361,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
 
     /**
      * Class method for determining support
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("supportsDevice:")
@@ -332,4 +402,59 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("isReactiveMaskTextureEnabled")
+    public native boolean isReactiveMaskTextureEnabled();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("reactiveMaskTextureFormat")
+    @NUInt
+    public native long reactiveMaskTextureFormat();
+
+    /**
+     * requiresSynchronousInitialization property, setting this to YES ensures
+     * that the effect is fully created before first use, setting it to NO
+     * allows the implementation to create an optimized version asynchronously, this
+     * can cause the performance to be submoptimal while the optimized version is created.
+     * Defaults to NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("requiresSynchronousInitialization")
+    public native boolean requiresSynchronousInitialization();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setReactiveMaskTextureEnabled:")
+    public native void setReactiveMaskTextureEnabled(boolean value);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setReactiveMaskTextureFormat:")
+    public native void setReactiveMaskTextureFormat(@NUInt long value);
+
+    /**
+     * requiresSynchronousInitialization property, setting this to YES ensures
+     * that the effect is fully created before first use, setting it to NO
+     * allows the implementation to create an optimized version asynchronously, this
+     * can cause the performance to be submoptimal while the optimized version is created.
+     * Defaults to NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setRequiresSynchronousInitialization:")
+    public native void setRequiresSynchronousInitialization(boolean value);
 }

@@ -109,6 +109,9 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("init")
     public native MDLPackedJointAnimation init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithName:jointPaths:")
     public native MDLPackedJointAnimation initWithNameJointPaths(@NotNull String name,
@@ -131,6 +134,9 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("jointPaths")
@@ -163,11 +169,17 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("rotations")
     public native MDLAnimatedQuaternionArray rotations();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("scales")
@@ -181,6 +193,9 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("translations")

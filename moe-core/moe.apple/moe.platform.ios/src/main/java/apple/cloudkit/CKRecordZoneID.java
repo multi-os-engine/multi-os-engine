@@ -187,10 +187,16 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native CKRecordZoneID initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithZoneName:ownerName:")
     public native CKRecordZoneID initWithZoneNameOwnerName(@NotNull String zoneName, @NotNull String ownerName);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("ownerName")
@@ -202,6 +208,9 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("zoneName")

@@ -107,6 +107,9 @@ public class CAValueFunction extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("functionWithName:")
     public static native CAValueFunction functionWithName(@NotNull String name);
@@ -176,6 +179,9 @@ public class CAValueFunction extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CAValueFunction initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("name")

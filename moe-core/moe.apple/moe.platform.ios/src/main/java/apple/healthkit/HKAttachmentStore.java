@@ -68,6 +68,8 @@ public class HKAttachmentStore extends NSObject {
      * @param metadata    Extra information describing the attachment.
      * @param completion  Called with an HKAttachment instance once the file was successfully saved and attached,
      *                    otherwise called with an error.
+     * 
+     *                    API-Since: 16.0
      */
     @Generated
     @Selector("addAttachmentToObject:name:contentType:URL:metadata:completion:")
@@ -134,6 +136,8 @@ public class HKAttachmentStore extends NSObject {
      * 
      * @param object     The object for which to retrieve attachments.
      * @param completion Called with a list of attachments or an error.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("getAttachmentsForObject:completion:")
@@ -160,6 +164,8 @@ public class HKAttachmentStore extends NSObject {
      * @param attachment The attachment object to read data from.
      * @param completion Called with an NSData or an error.
      * @return An NSProgress object to use for tracking the progress of downloading the attachment's data from iCloud.
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -189,6 +195,8 @@ public class HKAttachmentStore extends NSObject {
      * The designated initializer to create an HKAttachmentStore.
      * 
      * @param healthStore Specifies the HKHealthStore object to use.
+     * 
+     *                    API-Since: 16.0
      */
     @Generated
     @Selector("initWithHealthStore:")
@@ -229,6 +237,8 @@ public class HKAttachmentStore extends NSObject {
      * @param attachment The HKAttachment to be removed.
      * @param object     The object from which to remove the attachment.
      * @param completion Called once the remove operation finishes.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("removeAttachment:fromObject:completion:")
@@ -265,6 +275,8 @@ public class HKAttachmentStore extends NSObject {
      * @param attachment  The attachment object to read data from.
      * @param dataHandler Called with an NSData chunk or an error. When done is YES, the operation has completed.
      * @return An NSProgress object to use for tracking the progress of downloading the attachment's data from iCloud.
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated

@@ -105,7 +105,12 @@ public class NSNetService extends NSObject {
      * and the values must be NSDatas. If the dictionary cannot be converted into an NSData suitable for a TXT record,
      * this method will return nil. For applications linked on or after Mac OS X 10.5, this method will throw an
      * NSInvalidArgumentException if it is passed nil as the argument.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("dataFromTXTRecordDictionary:")
@@ -125,7 +130,12 @@ public class NSNetService extends NSObject {
      * NSDatas. The caller is responsible for interpreting these as types appropriate to the keys. If the NSData cannot
      * be converted into an appropriate NSDictionary, this method will return nil. For applications linked on or after
      * Mac OS X 10.5, this method will throw an NSInvalidException if it is passed nil as the argument.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("dictionaryFromTXTRecordData:")
@@ -188,7 +198,12 @@ public class NSNetService extends NSObject {
      * Returns the raw TXT record of the NSNetService instance. If the instance has not been resolved, or the delegate's
      * -netService:didUpdateTXTRecordData: has not been called, this will return nil. It is permitted to have a
      * zero-length TXT record.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("TXTRecordData")
@@ -198,7 +213,12 @@ public class NSNetService extends NSObject {
      * The addresses of the service. This is an NSArray of NSData instances, each of which contains a single struct
      * sockaddr suitable for use with connect(2). In the event that no addresses are resolved for the service or the
      * service has not yet been resolved, an empty NSArray is returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("addresses")
@@ -206,7 +226,12 @@ public class NSNetService extends NSObject {
 
     /**
      * Set a delegate to receive publish, resolve, or monitor events.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -215,7 +240,12 @@ public class NSNetService extends NSObject {
 
     /**
      * Returns the domain of the discovered or published service.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("domain")
@@ -226,7 +256,12 @@ public class NSNetService extends NSObject {
      * the streams requested are created successfully. Returns NO if or any reason the stream could not be created. If
      * only one stream is desired, pass NULL for the address of the other stream. The streams that are created are not
      * open, and are not scheduled in any run loop for any mode.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("getInputStream:outputStream:")
     public native boolean getInputStreamOutputStream(
@@ -236,7 +271,12 @@ public class NSNetService extends NSObject {
     /**
      * Returns the DNS host name of the computer hosting the discovered or published service. If a successful resolve
      * has not yet occurred, this method will return nil.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("hostName")
@@ -264,7 +304,12 @@ public class NSNetService extends NSObject {
      * 
      * If publish: is called on an NSNetService instance initialized with this method, an NSNetServicesBadArgumentError
      * will be sent in the error dictionary to the delegate's netService:didNotPublish: method.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithDomain:type:name:")
     public native NSNetService initWithDomainTypeName(@NotNull String domain, @NotNull String type,
@@ -274,7 +319,12 @@ public class NSNetService extends NSObject {
      * This is the initializer for publishing. You should use this initializer if you are going to announce the
      * availability of a service on the network. To publish a service in all available domains, pass the empty string as
      * the domain.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithDomain:type:name:port:")
     public native NSNetService initWithDomainTypeNamePort(@NotNull String domain, @NotNull String type,
@@ -282,7 +332,12 @@ public class NSNetService extends NSObject {
 
     /**
      * Returns the name of the discovered or published service.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("name")
@@ -305,7 +360,12 @@ public class NSNetService extends NSObject {
      * If the name of the service is the default name (@""), then the service will be renamed automatically. If the name
      * of the service has been specified, then the service will not be renamed automatically. If more control over
      * renaming is required, then -[NSNetService publishWithOptions:] is available.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("publish")
     public native void publish();
@@ -323,6 +383,12 @@ public class NSNetService extends NSObject {
     @Selector("publishWithOptions:")
     public native void publishWithOptions(@NUInt long options);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
+     */
+    @Deprecated
     @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
@@ -347,7 +413,12 @@ public class NSNetService extends NSObject {
      * -netServiceDidResolveAddress: method is called before the timeout expires, the resolve is successful. If the
      * timeout is reached, the delegate's -netService:didNotResolve: method will be called. The value of the
      * NSNetServicesErrorCode key in the error dictionary will be NSNetServicesTimeoutError.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("resolveWithTimeout:")
     public native void resolveWithTimeout(double timeout);
@@ -356,21 +427,36 @@ public class NSNetService extends NSObject {
      * NSNetService instances may be scheduled on NSRunLoops to operate in different modes, or in other threads. It is
      * generally not necessary to schedule NSNetServices in other threads. NSNetServices are scheduled in the current
      * thread's NSRunLoop in the NSDefaultRunLoopMode when they are created.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     /**
      * Set a delegate to receive publish, resolve, or monitor events.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value);
 
     /**
      * Set a delegate to receive publish, resolve, or monitor events.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value) {
         Object __old = delegate();
@@ -396,7 +482,12 @@ public class NSNetService extends NSObject {
     /**
      * Sets the TXT record of the NSNetService instance that has been or will be published. Pass nil to remove the TXT
      * record from the instance.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setTXTRecordData:")
     public native boolean setTXTRecordData(@Nullable NSData recordData);
@@ -405,28 +496,48 @@ public class NSNetService extends NSObject {
      * Starts monitoring the NSNetService instance for events. In Mac OS X 10.4 Tiger, monitored NSNetService instances
      * inform their delegates of changes to the instance's TXT record by calling the delegate's
      * -netService:didUpdateTXTRecordData: method.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("startMonitoring")
     public native void startMonitoring();
 
     /**
      * Halts a service which is either publishing or resolving.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("stop")
     public native void stop();
 
     /**
      * Stops monitoring the NSNetService instance for events.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("stopMonitoring")
     public native void stopMonitoring();
 
     /**
      * Returns the type of the discovered or published service.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("type")

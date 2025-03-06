@@ -28,6 +28,8 @@ public interface UISpringLoadedInteractionEffect {
      * 
      * @param interaction The springloaded interaction providing this information.
      * @param context     An object that provides information about the current springloading state.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("interaction:didChangeWithContext:")

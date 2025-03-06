@@ -38,8 +38,7 @@ import org.jetbrains.annotations.Nullable;
  * update.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -103,6 +102,11 @@ public class MLCEmbeddingLayer extends MLCLayer {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -139,6 +143,11 @@ public class MLCEmbeddingLayer extends MLCLayer {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:weights:")
     public static native MLCEmbeddingLayer layerWithDescriptorWeights(@NotNull MLCEmbeddingDescriptor descriptor,
@@ -165,6 +174,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -178,7 +188,11 @@ public class MLCEmbeddingLayer extends MLCLayer {
      * [@property] weights
      * 
      * The array of word embeddings
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weights")
@@ -188,7 +202,11 @@ public class MLCEmbeddingLayer extends MLCLayer {
      * [@property] weightsParameter
      * 
      * The weights tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weightsParameter")

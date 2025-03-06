@@ -61,6 +61,8 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
      * [@property] alpha
      * 
      * Scaling factor for the output. Default: 1.0f.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("alpha")
@@ -108,12 +110,18 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
     @Selector("init")
     public native MPSNNGramMatrixCalculationGradientNode init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
     public native MPSNNGramMatrixCalculationGradientNode initWithSourceGradientSourceImageGradientState(
             @NotNull MPSNNImageNode sourceGradient, @NotNull MPSNNImageNode sourceImage,
             @NotNull MPSNNGradientStateNode gradientState);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:alpha:")
     public native MPSNNGramMatrixCalculationGradientNode initWithSourceGradientSourceImageGradientStateAlpha(
@@ -147,12 +155,18 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
     @Selector("new")
     public static native MPSNNGramMatrixCalculationGradientNode new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")
     public static native MPSNNGramMatrixCalculationGradientNode nodeWithSourceGradientSourceImageGradientState(
             @NotNull MPSNNImageNode sourceGradient, @NotNull MPSNNImageNode sourceImage,
             @NotNull MPSNNGradientStateNode gradientState);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:alpha:")
     public static native MPSNNGramMatrixCalculationGradientNode nodeWithSourceGradientSourceImageGradientStateAlpha(

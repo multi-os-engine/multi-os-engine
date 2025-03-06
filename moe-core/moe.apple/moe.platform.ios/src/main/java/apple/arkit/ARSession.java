@@ -59,6 +59,8 @@ public class ARSession extends NSObject {
      * The anchor will be added in the next frame update.
      * 
      * @param anchor The anchor to add.
+     * 
+     *               API-Since: 11.0
      */
     @Generated
     @Selector("addAnchor:")
@@ -101,6 +103,8 @@ public class ARSession extends NSObject {
 
     /**
      * The configuration currently being used by the session.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -109,6 +113,8 @@ public class ARSession extends NSObject {
 
     /**
      * The current frame of the session.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -121,6 +127,8 @@ public class ARSession extends NSObject {
 
     /**
      * A delegate for receiving ARSession updates.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -132,6 +140,8 @@ public class ARSession extends NSObject {
      * The dispatch queue on which the delegate calls are performed.
      * 
      * If not provided or nil, delegate calls will be performed on the main queue.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -183,6 +193,8 @@ public class ARSession extends NSObject {
      * 
      * Once paused, no more updates will be received from the
      * session until run is called again.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pause")
@@ -194,6 +206,8 @@ public class ARSession extends NSObject {
      * The anchor will be removed from subsequent frame updates.
      * 
      * @param anchor The anchor to remove.
+     * 
+     *               API-Since: 11.0
      */
     @Generated
     @Selector("removeAnchor:")
@@ -228,6 +242,8 @@ public class ARSession extends NSObject {
      * 
      * @param configuration The configuration to use.
      * @param options       The run options to use.
+     * 
+     *                      API-Since: 11.0
      */
     @Generated
     @Selector("runWithConfiguration:options:")
@@ -235,6 +251,8 @@ public class ARSession extends NSObject {
 
     /**
      * A delegate for receiving ARSession updates.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -242,6 +260,8 @@ public class ARSession extends NSObject {
 
     /**
      * A delegate for receiving ARSession updates.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ARSessionDelegate value) {
@@ -259,6 +279,8 @@ public class ARSession extends NSObject {
      * The dispatch queue on which the delegate calls are performed.
      * 
      * If not provided or nil, delegate calls will be performed on the main queue.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDelegateQueue:")

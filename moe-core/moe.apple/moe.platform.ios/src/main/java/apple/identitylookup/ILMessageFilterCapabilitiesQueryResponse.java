@@ -140,6 +140,8 @@ public class ILMessageFilterCapabilitiesQueryResponse extends NSObject implement
 
     /**
      * Array of type ILMessageFilterSubAction under Promotional
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -156,6 +158,8 @@ public class ILMessageFilterCapabilitiesQueryResponse extends NSObject implement
 
     /**
      * Array of type ILMessageFilterSubAction under Promotional
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPromotionalSubActions:")
@@ -163,6 +167,8 @@ public class ILMessageFilterCapabilitiesQueryResponse extends NSObject implement
 
     /**
      * Array of type ILMessageFilterSubAction under Transactional
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTransactionalSubActions:")
@@ -188,6 +194,8 @@ public class ILMessageFilterCapabilitiesQueryResponse extends NSObject implement
 
     /**
      * Array of type ILMessageFilterSubAction under Transactional
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

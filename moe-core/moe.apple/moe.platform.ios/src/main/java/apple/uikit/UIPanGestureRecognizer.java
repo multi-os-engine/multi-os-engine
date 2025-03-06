@@ -199,12 +199,17 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Selector("setMinimumNumberOfTouches:")
     public native void setMinimumNumberOfTouches(@NUInt long value);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setTranslation:inView:")
     public native void setTranslationInView(@ByValue CGPoint translation, @Nullable UIView view);
 
     /**
      * translation in the coordinate system of the specified view
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("translationInView:")
@@ -213,6 +218,8 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * velocity of the pan in points/second in the coordinate system of the specified view
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("velocityInView:")

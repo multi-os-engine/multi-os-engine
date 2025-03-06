@@ -86,6 +86,12 @@ public class INTransferMoneyIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -99,6 +105,12 @@ public class INTransferMoneyIntentResponse extends INIntentResponse {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fromAccount")
@@ -121,7 +133,12 @@ public class INTransferMoneyIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INTransferMoneyIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -166,26 +183,62 @@ public class INTransferMoneyIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setFromAccount:")
     public native void setFromAccount(@Nullable INPaymentAccount value);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setToAccount:")
     public native void setToAccount(@Nullable INPaymentAccount value);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setTransactionAmount:")
     public native void setTransactionAmount(@Nullable INPaymentAmount value);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setTransactionNote:")
     public native void setTransactionNote(@Nullable String value);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setTransactionScheduledDate:")
     public native void setTransactionScheduledDate(@Nullable INDateComponentsRange value);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setTransferFee:")
     public native void setTransferFee(@Nullable INCurrencyAmount value);
@@ -208,26 +261,56 @@ public class INTransferMoneyIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("toAccount")
     public native INPaymentAccount toAccount();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionAmount")
     public native INPaymentAmount transactionAmount();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionNote")
     public native String transactionNote();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionScheduledDate")
     public native INDateComponentsRange transactionScheduledDate();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transferFee")

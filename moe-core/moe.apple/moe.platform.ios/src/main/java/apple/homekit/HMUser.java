@@ -166,6 +166,8 @@ public class HMUser extends NSObject {
 
     /**
      * Name of the user.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

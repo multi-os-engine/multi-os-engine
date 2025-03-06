@@ -61,6 +61,8 @@ public interface INSendPaymentIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSendPaymentIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -80,6 +82,8 @@ public interface INSendPaymentIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INSendPaymentIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleSendPayment:completion:")
@@ -101,6 +105,9 @@ public interface INSendPaymentIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveNoteForSendPayment:withCompletion:")

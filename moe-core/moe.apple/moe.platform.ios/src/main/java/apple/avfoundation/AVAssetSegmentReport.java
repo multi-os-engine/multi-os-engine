@@ -145,6 +145,8 @@ public class AVAssetSegmentReport extends NSObject {
      * [@property] segmentType
      * 
      * A segment type of the segment data.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("segmentType")
@@ -163,6 +165,8 @@ public class AVAssetSegmentReport extends NSObject {
      * [@property] trackReports
      * 
      * Provides an array of AVAssetSegmentTrackReport in the segment data.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

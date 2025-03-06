@@ -195,4 +195,14 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistration extends N
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A list of transports that the authenticator is believed to support, if this could be determined.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("transports")
+    @NotNull
+    public native NSArray<String> transports();
 }

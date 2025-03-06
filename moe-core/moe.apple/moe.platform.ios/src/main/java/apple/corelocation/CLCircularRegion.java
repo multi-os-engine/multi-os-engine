@@ -172,7 +172,11 @@ public class CLCircularRegion extends CLRegion {
      * 
      * Discussion:
      * Returns the coordinate of the center of the region.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("center")
     @ByValue
@@ -183,7 +187,11 @@ public class CLCircularRegion extends CLRegion {
      * 
      * Discussion:
      * Returns YES if the coordinate lies inside the region, and NO otherwise.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("containsCoordinate:")
     public native boolean containsCoordinate(@ByValue CLLocationCoordinate2D coordinate);
@@ -205,7 +213,11 @@ public class CLCircularRegion extends CLRegion {
      * Initialize a region. center gives the coordinates of center of the region, while radius gives
      * the distance in meters between the center and the region's boundary. identifier is a description
      * for the region that could be displayed to the user, and ideally should be chosen by the user.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithCenter:radius:identifier:")
     public native CLCircularRegion initWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center, double radius,
@@ -220,7 +232,11 @@ public class CLCircularRegion extends CLRegion {
      * 
      * Discussion:
      * Returns the radius of the region.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("radius")
     public native double radius();

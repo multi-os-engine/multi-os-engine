@@ -92,6 +92,8 @@ import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.opaque.CFErrorRef;
+import apple.coregraphics.struct.CGColorBufferFormat;
 
 @Generated
 @Library("CoreGraphics")
@@ -5582,8 +5584,7 @@ public final class CoreGraphics {
     public static native CFStringRef kCGFontVariationAxisDefaultValue();
 
     /**
-     * CFBooleanRef which can be used as option to create CGColorConversionInfoRef, when Black Point Compensation is
-     * desired
+     * CFBooleanRef's which can be used as options to create CGColorConversionInfoRef
      * 
      * API-Since: 10.0
      */
@@ -6008,10 +6009,7 @@ public final class CoreGraphics {
      * Please use CGColorSpaceUsesITUR_2100TF instead
      * 
      * API-Since: 13.0
-     * Deprecated-Since: 13.4
-     * Deprecated-Message: No longer supported
      */
-    @Deprecated
     @Generated
     @CFunction
     public static native boolean CGColorSpaceIsHDR(@NotNull CGColorSpaceRef arg1);
@@ -6121,6 +6119,12 @@ public final class CoreGraphics {
     }
 
     /**
+     * CGColorConversionInfoCreateWithOptions allows to request a specifc behavior of color conversion
+     * which is consistent with CGContextDrawImageApplyingToneMapping when applying kCGToneMappingITURecommended.
+     * These options include: kCGUse100nitsHLGOOTF, kCGUseBT1886ForCoreVideoGamma, kCGSkipBoostToHDR
+     * and kCGUseLegacyHDREcosystem.
+     * See CGContext.h and CGToneMapping.h for more details.
+     * 
      * API-Since: 13.0
      */
     @Nullable
@@ -6746,7 +6750,7 @@ public final class CoreGraphics {
 
     /**
      * Returns a new path created by unioning `path` and `maskPath`. Any unclosed subpaths in either path are assumed to
-     * be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * be closed. Filling the resulting path using even-odd or non-zero filling is identical.
      * 
      * API-Since: 16.0
      */
@@ -6758,7 +6762,7 @@ public final class CoreGraphics {
 
     /**
      * Returns a new path created by intersecting `path` and `maskPath`. Any unclosed subpaths in either path are
-     * assumed to be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * assumed to be closed. Filling the resulting path using even-odd or non-zero filling is identical.
      * 
      * API-Since: 16.0
      */
@@ -6770,7 +6774,7 @@ public final class CoreGraphics {
 
     /**
      * Returns a new path created by subtracting `maskPath` from `path`. Any unclosed subpaths in either path are
-     * assumed to be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * assumed to be closed. Filling the resulting path using even-odd or non-zero filling is identical.
      * 
      * API-Since: 16.0
      */
@@ -6782,7 +6786,7 @@ public final class CoreGraphics {
 
     /**
      * Returns a new path created by exclusive or-ing `path` and `maskPath`. Any unclosed subpaths in either path are
-     * assumed to be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * assumed to be closed. Filling the resulting path using even-odd or non-zero filling is identical.
      * 
      * API-Since: 16.0
      */
@@ -6884,4 +6888,270 @@ public final class CoreGraphics {
     @CFunction
     public static native void CGContextDrawConicGradient(@NotNull CGContextRef c, @Nullable CGGradientRef gradient,
             @ByValue CGPoint center, @NFloat double angle);
+
+    /**
+     * Similar to 'CGColorSpaceGetBaseColorSpace' if `space' is a pattern or indexed
+     * color space, in which case the retained base color space is returned.
+     * In the case of a color space containing image specific metadata associated with
+     * the gain map, a new color space without the metadata will be returned.
+     * For all other color spaces this function will return NULL.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native CGColorSpaceRef CGColorSpaceCopyBaseColorSpace(@NotNull CGColorSpaceRef space);
+
+    /**
+     * Create an image with specified content headroom. ColorSpace 'space' must be an
+     * extended color space, PQ or HLG. In case of extended color spaces, image
+     * components must be either 16-bit or 32-bit float. In case of PQ or HLG
+     * color spaces, 16-bit or 32-bit float image components values will be
+     * clipped to [0.0, 1.0] range, and other bit depths will be treated as
+     * representing [0.0, 1.0] range, same as in the 'CGImageCreate' API.
+     * The headroom parameter must be either equal 0.0f or be greater or equal 1.0f.
+     * When the headroom parameter is 0.0f and the color space is extended,
+     * the image content headroom will be calculated from the image data.
+     * When needed, the exisitng 'CGImageCreate' API will create an image with
+     * content headroom equal 0.0f.
+     * When the headroom parameter is 0.0f in case of PQ or HLG color spaces,
+     * the image content headroom value will be estimated based on the color space.
+     * When justified, kCGDefaultHDRImageContentHeadroom which is a typical content
+     * headroom for PQ and HLG images could be used to specify the content headroom.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGImageRef CGImageCreateWithContentHeadroom(float headroom, @NUInt long width,
+            @NUInt long height, @NUInt long bitsPerComponent, @NUInt long bitsPerPixel, @NUInt long bytesPerRow,
+            @Nullable CGColorSpaceRef space, int bitmapInfo, @Nullable CGDataProviderRef provider,
+            @Nullable ConstNFloatPtr decode, boolean shouldInterpolate, int intent);
+
+    /**
+     * Create a copy of `image' adding or replacing the image's content headroom.
+     * Returns NULL if `image' is an image mask, or if original is not using
+     * extended color space, PQ or HLG.
+     * The headroom parameter must be either equal 0.0f or be greater or equal 1.0f.
+     * When the headroom parameter is 0.0f and the color space is extended,
+     * the image content headroom will be calculated from the image data.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGImageRef CGImageCreateCopyWithContentHeadroom(float headroom, @Nullable CGImageRef image);
+
+    /**
+     * Return image content headroom
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGImageGetContentHeadroom(@Nullable CGImageRef image);
+
+    /**
+     * Return true if `image' should be tone mapped while rendering, false otherwise.
+     * Tone mapping results depend on the receiving context.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CGImageShouldToneMap(@Nullable CGImageRef image);
+
+    /**
+     * Return true if `image' contains image specific tone mapping metadata, false otherwise.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CGImageContainsImageSpecificToneMappingMetadata(@Nullable CGImageRef image);
+
+    /**
+     * Set target EDR headroom on a context to be used when rendering HDR content to the context.
+     * Context 'c' has to be a bitmap context using either extended or HDR color space and
+     * 'headroom' has to be a value greater than 1.0f. Return true on success and false on failure
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CGContextSetEDRTargetHeadroom(@NotNull CGContextRef c, float headroom);
+
+    /**
+     * Return the EDR target headroom of the context `c'.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGContextGetEDRTargetHeadroom(@NotNull CGContextRef c);
+
+    /**
+     * Draw `image' in the rectangular area specified by `rect' in the context
+     * `c' applying the specified tone mapping method and options. See CGToneMapping.h for more info. Same as in
+     * CGContextDrawImage, the image is scaled, if necessary, to fit into `rect'.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CGContextDrawImageApplyingToneMapping(@NotNull CGContextRef c, @ByValue CGRect r,
+            @NotNull CGImageRef image, int method, @Nullable CFDictionaryRef options);
+
+    /**
+     * CGColorConversionInfoCreateForToneMapping allows to request the specifc behavior of a color conversion
+     * which is consistent with CGContextDrawImageApplyingToneMapping.
+     * See CGContext.h and CGToneMapping.h for more details about CGToneMapping type and options.
+     * CGColorConversionInfoCreateWithOptions will return NULL when CGColorConversionInfoRef cannot be created or no
+     * cconversion is required.
+     * Headroom values are ignored when kCGToneMappingITURecommended, kCGToneMappingEXRGamma or kCGToneMappingNone
+     * methods are used.
+     * Otherwise headroom values must be equal or greater 1.0f to be considered valid.
+     * CGColorConversionInfoCreateForToneMapping requires that target headroom is smaller or equal source headroom to
+     * succeed, except when converting
+     * SDR to HDR.
+     * If CGColorConversionInfoRef cannot be created because of incorrect parameters and 'error' is a non-NULL pointer,
+     * a CFErrorRef will be returned
+     * with the description explaining the reason.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreateForToneMapping(
+            @NotNull CGColorSpaceRef from, float source_headroom, @NotNull CGColorSpaceRef to, float target_headroom,
+            int method, @Nullable CFDictionaryRef options, @Nullable Ptr<CFErrorRef> error);
+
+    /**
+     * CGColorConversionInfoConvertData will use CGColorConversionInfoRef 'info' to convert 'src_data' described by
+     * 'width' (in pixels),
+     * 'height' (in pixels) and 'src_format' to 'dst_data' of the same pixel size ('width', 'height') and 'dst_format'.
+     * CFDictionaryRef 'options' is reserved for future use.
+     * CGColorConversionInfoConvertData will return 'true' on success and 'false' on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CGColorConversionInfoConvertData(@NotNull CGColorConversionInfoRef info,
+            @NUInt long width, @NUInt long height, @NotNull VoidPtr dst_data, @ByValue CGColorBufferFormat dst_format,
+            @NotNull ConstVoidPtr src_data, @ByValue CGColorBufferFormat src_format, @Nullable CFDictionaryRef options);
+
+    @Generated
+    @CFunction
+    public static native void CGPDFContextSetParentTree(@Nullable CGContextRef context,
+            @NotNull CGPDFDictionaryRef parentTreeDictionary);
+
+    @Generated
+    @CFunction
+    public static native void CGPDFContextSetIDTree(@Nullable CGContextRef context,
+            @NotNull CGPDFDictionaryRef IDTreeDictionary);
+
+    @Generated
+    @CFunction
+    public static native void CGPDFContextSetPageTagStructureTree(@Nullable CGContextRef context,
+            @NotNull CFDictionaryRef pageTagStructureTreeDictionary);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGColorSpaceCoreMedia709();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    public static native float kCGDefaultHDRImageContentHeadroom();
+
+    /**
+     * default value: 0.0f range [0.0f, 0.01f]
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGEXRToneMappingGammaDefog();
+
+    /**
+     * default value: 0.0f range [-10.0f, 10.0f]
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGEXRToneMappingGammaExposure();
+
+    /**
+     * default value: 0.0f range [-2.85f, 3.0f]
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGEXRToneMappingGammaKneeLow();
+
+    /**
+     * default value: 5.0f range [3.5f, 7.5f]
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGEXRToneMappingGammaKneeHigh();
+
+    /**
+     * The expected value is a CFBooleanRef (kCFBooleanTrue)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGUse100nitsHLGOOTF();
+
+    /**
+     * The expected value is a CFBooleanRef (kCFBooleanTrue)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGUseBT1886ForCoreVideoGamma();
+
+    /**
+     * The expected value is a CFBooleanRef (kCFBooleanTrue)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGSkipBoostToHDR();
+
+    /**
+     * The expected value is a CFBooleanRef (kCFBooleanTrue)
+     * 
+     * API-Since: 18.1
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGUseLegacyHDREcosystem();
 }

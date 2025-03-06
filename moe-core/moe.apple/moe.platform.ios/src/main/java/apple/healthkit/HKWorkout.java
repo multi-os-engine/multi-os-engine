@@ -334,6 +334,8 @@ public class HKWorkout extends HKSample {
      * 
      * The duration is derived from the start and end dates of the workout and takes into account periods that the
      * workout was paused. Periods that the workout was paused are based off of the workoutEvents property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("duration")
@@ -380,7 +382,7 @@ public class HKWorkout extends HKSample {
      * quantity with a unit representing energy.
      * 
      * API-Since: 8.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: Use statisticsForType: passing the HKQuantityType for
      * HKQuantityTypeIdentifierActiveEnergyBurned
      */
@@ -399,7 +401,7 @@ public class HKWorkout extends HKSample {
      * workout. It should be a quantity with a unit representing count.
      * 
      * API-Since: 10.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: Use statisticsForType: passing the HKQuantityType for
      * HKQuantityTypeIdentifierSwimmingStrokeCount
      */
@@ -413,6 +415,8 @@ public class HKWorkout extends HKSample {
      * [@property] workoutActivityType
      * 
      * Represents the activity that the user was performing during a workout
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("workoutActivityType")
@@ -427,6 +431,8 @@ public class HKWorkout extends HKSample {
      * These events will be ordered by date in ascending order. All events must take place
      * between the start date and end date of the workout. The first workout event should never be a resume event
      * because it is assumed that the workout begins in a running state.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -442,7 +448,7 @@ public class HKWorkout extends HKSample {
      * workout. It should be a quantity with a unit representing count.
      * 
      * API-Since: 11.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: Use statisticsForType: passing the HKQuantityType for HKQuantityTypeIdentifierFlightClimbed
      */
     @Nullable

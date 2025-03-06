@@ -133,10 +133,16 @@ public class INUpcomingMediaManager extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setPredictionMode:forType:")
     public native void setPredictionModeForType(@NInt long mode, @NInt long type);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setSuggestedMediaIntents:")
     public native void setSuggestedMediaIntents(@NotNull NSOrderedSet<? extends INPlayMediaIntent> intents);
@@ -145,6 +151,9 @@ public class INUpcomingMediaManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("sharedManager")

@@ -106,6 +106,8 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
      * A unique id for the participant.
      * 
      * Use this identifier to distinguish participants.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -133,6 +135,8 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
      * [@property] readyToPlay
      * 
      * YES if the participant is ready to play.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isReadyToPlay")
@@ -172,6 +176,8 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
      * [@property] suspensionReasons
      * 
      * The reason, if any, this participant is currently not participating in coordinated playback.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

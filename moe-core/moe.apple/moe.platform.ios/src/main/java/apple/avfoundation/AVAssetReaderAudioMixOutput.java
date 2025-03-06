@@ -100,6 +100,8 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * CMAudioFormatDescription of the CMSampleBuffers that are provided in order to ensure that your processing is
      * appropriately configured for the output format.
      * 
+     * API-Since: 4.1
+     * 
      * @param tracks
      *                      An NSArray of AVAssetTrack objects from which the created object should read sample buffers
      *                      to be mixed.
@@ -212,6 +214,8 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * AVAssetReaderStatusUnknown)
      * - setting an audio mix containing a track that was not used to create the receiver
      * - an audio mix is set containing an invalid audio time pitch algorithm
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -226,6 +230,8 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * The value of this property is an NSDictionary that contains values for keys from AVAudioSettings.h (linear PCM
      * only). A value of nil indicates that the receiver will return audio samples in a convenient uncompressed format,
      * with sample rate and other properties determined according to the properties of the receiver's audio tracks.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -256,6 +262,8 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * The tracks from which the receiver reads mixed audio.
      * 
      * The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader's asset.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -292,6 +300,8 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * - the audio settings contains an AVSampleRateConverterAudioQualityKey
      * - the output would be compressed
      * 
+     * API-Since: 4.1
+     * 
      * @param tracks
      *                      An NSArray of AVAssetTrack objects from which the created object should read sample buffers
      *                      to be mixed.
@@ -318,6 +328,8 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * AVAssetReaderStatusUnknown)
      * - setting an audio mix containing a track that was not used to create the receiver
      * - an audio mix is set containing an invalid audio time pitch algorithm
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setAudioMix:")

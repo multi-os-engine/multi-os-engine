@@ -109,6 +109,8 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
      * 
      * @param sourceNode A valid MPSNNImageNode
      * @param size       The size of the output image {width, height, depth}
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:outputSize:")
@@ -120,6 +122,8 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
      * @param sourceNode        A valid MPSNNImageNode
      * @param transformProvider If non-nil, a valid MPSImageTransformProvider that provides the region of interest
      * @param size              The size of the output image {width, height, depth}
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:transformProvider:outputSize:")
@@ -159,6 +163,8 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
      * 
      * @param sourceNode A valid MPSNNImageNode
      * @param size       The size of the output image {width, height, depth}
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:outputSize:")
@@ -171,6 +177,8 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
      * @param sourceNode        A valid MPSNNImageNode
      * @param transformProvider If non-nil, a valid MPSImageTransformProvider that provides the region of interest
      * @param size              The size of the output image {width, height, depth}
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:transformProvider:outputSize:")

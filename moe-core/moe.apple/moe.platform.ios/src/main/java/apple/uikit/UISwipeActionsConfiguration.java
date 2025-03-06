@@ -45,6 +45,9 @@ public class UISwipeActionsConfiguration extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("actions")
@@ -85,6 +88,9 @@ public class UISwipeActionsConfiguration extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("configurationWithActions:")
     public static native UISwipeActionsConfiguration configurationWithActions(
@@ -136,6 +142,8 @@ public class UISwipeActionsConfiguration extends NSObject {
 
     /**
      * default YES, set to NO to prevent a full swipe from performing the first action
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("performsFirstActionWithFullSwipe")
@@ -151,6 +159,8 @@ public class UISwipeActionsConfiguration extends NSObject {
 
     /**
      * default YES, set to NO to prevent a full swipe from performing the first action
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPerformsFirstActionWithFullSwipe:")

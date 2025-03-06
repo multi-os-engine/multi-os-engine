@@ -142,6 +142,8 @@ public class AVMetadataItemFilter extends NSObject {
      * items, such as location information, leaving only playback-, copyright- and commercial-related metadata (such as
      * the purchaser's Apple ID), along with metadata either derivable from the media itself or necessary for its proper
      * behavior.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

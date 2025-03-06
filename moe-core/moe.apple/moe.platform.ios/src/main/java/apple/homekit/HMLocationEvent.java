@@ -184,6 +184,8 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     /**
      * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
      * This property will be nil when an application is not authorized for location services.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

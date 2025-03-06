@@ -190,6 +190,9 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native UINavigationItem initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithTitle:")
     public native UINavigationItem initWithTitle(@NotNull String title);
@@ -197,6 +200,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * Some navigation items want to display a custom left or right item when they're on top of the stack. A custom left
      * item replaces the regular back button unless you set leftItemsSupplementBackButton to YES
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -243,6 +248,9 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("prompt")
     public native String prompt();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("rightBarButtonItem")
@@ -277,11 +285,16 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * Some navigation items want to display a custom left or right item when they're on top of the stack. A custom left
      * item replaces the regular back button unless you set leftItemsSupplementBackButton to YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLeftBarButtonItem:")
     public native void setLeftBarButtonItem(@Nullable UIBarButtonItem value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setLeftBarButtonItem:animated:")
     public native void setLeftBarButtonItemAnimated(@Nullable UIBarButtonItem item, boolean animated);
@@ -332,10 +345,16 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("setPrompt:")
     public native void setPrompt(@Nullable String value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setRightBarButtonItem:")
     public native void setRightBarButtonItem(@Nullable UIBarButtonItem value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setRightBarButtonItem:animated:")
     public native void setRightBarButtonItemAnimated(@Nullable UIBarButtonItem item, boolean animated);
@@ -357,6 +376,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     /**
      * Title when topmost on the stack. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitle:")
@@ -364,6 +385,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     /**
      * Custom view to use in lieu of a title. May be sized horizontally. Only used when item is topmost on the stack.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitleView:")
@@ -371,6 +394,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     /**
      * Title when topmost on the stack. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -379,6 +404,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     /**
      * Custom view to use in lieu of a title. May be sized horizontally. Only used when item is topmost on the stack.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

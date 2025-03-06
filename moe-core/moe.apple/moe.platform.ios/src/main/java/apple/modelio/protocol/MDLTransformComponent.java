@@ -43,18 +43,25 @@ public interface MDLTransformComponent extends MDLComponent {
     /**
      * An array of sample times for which a key has been stored
      * If no animation data is present, the array will contain a single value of zero
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("keyTimes")
     NSArray<? extends NSNumber> keyTimes();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("maximumTime")
     double maximumTime();
 
     /**
      * If no animation data is present, minimumTime and maximumTime will be zero
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("minimumTime")
@@ -62,6 +69,8 @@ public interface MDLTransformComponent extends MDLComponent {
 
     /**
      * if YES, this transform is intended to be in global space, not parent space
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resetsTransform")
@@ -69,6 +78,8 @@ public interface MDLTransformComponent extends MDLComponent {
 
     /**
      * if YES, this transform is intended to be in global space, not parent space
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setResetsTransform:")

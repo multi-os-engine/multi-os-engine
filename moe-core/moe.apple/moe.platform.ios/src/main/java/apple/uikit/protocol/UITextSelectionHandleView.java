@@ -31,6 +31,8 @@ public interface UITextSelectionHandleView extends UICoordinateSpace {
     /**
      * If applicable, a custom shape for the lollipop stem. Default is @c nil, which results in a rounded rect style
      * based on bounds.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("customShape")
@@ -41,6 +43,8 @@ public interface UITextSelectionHandleView extends UICoordinateSpace {
      * Controls which direction the handle is oriented. For example, NSDirectionalRectEdgeLeading indicates the handle
      * is on the leading
      * edge, so the dot will be rendered on top.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("direction")
@@ -49,6 +53,8 @@ public interface UITextSelectionHandleView extends UICoordinateSpace {
 
     /**
      * Convenience accessor for @c direction calculations.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isVertical")
@@ -56,6 +62,8 @@ public interface UITextSelectionHandleView extends UICoordinateSpace {
 
     /**
      * Provides a preferred frame given @c rect based on the current appearance configuration.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preferredFrameForRect:")
@@ -65,6 +73,8 @@ public interface UITextSelectionHandleView extends UICoordinateSpace {
     /**
      * If applicable, a custom shape for the lollipop stem. Default is @c nil, which results in a rounded rect style
      * based on bounds.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCustomShape:")
@@ -74,6 +84,8 @@ public interface UITextSelectionHandleView extends UICoordinateSpace {
      * Controls which direction the handle is oriented. For example, NSDirectionalRectEdgeLeading indicates the handle
      * is on the leading
      * edge, so the dot will be rendered on top.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDirection:")

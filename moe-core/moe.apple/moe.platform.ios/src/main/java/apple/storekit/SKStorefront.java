@@ -26,7 +26,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Storefront
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -84,7 +87,10 @@ public class SKStorefront extends NSObject {
      * The three letter country code for the current storefront
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use 'Storefront.countryCode'
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("countryCode")
@@ -107,7 +113,10 @@ public class SKStorefront extends NSObject {
      * The App Store storefront identifier
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use 'Storefront.id'
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("identifier")

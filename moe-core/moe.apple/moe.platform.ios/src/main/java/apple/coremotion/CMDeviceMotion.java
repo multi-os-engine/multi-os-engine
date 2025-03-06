@@ -178,6 +178,9 @@ public class CMDeviceMotion extends CMLogItem {
      * 
      * Discussion:
      * Returns the attitude of the device.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -191,6 +194,9 @@ public class CMDeviceMotion extends CMLogItem {
      * Returns the gravity vector expressed in the device's reference frame. Note
      * that the total acceleration of the device is equal to gravity plus
      * userAcceleration.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("gravity")
@@ -226,6 +232,9 @@ public class CMDeviceMotion extends CMLogItem {
      * 
      * Discussion:
      * Returns the rotation rate of the device for devices with a gyro.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("rotationRate")
@@ -245,6 +254,9 @@ public class CMDeviceMotion extends CMLogItem {
      * Returns the acceleration that the user is giving to the device. Note
      * that the total acceleration of the device is equal to gravity plus
      * userAcceleration.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("userAcceleration")

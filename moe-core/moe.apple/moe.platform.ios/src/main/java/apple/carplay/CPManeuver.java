@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.UIColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSMeasurement;
+import apple.foundation.NSUnitAngle;
 
 /**
  * [@c] CPManeuver describes a navigation instruction.
@@ -80,6 +82,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -145,6 +149,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * initialTravelEstimates represents the estimates beginning from the end of the preceding maneuver.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -168,6 +174,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * instructionVariants is an array of @c NSString representing the instruction for this maneuver, arranged from most
      * to least preferred. You must provide at least one variant.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -183,6 +191,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * [@note] The maximum image size is 140 points by 100 points. If necessary, images will be scaled down to fit while
      * maintaining the aspect ratio.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -222,6 +232,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 12.0
      */
     @Generated
     @Selector("setAttributedInstructionVariants:")
@@ -229,6 +241,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * initialTravelEstimates represents the estimates beginning from the end of the preceding maneuver.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setInitialTravelEstimates:")
@@ -238,6 +252,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * instructionVariants is an array of @c NSString representing the instruction for this maneuver, arranged from most
      * to least preferred. You must provide at least one variant.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setInstructionVariants:")
@@ -248,6 +264,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * [@note] The maximum image size is 140 points by 100 points. If necessary, images will be scaled down to fit while
      * maintaining the aspect ratio.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setJunctionImage:")
@@ -256,6 +274,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * symbolImage is a @c UIImage representing the maneuver. Provide variants for UIUserInterfaceStyleLight and
      * UIUserInterfaceStyleDark that will be used against light backgrounds and dark backgrounds.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSymbolImage:")
@@ -274,6 +294,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Any custom user info related to this maneuver.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -300,6 +322,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * symbolImage is a @c UIImage representing the maneuver. Provide variants for UIUserInterfaceStyleLight and
      * UIUserInterfaceStyleDark that will be used against light backgrounds and dark backgrounds.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -320,6 +344,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Any custom user info related to this maneuver.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -573,4 +599,182 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * highwayExitLabel is a @c NSString describing a highway exit. Exit 123 for example.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("highwayExitLabel")
+    @NotNull
+    public native String highwayExitLabel();
+
+    /**
+     * junctionElementAngles is a set of angles of the rest of the roads of this junction. This must not include @c
+     * junctionExitAngle .
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("junctionElementAngles")
+    @Nullable
+    public native NSSet<? extends NSMeasurement<NSUnitAngle>> junctionElementAngles();
+
+    /**
+     * junctionExitAngle is the angle of the exit road of this junction.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("junctionExitAngle")
+    @Nullable
+    public native NSMeasurement<NSUnitAngle> junctionExitAngle();
+
+    /**
+     * junctionType is a @c CPJunctionType representing the type of the junction associated with this maneuver
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("junctionType")
+    @NUInt
+    public native long junctionType();
+
+    /**
+     * linkedLaneGuidance is the optional @c CPLaneGuidance associated with this maneuver // conditional - must be there
+     * if there is a corresponding lane guidance
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("linkedLaneGuidance")
+    @NotNull
+    public native CPLaneGuidance linkedLaneGuidance();
+
+    /**
+     * maneuverType is a @c CPManeuverType representing the type of maneuver.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("maneuverType")
+    @NUInt
+    public native long maneuverType();
+
+    /**
+     * roadFollowingManeuverVariants is an array of @c NSString representing the name of the road following this
+     * maneuver,
+     * arranged from most to least preferred. (arranged by space)
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("roadFollowingManeuverVariants")
+    @Nullable
+    public native NSArray<String> roadFollowingManeuverVariants();
+
+    /**
+     * highwayExitLabel is a @c NSString describing a highway exit. Exit 123 for example.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setHighwayExitLabel:")
+    public native void setHighwayExitLabel(@NotNull String value);
+
+    /**
+     * junctionElementAngles is a set of angles of the rest of the roads of this junction. This must not include @c
+     * junctionExitAngle .
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setJunctionElementAngles:")
+    public native void setJunctionElementAngles(@Nullable NSSet<? extends NSMeasurement<NSUnitAngle>> value);
+
+    /**
+     * junctionExitAngle is the angle of the exit road of this junction.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setJunctionExitAngle:")
+    public native void setJunctionExitAngle(@Nullable NSMeasurement<NSUnitAngle> value);
+
+    /**
+     * junctionType is a @c CPJunctionType representing the type of the junction associated with this maneuver
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setJunctionType:")
+    public native void setJunctionType(@NUInt long value);
+
+    /**
+     * linkedLaneGuidance is the optional @c CPLaneGuidance associated with this maneuver // conditional - must be there
+     * if there is a corresponding lane guidance
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setLinkedLaneGuidance:")
+    public native void setLinkedLaneGuidance_unsafe(@NotNull CPLaneGuidance value);
+
+    /**
+     * linkedLaneGuidance is the optional @c CPLaneGuidance associated with this maneuver // conditional - must be there
+     * if there is a corresponding lane guidance
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    public void setLinkedLaneGuidance(@NotNull CPLaneGuidance value) {
+        Object __old = linkedLaneGuidance();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setLinkedLaneGuidance_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * maneuverType is a @c CPManeuverType representing the type of maneuver.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setManeuverType:")
+    public native void setManeuverType(@NUInt long value);
+
+    /**
+     * roadFollowingManeuverVariants is an array of @c NSString representing the name of the road following this
+     * maneuver,
+     * arranged from most to least preferred. (arranged by space)
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setRoadFollowingManeuverVariants:")
+    public native void setRoadFollowingManeuverVariants(@Nullable NSArray<String> value);
+
+    /**
+     * trafficSide is a @c CPTrafficSide representing which side of the road the traffic drives on.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setTrafficSide:")
+    public native void setTrafficSide(@NUInt long value);
+
+    /**
+     * trafficSide is a @c CPTrafficSide representing which side of the road the traffic drives on.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("trafficSide")
+    @NUInt
+    public native long trafficSide();
 }

@@ -68,6 +68,8 @@ public class AVSpeechSynthesisMarker extends NSObject implements NSSecureCoding,
 
     /**
      * Byte offset into the associated audio buffer
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("byteSampleOffset")
@@ -127,6 +129,9 @@ public class AVSpeechSynthesisMarker extends NSObject implements NSSecureCoding,
     @Selector("initWithCoder:")
     public native AVSpeechSynthesisMarker initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithMarkerType:forTextRange:atByteSampleOffset:")
     public native AVSpeechSynthesisMarker initWithMarkerTypeForTextRangeAtByteSampleOffset(@NInt long type,
@@ -154,6 +159,9 @@ public class AVSpeechSynthesisMarker extends NSObject implements NSSecureCoding,
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("mark")
     @NInt
@@ -174,11 +182,16 @@ public class AVSpeechSynthesisMarker extends NSObject implements NSSecureCoding,
 
     /**
      * Byte offset into the associated audio buffer
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setByteSampleOffset:")
     public native void setByteSampleOffset(@NUInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setMark:")
     public native void setMark(@NInt long value);
@@ -186,6 +199,8 @@ public class AVSpeechSynthesisMarker extends NSObject implements NSSecureCoding,
     /**
      * The location and length of the pertaining speech request's SSML text. This marker applies to the range of
      * characters represented by the NSString.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTextRange:")
@@ -212,6 +227,8 @@ public class AVSpeechSynthesisMarker extends NSObject implements NSSecureCoding,
     /**
      * The location and length of the pertaining speech request's SSML text. This marker applies to the range of
      * characters represented by the NSString.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("textRange")

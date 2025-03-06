@@ -30,6 +30,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
 
     /**
      * The challenge which can be used to verify the authenticator's attestation, if attestation is requested.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -38,6 +40,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
 
     /**
      * A high level human readable name to associate with a credential, which should only be used for display.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -47,6 +51,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * A human readable name to associate with a credential, which a user should be able to use to identify the
      * credential.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -55,6 +61,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
 
     /**
      * The Relying Party identifier used to scope this request.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -70,6 +78,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
 
     /**
      * The challenge which can be used to verify the authenticator's attestation, if attestation is requested.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setChallenge:")
@@ -77,6 +87,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
 
     /**
      * A high level human readable name to associate with a credential, which should only be used for display.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDisplayName:")
@@ -85,6 +97,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * A human readable name to associate with a credential, which a user should be able to use to identify the
      * credential.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setName:")
@@ -94,6 +108,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential
      * when authenticating with it in the future. May be used by a relying party to identify the user account this
      * credential is associated with.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUserID:")
@@ -102,6 +118,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
      * through a PIN or biometrics.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUserVerificationPreference:")
@@ -111,6 +129,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential
      * when authenticating with it in the future. May be used by a relying party to identify the user account this
      * credential is associated with.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -120,6 +140,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
      * through a PIN or biometrics.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

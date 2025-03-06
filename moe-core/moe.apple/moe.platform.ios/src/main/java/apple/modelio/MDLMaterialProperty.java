@@ -165,11 +165,17 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("URLValue")
     public native NSURL URLValue();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("color")
@@ -182,6 +188,9 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("floatValue")
     public native float floatValue();
@@ -190,35 +199,56 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @Selector("init")
     public native MDLMaterialProperty init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithName:semantic:")
     public native MDLMaterialProperty initWithNameSemantic(@NotNull String name, @NUInt long semantic);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithName:semantic:URL:")
     public native MDLMaterialProperty initWithNameSemanticURL(@NotNull String name, @NUInt long semantic,
             @Nullable NSURL URL);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithName:semantic:color:")
     public native MDLMaterialProperty initWithNameSemanticColor(@NotNull String name, @NUInt long semantic,
             @NotNull CGColorRef color);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithName:semantic:float:")
     public native MDLMaterialProperty initWithNameSemanticFloat(@NotNull String name, @NUInt long semantic,
             float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithName:semantic:string:")
     public native MDLMaterialProperty initWithNameSemanticString(@NotNull String name, @NUInt long semantic,
             @Nullable String string);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithName:semantic:textureSampler:")
     public native MDLMaterialProperty initWithNameSemanticTextureSampler(@NotNull String name, @NUInt long semantic,
             @Nullable MDLTextureSampler textureSampler);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("luminance")
     public native float luminance();
@@ -228,19 +258,31 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("semantic")
     @NUInt
     public native long semantic();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setColor:")
     public native void setColor(@Nullable CGColorRef value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setFloatValue:")
     public native void setFloatValue(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setLuminance:")
     public native void setLuminance(float value);
@@ -249,41 +291,68 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @Selector("setName:")
     public native void setName(@NotNull String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setProperties:")
     public native void setProperties(@NotNull MDLMaterialProperty property);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setSemantic:")
     public native void setSemantic(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setStringValue:")
     public native void setStringValue(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setTextureSamplerValue:")
     public native void setTextureSamplerValue(@Nullable MDLTextureSampler value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setURLValue:")
     public native void setURLValue(@Nullable NSURL value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("stringValue")
     public native String stringValue();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("textureSamplerValue")
     public native MDLTextureSampler textureSamplerValue();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("type")
     @NUInt
     public native long type();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setType:")
     public native void setType(@NUInt long value);

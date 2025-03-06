@@ -39,6 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.network.opaque.nw_interface_t;
 
 /**
  * [@interface] NEHotspotHelperCommand
@@ -206,7 +207,10 @@ public class NEHotspotHelperCommand extends NSObject {
      *         non-nil NWTCPConnection object if successful, nil otherwise
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use the `interface` property with `nw_parameters_require_interface`
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("createTCPConnection:")
@@ -224,7 +228,10 @@ public class NEHotspotHelperCommand extends NSObject {
      *         non-nil NWUDPSession object if successful, nil otherwise
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use the `interface` property with `nw_parameters_require_interface`
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("createUDPSession:")
@@ -264,4 +271,19 @@ public class NEHotspotHelperCommand extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] interface
+     * 
+     * Network interface associated with the command.
+     * 
+     * To create a connection over the hotspot, set the interface on the corresponding parameters using
+     * `nw_parameters_require_interface`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("interface")
+    @NotNull
+    public native nw_interface_t interface_objc();
 }

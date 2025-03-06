@@ -100,6 +100,8 @@ public class MLImageSizeConstraint extends NSObject implements NSSecureCoding {
     /**
      * If type == MLImageSizeConstraintTypeEnumerated
      * then the only image sizes present in this set are allowed.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -146,6 +148,9 @@ public class MLImageSizeConstraint extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native MLImageSizeConstraint new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("pixelsHighRange")
     @ByValue
@@ -153,6 +158,8 @@ public class MLImageSizeConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Image size must fall within this range
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("pixelsWideRange")
@@ -185,6 +192,9 @@ public class MLImageSizeConstraint extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("type")
     @NInt

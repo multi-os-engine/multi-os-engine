@@ -164,6 +164,9 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("JPEGDataWithCompressionQuality:actions:")
@@ -172,6 +175,8 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
 
     /**
      * These return compressed image data with the contents of the image drawn in the renderer block.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -183,6 +188,8 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
      * Returns a UIImage rendered with the contents of the CGContext after the imageRenderBlock executes.
      * If the options provided to the renderer contain a rect with a zero width or height size, this will return an
      * empty UIImage.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -198,15 +205,24 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @Selector("initWithBounds:")
     public native UIGraphicsImageRenderer initWithBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithBounds:format:")
     public native UIGraphicsImageRenderer initWithBoundsFormat(@ByValue CGRect bounds,
             @NotNull UIGraphicsImageRendererFormat format);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithSize:")
     public native UIGraphicsImageRenderer initWithSize(@ByValue CGSize size);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithSize:format:")
     public native UIGraphicsImageRenderer initWithSizeFormat(@ByValue CGSize size,

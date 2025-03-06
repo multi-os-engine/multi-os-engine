@@ -181,6 +181,8 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Contains the entire recognition, formatted into a single user-displayable string
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -195,6 +197,9 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     @Selector("initWithCoder:")
     public native SFTranscription initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("segments")

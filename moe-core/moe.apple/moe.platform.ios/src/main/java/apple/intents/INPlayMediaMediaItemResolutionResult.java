@@ -115,6 +115,9 @@ public class INPlayMediaMediaItemResolutionResult extends INMediaItemResolutionR
     @Selector("init")
     public native INPlayMediaMediaItemResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMediaItemResolutionResult:")
     public native INPlayMediaMediaItemResolutionResult initWithMediaItemResolutionResult(
@@ -177,6 +180,8 @@ public class INPlayMediaMediaItemResolutionResult extends INMediaItemResolutionR
 
     /**
      * Convenience method to return multiple success resolution results for an array of INMediaItems
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -193,6 +198,9 @@ public class INPlayMediaMediaItemResolutionResult extends INMediaItemResolutionR
     @Selector("unsupported")
     public static native INPlayMediaMediaItemResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

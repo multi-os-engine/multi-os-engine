@@ -161,6 +161,8 @@ public class CXCallObserver extends NSObject {
 
     /**
      * Retrieve the current call list, blocking on initial state retrieval if necessary
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -174,6 +176,8 @@ public class CXCallObserver extends NSObject {
     /**
      * Set delegate and optional queue for delegate callbacks to be performed on.
      * A nil queue implies that delegate callbacks should happen on the main queue. The delegate is stored weakly
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:queue:")

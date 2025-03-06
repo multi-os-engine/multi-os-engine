@@ -277,26 +277,42 @@ public class GLKReflectionMapEffect extends GLKBaseEffect implements GLKNamedEff
 
     /**
      * Identity
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("matrix")
     @ByValue
     public native GLKMatrix3 matrix();
 
+    @Deprecated
     @Generated
     @Selector("prepareToDraw")
     public native void prepareToDraw();
 
     /**
      * Identity
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setMatrix:")
     public native void setMatrix(@ByValue GLKMatrix3 value);
 
     /**
      * GL Texture Name == 0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("textureCubeMap")

@@ -114,7 +114,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * File path of image.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:error:")
@@ -124,7 +129,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * An array of paths (NSStrings or NSURLs).
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:error:")
@@ -134,7 +144,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * File path of image.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:error:")
@@ -200,7 +215,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * CGImage reference.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("textureWithCGImage:options:error:")
@@ -210,7 +230,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * NSData containing image contents.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("textureWithContentsOfData:options:error:")
@@ -220,7 +245,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * File path of image.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("textureWithContentsOfFile:options:error:")
@@ -230,7 +260,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * The URL from which to read.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("textureWithContentsOfURL:options:error:")
@@ -240,7 +275,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * The asset name
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("textureWithName:scaleFactor:bundle:options:error:")
@@ -256,7 +296,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * File path of image.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFileOptionsQueueCompletionHandler(@NotNull String path,
@@ -265,7 +310,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * An array of paths (NSStrings or NSURLs).
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFilesOptionsQueueCompletionHandler(@NotNull NSArray<?> paths,
@@ -274,7 +324,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * File path of image.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfURLOptionsQueueCompletionHandler(@NotNull NSURL url,
@@ -285,13 +340,24 @@ public class GLKTextureLoader extends NSObject {
     @Selector("init")
     public native GLKTextureLoader init();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("initWithSharegroup:")
     public native GLKTextureLoader initWithSharegroup(@NotNull EAGLSharegroup sharegroup);
 
     /**
      * CGImage reference.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("textureWithCGImage:options:queue:completionHandler:")
     public native void textureWithCGImageOptionsQueueCompletionHandler(@NotNull CGImageRef cgImage,
@@ -300,7 +366,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * NSData containing image contents.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("textureWithContentsOfData:options:queue:completionHandler:")
     public native void textureWithContentsOfDataOptionsQueueCompletionHandler(@NotNull NSData data,
@@ -309,7 +380,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * File path of image.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("textureWithContentsOfFile:options:queue:completionHandler:")
     public native void textureWithContentsOfFileOptionsQueueCompletionHandler(@NotNull String path,
@@ -318,7 +394,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * File path of image.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("textureWithContentsOfURL:options:queue:completionHandler:")
     public native void textureWithContentsOfURLOptionsQueueCompletionHandler(@NotNull NSURL url,
@@ -327,7 +408,12 @@ public class GLKTextureLoader extends NSObject {
 
     /**
      * The asset name
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("textureWithName:scaleFactor:bundle:options:queue:completionHandler:")
     public native void textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(@NotNull String name,

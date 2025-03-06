@@ -161,6 +161,8 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
      * [@property] clearDepth
      * 
      * The clear depth value to be used if the loadAction property is MTLLoadActionClear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("clearDepth")
@@ -186,6 +188,8 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
      * [@property] clearDepth
      * 
      * The clear depth value to be used if the loadAction property is MTLLoadActionClear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setClearDepth:")

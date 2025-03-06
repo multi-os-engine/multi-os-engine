@@ -171,6 +171,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * provides a reference to the AVAsset of which the AVAssetTrack is a part
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -186,7 +188,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * Becomes callable without blocking when the key @"availableTrackAssociationTypes" has been loaded.
      * 
      * API-Since: 7.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadAssociatedTracksOfType:completionHandler: instead
      * 
      * @param trackAssociationType
      *                             The type of track association for which associated tracks are requested.
@@ -202,6 +205,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * provides an NSArray of NSStrings, each representing a format of metadata that's available for the track (e.g.
      * QuickTime userdata, etc.)
      * Metadata formats are defined in AVMetadataItem.h.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -223,6 +228,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * provides access to an array of AVMetadataItems for each common metadata key for which a value is available
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -238,6 +245,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * indicates the estimated data rate of the media data referenced by the track, in units of bits per second
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("estimatedDataRate")
@@ -246,6 +255,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier;
      * may be nil if no language tag is indicated
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -257,6 +268,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * each of which indicates the format of media samples referenced by the track;
      * a track that presents uniform media, e.g. encoded according to the same encoding settings,
      * will provide an array with a count of 1
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -273,6 +286,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      *                            AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, etc.,
      *                            as defined above.
      * @return YES if the track references media with the specified characteristic, otherwise NO.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("hasMediaCharacteristic:")
@@ -285,6 +300,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * indicates whether the track is enabled according to state stored in its container or construct;
      * note that its presentation state can be changed from this default via AVPlayerItemTrack
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isEnabled")
@@ -302,6 +319,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * indicates whether the track references sample data only within its storage container
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isSelfContained")
@@ -310,6 +329,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * indicates the language associated with the track, as an ISO 639-2/T language code;
      * may be nil if no language is indicated
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -324,6 +345,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * indicates the media type for this track, e.g. AVMediaTypeVideo, AVMediaTypeAudio, etc., as defined in
      * AVMediaFormat.h.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -351,7 +374,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * Becomes callable without blocking when the key @"availableMetadataFormats" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadMetadataForFormat:completionHandler: instead
      * 
      * @param format
      *               The metadata format for which items are requested.
@@ -376,6 +400,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * indicates the natural dimensions of the media data referenced by the track as a CGSize
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("naturalSize")
@@ -385,6 +411,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * indicates a timescale in which time values for the track can be operated upon without extraneous numerical
      * conversion
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("naturalTimeScale")
@@ -398,6 +426,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * 
      * For field-based video tracks that carry one field per media sample, the value of this property is the field rate,
      * not the frame rate.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("nominalFrameRate")
@@ -407,6 +437,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * indicates the transform specified in the track's storage container as the preferred transformation of the visual
      * media data for display purposes;
      * its value is often but not always CGAffineTransformIdentity
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("preferredTransform")
@@ -415,6 +447,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * indicates the volume specified in the track's storage container as the preferred volume of the audible media data
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("preferredVolume")
@@ -442,7 +476,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * @return A CMTime; will be invalid if the trackTime is out of range
      * 
      *         API-Since: 4.0
-     *         Deprecated-Since: 100000.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use loadSamplePresentationTimeForTrackTime:completionHandler: instead
      */
     @Deprecated
     @Generated
@@ -460,7 +495,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * segment closest in time to the specified trackTime is returned.
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadSegmentForTrackTime:completionHandler: instead
      * 
      * @param trackTime
      *                  The trackTime for which an AVAssetTrackSegment is requested.
@@ -477,6 +513,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * the timeline of the track.
      * Empty edits, i.e. timeRanges for which no media data is available to be presented, have a value of
      * AVAssetTrackSegment.empty equal to YES.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -492,6 +530,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * Indicates the timeRange of the track within the overall timeline of the asset;
      * a track with CMTIME_COMPARE_INLINE(timeRange.start, >, kCMTimeZero) will initially present an empty interval.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("timeRange")
@@ -500,6 +540,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * indicates the total number of bytes of sample data required by the track
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("totalSampleDataLength")
@@ -507,6 +549,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * indicates the persistent unique identifier for this track of the asset
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("trackID")

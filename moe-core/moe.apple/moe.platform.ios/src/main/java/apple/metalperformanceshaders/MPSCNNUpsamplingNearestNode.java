@@ -106,6 +106,8 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
      * @return A new MPSNNFilter node for a MPSCNNUpsamplingNearest kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:integerScaleFactorX:integerScaleFactorY:")
@@ -146,6 +148,8 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
      * @return A new MPSNNFilter node for a MPSCNNUpsamplingNearest kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:integerScaleFactorX:integerScaleFactorY:")
@@ -160,10 +164,16 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("scaleFactorX")
     public native double scaleFactorX();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("scaleFactorY")
     public native double scaleFactorY();

@@ -55,6 +55,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * [@property] URL
      * 
      * The URL with which the instance of AVMovie was initialized; may be nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -90,6 +92,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * 
      * The value of this property is YES if an 'mvex' box is present in the 'moov' box. The 'mvex' box is necessary in
      * order to signal the possible presence of later 'moof' boxes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("canContainMovieFragments")
@@ -218,6 +222,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * first set one of these properties
      * to indicate where the sample data should be written.
      * 
+     * API-Since: 13.0
+     * 
      * @param URL
      *                An NSURL object that specifies a file containing a movie header.
      * @param options
@@ -297,6 +303,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * Provides the file types the AVMovie class understands.
      * 
      * @return An NSArray of UTIs identifying the file types the AVMovie class understands.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -338,6 +346,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * If you want to create an AVMutableMovie from a file and then append sample buffers to any of its tracks, you must
      * first set one of these properties
      * to indicate where the sample data should be written.
+     * 
+     * API-Since: 13.0
      * 
      * @param URL
      *                An NSURL object that specifies a file containing a movie header.
@@ -386,7 +396,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTrackWithTrackID:completionHandler: instead
      * 
      * @param trackID
      *                The trackID of the requested AVMovieTrack.
@@ -404,6 +415,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * The tracks in a movie.
      * 
      * The value of this property is an array of tracks the movie contains; the tracks are of type AVMovieTrack.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -418,7 +431,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTracksWithMediaCharacteristic:completionHandler: instead
      * 
      * @param mediaCharacteristic
      *                            The media characteristic according to which the receiver filters its AVMovieTracks.
@@ -439,7 +453,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTracksWithMediaType:completionHandler: instead
      * 
      * @param mediaType
      *                  The media type according to which the receiver filters its AVMovieTracks. (Media types are

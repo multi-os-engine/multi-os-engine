@@ -166,6 +166,9 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("PDFDataWithActions:")
@@ -180,11 +183,17 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
     @Selector("initWithBounds:")
     public native UIGraphicsPDFRenderer initWithBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithBounds:format:")
     public native UIGraphicsPDFRenderer initWithBoundsFormat(@ByValue CGRect bounds,
             @NotNull UIGraphicsPDFRendererFormat format);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("writePDFToURL:withActions:error:")
     public native boolean writePDFToURLWithActionsError(@NotNull NSURL url,

@@ -213,7 +213,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * }];
      * 
      * API-Since: 9.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler: instead
      * 
      * @param asset An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the
      *              asset are already loaded before invoking this method.
@@ -251,7 +252,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * 
      * 
      * API-Since: 6.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use videoCompositionWithPropertiesOfAsset:completionHandler: instead
      * 
      * @param asset An instance of AVAsset. Ensure that the duration and tracks properties of the asset are already
      *              loaded before invoking this method.
@@ -265,6 +267,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
 
     /**
      * indicates a special video composition tool for use of Core Animation; may be nil
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -340,6 +344,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
 
     /**
      * indicates the interval which the video composition, when enabled, should render composed video frames
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("frameDuration")
@@ -360,6 +366,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * the last instruction must be greater than or equal to the latest time for which playback or other processing will
      * be attempted (note that this will often be
      * the duration of the asset with which the instance of AVVideoComposition is associated).
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -380,7 +388,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * layerInstructions of any AVVideoCompositionInstruction contained therein during validation.
      * 
      * API-Since: 5.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use isValidForTracks:assetDuration:timeRange:validationDelegate: instead
      * 
      * @param asset
      *                           Pass a reference to an AVAsset if you wish to validate the timeRanges of the
@@ -389,7 +398,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      *                           should ensure that the keys @"tracks" and @"duration" are already loaded on the AVAsset
      *                           before validation is attempted.
      * @param timeRange
-     *                           A CMTimeRange. Only those instuctions with timeRanges that overlap with the specified
+     *                           A CMTimeRange. Only those instructions with timeRanges that overlap with the specified
      *                           timeRange will be validated. To validate all instructions that may be used for playback
      *                           or other processing, regardless of timeRange, pass CMTimeRangeMake(kCMTimeZero,
      *                           kCMTimePositiveInfinity).
@@ -424,6 +433,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
 
     /**
      * indicates the size at which the video composition, when enabled, should render
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("renderSize")
@@ -476,13 +487,14 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * layerInstructions of any AVVideoCompositionInstruction contained therein during validation.
      * 
      * API-Since: 16.0
+     * Deprecated-Since: 18.0
      * 
      * @param asset
      *                           Pass a reference to an AVAsset if you wish to validate the timeRanges of the
      *                           instructions against the duration of the asset and the trackIDs of the layer
      *                           instructions against the asset's tracks. Pass nil to skip that validation.
      * @param timeRange
-     *                           A CMTimeRange. Only those instuctions with timeRanges that overlap with the specified
+     *                           A CMTimeRange. Only those instructions with timeRanges that overlap with the specified
      *                           timeRange will be validated. To validate all instructions that may be used for playback
      *                           or other processing, regardless of timeRange, pass CMTimeRangeMake(kCMTimeZero,
      *                           kCMTimePositiveInfinity).
@@ -497,6 +509,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      *                           determined, in which case the `error` parameter will be non-nil and describe the
      *                           failure that occurred.
      */
+    @Deprecated
     @Generated
     @Selector("determineValidityForAsset:timeRange:validationDelegate:completionHandler:")
     public native void determineValidityForAssetTimeRangeValidationDelegateCompletionHandler(@Nullable AVAsset asset,
@@ -658,4 +671,42 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * isValidForTracks:assetDuration:timeRange:validationDelegate:
+     * 
+     * Indicates whether the timeRanges of the receiver's instructions conform to the requirements described for them
+     * immediately above (in connection with the instructions property) and also whether all of the layer instructions
+     * have a value for trackID that corresponds either to a track of the specified asset or to the receiver's
+     * animationTool.
+     * 
+     * In the course of validation, the receiver will invoke its validationDelegate with reference to any trouble spots
+     * in the video composition.
+     * An exception will be raised if the delegate modifies the receiver's array of instructions or the array of
+     * layerInstructions of any AVVideoCompositionInstruction contained therein during validation.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param tracks
+     *                           Pass a reference to an AVAsset's tracks if you wish to validate the trackIDs of the
+     *                           layer instructions against the asset's tracks. Pass nil to skip that validation. This
+     *                           method throws an exception if the tracks are not all from the same asset.
+     * @param duration
+     *                           Pass an AVAsset if you wish to validate the timeRanges of the instructions against the
+     *                           duration of the asset. Pass kCMTimeInvalid to skip that validation.
+     * @param timeRange
+     *                           A CMTimeRange. Only those instructions with timeRanges that overlap with the specified
+     *                           timeRange will be validated. To validate all instructions that may be used for playback
+     *                           or other processing, regardless of timeRange, pass CMTimeRangeMake(kCMTimeZero,
+     *                           kCMTimePositiveInfinity).
+     * @param validationDelegate
+     *                           Indicates an object implementing the AVVideoCompositionValidationHandling protocol to
+     *                           receive information about troublesome portions of a video composition during processing
+     *                           of -isValidForAsset:. May be nil.
+     */
+    @Generated
+    @Selector("isValidForTracks:assetDuration:timeRange:validationDelegate:")
+    public native boolean isValidForTracksAssetDurationTimeRangeValidationDelegate(
+            @NotNull NSArray<? extends AVAssetTrack> tracks, @ByValue CMTime duration, @ByValue CMTimeRange timeRange,
+            @Mapped(ObjCObjectMapper.class) @Nullable AVVideoCompositionValidationHandling validationDelegate);
 }

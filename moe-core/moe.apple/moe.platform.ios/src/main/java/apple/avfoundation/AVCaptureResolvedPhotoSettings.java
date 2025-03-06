@@ -195,7 +195,7 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
      * 
      * Indicates whether the flash will fire when capturing the photo.
      * 
-     * When you specify AVCaptureFlashModeAuto as you AVCapturePhotoSettings.flashMode, you don't know if flash capture
+     * When you specify AVCaptureFlashModeAuto as your AVCapturePhotoSettings.flashMode, you don't know if flash capture
      * will be chosen until you inspect the AVCaptureResolvedPhotoSettings flashEnabled property. If the device becomes
      * too hot, the flash becomes temporarily unavailable. You can key-value observe AVCaptureDevice's flashAvailable
      * property to know when this occurs. If the flash is unavailable due to thermal issues, and you specify a flashMode
@@ -248,6 +248,8 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
      * callback.
      * 
      * If you request a RAW capture with no processed companion image, photoDimensions resolve to { 0, 0 }.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("photoDimensions")
@@ -285,6 +287,8 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
      * [@property] uniqueID
      * 
      * uniqueID matches that of the AVCapturePhotoSettings instance you passed to -capturePhotoWithSettings:delegate:.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("uniqueID")

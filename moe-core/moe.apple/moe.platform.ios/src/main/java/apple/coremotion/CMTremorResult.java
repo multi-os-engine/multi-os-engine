@@ -114,6 +114,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The date and time representing the end of the result.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -162,6 +164,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The percentage of time tremor was likely and displacement amplitude was mild for the result.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentMild")
@@ -169,6 +173,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The percentage of time tremor was likely and displacement amplitude was moderate for the result.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentModerate")
@@ -176,6 +182,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The percentage of time no tremor was detected for the result.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentNone")
@@ -183,6 +191,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The percentage of time tremor was likely and displacement amplitude was slight for the result.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentSlight")
@@ -190,6 +200,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The percentage of time tremor was likely and displacement amplitude was strong for the result.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentStrong")
@@ -200,6 +212,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
      * Unknown periods include times when:
      * 1. the subject is moving and therefore a resting tremor cannot be assessed, and
      * 2. the signal strength is too low to measure tremor confidently.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentUnknown")
@@ -219,6 +233,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The date and time representing the start of the result.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

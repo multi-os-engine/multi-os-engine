@@ -1,0 +1,293 @@
+package apple.avfoundation;
+
+import apple.NSObject;
+import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
+import apple.foundation.NSMethodSignature;
+import apple.foundation.NSSet;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.general.NatJ;
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.objc.Class;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
+import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
+
+/**
+ * AVMetricPlayerItemPlaybackSummaryEvent
+ * 
+ * Represents a summary metric event with aggregated metrics for the entire playback session.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
+ * API-Since: 18.0
+ */
+@Generated
+@Library("AVFoundation")
+@Runtime(ObjCRuntime.class)
+@ObjCClassBinding
+public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
+    static {
+        NatJ.register();
+    }
+
+    @Generated
+    protected AVMetricPlayerItemPlaybackSummaryEvent(Pointer peer) {
+        super(peer);
+    }
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native AVMetricPlayerItemPlaybackSummaryEvent alloc();
+
+    @Generated
+    @Owned
+    @Selector("allocWithZone:")
+    public static native AVMetricPlayerItemPlaybackSummaryEvent allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    @NotNull
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    @NotNull
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    /**
+     * [@property] errorEvent
+     * 
+     * Returns the error event if any. If no value is available, returns nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("errorEvent")
+    @Nullable
+    public native AVMetricErrorEvent errorEvent();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("init")
+    public native AVMetricPlayerItemPlaybackSummaryEvent init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVMetricPlayerItemPlaybackSummaryEvent initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    @NotNull
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
+
+    /**
+     * [@property] mediaResourceRequestCount
+     * 
+     * Returns the total number of media requests performed by the player.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("mediaResourceRequestCount")
+    @NInt
+    public native long mediaResourceRequestCount();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    public static native AVMetricPlayerItemPlaybackSummaryEvent new_objc();
+
+    /**
+     * [@property] playbackDuration
+     * 
+     * Returns the total duration of playback in seconds.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("playbackDuration")
+    @NInt
+    public native long playbackDuration();
+
+    /**
+     * [@property] recoverableErrorCount
+     * 
+     * Returns the total count of recoverable errors encountered during playback. If no errors were encountered, returns
+     * 0.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("recoverableErrorCount")
+    @NInt
+    public native long recoverableErrorCount();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    /**
+     * [@property] stallCount
+     * 
+     * Returns the total count of stalls encountered during playback. If no stalls were encountered, returns 0.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("stallCount")
+    @NInt
+    public native long stallCount();
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * [@property] timeSpentInInitialStartup
+     * 
+     * Returns the total time spent in initial startup of playback.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("timeSpentInInitialStartup")
+    public native double timeSpentInInitialStartup();
+
+    /**
+     * [@property] timeSpentRecoveringFromStall
+     * 
+     * Returns the total time spent recovering from a stall event.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("timeSpentRecoveringFromStall")
+    public native double timeSpentRecoveringFromStall();
+
+    /**
+     * [@property] timeWeightedAverageBitrate
+     * 
+     * Returns the playtime weighted average bitrate played in bits / second.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("timeWeightedAverageBitrate")
+    @NInt
+    public native long timeWeightedAverageBitrate();
+
+    /**
+     * [@property] timeWeightedPeakBitrate
+     * 
+     * Returns the playtime weighted peak bitrate played in bits / second.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("timeWeightedPeakBitrate")
+    @NInt
+    public native long timeWeightedPeakBitrate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] variantSwitchCount
+     * 
+     * Returns the total count of variant switch encountered during playback.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("variantSwitchCount")
+    @NInt
+    public native long variantSwitchCount();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+}

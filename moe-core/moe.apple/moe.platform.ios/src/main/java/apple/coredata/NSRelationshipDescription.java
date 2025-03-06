@@ -162,11 +162,17 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("deleteRule")
     @NUInt
     public native long deleteRule();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("destinationEntity")
@@ -180,6 +186,9 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Selector("initWithCoder:")
     public native NSRelationshipDescription initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("inverseRelationship")
@@ -201,6 +210,8 @@ public class NSRelationshipDescription extends NSPropertyDescription {
 
     /**
      * convenience method to test whether the relationship is to-one or to-many
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isToMany")
@@ -211,25 +222,39 @@ public class NSRelationshipDescription extends NSPropertyDescription {
      * means undefined) - note that the counts are only enforced if the relationship value is not nil/"empty" (so as
      * long as the relationship value is optional, there might be zero objects in the relationship, which might be less
      * than the min count)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("maxCount")
     @NUInt
     public native long maxCount();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("minCount")
     @NUInt
     public native long minCount();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDeleteRule:")
     public native void setDeleteRule(@NUInt long value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDestinationEntity:")
     public native void setDestinationEntity_unsafe(@Nullable NSEntityDescription value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     public void setDestinationEntity(@Nullable NSEntityDescription value) {
         Object __old = destinationEntity();
@@ -242,10 +267,16 @@ public class NSRelationshipDescription extends NSPropertyDescription {
         }
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setInverseRelationship:")
     public native void setInverseRelationship_unsafe(@Nullable NSRelationshipDescription value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     public void setInverseRelationship(@Nullable NSRelationshipDescription value) {
         Object __old = inverseRelationship();
@@ -263,11 +294,16 @@ public class NSRelationshipDescription extends NSPropertyDescription {
      * means undefined) - note that the counts are only enforced if the relationship value is not nil/"empty" (so as
      * long as the relationship value is optional, there might be zero objects in the relationship, which might be less
      * than the min count)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMaxCount:")
     public native void setMaxCount(@NUInt long value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setMinCount:")
     public native void setMinCount(@NUInt long value);

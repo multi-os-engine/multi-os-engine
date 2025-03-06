@@ -129,6 +129,8 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
      * @param mean     The MTLBuffer containing mean terms.
      * 
      * @param variance The MTLBuffer containing variance terms.
+     * 
+     *                 API-Since: 12.0
      */
     @Generated
     @Selector("initWithMean:variance:")
@@ -171,6 +173,8 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
      * [@property] mean
      * 
      * A MTLBuffer containing the mean terms.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -221,6 +225,8 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
      * 
      * @param numberOfFeatureChannels The number of feature channels used to size the
      *                                state.
+     * 
+     *                                API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -246,6 +252,8 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
      * [@property] variance
      * 
      * A MTLBuffer containing the variance terms.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

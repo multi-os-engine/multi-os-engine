@@ -192,6 +192,11 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("customizableViewControllers")
     public native NSArray<? extends UIViewController> customizableViewControllers();
 
+    /**
+     * The object managing the delegate of the tab bar controller. Default is nil.
+     * 
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -223,6 +228,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("moreNavigationController")
     public native UINavigationController moreNavigationController();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("selectedIndex")
     @NUInt
@@ -230,6 +238,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
 
     /**
      * This may return the "More" navigation controller if it exists.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -244,10 +254,20 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("setCustomizableViewControllers:")
     public native void setCustomizableViewControllers(@Nullable NSArray<? extends UIViewController> value);
 
+    /**
+     * The object managing the delegate of the tab bar controller. Default is nil.
+     * 
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value);
 
+    /**
+     * The object managing the delegate of the tab bar controller. Default is nil.
+     * 
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value) {
         Object __old = delegate();
@@ -260,12 +280,17 @@ public class UITabBarController extends UIViewController implements UITabBarDele
         }
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setSelectedIndex:")
     public native void setSelectedIndex(@NUInt long value);
 
     /**
      * This may return the "More" navigation controller if it exists.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelectedViewController:")
@@ -273,6 +298,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
 
     /**
      * This may return the "More" navigation controller if it exists.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setSelectedViewController(@Nullable UIViewController value) {
@@ -286,6 +313,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
         }
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setViewControllers:")
     public native void setViewControllers(@Nullable NSArray<? extends UIViewController> value);
@@ -295,6 +325,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
      * controller will automatically be shown.
      * The "More" navigation controller will not be returned by -viewControllers, but it may be returned by
      * -selectedViewController.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setViewControllers:animated:")
@@ -341,6 +373,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void tabBarWillEndCustomizingItemsChanged(@NotNull UITabBar tabBar,
             @NotNull NSArray<? extends UITabBarItem> items, boolean changed);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("viewControllers")
@@ -350,4 +385,173 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * An optional filter to display only select root-level tabs when in a compact appearance. Default is nil, which
+     * would make all tabs available.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("compactTabIdentifiers")
+    @Nullable
+    public native NSArray<String> compactTabIdentifiers();
+
+    /**
+     * The customization identifier for the tab bar and sidebar for persistence. The identifier is useful for when an
+     * app has multiple tab bar controllers,
+     * each with their own customizations. If the identifier is nil, a system default is used. Default is nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("customizationIdentifier")
+    @Nullable
+    public native String customizationIdentifier();
+
+    /**
+     * Creates a tab bar controller with the specified tabs.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithTabs:")
+    public native UITabBarController initWithTabs(@NotNull NSArray<? extends UITab> tabs);
+
+    /**
+     * Determines if the active tab bar is currently hidden. Default is NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isTabBarHidden")
+    public native boolean isTabBarHidden();
+
+    /**
+     * The object managing the tab sidebar for the tab bar controller. Default is `UITabBarControllerModeAutomatic`
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("mode")
+    @NInt
+    public native long mode();
+
+    /**
+     * The currently selected tab, which can be a root tab or any of their descendants. Default is nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("selectedTab")
+    @Nullable
+    public native UITab selectedTab();
+
+    /**
+     * An optional filter to display only select root-level tabs when in a compact appearance. Default is nil, which
+     * would make all tabs available.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setCompactTabIdentifiers:")
+    public native void setCompactTabIdentifiers(@Nullable NSArray<String> value);
+
+    /**
+     * The customization identifier for the tab bar and sidebar for persistence. The identifier is useful for when an
+     * app has multiple tab bar controllers,
+     * each with their own customizations. If the identifier is nil, a system default is used. Default is nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setCustomizationIdentifier:")
+    public native void setCustomizationIdentifier(@Nullable String value);
+
+    /**
+     * The object managing the tab sidebar for the tab bar controller. Default is `UITabBarControllerModeAutomatic`
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMode:")
+    public native void setMode(@NInt long value);
+
+    /**
+     * The currently selected tab, which can be a root tab or any of their descendants. Default is nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSelectedTab:")
+    public native void setSelectedTab(@Nullable UITab value);
+
+    /**
+     * Determines if the active tab bar is currently hidden. Default is NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTabBarHidden:")
+    public native void setTabBarHidden(boolean value);
+
+    /**
+     * Changes the active tab bar's visibility with an option to animate the change.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTabBarHidden:animated:")
+    public native void setTabBarHiddenAnimated(boolean hidden, boolean animated);
+
+    /**
+     * An array of root tabs representing view controllers to display by the tab bar interface. Default is empty.
+     * Once set, `UITabBarController.viewControllers` and related properties and methods will not be called.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTabs:")
+    public native void setTabs(@NotNull NSArray<? extends UITab> value);
+
+    /**
+     * Sets the root tabs of the tab bar controller, with an option to animate the change.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTabs:animated:")
+    public native void setTabsAnimated(@NotNull NSArray<? extends UITab> tabs, boolean animated);
+
+    /**
+     * The object managing the tab sidebar for the tab bar controller.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("sidebar")
+    @NotNull
+    public native UITabBarControllerSidebar sidebar();
+
+    /**
+     * Returns the `tab` matching the specified `identifier` in the tab bar controller's tabs. Returns nil if no tab is
+     * found matching the `identifier`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("tabForIdentifier:")
+    @Nullable
+    public native UITab tabForIdentifier(@NotNull String identifier);
+
+    /**
+     * An array of root tabs representing view controllers to display by the tab bar interface. Default is empty.
+     * Once set, `UITabBarController.viewControllers` and related properties and methods will not be called.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("tabs")
+    @NotNull
+    public native NSArray<? extends UITab> tabs();
 }

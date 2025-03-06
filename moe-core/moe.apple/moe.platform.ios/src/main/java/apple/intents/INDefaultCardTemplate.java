@@ -115,6 +115,8 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
 
     /**
      * The image used when displaying the relevant shortcut.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -131,6 +133,8 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
 
     /**
      * Initializes a default card template with the provided title.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithTitle:")
@@ -173,6 +177,8 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
 
     /**
      * The image used when displaying the relevant shortcut.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setImage:")
@@ -180,6 +186,8 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
 
     /**
      * The subtitle used when displaying the relevant shortcut.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSubtitle:")
@@ -187,6 +195,8 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
 
     /**
      * The title used when displaying the relevant shortcut.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setTitle:")
@@ -198,6 +208,8 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
 
     /**
      * The subtitle used when displaying the relevant shortcut.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -220,6 +232,8 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
 
     /**
      * The title used when displaying the relevant shortcut.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

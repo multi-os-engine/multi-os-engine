@@ -130,6 +130,8 @@ public class WKFindResult extends NSObject implements NSCopying {
 
     /**
      * Whether or not a match was found during the find operation
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("matchFound")

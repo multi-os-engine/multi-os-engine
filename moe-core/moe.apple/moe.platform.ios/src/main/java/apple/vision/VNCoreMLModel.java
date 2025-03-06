@@ -135,6 +135,8 @@ public class VNCoreMLModel extends NSObject {
      * @param model The MLModel from CoreML to be used.
      * 
      * @param error Returns the error code and description, if the model is not supported.
+     * 
+     *              API-Since: 11.0
      */
     @Generated
     @Selector("modelForMLModel:error:")

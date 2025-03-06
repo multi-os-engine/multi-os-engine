@@ -63,6 +63,9 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingGraph allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("attributes")
@@ -108,6 +111,9 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("functionName")
@@ -122,6 +128,9 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLFunctionStitchingGraph init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithFunctionName:nodes:outputNode:attributes:")
     public native MTLFunctionStitchingGraph initWithFunctionNameNodesOutputNodeAttributes(@NotNull String functionName,
@@ -155,11 +164,17 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("new")
     public static native MTLFunctionStitchingGraph new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("nodes")
     public native NSArray<? extends MTLFunctionStitchingFunctionNode> nodes();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("outputNode")
@@ -173,18 +188,30 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setAttributes:")
     public native void setAttributes(@NotNull NSArray<?> value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setFunctionName:")
     public native void setFunctionName(@NotNull String value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setNodes:")
     public native void setNodes(@NotNull NSArray<? extends MTLFunctionStitchingFunctionNode> value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setOutputNode:")
     public native void setOutputNode(@Nullable MTLFunctionStitchingFunctionNode value);

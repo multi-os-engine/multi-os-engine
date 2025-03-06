@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASAuthorizationWebBrowserSecurityKeyPublicKeyCredentialProvider;
 
 /**
  * API-Since: 15.0
@@ -33,7 +34,8 @@ import org.jetbrains.annotations.Nullable;
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObject implements ASAuthorizationProvider {
+public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObject implements ASAuthorizationProvider,
+        ASAuthorizationWebBrowserSecurityKeyPublicKeyCredentialProvider {
     static {
         NatJ.register();
     }
@@ -86,6 +88,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObj
      * Create a request to authenticate using an existing credential.
      * 
      * @param challenge The challenge to sign.
+     * 
+     *                  API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -101,6 +105,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObj
      * @param name        The name for the new credential.
      * @param userID      An identifier to be stored alongside the credential, which will be returned with the
      *                    credential when it is used to authenticate.
+     * 
+     *                    API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -125,6 +131,9 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObj
     @Selector("init")
     public native ASAuthorizationSecurityKeyPublicKeyCredentialProvider init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithRelyingPartyIdentifier:")
     public native ASAuthorizationSecurityKeyPublicKeyCredentialProvider initWithRelyingPartyIdentifier(
@@ -159,6 +168,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObj
 
     /**
      * The Relying Party identifier used for all requests created by this object.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -190,4 +201,17 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObj
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("createCredentialAssertionRequestWithClientData:")
+    @NotNull
+    public native ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest createCredentialAssertionRequestWithClientData(
+            @NotNull ASPublicKeyCredentialClientData clientData);
+
+    @Generated
+    @Selector("createCredentialRegistrationRequestWithClientData:displayName:name:userID:")
+    @NotNull
+    public native ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest createCredentialRegistrationRequestWithClientDataDisplayNameNameUserID(
+            @NotNull ASPublicKeyCredentialClientData clientData, @NotNull String displayName, @NotNull String name,
+            @NotNull NSData userID);
 }

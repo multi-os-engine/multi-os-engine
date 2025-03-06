@@ -110,6 +110,8 @@ public class NSFileProviderDomain extends NSObject {
 
     /**
      * The display name shown by the system to represent this domain.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -123,6 +125,8 @@ public class NSFileProviderDomain extends NSObject {
 
     /**
      * The identifier - as provided by the file provider extension.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -339,4 +343,48 @@ public class NSFileProviderDomain extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Whether the domain supports syncing the trash.
+     * 
+     * The system supports syncing a trash folder (NSFileProviderTrashContainerItemIdentifier) to the extension.
+     * On iOS, this is surfaced to the user as "Recently Deleted" in the Files app. On macOS, this is surfaced
+     * to the user as the Trash in Finder.
+     * 
+     * If the domain is configured with supportsSyncingTrash=YES, the system will reparent trashed
+     * files (which were located in the extension's domain) to NSFileProviderTrashContainerItemIdentifier.
+     * If the domain is configured with supportsSyncingTrash=NO, the system will decide how to handle
+     * the trashing operation (not guaranteed by API contract).
+     * 
+     * This property is only applicable for NSFileProviderReplicatedExtension-based domains.
+     * 
+     * This property defaults to YES.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSupportsSyncingTrash:")
+    public native void setSupportsSyncingTrash(boolean value);
+
+    /**
+     * Whether the domain supports syncing the trash.
+     * 
+     * The system supports syncing a trash folder (NSFileProviderTrashContainerItemIdentifier) to the extension.
+     * On iOS, this is surfaced to the user as "Recently Deleted" in the Files app. On macOS, this is surfaced
+     * to the user as the Trash in Finder.
+     * 
+     * If the domain is configured with supportsSyncingTrash=YES, the system will reparent trashed
+     * files (which were located in the extension's domain) to NSFileProviderTrashContainerItemIdentifier.
+     * If the domain is configured with supportsSyncingTrash=NO, the system will decide how to handle
+     * the trashing operation (not guaranteed by API contract).
+     * 
+     * This property is only applicable for NSFileProviderReplicatedExtension-based domains.
+     * 
+     * This property defaults to YES.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("supportsSyncingTrash")
+    public native boolean supportsSyncingTrash();
 }

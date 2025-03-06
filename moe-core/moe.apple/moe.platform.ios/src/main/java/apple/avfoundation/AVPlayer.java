@@ -154,6 +154,8 @@ public class AVPlayer extends NSObject {
      * Useful in order to play items for which an AVAsset has previously been created. See -[AVPlayerItem
      * initWithAsset:].
      * 
+     * API-Since: 4.0
+     * 
      * @param item
      * @return An instance of AVPlayer
      */
@@ -167,6 +169,8 @@ public class AVPlayer extends NSObject {
      * Returns an instance of AVPlayer that plays a single audiovisual resource referenced by URL.
      * 
      * Implicitly creates an AVPlayerItem. Clients can obtain the AVPlayerItem as it becomes the player's currentItem.
+     * 
+     * API-Since: 4.0
      * 
      * @param URL
      * @return An instance of AVPlayer
@@ -203,6 +207,8 @@ public class AVPlayer extends NSObject {
      * 
      * This property throws an exception if set to AVPlayerActionAtItemEndAdvance on an AVPlayer which is not an
      * AVQueuePlayer.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("actionAtItemEnd")
@@ -217,6 +223,8 @@ public class AVPlayer extends NSObject {
      * Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to
      * -removeTimeObserver:.
      * Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
+     * 
+     * API-Since: 4.0
      * 
      * @param times
      *              The times for which the observer requests notification, supplied as an array of NSValues carrying
@@ -255,6 +263,8 @@ public class AVPlayer extends NSObject {
      * Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to
      * -removeTimeObserver:.
      * Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
+     * 
+     * API-Since: 4.0
      * 
      * @param interval
      *                 The interval of invocation of the block during normal playback, according to progress of the
@@ -384,6 +394,8 @@ public class AVPlayer extends NSObject {
 
     /**
      * indicates the current item of the player
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -397,6 +409,8 @@ public class AVPlayer extends NSObject {
      * 
      * Returns the current time of the current item. Not key-value observable; use
      * -addPeriodicTimeObserverForInterval:queue:usingBlock: instead.
+     * 
+     * API-Since: 4.0
      * 
      * @return A CMTime
      */
@@ -413,6 +427,8 @@ public class AVPlayer extends NSObject {
      * The value of this property is an NSError that describes what caused the receiver to no longer be able to play
      * items.
      * If the receiver's status is not AVPlayerStatusFailed, the value of this property is nil.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -429,6 +445,13 @@ public class AVPlayer extends NSObject {
     @Selector("externalPlaybackVideoGravity")
     public native String externalPlaybackVideoGravity();
 
+    /**
+     * init
+     * 
+     * Initializes an AVPlayer with no player items.
+     * 
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("init")
     public native AVPlayer init();
@@ -443,6 +466,8 @@ public class AVPlayer extends NSObject {
      * This method throws an exception if the item is not an AVPlayerItem, or if the item is
      * associated with another AVPlayer.
      * 
+     * API-Since: 4.0
+     * 
      * @param item
      * @return An instance of AVPlayer
      */
@@ -456,6 +481,8 @@ public class AVPlayer extends NSObject {
      * Initializes an AVPlayer that plays a single audiovisual resource referenced by URL.
      * 
      * Implicitly creates an AVPlayerItem. Clients can obtain the AVPlayerItem as it becomes the player's currentItem.
+     * 
+     * API-Since: 4.0
      * 
      * @param URL
      * @return An instance of AVPlayer
@@ -577,7 +604,7 @@ public class AVPlayer extends NSObject {
      * Use sourceClock instead.
      * 
      * API-Since: 6.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      */
     @Nullable
     @Deprecated
@@ -635,6 +662,8 @@ public class AVPlayer extends NSObject {
      * Equivalent to setting the value of rate to 0.0.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("pause")
@@ -652,6 +681,8 @@ public class AVPlayer extends NSObject {
      * interested in knowing the effective rate can listen for `AVPlayerRateDidChangeNotification` notification.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("play")
@@ -725,6 +756,8 @@ public class AVPlayer extends NSObject {
      * timebase; see the timebase property of AVPlayerItem.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("rate")
@@ -771,6 +804,8 @@ public class AVPlayer extends NSObject {
      * - observer was not returned by -addPeriodicTimeObserverForInterval:queue:usingBlock:
      * - observer was not returned by -addBoundaryTimeObserverForTimes:queue:usingBlock:
      * 
+     * API-Since: 4.0
+     * 
      * @param observer
      *                 An object returned by a previous call to -addPeriodicTimeObserverForInterval:queue:usingBlock: or
      *                 -addBoundaryTimeObserverForTimes:queue:usingBlock:.
@@ -788,6 +823,8 @@ public class AVPlayer extends NSObject {
      * receiver's currentItem results in an exception being raised. Starting with iOS 5, it's a no-op.
      * This method throws an exception if the item already exists in the play queue.
      * 
+     * API-Since: 4.0
+     * 
      * @param item
      *             The AVPlayerItem that will become the player's current item.
      */
@@ -803,6 +840,8 @@ public class AVPlayer extends NSObject {
      * Use this method to seek to a specified time for the current player item.
      * The time seeked to may differ from the specified time for efficiency. For sample accurate seeking see
      * seekToTime:toleranceBefore:toleranceAfter:.
+     * 
+     * API-Since: 4.0
      * 
      * @param date
      */
@@ -844,6 +883,8 @@ public class AVPlayer extends NSObject {
      * Use this method to seek to a specified time for the current player item.
      * The time seeked to may differ from the specified time for efficiency. For sample accurate seeking see
      * seekToTime:toleranceBefore:toleranceAfter:.
+     * 
+     * API-Since: 4.0
      * 
      * @param time
      */
@@ -889,6 +930,8 @@ public class AVPlayer extends NSObject {
      * additional decoding delay.
      * Messaging this method with beforeTolerance:kCMTimePositiveInfinity and afterTolerance:kCMTimePositiveInfinity is
      * the same as messaging seekToTime: directly.
+     * 
+     * API-Since: 4.0
      * 
      * @param time
      * @param toleranceBefore
@@ -939,6 +982,8 @@ public class AVPlayer extends NSObject {
      * 
      * This property throws an exception if set to AVPlayerActionAtItemEndAdvance on an AVPlayer which is not an
      * AVQueuePlayer.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setActionAtItemEnd:")
@@ -1047,7 +1092,7 @@ public class AVPlayer extends NSObject {
      * Use sourceClock instead.
      * 
      * API-Since: 6.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      */
     @Deprecated
     @Generated
@@ -1109,6 +1154,8 @@ public class AVPlayer extends NSObject {
      * timebase; see the timebase property of AVPlayerItem.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setRate:")
@@ -1205,6 +1252,8 @@ public class AVPlayer extends NSObject {
      * instance needs to be created in its place. When this happens, clients can check the value of the error property
      * to
      * determine the nature of the failure. This property is key value observable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("status")
@@ -1328,7 +1377,10 @@ public class AVPlayer extends NSObject {
      * currently playing, or whether video is playing on an HDR display.
      * 
      * API-Since: 11.2
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use eligibleForHDRPlayback instead
      */
+    @Deprecated
     @Generated
     @Selector("availableHDRModes")
     @NInt
@@ -1536,6 +1588,8 @@ public class AVPlayer extends NSObject {
      * [@note] If an output is set while AVPlayer has a current item it may cause different data channels to be selected
      * for that item, which can have a performance impact.
      * As a result, when possible, it is best to set an output before setting items on an AVPlayer.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("setVideoOutput:")
@@ -1556,6 +1610,8 @@ public class AVPlayer extends NSObject {
      * [@note] If an output is set while AVPlayer has a current item it may cause different data channels to be selected
      * for that item, which can have a performance impact.
      * As a result, when possible, it is best to set an output before setting items on an AVPlayer.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("videoOutput")

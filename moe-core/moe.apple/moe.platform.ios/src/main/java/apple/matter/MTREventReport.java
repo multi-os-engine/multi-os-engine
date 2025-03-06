@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +99,8 @@ public class MTREventReport extends NSObject {
      * If this specific path resulted in an error, the error (in the
      * MTRInteractionErrorDomain or MTRErrorDomain) that corresponds to this
      * path.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("error")
@@ -104,6 +109,8 @@ public class MTREventReport extends NSObject {
 
     /**
      * EventNumber type (uint64_t)
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("eventNumber")
@@ -184,6 +191,9 @@ public class MTREventReport extends NSObject {
     @Selector("new")
     public static native MTREventReport new_objc();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("path")
     @NotNull
@@ -191,6 +201,8 @@ public class MTREventReport extends NSObject {
 
     /**
      * PriorityLevel type (MTREventPriority)
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("priority")
@@ -249,6 +261,8 @@ public class MTREventReport extends NSObject {
      * path (e.g. MTRBasicInformationClusterStartUpEvent if the path's cluster
      * 0x0028 "Basic Information" and the path's event is 0x00 "StartUp"), or nil if
      * error is not nil (in which case there is no payload available).
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("value")

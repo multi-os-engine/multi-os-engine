@@ -35,6 +35,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFence")
 public interface MTLFence {
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("device")
@@ -45,6 +48,8 @@ public interface MTLFence {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -55,6 +60,8 @@ public interface MTLFence {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLabel:")

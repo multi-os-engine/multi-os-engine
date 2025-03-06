@@ -62,6 +62,8 @@ public interface INSendMessageIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSendMessageIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -81,12 +83,17 @@ public interface INSendMessageIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INSendMessageIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleSendMessage:completion:")
     void handleSendMessageCompletion(@NotNull INSendMessageIntent intent,
             @NotNull @ObjCBlock(name = "call_handleSendMessageCompletion") Block_handleSendMessageCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveContentForSendMessage:withCompletion:")

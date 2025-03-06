@@ -160,6 +160,9 @@ public class UIAccessibilityCustomRotorSearchPredicate extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("currentItem")
@@ -169,15 +172,24 @@ public class UIAccessibilityCustomRotorSearchPredicate extends NSObject {
     @Selector("init")
     public native UIAccessibilityCustomRotorSearchPredicate init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("searchDirection")
     @NInt
     public native long searchDirection();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setCurrentItem:")
     public native void setCurrentItem(@NotNull UIAccessibilityCustomRotorItemResult value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setSearchDirection:")
     public native void setSearchDirection(@NInt long value);

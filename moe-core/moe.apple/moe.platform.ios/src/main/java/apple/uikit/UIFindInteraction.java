@@ -52,6 +52,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     /**
      * If there's a currently active find session (implying isFindNavigatorVisible is true), returns the active find
      * session.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -99,6 +101,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * See UIFindInteractionDelegate above.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -116,6 +120,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * Dismisses the find navigator panel.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("dismissFindNavigator")
@@ -123,6 +129,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * Jump to the next found result in the document, relative to the currently highlighted result.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("findNext")
@@ -130,6 +138,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * Jump to the previous found result in the document, relative to the currently highlighted result.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("findPrevious")
@@ -146,6 +156,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * Creates a find interaction object with the specified delegate.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithSessionDelegate:")
@@ -167,6 +179,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * Returns YES if the find navigator panel is currently visible.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isFindNavigatorVisible")
@@ -190,6 +204,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
      * This provider is consulted when the search options menu is being populated. A default set of search options is
      * provided, representing the options
      * available in @c UITextSearchOptions, which can be either modified, augmented, or omitted.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -210,6 +226,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
      * 
      * @param replaceVisible If the delegate supports text replacement, will make the replace text field
      *                       visible on first appearance.
+     * 
+     *                       API-Since: 16.0
      */
     @Generated
     @Selector("presentFindNavigatorShowingReplace:")
@@ -218,6 +236,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     /**
      * If replacement is supported, assign this property to pre-populate the system find panel's replace text field with
      * a replacement string.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -234,6 +254,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * Assign this property to pre-populate the system find panel's search text field with a search query.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -244,6 +266,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
      * This provider is consulted when the search options menu is being populated. A default set of search options is
      * provided, representing the options
      * available in @c UITextSearchOptions, which can be either modified, augmented, or omitted.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setOptionsMenuProvider:")
@@ -261,6 +285,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     /**
      * If replacement is supported, assign this property to pre-populate the system find panel's replace text field with
      * a replacement string.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setReplacementText:")
@@ -268,6 +294,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     /**
      * Assign this property to pre-populate the system find panel's search text field with a search query.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSearchText:")
@@ -284,6 +312,8 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     /**
      * Calling this triggers an update of the UI to reflect changes to the currently shown result count or result index,
      * as defined by UIFindSession.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("updateResultCount")

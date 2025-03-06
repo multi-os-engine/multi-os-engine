@@ -100,6 +100,9 @@ public class MLUpdateProgressHandlers extends NSObject {
     @Selector("init")
     public native MLUpdateProgressHandlers init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initForEvents:progressHandler:completionHandler:")
     public native MLUpdateProgressHandlers initForEventsProgressHandlerCompletionHandler(@NInt long interestedEvents,

@@ -62,6 +62,8 @@ public interface INSearchForMessagesIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSearchForMessagesIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -81,12 +83,17 @@ public interface INSearchForMessagesIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSearchForMessagesIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleSearchForMessages:completion:")
     void handleSearchForMessagesCompletion(@NotNull INSearchForMessagesIntent intent,
             @NotNull @ObjCBlock(name = "call_handleSearchForMessagesCompletion") Block_handleSearchForMessagesCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveAttributesForSearchForMessages:withCompletion:")
@@ -95,6 +102,9 @@ public interface INSearchForMessagesIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveDateTimeRangeForSearchForMessages:withCompletion:")
@@ -128,6 +138,8 @@ public interface INSearchForMessagesIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -137,6 +149,9 @@ public interface INSearchForMessagesIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveSendersForSearchForMessages:withCompletion:")

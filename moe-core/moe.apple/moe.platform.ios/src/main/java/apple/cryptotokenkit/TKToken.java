@@ -100,6 +100,9 @@ public class TKToken extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -124,6 +127,8 @@ public class TKToken extends NSObject {
      * 
      * @param tokenDriver Creating token driver.
      * @param instanceID  Unique, persistent identifier of this token.
+     * 
+     *                    API-Since: 10.0
      */
     @Generated
     @Selector("initWithTokenDriver:instanceID:")
@@ -153,6 +158,8 @@ public class TKToken extends NSObject {
 
     /**
      * Keychain contents (certificate and key items) representing this token.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -172,10 +179,16 @@ public class TKToken extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) TKTokenDelegate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) TKTokenDelegate value) {
         Object __old = delegate();
@@ -196,6 +209,9 @@ public class TKToken extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("tokenDriver")

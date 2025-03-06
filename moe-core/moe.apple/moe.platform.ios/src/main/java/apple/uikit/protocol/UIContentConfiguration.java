@@ -22,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 public interface UIContentConfiguration extends NSCopying {
     /**
      * Initializes and returns a new instance of the content view using this configuration.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -31,6 +33,8 @@ public interface UIContentConfiguration extends NSCopying {
     /**
      * Returns a copy of the configuration updated for the specified state, by applying the configuration's default
      * values for that state to any properties that have not been customized.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

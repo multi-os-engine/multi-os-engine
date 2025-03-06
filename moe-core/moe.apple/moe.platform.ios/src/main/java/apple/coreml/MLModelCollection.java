@@ -34,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
  * A collection of models managed as part of Core ML Model Deployment.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
+ * Deprecated-Since: 17.4
  * Deprecated-Message: Use Background Assets or NSURLSession instead.
  */
 @Deprecated
@@ -83,7 +83,7 @@ public class MLModelCollection extends NSObject {
      * @return NSProgress for updates during setup and download of the model collection
      * 
      *         API-Since: 14.0
-     *         Deprecated-Since: 100000.0
+     *         Deprecated-Since: 17.4
      *         Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated
@@ -132,7 +132,7 @@ public class MLModelCollection extends NSObject {
      * Deployment dashboard.
      * 
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 17.4
      * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated
@@ -155,7 +155,7 @@ public class MLModelCollection extends NSObject {
      * @param completionHandler The completion handler, invoked with YES on success or NSError on failure.
      * 
      *                          API-Since: 14.0
-     *                          Deprecated-Since: 100000.0
+     *                          Deprecated-Since: 17.4
      *                          Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated
@@ -176,7 +176,7 @@ public class MLModelCollection extends NSObject {
      * downloaded.
      * 
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 17.4
      * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated
@@ -195,7 +195,7 @@ public class MLModelCollection extends NSObject {
      * dashboard.
      * 
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 17.4
      * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated

@@ -170,12 +170,17 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     /**
      * Images returned hold a strong reference to the asset that created them
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("imageWithTraitCollection:")
     public native UIImage imageWithTraitCollection(@NotNull UITraitCollection traitCollection);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native UIImageAsset init();
@@ -187,6 +192,8 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
     /**
      * Adds a new variation to this image asset that is appropriate for the provided traits. Any traits not exposed by
      * asset catalogs (such as forceTouchCapability) are ignored.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("registerImage:withTraitCollection:")
@@ -201,6 +208,8 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     /**
      * removes only those images added with registerImage:withTraitCollection:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("unregisterImageWithTraitCollection:")
@@ -208,12 +217,17 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     /**
      * Images returned hold a strong reference to the asset that created them
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("imageWithConfiguration:")
     public native UIImage imageWithConfiguration(@NotNull UIImageConfiguration configuration);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("registerImage:withConfiguration:")
     public native void registerImageWithConfiguration(@NotNull UIImage image,
@@ -221,6 +235,8 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     /**
      * removes only those images added with registerImage:withConfiguration:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("unregisterImageWithConfiguration:")

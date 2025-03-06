@@ -88,6 +88,8 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
 
     /**
      * The delegate of the receiver.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -123,6 +125,8 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
 
     /**
      * Indicates if the associated accessory's access to the network is restricted.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isNetworkAccessRestricted")
@@ -152,6 +156,8 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
 
     /**
      * The delegate of the receiver.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -160,6 +166,8 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
 
     /**
      * The delegate of the receiver.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMNetworkConfigurationProfileDelegate value) {

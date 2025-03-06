@@ -175,6 +175,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("buttonWithType:")
     public static native UIButton buttonWithType(@NInt long buttonType);
@@ -460,6 +463,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("attributedTitleForState:")
     public native NSAttributedString attributedTitleForState(@NUInt long state);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("backgroundImageForState:")
@@ -480,6 +486,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @ByValue
     public native CGRect backgroundRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("buttonType")
     @NInt
@@ -521,6 +530,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * normal/highlighted/selected/disabled. can return nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -529,6 +540,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * normal/highlighted/selected/disabled. can return nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -537,6 +550,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * normal/highlighted/selected/disabled. can return nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -545,6 +560,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * normal/highlighted/selected/disabled. always returns non-nil. default is white(1,1)
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -553,6 +570,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * normal/highlighted/selected/disabled.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -587,6 +606,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @ByValue
     public native UIEdgeInsets imageEdgeInsets();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("imageForState:")
@@ -619,6 +641,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("initWithCoder:")
     public native UIButton initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UIButton initWithFrame(@ByValue CGRect frame);
@@ -684,6 +709,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBackgroundImage:forState:")
@@ -713,6 +740,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is nil. should be same size if different for different states
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setImage:forState:")
@@ -776,6 +805,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is nil. title is assumed to be single line
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitle:forState:")
@@ -783,6 +814,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is nil. use opaque white
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitleColor:forState:")
@@ -802,6 +835,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is nil. use 50% black
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitleShadowColor:forState:")
@@ -838,6 +873,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("tintColor")
     public native UIColor tintColor();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("titleColorForState:")
@@ -858,6 +896,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * these getters only take a single state value
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -885,6 +925,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @ByValue
     public native CGRect titleRectForContentRect(@ByValue CGRect contentRect);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("titleShadowColorForState:")

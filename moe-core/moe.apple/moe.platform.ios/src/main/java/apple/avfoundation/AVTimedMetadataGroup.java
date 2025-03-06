@@ -212,6 +212,8 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
      * @param timeRange
      *                  The timeRange of the collection of AVMetadataItems.
      * @return An instance of AVTimedMetadataGroup.
+     * 
+     *         API-Since: 4.3
      */
     @Generated
     @Selector("initWithItems:timeRange:")
@@ -235,6 +237,8 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
 
     /**
      * an array of AVMetadataItems
+     * 
+     * API-Since: 4.3
      */
     @NotNull
     @Generated
@@ -250,6 +254,8 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
 
     /**
      * indicates the time range of the timed metadata
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("timeRange")

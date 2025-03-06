@@ -35,5 +35,20 @@ public final class MIDIMessageType {
      * 4 words
      */
     @Generated public static final int Data128 = 0x00000005;
+    /**
+     * Replaced by kMIDIMessageTypeStream
+     */
     @Generated public static final int UnknownF = 0x0000000F;
+    /**
+     * 4 words
+     */
+    @Generated public static final int FlexData = 0x0000000D;
+    /**
+     * 4 words
+     */
+    @Generated public static final int Stream = 0x0000000F;
+    /**
+     * Invalid / Unkown Type
+     */
+    @Generated public static final int Invalid = 0x000000FF;
 }

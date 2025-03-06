@@ -157,6 +157,9 @@ public class MDLTextureSampler extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("hardwareFilter")
@@ -166,23 +169,38 @@ public class MDLTextureSampler extends NSObject {
     @Selector("init")
     public native MDLTextureSampler init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setHardwareFilter:")
     public native void setHardwareFilter(@Nullable MDLTextureFilter value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setTexture:")
     public native void setTexture(@Nullable MDLTexture value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setTransform:")
     public native void setTransform(@Nullable MDLTransform value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("texture")
     public native MDLTexture texture();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("transform")

@@ -90,6 +90,8 @@ public class CPTemplateApplicationInstrumentClusterScene extends UIScene {
 
     /**
      * The current content style for this scene suggested by the connected CarPlay system.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("contentStyle")
@@ -103,6 +105,8 @@ public class CPTemplateApplicationInstrumentClusterScene extends UIScene {
     /**
      * The delegate for a CPTemplateApplicationInstrumentClusterScene must conform to the
      * CPTemplateApplicationInstrumentClusterSceneDelegate protocol.
+     * 
+     * API-Since: 15.4
      */
     @Nullable
     @Generated
@@ -143,6 +147,8 @@ public class CPTemplateApplicationInstrumentClusterScene extends UIScene {
 
     /**
      * The instrumentClusterController object for this scene.
+     * 
+     * API-Since: 15.4
      */
     @NotNull
     @Generated
@@ -174,6 +180,8 @@ public class CPTemplateApplicationInstrumentClusterScene extends UIScene {
     /**
      * The delegate for a CPTemplateApplicationInstrumentClusterScene must conform to the
      * CPTemplateApplicationInstrumentClusterSceneDelegate protocol.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("setDelegate:")

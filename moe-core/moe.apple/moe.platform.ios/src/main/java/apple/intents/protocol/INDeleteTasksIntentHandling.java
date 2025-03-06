@@ -46,7 +46,12 @@ public interface INDeleteTasksIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INDeleteTasksIntentResponse
+     * 
+     *      API-Since: 13.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INDeleteTasksIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmDeleteTasks:completion:")
@@ -72,7 +77,12 @@ public interface INDeleteTasksIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INDeleteTasksIntentResponse
+     * 
+     *      API-Since: 13.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INDeleteTasksIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleDeleteTasks:completion:")
     void handleDeleteTasksCompletion(@NotNull INDeleteTasksIntent intent,
@@ -95,7 +105,12 @@ public interface INDeleteTasksIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 13.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INDeleteTasksIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTaskListForDeleteTasks:withCompletion:")
@@ -112,6 +127,12 @@ public interface INDeleteTasksIntentHandling {
                 @NotNull INDeleteTasksTaskListResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTasksForDeleteTasks:withCompletion:")

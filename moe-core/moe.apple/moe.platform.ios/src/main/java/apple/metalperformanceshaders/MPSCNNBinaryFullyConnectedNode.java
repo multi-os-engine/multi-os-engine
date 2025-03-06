@@ -117,6 +117,8 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
      * @param type       What kind of binarization strategy is to be used.
      * @param flags      See documentation of MPSCNNBinaryConvolutionFlags.
      * @return A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:weights:scaleValue:type:flags:")
@@ -168,6 +170,8 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
      * @param type       What kind of binarization strategy is to be used.
      * @param flags      See documentation of MPSCNNBinaryConvolutionFlags.
      * @return A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:weights:scaleValue:type:flags:")

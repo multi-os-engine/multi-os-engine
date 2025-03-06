@@ -105,6 +105,8 @@ public class CPMessageListItemTrailingConfiguration extends NSObject {
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      * 
+     * API-Since: 14.0
+     * 
      * @param trailingItem  An optional glyph displayed on the trailing side of the cell.
      * @param trailingImage An optional image displayed on the trailing side of the cell.
      * 
@@ -166,11 +168,17 @@ public class CPMessageListItemTrailingConfiguration extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("trailingImage")
     public native UIImage trailingImage();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("trailingItem")
     @NInt

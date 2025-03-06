@@ -133,6 +133,8 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
      * AVAudioSourceNode supports different audio formats for the block and output, but only
      * Linear PCM conversions are supported (sample rate, bit depth, interleaving).
      * 
+     * API-Since: 13.0
+     * 
      * @param format
      *               The format of the PCM audio data that will be supplied by the block.
      * @param block
@@ -166,6 +168,8 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
      * 
      * The audio format for the block will be set to the node's output format. If node is
      * reconnected with a different output format, the audio format for the block will also change.
+     * 
+     * API-Since: 13.0
      * 
      * @param block
      *              The block to supply audio data to the output.

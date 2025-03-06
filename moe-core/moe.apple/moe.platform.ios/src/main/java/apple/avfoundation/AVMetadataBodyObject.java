@@ -78,6 +78,8 @@ public class AVMetadataBodyObject extends AVMetadataObject implements NSCopying 
      * in the picture. When a new body enters the picture, it is assigned a new unique identifier. bodyIDs are not
      * re-used as bodies leave the picture and new ones enter. Bodies that leave the picture then re-enter are assigned
      * a new bodyID.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bodyID")

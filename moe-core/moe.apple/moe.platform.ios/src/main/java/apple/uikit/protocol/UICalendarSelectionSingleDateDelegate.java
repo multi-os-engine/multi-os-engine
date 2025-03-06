@@ -28,6 +28,8 @@ public interface UICalendarSelectionSingleDateDelegate {
      * @param dateComponents The date to be checked by selection; a @c nil date represents a deselected date.
      * 
      * @return YES if the date can be selected, NO otherwise.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -43,6 +45,8 @@ public interface UICalendarSelectionSingleDateDelegate {
      * @param selection      The @c UICalendarSelectionMultiDate
      * @param dateComponents The date that was selected by the user. @c dateComponents can be @c nil when the selected
      *                       date is deselected by the user.
+     * 
+     *                       API-Since: 16.0
      */
     @Generated
     @Selector("dateSelection:didSelectDate:")

@@ -479,4 +479,17 @@ public final class Enums {
      * Component AY'CbCr single precision floating-point 4:4:4:4
      */
     @Generated public static final int kCVPixelFormatType_4444AYpCbCrFloat = 0x7234666C;
+    /**
+     * 30 bit RGB, 10-bit big-endian samples, 2 unused padding bits (at most significant end), video-range (64-940).
+     */
+    @Generated public static final int kCVPixelFormatType_30RGB_r210 = 0x72323130;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_64RGBAHalf. No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_64RGBAHalf = 0x26526841;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_420YpCbCr10BiPlanarFullRange. No CVPlanarPixelBufferInfo struct.
+     * Format is compressed-packed with no padding bits between pixels.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr10PackedBiPlanarFullRange = 0x26786630;
 }

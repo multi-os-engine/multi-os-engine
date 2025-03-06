@@ -308,4 +308,10 @@ public final class CGPDFTagType {
      * API-Since: 13.0
      */
     @Generated public static final int Form = 0x000002BE;
+    /**
+     * Page , TABLE 10.12 Type for object reference
+     * 
+     * API-Since: 13.0
+     */
+    @Generated public static final int Object = 0x00000320;
 }

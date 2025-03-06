@@ -25,34 +25,50 @@ import org.moe.natj.general.ann.NInt;
  * Path status values
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `nw_path_status_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWPath.h>
  */
+@Deprecated
 @Generated
 public final class NWPathStatus {
     /**
      * [@const] NWPathStatusInvalid The path cannot be evaluated.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_status_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWPath.h>
      */
-    @Generated @NInt public static final long Invalid = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Invalid = 0x0000000000000000L;
     /**
      * [@const] NWPathStatusSatisfied The path is ready to be used for traffic.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_status_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWPath.h>
      */
-    @Generated @NInt public static final long Satisfied = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Satisfied = 0x0000000000000001L;
     /**
      * [@const] NWPathStatusUnsatisfied The network for this connection is not available.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_status_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWPath.h>
      */
-    @Generated @NInt public static final long Unsatisfied = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Unsatisfied = 0x0000000000000002L;
     /**
      * [@const] NWPathStatusSatisfiable The path may become satisfied upon
      * a connection attempt.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_path_status_t` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWPath.h>
      */
-    @Generated @NInt public static final long Satisfiable = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Satisfiable = 0x0000000000000003L;
 
     @Generated
     private NWPathStatus() {

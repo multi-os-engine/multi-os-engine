@@ -33,7 +33,6 @@ import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.ConstNUIntPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
-import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -41,6 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * [@protocol] MTLRenderCommandEncoder
@@ -77,6 +77,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param indexBuffer       A buffer object that the device will read indexes from.
      * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from. @a indexBufferOffset
      *                          must be a multiple of the index size.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:")
@@ -96,6 +98,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from. @a indexBufferOffset
      *                          must be a multiple of the index size.
      * @param instanceCount     The number of instances drawn.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:")
@@ -188,6 +192,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param primitiveType The type of primitives that elements are assembled into.
      * @param vertexStart   For each instance, the first index to draw
      * @param vertexCount   For each instance, the number of indexes to draw
+     * 
+     *                      API-Since: 8.0
      */
     @Generated
     @Selector("drawPrimitives:vertexStart:vertexCount:")
@@ -203,6 +209,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param vertexStart   For each instance, the first index to draw
      * @param vertexCount   For each instance, the number of indexes to draw
      * @param instanceCount The number of instances drawn.
+     * 
+     *                      API-Since: 8.0
      */
     @Generated
     @Selector("drawPrimitives:vertexStart:vertexCount:instanceCount:")
@@ -233,6 +241,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setBlendColorRed:green:blue:alpha:
      * 
      * Set the constant blend color used across all blending on all render targets
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBlendColorRed:green:blue:alpha:")
@@ -259,6 +269,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setCullMode:
      * 
      * Controls if primitives are culled when front facing, back facing, or not culled at all.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCullMode:")
@@ -268,6 +280,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setDepthBias:slopeScale:clamp:
      * 
      * Depth Bias.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDepthBias:slopeScale:clamp:")
@@ -277,6 +291,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setDepthStencilState:
      * 
      * Set the DepthStencil state object.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDepthStencilState:")
@@ -299,6 +315,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setFragmentBuffer:offset:atIndex:
      * 
      * Set a global buffer for all fragment shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentBuffer:offset:atIndex:")
@@ -320,10 +338,13 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setFragmentBuffers:offsets:withRange:
      * 
      * Set an array of global buffers for all fragment shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentBuffers:offsets:withRange:")
-    void setFragmentBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setFragmentBuffersOffsetsWithRange(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
@@ -342,6 +363,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setFragmentSamplerState:atIndex:
      * 
      * Set a global sampler for all fragment shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentSamplerState:atIndex:")
@@ -352,6 +375,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setFragmentSamplerState:lodMinClamp:lodMaxClamp:atIndex:
      * 
      * Set a global sampler for all fragment shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
@@ -363,27 +388,33 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setFragmentSamplerStates:lodMinClamps:lodMaxClamps:withRange:
      * 
      * Set an array of global samplers for all fragment shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
     void setFragmentSamplerStatesLodMinClampsLodMaxClampsWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @NotNull ConstFloatPtr lodMinClamps, @NotNull ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     /**
      * setFragmentSamplerStates:withRange:
      * 
      * Set an array of global samplers for all fragment shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentSamplerStates:withRange:")
-    void setFragmentSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
-            @ByValue NSRange range);
+    void setFragmentSamplerStatesWithRange(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers, @ByValue NSRange range);
 
     /**
      * setFragmentTexture:atIndex:
      * 
      * Set a global texture for all fragment shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentTexture:atIndex:")
@@ -393,16 +424,20 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setFragmentTextures:withRange:
      * 
      * Set an array of global textures for all fragment shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFragmentTextures:withRange:")
-    void setFragmentTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+    void setFragmentTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> textures,
             @ByValue NSRange range);
 
     /**
      * setFrontFacingWinding:
      * 
      * The winding order of front-facing primitives.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFrontFacingWinding:")
@@ -412,6 +447,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setRenderPipelineState
      * 
      * Sets the current render pipeline state object.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRenderPipelineState:")
@@ -421,6 +458,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setScissorRect:
      * 
      * Specifies a rectangle for a fragment scissor test. All fragments outside of this rectangle are discarded.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setScissorRect:")
@@ -441,6 +480,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setStencilReferenceValue:
      * 
      * Set the stencil reference value for both the back and front stencil buffers.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setStencilReferenceValue:")
@@ -478,6 +519,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setTriangleFillMode:
      * 
      * Set how to rasterize triangle and triangle strip primitives.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTriangleFillMode:")
@@ -487,6 +530,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setVertexBuffer:offset:atIndex:
      * 
      * Set a global buffer for all vertex shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexBuffer:offset:atIndex:")
@@ -508,10 +553,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setVertexBuffers:offsets:withRange:
      * 
      * Set an array of global buffers for all vertex shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexBuffers:offsets:withRange:")
-    void setVertexBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setVertexBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
@@ -530,6 +577,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setVertexSamplerState:atIndex:
      * 
      * Set a global sampler for all vertex shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexSamplerState:atIndex:")
@@ -540,6 +589,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setVertexSamplerState:lodMinClamp:lodMaxClamp:atIndex:
      * 
      * Set a global sampler for all vertex shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
@@ -551,27 +602,33 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setVertexSamplerStates:lodMinClamps:lodMaxClamps:withRange:
      * 
      * Set an array of global samplers for all vertex shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
     void setVertexSamplerStatesLodMinClampsLodMaxClampsWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @NotNull ConstFloatPtr lodMinClamps, @NotNull ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     /**
      * setVertexSamplerStates:withRange:
      * 
      * Set an array of global samplers for all vertex shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexSamplerStates:withRange:")
-    void setVertexSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+    void setVertexSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @ByValue NSRange range);
 
     /**
      * setVertexTexture:atIndex:
      * 
      * Set a global texture for all vertex shaders at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexTexture:atIndex:")
@@ -581,10 +638,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * setVertexTextures:withRange:
      * 
      * Set an array of global textures for all vertex shaders with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVertexTextures:withRange:")
-    void setVertexTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+    void setVertexTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> textures,
             @ByValue NSRange range);
 
     /**
@@ -593,6 +652,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * Set the viewport, which is used to transform vertexes from normalized device coordinates to window coordinates.
      * Fragments that lie outside of the viewport are clipped, and optionally clamped for fragments outside of
      * znear/zfar.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setViewport:")
@@ -606,6 +667,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param mode   Controls if the counter is disabled or moniters passing samples.
      * @param offset The offset relative to the occlusion query buffer provided when the command encoder was created.
      *               offset must be a multiple of 8.
+     * 
+     *               API-Since: 8.0
      */
     @Generated
     @Selector("setVisibilityResultMode:offset:")
@@ -749,7 +812,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setTileBuffers:offsets:withRange:")
-    void setTileBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setTileBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
@@ -799,7 +862,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setTileSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
     void setTileSamplerStatesLodMinClampsLodMaxClampsWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @NotNull ConstFloatPtr lodMinClamps, @NotNull ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     /**
@@ -811,7 +874,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setTileSamplerStates:withRange:")
-    void setTileSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+    void setTileSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @ByValue NSRange range);
 
     /**
@@ -834,7 +897,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setTileTextures:withRange:")
-    void setTileTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+    void setTileTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> textures,
             @ByValue NSRange range);
 
     /**
@@ -898,7 +961,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Deprecated
     @Generated
     @Selector("useHeaps:count:")
-    void useHeapsCount(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
+    void useHeapsCount(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> heaps, @NUInt long count);
 
     /**
      * * @method useResource:usage:
@@ -940,7 +1003,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Deprecated
     @Generated
     @Selector("useResources:count:usage:")
-    void useResourcesCountUsage(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
+    void useResourcesCountUsage(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> resources,
             @NUInt long count, @NUInt long usage);
 
     /**
@@ -1083,8 +1146,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("useHeaps:count:stages:")
-    void useHeapsCountStages(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count,
-            @NUInt long stages);
+    void useHeapsCountStages(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> heaps,
+            @NUInt long count, @NUInt long stages);
 
     /**
      * * @method useResources:usage:stage
@@ -1123,7 +1186,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("useResources:count:usage:stages:")
-    void useResourcesCountUsageStages(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
+    void useResourcesCountUsageStages(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> resources,
             @NUInt long count, @NUInt long usage, @NUInt long stages);
 
     /**
@@ -1188,7 +1251,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setFragmentIntersectionFunctionTables:withBufferRange:")
     void setFragmentIntersectionFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> intersectionFunctionTables,
             @ByValue NSRange range);
 
     /**
@@ -1213,7 +1276,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setFragmentVisibleFunctionTables:withBufferRange:")
     void setFragmentVisibleFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functionTables, @ByValue NSRange range);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> functionTables,
+            @ByValue NSRange range);
 
     /**
      * setTileAccelerationStructure:atBufferIndex:
@@ -1251,7 +1315,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setTileIntersectionFunctionTables:withBufferRange:")
     void setTileIntersectionFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> intersectionFunctionTables,
             @ByValue NSRange range);
 
     /**
@@ -1276,7 +1340,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setTileVisibleFunctionTables:withBufferRange:")
     void setTileVisibleFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functionTables, @ByValue NSRange range);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> functionTables,
+            @ByValue NSRange range);
 
     /**
      * setVertexAccelerationStructure:atBufferIndex:
@@ -1315,7 +1380,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setVertexIntersectionFunctionTables:withBufferRange:")
     void setVertexIntersectionFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> intersectionFunctionTables,
             @ByValue NSRange range);
 
     /**
@@ -1340,7 +1405,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setVertexVisibleFunctionTables:withBufferRange:")
     void setVertexVisibleFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functionTables, @ByValue NSRange range);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> functionTables,
+            @ByValue NSRange range);
 
     /**
      * drawMeshThreadgroups:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:
@@ -1420,7 +1486,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("memoryBarrierWithResources:count:afterStages:beforeStages:")
     void memoryBarrierWithResourcesCountAfterStagesBeforeStages(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> resources, @NUInt long count,
             @NUInt long after, @NUInt long before);
 
     /**
@@ -1470,7 +1536,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setMeshBuffers:offsets:withRange:")
-    void setMeshBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setMeshBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
@@ -1520,7 +1586,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setMeshSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
     void setMeshSamplerStatesLodMinClampsLodMaxClampsWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @NotNull ConstFloatPtr lodMinClamps, @NotNull ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     /**
@@ -1532,7 +1598,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setMeshSamplerStates:withRange:")
-    void setMeshSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+    void setMeshSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @ByValue NSRange range);
 
     /**
@@ -1555,7 +1621,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setMeshTextures:withRange:")
-    void setMeshTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+    void setMeshTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> textures,
             @ByValue NSRange range);
 
     /**
@@ -1590,7 +1656,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setObjectBuffers:offsets:withRange:")
-    void setObjectBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setObjectBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
@@ -1640,7 +1706,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setObjectSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
     void setObjectSamplerStatesLodMinClampsLodMaxClampsWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @NotNull ConstFloatPtr lodMinClamps, @NotNull ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     /**
@@ -1652,7 +1718,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setObjectSamplerStates:withRange:")
-    void setObjectSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+    void setObjectSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @ByValue NSRange range);
 
     /**
@@ -1675,7 +1741,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("setObjectTextures:withRange:")
-    void setObjectTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+    void setObjectTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> textures,
             @ByValue NSRange range);
 
     /**
@@ -1723,8 +1789,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setVertexBuffers:offsets:attributeStrides:withRange:")
     void setVertexBuffersOffsetsAttributeStridesWithRange(
-            @ReferenceInfo(type = ObjCObject.class) @NotNull Ptr<ObjCObject> buffers, @NotNull ConstNUIntPtr offsets,
-            @NotNull ConstNUIntPtr strides, @ByValue NSRange range);
+            @ReferenceInfo(type = ObjCObject.class) @NotNull ConstPtr<ObjCObject> buffers,
+            @NotNull ConstNUIntPtr offsets, @NotNull ConstNUIntPtr strides, @ByValue NSRange range);
 
     /**
      * only call this when the buffer-index is part of the vertexDescriptor and

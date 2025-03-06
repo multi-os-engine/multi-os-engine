@@ -168,6 +168,8 @@ public class CXEndCallAction extends CXCallAction {
     /**
      * Normally, providers can just call -[CXAction fulfill] to indicate action fulfillment. Use this method to note a
      * specific date that the call ended.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("fulfillWithDateEnded:")

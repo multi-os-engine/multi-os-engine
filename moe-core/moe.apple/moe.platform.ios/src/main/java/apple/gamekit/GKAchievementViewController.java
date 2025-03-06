@@ -176,6 +176,11 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("achievementDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -203,11 +208,21 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @Selector("initWithRootViewController:")
     public native GKAchievementViewController initWithRootViewController(@NotNull UIViewController rootViewController);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("setAchievementDelegate:")
     public native void setAchievementDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     public void setAchievementDelegate(@Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value) {
         Object __old = achievementDelegate();
@@ -242,4 +257,12 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("initWithLeaderboardSetID:")
+    public native GKAchievementViewController initWithLeaderboardSetID(@NotNull String leaderboardSetID);
+
+    @Generated
+    @Selector("initWithPlayer:")
+    public native GKAchievementViewController initWithPlayer(@NotNull GKPlayer player);
 }

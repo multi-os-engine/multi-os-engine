@@ -93,6 +93,8 @@ public class GCMouse extends NSObject implements GCDevice {
      * 
      * @see GCMouseDidBecomeCurrentNotification
      * @see GCMouseDidStopBeingCurrentNotification
+     * 
+     *      API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -148,6 +150,8 @@ public class GCMouse extends NSObject implements GCDevice {
      * 
      * @see GCMouseDidConnectNotification
      * @see GCMouseDidDisconnectNotification
+     * 
+     *      API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -157,6 +161,8 @@ public class GCMouse extends NSObject implements GCDevice {
     /**
      * Unlike GCController GCMouse supports only one input profile
      * Profile contains mouse buttons, scroll wheel and pointer delta.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

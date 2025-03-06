@@ -49,21 +49,33 @@ public interface INSpeakable {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("pronunciationHint")
     String pronunciationHint();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("spokenPhrase")
     String spokenPhrase();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("alternativeSpeakableMatches")
     NSArray<?> alternativeSpeakableMatches();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("vocabularyIdentifier")

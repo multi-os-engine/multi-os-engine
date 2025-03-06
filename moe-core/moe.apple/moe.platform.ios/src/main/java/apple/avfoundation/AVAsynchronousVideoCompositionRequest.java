@@ -168,6 +168,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * The time for which the frame should be composed
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("compositionTime")
@@ -183,6 +185,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * callback the custom compositor should call for a request that has been cancelled.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("finishCancelledRequest")
@@ -195,6 +199,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
      * 
      * @param composedVideoFrame
      *                           The video frame to finish with.
+     * 
+     *                           API-Since: 7.0
      */
     @Generated
     @Selector("finishWithComposedVideoFrame:")
@@ -203,6 +209,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     /**
      * callback the custom compositor should call when composition failed. The error parameter should describe the
      * actual error.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("finishWithError:")
@@ -214,6 +222,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * The AVVideoCompositionRenderContext making the request
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -227,6 +237,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
      * 
      * @param trackID
      *                The track ID for the requested source frame
+     * 
+     *                API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -235,6 +247,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * Track IDs of all the source video buffers that are available to compose the frame.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -243,6 +257,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * The AVVideoCompositionInstruction to use to compose the frame.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

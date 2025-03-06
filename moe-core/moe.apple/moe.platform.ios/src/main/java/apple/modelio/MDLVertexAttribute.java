@@ -168,6 +168,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * 
      * index of the buffer in mesh's vertexBuffer array in which this
      * attribute resides
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("bufferIndex")
@@ -189,6 +191,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * If the value is MDLVertexFormatInvalid. Other values of this
      * object will be ignored when setting the MDLVertexDescriptor object
      * in a Mesh. The initial value is MDLVertexFormatInvalid.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("format")
@@ -203,6 +207,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * initWithName:format:offset:bufferIndex
      * 
      * Initialize attribute object with all properties
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithName:format:offset:bufferIndex:")
@@ -214,6 +220,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * 
      * Identifying name of the attribute derived from model file, or one of
      * the predefined MDLVertexAttribute strings
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -224,6 +232,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * [@property] offset
      * 
      * offset in bytes of the attrbute in each element of the vertex buffer
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("offset")
@@ -235,6 +245,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * 
      * index of the buffer in mesh's vertexBuffer array in which this
      * attribute resides
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBufferIndex:")
@@ -248,6 +260,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * If the value is MDLVertexFormatInvalid. Other values of this
      * object will be ignored when setting the MDLVertexDescriptor object
      * in a Mesh. The initial value is MDLVertexFormatInvalid.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFormat:")
@@ -258,6 +272,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * 
      * Identifying name of the attribute derived from model file, or one of
      * the predefined MDLVertexAttribute strings
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setName:")
@@ -267,6 +283,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * [@property] offset
      * 
      * offset in bytes of the attrbute in each element of the vertex buffer
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOffset:")
@@ -278,6 +296,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * the time the attribute is intended for.
      * 
      * morph targets would store their times here
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTime:")
@@ -289,6 +309,8 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * the time the attribute is intended for.
      * 
      * morph targets would store their times here
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("time")

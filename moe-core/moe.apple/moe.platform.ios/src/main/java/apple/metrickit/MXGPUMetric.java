@@ -97,6 +97,8 @@ public class MXGPUMetric extends MXMetric {
      * payload.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

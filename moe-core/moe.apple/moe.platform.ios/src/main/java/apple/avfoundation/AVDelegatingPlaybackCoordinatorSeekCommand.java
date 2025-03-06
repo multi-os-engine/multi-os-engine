@@ -71,6 +71,8 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
      * [@property] anticipatedPlaybackRate
      * 
      * The rate to prepare for if shouldBufferInAnticipationOfPlayback is YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("anticipatedPlaybackRate")
@@ -115,6 +117,8 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
      * suspension to communicate the situation to the other participants.
      * Completing the command after this date means that the coordinator will likely send a play command for a later
      * time than the receiver buffered for.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -162,6 +166,8 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
      * 
      * Playback should never automatically resume after seeking to this time. The coordinator will issue a new
      * PlayCommand when everyone else is ready to resume.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("itemTime")
@@ -200,6 +206,8 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
      * This should be treated similar to receiving a separate AVDelegatingPlaybackCoordinatorBufferingCommand.
      * If YES, the command should only be considered complete once the player is ready to receive an
      * AVDelegatingPlaybackCoordinatorPlayCommand with the indicated rate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("shouldBufferInAnticipationOfPlayback")

@@ -176,6 +176,8 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
 
     /**
      * returns the bounds for drawing into the owning UIGraphicsRendererContext.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("bounds")

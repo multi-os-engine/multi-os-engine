@@ -77,6 +77,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * The aspect ratio of the contour from the original image aspect ratio expressed as width/height
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("aspectRatio")
@@ -103,6 +105,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
      * @param childContourIndex The index into the childContours array.
      * @param error             The error returned if the child contour cannot be provided.
      * @return The VNContour object at the specified index path, or nil of a failure occurs.
+     * 
+     *         API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -114,6 +118,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
      * The total number of child contours in the target contour.
      * 
      * The use of this property is preferred over childContours.count due to the cost of building the child objects.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("childContourCount")
@@ -125,6 +131,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
      * 
      * This property may come with the cost of instantiating new VNContour objects; therefore, clients are strongly
      * encouraged to hold the results in a local variable instead of repeatedly invoking it.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -163,6 +171,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * The path to the target VNContour as it is stored in the owning VNContoursObservation's hierarchy of contours.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -204,6 +214,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
      * The contour represented as a CGPath in normalized coordinates.
      * 
      * The path is owned by this object and therefore will be alive as long as the the observation is alive.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -212,6 +224,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * The number of points that describe the contour.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("pointCount")
@@ -228,6 +242,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
      * @param error   The error returned if a simplified contour cannot be created.
      * @return A new VNContour object with a simplified polygon consisting of a subset of the points that defined the
      *         original VNContour.
+     * 
+     *         API-Since: 14.0
      */
     @Nullable
     @Generated

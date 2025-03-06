@@ -48,6 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * SCNText
@@ -463,4 +464,11 @@ public class SCNText extends SCNGeometry {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("geometryWithSources:elements:sourceChannels:")
+    public static native SCNText geometryWithSourcesElementsSourceChannels(
+            @NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements,
+            @Nullable NSArray<? extends NSNumber> sourceChannels);
 }

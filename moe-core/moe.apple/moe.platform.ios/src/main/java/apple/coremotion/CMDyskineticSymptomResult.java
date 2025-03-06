@@ -107,6 +107,8 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
 
     /**
      * The date and time representing the end of the result.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -155,6 +157,8 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
 
     /**
      * The percentage of time dyskinetic symptoms were likely for the result.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentLikely")
@@ -162,6 +166,8 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
 
     /**
      * The percentage of time dyskinetic symptoms were unlikely for the result.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("percentUnlikely")
@@ -181,6 +187,8 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
 
     /**
      * The date and time representing the start of the result.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

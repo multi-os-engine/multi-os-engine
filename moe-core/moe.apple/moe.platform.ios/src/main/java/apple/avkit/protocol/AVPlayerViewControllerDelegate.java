@@ -212,7 +212,7 @@ public interface AVPlayerViewControllerDelegate {
      * 
      * Informs the delegate that AVPlayerViewController is about to stop displaying its contents full screen.
      * 
-     * See the discussion of -[AVPlayerViewControllerDelegatePrivate
+     * See the discussion of -[AVPlayerViewControllerDelegate
      * playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:].
      * 
      * API-Since: 12.0

@@ -173,7 +173,12 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
      * If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754
      * standard. It also enables the high precision variant of math functions for single precision floating-point scalar
      * and vector types. fastMathEnabled defaults to YES.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use mathMode instead
      */
+    @Deprecated
     @Generated
     @Selector("fastMathEnabled")
     public native boolean fastMathEnabled();
@@ -201,6 +206,8 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
      * NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -213,7 +220,12 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
      * If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754
      * standard. It also enables the high precision variant of math functions for single precision floating-point scalar
      * and vector types. fastMathEnabled defaults to YES.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use mathMode instead
      */
+    @Deprecated
     @Generated
     @Selector("setFastMathEnabled:")
     public native void setFastMathEnabled(boolean value);
@@ -236,6 +248,8 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
      * NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPreprocessorMacros:")
@@ -487,4 +501,74 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] enableLogging
+     * 
+     * If YES, set the compiler to enable any logging in the shader. The default is false.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("enableLogging")
+    public native boolean enableLogging();
+
+    /**
+     * [@property] mathFloatingPointFunctions
+     * 
+     * Sets the default math functions for single precision floating-point. Default is
+     * `MTLMathFloatingPointFunctionsFast`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("mathFloatingPointFunctions")
+    @NInt
+    public native long mathFloatingPointFunctions();
+
+    /**
+     * [@property] mathMode
+     * 
+     * Sets the floating-point arithmetic optimizations. Default depends on the language standard version.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("mathMode")
+    @NInt
+    public native long mathMode();
+
+    /**
+     * [@property] enableLogging
+     * 
+     * If YES, set the compiler to enable any logging in the shader. The default is false.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setEnableLogging:")
+    public native void setEnableLogging(boolean value);
+
+    /**
+     * [@property] mathFloatingPointFunctions
+     * 
+     * Sets the default math functions for single precision floating-point. Default is
+     * `MTLMathFloatingPointFunctionsFast`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMathFloatingPointFunctions:")
+    public native void setMathFloatingPointFunctions(@NInt long value);
+
+    /**
+     * [@property] mathMode
+     * 
+     * Sets the floating-point arithmetic optimizations. Default depends on the language standard version.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMathMode:")
+    public native void setMathMode(@NInt long value);
 }

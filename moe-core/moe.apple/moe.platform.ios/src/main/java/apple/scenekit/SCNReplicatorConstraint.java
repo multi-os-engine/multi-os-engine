@@ -141,6 +141,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] orientationOffset
      * 
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("orientationOffset")
@@ -151,6 +153,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] positionOffset
      * 
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("positionOffset")
@@ -161,6 +165,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] replicatesOrientation
      * 
      * Defines whether or not the constraint should replicate the target orientation. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("replicatesOrientation")
@@ -170,6 +176,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] replicatesPosition
      * 
      * Defines whether or not the constraint should replicate the target position. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("replicatesPosition")
@@ -179,6 +187,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] replicatesScale
      * 
      * Defines whether or not the constraint should replicate the target scale. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("replicatesScale")
@@ -188,6 +198,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * replicatorWithTargetNode
      * 
      * Creates and returns a SCNReplicatorConstraint constraint.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("replicatorConstraintWithTarget:")
@@ -205,6 +217,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] scaleOffset
      * 
      * Defines an addition scale offset. Defaults to no offset. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("scaleOffset")
@@ -215,6 +229,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] orientationOffset
      * 
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOrientationOffset:")
@@ -224,6 +240,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] positionOffset
      * 
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPositionOffset:")
@@ -233,6 +251,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] replicatesOrientation
      * 
      * Defines whether or not the constraint should replicate the target orientation. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReplicatesOrientation:")
@@ -242,6 +262,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] replicatesPosition
      * 
      * Defines whether or not the constraint should replicate the target position. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReplicatesPosition:")
@@ -251,6 +273,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] replicatesScale
      * 
      * Defines whether or not the constraint should replicate the target scale. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReplicatesScale:")
@@ -260,6 +284,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] scaleOffset
      * 
      * Defines an addition scale offset. Defaults to no offset. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScaleOffset:")
@@ -269,6 +295,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] target
      * 
      * Defines the target node to replicate
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTarget:")
@@ -296,6 +324,8 @@ public class SCNReplicatorConstraint extends SCNConstraint {
      * [@property] target
      * 
      * Defines the target node to replicate
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

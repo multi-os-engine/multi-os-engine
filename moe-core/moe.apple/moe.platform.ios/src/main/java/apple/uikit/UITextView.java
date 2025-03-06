@@ -72,6 +72,7 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.uikit.protocol.UILetterformAwareAdjusting;
+import apple.corefoundation.struct.CGAffineTransform;
 
 /**
  * API-Since: 2.0
@@ -545,6 +546,9 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @NUInt
     public native long dataDetectorTypes();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -585,6 +589,9 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @ByValue
     public native CGRect firstRectForRange(@NotNull UITextRange range);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("font")
@@ -605,6 +612,9 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("init")
     public native UITextView init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UITextView initWithCoder(@NotNull NSCoder coder);
@@ -639,6 +649,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     /**
      * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -791,10 +803,16 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @NInt
     public native long returnKeyType();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("scrollRangeToVisible:")
     public native void scrollRangeToVisible(@ByValue NSRange range);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("selectedRange")
     @ByValue
@@ -867,10 +885,16 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -888,6 +912,9 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("setEnablesReturnKeyAutomatically:")
     public native void setEnablesReturnKeyAutomatically(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setFont:")
     public native void setFont(@Nullable UIFont value);
@@ -915,6 +942,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     /**
      * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setInputView:")
@@ -952,6 +981,9 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("setReturnKeyType:")
     public native void setReturnKeyType(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setSelectedRange:")
     public native void setSelectedRange(@ByValue NSRange value);
@@ -970,17 +1002,25 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("setSpellCheckingType:")
     public native void setSpellCheckingType(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
 
     /**
      * default is NSLeftTextAlignment
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setTextColor:")
     public native void setTextColor(@Nullable UIColor value);
@@ -1019,18 +1059,26 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @NInt
     public native long spellCheckingType();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("text")
     public native String text();
 
     /**
      * default is NSLeftTextAlignment
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("textColor")
@@ -1569,4 +1617,172 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("allowedWritingToolsResultOptions")
+    @NUInt
+    public native long allowedWritingToolsResultOptions();
+
+    @Generated
+    @IsOptional
+    @Selector("attributedTextInRange:")
+    @NotNull
+    public native NSAttributedString attributedTextInRange(@NotNull UITextRange range);
+
+    @Generated
+    @IsOptional
+    @Selector("caretTransformForPosition:")
+    @ByValue
+    public native CGAffineTransform caretTransformForPosition(@NotNull UITextPosition position);
+
+    @Generated
+    @IsOptional
+    @Selector("didDismissWritingTools")
+    public native void didDismissWritingTools();
+
+    /**
+     * Renders the text highlight background for NSTextHighlightStyleAttributeName in textRange. origin specifies the
+     * coordinate origin in the NSTextContainer coordinate system of the rendering context.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("drawTextHighlightBackgroundForTextRange:origin:")
+    public native void drawTextHighlightBackgroundForTextRangeOrigin(@NotNull NSTextRange textRange,
+            @ByValue CGPoint origin);
+
+    @Generated
+    @IsOptional
+    @Selector("insertAdaptiveImageGlyph:replacementRange:")
+    public native void insertAdaptiveImageGlyphReplacementRange(@NotNull NSAdaptiveImageGlyph adaptiveImageGlyph,
+            @NotNull UITextRange replacementRange);
+
+    @Generated
+    @IsOptional
+    @Selector("insertAttributedText:")
+    public native void insertAttributedText(@NotNull NSAttributedString string);
+
+    /**
+     * Convenience for tracking whether Writing Tools is active
+     * 
+     * @return Returns @c YES while Writing Tools is interacting with the receiver (after @c
+     *         -textViewWritingToolsWillBegin: completes until @c -textViewWritingToolsDidEnd: completes)
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("isWritingToolsActive")
+    public native boolean isWritingToolsActive();
+
+    @Generated
+    @IsOptional
+    @Selector("mathExpressionCompletionType")
+    @NInt
+    public native long mathExpressionCompletionType();
+
+    @Generated
+    @IsOptional
+    @Selector("replaceRange:withAttributedText:")
+    public native void replaceRangeWithAttributedText(@NotNull UITextRange range,
+            @NotNull NSAttributedString attributedText);
+
+    @Generated
+    @Selector("setAllowedWritingToolsResultOptions:")
+    public native void setAllowedWritingToolsResultOptions(@NUInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setMathExpressionCompletionType:")
+    public native void setMathExpressionCompletionType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setSupportsAdaptiveImageGlyph:")
+    public native void setSupportsAdaptiveImageGlyph(boolean value);
+
+    /**
+     * For text views that have flag `allowsEditingTextAttributes` set,
+     * this configuration will be used for `UITextFormattingViewController`
+     * when its presentation is requested.
+     * 
+     * It has a non-nil default value.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTextFormattingConfiguration:")
+    public native void setTextFormattingConfiguration(@Nullable UITextFormattingViewControllerConfiguration value);
+
+    /**
+     * Text Highlight
+     * Attributes for NSTextHighlightStyleAttributeName rendering. It is consulted when the corresponding
+     * NSTextHighlightColorSchemeAttributeName is NSTextHighlightColorSchemeDefault. NSForegroundColorAttributeName
+     * overrides the text color, and NSBackgroundColorAttributeName specifies the highlight color rendered with
+     * drawTextHighlightBackground(for textRange:, origin:). When NSForegroundColorAttributeName is missing, it uses the
+     * text color specified by the document content. When NSBackgroundColorAttributeName is not specified, it is derived
+     * from NSForegroundColorAttributeName. By default, it returns a dictionary with tintColor for
+     * NSForegroundColorAttributeName.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTextHighlightAttributes:")
+    public native void setTextHighlightAttributes(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("setWritingToolsBehavior:")
+    public native void setWritingToolsBehavior(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("supportsAdaptiveImageGlyph")
+    public native boolean supportsAdaptiveImageGlyph();
+
+    /**
+     * For text views that have flag `allowsEditingTextAttributes` set,
+     * this configuration will be used for `UITextFormattingViewController`
+     * when its presentation is requested.
+     * 
+     * It has a non-nil default value.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("textFormattingConfiguration")
+    @Nullable
+    public native UITextFormattingViewControllerConfiguration textFormattingConfiguration();
+
+    /**
+     * Text Highlight
+     * Attributes for NSTextHighlightStyleAttributeName rendering. It is consulted when the corresponding
+     * NSTextHighlightColorSchemeAttributeName is NSTextHighlightColorSchemeDefault. NSForegroundColorAttributeName
+     * overrides the text color, and NSBackgroundColorAttributeName specifies the highlight color rendered with
+     * drawTextHighlightBackground(for textRange:, origin:). When NSForegroundColorAttributeName is missing, it uses the
+     * text color specified by the document content. When NSBackgroundColorAttributeName is not specified, it is derived
+     * from NSForegroundColorAttributeName. By default, it returns a dictionary with tintColor for
+     * NSForegroundColorAttributeName.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("textHighlightAttributes")
+    public native NSDictionary<String, ?> textHighlightAttributes();
+
+    @Generated
+    @IsOptional
+    @Selector("willPresentWritingTools")
+    public native void willPresentWritingTools();
+
+    @Generated
+    @Selector("writingToolsBehavior")
+    @NInt
+    public native long writingToolsBehavior();
+
+    /**
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("writingToolsCoordinator")
+    @NotNull
+    public native UIWritingToolsCoordinator writingToolsCoordinator();
 }

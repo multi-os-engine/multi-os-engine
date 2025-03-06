@@ -85,6 +85,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * [@property] channelCount
      * 
      * The number of channels of audio data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("channelCount")
@@ -133,6 +135,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * If the provided layout's tag is kAudioChannelLayoutTag_UseChannelDescriptions, this
      * initializer attempts to convert it to a more specific tag.
      * 
+     * API-Since: 8.0
+     * 
      * @param layout
      *               The AudioChannelLayout.
      */
@@ -147,6 +151,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * 
      * Returns nil if the tag is either kAudioChannelLayoutTag_UseChannelDescriptions or
      * kAudioChannelLayoutTag_UseChannelBitmap.
+     * 
+     * API-Since: 8.0
      * 
      * @param layoutTag
      *                  The tag.
@@ -175,6 +181,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * 
      * The underlying AudioChannelLayoutTag and AudioChannelLayout are compared for equality.
      * 
+     * API-Since: 8.0
+     * 
      * @param object
      *               The AVAudioChannelLayout to compare against.
      */
@@ -195,6 +203,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * [@property] layout
      * 
      * The underlying AudioChannelLayout.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -205,6 +215,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * [@property] layoutTag
      * 
      * The layout's tag.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("layoutTag")
@@ -214,6 +226,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * layoutWithLayout:
      * 
      * Create from an AudioChannelLayout
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("layoutWithLayout:")
@@ -223,6 +237,8 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
      * layoutWithLayoutTag:
      * 
      * Create from a layout tag.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("layoutWithLayoutTag:")

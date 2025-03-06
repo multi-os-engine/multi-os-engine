@@ -107,6 +107,9 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("fetchAllSubscriptionsOperation")
@@ -176,6 +179,8 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -183,10 +188,16 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_fetchSubscriptionCompletionBlock_ret")
     public native Block_fetchSubscriptionCompletionBlock_ret fetchSubscriptionCompletionBlock();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native CKFetchSubscriptionsOperation init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithSubscriptionIDs:")
     public native CKFetchSubscriptionsOperation initWithSubscriptionIDs(@NotNull NSArray<String> subscriptionIDs);
@@ -202,16 +213,24 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFetchSubscriptionCompletionBlock:")
     public native void setFetchSubscriptionCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setFetchSubscriptionCompletionBlock") Block_setFetchSubscriptionCompletionBlock value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setSubscriptionIDs:")
     public native void setSubscriptionIDs(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("subscriptionIDs")

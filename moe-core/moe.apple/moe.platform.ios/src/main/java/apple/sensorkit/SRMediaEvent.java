@@ -110,6 +110,8 @@ public class SRMediaEvent extends NSObject implements NSCopying, NSSecureCoding 
      * Type of the event
      * 
      * Type of media event (e.g., media has been displayed on a screen).
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("eventType")
@@ -157,6 +159,8 @@ public class SRMediaEvent extends NSObject implements NSCopying, NSSecureCoding 
      * Unique media identifier
      * 
      * Unique media identifier to track a specific media object.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("mediaIdentifier")

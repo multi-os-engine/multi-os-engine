@@ -129,6 +129,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * Provide convenient bounds-checked access to the quality samples stored in the descriptor.
      * 
      * @return Returns a syntactic sugar helper to get or set sample values on the horizontal axis.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -141,6 +143,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * Provide direct access to the quality samples stored in the descriptor.
      * 
      * The returned pointer points to the first element of an array of sampleCount.width elements.
+     * 
+     * API-Since: 13.0
      * 
      * @return Pointer to the (mutable) storage array for samples on the horizontal axis.
      */
@@ -160,6 +164,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * 
      * All values are initialized to zero.
      * 
+     * API-Since: 13.0
+     * 
      * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis
      *                    respectively. The depth component is ignored.
      */
@@ -173,6 +179,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * Initialize a descriptor for a layer with the given number of quality samples on the horizontal and vertical axis.
      * 
      * Use initWithSampleCount: to initialize with zeroes instead.
+     * 
+     * API-Since: 13.0
      * 
      * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis
      *                    respectively. The depth component is ignored.
@@ -253,6 +261,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * Provide convenient bounds-checked access to the quality samples stored in the descriptor.
      * 
      * @return Returns a syntactic sugar helper to get or set sample values on the vertical axis.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -265,6 +275,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * Provide direct access to the quality samples stored in the descriptor.
      * 
      * The returned pointer points to the first element of an array of sampleCount.height elements.
+     * 
+     * API-Since: 13.0
      * 
      * @return Pointer to the (mutable) storage array for samples on the vertical axis.
      */

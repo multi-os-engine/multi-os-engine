@@ -3,7 +3,7 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * The type of the reduction MPSGraph applies in the loss operations.
+ * The type of the reduction the graph applies in the loss operations.
  */
 @Generated
 public final class MPSGraphLossReductionType {

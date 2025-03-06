@@ -45,6 +45,9 @@ public class EKVirtualConferenceDescriptor extends NSObject {
         super(peer);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("URLDescriptors")
@@ -89,6 +92,9 @@ public class EKVirtualConferenceDescriptor extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("conferenceDetails")
@@ -126,6 +132,8 @@ public class EKVirtualConferenceDescriptor extends NSObject {
      * @param conferenceDetails A user-readable string containing any other information you wish to
      *                          communicate to the user about this virtual conference. This string will
      *                          be displayed in the UI. This argument is optional and may be left nil.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("initWithTitle:URLDescriptors:conferenceDetails:")
@@ -176,6 +184,9 @@ public class EKVirtualConferenceDescriptor extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("title")

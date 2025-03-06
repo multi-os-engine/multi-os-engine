@@ -86,6 +86,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alpha")
@@ -125,6 +127,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -154,6 +158,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * 
      * The bias vector must contain at least
      * MIN(sourceOutputFeatureChannels, weightMatrix.columns - secondarySourceMatrixOrigin.y) elements.
+     * 
+     * API-Since: 11.0
      * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -193,12 +199,17 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixFullyConnected
      * @param device   The MTLDevice on which to make the MPSMatrixFullyConnected object.
      * @return A new MPSMatrixFullyConnected object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixFullyConnected initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSMatrixFullyConnected initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -227,6 +238,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterA")
@@ -234,6 +247,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterB")
@@ -241,6 +256,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterC")
@@ -248,6 +265,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronType")
@@ -273,6 +292,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -294,6 +315,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * @param parameterA parameterA of neuron activation that is shared across all output values.
      * @param parameterB parameterB of neuron activation that is shared across all output values.
      * @param parameterC parameterC of neuron activation that is shared across all output values.
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
@@ -316,6 +339,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * MIN(MIN(inputMatrix.columns - primarySourceMatrixOrigin.y,
      * weightMatrix.rows - secondarySourceMatrixOrigin.x),
      * sourceInputFeatureChannels)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
@@ -331,6 +356,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * time the larger of this property or the available number of inputs is
      * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at primarySourceMatrixOrigin.x) should be considered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -346,6 +373,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * The value of NSUIntegerMax thus indicates that all available
      * columns in the weight array (beginning at secondarySourceMatrixOrigin.y)
      * should be considered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceOutputFeatureChannels:")
@@ -371,6 +400,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * MIN(MIN(inputMatrix.columns - primarySourceMatrixOrigin.y,
      * weightMatrix.rows - secondarySourceMatrixOrigin.x),
      * sourceInputFeatureChannels)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -387,6 +418,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * time the larger of this property or the available number of inputs is
      * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at primarySourceMatrixOrigin.x) should be considered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")
@@ -403,6 +436,8 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
      * The value of NSUIntegerMax thus indicates that all available
      * columns in the weight array (beginning at secondarySourceMatrixOrigin.y)
      * should be considered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceOutputFeatureChannels")

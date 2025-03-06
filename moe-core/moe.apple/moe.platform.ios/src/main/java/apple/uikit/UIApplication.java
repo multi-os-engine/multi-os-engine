@@ -49,6 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * API-Since: 2.0
@@ -336,6 +338,9 @@ public class UIApplication extends UIResponder {
     @Selector("currentUserNotificationSettings")
     public native UIUserNotificationSettings currentUserNotificationSettings();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -411,6 +416,8 @@ public class UIApplication extends UIResponder {
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isIdleTimerDisabled")
@@ -418,6 +425,8 @@ public class UIApplication extends UIResponder {
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setIdleTimerDisabled:")
@@ -635,12 +644,18 @@ public class UIApplication extends UIResponder {
     @Selector("scheduledLocalNotifications")
     public native NSArray<? extends UILocalNotification> scheduledLocalNotifications();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("sendAction:to:from:forEvent:")
     public native boolean sendActionToFromForEvent(@NotNull SEL action,
             @Nullable @Mapped(ObjCObjectMapper.class) Object target,
             @Nullable @Mapped(ObjCObjectMapper.class) Object sender, @Nullable UIEvent event);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("sendEvent:")
     public native void sendEvent(@NotNull UIEvent event);
@@ -662,10 +677,16 @@ public class UIApplication extends UIResponder {
     @Selector("setApplicationSupportsShakeToEdit:")
     public native void setApplicationSupportsShakeToEdit(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIApplicationDelegate value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIApplicationDelegate value) {
         Object __old = delegate();
@@ -1074,4 +1095,33 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Determine whether the application is the current default app for some category of application.
+     * 
+     * When this method returns `UIApplicationCategoryDefaultStatusIsDefault`, the application
+     * is the default for the provided category.
+     * 
+     * When this method returns `UIApplicationCategoryDefaultStatusNotDefault`, the application is
+     * not the default for the provide category.
+     * 
+     * Otherwise, this method returns `UIApplicationCategoryDefaultStatusUnavailable`, which is an error
+     * condition (e.g., the application was rate-limited); the `NSError` object returned in the error
+     * out-parameter has more information.
+     * 
+     * The system reserves the right to aggressively rate-limit its response. If the application is
+     * rate-limited, the method will fail, the error will be `UIApplicationCategoryDefaultErrorRateLimited`
+     * in the `UIApplicationCategoryDefaultErrorDomain` domain, and two keys will be in the error userInfo
+     * dictionary: `UIApplicationCategoryDefaultStatusLastProvidedDateErrorKey`, which is the date when
+     * an answer was last provided to the app, and `UIApplicationCategoryDefaultRetryAvailabilityDateErrorKey`,
+     * which is the date after which the application can expect to ask again (i.e., will not be
+     * rate-limited any more).
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("defaultStatusForCategory:error:")
+    @NInt
+    public native long defaultStatusForCategoryError(@NInt long category,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

@@ -88,6 +88,9 @@ public class SRMessagesUsageReport extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -144,16 +147,25 @@ public class SRMessagesUsageReport extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalIncomingMessages")
     @NInt
     public native long totalIncomingMessages();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalOutgoingMessages")
     @NInt
     public native long totalOutgoingMessages();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalUniqueContacts")
     @NInt

@@ -50,6 +50,8 @@ public class UIScene extends UIResponder {
 
     /**
      * use the activation conditions to influence which scene is activated for banner taps, URLs, etc.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -58,6 +60,8 @@ public class UIScene extends UIResponder {
 
     /**
      * the activation state of this scene
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("activationState")
@@ -111,6 +115,8 @@ public class UIScene extends UIResponder {
      * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not
      * need to live for the whole lifetime of the process.
      * A strong ref here relieves clients of the responsibility of managing the delegate lifetime directly.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -133,6 +139,8 @@ public class UIScene extends UIResponder {
 
     /**
      * An initializer for subclasses, will be called by UIKit and not intended to be called by applications.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithSession:connectionOptions:")
@@ -171,6 +179,8 @@ public class UIScene extends UIResponder {
      * An empty options dictionary will result in the same behavior as the older openURL call,
      * aside from the fact that this is asynchronous and calls the completion handler rather than returning a result.
      * The completion handler is called on the main queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("openURL:options:completionHandler:")
@@ -195,6 +205,8 @@ public class UIScene extends UIResponder {
 
     /**
      * The existing representation which references this UIScene instance
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -203,6 +215,8 @@ public class UIScene extends UIResponder {
 
     /**
      * use the activation conditions to influence which scene is activated for banner taps, URLs, etc.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setActivationConditions:")
@@ -212,6 +226,8 @@ public class UIScene extends UIResponder {
      * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not
      * need to live for the whole lifetime of the process.
      * A strong ref here relieves clients of the responsibility of managing the delegate lifetime directly.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -220,6 +236,8 @@ public class UIScene extends UIResponder {
     /**
      * A title for the scene to allow the system to differentiate multiple scenes for the user.
      * If set to nil or an empty string, the system will not display a title.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitle:")
@@ -236,6 +254,8 @@ public class UIScene extends UIResponder {
     /**
      * A title for the scene to allow the system to differentiate multiple scenes for the user.
      * If set to nil or an empty string, the system will not display a title.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("title")
@@ -287,4 +307,12 @@ public class UIScene extends UIResponder {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("systemProtectionManager")
+    @Nullable
+    public native UISceneSystemProtectionManager systemProtectionManager();
 }

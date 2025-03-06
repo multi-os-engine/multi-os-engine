@@ -71,6 +71,8 @@ public class ARCoachingOverlayView extends UIView {
      * a set amount
      * of time.
      * When tracking resumes and other requirements (based on `goal`) are met, the view will deactivate.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("activatesAutomatically")
@@ -259,6 +261,8 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * Specifies the delegate used for callbacks
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -273,6 +277,8 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * The coaching type used to resolve what messaging to display to the user while activated
      * Defaults to `ARCoachingGoalTracking`
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("goal")
@@ -317,6 +323,8 @@ public class ARCoachingOverlayView extends UIView {
      * Whether or not the view is currently active.
      * 
      * @see -[ARCoachingOverlayView setActive:animated:]
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("isActive")
@@ -373,6 +381,8 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * The session that the view uses to update coaching
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -385,6 +395,8 @@ public class ARCoachingOverlayView extends UIView {
      * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime
      * will also
      * set the `session` property.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -399,6 +411,8 @@ public class ARCoachingOverlayView extends UIView {
      * a set amount
      * of time.
      * When tracking resumes and other requirements (based on `goal`) are met, the view will deactivate.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setActivatesAutomatically:")
@@ -417,6 +431,8 @@ public class ARCoachingOverlayView extends UIView {
      * @param animated Whether the view animated to activated/deactivated states, or transitions instantly
      * 
      * @see -[ARCoachingOverlayViewDelegate coachingOverlayViewDidTriggerReset:]
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setActive:animated:")
@@ -484,6 +500,8 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * Specifies the delegate used for callbacks
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -492,6 +510,8 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * Specifies the delegate used for callbacks
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ARCoachingOverlayViewDelegate value) {
@@ -508,6 +528,8 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * The coaching type used to resolve what messaging to display to the user while activated
      * Defaults to `ARCoachingGoalTracking`
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setGoal:")
@@ -515,6 +537,8 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * The session that the view uses to update coaching
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSession:")
@@ -526,6 +550,8 @@ public class ARCoachingOverlayView extends UIView {
      * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime
      * will also
      * set the `session` property.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSessionProvider:")
@@ -537,6 +563,8 @@ public class ARCoachingOverlayView extends UIView {
      * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime
      * will also
      * set the `session` property.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setSessionProvider(@Nullable NSObject value) {

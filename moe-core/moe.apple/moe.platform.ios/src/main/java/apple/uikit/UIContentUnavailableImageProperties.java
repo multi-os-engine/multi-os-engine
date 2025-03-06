@@ -55,6 +55,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
 
     /**
      * Prevents the image from inverting its colors when the accessibility setting is enabled.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("accessibilityIgnoresInvertColors")
@@ -106,6 +108,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
      * The preferred corner radius (using a continuous corner curve) for the image.
      * Default is 0. If the image is too small to fit the requested radius, the corner curve
      * and radius will be adjusted to fit.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("cornerRadius")
@@ -163,6 +167,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
      * Enforces a maximum size for the image. The default value is CGSizeZero. A zero width or
      * height means the size is unconstrained on that dimension. If the image exceeds this size
      * on either dimension, its size will be reduced proportionately (maintaining aspect ratio).
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("maximumSize")
@@ -176,6 +182,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
 
     /**
      * The symbol configuration to use.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preferredSymbolConfiguration")
@@ -192,6 +200,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
 
     /**
      * Prevents the image from inverting its colors when the accessibility setting is enabled.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAccessibilityIgnoresInvertColors:")
@@ -201,6 +211,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
      * The preferred corner radius (using a continuous corner curve) for the image.
      * Default is 0. If the image is too small to fit the requested radius, the corner curve
      * and radius will be adjusted to fit.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCornerRadius:")
@@ -210,6 +222,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
      * Enforces a maximum size for the image. The default value is CGSizeZero. A zero width or
      * height means the size is unconstrained on that dimension. If the image exceeds this size
      * on either dimension, its size will be reduced proportionately (maintaining aspect ratio).
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMaximumSize:")
@@ -217,6 +231,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
 
     /**
      * The symbol configuration to use.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPreferredSymbolConfiguration:")
@@ -224,6 +240,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
 
     /**
      * The tint color to apply to the image view. Nil will use the image view's normal inherited tint color.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -249,6 +267,8 @@ public class UIContentUnavailableImageProperties extends NSObject implements NSC
 
     /**
      * The tint color to apply to the image view. Nil will use the image view's normal inherited tint color.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("tintColor")

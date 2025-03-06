@@ -106,6 +106,8 @@ public class AVAssetExportSession extends NSObject {
      * compatible with all AVAssets.
      * 
      * @return An NSArray containing an NSString for each of the available preset names.
+     * 
+     *         API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -301,6 +303,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Indicates whether non-default audio mixing is enabled for export and supplies the parameters for audio mixing.
      * Ignored when export preset is AVAssetExportPresetPassthrough.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -348,6 +352,8 @@ public class AVAssetExportSession extends NSObject {
      * Cancels the execution of an export session.
      * 
      * Cancel can be invoked when the export is running.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("cancelExport")
@@ -410,6 +416,8 @@ public class AVAssetExportSession extends NSObject {
 
     /**
      * describes the error that occured if the export status is AVAssetExportSessionStatusFailed
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -424,7 +432,8 @@ public class AVAssetExportSession extends NSObject {
      * information. For a more accurate estimation, use estimateOutputFileLengthWithCompletionHandler.
      * 
      * API-Since: 5.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use estimateOutputFileLengthWithCompletionHandler: instead
      */
     @Deprecated
     @Generated
@@ -437,6 +446,8 @@ public class AVAssetExportSession extends NSObject {
      * Starts the asynchronous execution of an export session.
      * 
      * Initiates an asynchronous export operation and returns immediately.
+     * 
+     * API-Since: 4.0
      * 
      * @param handler
      *                If internal preparation for export fails, the handler will be invoked synchronously.
@@ -482,6 +493,8 @@ public class AVAssetExportSession extends NSObject {
      * These operations include but are not limited to: 1) testing the compatibility of export presets with the asset,
      * 2) calculating the maximum duration or estimated length of the output file, and 3) the export operation itself.
      * 
+     * API-Since: 4.0
+     * 
      * @param asset      An AVAsset object that is intended to be exported.
      * @param presetName An NSString specifying the name of the preset template for the export.
      * @return Returns the initialized AVAssetExportSession.
@@ -496,7 +509,8 @@ public class AVAssetExportSession extends NSObject {
      * duration; set the timeRange property to export only a certain time range.
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use estimateMaximumDurationWithCompletionHandler: instead
      */
     @Deprecated
     @Generated
@@ -509,6 +523,8 @@ public class AVAssetExportSession extends NSObject {
      * If the value of this key is nil, any existing metadata in the exported asset will be translated as accurately as
      * possible into
      * the appropriate metadata keyspace for the output file and written to the output.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -536,6 +552,8 @@ public class AVAssetExportSession extends NSObject {
      * -exportAsynchronouslyWithCompletionHandler: will raise an NSInternalInconsistencyException.
      * Setting the value of this property to a file type that's not among the session's supported file types will result
      * in an NSInvalidArgumentException. See supportedFileTypes.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -546,6 +564,8 @@ public class AVAssetExportSession extends NSObject {
      * Indicates the URL of the export session's output. You may use [[UTType typeWithIdentifier:outputFileType]
      * preferredFilenameExtension] to obtain an appropriate path extension for the outputFileType you have specified.
      * For more information, see <UniformTypeIdentifiers/UTType.h>.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -554,6 +574,8 @@ public class AVAssetExportSession extends NSObject {
 
     /**
      * Indicates the name of the preset with which the AVExportSession was initialized
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -563,6 +585,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Specifies the progress of the export on a scale from 0 to 1.0. A value of 0 means the export has not yet begun, A
      * value of 1.0 means the export is complete. This property is not key-value observable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("progress")
@@ -571,6 +595,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Indicates whether non-default audio mixing is enabled for export and supplies the parameters for audio mixing.
      * Ignored when export preset is AVAssetExportPresetPassthrough.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAudioMix:")
@@ -650,6 +676,8 @@ public class AVAssetExportSession extends NSObject {
      * If the value of this key is nil, any existing metadata in the exported asset will be translated as accurately as
      * possible into
      * the appropriate metadata keyspace for the output file and written to the output.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMetadata:")
@@ -675,6 +703,8 @@ public class AVAssetExportSession extends NSObject {
      * -exportAsynchronouslyWithCompletionHandler: will raise an NSInternalInconsistencyException.
      * Setting the value of this property to a file type that's not among the session's supported file types will result
      * in an NSInvalidArgumentException. See supportedFileTypes.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setOutputFileType:")
@@ -684,6 +714,8 @@ public class AVAssetExportSession extends NSObject {
      * Indicates the URL of the export session's output. You may use [[UTType typeWithIdentifier:outputFileType]
      * preferredFilenameExtension] to obtain an appropriate path extension for the outputFileType you have specified.
      * For more information, see <UniformTypeIdentifiers/UTType.h>.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setOutputURL:")
@@ -692,6 +724,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * indicates that the output file should be optimized for network use, e.g. that a QuickTime movie file should
      * support "fast start"
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setShouldOptimizeForNetworkUse:")
@@ -700,6 +734,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Specifies a time range to be exported from the source. The default timeRange of an export session is
      * kCMTimeZero..kCMTimePositiveInfinity, meaning that the full duration of the asset will be exported.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTimeRange:")
@@ -708,6 +744,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Indicates whether video composition is enabled for export and supplies the instructions for video composition.
      * Ignored when export preset is AVAssetExportPresetPassthrough.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVideoComposition:")
@@ -716,6 +754,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * indicates that the output file should be optimized for network use, e.g. that a QuickTime movie file should
      * support "fast start"
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("shouldOptimizeForNetworkUse")
@@ -723,6 +763,8 @@ public class AVAssetExportSession extends NSObject {
 
     /**
      * indicates the status of the export session
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("status")
@@ -734,6 +776,8 @@ public class AVAssetExportSession extends NSObject {
      * Does not perform an inspection of the AVAsset to determine whether its contents are compatible with the supported
      * file types. If you need to make that determination before initiating the export, use -
      * (void)determineCompatibleFileTypesWithCompletionHandler:(void (^)(NSArray *compatibleFileTypes))handler:.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -743,6 +787,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Specifies a time range to be exported from the source. The default timeRange of an export session is
      * kCMTimeZero..kCMTimePositiveInfinity, meaning that the full duration of the asset will be exported.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("timeRange")
@@ -752,6 +798,8 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Indicates whether video composition is enabled for export and supplies the instructions for video composition.
      * Ignored when export preset is AVAssetExportPresetPassthrough.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated

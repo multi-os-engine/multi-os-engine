@@ -112,6 +112,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * The number of columns to sum.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("columns")
@@ -120,6 +122,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * The number of matrices to sum.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("count")
@@ -147,6 +151,8 @@ public class MPSMatrixSum extends MPSKernel {
      * @param biasVector     A MPSVector containing the bias terms to add to the result
      *                       prior to applying the neuron function, if any. May be nil.
      * @param startIndex     The starting index into the scale and offset vectors.
+     * 
+     *                       API-Since: 11.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:")
@@ -177,6 +183,8 @@ public class MPSMatrixSum extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixSum kernel.
      * @param device   The MTLDevice on which to make the MPSMatrixSum object.
      * @return A new MPSMatrixSum object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -196,6 +204,8 @@ public class MPSMatrixSum extends MPSKernel {
      * @param columns   The number of columns to use in the input matrices.
      * @param transpose If YES the result of the summation is to be transposed
      *                  prior to applying the bias and activation.
+     * 
+     *                  API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:count:rows:columns:transpose:")
@@ -227,6 +237,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * Neuron parameter A.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterA")
@@ -234,6 +246,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * Neuron parameter B.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterB")
@@ -241,6 +255,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * Neuron parameter C.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterC")
@@ -248,6 +264,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronType")
@@ -273,6 +291,8 @@ public class MPSMatrixSum extends MPSKernel {
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("resultMatrixOrigin")
@@ -281,6 +301,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * The number of rows to sum.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rows")
@@ -302,6 +324,8 @@ public class MPSMatrixSum extends MPSKernel {
      * @param parameterA parameterA of neuron activation that is shared across all output values.
      * @param parameterB parameterB of neuron activation that is shared across all output values.
      * @param parameterC parameterC of neuron activation that is shared across all output values.
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
@@ -315,6 +339,8 @@ public class MPSMatrixSum extends MPSKernel {
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setResultMatrixOrigin:")
@@ -340,6 +366,8 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * The transposition used to initialize the kernel.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("transpose")

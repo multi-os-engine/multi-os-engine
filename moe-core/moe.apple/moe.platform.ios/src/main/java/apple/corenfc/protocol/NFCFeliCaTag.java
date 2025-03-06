@@ -83,7 +83,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      * 
      * @param systemCode        Designation of System Code. Wildcard value (0xFF) in the upper or the lower byte is not
      *                          supported.
-     * @param requestCode       Designation of Requset Data output.
+     * @param requestCode       Designation of Request Data output.
      * @param timeSlot          Maximum number of slots possible to respond.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if the
      *                          contactless transceive operation
@@ -111,7 +111,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     /**
      * readWithoutEncryptionWithServiceCodeList:blockList:completionHandler:
      * 
-     * Read Without Encrypton command defined by FeliCa card specification. Refer to the FeliCa specification for
+     * Read Without Encryption command defined by FeliCa card specification. Refer to the FeliCa specification for
      * details.
      * 
      * API-Since: 13.0
@@ -179,8 +179,8 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      *                          contactless transceive operation succeeds,
      *                          else all other return values shall be ignored. encryptionIdentifier value shall be
      *                          ignored if Status Flag 1 value indicates an error.
-     *                          nodeKeyVerionListAES and nodeKeyVersionListDES may be empty depending on the Status Flag
-     *                          1 value and the Encryption Identifier value.
+     *                          nodeKeyVersionListAES and nodeKeyVersionListDES may be empty depending on the Status
+     *                          Flag 1 value and the Encryption Identifier value.
      *                          The 2 bytes node key version (AES and DES) is in Little Endian format.
      */
     @Generated
@@ -229,7 +229,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     /**
      * requestSpecificationVersionWithCompletionHandler:
      * 
-     * Request Specification Verison command defined by FeliCa card specification. This command supports response format
+     * Request Specification Version command defined by FeliCa card specification. This command supports response format
      * version `00`h.
      * Refer to the FeliCa specification for details.
      * 
@@ -306,7 +306,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     /**
      * sendFeliCaCommandPacket:completionHandler:
      * 
-     * Transmission of FeliCa Command Packet Data at the applicaiton layer. Refer to the FeliCa specification for
+     * Transmission of FeliCa Command Packet Data at the application layer. Refer to the FeliCa specification for
      * details.
      * Manufacturer ID (IDm) of the currently selected system can be read from the currentIDm property.
      * 
@@ -335,7 +335,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     /**
      * writeWithoutEncryptionWithServiceCodeList:blockList:blockData:completionHandler:
      * 
-     * Write Without Encrypton command defined by FeliCa card specification. Refer to the FeliCa specification for
+     * Write Without Encryption command defined by FeliCa card specification. Refer to the FeliCa specification for
      * details.
      * 
      * API-Since: 13.0

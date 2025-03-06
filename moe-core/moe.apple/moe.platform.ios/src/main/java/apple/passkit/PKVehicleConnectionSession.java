@@ -87,6 +87,9 @@ public class PKVehicleConnectionSession extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @Selector("connectionStatus")
     @NInt
@@ -96,6 +99,9 @@ public class PKVehicleConnectionSession extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 15.4
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -130,6 +136,8 @@ public class PKVehicleConnectionSession extends NSObject {
 
     /**
      * Invalidate this session. Session will also invalidate on dealloc
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("invalidate")
@@ -159,6 +167,8 @@ public class PKVehicleConnectionSession extends NSObject {
 
     /**
      * Send data to the car
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("sendData:error:")
@@ -168,6 +178,8 @@ public class PKVehicleConnectionSession extends NSObject {
     /**
      * Factory method that returns in the completion handler a session in the
      * PKVehicleConnectionSessionConnectionStateConnecting state for the given passUniqueIdentifier
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("sessionForPass:delegate:completion:")

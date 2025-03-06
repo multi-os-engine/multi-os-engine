@@ -117,6 +117,9 @@ public class INObjectSection<_ObjectType> extends NSObject implements NSCopying,
     @Selector("initWithCoder:")
     public native INObjectSection<?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithTitle:items:")
     public native INObjectSection<?> initWithTitleItems(@Nullable String title, @NotNull NSArray<_ObjectType> items);
@@ -138,6 +141,9 @@ public class INObjectSection<_ObjectType> extends NSObject implements NSCopying,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("items")
@@ -179,6 +185,9 @@ public class INObjectSection<_ObjectType> extends NSObject implements NSCopying,
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("title")

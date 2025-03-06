@@ -78,6 +78,8 @@ public class HMCharacteristicThresholdRangeEvent extends HMEvent implements NSCo
 
     /**
      * The characteristic associated with the event.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -127,6 +129,8 @@ public class HMCharacteristicThresholdRangeEvent extends HMEvent implements NSCo
      * @param thresholdRange The range for the characteristic value to trigger the event.
      * 
      * @return Instance object representing the characteristic event.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCharacteristic:thresholdRange:")
@@ -189,6 +193,8 @@ public class HMCharacteristicThresholdRangeEvent extends HMEvent implements NSCo
 
     /**
      * The range of the characteristic value that triggers the event.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

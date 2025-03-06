@@ -19,11 +19,17 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AXChart")
 public interface AXChart {
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("accessibilityChartDescriptor")
     AXChartDescriptor accessibilityChartDescriptor();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setAccessibilityChartDescriptor:")
     void setAccessibilityChartDescriptor(@Nullable AXChartDescriptor value);

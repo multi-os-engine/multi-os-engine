@@ -137,6 +137,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("new")
     public static native NSPointerFunctions new_objc();
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("pointerFunctionsWithOptions:")
@@ -170,6 +173,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("descriptionFunction")
@@ -182,16 +188,24 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * construction
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("initWithOptions:")
     public native NSPointerFunctions initWithOptions(@NUInt long options);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setDescriptionFunction:")
     public native void setDescriptionFunction(
             @Nullable @FunctionPtr(name = "call_setDescriptionFunction") Function_setDescriptionFunction value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setSizeFunction:")
     public native void setSizeFunction(
@@ -221,6 +235,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("setUsesWeakReadAndWriteBarriers:")
     public native void setUsesWeakReadAndWriteBarriers(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("sizeFunction")
@@ -285,6 +302,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         long call_sizeFunction_ret(@NotNull ConstVoidPtr arg0);
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("acquireFunction")
@@ -311,6 +331,8 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * pointer personality functions
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -335,6 +357,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
                 @Nullable @FunctionPtr(name = "call_Function_hashFunction_ret") Function_Function_hashFunction_ret arg1);
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("isEqualFunction")
@@ -359,6 +384,8 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * custom memory configuration
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -382,6 +409,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
                 @Nullable @FunctionPtr(name = "call_Function_relinquishFunction_ret") Function_Function_relinquishFunction_ret arg1);
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setAcquireFunction:")
     public native void setAcquireFunction(
@@ -407,6 +437,8 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * pointer personality functions
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setHashFunction:")
@@ -430,6 +462,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
                 @Nullable @FunctionPtr(name = "call_Function_setHashFunction") Function_Function_setHashFunction arg1);
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setIsEqualFunction:")
     public native void setIsEqualFunction(
@@ -453,6 +488,8 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * custom memory configuration
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setRelinquishFunction:")

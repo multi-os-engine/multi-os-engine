@@ -63,6 +63,8 @@ public class HKActivityRingView extends UIView {
      * The activity summary that is currently being displayed in the activity ring view
      * 
      * Setting this property directly will not animate ring changes
+     * 
+     * API-Since: 9.3
      */
     @Nullable
     @Generated
@@ -343,11 +345,16 @@ public class HKActivityRingView extends UIView {
      * The activity summary that is currently being displayed in the activity ring view
      * 
      * Setting this property directly will not animate ring changes
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setActivitySummary:")
     public native void setActivitySummary(@Nullable HKActivitySummary value);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("setActivitySummary:animated:")
     public native void setActivitySummaryAnimated(@Nullable HKActivitySummary activitySummary, boolean animated);

@@ -137,6 +137,8 @@ public class CPDashboardController extends NSObject {
      * [@note] The dashboard controller may display a maximum of 2 buttons. Setting more than 2 buttons to this
      * property will only display the first 2 buttons. The system will manage hiding and showing these buttons when
      * navigation is active or inactive.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setShortcutButtons:")
@@ -151,6 +153,8 @@ public class CPDashboardController extends NSObject {
      * [@note] The dashboard controller may display a maximum of 2 buttons. Setting more than 2 buttons to this
      * property will only display the first 2 buttons. The system will manage hiding and showing these buttons when
      * navigation is active or inactive.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated

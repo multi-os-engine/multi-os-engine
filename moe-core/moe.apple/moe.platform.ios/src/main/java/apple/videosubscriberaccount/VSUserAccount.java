@@ -50,12 +50,17 @@ public class VSUserAccount extends NSObject {
     /**
      * The identifier of the provider known to Apple that provides the account. For use only with TV Provider
      * Authentication integrated apps.
+     * 
+     * API-Since: 16.4
      */
     @Nullable
     @Generated
     @Selector("accountProviderIdentifier")
     public native String accountProviderIdentifier();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("accountType")
     @NInt
@@ -79,6 +84,8 @@ public class VSUserAccount extends NSObject {
      * different device, and the user is not signed in to the current device, it can be used to
      * authenticate the user seamlessly without requiring username/password.
      * This data is not accessible by Apple.
+     * 
+     * API-Since: 16.4
      */
     @Nullable
     @Generated
@@ -91,6 +98,8 @@ public class VSUserAccount extends NSObject {
 
     /**
      * Identifies the billing group associated with the subscription.
+     * 
+     * API-Since: 16.4
      */
     @Nullable
     @Generated
@@ -128,6 +137,8 @@ public class VSUserAccount extends NSObject {
 
     /**
      * The type of device the VSUserAccount was registered on.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("deviceCategory")
@@ -143,6 +154,8 @@ public class VSUserAccount extends NSObject {
      * A value opaque to Apple that can be used to uniquely identify the account.
      * When an account update request is made to the application JS, this identifier will be provided in order to help
      * identify the account to be refreshed.
+     * 
+     * API-Since: 16.4
      */
     @Nullable
     @Generated
@@ -156,6 +169,8 @@ public class VSUserAccount extends NSObject {
     /**
      * Initializes a new VSUserAccount with a URL that points to an application JS
      * that can respond to account update requests.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("initWithAccountType:updateURL:")
@@ -178,6 +193,8 @@ public class VSUserAccount extends NSObject {
      * Indicates whether or not the account was registered on the current device.
      * Accounts pulled using VSUserAccountManager may be from other devices signed
      * in to the same iCloud account.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("isFromCurrentDevice")
@@ -200,6 +217,8 @@ public class VSUserAccount extends NSObject {
     /**
      * Indicates whether or not the update URL must have a certificate trusted by the system,
      * and not a certificate trusted by the user of the device.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("requiresSystemTrust")
@@ -216,11 +235,16 @@ public class VSUserAccount extends NSObject {
     /**
      * The identifier of the provider known to Apple that provides the account. For use only with TV Provider
      * Authentication integrated apps.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setAccountProviderIdentifier:")
     public native void setAccountProviderIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("setAccountType:")
     public native void setAccountType(@NInt long value);
@@ -233,6 +257,8 @@ public class VSUserAccount extends NSObject {
      * different device, and the user is not signed in to the current device, it can be used to
      * authenticate the user seamlessly without requiring username/password.
      * This data is not accessible by Apple.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setAuthenticationData:")
@@ -240,6 +266,8 @@ public class VSUserAccount extends NSObject {
 
     /**
      * Identifies the billing group associated with the subscription.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setBillingIdentifier:")
@@ -249,6 +277,8 @@ public class VSUserAccount extends NSObject {
      * A value opaque to Apple that can be used to uniquely identify the account.
      * When an account update request is made to the application JS, this identifier will be provided in order to help
      * identify the account to be refreshed.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setIdentifier:")
@@ -257,6 +287,8 @@ public class VSUserAccount extends NSObject {
     /**
      * Indicates whether or not the update URL must have a certificate trusted by the system,
      * and not a certificate trusted by the user of the device.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setRequiresSystemTrust:")
@@ -266,6 +298,8 @@ public class VSUserAccount extends NSObject {
      * The date in which the billing cycle ends for paid accounts.
      * used as a heuristic to determine when a refresh should occur.
      * If there is no existing billing cycle, this value should be nil.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setSubscriptionBillingCycleEndDate:")
@@ -274,6 +308,8 @@ public class VSUserAccount extends NSObject {
     /**
      * Identifies a subset of content from your catalog that subscriber can play.
      * Matches tier identifiers that are present in the availability feed.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setTierIdentifiers:")
@@ -282,6 +318,8 @@ public class VSUserAccount extends NSObject {
     /**
      * The URL pointing to the application JS that can respond to account update requests, or nil if JS updates are not
      * supported.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setUpdateURL:")
@@ -295,6 +333,8 @@ public class VSUserAccount extends NSObject {
      * The date in which the billing cycle ends for paid accounts.
      * used as a heuristic to determine when a refresh should occur.
      * If there is no existing billing cycle, this value should be nil.
+     * 
+     * API-Since: 16.4
      */
     @Nullable
     @Generated
@@ -308,6 +348,8 @@ public class VSUserAccount extends NSObject {
     /**
      * Identifies a subset of content from your catalog that subscriber can play.
      * Matches tier identifiers that are present in the availability feed.
+     * 
+     * API-Since: 16.4
      */
     @Nullable
     @Generated
@@ -317,6 +359,8 @@ public class VSUserAccount extends NSObject {
     /**
      * The URL pointing to the application JS that can respond to account update requests, or nil if JS updates are not
      * supported.
+     * 
+     * API-Since: 16.4
      */
     @Nullable
     @Generated
@@ -330,6 +374,8 @@ public class VSUserAccount extends NSObject {
 
     /**
      * Indicates if the user has signed out of their account.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("isSignedOut")
@@ -337,6 +383,8 @@ public class VSUserAccount extends NSObject {
 
     /**
      * Indicates if the user has signed out of their account.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setSignedOut:")
@@ -346,4 +394,23 @@ public class VSUserAccount extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The Apple service subscription associated with the user account.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("appleSubscription")
+    @Nullable
+    public native VSAppleSubscription appleSubscription();
+
+    /**
+     * The Apple service subscription associated with the user account.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setAppleSubscription:")
+    public native void setAppleSubscription(@Nullable VSAppleSubscription value);
 }

@@ -101,6 +101,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * If the receiver and cursor reference different sequences of samples, as when they're created by different
      * instances of AVAssetTrack, results are undefined.
      * 
+     * API-Since: 16.0
+     * 
      * @param cursor
      *               An instance of AVSampleCursor with which to compare positions.
      * @return kCFCompareLessThan, kCFCompareEqualTo or kCFCompareGreaterThan, depending on whether the receiver points
@@ -115,6 +117,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * copyCurrentSampleFormatDescription:
      * 
      * Provides the format description of the sample at the receiver's current position.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -134,6 +138,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * Provides information about the "chunk" of samples to which the current sample belongs. If the media format that
      * defines the sequence of samples does not signal "chunking" of samples in any way, each sample will be considered
      * by the receiver as belonging to a chunk of one sample only.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("currentChunkInfo")
@@ -148,6 +154,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * 
      * If the current chunk isn't stored contiguously in its storage container, currentChunkStorageRange.offset will be
      * -1. In such cases you can use AVSampleBufferGenerator to obtain the sample data.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("currentChunkStorageRange")
@@ -162,6 +170,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * 
      * May be nil; if nil, the storage location of the chunk is the URL of the sample cursor's track's asset, if it has
      * one.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -206,6 +216,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * 
      * Provides information about dependencies between a media sample and other media samples in the same sample
      * sequence, if known.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("currentSampleDependencyInfo")
@@ -220,6 +232,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * If the receiver must be advanced past its current position in order to determine the decode duration of the
      * current sample, the value of currentSampleDuration is equal to kCMTimeIndefinite. This can occur with streaming
      * formats such as MPEG-2 transport streams.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("currentSampleDuration")
@@ -230,6 +244,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * [@property] currentSampleIndexInChunk
      * 
      * The index of the current sample within the chunk to which it belongs.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("currentSampleIndexInChunk")
@@ -242,6 +258,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * 
      * If the current sample isn't stored contiguously in its storage container, currentSampleStorageRange.offset will
      * be -1. In such cases you can use AVSampleBufferGenerator to obtain the sample data.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("currentSampleStorageRange")
@@ -253,6 +271,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * 
      * Provides information about the current sample for consideration when resynchronizing a decoder, as when
      * scrubbing.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("currentSampleSyncInfo")
@@ -267,6 +287,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * [@property] decodeTimeStamp
      * 
      * The decode timestamp (DTS) of the sample at the current position of the cursor.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("decodeTimeStamp")
@@ -317,6 +339,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * [@property] presentationTimeStamp
      * 
      * The presentation timestamp (PTS) of the sample at the current position of the cursor.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("presentationTimeStamp")
@@ -371,6 +395,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * If the receiver and cursor reference different sequences of samples, as when they're created by different
      * instances of AVAssetTrack, results are undefined.
      * 
+     * API-Since: 16.0
+     * 
      * @param cursor
      *               An instance of AVSampleCursor with which to test the sample reordering boundary.
      * @return YES if it's possible for any sample earlier in decode order than the sample at the position of the
@@ -390,6 +416,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * 
      * If the receiver and cursor reference different sequences of samples, as when they're created by different
      * instances of AVAssetTrack, results are undefined.
+     * 
+     * API-Since: 16.0
      * 
      * @param cursor
      *               An instance of AVSampleCursor with which to test the sample reordering boundary.
@@ -419,6 +447,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * @return The amount of time the cursor was moved along the decode timeline. Because sample cursors snap to sample
      *         boundaries when stepped, this value may not be equal to deltaDecodeTime even if the cursor was not
      *         pinned.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("stepByDecodeTime:wasPinned:")
@@ -439,6 +469,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * @return The amount of time the cursor was moved along the presentation timeline. Because sample cursors snap to
      *         sample boundaries when stepped, this value may not be equal to deltaPresentationTime even if the cursor
      *         was not pinned.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("stepByPresentationTime:wasPinned:")
@@ -457,6 +489,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * @return The number of samples the cursor traversed. If the beginning or the end of the sample sequence was
      *         reached before the requested number of samples was traversed, the absolute value of the result will be
      *         less than the absolute value of stepCount.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("stepInDecodeOrderByCount:")
@@ -473,6 +507,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * @return The number of samples the cursor traversed. If the beginning or the end of the sample sequence was
      *         reached before the requested number of samples was traversed, the absolute value of the result will be
      *         less than the absolute value of stepCount.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("stepInPresentationOrderByCount:")

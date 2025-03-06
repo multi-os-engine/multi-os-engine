@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterDoorLock extends MTRCluster {
+public class MTRBaseClusterDoorLock extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -7278,5 +7278,35 @@ public class MTRBaseClusterDoorLock extends MTRCluster {
     public interface Block_writeAttributeWrongCodeEntryLimitWithValueParamsCompletionHandler {
         @Generated
         void call_writeAttributeWrongCodeEntryLimitWithValueParamsCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("lockDoorWithCompletion:")
+    public native void lockDoorWithCompletion(
+            @ObjCBlock(name = "call_lockDoorWithCompletion") @NotNull Block_lockDoorWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_lockDoorWithCompletion {
+        @Generated
+        void call_lockDoorWithCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("unlockDoorWithCompletion:")
+    public native void unlockDoorWithCompletion(
+            @ObjCBlock(name = "call_unlockDoorWithCompletion") @NotNull Block_unlockDoorWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_unlockDoorWithCompletion {
+        @Generated
+        void call_unlockDoorWithCompletion(@Nullable NSError error);
     }
 }

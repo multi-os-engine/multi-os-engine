@@ -220,6 +220,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * [@property] columns
      * 
      * The number of columns in a matrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("columns")
@@ -230,6 +232,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * [@property] dataType
      * 
      * The type of the data which makes up the values of the matrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dataType")
@@ -244,6 +248,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * 
      * The stride, in bytes, between corresponding elements of
      * consecutive rows. Must be a multiple of the element size.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("rowBytes")
@@ -254,6 +260,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * [@property] rows
      * 
      * The number of rows in a matrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("rows")
@@ -264,6 +272,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * [@property] columns
      * 
      * The number of columns in a matrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setColumns:")
@@ -273,6 +283,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * [@property] dataType
      * 
      * The type of the data which makes up the values of the matrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDataType:")
@@ -283,6 +295,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * 
      * The stride, in bytes, between corresponding elements of
      * consecutive rows. Must be a multiple of the element size.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRowBytes:")
@@ -292,6 +306,8 @@ public class MPSMatrixDescriptor extends NSObject {
      * [@property] rows
      * 
      * The number of rows in a matrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRows:")

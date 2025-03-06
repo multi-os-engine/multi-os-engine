@@ -127,6 +127,8 @@ public class MLGPUComputeDevice extends NSObject implements MLComputeDeviceProto
 
     /**
      * The underlying metal device.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("metalDevice")

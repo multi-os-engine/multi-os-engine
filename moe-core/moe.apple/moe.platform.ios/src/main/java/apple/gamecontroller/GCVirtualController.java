@@ -87,6 +87,9 @@ public class GCVirtualController extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("connectWithReplyHandler:")
     public native void connectWithReplyHandler(
@@ -101,6 +104,8 @@ public class GCVirtualController extends NSObject {
 
     /**
      * GCController is only available when GCVirtualController is connected
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -115,6 +120,9 @@ public class GCVirtualController extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("disconnect")
     public native void disconnect();
@@ -128,6 +136,9 @@ public class GCVirtualController extends NSObject {
     @Selector("init")
     public native GCVirtualController init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native GCVirtualController initWithConfiguration(@NotNull GCVirtualControllerConfiguration configuration);
@@ -179,6 +190,8 @@ public class GCVirtualController extends NSObject {
      * Changes the GCVirtualControllerElementConfiguration on a per element basis. Only applicable when the
      * GCVirtualController is not hidden and its
      * UI is being drawn by the system.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("updateConfigurationForElement:configuration:")
@@ -203,6 +216,8 @@ public class GCVirtualController extends NSObject {
      * Create a virtual controller
      * 
      * @see GCVirtualControllerConfiguration
+     * 
+     *      API-Since: 15.0
      */
     @NotNull
     @Generated

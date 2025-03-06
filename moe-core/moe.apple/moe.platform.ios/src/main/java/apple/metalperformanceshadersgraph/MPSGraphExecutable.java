@@ -28,9 +28,9 @@ import org.jetbrains.annotations.Nullable;
 import apple.foundation.NSURL;
 
 /**
- * Compiled representation of a compute graph executable.
+ * The compiled representation of a compute graph executable.
  * 
- * An MPSGraphExecutable is a compiled graph for specific feeds for specific targetTensors and target operations.
+ * An `MPSGraphExecutable` is a compiled graph for specific feeds for specific target tensors and target operations.
  * 
  * API-Since: 15.0
  */
@@ -96,7 +96,8 @@ public class MPSGraphExecutable extends MPSGraphObject {
     public static native String description_static();
 
     /**
-     * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
+     * Runs the graph for the given feeds and returns the target tensor values, ensuring all target operations also
+     * executed.
      * This call is asynchronous and will return immediately after finishing encoding.
      * 
      * - Parameters:
@@ -107,6 +108,8 @@ public class MPSGraphExecutable extends MPSGraphObject {
      * - executionDescriptor: ExecutionDescriptor to be passed in and used,
      * - Returns: A valid MPSGraphTensorData array with results synchronized to the CPU memory if
      * MPSGraphOptionsSynchronizeResults set.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -117,7 +120,9 @@ public class MPSGraphExecutable extends MPSGraphObject {
             @Nullable MPSGraphExecutableExecutionDescriptor executionDescriptor);
 
     /**
-     * Feed tensors for the graph, can be used to order the inputs when executable was created with an MPSGraph
+     * Tensors fed to the graph, can be used to order the inputs when executable is created with a graph.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -164,6 +169,8 @@ public class MPSGraphExecutable extends MPSGraphObject {
      * Options for the graph executable.
      * 
      * Default value is `MPSGraphOptionsDefault`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("options")
@@ -178,7 +185,8 @@ public class MPSGraphExecutable extends MPSGraphObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
+     * Runs the graph for the given feeds and returns the target tensor values, ensuring all target operations also
+     * executed.
      * This call is asynchronous and will return immediately.
      * 
      * - Parameters:
@@ -188,6 +196,8 @@ public class MPSGraphExecutable extends MPSGraphObject {
      * - executionDescriptor: ExecutionDescriptor to be passed in and used.
      * - Returns: A valid MPSGraphTensorData array with results synchronized to the CPU memory if
      * MPSGraphOptionsSynchronizeResults set.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -199,7 +209,9 @@ public class MPSGraphExecutable extends MPSGraphObject {
             @Nullable MPSGraphExecutableExecutionDescriptor executionDescriptor);
 
     /**
-     * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
+     * Runs the graph for the given feeds and returns the target tensor values, ensuring all target operations also
+     * executed.
+     * 
      * This call is synchronous and will return on completion of execution.
      * 
      * - Parameters:
@@ -208,6 +220,8 @@ public class MPSGraphExecutable extends MPSGraphObject {
      * - resultsArray: Results tensorData for which the caller wishes MPSGraphTensorData to be returned.
      * - Returns: A valid MPSGraphTensorData array with results synchronized to the CPU memory if
      * MPSGraphOptionsSynchronizeResults set.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -222,6 +236,8 @@ public class MPSGraphExecutable extends MPSGraphObject {
      * Options for the graph executable.
      * 
      * Default value is `MPSGraphOptionsDefault`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setOptions:")
@@ -232,14 +248,17 @@ public class MPSGraphExecutable extends MPSGraphObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Specialize the MPSGraphExecutable and optimize it, use this method to choose when specialization happens, else it
-     * occurs at encode time automatically.
+     * Specialize the executable and optimize it.
+     * 
+     * Use this method to choose when specialization happens, else it occurs at encode time automatically.
      * 
      * - Parameters:
-     * - device: optional MPSGraph device to compile with
-     * - inputTypes: input types
-     * - compilationDescriptor: compilationDescriptor to be used to specialize, since the executable was created with a
+     * - device:Ooptional MPSGraph device to compile with.
+     * - inputTypes: Input types expected to be passed to the executable.
+     * - compilationDescriptor: Compilation descriptor to be used to specialize, since the executable was created with a
      * compilationDescriptor already this one overrides those settings to the extent it can.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("specializeWithDevice:inputTypes:compilationDescriptor:")
@@ -252,7 +271,9 @@ public class MPSGraphExecutable extends MPSGraphObject {
     public static native Class superclass_static();
 
     /**
-     * Target tensors for the graph, can be used to order the outputs when executable was created with an MPSGraph
+     * Tensors targeted by the graph, can be used to order the outputs when executable was created with a graph.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -265,13 +286,15 @@ public class MPSGraphExecutable extends MPSGraphObject {
     public static native long version_static();
 
     /**
-     * Get output shapes for a specialized MPSGraphExecutable - in case specialization has not been done yet then
-     * calling this function will specialize for the given input shapes.
+     * Get output shapes for a specialized executable.
+     * 
+     * In case specialization has not been done yet then calling this function will specialize for the given input
+     * shapes.
      * 
      * - Parameters:
-     * - device: optional MPSGraph device to compile with
-     * - inputTypes: input types
-     * - compilationDescriptor: compilationDescriptor to be used to specialize, since the executable was created with a
+     * - device: Optional MPSGraph device to compile with
+     * - inputTypes: Input types expected to be passed to the executable.
+     * - compilationDescriptor: CompilationDescriptor to be used to specialize, since the executable was created with a
      * compilationDescriptor already this one overrides those settings to the extent it can.
      * 
      * API-Since: 16.3
@@ -284,7 +307,7 @@ public class MPSGraphExecutable extends MPSGraphObject {
             @Nullable MPSGraphCompilationDescriptor compilationDescriptor);
 
     /**
-     * Initialize the MPSGraph executable with the package at the provided url.
+     * Initialize the executable with the Metal Performance Shaders Graph package at the provided URL.
      * 
      * - Parameters:
      * - mpsgraphPackageURL: The URL where to read the serialized MPSGraphExecutable.
@@ -316,4 +339,19 @@ public class MPSGraphExecutable extends MPSGraphObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Initialize the executable with the Core ML model package at the provided URL.
+     * 
+     * - Parameters:
+     * - coreMLPackageURL: The URL where to read the Core ML model package.
+     * - compilationDescriptor: Compilation descriptor to be used to specialize, since the executable was created with a
+     * compilationDescriptor already this one overrides those settings to the extent it can.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithCoreMLPackageAtURL:compilationDescriptor:")
+    public native MPSGraphExecutable initWithCoreMLPackageAtURLCompilationDescriptor(@NotNull NSURL coreMLPackageURL,
+            @Nullable MPSGraphCompilationDescriptor compilationDescriptor);
 }

@@ -175,6 +175,8 @@ public class MTLFunctionConstantValues extends NSObject implements NSCopying {
 
     /**
      * delete all the constants
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("reset")
@@ -182,6 +184,8 @@ public class MTLFunctionConstantValues extends NSObject implements NSCopying {
 
     /**
      * using indices
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setConstantValue:type:atIndex:")
@@ -189,12 +193,17 @@ public class MTLFunctionConstantValues extends NSObject implements NSCopying {
 
     /**
      * using names
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setConstantValue:type:withName:")
     public native void setConstantValueTypeWithName(@NotNull ConstVoidPtr value, @NUInt long type,
             @NotNull String name);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setConstantValues:type:withRange:")
     public native void setConstantValuesTypeWithRange(@NotNull ConstVoidPtr values, @NUInt long type,

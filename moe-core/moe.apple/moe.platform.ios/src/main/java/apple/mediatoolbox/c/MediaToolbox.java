@@ -151,11 +151,17 @@ public final class MediaToolbox {
             @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CMTimeRange timeRangeOut,
             @Nullable NIntPtr numberFramesOut);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @CFunction
     public static native CFStringRef MTCopyLocalizedNameForMediaType(int mediaType);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @CFunction

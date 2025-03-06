@@ -57,6 +57,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The alignment of the image, text and buttons.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("alignment")
@@ -76,6 +78,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * An attributed variant of the primary text, which supersedes the `text` and some properties of the
      * `textProperties` if set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("attributedText")
@@ -89,6 +93,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
      * vertical axes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("axesPreservingSuperviewLayoutMargins")
@@ -97,6 +103,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The background configuration.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("background")
@@ -105,6 +113,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The primary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("button")
@@ -113,6 +123,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Additional properties to configure the primary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("buttonProperties")
@@ -121,6 +133,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the button and secondary button. Only applies when there is both a button and a secondary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("buttonToSecondaryButtonPadding")
@@ -166,6 +180,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or
      * both axes, these are just minimum margins, as inherited margins may be larger.)
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("directionalLayoutMargins")
@@ -174,6 +190,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Returns the default configuration for unavailable content.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("emptyConfiguration")
@@ -191,6 +209,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The image to display.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("image")
@@ -200,6 +220,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * Additional properties to configure the image. When adopting the loading configuration, relevant properties are
      * applied to the activity indicator.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("imageProperties")
@@ -208,6 +230,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the image and text. Only applies when there is both an image and text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("imageToTextPadding")
@@ -246,6 +270,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Returns the default configuration for content which is loading.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("loadingConfiguration")
@@ -272,6 +298,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Returns the default configuration for searches which return no results.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("searchConfiguration")
@@ -281,6 +309,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the
      * `secondaryTextProperties` if set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("secondaryAttributedText")
@@ -289,6 +319,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The secondary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("secondaryButton")
@@ -297,6 +329,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Additional properties to configure the secondary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("secondaryButtonProperties")
@@ -305,6 +339,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The secondary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("secondaryText")
@@ -313,6 +349,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Additional properties to configure the secondary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("secondaryTextProperties")
@@ -321,6 +359,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The alignment of the image, text and buttons.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAlignment:")
@@ -329,6 +369,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * An attributed variant of the primary text, which supersedes the `text` and some properties of the
      * `textProperties` if set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAttributedText:")
@@ -337,6 +379,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
      * vertical axes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAxesPreservingSuperviewLayoutMargins:")
@@ -344,6 +388,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The background configuration.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setBackground:")
@@ -351,6 +397,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The primary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setButton:")
@@ -358,6 +406,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the button and secondary button. Only applies when there is both a button and a secondary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setButtonToSecondaryButtonPadding:")
@@ -366,6 +416,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or
      * both axes, these are just minimum margins, as inherited margins may be larger.)
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDirectionalLayoutMargins:")
@@ -373,6 +425,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The image to display.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setImage:")
@@ -380,6 +434,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the image and text. Only applies when there is both an image and text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setImageToTextPadding:")
@@ -388,6 +444,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
     /**
      * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the
      * `secondaryTextProperties` if set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSecondaryAttributedText:")
@@ -395,6 +453,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The secondary button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSecondaryButton:")
@@ -402,6 +462,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The secondary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSecondaryText:")
@@ -409,6 +471,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The primary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setText:")
@@ -416,6 +480,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the button and text. Only applies when there is both a button and text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setTextToButtonPadding:")
@@ -423,6 +489,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the text and secondary text. Only applies when there is both text and secondary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setTextToSecondaryTextPadding:")
@@ -448,6 +516,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * The primary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("text")
@@ -456,6 +526,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Additional properties to configure the primary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("textProperties")
@@ -464,6 +536,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the button and text. Only applies when there is both a button and text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("textToButtonPadding")
@@ -472,6 +546,8 @@ public class UIContentUnavailableConfiguration extends NSObject implements UICon
 
     /**
      * Padding between the text and secondary text. Only applies when there is both text and secondary text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("textToSecondaryTextPadding")

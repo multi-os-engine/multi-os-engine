@@ -172,6 +172,9 @@ public class UIDocumentPickerViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -193,6 +196,9 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("init")
     public native UIDocumentPickerViewController init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIDocumentPickerViewController initWithCoder(@NotNull NSCoder coder);
@@ -227,10 +233,16 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("initWithURL:inMode:")
     public native UIDocumentPickerViewController initWithURLInMode(@NotNull NSURL url, @NUInt long mode);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value) {
         Object __old = delegate();

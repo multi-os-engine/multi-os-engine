@@ -104,6 +104,8 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * AVVideoPixelAspectRatioKey
      * AVVideoScalingModeKey
      * 
+     * API-Since: 4.1
+     * 
      * @param tracks
      *                      An NSArray of AVAssetTrack objects from which the resulting
      *                      AVAssetReaderVideoCompositionOutput should read video frames for compositing.
@@ -250,6 +252,8 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * - AVVideoScalingModeKey
      * - AVVideoDecompressionPropertiesKey
      * 
+     * API-Since: 4.1
+     * 
      * @param tracks
      *                      An NSArray of AVAssetTrack objects from which the resulting
      *                      AVAssetReaderVideoCompositionOutput should read video frames for compositing.
@@ -272,6 +276,8 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * frames read from each source track over the timeline of the source asset.
      * 
      * This property throws an exception if a value is set after reading has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setVideoComposition:")
@@ -286,6 +292,8 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * frames read from each source track over the timeline of the source asset.
      * 
      * This property throws an exception if a value is set after reading has started.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -300,6 +308,8 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * The value of this property is an NSDictionary that contains values for keys as specified by AVVideoSettings.h. A
      * value of nil indicates that the receiver will return video frames in a convenient uncompressed format, with
      * properties determined according to the properties of the receiver's video tracks.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -312,6 +322,8 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * The tracks from which the receiver reads composited video.
      * 
      * The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader's asset.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated

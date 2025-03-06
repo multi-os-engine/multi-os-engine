@@ -121,6 +121,9 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
     @Selector("initWithCoder:")
     public native INRestaurantReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:reservationDuration:partySize:restaurantLocation:")
     public native INRestaurantReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsReservationDurationPartySizeRestaurantLocation(
@@ -157,11 +160,17 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
     @Selector("new")
     public static native INRestaurantReservation new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("partySize")
     public native NSNumber partySize();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("reservationDuration")
@@ -175,6 +184,9 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("restaurantLocation")

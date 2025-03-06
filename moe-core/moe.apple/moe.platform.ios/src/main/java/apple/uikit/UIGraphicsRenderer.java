@@ -168,6 +168,8 @@ public class UIGraphicsRenderer extends NSObject {
 
     /**
      * If YES, this renderer may be used to generate CGImageRefs.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("allowsImageOutput")
@@ -175,6 +177,8 @@ public class UIGraphicsRenderer extends NSObject {
 
     /**
      * The renderer format used to create this renderer instance. returned by copy.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -190,11 +194,16 @@ public class UIGraphicsRenderer extends NSObject {
      * provided.
      * The format instance is copied by the initializer, and the provided instance may be immediately reused
      * for creating other renderer instances with the same or different bounds.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithBounds:")
     public native UIGraphicsRenderer initWithBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithBounds:format:")
     public native UIGraphicsRenderer initWithBoundsFormat(@ByValue CGRect bounds,

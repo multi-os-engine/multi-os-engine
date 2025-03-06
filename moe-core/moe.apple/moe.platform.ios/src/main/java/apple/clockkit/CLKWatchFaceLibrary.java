@@ -51,6 +51,8 @@ public class CLKWatchFaceLibrary extends NSObject {
     /**
      * Use this method to import a watch face with the given file URL.
      * The completionHandler will always be called on the main thread.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("addWatchFaceAtURL:completionHandler:")

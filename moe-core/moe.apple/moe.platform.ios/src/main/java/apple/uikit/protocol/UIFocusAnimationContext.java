@@ -20,6 +20,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIFocusAnimationContext {
     /**
      * The duration of the main animations in seconds.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("duration")

@@ -114,6 +114,8 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * The distance from each pupil to the center of the nose (measured in mm) when looking at a far target.
      * Can be described as combined or individual value. For distance prescriptions, the pupillary distance will be a
      * far value.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -150,6 +152,8 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      *                              at a near target.
      *                              Can be described as combined or individual value. For near prescriptions, the
      *                              pupillary distance will be a near value.
+     * 
+     *                              API-Since: 16.0
      */
     @Generated
     @Selector("initWithSphere:cylinder:axis:addPower:vertexDistance:prism:farPupillaryDistance:nearPupillaryDistance:")
@@ -186,6 +190,8 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * The distance from each pupil to the center of the nose (measured in mm) when looking at a near target.
      * Can be described as combined or individual value. For near prescriptions, the pupillary distance will be a near
      * value.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -201,6 +207,8 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * [@property] prism
      * 
      * The object encapsulating the prism fields
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -242,6 +250,8 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * [@property] vertexDistance
      * 
      * The distance between the back of the eyeglass lens and the eye (measured in mm)
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

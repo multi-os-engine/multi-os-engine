@@ -155,6 +155,8 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
      * This method returns an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups
      * supplied by the client to an AVCaptureSession.
      * 
+     * API-Since: 9.0
+     * 
      * @param desc
      *              A CMFormatDescription that defines the metadata to be supplied by the client. Throws an
      *              NSInvalidArgumentException if NULL is passed.
@@ -205,6 +207,8 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
      * AVTimedMetadataGroup have a duration; an empty AVTimedMetadataGroup can be supplied to denote a period of no
      * metadata.
      * 
+     * API-Since: 9.0
+     * 
      * @param metadata
      *                 An AVTimedMetadataGroup of metadata. Will throw an exception if nil. In order to denote a period
      *                 of no metadata, an empty AVTimedMetadataGroup should be passed.
@@ -226,6 +230,8 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
      * 
      * This method creates an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups
      * supplied by the client to an AVCaptureSession.
+     * 
+     * API-Since: 9.0
      * 
      * @param desc
      *              A CMFormatDescription that defines the metadata to be supplied by the client. Throws

@@ -121,6 +121,8 @@ public class PTPushResult extends NSObject {
 
     /**
      * Use this if the push is a result of the user leaving the channel
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -134,6 +136,8 @@ public class PTPushResult extends NSObject {
 
     /**
      * Use this to report the active remote participant that started speaking
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

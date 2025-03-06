@@ -16,10 +16,16 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLTransformOp")
 public interface MDLTransformOp {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("IsInverseOp")
     boolean IsInverseOp();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("name")

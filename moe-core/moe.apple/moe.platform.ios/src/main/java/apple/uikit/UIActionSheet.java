@@ -376,7 +376,13 @@ public class UIActionSheet extends UIView {
 
     /**
      * default is UIActionSheetStyleAutomatic. ignored if alert is visible
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("actionSheetStyle")
     @NInt
@@ -384,7 +390,13 @@ public class UIActionSheet extends UIView {
 
     /**
      * returns index of button. 0 based.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("addButtonWithTitle:")
     @NInt
@@ -437,6 +449,13 @@ public class UIActionSheet extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("buttonTitleAtIndex:")
@@ -444,12 +463,25 @@ public class UIActionSheet extends UIView {
 
     /**
      * if the delegate does not implement -actionSheetCancel:, we pretend this button was clicked on. default is -1
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("cancelButtonIndex")
     @NInt
     public native long cancelButtonIndex();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -458,7 +490,13 @@ public class UIActionSheet extends UIView {
 
     /**
      * sets destructive (red) button. -1 means none set. default is -1. ignored if only one button
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("destructiveButtonIndex")
     @NInt
@@ -467,14 +505,26 @@ public class UIActionSheet extends UIView {
     /**
      * hides alert sheet or popup. use this method when you need to explicitly dismiss the alert.
      * it does not need to be called if the user presses on a button
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("dismissWithClickedButtonIndex:animated:")
     public native void dismissWithClickedButtonIndexAnimated(@NInt long buttonIndex, boolean animated);
 
     /**
      * -1 if no otherButtonTitles or initWithTitle:... not used
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("firstOtherButtonIndex")
     @NInt
@@ -492,6 +542,13 @@ public class UIActionSheet extends UIView {
     @Selector("initWithFrame:")
     public native UIActionSheet initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     @Variadic()
     @Selector("initWithTitle:delegate:cancelButtonTitle:destructiveButtonTitle:otherButtonTitles:")
@@ -500,10 +557,24 @@ public class UIActionSheet extends UIView {
             @Nullable String cancelButtonTitle, @Nullable String destructiveButtonTitle,
             @Nullable String otherButtonTitles, Object... varargs);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     @Selector("isVisible")
     public native boolean isVisible();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     @Selector("numberOfButtons")
     @NInt
@@ -511,22 +582,48 @@ public class UIActionSheet extends UIView {
 
     /**
      * default is UIActionSheetStyleAutomatic. ignored if alert is visible
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("setActionSheetStyle:")
     public native void setActionSheetStyle(@NInt long value);
 
     /**
      * if the delegate does not implement -actionSheetCancel:, we pretend this button was clicked on. default is -1
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("setCancelButtonIndex:")
     public native void setCancelButtonIndex(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIActionSheetDelegate value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIActionSheetDelegate value) {
         Object __old = delegate();
@@ -541,11 +638,24 @@ public class UIActionSheet extends UIView {
 
     /**
      * sets destructive (red) button. -1 means none set. default is -1. ignored if only one button
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("setDestructiveButtonIndex:")
     public native void setDestructiveButtonIndex(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@NotNull String value);
@@ -564,6 +674,13 @@ public class UIActionSheet extends UIView {
     @Selector("showFromRect:inView:animated:")
     public native void showFromRectInViewAnimated(@ByValue CGRect rect, @NotNull UIView view, boolean animated);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     @Selector("showFromTabBar:")
     public native void showFromTabBar(@NotNull UITabBar view);
@@ -574,15 +691,35 @@ public class UIActionSheet extends UIView {
      * a toolbar, tab bar or bar button item and we will automatically select the correct style based on the bar style.
      * if not from a bar, we use
      * UIActionSheetStyleDefault if automatic style set
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
      */
+    @Deprecated
     @Generated
     @Selector("showFromToolbar:")
     public native void showFromToolbar(@NotNull UIToolbar view);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @Generated
     @Selector("showInView:")
     public native void showInView(@NotNull UIView view);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.3
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("title")

@@ -50,6 +50,9 @@ public class CAMetalDisplayLink extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("addToRunLoop:forMode:")
     public native void addToRunLoopForMode(@NotNull NSRunLoop runloop, @NotNull String mode);
@@ -93,6 +96,9 @@ public class CAMetalDisplayLink extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -112,6 +118,9 @@ public class CAMetalDisplayLink extends NSObject {
     @Selector("init")
     public native CAMetalDisplayLink init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithMetalLayer:")
     public native CAMetalDisplayLink initWithMetalLayer(@NotNull CAMetalLayer layer);
@@ -129,10 +138,16 @@ public class CAMetalDisplayLink extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
@@ -151,15 +166,24 @@ public class CAMetalDisplayLink extends NSObject {
     @Selector("new")
     public static native CAMetalDisplayLink new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("preferredFrameLatency")
     public native float preferredFrameLatency();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("preferredFrameRateRange")
     @ByValue
     public native CAFrameRateRange preferredFrameRateRange();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(@NotNull NSRunLoop runloop, @NotNull String mode);
@@ -172,10 +196,16 @@ public class CAMetalDisplayLink extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) @Nullable CAMetalDisplayLinkDelegate value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable CAMetalDisplayLinkDelegate value) {
         Object __old = delegate();
@@ -188,14 +218,23 @@ public class CAMetalDisplayLink extends NSObject {
         }
     }
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setPreferredFrameLatency:")
     public native void setPreferredFrameLatency(float value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setPreferredFrameRateRange:")
     public native void setPreferredFrameRateRange(@ByValue CAFrameRateRange value);

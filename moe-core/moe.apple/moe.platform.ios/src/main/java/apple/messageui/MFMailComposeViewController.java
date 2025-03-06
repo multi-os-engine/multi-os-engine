@@ -106,6 +106,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * The client may continue to set the recipients and content if the return value was <tt>YES</tt>. If <tt>NO</tt>
      * was the result, the client has a couple options. It may choose to simply notify the user of the inability to
      * send mail, or it may issue a "mailto" URL via <tt>-[UIApplication openURL:]</tt>.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("canSendMail")
@@ -211,6 +213,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * @param filename   NSString specifying the intended filename for the attachment. This is displayed below
      *                   the attachment's icon if the attachment is not decoded when displayed. Must not be
      *                   <tt>nil</tt>.
+     * 
+     *                   API-Since: 3.0
      */
     @Generated
     @Selector("addAttachmentData:mimeType:fileName:")
@@ -243,6 +247,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * [@property] mailComposeDelegate
      * 
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -260,6 +266,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>After the view has been presented to the user, this method will no longer change the value.</p>
      * 
      * @param bccRecipients A NSArray of NSString instances specifying the email addresses of recipients.
+     * 
+     *                      API-Since: 3.0
      */
     @Generated
     @Selector("setBccRecipients:")
@@ -275,6 +283,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>After the view has been presented to the user, this method will no longer change the value.</p>
      * 
      * @param ccRecipients A NSArray of NSString instances specifying the email addresses of recipients.
+     * 
+     *                     API-Since: 3.0
      */
     @Generated
     @Selector("setCcRecipients:")
@@ -284,6 +294,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * [@property] mailComposeDelegate
      * 
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMailComposeDelegate:")
@@ -294,6 +306,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * [@property] mailComposeDelegate
      * 
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     public void setMailComposeDelegate(
@@ -318,6 +332,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * 
      * @param body   A NSString containing the body contents of the email message.
      * @param isHTML A boolean value indicating if the body argument is to be interpreted as HTML content.
+     * 
+     *               API-Since: 3.0
      */
     @Generated
     @Selector("setMessageBody:isHTML:")
@@ -333,6 +349,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>After the view has been presented to the user, this method will no longer change the value.</p>
      * 
      * @param subject A NSString specifying the message's Subject header.
+     * 
+     *                API-Since: 3.0
      */
     @Generated
     @Selector("setSubject:")
@@ -348,6 +366,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>After the view has been presented to the user, this method will no longer change the value.</p>
      * 
      * @param toRecipients A NSArray of NSString instances specifying the email addresses of recipients.
+     * 
+     *                     API-Since: 3.0
      */
     @Generated
     @Selector("setToRecipients:")

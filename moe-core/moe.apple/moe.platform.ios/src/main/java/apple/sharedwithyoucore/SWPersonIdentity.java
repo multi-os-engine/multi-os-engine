@@ -129,6 +129,8 @@ public class SWPersonIdentity extends NSObject implements NSSecureCoding, NSCopy
      * 
      * The data contains a SHA256 hash of the user's combined public identities.
      * 
+     * API-Since: 16.0
+     * 
      * @param rootHash The root hash of the tree that represents this individual's identity.
      */
     @Generated
@@ -174,6 +176,8 @@ public class SWPersonIdentity extends NSObject implements NSSecureCoding, NSCopy
      * The root hash of the tree that represents this individual's identity.
      * 
      * The data contains a SHA256 hash of the user's combined public identities.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

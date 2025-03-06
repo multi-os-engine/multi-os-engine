@@ -103,6 +103,9 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     /**
      * The result VNCoreMLRequest where the model produces an MLFeatureValue that is neither a classification or image.
      * Refer to the Core ML documentation and the model itself for the handling of the content of the featureValue.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

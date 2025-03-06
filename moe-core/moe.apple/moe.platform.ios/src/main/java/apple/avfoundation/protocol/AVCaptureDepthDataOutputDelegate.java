@@ -40,6 +40,8 @@ public interface AVCaptureDepthDataOutputDelegate {
      * Because this method is called on the same dispatch queue that outputs depth data, it must be efficient to prevent
      * further capture performance problems, such as additional drops.
      * 
+     * API-Since: 11.0
+     * 
      * @param output
      *                   The AVCaptureDepthDataOutput instance that dropped the depth data.
      * @param depthData
@@ -80,6 +82,8 @@ public interface AVCaptureDepthDataOutputDelegate {
      * into memory, resulting in droppage. If your application is causing depth data drops by holding on to provided
      * depth data objects for too long, consider copying the pixel buffer map data into a new pixel buffer so that the
      * AVDepthData backing memory can be reused more quickly.
+     * 
+     * API-Since: 11.0
      * 
      * @param output
      *                   The AVCaptureDepthDataOutput instance vending the depth data.

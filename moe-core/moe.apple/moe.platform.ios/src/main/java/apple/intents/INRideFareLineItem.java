@@ -176,6 +176,8 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     /**
      * the ISO currency code for the currency for this price, e.g. "USD" for U.S. Dollar.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("currencyCode")
@@ -195,6 +197,8 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     /**
      * A single line item in a set of pricing line items that describes
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithTitle:price:currencyCode:")
@@ -203,6 +207,8 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     /**
      * e.g. '4.50'
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("price")
@@ -216,6 +222,8 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     /**
      * e.g. "Base fare", or "+ per mile"
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("title")

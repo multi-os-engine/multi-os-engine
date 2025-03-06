@@ -64,7 +64,12 @@ public interface INStartPhotoPlaybackIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INStartPhotoPlaybackIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INStartPhotoPlaybackIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmStartPhotoPlayback:completion:")
@@ -83,12 +88,23 @@ public interface INStartPhotoPlaybackIntentHandling {
      *                   of the result of having executed the intent
      * 
      * @see INStartPhotoPlaybackIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INStartPhotoPlaybackIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleStartPhotoPlayback:completion:")
     void handleStartPhotoPlaybackCompletion(@NotNull INStartPhotoPlaybackIntent intent,
             @NotNull @ObjCBlock(name = "call_handleStartPhotoPlaybackCompletion") Block_handleStartPhotoPlaybackCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveAlbumNameForStartPhotoPlayback:withCompletion:")
@@ -107,7 +123,12 @@ public interface INStartPhotoPlaybackIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INStartPhotoPlaybackIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveDateCreatedForStartPhotoPlayback:withCompletion:")
@@ -116,6 +137,12 @@ public interface INStartPhotoPlaybackIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveLocationCreatedForStartPhotoPlayback:withCompletion:")
@@ -124,6 +151,12 @@ public interface INStartPhotoPlaybackIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolvePeopleInPhotoForStartPhotoPlayback:withCompletion:")

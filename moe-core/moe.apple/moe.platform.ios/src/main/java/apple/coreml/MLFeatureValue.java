@@ -115,6 +115,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Populated value if the type is MLFeatureTypeDictionary
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -123,6 +125,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Populated value if the type is MLFeatureTypeDouble
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("doubleValue")
@@ -132,6 +136,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      * For encoding a sparse feature set or for encoding probabilities. Input keys that are not
      * NSNumber * or NSString * are rejected on construction and return a MLModelErrorFeatureTypeMismatch
      * error. Further validation for consistency occurs on evaluation
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("featureValueWithDictionary:error:")
@@ -139,25 +145,39 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
             @NotNull NSDictionary<?, ? extends NSNumber> value,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("featureValueWithDouble:")
     public static native MLFeatureValue featureValueWithDouble(double value);
 
     /**
      * Hold an object with the specified value
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("featureValueWithInt64:")
     public static native MLFeatureValue featureValueWithInt64(long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("featureValueWithMultiArray:")
     public static native MLFeatureValue featureValueWithMultiArray(@NotNull MLMultiArray value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("featureValueWithPixelBuffer:")
     public static native MLFeatureValue featureValueWithPixelBuffer(@NotNull CVBufferRef value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("featureValueWithString:")
     public static native MLFeatureValue featureValueWithString(@NotNull String value);
@@ -169,6 +189,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Populated value if the type is MLFeatureTypeImage
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -194,6 +216,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Populated value if the type is MLFeatureTypeInt64
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("int64Value")
@@ -214,6 +238,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      * "value" via
      * isEqualToNumber:, isEqualToString:, isEqualtoDictionary:, isEqualToMultiArray:, isEqualToArray: as chosen by the
      * MLFeatureValue types.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isEqualToFeatureValue:")
@@ -225,6 +251,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * True if the value represents a missing or undefined value
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isUndefined")
@@ -237,6 +265,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Populated value if the type is MLFeatureTypeMultiArray
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -262,6 +292,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Populated value if the type is MLFeatureTypeString
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -274,6 +306,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Type of the value for which the corresponding property below is held
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("type")
@@ -282,6 +316,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Represent an undefined value of a specified type
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -296,6 +332,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Construct image feature value from CGImage, using the size and type information required by feature description
      * (orientation is assumed to be kCGImagePropertyOrientationUp)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithCGImage:constraint:options:error:")
@@ -306,6 +344,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Construct image feature value from CGImage w/ specified orientation, using the size and type information required
      * by feature description
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithCGImage:orientation:constraint:options:error:")
@@ -316,6 +356,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Construct image feature value from CGImage w/ specified orientation
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithCGImage:orientation:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
@@ -326,6 +368,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Construct image feature value from CGImage (orientation is assumed to be kCGImagePropertyOrientationUp)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithCGImage:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
@@ -337,6 +381,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Construct image feature value from an image on disk, using a model specified image constraint. Orientation is
      * read from Exif if avaiable
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithImageAtURL:constraint:options:error:")
@@ -347,6 +393,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Construct image feature value from an image on disk using a model specified image constraint. The passed in
      * orientation supersedes any in the file
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithImageAtURL:orientation:constraint:options:error:")
@@ -356,6 +404,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Construct image feature value from an image on disk. The passed in orientation supersedes any in the file
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithImageAtURL:orientation:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
@@ -366,6 +416,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Construct image feature value from an image on disk. Orientation is read from Exif if avaiable
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureValueWithImageAtURL:pixelsWide:pixelsHigh:pixelFormatType:options:error:")

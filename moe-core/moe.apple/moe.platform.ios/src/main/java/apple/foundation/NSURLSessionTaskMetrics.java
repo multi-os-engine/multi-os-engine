@@ -172,6 +172,8 @@ public class NSURLSessionTaskMetrics extends NSObject {
 
     /**
      * redirectCount is the number of redirects that were recorded.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("redirectCount")
@@ -182,6 +184,8 @@ public class NSURLSessionTaskMetrics extends NSObject {
      * Interval from the task creation time to the task completion time.
      * Task creation time is the time when the task was instantiated.
      * Task completion time is the time when the task is about to change its internal state to completed.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -191,6 +195,8 @@ public class NSURLSessionTaskMetrics extends NSObject {
     /**
      * transactionMetrics array contains the metrics collected for every request/response transaction created during the
      * task execution.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

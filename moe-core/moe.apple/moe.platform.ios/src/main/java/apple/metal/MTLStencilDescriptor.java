@@ -168,6 +168,8 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * If stencil passes, depth is tested next. Declare what happens when the depth test fails.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("depthFailureOperation")
@@ -176,6 +178,8 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * If both the stencil and depth tests pass, declare how the stencil buffer is updated.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("depthStencilPassOperation")
@@ -186,12 +190,17 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLStencilDescriptor init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("readMask")
     public native int readMask();
 
     /**
      * If stencil passes, depth is tested next. Declare what happens when the depth test fails.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDepthFailureOperation:")
@@ -199,15 +208,23 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * If both the stencil and depth tests pass, declare how the stencil buffer is updated.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDepthStencilPassOperation:")
     public native void setDepthStencilPassOperation(@NUInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setReadMask:")
     public native void setReadMask(int value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setStencilCompareFunction:")
     public native void setStencilCompareFunction(@NUInt long value);
@@ -215,15 +232,23 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     /**
      * Stencil is tested first. stencilFailureOperation declares how the stencil buffer is updated when the stencil test
      * fails.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setStencilFailureOperation:")
     public native void setStencilFailureOperation(@NUInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setWriteMask:")
     public native void setWriteMask(int value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stencilCompareFunction")
     @NUInt
@@ -232,12 +257,17 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     /**
      * Stencil is tested first. stencilFailureOperation declares how the stencil buffer is updated when the stencil test
      * fails.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stencilFailureOperation")
     @NUInt
     public native long stencilFailureOperation();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("writeMask")
     public native int writeMask();

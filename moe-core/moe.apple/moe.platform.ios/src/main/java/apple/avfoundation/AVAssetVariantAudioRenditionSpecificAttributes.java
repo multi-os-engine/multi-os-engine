@@ -82,6 +82,8 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
      * If it is not declared, the value will be negative.
      * 
      * A channel count greater than two indicates that the variant offers a rich multichannel authoring.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("channelCount")

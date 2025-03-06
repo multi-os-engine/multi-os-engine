@@ -92,6 +92,8 @@ public class DDDeviceEvent extends NSObject {
 
     /**
      * Device found or lost.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -100,6 +102,8 @@ public class DDDeviceEvent extends NSObject {
 
     /**
      * Type of event.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("eventType")
@@ -117,6 +121,8 @@ public class DDDeviceEvent extends NSObject {
 
     /**
      * Initializes a device event.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithEventType:device:")

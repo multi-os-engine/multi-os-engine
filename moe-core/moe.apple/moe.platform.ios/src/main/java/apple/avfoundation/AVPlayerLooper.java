@@ -147,6 +147,8 @@ public class AVPlayerLooper extends NSObject {
      * Equivalent to +playerLooperWithPlayer:templateItem:timeRange: and passing in kCMTimeRangeInvalid for timeRange
      * parameter.
      * 
+     * API-Since: 10.0
+     * 
      * @param player
      *                   Must not be nil
      * @param itemToLoop
@@ -187,6 +189,8 @@ public class AVPlayerLooper extends NSObject {
      * if the player and template item are not specified or the template item has a 0 duration. An
      * NSInvalidArgumentException will be raised if a valid time range has a duration of 0 or is not contained within
      * time 0 and duration of the templateItem.
+     * 
+     * API-Since: 10.0
      * 
      * @param player
      *                   Must not be nil
@@ -232,6 +236,8 @@ public class AVPlayerLooper extends NSObject {
      * AVPlayerLooper will stop performing player queue operations for looping and let the current looping item replica
      * play to the end. The player's original actionAtItemEnd property will be restored afterwards. After this method is
      * called, the value of the receiver's status property will be AVPlayerLooperStatusCancelled.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("disableLooping")
@@ -244,6 +250,8 @@ public class AVPlayerLooper extends NSObject {
      * 
      * The value of this property is a NSError that describes what caused the receiver to not be able to perform looping
      * playback. If the receiver's status is not AVPlayerLooperStatusFailed, the value of this property is nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -262,6 +270,8 @@ public class AVPlayerLooper extends NSObject {
      * 
      * Equivalent to -initWithPlayer:templateItem:timeRange:existingItemsOrdering: and passing
      * AVPlayerLooperItemOrderingLoopingItemsPrecedeExistingItems as the beforeOrAfter parameter.
+     * 
+     * API-Since: 10.0
      * 
      * @param player
      *                   Must not be nil
@@ -285,6 +295,8 @@ public class AVPlayerLooper extends NSObject {
      * 
      * Starts at 0 and increments when the player starts playback of the AVPlayerItem again. This property is key value
      * observable.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("loopCount")
@@ -307,6 +319,8 @@ public class AVPlayerLooper extends NSObject {
      * 
      * @return
      *         Array containing replicas of specified AVPlayerItem
+     * 
+     *         API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -322,6 +336,8 @@ public class AVPlayerLooper extends NSObject {
      * playback. When the value of this property is AVPlayerStatusFailed, the receiver can no longer be used for
      * playback and a new instance needs to be created in its place. When this happens, clients can check the value of
      * the error property to determine the nature of the failure. This property is key value observable.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("status")

@@ -140,6 +140,8 @@ public class AVAssetDownloadStorageManager extends NSObject {
      * 
      * @param downloadStorageURL
      *                           The location of downloaded asset.
+     * 
+     *                           API-Since: 11.0
      */
     @Generated
     @Selector("setStorageManagementPolicy:forURL:")
@@ -154,6 +156,8 @@ public class AVAssetDownloadStorageManager extends NSObject {
      * sharedDownloadStorageManager
      * 
      * returns singleton instance.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -168,6 +172,8 @@ public class AVAssetDownloadStorageManager extends NSObject {
      * 
      * @param downloadStorageURL
      *                           The location of downloaded asset.
+     * 
+     *                           API-Since: 11.0
      */
     @Nullable
     @Generated

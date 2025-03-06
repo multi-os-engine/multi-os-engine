@@ -107,6 +107,9 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("defaultRecordZone")
@@ -176,6 +179,8 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Capabilities on locally-created record zones are not valid until the record zone is saved. Capabilities on record
      * zones fetched from the server are valid.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("capabilities")
@@ -201,10 +206,16 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithCoder:")
     public native CKRecordZone initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithZoneID:")
     public native CKRecordZone initWithZoneID(@NotNull CKRecordZoneID zoneID);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithZoneName:")
     public native CKRecordZone initWithZoneName(@NotNull String zoneName);
@@ -215,6 +226,9 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("zoneID")

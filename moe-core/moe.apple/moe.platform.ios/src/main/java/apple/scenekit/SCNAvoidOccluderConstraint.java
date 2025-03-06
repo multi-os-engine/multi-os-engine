@@ -75,6 +75,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * avoidOccluderConstraintWithTarget
      * 
      * Creates and returns a SCNAvoidOccluderConstraint object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("avoidOccluderConstraintWithTarget:")
@@ -86,6 +88,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * Defines the bias the apply after moving the receiver to avoid occluders. Defaults to 10e-5.
      * 
      * A positive bias will move the receiver closer to the target.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("bias")
@@ -121,6 +125,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * [@property] delegate
      * 
      * The receiver's delegate
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -176,6 +182,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * [@property] occluderCategoryBitMask
      * 
      * Defines the category of node to consider as occluder. Defaults to 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("occluderCategoryBitMask")
@@ -196,6 +204,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * Defines the bias the apply after moving the receiver to avoid occluders. Defaults to 10e-5.
      * 
      * A positive bias will move the receiver closer to the target.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBias:")
@@ -205,6 +215,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * [@property] delegate
      * 
      * The receiver's delegate
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -215,6 +227,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * [@property] delegate
      * 
      * The receiver's delegate
+     * 
+     * API-Since: 11.0
      */
     @Generated
     public void setDelegate(@NotNull @Mapped(ObjCObjectMapper.class) SCNAvoidOccluderConstraintDelegate value) {
@@ -232,6 +246,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * [@property] occluderCategoryBitMask
      * 
      * Defines the category of node to consider as occluder. Defaults to 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOccluderCategoryBitMask:")
@@ -241,6 +257,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * [@property] target
      * 
      * Defines the target node
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTarget:")
@@ -268,6 +286,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * [@property] target
      * 
      * Defines the target node
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

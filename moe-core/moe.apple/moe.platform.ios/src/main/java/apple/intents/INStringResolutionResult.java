@@ -98,6 +98,8 @@ public class INStringResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the string with which the user wants to continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class INStringResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided strings.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -181,6 +185,8 @@ public class INStringResolutionResult extends INIntentResolutionResult {
      * resolvedString can be different than the original string. This allows app extensions to apply business logic
      * constraints to the string.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

@@ -120,6 +120,8 @@ public interface UNNotificationContentExtension {
      * 
      * - Parameters:
      * - notification: The notification that arrived.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("didReceiveNotification:")
@@ -157,6 +159,8 @@ public interface UNNotificationContentExtension {
      * - term `dismiss`: The response you want to take for the notification. For a list of
      * possible options, see
      * ``UserNotificationsUI/UNNotificationContentExtensionResponseOption``.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -174,6 +178,8 @@ public interface UNNotificationContentExtension {
      * your view controller, the system calls this method when the user wants to
      * stop playback of your media. Use your implementation of this method to pause
      * playback at the current location.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -190,6 +196,8 @@ public interface UNNotificationContentExtension {
      * your view controller, the system calls this method when the user wants to
      * begin playback of your media. Use your implementation of this method to
      * initiate playback.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -213,6 +221,8 @@ public interface UNNotificationContentExtension {
      * 
      * If you don't implement this property, the system doesn't draw a media
      * playback button.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -230,6 +240,8 @@ public interface UNNotificationContentExtension {
      * can also implement this property and use it to specify the tint color to
      * apply to the button. If you don't implement this property, the system uses a
      * default color for the tint color.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -247,6 +259,8 @@ public interface UNNotificationContentExtension {
      * indicating the type of button you want. If you don't implement this
      * property, the system behaves as if you set the value to
      * ``UNNotificationContentExtensionMediaPlayPauseButtonType/UNNotificationContentExtensionMediaPlayPauseButtonTypeNone``.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

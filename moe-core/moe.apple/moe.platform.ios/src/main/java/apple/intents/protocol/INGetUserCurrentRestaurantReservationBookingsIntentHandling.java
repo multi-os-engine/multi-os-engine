@@ -51,6 +51,9 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
      *                   user prior to handling.
      * 
      * @see INGetUserCurrentRestaurantReservationBookingsIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -72,6 +75,9 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
      * @param completion The response handling block to invoke with the response to handling the intent.
      * 
      * @see INGetUserCurrentRestaurantReservationBookingsIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleGetUserCurrentRestaurantReservationBookings:completion:")
@@ -89,6 +95,9 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INGetUserCurrentRestaurantReservationBookingsIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

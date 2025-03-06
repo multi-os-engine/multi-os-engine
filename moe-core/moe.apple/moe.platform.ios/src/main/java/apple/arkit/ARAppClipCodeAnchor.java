@@ -144,6 +144,8 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The estimated radius of the app clip code in meters.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("radius")
@@ -177,6 +179,8 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The URL encoded in this app clip code. Not nil only if urlDecodingState is .decoded.
+     * 
+     * API-Since: 14.3
      */
     @Nullable
     @Generated
@@ -185,6 +189,8 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The URL decoding state of the app clip code.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("urlDecodingState")

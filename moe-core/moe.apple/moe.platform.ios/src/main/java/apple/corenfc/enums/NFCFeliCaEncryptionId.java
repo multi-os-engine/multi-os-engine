@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Encryption Identifier parameter in response of Request Service V2
+ * 
+ * API-Since: 13.0
  */
 @Generated
 public final class NFCFeliCaEncryptionId {

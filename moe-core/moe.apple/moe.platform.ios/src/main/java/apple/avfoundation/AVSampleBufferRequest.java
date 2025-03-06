@@ -96,6 +96,8 @@ public class AVSampleBufferRequest extends NSObject {
 
     /**
      * Default is AVSampleBufferRequestDirectionNone.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("direction")
@@ -111,6 +113,9 @@ public class AVSampleBufferRequest extends NSObject {
     @Selector("init")
     public native AVSampleBufferRequest init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithStartCursor:")
     public native AVSampleBufferRequest initWithStartCursor(@NotNull AVSampleCursor startCursor);
@@ -140,6 +145,8 @@ public class AVSampleBufferRequest extends NSObject {
     /**
      * optional: if not nil, the sequence of samples to be loaded may include the sample at this position, but no
      * further.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -148,6 +155,8 @@ public class AVSampleBufferRequest extends NSObject {
 
     /**
      * optional: if not zero, indicates the maximum number of samples to load.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxSampleCount")
@@ -157,6 +166,8 @@ public class AVSampleBufferRequest extends NSObject {
     /**
      * One of AVSampleBufferRequestMode*. This property is ignored when scheduling the request on an
      * AVSampleBufferGenerator created with a NULL timebase.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("mode")
@@ -170,6 +181,8 @@ public class AVSampleBufferRequest extends NSObject {
 
     /**
      * optional: indicates deadline for sample data and output PTS for CMSampleBuffer.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("overrideTime")
@@ -179,6 +192,8 @@ public class AVSampleBufferRequest extends NSObject {
     /**
      * optional: if not zero, indicates the preferred number of samples to load. Fewer samples may be loaded if there is
      * a change of format description.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("preferredMinSampleCount")
@@ -195,6 +210,8 @@ public class AVSampleBufferRequest extends NSObject {
 
     /**
      * Default is AVSampleBufferRequestDirectionNone.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDirection:")
@@ -203,6 +220,8 @@ public class AVSampleBufferRequest extends NSObject {
     /**
      * optional: if not nil, the sequence of samples to be loaded may include the sample at this position, but no
      * further.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setLimitCursor:")
@@ -210,6 +229,8 @@ public class AVSampleBufferRequest extends NSObject {
 
     /**
      * optional: if not zero, indicates the maximum number of samples to load.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxSampleCount:")
@@ -218,6 +239,8 @@ public class AVSampleBufferRequest extends NSObject {
     /**
      * One of AVSampleBufferRequestMode*. This property is ignored when scheduling the request on an
      * AVSampleBufferGenerator created with a NULL timebase.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMode:")
@@ -225,6 +248,8 @@ public class AVSampleBufferRequest extends NSObject {
 
     /**
      * optional: indicates deadline for sample data and output PTS for CMSampleBuffer.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setOverrideTime:")
@@ -233,6 +258,8 @@ public class AVSampleBufferRequest extends NSObject {
     /**
      * optional: if not zero, indicates the preferred number of samples to load. Fewer samples may be loaded if there is
      * a change of format description.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPreferredMinSampleCount:")
@@ -244,6 +271,8 @@ public class AVSampleBufferRequest extends NSObject {
 
     /**
      * mandatory: the created CMSampleBuffer must include the sample at this position
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

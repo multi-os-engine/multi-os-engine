@@ -107,6 +107,8 @@ public class UNUserNotificationCenter extends NSObject {
 
     /**
      * The UNUserNotificationCenter for the current application
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -180,6 +182,8 @@ public class UNUserNotificationCenter extends NSObject {
      * identifier. A notification request with the identifier as an existing delivered notifications will alert for the
      * new notification request and replace the existing delivered notification when it is triggered. The number of
      * pending notification requests that may be scheduled by an application at any one time is limited by the system.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("addNotificationRequest:withCompletionHandler:")
@@ -188,6 +192,8 @@ public class UNUserNotificationCenter extends NSObject {
 
     /**
      * The delegate can only be set from an application
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -211,6 +217,8 @@ public class UNUserNotificationCenter extends NSObject {
 
     /**
      * The application's user notification settings
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("getNotificationSettingsWithCompletionHandler:")
@@ -220,6 +228,8 @@ public class UNUserNotificationCenter extends NSObject {
     /**
      * Notification requests that have been scheduled for a future time or location and are waiting for their trigger to
      * fire
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("getPendingNotificationRequestsWithCompletionHandler:")
@@ -234,6 +244,9 @@ public class UNUserNotificationCenter extends NSObject {
     @Selector("removeAllDeliveredNotifications")
     public native void removeAllDeliveredNotifications();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("removeAllPendingNotificationRequests")
     public native void removeAllPendingNotificationRequests();
@@ -246,6 +259,8 @@ public class UNUserNotificationCenter extends NSObject {
      * Removes notifications that have been scheduled for a future time or location and are waiting for their trigger to
      * fire. There is no reason to call these methods to remove push notifications or notification requests with no
      * trigger.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("removePendingNotificationRequestsWithIdentifiers:")
@@ -254,6 +269,8 @@ public class UNUserNotificationCenter extends NSObject {
     /**
      * User authorization is required for applications to notify the user using UNUserNotificationCenter via both local
      * and remote notifications.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requestAuthorizationWithOptions:completionHandler:")
@@ -262,6 +279,8 @@ public class UNUserNotificationCenter extends NSObject {
 
     /**
      * The delegate can only be set from an application
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -270,6 +289,8 @@ public class UNUserNotificationCenter extends NSObject {
 
     /**
      * The delegate can only be set from an application
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UNUserNotificationCenterDelegate value) {
@@ -292,6 +313,8 @@ public class UNUserNotificationCenter extends NSObject {
 
     /**
      * Returns YES if the current device supports content extensions
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportsContentExtensions")

@@ -158,12 +158,17 @@ public class SFSpeechRecognitionTask extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
     /**
      * Reports error that occurred during recognition, if applicable
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -174,6 +179,8 @@ public class SFSpeechRecognitionTask extends NSObject {
      * Instructs the task to stop accepting new audio (e.g. stop recording) but complete processing on audio already
      * buffered.
      * This has no effect on URL-based recognition requests, which effectively buffer the entire file immediately.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("finish")
@@ -185,6 +192,8 @@ public class SFSpeechRecognitionTask extends NSObject {
 
     /**
      * True if recognition has been cancelled
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isCancelled")
@@ -192,11 +201,16 @@ public class SFSpeechRecognitionTask extends NSObject {
 
     /**
      * True if recognition audio input has stopped
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isFinishing")
     public native boolean isFinishing();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("state")
     @NInt

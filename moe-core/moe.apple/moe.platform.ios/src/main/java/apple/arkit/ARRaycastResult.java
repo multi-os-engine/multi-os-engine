@@ -62,6 +62,8 @@ public class ARRaycastResult extends NSObject {
      * 
      * In case of an existing plane target, an anchor will always be provided. In case of an estimated plane target,
      * an anchor may be provided if the ray hit an existing plane.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -155,6 +157,8 @@ public class ARRaycastResult extends NSObject {
 
     /**
      * Type of the target where the ray terminated.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("target")
@@ -163,6 +167,8 @@ public class ARRaycastResult extends NSObject {
 
     /**
      * Alignment of the target.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("targetAlignment")

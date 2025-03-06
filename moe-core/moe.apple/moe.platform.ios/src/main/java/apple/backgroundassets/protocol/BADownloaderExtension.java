@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface BADownloaderExtension {
     /**
      * Download is about to begin but requires an authentication challenge to continue.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @IsOptional
@@ -56,6 +58,8 @@ public interface BADownloaderExtension {
      * 
      * @param download The download object that has failed.
      * @param error    The error that caused the failure.
+     * 
+     *                 API-Since: 16.1
      */
     @Generated
     @IsOptional
@@ -76,6 +80,8 @@ public interface BADownloaderExtension {
      * [@warning] The file is marked by the system for deletion when the device becomes low on storage. Avoid copying or
      * modifying
      * the file, as this may remove the system's ability to delete the file.
+     * 
+     * API-Since: 16.1
      * 
      * @param download Download that has completed successfully.
      * @param fileURL  A location to the file that has been downloaded.
@@ -98,6 +104,8 @@ public interface BADownloaderExtension {
      * If a download fails, it can be rescheduled using `BADownloadManager` in any other method in this protocol.
      * [@warning] You cannot use `BADownloadManager` to manually schedule downloads using this method. All downloads to
      * enqueue must be returned.
+     * 
+     * API-Since: 16.1
      * 
      * @param contentRequest The content request event that occured that caused this method to be invoked.
      * @param manifestURL    A file URL to the local manifest that was pre-downloaded and specified in your App's

@@ -47,6 +47,9 @@ public class CNCustomDetectionTrack extends CNDetectionTrack {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("allDetections")
     @NotNull
@@ -109,6 +112,9 @@ public class CNCustomDetectionTrack extends CNDetectionTrack {
      * 
      * The smoothing algorithm used is the same one that is used for built-in detections during recording.
      * It compensates for some amount of jitter in the disparity measure by smoothing out variability.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithDetections:smooth:")

@@ -100,6 +100,12 @@ public class MTROTAHeaderParser extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROTAHeader's initWithData:
+     */
+    @Deprecated
     @Generated
     @Selector("headerFromData:error:")
     @Nullable

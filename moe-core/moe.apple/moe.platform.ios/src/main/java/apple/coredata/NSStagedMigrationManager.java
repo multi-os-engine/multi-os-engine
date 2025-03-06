@@ -91,6 +91,8 @@ public class NSStagedMigrationManager extends NSObject {
      * During migration, access to the migrating store can be obtained from this property. The NSPersistentContainer
      * will be configured with the appropriate model in the willMigrateHandler and didMigrateHandler of an
      * NSCustomMigrationStage.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("container")
@@ -114,6 +116,9 @@ public class NSStagedMigrationManager extends NSObject {
     @Selector("init")
     public native NSStagedMigrationManager init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithMigrationStages:")
     public native NSStagedMigrationManager initWithMigrationStages(@NotNull NSArray<? extends NSMigrationStage> stages);
@@ -160,6 +165,8 @@ public class NSStagedMigrationManager extends NSObject {
     /**
      * To perform staged migration, a total ordering of models must be described to Core Data. The models in the
      * .stages property should match the order of models for the app.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("stages")

@@ -92,6 +92,8 @@ public class MPSVectorDescriptor extends NSObject {
      * [@property] dataType
      * 
      * The type of the data which makes up the values of the vector.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dataType")
@@ -140,6 +142,8 @@ public class MPSVectorDescriptor extends NSObject {
      * [@property] length
      * 
      * The number of elements in the vector.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("length")
@@ -163,6 +167,8 @@ public class MPSVectorDescriptor extends NSObject {
      * [@property] dataType
      * 
      * The type of the data which makes up the values of the vector.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDataType:")
@@ -172,6 +178,8 @@ public class MPSVectorDescriptor extends NSObject {
      * [@property] length
      * 
      * The number of elements in the vector.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLength:")
@@ -190,6 +198,8 @@ public class MPSVectorDescriptor extends NSObject {
      * 
      * The stride, in bytes, between corresponding elements of
      * consecutive vectors. Must be a multiple of the element size
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("vectorBytes")
@@ -206,6 +216,8 @@ public class MPSVectorDescriptor extends NSObject {
      * Using this stride to construct your array is recommended, but not required (provided that
      * the stride used is still large enough to allocate a full vector of data).
      * 
+     * API-Since: 11.0
+     * 
      * @param length   The number of elements in a single vector.
      * 
      * @param dataType The type of vector data values.
@@ -221,6 +233,8 @@ public class MPSVectorDescriptor extends NSObject {
      * Use this function for creating a descriptor of a MPSVector object
      * containing a single vector.
      * 
+     * API-Since: 11.0
+     * 
      * @param length   The number of elements in a single vector.
      * 
      * @param dataType The type of the data to be stored in the vector.
@@ -235,6 +249,8 @@ public class MPSVectorDescriptor extends NSObject {
      * For performance considerations the optimal stride between vectors may not necessarily be equal
      * to the vector length. The MPSVectorDescriptor class provides a method which
      * may be used to determine this value, see the vectorBytesForLength API.
+     * 
+     * API-Since: 11.0
      * 
      * @param length      The number of elements in a single vector.
      * 
@@ -254,6 +270,8 @@ public class MPSVectorDescriptor extends NSObject {
      * [@property] vectors
      * 
      * The number of vectors.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("vectors")

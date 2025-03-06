@@ -62,6 +62,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
 
     /**
      * Details about the automatic reload payment, for example "top-up with $20 when account reaches $5".
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -75,6 +77,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
      * This may include further details about the threshold amount or reload conditions.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -119,6 +123,9 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     @Selector("init")
     public native PKAutomaticReloadPaymentRequest init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithPaymentDescription:automaticReloadBilling:managementURL:")
     public native PKAutomaticReloadPaymentRequest initWithPaymentDescriptionAutomaticReloadBillingManagementURL(
@@ -150,6 +157,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * automatic reload payment, including deleting it.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -163,6 +172,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
 
     /**
      * A description of the automatic reload, for example "Gift Card Reload".
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -179,6 +190,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
 
     /**
      * Details about the automatic reload payment, for example "top-up with $20 when account reaches $5".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAutomaticReloadBilling:")
@@ -187,6 +200,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
      * This may include further details about the threshold amount or reload conditions.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setBillingAgreement:")
@@ -195,6 +210,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * automatic reload payment, including deleting it.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setManagementURL:")
@@ -202,6 +219,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
 
     /**
      * A description of the automatic reload, for example "Gift Card Reload".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPaymentDescription:")
@@ -211,6 +230,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTokenNotificationURL:")
@@ -228,6 +249,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

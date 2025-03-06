@@ -123,6 +123,8 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -134,6 +136,8 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNGridSample object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -180,6 +184,8 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
      * This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
      * is added to the input coordinate (if set to NO).
      * The default value is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUseGridValueAsInputCoordinate:")
@@ -209,6 +215,8 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
      * This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
      * is added to the input coordinate (if set to NO).
      * The default value is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("useGridValueAsInputCoordinate")

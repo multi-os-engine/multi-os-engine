@@ -114,6 +114,9 @@ public class MPMusicPlayerControllerQueue extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 10.3
+     */
     @NotNull
     @Generated
     @Selector("items")

@@ -178,6 +178,8 @@ public class HMActionSet extends NSObject {
 
     /**
      * Set of HMAction objects that represent the individual items of the action set.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -204,6 +206,8 @@ public class HMActionSet extends NSObject {
 
     /**
      * Specifies whether the action set is currently executing or not.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isExecuting")
@@ -221,6 +225,8 @@ public class HMActionSet extends NSObject {
 
     /**
      * The name of the action set.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

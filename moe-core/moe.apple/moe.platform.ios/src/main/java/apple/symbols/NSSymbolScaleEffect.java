@@ -94,6 +94,8 @@ public class NSSymbolScaleEffect extends NSSymbolEffect {
 
     /**
      * The default scaling effect, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -101,6 +103,8 @@ public class NSSymbolScaleEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates incrementally, by layer.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithByLayer")
@@ -109,6 +113,8 @@ public class NSSymbolScaleEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates all layers of the symbol simultaneously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithWholeSymbol")
@@ -165,6 +171,8 @@ public class NSSymbolScaleEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer to create a scale effect with a scale down level.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("scaleDownEffect")
@@ -173,6 +181,8 @@ public class NSSymbolScaleEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer to create a scale effect with a scale up level.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("scaleUpEffect")

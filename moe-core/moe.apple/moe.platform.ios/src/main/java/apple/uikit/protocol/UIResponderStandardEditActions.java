@@ -313,4 +313,14 @@ public interface UIResponderStandardEditActions {
     default void useSelectionForFind(@Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * API-Since: 18.2
+     */
+    @Generated
+    @IsOptional
+    @Selector("showWritingTools:")
+    default void showWritingTools(@Mapped(ObjCObjectMapper.class) @NotNull Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

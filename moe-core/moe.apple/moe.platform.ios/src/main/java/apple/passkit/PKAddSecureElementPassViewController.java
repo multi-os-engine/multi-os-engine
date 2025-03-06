@@ -69,6 +69,9 @@ public class PKAddSecureElementPassViewController extends UIViewController {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("canAddSecureElementPassWithConfiguration:")
     public static native boolean canAddSecureElementPassWithConfiguration(
@@ -103,6 +106,9 @@ public class PKAddSecureElementPassViewController extends UIViewController {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.4
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -126,6 +132,9 @@ public class PKAddSecureElementPassViewController extends UIViewController {
     @Selector("initWithCoder:")
     public native PKAddSecureElementPassViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("initWithConfiguration:delegate:")
     public native PKAddSecureElementPassViewController initWithConfigurationDelegate(
@@ -172,11 +181,17 @@ public class PKAddSecureElementPassViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate value);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     public void setDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate value) {

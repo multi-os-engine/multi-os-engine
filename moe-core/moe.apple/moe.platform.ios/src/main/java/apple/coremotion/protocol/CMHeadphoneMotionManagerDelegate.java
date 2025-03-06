@@ -24,6 +24,8 @@ public interface CMHeadphoneMotionManagerDelegate {
      * Discussion:
      * Invoked when a headphone is connected. Execution of the delegate callback occurs on the operation queue used to
      * deliver the device motion updates. The main thread is used if the queue was not specified.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -39,6 +41,8 @@ public interface CMHeadphoneMotionManagerDelegate {
      * Invoked when a headphone is disconnected. Execution of the delegate callback occurs on the operation queue used
      * to
      * deliver the device motion updates. The main thread is used if the queue was not specified.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

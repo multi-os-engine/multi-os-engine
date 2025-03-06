@@ -52,6 +52,8 @@ public class HMAccessorySetupResult extends NSObject implements NSCopying {
      * The -[HMAccessory uniqueIdentifier] values corresponding to the accessories that were set up.
      * Usually only one accessory is set up at a time, but adding an accessory bridge can result in
      * multiple accessories being set up at once
+     * 
+     * API-Since: 15.4
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class HMAccessorySetupResult extends NSObject implements NSCopying {
 
     /**
      * The -[HMHome uniqueIdentifier] that the accessories were added to
+     * 
+     * API-Since: 15.4
      */
     @NotNull
     @Generated

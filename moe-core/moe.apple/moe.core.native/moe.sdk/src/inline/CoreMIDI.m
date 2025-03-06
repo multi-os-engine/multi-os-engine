@@ -49,8 +49,20 @@ EXPORT MIDIMessage_32 __natj_inline_MIDI1UPNoteOn(UInt8 group, UInt8 channel, UI
 	return MIDI1UPNoteOn(group, channel, noteNumber, velocity);
 }
 
+EXPORT MIDIMessage_32 __natj_inline_MIDI1UPPolyPressure(UInt8 group, UInt8 channel, UInt8 noteNumber, UInt8 pressure) {
+	return MIDI1UPPolyPressure(group, channel, noteNumber, pressure);
+}
+
 EXPORT MIDIMessage_32 __natj_inline_MIDI1UPControlChange(UInt8 group, UInt8 channel, UInt8 index, UInt8 data) {
 	return MIDI1UPControlChange(group, channel, index, data);
+}
+
+EXPORT MIDIMessage_32 __natj_inline_MIDI1UPProgramChange(UInt8 group, UInt8 channel, UInt8 program) {
+	return MIDI1UPProgramChange(group, channel, program);
+}
+
+EXPORT MIDIMessage_32 __natj_inline_MIDI1UPChannelPressure(UInt8 group, UInt8 channel, UInt8 value) {
+	return MIDI1UPChannelPressure(group, channel, value);
 }
 
 EXPORT MIDIMessage_32 __natj_inline_MIDI1UPPitchBend(UInt8 group, UInt8 channel, UInt8 lsb, UInt8 msb) {
@@ -131,6 +143,86 @@ EXPORT MIDIMessage_64 __natj_inline_MIDI2PitchBend(UInt8 group, UInt8 channel, U
 
 EXPORT MIDIMessage_64 __natj_inline_MIDI2PerNotePitchBend(UInt8 group, UInt8 channel, UInt8 noteNumber, UInt32 value) {
 	return MIDI2PerNotePitchBend(group, channel, noteNumber, value);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2StreamMessage(UMPStreamMessageFormat format, UMPStreamMessageStatus status, UInt16 data1, UInt32 data2, UInt32 data3, UInt32 data4) {
+	return MIDI2StreamMessage(format, status, data1, data2, data3, data4);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2StreamMessageFromData(UMPStreamMessageFormat format, UMPStreamMessageStatus status, const Byte * data, const size_t length) {
+	return MIDI2StreamMessageFromData(format, status, data, length);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2EndpointDiscoveryMessage(UInt8 versionMajor, UInt8 versionMinor, _Bool endpointInfoRequest, _Bool deviceIdentityRequest, _Bool endpointNameRequest, _Bool productInstanceIDRequest, _Bool streamConfigurationRequest) {
+	return MIDI2EndpointDiscoveryMessage(versionMajor, versionMinor, endpointInfoRequest, deviceIdentityRequest, endpointNameRequest, productInstanceIDRequest, streamConfigurationRequest);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2EndpointInfoNotificationMessage(UInt8 versionMajor, UInt8 versionMinor, _Bool staticFunctionBlocks, UInt8 numberOfFunctionBlocks, _Bool m1, _Bool m2, _Bool receiveJRTimestamp, _Bool transmitJRTimestamp) {
+	return MIDI2EndpointInfoNotificationMessage(versionMajor, versionMinor, staticFunctionBlocks, numberOfFunctionBlocks, m1, m2, receiveJRTimestamp, transmitJRTimestamp);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2EndpointDeviceIdentityNotificationMessage(MIDIUInteger7 deviceManufacturer1, MIDIUInteger7 deviceManufacturer2, MIDIUInteger7 deviceManufacturer3, MIDIUInteger14 deviceFamily, MIDIUInteger14 deviceFamilyModel, MIDIUInteger28 revisionLevel) {
+	return MIDI2EndpointDeviceIdentityNotificationMessage(deviceManufacturer1, deviceManufacturer2, deviceManufacturer3, deviceFamily, deviceFamilyModel, revisionLevel);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2EndpointNameNotificationMessage(UMPStreamMessageFormat format, const char * data, const size_t length) {
+	return MIDI2EndpointNameNotificationMessage(format, data, length);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2EndpointProductInstanceIDNotificationMessage(UMPStreamMessageFormat format, const char * data, const size_t length) {
+	return MIDI2EndpointProductInstanceIDNotificationMessage(format, data, length);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2StreamConfigurationRequestMessage(UInt8 protocol, _Bool receiveJRTimestamp, _Bool transmitJRTimestamp) {
+	return MIDI2StreamConfigurationRequestMessage(protocol, receiveJRTimestamp, transmitJRTimestamp);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2StreamConfigurationNotificationMessage(UInt8 protocol, _Bool receiveJRTimestamp, _Bool transmitJRTimestamp) {
+	return MIDI2StreamConfigurationNotificationMessage(protocol, receiveJRTimestamp, transmitJRTimestamp);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2FunctionBlockDiscoveryMessage(UInt8 functionBlockNumber, _Bool infoRequest, _Bool nameRequest) {
+	return MIDI2FunctionBlockDiscoveryMessage(functionBlockNumber, infoRequest, nameRequest);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2FunctionBlockInfoNotificationMessage(_Bool active, MIDIUInteger7 blockNumber, MIDIUMPFunctionBlockUIHint UIHint, MIDIUMPFunctionBlockMIDI1Info MIDI1, MIDIUMPFunctionBlockDirection direction, UInt8 firstGroup, UInt8 numberOfGroupsSpanned, UInt8 CIVersion, UInt8 maxSysex8Streams) {
+	return MIDI2FunctionBlockInfoNotificationMessage(active, blockNumber, UIHint, MIDI1, direction, firstGroup, numberOfGroupsSpanned, CIVersion, maxSysex8Streams);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2FunctionBlockNameNotificationMessage(UMPStreamMessageFormat format, UInt8 blockNumber, const char * data, size_t length) {
+	return MIDI2FunctionBlockNameNotificationMessage(format, blockNumber, data, length);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2StartOfClipMessage() {
+	return MIDI2StartOfClipMessage();
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2EndOfClipMessage() {
+	return MIDI2EndOfClipMessage();
+}
+
+EXPORT MIDIMessage_32 __natj_inline_MIDINoOpMessage() {
+	return MIDINoOpMessage();
+}
+
+EXPORT MIDIMessage_32 __natj_inline_MIDIJitterReductionClockMessage(UInt16 senderClockTime) {
+	return MIDIJitterReductionClockMessage(senderClockTime);
+}
+
+EXPORT MIDIMessage_32 __natj_inline_MIDIJitterReductionTimestampMessage(UInt16 senderClockTimestamp) {
+	return MIDIJitterReductionTimestampMessage(senderClockTimestamp);
+}
+
+EXPORT MIDIMessage_32 __natj_inline_MIDIDeltaClockstampTicksPerQuarterNoteMessage(UInt16 ticksPerQuarterNote) {
+	return MIDIDeltaClockstampTicksPerQuarterNoteMessage(ticksPerQuarterNote);
+}
+
+EXPORT MIDIMessage_32 __natj_inline_MIDITicksSinceLastEventMessage(UInt32 ticksSinceLastEvent) {
+	return MIDITicksSinceLastEventMessage(ticksSinceLastEvent);
+}
+
+EXPORT MIDIMessage_128 __natj_inline_MIDI2FlexDataMessage(MIDIUInteger4 group, MIDIUInteger2 format, MIDIUInteger2 address, MIDIUInteger4 channel, UInt8 statusBank, UInt8 status, UInt32 data1, UInt32 data2, UInt32 data3) {
+	return MIDI2FlexDataMessage(group, format, address, channel, statusBank, status, data1, data2, data3);
 }
 
 

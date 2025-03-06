@@ -111,6 +111,8 @@ public class CLSBinaryItem extends CLSActivityItem {
      * @param title      Title of the CLSBinaryItem.
      * @param identifier An identifier that is unique within its owning activity.
      * @param valueType  The type of binary value. Ex. pass or fail.
+     * 
+     *                   API-Since: 11.3
      */
     @Generated
     @Selector("initWithIdentifier:title:type:")
@@ -154,6 +156,8 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     /**
      * True or false value.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setValue:")
@@ -179,6 +183,8 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     /**
      * True or false value.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("value")
@@ -188,6 +194,8 @@ public class CLSBinaryItem extends CLSActivityItem {
      * Value type of this CLSBinaryItem.
      * 
      * The type that best describes this CLSBinaryItem value.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("valueType")

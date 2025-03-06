@@ -92,6 +92,9 @@ public class INTemporalEventTrigger extends NSObject implements NSCopying, NSSec
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("dateComponentsRange")
@@ -122,6 +125,9 @@ public class INTemporalEventTrigger extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native INTemporalEventTrigger initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDateComponentsRange:")
     public native INTemporalEventTrigger initWithDateComponentsRange(

@@ -67,6 +67,8 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
      * The cadence at which the request should be performed.
      * 
      * If this property is not defined, then every frame will be processed.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -157,6 +159,8 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
      * The cadence at which the request should be performed.
      * 
      * If this property is not defined, then every frame will be processed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCadence:")

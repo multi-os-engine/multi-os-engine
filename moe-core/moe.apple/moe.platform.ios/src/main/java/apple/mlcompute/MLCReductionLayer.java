@@ -35,8 +35,7 @@ import org.jetbrains.annotations.Nullable;
  * except for the given dimension which is set to 1.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -104,7 +103,11 @@ public class MLCReductionLayer extends MLCLayer {
      * [@property] dimension
      * 
      * The dimension over which to perform the reduction operation
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dimension")
     @NUInt
@@ -159,7 +162,11 @@ public class MLCReductionLayer extends MLCLayer {
      * @param reductionType The reduction type.
      * @param dimension     The reduction dimension.
      * @return A new reduction layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithReductionType:dimension:")
     public static native MLCReductionLayer layerWithReductionTypeDimension(int reductionType, @NUInt long dimension);
@@ -187,7 +194,11 @@ public class MLCReductionLayer extends MLCLayer {
      * [@property] reductionType
      * 
      * The reduction type
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -208,6 +219,7 @@ public class MLCReductionLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

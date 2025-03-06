@@ -54,6 +54,9 @@ public class VNImageTranslationAlignmentObservation extends VNImageAlignmentObse
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("alignmentTransform")
     @ByValue

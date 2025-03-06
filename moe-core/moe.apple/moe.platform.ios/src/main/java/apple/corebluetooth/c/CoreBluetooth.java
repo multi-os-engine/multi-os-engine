@@ -653,4 +653,15 @@ public final class CoreBluetooth {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String CBConnectPeripheralOptionEnableAutoReconnect();
+
+    /**
+     * [@const] CBUUIDCharacteristicObservationScheduleString
+     * 
+     * Data representing the observation schedule for a characteristic.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CBUUIDCharacteristicObservationScheduleString();
 }

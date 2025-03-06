@@ -161,6 +161,11 @@ public class MTLArgument extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("access")
     @NUInt
@@ -176,7 +181,11 @@ public class MTLArgument extends NSObject {
 
     /**
      * min alignment of starting offset in the buffer
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("bufferAlignment")
     @NUInt
@@ -184,7 +193,11 @@ public class MTLArgument extends NSObject {
 
     /**
      * sizeof(T) for T *argName
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("bufferDataSize")
     @NUInt
@@ -192,17 +205,31 @@ public class MTLArgument extends NSObject {
 
     /**
      * MTLDataTypeFloat, MTLDataTypeFloat4, MTLDataTypeStruct, ...
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("bufferDataType")
     @NUInt
     public native long bufferDataType();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("bufferStructType")
     public native MTLStructType bufferStructType();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("index")
     @NUInt
@@ -212,6 +239,11 @@ public class MTLArgument extends NSObject {
     @Selector("init")
     public native MTLArgument init();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("isActive")
     public native boolean isActive();
@@ -225,6 +257,11 @@ public class MTLArgument extends NSObject {
     @Selector("isDepthTexture")
     public native boolean isDepthTexture();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("name")
@@ -232,7 +269,11 @@ public class MTLArgument extends NSObject {
 
     /**
      * half, float, int, or uint.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("textureDataType")
     @NUInt
@@ -240,7 +281,11 @@ public class MTLArgument extends NSObject {
 
     /**
      * texture1D, texture2D...
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("textureType")
     @NUInt
@@ -248,7 +293,11 @@ public class MTLArgument extends NSObject {
 
     /**
      * for threadgroup memory arguments
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("threadgroupMemoryAlignment")
     @NUInt
@@ -256,12 +305,21 @@ public class MTLArgument extends NSObject {
 
     /**
      * sizeof(T) for T *argName
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("threadgroupMemoryDataSize")
     @NUInt
     public native long threadgroupMemoryDataSize();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("type")
     @NUInt

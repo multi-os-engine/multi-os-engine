@@ -66,6 +66,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * A color to use for the bar background. This color is composited over backgroundEffects.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -75,6 +77,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's
      * background.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -84,6 +88,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the
      * backgroundImageContentMode.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -93,6 +99,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * The content mode to use when rendering the backgroundImage. Defaults to UIViewContentModeScaleToFill.
      * UIViewContentModeRedraw will be reinterpreted as UIViewContentModeScaleToFill.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("backgroundImageContentMode")
@@ -122,6 +130,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Reset background and shadow properties to their defaults.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configureWithDefaultBackground")
@@ -129,6 +139,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Reset background and shadow properties to display theme-appropriate opaque colors.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configureWithOpaqueBackground")
@@ -136,11 +148,16 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Reset background and shadow properties to be transparent.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configureWithTransparentBackground")
     public native void configureWithTransparentBackground();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Owned
@@ -173,6 +190,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * The idiom that this appearance object targets.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("idiom")
@@ -181,6 +200,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Constructs a new bar appearance, configured with default values and targeting the device idiom.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("init")
@@ -191,6 +212,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      * initializer is useful for migrating configuration between UIBarAppearance subclasses. For example, you can
      * initialize a UINavigationBarAppearance with a UIToolbarAppearance instance, and shared attributes will be
      * identical between the two.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithBarAppearance:")
@@ -203,6 +226,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Constructs a new bar appearance, targeting the passed-in idiom as a hint. Not all platforms support all available
      * idioms. See the idiom property to determine the resolved idiom.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithIdiom:")
@@ -245,6 +270,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * A color to use for the bar background. This color is composited over backgroundEffects.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -253,6 +280,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's
      * background.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackgroundEffect:")
@@ -261,6 +290,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the
      * backgroundImageContentMode.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackgroundImage:")
@@ -269,6 +300,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * The content mode to use when rendering the backgroundImage. Defaults to UIViewContentModeScaleToFill.
      * UIViewContentModeRedraw will be reinterpreted as UIViewContentModeScaleToFill.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackgroundImageContentMode:")
@@ -280,6 +313,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      * shadow. If shadowImage is a template image, then the shadowColor is used to tint the image; a nil or clearColor
      * shadowColor will also result in no shadow. If the shadowImage is not a template image, then it will be rendered
      * regardless of the value of shadowColor.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShadowColor:")
@@ -287,6 +322,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Use an image for the shadow. See shadowColor for how they interact.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShadowImage:")
@@ -302,6 +339,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      * shadow. If shadowImage is a template image, then the shadowColor is used to tint the image; a nil or clearColor
      * shadowColor will also result in no shadow. If the shadowImage is not a template image, then it will be rendered
      * regardless of the value of shadowColor.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -310,6 +349,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Use an image for the shadow. See shadowColor for how they interact.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

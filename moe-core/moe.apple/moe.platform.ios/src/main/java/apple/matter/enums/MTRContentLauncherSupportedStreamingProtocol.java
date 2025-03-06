@@ -4,7 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 17.4
+ * Deprecated-Message: Please use MTRContentLauncherSupportedProtocolsBitmap
  */
+@Deprecated
 @Generated
 public final class MTRContentLauncherSupportedStreamingProtocol {
     @Generated
@@ -13,10 +16,14 @@ public final class MTRContentLauncherSupportedStreamingProtocol {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRContentLauncherSupportedProtocolsBitmapDASH
      */
-    @Generated public static final int DASH = 0x00000001;
+    @Deprecated @Generated public static final int DASH = 0x00000001;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRContentLauncherSupportedProtocolsBitmapHLS
      */
-    @Generated public static final int HLS = 0x00000002;
+    @Deprecated @Generated public static final int HLS = 0x00000002;
 }

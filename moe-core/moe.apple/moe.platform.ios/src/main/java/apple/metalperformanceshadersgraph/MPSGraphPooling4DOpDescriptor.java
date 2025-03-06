@@ -28,18 +28,18 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This class defines parameters for a 4d pooling operation.
+ * The class that defines the parameters for a 4D pooling operation.
  * 
  * Use this descriptor with the following methods:
- * ``MPSGraph/maxPooling4DWithSourceTensor:descriptor:name:``,
- * ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:``,
- * ``MPSGraph/maxPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:``,
- * ``MPSGraph/maxPooling4DGradientWithGradientTensor:indicesTensor:outputShape:descriptor:name:``,
- * ``MPSGraph/maxPooling4DGradientWithGradientTensor:indicesTensor:outputShapeTensor:descriptor:name:``,
- * ``MPSGraph/avgPooling4DWithSourceTensor:descriptor:name:``,
- * ``MPSGraph/avgPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:``,
- * ``MPSGraph/L2NormPooling4DWithSourceTensor:descriptor:name:`` and
- * ``MPSGraph/L2NormPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:``.
+ * - ``MPSGraph/maxPooling4DWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/maxPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:``
+ * - ``MPSGraph/maxPooling4DGradientWithGradientTensor:indicesTensor:outputShape:descriptor:name:``
+ * - ``MPSGraph/maxPooling4DGradientWithGradientTensor:indicesTensor:outputShapeTensor:descriptor:name:``
+ * - ``MPSGraph/avgPooling4DWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/avgPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:``
+ * - ``MPSGraph/L2NormPooling4DWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/L2NormPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:``
  * 
  * API-Since: 15.0
  */
@@ -89,7 +89,10 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     /**
      * Affects how MPSGraph computes the output size: if set to `YES` then output size is
      * computed by rounding up instead of down when dividing input size by stride.
+     * 
      * Default value: `NO`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("ceilMode")
@@ -121,12 +124,14 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     public static native String description_static();
 
     /**
-     * Creates a 4d pooling descriptor with default values.
+     * Creates a 4D pooling descriptor with default values.
      * 
      * - Parameters:
      * - kernelSizes: See `kernelSizes` property.
      * - paddingStyle: See `paddingStyle` property.
      * - Returns: The descriptor on autoreleasepool.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("descriptorWithKernelSizes:paddingStyle:")
@@ -134,7 +139,7 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
             @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long paddingStyle);
 
     /**
-     * Creates a 4d pooling descriptor with given values.
+     * Creates a 4D pooling descriptor with given values.
      * 
      * - Parameters:
      * - kernelSizes: See `kernelSizes` property.
@@ -143,6 +148,8 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
      * - paddingValues: See `paddingValues` property.
      * - paddingStyle: See `paddingStyle` property.
      * - Returns: The descriptor on autoreleasepool.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("descriptorWithKernelSizes:strides:dilationRates:paddingValues:paddingStyle:")
@@ -154,7 +161,10 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     /**
      * Defines dilation rates for spatial dimensions. Must be four numbers, one for each spatial dimension, fastest
      * running index last.
+     * 
      * Default value: `@[ @1, @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -167,10 +177,14 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     public static native long hash_static();
 
     /**
-     * Defines for average pooling a mode where samples outside the input tensor count as
-     * zeroes in the average computation. Otherwise the result is sum over samples divided by
+     * Defines a mode for average pooling, where samples outside the input tensor count as
+     * zeroes in the average computation.
+     * 
+     * Otherwise the result is sum over samples divided by
      * number of samples that didn't come from padding.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("includeZeroPadToAverage")
@@ -199,7 +213,10 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
 
     /**
      * Defines the pooling window size.
+     * 
      * Must be four numbers, one for each spatial dimension, fastest running index last.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -217,8 +234,11 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     public static native MPSGraphPooling4DOpDescriptor new_objc();
 
     /**
-     * Defines what kind of padding MPSGraph applies to the operation.
+     * Defines what kind of padding graph applies to the operation.
+     * 
      * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("paddingStyle")
@@ -226,12 +246,15 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     public native long paddingStyle();
 
     /**
-     * Defines padding values for spatial dimensions. Must be eight numbers, two for each spatial dimension.
+     * Defines padding values for spatial dimensions which must be eight numbers, two for each spatial dimension.
+     * 
      * For example `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
      * Used only when `paddingStyle = MPSGraphPaddingStyleExplicit`.
      * Default value: `@[ @0, @0, @0, @0, @0, @0, @0, @0 ]`
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -249,7 +272,10 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     /**
      * Affects how MPSGraph computes the output size: if set to `YES` then output size is
      * computed by rounding up instead of down when dividing input size by stride.
+     * 
      * Default value: `NO`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCeilMode:")
@@ -258,17 +284,24 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     /**
      * Defines dilation rates for spatial dimensions. Must be four numbers, one for each spatial dimension, fastest
      * running index last.
+     * 
      * Default value: `@[ @1, @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDilationRates:")
     public native void setDilationRates(@NotNull NSArray<? extends NSNumber> value);
 
     /**
-     * Defines for average pooling a mode where samples outside the input tensor count as
-     * zeroes in the average computation. Otherwise the result is sum over samples divided by
+     * Defines a mode for average pooling, where samples outside the input tensor count as
+     * zeroes in the average computation.
+     * 
+     * Otherwise the result is sum over samples divided by
      * number of samples that didn't come from padding.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIncludeZeroPadToAverage:")
@@ -276,27 +309,36 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
 
     /**
      * Defines the pooling window size.
+     * 
      * Must be four numbers, one for each spatial dimension, fastest running index last.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setKernelSizes:")
     public native void setKernelSizes(@NotNull NSArray<? extends NSNumber> value);
 
     /**
-     * Defines what kind of padding MPSGraph applies to the operation.
+     * Defines what kind of padding graph applies to the operation.
+     * 
      * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPaddingStyle:")
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * Defines padding values for spatial dimensions. Must be eight numbers, two for each spatial dimension.
+     * Defines padding values for spatial dimensions which must be eight numbers, two for each spatial dimension.
+     * 
      * For example `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
      * Used only when `paddingStyle = MPSGraphPaddingStyleExplicit`.
      * Default value: `@[ @0, @0, @0, @0, @0, @0, @0, @0 ]`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPaddingValues:")
@@ -305,7 +347,10 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     /**
      * Defines strides for spatial dimensions. Must be four numbers, one for each spatial dimension, fastest running
      * index last.
+     * 
      * Default value: `@[ @1, @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setStrides:")
@@ -318,7 +363,10 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
     /**
      * Defines strides for spatial dimensions. Must be four numbers, one for each spatial dimension, fastest running
      * index last.
+     * 
      * Default value: `@[ @1, @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -336,6 +384,7 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
 
     /**
      * Defines the data type for returned indices.
+     * 
      * Use this in conjunction with ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:`` API.
      * Currently MPSGraph supports the following datatypes: `MPSDataTypeInt32`.
      * Default value: `MPSDataTypeInt32`.
@@ -348,6 +397,7 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
 
     /**
      * Defines the mode for returned indices of maximum values within each pooling window.
+     * 
      * Use this in conjunction with ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:`` API.
      * If `returnIndicesMode = MPSGraphPoolingReturnIndicesNone` then only the first result
      * MPSGraph returns from ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:``
@@ -363,6 +413,7 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
 
     /**
      * Defines the data type for returned indices.
+     * 
      * Use this in conjunction with ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:`` API.
      * Currently MPSGraph supports the following datatypes: `MPSDataTypeInt32`.
      * Default value: `MPSDataTypeInt32`.
@@ -375,6 +426,7 @@ public class MPSGraphPooling4DOpDescriptor extends MPSGraphObject implements NSC
 
     /**
      * Defines the mode for returned indices of maximum values within each pooling window.
+     * 
      * Use this in conjunction with ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:`` API.
      * If `returnIndicesMode = MPSGraphPoolingReturnIndicesNone` then only the first result
      * MPSGraph returns from ``MPSGraph/maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:``

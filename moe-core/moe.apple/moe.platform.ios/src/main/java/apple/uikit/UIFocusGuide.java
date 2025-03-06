@@ -172,6 +172,8 @@ public class UIFocusGuide extends UILayoutGuide {
     /**
      * If disabled, UIFocusGuides are ignored by the focus engine, but still participate in layout. Modifying this flag
      * allows you to conditionally enable or disable certain focus behaviors. YES by default.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isEnabled")
@@ -180,6 +182,8 @@ public class UIFocusGuide extends UILayoutGuide {
     /**
      * If disabled, UIFocusGuides are ignored by the focus engine, but still participate in layout. Modifying this flag
      * allows you to conditionally enable or disable certain focus behaviors. YES by default.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEnabled:")

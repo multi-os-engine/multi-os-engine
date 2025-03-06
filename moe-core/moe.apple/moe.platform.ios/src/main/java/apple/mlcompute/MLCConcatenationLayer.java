@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A concatenation layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -101,7 +100,11 @@ public class MLCConcatenationLayer extends MLCLayer {
      * The dimension (or axis) along which to concatenate tensors
      * 
      * The default value is 1 (which typically represents features channels)
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dimension")
     @NUInt
@@ -142,7 +145,11 @@ public class MLCConcatenationLayer extends MLCLayer {
      * Create a concatenation layer
      * 
      * @return A new concatenation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layer")
     public static native MLCConcatenationLayer layer();
@@ -152,7 +159,11 @@ public class MLCConcatenationLayer extends MLCLayer {
      * 
      * @param dimension The concatenation dimension
      * @return A new concatenation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDimension:")
     public static native MLCConcatenationLayer layerWithDimension(@NUInt long dimension);
@@ -178,6 +189,7 @@ public class MLCConcatenationLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 public interface CPTabBarTemplateDelegate {
     /**
      * The user has selected one of the tabs in the tab bar template, bringing the selected template to the foreground.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("tabBarTemplate:didSelectTemplate:")

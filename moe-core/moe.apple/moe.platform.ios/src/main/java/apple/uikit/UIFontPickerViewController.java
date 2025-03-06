@@ -93,6 +93,9 @@ public class UIFontPickerViewController extends UIViewController {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("configuration")
@@ -102,6 +105,9 @@ public class UIFontPickerViewController extends UIViewController {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -128,6 +134,8 @@ public class UIFontPickerViewController extends UIViewController {
     /**
      * UIFontPickerViewController allows selecting a font family or specific face based on the configuration provided.
      * Mutating the configuration after invoking the initializer has no effect on the view controller.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithConfiguration:")
@@ -174,16 +182,25 @@ public class UIFontPickerViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("selectedFontDescriptor")
     public native UIFontDescriptor selectedFontDescriptor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UIFontPickerViewControllerDelegate value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIFontPickerViewControllerDelegate value) {
         Object __old = delegate();
@@ -196,6 +213,9 @@ public class UIFontPickerViewController extends UIViewController {
         }
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setSelectedFontDescriptor:")
     public native void setSelectedFontDescriptor(@Nullable UIFontDescriptor value);

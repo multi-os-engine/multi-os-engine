@@ -195,6 +195,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * specifies the store a newly inserted object will be saved in. Unnecessary unless there are multiple writable
      * persistent stores added to the NSPersistentStoreCoordinator which support this object's entity.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("assignObject:toPersistentStore:")
@@ -232,10 +234,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native long countForFetchRequestError(@NotNull NSFetchRequest<?> request,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("deleteObject:")
     public native void deleteObject(@NotNull NSManagedObject object);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("deletedObjects")
@@ -245,6 +253,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * marks an object for conflict detection, which means that the save fails if the object has been altered in the
      * persistent store by another application. This allows optimistic locking for unchanged objects. Conflict detection
      * is always performed on changed or deleted objects.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("detectConflictsForObject:")
@@ -262,6 +272,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * create a predicate like [NSComparisonPredicate predicateWithLeftExpression:[NSExpression
      * expressionForKeyPath:@"objectID"] rightExpression:[NSExpression expressionForConstantValue:<object id>]
      * modifier:NSDirectPredicateModifier type:NSEqualToPredicateOperatorType options:0]
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -298,6 +310,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native NSManagedObject existingObjectWithIDError(@NotNull NSManagedObjectID objectID,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("hasChanges")
     public native boolean hasChanges();
@@ -323,10 +338,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("initWithConcurrencyType:")
     public native NSManagedObjectContext initWithConcurrencyType(@NUInt long ct);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("insertObject:")
     public native void insertObject(@NotNull NSManagedObject object);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("insertedObjects")
@@ -351,6 +372,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * default: NSErrorMergePolicy
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -370,6 +393,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * returns the object for the specified ID if it is registered in the context already or nil. It never performs I/O.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -380,6 +405,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * returns the object for the specified ID if it is already registered, otherwise it creates a fault corresponding
      * to that objectID. It never returns nil, and never performs I/O. The object specified by objectID is assumed to
      * exist, and if that assumption is wrong the fault may throw an exception when used.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -388,6 +415,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * key-value observation
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("observeValueForKeyPath:ofObject:change:context:")
@@ -441,6 +470,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * coordinator which provides model and handles persistency (multiple contexts can share a coordinator)
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -450,6 +481,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * usually contexts process changes to the object graph coalesced at the end of the event - this method triggers it
      * explicitly
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("processPendingChanges")
@@ -457,6 +490,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * The default is YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("propagatesDeletesAtEndOfEvent")
@@ -476,6 +511,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("queryGenerationToken")
     public native NSQueryGenerationToken queryGenerationToken();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("redo")
     public native void redo();
@@ -494,31 +532,47 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * if flag is YES, merges an object with the state of the object available in the persistent store coordinator; if
      * flag is NO, simply refaults an object without merging (which also causes other related managed objects to be
      * released, so you can use this method to trim the portion of your object graph you want to hold in memory)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("refreshObject:mergeChanges:")
     public native void refreshObjectMergeChanges(@NotNull NSManagedObject object, boolean flag);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("registeredObjects")
     public native NSSet<? extends NSManagedObject> registeredObjects();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("reset")
     public native void reset();
 
     /**
      * The default is NO.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("retainsRegisteredObjects")
     public native boolean retainsRegisteredObjects();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("rollback")
     public native void rollback();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("save:")
     public native boolean save(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
@@ -535,6 +589,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * default: NSErrorMergePolicy
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMergePolicy:")
@@ -558,6 +614,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * coordinator which provides model and handles persistency (multiple contexts can share a coordinator)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setPersistentStoreCoordinator:")
@@ -565,6 +623,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * The default is YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setPropagatesDeletesAtEndOfEvent:")
@@ -601,6 +661,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * The default is NO.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setRetainsRegisteredObjects:")
@@ -620,11 +682,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * a negative value is considered infinite. The default is infinite staleness.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setStalenessInterval:")
     public native void setStalenessInterval(double value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setUndoManager:")
     public native void setUndoManager(@Nullable NSUndoManager value);
@@ -659,6 +726,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * a negative value is considered infinite. The default is infinite staleness.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("stalenessInterval")
@@ -674,10 +743,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("tryLock")
     public native boolean tryLock();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("undo")
     public native void undo();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("undoManager")
@@ -688,6 +763,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("unlock")
     public native void unlock();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("updatedObjects")

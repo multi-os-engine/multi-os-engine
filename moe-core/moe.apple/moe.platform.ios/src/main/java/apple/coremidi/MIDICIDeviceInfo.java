@@ -33,8 +33,11 @@ import org.jetbrains.annotations.Nullable;
  * 
  * An NSObject containing basic information about a MIDI-CI-capable node.
  * 
- * API-Since: 14.0
+ * API-Since: 12.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported for CoreMIDI
  */
+@Deprecated
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -102,7 +105,12 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
 
     /**
      * 2 bytes
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("family")
@@ -121,6 +129,12 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MIDICIDeviceInfo initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @Generated
     @Selector("initWithDestination:manufacturer:family:model:revision:")
     public native MIDICIDeviceInfo initWithDestinationManufacturerFamilyModelRevision(int midiDestination,
@@ -151,7 +165,12 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
 
     /**
      * 3 bytes
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("manufacturerID")
@@ -159,14 +178,24 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
 
     /**
      * The MIDI destination used by device's MIDI entity for capability inquiries.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("midiDestination")
     public native int midiDestination();
 
     /**
      * 2 bytes
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("modelNumber")
@@ -187,7 +216,12 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
 
     /**
      * 4 bytes
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("revisionLevel")

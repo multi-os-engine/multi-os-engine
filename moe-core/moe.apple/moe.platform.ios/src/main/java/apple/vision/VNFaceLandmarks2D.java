@@ -56,6 +56,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * allPoints the region containing all face landmark points.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -107,6 +109,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * faceContour the region containing the points that describe the face contour from cheek over chin to cheek.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -124,6 +128,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * innerLips the region containing the points describing the outline of the space between the of the lips.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -154,6 +160,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * leftEye the region containing the points describing the outline of the left eye.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -162,6 +170,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * leftEyebrow the region containing the points describing the trace of the left eyebrow.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -171,6 +181,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * leftPupil the region containing the point where the left pupil is located. This value may be inaccurate if
      * the face isBlinking.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -179,6 +191,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * medianLine the region containing the points describing the trace of the center line of the face.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -192,6 +206,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * nose the region containing the points describing the outline of the nose.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -200,6 +216,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * noseCrest the region containing the points describing the trace of the center crest of the nose.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -208,6 +226,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * outer lips the region containing the points describing the outline of the outside of the lips.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -224,6 +244,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * rightEye the region containing the points describing the outline of the right eye.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -232,6 +254,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     /**
      * rightEyebrow the region containing the points describing the trace of the right eyebrow.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -241,6 +265,8 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * rightPupil the region containing the point where the right pupil is located. This value may be inaccurate if
      * the face isBlinking.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

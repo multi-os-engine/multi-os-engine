@@ -85,6 +85,9 @@ public class PKAddPaymentPassViewController extends UIViewController {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("canAddPaymentPass")
     public static native boolean canAddPaymentPass();
@@ -175,6 +178,9 @@ public class PKAddPaymentPassViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -196,6 +202,8 @@ public class PKAddPaymentPassViewController extends UIViewController {
 
     /**
      * This controller should be presented with -[UIViewController presentViewController:animated:completion:].
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithRequestConfiguration:delegate:")
@@ -203,11 +211,17 @@ public class PKAddPaymentPassViewController extends UIViewController {
             @NotNull PKAddPaymentPassRequestConfiguration configuration,
             @Nullable @Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate delegate);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate value) {
         Object __old = delegate();

@@ -125,6 +125,8 @@ public class MPSCNNBatchNormalizationStatisticsGradient extends MPSCNNGradientKe
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNBatchNormalizationStatisticsGradient object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")

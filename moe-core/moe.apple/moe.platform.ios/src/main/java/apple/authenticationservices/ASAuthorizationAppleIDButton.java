@@ -206,6 +206,9 @@ public class ASAuthorizationAppleIDButton extends UIControl {
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("buttonWithType:style:")
     public static native ASAuthorizationAppleIDButton buttonWithTypeStyle(@NInt long type, @NInt long style);
@@ -269,6 +272,9 @@ public class ASAuthorizationAppleIDButton extends UIControl {
     @Selector("init")
     public native ASAuthorizationAppleIDButton init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithAuthorizationButtonType:authorizationButtonStyle:")
     public native ASAuthorizationAppleIDButton initWithAuthorizationButtonTypeAuthorizationButtonStyle(@NInt long type,

@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A softmax layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -99,7 +98,11 @@ public class MLCSoftmaxLayer extends MLCLayer {
      * [@property] dimension
      * 
      * The dimension over which softmax operation should be performed
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dimension")
     @NUInt
@@ -141,7 +144,11 @@ public class MLCSoftmaxLayer extends MLCLayer {
      * 
      * @param operation The softmax operation
      * @return A new softmax layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithOperation:")
     public static native MLCSoftmaxLayer layerWithOperation(int operation);
@@ -152,7 +159,11 @@ public class MLCSoftmaxLayer extends MLCLayer {
      * @param operation The softmax operation
      * @param dimension The dimension over which softmax operation should be performed
      * @return A new softmax layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithOperation:dimension:")
     public static native MLCSoftmaxLayer layerWithOperationDimension(int operation, @NUInt long dimension);
@@ -166,7 +177,11 @@ public class MLCSoftmaxLayer extends MLCLayer {
      * [@property] operation
      * 
      * The softmax operation. Supported values are softmax and log softmax.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("operation")
     public native int operation();
@@ -187,6 +202,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

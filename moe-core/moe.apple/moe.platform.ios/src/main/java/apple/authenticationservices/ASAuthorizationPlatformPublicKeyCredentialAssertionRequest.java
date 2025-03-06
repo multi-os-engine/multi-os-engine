@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASAuthorizationWebBrowserPlatformPublicKeyCredentialAssertionRequest;
 
 /**
  * API-Since: 15.0
@@ -37,7 +38,8 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ASAuthorizationPlatformPublicKeyCredentialAssertionRequest extends ASAuthorizationRequest implements
-        ASAuthorizationPublicKeyCredentialAssertionRequest {
+        ASAuthorizationPublicKeyCredentialAssertionRequest,
+        ASAuthorizationWebBrowserPlatformPublicKeyCredentialAssertionRequest {
     static {
         NatJ.register();
     }
@@ -231,4 +233,32 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertionRequest extends 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("clientData")
+    @Nullable
+    public native ASPublicKeyCredentialClientData clientData();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prf")
+    @Nullable
+    public native ASAuthorizationPublicKeyCredentialPRFAssertionInput prf();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setPrf:")
+    public native void setPrf(@Nullable ASAuthorizationPublicKeyCredentialPRFAssertionInput value);
+
+    @Generated
+    @Selector("setShouldShowHybridTransport:")
+    public native void setShouldShowHybridTransport(boolean value);
+
+    @Generated
+    @Selector("shouldShowHybridTransport")
+    public native boolean shouldShowHybridTransport();
 }

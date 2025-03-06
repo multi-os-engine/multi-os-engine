@@ -64,6 +64,8 @@ public class UICollectionLayoutSectionOrthogonalScrollingProperties extends NSOb
 
     /**
      * The orthogonal scroll view's bounce behavior.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("bounce")
@@ -104,6 +106,8 @@ public class UICollectionLayoutSectionOrthogonalScrollingProperties extends NSOb
 
     /**
      * The orthogonal scroll view's rate of deceleration after the user lifts their finger.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("decelerationRate")
@@ -160,6 +164,8 @@ public class UICollectionLayoutSectionOrthogonalScrollingProperties extends NSOb
 
     /**
      * The orthogonal scroll view's bounce behavior.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setBounce:")
@@ -167,6 +173,8 @@ public class UICollectionLayoutSectionOrthogonalScrollingProperties extends NSOb
 
     /**
      * The orthogonal scroll view's rate of deceleration after the user lifts their finger.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDecelerationRate:")

@@ -27,6 +27,8 @@ public interface SNResultsObserving {
      * 
      * If an error is produced by a request, that request will not produce any more results, and is in a terminal state.
      * The request:didFailWithError and requestDidComplete methods are mutually exclusive.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -41,6 +43,8 @@ public interface SNResultsObserving {
      * 
      * This function will be called each time a new analysis result is available. Different types of analysis may
      * produce results at different rates, spanning different time ranges.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("request:didProduceResult:")
@@ -52,6 +56,8 @@ public interface SNResultsObserving {
      * 
      * If an analysis request completes normally, that request will not produce any more results, and is in a terminal
      * state. The request:didFailWithError and requestDidComplete methods are mutually exclusive.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

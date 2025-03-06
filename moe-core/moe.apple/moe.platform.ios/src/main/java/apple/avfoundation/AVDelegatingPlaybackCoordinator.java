@@ -114,6 +114,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * @param options
      *                Additional configuration of the rate change. For details see
      *                AVDelegatingPlaybackCoordinatorRateChangeOptions.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("coordinateRateChangeToRate:options:")
@@ -134,6 +136,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      *                The time the group should seek to when the command ends.
      * @param options
      *                Additional configuration of the seek. For details see AVDelegatingPlaybackCoordinatorSeekOptions.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("coordinateSeekToTime:options:")
@@ -144,6 +148,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * 
      * The item identifier of the current item. Previously set by a call to
      * transitionToItemWithIdentifier:proposingInitialTimingBasedOnTimebase:
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -174,6 +180,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * 
      * Use this to create an AVPlaybackCoordinator when playback is not driven by an AVPlayer.
      * [@note] See AVPlayer's playbackCoordinator property to get an AVPlaybackCoordinator for an AVPlayer.
+     * 
+     * API-Since: 15.0
      * 
      * @param playbackControlDelegate
      *                                An object conforming to the AVPlaybackCoordinatorPlaybackControlDelegate protocol
@@ -216,6 +224,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * [@property] playbackControlDelegate
      * 
      * The custom player implementation controlled by the coordinator.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -231,6 +241,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * 
      * Use this method when the playback object is in a state that doesn't match the group for some reason and should be
      * re-synchronized.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("reapplyCurrentItemStateToPlaybackControlDelegate")
@@ -276,6 +288,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      *                         AVFoundation playback objects such as AVSampleBufferRenderSynchronizer.
      *                         It can also be created manually using CMTimebaseCreateWithSourceClock. The timebase will
      *                         only be used to take a snapshot of its immediate timing. It will not be observed further.
+     * 
+     *                         API-Since: 15.0
      */
     @Generated
     @Selector("transitionToItemWithIdentifier:proposingInitialTimingBasedOnTimebase:")

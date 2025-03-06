@@ -95,6 +95,8 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
      * Unique identifier as provided by the app hosting the collaboration
      * 
      * This identifier is unique across platforms and shares
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -103,6 +105,8 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
 
     /**
      * UTI type for this collaboration highlight
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -118,6 +122,8 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
 
     /**
      * Date when the file was created
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -206,6 +212,8 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
      * Title of the collaboration highlight
      * 
      * Title of the collaboration if provided by the app hosting the collaboration
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

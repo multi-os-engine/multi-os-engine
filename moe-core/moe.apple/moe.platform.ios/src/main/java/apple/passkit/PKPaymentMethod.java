@@ -161,6 +161,8 @@ public class PKPaymentMethod extends NSObject {
     /**
      * A string describing the instrument that's suitable for display
      * This property will be nil prior to the user authorizing the payment
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -174,6 +176,8 @@ public class PKPaymentMethod extends NSObject {
     /**
      * The payment network that backs the instrument. Suitable for display.
      * This property will be nil prior to the user authorizing the payment
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -195,6 +199,8 @@ public class PKPaymentMethod extends NSObject {
 
     /**
      * The underlying instrument type (Credit, Debit, etc)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("type")

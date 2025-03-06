@@ -78,6 +78,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * The bounds of the drawing's contents, taking into account the rendered width of all content.
      * If these bounds are used to render an image with `imageFromRect:scale:`, no contents will be cropped.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bounds")
@@ -116,6 +118,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
      * Generate a data representation of the drawing.
      * 
      * @return A NSData object containing a representation of the drawing.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -135,6 +139,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @param drawing The drawing to append.
      * @return A new copy of this drawing with `drawing` appended onto it.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -146,6 +152,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @param transform The transform to apply to this drawing.
      * @return A new copy of this drawing with `transform` applied.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -161,6 +169,9 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("imageFromRect:scale:")
@@ -168,6 +179,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes and returns a blank drawing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("init")
@@ -185,6 +198,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
      *              Set to NULL to ignore errors.
      * @return On success, an initialized PKDrawing object. If nil, the outError parameter
      *         contains an NSError instance describing the problem.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithData:error:")

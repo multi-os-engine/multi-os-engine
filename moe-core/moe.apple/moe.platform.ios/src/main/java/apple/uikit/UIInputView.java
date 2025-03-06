@@ -428,6 +428,9 @@ public class UIInputView extends UIView {
     @Selector("init")
     public native UIInputView init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIInputView initWithCoder(@NotNull NSCoder coder);
@@ -436,10 +439,16 @@ public class UIInputView extends UIView {
     @Selector("initWithFrame:")
     public native UIInputView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithFrame:inputViewStyle:")
     public native UIInputView initWithFrameInputViewStyle(@ByValue CGRect frame, @NInt long inputViewStyle);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("inputViewStyle")
     @NInt

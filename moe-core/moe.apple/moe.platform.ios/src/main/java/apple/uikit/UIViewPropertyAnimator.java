@@ -167,6 +167,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
      * block of another propertyAnimator that is interruptible, the implicit
      * animations defined by this call will be tracked by the outer
      * propertyAnimator.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -219,11 +221,16 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * Defaults to 0. This property is set when calling -[UIView startAnimationAfterDelay:].
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("delay")
     public native double delay();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -241,6 +248,9 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("init")
     public native UIViewPropertyAnimator init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithDuration:controlPoint1:controlPoint2:animations:")
     public native UIViewPropertyAnimator initWithDurationControlPoint1ControlPoint2Animations(double duration,
@@ -249,17 +259,25 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * All convenience initializers return an animator which is not running.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithDuration:curve:animations:")
     public native UIViewPropertyAnimator initWithDurationCurveAnimations(double duration, @NInt long curve,
             @Nullable @ObjCBlock(name = "call_initWithDurationCurveAnimations") Block_initWithDurationCurveAnimations animations);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithDuration:dampingRatio:animations:")
     public native UIViewPropertyAnimator initWithDurationDampingRatioAnimations(double duration, @NFloat double ratio,
             @Nullable @ObjCBlock(name = "call_initWithDurationDampingRatioAnimations") Block_initWithDurationDampingRatioAnimations animations);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithDuration:timingParameters:")
     public native UIViewPropertyAnimator initWithDurationTimingParameters(double duration,
@@ -267,6 +285,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * Defaults to YES. Raises if set on an active animator.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isInterruptible")
@@ -274,6 +294,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * Defaults to YES. Raises if set on an active animator.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setInterruptible:")
@@ -281,6 +303,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * Defaults to NO. Set if you need to manage the the hit-testing of animating view hierarchies
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isManualHitTestingEnabled")
@@ -288,6 +312,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * Defaults to NO. Set if you need to manage the the hit-testing of animating view hierarchies
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setManualHitTestingEnabled:")
@@ -307,6 +333,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * Defaults to YES. Raises if set on an active animator.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isUserInteractionEnabled")
@@ -314,6 +342,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * Defaults to YES. Raises if set on an active animator.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUserInteractionEnabled:")
@@ -344,6 +374,9 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("stopAnimation:")
     public native void stopAnimation(boolean withoutFinishing);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("timingParameters")

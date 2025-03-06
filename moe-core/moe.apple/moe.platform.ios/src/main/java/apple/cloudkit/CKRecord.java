@@ -181,6 +181,8 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * A special property that returns an array of token generated from all the string field values in the record.
      * 
      * These tokens have been normalized for the current locale, so they are suitable for performing full-text searches.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -199,6 +201,9 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("creationDate")
@@ -206,6 +211,8 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
 
     /**
      * This is a User Record recordID, identifying the user that created this record.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -222,6 +229,8 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * be aware that
      * - any record values you had set on the original instance, but had not saved, will be lost
      * - the reconstituted CKRecord's @c changedKeys will be empty
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("encodeSystemFieldsWithCoder:")
@@ -241,27 +250,40 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
 
     /**
      * This creates the record in the default zone.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithRecordType:")
     public native CKRecord initWithRecordType(@NotNull String recordType);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithRecordType:recordID:")
     public native CKRecord initWithRecordTypeRecordID(@NotNull String recordType, @NotNull CKRecordID recordID);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithRecordType:zoneID:")
     public native CKRecord initWithRecordTypeZoneID(@NotNull String recordType, @NotNull CKRecordZoneID zoneID);
 
     /**
      * This is a User Record recordID, identifying the user that last modified this record.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("lastModifiedUserRecordID")
     public native CKRecordID lastModifiedUserRecordID();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("modificationDate")
@@ -305,17 +327,25 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     /**
      * Change tags are updated by the server to a unique value every time a record is modified. A different change tag
      * necessarily means that the contents of the record are different.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("recordChangeTag")
     public native String recordChangeTag();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("recordID")
     public native CKRecordID recordID();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("recordType")

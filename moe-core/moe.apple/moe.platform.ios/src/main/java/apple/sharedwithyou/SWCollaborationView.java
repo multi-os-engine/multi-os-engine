@@ -61,6 +61,9 @@ public class SWCollaborationView extends UIView {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("activeParticipantCount")
     @NUInt
@@ -242,6 +245,8 @@ public class SWCollaborationView extends UIView {
      * If you are using the built in manage share button, this delegate property will be forwarded along to the
      * UICloudSharingController that button presents. If you have your own and suppress the provided one via
      * setShowManageButton, this does nothing.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -249,6 +254,9 @@ public class SWCollaborationView extends UIView {
     @MappedReturn(ObjCObjectMapper.class)
     public native UICloudSharingControllerDelegate cloudSharingControllerDelegate();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("cloudSharingDelegate")
@@ -264,6 +272,9 @@ public class SWCollaborationView extends UIView {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -278,6 +289,8 @@ public class SWCollaborationView extends UIView {
      * Dismisses the popover, if presented.
      * 
      * @param completion Called when the popover dismissal finishes.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("dismissPopover:")
@@ -296,16 +309,25 @@ public class SWCollaborationView extends UIView {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("headerImage")
     public native UIImage headerImage();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("headerSubtitle")
     public native String headerSubtitle();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("headerTitle")
@@ -327,6 +349,9 @@ public class SWCollaborationView extends UIView {
     @Selector("initWithFrame:")
     public native SWCollaborationView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithItemProvider:")
     public native SWCollaborationView initWithItemProvider(@NotNull NSItemProvider itemProvider);
@@ -361,6 +386,8 @@ public class SWCollaborationView extends UIView {
     /**
      * sets the title of the manage participants button in the collaboration popover to the given string, defaults to
      * "Manage Share"
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -402,6 +429,9 @@ public class SWCollaborationView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setActiveParticipantCount:")
     public native void setActiveParticipantCount(@NUInt long value);
@@ -470,6 +500,8 @@ public class SWCollaborationView extends UIView {
      * If you are using the built in manage share button, this delegate property will be forwarded along to the
      * UICloudSharingController that button presents. If you have your own and suppress the provided one via
      * setShowManageButton, this does nothing.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setCloudSharingControllerDelegate:")
@@ -480,6 +512,8 @@ public class SWCollaborationView extends UIView {
      * If you are using the built in manage share button, this delegate property will be forwarded along to the
      * UICloudSharingController that button presents. If you have your own and suppress the provided one via
      * setShowManageButton, this does nothing.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     public void setCloudSharingControllerDelegate(
@@ -494,11 +528,17 @@ public class SWCollaborationView extends UIView {
         }
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setCloudSharingDelegate:")
     public native void setCloudSharingDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     public void setCloudSharingDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value) {
@@ -512,14 +552,23 @@ public class SWCollaborationView extends UIView {
         }
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setContentView:")
     public native void setContentView(@NotNull UIView detailViewListContentView);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SWCollaborationViewDelegate value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SWCollaborationViewDelegate value) {
         Object __old = delegate();
@@ -532,14 +581,23 @@ public class SWCollaborationView extends UIView {
         }
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setHeaderImage:")
     public native void setHeaderImage(@NotNull UIImage value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setHeaderSubtitle:")
     public native void setHeaderSubtitle(@NotNull String value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setHeaderTitle:")
     public native void setHeaderTitle(@NotNull String value);
@@ -547,6 +605,8 @@ public class SWCollaborationView extends UIView {
     /**
      * sets the title of the manage participants button in the collaboration popover to the given string, defaults to
      * "Manage Share"
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setManageButtonTitle:")
@@ -557,6 +617,8 @@ public class SWCollaborationView extends UIView {
      * YES
      * 
      * @param showManageButton whether the button should be hidden
+     * 
+     *                         API-Since: 16.0
      */
     @Generated
     @Selector("setShowManageButton:")

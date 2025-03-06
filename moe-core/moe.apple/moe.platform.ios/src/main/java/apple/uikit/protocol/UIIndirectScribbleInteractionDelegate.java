@@ -37,6 +37,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      * 
      * @param interaction       The interaction notifying about writing state changes.
      * @param elementIdentifier The identifier of the element the user finished writing into.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -61,6 +63,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      *                          success, the first parameter should be the text input that became first responder and
      *                          that will handle text operations for this element. On failure, call the completion with
      *                          a nil parameter.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("indirectScribbleInteraction:focusElementIfNeeded:referencePoint:completion:")
@@ -83,6 +87,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      * @param interaction       The interaction asking for the element's frame.
      * @param elementIdentifier The identifier of the element the interaction is asking about.
      * @return Frame for the element, in the interactions's view coordinate system.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("indirectScribbleInteraction:frameForElement:")
@@ -96,6 +102,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      * @param interaction       The interaction asking for the focused state.
      * @param elementIdentifier The identifier of the element the interaction is asking about.
      * @return Return YES if the element is the one currently focused.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("indirectScribbleInteraction:isElementFocused:")
@@ -111,6 +119,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      *                    coordinate system. Only elements intersecting this rect should be returned.
      * @param completion  You must call the completion handler, synchronously or asynchronously, with an array of
      *                    identifiers of the available elements, or an empty array if no elements are available.
+     * 
+     *                    API-Since: 14.0
      */
     @Generated
     @Selector("indirectScribbleInteraction:requestElementsInRect:completion:")
@@ -136,6 +146,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      * @param interaction       The interaction asking about delaying focus.
      * @param elementIdentifier The identifier of the element the interaction is asking about.
      * @return Return YES to delay focusing the element.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -153,6 +165,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      * 
      * @param interaction       The interaction notifying about writing state changes.
      * @param elementIdentifier The identifier of the element the user is writing into.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @IsOptional

@@ -263,8 +263,11 @@ public class PKPass extends PKObject {
     public native PKPaymentPass paymentPass();
 
     /**
-     * may be useful for sorting
+     * API-Since: 6.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use relevantDates
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("relevantDate")
@@ -300,4 +303,12 @@ public class PKPass extends PKObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("relevantDates")
+    @NotNull
+    public native NSArray<?> relevantDates();
 }

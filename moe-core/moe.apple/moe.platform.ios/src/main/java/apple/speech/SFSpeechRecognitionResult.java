@@ -169,6 +169,9 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("bestTranscription")
@@ -195,6 +198,8 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
 
     /**
      * True if the hypotheses will not change; speech processing is complete.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isFinal")
@@ -208,6 +213,8 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
 
     /**
      * Hypotheses for possible transcriptions, sorted in descending order of confidence (more likely first)
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

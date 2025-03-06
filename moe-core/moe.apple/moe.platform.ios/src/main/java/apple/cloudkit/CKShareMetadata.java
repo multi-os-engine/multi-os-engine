@@ -168,6 +168,9 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("containerIdentifier")
@@ -192,16 +195,25 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @Selector("initWithCoder:")
     public native CKShareMetadata initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("ownerIdentity")
     public native CKUserIdentity ownerIdentity();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("participantPermission")
     @NInt
     public native long participantPermission();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("participantStatus")
     @NInt
@@ -220,6 +232,8 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     /**
      * This is only present if the share metadata was returned from a CKFetchShareMetadataOperation with
      * shouldFetchRootRecord set to YES
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -236,6 +250,9 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @Selector("rootRecordID")
     public native CKRecordID rootRecordID();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("share")

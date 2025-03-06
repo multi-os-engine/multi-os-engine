@@ -632,9 +632,6 @@ public final class Enums {
     private Enums() {
     }
 
-    @Generated public static final int _SparseMethodCG = 0x00000000;
-    @Generated public static final int _SparseMethodGMRES = 0x00000001;
-    @Generated public static final int _SparseMethodLSMR = 0x00000002;
     /**
      * API-Since: 16.0
      */

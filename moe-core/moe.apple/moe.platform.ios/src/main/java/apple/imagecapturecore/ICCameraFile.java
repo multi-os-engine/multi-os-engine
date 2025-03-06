@@ -592,4 +592,52 @@ public class ICCameraFile extends ICCameraItem {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] fingerprint
+     * 
+     * A fingerprint generated from the camera file data
+     * date, or nil.
+     * 
+     * API-Since: 13.0
+     */
+    @Generated
+    @Selector("fingerprint")
+    @Nullable
+    public native String fingerprint();
+
+    /**
+     * [@property] fingerprintForFileAtURL
+     * 
+     * Generates a fingerprint given a URL
+     * date, or nil.
+     * 
+     * API-Since: 13.0
+     */
+    @Generated
+    @Selector("fingerprintForFileAtURL:")
+    @Nullable
+    public static native String fingerprintForFileAtURL(@NotNull NSURL url);
+
+    /**
+     * requestFingerprintWithCompletion
+     * 
+     * ￼Requests a fingerprint be generated for camera file.
+     * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param completion Completion block called with an NSString*, and an NSError* for status.
+     */
+    @Generated
+    @Selector("requestFingerprintWithCompletion:")
+    public native void requestFingerprintWithCompletion(
+            @ObjCBlock(name = "call_requestFingerprintWithCompletion") @NotNull Block_requestFingerprintWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestFingerprintWithCompletion {
+        @Generated
+        void call_requestFingerprintWithCompletion(@Nullable String arg0, @Nullable NSError arg1);
+    }
 }

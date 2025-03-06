@@ -28,6 +28,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UILargeContentViewerItem {
     /**
      * Returns an image that should be shown in the large content viewer.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -36,6 +38,8 @@ public interface UILargeContentViewerItem {
 
     /**
      * Returns insets appropriate for positioning the image in the viewer so that it appears visually centered.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("largeContentImageInsets")
@@ -44,6 +48,8 @@ public interface UILargeContentViewerItem {
 
     /**
      * Returns a title that should be shown in the large content viewer.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -54,6 +60,8 @@ public interface UILargeContentViewerItem {
      * Returns whether the image should be scaled to a larger size appropriate for the viewer.
      * If not, the image will be shown at its intrinsic size.
      * For best results when scaling, use a PDF asset with its "Preserve Vector Data" checkbox checked.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("scalesLargeContentImage")
@@ -63,6 +71,8 @@ public interface UILargeContentViewerItem {
      * Returns whether the item shows the large content viewer.
      * In general, only views that cannot scale for the full range of Dynamic Type sizes should return YES.
      * For this property to take effect, the item or an ancestor view must have a UILargeContentViewerInteraction.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("showsLargeContentViewer")

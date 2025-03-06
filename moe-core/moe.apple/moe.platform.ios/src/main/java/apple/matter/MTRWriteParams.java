@@ -26,18 +26,23 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * MTRWriteParams
  * This is used to control the behavior of cluster writes.
  * If not provided (i.e. nil passed for the CHIPWriteParams argument), will be
  * treated as if a default-initialized object was passed in.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRWriteParams extends NSObject implements NSCopying {
+public class MTRWriteParams extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -98,6 +103,8 @@ public class MTRWriteParams extends NSObject implements NSCopying {
      * 
      * If not nil, the write will only succeed if the current data version of
      * the cluster matches the provided data version.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("dataVersion")
@@ -161,6 +168,8 @@ public class MTRWriteParams extends NSObject implements NSCopying {
      * 
      * If not nil, the write will only succeed if the current data version of
      * the cluster matches the provided data version.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setDataVersion:")
@@ -180,6 +189,8 @@ public class MTRWriteParams extends NSObject implements NSCopying {
      * request) within the timeout window.
      * 
      * This value is specified in milliseconds.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setTimedWriteTimeout:")
@@ -207,6 +218,8 @@ public class MTRWriteParams extends NSObject implements NSCopying {
      * request) within the timeout window.
      * 
      * This value is specified in milliseconds.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("timedWriteTimeout")
@@ -222,4 +235,22 @@ public class MTRWriteParams extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTRWriteParams initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

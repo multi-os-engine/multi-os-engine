@@ -113,6 +113,8 @@ public class ARReferenceImage extends NSObject {
      * @param image         The reference image as CGImage.
      * @param orientation   The image orientation.
      * @param physicalWidth The width in meters of the physical object.
+     * 
+     *                      API-Since: 11.3
      */
     @Generated
     @Selector("initWithCGImage:orientation:physicalWidth:")
@@ -125,6 +127,8 @@ public class ARReferenceImage extends NSObject {
      * @param pixelBuffer   The reference image as CVPixelBuffer.
      * @param physicalWidth The width in meters of the physical object.
      * @param orientation   The image orientation.
+     * 
+     *                      API-Since: 11.3
      */
     @Generated
     @Selector("initWithPixelBuffer:orientation:physicalWidth:")
@@ -155,6 +159,8 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * An optional name used to identify the image.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -168,6 +174,8 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * The physical size of the image in meters.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("physicalSize")
@@ -180,6 +188,8 @@ public class ARReferenceImage extends NSObject {
      * @param name   The name of the resource group.
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference images or nil on error.
+     * 
+     *         API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -211,6 +221,8 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * An optional name used to identify the image.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setName:")
@@ -234,7 +246,7 @@ public class ARReferenceImage extends NSObject {
      * @param completionHandler Completion handler invoked when validation is done. The completion handler takes the
      *                          following parameters:
      *                          error - An error that indicates why the image is not suitable for tracking, or nil if no
-     *                          error occured.
+     *                          error occurred.
      * 
      *                          API-Since: 13.0
      */

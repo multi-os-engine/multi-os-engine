@@ -168,7 +168,12 @@ public class INStartAudioCallIntent extends INIntent {
 
     /**
      * Recipients of the audio call.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("contacts")

@@ -106,6 +106,8 @@ public class AVPlaybackSpeed extends NSObject {
      * 
      * Initializes an AVPlaybackSpeed.
      * 
+     * API-Since: 16.0
+     * 
      * @param rate
      *                      The rate to be used when this playback speed is selected.
      * @param localizedName
@@ -143,6 +145,8 @@ public class AVPlaybackSpeed extends NSObject {
      * A localized name for this playback speed.
      * 
      * This name will be used to represent this playback speed in playback UIs where more space is available.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -155,6 +159,8 @@ public class AVPlaybackSpeed extends NSObject {
      * A localized name for this playback speed used when space is limited.
      * 
      * This name will be used to represent this playback speed in playback UIs where limited space is available.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -171,6 +177,8 @@ public class AVPlaybackSpeed extends NSObject {
      * 
      * The rate associated with this object. When this playback speed is selected this rate will be set in response to
      * the play button being pressed.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("rate")
@@ -196,6 +204,8 @@ public class AVPlaybackSpeed extends NSObject {
      * [@property] systemDefaultSpeeds
      * 
      * A list of playback speeds to be used by default across the system.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

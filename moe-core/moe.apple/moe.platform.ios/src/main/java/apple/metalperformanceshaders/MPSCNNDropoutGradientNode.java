@@ -104,6 +104,8 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
      * 
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      * for an easier way to do this
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:keepProbability:seed:maskStrideInPixels:")
@@ -129,6 +131,9 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("keepProbability")
     public native float keepProbability();
@@ -138,6 +143,9 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("maskStrideInPixels")
     @ByValue
@@ -153,6 +161,8 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
      * 
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      * for an easier way to do this
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:keepProbability:seed:maskStrideInPixels:")
@@ -169,6 +179,9 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("seed")
     @NUInt

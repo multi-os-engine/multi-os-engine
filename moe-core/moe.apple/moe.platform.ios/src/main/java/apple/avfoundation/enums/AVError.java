@@ -221,4 +221,8 @@ public final class AVError {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long SandboxExtensionDenied = 0xFFFFFFFFFFFFD194L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long ToneMappingFailed = 0xFFFFFFFFFFFFD193L;
 }

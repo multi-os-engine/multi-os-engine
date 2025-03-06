@@ -184,6 +184,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * be made if the origin source did not report any such information.
      * 
      * @return The MIME type of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -194,6 +196,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * Returns the URL of the receiver.
      * 
      * @return The URL of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -224,6 +228,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * @return The expected content length of the receiver, or -1 if
      *         there is no expectation that can be arrived at regarding expected
      *         content length.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("expectedContentLength")
@@ -243,6 +249,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * Initialize an NSURLResponse with the provided values.
      * 
      * This is the designated initializer for NSURLResponse.
+     * 
+     * API-Since: 2.0
      * 
      * @param URL      the URL
      * @param MIMEType the MIME content type of the response
@@ -267,6 +275,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * This method always returns a valid filename.
      * 
      * @return A suggested filename to use if saving the resource to disk.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -290,6 +300,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * 
      * @return The name of the text encoding of the receiver, or nil if no
      *         text encoding was specified.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated

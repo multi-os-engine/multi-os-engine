@@ -101,6 +101,9 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("extensionContext")
@@ -167,6 +170,8 @@ public class ASCredentialProviderViewController extends UIViewController {
      * If the array of service identifiers is empty, it is expected that the credential list should still show
      * credentials that the user can pick from.
      * 
+     * API-Since: 12.0
+     * 
      * @param serviceIdentifiers the array of service identifiers.
      */
     @Generated
@@ -183,6 +188,8 @@ public class ASCredentialProviderViewController extends UIViewController {
      * completeExtensionConfigurationRequest].
      * [@note] This method only gets called if your extension supports this functionality by specifying
      * "ASCredentialProviderExtensionShowsConfigurationUI": YES in its extension attributes.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("prepareInterfaceForExtensionConfiguration")
@@ -270,7 +277,7 @@ public class ASCredentialProviderViewController extends UIViewController {
     public static native long version_static();
 
     /**
-     * Prepare the view controller to show a list of password and passkey credentials.
+     * Prepare the view controller to show a list of passkey and password credentials.
      * 
      * This method is called by the system to prepare the extension's view controller to present the list of
      * credentials.
@@ -364,16 +371,18 @@ public class ASCredentialProviderViewController extends UIViewController {
      * 
      * After the user selects a credential identity, the system will create a credential request, the contents of
      * which will depend on whether the credential to use is a password or passkey. The request type will match
-     * the type of credential that was requested. Refer to `ASPasswordCredentialRequest` and
-     * `ASPasskeyCredentialRequest` for details.
+     * the type of credential that was requested. Refer to `ASPasswordCredentialRequest`,
+     * `ASPasskeyCredentialRequest`, and `ASOneTimeCodeCredentialRequest` for details.
      * 
      * The system may ask your extension to provide the credential without showing any user interface if possible
      * to enhance the user experience. If your extension can accomplish this (for example, the user’s passwords
      * database is still unlocked from a recent interaction), call `-[ASCredentialProviderExtensionContext
      * completeRequestWithSelectedCredential:completionHandler:]`
-     * for password credentials or `-[ASCredentialProviderExtensionContext
-     * completeAssertionRequestWithSelectedPasskeyCredential:completionHandler:]` for passkey credentials. If an error
-     * occurs, call `-[ASCredentialProviderExtensionContext cancelRequestWithError:]`
+     * for password credentials, `-[ASCredentialProviderExtensionContext
+     * completeAssertionRequestWithSelectedPasskeyCredential:completionHandler:]` for passkey credentials,
+     * or `-[ASCredentialProviderExtensionContext completeOneTimeCodeRequestWithSelectedCredential:completionHandler:]`
+     * for one time code credentials.
+     * If an error occurs, call `-[ASCredentialProviderExtensionContext cancelRequestWithError:]`
      * and pass an error with domain `ASExtensionErrorDomain` and an appropriate error code from
      * `ASExtensionErrorCode`. For example, if your extension requires user interaction because the
      * passwords database needs to be unlocked, pass an error with code `ASExtensionErrorCodeUserInteractionRequired`.
@@ -387,6 +396,11 @@ public class ASCredentialProviderViewController extends UIViewController {
      * ├─ NSExtensionAttributes
      * ├─ ASCredentialProviderExtensionCapabilities
      * ├─ ProvidesPasskeys => true
+     * 
+     * Similarly, your extension needs to specify a true value for the Information Property List key
+     * `ProvidesOneTimeCodes`
+     * under the `ASCredentialProviderExtensionCapabilities` dictionary in order to be presented in
+     * the list of options for one time code requests.
      * 
      * - Note: When this method is called, your extension's view controller is not present on the screen. Do not
      * attempt or expect to show any user interface in this method.
@@ -404,4 +418,96 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Perform a conditional passkey registration, if possible.
+     * 
+     * This method will be called for handling conditional passkey registration requests. A conditional passkey
+     * registration request allows
+     * your extension to opportunistically register passkeys in the background, if and only if you believe the user is
+     * in a good state to do
+     * so. Your extension decides can decide what conditions make sense for whether to fulfill or reject this request.
+     * For example, an
+     * extension may decide to register a passkey only if all of the following conditions are met:
+     * - The user's vault is currently unlocked.
+     * - The user name for the registration request matches that for an existing saved password.
+     * - The matching saved password was filled recently.
+     * - The user does not already have a passkey for this account.
+     * 
+     * 
+     * Fulfilling this request should not remove a user's saved password for this account, but it may mean that the
+     * passkey will be
+     * preferred over the password in future AutoFill invocations, if both are supported.
+     * 
+     * Your extension should complete this request by calling `-[ASCredentialProviderExtensionContext
+     * completeRegistrationRequestWithSelectedPasskeyCredential:completionHandler:]`
+     * or`-[ASCredentialProviderExtensionContext cancelRequestWithError:]`, like for standard registration requests.
+     * However, this request is not allowed to show UI and `ASExtensionErrorCodeUserInteractionRequired` will be treated
+     * like any other error. The intent of this API is to provide a method of performing a background registration only
+     * where easy and
+     * convenient, so no blocking UI or error should ever be shown.
+     * 
+     * To indicate support for this feature, add `SupportsConditionalPasskeyRegistration` under the
+     * `ASCredentialProviderExtensionCapabilities` dictionary.
+     * 
+     * Info.plist
+     * ├─ NSExtension
+     * ├─ NSExtensionAttributes
+     * ├─ ASCredentialProviderExtensionCapabilities
+     * ├─ SupportsConditionalPasskeyRegistration => true
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("performPasskeyRegistrationWithoutUserInteractionIfPossible:")
+    public native void performPasskeyRegistrationWithoutUserInteractionIfPossible(
+            @NotNull ASPasskeyCredentialRequest registrationRequest);
+
+    /**
+     * Prepare the view controller to show a list of all insertable text with user selectable fields.
+     * 
+     * This method is called by the system to prepare the extension's view controller to present a list of any
+     * insertable text with selectable fields.
+     * 
+     * In order for your extension to be presented in the list of options for text insertion request, your
+     * extension needs to specify a true value for the Information Property List key `ProvidesTextToInsert`
+     * under the `ASCredentialProviderExtensionCapabilities` dictionary.
+     * 
+     * Info.plist
+     * ├─ NSExtension
+     * ├─ NSExtensionAttributes
+     * ├─ ASCredentialProviderExtensionCapabilities
+     * ├─ ProvidesTextToInsert => true
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prepareInterfaceForUserChoosingTextToInsert")
+    public native void prepareInterfaceForUserChoosingTextToInsert();
+
+    /**
+     * Prepare the view controller to show a list of one time code credentials.
+     * 
+     * This method is called by the system to prepare the extension's view controller to present the list of
+     * credentials.
+     * A service identifier array is passed which can be used to filter or prioritize the credentials that closely match
+     * each service.
+     * The service identifier array could have zero or more items. If there is more than one item in the array, items
+     * with lower indexes
+     * represent more specific identifiers for which a credential is being requested. For example, the array could
+     * contain identifiers
+     * [m.example.com, example.com] with the first item representing the more specifc service that requires a
+     * credential.
+     * If the array of service identifiers is empty, it is expected that the credential list should still show
+     * credentials that the user can pick from.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param serviceIdentifiers the array of service identifiers.
+     */
+    @Generated
+    @Selector("prepareOneTimeCodeCredentialListForServiceIdentifiers:")
+    public native void prepareOneTimeCodeCredentialListForServiceIdentifiers(
+            @NotNull NSArray<? extends ASCredentialServiceIdentifier> serviceIdentifiers);
 }

@@ -49,7 +49,12 @@ public interface INPayBillIntentHandling {
      *                   intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INPayBillIntentResponse
+     * 
+     *      API-Since: 10.3
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmPayBill:completion:")
@@ -75,7 +80,12 @@ public interface INPayBillIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INPayBillIntentResponse
+     * 
+     *      API-Since: 10.3
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handlePayBill:completion:")
     void handlePayBillCompletion(@NotNull INPayBillIntent intent,
@@ -98,7 +108,12 @@ public interface INPayBillIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.3
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveBillPayeeForPayBill:withCompletion:")
@@ -114,6 +129,12 @@ public interface INPayBillIntentHandling {
         void call_resolveBillPayeeForPayBillWithCompletion(@NotNull INBillPayeeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveBillTypeForPayBill:withCompletion:")
@@ -129,6 +150,12 @@ public interface INPayBillIntentHandling {
         void call_resolveBillTypeForPayBillWithCompletion(@NotNull INBillTypeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveDueDateForPayBill:withCompletion:")
@@ -145,6 +172,12 @@ public interface INPayBillIntentHandling {
                 @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveFromAccountForPayBill:withCompletion:")
@@ -161,6 +194,12 @@ public interface INPayBillIntentHandling {
                 @NotNull INPaymentAccountResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTransactionAmountForPayBill:withCompletion:")
@@ -177,6 +216,12 @@ public interface INPayBillIntentHandling {
                 @NotNull INPaymentAmountResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTransactionNoteForPayBill:withCompletion:")
@@ -192,6 +237,12 @@ public interface INPayBillIntentHandling {
         void call_resolveTransactionNoteForPayBillWithCompletion(@NotNull INStringResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTransactionScheduledDateForPayBill:withCompletion:")

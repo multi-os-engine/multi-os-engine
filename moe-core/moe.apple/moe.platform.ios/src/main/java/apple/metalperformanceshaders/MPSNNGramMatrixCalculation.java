@@ -80,6 +80,8 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
      * [@property] alpha
      * 
      * Scaling factor for the output. Default: 1.0f.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("alpha")
@@ -143,6 +145,8 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -154,6 +158,8 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
      * 
      * @param device The MTLDevice on which this MPSNNGramMatrixCalculation filter will be used.
      * @return A valid MPSNNGramMatrixCalculation object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -165,6 +171,8 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
      * @param device The MTLDevice on which this MPSNNGramMatrixCalculation filter will be used.
      * @param alpha  Scaling factor for the output.
      * @return A valid MPSNNGramMatrixCalculation object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:alpha:")
@@ -210,6 +218,8 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
      * [@property] alpha
      * 
      * Scaling factor for the output. Default: 1.0f.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAlpha:")

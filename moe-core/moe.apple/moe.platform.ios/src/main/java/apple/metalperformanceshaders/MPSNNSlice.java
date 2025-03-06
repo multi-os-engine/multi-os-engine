@@ -122,6 +122,9 @@ public class MPSNNSlice extends MPSCNNKernel {
     @Selector("initWithCoder:")
     public native MPSNNSlice initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNSlice initWithCoderDevice(@NotNull NSCoder aDecoder,
@@ -132,6 +135,8 @@ public class MPSNNSlice extends MPSCNNKernel {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNSlice object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

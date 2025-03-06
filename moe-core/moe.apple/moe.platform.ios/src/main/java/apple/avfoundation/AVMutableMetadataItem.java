@@ -159,6 +159,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * metadataItem
      * 
      * Returns an instance of AVMutableMetadataItem.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -264,6 +266,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics
      * of their carriage in their container format. Keys for extra attributes are declared in AVMetadataFormat.h.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -289,6 +293,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * Indicates the key of the metadata item. Metadata item keys that are not instances NSString, NSNumber, or NSData
      * cannot be converted to metadata identifiers; they also cannot be written to media resources via
      * AVAssetExportSession or AVAssetWriter.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -299,6 +305,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata
      * container in which the metadata item is stored.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -307,6 +315,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the locale of the metadata item; may be nil if no locale information is available for the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -345,6 +355,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics
      * of their carriage in their container format. Keys for extra attributes are declared in AVMetadataFormat.h.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setExtraAttributes:")
@@ -364,6 +376,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * Indicates the key of the metadata item. Metadata item keys that are not instances NSString, NSNumber, or NSData
      * cannot be converted to metadata identifiers; they also cannot be written to media resources via
      * AVAssetExportSession or AVAssetWriter.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setKey:")
@@ -372,6 +386,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata
      * container in which the metadata item is stored.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setKeySpace:")
@@ -379,6 +395,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the locale of the metadata item; may be nil if no locale information is available for the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setLocale:")
@@ -395,6 +413,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the timestamp of the metadata item.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTime:")
@@ -402,6 +422,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * provides the value of the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setValue:")
@@ -419,6 +441,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the timestamp of the metadata item.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("time")
@@ -427,6 +451,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * provides the value of the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated

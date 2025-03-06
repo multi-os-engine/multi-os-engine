@@ -151,6 +151,9 @@ public class PKPaymentRequestPaymentMethodUpdate extends PKPaymentRequestUpdate 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("errors")
     public native NSArray<? extends NSError> errors();
@@ -158,6 +161,8 @@ public class PKPaymentRequestPaymentMethodUpdate extends PKPaymentRequestUpdate 
     /**
      * You may optionally supply errors here.
      * See PKError for specific NSError keys to use.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithErrors:paymentSummaryItems:")
@@ -165,6 +170,9 @@ public class PKPaymentRequestPaymentMethodUpdate extends PKPaymentRequestUpdate 
             @Nullable NSArray<? extends NSError> errors,
             @NotNull NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setErrors:")
     public native void setErrors(NSArray<? extends NSError> value);

@@ -159,6 +159,8 @@ public class AVCaptureMultiCamSession extends AVCaptureSession {
      * AVCaptureMultiCamSession is intended to be used with multiple cameras and is only supported on platforms with
      * sufficient hardware bandwidth, system memory, and thermal performance. For single-camera use cases,
      * AVCaptureSession should be used instead.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMultiCamSupported")

@@ -117,6 +117,8 @@ public class HKHeartbeatSeriesQuery extends HKQuery {
      *                        there was a gap in data collection before the current heartbeat, meaning that one or more
      *                        heartbeats may have occured since the previous heartbeat in the series. Once done is YES,
      *                        or stopQuery called, the query is complete and no more calls to the handler will be made.
+     * 
+     *                        API-Since: 13.0
      */
     @Generated
     @Selector("initWithHeartbeatSeries:dataHandler:")
@@ -427,4 +429,31 @@ public class HKHeartbeatSeriesQuery extends HKQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

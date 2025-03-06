@@ -186,6 +186,8 @@ public class UIWindowSceneActivationAction extends UIAction {
 
     /**
      * The actions title. Set to nil to use the default title.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTitle:")
@@ -211,6 +213,8 @@ public class UIWindowSceneActivationAction extends UIAction {
 
     /**
      * The actions title. Set to nil to use the default title.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("title")

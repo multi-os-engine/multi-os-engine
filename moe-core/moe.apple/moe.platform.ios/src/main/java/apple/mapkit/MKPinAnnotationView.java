@@ -400,6 +400,11 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("animatesDrop")
     public native boolean animatesDrop();
@@ -486,6 +491,11 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("pinTintColor")
     public native UIColor pinTintColor();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimatesDrop:")
     public native void setAnimatesDrop(boolean value);

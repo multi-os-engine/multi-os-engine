@@ -170,6 +170,9 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("bloodType")
     @NInt

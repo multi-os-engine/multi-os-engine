@@ -87,6 +87,8 @@ public class UICalendarViewDecoration extends NSObject {
 
     /**
      * Creates a default image accessory with a circle image, and the specified color and size.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("decorationWithColor:size:")
@@ -96,6 +98,8 @@ public class UICalendarViewDecoration extends NSObject {
      * Creates a new custom view decoration using the specified custom view provider. The provider will be called once
      * when the decoration view is first loaded. The decoration will be clipped to its parent's bounds, and cannot have
      * user interaction.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("decorationWithCustomViewProvider:")
@@ -112,6 +116,8 @@ public class UICalendarViewDecoration extends NSObject {
 
     /**
      * Creates an accessory with the specified image, and default color, and size.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("decorationWithImage:")
@@ -119,6 +125,8 @@ public class UICalendarViewDecoration extends NSObject {
 
     /**
      * Creates an accessory with the specified image, color, and size.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("decorationWithImage:color:size:")
@@ -136,6 +144,8 @@ public class UICalendarViewDecoration extends NSObject {
 
     /**
      * Creates a default decoration with a circle image.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("init")
@@ -145,6 +155,8 @@ public class UICalendarViewDecoration extends NSObject {
      * Creates a new custom view decoration using the provided view provider. The provider will
      * be called once when the decoration view is first loaded. The decoration will be clipped to
      * its parent's bounds, and cannot have interaction.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithCustomViewProvider:")
@@ -165,6 +177,8 @@ public class UICalendarViewDecoration extends NSObject {
      * @param image The image of the decoration, defaults to @c circ lebadge.fill if nil.
      * @param color The color of the the decoration. defaults to @c UIColor.systemFillColor if nil.
      * @param size  The preferred size of the decoration. The default is UICalendarViewDecorationSizeMedium
+     * 
+     *              API-Since: 16.0
      */
     @Generated
     @Selector("initWithImage:color:size:")

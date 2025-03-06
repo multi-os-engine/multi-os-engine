@@ -73,6 +73,8 @@ public class VNRecognizedPoints3DObservation extends VNObservation {
 
     /**
      * The availableGroupKeys property returns all of the point group labels usable with the observation.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("availableGroupKeys")
@@ -81,6 +83,8 @@ public class VNRecognizedPoints3DObservation extends VNObservation {
 
     /**
      * Returns all of the point group keys available in the observation.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("availableKeys")
@@ -163,6 +167,8 @@ public class VNRecognizedPoints3DObservation extends VNObservation {
      * @param error    The address of a variable that will be populated with the error that describes the failure. If
      *                 the caller does not require this information, NULL can be passed.
      * @return the recognized point, or nil if the specific point is not defined.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("recognizedPointForKey:error:")
@@ -180,6 +186,8 @@ public class VNRecognizedPoints3DObservation extends VNObservation {
      * @param error    The address of a variable that will be populated with the error that describes the failure. If
      *                 the caller does not require this information, NULL can be passed.
      * @return the dictionary of recognized points in the group, or nil if an error was encountered.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("recognizedPointsForGroupKey:error:")

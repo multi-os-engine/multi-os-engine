@@ -111,6 +111,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * adjusts the tuning of all the notes played.
      * Range: -2400 -> +2400 cents
      * Default: 0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("globalTuning")
@@ -167,6 +169,9 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * their placement on the keyboard (e.g. root key, key range) will be used.
      * This method reads from file and allocates memory, so it should not be called on a real time thread.
      * 
+     * 
+     * API-Since: 8.0
+     * 
      * @param audioFiles
      *                   array of URLs for audio files to be loaded
      * @param outError
@@ -190,6 +195,9 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * key range) will be used.
      * This method reads from file and allocates memory, so it should not be called on a real time thread.
      * 
+     * 
+     * API-Since: 8.0
+     * 
      * @param instrumentURL
      *                      URL to the preset file or audio file
      * @param outError
@@ -206,6 +214,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * loads a specific instrument from the specified sound bank
      * 
      * This method reads from file and allocates memory, so it should not be called on a real time thread.
+     * 
+     * API-Since: 8.0
      * 
      * @param bankURL
      *                 URL for a Soundbank file. The file can be either a DLS bank (.dls) or a SoundFont bank (.sf2).
@@ -272,6 +282,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * adjusts the tuning of all the notes played.
      * Range: -2400 -> +2400 cents
      * Default: 0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setGlobalTuning:")
@@ -311,6 +323,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * adjusts the pan for all the notes played.
      * Range: -100 -> +100
      * Default: 0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setStereoPan:")
@@ -326,6 +340,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * adjusts the pan for all the notes played.
      * Range: -100 -> +100
      * Default: 0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stereoPan")

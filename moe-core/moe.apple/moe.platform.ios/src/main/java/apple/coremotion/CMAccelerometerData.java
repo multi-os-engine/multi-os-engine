@@ -176,6 +176,9 @@ public class CMAccelerometerData extends CMLogItem {
      * 
      * Discussion:
      * The acceleration measured by the accelerometer.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("acceleration")

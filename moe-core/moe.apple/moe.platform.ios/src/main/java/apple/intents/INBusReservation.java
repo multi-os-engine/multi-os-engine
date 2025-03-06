@@ -66,6 +66,9 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("busTrip")
@@ -124,6 +127,9 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
     @Selector("initWithCoder:")
     public native INBusReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:URL:reservedSeat:busTrip:")
     public native INBusReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsURLReservedSeatBusTrip(
@@ -159,6 +165,9 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
     @Selector("new")
     public static native INBusReservation new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("reservedSeat")

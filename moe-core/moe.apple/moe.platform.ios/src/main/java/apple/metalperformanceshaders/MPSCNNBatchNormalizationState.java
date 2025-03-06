@@ -74,6 +74,9 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @NotNull
     @Generated
     @Selector("batchNormalization")
@@ -81,6 +84,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object with the state's current beta values..
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -119,6 +124,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object with the state's current gamma values.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -130,6 +137,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
      * Return an MTLBuffer object containing the values of the gradient of the loss function
      * with respect to the bias terms. If a MPSCNNBatchNormalizationGradient kernel
      * has not successfully generated these values nil will be returned.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -141,6 +150,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
      * Return an MTLBuffer object containing the values of the gradient of the loss function
      * with respect to the scale factors. If a MPSCNNBatchNormalizationGradient kernel
      * has not successfully generated these values nil will be returned.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -205,6 +216,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object with the most recently computed batch mean values.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -219,6 +232,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     /**
      * Reset any accumulated state data to its initial values.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("reset")
@@ -267,6 +282,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object with the most recently computed batch variance values.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated

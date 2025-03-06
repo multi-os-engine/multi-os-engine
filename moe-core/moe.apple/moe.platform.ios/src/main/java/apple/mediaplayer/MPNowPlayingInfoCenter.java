@@ -104,6 +104,8 @@ public class MPNowPlayingInfoCenter extends NSObject {
     /**
      * Returns the default now playing info center.
      * The default center holds now playing info about the current application.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -174,6 +176,8 @@ public class MPNowPlayingInfoCenter extends NSObject {
     /**
      * The current now playing info for the center.
      * Setting the info to nil will clear it.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -183,6 +187,8 @@ public class MPNowPlayingInfoCenter extends NSObject {
     /**
      * The current now playing info for the center.
      * Setting the info to nil will clear it.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setNowPlayingInfo:")

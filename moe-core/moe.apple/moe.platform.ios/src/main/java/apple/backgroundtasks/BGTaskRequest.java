@@ -108,6 +108,8 @@ public class BGTaskRequest extends NSObject implements NSCopying {
      * Setting the property indicates that the background task shouldn’t start any
      * earlier than this date. However, the system doesn’t guarantee launching the
      * task at the specified date, but only that it won’t begin sooner.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -121,6 +123,8 @@ public class BGTaskRequest extends NSObject implements NSCopying {
 
     /**
      * The identifier of the task associated with the request.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -174,6 +178,8 @@ public class BGTaskRequest extends NSObject implements NSCopying {
      * Setting the property indicates that the background task shouldn’t start any
      * earlier than this date. However, the system doesn’t guarantee launching the
      * task at the specified date, but only that it won’t begin sooner.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setEarliestBeginDate:")

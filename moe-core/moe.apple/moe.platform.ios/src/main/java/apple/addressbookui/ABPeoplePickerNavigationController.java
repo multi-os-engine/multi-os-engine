@@ -182,7 +182,13 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * The Address Book to browse. Contacts will be returned from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
      * Note this property is only used if the app has access to the user's contacts, otherwise it remains NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("addressBook")
@@ -193,7 +199,13 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * If you are interested in one particular type of data (for example a phone number), displayedProperties
      * should be an array with a single NSNumber instance (representing kABPersonPhoneProperty).
      * Note that name information will always be shown if available.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("displayedProperties")
@@ -224,7 +236,13 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
 
     /**
      * Optional to get the selected contact, selected property or cancellation of the people picker.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("peoplePickerDelegate")
@@ -277,7 +295,13 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * The Address Book to browse. Contacts will be returned from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
      * Note this property is only used if the app has access to the user's contacts, otherwise it remains NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(@Nullable ConstVoidPtr value);
@@ -287,14 +311,26 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * If you are interested in one particular type of data (for example a phone number), displayedProperties
      * should be an array with a single NSNumber instance (representing kABPersonPhoneProperty).
      * Note that name information will always be shown if available.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setDisplayedProperties:")
     public native void setDisplayedProperties(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * Optional to get the selected contact, selected property or cancellation of the people picker.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setPeoplePickerDelegate:")
     public native void setPeoplePickerDelegate_unsafe(
@@ -302,7 +338,13 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
 
     /**
      * Optional to get the selected contact, selected property or cancellation of the people picker.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     public void setPeoplePickerDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) ABPeoplePickerNavigationControllerDelegate value) {

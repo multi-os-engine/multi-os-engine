@@ -164,11 +164,17 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("expression")
     public native NSExpression expression();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("expressionResultType")
     @NUInt
@@ -182,10 +188,16 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @Selector("initWithCoder:")
     public native NSExpressionDescription initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setExpression:")
     public native void setExpression(@Nullable NSExpression value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setExpressionResultType:")
     public native void setExpressionResultType(@NUInt long value);

@@ -92,6 +92,8 @@ public class VNFeaturePrintObservation extends VNObservation {
      * 
      * The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false
      * with an error describing the error condition, for instance comparing two non-comparable feature prints.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("computeDistance:toFeaturePrintObservation:error:")
@@ -101,6 +103,8 @@ public class VNFeaturePrintObservation extends VNObservation {
 
     /**
      * The feature print data.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -117,6 +121,8 @@ public class VNFeaturePrintObservation extends VNObservation {
 
     /**
      * The total number of elements in the data.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("elementCount")
@@ -125,6 +131,8 @@ public class VNFeaturePrintObservation extends VNObservation {
 
     /**
      * The type of each element in the data.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("elementType")

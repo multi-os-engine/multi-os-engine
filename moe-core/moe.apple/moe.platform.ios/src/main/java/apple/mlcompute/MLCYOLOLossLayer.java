@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A YOLO loss layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -77,12 +76,14 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
     public static native MLCYOLOLossLayer categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
             int reductionType, float labelSmoothing, @NUInt long classCount, float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
@@ -99,11 +100,13 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer cosineDistanceLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weights:")
@@ -123,23 +126,27 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @NUInt
     public static native long hash_static();
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer hingeLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weights:")
     public static native MLCYOLOLossLayer hingeLossWithReductionTypeWeights(int reductionType,
             @Nullable MLCTensor weights);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weight:")
     public static native MLCYOLOLossLayer huberLossWithReductionTypeDeltaWeight(int reductionType, float delta,
             float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weights:")
@@ -177,44 +184,55 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
      * 
      * @param lossDescriptor The loss descriptor
      * @return A new YOLO loss layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:")
     public static native MLCYOLOLossLayer layerWithDescriptor(@NotNull MLCYOLOLossDescriptor lossDescriptor);
 
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:weights:")
     public static native MLCYOLOLossLayer layerWithDescriptorWeights(@NotNull MLCLossDescriptor lossDescriptor,
             @NotNull MLCTensor weights);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weight:")
     public static native MLCYOLOLossLayer logLossWithReductionTypeEpsilonWeight(int reductionType, float epsilon,
             float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weights:")
     public static native MLCYOLOLossLayer logLossWithReductionTypeEpsilonWeights(int reductionType, float epsilon,
             @Nullable MLCTensor weights);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer meanAbsoluteErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weights:")
     public static native MLCYOLOLossLayer meanAbsoluteErrorLossWithReductionTypeWeights(int reductionType,
             @Nullable MLCTensor weights);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer meanSquaredErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weights:")
@@ -238,24 +256,28 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weight:")
     public static native MLCYOLOLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeight(
             int reductionType, float labelSmoothing, float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weights:")
     public static native MLCYOLOLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeights(
             int reductionType, float labelSmoothing, @Nullable MLCTensor weights);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
     public static native MLCYOLOLossLayer softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
             int reductionType, float labelSmoothing, @NUInt long classCount, float weight);
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
@@ -266,6 +288,7 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -279,7 +302,11 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
      * [@property] yoloLossDescriptor
      * 
      * The YOLO loss descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("yoloLossDescriptor")

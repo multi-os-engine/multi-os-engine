@@ -172,6 +172,8 @@ public class AVCaptureAudioChannel extends NSObject {
      * 
      * A client may poll an AVCaptureAudioChannel object for its current averagePowerLevel to get its instantaneous
      * average power level in decibels. This property is not key-value observable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("averagePowerLevel")
@@ -188,6 +190,8 @@ public class AVCaptureAudioChannel extends NSObject {
      * 
      * A client may poll an AVCaptureAudioChannel object for its current peakHoldLevel to get its most recent peak hold
      * level in decibels. This property is not key-value observable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("peakHoldLevel")

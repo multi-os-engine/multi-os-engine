@@ -160,6 +160,9 @@ public class CXCallController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("callObserver")
@@ -167,6 +170,8 @@ public class CXCallController extends NSObject {
 
     /**
      * Initialize call controller with a private, serial queue.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("init")
@@ -174,6 +179,8 @@ public class CXCallController extends NSObject {
 
     /**
      * Initialize call controller with specified queue, which is used for calling completion blocks.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithQueue:")
@@ -187,6 +194,8 @@ public class CXCallController extends NSObject {
      * A non-nil error indicates that the requested transaction could not be executed.
      * 
      * Completion block is performed on the queue supplied to designated initializer.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requestTransaction:completion:")

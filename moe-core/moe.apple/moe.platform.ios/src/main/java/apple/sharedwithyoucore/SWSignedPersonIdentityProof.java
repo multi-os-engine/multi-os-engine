@@ -104,6 +104,9 @@ public class SWSignedPersonIdentityProof extends SWPersonIdentityProof {
     @Selector("initWithCoder:")
     public native SWSignedPersonIdentityProof initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithPersonIdentityProof:signatureData:")
     public native SWSignedPersonIdentityProof initWithPersonIdentityProofSignatureData(
@@ -150,6 +153,8 @@ public class SWSignedPersonIdentityProof extends SWPersonIdentityProof {
 
     /**
      * The signature created by signing the data with this identity.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

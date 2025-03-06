@@ -169,6 +169,8 @@ public class CKAcceptSharesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -176,10 +178,16 @@ public class CKAcceptSharesOperation extends CKOperation {
     @ObjCBlock(name = "call_acceptSharesCompletionBlock_ret")
     public native Block_acceptSharesCompletionBlock_ret acceptSharesCompletionBlock();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native CKAcceptSharesOperation init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithShareMetadatas:")
     public native CKAcceptSharesOperation initWithShareMetadatas(
@@ -192,6 +200,8 @@ public class CKAcceptSharesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -209,6 +219,8 @@ public class CKAcceptSharesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAcceptSharesCompletionBlock:")
@@ -222,16 +234,24 @@ public class CKAcceptSharesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPerShareCompletionBlock:")
     public native void setPerShareCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setPerShareCompletionBlock") Block_setPerShareCompletionBlock value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setShareMetadatas:")
     public native void setShareMetadatas(@Nullable NSArray<? extends CKShareMetadata> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("shareMetadatas")

@@ -72,6 +72,8 @@ public interface MTLBuffer extends MTLResource {
      * contents
      * 
      * Returns the data pointer of this buffer's shared copy.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -82,6 +84,8 @@ public interface MTLBuffer extends MTLResource {
      * [@property] length
      * 
      * The length of the buffer in bytes.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("length")

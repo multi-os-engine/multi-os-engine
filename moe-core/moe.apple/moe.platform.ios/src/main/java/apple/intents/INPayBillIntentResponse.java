@@ -65,6 +65,12 @@ public class INPayBillIntentResponse extends INIntentResponse {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("billDetails")
@@ -91,6 +97,12 @@ public class INPayBillIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -104,6 +116,12 @@ public class INPayBillIntentResponse extends INIntentResponse {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fromAccount")
@@ -126,7 +144,12 @@ public class INPayBillIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INPayBillIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -171,22 +194,52 @@ public class INPayBillIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setBillDetails:")
     public native void setBillDetails(@Nullable INBillDetails value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setFromAccount:")
     public native void setFromAccount(@Nullable INPaymentAccount value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setTransactionAmount:")
     public native void setTransactionAmount(@Nullable INPaymentAmount value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setTransactionNote:")
     public native void setTransactionNote(@Nullable String value);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setTransactionScheduledDate:")
     public native void setTransactionScheduledDate(@Nullable INDateComponentsRange value);
@@ -209,16 +262,34 @@ public class INPayBillIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionAmount")
     public native INPaymentAmount transactionAmount();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionNote")
     public native String transactionNote();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionScheduledDate")

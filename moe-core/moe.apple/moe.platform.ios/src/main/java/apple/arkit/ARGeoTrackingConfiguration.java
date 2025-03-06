@@ -74,6 +74,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * estimatedScaleFactor on the ARImageAnchor.
      * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("automaticImageScaleEstimationEnabled")
@@ -102,6 +104,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      *                          executed on an arbitrary serial queue. It takes the following parameters:
      *                          isAvailable - True if geo tracking is available at the given location, otherwise false.
      *                          error - An error that indicates why geo tracking is not available at the given location.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("checkAvailabilityAtCoordinate:completionHandler:")
@@ -126,6 +130,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      *                          false.
      *                          error - An error that indicates why geo tracking is not available at the current
      *                          location.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("checkAvailabilityWithCompletionHandler:")
@@ -162,6 +168,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("detectionImages")
@@ -172,6 +180,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
      * will be added to the session.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -184,6 +194,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("environmentTexturing")
@@ -195,6 +207,9 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("init")
     public native ARGeoTrackingConfiguration init();
@@ -233,6 +248,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumNumberOfTrackedImages")
@@ -251,6 +268,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("planeDetection")
@@ -274,6 +293,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * estimatedScaleFactor on the ARImageAnchor.
      * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAutomaticImageScaleEstimationEnabled:")
@@ -284,6 +305,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDetectionImages:")
@@ -294,6 +317,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
      * will be added to the session.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDetectionObjects:")
@@ -305,6 +330,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEnvironmentTexturing:")
@@ -318,6 +345,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumNumberOfTrackedImages:")
@@ -330,6 +359,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPlaneDetection:")
@@ -341,6 +372,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setWantsHDREnvironmentTextures:")
@@ -366,6 +399,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("wantsHDREnvironmentTextures")

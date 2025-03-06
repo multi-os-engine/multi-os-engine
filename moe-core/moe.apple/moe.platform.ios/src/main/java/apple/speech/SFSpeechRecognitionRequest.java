@@ -161,6 +161,8 @@ public class SFSpeechRecognitionRequest extends NSObject {
 
     /**
      * Phrases which should be recognized even if they are not in the system vocabulary
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -186,6 +188,8 @@ public class SFSpeechRecognitionRequest extends NSObject {
 
     /**
      * Phrases which should be recognized even if they are not in the system vocabulary
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setContextualStrings:")
@@ -206,11 +210,16 @@ public class SFSpeechRecognitionRequest extends NSObject {
     /**
      * If true, partial (non-final) results for each utterance will be reported.
      * Default is true
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setShouldReportPartialResults:")
     public native void setShouldReportPartialResults(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTaskHint:")
     public native void setTaskHint(@NInt long value);
@@ -218,11 +227,16 @@ public class SFSpeechRecognitionRequest extends NSObject {
     /**
      * If true, partial (non-final) results for each utterance will be reported.
      * Default is true
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("shouldReportPartialResults")
     public native boolean shouldReportPartialResults();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("taskHint")
     @NInt

@@ -160,6 +160,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * No parsing is supported. This method will return NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
@@ -177,6 +179,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * default is NO; if it is set to YES, NSEnergyFormatterUnitKilocalorie may be “C” instead of “kcal"
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isForFoodEnergyUse")
@@ -184,6 +188,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * default is NO; if it is set to YES, NSEnergyFormatterUnitKilocalorie may be “C” instead of “kcal"
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setForFoodEnergyUse:")
@@ -191,6 +197,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("numberFormatter")
@@ -198,6 +206,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNumberFormatter:")
@@ -205,6 +215,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingUnitStyleMedium
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUnitStyle:")
@@ -213,6 +225,8 @@ public class NSEnergyFormatter extends NSFormatter {
     /**
      * Format a number in joules to a localized string with the locale-appropriate unit and an appropriate scale (e.g.
      * 10.3J = 2.46cal in the US locale).
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -221,6 +235,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * Format a combination of a number and an unit to a localized string.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -229,6 +245,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * Return the locale-appropriate unit, the same unit used by -stringFromJoules:.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -237,6 +255,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * Return a localized string of the given unit, and if the unit is singular or plural is based on the given number.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -245,6 +265,8 @@ public class NSEnergyFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingUnitStyleMedium
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("unitStyle")

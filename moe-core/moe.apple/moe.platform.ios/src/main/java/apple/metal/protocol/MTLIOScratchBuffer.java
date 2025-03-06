@@ -24,6 +24,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLIOScratchBuffer")
 public interface MTLIOScratchBuffer {
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("buffer")

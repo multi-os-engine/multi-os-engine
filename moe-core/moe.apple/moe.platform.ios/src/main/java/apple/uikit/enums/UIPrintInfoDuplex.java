@@ -19,15 +19,25 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 public final class UIPrintInfoDuplex {
+    /**
+     * API-Since: 4.2
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * flip back page along long edge (same orientation in portrait, flipped for landscape)
+     * 
+     * API-Since: 4.2
      */
     @Generated @NInt public static final long LongEdge = 0x0000000000000001L;
     /**
      * flip back page along short edge (flipped orientation for portrait, same in landscape)
+     * 
+     * API-Since: 4.2
      */
     @Generated @NInt public static final long ShortEdge = 0x0000000000000002L;
 

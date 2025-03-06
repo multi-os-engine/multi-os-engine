@@ -74,6 +74,8 @@ public class AVAudioRecorder extends NSObject {
      * averagePowerForChannel:
      * 
      * Returns average power in decibels for a given channel.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("averagePowerForChannel:")
@@ -122,6 +124,8 @@ public class AVAudioRecorder extends NSObject {
      * Get the current time of the recording.
      * 
      * This method is only vaild while recording.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("currentTime")
@@ -135,6 +139,8 @@ public class AVAudioRecorder extends NSObject {
      * [@property] delegate
      * 
      * A delegate object to the AudioRecorder that conforms to the AVAudioRecorderDelegate protocol.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -148,6 +154,8 @@ public class AVAudioRecorder extends NSObject {
      * Delete the recorded file.
      * 
      * AudioRecorder must be stopped. Returns YES on success and NO on failure.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("deleteRecording")
@@ -215,6 +223,8 @@ public class AVAudioRecorder extends NSObject {
      * 
      * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from
      * the file extension. Will overwrite a file at the specified url if a file exists.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithURL:settings:error:")
@@ -241,6 +251,8 @@ public class AVAudioRecorder extends NSObject {
      * Turns level metering on or off.
      * 
      * Default is off.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isMeteringEnabled")
@@ -250,6 +262,8 @@ public class AVAudioRecorder extends NSObject {
      * [@property] recording
      * 
      * Returns YES if the AudioRecorder is currently recording.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isRecording")
@@ -273,6 +287,8 @@ public class AVAudioRecorder extends NSObject {
      * pause
      * 
      * Pause recording.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("pause")
@@ -282,6 +298,8 @@ public class AVAudioRecorder extends NSObject {
      * peakPowerForChannel:
      * 
      * Returns peak power in decibels for a given channel.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("peakPowerForChannel:")
@@ -293,6 +311,8 @@ public class AVAudioRecorder extends NSObject {
      * Creates the output file and gets ready to record.
      * 
      * This method is called automatically on record. Returns YES on success and NO on failure.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("prepareToRecord")
@@ -304,6 +324,8 @@ public class AVAudioRecorder extends NSObject {
      * Start or resume recording to file.
      * 
      * Returns YES on success and NO on failure.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("record")
@@ -341,6 +363,8 @@ public class AVAudioRecorder extends NSObject {
      * Record for a specified duration.
      * 
      * The recorder will stop when it has recorded this length of audio. Returns YES on success and NO on failure.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("recordForDuration:")
@@ -373,6 +397,8 @@ public class AVAudioRecorder extends NSObject {
      * [@property] delegate
      * 
      * A delegate object to the AudioRecorder that conforms to the AVAudioRecorderDelegate protocol.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -382,6 +408,8 @@ public class AVAudioRecorder extends NSObject {
      * [@property] delegate
      * 
      * A delegate object to the AudioRecorder that conforms to the AVAudioRecorderDelegate protocol.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value) {
@@ -401,6 +429,8 @@ public class AVAudioRecorder extends NSObject {
      * Turns level metering on or off.
      * 
      * Default is off.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMeteringEnabled:")
@@ -417,6 +447,8 @@ public class AVAudioRecorder extends NSObject {
      * 
      * These settings are fully valid only when prepareToRecord has been called. For supported key-value pairs, see
      * https://developer.apple.com/documentation/avfaudio/avaudiorecorder/1388386-initwithurl?language=objc
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -429,6 +461,8 @@ public class AVAudioRecorder extends NSObject {
      * Stop recording.
      * 
      * This method also closes the output file.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("stop")
@@ -442,6 +476,8 @@ public class AVAudioRecorder extends NSObject {
      * updateMeters
      * 
      * Call this method to refresh meter values.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("updateMeters")
@@ -451,6 +487,8 @@ public class AVAudioRecorder extends NSObject {
      * [@property] url
      * 
      * URL of the recorded file.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated

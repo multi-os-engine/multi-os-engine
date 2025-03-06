@@ -76,6 +76,8 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
      * [@property] bucketCount
      * 
      * An NSUInteger representing the number of samples in this histogram bucket.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bucketCount")
@@ -86,6 +88,8 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
      * [@property] bucketEnd
      * 
      * An NSMeasurement representing the end of a histogram bucket.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -96,6 +100,8 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
      * [@property] bucketStart
      * 
      * An NSMeasurement representing the start of a histogram bucket.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

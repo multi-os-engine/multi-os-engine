@@ -47,6 +47,9 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
         super(peer);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("acceptableTypeIdentifiers")
@@ -56,10 +59,16 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("addAcceptableTypeIdentifiers:")
     public native void addAcceptableTypeIdentifiers(@NotNull NSArray<String> acceptableTypeIdentifiers);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("addTypeIdentifiersForAcceptingClass:")
     public native void addTypeIdentifiersForAcceptingClass(
@@ -124,10 +133,16 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("init")
     public native UIPasteConfiguration init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAcceptableTypeIdentifiers:")
     public native UIPasteConfiguration initWithAcceptableTypeIdentifiers(
@@ -139,6 +154,8 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     /**
      * Uses the readableTypeIdentifiersForItemProvider class property to get acceptable types.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithTypeIdentifiersForAcceptingClass:")
@@ -180,6 +197,9 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAcceptableTypeIdentifiers:")
     public native void setAcceptableTypeIdentifiers(@NotNull NSArray<String> value);

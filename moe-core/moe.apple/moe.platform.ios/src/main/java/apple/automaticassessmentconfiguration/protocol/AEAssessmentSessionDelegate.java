@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
+import apple.automaticassessmentconfiguration.AEAssessmentConfiguration;
 
 /**
  * API-Since: 13.4
@@ -19,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AEAssessmentSessionDelegate")
 public interface AEAssessmentSessionDelegate {
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @IsOptional
     @Selector("assessmentSession:failedToBeginWithError:")
@@ -26,6 +30,9 @@ public interface AEAssessmentSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @IsOptional
     @Selector("assessmentSession:wasInterruptedWithError:")
@@ -34,6 +41,9 @@ public interface AEAssessmentSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @IsOptional
     @Selector("assessmentSessionDidBegin:")
@@ -41,10 +51,34 @@ public interface AEAssessmentSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @IsOptional
     @Selector("assessmentSessionDidEnd:")
     default void assessmentSessionDidEnd(@NotNull AEAssessmentSession session) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @IsOptional
+    @Selector("assessmentSession:failedToUpdateToConfiguration:error:")
+    default void assessmentSessionFailedToUpdateToConfigurationError(@NotNull AEAssessmentSession session,
+            @NotNull AEAssessmentConfiguration configuration, @NotNull NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @IsOptional
+    @Selector("assessmentSessionDidUpdate:")
+    default void assessmentSessionDidUpdate(@NotNull AEAssessmentSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

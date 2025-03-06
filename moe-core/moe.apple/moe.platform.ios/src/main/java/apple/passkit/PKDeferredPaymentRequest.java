@@ -69,6 +69,8 @@ public class PKDeferredPaymentRequest extends NSObject {
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
      * This may include further details about the cancellation period or penalties for late cancellation.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("billingAgreement")
@@ -102,6 +104,8 @@ public class PKDeferredPaymentRequest extends NSObject {
 
     /**
      * Details about the deferred payment, for example "Pay $2.99 on January 9, 2022".
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("deferredBilling")
@@ -115,6 +119,8 @@ public class PKDeferredPaymentRequest extends NSObject {
     /**
      * Optional, the last date before which cancellation charges don't apply. If `freeCancellationDate` is set,
      * `freeCancellationDateTimeZone` must be set as well.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("freeCancellationDate")
@@ -125,6 +131,8 @@ public class PKDeferredPaymentRequest extends NSObject {
      * Optional, the timezone of the "destination" of the payment. As an example, for a hotel booking, this refers to
      * the local timezone of the hotel. On the payment sheet, this timezone will be used to format the cancellation
      * date. If `freeCancellationDateTimeZone` date is set, `freeCancellationDate` must be set as well
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("freeCancellationDateTimeZone")
@@ -140,6 +148,9 @@ public class PKDeferredPaymentRequest extends NSObject {
     @Selector("init")
     public native PKDeferredPaymentRequest init();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("initWithPaymentDescription:deferredBilling:managementURL:")
     public native PKDeferredPaymentRequest initWithPaymentDescriptionDeferredBillingManagementURL(
@@ -171,6 +182,8 @@ public class PKDeferredPaymentRequest extends NSObject {
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * deferred payment, including deleting it.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("managementURL")
@@ -184,6 +197,8 @@ public class PKDeferredPaymentRequest extends NSObject {
 
     /**
      * A description of the deferred payment, for example "Hotel Stay, 2 nights".
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("paymentDescription")
@@ -201,6 +216,8 @@ public class PKDeferredPaymentRequest extends NSObject {
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
      * This may include further details about the cancellation period or penalties for late cancellation.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setBillingAgreement:")
@@ -208,6 +225,8 @@ public class PKDeferredPaymentRequest extends NSObject {
 
     /**
      * Details about the deferred payment, for example "Pay $2.99 on January 9, 2022".
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setDeferredBilling:")
@@ -216,6 +235,8 @@ public class PKDeferredPaymentRequest extends NSObject {
     /**
      * Optional, the last date before which cancellation charges don't apply. If `freeCancellationDate` is set,
      * `freeCancellationDateTimeZone` must be set as well.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setFreeCancellationDate:")
@@ -225,6 +246,8 @@ public class PKDeferredPaymentRequest extends NSObject {
      * Optional, the timezone of the "destination" of the payment. As an example, for a hotel booking, this refers to
      * the local timezone of the hotel. On the payment sheet, this timezone will be used to format the cancellation
      * date. If `freeCancellationDateTimeZone` date is set, `freeCancellationDate` must be set as well
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setFreeCancellationDateTimeZone:")
@@ -233,6 +256,8 @@ public class PKDeferredPaymentRequest extends NSObject {
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * deferred payment, including deleting it.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setManagementURL:")
@@ -240,6 +265,8 @@ public class PKDeferredPaymentRequest extends NSObject {
 
     /**
      * A description of the deferred payment, for example "Hotel Stay, 2 nights".
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setPaymentDescription:")
@@ -249,6 +276,8 @@ public class PKDeferredPaymentRequest extends NSObject {
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setTokenNotificationURL:")
@@ -266,6 +295,8 @@ public class PKDeferredPaymentRequest extends NSObject {
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("tokenNotificationURL")

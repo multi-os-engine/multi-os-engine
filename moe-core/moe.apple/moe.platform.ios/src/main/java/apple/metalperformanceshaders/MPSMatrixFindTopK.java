@@ -105,6 +105,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -138,6 +140,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * 
      * The datatypes of the matrices inputMatrix and resultValueMatrix must match and be either
      * MPSDataTypeFloat32 or MPSDataTypeFloat16.
+     * 
+     * API-Since: 11.3
      * 
      * @param commandBuffer     A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -190,6 +194,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * 
      * This property is modifiable and defaults to 0. If a different behavior
      * is desired then this should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("indexOffset")
@@ -206,6 +212,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * FIXME: Fix availability macros to 10.14 and 12.0 once we get there
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -218,6 +226,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * FIXME: Fix availability macros to 10.14 and 12.0 once we get there
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:numberOfTopKValues:")
@@ -261,6 +271,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * It is the user's responsibility to ensure that the resultIndexMatrix and resultValueMatrix
      * parameters in encodeToCommandBuffer are large enough to accommodate the results of this
      * operation, otherwise the results of the encode call are undefined.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("numberOfTopKValues")
@@ -305,6 +317,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * 
      * This property is modifiable and defaults to 0. If a different behavior
      * is desired then this should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setIndexOffset:")
@@ -320,6 +334,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * It is the user's responsibility to ensure that the resultIndexMatrix and resultValueMatrix
      * parameters in encodeToCommandBuffer are large enough to accommodate the results of this
      * operation, otherwise the results of the encode call are undefined.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setNumberOfTopKValues:")
@@ -341,6 +357,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSourceColumns:")
@@ -362,6 +380,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSourceRows:")
@@ -387,6 +407,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("sourceColumns")
@@ -409,6 +431,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("sourceRows")

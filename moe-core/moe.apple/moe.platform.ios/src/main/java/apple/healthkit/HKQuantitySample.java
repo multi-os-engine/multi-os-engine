@@ -151,6 +151,8 @@ public class HKQuantitySample extends HKSample {
      * 
      * The quantity must have a unit that is compatible with the given quantity type.
      * See -[HKQuantityType isCompatibleWithUnit:].
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:")
@@ -187,6 +189,8 @@ public class HKQuantitySample extends HKSample {
      * 
      * The quantity must have a unit that is compatible with the given quantity type.
      * See -[HKQuantityType isCompatibleWithUnit:].
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:metadata:")
@@ -227,11 +231,17 @@ public class HKQuantitySample extends HKSample {
     @Selector("initWithCoder:")
     public native HKQuantitySample initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("quantity")
     public native HKQuantity quantity();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("quantityType")

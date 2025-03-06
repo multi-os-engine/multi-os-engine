@@ -81,6 +81,8 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
      * 
      * The axis along which to apply the gather operation.
      * Defaults to zero.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("axis")
@@ -183,6 +185,8 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
      * 
      * The axis along which to apply the gather operation.
      * Defaults to zero.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAxis:")

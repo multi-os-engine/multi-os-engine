@@ -109,11 +109,17 @@ public class INAirline extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("iataCode")
     public native String iataCode();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("icaoCode")
@@ -127,6 +133,9 @@ public class INAirline extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INAirline initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithName:iataCode:icaoCode:")
     public native INAirline initWithNameIataCodeIcaoCode(@Nullable String name, @Nullable String iataCode,
@@ -154,6 +163,9 @@ public class INAirline extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("name")

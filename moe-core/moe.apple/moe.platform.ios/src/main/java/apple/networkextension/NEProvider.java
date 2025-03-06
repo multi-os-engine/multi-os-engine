@@ -182,7 +182,10 @@ public class NEProvider extends NSObject {
      * @return An NWTCPConnection object.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use nw_connection_t in Network framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:")
@@ -203,7 +206,10 @@ public class NEProvider extends NSObject {
      * @return An NWUDPSession object.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use nw_connection_t in Network framework instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("createUDPSessionToEndpoint:fromEndpoint:")
@@ -216,7 +222,10 @@ public class NEProvider extends NSObject {
      * The current default path for connections created by the provider. Use KVO to watch for network changes.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use nw_path_monitor_t in Network framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("defaultPath")

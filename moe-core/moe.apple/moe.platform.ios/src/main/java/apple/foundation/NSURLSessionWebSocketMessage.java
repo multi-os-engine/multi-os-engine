@@ -81,6 +81,9 @@ public class NSURLSessionWebSocketMessage extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("data")
@@ -105,6 +108,8 @@ public class NSURLSessionWebSocketMessage extends NSObject {
 
     /**
      * Create a message with data type
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithData:")
@@ -112,6 +117,8 @@ public class NSURLSessionWebSocketMessage extends NSObject {
 
     /**
      * Create a message with string type
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithString:")
@@ -156,6 +163,9 @@ public class NSURLSessionWebSocketMessage extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("string")
@@ -165,6 +175,9 @@ public class NSURLSessionWebSocketMessage extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("type")
     @NInt

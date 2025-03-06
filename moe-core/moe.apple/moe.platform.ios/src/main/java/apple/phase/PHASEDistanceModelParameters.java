@@ -96,6 +96,8 @@ public class PHASEDistanceModelParameters extends NSObject {
      * [@property] fadeOutParameters
      * 
      * Fade out parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -150,6 +152,8 @@ public class PHASEDistanceModelParameters extends NSObject {
      * [@property] fadeOutParameters
      * 
      * Fade out parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFadeOutParameters:")

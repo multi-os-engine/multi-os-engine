@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterFanControl extends MTRCluster {
+public class MTRBaseClusterFanControl extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -2588,5 +2588,113 @@ public class MTRBaseClusterFanControl extends MTRCluster {
     public interface Block_writeAttributeWindSettingWithValueParamsCompletionHandler {
         @Generated
         void call_writeAttributeWindSettingWithValueParamsCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("readAttributeAirflowDirectionWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAirflowDirectionWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAirflowDirectionWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAirflowDirectionWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAirflowDirectionWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAirflowDirectionWithClusterStateCacheEndpointQueueCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("readAttributeAirflowDirectionWithCompletion:")
+    public native void readAttributeAirflowDirectionWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAirflowDirectionWithCompletion") @NotNull Block_readAttributeAirflowDirectionWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAirflowDirectionWithCompletion {
+        @Generated
+        void call_readAttributeAirflowDirectionWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * Command Step
+     * 
+     * The Step command speeds up or slows down the fan, in steps.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("stepWithParams:completion:")
+    public native void stepWithParamsCompletion(@NotNull MTRFanControlClusterStepParams params,
+            @ObjCBlock(name = "call_stepWithParamsCompletion") @NotNull Block_stepWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stepWithParamsCompletion {
+        @Generated
+        void call_stepWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("subscribeAttributeAirflowDirectionWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAirflowDirectionWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("writeAttributeAirflowDirectionWithValue:completion:")
+    public native void writeAttributeAirflowDirectionWithValueCompletion(@NotNull NSNumber value,
+            @ObjCBlock(name = "call_writeAttributeAirflowDirectionWithValueCompletion") @NotNull Block_writeAttributeAirflowDirectionWithValueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeAirflowDirectionWithValueCompletion {
+        @Generated
+        void call_writeAttributeAirflowDirectionWithValueCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("writeAttributeAirflowDirectionWithValue:params:completion:")
+    public native void writeAttributeAirflowDirectionWithValueParamsCompletion(@NotNull NSNumber value,
+            @Nullable MTRWriteParams params,
+            @ObjCBlock(name = "call_writeAttributeAirflowDirectionWithValueParamsCompletion") @NotNull Block_writeAttributeAirflowDirectionWithValueParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeAirflowDirectionWithValueParamsCompletion {
+        @Generated
+        void call_writeAttributeAirflowDirectionWithValueParamsCompletion(@Nullable NSError error);
     }
 }

@@ -131,6 +131,8 @@ public class ILMessageCommunication extends ILCommunication {
 
     /**
      * Contains the contents of the message
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

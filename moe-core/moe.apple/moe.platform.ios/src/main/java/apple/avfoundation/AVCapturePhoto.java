@@ -362,6 +362,8 @@ public class AVCapturePhoto extends NSObject {
      * given capture request. This property indicates this photo's index (1-based). When you receive a
      * -captureOutput:didFinishProcessingPhoto:error: callback with a photo whose photoCount matches
      * resolvedSettings.expectedPhotoCount, you know you've received the last one for the given capture request.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("photoCount")
@@ -378,6 +380,8 @@ public class AVCapturePhoto extends NSObject {
      * discussion on the differences between Bayer RAW and Apple ProRAW. This property is analogous to
      * CMSampleBufferGetImageBuffer(). The pixel buffer contains only the minimal attachments required for correct
      * display. Compressed captures, such as 'jpeg', return nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -436,6 +440,8 @@ public class AVCapturePhoto extends NSObject {
      * capturePhotoWithSettings:delegate:] request.
      * 
      * Even in the event of an error, the resolved settings are always non nil.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -490,6 +496,8 @@ public class AVCapturePhoto extends NSObject {
      * The timestamp property indicates the time the image was captured, and is analogous to
      * CMSampleBufferGetPresentationTimeStamp(). If an error was provided in the
      * -captureOutput:didFinishingProcessingPhoto:error: callback, timestamp returns kCMTimeInvalid.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("timestamp")
@@ -570,4 +578,51 @@ public class AVCapturePhoto extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] constantColorCenterWeightedMeanConfidenceLevel
+     * 
+     * Returns a score summarizing the overall confidence level of a constant color photo -- 1.0 means full confidence,
+     * 0.0 means zero confidence.
+     * 
+     * Default is 0.0.
+     * 
+     * In most use cases (document scanning for example), the central region of the photo is considered more important
+     * than the peripherals, therefore the confidence level of the central pixels are weighted more heavily than pixels
+     * on the edges of the photo.
+     * 
+     * Use constantColorConfidenceMap for more use case specific analyses of the confidence level.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("constantColorCenterWeightedMeanConfidenceLevel")
+    public native float constantColorCenterWeightedMeanConfidenceLevel();
+
+    /**
+     * [@property] constantColorConfidenceMap
+     * 
+     * Returns a pixel buffer with the same aspect ratio as the constant color photo, where each pixel value (unsigned
+     * 8-bit integer) indicates how fully the constant color effect has been achieved in the corresponding region of the
+     * constant color photo -- 255 means full confidence, 0 means zero confidence.
+     * 
+     * NULL is returned for any non constant color photos.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("constantColorConfidenceMap")
+    @Nullable
+    public native CVBufferRef constantColorConfidenceMap();
+
+    /**
+     * [@property] constantColorFallbackPhoto
+     * 
+     * Indicates whether this photo is a fallback photo for a constant color capture.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isConstantColorFallbackPhoto")
+    public native boolean isConstantColorFallbackPhoto();
 }

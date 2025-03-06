@@ -165,6 +165,8 @@ public class MPFeedbackCommand extends MPRemoteCommand {
      * Whether the feedback command is in an "active" state. An example of when a
      * feedback command would be active is if the user already "liked" a particular
      * content item.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("isActive")
@@ -174,6 +176,8 @@ public class MPFeedbackCommand extends MPRemoteCommand {
      * Whether the feedback command is in an "active" state. An example of when a
      * feedback command would be active is if the user already "liked" a particular
      * content item.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setActive:")
@@ -193,6 +197,8 @@ public class MPFeedbackCommand extends MPRemoteCommand {
 
     /**
      * A localized string briefly describing the context of the command.
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
@@ -212,6 +218,8 @@ public class MPFeedbackCommand extends MPRemoteCommand {
 
     /**
      * A localized string briefly describing the context of the command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setLocalizedTitle:")

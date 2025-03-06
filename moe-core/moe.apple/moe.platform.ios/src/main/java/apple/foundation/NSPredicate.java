@@ -151,6 +151,9 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     public static native NSPredicate predicateWithBlock(
             @NotNull @ObjCBlock(name = "call_predicateWithBlock") Block_predicateWithBlock block);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Variadic()
@@ -159,6 +162,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Parse predicateFormat and return an appropriate predicate
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -166,6 +171,9 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     public static native NSPredicate predicateWithFormatArgumentArray(@NotNull String predicateFormat,
             @Nullable NSArray<?> arguments);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("predicateWithFormat:arguments:")
@@ -173,6 +181,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * return predicates that always evaluate to true/false
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -226,6 +236,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * evaluate a predicate against a single object
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("evaluateWithObject:")
@@ -252,6 +264,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * returns the format string of the predicate
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -260,6 +274,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * substitute constant values for variables
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated

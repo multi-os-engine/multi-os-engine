@@ -288,6 +288,8 @@ public class LPLinkView extends UIView {
 
     /**
      * Initializes a link view with specified metadata.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithMetadata:")
@@ -295,6 +297,8 @@ public class LPLinkView extends UIView {
 
     /**
      * Initializes a placeholder link view without metadata for a given URL.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -332,6 +336,8 @@ public class LPLinkView extends UIView {
      * 
      * This can either be generated automatically from a URL by LPMetadataProvider,
      * or manually constructed with the desired data.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -438,6 +444,8 @@ public class LPLinkView extends UIView {
      * 
      * This can either be generated automatically from a URL by LPMetadataProvider,
      * or manually constructed with the desired data.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMetadata:")

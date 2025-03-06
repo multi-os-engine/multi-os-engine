@@ -202,6 +202,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * 
      * This data is sent as the message body of the request, as
      * in done in an HTTP POST request.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -216,6 +218,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * transmitted as the HTTP body of the request. Note that the body stream
      * and the body data (set by setHTTPBody:, above) are mutually exclusive
      * - setting one will clear the other.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -224,6 +228,8 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the HTTP request method of the receiver.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -238,6 +244,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * The default is YES - in other words, cookies are sent from and
      * stored to the cookie manager by default.
      * NOTE: In releases prior to 10.3, this value is ignored
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("HTTPShouldHandleCookies")
@@ -268,6 +276,8 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * The URL of the receiver.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -290,6 +300,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * 
      * @param value the header field value.
      * @param field the header field name (case-insensitive).
+     * 
+     *              API-Since: 2.0
      */
     @Generated
     @Selector("addValue:forHTTPHeaderField:")
@@ -306,6 +318,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * sent an <tt>-isKindOfClass:[NSString class]</tt> message. If either
      * the key or value for a key-value pair answers NO when sent this
      * message, the key-value pair is skipped.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -339,6 +353,8 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * The cache policy of the receiver.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("cachePolicy")
@@ -372,6 +388,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * from same domain as main document" policy, attributing this request
      * as a sub-resource of a user-specified URL, and possibly other things
      * in the future.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -402,6 +420,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * sent an <tt>-isKindOfClass:[NSString class]</tt> message. If either
      * the key or value for a key-value pair answers NO when sent this
      * message, the key-value pair is skipped.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAllHTTPHeaderFields:")
@@ -422,6 +442,8 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * The cache policy of the receiver.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCachePolicy:")
@@ -432,6 +454,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * 
      * This data is sent as the message body of the request, as
      * in done in an HTTP POST request.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHTTPBody:")
@@ -445,6 +469,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * transmitted as the HTTP body of the request. Note that the body stream
      * and the body data (set by setHTTPBody:, above) are mutually exclusive
      * - setting one will clear the other.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHTTPBodyStream:")
@@ -452,6 +478,8 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the HTTP request method of the receiver.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHTTPMethod:")
@@ -465,6 +493,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * The default is YES - in other words, cookies are sent from and
      * stored to the cookie manager by default.
      * NOTE: In releases prior to 10.3, this value is ignored
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHTTPShouldHandleCookies:")
@@ -503,6 +533,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * from same domain as main document" policy, attributing this request
      * as a sub-resource of a user-specified URL, and possibly other things
      * in the future.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMainDocumentURL:")
@@ -533,6 +565,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * becomes greater than or equal to the timeout interval, the request
      * is considered to have timed out. This timeout interval is measured
      * in seconds.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTimeoutInterval:")
@@ -540,6 +574,8 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * The URL of the receiver.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setURL:")
@@ -557,6 +593,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * 
      * @param value the header field value.
      * @param field the header field name (case-insensitive).
+     * 
+     *              API-Since: 2.0
      */
     @Generated
     @Selector("setValue:forHTTPHeaderField:")
@@ -581,6 +619,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * becomes greater than or equal to the timeout interval, the request
      * is considered to have timed out. This timeout interval is measured
      * in seconds.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("timeoutInterval")
@@ -717,4 +757,51 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Allows storing and usage of DNS answers, potentially beyond TTL expiry,
+     * in a persistent per-process cache. This should only be set for hostnames whose resolutions
+     * are not expected to change across networks.
+     * 
+     * YES, if the DNS lookup for this request is allowed to use a persistent per-process cache,
+     * NO otherwise. Defaults to NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("allowsPersistentDNS")
+    public native boolean allowsPersistentDNS();
+
+    /**
+     * Cookie partition identifier used for cookie storage and retrieval.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("cookiePartitionIdentifier")
+    @Nullable
+    public native String cookiePartitionIdentifier();
+
+    /**
+     * Allows storing and usage of DNS answers, potentially beyond TTL expiry,
+     * in a persistent per-process cache. This should only be set for hostnames whose resolutions
+     * are not expected to change across networks.
+     * 
+     * YES, if the DNS lookup for this request is allowed to use a persistent per-process cache,
+     * NO otherwise. Defaults to NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setAllowsPersistentDNS:")
+    public native void setAllowsPersistentDNS(boolean value);
+
+    /**
+     * Cookie partition identifier used for cookie storage and retrieval.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("setCookiePartitionIdentifier:")
+    public native void setCookiePartitionIdentifier(@Nullable String value);
 }

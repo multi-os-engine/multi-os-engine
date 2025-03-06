@@ -52,6 +52,9 @@ public class CLMonitor extends NSObject {
      * Discussion:
      * Adds `condition` to be monitored under `identifier`.
      * It initializes the monitoring state to `CLMonitoringStateUnknown`.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addConditionForMonitoring:identifier:")
@@ -63,6 +66,9 @@ public class CLMonitor extends NSObject {
      * Discussion:
      * Adds `condition` to be monitored under `identifier`.
      * It initializes the monitoring state with the given value.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addConditionForMonitoring:identifier:assumedState:")
@@ -149,6 +155,9 @@ public class CLMonitor extends NSObject {
      * Discussion:
      * Array containing all the identifiers with each identifying a condition
      * that is monitored.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("monitoredIdentifiers")
@@ -161,6 +170,9 @@ public class CLMonitor extends NSObject {
      * Discussion:
      * Gets the monitoring record containing the condition and last
      * monitoring event, if applicable
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("monitoringRecordForIdentifier:")
@@ -172,6 +184,9 @@ public class CLMonitor extends NSObject {
      * 
      * Discussion:
      * Name associated with the `CLMonitor` instance.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("name")
@@ -188,6 +203,9 @@ public class CLMonitor extends NSObject {
      * 
      * Discussion:
      * Removes the monitoring record with given `identifier` from monitoring
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("removeConditionFromMonitoringWithIdentifier:")

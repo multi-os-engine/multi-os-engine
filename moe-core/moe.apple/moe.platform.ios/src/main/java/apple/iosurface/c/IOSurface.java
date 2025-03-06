@@ -1144,4 +1144,23 @@ public final class IOSurface {
 
     @Generated public static final double IOSURFACE_REF_H = 1.0;
     @Generated public static final double IOSURFACE_OBJC_H = 1.0;
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    public static native int IOSurfaceSetOwnershipIdentity(@NotNull IOSurfaceRef buffer, int task_id_token,
+            int newLedgerTag, int newLedgerOptions);
+
+    /**
+     * CFNumber representation of the content headroom, which is defined as the ratio of nominal peak luminance
+     * ("peak white") to nominal diffuse luminance ("reference white" or "diffuse white").
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIOSurfaceContentHeadroom();
 }

@@ -181,6 +181,8 @@ public class AVFrameRateRange extends NSObject {
      * 
      * This read-only property indicates the maximum frame duration supported by this range. It is the reciprocal of
      * minFrameRate, and expresses minFrameRate as a duration.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("maxFrameDuration")
@@ -193,6 +195,8 @@ public class AVFrameRateRange extends NSObject {
      * A Float64 indicating the maximum frame rate supported by this range.
      * 
      * This read-only property indicates the maximum frame rate supported by this range in frames per second.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("maxFrameRate")
@@ -205,6 +209,8 @@ public class AVFrameRateRange extends NSObject {
      * 
      * This read-only property indicates the minimum frame duration supported by this range. It is the reciprocal of
      * maxFrameRate, and expresses maxFrameRate as a duration.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("minFrameDuration")
@@ -217,6 +223,8 @@ public class AVFrameRateRange extends NSObject {
      * A Float64 indicating the minimum frame rate supported by this range.
      * 
      * This read-only property indicates the minimum frame rate supported by this range in frames per second.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("minFrameRate")

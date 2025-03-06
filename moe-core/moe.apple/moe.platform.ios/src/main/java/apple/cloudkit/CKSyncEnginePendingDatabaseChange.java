@@ -142,6 +142,9 @@ public class CKSyncEnginePendingDatabaseChange extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("type")
     @NInt
@@ -157,6 +160,9 @@ public class CKSyncEnginePendingDatabaseChange extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("zoneID")
     @NotNull

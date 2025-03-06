@@ -28,6 +28,8 @@ public interface PKIdentityDocumentDescriptor {
      * Adds the set of elements and associates them with the intent to store. This method can be
      * called multple times with the same intent to store to append additional elements. If the same
      * element is specified multiple times with different intents to store, the most recent one wins.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("addElements:withIntentToStore:")
@@ -36,6 +38,8 @@ public interface PKIdentityDocumentDescriptor {
 
     /**
      * Set of elements that will be requested from the document.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -44,6 +48,8 @@ public interface PKIdentityDocumentDescriptor {
 
     /**
      * Intent to store for the given element, or nil if the element has not been added to this descriptor.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

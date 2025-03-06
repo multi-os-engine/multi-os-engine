@@ -31,8 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * A reshape layer.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -132,7 +131,11 @@ public class MLCReshapeLayer extends MLCLayer {
      * 
      * @param shape An array that contains the sizes of each dimension.
      * @return A new reshape layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithShape:")
     public static native MLCReshapeLayer layerWithShape(@NotNull NSArray<? extends NSNumber> shape);
@@ -170,6 +173,7 @@ public class MLCReshapeLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

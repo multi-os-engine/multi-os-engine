@@ -134,6 +134,8 @@ public class MPSNNFilterNode extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -177,6 +179,8 @@ public class MPSNNFilterNode extends NSObject {
      * in the case of the .offset. However, that computation usually doesn't reset
      * other properties. In such cases, the custom padding policy may need to keep
      * a record of the original value to enable consistent behavior.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -198,6 +202,8 @@ public class MPSNNFilterNode extends NSObject {
      * Except where otherwise noted, the precision used for the
      * result image (see format property) is copied from the precision
      * from the first input image node.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -208,6 +214,8 @@ public class MPSNNFilterNode extends NSObject {
      * convenience method for resultStates[0]
      * 
      * If resultStates is nil, returns nil
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -218,6 +226,8 @@ public class MPSNNFilterNode extends NSObject {
      * Get the node representing the state result of the filter
      * 
      * If more than one, see description of subclass for ordering.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -228,6 +238,8 @@ public class MPSNNFilterNode extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLabel:")
@@ -265,6 +277,8 @@ public class MPSNNFilterNode extends NSObject {
      * in the case of the .offset. However, that computation usually doesn't reset
      * other properties. In such cases, the custom padding policy may need to keep
      * a record of the original value to enable consistent behavior.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPaddingPolicy:")
@@ -292,6 +306,8 @@ public class MPSNNFilterNode extends NSObject {
      * 
      * @param gradientImage The gradient images corresponding with the resultImage
      *                      of the target
+     * 
+     *                      API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -307,6 +323,8 @@ public class MPSNNFilterNode extends NSObject {
      * 
      * @param gradientImages The gradient images corresponding with the resultImage
      *                       of the target
+     * 
+     *                       API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -322,6 +340,8 @@ public class MPSNNFilterNode extends NSObject {
      * the end of training. For example, a single concatenation operation
      * that concatenates multple images will result in an array of slice
      * operators that carve out subsections of the input gradient image.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -337,6 +357,8 @@ public class MPSNNFilterNode extends NSObject {
      * the end of training. For example, a single concatenation operation
      * that concatenates multple images will result in an array of slice
      * operators that carve out subsections of the input gradient image.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

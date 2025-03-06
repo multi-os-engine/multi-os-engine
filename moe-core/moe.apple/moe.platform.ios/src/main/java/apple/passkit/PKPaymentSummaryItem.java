@@ -151,6 +151,9 @@ public class PKPaymentSummaryItem extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("summaryItemWithLabel:amount:")
     public static native PKPaymentSummaryItem summaryItemWithLabelAmount(@NotNull String label,
@@ -176,6 +179,8 @@ public class PKPaymentSummaryItem extends NSObject {
     /**
      * Same currency as the enclosing PKPaymentRequest. Negative values are permitted, for example when
      * redeeming a coupon. An amount is always required unless the summary item's type is set to pending
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -188,6 +193,8 @@ public class PKPaymentSummaryItem extends NSObject {
 
     /**
      * A short localized description of the item, e.g. "Tax" or "Gift Card".
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -197,6 +204,8 @@ public class PKPaymentSummaryItem extends NSObject {
     /**
      * Same currency as the enclosing PKPaymentRequest. Negative values are permitted, for example when
      * redeeming a coupon. An amount is always required unless the summary item's type is set to pending
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAmount:")
@@ -204,6 +213,8 @@ public class PKPaymentSummaryItem extends NSObject {
 
     /**
      * A short localized description of the item, e.g. "Tax" or "Gift Card".
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLabel:")

@@ -253,11 +253,17 @@ public class UITouch extends NSObject {
     @Selector("init")
     public native UITouch init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("locationInNode:")
     @ByValue
     public native CGPoint locationInNode(@NotNull SKNode node);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("locationInView:")
     @ByValue
@@ -292,6 +298,9 @@ public class UITouch extends NSObject {
     @NFloat
     public native double maximumPossibleForce();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("phase")
     @NInt
@@ -317,11 +326,17 @@ public class UITouch extends NSObject {
     @ByValue
     public native CGPoint precisePreviousLocationInView(@Nullable UIView view);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("previousLocationInNode:")
     @ByValue
     public native CGPoint previousLocationInNode(@NotNull SKNode node);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("previousLocationInView:")
     @ByValue
@@ -329,12 +344,17 @@ public class UITouch extends NSObject {
 
     /**
      * touch down within a certain point within a certain amount of time
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tapCount")
     @NUInt
     public native long tapCount();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();
@@ -347,11 +367,17 @@ public class UITouch extends NSObject {
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("window")
@@ -361,4 +387,15 @@ public class UITouch extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Roll angle in radians. Devices that do not support roll angle will always return 0. The roll angle
+     * for the Pencil Pro is relative to the angle it has when the pencil becomes active/wakes up.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("rollAngle")
+    @NFloat
+    public native double rollAngle();
 }

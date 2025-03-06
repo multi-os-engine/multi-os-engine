@@ -79,6 +79,8 @@ public class AVAudioUnitEffect extends AVAudioUnit {
      * [@property] bypass
      * 
      * Bypass state of the audio unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("bypass")
@@ -134,6 +136,9 @@ public class AVAudioUnitEffect extends AVAudioUnit {
      * kAudioUnitType_RemoteEffect
      * kAudioUnitType_RemoteMusicEffect
      * 
+     * 
+     * API-Since: 8.0
+     * 
      * @param audioComponentDescription
      *                                  AudioComponentDescription of the audio unit to be instantiated.
      */
@@ -187,6 +192,8 @@ public class AVAudioUnitEffect extends AVAudioUnit {
      * [@property] bypass
      * 
      * Bypass state of the audio unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBypass:")

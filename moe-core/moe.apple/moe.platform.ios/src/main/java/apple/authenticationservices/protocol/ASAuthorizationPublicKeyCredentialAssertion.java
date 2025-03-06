@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface ASAuthorizationPublicKeyCredentialAssertion extends ASPublicKeyCredential {
     /**
      * A byte sequence containing the encoded authenticatorData blob returned by the authenticator.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("rawAuthenticatorData")
@@ -25,6 +27,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertion extends ASPublicKey
 
     /**
      * The signature provided by the authenticator using the credential's private key.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("signature")
@@ -32,6 +36,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertion extends ASPublicKey
 
     /**
      * The userID provided when creating this credential.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("userID")

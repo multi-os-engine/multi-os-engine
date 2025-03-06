@@ -83,6 +83,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("colorAttachments")
@@ -138,6 +141,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * [@property] label:
      * 
      * The descriptor label.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -151,12 +156,17 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * Rasterization and visibility state
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rasterSampleCount")
     @NUInt
     public native long rasterSampleCount();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("reset")
     public native void reset();
@@ -173,6 +183,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * [@property] label:
      * 
      * The descriptor label.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLabel:")
@@ -180,6 +192,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * Rasterization and visibility state
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRasterSampleCount:")
@@ -191,6 +205,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Whether all threadgroups associated with this pipeline will cover tiles entirely.
      * 
      * Metal can optimize code generation for this case.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setThreadgroupSizeMatchesTileSize:")
@@ -204,6 +220,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
      * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
      * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileFunction:")
@@ -223,6 +241,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Whether all threadgroups associated with this pipeline will cover tiles entirely.
      * 
      * Metal can optimize code generation for this case.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("threadgroupSizeMatchesTileSize")
@@ -244,6 +264,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
      * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
      * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -430,4 +452,33 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setShaderValidation:")
+    public native void setShaderValidation(@NInt long value);
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("shaderValidation")
+    @NInt
+    public native long shaderValidation();
 }

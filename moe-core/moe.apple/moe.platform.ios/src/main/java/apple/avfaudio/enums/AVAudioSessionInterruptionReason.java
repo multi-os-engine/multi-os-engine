@@ -20,6 +20,9 @@ import org.moe.natj.general.ann.NUInt;
  * 
  * [@var] AVAudioSessionInterruptionReasonRouteDisconnected
  * The audio session was interrupted due to route getting disconnected.
+ * 
+ * [@var] AVAudioSessionInterruptionReasonDeviceUnauthenticated
+ * The audio session was interrupted due to device being doffed or locked.
  */
 @Generated
 public final class AVAudioSessionInterruptionReason {

@@ -104,6 +104,8 @@ public class HMAccessorySetupPayload extends NSObject {
      * @param setupPayloadURL The HomeKit setup payload for the accessory being added to the home.
      * 
      * @return Returns an accessory setup payload object if successful or nil on error.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithURL:")

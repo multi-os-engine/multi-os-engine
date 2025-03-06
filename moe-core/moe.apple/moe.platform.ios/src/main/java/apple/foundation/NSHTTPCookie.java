@@ -117,6 +117,8 @@ public class NSHTTPCookie extends NSObject {
      *         nil if the set of dictionary keys is invalid, for example because
      *         a required key is missing, or a recognized key maps to an illegal
      *         value.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -130,6 +132,8 @@ public class NSHTTPCookie extends NSObject {
      * 
      * This method will ignore irrelevant header fields so
      * you can pass a dictionary containing data other than cookie data.
+     * 
+     * API-Since: 2.0
      * 
      * @param headerFields The response header fields to check for cookies.
      * @param URL          The URL that the cookies came from - relevant to how the cookies are interpreted.
@@ -190,6 +194,8 @@ public class NSHTTPCookie extends NSObject {
      * @param cookies The cookies to turn into request headers.
      * @return An NSDictionary where the keys are header field names, and the values
      *         are the corresponding header field values.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -222,6 +228,8 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return The comment of the receiver, or nil if the receiver has no
      *         comment.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -237,6 +245,8 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return The comment URL of the receiver, or nil if the receiver
      *         has no comment URL.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -252,6 +262,8 @@ public class NSHTTPCookie extends NSObject {
      * restrictions are valid. See RFC 2965 for more detail.
      * 
      * @return The domain of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -267,6 +279,8 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return the expires date of the receiver.
      * @return The expires date of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -393,6 +407,13 @@ public class NSHTTPCookie extends NSObject {
      * <td>Specifies the version of the cookie. Must be either "0" or
      * "1". Default is "0".</td>
      * </tr>
+     * <tr>
+     * <td>NSHTTPCookieSetByJavaScript</td>
+     * <td>NSNumber</td>
+     * <td>NO</td>
+     * <td>@YES if the cookie is set via JavaScript. @NO if the cookie
+     * is not set via JavaScript</td>
+     * </tr>
      * </table>
      * <p>
      * All other keys are ignored.
@@ -402,6 +423,8 @@ public class NSHTTPCookie extends NSObject {
      * @return An initialized NSHTTPCookie, or nil if the set of
      *         dictionary keys is invalid, for example because a required key is
      *         missing, or a recognized key maps to an illegal value.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithProperties:")
@@ -419,6 +442,8 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return YES if this cookie should only be sent via HTTP headers,
      *         NO otherwise.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("isHTTPOnly")
@@ -435,6 +460,8 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return YES if this cookie should be sent only over secure channels,
      *         NO otherwise.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("isSecure")
@@ -446,6 +473,8 @@ public class NSHTTPCookie extends NSObject {
      * @return YES if this receiver should be discarded at the end of the
      *         session (regardless of expiration date), NO if receiver need not
      *         be discarded at the end of the session.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("isSessionOnly")
@@ -455,6 +484,8 @@ public class NSHTTPCookie extends NSObject {
      * Returns the name of the receiver.
      * 
      * @return the name of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -469,6 +500,8 @@ public class NSHTTPCookie extends NSObject {
      * be sent for children of that path, so "/" is the most general.
      * 
      * @return The path of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -486,6 +519,8 @@ public class NSHTTPCookie extends NSObject {
      * @return The list ports to which the receiver should be sent. The
      *         array may be nil, in which case this cookie can be sent to any
      *         port.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -504,6 +539,8 @@ public class NSHTTPCookie extends NSObject {
      * for descriptions of the supported keys and values.
      * 
      * @return The dictionary representation of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -514,6 +551,8 @@ public class NSHTTPCookie extends NSObject {
      * Returns the value of the receiver.
      * 
      * @return the value of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -527,6 +566,8 @@ public class NSHTTPCookie extends NSObject {
      * Version 1 maps to RFC2965 cookies. There may be future versions.
      * 
      * @return the version of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("version")

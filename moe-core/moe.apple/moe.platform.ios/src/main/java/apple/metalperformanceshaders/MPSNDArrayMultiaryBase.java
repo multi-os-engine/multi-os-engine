@@ -94,6 +94,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * @param zone   The NSZone in which to allocate the MPSNDArrayMultiaryKernel object
      * @param device The device on which the new kernel will run. Pass nil for same device.
      * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -114,6 +116,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
      * 
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -132,6 +136,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * @param state   The source state object, if any passed to the -encode call
      * @return a valid MPSNDArrayDescriptor that may be used to create a MPSNDArray to used to
      *         hold the results of this kernel.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -173,6 +179,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * Initialize a MPSNDArrayMultiaryKernel from a NSCoder
      * 
      * @param coder The NSCoder that contains the serialized object
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("encodeWithCoder:")
@@ -197,6 +205,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * @param coder  The NSCoder that contains the serialized object
      * @param device The device on which the kernel will run
      * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -213,6 +223,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * @param device The device on which the kernel will run
      * @param count  The maximum number of NDArrays read by the kernel
      * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:sourceCount:")
@@ -289,6 +301,9 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("resultStateForSourceArrays:sourceStates:destinationArray:")
@@ -300,6 +315,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
      * 
      * Default: MPSTemporaryImage.defaultAllocator
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDestinationArrayAllocator:")

@@ -56,6 +56,8 @@ public interface MTLFunction {
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -79,6 +81,8 @@ public interface MTLFunction {
      * [@property] functionType
      * 
      * The overall kind of entry point: compute, vertex, or fragment.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("functionType")
@@ -101,6 +105,8 @@ public interface MTLFunction {
      * [@property] name
      * 
      * The name of the function in the shading language.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -155,6 +161,9 @@ public interface MTLFunction {
     @Selector("stageInputAttributes")
     NSArray<? extends MTLAttribute> stageInputAttributes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("vertexAttributes")

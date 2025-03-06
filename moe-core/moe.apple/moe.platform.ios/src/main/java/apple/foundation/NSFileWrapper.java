@@ -164,6 +164,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * unless that name is already in use as a key into the receiver's dictionary of children. Beware of the fact that
      * -initDirectoryWithFileWrappers:, -initRegularFileWithContents:, and -initSymbolicLinkWithDestinationURL: do not
      * automatically set the preferred file name.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -174,6 +176,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * A convenience method. The default implementation merely allocates a new file wrapper, initializes it with
      * -initRegularFileWithContents:, sends it -setPreferredFileName:fileName, adds it to the receiver with
      * -addFileWrapper:, and returns what -addFileWrapper: returned.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -187,6 +191,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     /**
      * The file attributes, in a dictionary of the same sort as those returned by -[NSFileManager
      * attributesOfItemAtPath:error:].
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -197,6 +203,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * Return a dictionary whose values are the receiver's children and whose keys are the unique file name that has
      * been assigned to each one. This method may return nil if the receiver is the result of reading a parent from the
      * file system (use NSFileWrapperReadingImmediately if appropriate to prevent that).
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -208,6 +216,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * from the preferred file name. You can use this method to find out the name of a child that's just been read but
      * you should not use it to find out the name of a child that's about to be written, because the name might be about
      * to change. Send -keyForFileWrapper: to the parent instead.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -223,6 +233,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * must contain entries whose values are the file wrappers that are to become children and whose keys are file
      * names. Each file wrapper that does not already have a preferred file name is sent -setPreferredFilename: with the
      * corresponding key as the argument.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initDirectoryWithFileWrappers:")
@@ -231,6 +243,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
 
     /**
      * A designated initializer for creating an instance for which -isRegularFile returns YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initRegularFileWithContents:")
@@ -254,6 +268,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
 
     /**
      * A designated initializer. The data must be in the same format as that returned by -serializedRepresentation.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initWithSerializedRepresentation:")
@@ -274,21 +290,31 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     /**
      * What kind of file wrapper it is. Invocations of -readFromURL:options:error: may change what subsequent
      * invocations of these methods return.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isDirectory")
     public native boolean isDirectory();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("isRegularFile")
     public native boolean isRegularFile();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("isSymbolicLink")
     public native boolean isSymbolicLink();
 
     /**
      * Return the unique file name that has been assigned to a child or nil if it is not a child of the receiver.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -322,6 +348,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * Some instances of NSFileWrapper may be created without a preferredFilename (e.g. -initDirectoryWithFileWrappers:
      * or -initRegularFileWithContents:), meaning preferredFilename may be nil. However, setting nil is never allowed
      * and will result in an exception.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -344,6 +372,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     /**
      * Return the receiver's contents. This may return nil if the receiver is the result of reading a parent from the
      * file system (use NSFileWrapperReadingImmediately if appropriate to prevent that).
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -352,6 +382,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
 
     /**
      * Remove a file wrapper from the receiver's children.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("removeFileWrapper:")
@@ -361,6 +393,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * Return an NSData suitable for passing to -initWithSerializedRepresentation:. This method may return nil if the
      * receiver is the result of reading from the file system (use NSFileWrapperReadingImmediately if appropriate to
      * prevent that).
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -370,6 +404,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     /**
      * The file attributes, in a dictionary of the same sort as those returned by -[NSFileManager
      * attributesOfItemAtPath:error:].
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setFileAttributes:")
@@ -380,6 +416,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * from the preferred file name. You can use this method to find out the name of a child that's just been read but
      * you should not use it to find out the name of a child that's about to be written, because the name might be about
      * to change. Send -keyForFileWrapper: to the parent instead.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setFilename:")
@@ -397,6 +435,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * Some instances of NSFileWrapper may be created without a preferredFilename (e.g. -initDirectoryWithFileWrappers:
      * or -initRegularFileWithContents:), meaning preferredFilename may be nil. However, setting nil is never allowed
      * and will result in an exception.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setPreferredFilename:")

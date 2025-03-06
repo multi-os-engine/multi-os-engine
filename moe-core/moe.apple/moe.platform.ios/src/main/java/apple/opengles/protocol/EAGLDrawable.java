@@ -40,7 +40,12 @@ import org.jetbrains.annotations.Nullable;
 public interface EAGLDrawable {
     /**
      * Contains keys from kEAGLDrawableProperty* above
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("drawableProperties")
@@ -48,7 +53,12 @@ public interface EAGLDrawable {
 
     /**
      * Contains keys from kEAGLDrawableProperty* above
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setDrawableProperties:")
     void setDrawableProperties(@Nullable NSDictionary<String, ?> value);

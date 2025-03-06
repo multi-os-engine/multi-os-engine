@@ -192,25 +192,39 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Use @code [NSPredicate predicateWithValue:YES] / NSPredicate(value: true) @endcode if you want to query for all
      * records of a given type.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithRecordType:predicate:")
     public native CKQuery initWithRecordTypePredicate(@NotNull String recordType, @NotNull NSPredicate predicate);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("recordType")
     public native String recordType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setSortDescriptors:")
     public native void setSortDescriptors(@Nullable NSArray<? extends NSSortDescriptor> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("sortDescriptors")

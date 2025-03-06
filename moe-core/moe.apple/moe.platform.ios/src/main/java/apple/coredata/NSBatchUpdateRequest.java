@@ -83,6 +83,9 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("batchUpdateRequestWithEntityName:")
     public static native NSBatchUpdateRequest batchUpdateRequestWithEntityName(@NotNull String entityName);
@@ -169,11 +172,17 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("entityName")
@@ -181,6 +190,8 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
 
     /**
      * Should the update include subentities? Defaults to YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("includesSubentities")
@@ -190,14 +201,23 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("init")
     public native NSBatchUpdateRequest init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithEntity:")
     public native NSBatchUpdateRequest initWithEntity(@NotNull NSEntityDescription entity);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithEntityName:")
     public native NSBatchUpdateRequest initWithEntityName(@NotNull String entityName);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("predicate")
@@ -207,6 +227,8 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
      * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the
      * desired updates.
      * The expressions can be any NSExpression that evaluates to a scalar value.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -215,6 +237,8 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
 
     /**
      * The type of result that should be returned from this request. Defaults to NSStatusOnlyResultType
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("resultType")
@@ -223,11 +247,16 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
 
     /**
      * Should the update include subentities? Defaults to YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIncludesSubentities:")
     public native void setIncludesSubentities(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setPredicate:")
     public native void setPredicate(@Nullable NSPredicate value);
@@ -236,6 +265,8 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
      * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the
      * desired updates.
      * The expressions can be any NSExpression that evaluates to a scalar value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPropertiesToUpdate:")
@@ -243,6 +274,8 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
 
     /**
      * The type of result that should be returned from this request. Defaults to NSStatusOnlyResultType
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setResultType:")

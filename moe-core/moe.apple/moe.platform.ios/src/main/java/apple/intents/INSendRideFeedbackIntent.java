@@ -104,6 +104,9 @@ public class INSendRideFeedbackIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSendRideFeedbackIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithRideIdentifier:")
     public native INSendRideFeedbackIntent initWithRideIdentifier(@NotNull String rideIdentifier);
@@ -137,6 +140,8 @@ public class INSendRideFeedbackIntent extends INIntent {
 
     /**
      * Will be between 0 and 10 inclusive.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -153,6 +158,8 @@ public class INSendRideFeedbackIntent extends INIntent {
 
     /**
      * Specifies the identifier of the ride to send feedback for.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -161,11 +168,16 @@ public class INSendRideFeedbackIntent extends INIntent {
 
     /**
      * Will be between 0 and 10 inclusive.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRating:")
     public native void setRating(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTip:")
     public native void setTip(@Nullable INCurrencyAmount value);
@@ -188,6 +200,9 @@ public class INSendRideFeedbackIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("tip")

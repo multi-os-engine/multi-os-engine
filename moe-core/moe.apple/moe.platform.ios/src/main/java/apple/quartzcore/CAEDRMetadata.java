@@ -68,6 +68,8 @@ public class CAEDRMetadata extends NSObject implements NSCopying, NSSecureCoding
      * display-referred linear value corresponding to C = 4,000 cd/m^2 is y = 40.
      * If the content, y, is in a normalized pixel format then `scale' is
      * assumed to be 10,000.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -96,6 +98,8 @@ public class CAEDRMetadata extends NSObject implements NSCopying, NSSecureCoding
      * display-referred linear value corresponding to C = 4,000 cd/m^2 is y = 40.
      * If the content, y, is in a normalized pixel format then `scale' is
      * assumed to be 10,000.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -110,6 +114,8 @@ public class CAEDRMetadata extends NSObject implements NSCopying, NSSecureCoding
      * brightness and ambient. If rendering to a CAMetalLayer with a linear
      * colorspace (for floating point extended dynamic range layers), the content
      * provider must have already applied the HLG inverse OETF.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

@@ -30,6 +30,8 @@ public interface ASCredentialIdentity {
      * if two identities have the same service identifier. A credential identity with a larger rank value
      * precedes one with a smaller value if both credential identities have the same service identifier.
      * The default value of this property is 0.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("rank")
@@ -40,6 +42,8 @@ public interface ASCredentialIdentity {
      * Get the record identifier.
      * 
      * You can utilize the record identifier to uniquely identify the credential identity in your local database.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("recordIdentifier")
@@ -48,6 +52,8 @@ public interface ASCredentialIdentity {
 
     /**
      * Get the service identifier.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("serviceIdentifier")
@@ -61,6 +67,8 @@ public interface ASCredentialIdentity {
      * if two identities have the same service identifier. A credential identity with a larger rank value
      * precedes one with a smaller value if both credential identities have the same service identifier.
      * The default value of this property is 0.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRank:")
@@ -68,6 +76,8 @@ public interface ASCredentialIdentity {
 
     /**
      * Get the user.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("user")

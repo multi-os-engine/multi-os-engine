@@ -149,6 +149,8 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
      * quantityWithUnit:doubleValue:
      * 
      * Returns a new object representing a quantity measurement with the given unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("quantityWithUnit:doubleValue:")
@@ -186,6 +188,8 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
      * less than a given quantity.
      * 
      * Throws an exception if the unit of the given quantity is not compatible with the receiver's unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("compare:")
@@ -205,6 +209,8 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
      * Returns the quantity value converted to the given unit.
      * 
      * Throws an exception if the receiver's value cannot be converted to one of the requested unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("doubleValueForUnit:")
@@ -226,6 +232,8 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
      * isCompatibleWithUnit:
      * 
      * Returns yes if the receiver's value can be converted to a value of the given unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isCompatibleWithUnit:")

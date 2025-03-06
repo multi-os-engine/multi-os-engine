@@ -85,6 +85,9 @@ public class PKInk extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("color")
@@ -114,12 +117,17 @@ public class PKInk extends NSObject implements NSCopying {
     @Selector("init")
     public native PKInk init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithInkType:color:")
     public native PKInk initWithInkTypeColor(@NotNull String type, @NotNull UIColor color);
 
     /**
      * The type of ink, eg. pen, pencil...
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

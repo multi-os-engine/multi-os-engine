@@ -184,6 +184,8 @@ public class MPSMatrix extends NSObject {
      * [@property] columns
      * 
      * The number of columns in a matrix in the MPSMatrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("columns")
@@ -194,6 +196,8 @@ public class MPSMatrix extends NSObject {
      * [@property] data
      * 
      * An MTLBuffer to store the data.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -205,6 +209,8 @@ public class MPSMatrix extends NSObject {
      * [@property] dataType
      * 
      * The type of the MPSMatrix data.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dataType")
@@ -214,6 +220,8 @@ public class MPSMatrix extends NSObject {
      * [@property] device
      * 
      * The device on which the MPSMatrix will be used.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -237,6 +245,9 @@ public class MPSMatrix extends NSObject {
      * (descriptor.rows-1) * descriptor.rowBytes +
      * descriptor.columns * (element size) bytes.
      * 
+     * 
+     * API-Since: 10.0
+     * 
      * @param buffer     The MTLBuffer object which contains the data to use for the
      *                   MPSMatrix. May not be NULL.
      * 
@@ -254,6 +265,8 @@ public class MPSMatrix extends NSObject {
      * 
      * The stride, in bytes, between corresponding elements of
      * consecutive rows.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("rowBytes")
@@ -264,6 +277,8 @@ public class MPSMatrix extends NSObject {
      * [@property] rows
      * 
      * The number of rows in a matrix in the MPSMatrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("rows")
@@ -320,6 +335,8 @@ public class MPSMatrix extends NSObject {
      * when the data property is invoked. In conjunction
      * with -resourceSize, this will allow you to estimate storage needs
      * without actually creating the backing store for the matrix.
+     * 
+     * API-Since: 10.0
      * 
      * @param device     The device with which it will be used
      * @param descriptor The shape and style of the matrix

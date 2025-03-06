@@ -213,6 +213,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is NULL
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -328,6 +330,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -338,10 +342,16 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("init")
     public native UIBarButtonItem init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithBarButtonSystemItem:target:action:")
     public native UIBarButtonItem initWithBarButtonSystemItemTargetAction(@NInt long systemItem,
@@ -351,6 +361,9 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("initWithCoder:")
     public native UIBarButtonItem initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithCustomView:")
     public native UIBarButtonItem initWithCustomView(@NotNull UIView customView);
@@ -366,11 +379,17 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
             @Nullable UIImage landscapeImagePhone, @NInt long style,
             @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithImage:style:target:action:")
     public native UIBarButtonItem initWithImageStyleTargetAction(@Nullable UIImage image, @NInt long style,
             @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithTitle:style:target:action:")
     public native UIBarButtonItem initWithTitleStyleTargetAction(@Nullable String title, @NInt long style,
@@ -378,6 +397,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -386,6 +407,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is NULL
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAction:")
@@ -460,6 +483,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCustomView:")
@@ -467,6 +492,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setPossibleTitles:")
@@ -474,6 +501,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is UIBarButtonItemStylePlain
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setStyle:")
@@ -481,6 +510,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTarget:")
@@ -488,6 +519,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
@@ -519,6 +552,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is 0.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setWidth:")
@@ -526,6 +561,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is UIBarButtonItemStylePlain
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("style")
@@ -534,6 +571,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -559,6 +598,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * default is 0.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("width")

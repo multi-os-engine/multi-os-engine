@@ -123,6 +123,8 @@ public class SRSupplementalCategory extends NSObject implements NSCopying, NSSec
      * An opaque identifier for the supplemental category
      * 
      * More information about what this category represents can be found in Apple's developer documentation
+     * 
+     * API-Since: 16.4
      */
     @NotNull
     @Generated

@@ -7147,4 +7147,26 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String NSURLSessionUploadTaskResumeData();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSLocalizedNumberFormatAttributeName();
+
+    /**
+     * [@const] NSHTTPCookieSetByJavaScript
+     * 
+     * An NSString object indicating that the cookie is set via JavaScript.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSHTTPCookieSetByJavaScript();
 }

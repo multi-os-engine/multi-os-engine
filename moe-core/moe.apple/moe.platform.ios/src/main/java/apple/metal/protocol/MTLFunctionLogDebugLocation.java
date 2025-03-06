@@ -20,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
 public interface MTLFunctionLogDebugLocation {
     /**
      * source location
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -28,6 +30,8 @@ public interface MTLFunctionLogDebugLocation {
 
     /**
      * column in line
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("column")
@@ -36,6 +40,8 @@ public interface MTLFunctionLogDebugLocation {
 
     /**
      * faulting function
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -44,6 +50,8 @@ public interface MTLFunctionLogDebugLocation {
 
     /**
      * line number
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("line")

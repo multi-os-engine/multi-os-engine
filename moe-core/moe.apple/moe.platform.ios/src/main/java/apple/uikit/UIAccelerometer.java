@@ -153,6 +153,12 @@ public class UIAccelerometer extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAccelerometer has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sharedAccelerometer")
@@ -167,6 +173,12 @@ public class UIAccelerometer extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAccelerometer has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -177,10 +189,22 @@ public class UIAccelerometer extends NSObject {
     @Selector("init")
     public native UIAccelerometer init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAccelerometer has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIAccelerometerDelegate value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAccelerometer has been replaced by the CoreMotion framework
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIAccelerometerDelegate value) {
         Object __old = delegate();
@@ -195,14 +219,24 @@ public class UIAccelerometer extends NSObject {
 
     /**
      * May be capped at a minimum interval
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAccelerometer has been replaced by the CoreMotion framework
      */
+    @Deprecated
     @Generated
     @Selector("setUpdateInterval:")
     public native void setUpdateInterval(double value);
 
     /**
      * May be capped at a minimum interval
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: UIAccelerometer has been replaced by the CoreMotion framework
      */
+    @Deprecated
     @Generated
     @Selector("updateInterval")
     public native double updateInterval();

@@ -102,6 +102,9 @@ public class CNDetectionTrack extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("detectionAtOrBeforeTime:")
     @Nullable
@@ -111,6 +114,9 @@ public class CNDetectionTrack extends NSObject implements NSCopying {
      * The detectionGroupID of the subject detected by the track.
      * 
      * The detectionGroupID can be used to associate related detections such as the face and torso of the same person.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionGroupID")
@@ -118,11 +124,16 @@ public class CNDetectionTrack extends NSObject implements NSCopying {
 
     /**
      * The detectionID of the subject detected during this track; unique within a cinematic script.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionID")
     public native long detectionID();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("detectionNearestTime:")
     @Nullable
@@ -130,6 +141,8 @@ public class CNDetectionTrack extends NSObject implements NSCopying {
 
     /**
      * The type of subject detected by this detection track.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionType")
@@ -139,6 +152,8 @@ public class CNDetectionTrack extends NSObject implements NSCopying {
     /**
      * Gets the array of detections in the detection track within the given time range. Makes sense for discrete
      * detection tracks only.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionsInTimeRange:")
@@ -172,6 +187,9 @@ public class CNDetectionTrack extends NSObject implements NSCopying {
      * 
      * A discrete detection track will return detections only at the specific times a detection occurs.
      * A continuous detection track will return a detection for any requested time and an empty array for time ranges.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isDiscrete")
@@ -183,6 +201,8 @@ public class CNDetectionTrack extends NSObject implements NSCopying {
 
     /**
      * Whether this detection track was created by the client.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isUserCreated")

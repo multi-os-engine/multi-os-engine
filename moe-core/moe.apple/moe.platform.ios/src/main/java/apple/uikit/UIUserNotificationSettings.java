@@ -153,7 +153,12 @@ public class UIUserNotificationSettings extends NSObject {
 
     /**
      * categories may be nil or an empty set if custom user notification actions will not be used
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationSettings
      */
+    @Deprecated
     @Generated
     @Selector("settingsForTypes:categories:")
     public static native UIUserNotificationSettings settingsForTypesCategories(@NUInt long types,
@@ -171,7 +176,12 @@ public class UIUserNotificationSettings extends NSObject {
     /**
      * The set of UIUserNotificationCategory objects that describe the actions to show when a user notification is
      * presented
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationSettings
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("categories")
@@ -181,6 +191,12 @@ public class UIUserNotificationSettings extends NSObject {
     @Selector("init")
     public native UIUserNotificationSettings init();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationSettings
+     */
+    @Deprecated
     @Generated
     @Selector("types")
     @NUInt

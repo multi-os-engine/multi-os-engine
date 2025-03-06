@@ -106,6 +106,9 @@ public class INFlightReservation extends INReservation implements NSCopying, NSS
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("flight")
@@ -124,6 +127,9 @@ public class INFlightReservation extends INReservation implements NSCopying, NSS
     @Selector("initWithCoder:")
     public native INFlightReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:reservedSeat:flight:")
     public native INFlightReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsReservedSeatFlight(
@@ -159,6 +165,9 @@ public class INFlightReservation extends INReservation implements NSCopying, NSS
     @Selector("new")
     public static native INFlightReservation new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservedSeat")

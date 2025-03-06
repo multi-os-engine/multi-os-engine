@@ -161,15 +161,24 @@ public class PKLabeledValue extends NSObject {
     @Selector("init")
     public native PKLabeledValue init();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("initWithLabel:value:")
     public native PKLabeledValue initWithLabelValue(@NotNull String label, @NotNull String value);
 
+    /**
+     * API-Since: 10.1
+     */
     @NotNull
     @Generated
     @Selector("label")
     public native String label();
 
+    /**
+     * API-Since: 10.1
+     */
     @NotNull
     @Generated
     @Selector("value")

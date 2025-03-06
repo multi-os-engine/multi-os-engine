@@ -100,6 +100,8 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
      * This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of
      * synchronized data returned by AVCaptureDataOutputSynchronizer's
      * -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -112,6 +114,8 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
      * YES if the depth data was dropped.
      * 
      * If YES, inspect -droppedReason for the reason.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("depthDataWasDropped")
@@ -127,6 +131,8 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
      * If depthDataWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
      * 
      * AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("droppedReason")

@@ -110,6 +110,8 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
      * @param scaleFactorX   The X scale factor from the forward pass
      * @param scaleFactorY   The Y scale factor from the forward pass
      * @return A MPSCNNUpsamplingBilinearGradientNode
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:scaleFactorX:scaleFactorY:")
@@ -155,6 +157,8 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
      * @param scaleFactorX   The X scale factor from the forward pass
      * @param scaleFactorY   The Y scale factor from the forward pass
      * @return A MPSCNNUpsamplingBilinearGradientNode
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:scaleFactorX:scaleFactorY:")
@@ -170,10 +174,16 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("scaleFactorX")
     public native double scaleFactorX();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("scaleFactorY")
     public native double scaleFactorY();

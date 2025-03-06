@@ -82,6 +82,9 @@ public class CKSyncEngineWillSendChangesEvent extends CKSyncEngineEvent {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("context")
     @NotNull

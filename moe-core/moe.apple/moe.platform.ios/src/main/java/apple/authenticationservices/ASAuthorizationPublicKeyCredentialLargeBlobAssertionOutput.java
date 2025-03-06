@@ -89,6 +89,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobAssertionOutput extends 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("didWrite")
     public native boolean didWrite();
@@ -129,6 +132,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobAssertionOutput extends 
     @Selector("new")
     public static native ASAuthorizationPublicKeyCredentialLargeBlobAssertionOutput new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("readData")
     @Nullable

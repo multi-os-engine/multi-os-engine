@@ -95,6 +95,8 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
     /**
      * Gradient encode methods
      * Inference encode calls.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -103,6 +105,9 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
             @NotNull NSArray<? extends MPSNDArray> sources, @NotNull MPSNDArray gradient, @NotNull MPSState state);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:sourceGradient:gradientState:destinationArray:")
     public native void encodeToCommandBufferSourceArraysSourceGradientGradientStateDestinationArray(
@@ -125,6 +130,8 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * NSSecureCoding support
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -148,6 +155,8 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
      * @param count               The maximum number of NDArrays read by the kernel
      * @param sourceGradientIndex The source index for which gradient will be calculated
      * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:sourceCount:sourceGradientIndex:")

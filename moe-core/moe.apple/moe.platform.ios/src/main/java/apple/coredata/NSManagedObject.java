@@ -198,6 +198,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * invoked after a fetch or after unfaulting (commonly used for computing derived values from the persisted
      * properties)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("awakeFromFetch")
@@ -205,6 +207,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * invoked after an insert (commonly used for initializing special default/initial settings)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("awakeFromInsert")
@@ -222,6 +226,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * returns a dictionary with the keys and (new) values that have been changed since last fetching or saving the
      * object (this is implemented efficiently without firing relationship faults)
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -239,6 +245,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * returns a dictionary of the last fetched or saved keys and values of this object. Pass nil to get all persistent
      * modeled properties.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -249,15 +257,23 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * read notification (together with willAccessValueForKey used to maintain inverse relationships, to fire faults,
      * etc.) - each read access has to be wrapped in this method pair (in the same way as each write access has to be
      * wrapped in the KVO method pair)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("didAccessValueForKey:")
     public native void didAccessValueForKey(@Nullable String key);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("didChangeValueForKey:")
     public native void didChangeValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("didChangeValueForKey:withSetMutation:usingObjects:")
     public native void didChangeValueForKeyWithSetMutationUsingObjects(@NotNull String inKey,
@@ -265,6 +281,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * commonly used to notify other objects after a save
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("didSave")
@@ -272,11 +290,16 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * commonly used to clear out additional transient values or caches
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("didTurnIntoFault")
     public native void didTurnIntoFault();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("entity")
@@ -338,6 +361,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * The designated initializer.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -345,6 +370,9 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     public native NSManagedObject initWithEntityInsertIntoManagedObjectContext(@NotNull NSEntityDescription entity,
             @Nullable NSManagedObjectContext context);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("isDeleted")
     public native boolean isDeleted();
@@ -353,6 +381,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * this information is useful in many situations when computations are optional - this can be used to avoid growing
      * the object graph unnecessarily (which allows to control performance as it can avoid time consuming fetches from
      * databases)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isFault")
@@ -360,23 +390,33 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * state - methods
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isInserted")
     public native boolean isInserted();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("isUpdated")
     public native boolean isUpdated();
 
     /**
      * identity
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("objectID")
@@ -407,6 +447,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * primitive methods give access to the generic dictionary storage from subclasses that implement explicit accessors
      * like -setName/-name to add custom document logic
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -414,6 +456,9 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object primitiveValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setPrimitiveValue:forKey:")
     public native void setPrimitiveValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
@@ -421,25 +466,38 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * KVC - overridden to access generic dictionary storage unless subclasses explicitly provide accessors
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("validateForDelete:")
     public native boolean validateForDelete(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("validateForInsert:")
     public native boolean validateForInsert(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("validateForUpdate:")
     public native boolean validateForUpdate(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * KVC
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("validateValue:forKey:error:")
@@ -449,6 +507,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * KVC - overridden to access generic dictionary storage unless subclasses explicitly provide accessors
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -458,6 +518,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * read notification
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willAccessValueForKey:")
@@ -465,11 +527,16 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * KVO change notification
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willChangeValueForKey:")
     public native void willChangeValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("willChangeValueForKey:withSetMutation:usingObjects:")
     public native void willChangeValueForKeyWithSetMutationUsingObjects(@NotNull String inKey,
@@ -478,6 +545,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * commonly used to compute persisted values from other transient/scratchpad values, to set timestamps, etc. - this
      * method can have "side effects" on the persisted values
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willSave")

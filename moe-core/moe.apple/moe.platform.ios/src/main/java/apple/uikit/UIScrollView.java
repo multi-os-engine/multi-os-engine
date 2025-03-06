@@ -377,6 +377,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default NO. if YES and bounces is YES, even if content is smaller than bounds, allow drag horizontally
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("alwaysBounceHorizontal")
@@ -384,6 +386,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default NO. if YES and bounces is YES, even if content is smaller than bounds, allow drag vertically
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("alwaysBounceVertical")
@@ -437,15 +441,23 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     }
 
     /**
-     * default YES. if YES, bounces past edge of content and back again
+     * If YES, bounces past the edge of the content and back again.
+     * Setting this property is a convenience for setting both `bouncesHorizontally` and `bouncesVertically`.
+     * Only returns YES if both `bouncesHorizontally` and `bouncesVertically` are YES.
+     * Default: YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("bounces")
     public native boolean bounces();
 
     /**
-     * default is YES. if set, user can go past min/max zoom while gesturing and the zoom will animate to the min/max
-     * value at gesture end
+     * If set, the user can zoom past the min/max scale while gesturing and the scale will animate to the min/max value
+     * when the gesture ends
+     * Default: YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("bouncesZoom")
@@ -454,6 +466,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * default is YES. if NO, then once we start tracking, we don't try to drag if the touch moves. this has no effect
      * on presses
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("canCancelContentTouches")
@@ -461,6 +475,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default UIEdgeInsetsZero. add additional scroll area around content
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("contentInset")
@@ -488,6 +504,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * default is YES. if NO, we immediately call -touchesShouldBegin:withEvent:inContentView:. this has no effect on
      * presses
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("delaysContentTouches")
@@ -495,6 +513,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -507,7 +527,9 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
-     * displays the scroll indicators for a short time. This should be done whenever you bring the scroll view to front.
+     * Displays the scroll indicators for a short time. This should be done whenever you bring the scroll view to front.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("flashScrollIndicators")
@@ -515,6 +537,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIScrollViewIndicatorStyleDefault
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("indicatorStyle")
@@ -534,7 +558,9 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native UIScrollView initWithFrame(@ByValue CGRect frame);
 
     /**
-     * returns YES if user isn't dragging (touch up) but scroll view is still moving
+     * Returns YES if user isn't dragging (touch up) but scroll view is still moving
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isDecelerating")
@@ -542,6 +568,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default NO. if YES, try to lock vertical or horizontal scrolling while dragging
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isDirectionalLockEnabled")
@@ -549,14 +577,17 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default NO. if YES, try to lock vertical or horizontal scrolling while dragging
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDirectionalLockEnabled:")
     public native void setDirectionalLockEnabled(boolean value);
 
     /**
-     * returns YES if user has started scrolling. this may require some time and or distance to move to initiate
-     * dragging
+     * Returns YES if user has started scrolling. It may require some time and/or distance to move to initiate dragging
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isDragging")
@@ -578,6 +609,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default YES. turn off any dragging temporarily
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isScrollEnabled")
@@ -585,27 +618,35 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default YES. turn off any dragging temporarily
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setScrollEnabled:")
     public native void setScrollEnabled(boolean value);
 
     /**
-     * returns YES if user has touched. may not yet have started dragging
+     * Returns YES if user has touched. May not yet have started dragging
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isTracking")
     public native boolean isTracking();
 
     /**
-     * returns YES if we are in the middle of zooming back to the min/max value
+     * Returns YES if ths scroll view is in the middle of zooming back to the min/max zoom scale
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isZoomBouncing")
     public native boolean isZoomBouncing();
 
     /**
-     * returns YES if user in zoom gesture
+     * Returns YES if the user is performing a zoom gesture
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isZooming")
@@ -623,6 +664,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is 1.0. must be > minimum zoom scale to enable zooming
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("maximumZoomScale")
@@ -631,6 +674,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is 1.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("minimumZoomScale")
@@ -679,13 +724,20 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * scroll so rect is just visible (nearest edges). nothing if rect completely visible
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("scrollRectToVisible:animated:")
     public native void scrollRectToVisibleAnimated(@ByValue CGRect rect, boolean animated);
 
     /**
-     * default is YES.
+     * When the user taps the status bar, the scroll view beneath the touch which is closest to the status bar will be
+     * scrolled to top, but only if its `scrollsToTop` property is YES, its delegate does not return NO from
+     * `-scrollViewShouldScrollToTop:`, and it is not already at the top.
+     * On iPhone, we execute this gesture only if there's one on-screen scroll view with `scrollsToTop` == YES. If more
+     * than one is found, none will be scrolled.
+     * Default: YES
      */
     @Generated
     @Selector("scrollsToTop")
@@ -693,6 +745,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default NO. if YES and bounces is YES, even if content is smaller than bounds, allow drag horizontally
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAlwaysBounceHorizontal:")
@@ -700,21 +754,31 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default NO. if YES and bounces is YES, even if content is smaller than bounds, allow drag vertically
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAlwaysBounceVertical:")
     public native void setAlwaysBounceVertical(boolean value);
 
     /**
-     * default YES. if YES, bounces past edge of content and back again
+     * If YES, bounces past the edge of the content and back again.
+     * Setting this property is a convenience for setting both `bouncesHorizontally` and `bouncesVertically`.
+     * Only returns YES if both `bouncesHorizontally` and `bouncesVertically` are YES.
+     * Default: YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBounces:")
     public native void setBounces(boolean value);
 
     /**
-     * default is YES. if set, user can go past min/max zoom while gesturing and the zoom will animate to the min/max
-     * value at gesture end
+     * If set, the user can zoom past the min/max scale while gesturing and the scale will animate to the min/max value
+     * when the gesture ends
+     * Default: YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBouncesZoom:")
@@ -723,6 +787,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * default is YES. if NO, then once we start tracking, we don't try to drag if the touch moves. this has no effect
      * on presses
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCanCancelContentTouches:")
@@ -730,6 +796,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default UIEdgeInsetsZero. add additional scroll area around content
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContentInset:")
@@ -741,6 +809,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * animate at constant velocity to new offset
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContentOffset:animated:")
@@ -748,6 +818,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default CGSizeZero
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContentSize:")
@@ -763,6 +835,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * default is YES. if NO, we immediately call -touchesShouldBegin:withEvent:inContentView:. this has no effect on
      * presses
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelaysContentTouches:")
@@ -770,6 +844,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -777,6 +853,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
@@ -792,6 +870,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIScrollViewIndicatorStyleDefault
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setIndicatorStyle:")
@@ -808,6 +888,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is 1.0. must be > minimum zoom scale to enable zooming
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMaximumZoomScale:")
@@ -815,6 +897,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is 1.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMinimumZoomScale:")
@@ -831,13 +915,20 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
      * use the setter only, as a convenience for setting both verticalScrollIndicatorInsets and
      * horizontalScrollIndicatorInsets to the same value. if those properties have been set to different values, the
      * return value of this getter (deprecated) is undefined.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setScrollIndicatorInsets:")
     public native void setScrollIndicatorInsets(@ByValue UIEdgeInsets value);
 
     /**
-     * default is YES.
+     * When the user taps the status bar, the scroll view beneath the touch which is closest to the status bar will be
+     * scrolled to top, but only if its `scrollsToTop` property is YES, its delegate does not return NO from
+     * `-scrollViewShouldScrollToTop:`, and it is not already at the top.
+     * On iPhone, we execute this gesture only if there's one on-screen scroll view with `scrollsToTop` == YES. If more
+     * than one is found, none will be scrolled.
+     * Default: YES
      */
     @Generated
     @Selector("setScrollsToTop:")
@@ -845,6 +936,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default YES. show indicator while we are tracking. fades out after tracking
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setShowsHorizontalScrollIndicator:")
@@ -852,6 +945,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default YES. show indicator while we are tracking. fades out after tracking
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setShowsVerticalScrollIndicator:")
@@ -875,6 +970,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default YES. show indicator while we are tracking. fades out after tracking
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("showsHorizontalScrollIndicator")
@@ -882,6 +979,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default YES. show indicator while we are tracking. fades out after tracking
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("showsVerticalScrollIndicator")
@@ -893,6 +992,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
      * delivered to the subview
      * this has no effect on presses
      * default returns YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("touchesShouldBegin:withEvent:inContentView:")
@@ -904,6 +1005,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
      * returns NO the touches will continue to be delivered to the subview and scrolling will not occur
      * not called if canCancelContentTouches is NO. default returns YES if view isn't a UIControl
      * this has no effect on presses
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("touchesShouldCancelInContentView:")
@@ -1123,4 +1226,172 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * If YES, bounces past the left and right edges of the content and back again.
+     * Setting the `bounces` property will set this axis-specific value.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("bouncesHorizontally")
+    public native boolean bouncesHorizontally();
+
+    /**
+     * If YES, bounces past the top and bottom edges of the content and back again.
+     * Setting the `bounces` property will set this axis-specific value.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("bouncesVertically")
+    public native boolean bouncesVertically();
+
+    /**
+     * A unit point that describes how to align the scroll view content when the content size is smaller than the scroll
+     * view bounds.
+     * For example, (0, 0) aligns the content to the top left, (0.5, 0.5) centers the content, and (0.5, 1.0) would
+     * align the content to the bottom center.
+     * Default: CGPointZero
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("contentAlignmentPoint")
+    @ByValue
+    public native CGPoint contentAlignmentPoint();
+
+    /**
+     * Returns YES if the scroll view is currently animating a `contentOffset` change
+     * For example, this could be from a `setContentOffset:animated:` call
+     * Note that deceleration will *not* cause this property to be YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("isScrollAnimating")
+    public native boolean isScrollAnimating();
+
+    /**
+     * Returns YES if the scroll view is currently animating a `zoomScale` change
+     * For example, this could be from a `setZoomScale:animated:` call
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("isZoomAnimating")
+    public native boolean isZoomAnimating();
+
+    /**
+     * If YES, bounces past the left and right edges of the content and back again.
+     * Setting the `bounces` property will set this axis-specific value.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setBouncesHorizontally:")
+    public native void setBouncesHorizontally(boolean value);
+
+    /**
+     * If YES, bounces past the top and bottom edges of the content and back again.
+     * Setting the `bounces` property will set this axis-specific value.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setBouncesVertically:")
+    public native void setBouncesVertically(boolean value);
+
+    /**
+     * A unit point that describes how to align the scroll view content when the content size is smaller than the scroll
+     * view bounds.
+     * For example, (0, 0) aligns the content to the top left, (0.5, 0.5) centers the content, and (0.5, 1.0) would
+     * align the content to the bottom center.
+     * Default: CGPointZero
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setContentAlignmentPoint:")
+    public native void setContentAlignmentPoint(@ByValue CGPoint value);
+
+    /**
+     * If YES, scrolling horizontally past the left and right edges of the content will start scrolling parent scroll
+     * views.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setTransfersHorizontalScrollingToParent:")
+    public native void setTransfersHorizontalScrollingToParent(boolean value);
+
+    /**
+     * If YES, scrolling vertically past the top and bottom edges of the content will start scrolling parent scroll
+     * views.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setTransfersVerticalScrollingToParent:")
+    public native void setTransfersVerticalScrollingToParent(boolean value);
+
+    /**
+     * Stops any scrolling or zooming, whether initiated programmatically or by the user
+     * Stops scrolling at the current `contentOffset` during deceleration unless bouncing, in which case the
+     * `contentOffset` is moved within the valid range
+     * If paging is enabled, aligns `contentOffset` with a page boundary
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("stopScrollingAndZooming")
+    public native void stopScrollingAndZooming();
+
+    /**
+     * If YES, scrolling horizontally past the left and right edges of the content will start scrolling parent scroll
+     * views.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("transfersHorizontalScrollingToParent")
+    public native boolean transfersHorizontalScrollingToParent();
+
+    /**
+     * If YES, scrolling vertically past the top and bottom edges of the content will start scrolling parent scroll
+     * views.
+     * Default: YES
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("transfersVerticalScrollingToParent")
+    public native boolean transfersVerticalScrollingToParent();
+
+    /**
+     * Shows scroll indicators immediately as a result of any contentOffset changes performed within the block.
+     * Scroll indicators are only shown on axes where the contentOffset changes.
+     * If contentOffset is set without animation, the scroll indicators will fade out after a delay.
+     * If contentOffset is set with animation, the scroll indicators will fade out when the animation completes.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("withScrollIndicatorsShownForContentOffsetChanges:")
+    public native void withScrollIndicatorsShownForContentOffsetChanges(
+            @ObjCBlock(name = "call_withScrollIndicatorsShownForContentOffsetChanges") @NotNull Block_withScrollIndicatorsShownForContentOffsetChanges changes);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_withScrollIndicatorsShownForContentOffsetChanges {
+        @Generated
+        void call_withScrollIndicatorsShownForContentOffsetChanges();
+    }
 }

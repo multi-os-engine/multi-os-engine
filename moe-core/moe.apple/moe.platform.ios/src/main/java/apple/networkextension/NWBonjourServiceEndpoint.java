@@ -51,7 +51,11 @@ import org.jetbrains.annotations.Nullable;
  * the type "_music._tcp", and the domain "local".
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `nw_endpoint_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWBonjourServiceEndpoint.h>
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -122,7 +126,11 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
      * @return An initialized NWBonjourServiceEndpoint object.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use `nw_endpoint_create_bonjour_service` in Network framework instead, see
+     *         deprecation notice in <NetworkExtension/NWBonjourServiceEndpoint.h>
      */
+    @Deprecated
     @Generated
     @Selector("endpointWithName:type:domain:")
     public static native NWBonjourServiceEndpoint endpointWithNameTypeDomain(@NotNull String name, @NotNull String type,
@@ -191,7 +199,11 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
      * The endpoint's Bonjour service domain.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_endpoint_get_bonjour_service_domain` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWBonjourServiceEndpoint.h>
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("domain")
@@ -211,7 +223,11 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
      * The endpoint's Bonjour service name.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_endpoint_get_bonjour_service_name` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWBonjourServiceEndpoint.h>
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("name")
@@ -229,7 +245,11 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
      * The endpoint's Bonjour service type.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_endpoint_get_bonjour_service_type` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWBonjourServiceEndpoint.h>
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("type")

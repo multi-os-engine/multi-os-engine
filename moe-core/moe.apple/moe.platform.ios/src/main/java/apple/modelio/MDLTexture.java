@@ -202,11 +202,16 @@ public class MDLTexture extends NSObject implements MDLNamed {
      *              positive set and a negative set in the order +x, +y, +z, then -x, -y, -z.
      *              - if a single image is given it will be used without conversion if in column
      *              orientation and demosaiced in all other instances.
+     * 
+     *              API-Since: 9.0
      */
     @Generated
     @Selector("textureCubeWithImagesNamed:")
     public static native MDLTexture textureCubeWithImagesNamed(@NotNull NSArray<String> names);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("textureCubeWithImagesNamed:bundle:")
     public static native MDLTexture textureCubeWithImagesNamedBundle(@NotNull NSArray<String> names,
@@ -215,11 +220,16 @@ public class MDLTexture extends NSObject implements MDLNamed {
     /**
      * Creates a texture from a source in the main bundle named in a manner matching
      * name.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("textureNamed:")
     public static native MDLTexture textureNamed(@NotNull String name);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("textureNamed:bundle:")
     public static native MDLTexture textureNamedBundle(@NotNull String name, @Nullable NSBundle bundleOrNil);
@@ -229,11 +239,17 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("channelCount")
     @NUInt
     public native long channelCount();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("channelEncoding")
     @NInt
@@ -245,24 +261,38 @@ public class MDLTexture extends NSObject implements MDLNamed {
      * Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
      * have an alpha channel. It wil be YES if the texture has an alpha channel and
      * there is at least one non-opaque texel in it.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hasAlphaValues")
     public native boolean hasAlphaValues();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("imageFromTexture")
     public native CGImageRef imageFromTexture();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("init")
     public native MDLTexture init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("isCube")
     public native boolean isCube();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("mipLevelCount")
     @NUInt
@@ -273,6 +303,9 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rowStride")
     @NInt
@@ -284,11 +317,16 @@ public class MDLTexture extends NSObject implements MDLNamed {
      * Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
      * have an alpha channel. It wil be YES if the texture has an alpha channel and
      * there is at least one non-opaque texel in it.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHasAlphaValues:")
     public native void setHasAlphaValues(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setIsCube:")
     public native void setIsCube(boolean value);
@@ -297,21 +335,33 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("setName:")
     public native void setName(@NotNull String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("texelDataWithBottomLeftOrigin")
     public native NSData texelDataWithBottomLeftOrigin();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("texelDataWithBottomLeftOriginAtMipLevel:create:")
     public native NSData texelDataWithBottomLeftOriginAtMipLevelCreate(@NInt long level, boolean create);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("texelDataWithTopLeftOrigin")
     public native NSData texelDataWithTopLeftOrigin();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("texelDataWithTopLeftOriginAtMipLevel:create:")
@@ -319,6 +369,8 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     /**
      * write a texture to URL, deducing type from path extension
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("writeToURL:")
@@ -326,6 +378,8 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     /**
      * write a texture to URL, using a specific UT type
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("writeToURL:type:")

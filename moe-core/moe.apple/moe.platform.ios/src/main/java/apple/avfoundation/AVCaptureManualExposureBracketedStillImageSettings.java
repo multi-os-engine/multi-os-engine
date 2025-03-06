@@ -157,6 +157,8 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
      *                 The ISO. Pass AVCaptureISOCurrent to leave the ISO unchanged for this bracketed image.
      * @return
      *         An initialized AVCaptureManualExposureBracketedStillImageSettings instance.
+     * 
+     *         API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -194,6 +196,8 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
      * [@property] ISO
      * 
      * The ISO for the still image.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("ISO")
@@ -203,6 +207,8 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
      * [@property] exposureDuration
      * 
      * The exposure duration for the still image.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("exposureDuration")

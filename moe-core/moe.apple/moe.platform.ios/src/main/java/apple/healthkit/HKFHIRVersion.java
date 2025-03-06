@@ -58,6 +58,9 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
         super(peer);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("FHIRRelease")
@@ -156,11 +159,17 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("majorVersion")
     @NInt
     public native long majorVersion();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("minorVersion")
     @NInt
@@ -171,16 +180,25 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @Selector("new")
     public static native HKFHIRVersion new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("patchVersion")
     @NInt
     public native long patchVersion();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("primaryDSTU2Version")
     public static native HKFHIRVersion primaryDSTU2Version();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("primaryR4Version")
@@ -202,6 +220,8 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
      * [@property] stringRepresentation
      * 
      * A string representation in the format "{major}.{minor}.{patch}".
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -227,6 +247,9 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("versionFromVersionString:error:")
     public static native HKFHIRVersion versionFromVersionStringError(@NotNull String versionString,

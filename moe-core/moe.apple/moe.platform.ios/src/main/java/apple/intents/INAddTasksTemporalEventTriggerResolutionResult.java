@@ -115,6 +115,9 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
     @Selector("init")
     public native INAddTasksTemporalEventTriggerResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTemporalEventTriggerResolutionResult:")
     public native INAddTasksTemporalEventTriggerResolutionResult initWithTemporalEventTriggerResolutionResult(
@@ -184,6 +187,9 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
     @Selector("unsupported")
     public static native INAddTasksTemporalEventTriggerResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

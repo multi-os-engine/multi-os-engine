@@ -94,6 +94,8 @@ public class AVZoomRange extends NSObject {
      * 
      * Note that the zoom ranges are inclusive.
      * 
+     * API-Since: 17.2
+     * 
      * @param zoomFactor
      *                   The zoom factor to test.
      * @return
@@ -146,6 +148,8 @@ public class AVZoomRange extends NSObject {
      * [@property] maxZoomFactor
      * 
      * A CGFloat indicating the maximum zoom factor supported by this range.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("maxZoomFactor")
@@ -156,6 +160,8 @@ public class AVZoomRange extends NSObject {
      * [@property] minZoomFactor
      * 
      * A CGFloat indicating the minimum zoom factor supported by this range.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("minZoomFactor")

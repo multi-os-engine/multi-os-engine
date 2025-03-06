@@ -29,80 +29,80 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class vImageYpCbCrType {
+    @Generated
+    private vImageYpCbCrType() {
+    }
+
     /**
      * 2vuy
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage422CbYpCrYp8 = 0x00000000;
+    @Generated public static final int Image422CbYpCrYp8 = 0x00000000;
     /**
      * yuvs / yuvf
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage422YpCbYpCr8 = 0x00000001;
+    @Generated public static final int Image422YpCbYpCr8 = 0x00000001;
     /**
      * a2vy
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage422CbYpCrYp8_AA8 = 0x00000002;
+    @Generated public static final int Image422CbYpCrYp8_AA8 = 0x00000002;
     /**
      * y420 / f420
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage420Yp8_Cb8_Cr8 = 0x00000003;
+    @Generated public static final int Image420Yp8_Cb8_Cr8 = 0x00000003;
     /**
      * 420v / 420f
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage420Yp8_CbCr8 = 0x00000004;
+    @Generated public static final int Image420Yp8_CbCr8 = 0x00000004;
     /**
      * r408 / y408
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage444AYpCbCr8 = 0x00000005;
+    @Generated public static final int Image444AYpCbCr8 = 0x00000005;
     /**
      * v308
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage444CrYpCb8 = 0x00000006;
+    @Generated public static final int Image444CrYpCb8 = 0x00000006;
     /**
      * v408
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage444CbYpCrA8 = 0x00000007;
+    @Generated public static final int Image444CbYpCrA8 = 0x00000007;
     /**
      * v410
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage444CrYpCb10 = 0x00000008;
+    @Generated public static final int Image444CrYpCb10 = 0x00000008;
     /**
      * v210
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage422CrYpCbYpCbYpCbYpCrYpCrYp10 = 0x00000009;
+    @Generated public static final int Image422CrYpCbYpCbYpCbYpCrYpCrYp10 = 0x00000009;
     /**
      * v216 16-bit
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage422CbYpCrYp16 = 0x0000000D;
+    @Generated public static final int Image422CbYpCrYp16 = 0x0000000D;
     /**
      * y416
      * 
      * API-Since: 8.0
      */
-    @Generated public static final int kvImage444AYpCbCr16 = 0x0000000E;
-
-    @Generated
-    private vImageYpCbCrType() {
-    }
+    @Generated public static final int Image444AYpCbCr16 = 0x0000000E;
 }

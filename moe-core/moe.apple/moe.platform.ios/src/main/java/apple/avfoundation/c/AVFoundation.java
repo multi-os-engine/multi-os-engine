@@ -39,6 +39,11 @@ import org.jetbrains.annotations.Nullable;
 import apple.corefoundation.opaque.CFAllocatorRef;
 import apple.coremedia.opaque.CMTagCollectionRef;
 import org.moe.natj.general.ann.Mapped;
+import apple.avfoundation.struct.AVCaptionDimension;
+import apple.avfoundation.struct.AVCaptionPoint;
+import apple.avfoundation.struct.AVCaptionSize;
+import org.moe.natj.general.ann.NFloat;
+import org.moe.natj.general.ann.NInt;
 
 @Generated
 @Library("AVFoundation")
@@ -433,7 +438,9 @@ public final class AVFoundation {
      * Value should be a NSNumber created with +[NSNumber numberWithBool:].
      * 
      * API-Since: 9.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use -[AVPersistableContentKeyRequest
+     * persistableContentKeyFromKeyVendorResponse:options:error:] instead
      */
     @NotNull
     @Deprecated
@@ -681,7 +688,11 @@ public final class AVFoundation {
      * By default, the highest media bitrate will be selected for download.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use AVAssetDownloadConfiguration:variantQualifiers with assetVariantQualifierWithPredicate
+     * using desired comparison value against averageBitRate/peakBitRate instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -697,7 +708,10 @@ public final class AVFoundation {
      * By default, media selections for AVAssetDownloadTask will be automatically selected.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use AVAssetDownloadConfiguration:mediaSelections instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -8386,8 +8400,10 @@ public final class AVFoundation {
     /**
      * [@constant] AVContentKeySessionServerPlaybackContextOptionProtocolVersions
      * 
-     * Specifies the versions of the content protection protocol supported by the application as an NSArray of one or
-     * more NSNumber objects. If not specified default protocol version of 1 is assumed.
+     * Specifies the versions of the content protection protocol supported by the application; as an NSArray of one or
+     * more NSNumber objects. If this option is not set, an appropriate protocol version will be selected based on
+     * sideband information such as an associated HLS playlist. If such information is not available, a protocol version
+     * of 1 is assumed
      * 
      * API-Since: 12.2
      */
@@ -8568,7 +8584,10 @@ public final class AVFoundation {
      * available in additon to stereo.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use AVAssetDownloadConfiguration:variantQualifiers with predicateForChannelCount instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -9111,7 +9130,9 @@ public final class AVFoundation {
      * by display connection/disconnection or resource changes.
      * 
      * API-Since: 11.2
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -9262,7 +9283,11 @@ public final class AVFoundation {
      * By default, the highest media presentation size will be selected for download.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use AVAssetDownloadConfiguration:variantQualifiers with predicateForPresentationWidth and
+     * predicateForPresentationHeight instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -9278,7 +9303,11 @@ public final class AVFoundation {
      * By default AVAssetDownloadTask will prefer HDR content.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use AVAssetDownloadConfiguration:variantQualifiers with assetVariantQualifierWithPredicate
+     * using [NSPredicate predicateWithFormat:@'videoAttributes.videoRange == %@', AVVideoRangePQ]
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -9472,7 +9501,11 @@ public final class AVFoundation {
      * By default AVAssetDownloadTask will prefer lossy audio representation.
      * 
      * API-Since: 14.5
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use AVAssetDownloadConfiguration:variantQualifiers with assetVariantQualifierWithPredicate
+     * using [NSPredicate predicateWithFormat:@'%d in audioAttributes.formatIDs', kAudioFormatAppleLossless]
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -9857,7 +9890,7 @@ public final class AVFoundation {
     /**
      * [@constant] AVAssetPlaybackConfigurationOptionStereoVideo
      * 
-     * Indicates whether or not the asset can render stereo video.
+     * Indicates whether or not the asset can be rendered as stereo video.
      * 
      * Clients may use this property to determine whether to configure stereo video rendering.
      * 
@@ -9872,7 +9905,7 @@ public final class AVFoundation {
     /**
      * [@constant] AVAssetPlaybackConfigurationOptionStereoMultiviewVideo
      * 
-     * Indicates whether or not the asset can render stereo video and is also in a multiview compression format.
+     * Indicates whether or not the asset can rendered as stereo video and is also in a multiview compression format.
      * 
      * Clients may use this property to determine whether to configure stereo video rendering.
      * 
@@ -10494,9 +10527,11 @@ public final class AVFoundation {
      * to their Info.plist:
      * <key>NSCameraUseExternalDeviceType</key>
      * <true/>
-     * 
      * Otherwise, external cameras on Mac Catalyst report that their device type is
      * AVCaptureDeviceTypeBuiltInWideAngleCamera.
+     * 
+     * On visionOS, your app must have the `com.apple.developer.avfoundation.uvc-device-access` entitlement in order to
+     * discover and use devices of type `AVCaptureDeviceTypeExternal`.
      * 
      * API-Since: 17.0
      */
@@ -10557,4 +10592,360 @@ public final class AVFoundation {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String AVMetadataObjectTypeHumanFullBody();
+
+    /**
+     * [@function] AVCaptionDimensionMake
+     * 
+     * Makes an AVCaptionDimension from a value and units.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native AVCaptionDimension AVCaptionDimensionMake(@NFloat double value, @NInt long units);
+
+    /**
+     * [@function] AVCaptionPointMake
+     * 
+     * Makes an AVCaptionPoint from x and y coordinate AVCaptionDimensions.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native AVCaptionPoint AVCaptionPointMake(@ByValue AVCaptionDimension x,
+            @ByValue AVCaptionDimension y);
+
+    /**
+     * [@function] AVCaptionSizeMake
+     * 
+     * Makes an AVCaptionSize from width and height AVCaptionDimensions.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native AVCaptionSize AVCaptionSizeMake(@ByValue AVCaptionDimension width,
+            @ByValue AVCaptionDimension height);
+
+    /**
+     * [@constant] AVMediaTypeAuxiliaryPicture
+     * 
+     * This media type is used only to identify the track type. An Auxiliary Picture track is not intended to be
+     * displayed; as such, the track_in_movie flag in TrackHeaderBox of these tracks will be 0.
+     * A track with this media type contain video samples the media type of the format description of which is
+     * AVMediaTypeVideo.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaTypeAuxiliaryPicture();
+
+    /**
+     * [@constant] AVFileTypeAppleiTT
+     * 
+     * A UTI for the Apple iTT caption file format
+     * 
+     * The value of this UTI is @"com.apple.itunes-timed-text".
+     * Files are identified with the .itt extension.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVFileTypeAppleiTT();
+
+    /**
+     * [@constant] AVFileTypeSCC
+     * 
+     * A UTI for the Scenarist closed caption file format
+     * 
+     * The value of this UTI is @"com.scenarist.closed-caption".
+     * Files are identified with the .scc extension.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVFileTypeSCC();
+
+    /**
+     * [@constant] AVMetadataQuickTimeMetadataKeyFullFrameRatePlaybackIntent
+     * 
+     * A value of type kCMMetadataBaseDataType_UInt8 indicating whether this movie is intended to be played back at the
+     * full frame rate (1), or at a slow motion rate (0).
+     * 
+     * Historically, some apps have played movies recorded at frame rates of 120fps or higher in slow motion by default.
+     * With the introduction of this metadata, apps that record high-frame-rate movies may add this movie-level metadata
+     * to indicate whether the movie is intended to be played at the full frame rate (1) or at a slow motion rate (0).
+     * Apps that play movies may use this metadata, when present, to guide their behavior.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyFullFrameRatePlaybackIntent();
+
+    /**
+     * @"jxlc"
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoCodecTypeJPEGXL();
+
+    /**
+     * @"ap4x"
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoCodecTypeAppleProRes4444XQ();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoTransferFunction_IEC_sRGB();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetImageGeneratorDynamicRangePolicyForceSDR();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetImageGeneratorDynamicRangePolicyMatchSource();
+
+    /**
+     * [@constant] AVAssetPlaybackConfigurationOptionSpatialVideo
+     * 
+     * Indicates whether or not the asset can be rendered as spatial video.
+     * 
+     * Clients may use this property to determine whether to configure spatial video rendering.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetPlaybackConfigurationOptionSpatialVideo();
+
+    /**
+     * [@constant] AVCaptionMediaTypeKey
+     * 
+     * Indicates the output media type of a caption conversion operation. For example, AVMediaTypeClosedCaption.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptionMediaTypeKey();
+
+    /**
+     * [@constant] AVCaptionMediaSubTypeKey
+     * 
+     * Indicates the output media subtype of a caption conversion operation. For example, [NSNumber
+     * numberWithInt:kCMClosedCaptionFormatType_CEA608].
+     * 
+     * Both numeric and string forms of media subtypes are accepted for caption conversions, so you could, for example,
+     * use @"c608" instead of [NSNumber numberWithInt:kCMClosedCaptionFormatType_CEA608].
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptionMediaSubTypeKey();
+
+    /**
+     * CMTime as NSValue through +[NSValue valueWithCMTime] in AVTime.h
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptionTimeCodeFrameDurationKey();
+
+    /**
+     * [@constant] AVCaptionUseDropFrameTimeCodeKey
+     * 
+     * Indicates whether to use drop frame time code.
+     * 
+     * Some formats, such as SCC, use time code notation to indicate the timing of a caption. Use the property to
+     * specify whether to use the drop frame time code or non-drop frame time code.
+     * When the value for this key is a NSNumber indicating the BOOL YES, the receiver will use the drop frame time
+     * code.
+     * When the value for this key is a NSNumber indicating the BOOL NO, the receiver will use the non-drop frame time
+     * code.
+     * The default is NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptionUseDropFrameTimeCodeKey();
+
+    /**
+     * [@constant] AVCaptionConversionWarningTypeExcessMediaData
+     * 
+     * Indicates that one or more captions in the validator's captions array exceed the capacity for media data of the
+     * media type and subtype specified by the conversion settings.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptionConversionWarningTypeExcessMediaData();
+
+    /**
+     * [@constant] AVCaptionConversionAdjustmentTypeTimeRange
+     * 
+     * Indicates a timing adjustment.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptionConversionAdjustmentTypeTimeRange();
+
+    /**
+     * [@constant] AVMetadataIdentifierQuickTimeMetadataFullFrameRatePlaybackIntent
+     * 
+     * A value of type kCMMetadataBaseDataType_UInt8 indicating whether this movie is intended to be played back at the
+     * full frame rate (1), or at a slow motion rate (0).
+     * 
+     * Historically, some apps have played movies recorded at frame rates of 120fps or higher in slow motion by default.
+     * With the introduction of this metadata, apps that record high-frame-rate movies may add this movie-level metadata
+     * to indicate whether the movie is intended to be played at the full frame rate (1) or at a slow motion rate (0).
+     * Apps that play movies may use this metadata, when present, to guide their behavior.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataFullFrameRatePlaybackIntent();
+
+    /**
+     * [@constant] AVPlayerIntegratedTimelineSnapshotsOutOfSyncNotification
+     * 
+     * A notification which is posted when the snapshot objects provided by this timeline would be out of sync with the
+     * current timeline state. See keys below.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerIntegratedTimelineSnapshotsOutOfSyncNotification();
+
+    /**
+     * [@constant] AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonKey
+     * 
+     * Indicates the reason for the snapshot out of sync notification.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonSegmentsChanged();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonCurrentSegmentChanged();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonLoadedTimeRangesChanged();
+
+    /**
+     * see readyForDisplay property
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVSampleBufferDisplayLayerReadyForDisplayDidChangeNotification();
+
+    /**
+     * [@constant] AVSpatialCaptureDiscomfortReasonNotEnoughLight
+     * The lighting of the current scene is not bright enough; the playback experience will likely be uncomfortable due
+     * to noise differences between the two cameras.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVSpatialCaptureDiscomfortReasonNotEnoughLight();
+
+    /**
+     * [@constant] AVSpatialCaptureDiscomfortReasonSubjectTooClose
+     * The focus point of the current scene is too close; the playback experience will likely be uncomfortable due to
+     * the subject being closer than the minimum focus distance of one or both of the lenses.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVSpatialCaptureDiscomfortReasonSubjectTooClose();
 }

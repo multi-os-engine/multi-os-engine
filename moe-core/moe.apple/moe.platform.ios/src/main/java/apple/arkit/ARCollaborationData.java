@@ -143,6 +143,8 @@ public class ARCollaborationData extends NSObject implements NSSecureCoding {
      * Network priority of the data.
      * 
      * The network implementation should respect this flag and choose the appropriate protocol.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("priority")

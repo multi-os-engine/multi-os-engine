@@ -105,6 +105,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * The state(s) for which the accessory should be displayed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("displayedState")
@@ -120,6 +122,9 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("init")
     public native UICellAccessory init();
@@ -144,6 +149,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Hidden accessories take up space in the layout, but are not visible and do not provide any behaviors.
      * Use this property to achieve a consistent layout across cells when some show the accessory and others do not.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isHidden")
@@ -168,6 +175,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
      * This is used to ensure horizontal alignment of different accessories in adjacent cells, even when
      * the actual accessory view width varies slightly. A value of 0 means the actual width of the
      * accessory will be used. Use UICellAccessoryStandardDimension to request the standard width.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("reservedLayoutWidth")
@@ -184,6 +193,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * The state(s) for which the accessory should be displayed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDisplayedState:")
@@ -192,6 +203,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Hidden accessories take up space in the layout, but are not visible and do not provide any behaviors.
      * Use this property to achieve a consistent layout across cells when some show the accessory and others do not.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setHidden:")
@@ -202,6 +215,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
      * This is used to ensure horizontal alignment of different accessories in adjacent cells, even when
      * the actual accessory view width varies slightly. A value of 0 means the actual width of the
      * accessory will be used. Use UICellAccessoryStandardDimension to request the standard width.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setReservedLayoutWidth:")
@@ -209,6 +224,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * The tint color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -234,6 +251,8 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * The tint color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

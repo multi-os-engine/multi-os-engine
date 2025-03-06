@@ -83,11 +83,17 @@ public class INCreateNoteIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("code")
     @NInt
     public native long code();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("createdNote")
@@ -118,6 +124,8 @@ public class INCreateNoteIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -163,6 +171,9 @@ public class INCreateNoteIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setCreatedNote:")
     public native void setCreatedNote(@Nullable INNote value);

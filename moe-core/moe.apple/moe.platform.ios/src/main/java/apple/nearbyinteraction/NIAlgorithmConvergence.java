@@ -161,6 +161,9 @@ public class NIAlgorithmConvergence extends NSObject implements NSCopying, NSSec
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("status")
     @NInt

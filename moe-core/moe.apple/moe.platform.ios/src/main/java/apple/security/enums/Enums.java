@@ -2442,4 +2442,8 @@ public final class Enums {
      * The certificate contains multiple extensions with the same extension ID.
      */
     @Generated public static final int errSecCertificateDuplicateExtension = 0xFFFEF6C1;
+    /**
+     * ChaCha20-Poly1305 Cipher Suites for Transport Layer Security (TLS), RFC 7905
+     */
+    @Generated public static final char TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256 = 0xCCAC;
 }

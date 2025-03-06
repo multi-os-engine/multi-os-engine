@@ -307,6 +307,8 @@ public class HKActivitySummaryQuery extends HKQuery {
      *  @param predicate The predicate which HKActivitySummaries should match.
      *  @param handler The block to invoke with results when the query has finished.
      *  
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("initWithPredicate:resultsHandler:")
@@ -321,6 +323,8 @@ public class HKActivitySummaryQuery extends HKQuery {
      * then
      *                 the query must be manually stopped.
      *  
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setUpdateHandler:")
@@ -335,6 +339,8 @@ public class HKActivitySummaryQuery extends HKQuery {
      * then
      *                 the query must be manually stopped.
      *  
+     * 
+     * API-Since: 9.3
      */
     @Nullable
     @Generated
@@ -487,4 +493,31 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

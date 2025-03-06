@@ -35,7 +35,10 @@ import org.jetbrains.annotations.Nullable;
  * create MIDICISessions.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported for CoreMIDI
  */
+@Deprecated
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +100,12 @@ public class MIDICIDiscoveryManager extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @Generated
     @Selector("discoverWithHandler:")
     public native void discoverWithHandler(
@@ -157,6 +166,12 @@ public class MIDICIDiscoveryManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sharedInstance")

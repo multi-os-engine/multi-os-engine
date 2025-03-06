@@ -345,7 +345,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * 
      * @param zone   This parameter is ignored. Memory zones are no longer used by Objective-C.
      * @param device New Metal device
+     * 
+     *               API-Since: 12.0
+     *               Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Owned
@@ -364,7 +368,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * 
      * @param zone  This parameter is ignored. Memory zones are no longer used by Objective-C.
      * @param group New acceleration structure group
+     * 
+     *              API-Since: 12.0
+     *              Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Owned
@@ -393,19 +401,28 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * instance count might not be reflected. These changes require that the acceleration structure be
      * rebuilt instead. The acceleration structure must be rebuilt at least once before this method can
      * be called.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("encodeRefitToCommandBuffer:")
     public native void encodeRefitToCommandBuffer(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
+    @Deprecated
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The group this acceleration structure was created with
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("group")
@@ -428,7 +445,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * Initialize the acceleration structure with an NSCoder and a Metal device. Buffer
      * properties such as the vertex buffer, instance buffer, etc. are set to nil. Encode and decode
      * these buffers along with the acceleration structure instead.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
@@ -440,7 +461,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * structures in the instance hierarchy must share the same group. Buffer properties such as the
      * vertex buffer, instance buffer, etc. are set to nil. Encode and decode these buffers along with
      * the acceleration structure instead.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithCoder:group:")
     public native MPSAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
@@ -448,7 +473,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     /**
      * Initialize the acceleration structure with a Metal device
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:")
     public native MPSAccelerationStructure initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -459,7 +488,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * 
      * The Metal device is determined from the acceleration structure group. All
      * acceleration structures in the instance hierarchy must share the same group.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithGroup:")
     public native MPSAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
@@ -507,7 +540,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * refit. Before this method can be called, any pending GPU writes to the vertex buffer, index
      * buffer, etc. must be completed (and, for managed buffers, synchronized). Any prior intersection
      * tests must also be completed before the acceleration structure can be rebuilt.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rebuild")
     public native void rebuild();
@@ -528,7 +565,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * the vertex buffer, index buffer, etc. must be completed (and, for managed buffers,
      * synchronized). Any prior intersection tests must also be completed before the acceleration
      * structure can be rebuilt.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rebuildWithCompletionHandler:")
     public native void rebuildWithCompletionHandler(
@@ -552,7 +593,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     /**
      * Acceleration structure usage options. Changes to this property require rebuilding the
      * acceleration structure. Defaults to MPSAccelerationStructureUsageNone.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setUsage:")
     public native void setUsage(@NUInt long value);
@@ -563,7 +608,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     /**
      * Status indicating whether the acceleration structure has finished building
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("status")
     @NUInt
@@ -586,7 +635,11 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     /**
      * Acceleration structure usage options. Changes to this property require rebuilding the
      * acceleration structure. Defaults to MPSAccelerationStructureUsageNone.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("usage")
     @NUInt

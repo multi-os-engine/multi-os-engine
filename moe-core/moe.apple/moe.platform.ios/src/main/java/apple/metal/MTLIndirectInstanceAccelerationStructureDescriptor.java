@@ -92,6 +92,9 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("descriptor")
     public static native MTLIndirectInstanceAccelerationStructureDescriptor descriptor();
@@ -108,6 +111,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Buffer containing the instance count as a uint32_t value. Value at build time
      * must be less than or equal to maxInstanceCount.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceCountBuffer")
@@ -118,6 +123,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the instance count buffer. Must be a multiple of 4 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceCountBufferOffset")
@@ -126,6 +133,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Buffer containing instance descriptors of the type specified by the instanceDescriptorType property
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceDescriptorBuffer")
@@ -136,6 +145,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceDescriptorBufferOffset")
@@ -146,6 +157,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
      * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
      * be at least the size of the instance descriptor type and must be a multiple of 4 bytes.
      * Defaults to the size of the instance descriptor type.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceDescriptorStride")
@@ -157,6 +170,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
      * MTLAccelerationStructureInstanceDescriptorTypeIndirect. Must be
      * MTLAccelerationStructureInstanceDescriptorTypeIndirect or
      * MTLAccelerationStructureInstanceDescriptorTypeIndirectMotion.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceDescriptorType")
@@ -187,6 +202,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Maximum number of instance descriptors
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("maxInstanceCount")
@@ -195,6 +212,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Maximum number of motion transforms
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("maxMotionTransformCount")
@@ -203,6 +222,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Buffer containing transformation information for motion
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("motionTransformBuffer")
@@ -213,6 +234,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
      * must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("motionTransformBufferOffset")
@@ -222,6 +245,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Buffer containing the motion transform count as a uint32_t value. Value at build time
      * must be less than or equal to maxMotionTransformCount.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("motionTransformCountBuffer")
@@ -232,6 +257,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the motion transform count buffer. Must be a multiple of 4 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("motionTransformCountBufferOffset")
@@ -254,6 +281,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Buffer containing the instance count as a uint32_t value. Value at build time
      * must be less than or equal to maxInstanceCount.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setInstanceCountBuffer:")
@@ -262,6 +291,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the instance count buffer. Must be a multiple of 4 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setInstanceCountBufferOffset:")
@@ -269,6 +300,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Buffer containing instance descriptors of the type specified by the instanceDescriptorType property
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setInstanceDescriptorBuffer:")
@@ -277,6 +310,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setInstanceDescriptorBufferOffset:")
@@ -286,6 +321,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
      * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
      * be at least the size of the instance descriptor type and must be a multiple of 4 bytes.
      * Defaults to the size of the instance descriptor type.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setInstanceDescriptorStride:")
@@ -296,6 +333,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
      * MTLAccelerationStructureInstanceDescriptorTypeIndirect. Must be
      * MTLAccelerationStructureInstanceDescriptorTypeIndirect or
      * MTLAccelerationStructureInstanceDescriptorTypeIndirectMotion.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setInstanceDescriptorType:")
@@ -303,6 +342,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Maximum number of instance descriptors
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMaxInstanceCount:")
@@ -310,6 +351,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Maximum number of motion transforms
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMaxMotionTransformCount:")
@@ -317,6 +360,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
 
     /**
      * Buffer containing transformation information for motion
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMotionTransformBuffer:")
@@ -325,6 +370,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
      * must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMotionTransformBufferOffset:")
@@ -333,6 +380,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Buffer containing the motion transform count as a uint32_t value. Value at build time
      * must be less than or equal to maxMotionTransformCount.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMotionTransformCountBuffer:")
@@ -341,6 +390,8 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     /**
      * Offset into the motion transform count buffer. Must be a multiple of 4 bytes and must be
      * aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMotionTransformCountBufferOffset:")
@@ -363,4 +414,67 @@ public class MTLIndirectInstanceAccelerationStructureDescriptor extends MTLAccel
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Matrix layout of the transformation matrices in the instance descriptors
+     * in the instance descriptor buffer and the transformation matrices in the
+     * transformation matrix buffer. Defaults to MTLMatrixLayoutColumnMajor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("instanceTransformationMatrixLayout")
+    @NInt
+    public native long instanceTransformationMatrixLayout();
+
+    /**
+     * Motion transform stride. Defaults to 0, indicating that transforms are tightly packed according to the
+     * motion transform type.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("motionTransformStride")
+    @NUInt
+    public native long motionTransformStride();
+
+    /**
+     * Type of motion transforms. Defaults to MTLTransformTypePackedFloat4x3.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("motionTransformType")
+    @NInt
+    public native long motionTransformType();
+
+    /**
+     * Matrix layout of the transformation matrices in the instance descriptors
+     * in the instance descriptor buffer and the transformation matrices in the
+     * transformation matrix buffer. Defaults to MTLMatrixLayoutColumnMajor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setInstanceTransformationMatrixLayout:")
+    public native void setInstanceTransformationMatrixLayout(@NInt long value);
+
+    /**
+     * Motion transform stride. Defaults to 0, indicating that transforms are tightly packed according to the
+     * motion transform type.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMotionTransformStride:")
+    public native void setMotionTransformStride(@NUInt long value);
+
+    /**
+     * Type of motion transforms. Defaults to MTLTransformTypePackedFloat4x3.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMotionTransformType:")
+    public native void setMotionTransformType(@NInt long value);
 }

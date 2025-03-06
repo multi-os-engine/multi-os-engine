@@ -50,6 +50,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface GCPhysicalInputSource {
     /**
      * One or more directions associated with the source.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("direction")
@@ -58,6 +60,8 @@ public interface GCPhysicalInputSource {
 
     /**
      * The set of aliases for the element that the user interacts with.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("elementAliases")
@@ -66,6 +70,8 @@ public interface GCPhysicalInputSource {
 
     /**
      * The localized name of the element that the user interacts with.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("elementLocalizedName")
@@ -74,6 +80,8 @@ public interface GCPhysicalInputSource {
 
     /**
      * The SF Symbol of the element that the user interacts with.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sfSymbolsName")

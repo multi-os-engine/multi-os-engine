@@ -63,6 +63,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * 
      * This is an optional property that indicates the age of this voice, to be treated as a personality trait. Defaults
      * to 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("age")
@@ -125,6 +127,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
 
     /**
      * The gender of the voice (optional)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("gender")
@@ -141,6 +145,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * 
      * The recommended format is reverse domain notation.
      * Behavior is undefined if identifiers are not unique for all voices within a given extension.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -155,6 +161,9 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
     @Selector("initWithCoder:")
     public native AVSpeechSynthesisProviderVoice initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithName:identifier:primaryLanguages:supportedLanguages:")
     public native AVSpeechSynthesisProviderVoice initWithNameIdentifierPrimaryLanguagesSupportedLanguages(
@@ -185,6 +194,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
 
     /**
      * The localized name of the voice
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -200,6 +211,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * A set of BCP 47 codes identifying the languages this synthesizer is primarily used for.
      * 
      * These languages are what a user would expect a synthesizer to fully support and be primarily used for.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -219,6 +232,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * 
      * This is an optional property that indicates the age of this voice, to be treated as a personality trait. Defaults
      * to 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAge:")
@@ -226,6 +241,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
 
     /**
      * The gender of the voice (optional)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setGender:")
@@ -235,6 +252,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * The voice version (optional)
      * 
      * This is an optional property for bookkeeping. This value does not affect system behavior.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setVersion:")
@@ -244,6 +263,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * The size of the voice (optional)
      * 
      * This reported size of the voice package on disk, in bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setVoiceSize:")
@@ -260,6 +281,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * multi-lingual phrase, it would be able to speak the entire phrase without a need to to switch voices. For
      * example, a zh-CN voice could have @c ["zh-CN"] as its @c primaryLanguages, but in @c supportedLanguages have @c
      * ["zh-CN","en-US"] indicating if it received "你好 means Hello", it would be able to speak the entire phrase.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -281,6 +304,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * 
      * Call this method to indicate to the system that there has been change in the availability of the voices your
      * application is providing to the system.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("updateSpeechVoices")
@@ -290,6 +315,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * The voice version (optional)
      * 
      * This is an optional property for bookkeeping. This value does not affect system behavior.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -300,6 +327,8 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * The size of the voice (optional)
      * 
      * This reported size of the voice package on disk, in bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("voiceSize")

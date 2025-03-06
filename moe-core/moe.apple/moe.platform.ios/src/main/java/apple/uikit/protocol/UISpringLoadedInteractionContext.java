@@ -30,6 +30,8 @@ public interface UISpringLoadedInteractionContext {
      * 
      * @param view A view on which the drag is taking place. Specify nil to indicate the window.
      * @return A point in the local coordinate system of `view`.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("locationInView:")
@@ -39,6 +41,8 @@ public interface UISpringLoadedInteractionContext {
     /**
      * The `targetItem` allows to distinguish a region of the view on which the interaction is installed.
      * It is convenient to set this property to a model object associated to `targetView`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTargetItem:")
@@ -46,6 +50,8 @@ public interface UISpringLoadedInteractionContext {
 
     /**
      * The view to which the interaction effect is applied. Defaults to the interaction's view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTargetView:")
@@ -53,6 +59,8 @@ public interface UISpringLoadedInteractionContext {
 
     /**
      * The state that describes the current springloading style.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("state")
@@ -62,6 +70,8 @@ public interface UISpringLoadedInteractionContext {
     /**
      * The `targetItem` allows to distinguish a region of the view on which the interaction is installed.
      * It is convenient to set this property to a model object associated to `targetView`.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -71,6 +81,8 @@ public interface UISpringLoadedInteractionContext {
 
     /**
      * The view to which the interaction effect is applied. Defaults to the interaction's view.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

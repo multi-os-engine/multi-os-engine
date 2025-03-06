@@ -129,6 +129,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      * default summary string "Share Options"
      * 
      * @param optionsGroups SWCollaborationOptionsGroups to customize how the collaboration will be shared
+     * 
+     *                      API-Since: 16.0
      */
     @Generated
     @Selector("initWithOptionsGroups:")
@@ -141,6 +143,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      * 
      * @param optionsGroups SWCollaborationOptionsGroups to customize how the collaboration will be shared
      * @param summary       localized string to summarize the selected collaboration options
+     * 
+     *                      API-Since: 16.0
      */
     @Generated
     @Selector("initWithOptionsGroups:summary:")
@@ -176,6 +180,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
 
     /**
      * SWCollaborationOptionsGroups to customize how the collaboration will be shared
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -192,6 +198,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
 
     /**
      * SWCollaborationOptionsGroups to customize how the collaboration will be shared
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setOptionsGroups:")
@@ -200,6 +208,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
     /**
      * Localized string to summarize the selected collaboration options. If nil, "Share Options" will be displayed by
      * default.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSummary:")
@@ -214,6 +224,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      * the selected options
      * 
      * @param optionsGroups SWCollaborationOptionsGroups to customize how the collaboration will be shared
+     * 
+     *                      API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -227,6 +239,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      * 
      * @param optionsGroups SWCollaborationOptionsGroups to customize how the collaboration will be shared
      * @param summary       localized string to summarize the selected collaboration options
+     * 
+     *                      API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -237,6 +251,8 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
     /**
      * Localized string to summarize the selected collaboration options. If nil, "Share Options" will be displayed by
      * default.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

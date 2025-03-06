@@ -169,6 +169,8 @@ public class WKNavigationAction extends NSObject {
      * The type of action that triggered the navigation.
      * 
      * The value is one of the constants of the enumerated type WKNavigationType.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("navigationType")
@@ -177,6 +179,8 @@ public class WKNavigationAction extends NSObject {
 
     /**
      * The navigation's request.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -185,6 +189,8 @@ public class WKNavigationAction extends NSObject {
 
     /**
      * The frame requesting the navigation.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -193,6 +199,8 @@ public class WKNavigationAction extends NSObject {
 
     /**
      * The target frame, or nil if this is a new window navigation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

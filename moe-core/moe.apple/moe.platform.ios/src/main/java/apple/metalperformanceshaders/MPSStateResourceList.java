@@ -59,6 +59,8 @@ public class MPSStateResourceList extends NSObject {
 
     /**
      * append a buffer to the resource list
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("appendBuffer:")
@@ -66,6 +68,8 @@ public class MPSStateResourceList extends NSObject {
 
     /**
      * append a texture to the resource list
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("appendTexture:")
@@ -111,6 +115,8 @@ public class MPSStateResourceList extends NSObject {
 
     /**
      * Init an empty list
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("init")
@@ -153,6 +159,8 @@ public class MPSStateResourceList extends NSObject {
 
     /**
      * Init an empty autoreleased resource list
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("resourceList")
@@ -160,6 +168,8 @@ public class MPSStateResourceList extends NSObject {
 
     /**
      * Init a resource list with a 0 terminated list of Buffer Sizes
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Variadic()
@@ -168,6 +178,8 @@ public class MPSStateResourceList extends NSObject {
 
     /**
      * Init a resource list with a nil terminated list of MTLTextureDescriptors
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Variadic()

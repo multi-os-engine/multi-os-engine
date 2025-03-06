@@ -141,6 +141,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     /**
      * The radius of the bilateral filter. Defaults to 2 resulting in a 5x5 filter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bilateralFilterRadius")
@@ -150,6 +152,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The sigma value of the Gaussian function used by the bilateral filter. Must be greater
      * than zero. Defaults to 1.2.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bilateralFilterSigma")
@@ -169,6 +173,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The number of channels to filter in the source image. Must be at least one and at most
      * three. Defaults to 3.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("channelCount")
@@ -178,6 +184,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The number of channels to filter in the second source image. Must be at least one and at
      * most three. Defaults to 3.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("channelCount2")
@@ -201,6 +209,9 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Owned
@@ -216,6 +227,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * Controls how samples' depths are compared during reprojection, variance estimation, and
      * bilateral filtering. The final weight is given by exp(-abs(Z1 - Z2) / depthWeight). Must be
      * greater than zero. Defaults to 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("depthWeight")
@@ -269,6 +282,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * @param sourceTexture      Source packed color and variance texture
      * @param destinationTexture Destination packed color and variance texture
      * @param depthNormalTexture The depth and normal values for the current frame
+     * 
+     *                           API-Since: 13.0
      */
     @Generated
     @Selector("encodeBilateralFilterToCommandBuffer:stepDistance:sourceTexture:destinationTexture:depthNormalTexture:")
@@ -324,6 +339,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * @param sourceTexture2      Second source image
      * @param destinationTexture2 Second destination image
      * @param depthNormalTexture  The depth and normal values for the current frame
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @Selector("encodeBilateralFilterToCommandBuffer:stepDistance:sourceTexture:destinationTexture:sourceTexture2:destinationTexture2:depthNormalTexture:")
@@ -400,6 +417,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * @param motionVectorTexture                Motion vector texture
      * @param depthNormalTexture                 The depth and normal values for the current frame
      * @param previousDepthNormalTexture         The depth and normal values for the previous frame
+     * 
+     *                                           API-Since: 13.0
      */
     @Generated
     @Selector("encodeReprojectionToCommandBuffer:sourceTexture:previousTexture:destinationTexture:previousLuminanceMomentsTexture:destinationLuminanceMomentsTexture:previousFrameCountTexture:destinationFrameCountTexture:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
@@ -486,6 +505,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * @param motionVectorTexture                 Motion vector texture
      * @param depthNormalTexture                  The depth and normal values for the current frame
      * @param previousDepthNormalTexture          The depth and normal values for the previous frame
+     * 
+     *                                            API-Since: 13.0
      */
     @Generated
     @Selector("encodeReprojectionToCommandBuffer:sourceTexture:previousTexture:destinationTexture:previousLuminanceMomentsTexture:destinationLuminanceMomentsTexture:sourceTexture2:previousTexture2:destinationTexture2:previousLuminanceMomentsTexture2:destinationLuminanceMomentsTexture2:previousFrameCountTexture:destinationFrameCountTexture:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
@@ -552,6 +573,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * @param destinationTexture      Output packed color and variance image
      * @param frameCountTexture       Number of frames accumulated into the source image
      * @param depthNormalTexture      The depth and normal values for the current frame
+     * 
+     *                                API-Since: 13.0
      */
     @Generated
     @Selector("encodeVarianceEstimationToCommandBuffer:sourceTexture:luminanceMomentsTexture:destinationTexture:frameCountTexture:depthNormalTexture:")
@@ -611,6 +634,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * @param destinationTexture2      Second destination image
      * @param frameCountTexture        Number of frames accumulated into the source image
      * @param depthNormalTexture       The depth and normal values for the current frame
+     * 
+     *                                 API-Since: 13.0
      */
     @Generated
     @Selector("encodeVarianceEstimationToCommandBuffer:sourceTexture:luminanceMomentsTexture:destinationTexture:sourceTexture2:luminanceMomentsTexture2:destinationTexture2:frameCountTexture:depthNormalTexture:")
@@ -642,11 +667,17 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native MPSSVGF initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSSVGF initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSSVGF initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -677,6 +708,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * Controls how samples' luminance values are compared during bilateral filtering. The final
      * weight is given by exp(-abs(L1 - L2) / (luminanceWeight * luminanceVariance + EPSILON)). Must be
      * greater than or equal to zero. Defaults to 4.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("luminanceWeight")
@@ -686,6 +719,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * The minimum number of frames which must be accumulated before variance can be computed
      * directly from the accumulated luminance moments. If enough frames have not been accumulated,
      * variance will be estimated with a spatial filter instead. Defaults to 4.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimumFramesForVarianceEstimation")
@@ -701,6 +736,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * Controls how samples' normals are compared during reprojection, variance estimation, and
      * bilateral filtering. The final weight is given by pow(max(dot(N1, N2)), normalWeight). Must be
      * greater than or equal to zero. Defaults to 128.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("normalWeight")
@@ -710,6 +747,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * During reprojection, minimum combined depth and normal weight needed to consider a pixel
      * from the previous frame consistent with a pixel from the current frame. Must be greater than or
      * equal to zero. Defaults to 0.01.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("reprojectionThreshold")
@@ -725,6 +764,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     /**
      * The radius of the bilateral filter. Defaults to 2 resulting in a 5x5 filter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBilateralFilterRadius:")
@@ -733,6 +774,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The sigma value of the Gaussian function used by the bilateral filter. Must be greater
      * than zero. Defaults to 1.2.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBilateralFilterSigma:")
@@ -741,6 +784,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The number of channels to filter in the second source image. Must be at least one and at
      * most three. Defaults to 3.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setChannelCount2:")
@@ -749,6 +794,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The number of channels to filter in the source image. Must be at least one and at most
      * three. Defaults to 3.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setChannelCount:")
@@ -758,6 +805,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * Controls how samples' depths are compared during reprojection, variance estimation, and
      * bilateral filtering. The final weight is given by exp(-abs(Z1 - Z2) / depthWeight). Must be
      * greater than zero. Defaults to 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDepthWeight:")
@@ -767,6 +816,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * Controls how samples' luminance values are compared during bilateral filtering. The final
      * weight is given by exp(-abs(L1 - L2) / (luminanceWeight * luminanceVariance + EPSILON)). Must be
      * greater than or equal to zero. Defaults to 4.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLuminanceWeight:")
@@ -776,6 +827,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * The minimum number of frames which must be accumulated before variance can be computed
      * directly from the accumulated luminance moments. If enough frames have not been accumulated,
      * variance will be estimated with a spatial filter instead. Defaults to 4.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMinimumFramesForVarianceEstimation:")
@@ -785,6 +838,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * Controls how samples' normals are compared during reprojection, variance estimation, and
      * bilateral filtering. The final weight is given by pow(max(dot(N1, N2)), normalWeight). Must be
      * greater than or equal to zero. Defaults to 128.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNormalWeight:")
@@ -794,6 +849,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * During reprojection, minimum combined depth and normal weight needed to consider a pixel
      * from the previous frame consistent with a pixel from the current frame. Must be greater than or
      * equal to zero. Defaults to 0.01.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setReprojectionThreshold:")
@@ -804,6 +861,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * the current frame with the previous frame during reprojection. The final value is given by
      * current * temporalReprojectionBlendFactor + previous * (1 - temporalReprojectionBlendFactor).
      * Must be between zero and one, inclusive. Defaults to 0.2.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTemporalReprojectionBlendFactor:")
@@ -812,6 +871,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * How to weight samples during temporal reprojection. Defaults to
      * MPSTemporalWeightingAverage.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTemporalWeighting:")
@@ -820,6 +881,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The radius of the spatial filter used when not enough frames have been accumulated to
      * compute variance from accumulated luminance moments. Defaults to 3 resulting in a 7x7 filter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setVarianceEstimationRadius:")
@@ -829,6 +892,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * The sigma value of the Gaussian function used by the spatial filter used when not enough
      * frames have been accumulated to compute variance from accumulated luminance moments. Must be
      * greater than zero. Defaults to 2.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setVarianceEstimationSigma:")
@@ -837,6 +902,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The radius of the variance pre-filter of the bilateral filter. Defaults to 1 resulting in
      * a 3x3 filter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setVariancePrefilterRadius:")
@@ -845,6 +912,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The sigma value of the Gaussian function used by the variance pre-filter of the
      * bilateral filter. Must be greater than zero. Defaults to 1.33.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setVariancePrefilterSigma:")
@@ -873,6 +942,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * the current frame with the previous frame during reprojection. The final value is given by
      * current * temporalReprojectionBlendFactor + previous * (1 - temporalReprojectionBlendFactor).
      * Must be between zero and one, inclusive. Defaults to 0.2.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("temporalReprojectionBlendFactor")
@@ -881,6 +952,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * How to weight samples during temporal reprojection. Defaults to
      * MPSTemporalWeightingAverage.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("temporalWeighting")
@@ -890,6 +963,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The radius of the spatial filter used when not enough frames have been accumulated to
      * compute variance from accumulated luminance moments. Defaults to 3 resulting in a 7x7 filter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("varianceEstimationRadius")
@@ -900,6 +975,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * The sigma value of the Gaussian function used by the spatial filter used when not enough
      * frames have been accumulated to compute variance from accumulated luminance moments. Must be
      * greater than zero. Defaults to 2.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("varianceEstimationSigma")
@@ -908,6 +985,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The radius of the variance pre-filter of the bilateral filter. Defaults to 1 resulting in
      * a 3x3 filter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("variancePrefilterRadius")
@@ -917,6 +996,8 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     /**
      * The sigma value of the Gaussian function used by the variance pre-filter of the
      * bilateral filter. Must be greater than zero. Defaults to 1.33.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("variancePrefilterSigma")

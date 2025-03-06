@@ -43,17 +43,29 @@ public final class tls_ciphersuite_t {
     private tls_ciphersuite_t() {
     }
 
-    @Generated public static final char RSA_WITH_3DES_EDE_CBC_SHA = 0x000A;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     */
+    @Deprecated @Generated public static final char RSA_WITH_3DES_EDE_CBC_SHA = 0x000A;
     @Generated public static final char RSA_WITH_AES_128_CBC_SHA = 0x002F;
     @Generated public static final char RSA_WITH_AES_256_CBC_SHA = 0x0035;
     @Generated public static final char RSA_WITH_AES_128_GCM_SHA256 = 0x009C;
     @Generated public static final char RSA_WITH_AES_256_GCM_SHA384 = 0x009D;
     @Generated public static final char RSA_WITH_AES_128_CBC_SHA256 = 0x003C;
     @Generated public static final char RSA_WITH_AES_256_CBC_SHA256 = 0x003D;
-    @Generated public static final char ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA = 0xC008;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     */
+    @Deprecated @Generated public static final char ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA = 0xC008;
     @Generated public static final char ECDHE_ECDSA_WITH_AES_128_CBC_SHA = 0xC009;
     @Generated public static final char ECDHE_ECDSA_WITH_AES_256_CBC_SHA = 0xC00A;
-    @Generated public static final char ECDHE_RSA_WITH_3DES_EDE_CBC_SHA = 0xC012;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     */
+    @Deprecated @Generated public static final char ECDHE_RSA_WITH_3DES_EDE_CBC_SHA = 0xC012;
     @Generated public static final char ECDHE_RSA_WITH_AES_128_CBC_SHA = 0xC013;
     @Generated public static final char ECDHE_RSA_WITH_AES_256_CBC_SHA = 0xC014;
     @Generated public static final char ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 = 0xC023;

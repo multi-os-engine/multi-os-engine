@@ -158,6 +158,8 @@ public class TKSmartCardTokenSession extends TKTokenSession {
      * property. This property will be automatically set to nil if the card is reset or accessed by different
      * TKSmartCard instance (possibly in another process). Checking TKSmartCard.context property for previously stored
      * value can be used to avoid potentially costly restoring of SmartCard state before performing the operation.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

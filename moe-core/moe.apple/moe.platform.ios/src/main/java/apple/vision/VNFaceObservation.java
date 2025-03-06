@@ -145,6 +145,8 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     /**
      * The face landmarks populated by the VNDetectFaceLandmarksRequest. This is set to nil if only a
      * VNDetectFaceRectanglesRequest was performed.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

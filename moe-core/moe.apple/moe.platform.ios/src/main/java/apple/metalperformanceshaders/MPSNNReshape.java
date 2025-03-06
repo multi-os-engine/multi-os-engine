@@ -114,6 +114,9 @@ public class MPSNNReshape extends MPSCNNKernel {
     @Selector("initWithCoder:")
     public native MPSNNReshape initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNReshape initWithCoderDevice(@NotNull NSCoder aDecoder,
@@ -124,6 +127,8 @@ public class MPSNNReshape extends MPSCNNKernel {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReshape object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

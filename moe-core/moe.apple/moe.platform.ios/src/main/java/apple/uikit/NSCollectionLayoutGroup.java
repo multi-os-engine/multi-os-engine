@@ -96,6 +96,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      * NSCollectionLayoutEnvironment supplied.
      * The coordinate space for returned frames should be {0,0} relative to this group's geometry.
      * Custom groups can be nested arbitrarily inside other groups.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -144,6 +146,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Specifies a group that will repeat items until available horizontal space is exhausted.
      * note: any remaining space after laying out items can be apportioned among flexible interItemSpacing definitions
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -170,6 +174,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Supplies additional spacing between items along the layout axis of the group
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -210,6 +216,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Supplies additional spacing between items along the layout axis of the group
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInterItemSpacing:")
@@ -217,6 +225,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Supplementary items are "anchored" to the group's geometry.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSupplementaryItems:")
@@ -226,6 +236,9 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("subitems")
@@ -237,6 +250,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Supplementary items are "anchored" to the group's geometry.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -266,6 +281,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Specifies a group that will repeat items until available vertical space is exhausted.
      * note: any remaining space after laying out items can be apportioned among flexible interItemSpacing definitions
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -275,6 +292,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * for visual debugging; will print an ASCII art rendering to console
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

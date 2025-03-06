@@ -19,6 +19,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.MTLMeshRenderPipelineDescriptor;
+import apple.metal.MTLStitchedLibraryDescriptor;
 
 /**
  * [@protocol] MTLBinaryArchive
@@ -66,6 +68,8 @@ public interface MTLBinaryArchive {
      * @param error      If the function fails, this will be set to describe the failure. This can be (but is not
      *                   required to be) an error from the MTLBinaryArchiveDomain domain.
      * @return Whether or not the addition succeeded. Functions referenced multiple times are silently accepted.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("addComputePipelineFunctionsWithDescriptor:error:")
@@ -81,6 +85,8 @@ public interface MTLBinaryArchive {
      * @param error      If the function fails, this will be set to describe the failure. This can be (but is not
      *                   required to be) an error from the MTLBinaryArchiveDomain domain.
      * @return Whether or not the addition succeeded. Functions referenced multiple times are silently accepted.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("addRenderPipelineFunctionsWithDescriptor:error:")
@@ -106,6 +112,8 @@ public interface MTLBinaryArchive {
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -117,6 +125,8 @@ public interface MTLBinaryArchive {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -136,6 +146,8 @@ public interface MTLBinaryArchive {
      *              be) an error from the MTLBinaryArchiveDomain domain. Other possible errors can be file access or I/O
      *              related.
      * @return Whether or not the writing the file succeeded.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("serializeToURL:error:")
@@ -145,6 +157,8 @@ public interface MTLBinaryArchive {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLabel:")
@@ -169,4 +183,38 @@ public interface MTLBinaryArchive {
     boolean addFunctionWithDescriptorLibraryError(@NotNull MTLFunctionDescriptor descriptor,
             @NotNull @Mapped(ObjCObjectMapper.class) MTLLibrary library,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * addLibraryWithDescriptor:error:
+     * 
+     * Add the function(s) from a stitched library to the archive.
+     * 
+     * @param descriptor The stitched library descriptor from which function(s) will be added.
+     * @param error      If the function fails, this will be set to describe the failure. This can be (but is not
+     *                   required to be) an error from the MTLBinaryArchiveDomain domain.
+     * @return Whether or not the addition succeeded. Functions referenced multiple times are silently accepted.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("addLibraryWithDescriptor:error:")
+    boolean addLibraryWithDescriptorError(@NotNull MTLStitchedLibraryDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * addMeshRenderPipelineFunctionsWithDescriptor:error:
+     * 
+     * Add the function(s) from a mesh render pipeline state to the archive.
+     * 
+     * @param descriptor The descriptor from which function(s) will be added.
+     * @param error      If the function fails, this will be set to describe the failure. This can be (but is not
+     *                   required to be) an error from the MTLBinaryArchiveDomain domain.
+     * @return Whether or not the addition succeeded. Functions referenced multiple times are silently accepted.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("addMeshRenderPipelineFunctionsWithDescriptor:error:")
+    boolean addMeshRenderPipelineFunctionsWithDescriptorError(@NotNull MTLMeshRenderPipelineDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

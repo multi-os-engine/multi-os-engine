@@ -60,6 +60,8 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     /**
      * To get the right extension the identity provider main URL has to be provided. The URL is even part of the
      * extension using assosiated domains mechanism or can be configured by MDM profile.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -73,6 +75,8 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
 
     /**
      * Returns YES if the configured provider is capable of performing authorization within a given configuration.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("canPerformAuthorization")
@@ -99,6 +103,9 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("createRequest")
@@ -164,6 +171,9 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("url")

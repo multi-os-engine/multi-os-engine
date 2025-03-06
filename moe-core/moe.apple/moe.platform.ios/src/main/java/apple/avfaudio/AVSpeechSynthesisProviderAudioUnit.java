@@ -79,6 +79,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
 
     /**
      * Informs the audio unit that the speech request job should be discarded.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("cancelSpeechRequest")
@@ -182,6 +184,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      * cases, and other casers where marker data has changed, calling this block with marker data that contains
      * perviously delivered audio buffer ranges will replace that audio buffer range's marker data, as it will be
      * considered stale.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSpeechSynthesisOutputMetadataBlock:")
@@ -203,6 +207,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      * Settings).
      * Required for speech synthesizer audio unit extensions. An audio unit with a dynamic list of voices can override
      * this property's getter to perform a more complex fetch.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSpeechVoices:")
@@ -225,6 +231,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      * cases, and other casers where marker data has changed, calling this block with marker data that contains
      * perviously delivered audio buffer ranges will replace that audio buffer range's marker data, as it will be
      * considered stale.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -247,6 +255,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      * Settings).
      * Required for speech synthesizer audio unit extensions. An audio unit with a dynamic list of voices can override
      * this property's getter to perform a more complex fetch.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -264,6 +274,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      * audio buffers for the speech request, it should indicate this within its internal render block, @c
      * AUInternalRenderBlock, specifically through the @c AudioUnitRenderActionFlags flag @c
      * kAudioOfflineUnitRenderAction_Complete.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("synthesizeSpeechRequest:")

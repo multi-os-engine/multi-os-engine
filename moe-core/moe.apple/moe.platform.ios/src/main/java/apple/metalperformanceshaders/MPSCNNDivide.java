@@ -120,6 +120,8 @@ public class MPSCNNDivide extends MPSCNNArithmetic {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSCNNDivide object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

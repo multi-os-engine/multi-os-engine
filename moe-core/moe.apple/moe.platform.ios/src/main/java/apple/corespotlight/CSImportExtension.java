@@ -153,6 +153,8 @@ public class CSImportExtension extends NSObject implements NSExtensionRequestHan
     /**
      * The developer should implement this method to import the file located at contentURL, and update the provided
      * attributes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("updateAttributes:forFileAtURL:error:")

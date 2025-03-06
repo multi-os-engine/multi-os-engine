@@ -103,6 +103,8 @@ public class CMRecordedPressureData extends CMAmbientPressureData {
      * Unique identifier that identifies the batch for which the pressure sample
      * was recorded in. This identifier will be monotonically increased
      * for each new sensor batch recorded and can be used as an anchor for future queries.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("identifier")
@@ -160,6 +162,9 @@ public class CMRecordedPressureData extends CMAmbientPressureData {
      * 
      * Discussion:
      * Wall time for when this sensor sample is recorded.
+     * 
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

@@ -93,6 +93,8 @@ public class PKPaymentAuthorizationResult extends NSObject {
      * Any errors that applied. These errors will be displayed to the user to correct.
      * Errors should be ordered from most to least serious.
      * See PKError for specific NSError keys to use to enable rich error handling.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("errors")
@@ -107,6 +109,9 @@ public class PKPaymentAuthorizationResult extends NSObject {
     @Selector("init")
     public native PKPaymentAuthorizationResult init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithStatus:errors:")
     public native PKPaymentAuthorizationResult initWithStatusErrors(@NInt long status,
@@ -151,6 +156,8 @@ public class PKPaymentAuthorizationResult extends NSObject {
      * Any errors that applied. These errors will be displayed to the user to correct.
      * Errors should be ordered from most to least serious.
      * See PKError for specific NSError keys to use to enable rich error handling.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setErrors:")
@@ -158,6 +165,8 @@ public class PKPaymentAuthorizationResult extends NSObject {
 
     /**
      * The status of the payment
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStatus:")
@@ -169,6 +178,8 @@ public class PKPaymentAuthorizationResult extends NSObject {
 
     /**
      * The status of the payment
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("status")

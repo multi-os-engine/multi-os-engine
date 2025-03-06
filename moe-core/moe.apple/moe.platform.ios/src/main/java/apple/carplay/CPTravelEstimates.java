@@ -97,6 +97,8 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
 
     /**
      * Distance remaining.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -128,6 +130,8 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
      * unavailable, due to route calculations/rerouting or internet connectivity problems.
      * Values less than 0 are distinguished from distance or time values equal to 0; your app may
      * display 0 as the user is imminently arriving at their destination.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithDistanceRemaining:timeRemaining:")
@@ -189,6 +193,8 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
 
     /**
      * Time remaining.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("timeRemaining")
@@ -203,4 +209,23 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Distance remaining for displaying to the user. If not set falls back to distanceRemaining;
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("distanceRemainingToDisplay")
+    @NotNull
+    public native NSMeasurement<NSUnitLength> distanceRemainingToDisplay();
+
+    /**
+     * API-Since: 12.0
+     */
+    @Generated
+    @Selector("initWithDistanceRemaining:distanceRemainingToDisplay:timeRemaining:")
+    public native CPTravelEstimates initWithDistanceRemainingDistanceRemainingToDisplayTimeRemaining(
+            @NotNull NSMeasurement<NSUnitLength> distanceRemaining,
+            @NotNull NSMeasurement<NSUnitLength> distanceRemainingToDisplay, double time);
 }

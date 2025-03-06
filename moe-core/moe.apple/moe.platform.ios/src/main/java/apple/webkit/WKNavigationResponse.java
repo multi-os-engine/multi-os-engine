@@ -164,6 +164,8 @@ public class WKNavigationResponse extends NSObject {
      * A Boolean value indicating whether WebKit can display the response's MIME type natively.
      * 
      * Allowing a navigation response with a MIME type that can't be shown will cause the navigation to fail.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("canShowMIMEType")
@@ -175,6 +177,8 @@ public class WKNavigationResponse extends NSObject {
 
     /**
      * A Boolean value indicating whether the frame being navigated is the main frame.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isForMainFrame")
@@ -182,6 +186,8 @@ public class WKNavigationResponse extends NSObject {
 
     /**
      * The frame's response.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

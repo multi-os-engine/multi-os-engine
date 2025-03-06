@@ -17,19 +17,19 @@ public final class nw_path_status_t {
     /**
      * [@const] nw_path_status_invalid The path is not valid
      */
-    @Generated public static final int nw_path_status_invalid = 0x00000000;
+    @Generated public static final int _invalid = 0x00000000;
     /**
      * [@const] nw_path_status_satisfied The path has a usable route upon which to send and receive data
      */
-    @Generated public static final int nw_path_status_satisfied = 0x00000001;
+    @Generated public static final int _satisfied = 0x00000001;
     /**
      * [@const] nw_path_status_unsatisfied The path does not have a usable route. This may be due to a network interface
      * being down, or due to system policy.
      */
-    @Generated public static final int nw_path_status_unsatisfied = 0x00000002;
+    @Generated public static final int _unsatisfied = 0x00000002;
     /**
      * [@const] nw_path_status_satisfiable The path does not currently have a usable route, but a connection attempt
      * will trigger network attachment
      */
-    @Generated public static final int nw_path_status_satisfiable = 0x00000003;
+    @Generated public static final int _satisfiable = 0x00000003;
 }

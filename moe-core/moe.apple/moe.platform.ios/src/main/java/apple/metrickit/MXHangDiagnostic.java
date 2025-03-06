@@ -75,6 +75,8 @@ public class MXHangDiagnostic extends MXDiagnostic {
      * [@property] callStackTree
      * 
      * The application call stack tree associated with the hang.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class MXHangDiagnostic extends MXDiagnostic {
      * Total hang duration for this diagnostic.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

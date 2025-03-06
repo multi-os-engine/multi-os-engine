@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -107,6 +110,8 @@ public class MTRCertificates extends NSObject {
      * Returns nil if the conversion fails (e.g. if the input data cannot be parsed
      * as a DER encoded X.509 certificate, or if the certificate cannot be
      * represented in the Matter certificate format).
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("convertX509Certificate:")
@@ -125,6 +130,8 @@ public class MTRCertificates extends NSObject {
      * 
      * On failure returns nil and if "error" is not null sets *error to the relevant
      * error.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("createCertificateSigningRequest:error:")
@@ -361,6 +368,8 @@ public class MTRCertificates extends NSObject {
      * Check whether two X.509 DER encoded certificates are equivalent, in the sense
      * of having the same public key and the same subject DN. Returns NO if public
      * keys or subject DNs cannot be extracted from the certificates.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("isCertificate:equalTo:")
@@ -381,6 +390,8 @@ public class MTRCertificates extends NSObject {
      * certificate.
      * 
      * Will return NO on failures to extract public keys from the objects.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("keypair:matchesCertificate:")

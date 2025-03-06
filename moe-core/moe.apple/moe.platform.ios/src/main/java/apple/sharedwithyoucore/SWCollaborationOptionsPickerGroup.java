@@ -159,6 +159,8 @@ public class SWCollaborationOptionsPickerGroup extends SWCollaborationOptionsGro
 
     /**
      * The identifier of the selected option in the group. Defaults to the first SWCollaborationOption's identifier.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -167,6 +169,8 @@ public class SWCollaborationOptionsPickerGroup extends SWCollaborationOptionsGro
 
     /**
      * The identifier of the selected option in the group. Defaults to the first SWCollaborationOption's identifier.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelectedOptionIdentifier:")

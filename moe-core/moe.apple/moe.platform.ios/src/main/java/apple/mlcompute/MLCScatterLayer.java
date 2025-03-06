@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A scatter layer
  * 
  * API-Since: 14.5
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -99,7 +98,11 @@ public class MLCScatterLayer extends MLCLayer {
      * [@property] dimension
      * 
      * The dimension along which to index
+     * 
+     * API-Since: 14.5
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dimension")
     @NUInt
@@ -142,7 +145,11 @@ public class MLCScatterLayer extends MLCLayer {
      * @param dimension     The dimension along which to index
      * @param reductionType The reduction type to use
      * @return A new scatter layer
+     * 
+     *         API-Since: 14.5
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDimension:reductionType:")
     public static native MLCScatterLayer layerWithDimensionReductionType(@NUInt long dimension, int reductionType);
@@ -158,7 +165,11 @@ public class MLCScatterLayer extends MLCLayer {
      * The reduction type applied for all values in source tensor that are scattered to a specific location in the
      * result tensor.
      * Must be: MLCReductionTypeNone or MLCReductionTypeSum.
+     * 
+     * API-Since: 14.5
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -179,6 +190,7 @@ public class MLCScatterLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

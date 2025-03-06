@@ -181,6 +181,9 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("init")
     public native UIMotionEffect init();
@@ -206,6 +209,8 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
      * Example return value: `@{ @"center": [NSValue
      * valueFromCGPoint:CGPointMake(3.4, 1.2)],
      * @"layer.shadowOffset.x": @(-1.1) }`
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated

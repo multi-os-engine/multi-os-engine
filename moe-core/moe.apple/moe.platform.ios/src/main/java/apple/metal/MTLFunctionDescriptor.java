@@ -87,6 +87,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * 
      * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid
      * constant values for all required function constants.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -112,6 +114,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * functionDescriptor
      * 
      * Create an autoreleased function descriptor
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -153,6 +157,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * [@property] name
      * 
      * The name of the `visible` function to find.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -168,6 +174,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * [@property] options
      * 
      * The options to use for this new `MTLFunction`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("options")
@@ -187,6 +195,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * 
      * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid
      * constant values for all required function constants.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setConstantValues:")
@@ -196,6 +206,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * [@property] name
      * 
      * The name of the `visible` function to find.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setName:")
@@ -205,6 +217,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * [@property] options
      * 
      * The options to use for this new `MTLFunction`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOptions:")
@@ -214,6 +228,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * [@property] specializedName
      * 
      * An optional new name for a `visible` function to allow reuse with different specializations.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSpecializedName:")
@@ -227,6 +243,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
      * [@property] specializedName
      * 
      * An optional new name for a `visible` function to allow reuse with different specializations.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

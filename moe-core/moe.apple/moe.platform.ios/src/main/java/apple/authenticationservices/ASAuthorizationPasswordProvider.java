@@ -81,6 +81,9 @@ public class ASAuthorizationPasswordProvider extends NSObject implements ASAutho
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("createRequest")

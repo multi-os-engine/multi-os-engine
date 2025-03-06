@@ -14,4 +14,6 @@ public final class MIDIUtilityStatus {
     @Generated public static final int NOOP = 0x00000000;
     @Generated public static final int JitterReductionClock = 0x00000001;
     @Generated public static final int JitterReductionTimestamp = 0x00000002;
+    @Generated public static final int DeltaClockstampTicksPerQuarterNote = 0x00000003;
+    @Generated public static final int TicksSinceLastEvent = 0x00000004;
 }

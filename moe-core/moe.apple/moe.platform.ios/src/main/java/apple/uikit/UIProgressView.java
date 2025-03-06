@@ -429,12 +429,17 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("initWithCoder:")
     public native UIProgressView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UIProgressView initWithFrame(@ByValue CGRect frame);
 
     /**
      * sets the view height according to the style
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithProgressViewStyle:")
@@ -450,6 +455,8 @@ public class UIProgressView extends UIView implements NSCoding {
 
     /**
      * 0.0 .. 1.0, default is 0.0. values outside are pinned.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("progress")
@@ -473,6 +480,8 @@ public class UIProgressView extends UIView implements NSCoding {
 
     /**
      * default is UIProgressViewStyleDefault
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("progressViewStyle")
@@ -488,6 +497,8 @@ public class UIProgressView extends UIView implements NSCoding {
 
     /**
      * 0.0 .. 1.0, default is 0.0. values outside are pinned.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setProgress:")
@@ -516,6 +527,8 @@ public class UIProgressView extends UIView implements NSCoding {
 
     /**
      * default is UIProgressViewStyleDefault
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setProgressViewStyle:")

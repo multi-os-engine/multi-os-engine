@@ -76,6 +76,8 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("CoreText")
@@ -1554,11 +1556,13 @@ public final class CoreText {
      * 
      * Returns an array of variation axis dictionaries.
      * 
+     * Each variation axis dictionary contains the five kCTFontVariationAxis* keys above, and
+     * kCTFontVariationAxisNameKey values will be localized when supported by the font.
+     * 
      * @param font
      *             The font reference.
      * 
-     * @return This function returns an array of variation axis dictionaries or null if the font does not support
-     *         variations. Each variation axis dictionary contains the five kCTFontVariationAxis* keys above.
+     * @return An array of variation axis dictionaries or null if the font does not support variations.
      * 
      *         API-Since: 3.2
      */
@@ -1804,15 +1808,15 @@ public final class CoreText {
     /**
      * [@function] CTFontCopyDefaultCascadeListForLanguages
      * 
-     * Return an ordered list of CTFontDescriptorRef's for font fallback derived from the system default fallback region
-     * according to the given language preferences. The style of the given is also matched as well as the weight and
-     * width of the font is not one of the system UI font, otherwise the UI font fallback is applied.
+     * Return an ordered list of CTFontDescriptorRef's for font fallback derived from the system default fallback
+     * according to the given language preferences, making a reasonable attempt to match the given font's style, weight,
+     * and width.
      * 
      * @param font
      *                         The font reference.
      * 
      * @param languagePrefList
-     *                         The language preference list - ordered array of CFStringRef's of ISO language codes.
+     *                         An array of language identifiers as CFString values, in decreasing order of preference.
      * 
      * @return The ordered list of fallback fonts - ordered array of CTFontDescriptors.
      * 
@@ -2075,9 +2079,10 @@ public final class CoreText {
      * 
      * Registers the specified graphics font with the font manager. Registered fonts participate in font descriptor
      * matching.
+     * 
      * Attempts to register a font that is either already registered or contains the same PostScript name of an already
      * registered font will fail.
-     * This functionality is useful for fonts that may be embedded in documents or present/constructed in memory. A
+     * This functionality is intended for fonts that may be embedded in documents or present/constructed in memory. A
      * graphics font is obtained
      * by calling CGFontCreateWithDataProvider. Fonts that are backed by files should be registered using
      * CTFontManagerRegisterFontsForURL.
@@ -2091,7 +2096,10 @@ public final class CoreText {
      * @return Returns true if registration of the fonts was successful.
      * 
      *         API-Since: 4.1
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use CTFontManagerCreateFontDescriptorsFromData or CTFontManagerRegisterFontsForURL
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean CTFontManagerRegisterGraphicsFont(@NotNull CGFontRef font,
@@ -2112,7 +2120,10 @@ public final class CoreText {
      * @return Returns true if unregistration of the font was successful.
      * 
      *         API-Since: 4.1
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use the API corresponding to the one used to register the font
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean CTFontManagerUnregisterGraphicsFont(@NotNull CGFontRef font,
@@ -4872,7 +4883,7 @@ public final class CoreText {
      * 
      * Key to get the variation axis name string.
      * 
-     * This key is used with a variation axis dictionary to get the localized variation axis name.
+     * This key is used with a variation axis dictionary to get the variation axis name.
      * 
      * API-Since: 3.2
      */
@@ -6611,4 +6622,61 @@ public final class CoreText {
     @Generated public static final double kCTVersionNumber10_14 = 720896.0;
     @Generated public static final double kCTVersionNumber10_15 = 786432.0;
     @Generated public static final double kCTVersionNumber11_0 = 851968.0;
+
+    /**
+     * [@function] CTFontHasTable
+     * 
+     * Determine whether a table is present in a font.
+     * 
+     * This is a convenience function to avoid requesting an array of table tags or any table data. It behaves according
+     * as if using `kCTFontTableOptionNoOptions`.
+     * 
+     * @param font
+     *             The font reference.
+     * 
+     * @param tag
+     *             The font table identifier as a CTFontTableTag.
+     * 
+     * @return Returns true if the call was successful and the requested table is present.
+     * 
+     *         API-Since: 13.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CTFontHasTable(@NotNull CTFontRef font, int tag);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CGRect CTFontGetTypographicBoundsForAdaptiveImageProvider(@NotNull CTFontRef font,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object provider);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void CTFontDrawImageFromAdaptiveImageProviderAtPoint(@NotNull CTFontRef font,
+            @Mapped(ObjCObjectMapper.class) @NotNull Object provider, @ByValue CGPoint point,
+            @NotNull CGContextRef context);
+
+    /**
+     * [@const] kCTAdaptiveImageProviderAttributeName
+     * 
+     * Provide the image for an emoji-like text attachment.
+     * 
+     * The attribute value must be an object conforming to the CTAdaptiveImageProviding protocol.
+     * The range this attribute is applied to should be one or more U+FFFC characters, each of which will be drawn as
+     * the provided image,
+     * and the font attribute applied to that range will be used to determine properties such as point size.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCTAdaptiveImageProviderAttributeName();
 }

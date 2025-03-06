@@ -118,6 +118,12 @@ public class INDeleteTasksTaskListResolutionResult extends INTaskListResolutionR
     @Selector("init")
     public native INDeleteTasksTaskListResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksTaskListResolutionResult is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTaskListResolutionResult:")
     public native INDeleteTasksTaskListResolutionResult initWithTaskListResolutionResult(
@@ -187,6 +193,12 @@ public class INDeleteTasksTaskListResolutionResult extends INTaskListResolutionR
     @Selector("unsupported")
     public static native INDeleteTasksTaskListResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksTaskListResolutionResult is deprecated. There is no replacement.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

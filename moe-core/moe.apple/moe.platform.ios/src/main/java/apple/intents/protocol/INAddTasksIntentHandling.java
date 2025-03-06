@@ -48,6 +48,8 @@ public interface INAddTasksIntentHandling {
      *                   intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INAddTasksIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -74,6 +76,8 @@ public interface INAddTasksIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INAddTasksIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("handleAddTasks:completion:")
@@ -87,6 +91,9 @@ public interface INAddTasksIntentHandling {
         void call_handleAddTasksCompletion(@NotNull INAddTasksIntentResponse response);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveSpatialEventTriggerForAddTasks:withCompletion:")
@@ -135,6 +142,9 @@ public interface INAddTasksIntentHandling {
         void call_resolveTargetTaskListForAddTasksWithCompletion(@NotNull INTaskListResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveTaskTitlesForAddTasks:withCompletion:")

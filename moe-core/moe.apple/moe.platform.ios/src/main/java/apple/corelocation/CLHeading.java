@@ -184,6 +184,8 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * Discussion:
      * Represents the maximum deviation of where the magnetic heading may differ from the actual geomagnetic heading in
      * degrees. A negative value indicates an invalid heading.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("headingAccuracy")
@@ -206,6 +208,8 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Range:
      * 0.0 - 359.9 degrees, 0 being magnetic North
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("magneticHeading")
@@ -222,6 +226,8 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns a timestamp for when the magnetic heading was determined.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -238,6 +244,8 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Range:
      * 0.0 - 359.9 degrees, 0 being true North
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("trueHeading")
@@ -248,6 +256,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns a raw value for the geomagnetism measured in the x-axis.
+     * 
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("x")
@@ -258,6 +269,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns a raw value for the geomagnetism measured in the y-axis.
+     * 
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("y")
@@ -268,6 +282,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns a raw value for the geomagnetism measured in the z-axis.
+     * 
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("z")

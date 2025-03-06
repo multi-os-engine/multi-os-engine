@@ -11,165 +11,165 @@ public final class BNNSArithmeticFunction {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticAdd = 0x00000000;
+    @Generated public static final int Add = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticSubtract = 0x00000001;
+    @Generated public static final int Subtract = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticMultiply = 0x00000002;
+    @Generated public static final int Multiply = 0x00000002;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticDivide = 0x00000003;
+    @Generated public static final int Divide = 0x00000003;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticSquareRoot = 0x00000004;
+    @Generated public static final int SquareRoot = 0x00000004;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticReciprocalSquareRoot = 0x00000005;
+    @Generated public static final int ReciprocalSquareRoot = 0x00000005;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticCeil = 0x00000006;
+    @Generated public static final int Ceil = 0x00000006;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticFloor = 0x00000007;
+    @Generated public static final int Floor = 0x00000007;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticRound = 0x00000008;
+    @Generated public static final int Round = 0x00000008;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticSin = 0x00000009;
+    @Generated public static final int Sin = 0x00000009;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticCos = 0x0000000A;
+    @Generated public static final int Cos = 0x0000000A;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticTan = 0x0000000B;
+    @Generated public static final int Tan = 0x0000000B;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticAsin = 0x0000000C;
+    @Generated public static final int Asin = 0x0000000C;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticAcos = 0x0000000D;
+    @Generated public static final int Acos = 0x0000000D;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticAtan = 0x0000000E;
+    @Generated public static final int Atan = 0x0000000E;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticSinh = 0x0000000F;
+    @Generated public static final int Sinh = 0x0000000F;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticCosh = 0x00000010;
+    @Generated public static final int Cosh = 0x00000010;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticTanh = 0x00000011;
+    @Generated public static final int Tanh = 0x00000011;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticAsinh = 0x00000012;
+    @Generated public static final int Asinh = 0x00000012;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticAcosh = 0x00000013;
+    @Generated public static final int Acosh = 0x00000013;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticAtanh = 0x00000014;
+    @Generated public static final int Atanh = 0x00000014;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticPow = 0x00000015;
+    @Generated public static final int Pow = 0x00000015;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticExp = 0x00000016;
+    @Generated public static final int Exp = 0x00000016;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticExp2 = 0x00000017;
+    @Generated public static final int Exp2 = 0x00000017;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticLog = 0x00000018;
+    @Generated public static final int Log = 0x00000018;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticLog2 = 0x00000019;
+    @Generated public static final int Log2 = 0x00000019;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticMultiplyNoNaN = 0x0000001A;
+    @Generated public static final int MultiplyNoNaN = 0x0000001A;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSArithmeticDivideNoNaN = 0x0000001B;
+    @Generated public static final int DivideNoNaN = 0x0000001B;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSArithmeticMultiplyAdd = 0x0000001C;
+    @Generated public static final int MultiplyAdd = 0x0000001C;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSArithmeticMinimum = 0x0000001D;
+    @Generated public static final int Minimum = 0x0000001D;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSArithmeticMaximum = 0x0000001E;
+    @Generated public static final int Maximum = 0x0000001E;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSArithmeticSelect = 0x0000001F;
+    @Generated public static final int Select = 0x0000001F;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticAbs = 0x00000020;
+    @Generated public static final int Abs = 0x00000020;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticSign = 0x00000021;
+    @Generated public static final int Sign = 0x00000021;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticNegate = 0x00000022;
+    @Generated public static final int Negate = 0x00000022;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticReciprocal = 0x00000023;
+    @Generated public static final int Reciprocal = 0x00000023;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticSquare = 0x00000024;
+    @Generated public static final int Square = 0x00000024;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticFloorDivide = 0x00000025;
+    @Generated public static final int FloorDivide = 0x00000025;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticTruncDivide = 0x00000026;
+    @Generated public static final int TruncDivide = 0x00000026;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticTruncRemainder = 0x00000027;
+    @Generated public static final int TruncRemainder = 0x00000027;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSArithmeticErf = 0x00000028;
+    @Generated public static final int Erf = 0x00000028;
 }

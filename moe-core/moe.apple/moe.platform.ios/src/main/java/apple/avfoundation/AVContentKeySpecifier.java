@@ -27,6 +27,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVContentKeySpecifier
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 14.5
  */
 @Generated
@@ -90,6 +94,8 @@ public class AVContentKeySpecifier extends NSObject {
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
      * 
+     * API-Since: 14.5
+     * 
      * @param keySystem
      *                             A valid key system for content keys.
      * @param contentKeyIdentifier
@@ -121,6 +127,8 @@ public class AVContentKeySpecifier extends NSObject {
      * [@property] identifier
      * 
      * Container and protocol-specific key identifier.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -139,6 +147,8 @@ public class AVContentKeySpecifier extends NSObject {
      * 
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
+     * 
+     * API-Since: 14.5
      * 
      * @param keySystem
      *                             A valid key system for content keys.
@@ -180,6 +190,8 @@ public class AVContentKeySpecifier extends NSObject {
      * [@property] keySystem
      * 
      * A valid key system for content keys.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -195,6 +207,8 @@ public class AVContentKeySpecifier extends NSObject {
      * [@property] options
      * 
      * Additional information necessary to obtain the key, can be empty if none needed.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated

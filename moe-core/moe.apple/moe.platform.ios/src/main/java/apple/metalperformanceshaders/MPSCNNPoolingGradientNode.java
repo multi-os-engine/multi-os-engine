@@ -110,6 +110,8 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
      * @param kernelHeight    The kernel height of the inference filter
      * @param strideInPixelsX The X stride from the inference filter
      * @param strideInPixelsY The Y stride from the inference filter
+     * 
+     *                        API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:paddingPolicy:")
@@ -136,11 +138,17 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("kernelHeight")
     @NUInt
     public native long kernelHeight();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("kernelWidth")
     @NUInt
@@ -168,6 +176,8 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
      * @param kernelHeight    The kernel height of the inference filter
      * @param strideInPixelsX The X stride from the inference filter
      * @param strideInPixelsY The Y stride from the inference filter
+     * 
+     *                        API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:paddingPolicy:")
@@ -189,11 +199,17 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("strideInPixelsX")
     @NUInt
     public native long strideInPixelsX();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("strideInPixelsY")
     @NUInt

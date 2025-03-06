@@ -46,6 +46,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
      * Indicates whether or not this item is currently allowed to become focused.
      * Returning NO restricts the item from being focusable, even if it is visible in the user interface. For example,
      * UIControls return NO if they are disabled.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canBecomeFocused")
@@ -119,6 +121,26 @@ public interface UIFocusItem extends UIFocusEnvironment {
     @IsOptional
     @Selector("isTransparentFocusItem")
     default boolean isTransparentFocusItem() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * If this property is present and returns `UIFocusItemDeferralModeNever`, the focus deferral will not be enabled
+     * again
+     * after the user engagement timeout has expired if this item is currently focused and programmatic focus updates
+     * pointing
+     * to this item will be executed immediatly. If it returns `UIFocusItemDeferralModeAlways` focus will always be
+     * deferred
+     * when this item is supposed to be focused.
+     * Does nothing when focus deferral is not supported on the platform.
+     * 
+     * API-Since: 10.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("focusItemDeferralMode")
+    @NInt
+    default long focusItemDeferralMode() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

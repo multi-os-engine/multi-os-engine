@@ -174,6 +174,8 @@ public class VNDetectHorizonRequest extends VNImageBasedRequest {
 
     /**
      * VNHorizonObservation results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

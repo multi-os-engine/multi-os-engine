@@ -34,6 +34,8 @@ public interface NSFileProviderCustomAction {
      * If the NSProgress returned by this method is cancelled, the extension should
      * call the completion handler with (NSUserCancelledError) in the NSProgress
      * cancellation handler.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

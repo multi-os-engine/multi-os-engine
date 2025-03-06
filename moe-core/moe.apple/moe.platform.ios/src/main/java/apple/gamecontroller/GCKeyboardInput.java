@@ -71,6 +71,8 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
      * [@example] [keyboard buttonForKey:GCKeyCode.UpArrow] == keyboard[GCKeyUpArrow]
      * [@note] Full list of supported key constants can be found in GCKeyCodes.h and GCKeyNames.h
      * 
+     * API-Since: 14.0
+     * 
      * @param code is a low level key code that can be used for accessing a keyboard button.
      */
     @Nullable
@@ -131,6 +133,8 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
 
     /**
      * Before querying any key for a value it might be useful to check if any key is actually pressed
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isAnyKeyPressed")
@@ -140,6 +144,9 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("keyChangedHandler")
@@ -172,6 +179,9 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setKeyChangedHandler:")
     public native void setKeyChangedHandler(

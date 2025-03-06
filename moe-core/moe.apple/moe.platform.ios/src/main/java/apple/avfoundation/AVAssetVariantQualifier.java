@@ -71,7 +71,9 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * Returns a qualifer for a predicate.
      * 
      * @param predicate
-     *                  The variant predicate.
+     *                  The variant predicate. Must be a valid, non-nil NSPredicate.
+     * 
+     *                  API-Since: 15.0
      */
     @Generated
     @Selector("assetVariantQualifierWithPredicate:")
@@ -84,7 +86,9 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * 
      * @param variant
      *                A variant obtained from the -[AVAsset variants] or -[AVAssetDownloadConfiguration
-     *                playableVariants].
+     *                playableVariants]. Must be a valid, non-nil AVAssetVariant.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("assetVariantQualifierWithVariant:")
@@ -181,6 +185,8 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      *                             NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
      *                             NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
      *                             NSNotEqualToPredicateOperatorType.
+     * 
+     *                             API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -201,6 +207,8 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
      *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
      *                     NSNotEqualToPredicateOperatorType.
+     * 
+     *                     API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -221,6 +229,8 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
      *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
      *                     NSNotEqualToPredicateOperatorType.
+     * 
+     *                     API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -309,4 +319,28 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * predicateForAudioSampleRate:mediaSelectionOption:operatorType:
+     * 
+     * Creates a NSPredicate for audio sample rate which can be used with other NSPredicates to express variant
+     * preferences.
+     * 
+     * @param sampleRate
+     *                             The RHS value for the sample rate in the predicate equation.
+     * @param mediaSelectionOption
+     *                             The audio media selection option under consideration.
+     * @param operatorType
+     *                             The valid values are NSLessThanPredicateOperatorType,
+     *                             NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     *                             NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     *                             NSNotEqualToPredicateOperatorType.
+     * 
+     *                             API-Since: 18.0
+     */
+    @Generated
+    @Selector("predicateForAudioSampleRate:mediaSelectionOption:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForAudioSampleRateMediaSelectionOptionOperatorType(double sampleRate,
+            @NotNull AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
 }

@@ -95,6 +95,9 @@ public class INListCarsIntent extends INIntent {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("init")
     public native INListCarsIntent init();

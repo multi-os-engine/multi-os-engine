@@ -27,6 +27,8 @@ public interface UITextPasteItem {
      * These will be the default attributes that will
      * be applied to plain strings when they are provided.
      * You can use these to make your own attributed string if you want.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -36,6 +38,8 @@ public interface UITextPasteItem {
     /**
      * This is the NSItemProvider for the item being pasted or dropped.
      * You should set a result for this item using one of the methods below.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -45,6 +49,8 @@ public interface UITextPasteItem {
     /**
      * This is nil for normal pastes, but might be filled with the
      * UIDragItem's localObject for pastes from drops.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -54,6 +60,8 @@ public interface UITextPasteItem {
 
     /**
      * provide an attachment result from this NSItemProvider's data
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAttachmentResult:")
@@ -61,6 +69,8 @@ public interface UITextPasteItem {
 
     /**
      * provide an attributed representation result from this NSItemProvider's data
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAttributedStringResult:")
@@ -71,6 +81,8 @@ public interface UITextPasteItem {
      * If the item data for the item provider is not supported, this action
      * will be the same as `setNoResult`.
      * You can use this as a fallback for any items you are not handling yourself.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDefaultResult")
@@ -79,6 +91,8 @@ public interface UITextPasteItem {
     /**
      * Use this to indicate that you don't want the data of this NSItemProvider
      * included in the resulting string.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setNoResult")
@@ -86,6 +100,8 @@ public interface UITextPasteItem {
 
     /**
      * provide a plain string representation result from this NSItemProvider's data
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStringResult:")

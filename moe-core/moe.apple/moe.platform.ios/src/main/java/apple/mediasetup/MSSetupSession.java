@@ -71,6 +71,8 @@ public class MSSetupSession extends NSObject {
 
     /**
      * The streaming media service account for the session to configure.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -140,6 +142,8 @@ public class MSSetupSession extends NSObject {
      * Returns `true` if it successfully presents; otherwise, `false`.
      * 
      * This method presents user with options to add a service to the home.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithServiceAccount:")
@@ -174,6 +178,8 @@ public class MSSetupSession extends NSObject {
 
     /**
      * A delegate that provides media setup display information to the system.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -191,6 +197,8 @@ public class MSSetupSession extends NSObject {
 
     /**
      * A delegate that provides media setup display information to the system.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPresentationContext:")
@@ -199,6 +207,8 @@ public class MSSetupSession extends NSObject {
 
     /**
      * A delegate that provides media setup display information to the system.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setPresentationContext(
@@ -221,6 +231,8 @@ public class MSSetupSession extends NSObject {
      * Initiates the service configuration process.
      * 
      * This method sends the account details of the streaming media service to the user’s HomePod speakers.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startWithError:")

@@ -23,6 +23,8 @@ public interface UIColorPickerViewControllerDelegate {
      * In presentations (except popovers) the color picker shows a close button. If the close button is tapped,
      * the view controller is dismissed and `colorPickerViewControllerDidFinish:` is called. Can be used to
      * animate alongside the dismissal.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

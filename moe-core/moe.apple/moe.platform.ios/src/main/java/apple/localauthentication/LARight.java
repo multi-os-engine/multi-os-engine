@@ -66,6 +66,8 @@ public class LARight extends NSObject {
      * @param localizedReason Localized explanation for the authorization. Appears in the UI presented to the user.
      * @param handler         Completion handler called after the authorization finishes. Returns an error when the
      *                        authorization fails.
+     * 
+     *                        API-Since: 16.0
      */
     @Generated
     @Selector("authorizeWithLocalizedReason:completion:")
@@ -98,6 +100,8 @@ public class LARight extends NSObject {
      * Checks whether the client can eventually be granted the right.
      * 
      * @param handler Completion handler. Returns @c nil if the right can be authorized or an error otherwise.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("checkCanAuthorizeWithCompletion:")
@@ -125,6 +129,8 @@ public class LARight extends NSObject {
      * Invalidates a previously authorized right.
      * 
      * @param handler Completion handler called after the right is deauthorized.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("deauthorizeWithCompletion:")
@@ -158,6 +164,8 @@ public class LARight extends NSObject {
      * device passcode.
      * 
      * @return @c LARight instance
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("init")
@@ -168,6 +176,8 @@ public class LARight extends NSObject {
      * 
      * @param requirement Requirement that needs to be satisfied to authorize the right
      * @return @c LARight instance
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("initWithRequirement:")
@@ -210,6 +220,8 @@ public class LARight extends NSObject {
 
     /**
      * An application-supplied integer that can be used to identify right intances. The default value is @c 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTag:")
@@ -221,6 +233,8 @@ public class LARight extends NSObject {
 
     /**
      * Provides the current authorization state of the @c LARight instance
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("state")
@@ -233,6 +247,8 @@ public class LARight extends NSObject {
 
     /**
      * An application-supplied integer that can be used to identify right intances. The default value is @c 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("tag")
@@ -251,6 +267,8 @@ public class LARight extends NSObject {
      * @param presentationContext Container where the authorization UI will be presented.
      * @param handler             Completion handler called after the authorization finishses. Returns an error when the
      *                            authorization fails.
+     * 
+     *                            API-Since: 16.0
      */
     @Generated
     @Selector("authorizeWithLocalizedReason:inPresentationContext:completion:")

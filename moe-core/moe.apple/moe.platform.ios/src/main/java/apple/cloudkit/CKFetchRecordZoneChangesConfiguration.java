@@ -108,6 +108,8 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -158,6 +160,9 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
     @Selector("new")
     public static native CKFetchRecordZoneChangesConfiguration new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("previousServerChangeToken")
@@ -171,6 +176,9 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("resultsLimit")
     @NUInt
@@ -182,15 +190,23 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setPreviousServerChangeToken:")
     public native void setPreviousServerChangeToken(@Nullable CKServerChangeToken value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);

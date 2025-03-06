@@ -115,6 +115,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLConnectionDataDelegate")
 public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connection:didReceiveData:")
@@ -122,6 +125,9 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connection:didReceiveResponse:")
@@ -129,6 +135,9 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:")
@@ -138,6 +147,9 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -147,6 +159,9 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -156,6 +171,9 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -165,6 +183,9 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connectionDidFinishLoading:")

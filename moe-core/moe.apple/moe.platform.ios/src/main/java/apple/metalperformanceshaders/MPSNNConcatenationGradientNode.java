@@ -115,6 +115,8 @@ public class MPSNNConcatenationGradientNode extends MPSNNGradientFilterNode {
      * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds
      *                           with
      * @param gradientState      The gradient state produced by the concatenation filter, consumed by this filter
+     * 
+     *                           API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
@@ -158,6 +160,8 @@ public class MPSNNConcatenationGradientNode extends MPSNNGradientFilterNode {
      * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds
      *                           with
      * @param gradientState      The gradient state produced by the concatenation filter, consumed by this filter
+     * 
+     *                           API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")

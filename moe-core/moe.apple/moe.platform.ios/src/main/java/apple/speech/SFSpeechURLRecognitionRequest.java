@@ -160,6 +160,9 @@ public class SFSpeechURLRecognitionRequest extends SFSpeechRecognitionRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("URL")
@@ -171,6 +174,8 @@ public class SFSpeechURLRecognitionRequest extends SFSpeechRecognitionRequest {
 
     /**
      * Request to transcribe speech from an audio file from the given URL.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithURL:")

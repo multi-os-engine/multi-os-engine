@@ -100,6 +100,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
     /**
      * Initializes and returns a newly created NSURLComponents with a URL string. If the URLString is malformed, nil is
      * returned.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("componentsWithString:")
@@ -109,6 +111,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * Initializes and returns a newly created NSURLComponents with the components of a URL. If resolvingAgainstBaseURL
      * is YES and url is a relative URL, the components of [url absoluteURL] are used. If the url string from the NSURL
      * is malformed, nil is returned.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("componentsWithURL:resolvingAgainstBaseURL:")
@@ -180,6 +184,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * password, host or port) and a path component, then the path must either begin with "/" or be an empty string. If
      * the NSURLComponents does not have an authority component (user, password, host or port) and has a path component,
      * the path component must not start with "//". If those requirements are not met, nil is returned.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -192,6 +198,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * empty string. If the NSURLComponents does not have an authority component (user, password, host or port) and has
      * a path component, the path component must not start with "//". If those requirements are not met, nil is
      * returned.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -205,11 +213,17 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("fragment")
     public native String fragment();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("host")
@@ -217,6 +231,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * Initialize a NSURLComponents with all components undefined. Designated initializer.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("init")
@@ -224,6 +240,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * Initialize a NSURLComponents with a URL string. If the URLString is malformed, nil is returned.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithString:")
@@ -233,21 +251,32 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * Initialize a NSURLComponents with the components of a URL. If resolvingAgainstBaseURL is YES and url is a
      * relative URL, the components of [url absoluteURL] are used. If the url string from the NSURL is malformed, nil is
      * returned.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithURL:resolvingAgainstBaseURL:")
     public native NSURLComponents initWithURLResolvingAgainstBaseURL(@NotNull NSURL url, boolean resolve);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("password")
     public native String password();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("path")
     public native String path();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("percentEncodedFragment")
@@ -264,16 +293,25 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Selector("percentEncodedHost")
     public native String percentEncodedHost();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("percentEncodedPassword")
     public native String percentEncodedPassword();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("percentEncodedPath")
     public native String percentEncodedPath();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("percentEncodedQuery")
@@ -285,6 +323,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * string will cause an exception. Although ';' is a legal path character, it is recommended that it be
      * percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will
      * percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -293,12 +333,17 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * Attempting to set a negative port number will cause an exception.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
     @Selector("port")
     public native NSNumber port();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("query")
@@ -407,28 +452,45 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * Attempting to set the scheme with an invalid scheme string will cause an exception.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
     @Selector("scheme")
     public native String scheme();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setFragment:")
     public native void setFragment(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setHost:")
     public native void setHost(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPassword:")
     public native void setPassword(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPath:")
     public native void setPath(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPercentEncodedFragment:")
     public native void setPercentEncodedFragment(@Nullable String value);
@@ -443,14 +505,23 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Selector("setPercentEncodedHost:")
     public native void setPercentEncodedHost(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPercentEncodedPassword:")
     public native void setPercentEncodedPassword(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPercentEncodedPath:")
     public native void setPercentEncodedPath(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPercentEncodedQuery:")
     public native void setPercentEncodedQuery(@Nullable String value);
@@ -461,6 +532,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * string will cause an exception. Although ';' is a legal path character, it is recommended that it be
      * percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will
      * percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPercentEncodedUser:")
@@ -468,11 +541,16 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * Attempting to set a negative port number will cause an exception.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPort:")
     public native void setPort(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setQuery:")
     public native void setQuery(@Nullable String value);
@@ -510,11 +588,16 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * Attempting to set the scheme with an invalid scheme string will cause an exception.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setScheme:")
     public native void setScheme(@Nullable String value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setUser:")
     public native void setUser(@Nullable String value);
@@ -532,6 +615,9 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Selector("string")
     public native String string();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("user")

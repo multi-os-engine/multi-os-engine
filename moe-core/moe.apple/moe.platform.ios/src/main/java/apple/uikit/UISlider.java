@@ -416,16 +416,25 @@ public class UISlider extends UIControl implements NSCoding {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("currentMaximumTrackImage")
     public native UIImage currentMaximumTrackImage();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("currentMinimumTrackImage")
     public native UIImage currentMinimumTrackImage();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("currentThumbImage")
@@ -449,6 +458,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * if set, value change events are generated any time the value changes due to dragging. default = YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isContinuous")
@@ -456,11 +467,16 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * if set, value change events are generated any time the value changes due to dragging. default = YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContinuous:")
     public native void setContinuous(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("maximumTrackImageForState:")
@@ -476,6 +492,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default 1.0. the current value may change if outside new max value
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("maximumValue")
@@ -483,17 +501,25 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default is nil. image that appears to right of control (e.g. speaker max)
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
     @Selector("maximumValueImage")
     public native UIImage maximumValueImage();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("maximumValueImageRectForBounds:")
     @ByValue
     public native CGRect maximumValueImageRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("minimumTrackImageForState:")
@@ -509,6 +535,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default 0.0. the current value may change if outside new min value
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("minimumValue")
@@ -516,6 +544,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default is nil. image that appears to left of control (e.g. speaker off)
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -524,12 +554,17 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * lets a subclass lay out the track and thumb as needed
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("minimumValueImageRectForBounds:")
     @ByValue
     public native CGRect minimumValueImageRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setMaximumTrackImage:forState:")
     public native void setMaximumTrackImageForState(@Nullable UIImage image, @NUInt long state);
@@ -543,6 +578,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default 1.0. the current value may change if outside new max value
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMaximumValue:")
@@ -550,11 +587,16 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default is nil. image that appears to right of control (e.g. speaker max)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMaximumValueImage:")
     public native void setMaximumValueImage(@Nullable UIImage value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setMinimumTrackImage:forState:")
     public native void setMinimumTrackImageForState(@Nullable UIImage image, @NUInt long state);
@@ -568,6 +610,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default 0.0. the current value may change if outside new min value
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMinimumValue:")
@@ -575,6 +619,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default is nil. image that appears to left of control (e.g. speaker off)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMinimumValueImage:")
@@ -585,6 +631,8 @@ public class UISlider extends UIControl implements NSCoding {
      * different left and right track
      * e.g blue on the left as you increase and white to the right of the thumb. The track images should be 3 part
      * resizable (via UIImage's resizableImage methods) along the direction that is longer
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setThumbImage:forState:")
@@ -599,6 +647,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default 0.0. this value will be pinned to min/max
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setValue:")
@@ -606,16 +656,24 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * move slider at fixed velocity (i.e. duration depends on distance). does not send action
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setValue:animated:")
     public native void setValueAnimated(float value, boolean animated);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("thumbImageForState:")
     public native UIImage thumbImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("thumbRectForBounds:trackRect:value:")
     @ByValue
@@ -629,6 +687,9 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("thumbTintColor")
     public native UIColor thumbTintColor();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("trackRectForBounds:")
     @ByValue
@@ -636,6 +697,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * default 0.0. this value will be pinned to min/max
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("value")

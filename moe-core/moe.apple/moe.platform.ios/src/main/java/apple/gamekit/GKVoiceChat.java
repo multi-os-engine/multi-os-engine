@@ -43,7 +43,12 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKVoiceChat represents an instance of a named voice communications channel
+ * 
+ * API-Since: 4.1
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -127,6 +132,12 @@ public class GKVoiceChat extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @Selector("isVoIPAllowed")
     public static native boolean isVoIPAllowed();
@@ -168,21 +179,36 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * make this session active and route the microphone
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
     /**
      * make this session active and route the microphone
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
     /**
      * name the chat was created with
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("name")
@@ -270,25 +296,46 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * default 1.0 (max is 1.0, min is 0.0)
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @Selector("start")
     public native void start();
 
     /**
      * start receiving audio from the chat
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("stop")
     public native void stop();
 
     /**
      * default 1.0 (max is 1.0, min is 0.0)
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("volume")
     public native float volume();

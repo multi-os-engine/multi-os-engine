@@ -84,6 +84,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * This way, you can have fine grained control over exactly when the sync engine fetches or sends changes.
      * This allows you to simulate edge cases and deterministically test your logic around scenarios like conflict
      * resolution and error handling.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("automaticallySync")
@@ -120,6 +122,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * This isn't recommended for production code, but it can be helpful for testing your `CKSyncEngine` integration.
      * For example, you might make multiple `CKSyncEngine` instances to simulate multiple devices syncing back and
      * forth.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("database")
@@ -132,6 +136,8 @@ public class CKSyncEngineConfiguration extends NSObject {
 
     /**
      * Your implementation of `CKSyncEngineDelegate`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("delegate")
@@ -152,6 +158,9 @@ public class CKSyncEngineConfiguration extends NSObject {
     @Selector("init")
     public native CKSyncEngineConfiguration init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithDatabase:stateSerialization:delegate:")
     public native CKSyncEngineConfiguration initWithDatabaseStateSerializationDelegate(@NotNull CKDatabase database,
@@ -216,6 +225,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * This way, you can have fine grained control over exactly when the sync engine fetches or sends changes.
      * This allows you to simulate edge cases and deterministically test your logic around scenarios like conflict
      * resolution and error handling.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAutomaticallySync:")
@@ -231,6 +242,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * This isn't recommended for production code, but it can be helpful for testing your `CKSyncEngine` integration.
      * For example, you might make multiple `CKSyncEngine` instances to simulate multiple devices syncing back and
      * forth.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDatabase:")
@@ -238,6 +251,8 @@ public class CKSyncEngineConfiguration extends NSObject {
 
     /**
      * Your implementation of `CKSyncEngineDelegate`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -245,6 +260,8 @@ public class CKSyncEngineConfiguration extends NSObject {
 
     /**
      * Your implementation of `CKSyncEngineDelegate`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable CKSyncEngineDelegate value) {
@@ -262,6 +279,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * The state serialization you last received in a `CKSyncEngineStateUpdateEvent`.
      * 
      * If this is the first time ever initializing your `CKSyncEngine`, you can provide `nil`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setStateSerialization:")
@@ -278,6 +297,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * 
      * >Note: `CKSyncEngine` will automatically attempt to discover any previous database subscriptions,
      * but you can be more explicit by giving the subscription ID through this configuration option.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSubscriptionID:")
@@ -291,6 +312,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * The state serialization you last received in a `CKSyncEngineStateUpdateEvent`.
      * 
      * If this is the first time ever initializing your `CKSyncEngine`, you can provide `nil`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("stateSerialization")
@@ -308,6 +331,8 @@ public class CKSyncEngineConfiguration extends NSObject {
      * 
      * >Note: `CKSyncEngine` will automatically attempt to discover any previous database subscriptions,
      * but you can be more explicit by giving the subscription ID through this configuration option.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("subscriptionID")

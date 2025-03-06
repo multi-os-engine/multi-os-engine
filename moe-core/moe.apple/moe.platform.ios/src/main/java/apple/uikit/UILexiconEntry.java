@@ -171,6 +171,8 @@ public class UILexiconEntry extends NSObject implements NSCopying {
      * -userInput represents the expected typed string, which need not match the actual typed string.
      * for example, if the -documentText were "iPhone", the corresponding -userInput could be "iphone"
      * -the documentText may also be in a different text script from the -userInput
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -181,6 +183,9 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     @Selector("init")
     public native UILexiconEntry init();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("userInput")

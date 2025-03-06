@@ -94,6 +94,8 @@ public class NSURLProtocol extends NSObject {
      * 
      * @param request A request to inspect.
      * @return YES if the protocol can handle the given request, NO if not.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("canInitWithRequest:")
@@ -136,6 +138,8 @@ public class NSURLProtocol extends NSObject {
      * 
      * @param request A request to make canonical.
      * @return The canonical form of the given request.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -206,6 +210,8 @@ public class NSURLProtocol extends NSObject {
      * @param request The request to use for the property lookup.
      * @return The property stored with the given key, or nil if no property
      *         had previously been stored with the given key in the given request.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -238,6 +244,8 @@ public class NSURLProtocol extends NSObject {
      * @return YES if the protocol was registered successfully, NO if not.
      *         The only way that failure can occur is if the given class is not a
      *         subclass of NSURLProtocol.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("registerClass:")
@@ -254,6 +262,8 @@ public class NSURLProtocol extends NSObject {
      * 
      * @param key     The key whose value should be removed
      * @param request The request to be modified
+     * 
+     *                API-Since: 2.0
      */
     @Generated
     @Selector("removePropertyForKey:inRequest:")
@@ -270,6 +280,8 @@ public class NSURLProtocol extends NSObject {
      * implementation-specific checks.
      * 
      * @return YES if the two requests are cache-equivalent, NO otherwise.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("requestIsCacheEquivalent:toRequest:")
@@ -296,6 +308,8 @@ public class NSURLProtocol extends NSObject {
      * @param value   The property to store.
      * @param key     The string to use for the property storage.
      * @param request The request in which to store the property.
+     * 
+     *                API-Since: 2.0
      */
     @Generated
     @Selector("setProperty:forKey:inRequest:")
@@ -319,6 +333,8 @@ public class NSURLProtocol extends NSObject {
      * consulted in calls to NSURLProtocol class methods.
      * 
      * @param protocolClass The class to unregister.
+     * 
+     *                      API-Since: 2.0
      */
     @Generated
     @Selector("unregisterClass:")
@@ -333,6 +349,8 @@ public class NSURLProtocol extends NSObject {
      * Returns the NSCachedURLResponse of the receiver.
      * 
      * @return The NSCachedURLResponse of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -343,6 +361,8 @@ public class NSURLProtocol extends NSObject {
      * Returns the NSURLProtocolClient of the receiver.
      * 
      * @return The NSURLProtocolClient of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -368,6 +388,8 @@ public class NSURLProtocol extends NSObject {
      * @param client         The NSURLProtocolClient object that serves as the
      *                       interface the protocol implementation can use to report results back
      *                       to the URL loading system.
+     * 
+     *                       API-Since: 2.0
      */
     @Generated
     @Selector("initWithRequest:cachedResponse:client:")
@@ -388,6 +410,8 @@ public class NSURLProtocol extends NSObject {
      * Returns the NSURLRequest of the receiver.
      * 
      * @return The NSURLRequest of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -401,6 +425,8 @@ public class NSURLProtocol extends NSObject {
      * 
      * When this method is called, the protocol implementation
      * should start loading a request.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("startLoading")
@@ -415,6 +441,8 @@ public class NSURLProtocol extends NSObject {
      * should end the work of loading a request. This could be in response
      * to a cancel operation, so protocol implementations must be able to
      * handle this call while a load is in progress.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("stopLoading")

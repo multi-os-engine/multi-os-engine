@@ -92,11 +92,17 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dilationRateX")
     @NUInt
     public native long dilationRateX();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dilationRateY")
     @NUInt
@@ -118,6 +124,8 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY
      *                   = size
      * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:filterSize:")
@@ -132,6 +140,8 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
      * @param stride       strideInPixelsX = strideInPixelsY = stride
      * @param dilationRate dilationRateX = dilationRateY = stride
      * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:filterSize:stride:dilationRate:")
@@ -149,6 +159,8 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
      * @param dilationRateX   The dilation factor in the x dimension.
      * @param dilationRateY   The dilation factor in the y dimension.
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:dilationRateX:dilationRateY:")
@@ -191,6 +203,8 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY
      *                   = size
      * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:filterSize:")
@@ -205,6 +219,8 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
      * @param stride       strideInPixelsX = strideInPixelsY = stride
      * @param dilationRate dilationRateX = dilationRateY = stride
      * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:filterSize:stride:dilationRate:")

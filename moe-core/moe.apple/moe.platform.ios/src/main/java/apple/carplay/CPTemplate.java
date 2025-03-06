@@ -149,6 +149,8 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
 
     /**
      * Any custom data or an object associated with this template can be stored in this property.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -174,6 +176,8 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
 
     /**
      * Any custom data or an object associated with this template can be stored in this property.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

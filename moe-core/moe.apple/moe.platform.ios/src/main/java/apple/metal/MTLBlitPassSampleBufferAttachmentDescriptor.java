@@ -107,6 +107,8 @@ public class MTLBlitPassSampleBufferAttachmentDescriptor extends NSObject implem
      * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a blit pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("endOfEncoderSampleIndex")
@@ -165,6 +167,8 @@ public class MTLBlitPassSampleBufferAttachmentDescriptor extends NSObject implem
      * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -181,6 +185,8 @@ public class MTLBlitPassSampleBufferAttachmentDescriptor extends NSObject implem
      * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a blit pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEndOfEncoderSampleIndex:")
@@ -194,6 +200,8 @@ public class MTLBlitPassSampleBufferAttachmentDescriptor extends NSObject implem
      * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSampleBuffer:")
@@ -208,6 +216,8 @@ public class MTLBlitPassSampleBufferAttachmentDescriptor extends NSObject implem
      * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a blit pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStartOfEncoderSampleIndex:")
@@ -226,6 +236,8 @@ public class MTLBlitPassSampleBufferAttachmentDescriptor extends NSObject implem
      * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a blit pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startOfEncoderSampleIndex")

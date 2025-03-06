@@ -66,6 +66,9 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("auxiliaryButtons")
@@ -133,17 +136,25 @@ public class GCMouseInput extends GCPhysicalInputProfile {
 
     /**
      * Mouse buttons that can be used only as digital inputs
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
     @Selector("leftButton")
     public native GCControllerButtonInput leftButton();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("middleButton")
     public native GCControllerButtonInput middleButton();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("mouseMovedHandler")
@@ -170,6 +181,9 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("rightButton")
@@ -177,12 +191,17 @@ public class GCMouseInput extends GCPhysicalInputProfile {
 
     /**
      * Scroll is a dpad with undefined range.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
     @Selector("scroll")
     public native GCDeviceCursor scroll();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setMouseMovedHandler:")
     public native void setMouseMovedHandler(

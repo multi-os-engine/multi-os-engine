@@ -89,6 +89,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Buffer containing curve control points. Each control point must
      * be of the format specified by the control point format. Must not be
      * nil when the acceleration structure is built.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("controlPointBuffer")
@@ -100,6 +102,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Control point buffer offset. Must be a multiple of the control
      * point format's element size and must be aligned to the platform's
      * buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("controlPointBufferOffset")
@@ -108,6 +112,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Number of control points in the control point buffer
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("controlPointCount")
@@ -117,6 +123,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Format of the control points in the control point buffer.
      * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("controlPointFormat")
@@ -128,6 +136,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * buffer. Must be a multiple of the control point format's element size
      * and must be at least the control point format's size. Defaults to 0
      * bytes, indicating that the control points are tightly packed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("controlPointStride")
@@ -136,6 +146,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Curve basis. Defaults to MTLCurveBasisBSpline.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("curveBasis")
@@ -144,6 +156,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Type of curve end caps. Defaults to MTLCurveEndCapsNone.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("curveEndCaps")
@@ -152,6 +166,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Curve type. Defaults to MTLCurveTypeRound.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("curveType")
@@ -166,6 +182,9 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("descriptor")
     public static native MTLAccelerationStructureCurveGeometryDescriptor descriptor();
@@ -178,6 +197,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Index buffer containing references to control points in the control
      * point buffer. Must not be nil when the acceleration structure is built.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("indexBuffer")
@@ -189,6 +210,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Index buffer offset. Must be a multiple of the index data type
      * size and must be aligned to both the index data type's alignment and
      * the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("indexBufferOffset")
@@ -197,6 +220,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Index type
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("indexType")
@@ -239,6 +264,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * radius must be of the type specified by the radius format. Each radius
      * must be at least zero. Must not be nil when the acceleration structure
      * is built.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("radiusBuffer")
@@ -249,6 +276,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Radius buffer offset. Must be a multiple of the radius format
      * size and must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("radiusBufferOffset")
@@ -258,6 +287,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Format of the radii in the radius buffer. Defaults to
      * MTLAttributeFormatFloat.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("radiusFormat")
@@ -268,6 +299,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Stride, in bytes, between radii in the radius buffer. Must be
      * a multiple of the radius format size. Defaults to 0 bytes, indicating
      * that the radii are tightly packed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("radiusStride")
@@ -284,6 +317,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Number of control points per curve segment. Must be 2, 3, or 4.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("segmentControlPointCount")
@@ -292,6 +327,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Number of curve segments
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("segmentCount")
@@ -302,6 +339,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Buffer containing curve control points. Each control point must
      * be of the format specified by the control point format. Must not be
      * nil when the acceleration structure is built.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setControlPointBuffer:")
@@ -311,6 +350,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Control point buffer offset. Must be a multiple of the control
      * point format's element size and must be aligned to the platform's
      * buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setControlPointBufferOffset:")
@@ -318,6 +359,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Number of control points in the control point buffer
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setControlPointCount:")
@@ -326,6 +369,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Format of the control points in the control point buffer.
      * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setControlPointFormat:")
@@ -336,6 +381,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * buffer. Must be a multiple of the control point format's element size
      * and must be at least the control point format's size. Defaults to 0
      * bytes, indicating that the control points are tightly packed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setControlPointStride:")
@@ -343,6 +390,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Curve basis. Defaults to MTLCurveBasisBSpline.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCurveBasis:")
@@ -350,6 +399,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Type of curve end caps. Defaults to MTLCurveEndCapsNone.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCurveEndCaps:")
@@ -357,6 +408,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Curve type. Defaults to MTLCurveTypeRound.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCurveType:")
@@ -365,6 +418,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Index buffer containing references to control points in the control
      * point buffer. Must not be nil when the acceleration structure is built.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setIndexBuffer:")
@@ -374,6 +429,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Index buffer offset. Must be a multiple of the index data type
      * size and must be aligned to both the index data type's alignment and
      * the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setIndexBufferOffset:")
@@ -381,6 +438,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Index type
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setIndexType:")
@@ -391,6 +450,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * radius must be of the type specified by the radius format. Each radius
      * must be at least zero. Must not be nil when the acceleration structure
      * is built.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRadiusBuffer:")
@@ -399,6 +460,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Radius buffer offset. Must be a multiple of the radius format
      * size and must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRadiusBufferOffset:")
@@ -407,6 +470,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
     /**
      * Format of the radii in the radius buffer. Defaults to
      * MTLAttributeFormatFloat.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRadiusFormat:")
@@ -416,6 +481,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
      * Stride, in bytes, between radii in the radius buffer. Must be
      * a multiple of the radius format size. Defaults to 0 bytes, indicating
      * that the radii are tightly packed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRadiusStride:")
@@ -423,6 +490,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Number of control points per curve segment. Must be 2, 3, or 4.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSegmentControlPointCount:")
@@ -430,6 +499,8 @@ public class MTLAccelerationStructureCurveGeometryDescriptor extends MTLAccelera
 
     /**
      * Number of curve segments
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSegmentCount:")

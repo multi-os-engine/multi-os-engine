@@ -1667,6 +1667,12 @@ public final class AudioToolbox {
      *         above); the converter will perform any necessary additional conversion between
      *         your PCM format and the one created or consumed by the codec.
      * 
+     *         Note that AudioConverter may change the formats to correct any
+     *         inconsistent or erroneous values. The actual formats expected and used
+     *         by the newly created AudioConverter can be obtained by getting the
+     *         properties `kAudioConverterCurrentInputStreamDescription` and
+     *         `kAudioConverterCurrentOutputStreamDescription` from it.
+     * 
      *         API-Since: 2.0
      */
     @Generated
@@ -7672,4 +7678,65 @@ public final class AudioToolbox {
     @CFunction
     public static native int AudioFileGetUserDataAtOffset(@NotNull AudioFileID inAudioFile, int inUserDataID,
             int inIndex, long inOffset, @NotNull IntPtr ioUserDataSize, @NotNull VoidPtr outUserData);
+
+    /**
+     * -----------------------------------------------------------------------------
+     * [@function] AudioConverterPrepare
+     * 
+     * Optimizes the subsequent creation of audio converters by the current process.
+     * 
+     * This function performs its work asynchronously. The optional completion block,
+     * if provided, is executed once preparation is complete.
+     * Although a best effort is made to ensure future audio converters will be created quickly,
+     * there are no guarantees.
+     * 
+     * @param inFlags
+     *                          Reserved for future use. Pass 0.
+     * @param ioReserved
+     *                          Reserved for future use. Pass NULL.
+     * @param inCompletionBlock
+     *                          Optional block to execute once preparation is complete. May be NULL.
+     *                          The block is given the OSStatus result of the preparation.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void AudioConverterPrepare(int inFlags, @Nullable VoidPtr ioReserved,
+            @ObjCBlock(name = "call_AudioConverterPrepare") @Nullable Block_AudioConverterPrepare inCompletionBlock);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_AudioConverterPrepare {
+        @Generated
+        void call_AudioConverterPrepare(int arg0);
+    }
+
+    /**
+     * -----------------------------------------------------------------------------
+     * [@function] AudioConverterNewWithOptions
+     * 
+     * Create a new AudioConverter with one or more options enabled.
+     * 
+     * @param inSourceFormat
+     *                            The format of the source audio to be converted.
+     * @param inDestinationFormat
+     *                            The destination format to which the audio is to be converted.
+     * @param inOptions
+     *                            Flags selecting one or more optional configurations for the AudioConverter.
+     * @param outAudioConverter
+     *                            On successful return, points to a new AudioConverter instance.
+     * @return An OSStatus result code.
+     * 
+     *         This is an alternative to AudioConverterNew which supports enabling
+     *         one or more optional configurations for the new AudioConverter.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int AudioConverterNewWithOptions(
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioStreamBasicDescription inSourceFormat,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioStreamBasicDescription inDestinationFormat,
+            int inOptions, @NotNull Ptr<AudioConverterRef> outAudioConverter);
 }

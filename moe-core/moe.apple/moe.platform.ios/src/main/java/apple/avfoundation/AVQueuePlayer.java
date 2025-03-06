@@ -154,6 +154,8 @@ public class AVQueuePlayer extends AVPlayer {
      *              An NSArray of AVPlayerItems with which to populate the player's queue initially.
      * @return
      *         An instance of AVQueuePlayer.
+     * 
+     *         API-Since: 4.1
      */
     @Generated
     @Selector("queuePlayerWithItems:")
@@ -186,6 +188,8 @@ public class AVQueuePlayer extends AVPlayer {
      * Ends playback of the current item and initiates playback of the next item in the player's queue.
      * 
      * Removes the current item from the play queue.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("advanceToNextItem")
@@ -198,6 +202,8 @@ public class AVQueuePlayer extends AVPlayer {
      * 
      * Note that adding the same AVPlayerItem to an AVQueuePlayer at more than one position in the queue is not
      * supported.
+     * 
+     * API-Since: 4.1
      * 
      * @param item
      *                  The AVPlayerItem to be tested.
@@ -221,6 +227,8 @@ public class AVQueuePlayer extends AVPlayer {
      * Initializes an instance of AVQueuePlayer by enqueueing the AVPlayerItems from the specified array.
      * 
      * This method throws an exception if items contains duplicated values or values associated with another AVPlayer.
+     * 
+     * API-Since: 4.1
      * 
      * @param items
      *              An NSArray of AVPlayerItems with which to populate the player's queue initially.
@@ -247,6 +255,8 @@ public class AVQueuePlayer extends AVPlayer {
      * 
      * This method throws an exception if item already exists in the queue.
      * 
+     * API-Since: 4.1
+     * 
      * @param item
      *                  The item to be inserted.
      * @param afterItem
@@ -263,6 +273,8 @@ public class AVQueuePlayer extends AVPlayer {
      * Provides an array of the currently enqueued items.
      * 
      * @return An NSArray containing the enqueued AVPlayerItems.
+     * 
+     *         API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -275,6 +287,8 @@ public class AVQueuePlayer extends AVPlayer {
      * Removes all items from the queue.
      * 
      * Stops playback by the target.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("removeAllItems")
@@ -287,6 +301,8 @@ public class AVQueuePlayer extends AVPlayer {
      * 
      * If the item to be removed is currently playing, has the same effect as -advanceToNextItem.
      * 
+     * API-Since: 4.1
+     * 
      * @param item
      *             The item to be removed.
      */
@@ -294,6 +310,7 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("removeItem:")
     public native void removeItem(@NotNull AVPlayerItem item);
 
+    @Deprecated
     @Generated
     @Selector("availableHDRModes")
     @NInt

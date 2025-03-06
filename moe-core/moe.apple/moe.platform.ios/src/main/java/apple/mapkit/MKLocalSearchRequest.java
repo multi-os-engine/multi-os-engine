@@ -243,4 +243,34 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("addressFilter")
+    @Nullable
+    public native MKAddressFilter addressFilter();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("regionPriority")
+    @NInt
+    public native long regionPriority();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setAddressFilter:")
+    public native void setAddressFilter(@Nullable MKAddressFilter value);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setRegionPriority:")
+    public native void setRegionPriority(@NInt long value);
 }

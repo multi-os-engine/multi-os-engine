@@ -29,6 +29,8 @@ import org.jetbrains.annotations.NotNull;
 public interface NSFileProviderTestingCollisionResolution extends NSFileProviderTestingOperation {
     /**
      * The state of the item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -38,6 +40,8 @@ public interface NSFileProviderTestingCollisionResolution extends NSFileProvider
 
     /**
      * The side of the operation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("side")

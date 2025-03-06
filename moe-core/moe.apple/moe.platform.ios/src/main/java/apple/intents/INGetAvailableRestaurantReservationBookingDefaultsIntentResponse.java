@@ -166,6 +166,9 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -173,6 +176,8 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
 
     /**
      * default booking time for an available bookings request
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -181,6 +186,8 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
 
     /**
      * default party size for an available bookings request
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("defaultPartySize")
@@ -196,35 +203,56 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
     public native INGetAvailableRestaurantReservationBookingDefaultsIntentResponse initWithCoder(
             @NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithDefaultPartySize:defaultBookingDate:code:userActivity:")
     public native INGetAvailableRestaurantReservationBookingDefaultsIntentResponse initWithDefaultPartySizeDefaultBookingDateCodeUserActivity(
             @NUInt long defaultPartySize, @NotNull NSDate defaultBookingDate, @NInt long code,
             @Nullable NSUserActivity userActivity);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("maximumPartySize")
     public native NSNumber maximumPartySize();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("minimumPartySize")
     public native NSNumber minimumPartySize();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("providerImage")
     public native INImage providerImage();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setMaximumPartySize:")
     public native void setMaximumPartySize(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setMinimumPartySize:")
     public native void setMinimumPartySize(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setProviderImage:")
     public native void setProviderImage(@NotNull INImage value);

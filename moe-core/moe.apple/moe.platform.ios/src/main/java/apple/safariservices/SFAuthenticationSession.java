@@ -68,7 +68,11 @@ public class SFAuthenticationSession extends NSObject {
      * Cancel an SFAuthenticationSession. If the view controller is already presented to load the webpage for
      * authentication,
      * it will be dismissed. Calling cancel on an already canceled session will have no effect.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -119,7 +123,11 @@ public class SFAuthenticationSession extends NSObject {
      * @param callbackURLScheme the custom URL scheme that the app expects in the callback URL.
      * @param completionHandler the completion handler which is called when the session is completed successfully or
      *                          canceled by user.
+     * 
+     *                          API-Since: 11.0
+     *                          Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithURL:callbackURLScheme:completionHandler:")
     public native SFAuthenticationSession initWithURLCallbackURLSchemeCompletionHandler(@NotNull NSURL URL,
@@ -179,7 +187,11 @@ public class SFAuthenticationSession extends NSObject {
      * canceled session will fail.
      * 
      * @return Returns YES if the session starts successfully.
+     * 
+     *         API-Since: 11.0
+     *         Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("start")
     public native boolean start();

@@ -106,6 +106,8 @@ public class MPSCNNNeuronSoftSignNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:")
@@ -140,6 +142,8 @@ public class MPSCNNNeuronSoftSignNode extends MPSCNNNeuronNode {
 
     /**
      * Create an autoreleased node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:")

@@ -183,6 +183,8 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("alpha")
@@ -192,6 +194,8 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("beta")
@@ -201,6 +205,8 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("delta")
@@ -221,6 +227,9 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * @param device     The device the filter will run on
      * @param kernelSize The kernel filter size in each dimension.
      * @return A valid MPSCNNCrossChannelNormalization object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelSize:")
@@ -231,6 +240,8 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * [@property] kernelSize
      * 
      * The size of the square filter window. Default is 5
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("kernelSize")
@@ -241,6 +252,8 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -250,6 +263,8 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBeta:")
@@ -259,6 +274,8 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelta:")

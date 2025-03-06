@@ -175,6 +175,9 @@ public class CKRecordZoneNotification extends CKNotification {
     @Selector("init")
     public native CKRecordZoneNotification init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordZoneID")

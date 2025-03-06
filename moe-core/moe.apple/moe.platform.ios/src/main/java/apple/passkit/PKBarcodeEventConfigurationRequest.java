@@ -81,11 +81,17 @@ public class PKBarcodeEventConfigurationRequest extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("configurationData")
     public native NSData configurationData();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("configurationDataType")
     @NInt
@@ -99,6 +105,9 @@ public class PKBarcodeEventConfigurationRequest extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("deviceAccountIdentifier")

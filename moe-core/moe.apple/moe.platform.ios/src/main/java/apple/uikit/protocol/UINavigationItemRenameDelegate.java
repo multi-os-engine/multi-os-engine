@@ -24,6 +24,8 @@ public interface UINavigationItemRenameDelegate {
      * This method is called when renaming has ended. The title on the navigation item has already been changed when
      * this method is called but
      * clients can make further adjustments to it when necessary.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("navigationItem:didEndRenamingWithTitle:")
@@ -36,6 +38,8 @@ public interface UINavigationItemRenameDelegate {
      * away. Clients are therefore expected to
      * handle titles in navigationItem:didEndRenamingWithTitle: for which they would return NO from
      * navigationItem:shouldEndRenamingWithTitle:.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -49,6 +53,8 @@ public interface UINavigationItemRenameDelegate {
      * Called when we begin renaming. Implementing this method allows for customizing the initial text that will show up
      * in the text field as well as the
      * selected range of that text.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -64,6 +70,8 @@ public interface UINavigationItemRenameDelegate {
      * Controls whether the rename action is supported for the given navigation item. For example this method is called
      * when the navigation bar's
      * document menu is shown to validate if the rename action should be part of that menu.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional

@@ -40,6 +40,8 @@ public interface INHangUpCallIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INHangUpCallIntentResponse
+     * 
+     *      API-Since: 16.2
      */
     @Generated
     @IsOptional
@@ -66,6 +68,8 @@ public interface INHangUpCallIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INHangUpCallIntentResponse
+     * 
+     *      API-Since: 16.2
      */
     @Generated
     @Selector("handleHangUpCall:completion:")

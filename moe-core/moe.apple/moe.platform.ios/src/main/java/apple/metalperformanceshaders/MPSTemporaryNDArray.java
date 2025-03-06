@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.protocol.MTLBuffer;
 
 /**
  * MPSTemporaryNDArray
@@ -100,6 +101,8 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     /**
      * Get a well known <MPSNDArrayAllocator> that makes temporary MTLBuffers
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -183,6 +186,8 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      * The Metal API Validation layer will assert if a MPSTemporaryNDArray is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("readCount")
@@ -223,6 +228,8 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      * The Metal API Validation layer will assert if a MPSTemporaryNDArray is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setReadCount:")
@@ -245,6 +252,8 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      *         released when the command buffer is committed. The underlying buffer will become invalid before
      *         this time due to the action of the readCount property. Please read and understand the use of
      *         the readCount property before using this object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("temporaryNDArrayWithCommandBuffer:descriptor:")
@@ -261,4 +270,10 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("initWithBuffer:offset:descriptor:")
+    public native MPSTemporaryNDArray initWithBufferOffsetDescriptor(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer, @NUInt long offset,
+            @NotNull MPSNDArrayDescriptor descriptor);
 }

@@ -70,6 +70,8 @@ public class AVAssetPlaybackAssistant extends NSObject {
      * @param asset
      *              An instance of AVAsset.
      * @return An instance of AVAssetPlaybackAssistant.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("assetPlaybackAssistantWithAsset:")
@@ -147,6 +149,8 @@ public class AVAssetPlaybackAssistant extends NSObject {
      * completionHandler is called when all of the AVAssetPlaybackConfigurationOption values have been loaded. If
      * AVAssetPlaybackAssistant encounters failures when inspecting the contents of the asset, it will return no
      * AVAssetPlaybackConfigurationOptions associated with those contents.
+     * 
+     * API-Since: 16.0
      * 
      * @param completionHandler
      *                          Called with an array of AVAssetPlaybackConfigurationOption values describing

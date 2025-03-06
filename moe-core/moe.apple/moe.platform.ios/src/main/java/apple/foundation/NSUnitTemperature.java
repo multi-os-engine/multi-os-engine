@@ -90,6 +90,9 @@ public class NSUnitTemperature extends NSDimension implements NSSecureCoding {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("celsius")
@@ -113,6 +116,9 @@ public class NSUnitTemperature extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("fahrenheit")
@@ -142,6 +148,8 @@ public class NSUnitTemperature extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - kelvin
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

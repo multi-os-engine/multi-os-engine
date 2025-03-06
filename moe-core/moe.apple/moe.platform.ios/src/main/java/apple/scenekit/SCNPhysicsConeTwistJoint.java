@@ -68,6 +68,8 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
 
     /**
      * the first body attached to the slider joint
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -76,6 +78,8 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
 
     /**
      * the second body attached to the slider joint
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -111,11 +115,17 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("frameA")
     @ByValue
     public native SCNMatrix4 frameA();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("frameB")
     @ByValue
@@ -154,6 +164,8 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     /**
      * Initializes and returns a physics cone-twist joint.
      * The joint attaches "body" to the 3d location specified by "frame" and relative to the node that owns the body.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("jointWithBody:frame:")
@@ -163,6 +175,8 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     /**
      * Initializes and returns a physics cone-twist joint.
      * The joint attaches bodyA and bodyB on frameA and frameB respectively.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("jointWithBodyA:frameA:bodyB:frameB:")
@@ -176,12 +190,17 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
 
     /**
      * The maximum angular limits in radians in each cone tangent directions
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumAngularLimit1")
     @NFloat
     public native double maximumAngularLimit1();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("maximumAngularLimit2")
     @NFloat
@@ -189,6 +208,8 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
 
     /**
      * Maximum twist angle alon the cone axis
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumTwistAngle")
@@ -208,27 +229,40 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setFrameA:")
     public native void setFrameA(@ByValue SCNMatrix4 value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setFrameB:")
     public native void setFrameB(@ByValue SCNMatrix4 value);
 
     /**
      * The maximum angular limits in radians in each cone tangent directions
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumAngularLimit1:")
     public native void setMaximumAngularLimit1(@NFloat double value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMaximumAngularLimit2:")
     public native void setMaximumAngularLimit2(@NFloat double value);
 
     /**
      * Maximum twist angle alon the cone axis
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumTwistAngle:")

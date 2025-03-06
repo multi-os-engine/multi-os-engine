@@ -61,6 +61,8 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alpha")
@@ -74,6 +76,8 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("beta")
@@ -108,6 +112,8 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("delta")
@@ -126,6 +132,9 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSCNNNormalizationNode init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNormalizationNode initWithSource(@NotNull MPSNNImageNode sourceNode);
@@ -157,6 +166,9 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
     @Selector("new")
     public static native MPSCNNNormalizationNode new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNormalizationNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
@@ -173,6 +185,8 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -182,6 +196,8 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBeta:")
@@ -191,6 +207,8 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDelta:")

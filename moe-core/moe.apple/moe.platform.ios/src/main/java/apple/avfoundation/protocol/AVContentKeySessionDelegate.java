@@ -15,6 +15,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.avfoundation.AVContentKey;
+import apple.foundation.NSArray;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.3
@@ -24,6 +27,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVContentKeySessionDelegate")
 public interface AVContentKeySessionDelegate {
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:contentKeyRequest:didFailWithError:")
@@ -32,11 +38,17 @@ public interface AVContentKeySessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("contentKeySession:didProvideContentKeyRequest:")
     void contentKeySessionDidProvideContentKeyRequest(@NotNull AVContentKeySession session,
             @NotNull AVContentKeyRequest keyRequest);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvidePersistableContentKeyRequest:")
@@ -45,6 +57,9 @@ public interface AVContentKeySessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvideRenewingContentKeyRequest:")
@@ -65,6 +80,9 @@ public interface AVContentKeySessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:shouldRetryContentKeyRequest:reason:")
@@ -73,6 +91,9 @@ public interface AVContentKeySessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySessionContentProtectionSessionIdentifierDidChange:")
@@ -98,6 +119,29 @@ public interface AVContentKeySessionDelegate {
     @IsOptional
     @Selector("contentKeySessionDidGenerateExpiredSessionReport:")
     default void contentKeySessionDidGenerateExpiredSessionReport(@NotNull AVContentKeySession session) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("contentKeySession:didProvideContentKeyRequests:forInitializationData:")
+    default void contentKeySessionDidProvideContentKeyRequestsForInitializationData(
+            @NotNull AVContentKeySession session, @NotNull NSArray<? extends AVContentKeyRequest> keyRequests,
+            @Nullable NSData initializationData) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("contentKeySession:externalProtectionStatusDidChangeForContentKey:")
+    default void contentKeySessionExternalProtectionStatusDidChangeForContentKey(@NotNull AVContentKeySession session,
+            @NotNull AVContentKey contentKey) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

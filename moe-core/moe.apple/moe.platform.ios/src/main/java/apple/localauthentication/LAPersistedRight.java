@@ -122,6 +122,8 @@ public class LAPersistedRight extends LARight {
 
     /**
      * Managed private key
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -150,6 +152,8 @@ public class LAPersistedRight extends LARight {
      * Generic secret
      * 
      * This is the generic secret that would have been stored along with the right
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

@@ -59,6 +59,7 @@ import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -133,7 +134,7 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSArray<?> arrayWithObjectsCount(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -500,7 +501,7 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Generated
     @Selector("initWithObjects:count:")
     public native NSArray<?> initWithObjectsCount(
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("isEqualToArray:")
@@ -1143,6 +1144,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public native boolean writeToURLError(@NotNull NSURL url,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("arrayByApplyingDifference:")
@@ -1151,18 +1155,26 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     /**
      * Uses isEqual: to determine the difference between the parameter and the receiver
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
     @Selector("differenceFromArray:")
     public native NSOrderedCollectionDifference<_ObjectType> differenceFromArray(@NotNull NSArray<_ObjectType> other);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("differenceFromArray:withOptions:")
     public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptions(
             @NotNull NSArray<_ObjectType> other, @NUInt long options);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("differenceFromArray:withOptions:usingEquivalenceTest:")

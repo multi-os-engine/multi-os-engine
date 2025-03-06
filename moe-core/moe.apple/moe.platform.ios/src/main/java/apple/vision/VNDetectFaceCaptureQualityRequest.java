@@ -186,6 +186,8 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
 
     /**
      * VNFaceObservation with populated faceCaptureQuality property results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

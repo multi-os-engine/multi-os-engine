@@ -80,6 +80,8 @@ public class UIPrintPaper extends NSObject {
 
     /**
      * for use by delegate. pass in list
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -173,6 +175,9 @@ public class UIPrintPaper extends NSObject {
     @Selector("init")
     public native UIPrintPaper init();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("paperSize")
     @ByValue
@@ -183,6 +188,9 @@ public class UIPrintPaper extends NSObject {
     @ByValue
     public native CGRect printRect();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("printableRect")
     @ByValue

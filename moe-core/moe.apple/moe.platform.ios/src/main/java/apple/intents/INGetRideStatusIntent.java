@@ -163,6 +163,9 @@ public class INGetRideStatusIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native INGetRideStatusIntent init();

@@ -14,4 +14,12 @@ public final class AEAssessmentErrorCode {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long UnsupportedPlatform = 0x0000000000000002L;
+    /**
+     * API-Since: 17.5
+     */
+    @Generated @NInt public static final long MultipleParticipantsNotSupported = 0x0000000000000003L;
+    /**
+     * API-Since: 17.5
+     */
+    @Generated @NInt public static final long ConfigurationUpdatesNotSupported = 0x0000000000000004L;
 }

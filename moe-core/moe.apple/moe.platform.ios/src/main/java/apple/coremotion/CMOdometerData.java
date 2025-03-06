@@ -152,6 +152,8 @@ public class CMOdometerData extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * Discussion:
      * The end time for the odometer data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("endDate")
@@ -296,6 +298,8 @@ public class CMOdometerData extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * Discussion:
      * The start time for the odometer data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startDate")

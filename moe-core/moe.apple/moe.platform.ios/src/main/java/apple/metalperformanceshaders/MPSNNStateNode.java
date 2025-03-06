@@ -104,6 +104,8 @@ public class MPSNNStateNode extends NSObject {
      * MPS resource identification
      * 
      * See MPSHandle protocol reference. Default: nil
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -159,6 +161,8 @@ public class MPSNNStateNode extends NSObject {
      * MPS resource identification
      * 
      * See MPSHandle protocol reference. Default: nil
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setHandle:")
@@ -194,6 +198,8 @@ public class MPSNNStateNode extends NSObject {
      * further work and recomputing it is prohibitively costly.
      * 
      * Default: NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("exportFromGraph")
@@ -216,6 +222,8 @@ public class MPSNNStateNode extends NSObject {
      * further work and recomputing it is prohibitively costly.
      * 
      * Default: NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setExportFromGraph:")

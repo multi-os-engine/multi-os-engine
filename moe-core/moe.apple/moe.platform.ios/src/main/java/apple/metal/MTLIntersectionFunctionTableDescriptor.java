@@ -101,6 +101,8 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
      * [@property] functionCount
      * 
      * The number of functions in the table.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("functionCount")
@@ -133,6 +135,8 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
      * intersectionFunctionTableDescriptor
      * 
      * Create an autoreleased intersection function table descriptor
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -165,6 +169,8 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
      * [@property] functionCount
      * 
      * The number of functions in the table.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setFunctionCount:")

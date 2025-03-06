@@ -31,8 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * A split layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -100,7 +99,11 @@ public class MLCSplitLayer extends MLCLayer {
      * [@property] dimension
      * 
      * The dimension (or axis) along which to split tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dimension")
     @NUInt
@@ -143,7 +146,11 @@ public class MLCSplitLayer extends MLCLayer {
      * @param splitCount The number of splits.
      * @param dimension  The dimension along which the tensor should be split.
      * @return A new split layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithSplitCount:dimension:")
     public static native MLCSplitLayer layerWithSplitCountDimension(@NUInt long splitCount, @NUInt long dimension);
@@ -154,7 +161,11 @@ public class MLCSplitLayer extends MLCLayer {
      * @param splitSectionLengths Lengths of each split section.
      * @param dimension           The dimension along which the tensor should be split.
      * @return A new split layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithSplitSectionLengths:dimension:")
     public static native MLCSplitLayer layerWithSplitSectionLengthsDimension(
@@ -183,7 +194,11 @@ public class MLCSplitLayer extends MLCLayer {
      * The number of splits.
      * 
      * The tensor will be split into equally sized chunks. The last chunk may be smaller in size.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("splitCount")
     @NUInt
@@ -195,7 +210,11 @@ public class MLCSplitLayer extends MLCLayer {
      * Lengths of each split section.
      * 
      * The tensor will be split into chunks along dimensions with sizes given in \p splitSectionLengths .
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("splitSectionLengths")
@@ -205,6 +224,7 @@ public class MLCSplitLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

@@ -59,6 +59,9 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("allocWithZone:")
     public static native NSPersistentHistoryTransaction allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("author")
@@ -68,6 +71,9 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("bundleID")
@@ -84,6 +90,9 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("changes")
@@ -99,6 +108,9 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("contextName")
@@ -157,12 +169,17 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
 
     /**
      * Get a notification that can be consumed by a NSManagedObjectContext
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
     @Selector("objectIDNotification")
     public native NSNotification objectIDNotification();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("processID")
@@ -180,6 +197,9 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("storeID")
@@ -189,16 +209,25 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("timestamp")
     public native NSDate timestamp();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("token")
     public native NSPersistentHistoryToken token();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("transactionNumber")
     public native long transactionNumber();

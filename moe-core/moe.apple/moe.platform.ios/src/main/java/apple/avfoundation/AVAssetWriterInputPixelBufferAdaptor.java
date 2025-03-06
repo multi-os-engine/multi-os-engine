@@ -107,6 +107,8 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * adaptor or if the input has already started writing (the asset writer has progressed beyond
      * AVAssetWriterStatusUnknown).
      * 
+     * API-Since: 4.1
+     * 
      * @param input
      *                                    An instance of AVAssetWriterInput to which the receiver should append pixel
      *                                    buffers. Currently, only asset writer inputs that accept media data of type
@@ -251,6 +253,8 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * This method throws an exception if the presentation time is is non-numeric (see CMTIME_IS_NUMERIC) or if
      * "readyForMoreMediaData" is NO.
      * 
+     * API-Since: 4.1
+     * 
      * @param pixelBuffer
      *                         The CVPixelBuffer to be appended.
      * @param presentationTime
@@ -272,6 +276,8 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * [@property] assetWriterInput
      * 
      * The asset writer input to which the receiver should append pixel buffers.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -303,6 +309,8 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * This method throws an exception if the input is already attached to another asset writer input pixel buffer
      * adaptor or if the input has already started writing (the asset writer has progressed beyond
      * AVAssetWriterStatusUnknown).
+     * 
+     * API-Since: 4.1
      * 
      * @param input
      *                                    An instance of AVAssetWriterInput to which the receiver should append pixel
@@ -336,6 +344,8 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * This property throws an exception if a pixel buffer pool cannot be created with this asset writer input pixel
      * buffer adaptor's source pixel buffer attributes (must specify width, height, and either pixel format or pixel
      * format description).
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -349,6 +359,8 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * 
      * The value of this property is a dictionary containing pixel buffer attributes keys defined in
      * <CoreVideo/CVPixelBuffer.h>.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated

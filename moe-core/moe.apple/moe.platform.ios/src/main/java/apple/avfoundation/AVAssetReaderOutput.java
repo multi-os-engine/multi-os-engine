@@ -211,6 +211,8 @@ public class AVAssetReaderOutput extends NSObject {
      * This method throws an exception if this output is not added to an instance of AVAssetReader (using -addOutput:)
      * and -startReading is not called on that asset reader.
      * 
+     * API-Since: 4.1
+     * 
      * @return
      *         A CMSampleBuffer object referencing the output sample buffer.
      */
@@ -250,6 +252,8 @@ public class AVAssetReaderOutput extends NSObject {
      * The media type of the samples that can be read from the receiver.
      * 
      * The value of this property is one of the media type strings defined in AVMediaFormat.h.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated

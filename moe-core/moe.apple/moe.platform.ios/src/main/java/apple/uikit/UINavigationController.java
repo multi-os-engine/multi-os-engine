@@ -191,6 +191,9 @@ public class UINavigationController extends UIViewController {
     @Selector("barHideOnTapGestureRecognizer")
     public native UITapGestureRecognizer barHideOnTapGestureRecognizer();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -241,6 +244,9 @@ public class UINavigationController extends UIViewController {
     @Selector("init")
     public native UINavigationController init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UINavigationController initWithCoder(@NotNull NSCoder aDecoder);
@@ -259,6 +265,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Initializes the navigation controller with an empty stack
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -267,6 +275,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Initializer that also pushes the root view controller without animation.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithRootViewController:")
@@ -280,10 +290,16 @@ public class UINavigationController extends UIViewController {
     @Selector("interactivePopGestureRecognizer")
     public native UIGestureRecognizer interactivePopGestureRecognizer();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isNavigationBarHidden")
     public native boolean isNavigationBarHidden();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setNavigationBarHidden:")
     public native void setNavigationBarHidden(boolean value);
@@ -309,6 +325,8 @@ public class UINavigationController extends UIViewController {
     /**
      * The navigation bar managed by the controller. Pushing, popping or setting navigation items on a managed
      * navigation bar is not supported.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -317,6 +335,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Pops until there's only a single view controller left on the stack. Returns the popped controllers.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -325,6 +345,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Pops view controllers until the one specified is on top. Returns the popped controllers.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -334,6 +356,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Returns the popped controller.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -342,15 +366,23 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Uses a horizontal slide transition. Has no effect if the view controller is already in the stack.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("pushViewController:animated:")
     public native void pushViewControllerAnimated(@NotNull UIViewController viewController, boolean animated);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -406,6 +438,8 @@ public class UINavigationController extends UIViewController {
     /**
      * Hide or show the navigation bar. If animated, it will transition vertically using
      * UINavigationControllerHideShowBarDuration.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setNavigationBarHidden:animated:")
@@ -423,6 +457,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * The current view controller stack.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setViewControllers:")
@@ -460,6 +496,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * The top view controller on the stack.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -468,6 +506,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * The current view controller stack.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -476,6 +516,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Return modal view controller if it exists. Otherwise the top view controller.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

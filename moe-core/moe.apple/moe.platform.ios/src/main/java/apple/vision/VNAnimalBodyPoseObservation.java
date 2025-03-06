@@ -67,6 +67,8 @@ public class VNAnimalBodyPoseObservation extends VNRecognizedPointsObservation {
 
     /**
      * All animal joints group names available in the observation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("availableJointGroupNames")
@@ -75,6 +77,8 @@ public class VNAnimalBodyPoseObservation extends VNRecognizedPointsObservation {
 
     /**
      * All animal joint names available in the observation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("availableJointNames")
@@ -157,6 +161,8 @@ public class VNAnimalBodyPoseObservation extends VNRecognizedPointsObservation {
      * @param error     The address of a variable that will be populated with the error that describes the failure. If
      *                  the caller does not require this information, NULL can be passed.
      * @return the recognized point, or nil if the point could not be obtained.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("recognizedPointForJointName:error:")
@@ -173,6 +179,8 @@ public class VNAnimalBodyPoseObservation extends VNRecognizedPointsObservation {
      * @param error           The address of a variable that will be populated with the error that describes the
      *                        failure. If the caller does not require this information, NULL can be passed.
      * @return a dictionary of recognized points in the group, or nil if an error was encountered.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("recognizedPointsForJointsGroupName:error:")

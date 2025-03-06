@@ -50,6 +50,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * Add an observer. Observers are notified about now playing template events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("addObserver:")
@@ -131,6 +133,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isAlbumArtistButtonEnabled")
@@ -146,6 +150,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isUpNextButtonEnabled")
@@ -167,6 +173,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * Your application may specify a maximum of 5 now playing buttons.
      * 
      * Buttons are filled in array order, from the leading side to the trailing side of the screen.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -175,6 +183,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * Remove an observer.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("removeObserver:")
@@ -195,6 +205,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAlbumArtistButtonEnabled:")
@@ -206,6 +218,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUpNextButtonEnabled:")
@@ -217,6 +231,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * will be used.
      * 
      * @see -[CPNowPlayingTemplate upNextButtonEnabled].
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setUpNextTitle:")
@@ -235,6 +251,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * 
      * When the system needs to present now playing on behalf of your app, it will present
      * this shared instance.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -261,6 +279,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * will be used.
      * 
      * @see -[CPNowPlayingTemplate upNextButtonEnabled].
+     * 
+     *      API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -269,6 +289,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * Update the buttons displayed in this Now Playing template.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateNowPlayingButtons:")

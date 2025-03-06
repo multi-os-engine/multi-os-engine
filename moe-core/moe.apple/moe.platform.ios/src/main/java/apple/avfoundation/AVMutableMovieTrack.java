@@ -64,6 +64,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * This method throws an exception if the movie track belongs to a different movie.
      * 
+     * API-Since: 13.0
+     * 
      * @param movieTrack
      *                             An AVMovieTrack object that is to be associated with the receiver.
      * @param trackAssociationType
@@ -89,6 +91,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] alternateGroupID
      * 
      * An integer indicating the track as a member of a particular alternate group.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("alternateGroupID")
@@ -181,6 +185,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] cleanApertureDimensions
      * 
      * A CGSize indicating the clean aperture dimensions of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cleanApertureDimensions")
@@ -199,6 +205,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] encodedPixelsDimensions
      * 
      * A CGSize indicating the dimensions encoded pixels dimensions of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("encodedPixelsDimensions")
@@ -212,6 +220,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an IETF BCP 47 (RFC 4646) language identifier indicating the language tag
      * associated with the track; may be nil if no language tag is indicated.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -224,6 +234,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * Whether a track contains protected content.
      * 
      * The value of this property is a BOOL that indicates whether the track contains protected content.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hasProtectedContent")
@@ -246,6 +258,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * @param timeRange
      *                  The time range to be made empty. Note that you cannot add empty time ranges to the end of a
      *                  track.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("insertEmptyTimeRange:")
@@ -305,6 +319,9 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * @param outError
      *                       If the insertion fails, describes the nature of the failure.
      * @return A BOOL value that indicates the success of the insertion.
+     * 
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("insertTimeRange:ofTrack:atTime:copySampleData:error:")
@@ -329,6 +346,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] enabled
      * 
      * A BOOL value indicating whether the track is enabled by default for presentation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isEnabled")
@@ -341,6 +360,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is a BOOL that indicates whether the AVMutableMovieTrack object has been modified
      * since it was created, was last written, or had its modified state cleared via a call to setModified:NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isModified")
@@ -362,6 +383,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an ISO 639-2/T language code indicating the language associated with the track; may
      * be nil if no language is indicated.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -372,6 +395,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] layer
      * 
      * The layer level of the visual media data of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("layer")
@@ -385,6 +410,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an AVMediaDataStorage object that indicates the location at which media data
      * inserted or appended to the track will be written.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -398,6 +425,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the track.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -408,6 +437,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] naturalSize
      * 
      * A CGSize indicating the dimensions at which the visual media data of the track should be displayed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("naturalSize")
@@ -426,6 +457,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The default value is 0, which means that no padding should be used to achieve chunk alignment. It is an error to
      * set a negative value for chunk alignment.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredMediaChunkAlignment")
@@ -443,6 +476,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The default media chunk duration is 1.0 second. It is an error to set a chunk duration that is negative or
      * non-numeric.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredMediaChunkDuration")
@@ -459,6 +494,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * single sample if the sample is larger than this preferred chunk size.
      * 
      * The default media chunk size is 1024 * 1024 bytes. It is an error to set a negative chunk size.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredMediaChunkSize")
@@ -471,6 +508,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * A CGAffineTransform indicating the transform specified in the track's storage container as the preferred
      * transformation of the visual media data for display purposes; the value is often but not always
      * CGAffineTransformIdentity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredTransform")
@@ -481,6 +520,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] preferredVolume
      * 
      * The preferred volume of the audible media data of the track; often but not always 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredVolume")
@@ -490,6 +531,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] productionApertureDimensions
      * 
      * A CGSize indicating the production aperture dimensions of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("productionApertureDimensions")
@@ -503,6 +546,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * @param timeRange
      *                  The time range to be removed.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("removeTimeRange:")
@@ -514,6 +559,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * Removes a track association of a specific type between two tracks.
      * 
      * This method throws an exception if the movie track belongs to a different movie.
+     * 
+     * API-Since: 13.0
      * 
      * @param movieTrack
      *                             An AVMovieTrack object that is associated with the receiver.
@@ -580,6 +627,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * unmodified.
      * 
      * The default value is nil, which means that the location will be written unmodified.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -595,6 +644,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      *                  The time range to be scaled.
      * @param duration
      *                  The new duration of the time range.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("scaleTimeRange:toDuration:")
@@ -604,6 +655,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] alternateGroupID
      * 
      * An integer indicating the track as a member of a particular alternate group.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAlternateGroupID:")
@@ -613,6 +666,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] cleanApertureDimensions
      * 
      * A CGSize indicating the clean aperture dimensions of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCleanApertureDimensions:")
@@ -622,6 +677,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] enabled
      * 
      * A BOOL value indicating whether the track is enabled by default for presentation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -631,6 +688,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] encodedPixelsDimensions
      * 
      * A CGSize indicating the dimensions encoded pixels dimensions of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setEncodedPixelsDimensions:")
@@ -643,6 +702,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an IETF BCP 47 (RFC 4646) language identifier indicating the language tag
      * associated with the track; may be nil if no language tag is indicated.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
@@ -655,6 +716,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an ISO 639-2/T language code indicating the language associated with the track; may
      * be nil if no language is indicated.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLanguageCode:")
@@ -664,6 +727,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] layer
      * 
      * The layer level of the visual media data of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLayer:")
@@ -676,6 +741,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an AVMediaDataStorage object that indicates the location at which media data
      * inserted or appended to the track will be written.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMediaDataStorage:")
@@ -688,6 +755,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMetadata:")
@@ -700,6 +769,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The value of this property is a BOOL that indicates whether the AVMutableMovieTrack object has been modified
      * since it was created, was last written, or had its modified state cleared via a call to setModified:NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setModified:")
@@ -709,6 +780,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] naturalSize
      * 
      * A CGSize indicating the dimensions at which the visual media data of the track should be displayed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNaturalSize:")
@@ -721,6 +794,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The default value is 0, which means that no padding should be used to achieve chunk alignment. It is an error to
      * set a negative value for chunk alignment.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredMediaChunkAlignment:")
@@ -737,6 +812,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The default media chunk duration is 1.0 second. It is an error to set a chunk duration that is negative or
      * non-numeric.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredMediaChunkDuration:")
@@ -752,6 +829,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * single sample if the sample is larger than this preferred chunk size.
      * 
      * The default media chunk size is 1024 * 1024 bytes. It is an error to set a negative chunk size.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredMediaChunkSize:")
@@ -763,6 +842,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * A CGAffineTransform indicating the transform specified in the track's storage container as the preferred
      * transformation of the visual media data for display purposes; the value is often but not always
      * CGAffineTransformIdentity.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredTransform:")
@@ -772,6 +853,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] preferredVolume
      * 
      * The preferred volume of the audible media data of the track; often but not always 1.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredVolume:")
@@ -781,6 +864,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * [@property] productionApertureDimensions
      * 
      * A CGSize indicating the production aperture dimensions of the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setProductionApertureDimensions:")
@@ -804,6 +889,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * unmodified.
      * 
      * The default value is nil, which means that the location will be written unmodified.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSampleReferenceBaseURL:")
@@ -818,6 +905,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * The default media time scale is 0.
      * 
      * This property should be set on a new empty track before any edits are performed on the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTimescale:")
@@ -840,6 +929,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * The default media time scale is 0.
      * 
      * This property should be set on a new empty track before any edits are performed on the track.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("timescale")
@@ -858,20 +949,32 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     @Selector("associatedTracksOfType:")
     public native NSArray<? extends AVAssetTrack> associatedTracksOfType(@NotNull String trackAssociationType);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("hasMediaCharacteristic:")
     public native boolean hasMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("metadataForFormat:")
     public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("samplePresentationTimeForTrackTime:")
     @ByValue
     public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("segmentForTrackTime:")

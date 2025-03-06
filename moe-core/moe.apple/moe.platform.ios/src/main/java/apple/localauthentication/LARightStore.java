@@ -133,6 +133,8 @@ public class LARightStore extends NSObject {
      * Removes all rights stored by the client
      * 
      * @param handler Completion handler with an error on failure.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("removeAllRightsWithCompletion:")
@@ -151,6 +153,8 @@ public class LARightStore extends NSObject {
      * 
      * @param right   @c LAPersistedRight instance to remove.
      * @param handler Completion handler with an error on failure.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("removeRight:completion:")
@@ -169,6 +173,8 @@ public class LARightStore extends NSObject {
      * 
      * @param identifier Identifier of @c LAPersistedRight instance to remove.
      * @param handler    Completion handler with an error on failure.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("removeRightForIdentifier:completion:")
@@ -195,6 +201,8 @@ public class LARightStore extends NSObject {
      * 
      * @param identifier Identifier associated with a previously stored right.
      * @param handler    Completion handler with the fetched right or an error on failure.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("rightForIdentifier:completion:")
@@ -214,6 +222,8 @@ public class LARightStore extends NSObject {
      * @param right      @c LARight instance to store.
      * @param identifier Identifier to be associated with the right. Useful for later retrieval.
      * @param handler    Completion handler with the persisted right or an error on failure.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("saveRight:identifier:completion:")
@@ -234,6 +244,8 @@ public class LARightStore extends NSObject {
      * @param identifier Identifier to be associated with the right. Useful for later retrieval.
      * @param secret     Secret data to be associated with the provided right.
      * @param handler    Completion handler with the persisted right or an error on failure.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("saveRight:identifier:secret:completion:")
@@ -254,6 +266,8 @@ public class LARightStore extends NSObject {
 
     /**
      * Shared instance of @c LARightStore.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

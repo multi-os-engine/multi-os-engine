@@ -149,6 +149,8 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingAverageGradient
      * @param device   The MTLDevice on which to make the MPSCNNPoolingAverageGradient
      * @return A new MPSCNNPoolingAverageGradient object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -174,6 +176,9 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
      * @param strideInPixelsX The input stride (upsampling factor) in the x dimension.
      * @param strideInPixelsY The input stride (upsampling factor) in the y dimension.
      * @return A valid MPSCNNPoolingGradient object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
@@ -229,6 +234,8 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setZeroPadSizeX:")
@@ -243,6 +250,8 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setZeroPadSizeY:")
@@ -276,6 +285,8 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("zeroPadSizeX")
@@ -291,6 +302,8 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
      * The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
      * and its padding region, but the effect is that the normalization factor of the average computation is computed
      * also for the zeros in the padding region.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("zeroPadSizeY")

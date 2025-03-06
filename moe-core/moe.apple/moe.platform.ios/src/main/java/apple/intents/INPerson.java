@@ -172,6 +172,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * If your application has other representations for the person's handle, you can supply it for INInteraction
      * donation
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -180,6 +182,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * Reference to this person, if present in the system's Contacts store
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -196,6 +200,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * This property can be set to the app's identifier for this person
      * It is also used as the vocabulary identifier for this person
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -205,6 +211,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * This will return either the displayName if non-nil, else the formatted nameComponents, else the handle, else an
      * empty string
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -237,6 +245,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * Returns an image for the person.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -290,6 +300,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
             @Nullable NSPersonNameComponents nameComponents, @Nullable String displayName, @Nullable INImage image,
             @Nullable String contactIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifier(
@@ -297,6 +310,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
             @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
             @Nullable String customIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:aliases:suggestionType:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierAliasesSuggestionType(
@@ -307,6 +323,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * Returns the person's name components if this was initialized with them
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -315,6 +333,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * The identity of the person in the application
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -344,6 +364,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * What Contact property this INInteraction donation should be suggested as when this person is matched to a contact
      * in the system's Contacts store.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("suggestionType")

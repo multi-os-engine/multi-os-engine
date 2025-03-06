@@ -113,6 +113,8 @@ public class CPInformationRatingItem extends CPInformationItem {
      *                      the item.
      * @param title         An optional string that will be styled by the template as the title text of the item.
      * @param detail        An optional string that will be styled by the template as the detail text of the item.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @Selector("initWithRating:maximumRating:title:detail:")
@@ -145,6 +147,9 @@ public class CPInformationRatingItem extends CPInformationItem {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("maximumRating")
@@ -155,6 +160,9 @@ public class CPInformationRatingItem extends CPInformationItem {
     @Selector("new")
     public static native CPInformationRatingItem new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("rating")

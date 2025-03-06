@@ -143,6 +143,8 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
 
     /**
      * Use a nil trigger to deliver immediately.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requestWithIdentifier:content:trigger:")
@@ -176,6 +178,8 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
 
     /**
      * The content that will be shown on the notification.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -196,6 +200,8 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
     /**
      * The unique identifier for this notification request. It can be used to replace or remove a pending notification
      * request or a delivered notification.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -218,6 +224,8 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
 
     /**
      * The trigger that will or did cause the notification to be delivered. A nil trigger means deliver immediately.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

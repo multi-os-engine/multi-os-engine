@@ -94,6 +94,8 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
 
     /**
      * Override to provide a classification response for the classification request
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -114,6 +116,8 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
 
     /**
      * The extension context to use for completing the classification request
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -167,6 +171,8 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
 
     /**
      * Override to customize UI based on the classification request before the view is loaded
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("prepareForClassificationRequest:")

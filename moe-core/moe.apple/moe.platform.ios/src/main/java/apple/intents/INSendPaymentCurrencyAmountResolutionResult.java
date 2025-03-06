@@ -109,6 +109,9 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Selector("init")
     public native INSendPaymentCurrencyAmountResolutionResult init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithCurrencyAmountResolutionResult:")
     public native INSendPaymentCurrencyAmountResolutionResult initWithCurrencyAmountResolutionResult(
@@ -178,6 +181,9 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Selector("unsupported")
     public static native INSendPaymentCurrencyAmountResolutionResult unsupported();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

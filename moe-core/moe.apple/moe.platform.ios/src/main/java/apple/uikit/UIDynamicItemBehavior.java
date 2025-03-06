@@ -165,12 +165,17 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
      * The angular velocity, expressed in radians per second, that you want to add to the specified dynamic item
      * If called before being associated to an animator, the behavior will accumulate values until being associated to
      * an animator
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addAngularVelocity:forItem:")
     public native void addAngularVelocityForItem(@NFloat double velocity,
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
@@ -179,6 +184,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
      * The linear velocity, expressed in points per second, that you want to add to the specified dynamic item
      * If called before being associated to an animator, the behavior will accumulate values until being associated to
      * an animator
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addLinearVelocity:forItem:")
@@ -187,6 +194,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * force an item to never rotate
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("allowsRotation")
@@ -194,12 +203,17 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * 0: no angular velocity damping
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("angularResistance")
     @NFloat
     public native double angularResistance();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("angularVelocityForItem:")
     @NFloat
@@ -220,6 +234,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * 1 by default
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("density")
@@ -228,6 +244,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * Usually between 0 (inelastic) and 1 (collide elastically)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("elasticity")
@@ -236,6 +254,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * 0 being no friction between objects slide along each other
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("friction")
@@ -246,6 +266,9 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIDynamicItemBehavior init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItems:")
     public native UIDynamicItemBehavior initWithItems(@NotNull NSArray<?> items);
@@ -272,22 +295,33 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("setAnchored:")
     public native void setAnchored(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("linearVelocityForItem:")
     @ByValue
     public native CGPoint linearVelocityForItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
      * 0: no velocity damping
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("resistance")
@@ -296,6 +330,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * force an item to never rotate
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAllowsRotation:")
@@ -303,6 +339,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * 0: no angular velocity damping
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAngularResistance:")
@@ -322,6 +360,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * 1 by default
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDensity:")
@@ -329,6 +369,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * Usually between 0 (inelastic) and 1 (collide elastically)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setElasticity:")
@@ -336,6 +378,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * 0 being no friction between objects slide along each other
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setFriction:")
@@ -343,6 +387,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * 0: no velocity damping
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setResistance:")

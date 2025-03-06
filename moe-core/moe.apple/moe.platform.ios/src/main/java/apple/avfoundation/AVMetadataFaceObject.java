@@ -184,6 +184,8 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * The value of this property is an NSInteger indicating the unique identifier of this face in the picture. When a
      * new face enters the picture, it is assigned a new unique identifier. faceIDs are not re-used as faces leave the
      * picture and new ones enter. Faces that leave the picture then re-enter are assigned a new faceID.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("faceID")
@@ -194,6 +196,8 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * [@property] hasRollAngle
      * 
      * A BOOL indicating whether the rollAngle property is valid for this receiver.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("hasRollAngle")
@@ -203,6 +207,8 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * [@property] hasYawAngle
      * 
      * A BOOL indicating whether the yawAngle property is valid for this receiver.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("hasYawAngle")
@@ -220,6 +226,8 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * The value of this property is a CGFloat indicating the face's angle of roll (or tilt) in degrees. A value of 0.0
      * indicates that the face is level in the picture. If -hasRollAngle returns NO, then reading this property throws
      * an NSGenericException.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("rollAngle")
@@ -234,6 +242,8 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * The value of this property is a CGFloat indicating the face's angle of yaw (or turn) in degrees. A value of 0.0
      * indicates that the face is straight on in the picture. If -hasYawAngle returns NO, then reading this property
      * throws an NSGenericException.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("yawAngle")

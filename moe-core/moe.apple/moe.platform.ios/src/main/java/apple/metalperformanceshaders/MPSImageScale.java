@@ -143,6 +143,8 @@ public class MPSImageScale extends MPSUnaryImageKernel {
 
     /**
      * You must use one of the sub-classes of MPSImageScale
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -237,6 +239,8 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      * scaleTransform->scaleX,Y, or the ratio of source and destination image sizes if
      * scaleTransform is NULL. Reuse a MPSImageLanczosScale object for frequently used scalings
      * to avoid redundantly recreating expensive resampling state.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -298,6 +302,8 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      * scaleTransform->scaleX,Y, or the ratio of source and destination image sizes if
      * scaleTransform is NULL. Reuse a MPSImageLanczosScale object for frequently used scalings
      * to avoid redundantly recreating expensive resampling state.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScaleTransform:")

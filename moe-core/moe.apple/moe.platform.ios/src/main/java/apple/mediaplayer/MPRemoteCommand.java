@@ -169,6 +169,8 @@ public class MPRemoteCommand extends NSObject {
      * possible. This allows the system to respond appropriately to commands that
      * may not have been able to be executed in accordance with the application's
      * current state.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("addTarget:action:")
@@ -176,6 +178,8 @@ public class MPRemoteCommand extends NSObject {
 
     /**
      * Returns an opaque object to act as the target.
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
@@ -191,6 +195,8 @@ public class MPRemoteCommand extends NSObject {
     /**
      * Whether a button (for example) should be enabled and tappable for this
      * particular command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("isEnabled")
@@ -199,15 +205,23 @@ public class MPRemoteCommand extends NSObject {
     /**
      * Whether a button (for example) should be enabled and tappable for this
      * particular command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * API-Since: 7.1
+     */
     @Generated
     @Selector("removeTarget:")
     public native void removeTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object target);
 
+    /**
+     * API-Since: 7.1
+     */
     @Generated
     @Selector("removeTarget:action:")
     public native void removeTargetAction(@NotNull @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);

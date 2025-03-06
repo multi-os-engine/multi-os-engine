@@ -46,6 +46,8 @@ import org.jetbrains.annotations.NotNull;
 public interface NSURLAuthenticationChallengeSender {
     /**
      * cancelAuthenticationChallenge:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("cancelAuthenticationChallenge:")
@@ -53,6 +55,8 @@ public interface NSURLAuthenticationChallengeSender {
 
     /**
      * continueWithoutCredentialForAuthenticationChallenge:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("continueWithoutCredentialForAuthenticationChallenge:")
@@ -60,6 +64,8 @@ public interface NSURLAuthenticationChallengeSender {
 
     /**
      * performDefaultHandlingForAuthenticationChallenge:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @IsOptional
@@ -70,6 +76,8 @@ public interface NSURLAuthenticationChallengeSender {
 
     /**
      * rejectProtectionSpaceAndContinueWithChallenge:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @IsOptional
@@ -80,6 +88,8 @@ public interface NSURLAuthenticationChallengeSender {
 
     /**
      * useCredential:forAuthenticationChallenge:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("useCredential:forAuthenticationChallenge:")

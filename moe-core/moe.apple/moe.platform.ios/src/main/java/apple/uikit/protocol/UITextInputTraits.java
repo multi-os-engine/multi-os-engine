@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NUInt;
 
 /**
  * UITextInputTraits
@@ -356,6 +357,73 @@ public interface UITextInputTraits {
     @IsOptional
     @Selector("setInlinePredictionType:")
     default void setInlinePredictionType(@NInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("allowedWritingToolsResultOptions")
+    @NUInt
+    default long allowedWritingToolsResultOptions() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * default is UITextMathExpressionCompletionTypeDefault
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mathExpressionCompletionType")
+    @NInt
+    default long mathExpressionCompletionType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("setAllowedWritingToolsResultOptions:")
+    default void setAllowedWritingToolsResultOptions(@NUInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * default is UITextMathExpressionCompletionTypeDefault
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("setMathExpressionCompletionType:")
+    default void setMathExpressionCompletionType(@NInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("setWritingToolsBehavior:")
+    default void setWritingToolsBehavior(@NInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("writingToolsBehavior")
+    @NInt
+    default long writingToolsBehavior() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

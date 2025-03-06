@@ -164,6 +164,12 @@ public class UISearchDisplayController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -184,6 +190,12 @@ public class UISearchDisplayController extends NSObject {
     @Selector("init")
     public native UISearchDisplayController init();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
+     */
+    @Deprecated
     @Generated
     @Selector("initWithSearchBar:contentsController:")
     public native UISearchDisplayController initWithSearchBarContentsController(@NotNull UISearchBar searchBar,
@@ -191,14 +203,24 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * configure the view controller for searching. default is NO. animated is NO
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
     /**
      * configure the view controller for searching. default is NO. animated is NO
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
@@ -211,6 +233,12 @@ public class UISearchDisplayController extends NSObject {
     @Selector("navigationItem")
     public native UINavigationItem navigationItem();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("searchBar")
@@ -218,7 +246,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * the view we are searching (often a UITableViewController)
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("searchContentsController")
@@ -226,7 +259,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. delegate can provide
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("searchResultsDataSource")
@@ -235,7 +273,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. delegate can provide
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("searchResultsDelegate")
@@ -244,7 +287,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * will return non-nil. create if requested
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("searchResultsTableView")
@@ -262,15 +310,32 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * animate the view controller for searching
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Generated
     @Selector("setActive:animated:")
     public native void setActiveAnimated(boolean visible, boolean animated);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value) {
         Object __old = delegate();
@@ -295,7 +360,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. delegate can provide
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Generated
     @Selector("setSearchResultsDataSource:")
     public native void setSearchResultsDataSource_unsafe(
@@ -303,7 +373,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. delegate can provide
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Generated
     public void setSearchResultsDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
         Object __old = searchResultsDataSource();
@@ -318,7 +393,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. delegate can provide
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Generated
     @Selector("setSearchResultsDelegate:")
     public native void setSearchResultsDelegate_unsafe(
@@ -326,7 +406,12 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. delegate can provide
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
      */
+    @Deprecated
     @Generated
     public void setSearchResultsDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDelegate value) {
         Object __old = searchResultsDelegate();

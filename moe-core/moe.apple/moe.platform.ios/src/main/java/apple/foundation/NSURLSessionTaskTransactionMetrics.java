@@ -165,6 +165,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * connectEndDate is the time immediately after the user agent finished establishing the connection to the server,
      * including completion of security-related and other handshakes.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -176,6 +178,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * For example, this would correspond to the time immediately before the user agent started trying to establish the
      * TCP connection.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -184,6 +188,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * domainLookupEndDate returns the time after the name lookup was completed.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -193,6 +199,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * domainLookupStartDate returns the time immediately before the user agent started the name lookup for the
      * resource.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -212,6 +220,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * connectEndDate
      * secureConnectionStartDate
      * secureConnectionEndDate
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -230,6 +240,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * This property is set to YES if a proxy connection was used to fetch the resource.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isProxyConnection")
@@ -237,6 +249,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * This property is set to YES if a persistent connection was used to fetch the resource.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isReusedConnection")
@@ -254,6 +268,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * If no proxy were used, and HTTP/2 was negotiated, then h2 would be returned.
      * If HTTP/1.1 were used to the proxy, and the tunneled connection was HTTP/2, then h2 would be returned.
      * If HTTP/1.1 were used to the proxy, and there were no tunnel, then http/1.1 would be returned.
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -262,6 +279,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * Represents the transaction request.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -274,6 +293,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * For example, this would correspond to the time immediately after the user agent finished sending the last byte of
      * the request.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -285,6 +306,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * whether the resource was retrieved from the server or local resources.
      * 
      * For example, this would correspond to the time immediately before the user agent sent an HTTP GET request.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -293,6 +316,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * Indicates whether the resource was loaded, pushed or retrieved from the local cache.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("resourceFetchType")
@@ -301,6 +326,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * Represents the transaction response. Can be nil if error occurred and no response was generated.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -309,6 +336,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * responseEndDate is the time immediately after the user agent received the last byte of the resource.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -321,6 +350,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * For example, this would correspond to the time immediately after the user agent received the first byte of an
      * HTTP response.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -332,6 +363,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * completed.
      * 
      * If an encrypted connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -345,6 +378,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * For example, this would correspond to the time immediately before the user agent started the TLS handshake.
      * 
      * If an encrypted connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

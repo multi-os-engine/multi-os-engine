@@ -91,6 +91,8 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
      * Any specified values in the other configuration will overwrite the values in this one.
      * Values that are unspecified in the other configuration will leave the current configuration
      * as is.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

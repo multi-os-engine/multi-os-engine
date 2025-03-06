@@ -175,14 +175,24 @@ public class MPPlayableContentManagerContext extends NSObject {
 
     /**
      * Represents whether content limits are being enforced by the content server or not.
+     * 
+     * API-Since: 8.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("contentLimitsEnforced")
     public native boolean contentLimitsEnforced();
 
     /**
      * Represents whether the content server is available or not.
+     * 
+     * API-Since: 8.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("endpointAvailable")
     public native boolean endpointAvailable();
@@ -190,7 +200,12 @@ public class MPPlayableContentManagerContext extends NSObject {
     /**
      * The number of items the content server will display when content limiting is enforced.
      * Returns NSIntegerMax if the content server will never limit the number of items.
+     * 
+     * API-Since: 8.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("enforcedContentItemsCount")
     @NInt
@@ -198,7 +213,12 @@ public class MPPlayableContentManagerContext extends NSObject {
 
     /**
      * The depth of the navigation hierarchy the content server will allow. Exceeding this limit will result in a crash.
+     * 
+     * API-Since: 8.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("enforcedContentTreeDepth")
     @NInt

@@ -474,6 +474,8 @@ public class AVCaptureDevice extends NSObject {
      * activeVideoMaxFrameDuration to a shorter value. If your new max frame duration is shorter than the current
      * exposureDuration, the exposureDuration will shorten as well to accommodate the new frame rate.
      * 
+     * When autoVideoFrameRateEnabled is true, setting activeVideoMaxFrameDuration throws an NSInvalidArgumentException.
+     * 
      * API-Since: 7.0
      */
     @Generated
@@ -509,6 +511,8 @@ public class AVCaptureDevice extends NSObject {
      * When exposureMode is AVCaptureExposureModeCustom, setting the activeVideoMinFrameDuration affects max frame rate,
      * but not exposureDuration. You may use setExposureModeCustomWithDuration:ISO:completionHandler: to set a shorter
      * exposureDuration than your activeVideoMinFrameDuration, if desired.
+     * 
+     * When autoVideoFrameRateEnabled is true, setting activeVideoMinFrameDuration throws an NSInvalidArgumentException.
      * 
      * API-Since: 7.0
      */
@@ -739,6 +743,8 @@ public class AVCaptureDevice extends NSObject {
      * AVCaptureStillImageOutput, automaticallyEnablesStillImageStabilizationWhenAvailable must be set to NO to preserve
      * your custom exposure values in a still image capture. Clients can observe automatic changes to the receiver's
      * exposureMode by key value observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("exposureMode")
@@ -758,6 +764,8 @@ public class AVCaptureDevice extends NSObject {
      * called without first obtaining exclusive access to the receiver using lockForConfiguration:. Note that setting
      * exposurePointOfInterest alone does not initiate an exposure operation. After setting exposurePointOfInterest,
      * call -setExposureMode: to apply the new point of interest.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("exposurePointOfInterest")
@@ -828,6 +836,8 @@ public class AVCaptureDevice extends NSObject {
      * -setFocusMode: throws an NSGenericException if called without first obtaining exclusive access to the receiver
      * using lockForConfiguration:. Clients can observe automatic changes to the receiver's focusMode by key value
      * observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("focusMode")
@@ -847,6 +857,8 @@ public class AVCaptureDevice extends NSObject {
      * lockForConfiguration:. Clients can observe automatic changes to the receiver's focusPointOfInterest by key value
      * observing this property. Note that setting focusPointOfInterest alone does not initiate a focus operation. After
      * setting focusPointOfInterest, call -setFocusMode: to apply the new point of interest.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("focusPointOfInterest")
@@ -896,6 +908,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * The value of this property is a BOOL indicating whether the receiver has a flash. The receiver's flashMode
      * property can only be set when this property returns YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("hasFlash")
@@ -907,6 +921,8 @@ public class AVCaptureDevice extends NSObject {
      * Returns whether the receiver provides media with the given media type.
      * 
      * Media type constants are defined in AVMediaFormat.h.
+     * 
+     * API-Since: 4.0
      * 
      * @param mediaType
      *                  A media type, such as AVMediaTypeVideo, AVMediaTypeAudio, or AVMediaTypeMuxed.
@@ -924,6 +940,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * The value of this property is a BOOL indicating whether the receiver has a torch. The receiver's torchMode
      * property can only be set when this property returns YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("hasTorch")
@@ -942,6 +960,8 @@ public class AVCaptureDevice extends NSObject {
      * adjusted because its exposure mode is AVCaptureExposureModeAutoExpose or
      * AVCaptureExposureModeContinuousAutoExposure. Clients can observe the value of this property to determine whether
      * the camera exposure is stable or is being automatically adjusted.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isAdjustingExposure")
@@ -959,6 +979,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * @see lensPosition
      * @see AVCaptureAutoFocusSystem
+     * 
+     *      API-Since: 4.0
      */
     @Generated
     @Selector("isAdjustingFocus")
@@ -973,6 +995,8 @@ public class AVCaptureDevice extends NSObject {
      * automatically adjusted because its white balance mode is AVCaptureWhiteBalanceModeAutoWhiteBalance or
      * AVCaptureWhiteBalanceModeContinuousAutoWhiteBalance. Clients can observe the value of this property to determine
      * whether the camera white balance is stable or is being automatically adjusted.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isAdjustingWhiteBalance")
@@ -1013,6 +1037,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * The receiver's exposureMode property can only be set to a certain mode if this method returns YES for that mode.
      * 
+     * API-Since: 4.0
+     * 
      * @param exposureMode
      *                     An AVCaptureExposureMode to be checked.
      * @return
@@ -1028,6 +1054,8 @@ public class AVCaptureDevice extends NSObject {
      * Indicates whether the receiver supports exposure points of interest.
      * 
      * The receiver's exposurePointOfInterest property can only be set if this property returns YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isExposurePointOfInterestSupported")
@@ -1095,6 +1123,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * The receiver's focusMode property can only be set to a certain mode if this method returns YES for that mode.
      * 
+     * API-Since: 4.0
+     * 
      * @param focusMode
      *                  An AVCaptureFocusMode to be checked.
      * @return
@@ -1110,6 +1140,8 @@ public class AVCaptureDevice extends NSObject {
      * Indicates whether the receiver supports focus points of interest.
      * 
      * The receiver's focusPointOfInterest property can only be set if this property returns YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isFocusPointOfInterestSupported")
@@ -1312,6 +1344,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * The receiver's torchMode property can only be set to a certain mode if this method returns YES for that mode.
      * 
+     * API-Since: 4.0
+     * 
      * @param torchMode
      *                  An AVCaptureTorchMode to be checked.
      * @return
@@ -1379,6 +1413,8 @@ public class AVCaptureDevice extends NSObject {
      * The receiver's whiteBalanceMode property can only be set to a certain mode if this method returns YES for that
      * mode.
      * 
+     * API-Since: 4.0
+     * 
      * @param whiteBalanceMode
      *                         An AVCaptureWhiteBalanceMode to be checked.
      * @return
@@ -1425,6 +1461,8 @@ public class AVCaptureDevice extends NSObject {
      * A localized human-readable name for the receiver.
      * 
      * This property can be used for displaying the name of a capture device in a user interface.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -1440,6 +1478,8 @@ public class AVCaptureDevice extends NSObject {
      * acquire a lock on the device. Clients should only hold the device lock if they require settable device properties
      * to remain unchanged. Holding the device lock unnecessarily may degrade capture quality in other applications
      * sharing the device.
+     * 
+     * API-Since: 4.0
      * 
      * @param outError
      *                 On return, if the device could not be locked, points to an NSError describing why the failure
@@ -1511,6 +1551,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * The value of this property is an AVCaptureDevicePosition indicating where the receiver's device is physically
      * located on the system hardware.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("position")
@@ -1643,6 +1685,8 @@ public class AVCaptureDevice extends NSObject {
      * activeVideoMaxFrameDuration to a shorter value. If your new max frame duration is shorter than the current
      * exposureDuration, the exposureDuration will shorten as well to accommodate the new frame rate.
      * 
+     * When autoVideoFrameRateEnabled is true, setting activeVideoMaxFrameDuration throws an NSInvalidArgumentException.
+     * 
      * API-Since: 7.0
      */
     @Generated
@@ -1677,6 +1721,8 @@ public class AVCaptureDevice extends NSObject {
      * When exposureMode is AVCaptureExposureModeCustom, setting the activeVideoMinFrameDuration affects max frame rate,
      * but not exposureDuration. You may use setExposureModeCustomWithDuration:ISO:completionHandler: to set a shorter
      * exposureDuration than your activeVideoMinFrameDuration, if desired.
+     * 
+     * When autoVideoFrameRateEnabled is true, setting activeVideoMinFrameDuration throws an NSInvalidArgumentException.
      * 
      * API-Since: 7.0
      */
@@ -1764,6 +1810,8 @@ public class AVCaptureDevice extends NSObject {
      * AVCaptureStillImageOutput, automaticallyEnablesStillImageStabilizationWhenAvailable must be set to NO to preserve
      * your custom exposure values in a still image capture. Clients can observe automatic changes to the receiver's
      * exposureMode by key value observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setExposureMode:")
@@ -1826,6 +1874,8 @@ public class AVCaptureDevice extends NSObject {
      * called without first obtaining exclusive access to the receiver using lockForConfiguration:. Note that setting
      * exposurePointOfInterest alone does not initiate an exposure operation. After setting exposurePointOfInterest,
      * call -setExposureMode: to apply the new point of interest.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setExposurePointOfInterest:")
@@ -1892,6 +1942,8 @@ public class AVCaptureDevice extends NSObject {
      * -setFocusMode: throws an NSGenericException if called without first obtaining exclusive access to the receiver
      * using lockForConfiguration:. Clients can observe automatic changes to the receiver's focusMode by key value
      * observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setFocusMode:")
@@ -1940,6 +1992,8 @@ public class AVCaptureDevice extends NSObject {
      * lockForConfiguration:. Clients can observe automatic changes to the receiver's focusPointOfInterest by key value
      * observing this property. Note that setting focusPointOfInterest alone does not initiate a focus operation. After
      * setting focusPointOfInterest, call -setFocusMode: to apply the new point of interest.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setFocusPointOfInterest:")
@@ -1955,6 +2009,8 @@ public class AVCaptureDevice extends NSObject {
      * -isTorchModeSupported:). -setTorchMode: throws an NSGenericException if called without first obtaining exclusive
      * access to the receiver using lockForConfiguration:. Clients can observe automatic changes to the receiver's
      * torchMode by key value observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTorchMode:")
@@ -2018,6 +2074,8 @@ public class AVCaptureDevice extends NSObject {
      * unsupported value (see -isWhiteBalanceModeSupported:). -setWhiteBalanceMode: throws an NSGenericException if
      * called without first obtaining exclusive access to the receiver using lockForConfiguration:. Clients can observe
      * automatic changes to the receiver's whiteBalanceMode by key value observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setWhiteBalanceMode:")
@@ -2126,6 +2184,8 @@ public class AVCaptureDevice extends NSObject {
      * -isTorchModeSupported:). -setTorchMode: throws an NSGenericException if called without first obtaining exclusive
      * access to the receiver using lockForConfiguration:. Clients can observe automatic changes to the receiver's
      * torchMode by key value observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("torchMode")
@@ -2140,6 +2200,8 @@ public class AVCaptureDevice extends NSObject {
      * Every available capture device has a unique ID that persists on one system across device connections and
      * disconnections, application restarts, and reboots of the system itself. Applications can store the value returned
      * by this property to recall or track the status of a specific device in the future.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -2153,6 +2215,8 @@ public class AVCaptureDevice extends NSObject {
      * 
      * This method should be called to match an invocation of lockForConfiguration: when an application no longer needs
      * to keep device hardware properties from changing automatically.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("unlockForConfiguration")
@@ -2197,6 +2261,8 @@ public class AVCaptureDevice extends NSObject {
      * unsupported value (see -isWhiteBalanceModeSupported:). -setWhiteBalanceMode: throws an NSGenericException if
      * called without first obtaining exclusive access to the receiver using lockForConfiguration:. Clients can observe
      * automatic changes to the receiver's whiteBalanceMode by key value observing this property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("whiteBalanceMode")
@@ -3411,6 +3477,11 @@ public class AVCaptureDevice extends NSObject {
      * This property changes to reflect the Gestures state in Control Center. It is key-value observable. Clients can
      * call performEffectForReaction: independently of whether gesture detection is enabled, reaction effects from
      * either source will be intermixed.
+     * By default, gesture detection is enabled. As of iOS 17.4 and macOS 14.4, applications can control the default
+     * value of this property by adding the following key to their Info.plist:
+     * <key>NSCameraReactionEffectGesturesEnabledDefault</key>
+     * A value of true enables gesture detection and a value of false disables it, until such time that the user makes
+     * their own selection in Control Center.
      * 
      * API-Since: 17.0
      */
@@ -3553,4 +3624,109 @@ public class AVCaptureDevice extends NSObject {
     @Selector("userPreferredCamera")
     @Nullable
     public static native AVCaptureDevice userPreferredCamera();
+
+    /**
+     * [@property] displayVideoZoomFactorMultiplier
+     * 
+     * A multiplier that can be used with the receiver's videoZoomFactor property for displaying a video zoom factor in
+     * a user interface.
+     * 
+     * In some system user interfaces, like the macOS Video Effects Menu, the video zoom factor value is displayed in a
+     * way most appropriate for visual representation and might differ from the videoZoomFactor property value on the
+     * receiver by a fixed ratio. For example, if the videoZoomFactor property value is 1.0 and the
+     * displayVideoZoomFactorMultiplier property value is 0.5, then multiplying 1.0 and 0.5 produces 0.5 which can be
+     * displayed in the UI. Client applications can key value observe this property to update the display video zoom
+     * factor values in their UI to stay consistent with Apple's system UIs.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("displayVideoZoomFactorMultiplier")
+    @NFloat
+    public native double displayVideoZoomFactorMultiplier();
+
+    /**
+     * [@property] autoVideoFrameRateEnabled
+     * 
+     * Indicates whether the receiver should enable auto video frame rate.
+     * 
+     * When enabled the receiver automatically adjusts the active frame rate, depending on light level. Under low light
+     * conditions, frame rate is decreased to properly expose the scene. For formats with a maximum frame rate of 30
+     * fps, the frame rate switches between 30 - 24. For formats with a maximum frame rate of 60 fps, the frame rate
+     * switches between 60 - 30 - 24.
+     * 
+     * Setting this property throws an NSInvalidArgumentException if the active format's -isAutoVideoFrameRateSupported
+     * returns NO. Changing the device's active format resets isAutoVideoFrameRateEnabled to its default value of NO.
+     * 
+     * When autoVideoFrameRateEnabled is true, setting activeVideoMinFrameDuration or activeVideoMaxFrameDuration throws
+     * an NSInvalidArgumentException.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isAutoVideoFrameRateEnabled")
+    public native boolean isAutoVideoFrameRateEnabled();
+
+    /**
+     * [@property] backgroundReplacementActive
+     * 
+     * Indicates whether Background Replacement is currently active on a particular AVCaptureDevice.
+     * 
+     * This property is key-value observable.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isBackgroundReplacementActive")
+    public native boolean isBackgroundReplacementActive();
+
+    /**
+     * [@property] backgroundReplacementEnabled
+     * 
+     * A class property indicating whether the user has enabled the Background Replacement feature for this application.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isBackgroundReplacementEnabled")
+    public static native boolean isBackgroundReplacementEnabled();
+
+    /**
+     * [@property] autoVideoFrameRateEnabled
+     * 
+     * Indicates whether the receiver should enable auto video frame rate.
+     * 
+     * When enabled the receiver automatically adjusts the active frame rate, depending on light level. Under low light
+     * conditions, frame rate is decreased to properly expose the scene. For formats with a maximum frame rate of 30
+     * fps, the frame rate switches between 30 - 24. For formats with a maximum frame rate of 60 fps, the frame rate
+     * switches between 60 - 30 - 24.
+     * 
+     * Setting this property throws an NSInvalidArgumentException if the active format's -isAutoVideoFrameRateSupported
+     * returns NO. Changing the device's active format resets isAutoVideoFrameRateEnabled to its default value of NO.
+     * 
+     * When autoVideoFrameRateEnabled is true, setting activeVideoMinFrameDuration or activeVideoMaxFrameDuration throws
+     * an NSInvalidArgumentException.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setAutoVideoFrameRateEnabled:")
+    public native void setAutoVideoFrameRateEnabled(boolean value);
+
+    /**
+     * [@property] spatialCaptureDiscomfortReasons
+     * 
+     * Indicates whether or not the current environmental conditions are amenable to a spatial capture that is
+     * comfortable to view.
+     * 
+     * This property can be monitored in order to determine the presentation of U/I elements to inform the user that
+     * they should reframe their scene for a more pleasing spatial capture ("subject is too close", "scene is too
+     * dark").
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("spatialCaptureDiscomfortReasons")
+    @NotNull
+    public native NSSet<String> spatialCaptureDiscomfortReasons();
 }

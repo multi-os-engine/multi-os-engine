@@ -162,6 +162,8 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
      * Range: 0.25 -> 4.0
      * Default: 1.0
      * Unit: Generic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("rate")
@@ -195,6 +197,8 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
      * Range: 0.25 -> 4.0
      * Default: 1.0
      * Unit: Generic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRate:")

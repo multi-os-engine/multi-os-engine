@@ -54,6 +54,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Whether the font is automatically updated when the content size category changes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("adjustsFontForContentSizeCategory")
@@ -61,6 +63,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Whether the font size of the text is automatically adjusted when necessary to fit in the available width.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
@@ -68,6 +72,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The alignment for the text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("alignment")
@@ -86,6 +92,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Whether the text is tightened before truncating.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
@@ -118,6 +126,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The color of the text.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -126,6 +136,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Optional color transformer that is used to resolve the color. A nil value means the `color` is used as-is.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -162,6 +174,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The font used for the text.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -205,6 +219,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The line break mode to use for the text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("lineBreakMode")
@@ -213,6 +229,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * When `adjustsFontSizeToFitWidth` is enabled, the smallest multiplier for the font size used to make the text fit.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("minimumScaleFactor")
@@ -226,6 +244,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The maximum number of lines for the text. 0 indicates the number of lines is unlimited.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("numberOfLines")
@@ -242,6 +262,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Returns the resolved color, based on the `color` and `colorTransformer`.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -250,6 +272,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Whether the font is automatically updated when the content size category changes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
@@ -257,6 +281,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Whether the font size of the text is automatically adjusted when necessary to fit in the available width.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
@@ -264,6 +290,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The alignment for the text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAlignment:")
@@ -271,6 +299,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Whether the text is tightened before truncating.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAllowsDefaultTighteningForTruncation:")
@@ -278,6 +308,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The color of the text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setColor:")
@@ -285,6 +317,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * Optional color transformer that is used to resolve the color. A nil value means the `color` is used as-is.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setColorTransformer:")
@@ -301,6 +335,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The font used for the text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setFont:")
@@ -308,6 +344,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The line break mode to use for the text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLineBreakMode:")
@@ -315,6 +353,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * When `adjustsFontSizeToFitWidth` is enabled, the smallest multiplier for the font size used to make the text fit.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMinimumScaleFactor:")
@@ -322,6 +362,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * The maximum number of lines for the text. 0 indicates the number of lines is unlimited.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setNumberOfLines:")
@@ -329,6 +371,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * A transform that is applied to the text before it is displayed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTransform:")
@@ -354,6 +398,8 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     /**
      * A transform that is applied to the text before it is displayed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("transform")

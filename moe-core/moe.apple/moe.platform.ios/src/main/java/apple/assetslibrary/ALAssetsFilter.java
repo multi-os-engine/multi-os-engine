@@ -67,21 +67,39 @@ public class ALAssetsFilter extends NSObject {
 
     /**
      * Get all assets in the group.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use fetchAssetsInAssetCollection:options: on PHAsset and set a mediaType predicate on the
+     * PHFetchOptions from the Photos framework instead
      */
+    @Deprecated
     @Generated
     @Selector("allAssets")
     public static native ALAssetsFilter allAssets();
 
     /**
      * Get all photos assets in the assets group.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use fetchAssetsInAssetCollection:options: on PHAsset and set a mediaType predicate on the
+     * PHFetchOptions from the Photos framework instead
      */
+    @Deprecated
     @Generated
     @Selector("allPhotos")
     public static native ALAssetsFilter allPhotos();
 
     /**
      * Get all video assets in the assets group.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use fetchAssetsInAssetCollection:options: on PHAsset and set a mediaType predicate on the
+     * PHFetchOptions from the Photos framework instead
      */
+    @Deprecated
     @Generated
     @Selector("allVideos")
     public static native ALAssetsFilter allVideos();

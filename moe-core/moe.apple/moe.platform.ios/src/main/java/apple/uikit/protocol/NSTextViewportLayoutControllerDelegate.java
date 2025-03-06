@@ -26,6 +26,8 @@ public interface NSTextViewportLayoutControllerDelegate {
      * The delegate should arrange to present the text layout fragment in the UI, e.g. a sublayer/subview.
      * Layout information such as viewportBounds on textViewportLayoutController is not up-to-date at the point of this
      * call.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("textViewportLayoutController:configureRenderingSurfaceForTextLayoutFragment:")
@@ -36,6 +38,8 @@ public interface NSTextViewportLayoutControllerDelegate {
     /**
      * Called when textViewportLayoutController is about to layout.
      * Layout information on textViewportLayoutController is up-to-date at the point of this call.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -48,6 +52,8 @@ public interface NSTextViewportLayoutControllerDelegate {
     /**
      * Called when textViewportLayoutController is about to layout.
      * Layout information on textViewportLayoutController is up-to-date at the point of this call.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -59,6 +65,8 @@ public interface NSTextViewportLayoutControllerDelegate {
 
     /**
      * The current viewport, typically the view visible bounds with overdraw.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("viewportBoundsForTextViewportLayoutController:")

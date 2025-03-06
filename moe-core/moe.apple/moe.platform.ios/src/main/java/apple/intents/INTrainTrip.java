@@ -61,11 +61,17 @@ public class INTrainTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("allocWithZone:")
     public static native INTrainTrip allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("arrivalPlatform")
     public native String arrivalPlatform();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("arrivalStationLocation")
@@ -107,11 +113,17 @@ public class INTrainTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("departurePlatform")
     public native String departurePlatform();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("departureStationLocation")
@@ -138,6 +150,9 @@ public class INTrainTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INTrainTrip initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithProvider:trainName:trainNumber:tripDuration:departureStationLocation:departurePlatform:arrivalStationLocation:arrivalPlatform:")
     public native INTrainTrip initWithProviderTrainNameTrainNumberTripDurationDepartureStationLocationDeparturePlatformArrivalStationLocationArrivalPlatform(
@@ -173,6 +188,9 @@ public class INTrainTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native INTrainTrip new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("provider")
@@ -204,16 +222,25 @@ public class INTrainTrip extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("trainName")
     public native String trainName();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("trainNumber")
     public native String trainNumber();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("tripDuration")

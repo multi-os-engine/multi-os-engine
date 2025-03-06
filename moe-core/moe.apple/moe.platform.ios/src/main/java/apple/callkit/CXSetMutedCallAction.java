@@ -172,18 +172,30 @@ public class CXSetMutedCallAction extends CXCallAction {
     @Selector("initWithCallUUID:")
     public native CXSetMutedCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCallUUID:muted:")
     public native CXSetMutedCallAction initWithCallUUIDMuted(@NotNull NSUUID callUUID, boolean muted);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native CXSetMutedCallAction initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isMuted")
     public native boolean isMuted();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setMuted:")
     public native void setMuted(boolean value);

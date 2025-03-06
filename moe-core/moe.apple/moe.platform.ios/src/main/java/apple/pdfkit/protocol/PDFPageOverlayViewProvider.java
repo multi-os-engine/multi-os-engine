@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 public interface PDFPageOverlayViewProvider {
     /**
      * Asks the provider for a view to be displayed on top of the specified page.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -33,6 +35,8 @@ public interface PDFPageOverlayViewProvider {
      * Tells the provider that a view returned from `overlayViewForPage` has been added
      * to the view hierarchy and constraints have been set up. At this point, gesture failure
      * handlers may be set up with those of `pdfView`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -45,6 +49,8 @@ public interface PDFPageOverlayViewProvider {
     /**
      * Tells the provider that a view returned from `overlayViewForPage` will be removed.
      * This can be used to restore whatever was done in `overlayView:wasAddedForPage`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional

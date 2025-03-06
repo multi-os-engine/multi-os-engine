@@ -29,6 +29,8 @@ public interface MTLIOCommandQueue {
      * 
      * Vends an autoreleased commandBuffer that can be used to
      * encode commands that read from handle objects and write to MTLResource objects.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -46,6 +48,8 @@ public interface MTLIOCommandQueue {
      * 
      * For correct execution its the application's responsibility to retain
      * objects referenced by commands within the commandBuffer.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -61,6 +65,8 @@ public interface MTLIOCommandQueue {
      * 
      * A serial commandQueue has implicit barriers between
      * each commandBuffer.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("enqueueBarrier")
@@ -70,6 +76,8 @@ public interface MTLIOCommandQueue {
      * [@property] label
      * 
      * An optional label for this handle.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -80,6 +88,8 @@ public interface MTLIOCommandQueue {
      * [@property] label
      * 
      * An optional label for this handle.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setLabel:")

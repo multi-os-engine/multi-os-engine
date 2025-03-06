@@ -18,6 +18,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIFontPickerViewControllerDelegate")
 public interface UIFontPickerViewControllerDelegate {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("fontPickerViewControllerDidCancel:")
@@ -25,6 +28,9 @@ public interface UIFontPickerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("fontPickerViewControllerDidPickFont:")

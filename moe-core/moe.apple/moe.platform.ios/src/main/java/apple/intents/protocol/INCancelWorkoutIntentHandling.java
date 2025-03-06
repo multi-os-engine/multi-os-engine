@@ -57,6 +57,8 @@ public interface INCancelWorkoutIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INCancelWorkoutIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -76,6 +78,8 @@ public interface INCancelWorkoutIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INCancelWorkoutIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleCancelWorkout:completion:")
@@ -92,6 +96,8 @@ public interface INCancelWorkoutIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

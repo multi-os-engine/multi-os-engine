@@ -229,6 +229,8 @@ public class MPSCNNKernel extends MPSKernel {
      * is the number of images to process in batch processing mode.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("clipRect")
@@ -253,6 +255,8 @@ public class MPSCNNKernel extends MPSKernel {
      * E.g. if the MPSCNNConvolution outputs 32 channels, and the destination has 64 channels, then it is an error to
      * set
      * destinationFeatureChannelOffset > 32.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("destinationFeatureChannelOffset")
@@ -273,6 +277,8 @@ public class MPSCNNKernel extends MPSKernel {
      * Note: For @ref MPSCNNPoolingAverage specifying edge mode @ref MPSImageEdgeModeClamp
      * is interpreted as a "shrink-to-edge" operation, which shrinks the effective
      * filtering window to remain within the source image borders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("edgeMode")
@@ -289,6 +295,8 @@ public class MPSCNNKernel extends MPSKernel {
      * @param sourceImage      A valid MPSImage object containing the source image.
      * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias
      *                         sourceImage.
+     * 
+     *                         API-Since: 10.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationImage:")
@@ -307,6 +315,8 @@ public class MPSCNNKernel extends MPSKernel {
      * @return A pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -322,6 +332,8 @@ public class MPSCNNKernel extends MPSKernel {
      * offset.z is the index of starting source image in batch processing mode.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("offset")
@@ -340,6 +352,8 @@ public class MPSCNNKernel extends MPSKernel {
      * is the number of images to process in batch processing mode.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setClipRect:")
@@ -363,6 +377,8 @@ public class MPSCNNKernel extends MPSKernel {
      * E.g. if the MPSCNNConvolution outputs 32 channels, and the destination has 64 channels, then it is an error to
      * set
      * destinationFeatureChannelOffset > 32.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDestinationFeatureChannelOffset:")
@@ -382,6 +398,8 @@ public class MPSCNNKernel extends MPSKernel {
      * Note: For @ref MPSCNNPoolingAverage specifying edge mode @ref MPSImageEdgeModeClamp
      * is interpreted as a "shrink-to-edge" operation, which shrinks the effective
      * filtering window to remain within the source image borders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setEdgeMode:")
@@ -397,6 +415,8 @@ public class MPSCNNKernel extends MPSKernel {
      * offset.z is the index of starting source image in batch processing mode.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setOffset:")
@@ -500,6 +520,8 @@ public class MPSCNNKernel extends MPSKernel {
      * Warning: This property was lowered to this class in ios/tvos 11
      * The property may not be available on iOS/tvOS 10 for
      * all subclasses of MPSCNNKernel
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -518,6 +540,8 @@ public class MPSCNNKernel extends MPSKernel {
      * Warning: This property was lowered to this class in ios/tvos 11
      * The property may not be available on iOS/tvOS 10 for
      * all subclasses of MPSCNNKernel
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("kernelWidth")
@@ -577,6 +601,8 @@ public class MPSCNNKernel extends MPSKernel {
      * Warning: This property was lowered to this class in ios/tvos 11
      * The property may not be available on iOS/tvOS 10 for
      * all subclasses of MPSCNNKernel
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("strideInPixelsX")
@@ -593,6 +619,8 @@ public class MPSCNNKernel extends MPSKernel {
      * Warning: This property was lowered to this class in ios/tvos 11
      * The property may not be available on iOS/tvOS 10 for
      * all subclasses of MPSCNNKernel
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("strideInPixelsY")
@@ -735,6 +763,8 @@ public class MPSCNNKernel extends MPSKernel {
      * [@property] dilationRateX
      * 
      * Stride in source coordinates from one kernel tap to the next in the X dimension.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dilationRateX")
@@ -745,6 +775,8 @@ public class MPSCNNKernel extends MPSKernel {
      * [@property] dilationRate
      * 
      * Stride in source coordinates from one kernel tap to the next in the Y dimension.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dilationRateY")
@@ -924,6 +956,8 @@ public class MPSCNNKernel extends MPSKernel {
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
      * is taken into account. Default: ULONG_MAX
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSourceFeatureChannelMaxCount:")
@@ -946,6 +980,8 @@ public class MPSCNNKernel extends MPSKernel {
      * image with insufficient number of feature channels will result in an error.
      * E.g. if the MPSCNNConvolution inputs 32 channels, and the source has 64 channels, then it is an error to set
      * sourceFeatureChannelOffset > 32.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSourceFeatureChannelOffset:")
@@ -961,6 +997,8 @@ public class MPSCNNKernel extends MPSKernel {
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
      * is taken into account. Default: ULONG_MAX
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("sourceFeatureChannelMaxCount")
@@ -984,6 +1022,8 @@ public class MPSCNNKernel extends MPSKernel {
      * image with insufficient number of feature channels will result in an error.
      * E.g. if the MPSCNNConvolution inputs 32 channels, and the source has 64 channels, then it is an error to set
      * sourceFeatureChannelOffset > 32.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("sourceFeatureChannelOffset")

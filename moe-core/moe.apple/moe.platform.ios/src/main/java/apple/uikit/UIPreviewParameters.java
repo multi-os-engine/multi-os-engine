@@ -65,6 +65,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     /**
      * The background color that the preview draws behind the specified view.
      * Set this to `nil` to reset to the default value.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("backgroundColor")
@@ -113,6 +115,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
 
     /**
      * The default parameters. Use these for most previews.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("init")
@@ -120,6 +124,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
 
     /**
      * CGRect
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithTextLineRects:")
@@ -163,6 +169,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     /**
      * The background color that the preview draws behind the specified view.
      * Set this to `nil` to reset to the default value.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -176,6 +184,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
      * The part of the view that should be shown in the preview.
      * If `nil`, the whole view will be shown.
      * Specify a path in the coordinate space of the view.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setVisiblePath:")
@@ -194,6 +204,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
      * The part of the view that should be shown in the preview.
      * If `nil`, the whole view will be shown.
      * Specify a path in the coordinate space of the view.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

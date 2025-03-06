@@ -51,6 +51,12 @@ public class INDeleteTasksIntent extends INIntent {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("all")
@@ -112,6 +118,12 @@ public class INDeleteTasksIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INDeleteTasksIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTaskList:tasks:all:")
     public native INDeleteTasksIntent initWithTaskListTasksAll(@Nullable INTaskList taskList,
@@ -170,11 +182,23 @@ public class INDeleteTasksIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("taskList")
     public native INTaskList taskList();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("tasks")

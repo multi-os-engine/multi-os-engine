@@ -186,6 +186,8 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     /**
      * Defines the alignment of tab column contents. NSTextAlignmentNatural and NSTextAlignmentJustified are resolved
      * either NSTextAlignmentLeft or NSTextAlignmentRight based on the user's preferred language.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("alignment")
@@ -214,6 +216,8 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     /**
      * Initializes a text tab with the text alignment, location, and options. The text alignment is used to determine
      * the position of text inside the tab column.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithTextAlignment:location:options:")
@@ -222,6 +226,8 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
 
     /**
      * Location of the tab stop inside the line fragment rect coordinate system
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("location")
@@ -230,6 +236,8 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
 
     /**
      * Optional configuration attributes
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

@@ -173,10 +173,16 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("advanceToNextInputMode")
     public native void advanceToNextInputMode();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("dismissKeyboard")
     public native void dismissKeyboard();
@@ -206,6 +212,9 @@ public class UIInputViewController extends UIViewController implements UITextInp
     public native UIInputViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("inputView")
@@ -214,6 +223,8 @@ public class UIInputViewController extends UIViewController implements UITextInp
     /**
      * The primary language of the UIInputViewController. A BCP 47 language identifier such as en-US
      * If specified, this will supersede any PrimaryLanguage in the Info.plist.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -223,6 +234,8 @@ public class UIInputViewController extends UIViewController implements UITextInp
     /**
      * This will not provide a complete repository of a language's vocabulary.
      * It is solely intended to supplement existing lexicons.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("requestSupplementaryLexiconWithCompletion:")
@@ -237,6 +250,9 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("selectionWillChange:")
     public native void selectionWillChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setInputView:")
     public native void setInputView(@Nullable UIInputView value);
@@ -244,6 +260,8 @@ public class UIInputViewController extends UIViewController implements UITextInp
     /**
      * The primary language of the UIInputViewController. A BCP 47 language identifier such as en-US
      * If specified, this will supersede any PrimaryLanguage in the Info.plist.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPrimaryLanguage:")
@@ -253,6 +271,9 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("textDidChange:")
     public native void textDidChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("textDocumentProxy")
@@ -286,6 +307,8 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     /**
      * When this property is set to YES, the system dictation key, if provided, will be disabled.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hasDictationKey")
@@ -293,6 +316,8 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     /**
      * When this property is set to YES, the system dictation key, if provided, will be disabled.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHasDictationKey:")

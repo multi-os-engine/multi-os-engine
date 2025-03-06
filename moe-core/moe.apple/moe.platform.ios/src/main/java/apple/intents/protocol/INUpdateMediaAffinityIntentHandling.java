@@ -44,6 +44,8 @@ public interface INUpdateMediaAffinityIntentHandling {
      *                   handling.
      * 
      * @see INUpdateMediaAffinityIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -70,6 +72,8 @@ public interface INUpdateMediaAffinityIntentHandling {
      *                   of the result of having executed the intent
      * 
      * @see INUpdateMediaAffinityIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("handleUpdateMediaAffinity:completion:")
@@ -83,6 +87,9 @@ public interface INUpdateMediaAffinityIntentHandling {
         void call_handleUpdateMediaAffinityCompletion(@NotNull INUpdateMediaAffinityIntentResponse response);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveAffinityTypeForUpdateMediaAffinity:withCompletion:")
@@ -109,6 +116,8 @@ public interface INUpdateMediaAffinityIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional

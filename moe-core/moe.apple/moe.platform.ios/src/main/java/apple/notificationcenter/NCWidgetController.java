@@ -168,6 +168,12 @@ public class NCWidgetController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
+     */
+    @Deprecated
     @Generated
     @Selector("widgetController")
     public static native NCWidgetController widgetController();
@@ -180,7 +186,12 @@ public class NCWidgetController extends NSObject {
      * Whether the widget has content to display, and the view should be visible in Notification Center. Default is
      * 'YES'.
      * A widget controller can be obtained and messaged in either the widget or the providing app.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
      */
+    @Deprecated
     @Generated
     @Selector("setHasContent:forWidgetWithBundleIdentifier:")
     public native void setHasContentForWidgetWithBundleIdentifier(boolean flag, @NotNull String bundleID);

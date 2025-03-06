@@ -58,6 +58,8 @@ public class NINearbyAccessoryConfiguration extends NIConfiguration {
      * The discovery token identifying the accessory device for this session configuration.
      * 
      * NINearbyObject updates for this accessory will contain this discovery token.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -126,6 +128,8 @@ public class NINearbyAccessoryConfiguration extends NIConfiguration {
      * @param data  Configuration data received from the accessory.
      * @param error An optional out error parameter that will be populated with an error if the provided data is invalid
      *              or unsupported.
+     * 
+     *              API-Since: 15.0
      */
     @Generated
     @Selector("initWithData:error:")

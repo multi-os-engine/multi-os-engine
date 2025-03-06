@@ -179,11 +179,16 @@ public class CADisplayLink extends NSObject {
      * will fire every vsync until removed. Each object may only be added
      * to a single run-loop, but it may be added in multiple modes at once.
      * While added to a run-loop it will implicitly be retained.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("addToRunLoop:forMode:")
     public native void addToRunLoopForMode(@NotNull NSRunLoop runloop, @NotNull String mode);
 
+    /**
+     * API-Since: 3.1
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -213,6 +218,8 @@ public class CADisplayLink extends NSObject {
     /**
      * Removes the object from all runloop modes (releasing the receiver if
      * it has been implicitly retained) and releases the 'target' object.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("invalidate")
@@ -221,6 +228,8 @@ public class CADisplayLink extends NSObject {
     /**
      * When true the object is prevented from firing. Initial state is
      * false.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("isPaused")
@@ -229,6 +238,8 @@ public class CADisplayLink extends NSObject {
     /**
      * When true the object is prevented from firing. Initial state is
      * false.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setPaused:")
@@ -253,6 +264,8 @@ public class CADisplayLink extends NSObject {
      * Removes the receiver from the given mode of the runloop. This will
      * implicitly release it when removed from the last mode it has been
      * registered for.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("removeFromRunLoop:forMode:")
@@ -303,6 +316,8 @@ public class CADisplayLink extends NSObject {
      * the most recent target invocation. Time is represented using the
      * normal Core Animation conventions, i.e. Mach host time converted to
      * seconds.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("timestamp")

@@ -169,41 +169,89 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("airCirculationMode")
     @NInt
     public native long airCirculationMode();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("climateZone")
     @NInt
     public native long climateZone();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enableAirConditioner")
     public native NSNumber enableAirConditioner();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enableAutoMode")
     public native NSNumber enableAutoMode();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enableClimateControl")
     public native NSNumber enableClimateControl();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enableFan")
     public native NSNumber enableFan();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fanSpeedIndex")
     public native NSNumber fanSpeedIndex();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fanSpeedPercentage")
@@ -231,11 +279,23 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
             @Nullable NSMeasurement<NSUnitTemperature> temperature, @NInt long relativeTemperatureSetting,
             @NInt long climateZone);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("relativeFanSpeedSetting")
     @NInt
     public native long relativeFanSpeedSetting();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("relativeTemperatureSetting")
     @NInt
@@ -247,6 +307,12 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("temperature")

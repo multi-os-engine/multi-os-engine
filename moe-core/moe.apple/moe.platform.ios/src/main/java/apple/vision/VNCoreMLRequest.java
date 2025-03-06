@@ -103,6 +103,9 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("imageCropAndScaleOption")
     @NUInt
@@ -121,6 +124,8 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
      * Create a new request with a model.
      * 
      * @param model The VNCoreMLModel to be used.
+     * 
+     *              API-Since: 11.0
      */
     @Generated
     @Selector("initWithModel:")
@@ -132,6 +137,8 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
      * @param model             The VNCoreMLModel to be used.
      * 
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithModel:completionHandler:")
@@ -169,6 +176,8 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
 
     /**
      * The model from CoreML wrapped in a VNCoreMLModel.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -188,6 +197,9 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setImageCropAndScaleOption:")
     public native void setImageCropAndScaleOption(@NUInt long value);

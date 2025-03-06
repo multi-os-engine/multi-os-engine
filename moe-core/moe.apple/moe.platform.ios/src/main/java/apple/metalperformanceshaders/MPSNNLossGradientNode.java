@@ -88,6 +88,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("delta")
     public native float delta();
@@ -96,6 +99,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("epsilon")
     public native float epsilon();
@@ -109,6 +115,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Selector("init")
     public native MPSNNLossGradientNode init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:labels:gradientState:lossDescriptor:isLabelsGradientFilter:")
     public native MPSNNLossGradientNode initWithSourceGradientSourceImageLabelsGradientStateLossDescriptorIsLabelsGradientFilter(
@@ -116,6 +125,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
             @Nullable MPSNNGradientStateNode gradientState, @NotNull MPSCNNLossDescriptor descriptor,
             boolean isLabelsGradientFilter);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:labels:weights:gradientState:lossDescriptor:isLabelsGradientFilter:")
     public native MPSNNLossGradientNode initWithSourceGradientSourceImageLabelsWeightsGradientStateLossDescriptorIsLabelsGradientFilter(
@@ -129,6 +141,8 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: input gradients, Node1: logits, Node2: labels, Node3: weights
      * @return A new MPSNNFilter node.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSources:gradientState:lossDescriptor:isLabelsGradientFilter:")
@@ -149,6 +163,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isLabelsGradientFilter")
     public native boolean isLabelsGradientFilter();
@@ -162,10 +179,16 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("labelSmoothing")
     public native float labelSmoothing();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("lossType")
     public native int lossType();
@@ -175,6 +198,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Selector("new")
     public static native MPSNNLossGradientNode new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:labels:gradientState:lossDescriptor:isLabelsGradientFilter:")
     public static native MPSNNLossGradientNode nodeWithSourceGradientSourceImageLabelsGradientStateLossDescriptorIsLabelsGradientFilter(
@@ -182,6 +208,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
             @Nullable MPSNNGradientStateNode gradientState, @NotNull MPSCNNLossDescriptor descriptor,
             boolean isLabelsGradientFilter);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:labels:weights:gradientState:lossDescriptor:isLabelsGradientFilter:")
     public static native MPSNNLossGradientNode nodeWithSourceGradientSourceImageLabelsWeightsGradientStateLossDescriptorIsLabelsGradientFilter(
@@ -195,6 +224,8 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: logits, Node1: labels, Node2: weights
      * @return A new MPSNNFilter node.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSources:gradientState:lossDescriptor:isLabelsGradientFilter:")
@@ -202,6 +233,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
             @NotNull NSArray<? extends MPSNNImageNode> sourceNodes, @Nullable MPSNNGradientStateNode gradientState,
             @NotNull MPSCNNLossDescriptor descriptor, boolean isLabelsGradientFilter);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("numberOfClasses")
     @NUInt
@@ -212,6 +246,8 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
      * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -219,6 +255,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public native MPSNNLossCallback propertyCallBack();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -236,6 +275,8 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
      * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPropertyCallBack:")
@@ -254,6 +295,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("weight")
     public native float weight();

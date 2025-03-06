@@ -27,6 +27,8 @@ public interface UITextSearching {
     /**
      * Called when the current search session has changed or ended, with the expectation that all decorations
      * applied via @c decorateFoundTextRange:usingStyle: are cleared.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("clearAllDecoratedFoundText")
@@ -41,6 +43,8 @@ public interface UITextSearching {
      * @param toRange    Developer-provided range to compare to.
      * @param document   If multiple documents are used, a document identifier will be provided here. Ranges are only
      *                   compared between other ranges of the same document.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("compareFoundRange:toRange:inDocument:")
@@ -51,6 +55,8 @@ public interface UITextSearching {
     /**
      * Returns the visible ordering from `fromDocument` to `toDocument`. If your document identifiers
      * are index paths, for example, this would yield the same result as `-[NSIndexPath compare:]`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -70,6 +76,8 @@ public interface UITextSearching {
      * @param style    A style hint for how to decorate the text. This is ultimately up to the developer, but developers
      *                 are
      *                 encouraged to match the system's appearance (i.e., UITextView) as close as possible.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @Selector("decorateFoundTextRange:inDocument:usingStyle:")
@@ -84,6 +92,8 @@ public interface UITextSearching {
      * @param options    Search options provided by the user.
      * @param aggregator When results are found, provide them to the aggregator. The aggregator is thread-safe,
      *                   so you may send it messages on other threads.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("performTextSearchWithQueryString:usingOptions:resultAggregator:")
@@ -97,6 +107,8 @@ public interface UITextSearching {
      * @param queryString     The search term to replace.
      * @param options         Search options provided by the find panel UI.
      * @param replacementText The string to replace it with.
+     * 
+     *                        API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -114,6 +126,8 @@ public interface UITextSearching {
      * @param document        If multiple search documents are used, the relevant document identifier is provided
      *                        here. Otherwise nil.
      * @param replacementText The replacement string.
+     * 
+     *                        API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -129,6 +143,8 @@ public interface UITextSearching {
      * 
      * @param range    The text range to scroll to.
      * @param document (Optional) If multiple documents are used, the document identifier to scroll to.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -140,6 +156,8 @@ public interface UITextSearching {
 
     /**
      * Overlap from UITextInput: Returns the currently selected text range, if applicable. Nil otherwise.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -148,6 +166,8 @@ public interface UITextSearching {
 
     /**
      * Returns the current search document, if applicable. Nil otherwise.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -166,6 +186,8 @@ public interface UITextSearching {
      * @param range           Range to replace.
      * @param document        If multiple documents are used, the document from which range originates.
      * @param replacementText Text that the user intends to replace with.
+     * 
+     *                        API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -178,6 +200,8 @@ public interface UITextSearching {
     /**
      * Return YES if your searchable item also supports replacement. If this method is unimplemented, it is
      * assumed that text replacement is not supported.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -188,6 +212,8 @@ public interface UITextSearching {
 
     /**
      * Called when the highlighted search result is about to change to @c range .
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional

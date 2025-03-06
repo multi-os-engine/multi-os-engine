@@ -97,6 +97,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.0 white
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -105,6 +107,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.0, 0.0, 1.0 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -113,6 +117,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.6, 0.4, 0.2 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -142,12 +148,17 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.0 white, 0.0 alpha
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
     @Selector("clearColor")
     public static native UIColor clearColor();
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("colorWithCGColor:")
@@ -170,17 +181,26 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     public static native UIColor colorWithDisplayP3RedGreenBlueAlpha(@NFloat double displayP3Red, @NFloat double green,
             @NFloat double blue, @NFloat double alpha);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("colorWithHue:saturation:brightness:alpha:")
     public static native UIColor colorWithHueSaturationBrightnessAlpha(@NFloat double hue, @NFloat double saturation,
             @NFloat double brightness, @NFloat double alpha);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("colorWithPatternImage:")
     public static native UIColor colorWithPatternImage(@NotNull UIImage image);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("colorWithRed:green:blue:alpha:")
@@ -189,6 +209,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * Convenience methods for creating colors
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -197,6 +219,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.0, 1.0, 1.0 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -205,6 +229,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.333 white
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -229,6 +255,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.5 white
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -237,6 +265,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.0, 1.0, 0.0 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -284,6 +314,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.667 white
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -300,6 +332,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 1.0, 0.0, 1.0 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -313,6 +347,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 1.0, 0.5, 0.0 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -321,6 +357,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 0.5, 0.0, 0.5 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -329,6 +367,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 1.0, 0.0, 0.0 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -392,6 +432,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 1.0 white
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -400,12 +442,17 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * 1.0, 1.0, 0.0 RGB
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
     @Selector("yellowColor")
     public static native UIColor yellowColor();
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("CGColor")
@@ -421,6 +468,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * Returns a color in the same color space as the receiver with the specified alpha component.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -469,6 +518,9 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("init")
     public native UIColor init();
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("initWithCGColor:")
@@ -495,17 +547,26 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     public native UIColor initWithDisplayP3RedGreenBlueAlpha(@NFloat double displayP3Red, @NFloat double green,
             @NFloat double blue, @NFloat double alpha);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("initWithHue:saturation:brightness:alpha:")
     public native UIColor initWithHueSaturationBrightnessAlpha(@NFloat double hue, @NFloat double saturation,
             @NFloat double brightness, @NFloat double alpha);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("initWithPatternImage:")
     public native UIColor initWithPatternImage(@NotNull UIImage image);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("initWithRed:green:blue:alpha:")
@@ -514,6 +575,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * Initializers for creating colors
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -523,6 +586,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     /**
      * Set the color: Sets the fill and stroke colors in the current drawing context. Should be implemented by
      * subclassers.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("set")
@@ -530,11 +595,16 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * Set the fill or stroke colors individually. These should be implemented by subclassers.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFill")
     public native void setFill();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setStroke")
     public native void setStroke();
@@ -1066,4 +1136,22 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns a color as the receiver with the specified prominence.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("colorWithProminence:")
+    @NotNull
+    public native UIColor colorWithProminence(@NInt long prominence);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prominence")
+    @NInt
+    public native long prominence();
 }

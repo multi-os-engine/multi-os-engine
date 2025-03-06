@@ -174,6 +174,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      * using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("fillValue")
@@ -200,6 +202,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSNNPad
      * @param device   The MTLDevice on which to make the MPSNNPad
      * @return A new MPSNNPad object, or nil if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -211,6 +215,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSNNPad object or nil, if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithDevice:")
@@ -223,6 +229,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * @param paddingSizeBefore The amount of padding to add before the source image - see details above.
      * @param paddingSizeAfter  The amount of padding to add after the source image - see details above.
      * @return A valid MPSNNPad object or nil, if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithDevice:paddingSizeBefore:paddingSizeAfter:")
@@ -243,6 +251,8 @@ public class MPSNNPad extends MPSCNNKernel {
      *                          the destination by the filter. Failing to pass a large enough array will
      *                          result in undefined behavior. Passing in nil is fine.
      * @return A valid MPSNNPad object or nil, if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:")
@@ -291,6 +301,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * [@ref] sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount, naturally
      * clipped to fit the feature channels in the provided source image.
      * Default: { 0, 0, 0 }
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("paddingSizeAfter")
@@ -310,6 +322,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * channel dimension, before the feature channels starting from feature channel
      * index @ref sourceFeatureChannelOffset.
      * Default: { 0, 0, 0 }
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("paddingSizeBefore")
@@ -330,6 +344,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      * using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setFillValue:")
@@ -349,6 +365,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * [@ref] sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount, naturally
      * clipped to fit the feature channels in the provided source image.
      * Default: { 0, 0, 0 }
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setPaddingSizeAfter:")
@@ -367,6 +385,8 @@ public class MPSNNPad extends MPSCNNKernel {
      * channel dimension, before the feature channels starting from feature channel
      * index @ref sourceFeatureChannelOffset.
      * Default: { 0, 0, 0 }
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setPaddingSizeBefore:")

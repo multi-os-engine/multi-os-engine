@@ -57,6 +57,8 @@ public interface UITextPasteDelegate {
      * but you are free to do what you want here.
      * The target text range is provided so you can alter behavior here depending on
      * where the text will be dropped.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -77,6 +79,8 @@ public interface UITextPasteDelegate {
      * to the user.
      * Return the resulting text range from the method (or nil to indicate no changes to the range).
      * This might be used to select the range for text drops.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -90,6 +94,8 @@ public interface UITextPasteDelegate {
 
     /**
      * DEPRECATED IOS13
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -113,6 +119,8 @@ public interface UITextPasteDelegate {
      * Note: You can use this UITextPasteItem on any thread,
      * but textPasteConfigurationSupporting:transformPasteItem: will be called
      * on the main thread.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

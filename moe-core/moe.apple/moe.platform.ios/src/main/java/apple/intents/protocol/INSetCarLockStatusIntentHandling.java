@@ -42,6 +42,8 @@ public interface INSetCarLockStatusIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSetCarLockStatusIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional
@@ -68,6 +70,8 @@ public interface INSetCarLockStatusIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSetCarLockStatusIntentResponse
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @Selector("handleSetCarLockStatus:completion:")
@@ -81,6 +85,9 @@ public interface INSetCarLockStatusIntentHandling {
         void call_handleSetCarLockStatusCompletion(@NotNull INSetCarLockStatusIntentResponse response);
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @IsOptional
     @Selector("resolveCarNameForSetCarLockStatus:withCompletion:")
@@ -107,6 +114,8 @@ public interface INSetCarLockStatusIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.3
      */
     @Generated
     @IsOptional

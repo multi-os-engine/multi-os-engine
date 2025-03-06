@@ -100,6 +100,8 @@ public class AVCaptureSystemPressureState extends NSObject {
      * [@property] factors
      * 
      * A bitmask of values indicating the factors contributing to the current system pressure level.
+     * 
+     * API-Since: 11.1
      */
     @Generated
     @Selector("factors")
@@ -141,6 +143,8 @@ public class AVCaptureSystemPressureState extends NSObject {
      * [@property] level
      * 
      * An enumerated string value characterizing the pressure level to which the system is currently elevated.
+     * 
+     * API-Since: 11.1
      */
     @NotNull
     @Generated

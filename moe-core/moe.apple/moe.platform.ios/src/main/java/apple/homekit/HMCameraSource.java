@@ -159,6 +159,12 @@ public class HMCameraSource extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: HMCameraSource is a base class for other types. Directly creating them is not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMCameraSource init();

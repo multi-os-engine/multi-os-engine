@@ -71,6 +71,9 @@ public class PKShareablePassMetadata extends NSObject {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("cardConfigurationIdentifier")
@@ -88,6 +91,8 @@ public class PKShareablePassMetadata extends NSObject {
 
     /**
      * A unique identifier for provisioning credential data.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -197,6 +202,8 @@ public class PKShareablePassMetadata extends NSObject {
     /**
      * A unique identifier that refers to an instance of sharing of credentials to a user's device initiated from
      * another user, device, or web.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -311,7 +318,7 @@ public class PKShareablePassMetadata extends NSObject {
     public native PKShareablePassMetadataPreview preview();
 
     /**
-     * Identifer referencing the target server environment Apple Pay servers should reach
+     * Identifier referencing the target server environment Apple Pay servers should reach
      * out to to provision this pass.
      * 
      * API-Since: 16.0
@@ -351,7 +358,7 @@ public class PKShareablePassMetadata extends NSObject {
     public native void setRequiresUnifiedAccessCapableDevice(boolean value);
 
     /**
-     * Identifer referencing the target server environment Apple Pay servers should reach
+     * Identifier referencing the target server environment Apple Pay servers should reach
      * out to to provision this pass.
      * 
      * API-Since: 16.0

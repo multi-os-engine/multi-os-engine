@@ -8,7 +8,6 @@ import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -17,6 +16,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * API-Since: 14.0
@@ -26,13 +26,19 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLVisibleFunctionTable")
 public interface MTLVisibleFunctionTable extends MTLResource {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setFunction:atIndex:")
     void setFunctionAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunctionHandle function, @NUInt long index);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setFunctions:withRange:")
-    void setFunctionsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functions,
+    void setFunctionsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> functions,
             @ByValue NSRange range);
 
     /**

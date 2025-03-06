@@ -129,6 +129,8 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      *                the AVFragmentedAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
      *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVFragmentedAsset.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("fragmentedAssetWithURL:options:")
@@ -207,7 +209,8 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTrackWithTrackID:completionHandler: instead
      * 
      * @param trackID
      *                The trackID of the requested AVFragmentedAssetTrack.
@@ -226,6 +229,8 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * 
      * The value of this property is an array of tracks the asset contains; the tracks are of type
      * AVFragmentedAssetTrack.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -240,7 +245,8 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTracksWithMediaCharacteristic:completionHandler: instead
      * 
      * @param mediaCharacteristic
      *                            The media characteristic according to which the receiver filters its
@@ -263,7 +269,8 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTracksWithMediaType:completionHandler: instead
      * 
      * @param mediaType
      *                  The media type according to which the receiver filters its AVFragmentedAssetTracks. (Media types

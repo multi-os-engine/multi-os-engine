@@ -161,6 +161,8 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
      * [@property] clearStencil
      * 
      * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("clearStencil")
@@ -174,6 +176,8 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
      * [@property] clearStencil
      * 
      * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setClearStencil:")

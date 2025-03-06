@@ -106,6 +106,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * UTIs for container formats that can be written are declared in AVMediaFormat.h.
      * 
+     * API-Since: 4.1
+     * 
      * @param URL
      *                 The location of the file to be written. The URL must be a file URL.
      * @param fileType
@@ -226,6 +228,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * *Passthrough is indicated when the input's output settings are nil.
      * 
+     * API-Since: 4.1
+     * 
      * @param input
      *              The AVAssetWriterInput object to be added.
      */
@@ -260,6 +264,8 @@ public class AVAssetWriter extends NSObject {
      * The media types for which inputs can be added to the receiver.
      * 
      * Some media types may not be accepted within the file format with which an AVAssetWriter was initialized.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -273,6 +279,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * An input that accepts media data of a type that is not compatible with the receiver, or with output settings that
      * are not compatible with the receiver, cannot be added.
+     * 
+     * API-Since: 4.1
      * 
      * @param input
      *              The AVAssetWriterInput object to be tested.
@@ -294,8 +302,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * This method throws an exception if any of the following conditions are satisfied:
      * - this writer's output file type does not support mutually exclusive relationships among tracks (allowed types
-     * are AVFileTypeQuickTimeMovie, AVFileTypeAppleM4A, AVFileTypeAppleM4V, AVFileType3GPP [iPhone only],
-     * AVFileTypeMPEG4)
+     * are AVFileTypeQuickTimeMovie, AVFileTypeAppleM4A, AVFileTypeAppleM4V, AVFileType3GPP, AVFileTypeMPEG4)
      * - any AVAssetWriterInput in the input group is also present in an input group already added
      * 
      * API-Since: 7.0
@@ -320,6 +327,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * Attempting to add an input with output settings and a media type for which this method returns NO will cause an
      * exception to be thrown.
+     * 
+     * API-Since: 4.1
      * 
      * @param outputSettings
      *                       The output settings that are to be tested.
@@ -346,6 +355,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * This method should not be called concurrently with -[AVAssetWriterInput appendSampleBuffer:] or
      * -[AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:].
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("cancelWriting")
@@ -402,6 +413,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * This method throws an exception if the session is ended without first starting it.
      * 
+     * API-Since: 4.1
+     * 
      * @param endTime
      *                The ending asset time for the sample-writing session, in the timeline of the source samples.
      */
@@ -417,6 +430,8 @@ public class AVAssetWriter extends NSObject {
      * The value of this property is an NSError that describes what caused the receiver to no longer be able to write to
      * its output file. If the receiver's status is not AVAssetWriterStatusFailed, the value of this property is nil.
      * This property is thread safe.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -490,6 +505,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * This method throws an exception if the output file type is not declared in AVMediaFormat.h.
      * 
+     * API-Since: 4.1
+     * 
      * @param URL
      *                 The location of the file to be written. The URL must be a file URL.
      * @param fileType
@@ -527,6 +544,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput. Inputs can be added
      * to the receiver using the addInput: method.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -542,6 +561,8 @@ public class AVAssetWriter extends NSObject {
      * metadata to be written in the output file.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -561,6 +582,8 @@ public class AVAssetWriter extends NSObject {
      * movieFragmentInterval to 10 seconds or greater.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("movieFragmentInterval")
@@ -587,6 +610,8 @@ public class AVAssetWriter extends NSObject {
      * [@property] outputFileType
      * 
      * The UTI of the file format of the file for which the instance of AVAssetWriter was initialized for writing.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -600,6 +625,8 @@ public class AVAssetWriter extends NSObject {
      * 
      * You may use [[UTType typeWithIdentifier:outputFileType] preferredFilenameExtension] to obtain an appropriate path
      * extension for the outputFileType you have specified. For more information, see <UniformTypeIdentifiers/UTType.h>.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -619,6 +646,8 @@ public class AVAssetWriter extends NSObject {
      * property to enable movie fragments.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("overallDurationHint")
@@ -657,6 +686,8 @@ public class AVAssetWriter extends NSObject {
      * metadata to be written in the output file.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setMetadata:")
@@ -675,6 +706,8 @@ public class AVAssetWriter extends NSObject {
      * movieFragmentInterval to 10 seconds or greater.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setMovieFragmentInterval:")
@@ -709,6 +742,8 @@ public class AVAssetWriter extends NSObject {
      * property to enable movie fragments.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setOverallDurationHint:")
@@ -724,6 +759,8 @@ public class AVAssetWriter extends NSObject {
      * after only a small amount of the file is downloaded.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setShouldOptimizeForNetworkUse:")
@@ -739,6 +776,8 @@ public class AVAssetWriter extends NSObject {
      * after only a small amount of the file is downloaded.
      * 
      * This property cannot be set after writing has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("shouldOptimizeForNetworkUse")
@@ -768,6 +807,8 @@ public class AVAssetWriter extends NSObject {
      * NOTE: Multiple sample-writing sessions are currently not supported. It is an error to call
      * -startSessionAtSourceTime: a second time after calling -endSessionAtSourceTime:.
      * 
+     * API-Since: 4.1
+     * 
      * @param startTime
      *                  The starting asset time for the sample-writing session, in the timeline of the source samples.
      */
@@ -794,6 +835,8 @@ public class AVAssetWriter extends NSObject {
      * middle of a writing session and to finish writing the data that has already been appended. For more information
      * about executing code in the background, see the iOS Application Programming Guide.
      * 
+     * API-Since: 4.1
+     * 
      * @return
      *         A BOOL indicating whether writing successfully started.
      */
@@ -810,6 +853,8 @@ public class AVAssetWriter extends NSObject {
      * successfully, has been canceled, or has failed. Clients of AVAssetWriterInput objects should check the value of
      * this property after appending samples fails to determine why no more samples could be written. This property is
      * thread safe.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("status")

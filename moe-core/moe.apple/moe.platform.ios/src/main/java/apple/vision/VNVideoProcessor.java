@@ -65,6 +65,8 @@ public class VNVideoProcessor extends NSObject {
      * 
      * [@note] The VNRequest must have completion handler set otherwise no results can be returned.
      * 
+     * API-Since: 14.0
+     * 
      * @param request           The VNRequest to be added to the processing pipeline. If added from within a
      *                          completionHandler, it will be processed on the same frame that is currently being
      *                          processed.
@@ -110,6 +112,8 @@ public class VNVideoProcessor extends NSObject {
      * [@note] The intersection of the CMTimeRangeMake(start, duration) and CMTimeRangeMake(kCMTimeZero, asset.duration)
      * will determine the timerange of the video to process
      * 
+     * API-Since: 14.0
+     * 
      * @param timeRange Start and duration of the timerange within video to process. If the duration is longer than the
      *                  video (e.g., kCMTimeIndefinite) the processing stops at the end of the video.
      * @param error     Returns an error that happened during the starting of the processing queue (for instance if the
@@ -138,6 +142,8 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Cancel the processing of the video. This can return before the last request has completed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("cancel")
@@ -186,6 +192,8 @@ public class VNVideoProcessor extends NSObject {
      * 
      * @param videoURL A URL pointing at a video asset on which the requests will be performed. The video format has to
      *                 be supported by AVFoundation.
+     * 
+     *                 API-Since: 14.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -228,6 +236,8 @@ public class VNVideoProcessor extends NSObject {
      * @param error   Returns an error that happened during processing of the request, such as if the request was not
      *                found in the processing queue. This parameter is optional.
      * @return Returns true if the request was found and removed from the processing pipeline.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("removeRequest:error:")

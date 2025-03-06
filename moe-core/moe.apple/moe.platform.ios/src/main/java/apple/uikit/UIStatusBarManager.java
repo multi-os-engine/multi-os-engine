@@ -112,6 +112,9 @@ public class UIStatusBarManager extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isStatusBarHidden")
     public native boolean isStatusBarHidden();
@@ -144,12 +147,17 @@ public class UIStatusBarManager extends NSObject {
 
     /**
      * returns CGRectZero if the status bar is hidden
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("statusBarFrame")
     @ByValue
     public native CGRect statusBarFrame();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("statusBarStyle")
     @NInt

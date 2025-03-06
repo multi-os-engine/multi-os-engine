@@ -29,7 +29,6 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.ConstNUIntPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
-import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -37,6 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * [@protocol] MTLComputeCommandEncoder
@@ -54,6 +54,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * dispatchThreadgroups:threadsPerThreadgroup:
      * 
      * Enqueue a compute function dispatch as a multiple of the threadgroup size.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("dispatchThreadgroups:threadsPerThreadgroup:")
@@ -83,6 +85,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setBuffer:offset:atIndex:
      * 
      * Set a global buffer for all compute kernels at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBuffer:offset:atIndex:")
@@ -104,10 +108,12 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setBuffers:offsets:withRange:
      * 
      * Set an array of global buffers for all compute kernels with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBuffers:offsets:withRange:")
-    void setBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
@@ -126,6 +132,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setComputePipelineState:
      * 
      * Set the compute pipeline state that will be used.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setComputePipelineState:")
@@ -135,6 +143,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setSamplerState:atIndex:
      * 
      * Set a global sampler for all compute kernels at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSamplerState:atIndex:")
@@ -144,6 +154,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setSamplerState:lodMinClamp:lodMaxClamp:atIndex:
      * 
      * Set a global sampler for all compute kernels at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
@@ -154,21 +166,25 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setSamplers:lodMinClamps:lodMaxClamps:withRange:
      * 
      * Set an array of global samplers for all compute kernels with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
     void setSamplerStatesLodMinClampsLodMaxClampsWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @NotNull ConstFloatPtr lodMinClamps, @NotNull ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     /**
      * setSamplers:withRange:
      * 
      * Set an array of global samplers for all compute kernels with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSamplerStates:withRange:")
-    void setSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+    void setSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @ByValue NSRange range);
 
     /**
@@ -186,6 +202,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setTexture:atIndex:
      * 
      * Set a global texture for all compute kernels at the given bind point index.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTexture:atIndex:")
@@ -195,10 +213,12 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * setTextures:withRange:
      * 
      * Set an array of global textures for all compute kernels with the given bind point range.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTextures:withRange:")
-    void setTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+    void setTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> textures,
             @ByValue NSRange range);
 
     /**
@@ -206,6 +226,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * 
      * Set the threadgroup memory byte length at the binding point specified by the index. This applies to all compute
      * kernels.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setThreadgroupMemoryLength:atIndex:")
@@ -303,7 +325,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("useHeaps:count:")
-    void useHeapsCount(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
+    void useHeapsCount(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> heaps, @NUInt long count);
 
     /**
      * useResource:usage:
@@ -335,7 +357,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("useResources:count:usage:")
-    void useResourcesCountUsage(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
+    void useResourcesCountUsage(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> resources,
             @NUInt long count, @NUInt long usage);
 
     /**
@@ -399,8 +421,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("memoryBarrierWithResources:count:")
-    void memoryBarrierWithResourcesCount(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
-            @NUInt long count);
+    void memoryBarrierWithResourcesCount(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> resources, @NUInt long count);
 
     /**
      * memoryBarrierWithScope
@@ -498,7 +520,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setIntersectionFunctionTables:withBufferRange:")
     void setIntersectionFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> intersectionFunctionTables,
             @ByValue NSRange range);
 
     /**
@@ -524,7 +546,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setVisibleFunctionTables:withBufferRange:")
     void setVisibleFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> visibleFunctionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> visibleFunctionTables,
             @ByValue NSRange range);
 
     /**
@@ -559,8 +581,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setBuffers:offsets:attributeStrides:withRange:")
     void setBuffersOffsetsAttributeStridesWithRange(
-            @ReferenceInfo(type = ObjCObject.class) @NotNull Ptr<ObjCObject> buffers, @NotNull ConstNUIntPtr offsets,
-            @NotNull ConstNUIntPtr strides, @ByValue NSRange range);
+            @ReferenceInfo(type = ObjCObject.class) @NotNull ConstPtr<ObjCObject> buffers,
+            @NotNull ConstNUIntPtr offsets, @NotNull ConstNUIntPtr strides, @ByValue NSRange range);
 
     /**
      * only call this when the buffer-index is part of the stageInputDescriptor

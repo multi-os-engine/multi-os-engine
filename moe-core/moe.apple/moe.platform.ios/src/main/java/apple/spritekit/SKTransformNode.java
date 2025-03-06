@@ -182,10 +182,16 @@ public class SKTransformNode extends SKNode {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setXRotation:")
     public native void setXRotation(@NFloat double value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setYRotation:")
     public native void setYRotation(@NFloat double value);
@@ -199,11 +205,17 @@ public class SKTransformNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("xRotation")
     @NFloat
     public native double xRotation();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("yRotation")
     @NFloat

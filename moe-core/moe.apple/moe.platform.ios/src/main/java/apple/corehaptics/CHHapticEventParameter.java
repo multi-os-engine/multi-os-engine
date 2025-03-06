@@ -102,6 +102,9 @@ public class CHHapticEventParameter extends NSObject {
     @Selector("init")
     public native CHHapticEventParameter init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithParameterID:value:")
     public native CHHapticEventParameter initWithParameterIDValue(@NotNull String parameterID, float value);
@@ -136,6 +139,8 @@ public class CHHapticEventParameter extends NSObject {
     /**
      * [@property] parameterID
      * The ID of the event parameter to use.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -153,6 +158,8 @@ public class CHHapticEventParameter extends NSObject {
     /**
      * [@property] value
      * The value of the event parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setValue:")
@@ -169,6 +176,8 @@ public class CHHapticEventParameter extends NSObject {
     /**
      * [@property] value
      * The value of the event parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("value")

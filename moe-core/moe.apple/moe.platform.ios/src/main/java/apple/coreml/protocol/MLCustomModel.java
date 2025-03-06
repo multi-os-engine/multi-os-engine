@@ -36,6 +36,8 @@ public interface MLCustomModel {
      * This function is called once on model load.
      * We expect the implementation to return 'nil' and set an error in the event of failure
      * initializing the object.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -46,6 +48,8 @@ public interface MLCustomModel {
 
     /**
      * Required implemenationat of a single sample input prediction.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -58,6 +62,8 @@ public interface MLCustomModel {
     /**
      * Batch prediction with explicit options, if not implemented the single input predictionFromFeatures:options:error
      * will be used
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

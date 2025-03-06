@@ -84,6 +84,8 @@ public class SNClassification extends NSObject {
 
     /**
      * The level of confidence normalized to [0, 1], where 1 is most confident
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("confidence")
@@ -106,6 +108,8 @@ public class SNClassification extends NSObject {
      * The identifier of a classification request. An example classification could be a string like 'laughter' or
      * 'applause'. The string is defined in the model that was used for the classification. Usually these are technical
      * labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

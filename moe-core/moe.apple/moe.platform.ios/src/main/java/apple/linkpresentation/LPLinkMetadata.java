@@ -119,6 +119,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * ``LPLinkMetadata/originalURL`` to which you sent the metadata request. This
      * can happen if the server redirects the request, for example, when a resource
      * has moved, or when the original URL is a domain alias.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -191,6 +193,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     /**
      * An object that retrieves data corresponding to a representative icon for the
      * URL.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -200,6 +204,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     /**
      * An object that retrieves data corresponding to a representative image for
      * the URL.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -243,6 +249,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The original URL of the metadata request.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -255,6 +263,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * This may reference a remote video file that
      * <doc://com.apple.documentation/documentation/avfoundation> can stream,
      * or a YouTube video URL.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -272,6 +282,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     /**
      * An object that retrieves data corresponding to a representative icon for the
      * URL.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setIconProvider:")
@@ -280,6 +292,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     /**
      * An object that retrieves data corresponding to a representative image for
      * the URL.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setImageProvider:")
@@ -287,6 +301,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The original URL of the metadata request.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOriginalURL:")
@@ -298,6 +314,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * This may reference a remote video file that
      * <doc://com.apple.documentation/documentation/avfoundation> can stream,
      * or a YouTube video URL.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRemoteVideoURL:")
@@ -305,6 +323,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * A representative title for the URL.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitle:")
@@ -318,6 +338,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * ``LPLinkMetadata/originalURL`` to which you sent the metadata request. This
      * can happen if the server redirects the request, for example, when a resource
      * has moved, or when the original URL is a domain alias.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setURL:")
@@ -333,6 +355,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * 
      * The item provider returns a video that
      * <doc://com.apple.documentation/documentation/avfoundation> can play.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setVideoProvider:")
@@ -354,6 +378,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * A representative title for the URL.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -371,6 +397,8 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * 
      * The item provider returns a video that
      * <doc://com.apple.documentation/documentation/avfoundation> can play.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

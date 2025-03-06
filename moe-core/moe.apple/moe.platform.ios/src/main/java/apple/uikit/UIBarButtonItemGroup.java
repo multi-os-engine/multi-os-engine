@@ -163,6 +163,8 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * The bar button items associated with this group. Changing these items will affect the bar displaying these items
      * without needing to re-set the groups that are in that bar. Any UIBarButtonItems that are already in group will be
      * removed from that group.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -180,6 +182,8 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     /**
      * Create a new bar button item group with the given items. When bar button item layout is done, either the group's
      * barButtonItems or its representativeItem is displayed (if it exists).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithBarButtonItems:representativeItem:")
@@ -192,6 +196,8 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
 
     /**
      * Returns YES if the representativeItem of this group is currently being displayed, rather than its barButtonItems.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isDisplayingRepresentativeItem")
@@ -206,6 +212,8 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * UIBarButtonItemGroup and may only represent a single group.
      * If the representativeItem has an action, then that action will be invoked, otherwise the bar will present a
      * standard UI to allow selection of the barButtonItems in the representedItem's group.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -216,6 +224,8 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * The bar button items associated with this group. Changing these items will affect the bar displaying these items
      * without needing to re-set the groups that are in that bar. Any UIBarButtonItems that are already in group will be
      * removed from that group.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBarButtonItems:")
@@ -230,6 +240,8 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * UIBarButtonItemGroup and may only represent a single group.
      * If the representativeItem has an action, then that action will be invoked, otherwise the bar will present a
      * standard UI to allow selection of the barButtonItems in the representedItem's group.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRepresentativeItem:")

@@ -37,6 +37,8 @@ public interface ILMessageFilterCapabilitiesQueryHandling {
      * @param capabilitiesQueryRequest A capabilities query request to be handled
      * @param context                  Extension context.
      * @param completion               Completion block for returning a response.
+     * 
+     *                                 API-Since: 16.0
      */
     @Generated
     @Selector("handleCapabilitiesQueryRequest:context:completion:")

@@ -90,6 +90,8 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
 
     /**
      * The clip rectangle to apply to the source image.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("clipRectSource")
@@ -118,6 +120,8 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
      * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for an MPS reduction kernel.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithSource:")
@@ -155,6 +159,8 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
      * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for an MPS reduction kernel.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("nodeWithSource:")
@@ -170,6 +176,8 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
 
     /**
      * The clip rectangle to apply to the source image.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setClipRectSource:")

@@ -97,6 +97,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
      * 
      * If false, computes a dot product of the feature channels and weights.
      * If true, computes a dot product of the feature channels and weights divided by the number of non-zero weights
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("doWeightedSumByNonZeroWeights")
@@ -123,6 +125,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -134,6 +138,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceFeatureChannelsAndWeightsMean object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")
@@ -147,6 +153,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
      * @param doWeightedSumByNonZeroWeights A boolean to indicate whether to compute a weighted sum or
      *                                      weighted sum divided by the number of non-zero weights
      * @return A valid MPSNNReduceFeatureChannelsAndWeightsSum object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:doWeightedSumByNonZeroWeights:")

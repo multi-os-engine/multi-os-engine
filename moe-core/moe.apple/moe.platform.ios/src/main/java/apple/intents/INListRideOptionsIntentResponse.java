@@ -165,11 +165,17 @@ public class INListRideOptionsIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("code")
     @NInt
     public native long code();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("expirationDate")
@@ -187,6 +193,8 @@ public class INListRideOptionsIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -197,24 +205,39 @@ public class INListRideOptionsIntentResponse extends INIntentResponse {
     @Selector("initWithCoder:")
     public native INListRideOptionsIntentResponse initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("paymentMethods")
     public native NSArray<? extends INPaymentMethod> paymentMethods();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("rideOptions")
     public native NSArray<? extends INRideOption> rideOptions();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setExpirationDate:")
     public native void setExpirationDate(@Nullable NSDate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPaymentMethods:")
     public native void setPaymentMethods(@Nullable NSArray<? extends INPaymentMethod> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRideOptions:")
     public native void setRideOptions(@Nullable NSArray<? extends INRideOption> value);

@@ -82,6 +82,8 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the taskList with which the user wants to continue.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -99,6 +101,8 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INTaskList.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -169,6 +173,8 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
      * resolvedTaskList can be different than the original INTaskList. This allows app extensions to apply business
      * logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

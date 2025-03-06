@@ -89,6 +89,8 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
 
     /**
      * The object that acts as the delegate of the calendar view selection
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -111,6 +113,8 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
 
     /**
      * Creates a new multi-date selection with the specified delegate.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithDelegate:")
@@ -154,6 +158,8 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
 
     /**
      * The currently selected dates in the Calendar view.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -162,6 +168,8 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
 
     /**
      * The currently selected dates in the Calendar view.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelectedDates:")
@@ -169,6 +177,8 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
 
     /**
      * Sets the dates to display in the calendar, with an option to animate the setting.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelectedDates:animated:")

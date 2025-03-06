@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UITraitChangeObservable {
     /**
      * Convenience method where the target is self.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("registerForTraitChanges:withAction:")
@@ -32,6 +34,9 @@ public interface UITraitChangeObservable {
     @NotNull
     UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits, @NotNull SEL action);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("registerForTraitChanges:withHandler:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -53,6 +58,8 @@ public interface UITraitChangeObservable {
      * changing.
      * If the method accepts two parameters, the second parameter will be the trait environment's previous trait
      * collection before the change.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("registerForTraitChanges:withTarget:action:")
@@ -61,6 +68,9 @@ public interface UITraitChangeObservable {
     UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
             @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("unregisterForTraitChanges:")
     void unregisterForTraitChanges(@Mapped(ObjCObjectMapper.class) @NotNull UITraitChangeRegistration registration);

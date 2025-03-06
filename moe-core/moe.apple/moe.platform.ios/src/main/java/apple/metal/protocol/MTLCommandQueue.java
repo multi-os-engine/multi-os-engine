@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.ConstPtr;
+import org.moe.natj.objc.ObjCObject;
 
 /**
  * [@protocol] MTLCommandQueue
@@ -45,6 +50,8 @@ public interface MTLCommandQueue {
      * 
      * Returns a new autoreleased command buffer used to encode work into this queue that
      * maintains strong references to resources used within the command buffer.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -57,6 +64,8 @@ public interface MTLCommandQueue {
      * 
      * Returns a new autoreleased command buffer used to encode work into this queue that
      * does not maintain strong references to resources used within the command buffer.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -66,6 +75,8 @@ public interface MTLCommandQueue {
 
     /**
      * The device this queue will submit to
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -89,6 +100,8 @@ public interface MTLCommandQueue {
 
     /**
      * A string to help identify this object
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -97,6 +110,8 @@ public interface MTLCommandQueue {
 
     /**
      * A string to help identify this object
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLabel:")
@@ -116,4 +131,54 @@ public interface MTLCommandQueue {
     @Selector("commandBufferWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLCommandBuffer commandBufferWithDescriptor(@NotNull MTLCommandBufferDescriptor descriptor);
+
+    /**
+     * addResidencySet
+     * 
+     * Marks the residency set as part of the command queue execution. This ensures that the residency set is resident
+     * during execution of all the command buffers within the queue.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("addResidencySet:")
+    void addResidencySet(@Mapped(ObjCObjectMapper.class) @NotNull MTLResidencySet residencySet);
+
+    /**
+     * addResidencySets
+     * 
+     * Marks the residency sets as part of the command queue execution. This ensures that the residency sets are
+     * resident during execution of all the command buffers within the queue.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("addResidencySets:count:")
+    void addResidencySetsCount(@ReferenceInfo(type = ObjCObject.class) @NotNull ConstPtr<ObjCObject> residencySets,
+            @NUInt long count);
+
+    /**
+     * removeResidencySet
+     * 
+     * Removes the residency set from the command queue execution. This ensures that only the remaining residency sets
+     * are resident during execution of all the command buffers within the queue.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("removeResidencySet:")
+    void removeResidencySet(@Mapped(ObjCObjectMapper.class) @NotNull MTLResidencySet residencySet);
+
+    /**
+     * removeResidencySets
+     * 
+     * Removes the residency sets from the command queue execution. This ensures that only the remaining residency sets
+     * are resident during execution of all the command buffers within the queue.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("removeResidencySets:count:")
+    void removeResidencySetsCount(@ReferenceInfo(type = ObjCObject.class) @NotNull ConstPtr<ObjCObject> residencySets,
+            @NUInt long count);
 }

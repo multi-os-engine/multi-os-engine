@@ -28,6 +28,8 @@ public interface WKURLSchemeHandler {
      * 
      * @param webView       The web view invoking the method.
      * @param urlSchemeTask The task that your app should start loading data for.
+     * 
+     *                      API-Since: 11.0
      */
     @Generated
     @Selector("webView:startURLSchemeTask:")
@@ -41,6 +43,8 @@ public interface WKURLSchemeHandler {
      * it must not perform any callbacks for that task.
      * An exception will be thrown if any callbacks are made on the URL scheme handler task
      * after your app has been told to stop loading for it.
+     * 
+     * API-Since: 11.0
      * 
      * @param webView       The web view invoking the method.
      * @param urlSchemeTask The task that your app should stop handling.

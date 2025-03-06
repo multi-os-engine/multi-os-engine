@@ -164,6 +164,8 @@ public class MPChangeRepeatModeCommand extends MPRemoteCommand {
 
     /**
      * The app's current repeat mode.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("currentRepeatType")
@@ -176,6 +178,8 @@ public class MPChangeRepeatModeCommand extends MPRemoteCommand {
 
     /**
      * The app's current repeat mode.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCurrentRepeatType:")

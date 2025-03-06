@@ -92,16 +92,25 @@ public class PKSecureElementPass extends PKPass {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.4
+     */
     @NotNull
     @Generated
     @Selector("deviceAccountIdentifier")
     public native String deviceAccountIdentifier();
 
+    /**
+     * API-Since: 13.4
+     */
     @NotNull
     @Generated
     @Selector("deviceAccountNumberSuffix")
     public native String deviceAccountNumberSuffix();
 
+    /**
+     * API-Since: 13.4
+     */
     @Nullable
     @Generated
     @Selector("devicePassIdentifier")
@@ -148,21 +157,33 @@ public class PKSecureElementPass extends PKPass {
     @Selector("new")
     public static native PKSecureElementPass new_objc();
 
+    /**
+     * API-Since: 13.4
+     */
     @Nullable
     @Generated
     @Selector("pairedTerminalIdentifier")
     public native String pairedTerminalIdentifier();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("passActivationState")
     @NInt
     public native long passActivationState();
 
+    /**
+     * API-Since: 13.4
+     */
     @NotNull
     @Generated
     @Selector("primaryAccountIdentifier")
     public native String primaryAccountIdentifier();
 
+    /**
+     * API-Since: 13.4
+     */
     @NotNull
     @Generated
     @Selector("primaryAccountNumberSuffix")

@@ -58,6 +58,9 @@ public class NSTextParagraph extends NSTextElement {
     @Selector("allocWithZone:")
     public static native NSTextParagraph allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("attributedString")
@@ -105,6 +108,9 @@ public class NSTextParagraph extends NSTextElement {
     @Selector("init")
     public native NSTextParagraph init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAttributedString:")
     public native NSTextParagraph initWithAttributedString(@Nullable NSAttributedString attributedString);
@@ -142,12 +148,17 @@ public class NSTextParagraph extends NSTextElement {
 
     /**
      * The paragraph ranges are derived from elementRange and attributedString.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
     @Selector("paragraphContentRange")
     public native NSTextRange paragraphContentRange();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("paragraphSeparatorRange")

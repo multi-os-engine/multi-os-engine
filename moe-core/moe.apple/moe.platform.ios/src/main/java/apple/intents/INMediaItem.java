@@ -68,6 +68,9 @@ public class INMediaItem extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("artist")
     public native String artist();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("artwork")
@@ -122,6 +125,9 @@ public class INMediaItem extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("identifier")
@@ -135,6 +141,9 @@ public class INMediaItem extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INMediaItem initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithIdentifier:title:type:artwork:")
     public native INMediaItem initWithIdentifierTitleTypeArtwork(@Nullable String identifier, @Nullable String title,
@@ -201,11 +210,17 @@ public class INMediaItem extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("type")
     @NInt

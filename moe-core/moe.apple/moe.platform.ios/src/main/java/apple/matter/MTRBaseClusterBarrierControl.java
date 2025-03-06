@@ -34,12 +34,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This cluster provides control of a barrier (garage door).
  * 
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: BarrierControl is deprecated and will be removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterBarrierControl extends MTRCluster {
+public class MTRBaseClusterBarrierControl extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -73,7 +76,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
      * Command to instruct a barrier to go to a percent open state.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("barrierControlGoToPercentWithParams:completion:")
     public native void barrierControlGoToPercentWithParamsCompletion(
@@ -108,7 +114,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("barrierControlStopWithCompletion:")
     public native void barrierControlStopWithCompletion(
@@ -145,7 +154,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
      * Command that instructs the barrier to stop moving.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("barrierControlStopWithParams:completion:")
     public native void barrierControlStopWithParamsCompletion(
@@ -232,7 +244,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
      * the completion will be called on the provided queue.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: BarrierControl is deprecated and will be removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:endpointID:queue:")
     public native MTRBaseClusterBarrierControl initWithDeviceEndpointIDQueue(@NotNull MTRBaseDevice device,
@@ -288,7 +303,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcceptedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -306,7 +324,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithCompletion:")
     public native void readAttributeAcceptedCommandListWithCompletion(
@@ -361,7 +382,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAttributeListWithClusterStateCacheEndpointQueueCompletion(
@@ -379,7 +403,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithCompletion:")
     public native void readAttributeAttributeListWithCompletion(
@@ -433,7 +460,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCapabilitiesWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierCapabilitiesWithClusterStateCacheEndpointQueueCompletion(
@@ -451,7 +481,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCapabilitiesWithCompletion:")
     public native void readAttributeBarrierCapabilitiesWithCompletion(
@@ -506,7 +539,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCloseEventsWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierCloseEventsWithClusterStateCacheEndpointQueueCompletion(
@@ -524,7 +560,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCloseEventsWithCompletion:")
     public native void readAttributeBarrierCloseEventsWithCompletion(
@@ -579,7 +618,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierClosePeriodWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierClosePeriodWithClusterStateCacheEndpointQueueCompletion(
@@ -597,7 +639,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierClosePeriodWithCompletion:")
     public native void readAttributeBarrierClosePeriodWithCompletion(
@@ -653,7 +698,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCommandCloseEventsWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierCommandCloseEventsWithClusterStateCacheEndpointQueueCompletion(
@@ -671,7 +719,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCommandCloseEventsWithCompletion:")
     public native void readAttributeBarrierCommandCloseEventsWithCompletion(
@@ -727,7 +778,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCommandOpenEventsWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierCommandOpenEventsWithClusterStateCacheEndpointQueueCompletion(
@@ -745,7 +799,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierCommandOpenEventsWithCompletion:")
     public native void readAttributeBarrierCommandOpenEventsWithCompletion(
@@ -801,7 +858,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierMovingStateWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierMovingStateWithClusterStateCacheEndpointQueueCompletion(
@@ -819,7 +879,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierMovingStateWithCompletion:")
     public native void readAttributeBarrierMovingStateWithCompletion(
@@ -874,7 +937,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierOpenEventsWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierOpenEventsWithClusterStateCacheEndpointQueueCompletion(
@@ -892,7 +958,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierOpenEventsWithCompletion:")
     public native void readAttributeBarrierOpenEventsWithCompletion(
@@ -947,7 +1016,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierOpenPeriodWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierOpenPeriodWithClusterStateCacheEndpointQueueCompletion(
@@ -965,7 +1037,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierOpenPeriodWithCompletion:")
     public native void readAttributeBarrierOpenPeriodWithCompletion(
@@ -1020,7 +1095,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierPositionWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierPositionWithClusterStateCacheEndpointQueueCompletion(
@@ -1038,7 +1116,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierPositionWithCompletion:")
     public native void readAttributeBarrierPositionWithCompletion(
@@ -1092,7 +1173,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierSafetyStatusWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeBarrierSafetyStatusWithClusterStateCacheEndpointQueueCompletion(
@@ -1110,7 +1194,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeBarrierSafetyStatusWithCompletion:")
     public native void readAttributeBarrierSafetyStatusWithCompletion(
@@ -1165,7 +1252,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeClusterRevisionWithClusterStateCacheEndpointQueueCompletion(
@@ -1183,7 +1273,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithCompletion:")
     public native void readAttributeClusterRevisionWithCompletion(
@@ -1237,7 +1330,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeFeatureMapWithClusterStateCacheEndpointQueueCompletion(
@@ -1255,7 +1351,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithCompletion:")
     public native void readAttributeFeatureMapWithCompletion(
@@ -1309,7 +1408,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeGeneratedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -1327,7 +1429,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithCompletion:")
     public native void readAttributeGeneratedCommandListWithCompletion(
@@ -1401,7 +1506,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcceptedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcceptedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -1454,7 +1562,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAttributeListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAttributeListWithParamsSubscriptionEstablishedReportHandler(
@@ -1507,7 +1618,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierCapabilitiesWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierCapabilitiesWithParamsSubscriptionEstablishedReportHandler(
@@ -1560,7 +1674,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierCloseEventsWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierCloseEventsWithParamsSubscriptionEstablishedReportHandler(
@@ -1613,7 +1730,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierClosePeriodWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierClosePeriodWithParamsSubscriptionEstablishedReportHandler(
@@ -1666,7 +1786,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierCommandCloseEventsWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierCommandCloseEventsWithParamsSubscriptionEstablishedReportHandler(
@@ -1719,7 +1842,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierCommandOpenEventsWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierCommandOpenEventsWithParamsSubscriptionEstablishedReportHandler(
@@ -1772,7 +1898,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierMovingStateWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierMovingStateWithParamsSubscriptionEstablishedReportHandler(
@@ -1825,7 +1954,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierOpenEventsWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierOpenEventsWithParamsSubscriptionEstablishedReportHandler(
@@ -1878,7 +2010,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierOpenPeriodWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierOpenPeriodWithParamsSubscriptionEstablishedReportHandler(
@@ -1931,7 +2066,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierPositionWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierPositionWithParamsSubscriptionEstablishedReportHandler(
@@ -1984,7 +2122,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeBarrierSafetyStatusWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeBarrierSafetyStatusWithParamsSubscriptionEstablishedReportHandler(
@@ -2037,7 +2178,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeClusterRevisionWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeClusterRevisionWithParamsSubscriptionEstablishedReportHandler(
@@ -2090,7 +2234,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeFeatureMapWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeFeatureMapWithParamsSubscriptionEstablishedReportHandler(
@@ -2143,7 +2290,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeGeneratedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeGeneratedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -2182,7 +2332,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierCloseEventsWithValue:completion:")
     public native void writeAttributeBarrierCloseEventsWithValueCompletion(@NotNull NSNumber value,
@@ -2215,7 +2368,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierCloseEventsWithValue:params:completion:")
     public native void writeAttributeBarrierCloseEventsWithValueParamsCompletion(@NotNull NSNumber value,
@@ -2250,7 +2406,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierClosePeriodWithValue:completion:")
     public native void writeAttributeBarrierClosePeriodWithValueCompletion(@NotNull NSNumber value,
@@ -2283,7 +2442,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierClosePeriodWithValue:params:completion:")
     public native void writeAttributeBarrierClosePeriodWithValueParamsCompletion(@NotNull NSNumber value,
@@ -2318,7 +2480,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierCommandCloseEventsWithValue:completion:")
     public native void writeAttributeBarrierCommandCloseEventsWithValueCompletion(@NotNull NSNumber value,
@@ -2351,7 +2516,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierCommandCloseEventsWithValue:params:completion:")
     public native void writeAttributeBarrierCommandCloseEventsWithValueParamsCompletion(@NotNull NSNumber value,
@@ -2386,7 +2554,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierCommandOpenEventsWithValue:completion:")
     public native void writeAttributeBarrierCommandOpenEventsWithValueCompletion(@NotNull NSNumber value,
@@ -2419,7 +2590,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierCommandOpenEventsWithValue:params:completion:")
     public native void writeAttributeBarrierCommandOpenEventsWithValueParamsCompletion(@NotNull NSNumber value,
@@ -2454,7 +2628,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierOpenEventsWithValue:completion:")
     public native void writeAttributeBarrierOpenEventsWithValueCompletion(@NotNull NSNumber value,
@@ -2487,7 +2664,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierOpenEventsWithValue:params:completion:")
     public native void writeAttributeBarrierOpenEventsWithValueParamsCompletion(@NotNull NSNumber value,
@@ -2522,7 +2702,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierOpenPeriodWithValue:completion:")
     public native void writeAttributeBarrierOpenPeriodWithValueCompletion(@NotNull NSNumber value,
@@ -2555,7 +2738,10 @@ public class MTRBaseClusterBarrierControl extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeBarrierOpenPeriodWithValue:params:completion:")
     public native void writeAttributeBarrierOpenPeriodWithValueParamsCompletion(@NotNull NSNumber value,

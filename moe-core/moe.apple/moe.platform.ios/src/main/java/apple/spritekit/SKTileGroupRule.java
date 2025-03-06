@@ -169,6 +169,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
      *                        that must be filled with tiles belonging to the same group; tiles not masked out must be
      *                        empty
      * @param tileDefinitions the tile definitions used for this rule
+     * 
+     *                        API-Since: 10.0
      */
     @Generated
     @Selector("tileGroupRuleWithAdjacency:tileDefinitions:")
@@ -183,6 +185,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     /**
      * The adjacency mask used by this rule. Set this to the mask that covers the adjacent spaces that must be filled
      * with tiles belonging to the same group for this rule met.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("adjacency")
@@ -211,6 +215,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
      *                        that must be filled with tiles belonging to the same group; tiles not masked out must be
      *                        empty
      * @param tileDefinitions the tile definitions used for this rule
+     * 
+     *                        API-Since: 10.0
      */
     @Generated
     @Selector("initWithAdjacency:tileDefinitions:")
@@ -223,6 +229,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Client-assignable name for the tile group rule. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -232,6 +240,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     /**
      * The adjacency mask used by this rule. Set this to the mask that covers the adjacent spaces that must be filled
      * with tiles belonging to the same group for this rule met.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAdjacency:")
@@ -239,6 +249,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Client-assignable name for the tile group rule. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setName:")
@@ -249,6 +261,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
      * definitions within this array will be randomly selected for placement within the tile map. Each tile definitions'
      * placement weight is taken into consideration to determine how likely each is to be selected; tile definitions
      * with higher placement weights will be selected more frequently than those with lower placement weights.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTileDefinitions:")
@@ -259,6 +273,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
      * definitions within this array will be randomly selected for placement within the tile map. Each tile definitions'
      * placement weight is taken into consideration to determine how likely each is to be selected; tile definitions
      * with higher placement weights will be selected more frequently than those with lower placement weights.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

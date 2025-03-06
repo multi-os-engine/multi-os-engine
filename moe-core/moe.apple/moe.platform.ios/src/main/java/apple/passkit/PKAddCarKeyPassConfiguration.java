@@ -93,6 +93,9 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("init")
     public native PKAddCarKeyPassConfiguration init();
@@ -124,6 +127,9 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @Selector("new")
     public static native PKAddCarKeyPassConfiguration new_objc();
 
+    /**
+     * API-Since: 13.4
+     */
     @NotNull
     @Generated
     @Selector("password")
@@ -137,6 +143,9 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setPassword:")
     public native void setPassword(@NotNull String value);

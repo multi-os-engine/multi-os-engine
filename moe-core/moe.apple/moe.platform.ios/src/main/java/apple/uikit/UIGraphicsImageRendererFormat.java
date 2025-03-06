@@ -169,6 +169,8 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
 
     /**
      * indicates the bitmap context will draw fully opaque. The preferredFormat sets this to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("opaque")
@@ -190,6 +192,8 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     /**
      * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current
      * configuration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("scale")
@@ -198,6 +202,8 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
 
     /**
      * indicates the bitmap context will draw fully opaque. The preferredFormat sets this to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setOpaque:")
@@ -219,6 +225,8 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     /**
      * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current
      * configuration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setScale:")

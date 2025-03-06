@@ -26,6 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ * Deprecated-Since: 17.4
+ */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)

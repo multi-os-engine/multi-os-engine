@@ -96,6 +96,8 @@ public class PKIdentityDocument extends NSObject {
      * This is encrypted to the public key on-file with the Developer portal for the calling app, and should
      * be passed to the server holding the corresponding private key for decryption.
      * This data is not intended to be read on-device.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

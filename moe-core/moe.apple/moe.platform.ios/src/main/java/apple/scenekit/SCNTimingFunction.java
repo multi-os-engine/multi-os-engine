@@ -96,12 +96,18 @@ public class SCNTimingFunction extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("functionWithCAMediaTimingFunction:")
     public static native SCNTimingFunction functionWithCAMediaTimingFunction(
             @NotNull CAMediaTimingFunction caTimingFunction);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("functionWithTimingMode:")

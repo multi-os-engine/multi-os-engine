@@ -166,6 +166,8 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * The type of the characteristic, e.g. HMCharacteristicTypePowerState.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -181,12 +183,21 @@ public class HMCharacteristic extends NSObject {
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("enableNotification:completionHandler:")
     public native void enableNotificationCompletionHandler(boolean enable,
             @NotNull @ObjCBlock(name = "call_enableNotificationCompletionHandler") Block_enableNotificationCompletionHandler completion);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: HMCharacteristic objects are created by their parent container objects. Directly creating
+     * them is not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMCharacteristic init();
@@ -195,6 +206,8 @@ public class HMCharacteristic extends NSObject {
      * Specifies whether the characteristic has been enabled to send notifications.
      * 
      * This property is reset to NO if the reachability of the accessory is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isNotificationEnabled")
@@ -212,6 +225,8 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Meta data associated with the characteristic.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -223,6 +238,8 @@ public class HMCharacteristic extends NSObject {
      * 
      * This value corresponds to the properties associated with this characteristic.
      * The contents of the array are one or more HMCharacteristicProperty constants.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -236,6 +253,8 @@ public class HMCharacteristic extends NSObject {
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("readValueWithCompletionHandler:")
@@ -244,6 +263,8 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Service that contains this characteristic.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -279,6 +300,8 @@ public class HMCharacteristic extends NSObject {
      * 
      * The value is a cached value that may have been updated as a result of prior
      * interaction with the accessory.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -293,6 +316,8 @@ public class HMCharacteristic extends NSObject {
      * The value written may be bounded by metadata for characteristics with int and
      * float format. If validation fails, the error provided to the completion handler
      * indicates the type of failure.
+     * 
+     * API-Since: 8.0
      * 
      * @param value      The value to be written.
      * 

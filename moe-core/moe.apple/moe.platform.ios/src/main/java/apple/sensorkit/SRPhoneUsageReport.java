@@ -88,6 +88,9 @@ public class SRPhoneUsageReport extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -144,20 +147,32 @@ public class SRPhoneUsageReport extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalIncomingCalls")
     @NInt
     public native long totalIncomingCalls();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalOutgoingCalls")
     @NInt
     public native long totalOutgoingCalls();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalPhoneCallDuration")
     public native double totalPhoneCallDuration();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalUniqueContacts")
     @NInt

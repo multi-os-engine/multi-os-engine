@@ -63,7 +63,12 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
      *                   handling.
      * 
      * @see INSetDefrosterSettingsInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetDefrosterSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSetDefrosterSettingsInCar:completion:")
@@ -82,12 +87,23 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
      *                   details of the result of having executed the intent
      * 
      * @see INSetDefrosterSettingsInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetDefrosterSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSetDefrosterSettingsInCar:completion:")
     void handleSetDefrosterSettingsInCarCompletion(@NotNull INSetDefrosterSettingsInCarIntent intent,
             @NotNull @ObjCBlock(name = "call_handleSetDefrosterSettingsInCarCompletion") Block_handleSetDefrosterSettingsInCarCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetDefrosterSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveDefrosterForSetDefrosterSettingsInCar:withCompletion:")
@@ -107,7 +123,12 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetDefrosterSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableForSetDefrosterSettingsInCar:withCompletion:")

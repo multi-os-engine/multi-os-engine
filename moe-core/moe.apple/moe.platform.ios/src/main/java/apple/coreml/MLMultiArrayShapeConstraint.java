@@ -100,6 +100,8 @@ public class MLMultiArrayShapeConstraint extends NSObject implements NSSecureCod
     /**
      * If type == MLMultiArrayShapeConstraintTypeEnumerated then
      * only shapes in this set are allowed
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -160,6 +162,8 @@ public class MLMultiArrayShapeConstraint extends NSObject implements NSSecureCod
 
     /**
      * Size of each dimension i must fall within sizeRangeForDimension[i].rangeValue
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -180,6 +184,9 @@ public class MLMultiArrayShapeConstraint extends NSObject implements NSSecureCod
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("type")
     @NInt

@@ -25,6 +25,8 @@ import org.jetbrains.annotations.Nullable;
 public interface NSFileProviderTestingCreation extends NSFileProviderTestingOperation {
     /**
      * The domain version at the time the creation was discovered on the source side.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -33,6 +35,8 @@ public interface NSFileProviderTestingCreation extends NSFileProviderTestingOper
 
     /**
      * The description of the item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -42,6 +46,8 @@ public interface NSFileProviderTestingCreation extends NSFileProviderTestingOper
 
     /**
      * The target side of the operation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("targetSide")

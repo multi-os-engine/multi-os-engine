@@ -97,6 +97,9 @@ public class UIColorPickerViewController extends UIViewController {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -112,6 +115,9 @@ public class UIColorPickerViewController extends UIViewController {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("init")
     public native UIColorPickerViewController init();
@@ -163,17 +169,25 @@ public class UIColorPickerViewController extends UIViewController {
     /**
      * Sets the selected color on the color picker and is updated when the user changes the selection.
      * Does support KVO.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
     @Selector("selectedColor")
     public native UIColor selectedColor();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UIColorPickerViewControllerDelegate value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIColorPickerViewControllerDelegate value) {
         Object __old = delegate();
@@ -189,6 +203,8 @@ public class UIColorPickerViewController extends UIViewController {
     /**
      * Sets the selected color on the color picker and is updated when the user changes the selection.
      * Does support KVO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSelectedColor:")
@@ -198,6 +214,8 @@ public class UIColorPickerViewController extends UIViewController {
      * Controls whether the color picker shows an alpha slider or not.
      * 
      * If set to `NO` users are only able to pick fully opaque colors.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSupportsAlpha:")
@@ -215,6 +233,8 @@ public class UIColorPickerViewController extends UIViewController {
      * Controls whether the color picker shows an alpha slider or not.
      * 
      * If set to `NO` users are only able to pick fully opaque colors.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("supportsAlpha")

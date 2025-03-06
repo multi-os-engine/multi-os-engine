@@ -21,6 +21,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPasteConfigurationSupporting")
 public interface UIPasteConfigurationSupporting {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("canPasteItemProviders:")
@@ -28,11 +31,17 @@ public interface UIPasteConfigurationSupporting {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("pasteConfiguration")
     UIPasteConfiguration pasteConfiguration();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("pasteItemProviders:")
@@ -40,6 +49,9 @@ public interface UIPasteConfigurationSupporting {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPasteConfiguration:")
     void setPasteConfiguration(@Nullable UIPasteConfiguration value);

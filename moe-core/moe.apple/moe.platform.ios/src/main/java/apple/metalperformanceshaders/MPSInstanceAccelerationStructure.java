@@ -161,7 +161,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      * offsets within each buffer, and all acceleration structures must share the same acceleration
      * structure group. If a polygon acceleration structure is rebuilt or refit, the instance
      * acceleration structure must subsequently be rebuilt or refit.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("accelerationStructures")
@@ -232,6 +236,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native MPSInstanceAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithCoder:group:")
     public native MPSInstanceAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
@@ -242,6 +247,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native MPSInstanceAccelerationStructure initWithDevice(
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithGroup:")
     public native MPSInstanceAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
@@ -249,7 +255,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
      * for each instance
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("instanceBuffer")
@@ -259,7 +269,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("instanceBufferOffset")
     @NUInt
@@ -268,7 +282,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Number of instances. Changes to this property require rebuilding the acceleration
      * structure.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("instanceCount")
     @NUInt
@@ -298,7 +316,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     /**
      * Mask buffer containing one uint32_t mask per instance. May be nil.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("maskBuffer")
@@ -307,7 +329,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("maskBufferOffset")
     @NUInt
@@ -334,7 +360,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      * offsets within each buffer, and all acceleration structures must share the same acceleration
      * structure group. If a polygon acceleration structure is rebuilt or refit, the instance
      * acceleration structure must subsequently be rebuilt or refit.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setAccelerationStructures:")
     public native void setAccelerationStructures(@Nullable NSArray<? extends MPSPolygonAccelerationStructure> value);
@@ -342,7 +372,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
      * for each instance
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setInstanceBuffer:")
     public native void setInstanceBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -350,7 +384,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setInstanceBufferOffset:")
     public native void setInstanceBufferOffset(@NUInt long value);
@@ -358,28 +396,44 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Number of instances. Changes to this property require rebuilding the acceleration
      * structure.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setInstanceCount:")
     public native void setInstanceCount(@NUInt long value);
 
     /**
      * Mask buffer containing one uint32_t mask per instance. May be nil.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setMaskBuffer:")
     public native void setMaskBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setMaskBufferOffset:")
     public native void setMaskBufferOffset(@NUInt long value);
 
     /**
      * Buffer containing one column major matrix_float4x4 transformation matrix per instance
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setTransformBuffer:")
     public native void setTransformBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -387,7 +441,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
      * stride of the transform type.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setTransformBufferOffset:")
     public native void setTransformBufferOffset(@NUInt long value);
@@ -395,7 +453,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Instance transform type. Defaults to MPSTransformTypeFloat4x4. Changes to this property
      * require rebuilding the acceleration structure.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setTransformType:")
     public native void setTransformType(@NUInt long value);
@@ -420,7 +482,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     /**
      * Buffer containing one column major matrix_float4x4 transformation matrix per instance
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transformBuffer")
@@ -430,7 +496,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
      * stride of the transform type.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("transformBufferOffset")
     @NUInt
@@ -439,7 +509,11 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Instance transform type. Defaults to MPSTransformTypeFloat4x4. Changes to this property
      * require rebuilding the acceleration structure.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("transformType")
     @NUInt

@@ -174,6 +174,8 @@ public class NSDataAsset extends NSObject implements NSCopying {
 
     /**
      * The data for this asset, as stored in the asset catalog
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -186,6 +188,8 @@ public class NSDataAsset extends NSObject implements NSCopying {
 
     /**
      * Equivalent to -initWithName:name bundle:[NSBundle mainBundle];
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithName:")
@@ -193,6 +197,8 @@ public class NSDataAsset extends NSObject implements NSCopying {
 
     /**
      * Create a data asset with the given name from the given bundle. Returns nil if the asset was not found.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithName:bundle:")
@@ -200,6 +206,8 @@ public class NSDataAsset extends NSObject implements NSCopying {
 
     /**
      * The name used to reference the data asset
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -208,6 +216,8 @@ public class NSDataAsset extends NSObject implements NSCopying {
 
     /**
      * The Uniform Type Identifier for this data object.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

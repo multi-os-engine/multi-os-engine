@@ -73,6 +73,9 @@ public class NSBlockOperation extends NSOperation {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("blockOperationWithBlock:")
     public static native NSBlockOperation blockOperationWithBlock(
@@ -160,11 +163,17 @@ public class NSBlockOperation extends NSOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("addExecutionBlock:")
     public native void addExecutionBlock(
             @NotNull @ObjCBlock(name = "call_addExecutionBlock") Block_addExecutionBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("executionBlocks")

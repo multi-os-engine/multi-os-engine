@@ -53,6 +53,8 @@ public class TKTokenWatcher extends NSObject {
      * 
      * @param removalHandler called when a token is removed
      * @param tokenID        specified tokenID, if tokenID does not exist removal handler is called imediately
+     * 
+     *                       API-Since: 10.0
      */
     @Generated
     @Selector("addRemovalHandler:forTokenID:")
@@ -117,6 +119,8 @@ public class TKTokenWatcher extends NSObject {
 
     /**
      * Init watcher
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("init")
@@ -212,6 +216,8 @@ public class TKTokenWatcher extends NSObject {
     /**
      * Array of currently known TokenIDs in the system. Tokens are identified by instance's names. It is possible to use
      * KVO to be notified about token arrivals and removals.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

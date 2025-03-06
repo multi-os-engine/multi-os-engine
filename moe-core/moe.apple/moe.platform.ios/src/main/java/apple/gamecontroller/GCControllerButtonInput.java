@@ -177,6 +177,8 @@ public class GCControllerButtonInput extends GCControllerElement {
      * 
      * @see pressedChangedHandler
      * @see value
+     * 
+     *      API-Since: 7.0
      */
     @Generated
     @Selector("isPressed")
@@ -207,6 +209,9 @@ public class GCControllerButtonInput extends GCControllerElement {
     public native void setPressedChangedHandler(
             @Nullable @ObjCBlock(name = "call_setPressedChangedHandler") Block_setPressedChangedHandler value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
@@ -218,11 +223,16 @@ public class GCControllerButtonInput extends GCControllerElement {
      * 
      * @see valueChangedHandler
      * @see pressed
+     * 
+     *      API-Since: 7.0
      */
     @Generated
     @Selector("value")
     public native float value();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("valueChangedHandler")
@@ -279,6 +289,8 @@ public class GCControllerButtonInput extends GCControllerElement {
      * 
      * @see touchChangedHandler
      * @see pressed
+     * 
+     *      API-Since: 7.0
      */
     @Generated
     @Selector("isTouched")

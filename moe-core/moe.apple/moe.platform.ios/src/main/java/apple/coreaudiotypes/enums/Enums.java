@@ -1234,4 +1234,21 @@ public final class Enums {
      */
     @Generated public static final int kAudioChannelLayoutTag_Ogg_7_1 = 0x00D70008;
     @Generated public static final int kAudio_NoError = 0x00000000;
+    /**
+     * < 5 channels, L R Rls Rrs C
+     */
+    @Generated public static final int kAudioChannelLayoutTag_MPEG_5_0_E = 0x00D80005;
+    /**
+     * < 6 channels, L R Rls Rrs C LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_MPEG_5_1_E = 0x00D90006;
+    /**
+     * < 7 channels, L R Ls Rs C Cs LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_MPEG_6_1_B = 0x00DA0007;
+    /**
+     * < 8 channels, L R Rls Rrs Ls Rs C LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_MPEG_7_1_D = 0x00DB0008;
+    @Generated public static final int kAudioFormatAPAC = 0x61706163;
 }

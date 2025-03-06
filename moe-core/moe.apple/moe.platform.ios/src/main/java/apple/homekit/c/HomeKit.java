@@ -2137,6 +2137,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2147,6 +2148,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2157,6 +2159,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2167,6 +2170,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2177,6 +2181,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2187,6 +2192,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2197,6 +2203,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2207,6 +2214,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2217,6 +2225,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2227,6 +2236,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2237,6 +2247,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2247,6 +2258,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2257,6 +2269,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2267,6 +2280,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2277,6 +2291,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2287,6 +2302,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2297,6 +2313,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2307,6 +2324,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2317,6 +2335,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2327,6 +2346,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2337,6 +2357,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2347,6 +2368,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2357,6 +2379,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2587,6 +2610,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2597,6 +2621,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2607,8 +2632,353 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMAccessoryCategoryTypeShowerHead();
+
+    /**
+     * Category type for Television.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMAccessoryCategoryTypeTelevision();
+
+    /**
+     * Category type for Television Set Top Box.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMAccessoryCategoryTypeTelevisionSetTopBox();
+
+    /**
+     * Category type for Television Streaming Stick.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMAccessoryCategoryTypeTelevisionStreamingStick();
+
+    /**
+     * Category type for Wi-Fi Router.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMAccessoryCategoryTypeWiFiRouter();
+
+    /**
+     * Category type for Speakers.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMAccessoryCategoryTypeSpeaker();
+
+    /**
+     * Category type for an audio receiver that supports HAP and AirPlay2.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMAccessoryCategoryTypeAudioReceiver();
+
+    /**
+     * Category type for AirPort accessories.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMAccessoryCategoryTypeAirPort();
+
+    /**
+     * This constant specifies that the characteristic requires authorization data for a write.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicPropertyRequiresAuthorizationData();
+
+    /**
+     * Characteristic type for volume control type. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueVolumeControlType.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeVolumeControlType();
+
+    /**
+     * Characteristic type for volume selector. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueVolumeSelector.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeVolumeSelector();
+
+    /**
+     * Characteristic type for input source type. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueInputSourceType.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeInputSourceType();
+
+    /**
+     * Characteristic type for input device type. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueInputDeviceType.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeInputDeviceType();
+
+    /**
+     * Characteristic type for closed captions. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueClosedCaptions.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeClosedCaptions();
+
+    /**
+     * Characteristic type for power mode selection. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValuePowerModeSelection.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypePowerModeSelection();
+
+    /**
+     * Characteristic type for current media state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueCurrentMediaState.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeCurrentMediaState();
+
+    /**
+     * Characteristic type for remote key. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueRemoteKey.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeRemoteKey();
+
+    /**
+     * Characteristic type for picture mode. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValuePictureMode.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypePictureMode();
+
+    /**
+     * Characteristic type for configured name. The value of the characteristic is a string.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeConfiguredName();
+
+    /**
+     * Characteristic type for identifier. The value of the characteristic is a uint32.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeIdentifier();
+
+    /**
+     * Characteristic type for active identifier. The value of the characteristic is a uint32.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeActiveIdentifier();
+
+    /**
+     * Characteristic type for target visibility state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueTargetVisibilityState.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeTargetVisibilityState();
+
+    /**
+     * Characteristic type for current visibility state. The value of the characteristic is one of the values defined
+     * for HMCharacteristicValueCurrentVisibilityState.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeCurrentVisibilityState();
+
+    /**
+     * Characteristic type for target media state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueTargetMediaState.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeTargetMediaState();
+
+    /**
+     * Characteristic type for router status. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueRouterStatus.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeRouterStatus();
+
+    /**
+     * Characteristic type for wan status list. The value of the characteristic is TLV8 encoded data.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeWANStatusList();
+
+    /**
+     * Characteristic type for Wi-Fi satellite status. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueWiFiSatelliteStatus.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMCharacteristicTypeWiFiSatelliteStatus();
+
+    /**
+     * Service type for television.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMServiceTypeTelevision();
+
+    /**
+     * Service type for input source.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMServiceTypeInputSource();
+
+    /**
+     * Service type for Wi-Fi router.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMServiceTypeWiFiRouter();
+
+    /**
+     * Service type for Wi-Fi satellite.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HMServiceTypeWiFiSatellite();
 }

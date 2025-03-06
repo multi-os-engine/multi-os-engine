@@ -146,6 +146,8 @@ public class MPSNNReductionFeatureChannelsSumNode extends MPSNNUnaryReductionNod
 
     /**
      * A scale factor to apply to each feature channel sum.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setWeight:")
@@ -162,6 +164,8 @@ public class MPSNNReductionFeatureChannelsSumNode extends MPSNNUnaryReductionNod
 
     /**
      * A scale factor to apply to each feature channel sum.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("weight")

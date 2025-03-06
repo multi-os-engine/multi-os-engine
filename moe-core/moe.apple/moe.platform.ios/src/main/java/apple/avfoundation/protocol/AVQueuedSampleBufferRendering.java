@@ -51,6 +51,8 @@ public interface AVQueuedSampleBufferRendering {
      * The combination of either a non-NULL controlTimebase or an AVSampleBufferRenderSynchronizer with the use of
      * kCMSampleAttachmentKey_DisplayImmediately as an attachment to the CMSampleBuffers that are enqueued for display
      * is not recommended.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("enqueueSampleBuffer:")
@@ -67,6 +69,8 @@ public interface AVQueuedSampleBufferRendering {
      * 
      * It is not possible to determine which sample buffers have been decoded, so the next frame passed to
      * enqueueSampleBuffer: should be an IDR frame (also known as a key frame or sync sample).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("flush")
@@ -95,6 +99,8 @@ public interface AVQueuedSampleBufferRendering {
      * buffers are decoded and rendered.
      * 
      * This property is not key value observable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isReadyForMoreMediaData")
@@ -117,6 +123,8 @@ public interface AVQueuedSampleBufferRendering {
      * Each call to requestMediaDataWhenReadyOnQueue:usingBlock: should be paired with a corresponding call to
      * stopRequestingMediaData:. Releasing the AVQueuedSampleBufferRendering object without a call to
      * stopRequestingMediaData will result in undefined behavior.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
@@ -136,6 +144,8 @@ public interface AVQueuedSampleBufferRendering {
      * Cancels any current requestMediaDataWhenReadyOnQueue:usingBlock: call.
      * 
      * This method may be called from outside the block or from within the block.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("stopRequestingMediaData")
@@ -149,6 +159,8 @@ public interface AVQueuedSampleBufferRendering {
      * The timebase is used to interpret time stamps.
      * 
      * The timebase is read-only. Use the AVSampleBufferRenderSynchronizer to set the rate or time.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

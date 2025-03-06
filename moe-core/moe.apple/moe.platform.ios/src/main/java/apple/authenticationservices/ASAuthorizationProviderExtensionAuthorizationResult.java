@@ -98,6 +98,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * HTTP extra headers for addition with credentials.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -106,6 +108,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * HTTP response body for OAUth and SAML based authentications.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -114,6 +118,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * HTTP response for OAUth and SAML based authentications.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -169,6 +175,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * Private SecKeys.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -185,6 +193,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * HTTP extra headers for addition with credentials.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setHttpAuthorizationHeaders:")
@@ -192,6 +202,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * HTTP response body for OAUth and SAML based authentications.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setHttpBody:")
@@ -199,6 +211,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * HTTP response for OAUth and SAML based authentications.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setHttpResponse:")
@@ -206,6 +220,8 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     /**
      * Private SecKeys.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPrivateKeys:")

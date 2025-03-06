@@ -143,6 +143,8 @@ public class MPSCNNMultiplyGradient extends MPSCNNArithmeticGradient {
      *                                filter is operating on the primary or secondary source image from the forward
      *                                pass.
      * @return A valid MPSCNNMultiplyGradient object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:isSecondarySourceFilter:")

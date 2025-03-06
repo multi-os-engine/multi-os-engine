@@ -109,6 +109,9 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
         super(peer);
     }
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("a")
     public native float a();
@@ -131,10 +134,16 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("b")
     public native float b();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("c")
     public native float c();
@@ -165,6 +174,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * 
      * @param neuronType The type of a neuron filter.
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -177,6 +188,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * @param neuronType The type of a neuron filter.
      * @param a          Parameter "a".
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -190,6 +203,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * @param a          Parameter "a".
      * @param b          Parameter "b".
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -204,6 +219,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * @param b          Parameter "b".
      * @param c          Parameter "c".
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -226,6 +243,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      *               for the newBufferWithBytesNoCopy:length:options:deallocator: method of
      *               MTLBuffer.
      * @return A valid MPSNNNeuronDescriptor object for a neuron of type MPSCNNNeuronTypePReLU or nil, if failure
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -242,6 +261,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     /**
      * Note: data is retained, not copied
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -295,6 +316,9 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("neuronType")
     public native int neuronType();
@@ -312,25 +336,39 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setA:")
     public native void setA(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setB:")
     public native void setB(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setC:")
     public native void setC(float value);
 
     /**
      * Note: data is retained, not copied
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setData:")
     public native void setData(@Nullable NSData value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setNeuronType:")
     public native void setNeuronType(int value);

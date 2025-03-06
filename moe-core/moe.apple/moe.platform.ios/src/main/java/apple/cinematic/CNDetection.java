@@ -63,6 +63,8 @@ public class CNDetection extends NSObject implements NSCopying {
 
     /**
      * A localized accessibility label converting a specific detection type into a broad category (person, pet, etc.).
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("accessibilityLabelForDetectionType:")
@@ -123,6 +125,8 @@ public class CNDetection extends NSObject implements NSCopying {
      * An unique identifier assigned by the cinematic script to all detections of the same subject and related detection
      * types across time.
      * For example, the face/torso detections of the same person are assigned the same detectionGroupID.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionGroupID")
@@ -132,6 +136,8 @@ public class CNDetection extends NSObject implements NSCopying {
      * An unique identifier assigned by the cinematic script to all detections of the same subject and detection type
      * across time.
      * If you build a custom detection track, the detectionID will be assigned when you add it to the script.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionID")
@@ -139,6 +145,8 @@ public class CNDetection extends NSObject implements NSCopying {
 
     /**
      * The type of object that was detected (face, torso, cat, dog, etc.)
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionType")
@@ -155,6 +163,8 @@ public class CNDetection extends NSObject implements NSCopying {
      * - priorDisparity: The disparity of the object in the prior frame. This helps ensure the object is not mistaken
      * for another that enters the same rectangle. Pass `NAN` if there is no known prior, such as in the first frame in
      * which the object is being tracked.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("disparityInNormalizedRect:sourceDisparity:detectionType:priorDisparity:")
@@ -166,6 +176,8 @@ public class CNDetection extends NSObject implements NSCopying {
      * The disparity to use in order to focus on the object.
      * If the disparity is unknown, use the class method to find it:
      * `disparityInNormalizedRect:sourceDisparity:detectionType:priorDisparity:`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("focusDisparity")
@@ -197,6 +209,9 @@ public class CNDetection extends NSObject implements NSCopying {
      * top-left and (1.0, 1.0) is the bottom-right
      * - focusDisparity: the disparity to use in order to focus on the object (use the static `disparity` method to
      * compute if unknown)
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithTime:detectionType:normalizedRect:focusDisparity:")
@@ -222,6 +237,8 @@ public class CNDetection extends NSObject implements NSCopying {
 
     /**
      * Determine whether a given detectionGroupID is valid
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isValidDetectionGroupID:")
@@ -229,6 +246,8 @@ public class CNDetection extends NSObject implements NSCopying {
 
     /**
      * Determine whether a given detectionID is valid
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isValidDetectionID:")
@@ -247,6 +266,8 @@ public class CNDetection extends NSObject implements NSCopying {
     /**
      * The rectangle within the image where the object occurs, normalized such that (0.0, 0.0) is the top-left and (1.0,
      * 1.0) is the bottom-right.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("normalizedRect")
@@ -271,6 +292,8 @@ public class CNDetection extends NSObject implements NSCopying {
 
     /**
      * The presentation time of the frame in which the detection occurred.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("time")

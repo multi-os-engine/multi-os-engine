@@ -80,6 +80,8 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
      * Call this method if the action fails. Set the error's domain to
      * ``FPUIErrorDomain``. Set the error code to a ``FPUIExtensionErrorCode``
      * value.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("cancelRequestWithError:")
@@ -99,6 +101,8 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
      * Marks the action as complete.
      * 
      * Call this method when the action completes successfully.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("completeRequest")
@@ -114,6 +118,8 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
 
     /**
      * The identifier for the domain managed by the current file provider.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

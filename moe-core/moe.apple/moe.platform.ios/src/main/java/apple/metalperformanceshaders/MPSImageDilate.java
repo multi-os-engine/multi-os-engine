@@ -206,6 +206,8 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
      *                     The values are copied into the filter. To avoid
      *                     image ligthening or darkening, the center value should
      *                     be 0.0f.
+     * 
+     *                     API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:values:")
@@ -217,6 +219,8 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
      * [@property] kernelHeight
      * 
      * The height of the filter window. Must be an odd number.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -227,6 +231,8 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
      * [@property] kernelWidth
      * 
      * The width of the filter window. Must be an odd number.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelWidth")

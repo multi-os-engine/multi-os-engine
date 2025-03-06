@@ -100,6 +100,9 @@ public class MKMapConfiguration extends NSObject implements NSSecureCoding, NSCo
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("elevationStyle")
     @NInt
@@ -157,6 +160,9 @@ public class MKMapConfiguration extends NSObject implements NSSecureCoding, NSCo
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setElevationStyle:")
     public native void setElevationStyle(@NInt long value);

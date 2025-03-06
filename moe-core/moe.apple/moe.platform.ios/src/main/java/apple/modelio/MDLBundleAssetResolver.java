@@ -103,6 +103,9 @@ public class MDLBundleAssetResolver extends NSObject implements MDLAssetResolver
     @Selector("init")
     public native MDLBundleAssetResolver init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithBundle:")
     public native MDLBundleAssetResolver initWithBundle(@NotNull String path);
@@ -134,6 +137,9 @@ public class MDLBundleAssetResolver extends NSObject implements MDLAssetResolver
     @Selector("new")
     public static native MDLBundleAssetResolver new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("path")
@@ -152,6 +158,9 @@ public class MDLBundleAssetResolver extends NSObject implements MDLAssetResolver
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPath:")
     public native void setPath(@NotNull String value);

@@ -5,7 +5,6 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCopying;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -14,7 +13,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -29,12 +27,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 17.4
+ * Deprecated-Message: Please use MTRThermostatClusterWeeklyScheduleTransitionStruct
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRThermostatClusterThermostatScheduleTransition extends NSObject implements NSCopying {
+public class MTRThermostatClusterThermostatScheduleTransition extends
+        MTRThermostatClusterWeeklyScheduleTransitionStruct {
     static {
         NatJ.register();
     }
@@ -85,18 +87,14 @@ public class MTRThermostatClusterThermostatScheduleTransition extends NSObject i
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatClusterWeeklyScheduleTransitionStruct
      */
+    @Deprecated
     @Generated
     @Selector("coolSetpoint")
     @Nullable
     public native NSNumber coolSetpoint();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    @NotNull
-    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -113,7 +111,10 @@ public class MTRThermostatClusterThermostatScheduleTransition extends NSObject i
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatClusterWeeklyScheduleTransitionStruct
      */
+    @Deprecated
     @Generated
     @Selector("heatSetpoint")
     @Nullable
@@ -160,21 +161,30 @@ public class MTRThermostatClusterThermostatScheduleTransition extends NSObject i
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatClusterWeeklyScheduleTransitionStruct
      */
+    @Deprecated
     @Generated
     @Selector("setCoolSetpoint:")
     public native void setCoolSetpoint(@Nullable NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatClusterWeeklyScheduleTransitionStruct
      */
+    @Deprecated
     @Generated
     @Selector("setHeatSetpoint:")
     public native void setHeatSetpoint(@Nullable NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatClusterWeeklyScheduleTransitionStruct
      */
+    @Deprecated
     @Generated
     @Selector("setTransitionTime:")
     public native void setTransitionTime(@NotNull NSNumber value);
@@ -189,7 +199,10 @@ public class MTRThermostatClusterThermostatScheduleTransition extends NSObject i
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatClusterWeeklyScheduleTransitionStruct
      */
+    @Deprecated
     @Generated
     @Selector("transitionTime")
     @NotNull

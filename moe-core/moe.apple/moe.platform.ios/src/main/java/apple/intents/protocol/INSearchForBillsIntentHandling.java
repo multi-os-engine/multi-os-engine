@@ -47,7 +47,12 @@ public interface INSearchForBillsIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSearchForBillsIntentResponse
+     * 
+     *      API-Since: 10.3
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchForBillsIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSearchForBills:completion:")
@@ -73,7 +78,12 @@ public interface INSearchForBillsIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSearchForBillsIntentResponse
+     * 
+     *      API-Since: 10.3
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchForBillsIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSearchForBills:completion:")
     void handleSearchForBillsCompletion(@NotNull INSearchForBillsIntent intent,
@@ -96,7 +106,12 @@ public interface INSearchForBillsIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.3
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchForBillsIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveBillPayeeForSearchForBills:withCompletion:")
@@ -113,6 +128,12 @@ public interface INSearchForBillsIntentHandling {
                 @NotNull INBillPayeeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveBillTypeForSearchForBills:withCompletion:")
@@ -128,6 +149,12 @@ public interface INSearchForBillsIntentHandling {
         void call_resolveBillTypeForSearchForBillsWithCompletion(@NotNull INBillTypeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveDueDateRangeForSearchForBills:withCompletion:")
@@ -144,6 +171,12 @@ public interface INSearchForBillsIntentHandling {
                 @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolvePaymentDateRangeForSearchForBills:withCompletion:")
@@ -160,6 +193,12 @@ public interface INSearchForBillsIntentHandling {
                 @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForBillsIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveStatusForSearchForBills:withCompletion:")

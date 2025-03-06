@@ -84,6 +84,8 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("alpha")
@@ -100,6 +102,8 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("beta")
@@ -203,6 +207,8 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -215,6 +221,8 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBeta:")

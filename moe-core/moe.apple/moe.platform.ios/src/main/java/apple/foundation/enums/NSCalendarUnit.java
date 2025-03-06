@@ -143,4 +143,9 @@ public final class NSCalendarUnit {
     @Generated
     private NSCalendarUnit() {
     }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NUInt public static final long CalendarUnitDayOfYear = 0x0000000000010000L;
 }

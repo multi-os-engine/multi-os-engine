@@ -148,6 +148,8 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
      * 
      * The session delegate object is the one implementing the methods that get called when the session
      * state changes or a failure occurs in the session.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("delegate")
@@ -201,6 +203,8 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
      * 
      * This value is nil when a workout session is initialized. It is set when the workout session state
      * changes to HKWorkoutSessionStateEnded.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("endDate")
@@ -349,6 +353,8 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
      * 
      * The session delegate object is the one implementing the methods that get called when the session
      * state changes or a failure occurs in the session.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -361,6 +367,8 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
      * 
      * The session delegate object is the one implementing the methods that get called when the session
      * state changes or a failure occurs in the session.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable HKWorkoutSessionDelegate value) {
@@ -402,6 +410,8 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
      * 
      * This value is nil when a workout session is initialized. It is set when the workout session state
      * changes to HKWorkoutSessionStateRunning.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("startDate")
@@ -415,6 +425,8 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
      * 
      * Each time this value is updated, the delegate method workoutSession:didChangeToState:fromState:date:
      * will be called.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("state")

@@ -110,6 +110,8 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
      *                   convolution weights and biases. If it is used for training, it may not
      *                   have a neuron embedded in the convolution descriptor.
      * @return A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:weights:")
@@ -152,6 +154,8 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
      *                   convolution weights and biases. If it is used for training, it may not
      *                   have a neuron embedded in the convolution descriptor.
      * @return A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:weights:")

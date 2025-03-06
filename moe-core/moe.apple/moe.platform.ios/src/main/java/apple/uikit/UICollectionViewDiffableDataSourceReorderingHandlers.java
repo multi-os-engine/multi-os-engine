@@ -63,6 +63,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("canReorderItemHandler")
@@ -112,6 +115,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("didReorderHandler")
@@ -169,6 +175,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setCanReorderItemHandler:")
     public native void setCanReorderItemHandler(
@@ -181,6 +190,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
         boolean call_setCanReorderItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDidReorderHandler:")
     public native void setDidReorderHandler(
@@ -197,6 +209,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setWillReorderHandler:")
     public native void setWillReorderHandler(
@@ -218,6 +233,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("willReorderHandler")

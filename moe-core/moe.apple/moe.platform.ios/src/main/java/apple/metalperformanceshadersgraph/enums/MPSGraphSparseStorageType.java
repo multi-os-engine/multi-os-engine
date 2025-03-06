@@ -3,7 +3,7 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * Sparse Storage options in MPSGraph.
+ * The sparse storage options in the Metal Performance Shaders Graph framework.
  */
 @Generated
 public final class MPSGraphSparseStorageType {

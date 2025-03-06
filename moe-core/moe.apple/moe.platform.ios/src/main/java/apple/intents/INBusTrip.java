@@ -61,11 +61,17 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("allocWithZone:")
     public static native INBusTrip allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("arrivalBusStopLocation")
     public native CLPlacemark arrivalBusStopLocation();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("arrivalPlatform")
@@ -75,11 +81,17 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("busName")
     public native String busName();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("busNumber")
@@ -117,11 +129,17 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("departureBusStopLocation")
     public native CLPlacemark departureBusStopLocation();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("departurePlatform")
@@ -148,6 +166,9 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INBusTrip initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithProvider:busName:busNumber:tripDuration:departureBusStopLocation:departurePlatform:arrivalBusStopLocation:arrivalPlatform:")
     public native INBusTrip initWithProviderBusNameBusNumberTripDurationDepartureBusStopLocationDeparturePlatformArrivalBusStopLocationArrivalPlatform(
@@ -183,6 +204,9 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native INBusTrip new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("provider")
@@ -214,6 +238,9 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("tripDuration")

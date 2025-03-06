@@ -70,6 +70,9 @@ public class NSUnitElectricCharge extends NSDimension implements NSSecureCoding 
     @Selector("allocWithZone:")
     public static native NSUnitElectricCharge allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("ampereHours")
@@ -107,6 +110,8 @@ public class NSUnitElectricCharge extends NSDimension implements NSSecureCoding 
 
     /**
      * Base unit - coulombs
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -148,21 +153,33 @@ public class NSUnitElectricCharge extends NSDimension implements NSSecureCoding 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kiloampereHours")
     public static native NSUnitElectricCharge kiloampereHours();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("megaampereHours")
     public static native NSUnitElectricCharge megaampereHours();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("microampereHours")
     public static native NSUnitElectricCharge microampereHours();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milliampereHours")

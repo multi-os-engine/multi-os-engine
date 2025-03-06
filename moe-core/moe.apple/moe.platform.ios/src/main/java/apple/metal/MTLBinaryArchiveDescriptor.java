@@ -150,6 +150,8 @@ public class MTLBinaryArchiveDescriptor extends NSObject implements NSCopying {
      * [@property] url
      * 
      * The file URL from which to open a MTLBinaryArchive, or nil to create an empty MTLBinaryArchive.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUrl:")
@@ -167,6 +169,8 @@ public class MTLBinaryArchiveDescriptor extends NSObject implements NSCopying {
      * [@property] url
      * 
      * The file URL from which to open a MTLBinaryArchive, or nil to create an empty MTLBinaryArchive.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

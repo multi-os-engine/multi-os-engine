@@ -131,6 +131,8 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
      * is any partial overlap between input and output data the results
      * are undefined.
      * 
+     * API-Since: 11.0
+     * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded filter
      * 
      * @param sourceMatrix  A valid MPSMatrix containing the source data. Must have
@@ -186,6 +188,8 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
      * @param order  The number of rows and columns in the source matrix.
      * 
      * @return A valid MPSMatrixDecompositionCholesky object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:lower:order:")

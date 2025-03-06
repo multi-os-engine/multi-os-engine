@@ -8,7 +8,7 @@ public final class SparseGMRESVariant_t {
     private SparseGMRESVariant_t() {
     }
 
-    @Generated public static final byte SparseVariantDQGMRES = 0;
-    @Generated public static final byte SparseVariantGMRES = 1;
-    @Generated public static final byte SparseVariantFGMRES = 2;
+    @Generated public static final byte DQGMRES = 0;
+    @Generated public static final byte GMRES = 1;
+    @Generated public static final byte FGMRES = 2;
 }

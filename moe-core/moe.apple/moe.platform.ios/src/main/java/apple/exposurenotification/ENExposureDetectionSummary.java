@@ -68,6 +68,8 @@ public class ENExposureDetectionSummary extends NSObject {
      * Array index 2: Sum of durations for all exposures when attenuation <= Z
      * Array index 3: Sum of durations for all exposures when attenuation > Z
      * X, Y, Z come from the attenuationDurationThresholds on the configuration object.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -111,6 +113,8 @@ public class ENExposureDetectionSummary extends NSObject {
 
     /**
      * Number of days since the most recent exposure. 0 = today, 1 = yesterday, etc. Only valid if matchedKeyCount > 0.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("daysSinceLastExposure")
@@ -158,6 +162,8 @@ public class ENExposureDetectionSummary extends NSObject {
 
     /**
      * Number of diagnosis keys that matched.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("matchedKeyCount")
@@ -165,6 +171,8 @@ public class ENExposureDetectionSummary extends NSObject {
 
     /**
      * Highest risk score of all exposure incidents.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("maximumRiskScore")
@@ -172,6 +180,8 @@ public class ENExposureDetectionSummary extends NSObject {
 
     /**
      * Highest risk score of all exposure incidents.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("maximumRiskScoreFullRange")
@@ -179,6 +189,8 @@ public class ENExposureDetectionSummary extends NSObject {
 
     /**
      * Metadata associated with the summary.
+     * 
+     * API-Since: 12.5
      */
     @Nullable
     @Generated
@@ -200,6 +212,8 @@ public class ENExposureDetectionSummary extends NSObject {
 
     /**
      * Sum of risk scores for all exposures. Summed using the full range risk scores before capping to ENRiskScore.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("riskScoreSumFullRange")

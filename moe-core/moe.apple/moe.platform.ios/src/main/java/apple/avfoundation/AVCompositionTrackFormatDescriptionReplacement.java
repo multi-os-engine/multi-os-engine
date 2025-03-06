@@ -146,6 +146,8 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
      * [@property] originalFormatDescription
      * 
      * The original format description.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -156,6 +158,8 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
      * [@property] replacementFormatDescription
      * 
      * The replacement format description.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

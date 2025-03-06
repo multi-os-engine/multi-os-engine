@@ -165,6 +165,9 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("fetchRequest")
@@ -174,16 +177,24 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
     @Selector("init")
     public native NSBatchDeleteRequest init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithFetchRequest:")
     public native NSBatchDeleteRequest initWithFetchRequest(@NotNull NSFetchRequest<?> fetch);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithObjectIDs:")
     public native NSBatchDeleteRequest initWithObjectIDs(@NotNull NSArray<? extends NSManagedObjectID> objects);
 
     /**
      * The type of result that should be returned from this request. Defaults to NSBatchDeleteResultTypeStatusOnly
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resultType")
@@ -192,6 +203,8 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
 
     /**
      * The type of result that should be returned from this request. Defaults to NSBatchDeleteResultTypeStatusOnly
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setResultType:")

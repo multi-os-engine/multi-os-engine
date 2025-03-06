@@ -96,10 +96,16 @@ public class UIWindowSceneGeometryPreferencesIOS extends UIWindowSceneGeometryPr
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("init")
     public native UIWindowSceneGeometryPreferencesIOS init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithInterfaceOrientations:")
     public native UIWindowSceneGeometryPreferencesIOS initWithInterfaceOrientations(@NUInt long interfaceOrientations);
@@ -120,6 +126,8 @@ public class UIWindowSceneGeometryPreferencesIOS extends UIWindowSceneGeometryPr
     /**
      * The preferred interface orientations. The system will choose the best orientation from the intersection of these
      * orientations and the current supported orientations. Defaults to an empty mask to indicate no preference.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("interfaceOrientations")
@@ -151,6 +159,8 @@ public class UIWindowSceneGeometryPreferencesIOS extends UIWindowSceneGeometryPr
     /**
      * The preferred interface orientations. The system will choose the best orientation from the intersection of these
      * orientations and the current supported orientations. Defaults to an empty mask to indicate no preference.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInterfaceOrientations:")

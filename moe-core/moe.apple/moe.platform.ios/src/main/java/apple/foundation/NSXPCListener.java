@@ -59,6 +59,8 @@ public class NSXPCListener extends NSObject {
     /**
      * Create an anonymous listener connection. Other processes may connect to this listener by passing this listener
      * object's endpoint to NSXPCConnection's -initWithListenerEndpoint: method.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -97,6 +99,8 @@ public class NSXPCListener extends NSObject {
     /**
      * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
      * protocol for more information on how to implement it.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -112,6 +116,8 @@ public class NSXPCListener extends NSObject {
      * Get an endpoint object which may be sent over an existing connection. This allows the receiver of the endpoint to
      * create a new connection to this NSXPCListener. The NSXPCListenerEndpoint uniquely names this listener object
      * across connections.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -143,6 +149,8 @@ public class NSXPCListener extends NSObject {
     /**
      * Invalidate the listener. No more connections will be created. Once a listener is invalidated it may not be
      * resumed or suspended.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("invalidate")
@@ -176,6 +184,8 @@ public class NSXPCListener extends NSObject {
      * service after setting up desired initial state and the listener itself. If called on any other NSXPCListener, the
      * connection is resumed and the method returns immediately.
      * For new code, calling `-activate` is preferred for the initial activation of the listener.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("resume")
@@ -187,6 +197,8 @@ public class NSXPCListener extends NSObject {
      * method is called on this listener, it will not return. Instead it hands over control to the object and allows it
      * to service the listener as appropriate. This makes it ideal for use in your main() function. For more info on
      * XPCServices, please refer to the developer documentation.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -196,6 +208,8 @@ public class NSXPCListener extends NSObject {
     /**
      * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
      * protocol for more information on how to implement it.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -204,6 +218,8 @@ public class NSXPCListener extends NSObject {
     /**
      * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
      * protocol for more information on how to implement it.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSXPCListenerDelegate value) {
@@ -227,6 +243,8 @@ public class NSXPCListener extends NSObject {
 
     /**
      * Suspend the listener. Suspends must be balanced with resumes before the listener may be invalidated.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("suspend")

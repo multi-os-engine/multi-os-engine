@@ -46,6 +46,8 @@ public interface NSURLSessionDelegate {
      * The last message a session receives. A session will only become
      * invalid because of a systemic error or when it has been
      * explicitly invalidated, in which case the error parameter will be nil.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -63,6 +65,8 @@ public interface NSURLSessionDelegate {
      * challenges). If this delegate message is not implemented, the
      * behavior will be to use the default handling, which may involve user
      * interaction.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

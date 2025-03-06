@@ -112,6 +112,8 @@ public class CLSScoreItem extends CLSActivityItem {
      * @param title      Title of score. Ex @em Biology- Cellular Division Quiz
      * @param score      The score the user received.
      * @param maxScore   The maximum score possible.
+     * 
+     *                   API-Since: 11.3
      */
     @Generated
     @Selector("initWithIdentifier:title:score:maxScore:")
@@ -144,6 +146,8 @@ public class CLSScoreItem extends CLSActivityItem {
      * Total score possible.
      * 
      * Must be greater than zero.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("maxScore")
@@ -166,6 +170,8 @@ public class CLSScoreItem extends CLSActivityItem {
      * Score out of @c maxScore.
      * 
      * Should be between zero and @c maxScore [0.0,maxScore].
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("score")
@@ -175,6 +181,8 @@ public class CLSScoreItem extends CLSActivityItem {
      * Total score possible.
      * 
      * Must be greater than zero.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setMaxScore:")
@@ -184,6 +192,8 @@ public class CLSScoreItem extends CLSActivityItem {
      * Score out of @c maxScore.
      * 
      * Should be between zero and @c maxScore [0.0,maxScore].
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setScore:")

@@ -66,6 +66,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for back buttons. Defaults are drawn from buttonAppearance when appropriate.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -74,6 +76,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * The image shown on the leading edge of the back button.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -82,6 +86,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * This image is used to mask content flowing underneath the backIndicatorImage during push & pop transitions
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -90,6 +96,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for plain-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -127,6 +135,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for done-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -178,6 +188,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * Large Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -199,6 +211,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for back buttons. Defaults are drawn from buttonAppearance when appropriate.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackButtonAppearance:")
@@ -207,6 +221,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     /**
      * Set the backIndicatorImage & backIndicatorTransitionMaskImage images. If either image is nil, then both images
      * will be reset to their default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackIndicatorImage:transitionMaskImage:")
@@ -215,6 +231,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for plain-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setButtonAppearance:")
@@ -222,6 +240,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for done-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDoneButtonAppearance:")
@@ -229,6 +249,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * Large Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLargeTitleTextAttributes:")
@@ -236,6 +258,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * An additional adjustment to the inline title's position.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitlePositionAdjustment:")
@@ -243,6 +267,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * Inline Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitleTextAttributes:")
@@ -268,6 +294,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * An additional adjustment to the inline title's position.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("titlePositionAdjustment")
@@ -276,6 +304,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     /**
      * Inline Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

@@ -84,6 +84,8 @@ public class UIMenuSystem extends NSObject {
 
     /**
      * The context command system.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -131,6 +133,8 @@ public class UIMenuSystem extends NSObject {
 
     /**
      * The main command system.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -152,6 +156,8 @@ public class UIMenuSystem extends NSObject {
 
     /**
      * Trigger a rebuild of this system at a suitable time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNeedsRebuild")
@@ -159,6 +165,8 @@ public class UIMenuSystem extends NSObject {
 
     /**
      * Trigger a revalidate of this system at a suitable time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNeedsRevalidate")

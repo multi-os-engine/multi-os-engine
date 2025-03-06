@@ -90,6 +90,8 @@ public class STScreenTimeConfigurationObserver extends NSObject {
 
     /**
      * The configuration being observed.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -119,6 +121,8 @@ public class STScreenTimeConfigurationObserver extends NSObject {
      * 
      * - Parameters:
      * - updateQueue: The queue on which to report updates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithUpdateQueue:")
@@ -165,6 +169,8 @@ public class STScreenTimeConfigurationObserver extends NSObject {
 
     /**
      * Starts observing changes to the current configuration.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startObserving")
@@ -172,6 +178,8 @@ public class STScreenTimeConfigurationObserver extends NSObject {
 
     /**
      * Stops observing changes to the current configuration.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("stopObserving")

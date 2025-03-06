@@ -57,6 +57,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
      * it describes the visual location of the text cursor between the head of line containing the selection location
      * (downstream) or tail of the previous line (upstream). For a selection with contents, it describes the logical
      * direction of non-anchored edge of the selection.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("affinity")
@@ -78,6 +80,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
      * tap or mouse down. That is from the left for a horizontal line fragment and from the top for a vertical.
      * Navigating between lines uses this point when the current line fragment associated with the selection is shorter
      * than the next line visited. 0.0 by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("anchorPositionOffset")
@@ -124,6 +128,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     /**
      * The granularity of the selection. NSTextSelectionGranularityByCharacter by default. Extending operations should
      * modify the selection by the granularity.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("granularity")
@@ -143,11 +149,17 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSTextSelection initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithLocation:affinity:")
     public native NSTextSelection initWithLocationAffinity(
             @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NInt long affinity);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithRange:affinity:granularity:")
     public native NSTextSelection initWithRangeAffinityGranularity(@NotNull NSTextRange range, @NInt long affinity,
@@ -156,6 +168,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     /**
      * textRanges should be ordered and not overlapping. Otherwise, textRanges would get normalized by reordered and
      * merging overlapping ranges.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithRanges:affinity:granularity:")
@@ -177,6 +191,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
 
     /**
      * Indicates whether the selection should be interpreted as logical or visual.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isLogical")
@@ -188,6 +204,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
 
     /**
      * Transient text selection during drag handling
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isTransient")
@@ -214,6 +232,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     /**
      * Specifies the secondary character location when user taps/clicks at a directional boundary. Setting non-nil
      * location has a side effect of making -logical=NO.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -226,6 +246,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
      * tap or mouse down. That is from the left for a horizontal line fragment and from the top for a vertical.
      * Navigating between lines uses this point when the current line fragment associated with the selection is shorter
      * than the next line visited. 0.0 by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAnchorPositionOffset:")
@@ -233,6 +255,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
 
     /**
      * Indicates whether the selection should be interpreted as logical or visual.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLogical:")
@@ -241,6 +265,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     /**
      * Specifies the secondary character location when user taps/clicks at a directional boundary. Setting non-nil
      * location has a side effect of making -logical=NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSecondarySelectionLocation:")
@@ -248,6 +274,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
 
     /**
      * The template attributes used for characters replacing the contents of this selection.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTypingAttributes:")
@@ -274,6 +302,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     /**
      * Represents an array of disjoint logical ranges in the selection. The array must be logically ordered. When
      * editing, all ranges in a text selection constitute a single insertion point.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -283,6 +313,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     /**
      * Returns a copy of this selection, replacing this instance's textRanges property with textRanges but keeping all
      * other attributes the same.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -291,6 +323,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
 
     /**
      * The template attributes used for characters replacing the contents of this selection.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

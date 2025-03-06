@@ -161,6 +161,8 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
      * AVCapturePhotoBracketSettings do not support flashMode, autoStillImageStabilizationEnabled, livePhotoMovieFileURL
      * or livePhotoMovieMetadata.
      * 
+     * API-Since: 10.0
+     * 
      * @param rawPixelFormatType
      *                           One of the OSTypes contained in AVCapturePhotoOutput's
      *                           -availableRawPhotoPixelFormatTypes array. May be set to 0 if you do not desire RAW
@@ -245,6 +247,8 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
      * -initWithFormat:rawPixelFormatType:bracketedSettings:
      * 
      * This read-only property never returns nil.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -263,6 +267,8 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
      * Default value is NO. This property may only be set to YES if AVCapturePhotoOutput's
      * isLensStabilizationDuringBracketedCaptureSupported is YES. When set to YES, AVCapturePhotoOutput holds the lens
      * steady for the duration of the bracket to counter hand shake and produce a sharper bracket of images.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isLensStabilizationEnabled")
@@ -276,6 +282,8 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
      * Default value is NO. This property may only be set to YES if AVCapturePhotoOutput's
      * isLensStabilizationDuringBracketedCaptureSupported is YES. When set to YES, AVCapturePhotoOutput holds the lens
      * steady for the duration of the bracket to counter hand shake and produce a sharper bracket of images.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLensStabilizationEnabled:")

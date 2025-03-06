@@ -148,6 +148,8 @@ public class VNSaliencyImageObservation extends VNPixelBufferObservation {
 
     /**
      * An array of bounds of salient objects within the image. Each box represents a distinct mode of the heat map.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

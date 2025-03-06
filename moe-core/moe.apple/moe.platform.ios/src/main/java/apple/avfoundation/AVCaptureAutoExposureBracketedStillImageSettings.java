@@ -93,6 +93,8 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
      *                           exposureTargetBias unchanged for this image.
      * @return
      *         An initialized AVCaptureAutoExposureBracketedStillImageSettings instance.
+     * 
+     *         API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -190,6 +192,8 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
      * [@property] exposureTargetBias
      * 
      * The exposure bias for the auto exposure bracketed settings
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("exposureTargetBias")

@@ -178,7 +178,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("addressBook")
@@ -187,7 +193,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
      * initiating a FaceTime call, or sending a text message.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("allowsActions")
     public native boolean allowsActions();
@@ -195,7 +207,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * Whether options to create a contact or add to an existing contact should be
      * made available to the user.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("allowsAddingToAddressBook")
     public native boolean allowsAddingToAddressBook();
@@ -203,7 +221,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * An alternateName can be provided to replace the First and Last name
      * in case they are not available.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alternateName")
@@ -215,7 +239,13 @@ public class ABUnknownPersonViewController extends UIViewController {
      * existing person in Address Book.
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("displayedPerson")
@@ -236,7 +266,13 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     /**
      * The message will be displayed below the alternateName.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("message")
@@ -245,7 +281,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(@Nullable ConstVoidPtr value);
@@ -253,7 +295,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
      * initiating a FaceTime call, or sending a text message.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setAllowsActions:")
     public native void setAllowsActions(boolean value);
@@ -261,7 +309,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * Whether options to create a contact or add to an existing contact should be
      * made available to the user.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setAllowsAddingToAddressBook:")
     public native void setAllowsAddingToAddressBook(boolean value);
@@ -269,7 +323,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * An alternateName can be provided to replace the First and Last name
      * in case they are not available.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setAlternateName:")
     public native void setAlternateName(@Nullable String value);
@@ -280,21 +340,39 @@ public class ABUnknownPersonViewController extends UIViewController {
      * existing person in Address Book.
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(@NotNull ConstVoidPtr value);
 
     /**
      * The message will be displayed below the alternateName.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setMessage:")
     public native void setMessage(@Nullable String value);
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setUnknownPersonViewDelegate:")
     public native void setUnknownPersonViewDelegate_unsafe(
@@ -302,7 +380,13 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Generated
     public void setUnknownPersonViewDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value) {
@@ -318,7 +402,13 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForUnknownContact:] from ContactsUI.framework
+     * instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("unknownPersonViewDelegate")

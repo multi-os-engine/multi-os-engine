@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -95,6 +98,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * A digest of the payload that follows the header. Can be used to verify that
      * the payload is not truncated or corrupted.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("imageDigest")
@@ -103,6 +108,8 @@ public class MTROTAHeader extends NSObject {
 
     /**
      * The specific algorithm that was used to compute imageDigest.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("imageDigestType")
@@ -156,6 +163,8 @@ public class MTROTAHeader extends NSObject {
      * applied on top of. In that case, this value must be compared to the
      * SoftwareVersion in the QueryImage command to check whether this image is
      * valid for the OTA requestor.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("maxApplicableVersion")
@@ -167,6 +176,8 @@ public class MTROTAHeader extends NSObject {
      * applied on top of. In that case, this value must be compared to the
      * SoftwareVersion in the QueryImage command to check whether this image is
      * valid for the OTA requestor.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("minApplicableVersion")
@@ -181,6 +192,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * The size of the actual image payload, which follows the header in the OTA
      * file.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("payloadSize")
@@ -191,6 +204,8 @@ public class MTROTAHeader extends NSObject {
      * The identifier of the specific product the image is meant for. May be 0, if
      * the image might apply to more than one product. This is allowed, but not
      * required, to be matched against the product id received in Query Image.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("productID")
@@ -200,6 +215,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * If not nil a URL pointing to release notes for the software update
      * represented by the image.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("releaseNotesURL")
@@ -217,6 +234,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * A digest of the payload that follows the header. Can be used to verify that
      * the payload is not truncated or corrupted.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setImageDigest:")
@@ -224,6 +243,8 @@ public class MTROTAHeader extends NSObject {
 
     /**
      * The specific algorithm that was used to compute imageDigest.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setImageDigestType:")
@@ -234,6 +255,8 @@ public class MTROTAHeader extends NSObject {
      * applied on top of. In that case, this value must be compared to the
      * SoftwareVersion in the QueryImage command to check whether this image is
      * valid for the OTA requestor.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setMaxApplicableVersion:")
@@ -244,6 +267,8 @@ public class MTROTAHeader extends NSObject {
      * applied on top of. In that case, this value must be compared to the
      * SoftwareVersion in the QueryImage command to check whether this image is
      * valid for the OTA requestor.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setMinApplicableVersion:")
@@ -252,6 +277,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * The size of the actual image payload, which follows the header in the OTA
      * file.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setPayloadSize:")
@@ -261,6 +288,8 @@ public class MTROTAHeader extends NSObject {
      * The identifier of the specific product the image is meant for. May be 0, if
      * the image might apply to more than one product. This is allowed, but not
      * required, to be matched against the product id received in Query Image.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setProductID:")
@@ -269,6 +298,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * If not nil a URL pointing to release notes for the software update
      * represented by the image.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setReleaseNotesURL:")
@@ -280,6 +311,8 @@ public class MTROTAHeader extends NSObject {
      * used to determine whether this image is newer than what the requestor is
      * currently running, by comparing it to the SoftwareVersion in the Query Image
      * command.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setSoftwareVersion:")
@@ -288,6 +321,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * Human-readable version of softwareVersion. This must not be used for
      * deciding which versions are newer or older; use softwareVersion for that.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setSoftwareVersionString:")
@@ -302,6 +337,8 @@ public class MTROTAHeader extends NSObject {
      * This field may be 0, in which case the image might apply to products from
      * more than one vendor. If it's nonzero, it must match the vendor id in Query
      * Image for this image to be considered.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setVendorID:")
@@ -317,6 +354,8 @@ public class MTROTAHeader extends NSObject {
      * used to determine whether this image is newer than what the requestor is
      * currently running, by comparing it to the SoftwareVersion in the Query Image
      * command.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("softwareVersion")
@@ -326,6 +365,8 @@ public class MTROTAHeader extends NSObject {
     /**
      * Human-readable version of softwareVersion. This must not be used for
      * deciding which versions are newer or older; use softwareVersion for that.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("softwareVersionString")
@@ -350,6 +391,8 @@ public class MTROTAHeader extends NSObject {
      * This field may be 0, in which case the image might apply to products from
      * more than one vendor. If it's nonzero, it must match the vendor id in Query
      * Image for this image to be considered.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("vendorID")

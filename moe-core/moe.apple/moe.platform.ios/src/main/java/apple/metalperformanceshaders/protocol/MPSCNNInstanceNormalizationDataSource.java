@@ -36,6 +36,8 @@ import org.jetbrains.annotations.Nullable;
 public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
     /**
      * Return a pointer to an array containing the beta terms.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -64,6 +66,8 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * Optional NSSecureCoding compatibility.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @IsOptional
@@ -77,6 +81,8 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
      * 
      * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
      * Defalt value if method unavailable: FLT_MIN
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @IsOptional
@@ -87,6 +93,8 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * Return a pointer to an array containing the gamma terms.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -95,6 +103,8 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * NS_DESIGNATED_INITIALIZER
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -108,6 +118,8 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
      * A label that is transferred to the instance normalization filter at init time
      * 
      * Overridden by a MPSCNNInstanceNormalizationNode.label if it is non-nil.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -131,6 +143,8 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * [@property] The number of feature channels over which to normalize.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("numberOfFeatureChannels")
@@ -149,6 +163,9 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @IsOptional
     @Selector("supportsSecureCoding")

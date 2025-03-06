@@ -21,6 +21,12 @@ public final class MTRColorControlColorMode {
     @Generated public static final byte CurrentXAndCurrentY = 1;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: Please use MTRColorControlColorModeColorTemperatureMireds
      */
-    @Generated public static final byte ColorTemperature = 2;
+    @Deprecated @Generated public static final byte ColorTemperature = 2;
+    /**
+     * API-Since: 18.2
+     */
+    @Generated public static final byte ColorTemperatureMireds = 2;
 }

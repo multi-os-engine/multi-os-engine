@@ -100,6 +100,9 @@ public class UIDocumentViewController extends UIViewController {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("document")
     @Nullable
@@ -108,6 +111,8 @@ public class UIDocumentViewController extends UIViewController {
     /**
      * Notifies subclasses that the specified document was opened. This method will be called by the system after
      * opening the document initially or after the presented document was changed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("documentDidOpen")
@@ -126,6 +131,9 @@ public class UIDocumentViewController extends UIViewController {
     @Selector("initWithCoder:")
     public native UIDocumentViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithDocument:")
     public native UIDocumentViewController initWithDocument(@Nullable UIDocument document);
@@ -160,6 +168,8 @@ public class UIDocumentViewController extends UIViewController {
     /**
      * When this view controller updates its navigation item, this method will be called, allowing subclasses to apply
      * any kind of customization you might want.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("navigationItemDidUpdate")
@@ -171,10 +181,12 @@ public class UIDocumentViewController extends UIViewController {
     public static native UIDocumentViewController new_objc();
 
     /**
-     * opens the current document.
+     * Opens the current document.
      * This method is optional. If the document is not opened by the time the view controller becomes visible, the view
      * controller will take care of opening the document.
      * If the document is already opened, the completion handler will be called as if opening the document succeeded.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("openDocumentWithCompletionHandler:")
@@ -196,6 +208,9 @@ public class UIDocumentViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setDocument:")
     public native void setDocument(@Nullable UIDocument value);
@@ -210,6 +225,8 @@ public class UIDocumentViewController extends UIViewController {
 
     /**
      * MARK: Custom Navigation Items
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("undoRedoItemGroup")
@@ -225,4 +242,23 @@ public class UIDocumentViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Properties to configure the view controller when no document is open.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("launchOptions")
+    @NotNull
+    public native UIDocumentViewControllerLaunchOptions launchOptions();
+
+    /**
+     * Properties to configure the view controller when no document is open.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setLaunchOptions:")
+    public native void setLaunchOptions(@NotNull UIDocumentViewControllerLaunchOptions value);
 }

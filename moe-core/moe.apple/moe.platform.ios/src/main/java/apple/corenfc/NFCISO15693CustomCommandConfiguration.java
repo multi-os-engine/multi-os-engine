@@ -134,7 +134,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
      * @param manufacturerCode  8 bits manufacturer code.
      * @param customCommandCode 8 bits custom command code. Valid range is 0xA0 to 0xDF.
      * @param requestParameters Optional custom request parameters.
-     * @param maximumRetries    Maximum number of retry attempt when tag response is not recevied.
+     * @param maximumRetries    Maximum number of retry attempt when tag response is not received.
      * @param retryInterval     Time interval wait between each retry attempt.
      * 
      *                          API-Since: 11.0

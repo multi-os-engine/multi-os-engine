@@ -168,6 +168,9 @@ public class HKSample extends HKObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("endDate")
@@ -181,11 +184,17 @@ public class HKSample extends HKObject {
     @Selector("initWithCoder:")
     public native HKSample initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("sampleType")
     public native HKSampleType sampleType();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("startDate")

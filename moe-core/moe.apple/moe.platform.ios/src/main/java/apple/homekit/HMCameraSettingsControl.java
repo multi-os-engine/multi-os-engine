@@ -161,6 +161,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to current horizontal tilt setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -169,6 +171,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to current vertical tilt setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -177,6 +181,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to digital zoom setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -185,6 +191,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to image mirroring setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -193,6 +201,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to image rotation setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -205,6 +215,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to night vision setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -213,6 +225,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to optical zoom setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -221,6 +235,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to target horizontal tilt setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -229,6 +245,8 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     /**
      * Characteristic corresponding to target vertical tilt setting on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

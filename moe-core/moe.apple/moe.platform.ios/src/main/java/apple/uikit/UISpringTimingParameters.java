@@ -181,6 +181,8 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
 
     /**
      * Initializes with the default system spring parameters
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("init")
@@ -192,6 +194,8 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
 
     /**
      * Equivalent to initWithDampingRatio:initialVelocity: where the velocity is the zero-vector.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithDampingRatio:")
@@ -211,6 +215,8 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
      * want to pass 0 for the velocity. Velocity is specified as a vector for the
      * convenience of animating position changes. For 1-dimensional properties
      * the x-coordinate of the velocity vector is used.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithDampingRatio:initialVelocity:")
@@ -221,12 +227,17 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
      * Similar to initWithDampingRatio:initialVelocity: except this allows you to specify the spring constants for the
      * underlying
      * CASpringAnimation directly. The duration is computed assuming a small settling oscillation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithMass:stiffness:damping:initialVelocity:")
     public native UISpringTimingParameters initWithMassStiffnessDampingInitialVelocity(@NFloat double mass,
             @NFloat double stiffness, @NFloat double damping, @ByValue CGVector velocity);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initialVelocity")
     @ByValue

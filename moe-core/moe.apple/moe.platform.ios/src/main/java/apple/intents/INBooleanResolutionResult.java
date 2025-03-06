@@ -100,6 +100,8 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the boolean value with which the user wants to
      * continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -173,6 +175,8 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
      * This resolution result is for when the app extension wants to tell Siri to proceed with a given value. The
      * resolvedValue need not be identical to the input value. If the app extension wants to continue with a 'nil'
      * value, it must use +notRequired.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

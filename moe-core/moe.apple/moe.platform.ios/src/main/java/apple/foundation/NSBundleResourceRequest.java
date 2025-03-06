@@ -194,6 +194,8 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      * case of an error in the completion handler.
      * 
      * If you want to access the resources again, create a new NSBundleResourceRequest object.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("beginAccessingResourcesWithCompletionHandler:")
@@ -204,6 +206,8 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      * The bundle object that will hold the requested resources. After the
      * -beginAccessingResourcesWithCompletionHandler: callback is invoked, you may use the standard bundle lookup APIs
      * on this bundle object to find your resources.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -218,6 +222,8 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      * If the resources were available, then you must invoke the -endAccessingResources method once you are done
      * accessing them. If the resources were not available, then you may invoke the
      * -beginAccessingResourcesWithCompletionHandler: method to initiate a download of the resources.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("conditionallyBeginAccessingResourcesWithCompletionHandler:")
@@ -230,6 +236,8 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      * make room for newly requested resources. This method may only be invoked if you have received a callback from
      * -beginAccessingResourcesWithCompletionHandler:. To cancel an in-progress request, invoke cancel on the -progress
      * property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("endAccessingResources")
@@ -244,11 +252,16 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      * the manifest of the specified bundle. The bundle argument describes an existing bundle which was built with on
      * demand resources support. Any resources downloaded can be found using the standard NSBundle resource lookup API
      * once the request is completed. If no bundle is specified then the main bundle is used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithTags:")
     public native NSBundleResourceRequest initWithTags(@NotNull NSSet<String> tags);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithTags:bundle:")
     public native NSBundleResourceRequest initWithTagsBundle(@NotNull NSSet<String> tags, @NotNull NSBundle bundle);
@@ -260,6 +273,8 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      * The exact meaning of the value is up to your application. The system will prefer to act on requests that have a
      * higher priority (from the same application). You may change the priority at any time, even after a request has
      * started. The system will make a best attempt to take the new priority into account.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("loadingPriority")
@@ -277,6 +292,8 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      * The exact meaning of the value is up to your application. The system will prefer to act on requests that have a
      * higher priority (from the same application). You may change the priority at any time, even after a request has
      * started. The system will make a best attempt to take the new priority into account.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLoadingPriority:")
@@ -284,6 +301,8 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
 
     /**
      * The tags this request will load.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

@@ -152,6 +152,9 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("stageInputOutputDescriptor")
@@ -166,6 +169,9 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("attributes")
@@ -178,6 +184,9 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("indexBufferIndex")
     @NUInt
@@ -185,6 +194,8 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
 
     /**
      * only used for compute with MTLStepFunction...Indexed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("indexType")
@@ -195,21 +206,32 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @Selector("init")
     public native MTLStageInputOutputDescriptor init();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("layouts")
     public native MTLBufferLayoutDescriptorArray layouts();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("reset")
     public native void reset();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setIndexBufferIndex:")
     public native void setIndexBufferIndex(@NUInt long value);
 
     /**
      * only used for compute with MTLStepFunction...Indexed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setIndexType:")

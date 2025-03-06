@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 public interface ASPublicKeyCredential extends ASAuthorizationCredential {
     /**
      * An identifier that uniquely identifies this credential.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -29,6 +31,8 @@ public interface ASPublicKeyCredential extends ASAuthorizationCredential {
 
     /**
      * A byte sequence containing the serialized clientDataJSON blob returned by the authenticator.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

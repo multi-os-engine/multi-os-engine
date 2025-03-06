@@ -43,7 +43,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Transaction.all and AppTransaction.shared
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -164,14 +167,20 @@ public class SKReceiptRefreshRequest extends SKRequest {
 
     /**
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Transaction.all and AppTransaction.shared
      */
+    @Deprecated
     @Generated
     @Selector("initWithReceiptProperties:")
     public native SKReceiptRefreshRequest initWithReceiptProperties(@Nullable NSDictionary<String, ?> properties);
 
     /**
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Transaction.all and AppTransaction.shared
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("receiptProperties")

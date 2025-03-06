@@ -27,6 +27,8 @@ public interface CPSelectableListItem extends CPListTemplateItem {
      * An optional action block, fired when the user selects this item in a list template.
      * 
      * You must call the completion block after processing the user's selection.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -53,6 +55,8 @@ public interface CPSelectableListItem extends CPListTemplateItem {
      * An optional action block, fired when the user selects this item in a list template.
      * 
      * You must call the completion block after processing the user's selection.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setHandler:")

@@ -137,9 +137,11 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     public static native HMMutableSignificantTimeEvent new_objc();
 
     /**
-     * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     * offset An offset from the time of the significant event. To specify an offset before the significant event, the
      * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      * 'minute' property must be set to -30.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -155,9 +157,11 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     * offset An offset from the time of the significant event. To specify an offset before the significant event, the
      * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      * 'minute' property must be set to -30.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOffset:")
@@ -165,6 +169,8 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
 
     /**
      * significantEvent The significant event for the trigger.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSignificantEvent:")
@@ -176,6 +182,8 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
 
     /**
      * significantEvent The significant event for the trigger.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

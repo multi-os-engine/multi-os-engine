@@ -437,4 +437,32 @@ public interface NSFilePresenter {
         void call_relinquishPresentedItemToWriter(
                 @Nullable @ObjCBlock(name = "call_Block_relinquishPresentedItemToWriter") Block_Block_relinquishPresentedItemToWriter reacquirer);
     }
+
+    /**
+     * Given that something in the system is waiting to evict the presented file or directory, do whatever it takes to
+     * ensure that the eviction will succeed and that the receiver's application will behave properly when the eviction
+     * has happened, and then invoke the completion handler. This must include calling `+[NSFileCoordinator
+     * removeFilePresenter:]`. If successful, pass nil to the completion handler. If not successful, or to prevent the
+     * eviction of the file, throw an error that encapsulates the reason. Implementations of this method must always
+     * invoke the completion handler because other parts of the system will wait until it is invoked or until the user
+     * loses patience and cancels the waiting.
+     * 
+     * If this method is not implemented, eviction will fail.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("accommodatePresentedItemEvictionWithCompletionHandler:")
+    default void accommodatePresentedItemEvictionWithCompletionHandler(
+            @ObjCBlock(name = "call_accommodatePresentedItemEvictionWithCompletionHandler") @NotNull Block_accommodatePresentedItemEvictionWithCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accommodatePresentedItemEvictionWithCompletionHandler {
+        @Generated
+        void call_accommodatePresentedItemEvictionWithCompletionHandler(@Nullable NSError errorOrNil);
+    }
 }

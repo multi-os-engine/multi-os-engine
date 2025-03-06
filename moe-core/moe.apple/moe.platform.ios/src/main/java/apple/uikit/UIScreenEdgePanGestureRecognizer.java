@@ -163,6 +163,8 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
 
     /**
      * The edges on which this gesture recognizes, relative to the current interface orientation
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("edges")
@@ -180,6 +182,8 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
 
     /**
      * The edges on which this gesture recognizes, relative to the current interface orientation
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setEdges:")

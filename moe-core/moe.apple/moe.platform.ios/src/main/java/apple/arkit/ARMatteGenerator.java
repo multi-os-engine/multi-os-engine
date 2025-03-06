@@ -110,6 +110,8 @@ public class ARMatteGenerator extends NSObject {
      *                      by the caller externally.
      * @return Dilated depth MTLTexture for the given ARFrame at the segmentation stencil resolution. The texture
      *         consists of a single channel and is of type float16.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -127,6 +129,8 @@ public class ARMatteGenerator extends NSObject {
      *                      committed by the caller externally.
      * @return Alpha matte MTLTexture for the given ARFrame at full resolution or half resolution as chosen by the
      *         caller during initialization.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -157,6 +161,8 @@ public class ARMatteGenerator extends NSObject {
      *                        'ARMatteResolution'.
      * @see ARMatteResolution
      * @return Instance of ARMatteGenerator.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:matteResolution:")

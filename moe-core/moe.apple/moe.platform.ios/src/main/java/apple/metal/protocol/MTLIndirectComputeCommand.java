@@ -22,24 +22,39 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLIndirectComputeCommand")
 public interface MTLIndirectComputeCommand {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("clearBarrier")
     void clearBarrier();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("concurrentDispatchThreadgroups:threadsPerThreadgroup:")
     void concurrentDispatchThreadgroupsThreadsPerThreadgroup(@ByValue MTLSize threadgroupsPerGrid,
             @ByValue MTLSize threadsPerThreadgroup);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("concurrentDispatchThreads:threadsPerThreadgroup:")
     void concurrentDispatchThreadsThreadsPerThreadgroup(@ByValue MTLSize threadsPerGrid,
             @ByValue MTLSize threadsPerThreadgroup);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reset")
     void reset();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setBarrier")
     void setBarrier();
@@ -51,15 +66,24 @@ public interface MTLIndirectComputeCommand {
     @Selector("setComputePipelineState:")
     void setComputePipelineState(@NotNull @Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipelineState);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setKernelBuffer:offset:atIndex:")
     void setKernelBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setStageInRegion:")
     void setStageInRegion(@ByValue MTLRegion region);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setThreadgroupMemoryLength:atIndex:")
     void setThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);

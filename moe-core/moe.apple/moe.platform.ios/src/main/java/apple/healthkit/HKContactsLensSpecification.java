@@ -72,6 +72,8 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
      * [@property] baseCurve
      * 
      * The curvature of the back surface of the lens (measured in mm)
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -118,6 +120,8 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
      * [@property] diameter
      * 
      * The width of the lens from edge to edge (measured in mm)
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -150,6 +154,8 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
      * @param addPower  The power adjustment applied to a multifocal lens to correct presbyopia
      * @param baseCurve The curvature of the back surface of the lens
      * @param diameter  The width of the lens from edge to edge
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("initWithSphere:cylinder:axis:addPower:baseCurve:diameter:")

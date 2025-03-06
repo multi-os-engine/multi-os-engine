@@ -94,6 +94,9 @@ public class MKLookAroundSnapshot extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("image")

@@ -33,7 +33,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: This command has been removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -66,7 +69,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The attributeId field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("attributeId")
     @NotNull
@@ -133,7 +139,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
      * schema for this command.
      * 
      * API-Since: 17.0
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This command has been removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithResponseValue:error:")
     public native MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommandParams initWithResponseValueError(
@@ -155,7 +164,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The intervals field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("intervals")
     @NotNull
@@ -177,7 +189,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The numberOfIntervalsDelivered field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("numberOfIntervalsDelivered")
     @NotNull
@@ -185,7 +200,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The profileIntervalPeriod field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("profileIntervalPeriod")
     @NotNull
@@ -201,42 +219,60 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The attributeId field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setAttributeId:")
     public native void setAttributeId(@NotNull NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The intervals field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setIntervals:")
     public native void setIntervals(@NotNull NSArray<?> value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The numberOfIntervalsDelivered field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setNumberOfIntervalsDelivered:")
     public native void setNumberOfIntervalsDelivered(@NotNull NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The profileIntervalPeriod field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setProfileIntervalPeriod:")
     public native void setProfileIntervalPeriod(@NotNull NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The startTime field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setStartTime:")
     public native void setStartTime(@NotNull NSNumber value);
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The status field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("setStatus:")
     public native void setStatus(@NotNull NSNumber value);
@@ -270,7 +306,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The startTime field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("startTime")
     @NotNull
@@ -278,7 +317,10 @@ public class MTRElectricalMeasurementClusterGetMeasurementProfileResponseCommand
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The status field will be removed
      */
+    @Deprecated
     @Generated
     @Selector("status")
     @NotNull

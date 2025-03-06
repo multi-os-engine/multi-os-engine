@@ -122,6 +122,8 @@ public class MPSCNNFullyConnectedGradient extends MPSCNNConvolutionGradient {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -140,6 +142,8 @@ public class MPSCNNFullyConnectedGradient extends MPSCNNConvolutionGradient {
      *                protocol. Note that same data source as provided to forward convolution should be used.
      * 
      * @return A valid MPSCNNConvolutionGradient object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:weights:")

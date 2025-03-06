@@ -89,6 +89,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("alpha")
@@ -102,6 +104,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("beta")
@@ -136,6 +140,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("delta")
@@ -170,6 +176,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -187,6 +195,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * @param device     The device the filter will run on
      * @param kernelSize The kernel filter size in each dimension.
      * @return A valid MPSCNNCrossChannelNormalization object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelSize:")
@@ -214,6 +225,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * [@property] kernelSize
      * 
      * The size of the square filter window. Default is 5
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("kernelSize")
@@ -242,6 +255,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setAlpha:")
@@ -251,6 +266,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setBeta:")
@@ -260,6 +277,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setDelta:")

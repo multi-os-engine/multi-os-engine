@@ -61,6 +61,8 @@ public class SRSensorReader extends NSObject {
 
     /**
      * The current authorization status of the calling application.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("authorizationStatus")
@@ -96,6 +98,9 @@ public class SRSensorReader extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -121,6 +126,8 @@ public class SRSensorReader extends NSObject {
      * to the delegate in the sensorReader:didCompleteFetch: method.
      * 
      * @param request The query parameters for this fetch
+     * 
+     *                API-Since: 14.0
      */
     @Generated
     @Selector("fetch:")
@@ -135,6 +142,8 @@ public class SRSensorReader extends NSObject {
      * failed, an error will be returned to the delegate in the
      * sensorReader:fetchDevicesFailedWithError:
      * method
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("fetchDevices")
@@ -152,6 +161,8 @@ public class SRSensorReader extends NSObject {
     /**
      * Initializes an SRSensorReader that will fetch data for the current device
      * and any companion
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithSensor:")
@@ -207,6 +218,9 @@ public class SRSensorReader extends NSObject {
      * the prompt, your completion block will be called with a nil error.
      * Changes in authorization status will delivered to the delegate in the
      * sensorReader:didChangeAuthorizationStatus: method.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("requestAuthorizationForSensors:completion:")
@@ -230,16 +244,24 @@ public class SRSensorReader extends NSObject {
 
     /**
      * the sensor this reader was initialized with
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
     @Selector("sensor")
     public native String sensor();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SRSensorReaderDelegate value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SRSensorReaderDelegate value) {
         Object __old = delegate();
@@ -273,6 +295,8 @@ public class SRSensorReader extends NSObject {
      * In the case of failure, error notification will be delivered
      * to the delegate in the sensorReader:startRecordingFailedWithError:
      * delegate method.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startRecording")
@@ -293,6 +317,8 @@ public class SRSensorReader extends NSObject {
      * In the case of failure, error notification will be delivered
      * to the delegate in the sensorReader:stopRecordingFailedWithError:
      * delegate method.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("stopRecording")

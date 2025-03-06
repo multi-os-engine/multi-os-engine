@@ -85,6 +85,8 @@ public class UIEditMenuConfiguration extends NSObject {
 
     /**
      * Creates a new configuration with the specified source location.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("configurationWithIdentifier:sourcePoint:")
@@ -106,6 +108,8 @@ public class UIEditMenuConfiguration extends NSObject {
 
     /**
      * The unique identifier of the configuration.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -146,6 +150,8 @@ public class UIEditMenuConfiguration extends NSObject {
 
     /**
      * The preferred arrow direction of the edit menu. Default is @c UIEditMenuArrowDirectionAutomatic
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("preferredArrowDirection")
@@ -162,6 +168,8 @@ public class UIEditMenuConfiguration extends NSObject {
 
     /**
      * The preferred arrow direction of the edit menu. Default is @c UIEditMenuArrowDirectionAutomatic
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPreferredArrowDirection:")
@@ -177,6 +185,8 @@ public class UIEditMenuConfiguration extends NSObject {
      * By default, the menu will be presented from this location. You can change the presentation source of the menu
      * with the delegate
      * method @c editMenuInteraction:targetRectForConfiguration:
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("sourcePoint")

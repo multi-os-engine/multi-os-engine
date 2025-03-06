@@ -89,6 +89,8 @@ public class ILNetworkResponse extends NSObject implements NSSecureCoding {
 
     /**
      * Data returned in the HTTPS response.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -175,6 +177,8 @@ public class ILNetworkResponse extends NSObject implements NSSecureCoding {
 
     /**
      * Represents the URL response itself. See documentation for NSHTTPURLResponse.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

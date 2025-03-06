@@ -70,6 +70,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
 
     /**
      * The source attributed string
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -94,6 +96,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     /**
      * The character index for point inside the line fragment coordinate system. The fraction of distance is from the
      * upstream edge
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("characterIndexForPoint:")
@@ -102,6 +106,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
 
     /**
      * The string range for the source attributed string corresponding to this line fragment
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("characterRange")
@@ -128,8 +134,10 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
 
     /**
      * Renders the line fragment contents at the rendering origin. The origin can be specified as
-     * (NSMinX(typographicBounds) + glyphOrigin.x, NSMinY(typographicBounds) + glyphOrigin.y) relative to the line
-     * fragment group coordinate system
+     * (CGRectGetMinX(typographicBounds), CGRectGetMinY(typographicBounds)) relative to the parent layout fragment
+     * coordinate system.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("drawAtPoint:inContext:")
@@ -139,6 +147,9 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("fractionOfDistanceThroughGlyphForPoint:")
     @NFloat
@@ -146,6 +157,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
 
     /**
      * Rendering origin for the left most glyph in the line fragment coordinate system
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("glyphOrigin")
@@ -161,6 +174,9 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     @Selector("init")
     public native NSTextLineFragment init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAttributedString:range:")
     public native NSTextLineFragment initWithAttributedStringRange(@NotNull NSAttributedString attributedString,
@@ -170,6 +186,9 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSTextLineFragment initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithString:attributes:range:")
     public native NSTextLineFragment initWithStringAttributesRange(@NotNull String string,
@@ -200,6 +219,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     /**
      * The location of the character at the specified index. It is on the upstream edge of the glyph. It is in the
      * coordinate system relative to the line fragment origin
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("locationForCharacterAtIndex:")
@@ -241,6 +262,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
      * The typographic bounds specifying the dimensions of the line fragment for laying out line fragments to each
      * other. The origin value is offset from the beginning of the line fragment group belonging to the parent layout
      * fragment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("typographicBounds")

@@ -233,6 +233,8 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
      * @return
      *         An indication of success. NO will be returned if the specified time is beyond the duration of the last
      *         opacity ramp that has been set.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("getOpacityRampForTime:startOpacity:endOpacity:timeRange:")
@@ -260,6 +262,8 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
      * @return
      *         An indication of success. NO will be returned if the specified time is beyond the duration of the last
      *         transform ramp that has been set.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("getTransformRampForTime:startTransform:endTransform:timeRange:")
@@ -290,6 +294,8 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
 
     /**
      * Indicates the trackID of the source track to which the compositor will apply the instruction.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("trackID")

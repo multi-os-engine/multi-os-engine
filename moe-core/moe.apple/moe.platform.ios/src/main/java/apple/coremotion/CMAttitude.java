@@ -194,6 +194,8 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
      * Discussion:
      * Multiplies attitude by the inverse of the specified attitude. This gives
      * the attitude change from the specified attitude.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("multiplyByInverseOfAttitude:")
@@ -204,6 +206,9 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns the pitch of the device in radians.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("pitch")
@@ -214,6 +219,9 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns a quaternion representing the device's attitude.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("quaternion")
@@ -225,6 +233,9 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns the roll of the device in radians.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("roll")
@@ -235,6 +246,9 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns a rotation matrix representing the device's attitude.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("rotationMatrix")
@@ -252,6 +266,9 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns the yaw of the device in radians.
+     * 
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("yaw")

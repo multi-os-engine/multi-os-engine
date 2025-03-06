@@ -83,6 +83,8 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      *                the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
      *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVURLAsset.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("URLAssetWithURL:options:")
@@ -254,6 +256,8 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * [@property] URL
      * 
      * Indicates the URL with which the instance of AVURLAsset was initialized.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -284,7 +288,8 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * The logical complement of -[AVMutableComposition mutableTrackCompatibleWithTrack:].
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use findCompatibleTrackForCompositionTrack:completionHandler: instead
      * 
      * @param compositionTrack
      *                         The composition track for which a compatible AVAssetTrack is requested.
@@ -312,6 +317,8 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      *                the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
      *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVURLAsset.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("initWithURL:options:")

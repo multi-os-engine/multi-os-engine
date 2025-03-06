@@ -154,6 +154,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     /**
      * looks up all models in the specified bundles and merges them; if nil is specified as argument, uses the main
      * bundle
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -176,6 +178,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
 
     /**
      * combines multiple models (typically from different frameworks) into one
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -224,6 +228,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
 
     /**
      * returns all available configuration names
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -247,16 +253,25 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("entities")
     public native NSArray<? extends NSEntityDescription> entities();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("entitiesByName")
     public native NSDictionary<String, ? extends NSEntityDescription> entitiesByName();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("entitiesForConfiguration:")
@@ -276,6 +291,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     /**
      * returns a copy of the fetch request template with the variable bindings substituted - this is the usual way to
      * bind an "abstractly" defined fetch request template to a concrete fetch
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -283,6 +300,9 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     public native NSFetchRequest<?> fetchRequestFromTemplateWithNameSubstitutionVariables(@NotNull String name,
             @NotNull NSDictionary<String, ?> variables);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("fetchRequestTemplateForName:")
@@ -300,6 +320,9 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Selector("fetchRequestTemplatesByName")
     public native NSDictionary<String, ? extends NSFetchRequest<?>> fetchRequestTemplatesByName();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("init")
     public native NSManagedObjectModel init();
@@ -308,6 +331,9 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Selector("initWithCoder:")
     public native NSManagedObjectModel initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSManagedObjectModel initWithContentsOfURL(@NotNull NSURL url);
@@ -340,16 +366,24 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * 
      * key = "ErrorString/NonLocalizedErrorString"
      * value = "LocalizedErrorString"
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
     @Selector("localizationDictionary")
     public native NSDictionary<String, String> localizationDictionary();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setEntities:")
     public native void setEntities(@NotNull NSArray<? extends NSEntityDescription> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setEntities:forConfiguration:")
     public native void setEntitiesForConfiguration(@NotNull NSArray<? extends NSEntityDescription> entities,
@@ -358,6 +392,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     /**
      * fetch request templates allow to pre-define queries and their parameters in the model (with the tool) - typically
      * they contain variables that need to be substituted at runtime.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setFetchRequestTemplate:forName:")
@@ -380,6 +416,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * 
      * key = "ErrorString/NonLocalizedErrorString"
      * value = "LocalizedErrorString"
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setLocalizationDictionary:")

@@ -177,6 +177,8 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
      * 
      * Returns a pointer to the array of three floats used to convert RGBA, RGB or RG images
      * to the destination format when the destination is monochrome.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -195,6 +197,8 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
      * 
      * @param device The device the filter will run on
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -211,6 +215,8 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
      * @param device    The device the filter will run on
      * @param transform Array of three floats describing the rgb to gray scale color transform.
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:linearGrayColorTransform:")

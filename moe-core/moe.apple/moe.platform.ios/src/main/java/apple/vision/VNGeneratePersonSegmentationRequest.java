@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * Performs person segmentation on an image generating a mask.
@@ -110,10 +113,16 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native VNGeneratePersonSegmentationRequest init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNGeneratePersonSegmentationRequest initWithCompletionHandler(
@@ -163,6 +172,8 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
      * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_OneComponent32Float,
      * kCVPixelFormatType_OneComponent16Half, and kCVPixelFormatType_OneComponent8. Default is
      * kCVPixelFormatType_OneComponent8.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("outputPixelFormat")
@@ -171,6 +182,8 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     /**
      * The quality level selects which techniques will be used during the person segmentation. There are trade-offs
      * between performance and accuracy.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("qualityLevel")
@@ -185,6 +198,9 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("results")
@@ -194,6 +210,8 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
      * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_OneComponent32Float,
      * kCVPixelFormatType_OneComponent16Half, and kCVPixelFormatType_OneComponent8. Default is
      * kCVPixelFormatType_OneComponent8.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setOutputPixelFormat:")
@@ -202,6 +220,8 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     /**
      * The quality level selects which techniques will be used during the person segmentation. There are trade-offs
      * between performance and accuracy.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setQualityLevel:")
@@ -229,4 +249,15 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Obtain the collection of supported output pixel formats for the configured request.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("supportedOutputPixelFormatsAndReturnError:")
+    @Nullable
+    public native NSArray<? extends NSNumber> supportedOutputPixelFormatsAndReturnError(
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

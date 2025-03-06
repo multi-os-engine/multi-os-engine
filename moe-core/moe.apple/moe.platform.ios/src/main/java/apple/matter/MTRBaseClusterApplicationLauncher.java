@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterApplicationLauncher extends MTRCluster {
+public class MTRBaseClusterApplicationLauncher extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -1248,5 +1248,53 @@ public class MTRBaseClusterApplicationLauncher extends MTRCluster {
     public interface Block_writeAttributeCurrentAppWithValueParamsCompletionHandler {
         @Generated
         void call_writeAttributeCurrentAppWithValueParamsCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("hideAppWithCompletion:")
+    public native void hideAppWithCompletion(
+            @ObjCBlock(name = "call_hideAppWithCompletion") @NotNull Block_hideAppWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_hideAppWithCompletion {
+        @Generated
+        void call_hideAppWithCompletion(@Nullable MTRApplicationLauncherClusterLauncherResponseParams data,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("launchAppWithCompletion:")
+    public native void launchAppWithCompletion(
+            @ObjCBlock(name = "call_launchAppWithCompletion") @NotNull Block_launchAppWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_launchAppWithCompletion {
+        @Generated
+        void call_launchAppWithCompletion(@Nullable MTRApplicationLauncherClusterLauncherResponseParams data,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("stopAppWithCompletion:")
+    public native void stopAppWithCompletion(
+            @ObjCBlock(name = "call_stopAppWithCompletion") @NotNull Block_stopAppWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stopAppWithCompletion {
+        @Generated
+        void call_stopAppWithCompletion(@Nullable MTRApplicationLauncherClusterLauncherResponseParams data,
+                @Nullable NSError error);
     }
 }

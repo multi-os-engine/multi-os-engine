@@ -53,6 +53,8 @@ public class HKLensSpecification extends NSObject {
      * [@property] addPower
      * 
      * The power adjustment applied to a multifocal lens to correct presbyopia
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -77,6 +79,8 @@ public class HKLensSpecification extends NSObject {
      * [@property] axis
      * 
      * The angle along which cylindrical power should be positioned to correct astigmatism
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -108,6 +112,8 @@ public class HKLensSpecification extends NSObject {
      * [@property] cylinder
      * 
      * The lens power required to correct astigmatism. Can be positive or negative.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -174,6 +180,8 @@ public class HKLensSpecification extends NSObject {
      * [@property] sphere
      * 
      * The lens power to correct nearsightedness or farsightedness. (-) means nearsighted while (+) farsighted.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

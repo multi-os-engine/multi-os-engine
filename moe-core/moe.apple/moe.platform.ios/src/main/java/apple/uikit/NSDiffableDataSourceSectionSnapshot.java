@@ -59,6 +59,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * append items to Root
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("appendItems:")
@@ -67,6 +69,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     /**
      * append items into parent (creating a new Parent+Child relationship if not present; appends to existing children
      * if present)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("appendItems:intoParentItem:")
@@ -100,11 +104,16 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * will log if item is not found
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("collapseItems:")
     public native void collapseItems(@NotNull NSArray<_ItemIdentifierType> items);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("containsItem:")
     public native boolean containsItem(@NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
@@ -120,12 +129,17 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("deleteAllItems")
     public native void deleteAllItems();
 
     /**
      * will also delete children
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("deleteItems:")
@@ -137,11 +151,16 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * will log if item is not found
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("expandItems:")
     public native void expandItems(@NotNull NSArray<_ItemIdentifierType> items);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("expandedItems")
@@ -152,6 +171,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("indexOfItem:")
     @NInt
@@ -159,6 +181,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * creates an empty snapshot
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("init")
@@ -202,6 +226,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * +--------------------------------+
      * | insertAfter(INS, after:2) |
      * +--------------------------------+
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("insertItems:afterItem:")
@@ -244,12 +270,17 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * +--------------------------------+
      * | insertBefore(0) |
      * +--------------------------------+
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("insertItems:beforeItem:")
     public native void insertItemsBeforeItem(@NotNull NSArray<_ItemIdentifierType> items,
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType beforeIdentifier);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("insertSnapshot:afterItem:")
@@ -260,6 +291,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * insert a subtree -- represented by a snapshot -- before/after a destination item
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("insertSnapshot:beforeItem:")
@@ -282,6 +315,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * these methods are all O(1)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isExpanded:")
@@ -291,10 +326,16 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isVisible:")
     public native boolean isVisible(@NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("items")
@@ -307,6 +348,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * NSNotFound if not present
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("levelOfItem:")
@@ -320,6 +363,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * nil == root node
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -328,6 +373,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     public native _ItemIdentifierType parentOfChildItem(
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType childItem);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("replaceChildrenOfParentItem:withSnapshot:")
     public native void replaceChildrenOfParentItemWithSnapshot(
@@ -342,6 +390,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("rootItems")
@@ -353,6 +404,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * snapshot will not include parentItem
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -360,6 +413,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     public native NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshotOfParentItem(
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("snapshotOfParentItem:includingParentItem:")
@@ -375,6 +431,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("visibleItems")
@@ -386,6 +445,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * * == visible
      * + == expanded
      * - == collapsed
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

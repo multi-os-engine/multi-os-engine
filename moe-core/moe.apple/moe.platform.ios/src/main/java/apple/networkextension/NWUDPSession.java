@@ -49,7 +49,11 @@ import org.jetbrains.annotations.Nullable;
  * Open UDP datagram sessions to an endpoint, and send and receive datagrams.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `nw_connection_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWUDPSession.h>
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -171,7 +175,11 @@ public class NWUDPSession extends NSObject {
      * and all handlers will be cancelled.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_cancel` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -182,7 +190,11 @@ public class NWUDPSession extends NSObject {
      * The current evaluated path for the resolvedEndpoint. Use KVO to watch for changes.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_copy_current_path` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("currentPath")
@@ -194,7 +206,11 @@ public class NWUDPSession extends NSObject {
      * The provided endpoint.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_copy_endpoint` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("endpoint")
@@ -207,7 +223,11 @@ public class NWUDPSession extends NSObject {
      * To take advantage of this path, create a new UDPSession. Use KVO to watch for changes.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_set_better_path_available_handler` in Network framework instead, see
+     * deprecation notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("hasBetterPath")
     public native boolean hasBetterPath();
@@ -234,7 +254,11 @@ public class NWUDPSession extends NSObject {
      * @return An initialized NWUDPSession object.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use `nw_connection_create` in Network framework instead, see deprecation notice in
+     *         <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("initWithUpgradeForSession:")
     public native NWUDPSession initWithUpgradeForSession(@NotNull NWUDPSession session);
@@ -246,7 +270,11 @@ public class NWUDPSession extends NSObject {
      * Use KVO to watch this property.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_set_viability_changed_handler` in Network framework instead, see
+     * deprecation notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("isViable")
     public native boolean isViable();
@@ -260,7 +288,11 @@ public class NWUDPSession extends NSObject {
      * across the network. Use KVO to watch for changes.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_get_maximum_datagram_size` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("maximumDatagramLength")
     @NUInt
@@ -272,7 +304,11 @@ public class NWUDPSession extends NSObject {
      * The currently targeted remote endpoint. Use KVO to watch for changes.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_copy_current_path` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("resolvedEndpoint")
@@ -288,7 +324,11 @@ public class NWUDPSession extends NSObject {
      * @param maxDatagrams The maximum number of datagrams to send to the handler.
      * 
      *                     API-Since: 9.0
+     *                     Deprecated-Since: 18.0
+     *                     Deprecated-Message: Use `nw_connection_receive` in Network framework instead, see deprecation
+     *                     notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("setReadHandler:maxDatagrams:")
     public native void setReadHandlerMaxDatagrams(
@@ -304,7 +344,11 @@ public class NWUDPSession extends NSObject {
      * rejected. Use KVO to watch for changes.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_set_state_changed_handler` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("state")
     @NInt
@@ -319,7 +363,11 @@ public class NWUDPSession extends NSObject {
      * there are no other resolved endpoints, the session will move to the failed state.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_connection_cancel_current_endpoint` in Network framework instead, see deprecation
+     * notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("tryNextResolvedEndpoint")
     public native void tryNextResolvedEndpoint();
@@ -334,7 +382,11 @@ public class NWUDPSession extends NSObject {
      * @param completionHandler A handler called when the write request has either succeeded or failed.
      * 
      *                          API-Since: 9.0
+     *                          Deprecated-Since: 18.0
+     *                          Deprecated-Message: Use `nw_connection_send` in Network framework instead, see
+     *                          deprecation notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("writeDatagram:completionHandler:")
     public native void writeDatagramCompletionHandler(@NotNull NSData datagram,
@@ -350,7 +402,11 @@ public class NWUDPSession extends NSObject {
      * @param completionHandler A handler called when the write request has either succeeded or failed.
      * 
      *                          API-Since: 9.0
+     *                          Deprecated-Since: 18.0
+     *                          Deprecated-Message: Use `nw_connection_send` in Network framework instead, see
+     *                          deprecation notice in <NetworkExtension/NWUDPSession.h>
      */
+    @Deprecated
     @Generated
     @Selector("writeMultipleDatagrams:completionHandler:")
     public native void writeMultipleDatagramsCompletionHandler(@NotNull NSArray<? extends NSData> datagramArray,

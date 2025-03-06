@@ -73,6 +73,8 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
      * Array of AVAudioUnitEQFilterParameters objects.
      * 
      * The number of elements in the array is equal to the number of bands.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("globalGain")
@@ -142,6 +146,8 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
      * 
      * @param numberOfBands
      *                      The number of bands created by the EQ.
+     * 
+     *                      API-Since: 8.0
      */
     @Generated
     @Selector("initWithNumberOfBands:")
@@ -196,6 +202,8 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setGlobalGain:")

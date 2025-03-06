@@ -178,6 +178,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("entity")
@@ -237,6 +240,8 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     /**
      * The optional flag specifies whether a property's value can be nil or not (before an object can be persisted).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isOptional")
@@ -244,6 +249,8 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     /**
      * The optional flag specifies whether a property's value can be nil or not (before an object can be persisted).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setOptional:")
@@ -276,6 +283,8 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     /**
      * The transient flag specifies whether a property's value is persisted or ignored when an object is persisted -
      * transient properties are still managed for undo/redo, validation, etc.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isTransient")
@@ -284,11 +293,16 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     /**
      * The transient flag specifies whether a property's value is persisted or ignored when an object is persisted -
      * transient properties are still managed for undo/redo, validation, etc.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setTransient:")
     public native void setTransient(boolean value);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("name")
@@ -302,6 +316,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(@NotNull String value);
@@ -313,10 +330,16 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("setRenamingIdentifier:")
     public native void setRenamingIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setValidationPredicates:withValidationWarnings:")
     public native void setValidationPredicatesWithValidationWarnings(
@@ -335,6 +358,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("setVersionHashModifier:")
     public native void setVersionHashModifier(@Nullable String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("userInfo")
@@ -344,12 +370,17 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      * Instead of individual methods to set/get parameters like length, min and max values, formats, etc., there is a
      * list of predicates evaluated against the managed objects and corresponding error messages (which can be
      * localized).
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
     @Selector("validationPredicates")
     public native NSArray<? extends NSPredicate> validationPredicates();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("validationWarnings")

@@ -90,6 +90,9 @@ public class INRelevantShortcutStore extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("defaultStore")
@@ -146,6 +149,8 @@ public class INRelevantShortcutStore extends NSObject {
     /**
      * Provide a new set of relevant shortcuts that should be suggested by Siri.
      * [@note] Setting new relevant shortcuts will replace all relevant shortcuts that were previously provided.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setRelevantShortcuts:completionHandler:")

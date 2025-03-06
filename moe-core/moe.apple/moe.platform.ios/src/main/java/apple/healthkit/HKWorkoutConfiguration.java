@@ -174,6 +174,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * [@property] activityType
      * 
      * Indicates the type of workout for the configuration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("activityType")
@@ -206,6 +208,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * 
      * This metric represents the length of the pool where the workout takes place. It should be a quantity with
      * a unit representing length.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -216,6 +220,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * [@property] locationType
      * 
      * Indicates the type of location (indoors vs. outdoors) for the configuration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("locationType")
@@ -226,6 +232,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * [@property] activityType
      * 
      * Indicates the type of workout for the configuration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setActivityType:")
@@ -238,6 +246,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * 
      * This metric represents the length of the pool where the workout takes place. It should be a quantity with
      * a unit representing length.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLapLength:")
@@ -247,6 +257,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * [@property] locationType
      * 
      * Indicates the type of location (indoors vs. outdoors) for the configuration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocationType:")
@@ -256,6 +268,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * [@property] swimmingLocationType
      * 
      * Indicates the type of swimming location (pool vs. open water) where the workout will take place.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSwimmingLocationType:")
@@ -271,6 +285,8 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
      * [@property] swimmingLocationType
      * 
      * Indicates the type of swimming location (pool vs. open water) where the workout will take place.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("swimmingLocationType")

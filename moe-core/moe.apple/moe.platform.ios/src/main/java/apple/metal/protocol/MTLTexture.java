@@ -65,6 +65,8 @@ public interface MTLTexture extends MTLResource {
      * The number of array elements in this MTLTexture.
      * 
      * For non-Array texture types, arrayLength is 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("arrayLength")
@@ -115,6 +117,8 @@ public interface MTLTexture extends MTLResource {
      * The depth of this MTLTexture instance in pixels.
      * 
      * If this MTLTexture is not a 3D texture, the depth is 1
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("depth")
@@ -125,6 +129,8 @@ public interface MTLTexture extends MTLResource {
      * getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:
      * 
      * Copies a block of pixels from a texture slice into the application's memory.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:")
@@ -137,6 +143,8 @@ public interface MTLTexture extends MTLResource {
      * 
      * Convenience for getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice: that doesn't require slice
      * related arguments
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getBytes:bytesPerRow:fromRegion:mipmapLevel:")
@@ -148,6 +156,8 @@ public interface MTLTexture extends MTLResource {
      * 
      * The height of the MTLTexture instance in pixels.
      * @discussion. height is 1 if the texture is 1D.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("height")
@@ -164,6 +174,8 @@ public interface MTLTexture extends MTLResource {
      * Textures obtained from CAMetalDrawables may have this property set to YES, depending on the value of
      * frameBufferOnly passed to their parent CAMetalLayer. Textures created directly by the application will not have
      * any restrictions.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isFramebufferOnly")
@@ -173,6 +185,8 @@ public interface MTLTexture extends MTLResource {
      * [@property] mipmapLevelCount
      * 
      * The number of mipmap levels in each slice of this MTLTexture.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("mipmapLevelCount")
@@ -184,6 +198,8 @@ public interface MTLTexture extends MTLResource {
      * 
      * Create a new texture which shares the same storage as the source texture, but with a different (but compatible)
      * pixel format.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -248,6 +264,8 @@ public interface MTLTexture extends MTLResource {
      * [@property] pixelFormat
      * 
      * The MTLPixelFormat that is used to interpret this texture's contents.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pixelFormat")
@@ -258,6 +276,8 @@ public interface MTLTexture extends MTLResource {
      * replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:
      * 
      * Copy a block of pixel data from the caller's pointer into a texture slice.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:")
@@ -269,6 +289,8 @@ public interface MTLTexture extends MTLResource {
      * 
      * Convenience for replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage: that doesn't require slice
      * related arguments
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("replaceRegion:mipmapLevel:withBytes:bytesPerRow:")
@@ -298,6 +320,8 @@ public interface MTLTexture extends MTLResource {
      * The number of samples in each pixel of this MTLTexture.
      * 
      * If this texture is any type other than 2DMultisample, samples is 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sampleCount")
@@ -308,6 +332,8 @@ public interface MTLTexture extends MTLResource {
      * [@property] type
      * 
      * The type of this texture.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("textureType")
@@ -318,6 +344,8 @@ public interface MTLTexture extends MTLResource {
      * [@property] usage
      * 
      * Description of texture usage.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("usage")
@@ -328,6 +356,8 @@ public interface MTLTexture extends MTLResource {
      * [@property] width
      * 
      * The width of the MTLTexture instance in pixels.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("width")

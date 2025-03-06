@@ -109,6 +109,9 @@ public class INStartCallCallCapabilityResolutionResult extends INCallCapabilityR
     @Selector("init")
     public native INStartCallCallCapabilityResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCallCapabilityResolutionResult:")
     public native INStartCallCallCapabilityResolutionResult initWithCallCapabilityResolutionResult(
@@ -178,6 +181,9 @@ public class INStartCallCallCapabilityResolutionResult extends INCallCapabilityR
     @Selector("unsupported")
     public static native INStartCallCallCapabilityResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

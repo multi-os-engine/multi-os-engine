@@ -25,19 +25,30 @@ import org.jetbrains.annotations.Nullable;
 public interface UITextDraggable extends UITextInput {
     /**
      * Returns whether this control currently has at least one active drag session.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isTextDragActive")
     boolean isTextDragActive();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTextDragDelegate:")
     void setTextDragDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTextDragOptions:")
     void setTextDragOptions(@NInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("textDragDelegate")
@@ -48,12 +59,17 @@ public interface UITextDraggable extends UITextInput {
      * The text drag interaction that UIKit installs on the text control.
      * Use this to explicitly disable drag interactions on system text controls,
      * if desired.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
     @Selector("textDragInteraction")
     UIDragInteraction textDragInteraction();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("textDragOptions")
     @NInt

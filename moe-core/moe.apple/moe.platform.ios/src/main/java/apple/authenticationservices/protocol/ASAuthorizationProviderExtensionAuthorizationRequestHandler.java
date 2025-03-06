@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 public interface ASAuthorizationProviderExtensionAuthorizationRequestHandler {
     /**
      * Called to begin the authorization. It’s called on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("beginAuthorizationWithRequest:")
@@ -27,6 +29,8 @@ public interface ASAuthorizationProviderExtensionAuthorizationRequestHandler {
 
     /**
      * Called when the authorization was canceled by authorization service. It’s called on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

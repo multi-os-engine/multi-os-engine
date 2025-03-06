@@ -137,6 +137,8 @@ public class NSBatchInsertResult extends NSPersistentStoreResult {
 
     /**
      * Return the result. See NSBatchInsertRequestResultType for options
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -144,6 +146,9 @@ public class NSBatchInsertResult extends NSPersistentStoreResult {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object result();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("resultType")
     @NUInt

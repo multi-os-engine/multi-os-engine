@@ -144,6 +144,9 @@ public class MTLAccelerationStructureDescriptor extends NSObject implements NSCo
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setUsage:")
     public native void setUsage(@NUInt long value);
@@ -156,6 +159,9 @@ public class MTLAccelerationStructureDescriptor extends NSObject implements NSCo
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("usage")
     @NUInt

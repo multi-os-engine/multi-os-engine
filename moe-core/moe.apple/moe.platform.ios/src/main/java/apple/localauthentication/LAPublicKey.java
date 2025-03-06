@@ -70,6 +70,8 @@ public class LAPublicKey extends NSObject {
      * 
      * @param algorithm Cryptographic algorithm
      * @return @c YES in case the key supports the provided algorithm with the specified operation.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("canEncryptUsingSecKeyAlgorithm:")
@@ -80,6 +82,8 @@ public class LAPublicKey extends NSObject {
      * 
      * @param algorithm Cryptographic algorithm
      * @return @c YES in case the key supports the provided algorithm with the specified operation.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @Selector("canVerifyUsingSecKeyAlgorithm:")
@@ -121,6 +125,8 @@ public class LAPublicKey extends NSObject {
      * @param algorithm A @c SecKeyAlgorithm suitable for encrypting with this key –e.g: @c
      *                  kSecKeyAlgorithmECIESEncryptionStandardVariableIVX963SHA256AESGCM .
      * @param handler   Completion handler with the ciphertext or an error on failure.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("encryptData:secKeyAlgorithm:completion:")
@@ -138,6 +144,8 @@ public class LAPublicKey extends NSObject {
      * Exports public key bytes.
      * 
      * @param handler Completion handler with the raw bytes of the public key or an error on failure
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("exportBytesWithCompletion:")
@@ -211,6 +219,8 @@ public class LAPublicKey extends NSObject {
      * @param algorithm  One of @c SecKeyAlgorithm suitable for verifying signatures with this key –e.g: @c
      *                   kSecKeyAlgorithmECDSASignatureMessageX962SHA256
      * @param handler    Completion hadnler with the signature of given data or an error on failure.
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("verifyData:signature:secKeyAlgorithm:completion:")

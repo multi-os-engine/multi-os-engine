@@ -41,6 +41,8 @@ public interface INEditMessageIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INEditMessageIntentResponse
+     * 
+     *      API-Since: 17.0
      */
     @Generated
     @IsOptional
@@ -67,6 +69,8 @@ public interface INEditMessageIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INEditMessageIntentResponse
+     * 
+     *      API-Since: 17.0
      */
     @Generated
     @Selector("handleEditMessage:completion:")
@@ -90,6 +94,8 @@ public interface INEditMessageIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 17.0
      */
     @Generated
     @IsOptional

@@ -40,13 +40,15 @@ import org.jetbrains.annotations.Nullable;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLHeap")
-public interface MTLHeap {
+public interface MTLHeap extends MTLAllocation {
     /**
      * [@property] cpuCacheMode
      * 
      * CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
      * 
      * All resources created from this heap share the same cache mode.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("cpuCacheMode")
@@ -57,6 +59,8 @@ public interface MTLHeap {
      * [@property] device
      * 
      * The device this heap was created against. This heap can only be used with this device.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -68,6 +72,8 @@ public interface MTLHeap {
      * [@property] label
      * 
      * A string to help identify this heap.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -81,6 +87,8 @@ public interface MTLHeap {
      * Alignment needs to be zero, or power of two.
      * 
      * Provides a measure of fragmentation within the heap.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("maxAvailableSizeWithAlignment:")
@@ -95,6 +103,8 @@ public interface MTLHeap {
      * The requested storage and CPU cache modes must match the storage and CPU cache modes of the heap.
      * 
      * @return The buffer or nil if heap is full.
+     * 
+     *         API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -111,6 +121,8 @@ public interface MTLHeap {
      * exception that the requested storage mode can be MTLStorageModeMemoryless.
      * 
      * @return The texture or nil if heap is full.
+     * 
+     *         API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -122,6 +134,8 @@ public interface MTLHeap {
      * [@property] label
      * 
      * A string to help identify this heap.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLabel:")
@@ -131,6 +145,8 @@ public interface MTLHeap {
      * setPurgeabilityState:
      * 
      * Set or query the purgeability state of the heap.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPurgeableState:")
@@ -141,6 +157,8 @@ public interface MTLHeap {
      * [@property] size
      * 
      * Heap size in bytes, specified at creation time and rounded up to device specific alignment.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("size")
@@ -153,6 +171,8 @@ public interface MTLHeap {
      * Current heap storage mode, default is MTLStorageModePrivate.
      * 
      * All resources created from this heap share the same storage mode.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("storageMode")
@@ -163,6 +183,8 @@ public interface MTLHeap {
      * [@property] usedSize
      * 
      * The size in bytes, of all resources allocated from the heap.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("usedSize")

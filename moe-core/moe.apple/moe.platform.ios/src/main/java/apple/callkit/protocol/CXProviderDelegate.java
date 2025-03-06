@@ -46,6 +46,8 @@ import org.jetbrains.annotations.NotNull;
 public interface CXProviderDelegate {
     /**
      * Called when the provider's audio session activation state changes.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -54,6 +56,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("provider:didDeactivateAudioSession:")
@@ -69,6 +74,8 @@ public interface CXProviderDelegate {
      * - YES: the transaction was handled and the perform*CallAction methods should not be called sequentially
      * 
      * If the method is not implemented, NO is assumed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -77,6 +84,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("provider:performAnswerCallAction:")
@@ -84,6 +94,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("provider:performEndCallAction:")
@@ -91,6 +104,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("provider:performPlayDTMFCallAction:")
@@ -98,6 +114,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("provider:performSetGroupCallAction:")
@@ -105,6 +124,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("provider:performSetHeldCallAction:")
@@ -112,6 +134,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("provider:performSetMutedCallAction:")
@@ -122,6 +147,8 @@ public interface CXProviderDelegate {
     /**
      * If provider:executeTransaction:error: returned NO, each perform*CallAction method is called sequentially for each
      * action in the transaction
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -134,6 +161,8 @@ public interface CXProviderDelegate {
      * Called when an action was not performed in time and has been inherently failed. Depending on the action, this
      * timeout may also force the call to end. An action that has already timed out should not be fulfilled or failed by
      * the provider delegate
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -144,6 +173,8 @@ public interface CXProviderDelegate {
 
     /**
      * Called when the provider has been fully created and is ready to send actions and receive updates
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -156,6 +187,8 @@ public interface CXProviderDelegate {
      * Called when the provider has been reset. Delegates must respond to this callback by cleaning up all internal call
      * state (disconnecting communication channels, releasing network resources, etc.). This callback can be treated as
      * a request to end all calls without the need to respond to any actions
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("providerDidReset:")

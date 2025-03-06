@@ -184,6 +184,8 @@ public class VSAccountManager extends NSObject {
      * deciding whether to allow authentication with the selected provider.
      * Some requests may fail if a delegate is not provided. For example, an account metadata request may require a
      * delegate if it allows interruption.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -220,6 +222,8 @@ public class VSAccountManager extends NSObject {
      * deciding whether to allow authentication with the selected provider.
      * Some requests may fail if a delegate is not provided. For example, an account metadata request may require a
      * delegate if it allows interruption.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -230,6 +234,8 @@ public class VSAccountManager extends NSObject {
      * deciding whether to allow authentication with the selected provider.
      * Some requests may fail if a delegate is not provided. For example, an account metadata request may require a
      * delegate if it allows interruption.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) VSAccountManagerDelegate value) {

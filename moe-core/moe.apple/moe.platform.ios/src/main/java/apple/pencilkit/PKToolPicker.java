@@ -29,6 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.pencilkit.protocol.PKToolPickerDelegate;
+import apple.uikit.UIBarButtonItem;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
  * A user interface for selecting a PKTool.
@@ -58,6 +61,8 @@ public class PKToolPicker extends NSObject {
      * 
      * Adding a `PKCanvasView` as an observer, will also set its initial state.
      * Observers are held weakly.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("addObserver:")
@@ -105,6 +110,8 @@ public class PKToolPicker extends NSObject {
      * interface style.
      * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("colorUserInterfaceStyle")
@@ -125,6 +132,8 @@ public class PKToolPicker extends NSObject {
      * @param view The view in which to return the frame to avoid.
      * @return The rect in `view` that the tool picker obscures. Will return
      *         `CGRectNull` if no rect is obscured, or the tool picker is movable.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("frameObscuredInView:")
@@ -163,6 +172,8 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Is the ruler toggled such that it should be active on canvases.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isRulerActive")
@@ -174,6 +185,8 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Is the tool picker visible.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isVisible")
@@ -194,6 +207,8 @@ public class PKToolPicker extends NSObject {
      * Consider if you need to set `colorUserInterfaceStyle` if you set this property.
      * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("overrideUserInterfaceStyle")
@@ -202,6 +217,8 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Remove an observer for a tool picker changes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("removeObserver:")
@@ -217,7 +234,12 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The currently selected tool.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use selectedToolItem instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("selectedTool")
@@ -230,6 +252,8 @@ public class PKToolPicker extends NSObject {
      * interface style.
      * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setColorUserInterfaceStyle:")
@@ -240,6 +264,8 @@ public class PKToolPicker extends NSObject {
      * Consider if you need to set `colorUserInterfaceStyle` if you set this property.
      * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOverrideUserInterfaceStyle:")
@@ -247,6 +273,8 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Is the ruler toggled such that it should be active on canvases.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRulerActive:")
@@ -254,7 +282,12 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The currently selected tool.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use selectedToolItem instead.
      */
+    @Deprecated
     @Generated
     @Selector("setSelectedTool:")
     public native void setSelectedTool(@NotNull PKTool value);
@@ -268,6 +301,8 @@ public class PKToolPicker extends NSObject {
      * 
      * @param visible   The visible state of this tool picker.
      * @param responder The first responder for which this visible state applies.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("setVisible:forFirstResponder:")
@@ -309,6 +344,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The name used to automatically save the tool picker's state in the defaults system.
+     * As of iOS 18.0 and visionOS 2.0, setting the value to nil disables auto-save.
      * 
      * API-Since: 14.0
      */
@@ -329,6 +365,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The name used to automatically save the tool picker's state in the defaults system.
+     * As of iOS 18.0 and visionOS 2.0, setting the value to nil disables auto-save.
      * 
      * API-Since: 14.0
      */
@@ -372,4 +409,127 @@ public class PKToolPicker extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * If this is non-nil, the tool picker will display this item when the tool picker is displayed in supported
+     * expanded configurations.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("accessoryItem")
+    @Nullable
+    public native UIBarButtonItem accessoryItem();
+
+    /**
+     * The delegate for the tool picker.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native PKToolPickerDelegate delegate();
+
+    /**
+     * Returns a new `PKToolPicker` instance with the given picker items.
+     * 
+     * @param items the items in desired order that are used to set up the picker. At least one item is required.
+     *              If `items` contains tools with the same identifier, only the first item is used to create the
+     *              picker.
+     * 
+     *              API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithToolItems:")
+    public native PKToolPicker initWithToolItems(@NotNull NSArray<? extends PKToolPickerItem> items);
+
+    /**
+     * The currently selected tool item.
+     * Updating this property will select the tool with the matching identifier without altering the item.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("selectedToolItem")
+    @NotNull
+    public native PKToolPickerItem selectedToolItem();
+
+    /**
+     * The identifier of the selected tool item.
+     * Setting it to an identifier without a matching item in this picker has no effect.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("selectedToolItemIdentifier")
+    @NotNull
+    public native String selectedToolItemIdentifier();
+
+    /**
+     * If this is non-nil, the tool picker will display this item when the tool picker is displayed in supported
+     * expanded configurations.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setAccessoryItem:")
+    public native void setAccessoryItem(@Nullable UIBarButtonItem value);
+
+    /**
+     * The delegate for the tool picker.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) @Nullable PKToolPickerDelegate value);
+
+    /**
+     * The delegate for the tool picker.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable PKToolPickerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * The currently selected tool item.
+     * Updating this property will select the tool with the matching identifier without altering the item.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSelectedToolItem:")
+    public native void setSelectedToolItem(@NotNull PKToolPickerItem value);
+
+    /**
+     * The identifier of the selected tool item.
+     * Setting it to an identifier without a matching item in this picker has no effect.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSelectedToolItemIdentifier:")
+    public native void setSelectedToolItemIdentifier(@NotNull String value);
+
+    /**
+     * All tool items within the picker.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("toolItems")
+    @NotNull
+    public native NSArray<? extends PKToolPickerItem> toolItems();
 }

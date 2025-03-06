@@ -174,6 +174,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * 
      * The returned AVMutableVideoCompositionInstruction will have a timeRange of kCMTimeRangeInvalid, a NULL
      * backgroundColor, and a nil array of layerInstructions.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("videoCompositionInstruction")
@@ -184,6 +186,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * refs that are not supported will be ignored.
      * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
      * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -193,6 +197,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     /**
      * If NO, indicates that post-processing should be skipped for the duration of this instruction. YES by default.
      * See +[AVVideoCompositionCoreAnimationTool videoCompositionToolWithPostProcessingAsVideoLayer:inLayer:].
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("enablePostProcessing")
@@ -214,6 +220,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * in the array will be layered on top, with the track with the trackID of the second instruction immediately
      * underneath, etc.
      * If this key is nil, the output will be a fill of the background color.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -225,6 +233,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * refs that are not supported will be ignored.
      * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
      * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -233,6 +243,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     /**
      * If NO, indicates that post-processing should be skipped for the duration of this instruction. YES by default.
      * See +[AVVideoCompositionCoreAnimationTool videoCompositionToolWithPostProcessingAsVideoLayer:inLayer:].
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setEnablePostProcessing:")
@@ -246,6 +258,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * in the array will be layered on top, with the track with the trackID of the second instruction immediately
      * underneath, etc.
      * If this key is nil, the output will be a fill of the background color.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setLayerInstructions:")
@@ -254,6 +268,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     /**
      * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of
      * instructions described in connection with AVVideoComposition's instructions key above.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTimeRange:")
@@ -268,6 +284,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     /**
      * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of
      * instructions described in connection with AVVideoComposition's instructions key above.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("timeRange")

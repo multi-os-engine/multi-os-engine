@@ -53,6 +53,8 @@ public class UICellAccessoryDelete extends UICellAccessory {
     /**
      * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe
      * actions for the cell.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -83,6 +85,8 @@ public class UICellAccessoryDelete extends UICellAccessory {
 
     /**
      * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -169,6 +173,8 @@ public class UICellAccessoryDelete extends UICellAccessory {
     /**
      * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe
      * actions for the cell.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActionHandler:")
@@ -184,6 +190,8 @@ public class UICellAccessoryDelete extends UICellAccessory {
 
     /**
      * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundColor:")

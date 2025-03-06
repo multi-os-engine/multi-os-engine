@@ -113,6 +113,8 @@ public class PHASESoundEvent extends NSObject {
      * 
      * This will look up the asset in the asset registry and create the necessary objects to play the sound event
      * 
+     * API-Since: 15.0
+     * 
      * @param engine
      *                        The PHASEEngine object that the sound event will be played by.
      * @param assetIdentifier
@@ -131,6 +133,8 @@ public class PHASESoundEvent extends NSObject {
      * Creates a new sound event instance
      * 
      * This will look up the asset in the asset registry and create the necessary objects to play the sound event
+     * 
+     * API-Since: 15.0
      * 
      * @param engine
      *                        The PHASEEngine object that the sound event will be played by.
@@ -165,6 +169,8 @@ public class PHASESoundEvent extends NSObject {
      * [@property] indefinite
      * 
      * A boolean that tell if this sound event will run indefinitely, or finish executing on its own
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isIndefinite")
@@ -183,6 +189,8 @@ public class PHASESoundEvent extends NSObject {
      * [@property] metaParameters
      * 
      * A Dictionary containing the MetaParameters associated with this sound event
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -193,6 +201,8 @@ public class PHASESoundEvent extends NSObject {
      * [@property] mixNodes
      * 
      * A Dictionary containing the mix nodes associated with this sound event
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -208,6 +218,8 @@ public class PHASESoundEvent extends NSObject {
      * pause
      * 
      * Pause the sound event.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("pause")
@@ -217,6 +229,8 @@ public class PHASESoundEvent extends NSObject {
      * [@property] prepareState
      * 
      * Sound Event's current preparation state
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("prepareState")
@@ -232,6 +246,8 @@ public class PHASESoundEvent extends NSObject {
      * Once the sound event is prepared (or has failed to prepare), you will receive a callback via the completion.
      * If you call startWithCompletion() before receiving the callback, the sound event will start as soon as it's
      * prepared.
+     * 
+     * API-Since: 15.0
      * 
      * @param handler
      *                The block that will be called when the PHASESoundEvent has finished preparing and is ready to
@@ -253,6 +269,8 @@ public class PHASESoundEvent extends NSObject {
      * [@property] pushStreamNodes
      * 
      * A Dictionary containing the push stream nodes associated with this sound event, for pushing buffers to.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -263,6 +281,8 @@ public class PHASESoundEvent extends NSObject {
      * [@property] renderingState
      * 
      * Sound Event's current rendering state
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("renderingState")
@@ -281,6 +301,8 @@ public class PHASESoundEvent extends NSObject {
      * resume
      * 
      * Resume the sound event.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("resume")
@@ -299,6 +321,8 @@ public class PHASESoundEvent extends NSObject {
      * Nodes that are sleeping will seek, and will resume at the correct time when they wake up.
      * [@note]
      * The time is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("seekToTime:completion:")
@@ -326,6 +350,8 @@ public class PHASESoundEvent extends NSObject {
      * Playback will begin immediately if the sound event has been prepared; otherwise, it will start as soon as it is
      * finished preparing.
      * 
+     * API-Since: 15.0
+     * 
      * @param handler
      *                The block that will be called when the sound event has stopped.
      */
@@ -345,6 +371,8 @@ public class PHASESoundEvent extends NSObject {
      * stopAndInvalidate
      * 
      * stop and invalidate the sound event
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("stopAndInvalidate")
@@ -363,4 +391,16 @@ public class PHASESoundEvent extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] pullStreamNodes
+     * 
+     * A Dictionary containing the pull stream nodes associated with this sound event, for setting renderBlocks on.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("pullStreamNodes")
+    @NotNull
+    public native NSDictionary<String, ? extends PHASEPullStreamNode> pullStreamNodes();
 }

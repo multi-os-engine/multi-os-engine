@@ -127,6 +127,8 @@ public class UISceneActivationRequestOptions extends NSObject {
     /**
      * Informs the system the interface instance the user interacted with to create the new interface for the purposes
      * of system navigation.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -144,6 +146,8 @@ public class UISceneActivationRequestOptions extends NSObject {
     /**
      * Informs the system the interface instance the user interacted with to create the new interface for the purposes
      * of system navigation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRequestingScene:")

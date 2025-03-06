@@ -22,6 +22,8 @@ public interface NSFileProviderPendingSetEnumerator extends NSFileProviderEnumer
      * 
      * This property is updated when the enumeration methods are called on the pending set enumerator. The value
      * is initially nil.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -41,6 +43,8 @@ public interface NSFileProviderPendingSetEnumerator extends NSFileProviderEnumer
 
     /**
      * The amount of time in seconds at which the pending set is refreshed on modifications.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("refreshInterval")

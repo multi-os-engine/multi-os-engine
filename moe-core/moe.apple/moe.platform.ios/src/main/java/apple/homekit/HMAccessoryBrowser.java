@@ -164,6 +164,8 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Delegate that receives updates on the state of the accessories discovered.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -175,18 +177,25 @@ public class HMAccessoryBrowser extends NSObject {
      * This is the array of HMAccessory objects that represents new
      * accessories that were discovered as part of a search session.
      * This array is not updated when a search session is not in progress.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("discoveredAccessories")
     public native NSArray<? extends HMAccessory> discoveredAccessories();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native HMAccessoryBrowser init();
 
     /**
      * Delegate that receives updates on the state of the accessories discovered.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -194,6 +203,8 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Delegate that receives updates on the state of the accessories discovered.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value) {
@@ -219,6 +230,9 @@ public class HMAccessoryBrowser extends NSObject {
      * The array of discovered accessories will be updated when this method
      * is called, so applications should clear and reload any stored copies
      * of that array or previous new accessory objects.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startSearchingForNewAccessories")
@@ -232,6 +246,8 @@ public class HMAccessoryBrowser extends NSObject {
      * reasons or if other delegates are still in active searching sessions.
      * The contents of the array of discovered accessories will not be updated until
      * startSearchingForNewAccessories is called.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopSearchingForNewAccessories")

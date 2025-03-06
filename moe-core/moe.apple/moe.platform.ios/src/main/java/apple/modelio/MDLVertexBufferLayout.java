@@ -174,6 +174,9 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     @Selector("init")
     public native MDLVertexBufferLayout init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithStride:")
     public native MDLVertexBufferLayout initWithStride(@NUInt long stride);
@@ -188,6 +191,8 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
      * - If you store multiple attributes non-interleaved (back to back),
      * the stride will be the size of an attribute (and all attributes are
      * required to have the same size).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStride:")
@@ -203,6 +208,8 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
      * - If you store multiple attributes non-interleaved (back to back),
      * the stride will be the size of an attribute (and all attributes are
      * required to have the same size).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("stride")

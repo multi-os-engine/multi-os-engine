@@ -138,6 +138,8 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specify whether or not the bounding boxes of individual characters should also be returned in the resultant
      * VNTextObservations. Default is NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("reportCharacterBoxes")
@@ -154,6 +156,8 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specify whether or not the bounding boxes of individual characters should also be returned in the resultant
      * VNTextObservations. Default is NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReportCharacterBoxes:")
@@ -189,6 +193,8 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * VNTextObservation results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

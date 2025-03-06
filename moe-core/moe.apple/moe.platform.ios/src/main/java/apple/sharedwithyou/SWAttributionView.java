@@ -203,6 +203,8 @@ public class SWAttributionView extends UIView {
      * 
      * If you do not specify a background style, one will be chosen automatically. In general, .color looks best on
      * monochrome backgrounds, while .material looks better on colored backgrounds.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("backgroundStyle")
@@ -255,6 +257,8 @@ public class SWAttributionView extends UIView {
     /**
      * The context for the content being displayed with this view. Set this prior to adding this view to your view
      * hierarchy.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("displayContext")
@@ -269,12 +273,17 @@ public class SWAttributionView extends UIView {
     /**
      * The SWHighlight to use for displaying this attribution. When this property is set to a new highlight, the
      * contents of the view will be reloaded.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
     @Selector("highlight")
     public native SWHighlight highlight();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("highlightMenu")
@@ -285,6 +294,8 @@ public class SWAttributionView extends UIView {
      * 
      * This value specifies the horizontal anchor for the view's contents. This only has an effect when the width of the
      * contents are less than the available width.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("horizontalAlignment")
@@ -342,6 +353,8 @@ public class SWAttributionView extends UIView {
      * SWHighlight represented by this view. Set a title to be used as the title for that context menu. An app that
      * displays articles, for example, might set @"Hide Article", localized to the current language. The string should
      * include the word "Hide", localized correctly with the custom content type.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -377,6 +390,8 @@ public class SWAttributionView extends UIView {
      * When using this view in SwiftUI, this view will constrain its contents to this width. If you are not using
      * SwiftUI this property should not be necessary, as SWAttributionView otherwise derives the maximum width from the
      * frame or constraints you set.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("preferredMaxLayoutWidth")
@@ -460,6 +475,8 @@ public class SWAttributionView extends UIView {
      * 
      * If you do not specify a background style, one will be chosen automatically. In general, .color looks best on
      * monochrome backgrounds, while .material looks better on colored backgrounds.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setBackgroundStyle:")
@@ -468,6 +485,8 @@ public class SWAttributionView extends UIView {
     /**
      * The context for the content being displayed with this view. Set this prior to adding this view to your view
      * hierarchy.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDisplayContext:")
@@ -476,6 +495,8 @@ public class SWAttributionView extends UIView {
     /**
      * The SWHighlight to use for displaying this attribution. When this property is set to a new highlight, the
      * contents of the view will be reloaded.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setHighlight:")
@@ -486,6 +507,8 @@ public class SWAttributionView extends UIView {
      * 
      * This value specifies the horizontal anchor for the view's contents. This only has an effect when the width of the
      * contents are less than the available width.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setHorizontalAlignment:")
@@ -499,6 +522,8 @@ public class SWAttributionView extends UIView {
      * SWHighlight represented by this view. Set a title to be used as the title for that context menu. An app that
      * displays articles, for example, might set @"Hide Article", localized to the current language. The string should
      * include the word "Hide", localized correctly with the custom content type.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMenuTitleForHideAction:")
@@ -510,11 +535,16 @@ public class SWAttributionView extends UIView {
      * When using this view in SwiftUI, this view will constrain its contents to this width. If you are not using
      * SwiftUI this property should not be necessary, as SWAttributionView otherwise derives the maximum width from the
      * frame or constraints you set.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPreferredMaxLayoutWidth:")
     public native void setPreferredMaxLayoutWidth(@NFloat double value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setSupplementalMenu:")
     public native void setSupplementalMenu(@Nullable UIMenu value);
@@ -527,6 +557,9 @@ public class SWAttributionView extends UIView {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("supplementalMenu")

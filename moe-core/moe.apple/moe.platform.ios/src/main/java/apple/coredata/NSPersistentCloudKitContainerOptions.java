@@ -85,6 +85,8 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
 
     /**
      * The container identifier of the CKContainer to use with a given instance of NSPersistentStoreDescription
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -108,6 +110,9 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     @Selector("init")
     public native NSPersistentCloudKitContainerOptions init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithContainerIdentifier:")
     public native NSPersistentCloudKitContainerOptions initWithContainerIdentifier(@NotNull String containerIdentifier);

@@ -93,6 +93,8 @@ public class NSTextElement extends NSObject {
 
     /**
      * Represents the range of the element inside the document.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -108,6 +110,9 @@ public class NSTextElement extends NSObject {
     @Selector("init")
     public native NSTextElement init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithTextContentManager:")
     public native NSTextElement initWithTextContentManager(@Nullable NSTextContentManager textContentManager);
@@ -149,6 +154,8 @@ public class NSTextElement extends NSObject {
 
     /**
      * Represents the range of the element inside the document.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setElementRange:")
@@ -156,6 +163,8 @@ public class NSTextElement extends NSObject {
 
     /**
      * Returns the owner NSTextContentManager. A text element can migrate between text content managers.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTextContentManager:")
@@ -163,6 +172,8 @@ public class NSTextElement extends NSObject {
 
     /**
      * Returns the owner NSTextContentManager. A text element can migrate between text content managers.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setTextContentManager(@Nullable NSTextContentManager value) {
@@ -186,6 +197,8 @@ public class NSTextElement extends NSObject {
 
     /**
      * Returns the owner NSTextContentManager. A text element can migrate between text content managers.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

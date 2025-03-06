@@ -109,6 +109,8 @@ public class LPMetadataProvider extends NSObject {
      * This method invokes the completion handler with the error code
      * ``LPErrorCode/LPErrorMetadataFetchCancelled`` if the request hasn’t already
      * completed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancel")
@@ -197,6 +199,8 @@ public class LPMetadataProvider extends NSObject {
      * ``LPMetadataProvider/startFetchingMetadataForURL:completionHandler:``.
      * 
      * The default value is `true`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShouldFetchSubresources:")
@@ -209,6 +213,8 @@ public class LPMetadataProvider extends NSObject {
      * The default timeout interval is 30 seconds. If a metadata fetch takes longer
      * than the timeout interval, the completion handler is called with the error
      * code ``LPErrorCode/LPErrorMetadataFetchTimedOut``.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTimeout:")
@@ -228,6 +234,8 @@ public class LPMetadataProvider extends NSObject {
      * ``LPMetadataProvider/startFetchingMetadataForURL:completionHandler:``.
      * 
      * The default value is `true`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("shouldFetchSubresources")
@@ -255,6 +263,8 @@ public class LPMetadataProvider extends NSObject {
      * >
      * > For information about concurrency and asynchronous code in Swift, see
      * <doc://com.apple.documentation/documentation/swift/calling-objective-c-apis-asynchronously>.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("startFetchingMetadataForURL:completionHandler:")
@@ -280,6 +290,8 @@ public class LPMetadataProvider extends NSObject {
      * The default timeout interval is 30 seconds. If a metadata fetch takes longer
      * than the timeout interval, the completion handler is called with the error
      * code ``LPErrorCode/LPErrorMetadataFetchTimedOut``.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("timeout")

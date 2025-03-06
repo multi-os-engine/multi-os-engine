@@ -19,7 +19,10 @@ import org.moe.natj.general.ann.NInt;
  * Indicates that Dolby Vision HDR mode is available.
  * 
  * API-Since: 11.2
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: The deprecated availableHDRModes uses this enum. Use eligibleForHDRPlayback instead
  */
+@Deprecated
 @Generated
 public final class AVPlayerHDRMode {
     @Generated
@@ -28,14 +31,20 @@ public final class AVPlayerHDRMode {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: The deprecated availableHDRModes uses this enum. Use eligibleForHDRPlayback instead
      */
-    @Generated @NInt public static final long HLG = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long HLG = 0x0000000000000001L;
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: The deprecated availableHDRModes uses this enum. Use eligibleForHDRPlayback instead
      */
-    @Generated @NInt public static final long HDR10 = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long HDR10 = 0x0000000000000002L;
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: The deprecated availableHDRModes uses this enum. Use eligibleForHDRPlayback instead
      */
-    @Generated @NInt public static final long DolbyVision = 0x0000000000000004L;
+    @Deprecated @Generated @NInt public static final long DolbyVision = 0x0000000000000004L;
 }

@@ -75,6 +75,8 @@ public class AVMutableAudioMix extends AVAudioMix {
      * audioMix
      * 
      * Returns a new instance of AVMutableAudioMix with a nil array of inputParameters.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("audioMix")
@@ -178,6 +180,8 @@ public class AVMutableAudioMix extends AVAudioMix {
      * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the
      * mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed
      * according to default behavior.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -192,6 +196,8 @@ public class AVMutableAudioMix extends AVAudioMix {
      * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the
      * mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed
      * according to default behavior.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setInputParameters:")

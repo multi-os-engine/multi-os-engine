@@ -40,6 +40,8 @@ public interface INUnsendMessagesIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INUnsendMessagesIntentResponse
+     * 
+     *      API-Since: 17.0
      */
     @Generated
     @IsOptional
@@ -66,6 +68,8 @@ public interface INUnsendMessagesIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INUnsendMessagesIntentResponse
+     * 
+     *      API-Since: 17.0
      */
     @Generated
     @Selector("handleUnsendMessages:completion:")

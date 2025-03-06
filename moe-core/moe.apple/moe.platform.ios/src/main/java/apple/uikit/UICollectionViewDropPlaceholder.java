@@ -135,6 +135,8 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
      * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the
      * placeholder cell) of the animating dropped item.
      * Handler will be called as-needed.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -162,6 +164,8 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
      * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the
      * placeholder cell) of the animating dropped item.
      * Handler will be called as-needed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPreviewParametersProvider:")

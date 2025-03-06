@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 public interface CPTemplateApplicationInstrumentClusterSceneDelegate extends UISceneDelegate {
     /**
      * The CarPlay system suggested content style for this scene has changed.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @IsOptional
@@ -33,6 +35,8 @@ public interface CPTemplateApplicationInstrumentClusterSceneDelegate extends UIS
 
     /**
      * The instrument cluster navigation scene has connected.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @IsOptional
@@ -45,6 +49,8 @@ public interface CPTemplateApplicationInstrumentClusterSceneDelegate extends UIS
 
     /**
      * The instrument cluster navigation scene has connected.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @IsOptional

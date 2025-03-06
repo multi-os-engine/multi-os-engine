@@ -84,6 +84,8 @@ public class UIPageControlProgress extends NSObject {
     /**
      * The current progress value of the active page control indicator, between 0 and 1.
      * Values outside of [0...1] will be clamped.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("currentProgress")
@@ -95,6 +97,8 @@ public class UIPageControlProgress extends NSObject {
 
     /**
      * An object that defines the delegate of the page control progress.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("delegate")
@@ -131,6 +135,8 @@ public class UIPageControlProgress extends NSObject {
     /**
      * Returns `YES` if the progress indicator is visible. The progress indicator is hidden when
      * the user is actively interacting with the `UIPageControl`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isProgressVisible")
@@ -161,6 +167,8 @@ public class UIPageControlProgress extends NSObject {
     /**
      * The current progress value of the active page control indicator, between 0 and 1.
      * Values outside of [0...1] will be clamped.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCurrentProgress:")
@@ -168,6 +176,8 @@ public class UIPageControlProgress extends NSObject {
 
     /**
      * An object that defines the delegate of the page control progress.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -175,6 +185,8 @@ public class UIPageControlProgress extends NSObject {
 
     /**
      * An object that defines the delegate of the page control progress.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable Object value) {

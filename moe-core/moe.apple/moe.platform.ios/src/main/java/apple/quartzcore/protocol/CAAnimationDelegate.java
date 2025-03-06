@@ -28,6 +28,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Delegate methods for CAAnimation.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("QuartzCore")
@@ -36,6 +38,8 @@ import org.jetbrains.annotations.NotNull;
 public interface CAAnimationDelegate {
     /**
      * Called when the animation begins its active duration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -49,6 +53,8 @@ public interface CAAnimationDelegate {
      * is removed from the object it is attached to (i.e. the layer). 'flag'
      * is true if the animation reached the end of its active duration
      * without being removed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

@@ -176,6 +176,8 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
      * 
      * @param method A MPSNNPaddingMethod
      * @return An object that implements <MPSNNPadding> for use with MPSNNGraphNodes.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("paddingWithMethod:")

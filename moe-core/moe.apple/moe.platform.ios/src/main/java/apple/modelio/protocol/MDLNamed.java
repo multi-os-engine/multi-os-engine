@@ -32,11 +32,17 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLNamed")
 public interface MDLNamed {
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("name")
     String name();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setName:")
     void setName(@NotNull String value);

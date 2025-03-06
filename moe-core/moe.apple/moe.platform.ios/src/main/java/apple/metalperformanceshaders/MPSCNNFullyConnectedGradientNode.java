@@ -110,6 +110,8 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
      *                       broken out into a separate node. Pass nil to use the weights
      *                       from the forward convolution pass.
      * @return A MPSCNNFullyConnectedGradientNode
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:convolutionGradientState:weights:")
@@ -157,6 +159,8 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
      *                       broken out into a separate node. Pass nil to use the weights
      *                       from the forward fully connected pass.
      * @return A MPSCNNFullyConnectedGradientNode
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:convolutionGradientState:weights:")

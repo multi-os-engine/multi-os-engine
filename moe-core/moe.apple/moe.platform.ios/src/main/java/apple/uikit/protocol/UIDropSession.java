@@ -35,6 +35,8 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
      * same order as `items`.
      * The progress returned is an aggregate of the progress for all objects
      * that are loaded.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -52,6 +54,8 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     /**
      * The `UIDragSession` that corresponds to this `UIDropSession`.
      * If the drag was started in a different app, this is nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -67,6 +71,8 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
      * meaning that some progress UI will be shown. If you show your own
      * progress indicator, hide the system progress UI by setting this
      * property to UIDropSessionProgressIndicatorStyleNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("progressIndicatorStyle")
@@ -81,6 +87,8 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
      * meaning that some progress UI will be shown. If you show your own
      * progress indicator, hide the system progress UI by setting this
      * property to UIDropSessionProgressIndicatorStyleNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProgressIndicatorStyle:")

@@ -3,7 +3,7 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * Specify what sampling method to use when generating values in the normal distribution.
+ * The sampling method to use when generating values in the normal distribution.
  */
 @Generated
 public final class MPSGraphRandomNormalSamplingMethod {

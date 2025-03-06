@@ -53,6 +53,9 @@ public class CLBeaconIdentityCondition extends CLCondition implements NSCopying,
      * 
      * Discussion:
      * UUID associated with the beacon.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("UUID")
@@ -136,6 +139,9 @@ public class CLBeaconIdentityCondition extends CLCondition implements NSCopying,
      * Discussion:
      * Initialize a beacon identity condition with a UUID. Major and
      * minor values will be wildcarded.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithUUID:")
@@ -147,6 +153,9 @@ public class CLBeaconIdentityCondition extends CLCondition implements NSCopying,
      * Discussion:
      * Initialize a beacon identity condition with a UUID and major
      * value. Minor value will be wildcarded.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithUUID:major:")
@@ -158,6 +167,9 @@ public class CLBeaconIdentityCondition extends CLCondition implements NSCopying,
      * Discussion:
      * Initialize a beacon identity condition with a UUID, major, and
      * minor values.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithUUID:major:minor:")
@@ -190,6 +202,9 @@ public class CLBeaconIdentityCondition extends CLCondition implements NSCopying,
      * 
      * Discussion:
      * Most significant value associated with the beacon.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("major")
@@ -201,6 +216,9 @@ public class CLBeaconIdentityCondition extends CLCondition implements NSCopying,
      * 
      * Discussion:
      * Least significant value associated with the beacon.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("minor")

@@ -126,6 +126,8 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
      * elements beginning at resultMatrixOrigin.x. resultMatrixOrigin.y and
      * resultMatrixOrigin.z must be zero.
      * 
+     * API-Since: 11.0
+     * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
      * 
      * @param inputMatrix   A valid MPSMatrix object which specifies the input matrix A.
@@ -178,6 +180,8 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
      *                elements in the input vector x.
      * 
      * @return A valid MPSMatrixVectorMultiplication object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:rows:columns:")
@@ -209,6 +213,8 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
      *                  implementation subject to rounding and/or clamping as necessary.
      * 
      * @return A valid MPSMatrixVectorMultiplication object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:transpose:rows:columns:alpha:beta:")

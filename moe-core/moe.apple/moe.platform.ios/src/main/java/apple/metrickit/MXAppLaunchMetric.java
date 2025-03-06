@@ -106,6 +106,8 @@ public class MXAppLaunchMetric extends MXMetric {
      * Histogrammed application resume time data.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -120,6 +122,8 @@ public class MXAppLaunchMetric extends MXMetric {
      * Dimensioned as NSUnitDuration.
      * 
      * This represents the time when the first CA commit is finished.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

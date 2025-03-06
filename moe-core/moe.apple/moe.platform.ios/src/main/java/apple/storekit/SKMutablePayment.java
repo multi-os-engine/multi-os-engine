@@ -43,7 +43,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.purchase(confirmIn:options:)
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -137,6 +140,7 @@ public class SKMutablePayment extends SKPayment {
     @Selector("new")
     public static native SKMutablePayment new_objc();
 
+    @Deprecated
     @Generated
     @Selector("paymentWithProduct:")
     public static native SKMutablePayment paymentWithProduct(@NotNull SKProduct product);
@@ -169,7 +173,11 @@ public class SKMutablePayment extends SKPayment {
 
     /**
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.appAccountToken to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("applicationUsername")
@@ -181,7 +189,10 @@ public class SKMutablePayment extends SKPayment {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("productIdentifier")
@@ -189,7 +200,10 @@ public class SKMutablePayment extends SKPayment {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.quantity to use in Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("quantity")
     @NInt
@@ -197,7 +211,10 @@ public class SKMutablePayment extends SKPayment {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create Product.PurchaseOption.custom values to use in Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("requestData")
@@ -205,49 +222,74 @@ public class SKMutablePayment extends SKPayment {
 
     /**
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.appAccountToken to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("setApplicationUsername:")
     public native void setApplicationUsername(@Nullable String value);
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("setProductIdentifier:")
     public native void setProductIdentifier(@NotNull String value);
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.quantity to use in Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("setQuantity:")
     public native void setQuantity(@NInt long value);
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create Product.PurchaseOption.custom values to use in Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("setRequestData:")
     public native void setRequestData(@Nullable NSData value);
 
     /**
      * API-Since: 8.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.simulatesAskToBuyInSandbox to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("setSimulatesAskToBuyInSandbox:")
     public native void setSimulatesAskToBuyInSandbox(boolean value);
 
     /**
      * API-Since: 8.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.simulatesAskToBuyInSandbox to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
     public native boolean simulatesAskToBuyInSandbox();
 
     /**
      * API-Since: 12.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.promotionalOffer to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("paymentDiscount")
@@ -255,7 +297,11 @@ public class SKMutablePayment extends SKPayment {
 
     /**
      * API-Since: 12.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Create a Product.PurchaseOption.promotionalOffer to use in
+     * Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("setPaymentDiscount:")
     public native void setPaymentDiscount(@Nullable SKPaymentDiscount value);

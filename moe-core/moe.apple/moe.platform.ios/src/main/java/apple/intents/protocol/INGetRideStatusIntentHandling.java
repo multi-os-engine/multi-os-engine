@@ -58,6 +58,8 @@ public interface INGetRideStatusIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INGetRideStatusIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -77,17 +79,25 @@ public interface INGetRideStatusIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INGetRideStatusIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleGetRideStatus:completion:")
     void handleGetRideStatusCompletion(@NotNull INGetRideStatusIntent intent,
             @NotNull @ObjCBlock(name = "call_handleGetRideStatusCompletion") Block_handleGetRideStatusCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("startSendingUpdatesForGetRideStatus:toObserver:")
     void startSendingUpdatesForGetRideStatusToObserver(@NotNull INGetRideStatusIntent intent,
             @NotNull @Mapped(ObjCObjectMapper.class) INGetRideStatusIntentResponseObserver observer);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("stopSendingUpdatesForGetRideStatus:")
     void stopSendingUpdatesForGetRideStatus(@NotNull INGetRideStatusIntent intent);

@@ -104,6 +104,8 @@ public class UIPointerStyle extends UIHoverStyle implements NSCopying {
 
     /**
      * Hides the pointer when hovering over the current region.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -159,6 +161,8 @@ public class UIPointerStyle extends UIHoverStyle implements NSCopying {
      * @param effect The desired pointer effect.
      * @param shape  The desired pointer shape. If omitted, a pointer will be generated automatically from the effect's
      *               preview view.
+     * 
+     *               API-Since: 13.4
      */
     @Generated
     @Selector("styleWithEffect:shape:")
@@ -170,6 +174,8 @@ public class UIPointerStyle extends UIHoverStyle implements NSCopying {
      * 
      * @param shape The desired pointer shape.
      * @param axes  Axes along which to recenter the pointer on touch up.
+     * 
+     *              API-Since: 13.4
      */
     @Generated
     @Selector("styleWithShape:constrainedAxes:")

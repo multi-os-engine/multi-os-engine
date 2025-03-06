@@ -100,6 +100,8 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
 
     /**
      * i.e. ==
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -108,6 +110,8 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
 
     /**
      * i.e. >=
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -136,10 +140,16 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isFixedSpacing")
     public native boolean isFixedSpacing();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isFlexibleSpacing")
     public native boolean isFlexibleSpacing();
@@ -170,6 +180,9 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("spacing")
     @NFloat

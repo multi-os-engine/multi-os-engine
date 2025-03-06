@@ -178,6 +178,9 @@ public class AVMetadataGroup extends NSObject {
     @Selector("init")
     public native AVMetadataGroup init();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("items")

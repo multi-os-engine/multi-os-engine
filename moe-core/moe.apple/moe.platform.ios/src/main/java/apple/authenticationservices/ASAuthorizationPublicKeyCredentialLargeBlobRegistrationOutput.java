@@ -23,6 +23,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * API-Since: 17.0
@@ -31,7 +36,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ASAuthorizationPublicKeyCredentialLargeBlobRegistrationOutput extends NSObject {
+public class ASAuthorizationPublicKeyCredentialLargeBlobRegistrationOutput extends NSObject implements NSCopying,
+        NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -114,6 +120,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobRegistrationOutput exten
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("isSupported")
     public native boolean isSupported();
@@ -153,4 +162,29 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobRegistrationOutput exten
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ASAuthorizationPublicKeyCredentialLargeBlobRegistrationOutput initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

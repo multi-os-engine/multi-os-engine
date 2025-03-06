@@ -164,6 +164,8 @@ public class AVMetadataItemValueRequest extends NSObject {
 
     /**
      * Indicates the AVMetadataItem for which a value is being loaded.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -178,6 +180,8 @@ public class AVMetadataItemValueRequest extends NSObject {
      * @param error
      *              An instance of NSError that describes a failure encountered while loading the value of an
      *              AVMetadataItem.
+     * 
+     *              API-Since: 9.0
      */
     @Generated
     @Selector("respondWithError:")
@@ -190,6 +194,8 @@ public class AVMetadataItemValueRequest extends NSObject {
      * 
      * @param value
      *              The value of the AVMetadataItem.
+     * 
+     *              API-Since: 9.0
      */
     @Generated
     @Selector("respondWithValue:")

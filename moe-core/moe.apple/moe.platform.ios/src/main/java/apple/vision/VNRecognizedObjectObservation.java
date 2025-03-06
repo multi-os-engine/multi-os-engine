@@ -134,6 +134,9 @@ public class VNRecognizedObjectObservation extends VNDetectedObjectObservation {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("labels")

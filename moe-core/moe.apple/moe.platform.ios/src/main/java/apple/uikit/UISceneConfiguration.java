@@ -92,6 +92,8 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
      * then an instance with a nil sceneSubclass, delegateClass, and storyboard is returned.
      * The name parameter passed in is used to lookup a predefined configuration from your app's Info.plist.
      * the returned UISceneConfiguration instance is not guaranteed to share the value of the parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configurationWithName:sessionRole:")
@@ -109,6 +111,9 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("delegateClass")
@@ -135,6 +140,9 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("initWithCoder:")
     public native UISceneConfiguration initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithName:sessionRole:")
     public native UISceneConfiguration initWithNameSessionRole(@Nullable String name, @NotNull String sessionRole);
@@ -161,6 +169,9 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("name")
@@ -179,24 +190,39 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("role")
     public native String role();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("sceneClass")
     public native Class sceneClass();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setDelegateClass:")
     public native void setDelegateClass(@Nullable Class value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setSceneClass:")
     public native void setSceneClass(@Nullable Class value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setStoryboard:")
     public native void setStoryboard(@Nullable UIStoryboard value);
@@ -205,6 +231,9 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("storyboard")

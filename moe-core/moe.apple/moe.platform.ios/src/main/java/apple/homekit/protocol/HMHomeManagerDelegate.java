@@ -45,6 +45,8 @@ public interface HMHomeManagerDelegate {
      * @param manager Sender of this message.
      * 
      * @param home    New home that was added.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -59,6 +61,8 @@ public interface HMHomeManagerDelegate {
      * @param manager Sender of this message.
      * 
      * @param home    Home that was removed.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -75,6 +79,8 @@ public interface HMHomeManagerDelegate {
      * current references to HomeKit objects and refresh their views with the new list of homes.
      * 
      * @param manager Sender of this message.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -87,6 +93,8 @@ public interface HMHomeManagerDelegate {
      * Informs the delegate when the primary home is modified.
      * 
      * @param manager Sender of this message.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional

@@ -87,10 +87,16 @@ public class NSTextRange extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("containsLocation:")
     public native boolean containsLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("containsRange:")
     public native boolean containsRange(@NotNull NSTextRange textRange);
@@ -103,6 +109,9 @@ public class NSTextRange extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("endLocation")
@@ -118,12 +127,17 @@ public class NSTextRange extends NSObject {
     @Selector("init")
     public native NSTextRange init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithLocation:")
     public native NSTextRange initWithLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * Returns an empty range when endLocation=nil
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithLocation:endLocation:")
@@ -144,17 +158,25 @@ public class NSTextRange extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("intersectsWithTextRange:")
     public native boolean intersectsWithTextRange(@NotNull NSTextRange textRange);
 
     /**
      * An empty range when location == endLocation
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isEmpty")
     public native boolean isEmpty();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("isEqualToTextRange:")
     public native boolean isEqualToTextRange(@NotNull NSTextRange textRange);
@@ -170,6 +192,8 @@ public class NSTextRange extends NSObject {
 
     /**
      * Represented with the inclusive location and the exclusive endLocation
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -198,6 +222,9 @@ public class NSTextRange extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("textRangeByFormingUnionWithTextRange:")
@@ -205,6 +232,8 @@ public class NSTextRange extends NSObject {
 
     /**
      * Returns the intersection with textRange. Returns nil when not intersecting.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

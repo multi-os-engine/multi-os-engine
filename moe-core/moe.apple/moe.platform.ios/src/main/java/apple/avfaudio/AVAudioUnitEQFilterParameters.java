@@ -73,6 +73,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * 
      * Range: 0.05 -> 5.0
      * Unit: Octaves
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("bandwidth")
@@ -84,6 +86,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * bypass state of band.
      * 
      * Default: YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("bypass")
@@ -124,6 +128,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * AVAudioUnitEQFilterType
      * 
      * Default: AVAudioUnitEQFilterTypeParametric
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("filterType")
@@ -137,6 +143,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * 
      * Range: 20 -> (SampleRate/2)
      * Unit: Hertz
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("frequency")
@@ -150,6 +158,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("gain")
@@ -206,6 +216,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * 
      * Range: 0.05 -> 5.0
      * Unit: Octaves
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBandwidth:")
@@ -217,6 +229,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * bypass state of band.
      * 
      * Default: YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBypass:")
@@ -228,6 +242,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * AVAudioUnitEQFilterType
      * 
      * Default: AVAudioUnitEQFilterTypeParametric
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFilterType:")
@@ -240,6 +256,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * 
      * Range: 20 -> (SampleRate/2)
      * Unit: Hertz
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFrequency:")
@@ -253,6 +271,8 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setGain:")

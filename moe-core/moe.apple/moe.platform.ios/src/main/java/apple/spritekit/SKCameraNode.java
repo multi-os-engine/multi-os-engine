@@ -215,6 +215,8 @@ public class SKCameraNode extends SKNode {
      * Returns the set of nodes in the same scene as the camera that are contained within its viewport.
      * 
      * @return the set of nodes contained
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -227,6 +229,8 @@ public class SKCameraNode extends SKNode {
      * to determine if the node is inside the camera viewport rectangle.
      * 
      * @return YES if the node is inside the viewport. NO if node is nil or the node is outside the viewport.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("containsNode:")

@@ -71,6 +71,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.metal.MTLArchitecture;
 import apple.opaque.dispatch_data_t;
+import apple.metal.MTLCommandQueueDescriptor;
+import apple.metal.MTLLogStateDescriptor;
+import apple.metal.MTLResidencySetDescriptor;
 
 /**
  * [@protocol] MTLDevice
@@ -128,6 +131,8 @@ public interface MTLDevice {
      * [@property] name
      * 
      * The full name of the vendor device.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -138,6 +143,8 @@ public interface MTLDevice {
      * newBufferWithBytes:length:options:
      * 
      * Create a buffer by allocating new memory and specifing the initial contents to be copied into it.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -149,6 +156,8 @@ public interface MTLDevice {
      * newBufferWithBytesNoCopy:length:options:deallocator:
      * 
      * Create a buffer by wrapping an existing part of the address space.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -162,6 +171,8 @@ public interface MTLDevice {
      * newBufferWithLength:options:
      * 
      * Create a buffer by allocating new memory.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -176,6 +187,8 @@ public interface MTLDevice {
      * non-completed command buffers.
      * 
      * @return The new command queue object
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -189,6 +202,8 @@ public interface MTLDevice {
      * Create and return a new command queue with a given upper bound on non-completed command buffers.
      * 
      * @return The new command queue object
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -229,6 +244,8 @@ public interface MTLDevice {
      * newComputePipelineStateWithDescriptor:completionHandler:
      * 
      * Create and compile a new MTLComputePipelineState object asynchronously.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("newComputePipelineStateWithFunction:completionHandler:")
@@ -240,6 +257,8 @@ public interface MTLDevice {
      * newComputePipelineStateWithDescriptor:error:
      * 
      * Create and compile a new MTLComputePipelineState object synchronously.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -253,6 +272,8 @@ public interface MTLDevice {
      * newComputePipelineStateWithDescriptor:options:completionHandler:
      * 
      * Create and compile a new MTLComputePipelineState object asynchronously.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("newComputePipelineStateWithFunction:options:completionHandler:")
@@ -264,6 +285,8 @@ public interface MTLDevice {
      * newComputePipelineStateWithDescriptor:options:reflection:error:
      * 
      * Create and compile a new MTLComputePipelineState object synchronously.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -280,6 +303,8 @@ public interface MTLDevice {
      * Returns the default library for the main bundle.
      * 
      * use newDefaultLibraryWithBundle:error: to get an NSError in case of failure.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -307,6 +332,8 @@ public interface MTLDevice {
      * newDepthStencilStateWithDescriptor:
      * 
      * Create a depth/stencil test state object.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -347,6 +374,8 @@ public interface MTLDevice {
      * 
      * @param data  A metallib file already loaded as data in the form of dispatch_data_t.
      * @param error An error if we fail to open the metallib data.
+     * 
+     *              API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -376,6 +405,8 @@ public interface MTLDevice {
      * newLibraryWithSource:options:completionHandler:
      * 
      * Load a MTLLibrary from source.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("newLibraryWithSource:options:completionHandler:")
@@ -386,6 +417,8 @@ public interface MTLDevice {
      * newLibraryWithSource:options:error:
      * 
      * Load a MTLLibrary from source.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -398,6 +431,8 @@ public interface MTLDevice {
      * newRenderPipelineState:completionHandler:
      * 
      * Create and compile a new MTLRenderPipelineState object asynchronously.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:completionHandler:")
@@ -408,6 +443,8 @@ public interface MTLDevice {
      * newRenderPipelineStateWithDescriptor:error:
      * 
      * Create and compile a new MTLRenderPipelineState object synchronously.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -421,6 +458,8 @@ public interface MTLDevice {
      * 
      * Create and compile a new MTLRenderPipelineState object asynchronously and returns additional reflection
      * information
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:options:completionHandler:")
@@ -433,6 +472,8 @@ public interface MTLDevice {
      * 
      * Create and compile a new MTLRenderPipelineState object synchronously and returns additional reflection
      * information.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -447,6 +488,8 @@ public interface MTLDevice {
      * newSamplerStateWithDescriptor:
      * 
      * Create a new sampler.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -458,6 +501,8 @@ public interface MTLDevice {
      * newTextureWithDescriptor:
      * 
      * Allocate a new texture with privately owned storage.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -1622,4 +1667,45 @@ public interface MTLDevice {
     @Generated
     @Selector("supportsBCTextureCompression")
     boolean supportsBCTextureCompression();
+
+    /**
+     * newCommandQueueWithDescriptor:
+     * 
+     * Create a MTLCommandQueue according to MTLCommandQueueDescriptor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("newCommandQueueWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLCommandQueue newCommandQueueWithDescriptor(@NotNull MTLCommandQueueDescriptor descriptor);
+
+    /**
+     * newLogStateWithDescriptor
+     * 
+     * This method will create a new MTLLogState.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("newLogStateWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLLogState newLogStateWithDescriptorError(@NotNull MTLLogStateDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * newResidencySetWithDescriptor
+     * 
+     * Creates a new residency set with a descriptor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("newResidencySetWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLResidencySet newResidencySetWithDescriptorError(@NotNull MTLResidencySetDescriptor desc,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

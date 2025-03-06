@@ -62,6 +62,9 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("boundarySupplementaryItems")
@@ -127,6 +130,8 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
 
     /**
      * default is 0
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("interSectionSpacing")
@@ -157,12 +162,17 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
 
     /**
      * default is UICollectionViewScrollDirectionVertical
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("scrollDirection")
     @NInt
     public native long scrollDirection();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setBoundarySupplementaryItems:")
     public native void setBoundarySupplementaryItems(
@@ -170,6 +180,8 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
 
     /**
      * default is 0
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInterSectionSpacing:")
@@ -177,6 +189,8 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
 
     /**
      * default is UICollectionViewScrollDirectionVertical
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setScrollDirection:")

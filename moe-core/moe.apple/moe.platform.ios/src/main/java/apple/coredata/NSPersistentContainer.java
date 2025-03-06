@@ -106,6 +106,9 @@ public class NSPersistentContainer extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("defaultDirectoryURL")
@@ -147,10 +150,16 @@ public class NSPersistentContainer extends NSObject {
     @Selector("new")
     public static native NSPersistentContainer new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("persistentContainerWithName:")
     public static native NSPersistentContainer persistentContainerWithName(@NotNull String name);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("persistentContainerWithName:managedObjectModel:")
     public static native NSPersistentContainer persistentContainerWithNameManagedObjectModel(@NotNull String name,
@@ -183,11 +192,16 @@ public class NSPersistentContainer extends NSObject {
 
     /**
      * Creates a container using the model named `name` in the main bundle
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithName:")
     public native NSPersistentContainer initWithName(@NotNull String name);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithName:managedObjectModel:")
     public native NSPersistentContainer initWithNameManagedObjectModel(@NotNull String name,
@@ -196,46 +210,72 @@ public class NSPersistentContainer extends NSObject {
     /**
      * Load stores from the storeDescriptions property that have not already been successfully added to the container.
      * The completion handler is called once for each store that succeeds or fails.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("loadPersistentStoresWithCompletionHandler:")
     public native void loadPersistentStoresWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_loadPersistentStoresWithCompletionHandler") Block_loadPersistentStoresWithCompletionHandler block);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("managedObjectModel")
     public native NSManagedObjectModel managedObjectModel();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("newBackgroundContext")
     public native NSManagedObjectContext newBackgroundContext();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("performBackgroundTask:")
     public native void performBackgroundTask(
             @NotNull @ObjCBlock(name = "call_performBackgroundTask") Block_performBackgroundTask block);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("persistentStoreCoordinator")
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("persistentStoreDescriptions")
     public native NSArray<? extends NSPersistentStoreDescription> persistentStoreDescriptions();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPersistentStoreDescriptions:")
     public native void setPersistentStoreDescriptions(@NotNull NSArray<? extends NSPersistentStoreDescription> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("viewContext")

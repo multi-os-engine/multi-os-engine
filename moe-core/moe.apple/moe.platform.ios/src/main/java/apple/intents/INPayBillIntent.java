@@ -64,11 +64,23 @@ public class INPayBillIntent extends INIntent {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("billPayee")
     public native INBillPayee billPayee();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("billType")
     @NInt
@@ -103,11 +115,23 @@ public class INPayBillIntent extends INIntent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("dueDate")
     public native INDateComponentsRange dueDate();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fromAccount")
@@ -122,6 +146,12 @@ public class INPayBillIntent extends INIntent {
     @Selector("init")
     public native INPayBillIntent init();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithBillPayee:fromAccount:transactionAmount:transactionScheduledDate:transactionNote:billType:dueDate:")
     public native INPayBillIntent initWithBillPayeeFromAccountTransactionAmountTransactionScheduledDateTransactionNoteBillTypeDueDate(
@@ -186,16 +216,34 @@ public class INPayBillIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionAmount")
     public native INPaymentAmount transactionAmount();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionNote")
     public native String transactionNote();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INPayBillIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transactionScheduledDate")

@@ -141,4 +141,88 @@ public interface WKDownloadDelegate {
     default void downloadDidFinish(@NotNull WKDownload download) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * Invoked when the download needs a placeholder policy from the client.
+     * 
+     * The placeholder policy specifies whether a placeholder file should be created in
+     * the Downloads directory when the download is in progress. This function is called after
+     * the destination for the download has been decided, and before the download begins.
+     * If the client opts into the placeholder feature, the system will create a placeholder file in
+     * the Downloads directory, which is updated with the download's progress. When the download is
+     * done, the placeholder file is replaced with the actual downloaded file. If the client opts
+     * out of the placeholder feature, it can choose to provide a custom URL to publish progress
+     * against. This is useful if the client maintains it's own placeholder file. If this delegate
+     * is not implemented, the placeholder feature will be disabled.
+     * 
+     * API-Since: 18.2
+     * 
+     * @param download          The download for which we need a placeholder policy
+     * @param completionHandler The completion handler that should be invoked with the chosen policy.
+     *                          If the client implements it's own placeholder, it can choose to provide an alternate
+     *                          placeholder
+     *                          URL, which progress will be published against.
+     *                          The download will not proceed until the completion handler is called.
+     */
+    @Generated
+    @IsOptional
+    @Selector("download:decidePlaceholderPolicy:")
+    default void downloadDecidePlaceholderPolicy(@NotNull WKDownload download,
+            @ObjCBlock(name = "call_downloadDecidePlaceholderPolicy") @NotNull Block_downloadDecidePlaceholderPolicy completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_downloadDecidePlaceholderPolicy {
+        @Generated
+        void call_downloadDecidePlaceholderPolicy(@NInt long arg0, @Nullable NSURL arg1);
+    }
+
+    /**
+     * Called when the download receives a final URL
+     * 
+     * This function is called after didReceivePlaceholderURL was called and after the download finished.
+     * The final URL will normally refer to a file in the Downloads directory
+     * 
+     * API-Since: 18.2
+     * 
+     * @param download The download for which we received a final URL
+     * @param url      The URL of the final download location
+     */
+    @Generated
+    @IsOptional
+    @Selector("download:didReceiveFinalURL:")
+    default void downloadDidReceiveFinalURL(@NotNull WKDownload download, @NotNull NSURL url) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the download receives a placeholder URL
+     * 
+     * This function is called only if the client opted into the placeholder feature, and it is called
+     * before receiving the final URL of the download. The placeholder URL will normally refer to a file in the
+     * Downloads directory.
+     * 
+     * API-Since: 18.2
+     * 
+     * @param download          The download for which we received a placeholder URL
+     * @param completionHandler The completion handler that should be called by the client in response to this call.
+     *                          The didReceiveFinalURL function will not be called until the completion handler has been
+     *                          called.
+     */
+    @Generated
+    @IsOptional
+    @Selector("download:didReceivePlaceholderURL:completionHandler:")
+    default void downloadDidReceivePlaceholderURLCompletionHandler(@NotNull WKDownload download, @NotNull NSURL url,
+            @ObjCBlock(name = "call_downloadDidReceivePlaceholderURLCompletionHandler") @NotNull Block_downloadDidReceivePlaceholderURLCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_downloadDidReceivePlaceholderURLCompletionHandler {
+        @Generated
+        void call_downloadDidReceivePlaceholderURLCompletionHandler();
+    }
 }

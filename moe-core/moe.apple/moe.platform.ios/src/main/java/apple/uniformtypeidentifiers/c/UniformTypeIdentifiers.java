@@ -1891,4 +1891,114 @@ public final class UniformTypeIdentifiers {
     @CVariable()
     @NotNull
     public static native UTType UTTypeAHAP();
+
+    /**
+     * \brief Cascading Style Sheets (CSS)
+     * 
+     * UTI: public.css
+     * 
+     * conforms to: public.text
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeCSS();
+
+    /**
+     * \brief A High Efficiency Image Coding Image Sequence.
+     * 
+     * UTI: public.heics
+     * 
+     * conforms to: public.heif-standard
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeHEICS();
+
+    /**
+     * \brief An EXR image.
+     * 
+     * UTI: com.ilm.openexr-image
+     * 
+     * conforms to: public.image
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeEXR();
+
+    /**
+     * \brief An Adobe DNG (digital negative) image.
+     * 
+     * UTI: com.adobe.raw-image
+     * 
+     * conforms to: public.image
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeDNG();
+
+    /**
+     * \brief A JPEG-XL encoded image.
+     * 
+     * UTI: public.jpeg-xl
+     * 
+     * conforms to: public.image
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeJPEGXL();
+
+    /**
+     * \brief A tar Archive.
+     * 
+     * UTI: public.tar-archive
+     * 
+     * conforms to: public.data, public.archive
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeTarArchive();
+
+    /**
+     * \brief A GeoJSON file.
+     * 
+     * UTI: public.geojson
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeGeoJSON();
+
+    /**
+     * \brief Serialized LinkPresentation metadata.
+     * 
+     * UTI: com.apple.linkpresentation.metadata
+     * 
+     * conforms to: public.data
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeLinkPresentationMetadata();
 }

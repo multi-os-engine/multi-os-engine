@@ -60,6 +60,9 @@ public class SRDeviceUsageReport extends NSObject {
      * Usage time of applications per category
      * 
      * category is the primary genre from the app's iTunesMetadata.plist.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -101,6 +104,8 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * The duration of this report
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("duration")
@@ -146,6 +151,9 @@ public class SRDeviceUsageReport extends NSObject {
      * Usage time of notifications per category
      * 
      * category is the primary genre from the notifying app's iTunesMetadata.plist.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -170,6 +178,8 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Total number of screen wakes over this duration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalScreenWakes")
@@ -178,6 +188,8 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Total amount of time the device was unlocked over this duration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalUnlockDuration")
@@ -185,6 +197,8 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Total number of unlocks over this duration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalUnlocks")
@@ -195,6 +209,9 @@ public class SRDeviceUsageReport extends NSObject {
      * Usage time of web domains per category
      * 
      * category based on the primary Screen Time category of the web domain
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

@@ -139,11 +139,17 @@ public class INMediaDestination extends NSObject implements NSCopying, NSSecureC
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("libraryDestination")
     public static native INMediaDestination libraryDestination();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("mediaDestinationType")
     @NInt
@@ -154,11 +160,17 @@ public class INMediaDestination extends NSObject implements NSCopying, NSSecureC
     @Selector("new")
     public static native INMediaDestination new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("playlistDestinationWithName:")
     public static native INMediaDestination playlistDestinationWithName(@NotNull String playlistName);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("playlistName")

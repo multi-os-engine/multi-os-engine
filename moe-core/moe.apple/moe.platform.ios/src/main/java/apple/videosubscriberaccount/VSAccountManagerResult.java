@@ -161,6 +161,8 @@ public class VSAccountManagerResult extends NSObject {
 
     /**
      * Advise the account manager that the app no longer needs the requested work to be done.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("cancel")

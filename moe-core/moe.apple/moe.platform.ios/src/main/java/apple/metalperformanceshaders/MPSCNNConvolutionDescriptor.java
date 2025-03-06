@@ -208,6 +208,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * connected to ith group in output so number of weights (parameters) needed is reduced by factor
      * of n. Both inputFeatureChannels and outputFeatureChannels must be divisible by n and number of
      * channels in each group must be multiple of 4.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("groups")
@@ -222,6 +224,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels per pixel in the input image.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -235,6 +239,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * Any positive non-zero value is valid, including even values.
      * The position of the top edge of the filter window is given
      * by offset.y - (kernelHeight>>1)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -248,6 +254,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * Any positive non-zero value is valid, including even values.
      * The position of the left edge of the filter window is given
      * by offset.x - (kernelWidth>>1)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("kernelWidth")
@@ -275,6 +283,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the output image.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -291,6 +301,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * connected to ith group in output so number of weights (parameters) needed is reduced by factor
      * of n. Both inputFeatureChannels and outputFeatureChannels must be divisible by n and number of
      * channels in each group must be multiple of 4.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setGroups:")
@@ -300,6 +312,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels per pixel in the input image.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setInputFeatureChannels:")
@@ -312,6 +326,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * Any positive non-zero value is valid, including even values.
      * The position of the top edge of the filter window is given
      * by offset.y - (kernelHeight>>1)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setKernelHeight:")
@@ -324,6 +340,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * Any positive non-zero value is valid, including even values.
      * The position of the left edge of the filter window is given
      * by offset.x - (kernelWidth>>1)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setKernelWidth:")
@@ -349,6 +367,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the output image.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setOutputFeatureChannels:")
@@ -358,6 +378,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] strideInPixelsX
      * 
      * The output stride (downsampling factor) in the x dimension. The default value is 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStrideInPixelsX:")
@@ -367,6 +389,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] strideInPixelsY
      * 
      * The output stride (downsampling factor) in the y dimension. The default value is 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStrideInPixelsY:")
@@ -376,6 +400,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] strideInPixelsX
      * 
      * The output stride (downsampling factor) in the x dimension. The default value is 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("strideInPixelsX")
@@ -386,6 +412,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * [@property] strideInPixelsY
      * 
      * The output stride (downsampling factor) in the y dimension. The default value is 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("strideInPixelsY")
@@ -422,6 +450,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * 
      * by inserting d-1 zeros between consecutive entries in each row of the original kernel.
      * The kernel is centered based on kW_Dilated.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dilationRateX")
@@ -440,6 +470,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * 
      * by inserting d-1 rows of zeros between consecutive row of the original kernel.
      * The kernel is centered based on kH_Dilated.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dilationRateY")
@@ -561,6 +593,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * 
      * by inserting d-1 zeros between consecutive entries in each row of the original kernel.
      * The kernel is centered based on kW_Dilated.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDilationRateX:")
@@ -578,6 +612,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * 
      * by inserting d-1 rows of zeros between consecutive row of the original kernel.
      * The kernel is centered based on kH_Dilated.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDilationRateY:")

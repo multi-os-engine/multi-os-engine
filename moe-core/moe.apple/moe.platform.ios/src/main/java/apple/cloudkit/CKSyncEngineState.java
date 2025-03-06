@@ -73,6 +73,8 @@ public class CKSyncEngineState extends NSObject {
      * When you add a new pending change, the sync engine will automatically schedule a sync task.
      * 
      * The sync engine will ensure consistency and deduplicate these changes under the hood.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addPendingDatabaseChanges:")
@@ -84,6 +86,8 @@ public class CKSyncEngineState extends NSObject {
      * When you add a new pending change, the sync engine will automatically schedule a sync task.
      * 
      * The sync engine will ensure consistency and deduplicate these changes under the hood.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addPendingRecordZoneChanges:")
@@ -140,6 +144,8 @@ public class CKSyncEngineState extends NSObject {
      * 
      * When this property is set, the sync engine will automatically schedule a sync.
      * When the sync task runs, it will ask your delegate for pending changes in `nextRecordZoneChangeBatch`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("hasPendingUntrackedChanges")
@@ -183,6 +189,8 @@ public class CKSyncEngineState extends NSObject {
 
     /**
      * A list of database changes that need to be sent to the server, similar to `pendingRecordZoneChanges`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("pendingDatabaseChanges")
@@ -209,6 +217,8 @@ public class CKSyncEngineState extends NSObject {
      * this list.
      * 
      * If you'd prefer to track pending changes yourself, you can use `hasPendingUntrackedChanges` instead.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("pendingRecordZoneChanges")
@@ -217,6 +227,8 @@ public class CKSyncEngineState extends NSObject {
 
     /**
      * Removes from the list of pending database changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("removePendingDatabaseChanges:")
@@ -225,6 +237,8 @@ public class CKSyncEngineState extends NSObject {
 
     /**
      * Removes from the list of pending record zone changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("removePendingRecordZoneChanges:")
@@ -246,6 +260,8 @@ public class CKSyncEngineState extends NSObject {
      * 
      * When this property is set, the sync engine will automatically schedule a sync.
      * When the sync task runs, it will ask your delegate for pending changes in `nextRecordZoneChangeBatch`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setHasPendingUntrackedChanges:")
@@ -272,6 +288,8 @@ public class CKSyncEngineState extends NSObject {
     /**
      * The list of zone IDs that have new changes to fetch from the server.
      * `CKSyncEngine` keeps track of these zones and will update this list as it receives new information.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("zoneIDsWithUnfetchedServerChanges")

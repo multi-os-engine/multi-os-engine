@@ -133,6 +133,8 @@ public class MPSCNNLossLabels extends MPSState {
      *                         - Size of labels data: (width, height, feature channels}.
      *                         - Optionally, row bytes of labels data.
      *                         - Optionally, slice bytes of labels data.
+     * 
+     *                         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:labelsDescriptor:")
@@ -166,6 +168,8 @@ public class MPSCNNLossLabels extends MPSState {
      *                          - Optionally, slice bytes of weights data.
      *                          This parameter is optional. If you are using a single weight, please use the
      *                          weight property of the MPSCNNLossDescriptor object.
+     * 
+     *                          API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:lossImageSize:labelsDescriptor:weightsDescriptor:")
@@ -248,6 +252,8 @@ public class MPSCNNLossLabels extends MPSState {
      *         In order to guarantee that the image is correctly synchronized for CPU side access,
      *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
      *         method before accessing the data in the image.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -264,6 +270,8 @@ public class MPSCNNLossLabels extends MPSState {
      *         In order to guarantee that the image is correctly synchronized for CPU side access,
      *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
      *         method before accessing the data in the image.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -330,6 +338,8 @@ public class MPSCNNLossLabels extends MPSState {
      *         In order to guarantee that the image is correctly synchronized for CPU side access,
      *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
      *         method before accessing the data in the image.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated

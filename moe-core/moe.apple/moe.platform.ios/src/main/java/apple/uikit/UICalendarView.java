@@ -204,6 +204,8 @@ public class UICalendarView extends UIView {
     /**
      * The available date range of the calendar view. The default is a date interval from @c NSDate.distantPast
      * to @c NSDate.distantFuture
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -217,6 +219,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The backing calendar of the calendar view. The default value is @c NSCalendar.currentCalendar
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -259,6 +263,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The object that defines the delegate of the calendar view.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -272,6 +278,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The font design of the calendar view. The default value is @c UIFontDescriptorSystemDesignDefault
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -328,6 +336,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The backing locale of the calendar view. The default value is @c NSLocale.currentLocale
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -360,6 +370,8 @@ public class UICalendarView extends UIView {
     /**
      * Reloads the decorations for the specified dates, with an option to animate the action.
      * Decorations are only available if you implement the delegate method @c calendarView:decorationForDate:
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("reloadDecorationsForDateComponents:animated:")
@@ -380,6 +392,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The object that defines the selection behavior of the calendar view.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -449,6 +463,8 @@ public class UICalendarView extends UIView {
     /**
      * The available date range of the calendar view. The default is a date interval from @c NSDate.distantPast
      * to @c NSDate.distantFuture
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAvailableDateRange:")
@@ -456,6 +472,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The backing calendar of the calendar view. The default value is @c NSCalendar.currentCalendar
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setCalendar:")
@@ -463,6 +481,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The object that defines the delegate of the calendar view.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -470,6 +490,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The object that defines the delegate of the calendar view.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UICalendarViewDelegate value) {
@@ -485,6 +507,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The font design of the calendar view. The default value is @c UIFontDescriptorSystemDesignDefault
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setFontDesign:")
@@ -492,6 +516,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The backing locale of the calendar view. The default value is @c NSLocale.currentLocale
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setLocale:")
@@ -499,6 +525,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The object that defines the selection behavior of the calendar view.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelectionBehavior:")
@@ -506,6 +534,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The backing time zone of the calendar view. Default is nil
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTimeZone:")
@@ -525,6 +555,8 @@ public class UICalendarView extends UIView {
      * will be converted to use @c UICalendarView.calendar upon assignment. UICalendarView will use
      * [@c] UICalendarView.calendar if @c visibleDateComponents.calendar is not explicitly marked, and may result
      * in incorrect dates if the dateComponents is not valid in @c UICalendarView.calendar.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setVisibleDateComponents:")
@@ -539,6 +571,8 @@ public class UICalendarView extends UIView {
      * will be converted to use @c UICalendarView.calendar upon assignment. UICalendarView will use
      * [@c] UICalendarView.calendar if @c visibleDateComponents.calendar is not explicitly marked, and may result
      * in incorrect dates if the dateComponents is not valid in @c UICalendarView.calendar.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setVisibleDateComponents:animated:")
@@ -547,6 +581,8 @@ public class UICalendarView extends UIView {
     /**
      * Determines if we show date decorations. By default, this value returns @c YES, but you must also implement
      * the delegate method @c calendarView:decorationForDate: to show decorations.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setWantsDateDecorations:")
@@ -558,6 +594,8 @@ public class UICalendarView extends UIView {
 
     /**
      * The backing time zone of the calendar view. Default is nil
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -603,6 +641,8 @@ public class UICalendarView extends UIView {
      * will be converted to use @c UICalendarView.calendar upon assignment. UICalendarView will use
      * [@c] UICalendarView.calendar if @c visibleDateComponents.calendar is not explicitly marked, and may result
      * in incorrect dates if the dateComponents is not valid in @c UICalendarView.calendar.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -612,6 +652,8 @@ public class UICalendarView extends UIView {
     /**
      * Determines if we show date decorations. By default, this value returns @c YES, but you must also implement
      * the delegate method @c calendarView:decorationForDate: to show decorations.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("wantsDateDecorations")

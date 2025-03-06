@@ -161,6 +161,8 @@ public class UISwipeGestureRecognizer extends UIGestureRecognizer {
     /**
      * default is UISwipeGestureRecognizerDirectionRight. the desired direction of the swipe. multiple directions may be
      * specified if they will result in the same behavior (for example, UITableView swipe delete)
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("direction")
@@ -187,6 +189,8 @@ public class UISwipeGestureRecognizer extends UIGestureRecognizer {
     /**
      * default is UISwipeGestureRecognizerDirectionRight. the desired direction of the swipe. multiple directions may be
      * specified if they will result in the same behavior (for example, UITableView swipe delete)
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setDirection:")

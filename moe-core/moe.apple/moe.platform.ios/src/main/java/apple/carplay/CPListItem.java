@@ -100,6 +100,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Any extra text displayed below the primary text in a cell displaying this list item.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -125,6 +127,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -137,6 +141,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Initialize a list item with text and detail text.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithText:detailText:")
@@ -160,6 +166,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      * 
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithText:detailText:image:")
@@ -276,6 +284,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      * 
      * [@note] If set, this property takes precedence over the @c accessoryType.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

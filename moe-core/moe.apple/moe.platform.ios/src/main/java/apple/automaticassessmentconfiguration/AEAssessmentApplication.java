@@ -158,4 +158,19 @@ public class AEAssessmentApplication extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("bundleIdentifier")
+    @NotNull
+    public native String bundleIdentifier();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("initWithBundleIdentifier:")
+    public native AEAssessmentApplication initWithBundleIdentifier(@NotNull String bundleIdentifier);
 }

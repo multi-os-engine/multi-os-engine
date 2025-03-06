@@ -117,6 +117,8 @@ public class MPSImageReduceColumnMean extends MPSImageReduceUnary {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSImageReduce object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

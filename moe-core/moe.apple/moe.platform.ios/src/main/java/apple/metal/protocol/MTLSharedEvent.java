@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 public interface MTLSharedEvent extends MTLEvent {
     /**
      * Convenience method for creating a shared event handle that may be passed to other processes via XPC.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -32,6 +34,8 @@ public interface MTLSharedEvent extends MTLEvent {
     /**
      * When the event's signaled value reaches value or higher, invoke the block on the dispatch queue owned by the
      * listener.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("notifyListener:atValue:block:")
@@ -47,6 +51,8 @@ public interface MTLSharedEvent extends MTLEvent {
 
     /**
      * Read or set signaled value
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSignaledValue:")
@@ -54,8 +60,20 @@ public interface MTLSharedEvent extends MTLEvent {
 
     /**
      * Read or set signaled value
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("signaledValue")
     long signaledValue();
+
+    /**
+     * Synchronously wait for the signaledValue to be greater than or equal to 'value', with a timeout
+     * specified in milliseconds. Returns YES if the value was signaled before the timeout, otherwise NO.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("waitUntilSignaledValue:timeoutMS:")
+    boolean waitUntilSignaledValueTimeoutMS(long value, long milliseconds);
 }

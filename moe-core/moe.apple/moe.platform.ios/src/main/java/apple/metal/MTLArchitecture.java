@@ -136,6 +136,8 @@ public class MTLArchitecture extends NSObject implements NSCopying {
      * [@property] name
      * 
      * The device's architecture name.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("name")

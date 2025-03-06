@@ -82,6 +82,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns circle center.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -100,6 +102,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns YES if the point is inside the circle, including the boundary.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("containsPoint:")
@@ -107,6 +111,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns YES if the point is within the ring bound by two circles [radius - delta; radius + delta].
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("containsPoint:inCircumferentialRingOfWidth:")
@@ -129,6 +135,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns circle diameter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("diameter")
@@ -149,6 +157,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes VNCircle object with given circle center and circle diameter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithCenter:diameter:")
@@ -156,6 +166,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes VNCircle object with given circle center and circle radius.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithCenter:radius:")
@@ -194,6 +206,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns circle radius.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("radius")
@@ -232,6 +246,8 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a VNCircle object with center at the Origin [0.0; 0.0] and zero radius.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

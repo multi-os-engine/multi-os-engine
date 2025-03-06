@@ -163,6 +163,8 @@ public class UISnapBehavior extends UIDynamicBehavior {
 
     /**
      * damping value from 0.0 to 1.0. 1.0 is the least oscillation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("damping")
@@ -175,6 +177,8 @@ public class UISnapBehavior extends UIDynamicBehavior {
 
     /**
      * The point argument is expressed in the reference coordinate system
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithItem:snapToPoint:")
@@ -183,6 +187,8 @@ public class UISnapBehavior extends UIDynamicBehavior {
 
     /**
      * damping value from 0.0 to 1.0. 1.0 is the least oscillation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDamping:")

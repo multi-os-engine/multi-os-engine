@@ -163,12 +163,17 @@ public class UIMarkupTextPrintFormatter extends UIPrintFormatter {
     @Selector("init")
     public native UIMarkupTextPrintFormatter init();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("initWithMarkupText:")
     public native UIMarkupTextPrintFormatter initWithMarkupText(@NotNull String markupText);
 
     /**
      * cannot change once drawing started
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -177,6 +182,8 @@ public class UIMarkupTextPrintFormatter extends UIPrintFormatter {
 
     /**
      * cannot change once drawing started
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setMarkupText:")

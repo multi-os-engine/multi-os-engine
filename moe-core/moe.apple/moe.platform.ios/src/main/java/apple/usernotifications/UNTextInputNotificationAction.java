@@ -71,6 +71,8 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     /**
      * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at
      * the time that the notification is presented.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("actionWithIdentifier:title:options:textInputButtonTitle:textInputPlaceholder:")
@@ -194,6 +196,8 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
 
     /**
      * The text input button title displayed for this action.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -202,6 +206,8 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
 
     /**
      * The placeholder text displayed in the text input field for this action.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

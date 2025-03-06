@@ -12,6 +12,12 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 13.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported
+ */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -21,7 +27,11 @@ public interface SKPaymentQueueDelegate {
      * Sent when the storefront changes while a payment is processing.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Pass Product.PurchaseOption.onStorefrontChange(shouldContinuePurchase:) to
+     * product.purchase(options:)
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueue:shouldContinueTransaction:inStorefront:")
@@ -37,7 +47,10 @@ public interface SKPaymentQueueDelegate {
      * delegate before adding any transaction observers if you intend to implement this method.
      * 
      * API-Since: 13.4
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Message.messages and Message.display(in:)
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueueShouldShowPriceConsent:")

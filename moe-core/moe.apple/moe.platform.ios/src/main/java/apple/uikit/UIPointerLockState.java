@@ -115,6 +115,8 @@ public class UIPointerLockState extends NSObject {
      * The preferred pointer lock value specified by a view controller is only a request, which may or may not be
      * honored.
      * This property is key-value observable and UIPointerLockState.didChangeNotification is posted when it changes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isLocked")

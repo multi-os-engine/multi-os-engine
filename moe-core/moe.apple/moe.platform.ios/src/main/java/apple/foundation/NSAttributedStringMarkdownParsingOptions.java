@@ -57,6 +57,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     /**
      * Whether to allow parsing extensions to Markdown that specify extended attributes. Defaults to NO (only parse
      * CommonMark syntax).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsExtendedAttributes")
@@ -105,6 +107,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     /**
      * The policy to apply if the Markdown source triggers a parsing error.
      * The default is NSAttributedStringMarkdownParsingFailureReturnError.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("failurePolicy")
@@ -116,6 +120,9 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native NSAttributedStringMarkdownParsingOptions init();
@@ -137,6 +144,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
      * What subset of Markdown syntax will be interpreted to produce relevant attributes in the final result.
      * Excluded syntax will still be parsed, and the text will be included in the final result. However, it will not
      * have attributes applied to it.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interpretedSyntax")
@@ -156,6 +165,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
      * The BCP-47 language code for this document. If not nil, the NSLanguageAttributeName attribute will be applied to
      * any range in the returned string that doesn't otherwise specify a language attribute.
      * The default is nil, which applies no attributes.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -178,6 +189,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     /**
      * Whether to allow parsing extensions to Markdown that specify extended attributes. Defaults to NO (only parse
      * CommonMark syntax).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsExtendedAttributes:")
@@ -186,6 +199,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     /**
      * The policy to apply if the Markdown source triggers a parsing error.
      * The default is NSAttributedStringMarkdownParsingFailureReturnError.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFailurePolicy:")
@@ -195,6 +210,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
      * What subset of Markdown syntax will be interpreted to produce relevant attributes in the final result.
      * Excluded syntax will still be parsed, and the text will be included in the final result. However, it will not
      * have attributes applied to it.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInterpretedSyntax:")
@@ -204,6 +221,8 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
      * The BCP-47 language code for this document. If not nil, the NSLanguageAttributeName attribute will be applied to
      * any range in the returned string that doesn't otherwise specify a language attribute.
      * The default is nil, which applies no attributes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLanguageCode:")

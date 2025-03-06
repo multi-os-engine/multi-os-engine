@@ -193,6 +193,9 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @NUInt
     public static native long defaultRevision();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("revision:supportsConstellation:")
     public static native boolean revisionSupportsConstellation(@NUInt long requestRevision, @NUInt long constellation);
@@ -216,6 +219,8 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
 
     /**
      * VNFaceObservation with populated landmarks-related properties results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

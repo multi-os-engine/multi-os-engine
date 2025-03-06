@@ -182,6 +182,9 @@ public class MPSCNNPooling extends MPSCNNKernel {
      * @param kernelWidth  The width of the kernel. Can be an odd or even value.
      * @param kernelHeight The height of the kernel. Can be an odd or even value.
      * @return A valid MPSCNNPooling object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -198,6 +201,9 @@ public class MPSCNNPooling extends MPSCNNKernel {
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")

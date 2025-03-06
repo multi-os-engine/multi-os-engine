@@ -104,6 +104,9 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connection:didFailWithError:")
@@ -125,6 +128,9 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connection:willSendRequestForAuthenticationChallenge:")
@@ -133,6 +139,9 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connectionShouldUseCredentialStorage:")

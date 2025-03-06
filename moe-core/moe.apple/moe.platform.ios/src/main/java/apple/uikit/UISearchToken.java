@@ -137,6 +137,8 @@ public class UISearchToken extends NSObject {
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation
      * (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken
      * may be considerably longer than expected, especially if the token has been copied to a pasteboard.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -162,6 +164,8 @@ public class UISearchToken extends NSObject {
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation
      * (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken
      * may be considerably longer than expected, especially if the token has been copied to a pasteboard.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRepresentedObject:")
@@ -175,6 +179,9 @@ public class UISearchToken extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("tokenWithIcon:text:")

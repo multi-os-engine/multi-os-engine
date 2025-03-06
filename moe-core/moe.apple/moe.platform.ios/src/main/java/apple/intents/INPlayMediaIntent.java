@@ -148,11 +148,17 @@ public class INPlayMediaIntent extends INIntent {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("mediaContainer")
     public native INMediaItem mediaContainer();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("mediaItems")
@@ -173,6 +179,8 @@ public class INPlayMediaIntent extends INIntent {
 
     /**
      * An NSNumber representing a boolean value where true indicates that the media should be shuffled.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -187,6 +195,9 @@ public class INPlayMediaIntent extends INIntent {
     @NInt
     public native long playbackQueueLocation();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("playbackRepeatMode")
     @NInt
@@ -210,6 +221,8 @@ public class INPlayMediaIntent extends INIntent {
 
     /**
      * An NSNumber representing a boolean value where true indicates that the media should be resumed.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

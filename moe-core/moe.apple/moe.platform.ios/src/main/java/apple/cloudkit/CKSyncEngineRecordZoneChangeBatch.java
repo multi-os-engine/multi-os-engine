@@ -65,6 +65,8 @@ public class CKSyncEngineRecordZoneChangeBatch extends NSObject {
      * fail with ``CKErrorBatchRequestFailed``.
      * 
      * Records that exist in different zones will not be modified together atomically.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("atomicByZone")
@@ -122,6 +124,8 @@ public class CKSyncEngineRecordZoneChangeBatch extends NSObject {
      * If you return `nil` from the record provider, this will skip to the next pending change.
      * 
      * This will return `nil` if there are no pending changes to send.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithPendingChanges:recordProvider:")
@@ -152,6 +156,8 @@ public class CKSyncEngineRecordZoneChangeBatch extends NSObject {
      * 
      * > Tip: These batch size limitations are handled automatically by the ``initWithPendingChanges:recordProvider:``
      * initializer.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithRecordsToSave:recordIDsToDelete:atomicByZone:")
@@ -188,6 +194,8 @@ public class CKSyncEngineRecordZoneChangeBatch extends NSObject {
 
     /**
      * The IDs of the records to delete from the server.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("recordIDsToDelete")
@@ -196,6 +204,8 @@ public class CKSyncEngineRecordZoneChangeBatch extends NSObject {
 
     /**
      * The records to save to the server.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("recordsToSave")
@@ -217,6 +227,8 @@ public class CKSyncEngineRecordZoneChangeBatch extends NSObject {
      * fail with ``CKErrorBatchRequestFailed``.
      * 
      * Records that exist in different zones will not be modified together atomically.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAtomicByZone:")

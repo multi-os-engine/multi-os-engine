@@ -63,6 +63,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
      *                The probability weight of this subtree. Higher numbers compared to other subtree weights will
      *                increase the likelihood of being
      *                chosen. This value must be greater than or equal to 1, and is clamped otherwise.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("addSubtree:weight:")
@@ -123,6 +125,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
      * 
      * @return
      *         A new PHASERandomNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("init")
@@ -137,6 +141,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
      *                   An optional custom identifier to give to this object
      * @return
      *         A new PHASERandomNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -182,6 +188,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
      * 
      * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
      * times.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUniqueSelectionQueueLength:")
@@ -200,6 +208,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
      * 
      * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
      * times.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("uniqueSelectionQueueLength")

@@ -105,6 +105,8 @@ public class PHASEMedium extends NSObject {
      * initWithEngine:preset
      * 
      * Initialize a new medium from a preset.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithEngine:preset:")

@@ -430,15 +430,23 @@ public class UISwitch extends UIControl implements NSCoding {
 
     /**
      * This class enforces a size appropriate for the control, and so the frame size is ignored.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithFrame:")
     public native UISwitch initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isOn")
     public native boolean isOn();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setOn:")
     public native void setOn(boolean value);
@@ -476,6 +484,8 @@ public class UISwitch extends UIControl implements NSCoding {
 
     /**
      * does not send action
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setOn:animated:")

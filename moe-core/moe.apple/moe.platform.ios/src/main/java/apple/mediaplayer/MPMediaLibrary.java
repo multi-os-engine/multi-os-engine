@@ -115,6 +115,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("defaultMediaLibrary")
@@ -199,6 +202,8 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
 
     /**
      * MPMediaLibraryDidChangeNotification will be posted when a sync happens.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("beginGeneratingLibraryChangeNotifications")
@@ -208,6 +213,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("endGeneratingLibraryChangeNotifications")
     public native void endGeneratingLibraryChangeNotifications();
@@ -237,6 +245,8 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
 
     /**
      * Returns the date at which the media library was last modified.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated

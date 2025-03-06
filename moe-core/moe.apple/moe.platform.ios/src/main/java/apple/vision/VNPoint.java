@@ -125,6 +125,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @param point The destination point.
      * @return the Euclidean distance between the target and specified points.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("distanceToPoint:")
@@ -149,6 +151,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes a VNPoint object from a CGPoint.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithLocation:")
@@ -156,6 +160,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes a VNPoint object from X and Y coordinates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithX:y:")
@@ -186,6 +192,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns the X and Y coordinates of the point, as CGPoint type, with respect to the origin of the coordinate
      * system the point is defined in.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("location")
@@ -203,6 +211,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
      * @param vector The vector offset to be applied to a source point.
      * @param point  The source point.
      * @return the translated point.
+     * 
+     *         API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -243,6 +253,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns the X coordinate of the point with respect to the origin of the coordinate system the point is defined
      * in.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("x")
@@ -251,6 +263,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns the Y coordinate of the point with respect to the origin of the coordinate system the point is defined
      * in.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("y")
@@ -258,6 +272,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a VNPoint object that represents the location of (0.0, 0.0).
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

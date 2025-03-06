@@ -156,6 +156,8 @@ public class ASIdentifierManager extends NSObject {
      * 
      * - Returns: Returns the shared instance of the AdSupport identifier manager
      * class.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -222,6 +224,8 @@ public class ASIdentifierManager extends NSObject {
      * For more information about asking users for permission to track, see [User
      * Privacy and Data
      * Use](https://developer.apple.com/app-store/user-privacy-and-data-use/).
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated

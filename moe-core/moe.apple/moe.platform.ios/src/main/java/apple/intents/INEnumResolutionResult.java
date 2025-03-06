@@ -86,6 +86,9 @@ public class INEnumResolutionResult extends INIntentResolutionResult {
     public static native INEnumResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
@@ -157,6 +160,9 @@ public class INEnumResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("successWithResolvedValue:")

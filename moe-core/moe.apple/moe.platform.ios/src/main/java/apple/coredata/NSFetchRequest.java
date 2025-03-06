@@ -173,6 +173,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("affectedStores")
@@ -182,6 +185,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("entity")
@@ -221,6 +227,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @NUInt
     public native long fetchBatchSize();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("fetchLimit")
     @NUInt
@@ -287,6 +296,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("includesSubentities")
     public native boolean includesSubentities();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("init")
     public native NSFetchRequest<?> init();
@@ -302,6 +314,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("initWithEntityName:")
     public native NSFetchRequest<?> initWithEntityName(@NotNull String entityName);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("predicate")
@@ -388,10 +403,16 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("returnsObjectsAsFaults")
     public native boolean returnsObjectsAsFaults();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAffectedStores:")
     public native void setAffectedStores(@Nullable NSArray<? extends NSPersistentStore> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setEntity:")
     public native void setEntity(@Nullable NSEntityDescription value);
@@ -410,6 +431,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("setFetchBatchSize:")
     public native void setFetchBatchSize(@NUInt long value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setFetchLimit:")
     public native void setFetchLimit(@NUInt long value);
@@ -473,6 +497,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("setIncludesSubentities:")
     public native void setIncludesSubentities(boolean value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setPredicate:")
     public native void setPredicate(@Nullable NSPredicate value);
@@ -561,6 +588,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("setShouldRefreshRefetchedObjects:")
     public native void setShouldRefreshRefetchedObjects(boolean value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setSortDescriptors:")
     public native void setSortDescriptors(@Nullable NSArray<? extends NSSortDescriptor> value);
@@ -572,6 +602,9 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("shouldRefreshRefetchedObjects")
     public native boolean shouldRefreshRefetchedObjects();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("sortDescriptors")

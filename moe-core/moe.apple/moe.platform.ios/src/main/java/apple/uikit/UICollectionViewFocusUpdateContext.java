@@ -162,11 +162,17 @@ public class UICollectionViewFocusUpdateContext extends UIFocusUpdateContext {
     @Selector("init")
     public native UICollectionViewFocusUpdateContext init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("nextFocusedIndexPath")
     public native NSIndexPath nextFocusedIndexPath();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("previouslyFocusedIndexPath")

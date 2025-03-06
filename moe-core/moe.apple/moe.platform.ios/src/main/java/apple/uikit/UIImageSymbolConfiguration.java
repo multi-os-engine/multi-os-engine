@@ -86,6 +86,8 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * Adjusts for Dynamic Type. Use UIFontMetrics to get automatic adjustment with a custom font.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configurationWithFont:")
@@ -93,6 +95,8 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * Adjusts for Dynamic Type. Use UIFontMetrics to get automatic adjustment with a custom font.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configurationWithFont:scale:")
@@ -100,16 +104,24 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * Fixed point size configurations
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configurationWithPointSize:")
     public static native UIImageSymbolConfiguration configurationWithPointSize(@NFloat double pointSize);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("configurationWithPointSize:weight:")
     public static native UIImageSymbolConfiguration configurationWithPointSizeWeight(@NFloat double pointSize,
             @NInt long weight);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("configurationWithPointSize:weight:scale:")
     public static native UIImageSymbolConfiguration configurationWithPointSizeWeightScale(@NFloat double pointSize,
@@ -117,6 +129,8 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * just change the scale on the configuration
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configurationWithScale:")
@@ -124,25 +138,39 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * Dynamic type size configurations
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("configurationWithTextStyle:")
     public static native UIImageSymbolConfiguration configurationWithTextStyle(@NotNull String textStyle);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("configurationWithTextStyle:scale:")
     public static native UIImageSymbolConfiguration configurationWithTextStyleScale(@NotNull String textStyle,
             @NInt long scale);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("configurationWithWeight:")
     public static native UIImageSymbolConfiguration configurationWithWeight(@NInt long weight);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("configurationWithoutPointSizeAndWeight")
     public native UIImageSymbolConfiguration configurationWithoutPointSizeAndWeight();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("configurationWithoutScale")
@@ -150,12 +178,17 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * Removes attributes from the configuration if they are set
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
     @Selector("configurationWithoutTextStyle")
     public native UIImageSymbolConfiguration configurationWithoutTextStyle();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("configurationWithoutWeight")
@@ -198,6 +231,8 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     /**
      * checks if the other configuration is equal to this one.
      * the values have to match exactly.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isEqualToConfiguration:")
@@ -245,6 +280,8 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * everything is "unspecified". This is essentially the same as nil but's more explicit.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

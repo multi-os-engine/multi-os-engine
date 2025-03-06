@@ -126,6 +126,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * Enable or disable light estimation.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isLightEstimationEnabled")
@@ -137,6 +139,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines whether this device supports the ARConfiguration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isSupported")
@@ -156,6 +160,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * Determines whether to capture and provide audio data.
      * 
      * Disabled by default.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("providesAudioData")
@@ -173,6 +179,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * Enable or disable light estimation.
      * 
      * Enabled by default.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLightEstimationEnabled:")
@@ -182,6 +190,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * Determines whether to capture and provide audio data.
      * 
      * Disabled by default.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProvidesAudioData:")
@@ -195,6 +205,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * Determines how the coordinate system should be aligned with the world.
      * 
      * The default is ARWorldAlignmentGravity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWorldAlignment:")
@@ -213,6 +225,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * Determines how the coordinate system should be aligned with the world.
      * 
      * The default is ARWorldAlignmentGravity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("worldAlignment")

@@ -145,6 +145,9 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -181,12 +184,17 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * types are dependent on the capabilities of the AVCaptureInputPort to which this receiver's AVCaptureConnection is
      * connected. Clients may specify the types of objects they would like to process by calling
      * setMetadataObjectTypes:. This property is key-value observable.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
     @Selector("availableMetadataObjectTypes")
     public native NSArray<String> availableMetadataObjectTypes();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("init")
     public native AVCaptureMetadataOutput init();
@@ -201,6 +209,8 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * linked on or after iOS 7.0, the receiver captures no metadata objects by default. -setMetadataObjectTypes: throws
      * an NSInvalidArgumentException if any elements in the array are not present in the -availableMetadataObjectTypes
      * array.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("metadataObjectTypes")
@@ -213,6 +223,8 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setMetadataObjectsDelegate:queue:
      * method.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -227,6 +239,8 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * The value of this property is an object conforming to the AVCaptureMetadataOutputObjectsDelegate protocol that
      * will receive metadata objects after they are captured. The delegate is set using the
      * setMetadataObjectsDelegate:queue: method.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -265,6 +279,8 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * linked on or after iOS 7.0, the receiver captures no metadata objects by default. -setMetadataObjectTypes: throws
      * an NSInvalidArgumentException if any elements in the array are not present in the -availableMetadataObjectTypes
      * array.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setMetadataObjectTypes:")
@@ -284,7 +300,10 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * sufficiently small amount of processing is performed along with receiving metadata objects.
      * 
      * A serial dispatch queue must be used to guarantee that metadata objects will be delivered in order. The
-     * objectsCallbackQueue parameter may not be NULL, except when setting the objectsDelegate to nil.
+     * objectsCallbackQueue parameter may not be NULL, except when setting the objectsDelegate to nil otherwise
+     * -setMetadataObjectsDelegate:queue: throws an NSInvalidArgumentException.
+     * 
+     * API-Since: 6.0
      * 
      * @param objectsDelegate
      *                             An object conforming to the AVCaptureMetadataOutputObjectsDelegate protocol that will

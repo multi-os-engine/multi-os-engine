@@ -78,6 +78,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * [@property] alpha
      * 
      * The scale factor to apply to the input.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("alpha")
@@ -117,6 +119,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -152,6 +156,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * 
      * @param resultGradientForBiasVector If non-NULL the vector containing gradients for the bias
      *                                    terms.
+     * 
+     *                                    API-Since: 12.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:gradientMatrix:inputMatrix:biasVector:resultGradientForDataMatrix:resultGradientForBiasVector:")
@@ -181,12 +187,17 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixNeuronGradient
      * @param device   The MTLDevice on which to make the MPSMatrixNeuronGradient object.
      * @return A new MPSMatrixNeuronGradient object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixNeuronGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSMatrixNeuronGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -215,6 +226,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronParameterA")
@@ -222,6 +235,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronParameterB")
@@ -229,6 +244,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronParameterC")
@@ -236,6 +253,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronType")
@@ -258,6 +277,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * [@property] alpha
      * 
      * The scale factor to apply to the input.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -283,6 +304,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * @param A An array containing float values for neuron parameter A.
      *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y,
      *          sourceInputFeatureChannels)
+     * 
+     *          API-Since: 12.0
      */
     @Generated
     @Selector("setNeuronToPReLUWithParametersA:")
@@ -304,6 +327,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * @param parameterA parameterA of neuron activation that is shared across all output values.
      * @param parameterB parameterB of neuron activation that is shared across all output values.
      * @param parameterC parameterC of neuron activation that is shared across all output values.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
@@ -314,6 +339,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * [@property] sourceInputFeatureChannels
      * 
      * The number of feature channels in the input vectors.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
@@ -323,6 +350,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * [@property] sourceNumberOfFeatureVectors
      * 
      * The number of input vectors which make up the input array.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -336,6 +365,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * [@property] sourceInputFeatureChannels
      * 
      * The number of feature channels in the input vectors.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -346,6 +377,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * [@property] sourceNumberOfFeatureVectors
      * 
      * The number of input vectors which make up the input array.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")

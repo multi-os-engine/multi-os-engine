@@ -165,6 +165,9 @@ public class CXStartCallAction extends CXCallAction {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("contactIdentifier")
@@ -174,6 +177,8 @@ public class CXStartCallAction extends CXCallAction {
      * Normally, providers can just call -[CXAction fulfill] to indicate action fulfillment. Use this method to note a
      * specific date that the call started if it is different from [NSDate date]. A call is considered started when its
      * invitation has been sent to the remote callee.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("fulfillWithDateStarted:")
@@ -181,6 +186,8 @@ public class CXStartCallAction extends CXCallAction {
 
     /**
      * Handle for the party to call
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -195,28 +202,45 @@ public class CXStartCallAction extends CXCallAction {
     @Selector("initWithCallUUID:")
     public native CXStartCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCallUUID:handle:")
     public native CXStartCallAction initWithCallUUIDHandle(@NotNull NSUUID callUUID, @NotNull CXHandle handle);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native CXStartCallAction initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isVideo")
     public native boolean isVideo();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setVideo:")
     public native void setVideo(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setContactIdentifier:")
     public native void setContactIdentifier(@Nullable String value);
 
     /**
      * Handle for the party to call
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setHandle:")

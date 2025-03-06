@@ -180,6 +180,8 @@ public class MDLStereoscopicCamera extends MDLCamera {
     /**
      * Inter-pupillary distance in mm.
      * Default is 63mm.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("interPupillaryDistance")
@@ -197,6 +199,8 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * h = (focal length * interOcularDistance) / distance to vergence point.
      * 
      * Vergence is measured in degrees towards center and is usually positive.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("leftVergence")
@@ -206,11 +210,16 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * The amount, as a percentage of image width to offset an image towards the other
      * camera. This value is used in a stereo grade to enhance or reduce the intensity
      * of the stereoscopic effect
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("overlap")
     public native float overlap();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rightVergence")
     public native float rightVergence();
@@ -218,6 +227,8 @@ public class MDLStereoscopicCamera extends MDLCamera {
     /**
      * Inter-pupillary distance in mm.
      * Default is 63mm.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInterPupillaryDistance:")
@@ -235,6 +246,8 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * h = (focal length * interOcularDistance) / distance to vergence point.
      * 
      * Vergence is measured in degrees towards center and is usually positive.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLeftVergence:")
@@ -244,11 +257,16 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * The amount, as a percentage of image width to offset an image towards the other
      * camera. This value is used in a stereo grade to enhance or reduce the intensity
      * of the stereoscopic effect
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOverlap:")
     public native void setOverlap(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setRightVergence:")
     public native void setRightVergence(float value);

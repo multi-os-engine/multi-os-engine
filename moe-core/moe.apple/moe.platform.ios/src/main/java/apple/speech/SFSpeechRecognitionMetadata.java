@@ -66,6 +66,8 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
 
     /**
      * Measures average pause between words (in seconds)
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("averagePauseDuration")
@@ -165,6 +167,8 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
 
     /**
      * Measures the number of words spoken per minute
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("speakingRate")
@@ -172,6 +176,8 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
 
     /**
      * Duration of speech in audio
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("speechDuration")
@@ -179,6 +185,8 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
 
     /**
      * Timestamp of start of speech in audio
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("speechStartTimestamp")
@@ -203,6 +211,9 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.5
+     */
     @Nullable
     @Generated
     @Selector("voiceAnalytics")

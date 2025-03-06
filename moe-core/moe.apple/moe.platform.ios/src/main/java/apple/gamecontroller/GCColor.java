@@ -68,6 +68,9 @@ public class GCColor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("blue")
     public native float blue();
@@ -112,6 +115,9 @@ public class GCColor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("green")
     public native float green();
@@ -129,6 +135,9 @@ public class GCColor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native GCColor initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithRed:green:blue:")
     public native GCColor initWithRedGreenBlue(float red, float green, float blue);
@@ -160,6 +169,9 @@ public class GCColor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native GCColor new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("red")
     public native float red();

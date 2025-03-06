@@ -98,6 +98,9 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("init")
     public native AROrientationTrackingConfiguration init();

@@ -77,6 +77,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
     /**
      * The certification declaration of the device. This is a DER-encoded string
      * representing a CMS-formatted certification declaration.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("certificationDeclaration")
@@ -85,6 +87,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
 
     /**
      * The attestation challenge from the secure session.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("challenge")
@@ -112,6 +116,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
     /**
      * The device attestation certificate for the device. This can be used to
      * verify signatures created with the device attestation private key.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("deviceAttestationCertificate")
@@ -122,6 +128,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
      * A signature, using the device attestation private key of the device that sent
      * the attestation information, over the concatenation of elementsTLV and the
      * attestation challenge from the secure session.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("elementsSignature")
@@ -131,6 +139,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
     /**
      * The TLV-encoded attestation_elements_message that was used to find the
      * certificationDeclaration and firmwareInfo.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("elementsTLV")
@@ -141,6 +151,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
      * Firmware information, if any, provided in the elementsTLV. The encoding of
      * this is not currently specified, but if present this must match the
      * Distributed Compliance Ledger entry for the device.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("firmwareInfo")
@@ -156,6 +168,9 @@ public class MTRDeviceAttestationInfo extends NSObject {
     @Selector("init")
     public native MTRDeviceAttestationInfo init();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("initWithDeviceAttestationChallenge:nonce:elementsTLV:elementsSignature:deviceAttestationCertificate:productAttestationIntermediateCertificate:certificationDeclaration:firmwareInfo:")
     public native MTRDeviceAttestationInfo initWithDeviceAttestationChallengeNonceElementsTLVElementsSignatureDeviceAttestationCertificateProductAttestationIntermediateCertificateCertificationDeclarationFirmwareInfo(
@@ -193,6 +208,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
 
     /**
      * The attestation nonce from the AttestationRequest command.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("nonce")
@@ -202,6 +219,8 @@ public class MTRDeviceAttestationInfo extends NSObject {
     /**
      * The product attestation intermediate certificate that can be used to verify
      * the authenticity of the device attestation certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("productAttestationIntermediateCertificate")

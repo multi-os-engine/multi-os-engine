@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterNetworkCommissioning extends MTRCluster {
+public class MTRBaseClusterNetworkCommissioning extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -2124,5 +2124,21 @@ public class MTRBaseClusterNetworkCommissioning extends MTRCluster {
     public interface Block_writeAttributeInterfaceEnabledWithValueParamsCompletionHandler {
         @Generated
         void call_writeAttributeInterfaceEnabledWithValueParamsCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("scanNetworksWithCompletion:")
+    public native void scanNetworksWithCompletion(
+            @ObjCBlock(name = "call_scanNetworksWithCompletion") @NotNull Block_scanNetworksWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scanNetworksWithCompletion {
+        @Generated
+        void call_scanNetworksWithCompletion(@Nullable MTRNetworkCommissioningClusterScanNetworksResponseParams data,
+                @Nullable NSError error);
     }
 }

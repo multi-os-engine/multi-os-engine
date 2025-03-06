@@ -164,11 +164,17 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("availableBookings")
     public native NSArray<? extends INRestaurantReservationBooking> availableBookings();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -178,6 +184,9 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     @Selector("init")
     public native INGetAvailableRestaurantReservationBookingsIntentResponse init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithAvailableBookings:code:userActivity:")
     public native INGetAvailableRestaurantReservationBookingsIntentResponse initWithAvailableBookingsCodeUserActivity(
@@ -190,6 +199,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
 
     /**
      * An optional string to be displayed in UI that allows the vendor to detail things like specials or incentives.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -199,6 +210,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     /**
      * An optional string to be displayed in UI that allows the vendor to specify details or history about the
      * restaurant.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -207,6 +220,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
 
     /**
      * An optional string to be displayed in UI that allows the vendor to detail things like specials or incentives.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocalizedBookingAdvisementText:")
@@ -215,6 +230,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     /**
      * An optional string to be displayed in UI that allows the vendor to specify details or history about the
      * restaurant.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocalizedRestaurantDescriptionText:")
@@ -222,6 +239,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
 
     /**
      * An optional object allowing the vendor to display terms of use for its service
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTermsAndConditions:")
@@ -235,6 +254,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
 
     /**
      * An optional object allowing the vendor to display terms of use for its service
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

@@ -127,6 +127,9 @@ public class SFSpeechLanguageModel extends NSObject {
     @Selector("new")
     public static native SFSpeechLanguageModel new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("prepareCustomLanguageModelForUrl:clientIdentifier:configuration:completion:")
     public static native void prepareCustomLanguageModelForUrlClientIdentifierConfigurationCompletion(
@@ -141,6 +144,9 @@ public class SFSpeechLanguageModel extends NSObject {
         void call_prepareCustomLanguageModelForUrlClientIdentifierConfigurationCompletion(@Nullable NSError error);
     }
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("prepareCustomLanguageModelForUrl:clientIdentifier:configuration:ignoresCache:completion:")
     public static native void prepareCustomLanguageModelForUrlClientIdentifierConfigurationIgnoresCacheCompletion(

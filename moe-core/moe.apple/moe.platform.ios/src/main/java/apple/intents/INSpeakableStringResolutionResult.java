@@ -98,6 +98,8 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
 
     /**
      * This resolution result is to ask Siri to confirm if this is the string with which the user wants to continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided strings.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -181,6 +185,8 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
      * INSpeakableString. The resolvedString can be different than the original INSpeakableString. This allows app
      * extensions to add a pronunciationHint, or otherwise tweak the string.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

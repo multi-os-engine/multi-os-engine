@@ -101,6 +101,8 @@ public class PHASEAsset extends NSObject {
      * [@property] identifier
      * 
      * The identifier that uniquely represents this asset.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

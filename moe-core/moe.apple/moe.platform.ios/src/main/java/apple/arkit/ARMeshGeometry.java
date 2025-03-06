@@ -87,6 +87,8 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * Classification for each face in the mesh.
+     * 
+     * API-Since: 13.4
      */
     @Nullable
     @Generated
@@ -107,6 +109,8 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * A list of all faces in the mesh.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -155,6 +159,8 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * Normal of each vertex in the mesh.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -194,6 +200,8 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
 
     /**
      * The vertices of the mesh.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated

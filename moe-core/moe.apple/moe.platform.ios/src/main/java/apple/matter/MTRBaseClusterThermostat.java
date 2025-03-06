@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterThermostat extends MTRCluster {
+public class MTRBaseClusterThermostat extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -124,7 +124,7 @@ public class MTRBaseClusterThermostat extends MTRCluster {
     /**
      * Command ClearWeeklySchedule
      * 
-     * The Clear Weekly Schedule command is used to clear the weekly schedule.
+     * This command is used to clear the weekly schedule.
      * 
      * API-Since: 16.4
      */
@@ -171,7 +171,7 @@ public class MTRBaseClusterThermostat extends MTRCluster {
     /**
      * Command GetWeeklySchedule
      * 
-     * Command description for GetWeeklySchedule
+     * The Current Weekly Schedule Command is sent from the server in response to the Get Weekly Schedule Command.
      * 
      * API-Since: 16.4
      */
@@ -4226,7 +4226,7 @@ public class MTRBaseClusterThermostat extends MTRCluster {
     /**
      * Command SetWeeklySchedule
      * 
-     * Command description for SetWeeklySchedule
+     * This command is used to update the thermostat weekly setpoint schedule from a management system.
      * 
      * API-Since: 16.4
      */
@@ -4265,7 +4265,8 @@ public class MTRBaseClusterThermostat extends MTRCluster {
     /**
      * Command SetpointRaiseLower
      * 
-     * Command description for SetpointRaiseLower
+     * Upon receipt, the attributes for the indicated setpoint(s) SHALL have the amount specified in the Amount field
+     * added to them.
      * 
      * API-Since: 16.4
      */

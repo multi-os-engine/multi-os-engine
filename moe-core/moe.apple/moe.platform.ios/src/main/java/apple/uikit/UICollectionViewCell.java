@@ -424,6 +424,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * The background view is a subview behind all other views.
      * If selectedBackgroundView is different than backgroundView, it will be placed above the background view and
      * animated in on selection.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -432,6 +434,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
 
     /**
      * add custom subviews to the cell's contentView
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -450,10 +454,16 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Selector("initWithFrame:")
     public native UICollectionViewCell initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
@@ -463,6 +473,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * The selected state is toggled when the user lifts up from a highlighted cell.
      * Override these methods to provide custom UI for a selected or highlighted state.
      * The collection view may call the setters inside an animation block.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isSelected")
@@ -473,11 +485,16 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * The selected state is toggled when the user lifts up from a highlighted cell.
      * Override these methods to provide custom UI for a selected or highlighted state.
      * The collection view may call the setters inside an animation block.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("selectedBackgroundView")
@@ -488,11 +505,16 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * The background view is a subview behind all other views.
      * If selectedBackgroundView is different than backgroundView, it will be placed above the background view and
      * animated in on selection.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(@Nullable UIView value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setSelectedBackgroundView:")
     public native void setSelectedBackgroundView(@Nullable UIView value);

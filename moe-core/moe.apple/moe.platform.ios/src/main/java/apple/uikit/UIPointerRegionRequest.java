@@ -123,6 +123,8 @@ public class UIPointerRegionRequest extends NSObject {
 
     /**
      * The location of the pointer in the interaction's view's coordinate space.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("location")
@@ -131,6 +133,8 @@ public class UIPointerRegionRequest extends NSObject {
 
     /**
      * Key modifier flags representing keyboard keys pressed by the user at the time of this request.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("modifiers")

@@ -102,6 +102,8 @@ public class NSProgress extends NSObject {
      * of invoking this directly will often not be the right thing to do, because the invoking code will often not even
      * know what units of work the current progress object deals in. Invoking +progressWithTotalUnitCount: to create a
      * child NSProgress object and then using that to report progress makes more sense in that situation.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -170,6 +172,8 @@ public class NSProgress extends NSObject {
      * you can let the result of invoking this method get captured by a block passed to dispatch_async(). In that block
      * you can invoke methods like -becomeCurrentWithPendingUnitCount: and -resignCurrent, or -setCompletedUnitCount:
      * and -isCancelled.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -229,6 +233,8 @@ public class NSProgress extends NSObject {
      * -becomeCurrentWithPendingUnitCount: has to be the same unit of work as that used for the value of the
      * totalUnitCount property, but the unit of work used by the child can be a completely different one, and often will
      * be. You must always balance invocations of this method with invocations of -resignCurrent.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("becomeCurrentWithPendingUnitCount:")
@@ -239,6 +245,8 @@ public class NSProgress extends NSObject {
      * property to YES. Do this for the receiver, any descendants of the receiver, the instance of NSProgress that was
      * published in another process to make the receiver if that's the case, and any descendants of such a published
      * instance of NSProgress.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("cancel")
@@ -249,6 +257,8 @@ public class NSProgress extends NSObject {
      * ancestor of the receiver, or an instance of NSProgress in another process that resulted from publishing the
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -256,6 +266,9 @@ public class NSProgress extends NSObject {
     @ObjCBlock(name = "call_cancellationHandler_ret")
     public native Block_cancellationHandler_ret cancellationHandler();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("completedUnitCount")
     public native long completedUnitCount();
@@ -263,6 +276,8 @@ public class NSProgress extends NSObject {
     /**
      * The fraction of the overall work completed by this progress object, including work done by any children it may
      * have.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("fractionCompleted")
@@ -277,6 +292,8 @@ public class NSProgress extends NSObject {
      * checking done by the receiver will notify or consult the parent. The only valid arguments to the first argument
      * of this method are nil (indicating no parent) or [NSProgress currentProgress]. Any other value will throw an
      * exception.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithParent:userInfo:")
@@ -292,6 +309,8 @@ public class NSProgress extends NSObject {
      * It is valid for the values of these properties to change in virtually any way during the lifetime of an
      * NSProgress. Of course, if an NSProgress is cancellable you should actually implement cancellability by setting a
      * cancellation handler or by making your code poll the result of invoking -isCancelled. Likewise for pausability.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isCancellable")
@@ -306,6 +325,8 @@ public class NSProgress extends NSObject {
      * It is valid for the values of these properties to change in virtually any way during the lifetime of an
      * NSProgress. Of course, if an NSProgress is cancellable you should actually implement cancellability by setting a
      * cancellation handler or by making your code poll the result of invoking -isCancelled. Likewise for pausability.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setCancellable:")
@@ -315,6 +336,8 @@ public class NSProgress extends NSObject {
      * Whether the work being done has been cancelled or paused, respectively. NSProgress is by default KVO-compliant
      * for these properties, with the notifications always being sent on the thread which updates the property.
      * Instances of NSProgress that have parents are at least as cancelled or paused as their parents.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isCancelled")
@@ -326,19 +349,30 @@ public class NSProgress extends NSObject {
      * indicates that there turned out to not be any work to do after all; -isIndeterminate returns NO and
      * -fractionCompleted returns 1.0 in that case. NSProgress is by default KVO-compliant for these properties, with
      * the notifications always being sent on the thread which updates the property.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isIndeterminate")
     public native boolean isIndeterminate();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isPausable")
     public native boolean isPausable();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPausable:")
     public native void setPausable(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
@@ -350,6 +384,8 @@ public class NSProgress extends NSObject {
      * values in the user info dictionary, to create a string that is presentable to the user. This is most useful when
      * -localizedDescription is actually being invoked in another process, whose localization language may be different,
      * as a result of using the publish and subscribe mechanism described here.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -373,6 +409,9 @@ public class NSProgress extends NSObject {
      * 3.3 MB of 103.92 GB — 2 minutes remaining
      * 1.61 GB of 3.22 GB (2 KB/sec) — 2 minutes remaining
      * 1 minute remaining (1 KB/sec)
+     * 
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("localizedAdditionalDescription")
@@ -391,6 +430,8 @@ public class NSProgress extends NSObject {
      * Copying 10 files…
      * 30% completed
      * Copying “TextEdit”…
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("localizedDescription")
@@ -401,6 +442,8 @@ public class NSProgress extends NSObject {
      * YES. Do this for the receiver, any descendants of the receiver, the instance of NSProgress that was published in
      * another process to make the receiver if that's the case, and any descendants of such a published instance of
      * NSProgress.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("pause")
@@ -411,6 +454,8 @@ public class NSProgress extends NSObject {
      * ancestor of the receiver, or an instance of NSProgress in another process that resulted from publishing the
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -421,6 +466,8 @@ public class NSProgress extends NSObject {
     /**
      * Balance the most recent previous invocation of -becomeCurrentWithPendingUnitCount: on the same thread by
      * restoring the current progress object to what it was before -becomeCurrentWithPendingUnitCount: was invoked.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("resignCurrent")
@@ -457,12 +504,17 @@ public class NSProgress extends NSObject {
      * ancestor of the receiver, or an instance of NSProgress in another process that resulted from publishing the
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setCancellationHandler:")
     public native void setCancellationHandler(
             @Nullable @ObjCBlock(name = "call_setCancellationHandler") Block_setCancellationHandler value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCompletedUnitCount:")
     public native void setCompletedUnitCount(long value);
@@ -474,6 +526,8 @@ public class NSProgress extends NSObject {
      * values in the user info dictionary, to create a string that is presentable to the user. This is most useful when
      * -localizedDescription is actually being invoked in another process, whose localization language may be different,
      * as a result of using the publish and subscribe mechanism described here.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setKind:")
@@ -496,6 +550,9 @@ public class NSProgress extends NSObject {
      * 3.3 MB of 103.92 GB — 2 minutes remaining
      * 1.61 GB of 3.22 GB (2 KB/sec) — 2 minutes remaining
      * 1 minute remaining (1 KB/sec)
+     * 
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLocalizedAdditionalDescription:")
@@ -514,6 +571,8 @@ public class NSProgress extends NSObject {
      * Copying 10 files…
      * 30% completed
      * Copying “TextEdit”…
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLocalizedDescription:")
@@ -524,6 +583,8 @@ public class NSProgress extends NSObject {
      * ancestor of the receiver, or an instance of NSProgress in another process that resulted from publishing the
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPausingHandler:")
@@ -555,6 +616,8 @@ public class NSProgress extends NSObject {
      * completedUnitCount / totalUnitCount. If the receiver NSProgress has children, the fractionCompleted will reflect
      * progress made in child objects in addition to its own completedUnitCount. As children finish, the
      * completedUnitCount of the parent will be updated.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTotalUnitCount:")
@@ -564,6 +627,8 @@ public class NSProgress extends NSObject {
      * Set a value in the dictionary returned by invocations of -userInfo, with appropriate KVO notification for
      * properties whose values can depend on values in the user info dictionary, like localizedDescription. If a nil
      * value is passed then the dictionary entry is removed.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setUserInfoObject:forKey:")
@@ -582,6 +647,8 @@ public class NSProgress extends NSObject {
      * completedUnitCount / totalUnitCount. If the receiver NSProgress has children, the fractionCompleted will reflect
      * progress made in child objects in addition to its own completedUnitCount. As children finish, the
      * completedUnitCount of the parent will be updated.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("totalUnitCount")
@@ -593,6 +660,8 @@ public class NSProgress extends NSObject {
      * thread which updates the property. The result will never be nil, but may be an empty dictionary. Some entries
      * have meanings that are recognized by the NSProgress class itself. See the NSProgress...Key string constants
      * listed below.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -708,6 +777,8 @@ public class NSProgress extends NSObject {
 
     /**
      * True if the progress is considered finished. This property is observable.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isFinished")

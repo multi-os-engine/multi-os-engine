@@ -54,6 +54,9 @@ public class HKActivityMoveModeObject extends NSObject implements NSCopying, NSS
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("activityMoveMode")
     @NInt

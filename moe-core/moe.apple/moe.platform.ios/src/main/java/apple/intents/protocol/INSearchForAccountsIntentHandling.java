@@ -43,6 +43,8 @@ public interface INSearchForAccountsIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSearchForAccountsIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -69,6 +71,8 @@ public interface INSearchForAccountsIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSearchForAccountsIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("handleSearchForAccounts:completion:")
@@ -92,6 +96,8 @@ public interface INSearchForAccountsIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -109,6 +115,9 @@ public interface INSearchForAccountsIntentHandling {
                 @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveAccountTypeForSearchForAccounts:withCompletion:")
@@ -125,6 +134,9 @@ public interface INSearchForAccountsIntentHandling {
                 @NotNull INAccountTypeResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveOrganizationNameForSearchForAccounts:withCompletion:")
@@ -141,6 +153,9 @@ public interface INSearchForAccountsIntentHandling {
                 @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveRequestedBalanceTypeForSearchForAccounts:withCompletion:")

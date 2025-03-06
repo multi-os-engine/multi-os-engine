@@ -86,6 +86,8 @@ public class MPSMatrixCopy extends MPSKernel {
 
     /**
      * The number of columns to copy for each copy operation
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("copyColumns")
@@ -94,6 +96,8 @@ public class MPSMatrixCopy extends MPSKernel {
 
     /**
      * The number of rows to copy for each copy operation
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("copyRows")
@@ -110,6 +114,8 @@ public class MPSMatrixCopy extends MPSKernel {
 
     /**
      * If YES, the destinations are in row major storage order
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("destinationsAreTransposed")
@@ -121,6 +127,9 @@ public class MPSMatrixCopy extends MPSKernel {
      * @param commandBuffer  A valid MTLCommandBuffer to receive the encoded kernel.
      * 
      * @param copyDescriptor The descriptor that defines the copy operator
+     * 
+     * 
+     *                       API-Since: 11.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:copyDescriptor:")
@@ -218,6 +227,8 @@ public class MPSMatrixCopy extends MPSKernel {
 
     /**
      * If YES, the sources are in row major storage order
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourcesAreTransposed")
@@ -267,6 +278,9 @@ public class MPSMatrixCopy extends MPSKernel {
      *                             transpose is performed before permutations.
      * 
      * @param columnPermuteOffset  Offset in numbers to apply to the 'columnPermuteIndices' vector.
+     * 
+     * 
+     *                             API-Since: 11.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:copyDescriptor:rowPermuteIndices:rowPermuteOffset:columnPermuteIndices:columnPermuteOffset:")

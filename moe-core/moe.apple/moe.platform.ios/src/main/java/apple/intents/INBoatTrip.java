@@ -61,6 +61,9 @@ public class INBoatTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("allocWithZone:")
     public static native INBoatTrip allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("arrivalBoatTerminalLocation")
@@ -70,11 +73,17 @@ public class INBoatTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("boatName")
     public native String boatName();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("boatNumber")
@@ -112,6 +121,9 @@ public class INBoatTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("departureBoatTerminalLocation")
@@ -138,6 +150,9 @@ public class INBoatTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INBoatTrip initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithProvider:boatName:boatNumber:tripDuration:departureBoatTerminalLocation:arrivalBoatTerminalLocation:")
     public native INBoatTrip initWithProviderBoatNameBoatNumberTripDurationDepartureBoatTerminalLocationArrivalBoatTerminalLocation(
@@ -172,6 +187,9 @@ public class INBoatTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native INBoatTrip new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("provider")
@@ -203,6 +221,9 @@ public class INBoatTrip extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("tripDuration")

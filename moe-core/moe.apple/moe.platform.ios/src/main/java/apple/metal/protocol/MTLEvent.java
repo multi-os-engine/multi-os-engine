@@ -23,6 +23,8 @@ public interface MTLEvent {
      * 
      * The device this event can be used with. Will be nil when the event is shared across devices (i.e.
      * MTLSharedEvent).
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -34,6 +36,8 @@ public interface MTLEvent {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -44,6 +48,8 @@ public interface MTLEvent {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLabel:")

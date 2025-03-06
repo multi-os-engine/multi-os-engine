@@ -140,6 +140,9 @@ public class SRWebUsage extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("totalUsageTime")
     public native double totalUsageTime();

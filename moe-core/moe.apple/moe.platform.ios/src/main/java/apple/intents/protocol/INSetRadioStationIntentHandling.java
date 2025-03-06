@@ -63,7 +63,12 @@ public interface INSetRadioStationIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSetRadioStationIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetRadioStationIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSetRadioStation:completion:")
@@ -82,12 +87,23 @@ public interface INSetRadioStationIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSetRadioStationIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetRadioStationIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSetRadioStation:completion:")
     void handleSetRadioStationCompletion(@NotNull INSetRadioStationIntent intent,
             @NotNull @ObjCBlock(name = "call_handleSetRadioStationCompletion") Block_handleSetRadioStationCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveChannelForSetRadioStation:withCompletion:")
@@ -96,6 +112,12 @@ public interface INSetRadioStationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveFrequencyForSetRadioStation:withCompletion:")
@@ -104,6 +126,12 @@ public interface INSetRadioStationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolvePresetNumberForSetRadioStation:withCompletion:")
@@ -122,7 +150,12 @@ public interface INSetRadioStationIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetRadioStationIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveRadioTypeForSetRadioStation:withCompletion:")
@@ -131,6 +164,12 @@ public interface INSetRadioStationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveStationNameForSetRadioStation:withCompletion:")

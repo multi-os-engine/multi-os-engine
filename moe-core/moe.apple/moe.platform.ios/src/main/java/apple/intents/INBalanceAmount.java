@@ -61,6 +61,9 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
     @Selector("allocWithZone:")
     public static native INBalanceAmount allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("amount")
@@ -70,6 +73,9 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("balanceType")
     @NInt
@@ -105,6 +111,8 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * The ISO 4217 currency code that applies to the monetary amount.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -132,10 +140,16 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
     @Selector("init")
     public native INBalanceAmount init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAmount:balanceType:")
     public native INBalanceAmount initWithAmountBalanceType(@NotNull NSDecimalNumber amount, @NInt long balanceType);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAmount:currencyCode:")
     public native INBalanceAmount initWithAmountCurrencyCode(@NotNull NSDecimalNumber amount,

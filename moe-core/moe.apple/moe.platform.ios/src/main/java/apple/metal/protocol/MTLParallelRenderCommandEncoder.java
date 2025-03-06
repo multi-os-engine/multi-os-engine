@@ -45,6 +45,8 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
      * 
      * Return a new autoreleased object that conforms to <MTLRenderCommandEncoder> that may be used to encode on a
      * different thread.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

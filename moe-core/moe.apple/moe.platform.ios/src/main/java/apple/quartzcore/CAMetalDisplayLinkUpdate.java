@@ -90,6 +90,9 @@ public class CAMetalDisplayLinkUpdate extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("drawable")
     @MappedReturn(ObjCObjectMapper.class)
@@ -148,10 +151,16 @@ public class CAMetalDisplayLinkUpdate extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("targetPresentationTimestamp")
     public native double targetPresentationTimestamp();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("targetTimestamp")
     public native double targetTimestamp();

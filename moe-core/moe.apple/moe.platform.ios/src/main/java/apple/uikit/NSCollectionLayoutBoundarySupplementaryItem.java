@@ -50,6 +50,9 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("alignment")
     @NInt
@@ -98,12 +101,17 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
      * | |
      * | |
      * +----------------------------------+
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("boundarySupplementaryItemWithLayoutSize:elementKind:alignment:")
     public static native NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSizeElementKindAlignment(
             @NotNull NSCollectionLayoutSize layoutSize, @NotNull String elementKind, @NInt long alignment);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("boundarySupplementaryItemWithLayoutSize:elementKind:alignment:absoluteOffset:")
     public static native NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSizeElementKindAlignmentAbsoluteOffset(
@@ -149,6 +157,8 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     /**
      * Default is YES. This will automatically extend the content area of the host geometry (e.g. section)
      * For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("extendsBoundary")
@@ -201,6 +211,9 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Selector("new")
     public static native NSCollectionLayoutBoundarySupplementaryItem new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("offset")
     @ByValue
@@ -211,6 +224,8 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
      * section) is visible.
      * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header +
      * footer both pinned)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("pinToVisibleBounds")
@@ -227,6 +242,8 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     /**
      * Default is YES. This will automatically extend the content area of the host geometry (e.g. section)
      * For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setExtendsBoundary:")
@@ -237,6 +254,8 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
      * section) is visible.
      * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header +
      * footer both pinned)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPinToVisibleBounds:")

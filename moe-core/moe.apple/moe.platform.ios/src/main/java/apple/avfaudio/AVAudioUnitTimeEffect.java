@@ -75,6 +75,8 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
      * [@property] bypass
      * 
      * bypass state of the audio unit
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("bypass")
@@ -124,6 +126,8 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
      * create an AVAudioUnitTimeEffect object
      * 
      * The componentType must be kAudioUnitType_FormatConverter
+     * 
+     * API-Since: 8.0
      * 
      * @param audioComponentDescription
      *                                  AudioComponentDescription of the audio unit to be initialized
@@ -178,6 +182,8 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
      * [@property] bypass
      * 
      * bypass state of the audio unit
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBypass:")

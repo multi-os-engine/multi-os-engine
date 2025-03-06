@@ -116,6 +116,8 @@ public class VNTrackTranslationalImageRegistrationRequest extends VNStatefulRequ
      * Create a new request that can statefully track the translational registration of two images.
      * 
      * This is a convenience initializer for a frame analysis spacing of kCMTimeZero and a nil completion handler.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("init")
@@ -125,6 +127,8 @@ public class VNTrackTranslationalImageRegistrationRequest extends VNStatefulRequ
      * Create a new request that can statefully track the translational registration of two images.
      * 
      * This is a convenience initializer for a frame analysis spacing of kCMTimeZero.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithCompletionHandler:")
@@ -181,6 +185,8 @@ public class VNTrackTranslationalImageRegistrationRequest extends VNStatefulRequ
 
     /**
      * VNImageTranslationAlignmentObservation results.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("results")

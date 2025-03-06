@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A tensor parameter object. This is used to describe input tensors that are updated by the optimizer during training.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -125,7 +124,11 @@ public class MLCTensorParameter extends NSObject {
      * [@property] isUpdatable
      * 
      * Specifies whether this tensor parameter is updatable
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("isUpdatable")
     public native boolean isUpdatable();
@@ -145,7 +148,11 @@ public class MLCTensorParameter extends NSObject {
      * 
      * @param tensor The unedrlying tensor
      * @return A new tensor parameter object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("parameterWithTensor:")
     public static native MLCTensorParameter parameterWithTensor(@NotNull MLCTensor tensor);
@@ -156,7 +163,11 @@ public class MLCTensorParameter extends NSObject {
      * @param tensor        The unedrlying tensor
      * @param optimizerData The optimizer data needed for this input tensor
      * @return A new tensor parameter object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("parameterWithTensor:optimizerData:")
     public static native MLCTensorParameter parameterWithTensorOptimizerData(@NotNull MLCTensor tensor,
@@ -174,7 +185,11 @@ public class MLCTensorParameter extends NSObject {
      * [@property] isUpdatable
      * 
      * Specifies whether this tensor parameter is updatable
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setIsUpdatable:")
     public native void setIsUpdatable(boolean value);
@@ -191,7 +206,11 @@ public class MLCTensorParameter extends NSObject {
      * [@property] tensor
      * 
      * The underlying tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("tensor")

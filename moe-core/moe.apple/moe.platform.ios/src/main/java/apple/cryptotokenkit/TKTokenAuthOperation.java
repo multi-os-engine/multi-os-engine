@@ -105,6 +105,8 @@ public class TKTokenAuthOperation extends NSObject implements NSSecureCoding {
      * 
      * @param error Error details (see TKError.h).
      * @return Finalization status.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("finishWithError:")

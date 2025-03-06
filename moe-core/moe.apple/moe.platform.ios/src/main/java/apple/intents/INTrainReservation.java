@@ -119,6 +119,9 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
     @Selector("initWithCoder:")
     public native INTrainReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:reservedSeat:trainTrip:")
     public native INTrainReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsReservedSeatTrainTrip(
@@ -154,6 +157,9 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
     @Selector("new")
     public static native INTrainReservation new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservedSeat")
@@ -185,6 +191,9 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("trainTrip")

@@ -142,6 +142,8 @@ public class UICalendarSelection extends NSObject {
 
     /**
      * Called to refresh the selectable dates in the calendar view.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("updateSelectableDates")

@@ -100,6 +100,8 @@ public class MPSNDArrayBinaryPrimaryGradientKernel extends MPSNDArrayMultiaryGra
     /**
      * Gradient encode methods
      * Inference encode calls.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -108,6 +110,9 @@ public class MPSNDArrayBinaryPrimaryGradientKernel extends MPSNDArrayMultiaryGra
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArray primarySourceArray,
             @NotNull MPSNDArray secondarySourceArray, @NotNull MPSNDArray gradient, @NotNull MPSState state);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:sourceGradient:gradientState:destinationArray:")
     public native void encodeToCommandBufferPrimarySourceArraySecondarySourceArraySourceGradientGradientStateDestinationArray(
@@ -130,12 +135,17 @@ public class MPSNDArrayBinaryPrimaryGradientKernel extends MPSNDArrayMultiaryGra
 
     /**
      * NSSecureCoding support
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayBinaryPrimaryGradientKernel initWithCoderDevice(@NotNull NSCoder coder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNDArrayBinaryPrimaryGradientKernel initWithDevice(

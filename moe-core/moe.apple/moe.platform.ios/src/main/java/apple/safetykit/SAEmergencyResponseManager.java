@@ -104,6 +104,8 @@ public class SAEmergencyResponseManager extends NSObject {
      * delegate
      * 
      * The delegate object to receive updates about requested emergency response action.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("delegate")
@@ -137,6 +139,8 @@ public class SAEmergencyResponseManager extends NSObject {
      *                    Requests will fail with SAErrorNotAvailable if invoked outside of the limited time window
      *                    after an emergency event is detected.
      *                    Use the SAEmergencyResponseDelegate to monitor the progress of the voice call.
+     * 
+     *                    API-Since: 16.0
      */
     @Generated
     @Selector("dialVoiceCallToPhoneNumber:completionHandler:")
@@ -198,6 +202,8 @@ public class SAEmergencyResponseManager extends NSObject {
      * delegate
      * 
      * The delegate object to receive updates about requested emergency response action.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -207,6 +213,8 @@ public class SAEmergencyResponseManager extends NSObject {
      * delegate
      * 
      * The delegate object to receive updates about requested emergency response action.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable SAEmergencyResponseDelegate value) {

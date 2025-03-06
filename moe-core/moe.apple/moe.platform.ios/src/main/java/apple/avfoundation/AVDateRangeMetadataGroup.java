@@ -175,6 +175,8 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
 
     /**
      * indicates the end date of the metadata
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -199,6 +201,8 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
      *                  information about an instantaneous event, the value of endDate should be equal to the value of
      *                  startDate. A value of nil for endDate indicates that the endDate is indefinite.
      * @return An instance of AVDateRangeMetadataGroup.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithItems:startDate:endDate:")
@@ -207,6 +211,8 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
 
     /**
      * an array of AVMetadataItems
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -222,6 +228,8 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
 
     /**
      * indicates the start date of the metadata
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

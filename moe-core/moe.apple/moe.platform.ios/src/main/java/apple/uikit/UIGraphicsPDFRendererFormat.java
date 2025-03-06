@@ -163,6 +163,9 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("documentInfo")
@@ -172,6 +175,9 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
     @Selector("init")
     public native UIGraphicsPDFRendererFormat init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDocumentInfo:")
     public native void setDocumentInfo(@NotNull NSDictionary<String, ?> value);

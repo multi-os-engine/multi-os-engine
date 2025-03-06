@@ -126,6 +126,8 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptorArray extends N
 
     /**
      * Individual attachment state access
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -144,6 +146,8 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptorArray extends N
     /**
      * This always uses 'copy' semantics. It is safe to set the attachment state at any legal index to nil, which resets
      * that attachment descriptor state to default values.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")

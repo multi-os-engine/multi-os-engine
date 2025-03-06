@@ -105,6 +105,8 @@ public class AVDepthData extends NSObject {
      * 
      * This property presents the available pixel format types as an array of NSNumbers, each wrapping an OSType (CV
      * pixel format type).
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -118,6 +120,8 @@ public class AVDepthData extends NSObject {
      * 
      * See AVCameraCalibrationData for more information. This property may return nil if no camera calibration data is
      * available for the depth data.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -155,6 +159,8 @@ public class AVDepthData extends NSObject {
      * Specifies the accuracy of the units in the depth data map's values.
      * 
      * See AVDepthDataAccuracy documentation for more information.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("depthDataAccuracy")
@@ -170,6 +176,8 @@ public class AVDepthData extends NSObject {
      * initializer to create a derivative copy of the depth in which the specified orientation is applied to both the
      * underlying pixel map data and the camera calibration data. This method throws an NSInvalidArgumentException if
      * you pass an unrecognized exifOrientation.
+     * 
+     * API-Since: 11.0
      * 
      * @param exifOrientation
      *                        One of the 8 standard Exif orientation tags expressing how the depth data should be
@@ -188,6 +196,8 @@ public class AVDepthData extends NSObject {
      * Returns a converted, derivative AVDepthData instance in the specified depthDataType.
      * 
      * This method throws an NSInvalidArgumentException if you pass an unrecognized depthDataType. See
+     * 
+     * API-Since: 11.0
      * 
      * @param depthDataType
      *                      The OSType of depthData object to which you'd like to convert. Must be present in
@@ -208,6 +218,8 @@ public class AVDepthData extends NSObject {
      * When applying complex edits to media containing depth data, you may create a derivative map with arbitrary
      * transforms applied to it, then use this initializer to create a new AVDepthData. Note that this new depth data
      * object has no camera calibration data, so its cameraCalibrationData property always returns nil.
+     * 
+     * API-Since: 11.0
      * 
      * @param pixelBuffer
      *                    A pixel buffer containing depth data information in one of the 4 supported disparity / depth
@@ -232,6 +244,8 @@ public class AVDepthData extends NSObject {
      * AVDepthData can be instantiated using the result of CGImageSourceCopyAuxiliaryDataInfoAtIndex, which returns a
      * CFDictionary of primitive map information.
      * 
+     * API-Since: 11.0
+     * 
      * @param imageSourceAuxDataInfoDictionary
      *                                         A dictionary of primitive depth-related information obtained from
      *                                         CGImageSourceCopyAuxiliaryDataInfoAtIndex.
@@ -253,6 +267,8 @@ public class AVDepthData extends NSObject {
      * Provides access to the depth data object's internal map.
      * 
      * The depth data map's pixel format can be queried using the depthDataType property.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -265,6 +281,8 @@ public class AVDepthData extends NSObject {
      * Specifies the overall quality of the depth data map's values.
      * 
      * See AVDepthDataQuality documentation for more information.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("depthDataQuality")
@@ -278,6 +296,8 @@ public class AVDepthData extends NSObject {
      * 
      * One of kCVPixelFormatType_DisparityFloat16, kCVPixelFormatType_DisparityFloat32, kCVPixelFormatType_DepthFloat16,
      * or kCVPixelFormatType_DepthFloat32.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("depthDataType")
@@ -295,6 +315,8 @@ public class AVDepthData extends NSObject {
      * When using ImageIO framework's CGImageDestination API to write depth data to a HEIF or JPEG file, you may use
      * this method to generate a dictionary of primitive map information consumed by
      * CGImageDestinationAddAuxiliaryDataInfo.
+     * 
+     * API-Since: 11.0
      * 
      * @param outAuxDataType
      *                       On output, either kCGImageAuxiliaryDataTypeDisparity or kCGImageAuxiliaryDataTypeDepth,
@@ -342,6 +364,8 @@ public class AVDepthData extends NSObject {
      * filtering, all depth data holes are filled. Note that filtering the depth data makes it more usable for applying
      * effects, but alters the data such that it may no longer be suitable for computer vision tasks. Unfiltered depth
      * maps present missing data as NaN.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isDepthDataFiltered")

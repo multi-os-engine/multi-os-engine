@@ -59,6 +59,9 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("bias")
     public native float bias();
@@ -114,6 +117,8 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
      * @param isSecondarySourceFilter The isSecondarySourceFilter property is used to indicate whether the arithmetic
      *                                gradient filter is operating on the primary or secondary source image from the
      *                                forward pass.
+     * 
+     *                                API-Since: 11.3
      */
     @Generated
     @Selector("initWithGradientImages:forwardFilter:isSecondarySourceFilter:")
@@ -130,6 +135,8 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The source input image from the forward pass (primary or secondary).
      * @param gradientState  The gradient state produced by the concatenation filter, consumed by this filter.
+     * 
+     *                       API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:isSecondarySourceFilter:")
@@ -150,6 +157,9 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("isSecondarySourceFilter")
     public native boolean isSecondarySourceFilter();
@@ -163,10 +173,16 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("maximumValue")
     public native float maximumValue();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("minimumValue")
     public native float minimumValue();
@@ -185,6 +201,8 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The source input image from the forward pass (primary or secondary).
      * @param gradientState  The gradient state produced by the concatenation filter, consumed by this filter.
+     * 
+     *                       API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:isSecondarySourceFilter:")
@@ -192,6 +210,9 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
             @NotNull MPSNNImageNode sourceGradient, @NotNull MPSNNImageNode sourceImage,
             @NotNull MPSNNBinaryGradientStateNode gradientState, boolean isSecondarySourceFilter);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("primaryScale")
     public native float primaryScale();
@@ -204,53 +225,89 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("secondaryScale")
     public native float secondaryScale();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("secondaryStrideInFeatureChannels")
     @NUInt
     public native long secondaryStrideInFeatureChannels();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("secondaryStrideInPixelsX")
     @NUInt
     public native long secondaryStrideInPixelsX();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("secondaryStrideInPixelsY")
     @NUInt
     public native long secondaryStrideInPixelsY();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setBias:")
     public native void setBias(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setMaximumValue:")
     public native void setMaximumValue(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setMinimumValue:")
     public native void setMinimumValue(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setPrimaryScale:")
     public native void setPrimaryScale(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setSecondaryScale:")
     public native void setSecondaryScale(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setSecondaryStrideInFeatureChannels:")
     public native void setSecondaryStrideInFeatureChannels(@NUInt long value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setSecondaryStrideInPixelsX:")
     public native void setSecondaryStrideInPixelsX(@NUInt long value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setSecondaryStrideInPixelsY:")
     public native void setSecondaryStrideInPixelsY(@NUInt long value);

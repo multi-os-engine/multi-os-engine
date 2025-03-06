@@ -109,6 +109,8 @@ public class MXCellularConditionMetric extends MXMetric {
      * In the event that no data for any buckets is available, the histogram data will be empty.
      * 
      * Dimensioned as MXUnitSignalBars.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

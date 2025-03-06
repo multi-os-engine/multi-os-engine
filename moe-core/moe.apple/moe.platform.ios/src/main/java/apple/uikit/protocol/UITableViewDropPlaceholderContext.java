@@ -24,6 +24,8 @@ public interface UITableViewDropPlaceholderContext extends UIDragAnimating {
      * You are only responsible for updating your data source inside the block using the provided insertionIndexPath.
      * If the placeholder is no longer available (e.g. -reloadData has been called) the dataSourceUpdates block
      * will not be executed and this will return NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("commitInsertionWithDataSourceUpdates:")
@@ -41,6 +43,8 @@ public interface UITableViewDropPlaceholderContext extends UIDragAnimating {
      * If the placeholder is no longer needed or you wish to manually insert a cell for the drop data, you can
      * remove the placeholder via this method.
      * If the placeholder is no longer available (e.g. -reloadData has been called) this will return NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("deletePlaceholder")
@@ -48,6 +52,8 @@ public interface UITableViewDropPlaceholderContext extends UIDragAnimating {
 
     /**
      * The drag item this placeholder was created for.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

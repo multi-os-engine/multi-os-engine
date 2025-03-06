@@ -20,10 +20,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AXCustomContentProvider")
 public interface AXCustomContentProvider {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("accessibilityCustomContent")
     NSArray<? extends AXCustomContent> accessibilityCustomContent();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAccessibilityCustomContent:")
     void setAccessibilityCustomContent(NSArray<? extends AXCustomContent> value);

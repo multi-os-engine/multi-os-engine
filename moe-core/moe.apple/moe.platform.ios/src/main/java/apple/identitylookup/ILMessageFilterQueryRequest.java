@@ -134,6 +134,8 @@ public class ILMessageFilterQueryRequest extends NSObject implements NSSecureCod
 
     /**
      * The body of the message the receiver relates to.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -155,6 +157,8 @@ public class ILMessageFilterQueryRequest extends NSObject implements NSSecureCod
 
     /**
      * The sender of the message the receiver relates to.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

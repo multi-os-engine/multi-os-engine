@@ -157,11 +157,17 @@ public class MTLStructMember extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("arrayType")
     public native MTLArrayType arrayType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("dataType")
     @NUInt
@@ -171,16 +177,25 @@ public class MTLStructMember extends NSObject {
     @Selector("init")
     public native MTLStructMember init();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("structType")

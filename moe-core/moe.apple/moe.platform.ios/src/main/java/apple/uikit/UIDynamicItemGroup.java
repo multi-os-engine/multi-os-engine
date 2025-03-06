@@ -189,10 +189,16 @@ public class UIDynamicItemGroup extends NSObject implements UIDynamicItem {
     @Selector("init")
     public native UIDynamicItemGroup init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithItems:")
     public native UIDynamicItemGroup initWithItems(@NotNull NSArray<?> items);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("items")

@@ -104,7 +104,11 @@ public class MPSAccelerationStructureGroup extends NSObject {
 
     /**
      * The Metal device this acceleration structure group was created with
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("device")
@@ -120,6 +124,11 @@ public class MPSAccelerationStructureGroup extends NSObject {
     @Selector("init")
     public native MPSAccelerationStructureGroup init();
 
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:")
     public native MPSAccelerationStructureGroup initWithDevice(

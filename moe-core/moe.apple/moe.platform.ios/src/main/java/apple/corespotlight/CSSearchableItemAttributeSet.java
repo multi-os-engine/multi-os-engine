@@ -166,6 +166,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The version of GPSInfoIFD header that was used to generate the metadata
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -174,67 +176,105 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The verion of the EXIF header that was used to generate the metadata
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("EXIFVersion")
     public native String EXIFVersion();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSAreaInformation")
     public native String GPSAreaInformation();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSDOP")
     public native NSNumber GPSDOP();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSDateStamp")
     public native NSDate GPSDateStamp();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSDestBearing")
     public native NSNumber GPSDestBearing();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSDestDistance")
     public native NSNumber GPSDestDistance();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSDestLatitude")
     public native NSNumber GPSDestLatitude();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSDestLongitude")
     public native NSNumber GPSDestLongitude();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSDifferental")
     public native NSNumber GPSDifferental();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSMapDatum")
     public native String GPSMapDatum();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSMeasureMode")
     public native String GPSMeasureMode();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSProcessingMethod")
     public native String GPSProcessingMethod();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("GPSStatus")
@@ -242,6 +282,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The direction of travel of the item, in degrees from true north.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -250,6 +292,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Contains the HTML content of the document encoded as NSData of UTF-8 encoded string.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -258,6 +302,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The ISO Speed the camera was set to when the image was taken. Examples are 100, 200, 400, etc.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -266,6 +312,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * URL of the item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -276,6 +324,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Array of the canonical handles of the account the item is associated with
      * (IM handle, e-mail address, phone number...).
      * E.g. in Mail's case, all the email addresses the account receives email on.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -284,6 +334,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Unique identifier for the account the item is associated with, if any
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -292,6 +344,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Device make that was used to acquire this item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -300,6 +354,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Device model that was used to acquire this item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -308,6 +364,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the item was moved into the current location.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -316,6 +374,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the Cc: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -325,6 +385,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The title for a collection of media. This is analagous to a record album,
      * or photo album whichs are collections of audio or images.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -333,6 +395,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether this event covers complete days
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -341,6 +405,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of localized strings of alternate display names for this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -350,6 +416,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The altitude of the item in meters above sea level, expressed
      * using the WGS84 datum. Negative values lie below sea level.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -358,6 +426,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The size of the lens aperture as a log-scale APEX value when the image was acquired.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -366,6 +436,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The artist for the media
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -376,6 +448,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * A class of entity for whom the resource is intended or useful. A
      * class of entity may be determined by the creator or the publisher
      * or by a third party.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -384,6 +458,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The audio bit rate
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -394,6 +470,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * The number of channels in the audio data contained in the file. This item only represents
      * the number of discreet channels of audio data found in the file. It does not indicate
      * any configuration of the data in regards to a user's speaker setup.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -402,6 +480,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The name of the application that encoded the data contained in the audio file.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -411,6 +491,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The sample rate of the audio data contained in the file. The sample rate is a
      * float value representing hz (audio_frames/second). For example: 44100.0, 22254.54.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -419,6 +501,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The track number of a song/composition when it is part of an album
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -427,6 +511,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the author addresses of the document.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -436,6 +522,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This attribute indicates the author of the emails message addresses.
      * (This is always the email address, and not the human readable version)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -447,6 +535,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * There could be 0 or more authors of a particular item.
      * The order of the authors in the array is preserved, but is not intended to represent
      * the main author or relative importance of the authors.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -455,6 +545,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the From: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -465,6 +557,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Number of bits per sample
      * For example bit depth of an image (8-bit, 16-bit etc..) or bit
      * depth per audio sample of uncompressed audio data (8, 16, 24, 32, 64, etc..)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -473,6 +567,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The owner of the camera used to capture this image.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -481,6 +577,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Identifies city of item origin according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -489,6 +587,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The codecs used to encode/decode the media
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -497,6 +597,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * What color space model is this item following (For example, "RGB", "CMYK", "YUV", "YCbCr")
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -505,6 +607,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is a comment related to a file.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -513,6 +617,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Date the item was completed
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -521,6 +627,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The composer of the song/composition contained in the audio file.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -529,27 +637,41 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A list of contacts that are somehow associated with this document, beyond what is captured as Author.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("contactKeywords")
     public native NSArray<String> contactKeywords();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("containerDisplayName")
     public native String containerDisplayName();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("containerIdentifier")
     public native String containerIdentifier();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("containerOrder")
     public native NSNumber containerOrder();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("containerTitle")
@@ -557,6 +679,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the contents of the item were created
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -568,6 +692,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * but is not limited to: an abstract, table of contents, reference
      * to a graphical representation of content or a free-text account of
      * the content.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -576,6 +702,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the contents of the item were last modified
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -584,6 +712,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether or not the item has explicit content. Should be 1 if explicit, 0 for clean.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -595,6 +725,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Examples:
      * - downloaded file may refer to the site they were downloaded from,the refering URL, etc
      * - files received by email may indicate who sent the file, the message subject, etc
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -603,12 +735,17 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * UTI Type pedigree for an item. Common types can be found in UTCoreTypes.h
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("contentType")
     public native String contentType();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("contentTypeTree")
@@ -619,6 +756,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Applications that are also 'Documents & Data' clients can set this property to allow Spotlight to deduplicate
      * their searchable items against the iCloud Drive's items. When this property is set, Spotlight will not display
      * the iCloud Drive's searchable items that have the same contentURL property.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -630,6 +769,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * to the content of the resource. Examples of a Contributor include
      * a person, an organization or a service. Typically, the name of a
      * Contributor should be used to indicate the entity.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -645,6 +786,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the copyright of the content.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -654,6 +797,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Provides full, publishable, name of the country/primary location where the
      * intellectual property of the item was created,according to guidelines of the provider.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -668,6 +813,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Recommended best practice is to select a value from a controlled vocabulary, and that, where appropriate,
      * named places or time periods be used in preference to numeric identifiers such as sets of co-ordinates or date
      * ranges.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -677,6 +824,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Application used to create the document content (e.g. "Word",
      * "Framemaker", etc.).
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -685,6 +834,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The delivery type of the item. Should be 0 for fast start and 1 for RTSP.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -693,6 +844,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Director of the item (e.g. movie director)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -701,6 +854,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A localized string to be displayed in the UI for this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -722,6 +877,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the file was last downloaded / received.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -730,6 +887,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Date this item is due.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -738,6 +897,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the duration, in seconds, of the content of the item (if appropriate).
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -746,6 +907,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The list of editor/editors that have worked on this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -754,6 +917,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Email addresses for this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -763,6 +928,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Dictionary with all the headers of the message
      * Keys are header names and values arrays of strings (because a header might be present multiple times in an email)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -776,6 +943,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Software used to convert the original content into a PDF stream
      * (e.g. "Distiller", etc.).
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -784,6 +953,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * End date for this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -792,6 +963,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Mode that was used for the exposure. Should be 0 for AutoExposure, 1 for Manual, 2 for AutoBracket.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -801,6 +974,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The class of the program used by the camera to set exposure when the picture is taken (Manual, Normal, Aperture
      * Priority, ...)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -809,6 +984,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Time that the lens was open during exposure in seconds
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -817,6 +994,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The time of the exposure as a string, e.g. "1/250 seconds".
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -825,6 +1004,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The focal length of the lens divided by the diameter of the aperture when the image was acquired.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -833,6 +1014,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Size of the document in MB.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -841,6 +1024,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The actual focal length of the lens in mm.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -849,6 +1034,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Array of font names used in the item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -857,6 +1044,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The fully formatted address of the item (obtained from MapKit)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -865,6 +1054,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Genre of the item (e.g. movie genre)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -873,6 +1064,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if this image file has an alpha channel. Should be 0 for no alpha channel, 1 for alpha channel.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -881,6 +1074,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A publishable entry providing a synopsis of the contents of the item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -889,6 +1084,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the Bcc: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -899,6 +1096,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Used to reference to the resource within a given
      * context. Recommended best practice is to identify the resource by
      * means of a string or number conforming to a formal identification system.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -907,6 +1106,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The direction of the item's image, in degrees from true north.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -915,6 +1116,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Important dates associated with this item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -923,6 +1126,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Information about the item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -951,6 +1156,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Instant message addresses for this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -959,6 +1166,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Other editorial instructions concerning the use of the item, such as embargoes and warnings.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -967,6 +1176,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if the flash was used to take the picture. Should be 1 if flash is on, 0 otherwise.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -975,6 +1186,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if the focal length is 35mm. Should be 1 if true, 0 otherwise
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -984,6 +1197,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This attribute indicates whether the MIDI sequence contained in the file is setup for use with a General MIDI
      * device. Should be 1 if true, 0 otherwise.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -992,6 +1207,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates if the document is likely to be considered junk. Should be 1 if true, 0 otherwise
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -1000,6 +1217,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether or not the item is local. Should be 1 if true, 0 otherwise.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1008,6 +1227,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if red-eye reduction was used to take the picture. Should be 0 for no red-eye, 1 for red-eye
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1016,6 +1237,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether the content is prepared for streaming. Should be 0 for not streamable, 1 for streamable.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1025,6 +1248,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The musical key of the song/composition contained in an audio file.
      * For example: C, Dm, F#m, Bb.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1034,6 +1259,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Represents keywords associated with this particular item.
      * Example Keywords might be Birthday,Important etc.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1042,6 +1269,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Kind that this item represents.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1052,6 +1281,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Used to designate the languages of the intellectual content of the
      * resource. Recommended best practice for the values of the Language
      * element is defined by BCP 47.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1060,6 +1291,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the item was last used
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1069,6 +1302,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The latitude of the item in degrees north of the equator, expressed
      * using the WGS84 datum. Negative values lie south of the equator.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1077,6 +1312,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The names of the various layers in the file
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1085,6 +1322,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The model of the lens used to capture this image.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1094,6 +1333,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The longitude of the item in degrees east of the prime meridian,
      * expressed using the WGS84 datum. Negative values lie west of the prime meridian.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1102,6 +1343,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The lyricist/text writer for song/composition contained in the audio file.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1111,6 +1354,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Array of Mailbox identifiers associated with the item. e.g. CSMailboxInbox, CSMailboxDrafts, CSMailboxSent, or a
      * custom identifier etc.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1120,6 +1365,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The smallest F number of the lens. The unit is the APEX
      * value. Ordinarily it is given in the range of 00.00 to 99.99.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1128,6 +1375,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Media types present in the content
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1136,6 +1385,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the last metadata attribute was changed.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1144,6 +1395,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The metering mode for the image (Average, Partial, Pattern, ...)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1153,6 +1406,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The musical genre of the song/composition contained in the audio file.
      * For example: Jazz, Pop, Rock, Classical.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1165,6 +1420,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * them ("Other Instrument" is provided as a catch-all). For some
      * categories, like "Keyboards" there are instrument names which
      * provide a more detailed instrument definition (e.g., Piano,Organ, etc.)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1177,6 +1434,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * instrument name associated with them if they have certain
      * instrument categories (e.g., the category Percussion has
      * multiple instruments, including Conga and Bongo).
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1185,6 +1444,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The name of the location or point of interest associated with the item. The name may be user provided.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1193,6 +1454,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Used to indicate company/Organization that created the document.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1201,6 +1464,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The orientation of the data. Should be 0 for Landscape or 1 for Portrait.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1209,6 +1474,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Original format of the movie
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1217,6 +1484,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Original source of the movie
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1225,6 +1494,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Number of pages in the item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1235,6 +1506,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Height in points (72 points per inch) of the document page
      * (first page only for PDF's - other pages within the PDF may
      * not be the same height).
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1245,6 +1518,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Width in points (72 points per inch) of the document page
      * (first page only for PDF's - other pages within the PDF may
      * not be the same width).
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1253,6 +1528,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The list of people who are visible in an image or movie or written about in a document.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1261,6 +1538,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the complete path to the item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1269,6 +1548,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Performers in the movie
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1277,6 +1558,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Phone numbers for this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1285,6 +1568,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The total number of pixels in the item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1293,6 +1578,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The height of the item in pixels (ie Image height or Video frame height)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1301,6 +1588,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The width of the item in pixels (ie Image width or Video frame width)
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1309,6 +1598,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * User play count of this item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1317,6 +1608,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The postal code for the item according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1325,6 +1618,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the To: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1333,6 +1628,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Producer of the content
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1341,6 +1638,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Name of the color profile used for the image
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1351,6 +1650,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * The list of projects that this item is part of.
      * For example if you were working on a movie, all of the movie files could be marked
      * as belonging to the project "My movie"
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1362,6 +1663,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * available. Examples of a Publisher include a person, an
      * organization, or a service. Typically, the name of a Publisher
      * should be used to indicate the entity.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1370,6 +1673,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * User rating of this item out of 5 stars
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1378,6 +1683,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A description of the rating. E.g. the number of reviewers.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1386,6 +1693,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the recipient addresses of the document.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1393,8 +1702,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSArray<String> recipientAddresses();
 
     /**
-     * This attribute indicates the reciepients email addresses.
+     * This attribute indicates the recipients email addresses.
      * (This is always the email address, and not the human readable version).
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1403,6 +1714,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the recipients of this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1414,6 +1727,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * the contentCreationDate attribute as it indicates the date that the
      * 'art' was created, in contrast to contentCreationDate which for example, could indicate
      * the creation date of an edited or 'mastered' version of the original art.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1423,6 +1738,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * For activities, this is the unique identifier for the item this activity is related to. If the item doesn't exist
      * in the index, the activity will not get stored. When the item is deleted, the activity will also be deleted.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1431,6 +1748,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Resolution height of this image in DPI
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1439,6 +1758,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Resolution width of this image in DPI
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1454,6 +1775,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * various Property Rights. If the rights element is absent, no
      * assumptions can be made about the status of these and other rights
      * with respect to the resource.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1462,6 +1785,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Used to indicate the role of the document creator
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1470,6 +1795,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Security (encryption) method used in the file
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -1480,6 +1807,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Array of the canonical handles of the account the item is associated with
      * (IM handle, e-mail address, phone number...).
      * E.g. in Mail's case, all the email addresses the account receives email on.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAccountHandles:")
@@ -1487,6 +1816,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Unique identifier for the account the item is associated with, if any
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAccountIdentifier:")
@@ -1494,6 +1825,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Device make that was used to acquire this item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAcquisitionMake:")
@@ -1501,6 +1834,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Device model that was used to acquire this item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAcquisitionModel:")
@@ -1508,6 +1843,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the item was moved into the current location.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAddedDate:")
@@ -1515,6 +1852,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the Cc: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAdditionalRecipients:")
@@ -1523,6 +1862,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The title for a collection of media. This is analagous to a record album,
      * or photo album whichs are collections of audio or images.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAlbum:")
@@ -1530,6 +1871,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether this event covers complete days
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllDay:")
@@ -1537,6 +1880,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of localized strings of alternate display names for this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAlternateNames:")
@@ -1545,6 +1890,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The altitude of the item in meters above sea level, expressed
      * using the WGS84 datum. Negative values lie below sea level.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAltitude:")
@@ -1552,6 +1899,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The size of the lens aperture as a log-scale APEX value when the image was acquired.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAperture:")
@@ -1559,6 +1908,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The artist for the media
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setArtist:")
@@ -1568,6 +1919,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * A class of entity for whom the resource is intended or useful. A
      * class of entity may be determined by the creator or the publisher
      * or by a third party.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAudiences:")
@@ -1575,6 +1928,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The audio bit rate
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAudioBitRate:")
@@ -1584,6 +1939,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * The number of channels in the audio data contained in the file. This item only represents
      * the number of discreet channels of audio data found in the file. It does not indicate
      * any configuration of the data in regards to a user's speaker setup.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAudioChannelCount:")
@@ -1591,6 +1948,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The name of the application that encoded the data contained in the audio file.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAudioEncodingApplication:")
@@ -1599,6 +1958,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The sample rate of the audio data contained in the file. The sample rate is a
      * float value representing hz (audio_frames/second). For example: 44100.0, 22254.54.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAudioSampleRate:")
@@ -1606,6 +1967,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The track number of a song/composition when it is part of an album
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAudioTrackNumber:")
@@ -1613,6 +1976,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the author addresses of the document.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAuthorAddresses:")
@@ -1621,6 +1986,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This attribute indicates the author of the emails message addresses.
      * (This is always the email address, and not the human readable version)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAuthorEmailAddresses:")
@@ -1631,6 +1998,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * There could be 0 or more authors of a particular item.
      * The order of the authors in the array is preserved, but is not intended to represent
      * the main author or relative importance of the authors.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAuthorNames:")
@@ -1638,6 +2007,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the From: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAuthors:")
@@ -1647,6 +2018,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Number of bits per sample
      * For example bit depth of an image (8-bit, 16-bit etc..) or bit
      * depth per audio sample of uncompressed audio data (8, 16, 24, 32, 64, etc..)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBitsPerSample:")
@@ -1654,6 +2027,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The owner of the camera used to capture this image.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCameraOwner:")
@@ -1661,6 +2036,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Identifies city of item origin according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCity:")
@@ -1668,6 +2045,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The codecs used to encode/decode the media
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCodecs:")
@@ -1675,6 +2054,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * What color space model is this item following (For example, "RGB", "CMYK", "YUV", "YCbCr")
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setColorSpace:")
@@ -1682,6 +2063,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is a comment related to a file.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setComment:")
@@ -1689,6 +2072,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Date the item was completed
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCompletionDate:")
@@ -1696,6 +2081,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The composer of the song/composition contained in the audio file.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setComposer:")
@@ -1703,29 +2090,45 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A list of contacts that are somehow associated with this document, beyond what is captured as Author.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContactKeywords:")
     public native void setContactKeywords(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setContainerDisplayName:")
     public native void setContainerDisplayName(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setContainerIdentifier:")
     public native void setContainerIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setContainerOrder:")
     public native void setContainerOrder(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setContainerTitle:")
     public native void setContainerTitle(@Nullable String value);
 
     /**
      * This is the date that the contents of the item were created
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContentCreationDate:")
@@ -1736,6 +2139,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * but is not limited to: an abstract, table of contents, reference
      * to a graphical representation of content or a free-text account of
      * the content.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContentDescription:")
@@ -1743,6 +2148,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the contents of the item were last modified
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContentModificationDate:")
@@ -1750,6 +2157,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether or not the item has explicit content. Should be 1 if explicit, 0 for clean.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContentRating:")
@@ -1760,6 +2169,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Examples:
      * - downloaded file may refer to the site they were downloaded from,the refering URL, etc
      * - files received by email may indicate who sent the file, the message subject, etc
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContentSources:")
@@ -1767,11 +2178,16 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * UTI Type pedigree for an item. Common types can be found in UTCoreTypes.h
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContentType:")
     public native void setContentType(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setContentTypeTree:")
     public native void setContentTypeTree(@Nullable NSArray<String> value);
@@ -1781,6 +2197,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Applications that are also 'Documents & Data' clients can set this property to allow Spotlight to deduplicate
      * their searchable items against the iCloud Drive's items. When this property is set, Spotlight will not display
      * the iCloud Drive's searchable items that have the same contentURL property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContentURL:")
@@ -1791,6 +2209,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * to the content of the resource. Examples of a Contributor include
      * a person, an organization or a service. Typically, the name of a
      * Contributor should be used to indicate the entity.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContributors:")
@@ -1798,6 +2218,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the copyright of the content.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCopyright:")
@@ -1806,6 +2228,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Provides full, publishable, name of the country/primary location where the
      * intellectual property of the item was created,according to guidelines of the provider.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCountry:")
@@ -1819,6 +2243,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Recommended best practice is to select a value from a controlled vocabulary, and that, where appropriate,
      * named places or time periods be used in preference to numeric identifiers such as sets of co-ordinates or date
      * ranges.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCoverage:")
@@ -1827,6 +2253,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Application used to create the document content (e.g. "Word",
      * "Framemaker", etc.).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCreator:")
@@ -1834,6 +2262,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The delivery type of the item. Should be 0 for fast start and 1 for RTSP.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDeliveryType:")
@@ -1841,6 +2271,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Director of the item (e.g. movie director)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDirector:")
@@ -1848,6 +2280,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A localized string to be displayed in the UI for this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDisplayName:")
@@ -1867,6 +2301,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the file was last downloaded / received.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDownloadedDate:")
@@ -1874,6 +2310,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Date this item is due.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDueDate:")
@@ -1881,6 +2319,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the duration, in seconds, of the content of the item (if appropriate).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDuration:")
@@ -1888,6 +2328,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The version of GPSInfoIFD header that was used to generate the metadata
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEXIFGPSVersion:")
@@ -1895,6 +2337,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The verion of the EXIF header that was used to generate the metadata
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEXIFVersion:")
@@ -1902,6 +2346,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The list of editor/editors that have worked on this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEditors:")
@@ -1909,6 +2355,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Email addresses for this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEmailAddresses:")
@@ -1917,6 +2365,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Dictionary with all the headers of the message
      * Keys are header names and values arrays of strings (because a header might be present multiple times in an email)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEmailHeaders:")
@@ -1925,6 +2375,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Software used to convert the original content into a PDF stream
      * (e.g. "Distiller", etc.).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEncodingApplications:")
@@ -1932,6 +2384,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * End date for this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEndDate:")
@@ -1939,6 +2393,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Mode that was used for the exposure. Should be 0 for AutoExposure, 1 for Manual, 2 for AutoBracket.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setExposureMode:")
@@ -1947,6 +2403,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The class of the program used by the camera to set exposure when the picture is taken (Manual, Normal, Aperture
      * Priority, ...)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setExposureProgram:")
@@ -1954,6 +2412,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Time that the lens was open during exposure in seconds
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setExposureTime:")
@@ -1961,6 +2421,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The time of the exposure as a string, e.g. "1/250 seconds".
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setExposureTimeString:")
@@ -1968,6 +2430,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The focal length of the lens divided by the diameter of the aperture when the image was acquired.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFNumber:")
@@ -1975,6 +2439,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Size of the document in MB.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFileSize:")
@@ -1982,6 +2448,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if the flash was used to take the picture. Should be 1 if flash is on, 0 otherwise.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFlashOn:")
@@ -1989,6 +2457,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if the focal length is 35mm. Should be 1 if true, 0 otherwise
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFocalLength35mm:")
@@ -1996,6 +2466,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The actual focal length of the lens in mm.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFocalLength:")
@@ -2003,6 +2475,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Array of font names used in the item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFontNames:")
@@ -2010,61 +2484,101 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The fully formatted address of the item (obtained from MapKit)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFullyFormattedAddress:")
     public native void setFullyFormattedAddress(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSAreaInformation:")
     public native void setGPSAreaInformation(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSDOP:")
     public native void setGPSDOP(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSDateStamp:")
     public native void setGPSDateStamp(@Nullable NSDate value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSDestBearing:")
     public native void setGPSDestBearing(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSDestDistance:")
     public native void setGPSDestDistance(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSDestLatitude:")
     public native void setGPSDestLatitude(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSDestLongitude:")
     public native void setGPSDestLongitude(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSDifferental:")
     public native void setGPSDifferental(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSMapDatum:")
     public native void setGPSMapDatum(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSMeasureMode:")
     public native void setGPSMeasureMode(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSProcessingMethod:")
     public native void setGPSProcessingMethod(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setGPSStatus:")
     public native void setGPSStatus(@Nullable String value);
 
     /**
      * The direction of travel of the item, in degrees from true north.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setGPSTrack:")
@@ -2073,6 +2587,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This attribute indicates whether the MIDI sequence contained in the file is setup for use with a General MIDI
      * device. Should be 1 if true, 0 otherwise.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setGeneralMIDISequence:")
@@ -2080,6 +2596,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Genre of the item (e.g. movie genre)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setGenre:")
@@ -2087,6 +2605,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Contains the HTML content of the document encoded as NSData of UTF-8 encoded string.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHTMLContentData:")
@@ -2094,6 +2614,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if this image file has an alpha channel. Should be 0 for no alpha channel, 1 for alpha channel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHasAlphaChannel:")
@@ -2101,6 +2623,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A publishable entry providing a synopsis of the contents of the item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHeadline:")
@@ -2108,6 +2632,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the Bcc: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHiddenAdditionalRecipients:")
@@ -2115,6 +2641,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The ISO Speed the camera was set to when the image was taken. Examples are 100, 200, 400, etc.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setISOSpeed:")
@@ -2124,6 +2652,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Used to reference to the resource within a given
      * context. Recommended best practice is to identify the resource by
      * means of a string or number conforming to a formal identification system.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIdentifier:")
@@ -2131,6 +2661,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The direction of the item's image, in degrees from true north.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setImageDirection:")
@@ -2138,6 +2670,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Important dates associated with this item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setImportantDates:")
@@ -2145,6 +2679,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Information about the item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInformation:")
@@ -2152,6 +2688,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Instant message addresses for this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInstantMessageAddresses:")
@@ -2159,6 +2697,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Other editorial instructions concerning the use of the item, such as embargoes and warnings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInstructions:")
@@ -2167,6 +2707,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The musical key of the song/composition contained in an audio file.
      * For example: C, Dm, F#m, Bb.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setKeySignature:")
@@ -2175,6 +2717,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Represents keywords associated with this particular item.
      * Example Keywords might be Birthday,Important etc.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setKeywords:")
@@ -2182,6 +2726,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Kind that this item represents.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setKind:")
@@ -2191,6 +2737,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Used to designate the languages of the intellectual content of the
      * resource. Recommended best practice for the values of the Language
      * element is defined by BCP 47.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLanguages:")
@@ -2198,6 +2746,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the item was last used
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLastUsedDate:")
@@ -2206,6 +2756,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The latitude of the item in degrees north of the equator, expressed
      * using the WGS84 datum. Negative values lie south of the equator.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLatitude:")
@@ -2213,6 +2765,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The names of the various layers in the file
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLayerNames:")
@@ -2220,6 +2774,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The model of the lens used to capture this image.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLensModel:")
@@ -2227,6 +2783,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates if the document is likely to be considered junk. Should be 1 if true, 0 otherwise
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLikelyJunk:")
@@ -2234,6 +2792,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether or not the item is local. Should be 1 if true, 0 otherwise.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLocal:")
@@ -2242,6 +2802,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The longitude of the item in degrees east of the prime meridian,
      * expressed using the WGS84 datum. Negative values lie west of the prime meridian.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLongitude:")
@@ -2249,6 +2811,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The lyricist/text writer for song/composition contained in the audio file.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLyricist:")
@@ -2257,6 +2821,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * Array of Mailbox identifiers associated with the item. e.g. CSMailboxInbox, CSMailboxDrafts, CSMailboxSent, or a
      * custom identifier etc.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMailboxIdentifiers:")
@@ -2265,6 +2831,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The smallest F number of the lens. The unit is the APEX
      * value. Ordinarily it is given in the range of 00.00 to 99.99.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaxAperture:")
@@ -2272,6 +2840,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Media types present in the content
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMediaTypes:")
@@ -2279,6 +2849,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the date that the last metadata attribute was changed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMetadataModificationDate:")
@@ -2286,6 +2858,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The metering mode for the image (Average, Partial, Pattern, ...)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMeteringMode:")
@@ -2294,6 +2868,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The musical genre of the song/composition contained in the audio file.
      * For example: Jazz, Pop, Rock, Classical.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMusicalGenre:")
@@ -2305,6 +2881,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * them ("Other Instrument" is provided as a catch-all). For some
      * categories, like "Keyboards" there are instrument names which
      * provide a more detailed instrument definition (e.g., Piano,Organ, etc.)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMusicalInstrumentCategory:")
@@ -2316,6 +2894,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * instrument name associated with them if they have certain
      * instrument categories (e.g., the category Percussion has
      * multiple instruments, including Conga and Bongo).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMusicalInstrumentName:")
@@ -2323,6 +2903,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The name of the location or point of interest associated with the item. The name may be user provided.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNamedLocation:")
@@ -2330,6 +2912,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Used to indicate company/Organization that created the document.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOrganizations:")
@@ -2337,6 +2921,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The orientation of the data. Should be 0 for Landscape or 1 for Portrait.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOrientation:")
@@ -2344,6 +2930,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Original format of the movie
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOriginalFormat:")
@@ -2351,6 +2939,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Original source of the movie
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOriginalSource:")
@@ -2358,6 +2948,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Number of pages in the item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPageCount:")
@@ -2367,6 +2959,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Height in points (72 points per inch) of the document page
      * (first page only for PDF's - other pages within the PDF may
      * not be the same height).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPageHeight:")
@@ -2376,6 +2970,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * Width in points (72 points per inch) of the document page
      * (first page only for PDF's - other pages within the PDF may
      * not be the same width).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPageWidth:")
@@ -2383,6 +2979,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The list of people who are visible in an image or movie or written about in a document.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setParticipants:")
@@ -2390,6 +2988,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This is the complete path to the item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPath:")
@@ -2397,6 +2997,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Performers in the movie
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPerformers:")
@@ -2404,6 +3006,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Phone numbers for this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPhoneNumbers:")
@@ -2411,6 +3015,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The total number of pixels in the item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPixelCount:")
@@ -2418,6 +3024,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The height of the item in pixels (ie Image height or Video frame height)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPixelHeight:")
@@ -2425,6 +3033,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The width of the item in pixels (ie Image width or Video frame width)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPixelWidth:")
@@ -2432,6 +3042,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * User play count of this item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPlayCount:")
@@ -2439,6 +3051,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The postal code for the item according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPostalCode:")
@@ -2446,6 +3060,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of CSPerson objects representing the content of the To: field in an email
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPrimaryRecipients:")
@@ -2453,6 +3069,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Producer of the content
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProducer:")
@@ -2460,6 +3078,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Name of the color profile used for the image
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProfileName:")
@@ -2469,6 +3089,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * The list of projects that this item is part of.
      * For example if you were working on a movie, all of the movie files could be marked
      * as belonging to the project "My movie"
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProjects:")
@@ -2479,6 +3101,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * available. Examples of a Publisher include a person, an
      * organization, or a service. Typically, the name of a Publisher
      * should be used to indicate the entity.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPublishers:")
@@ -2486,6 +3110,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * User rating of this item out of 5 stars
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRating:")
@@ -2493,6 +3119,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A description of the rating. E.g. the number of reviewers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRatingDescription:")
@@ -2500,14 +3128,18 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the recipient addresses of the document.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRecipientAddresses:")
     public native void setRecipientAddresses(@Nullable NSArray<String> value);
 
     /**
-     * This attribute indicates the reciepients email addresses.
+     * This attribute indicates the recipients email addresses.
      * (This is always the email address, and not the human readable version).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRecipientEmailAddresses:")
@@ -2515,6 +3147,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the recipients of this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRecipientNames:")
@@ -2525,6 +3159,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * the contentCreationDate attribute as it indicates the date that the
      * 'art' was created, in contrast to contentCreationDate which for example, could indicate
      * the creation date of an edited or 'mastered' version of the original art.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRecordingDate:")
@@ -2532,6 +3168,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Indicates if red-eye reduction was used to take the picture. Should be 0 for no red-eye, 1 for red-eye
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRedEyeOn:")
@@ -2540,6 +3178,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * For activities, this is the unique identifier for the item this activity is related to. If the item doesn't exist
      * in the index, the activity will not get stored. When the item is deleted, the activity will also be deleted.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRelatedUniqueIdentifier:")
@@ -2547,6 +3187,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Resolution height of this image in DPI
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setResolutionHeightDPI:")
@@ -2554,6 +3196,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Resolution width of this image in DPI
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setResolutionWidthDPI:")
@@ -2568,6 +3212,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * various Property Rights. If the rights element is absent, no
      * assumptions can be made about the status of these and other rights
      * with respect to the resource.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRights:")
@@ -2575,6 +3221,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Used to indicate the role of the document creator
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRole:")
@@ -2582,6 +3230,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Security (encryption) method used in the file
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSecurityMethod:")
@@ -2589,6 +3239,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The speed of the item, in kilometers per hour.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSpeed:")
@@ -2596,6 +3248,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Start date of this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStartDate:")
@@ -2603,6 +3257,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Identifies Province/State of origin according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStateOrProvince:")
@@ -2610,6 +3266,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Whether the content is prepared for streaming. Should be 0 for not streamable, 1 for streamable.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStreamable:")
@@ -2617,6 +3275,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The sub-location (e.g., street number) for the item according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSubThoroughfare:")
@@ -2624,6 +3284,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Subject of the this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSubject:")
@@ -2633,6 +3295,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * If supportsNavigation is set to 1, and the item has the latitude and longitude properties set, then the latitude
      * and longitude may be used for navigation. For example, supportsNavigation would be set on a restaurant review,
      * but not on a photo.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSupportsNavigation:")
@@ -2643,6 +3307,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * initiate phone calls. This should be used to indicate that using the phone number is appropriate, and a primary
      * action for the user. For example, supportsPhoneCall would be set on a business, but not an academic paper that
      * happens to have phone numbers for the authors or the institution.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSupportsPhoneCall:")
@@ -2650,6 +3316,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The tempo of the music contained in the audio file in Beats Per Minute.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTempo:")
@@ -2657,6 +3325,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Contains the text content of the document.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTextContent:")
@@ -2664,6 +3334,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Theme of the this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTheme:")
@@ -2671,6 +3343,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The location (e.g., street name) for the item according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setThoroughfare:")
@@ -2678,6 +3352,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Optional image data for thumbnail for this item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setThumbnailData:")
@@ -2685,6 +3361,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Optional file URL pointing to a thumbnail image for this item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setThumbnailURL:")
@@ -2693,6 +3371,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The time signature of the musical composition contained in the audio/MIDI file.
      * For example: "4/4", "7/8".
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTimeSignature:")
@@ -2701,6 +3381,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The timestamp on the item. This generally is used to indicate the time at
      * which the event captured by the item took place.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTimestamp:")
@@ -2709,6 +3391,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The title of this particular item.
      * Title of the document, or it could be the title of this mp3 or a subject of a mail message.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTitle:")
@@ -2716,6 +3400,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The total bit rate (audio & video combined) of the media
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTotalBitRate:")
@@ -2723,11 +3409,16 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * URL of the item
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setURL:")
     public native void setURL(@Nullable NSURL value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setValue:forCustomKey:")
     public native void setValueForCustomKey(@Nullable @Mapped(ObjCObjectMapper.class) NSSecureCoding value,
@@ -2735,6 +3426,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A version specifier for this item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVersion:")
@@ -2742,6 +3435,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The video bit rate
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVideoBitRate:")
@@ -2759,6 +3454,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The white balance setting of the camera when the image was acquired. Should be 0 for Auto or 1 for Manual.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setWhiteBalance:")
@@ -2766,6 +3463,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The speed of the item, in kilometers per hour.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2774,6 +3473,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Start date of this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2782,6 +3483,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Identifies Province/State of origin according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2790,6 +3493,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The sub-location (e.g., street number) for the item according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2798,6 +3503,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Subject of the this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2808,6 +3515,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * If supportsNavigation is set to 1, and the item has the latitude and longitude properties set, then the latitude
      * and longitude may be used for navigation. For example, supportsNavigation would be set on a restaurant review,
      * but not on a photo.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2819,6 +3528,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * initiate phone calls. This should be used to indicate that using the phone number is appropriate, and a primary
      * action for the user. For example, supportsPhoneCall would be set on a business, but not an academic paper that
      * happens to have phone numbers for the authors or the institution.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2833,6 +3544,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The tempo of the music contained in the audio file in Beats Per Minute.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2841,6 +3554,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Contains the text content of the document.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2849,6 +3564,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Theme of the this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2857,6 +3574,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The location (e.g., street name) for the item according to guidelines established by the provider.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2865,6 +3584,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Optional image data for thumbnail for this item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2873,6 +3594,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Optional file URL pointing to a thumbnail image for this item
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2882,6 +3605,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The time signature of the musical composition contained in the audio/MIDI file.
      * For example: "4/4", "7/8".
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2891,6 +3616,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The timestamp on the item. This generally is used to indicate the time at
      * which the event captured by the item took place.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2900,6 +3627,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * The title of this particular item.
      * Title of the document, or it could be the title of this mp3 or a subject of a mail message.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2908,12 +3637,17 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The total bit rate (audio & video combined) of the media
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("totalBitRate")
     public native NSNumber totalBitRate();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("valueForCustomKey:")
@@ -2922,6 +3656,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * A version specifier for this item.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2930,6 +3666,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The video bit rate
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -2949,6 +3687,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The white balance setting of the camera when the image was acquired. Should be 0 for Auto or 1 for Manual.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -3127,6 +3867,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Optional file URL pointing to a thumbnail image for this item that will be preferred in dark appearances
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -3144,6 +3886,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Optional file URL pointing to a thumbnail image for this item that will be preferred in dark appearances
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDarkThumbnailURL:")

@@ -104,6 +104,8 @@ public class VNTrajectoryObservation extends VNObservation {
      * These are the unprocessed centroid points of the detected contour that is tracked on the trajectory. The points
      * may be slightly off the ideal trajectory as these are the measured points that fall within the allowed tolerance.
      * The maximum number or past points is limited by the maximum trajectory length set in the request.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -156,6 +158,8 @@ public class VNTrajectoryObservation extends VNObservation {
      * These are the calculated centroid points along the ideal trajectory described by the parabolic equation. The
      * equation and the projected points of the detected trajectory get refined over time. The maximum number of cached
      * points is limited by the maximum points needed to describe the trajectory together with the parabolic equation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

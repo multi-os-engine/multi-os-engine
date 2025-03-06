@@ -719,4 +719,116 @@ public final class SensorKit {
     public static native String SRSensorOdometer();
 
     @Generated public static final double SR_ARKIT_SUPPORTED = 1.0;
+
+    /**
+     * [@const] SRSensorElectrocardiogram
+     * 
+     * ECG sensor stream
+     * 
+     * This stream stores samples of the ECG sensor
+     * Fetches from this stream return objects of type \c NSArray<SRElectrocardiogramSample *> *
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorElectrocardiogram();
+
+    /**
+     * [@const] SRSensorPhotoplethysmogram
+     * 
+     * PPG sensor stream
+     * 
+     * This stream stores samples of the PPG sensor
+     * Fetches from this stream return objects of type \c NSArray<SRPhotoplethysmogramSample *> *
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorPhotoplethysmogram();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRPhotoplethysmogramOpticalSampleConditionSignalSaturation();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRPhotoplethysmogramOpticalSampleConditionUnreliableNoise();
+
+    /**
+     * [@typedef] SRPhotoplethysmogramSampleUsageForegroundHeartRate
+     * 
+     * A heart rate reading actively taken by a user in an app context
+     * 
+     * Typically driven by the user using the HeartRate app or a workout session.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRPhotoplethysmogramSampleUsageForegroundHeartRate();
+
+    /**
+     * [@const] SRPhotoplethysmogramSampleUsageDeepBreathing
+     * 
+     * A sensor reading actively taken by a user in a deep breathing context
+     * 
+     * Typically driven by the user performing a reflect or breathe session
+     * in the Mindfulness app.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRPhotoplethysmogramSampleUsageDeepBreathing();
+
+    /**
+     * [@const] SRPhotoplethysmogramSampleUsageForegroundBloodOxygen
+     * 
+     * A blood oxygen reading actively taken by a user in app context
+     * 
+     * Typically driven by the user using the BloodOxygen app
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRPhotoplethysmogramSampleUsageForegroundBloodOxygen();
+
+    /**
+     * [@const] SRPhotoplethysmogramSampleUsageBackgroundSystem
+     * 
+     * A sample reading passively taken by the system
+     * 
+     * These are driven by the system to perform the various heart features of watchOS
+     * (e.g., background blood oxygen, afib notifications, low cardio notifications, etc)
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRPhotoplethysmogramSampleUsageBackgroundSystem();
 }

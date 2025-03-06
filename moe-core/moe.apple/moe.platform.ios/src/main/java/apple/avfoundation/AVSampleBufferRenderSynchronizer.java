@@ -67,6 +67,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * -removeTimeObserver:. Releasing the observer object without a call to -removeTimeObserver: will result in
      * undefined behavior.
      * 
+     * API-Since: 11.0
+     * 
      * @param times
      *              The times for which the observer requests notification, supplied as an array of NSValues carrying
      *              CMTimes.
@@ -112,6 +114,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * -removeTimeObserver:. Releasing the observer object without a call to -removeTimeObserver: will result in
      * undefined behavior.
      * 
+     * API-Since: 11.0
+     * 
      * @param interval
      *                 The interval of invocation of the block during normal rendering, according to progress of the
      *                 current time of the timebase.
@@ -149,6 +153,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * Adds a renderer to begin operating with the synchronizer's timebase.
      * 
      * This method can be called while rate is non-0.0.
+     * 
+     * API-Since: 11.0
      * 
      * @param renderer
      *                 An object conforming to AVQueuedSampleBufferRendering to be synchronized by this synchronizer.
@@ -243,6 +249,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * 
      * Indicates the current rate of rendering. A value of 0.0 means "stopped"; a value of 1.0 means "play at the
      * natural rate of the media". Must be greater than or equal to 0.0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rate")
@@ -272,6 +280,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * replaced by another scheduled removal or the renderer is actually removed.
      * - When the renderer is removed due to a scheduled removal, the completionHandler provided when that removal was
      * scheduled will be called and didRemoveRenderer will be YES.
+     * 
+     * API-Since: 11.0
      * 
      * @param renderer
      *                          An object conforming to AVQueuedSampleBufferRendering currently synchronized by this
@@ -315,6 +325,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * -addPeriodicTimeObserverForInterval:queue:usingBlock:
      * -addBoundaryTimeObserverForTimes:queue:usingBlock:
      * 
+     * API-Since: 11.0
+     * 
      * @param observer
      *                 An object returned by a previous call to -addPeriodicTimeObserverForInterval:queue:usingBlock: or
      *                 -addBoundaryTimeObserverForTimes:queue:usingBlock:.
@@ -332,6 +344,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * been scheduled to be removed but have not yet been removed.
      * 
      * This property is not KVO observable.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -353,6 +367,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * 
      * Indicates the current rate of rendering. A value of 0.0 means "stopped"; a value of 1.0 means "play at the
      * natural rate of the media". Must be greater than or equal to 0.0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRate:")
@@ -367,6 +383,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * rate value of 1.0 means "play at the natural rate of the media". Use kCMTimeInvalid for time to not modify the
      * timebase's time.
      * Note that this method updates the rate property synchronously, but the timebase is updated asynchronously.
+     * 
+     * API-Since: 11.0
      * 
      * @param rate
      *             A new timebase rate to set. Must be greater than or equal to 0.0
@@ -397,6 +415,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * CACurrentMediaTime).
      * 
      * The timebase is a read-only timebase. Use the rate property and corresponding methods to adjust the timebase.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

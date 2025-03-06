@@ -70,11 +70,17 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
     @Selector("allocWithZone:")
     public static native NSUnitAngle allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("arcMinutes")
     public static native NSUnitAngle arcMinutes();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("arcSeconds")
@@ -116,6 +122,8 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - degrees
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -126,6 +134,9 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("gradians")
@@ -163,6 +174,9 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitAngle new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("radians")
@@ -176,6 +190,9 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("revolutions")

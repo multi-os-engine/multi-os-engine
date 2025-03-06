@@ -153,6 +153,8 @@ public class VNDetectDocumentSegmentationRequest extends VNImageBasedRequest {
 
     /**
      * VNRectangleObservation results.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

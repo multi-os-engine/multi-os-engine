@@ -162,6 +162,8 @@ public class HMAccessoryProfile extends NSObject {
 
     /**
      * Accessory implementing the profile.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -174,6 +176,8 @@ public class HMAccessoryProfile extends NSObject {
 
     /**
      * Collection of services representing the profile.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -182,6 +186,8 @@ public class HMAccessoryProfile extends NSObject {
 
     /**
      * A unique identifier for the profile.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

@@ -163,6 +163,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] edgeCreaseCount
      * 
      * The number of edge creases encoded in edgeCreases
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("edgeCreaseCount")
@@ -181,6 +183,8 @@ public class MDLSubmeshTopology extends NSObject {
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -188,6 +192,9 @@ public class MDLSubmeshTopology extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer edgeCreaseIndices();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("edgeCreases")
@@ -198,6 +205,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] faceCount
      * 
      * The number of faces encoded in faceTopologyBuffer
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("faceCount")
@@ -220,6 +229,8 @@ public class MDLSubmeshTopology extends NSObject {
      * in order, three indices for the first triangle, followed by three
      * for the second, followed by four for the polygon, and finally two
      * indices for the line.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -231,6 +242,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] holeCount
      * 
      * The number of holes encoded in holes
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("holeCount")
@@ -244,6 +257,8 @@ public class MDLSubmeshTopology extends NSObject {
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -259,6 +274,8 @@ public class MDLSubmeshTopology extends NSObject {
      * initWithSubmesh:
      * 
      * create a topology object corresponding to the topology in the submesh
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithSubmesh:")
@@ -268,6 +285,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] edgeCreaseCount
      * 
      * The number of edge creases encoded in edgeCreases
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEdgeCreaseCount:")
@@ -285,11 +304,16 @@ public class MDLSubmeshTopology extends NSObject {
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEdgeCreaseIndices:")
     public native void setEdgeCreaseIndices(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setEdgeCreases:")
     public native void setEdgeCreases(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
@@ -298,6 +322,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] faceCount
      * 
      * The number of faces encoded in faceTopologyBuffer
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFaceCount:")
@@ -319,6 +345,8 @@ public class MDLSubmeshTopology extends NSObject {
      * in order, three indices for the first triangle, followed by three
      * for the second, followed by four for the polygon, and finally two
      * indices for the line.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFaceTopology:")
@@ -328,6 +356,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] holeCount
      * 
      * The number of holes encoded in holes
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHoleCount:")
@@ -340,6 +370,8 @@ public class MDLSubmeshTopology extends NSObject {
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setHoles:")
@@ -349,6 +381,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] vertexCreaseCount
      * 
      * The number of vertex creases encoded in vertexCreases
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVertexCreaseCount:")
@@ -364,11 +398,16 @@ public class MDLSubmeshTopology extends NSObject {
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVertexCreaseIndices:")
     public native void setVertexCreaseIndices(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setVertexCreases:")
     public native void setVertexCreases(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
@@ -377,6 +416,8 @@ public class MDLSubmeshTopology extends NSObject {
      * [@property] vertexCreaseCount
      * 
      * The number of vertex creases encoded in vertexCreases
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("vertexCreaseCount")
@@ -393,6 +434,8 @@ public class MDLSubmeshTopology extends NSObject {
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -400,6 +443,9 @@ public class MDLSubmeshTopology extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer vertexCreaseIndices();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("vertexCreases")

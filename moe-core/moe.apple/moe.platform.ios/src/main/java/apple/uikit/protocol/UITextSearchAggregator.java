@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UITextSearchAggregator {
     /**
      * Returns all currently reported found ranges via @c foundRange:forSearchString:.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -31,6 +33,8 @@ public interface UITextSearchAggregator {
 
     /**
      * Call this method after all documents have been searched.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("finishedSearching")
@@ -43,6 +47,8 @@ public interface UITextSearchAggregator {
      * @param string   The query string that was used to locate this range of text.
      * @param document (Optional) A developer-defined document identifier, later provided when this range
      *                 needs to be styled.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @Selector("foundRange:forSearchString:inDocument:")
@@ -52,6 +58,8 @@ public interface UITextSearchAggregator {
     /**
      * Call this method to invalidate all currently shown ranges. This will cause the system find panel to update
      * it's current state, and may trigger a new search using `performTextSearchWithQueryString:` immediately after.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("invalidate")
@@ -64,6 +72,8 @@ public interface UITextSearchAggregator {
      * 
      * @param range    The range that is now invalid.
      * @param document (Optional) If multiple documents are used, the document identifier for the range provided.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @Selector("invalidateFoundRange:inDocument:")

@@ -43,6 +43,8 @@ public class MTLTextureReferenceType extends MTLType {
 
     /**
      * read, write, read-write
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("access")
@@ -120,6 +122,8 @@ public class MTLTextureReferenceType extends MTLType {
 
     /**
      * true for depth textures
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isDepthTexture")
@@ -157,6 +161,8 @@ public class MTLTextureReferenceType extends MTLType {
 
     /**
      * half, float, int, or uint.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("textureDataType")
@@ -165,6 +171,8 @@ public class MTLTextureReferenceType extends MTLType {
 
     /**
      * texture1D, texture2D...
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("textureType")

@@ -177,6 +177,9 @@ public class PKPushCredentials extends NSObject {
      * Forward this token to the server you use to generate push notifications. When preparing
      * to deliver a push notification to the current device, include the token in the HTTP
      * request you send to Apple Push Notification service (APNs).
+     * 
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -187,6 +190,8 @@ public class PKPushCredentials extends NSObject {
      * The push type constant associated with the token.
      * 
      * For possible values, see ``PushKit/PKPushType``.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

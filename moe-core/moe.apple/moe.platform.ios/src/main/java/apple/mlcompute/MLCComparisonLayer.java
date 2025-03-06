@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * given \p MLCComparisonOperation.
  * 
  * API-Since: 14.5
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -133,7 +132,11 @@ public class MLCComparisonLayer extends MLCLayer {
      * Create a comparison layer.
      * 
      * @return A new compare layer.
+     * 
+     *         API-Since: 14.5
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithOperation:")
     public static native MLCComparisonLayer layerWithOperation(int operation);
@@ -143,6 +146,11 @@ public class MLCComparisonLayer extends MLCLayer {
     @Selector("new")
     public static native MLCComparisonLayer new_objc();
 
+    /**
+     * API-Since: 14.5
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @Generated
     @Selector("operation")
     public native int operation();
@@ -163,6 +171,7 @@ public class MLCComparisonLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

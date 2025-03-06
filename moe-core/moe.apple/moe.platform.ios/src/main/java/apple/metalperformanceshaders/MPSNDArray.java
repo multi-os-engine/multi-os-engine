@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstNUIntPtr;
 
 /**
  * MPSNDArray
@@ -115,6 +116,8 @@ public class MPSNDArray extends NSObject {
      *                   be performed.
      * @return A new MPSNDArray, if it is possible to make one. Otherwise nil is returned. The MPSNDArray is
      *         autoreleased.
+     * 
+     *         API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -150,6 +153,8 @@ public class MPSNDArray extends NSObject {
 
     /**
      * The type of data stored by each element in the array
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("dataType")
@@ -157,6 +162,8 @@ public class MPSNDArray extends NSObject {
 
     /**
      * The size of one element in the MPSNDArray
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("dataTypeSize")
@@ -169,6 +176,8 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Get a well known <MPSNDArrayAllocator> that makes standard MTLBuffers
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -191,6 +200,8 @@ public class MPSNDArray extends NSObject {
      * @return A new autoreleased MPSNDArrayDescriptor that matches the
      *         shape of the MPSNDArray, suitable for introduction of slice,
      *         cast and transpose operations.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -201,6 +212,8 @@ public class MPSNDArray extends NSObject {
      * [@property] device
      * 
      * The device on which the MSPNDArray may be used
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -219,6 +232,8 @@ public class MPSNDArray extends NSObject {
      * @param offset              The byte offset to where the {0,0,0...}th element will be written
      * @param rowStrides          An optional array of (numberOfDimensions-1) byte counts which describe
      *                            the byte offset from position 0 of the respective dimension to position 1.
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @Selector("exportDataWithCommandBuffer:toBuffer:destinationDataType:offset:rowStrides:")
@@ -243,6 +258,8 @@ public class MPSNDArray extends NSObject {
      * @param offset         The byte offset in the buffer from where the {0,0,0...}th element is to be read.
      * @param rowStrides     An optional array of (numberOfDimensions-1) byte counts which describe
      *                       the byte offset from position 0 of the respective dimension to position 1.
+     * 
+     *                       API-Since: 13.0
      */
     @Generated
     @Selector("importDataWithCommandBuffer:fromBuffer:sourceDataType:offset:rowStrides:")
@@ -264,6 +281,8 @@ public class MPSNDArray extends NSObject {
      * @param descriptor The MPSNDArrayDescriptor used for initializing the the NDArray
      * 
      * @return A valid MPSNDArray object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:descriptor:")
@@ -272,6 +291,8 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Create a 1-Dimensional length=1 NDArray to hold a scalar
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:scalar:")
@@ -304,6 +325,8 @@ public class MPSNDArray extends NSObject {
      * A used specified string to help identify the array during debugging.
      * 
      * May be externally visible to tools like Instruments
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -316,6 +339,8 @@ public class MPSNDArray extends NSObject {
      * The dimension length is at least as large as the existing
      * slice length. Views of this MPSNDArray may have differing
      * dimension lengths.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("lengthOfDimension:")
@@ -329,6 +354,8 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Number of dimensions in the NDArray
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("numberOfDimensions")
@@ -341,6 +368,8 @@ public class MPSNDArray extends NSObject {
      * If the MPSNDArray was createrd as a array view of another MPSNDArray object, and aliases content
      * in the same MTLBuffer, the original MPSNDArray will be retained as the parent here. Two MPSNDArrays
      * alias if they share a common ancestor. Note that the parent may itself have a parent, and so forth.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -360,6 +389,8 @@ public class MPSNDArray extends NSObject {
      *                                and so forth. If the value is nil, these are calculated for you assuming that the
      *                                data is packed without additional space in between elements, rows, etc.
      *                                0 and negative values are permitted.
+     * 
+     *                                API-Since: 13.0
      */
     @Generated
     @Selector("readBytes:strideBytes:")
@@ -389,6 +420,8 @@ public class MPSNDArray extends NSObject {
      * Consequently, in most cases, it should be inexpensive to make
      * a MPSImage to see how much memory it will need, and release it
      * if it is too large.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resourceSize")
@@ -399,6 +432,8 @@ public class MPSNDArray extends NSObject {
      * A used specified string to help identify the array during debugging.
      * 
      * May be externally visible to tools like Instruments
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLabel:")
@@ -416,6 +451,8 @@ public class MPSNDArray extends NSObject {
      * Use a blit encoder if a discrete device to update CPU contents of underlying buffer with latest GPU value
      * 
      * @param commandBuffer The commandBuffer on which we transfer the contents.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @Selector("synchronizeOnCommandBuffer:")
@@ -441,6 +478,8 @@ public class MPSNDArray extends NSObject {
      *                                assuming that the
      *                                data is packed without additional space in between elements, rows, etc.
      *                                0 and negative values are permitted.
+     * 
+     *                                API-Since: 13.0
      */
     @Generated
     @Selector("writeBytes:strideBytes:")
@@ -450,4 +489,78 @@ public class MPSNDArray extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Make a new representation of a MPSNDArray with a slice, transpose or other change in property, trying to alias to
+     * result.
+     * 
+     * The same as `arrayViewWithCommandBuffer`, except that tries to always alias, and therefore does not require a
+     * commanbuffer.
+     * If aliasing is not possible nil is returned.
+     * This method is useful in making aliasing transposes and slices, that are guaranteed to be able to alias. For
+     * reshapes it is recommended
+     * to use the `MPSNDArrayIdentity` methods.
+     * 
+     * @param descriptor A MPSNDArrayDescriptor describing the shape of the new view of the data
+     * @return A new MPSNDArray, if it is possible to make one. Otherwise nil is returned. The MPSNDArray is
+     *         autoreleased.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("arrayViewWithDescriptor:")
+    @Nullable
+    public native MPSNDArray arrayViewWithDescriptor(@NotNull MPSNDArrayDescriptor descriptor);
+
+    /**
+     * Make a new representation of a MPSNDArray with given strides and a new shape.
+     * 
+     * This operation always returns a new view of the same underlying MTLBuffer, but works only with contiguous
+     * buffers.
+     * 
+     * @param numberOfDimensions Number of dimensions in the new view.
+     * @param dimensionSizes     Size of each new dimension. Fastest running dimension first. Must be of length
+     *                           numberOfDimensions.
+     * @param dimStrides         The strides for each dimension. First number must be one. Must be non-decreasing. Must
+     *                           be of length numberOfDimensions.
+     * 
+     * @return A new MPSNDArray, if it is possible to make one. Otherwise nil is returned. The MPSNDArray is
+     *         autoreleased.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("arrayViewWithDimensionCount:dimensionSizes:strides:")
+    @Nullable
+    public native MPSNDArray arrayViewWithDimensionCountDimensionSizesStrides(@NUInt long numberOfDimensions,
+            @NotNull ConstNUIntPtr dimensionSizes, @NotNull ConstNUIntPtr dimStrides);
+
+    /**
+     * Initialize an MPSNDArray object from a Metal Buffer with a given descriptor and offset in bytes.
+     * 
+     * @param buffer     The buffer used for initializing. The NDArray will alias to this buffer at the given offset.
+     * @param offset     Offset in bytes to the buffer.
+     * @param descriptor The MPSNDArrayDescriptor used for initializing the the NDArray.
+     * 
+     * @return A valid MPSNDArray object or nil, if failure.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithBuffer:offset:descriptor:")
+    public native MPSNDArray initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer,
+            @NUInt long offset, @NotNull MPSNDArrayDescriptor descriptor);
+
+    /**
+     * Returns the user buffer in case the NDArray was initialized with an MTLBuffer.
+     * 
+     * @return The user-provided MTLBuffer that was used to initialize this MPSNDArray or nil, in case it was not..
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("userBuffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MTLBuffer userBuffer();
 }

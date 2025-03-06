@@ -113,6 +113,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * [@property] data
      * 
      * Access the buffer's data bytes.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -144,6 +146,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * This fails if the format is PCM or if the format has variable bytes per packet
      * (format.streamDescription->mBytesPerPacket == 0).
      * 
+     * API-Since: 9.0
+     * 
      * @param format
      *                       The format of the audio to be contained in the buffer.
      * @param packetCapacity
@@ -160,6 +164,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * Initialize a buffer that is to contain compressed audio data.
      * 
      * An exception is raised if the format is PCM.
+     * 
+     * API-Since: 9.0
      * 
      * @param format
      *                          The format of the audio to be contained in the buffer.
@@ -201,6 +207,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * [@property] maximumPacketSize
      * 
      * The maximum size of a compressed packet in bytes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumPacketSize")
@@ -216,6 +224,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * [@property] packetCapacity
      * 
      * The number of compressed packets the buffer can contain.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("packetCapacity")
@@ -228,6 +238,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * 
      * You may modify the packetCount as part of an operation that modifies its contents.
      * The packetCount must be less than or equal to the packetCapacity.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("packetCount")
@@ -240,6 +252,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * 
      * If the format has constant bytes per packet (format.streamDescription->mBytesPerPacket != 0), then this will
      * return nil.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -274,6 +288,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * 
      * You may modify the packetCount as part of an operation that modifies its contents.
      * The packetCount must be less than or equal to the packetCapacity.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPacketCount:")

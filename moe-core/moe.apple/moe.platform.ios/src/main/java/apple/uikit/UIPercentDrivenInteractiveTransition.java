@@ -162,6 +162,9 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("cancelInteractiveTransition")
     public native void cancelInteractiveTransition();
@@ -179,12 +182,17 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     /**
      * This is the non-interactive duration that was returned when the
      * animators transitionDuration: method was called when the transition started.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("duration")
     @NFloat
     public native double duration();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("finishInteractiveTransition")
     public native void finishInteractiveTransition();
@@ -206,6 +214,8 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
 
     /**
      * The last percentComplete value specified by updateInteractiveTransition:
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("percentComplete")
@@ -216,6 +226,8 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
      * When the interactive part of the transition has completed, this property can
      * be set to indicate a different animation curve. It defaults to UIViewAnimationCurveEaseInOut.
      * Note that during the interactive portion of the animation the timing curve is linear.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setCompletionCurve:")
@@ -228,6 +240,8 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
      * before cancelInteractiveTransition or finishInteractiveTransition is called
      * in order to speed up or slow down the non interactive part of the
      * transition.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setCompletionSpeed:")
@@ -283,6 +297,8 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
      * interactive methods on UIViewControllerContextTransitioning should NOT be
      * called. If there is an interruptible animator, these methods will either scrub or continue
      * the transition in the forward or reverse directions.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("updateInteractiveTransition:")

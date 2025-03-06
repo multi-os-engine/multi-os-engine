@@ -133,6 +133,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * If the return value is YES, the client can set the recipients and body of the message.
      * If the return value is NO, the client may notify the user of the failure, or the
      * client may open an SMS URL via <tt>-[UIApplication openURL:]</tt>.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("canSendText")
@@ -294,6 +296,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * This property will set the initial value of the body of the message. This should be called prior
      * to display.
      * <p>After the view has been presented to the user, this property will no longer change the value.</p>
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -352,6 +356,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * [@property] messageComposeDelegate
      * 
      * This property is the delegate for the MFMessageComposeViewController method callbacks.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -368,6 +374,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * NSString instances specifying the message addresses of recipients. This should be called prior
      * to display.
      * <p>After the view has been presented to the user, this property will no longer change the value.</p>
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -382,6 +390,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * This property will set the initial value of the body of the message. This should be called prior
      * to display.
      * <p>After the view has been presented to the user, this property will no longer change the value.</p>
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setBody:")
@@ -402,6 +412,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * [@property] messageComposeDelegate
      * 
      * This property is the delegate for the MFMessageComposeViewController method callbacks.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMessageComposeDelegate:")
@@ -412,6 +424,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * [@property] messageComposeDelegate
      * 
      * This property is the delegate for the MFMessageComposeViewController method callbacks.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     public void setMessageComposeDelegate(
@@ -435,6 +449,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * NSString instances specifying the message addresses of recipients. This should be called prior
      * to display.
      * <p>After the view has been presented to the user, this property will no longer change the value.</p>
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setRecipients:")

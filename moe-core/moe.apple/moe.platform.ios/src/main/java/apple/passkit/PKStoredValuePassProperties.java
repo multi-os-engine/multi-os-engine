@@ -60,6 +60,9 @@ public class PKStoredValuePassProperties extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("balances")
@@ -96,6 +99,8 @@ public class PKStoredValuePassProperties extends NSObject {
 
     /**
      * nil if pass does not expire
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -154,6 +159,9 @@ public class PKStoredValuePassProperties extends NSObject {
     @Selector("new")
     public static native PKStoredValuePassProperties new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("passPropertiesForPass:")
     public static native PKStoredValuePassProperties passPropertiesForPass(@NotNull PKPass pass);

@@ -168,6 +168,9 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("content")
@@ -180,6 +183,9 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("dateSent")
@@ -189,6 +195,9 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("identifier")
@@ -202,17 +211,26 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INMessage initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithIdentifier:content:dateSent:sender:recipients:")
     public native INMessage initWithIdentifierContentDateSentSenderRecipients(@NotNull String identifier,
             @Nullable String content, @Nullable NSDate dateSent, @Nullable INPerson sender,
             @Nullable NSArray<? extends INPerson> recipients);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("recipients")
     public native NSArray<? extends INPerson> recipients();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("sender")
@@ -241,7 +259,7 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native INSpeakableString groupName();
 
     /**
-     * API-Since: 11.0
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:")
@@ -251,7 +269,7 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
             @Nullable INSpeakableString groupName, @NInt long messageType);
 
     /**
-     * API-Since: 11.0
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:messageType:")
@@ -297,6 +315,9 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("audioMessageFile")
     public native INFile audioMessageFile();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:serviceName:audioMessageFile:")
     public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageTypeServiceNameAudioMessageFile(
@@ -366,4 +387,80 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:serviceName:messageType:referencedMessage:reaction:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameServiceNameMessageTypeReferencedMessageReaction(
+            @NotNull String identifier, @Nullable String conversationIdentifier, @Nullable String content,
+            @Nullable NSDate dateSent, @Nullable INPerson sender, @Nullable NSArray<? extends INPerson> recipients,
+            @Nullable INSpeakableString groupName, @Nullable String serviceName, @NInt long messageType,
+            @Nullable INMessage referencedMessage, @Nullable INMessageReaction reaction);
+
+    /**
+     * Creates a message that includes a reaction and references the original message for the reaction.
+     * 
+     * - Parameters:
+     * - identifier: The message’s unique identifier.
+     * - conversationIdentifier: The identifier of the conversation that contains this message.
+     * - content: The text that Siri recites to the message recipient.
+     * - dateSent: The date and time the app sent the message to each recipient.
+     * - sender: The person who sent the message.
+     * - recipients: The people who received the message.
+     * - groupName: The name of the group conversation.
+     * - serviceName: The name of the service that delivers the message.
+     * - messageType: The type of content the message contains.
+     * - referencedMessage: The referenced message that received a reaction if the message object itself was a reaction.
+     * - sticker: The sticker that this message contains.
+     * - reaction: The message reaction that this message contains.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:serviceName:messageType:referencedMessage:sticker:reaction:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameServiceNameMessageTypeReferencedMessageStickerReaction(
+            @NotNull String identifier, @Nullable String conversationIdentifier, @Nullable String content,
+            @Nullable NSDate dateSent, @Nullable INPerson sender, @Nullable NSArray<? extends INPerson> recipients,
+            @Nullable INSpeakableString groupName, @Nullable String serviceName, @NInt long messageType,
+            @Nullable INMessage referencedMessage, @Nullable INSticker sticker, @Nullable INMessageReaction reaction);
+
+    /**
+     * The message reaction that this message contains.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("reaction")
+    @Nullable
+    public native INMessageReaction reaction();
+
+    /**
+     * The message reaction that this message contains.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setReaction:")
+    public native void setReaction(@Nullable INMessageReaction value);
+
+    /**
+     * The sticker that this message contains.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSticker:")
+    public native void setSticker(@Nullable INSticker value);
+
+    /**
+     * The sticker that this message contains.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("sticker")
+    @Nullable
+    public native INSticker sticker();
 }

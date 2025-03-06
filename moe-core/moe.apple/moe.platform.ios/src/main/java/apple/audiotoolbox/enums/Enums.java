@@ -2447,4 +2447,21 @@ public final class Enums {
     @Generated public static final int kDynamicRangeCompressionProfile_NoisyEnvironment = 0x00000002;
     @Generated public static final int kDynamicRangeCompressionProfile_LimitedPlaybackRange = 0x00000003;
     @Generated public static final int kDynamicRangeCompressionProfile_GeneralCompression = 0x00000006;
+    @Generated public static final int kAudioUnitErr_MultipleVoiceProcessors = 0xFFFEFBB5;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int kAudioUnitProperty_SpatialMixerEnableHeadTracking = 0x00000C27;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int kAudioUnitProperty_SpatialMixerPersonalizedHRTFMode = 0x00000C29;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int kAudioUnitProperty_SpatialMixerAnyInputIsUsingPersonalizedHRTF = 0x00000C2C;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long kAUSoundIsolationSoundType_HighQualityVoice = 0x0000000000000000L;
 }

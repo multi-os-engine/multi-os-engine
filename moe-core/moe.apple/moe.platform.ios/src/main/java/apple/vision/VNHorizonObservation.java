@@ -69,6 +69,8 @@ public class VNHorizonObservation extends VNObservation {
 
     /**
      * Angle of the observed horizon.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("angle")
@@ -178,6 +180,8 @@ public class VNHorizonObservation extends VNObservation {
      * Transform applied to the detected horizon in image coordinates.
      * 
      * This is the transform in image coordinates and not a normalized transform.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("transform")

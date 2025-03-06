@@ -98,6 +98,8 @@ public class VSAccountApplicationProvider extends NSObject {
     /**
      * The identifier of the provider.
      * If selected, this value is returned to your application.
+     * 
+     * API-Since: 14.2
      */
     @NotNull
     @Generated
@@ -111,6 +113,8 @@ public class VSAccountApplicationProvider extends NSObject {
     /**
      * Returns an application provider using a given display name and identifier.
      * Both the localizedDisplayName and identifier parameters must be non-empty strings.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("initWithLocalizedDisplayName:identifier:")
@@ -141,6 +145,8 @@ public class VSAccountApplicationProvider extends NSObject {
 
     /**
      * The display name of the provider as it will appear in the list of providers.
+     * 
+     * API-Since: 14.2
      */
     @NotNull
     @Generated

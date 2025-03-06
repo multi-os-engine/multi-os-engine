@@ -163,6 +163,9 @@ public class UIAccessibilityCustomRotor extends NSObject {
     @Selector("init")
     public native UIAccessibilityCustomRotor init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithName:itemSearchBlock:")
     public native UIAccessibilityCustomRotor initWithNameItemSearchBlock(@NotNull String name,
@@ -172,6 +175,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
      * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous
      * instance of that rotor item.
      * If the currentItem is nil, that implies the first/last item should be returned.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -181,6 +186,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
 
     /**
      * The localized name the assistive technology will use to describe the custom rotor.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -191,6 +198,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
      * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous
      * instance of that rotor item.
      * If the currentItem is nil, that implies the first/last item should be returned.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setItemSearchBlock:")
@@ -199,6 +208,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
 
     /**
      * The localized name the assistive technology will use to describe the custom rotor.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setName:")

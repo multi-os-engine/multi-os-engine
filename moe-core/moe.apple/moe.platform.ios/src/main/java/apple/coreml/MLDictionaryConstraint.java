@@ -128,6 +128,8 @@ public class MLDictionaryConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Required key type, described as MLFeatureType
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("keyType")

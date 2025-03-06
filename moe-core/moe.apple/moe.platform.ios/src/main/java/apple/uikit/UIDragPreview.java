@@ -109,6 +109,8 @@ public class UIDragPreview extends NSObject implements NSCopying {
 
     /**
      * Use the default parameters.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithView:")
@@ -117,6 +119,8 @@ public class UIDragPreview extends NSObject implements NSCopying {
     /**
      * Create a preview based on a view and parameters.
      * Note: it doesn't matter whether this view is in a window or not.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithView:parameters:")
@@ -150,6 +154,9 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @Selector("new")
     public static native UIDragPreview new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("parameters")
@@ -192,6 +199,9 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("view")

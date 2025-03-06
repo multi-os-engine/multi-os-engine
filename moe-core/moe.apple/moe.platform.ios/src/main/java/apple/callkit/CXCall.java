@@ -158,15 +158,24 @@ public class CXCall extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hasConnected")
     public native boolean hasConnected();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hasEnded")
     public native boolean hasEnded();
@@ -175,14 +184,23 @@ public class CXCall extends NSObject {
     @Selector("init")
     public native CXCall init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isEqualToCall:")
     public native boolean isEqualToCall(@NotNull CXCall call);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isOnHold")
     public native boolean isOnHold();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isOutgoing")
     public native boolean isOutgoing();

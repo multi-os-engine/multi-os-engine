@@ -196,6 +196,8 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * A CMFormatDescription describing an AVCaptureDevice active or supported format. This is a read-only property. The
      * caller assumes no ownership of the returned value and should not CFRelease it.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -340,6 +342,8 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * Supported mediaTypes are listed in AVMediaFormat.h. This is a read-only property. The caller assumes no ownership
      * of the returned value and should not CFRelease it.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -420,6 +424,8 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * videoSupportedFrameRateRanges is an array of AVFrameRateRange objects, one for each of the format's supported
      * video frame rate ranges.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -855,4 +861,93 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Generated
     @Selector("zoomFactorsOutsideOfVideoZoomRangesForDepthDeliverySupported")
     public native boolean zoomFactorsOutsideOfVideoZoomRangesForDepthDeliverySupported();
+
+    /**
+     * [@property] autoVideoFrameRateSupported
+     * 
+     * Indicates whether the device format supports auto video frame rate.
+     * 
+     * See -[AVCaptureDevice autoVideoFrameRateEnabled] (above) for a detailed description of the feature.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isAutoVideoFrameRateSupported")
+    public native boolean isAutoVideoFrameRateSupported();
+
+    /**
+     * [@property] backgroundReplacementSupported
+     * 
+     * Indicates whether the format supports the Background Replacement feature.
+     * 
+     * This property returns YES if the format supports Background Replacement background replacement. See
+     * +AVCaptureDevice.backgroundReplacementEnabled.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isBackgroundReplacementSupported")
+    public native boolean isBackgroundReplacementSupported();
+
+    /**
+     * [@property] spatialVideoCaptureSupported
+     * 
+     * Returns whether or not the format supports capturing spatial video to a file.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isSpatialVideoCaptureSupported")
+    public native boolean isSpatialVideoCaptureSupported();
+
+    /**
+     * [@property] systemRecommendedExposureBiasRange
+     * 
+     * Indicates the system's recommended exposure bias range for this device format.
+     * 
+     * This property can be used to create a slider in your app's user interface to control the device's exposure bias
+     * with a system-recommended exposure bias range. When a recommendation is not available, this property returns nil.
+     * 
+     * The value of this property is also used for the AVCaptureSystemExposureBiasSlider's range.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("systemRecommendedExposureBiasRange")
+    @Nullable
+    public native AVExposureBiasRange systemRecommendedExposureBiasRange();
+
+    /**
+     * [@property] systemRecommendedVideoZoomRange
+     * 
+     * Indicates the system's recommended zoom range for this device format.
+     * 
+     * This property can be used to create a slider in your app's user interface to control the device's zoom with a
+     * system-recommended video zoom range. When a recommendation is not available, this property returns nil. Clients
+     * can key value observe AVCaptureDevice's minAvailableVideoZoomFactor and maxAvailableVideoZoomFactor properties to
+     * know when a device's supported zoom is restricted within the recommended zoom range.
+     * 
+     * The value of this property is also used for the AVCaptureSystemZoomSlider's range.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("systemRecommendedVideoZoomRange")
+    @Nullable
+    public native AVZoomRange systemRecommendedVideoZoomRange();
+
+    /**
+     * [@property] videoFrameRateRangeForBackgroundReplacement
+     * 
+     * Indicates the minimum / maximum frame rates available when background replacement is active.
+     * 
+     * Devices may support a limited frame rate range when Background Replacement is active. If this device format does
+     * not support Background Replacement, this property returns nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("videoFrameRateRangeForBackgroundReplacement")
+    @Nullable
+    public native AVFrameRateRange videoFrameRateRangeForBackgroundReplacement();
 }

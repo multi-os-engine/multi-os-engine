@@ -76,6 +76,8 @@ public class ENExposureConfiguration extends NSObject {
      * 
      * Index |0 |1 |2
      * Variable |X |Y |Z
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -85,12 +87,17 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * ---------------------------------------------------------------------------------------------------------------------------
      * Soon to be deprecated parameters. Use the parameters above instead.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
     @Selector("attenuationLevelValues")
     public native NSArray<? extends NSNumber> attenuationLevelValues();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("attenuationWeight")
     public native double attenuationWeight();
@@ -120,6 +127,9 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.5
+     */
     @NotNull
     @Generated
     @Selector("daysSinceLastExposureLevelValues")
@@ -135,6 +145,9 @@ public class ENExposureConfiguration extends NSObject {
     @NInt
     public native long daysSinceLastExposureThreshold();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("daysSinceLastExposureWeight")
     public native double daysSinceLastExposureWeight();
@@ -147,11 +160,17 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 12.5
+     */
     @NotNull
     @Generated
     @Selector("durationLevelValues")
     public native NSArray<? extends NSNumber> durationLevelValues();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("durationWeight")
     public native double durationWeight();
@@ -232,11 +251,17 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("mediumDurationWeight")
     public native double mediumDurationWeight();
 
+    /**
+     * API-Since: 12.5
+     */
     @Nullable
     @Generated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("minimumRiskScore")
     public native byte minimumRiskScore();
@@ -244,6 +269,8 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Minimum risk score. Excludes exposure incidents with scores lower than this. Full range and not capped to
      * ENRiskScore.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("minimumRiskScoreFullRange")
@@ -321,6 +348,8 @@ public class ENExposureConfiguration extends NSObject {
      * 
      * Index |0 |1 |2
      * Variable |X |Y |Z
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setAttenuationDurationThresholds:")
@@ -329,15 +358,23 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * ---------------------------------------------------------------------------------------------------------------------------
      * Soon to be deprecated parameters. Use the parameters above instead.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setAttenuationLevelValues:")
     public native void setAttenuationLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setAttenuationWeight:")
     public native void setAttenuationWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setDaysSinceLastExposureLevelValues:")
     public native void setDaysSinceLastExposureLevelValues(@NotNull NSArray<? extends NSNumber> value);
@@ -351,14 +388,23 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("setDaysSinceLastExposureThreshold:")
     public native void setDaysSinceLastExposureThreshold(@NInt long value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setDaysSinceLastExposureWeight:")
     public native void setDaysSinceLastExposureWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setDurationLevelValues:")
     public native void setDurationLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setDurationWeight:")
     public native void setDurationWeight(double value);
@@ -408,10 +454,16 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("setMediumDurationWeight:")
     public native void setMediumDurationWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(@Nullable NSDictionary<?, ?> value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setMinimumRiskScore:")
     public native void setMinimumRiskScore(byte value);
@@ -419,6 +471,8 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Minimum risk score. Excludes exposure incidents with scores lower than this. Full range and not capped to
      * ENRiskScore.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setMinimumRiskScoreFullRange:")
@@ -478,10 +532,16 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("setReportTypeSelfReportedWeight:")
     public native void setReportTypeSelfReportedWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setTransmissionRiskLevelValues:")
     public native void setTransmissionRiskLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setTransmissionRiskWeight:")
     public native void setTransmissionRiskWeight(double value);
@@ -494,11 +554,17 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 12.5
+     */
     @NotNull
     @Generated
     @Selector("transmissionRiskLevelValues")
     public native NSArray<? extends NSNumber> transmissionRiskLevelValues();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("transmissionRiskWeight")
     public native double transmissionRiskWeight();

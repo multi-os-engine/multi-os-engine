@@ -68,6 +68,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Called when the animation starts.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -88,6 +90,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * is removed from the object it is attached to (i.e. the layer). The 'completed' argument of
      * SCNAnimationDidStopBlock
      * is true if the animation reached the end of its active duration without being removed.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -107,6 +111,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Specifies the animation events attached to the receiver.
      * 
      * @see SCNAnimationEvent
+     * 
+     *      API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -117,6 +123,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Loads and returns the animation with the specified name in the current application bundle.
      * 
      * @param animationName The name of the animation to load.
+     * 
+     *                      API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -129,6 +137,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * Only CABasicAnimation, CAKeyframeAnimation and CAAnimationGroup are currently supported.
      * 
+     * API-Since: 11.0
+     * 
      * @param caAnimation The CAAnimation to initialize from.
      */
     @NotNull
@@ -140,6 +150,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Loads and returns an animation loaded from the specified URL.
      * 
      * @param animationUrl The url to load.
+     * 
+     *                     API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -152,6 +164,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the object plays backwards after playing forwards. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("autoreverses")
@@ -162,6 +176,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
      * during the specified duration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("blendInDuration")
@@ -172,6 +188,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to
      * 0% at the end of the animation duration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("blendOutDuration")
@@ -215,6 +233,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The duration of the animation in seconds. Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("duration")
@@ -226,6 +246,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation is active before its active duration and evaluates to its start value. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("fillsBackward")
@@ -233,6 +255,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation remains active after its active duration and evaluates to its end value. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("fillsForward")
@@ -270,6 +294,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * presentation value. The addition function is type-dependent, e.g.
      * for affine transforms the two matrices are concatenated. Defaults to
      * NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isAdditive")
@@ -277,6 +303,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation is applied to the model tree once its active duration has passed. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isAppliedOnCompletion")
@@ -288,6 +316,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * value at the end of the previous repeat cycle, plus the value of the
      * current repeat cycle. If false, the value is simply the value
      * calculated for the current repeat cycle. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isCumulative")
@@ -295,6 +325,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation is removed from the render tree once its active duration has passed. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isRemovedOnCompletion")
@@ -309,6 +341,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * multiple nodes. defaults to nil.
      * The key-path uses the KVC syntax. It's also possible to target a specific sub-node with the following syntax:
      * /<node-name>.property1.property2.field (field is optional, <node-name> is the name of the targeted node).
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -327,6 +361,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The repeat count of the object. May be fractional. Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("repeatCount")
@@ -347,6 +383,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * presentation value. The addition function is type-dependent, e.g.
      * for affine transforms the two matrices are concatenated. Defaults to
      * NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAdditive:")
@@ -354,6 +392,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Called when the animation starts.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAnimationDidStart:")
@@ -373,6 +413,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * is removed from the object it is attached to (i.e. the layer). The 'completed' argument of
      * SCNAnimationDidStopBlock
      * is true if the animation reached the end of its active duration without being removed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAnimationDidStop:")
@@ -391,6 +433,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Specifies the animation events attached to the receiver.
      * 
      * @see SCNAnimationEvent
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("setAnimationEvents:")
@@ -398,6 +442,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation is applied to the model tree once its active duration has passed. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAppliedOnCompletion:")
@@ -405,6 +451,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the object plays backwards after playing forwards. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAutoreverses:")
@@ -415,6 +463,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
      * during the specified duration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBlendInDuration:")
@@ -425,6 +475,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to
      * 0% at the end of the animation duration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBlendOutDuration:")
@@ -436,6 +488,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * value at the end of the previous repeat cycle, plus the value of the
      * current repeat cycle. If false, the value is simply the value
      * calculated for the current repeat cycle. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCumulative:")
@@ -443,6 +497,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The duration of the animation in seconds. Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDuration:")
@@ -450,6 +506,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation is active before its active duration and evaluates to its start value. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFillsBackward:")
@@ -457,6 +515,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation remains active after its active duration and evaluates to its end value. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFillsForward:")
@@ -467,6 +527,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * multiple nodes. defaults to nil.
      * The key-path uses the KVC syntax. It's also possible to target a specific sub-node with the following syntax:
      * /<node-name>.property1.property2.field (field is optional, <node-name> is the name of the targeted node).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setKeyPath:")
@@ -474,6 +536,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * When true, the animation is removed from the render tree once its active duration has passed. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRemovedOnCompletion:")
@@ -481,6 +545,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The repeat count of the object. May be fractional. Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRepeatCount:")
@@ -492,6 +558,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is
      * relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a
      * non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStartDelay:")
@@ -501,6 +569,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Additional offset in active local time. i.e. to convert from parent
      * time tp to active local time t: t = (tp - begin) * speed + offset.
      * Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTimeOffset:")
@@ -508,6 +578,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * A timing function defining the pacing of the animation. Defaults to nil indicating linear pacing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTimingFunction:")
@@ -521,6 +593,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * the evaluation time.
      * 
      * @see SCNSceneSourceAnimationImportPolicyKey
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("setUsesSceneTimeBase:")
@@ -536,6 +610,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is
      * relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a
      * non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("startDelay")
@@ -559,6 +635,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Additional offset in active local time. i.e. to convert from parent
      * time tp to active local time t: t = (tp - begin) * speed + offset.
      * Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("timeOffset")
@@ -566,6 +644,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * A timing function defining the pacing of the animation. Defaults to nil indicating linear pacing.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -580,6 +660,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * the evaluation time.
      * 
      * @see SCNSceneSourceAnimationImportPolicyKey
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("usesSceneTimeBase")

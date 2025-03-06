@@ -192,6 +192,8 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
      * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel
      * block by rearranging
      * the outputFeatureChannels as described above. Default value is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSubPixelScaleFactor:")
@@ -207,6 +209,8 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
      * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel
      * block by rearranging
      * the outputFeatureChannels as described above. Default value is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("subPixelScaleFactor")

@@ -114,6 +114,9 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
     @Selector("init")
     public native MDLPathAssetResolver init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithPath:")
     public native MDLPathAssetResolver initWithPath(@NotNull String path);
@@ -145,6 +148,9 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
     @Selector("new")
     public static native MDLPathAssetResolver new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("path")
@@ -163,6 +169,9 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPath:")
     public native void setPath(@NotNull String value);

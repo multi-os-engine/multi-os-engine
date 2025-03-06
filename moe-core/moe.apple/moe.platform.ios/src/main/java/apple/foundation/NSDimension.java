@@ -78,6 +78,8 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
      * This class method returns an instance of the dimension class that represents the base unit of that dimension.
      * e.g.
      * NSUnitSpeed *metersPerSecond = [NSUnitSpeed baseUnit];
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -170,6 +172,9 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("converter")
@@ -191,6 +196,9 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
     @Selector("initWithSymbol:")
     public native NSDimension initWithSymbol(@NotNull String symbol);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithSymbol:converter:")
     public native NSDimension initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);

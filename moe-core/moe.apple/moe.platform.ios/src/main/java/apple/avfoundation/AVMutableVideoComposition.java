@@ -172,6 +172,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * The returned AVMutableVideoComposition will have a frameDuration of kCMTimeZero, a renderSize of {0.0, 0.0}, a
      * nil array of instructions, and a nil animationTool.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -219,7 +221,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * }];
      * 
      * API-Since: 9.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler: instead
      * 
      * @param asset An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the
      *              asset are already loaded before invoking this method.
@@ -259,7 +262,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * 
      * API-Since: 6.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use videoCompositionWithPropertiesOfAsset:completionHandler: instead
      * 
      * @param asset An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the
      *              asset are already loaded before invoking this method.
@@ -273,6 +277,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates a special video composition tool for use of Core Animation; may be nil
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -340,6 +346,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates the interval which the video composition, when enabled, should render composed video frames
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("frameDuration")
@@ -360,6 +368,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * the last instruction must be greater than or equal to the latest time for which playback or other processing will
      * be attempted (note that this will often be
      * the duration of the asset with which the instance of AVVideoComposition is associated).
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -378,6 +388,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates the size at which the video composition, when enabled, should render
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("renderSize")
@@ -386,6 +398,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates a special video composition tool for use of Core Animation; may be nil
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAnimationTool:")
@@ -448,6 +462,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates the interval which the video composition, when enabled, should render composed video frames
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setFrameDuration:")
@@ -463,6 +479,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * the last instruction must be greater than or equal to the latest time for which playback or other processing will
      * be attempted (note that this will often be
      * the duration of the asset with which the instance of AVVideoComposition is associated).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setInstructions:")
@@ -480,6 +498,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates the size at which the video composition, when enabled, should render
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setRenderSize:")
@@ -536,7 +556,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * 
      * API-Since: 13.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use videoCompositionWithPropertiesOfAsset:prototypeInstruction:completionHandler: instead
      * 
      * @param asset                An instance of AVAsset. For best performance, ensure that the duration and tracks
      *                             properties of the asset are already loaded before invoking this method.

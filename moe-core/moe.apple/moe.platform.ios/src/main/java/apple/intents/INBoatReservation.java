@@ -66,6 +66,9 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("boatTrip")
@@ -124,6 +127,9 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native INBoatReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:URL:reservedSeat:boatTrip:")
     public native INBoatReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsURLReservedSeatBoatTrip(
@@ -159,6 +165,9 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
     @Selector("new")
     public static native INBoatReservation new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("reservedSeat")

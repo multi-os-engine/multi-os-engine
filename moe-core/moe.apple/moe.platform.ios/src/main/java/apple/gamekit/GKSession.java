@@ -172,12 +172,21 @@ public class GKSession extends NSObject {
 
     /**
      * errors: cancelled, or timeout
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("acceptConnectionFromPeer:error:")
     public native boolean acceptConnectionFromPeerError(String peerID,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("cancelConnectToPeer:")
     public native void cancelConnectToPeer(String peerID);
@@ -188,7 +197,11 @@ public class GKSession extends NSObject {
      * 
      * Success results in a call to delegate -session:peer:didChangeState: GKPeerStateConnected
      * Failure results in a call to delegate -session:connectionWithPeerFailed:withError:
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("connectToPeer:withTimeout:")
     public native void connectToPeerWithTimeout(String peerID, double timeout);
@@ -203,38 +216,64 @@ public class GKSession extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native GKSessionDelegate delegate();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("denyConnectionFromPeer:")
     public native void denyConnectionFromPeer(String peerID);
 
     /**
      * Disconnect local peer
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("disconnectFromAllPeers")
     public native void disconnectFromAllPeers();
 
     /**
      * Disconnect a peer from the session (the peer gets disconnected from all connected peers).
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("disconnectPeerFromAllPeers:")
     public native void disconnectPeerFromAllPeers(String peerID);
 
     /**
      * default is 20 seconds
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("disconnectTimeout")
     public native double disconnectTimeout();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("displayName")
     public native String displayName();
 
     /**
      * Return the application chosen name of a specific peer
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("displayNameForPeer:")
     public native String displayNameForPeer(String peerID);
@@ -255,7 +294,11 @@ public class GKSession extends NSObject {
     /**
      * Toggle availability on the network based on session mode and search criteria. Delegate will get a callback
      * -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
@@ -263,14 +306,22 @@ public class GKSession extends NSObject {
     /**
      * Toggle availability on the network based on session mode and search criteria. Delegate will get a callback
      * -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("setAvailable:")
     public native void setAvailable(boolean value);
 
     /**
      * session's peerID
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("peerID")
     public native String peerID();
@@ -311,6 +362,11 @@ public class GKSession extends NSObject {
     public native boolean sendDataToAllPeersWithDataModeError(NSData data, int mode,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @Selector("sessionID")
     public native String sessionID();
@@ -326,7 +382,11 @@ public class GKSession extends NSObject {
 
     /**
      * SEL = -receiveData:fromPeer:inSession:context:
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("setDataReceiveHandler:withContext:")
     public native void setDataReceiveHandlerWithContext(@Mapped(ObjCObjectMapper.class) Object handler,
@@ -360,7 +420,11 @@ public class GKSession extends NSObject {
 
     /**
      * default is 20 seconds
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("setDisconnectTimeout:")
     public native void setDisconnectTimeout(double value);

@@ -40,11 +40,11 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class quadrature_integrator {
-    @Generated public static final int QUADRATURE_INTEGRATE_QNG = 0x00000000;
-    @Generated public static final int QUADRATURE_INTEGRATE_QAG = 0x00000001;
-    @Generated public static final int QUADRATURE_INTEGRATE_QAGS = 0x00000002;
-
     @Generated
     private quadrature_integrator() {
     }
+
+    @Generated public static final int QNG = 0x00000000;
+    @Generated public static final int QAG = 0x00000001;
+    @Generated public static final int QAGS = 0x00000002;
 }

@@ -126,6 +126,8 @@ public class CNRenderingSessionAttributes extends NSObject {
 
     /**
      * Load rendering session attributes from an asset asynchronously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("loadFromAsset:completionHandler:")
@@ -147,6 +149,8 @@ public class CNRenderingSessionAttributes extends NSObject {
 
     /**
      * Rendering version used to render the original.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("renderingVersion")

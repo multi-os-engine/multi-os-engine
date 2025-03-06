@@ -137,6 +137,8 @@ public class NSPersistentCloudKitContainerEventResult extends NSPersistentStoreR
 
     /**
      * Return the result. See NSPersistentCloudKitContainerEventResultType for options
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -144,6 +146,9 @@ public class NSPersistentCloudKitContainerEventResult extends NSPersistentStoreR
     @MappedReturn(ObjCObjectMapper.class)
     public native Object result();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("resultType")
     @NInt

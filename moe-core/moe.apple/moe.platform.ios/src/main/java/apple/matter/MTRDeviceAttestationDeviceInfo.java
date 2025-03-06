@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -93,6 +96,9 @@ public class MTRDeviceAttestationDeviceInfo extends NSObject {
             @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
             @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("certificateDeclaration")
     @Nullable
@@ -108,11 +114,17 @@ public class MTRDeviceAttestationDeviceInfo extends NSObject {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("dacCertificate")
     @NotNull
     public native NSData dacCertificate();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("dacPAICertificate")
     @NotNull

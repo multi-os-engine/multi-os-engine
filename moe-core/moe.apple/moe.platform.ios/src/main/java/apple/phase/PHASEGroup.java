@@ -108,6 +108,8 @@ public class PHASEGroup extends NSObject {
      *                  time scale.
      * @param curveType
      *                  The type of curve function that is applied during the fade.
+     * 
+     *                  API-Since: 15.0
      */
     @Generated
     @Selector("fadeGain:duration:curveType:")
@@ -128,6 +130,8 @@ public class PHASEGroup extends NSObject {
      *                  time scale.
      * @param curveType
      *                  The type of curve function that is applied during the fade.
+     * 
+     *                  API-Since: 15.0
      */
     @Generated
     @Selector("fadeRate:duration:curveType:")
@@ -139,6 +143,8 @@ public class PHASEGroup extends NSObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gain")
@@ -153,6 +159,8 @@ public class PHASEGroup extends NSObject {
      * [@property] identifier
      * 
      * The identifier that uniquely represents this group.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -170,6 +178,8 @@ public class PHASEGroup extends NSObject {
      * 
      * @param identifier
      *                   The identifier that uniquely represents this group.
+     * 
+     *                   API-Since: 15.0
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -192,6 +202,8 @@ public class PHASEGroup extends NSObject {
      * [@property] muted
      * 
      * Whether or not this group is muted.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isMuted")
@@ -201,6 +213,8 @@ public class PHASEGroup extends NSObject {
      * [@property] soloed
      * 
      * Whether or not this group is soloed.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isSoloed")
@@ -219,6 +233,8 @@ public class PHASEGroup extends NSObject {
      * mute
      * 
      * Mute the group.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("mute")
@@ -235,6 +251,8 @@ public class PHASEGroup extends NSObject {
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("rate")
@@ -249,6 +267,8 @@ public class PHASEGroup extends NSObject {
      * 
      * @param engine
      *               An engine object to associate this group with.
+     * 
+     *               API-Since: 15.0
      */
     @Generated
     @Selector("registerWithEngine:")
@@ -268,6 +288,8 @@ public class PHASEGroup extends NSObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGain:")
@@ -279,6 +301,8 @@ public class PHASEGroup extends NSObject {
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRate:")
@@ -292,6 +316,8 @@ public class PHASEGroup extends NSObject {
      * solo
      * 
      * Solo the group.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("solo")
@@ -305,6 +331,8 @@ public class PHASEGroup extends NSObject {
      * unmute
      * 
      * Unmute the group.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("unmute")
@@ -314,6 +342,8 @@ public class PHASEGroup extends NSObject {
      * unregisterFromEngine
      * 
      * Unregister the group from a particular engine.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("unregisterFromEngine")
@@ -323,6 +353,8 @@ public class PHASEGroup extends NSObject {
      * unsolo
      * 
      * Unsolo the group.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("unsolo")

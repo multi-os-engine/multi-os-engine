@@ -191,6 +191,8 @@ public class AVCaptureInputPort extends NSObject {
      * The value of this property is a CMFormatDescription that describes the format of the media data currently
      * provided by the receiver. Clients can be notified of changes to the format by observing the
      * AVCaptureInputPortFormatDescriptionDidChangeNotification.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -207,6 +209,8 @@ public class AVCaptureInputPort extends NSObject {
      * The input that owns the receiver.
      * 
      * The value of this property is an AVCaptureInput instance that owns the receiver.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -221,6 +225,8 @@ public class AVCaptureInputPort extends NSObject {
      * The value of this property is a BOOL that determines whether the receiver should provide data to outputs when a
      * session is running. Clients can set this property to fine tune which media streams from a given input will be
      * used during capture. The default value is YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isEnabled")
@@ -234,6 +240,8 @@ public class AVCaptureInputPort extends NSObject {
      * The value of this property is a BOOL that determines whether the receiver should provide data to outputs when a
      * session is running. Clients can set this property to fine tune which media streams from a given input will be
      * used during capture. The default value is YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -246,6 +254,8 @@ public class AVCaptureInputPort extends NSObject {
      * 
      * The value of this property is a constant describing the type of media, such as AVMediaTypeVideo or
      * AVMediaTypeAudio, provided by the receiver. Media type constants are defined in AVMediaFormat.h.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated

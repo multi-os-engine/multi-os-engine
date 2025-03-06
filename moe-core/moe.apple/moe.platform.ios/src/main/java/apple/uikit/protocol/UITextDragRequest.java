@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 public interface UITextDragRequest {
     /**
      * The text range being dragged.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -31,6 +33,8 @@ public interface UITextDragRequest {
 
     /**
      * The current drag session.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -41,6 +45,8 @@ public interface UITextDragRequest {
     /**
      * The existing items in the session.
      * Will be filled when we request new items.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -52,6 +58,8 @@ public interface UITextDragRequest {
      * Use this to disable dragging from an attachment or links
      * without them being selected. (In those cases, `selected` will be false.)
      * For regular dragged text, this will always be true.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isSelected")
@@ -61,6 +69,8 @@ public interface UITextDragRequest {
      * The suggested items that the text control would return,
      * if the responsible delegate method were not implemented.
      * This is populated lazily, so only use it when you need it.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

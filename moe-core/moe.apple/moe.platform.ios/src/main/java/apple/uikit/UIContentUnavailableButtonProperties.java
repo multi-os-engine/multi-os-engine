@@ -132,6 +132,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * Whether the button is enabled. Default is YES.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isEnabled")
@@ -148,6 +150,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * An optional menu for the button to display.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("menu")
@@ -161,6 +165,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * The primary action of the button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("primaryAction")
@@ -177,6 +183,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * The role of the button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("role")
@@ -185,6 +193,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * Whether the button is enabled. Default is YES.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -192,6 +202,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * An optional menu for the button to display.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMenu:")
@@ -199,6 +211,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * The primary action of the button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPrimaryAction:")
@@ -206,6 +220,8 @@ public class UIContentUnavailableButtonProperties extends NSObject implements NS
 
     /**
      * The role of the button.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRole:")

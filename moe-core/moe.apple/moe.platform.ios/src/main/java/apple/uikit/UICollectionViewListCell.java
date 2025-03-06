@@ -57,6 +57,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     /**
      * All the accessories that should be decorating the cell. The order and whether an accessory is
      * rendered on the leading or trailing side of the cell is defined by the system.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -246,6 +248,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
 
     /**
      * Returns a default list content configuration for the cell's style.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -263,6 +267,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
 
     /**
      * Defines the level of indentation for this cell. This is set automatically when using a hierarchical data source.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("indentationLevel")
@@ -271,6 +277,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
 
     /**
      * The width of an indentation level. The overall indentation will be indentationWidth * indentationLevel.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("indentationWidth")
@@ -281,6 +289,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
      * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be
      * indented.
      * Defaults to YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("indentsAccessories")
@@ -380,6 +390,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     /**
      * All the accessories that should be decorating the cell. The order and whether an accessory is
      * rendered on the leading or trailing side of the cell is defined by the system.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAccessories:")
@@ -447,6 +459,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
 
     /**
      * Defines the level of indentation for this cell. This is set automatically when using a hierarchical data source.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setIndentationLevel:")
@@ -454,6 +468,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
 
     /**
      * The width of an indentation level. The overall indentation will be indentationWidth * indentationLevel.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setIndentationWidth:")
@@ -463,6 +479,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
      * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be
      * indented.
      * Defaults to YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setIndentsAccessories:")

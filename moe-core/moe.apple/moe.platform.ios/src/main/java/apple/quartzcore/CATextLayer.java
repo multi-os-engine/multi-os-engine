@@ -188,6 +188,8 @@ public class CATextLayer extends CALayer {
      * Describes how individual lines of text are aligned within the layer
      * bounds. The possible options are `natural', `left', `right',
      * `center' and `justified'. Defaults to `natural'.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -197,6 +199,8 @@ public class CATextLayer extends CALayer {
     /**
      * Sets allowsFontSubpixelQuantization parameter of CGContextRef
      * passed to the -drawInContext: method. Defaults to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("allowsFontSubpixelQuantization")
@@ -207,6 +211,8 @@ public class CATextLayer extends CALayer {
      * bridged from UIFont), a CGFontRef, or a string naming the font.
      * Defaults to the Helvetica font. Only used when the `string' property
      * is not an NSAttributedString.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -216,6 +222,8 @@ public class CATextLayer extends CALayer {
     /**
      * The font size. Defaults to 36. Only used when the `string' property
      * is not an NSAttributedString. Animatable (Mac OS X 10.6 and later.)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("fontSize")
@@ -226,6 +234,8 @@ public class CATextLayer extends CALayer {
      * The color object used to draw the text. Defaults to opaque white.
      * Only used when the `string' property is not an NSAttributedString.
      * Animatable (Mac OS X 10.6 and later.)
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -247,6 +257,8 @@ public class CATextLayer extends CALayer {
     /**
      * When true the string is wrapped to fit within the layer bounds.
      * Defaults to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isWrapped")
@@ -255,6 +267,8 @@ public class CATextLayer extends CALayer {
     /**
      * When true the string is wrapped to fit within the layer bounds.
      * Defaults to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setWrapped:")
@@ -264,6 +278,8 @@ public class CATextLayer extends CALayer {
      * Describes how individual lines of text are aligned within the layer
      * bounds. The possible options are `natural', `left', `right',
      * `center' and `justified'. Defaults to `natural'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAlignmentMode:")
@@ -272,6 +288,8 @@ public class CATextLayer extends CALayer {
     /**
      * Sets allowsFontSubpixelQuantization parameter of CGContextRef
      * passed to the -drawInContext: method. Defaults to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAllowsFontSubpixelQuantization:")
@@ -282,6 +300,8 @@ public class CATextLayer extends CALayer {
      * bridged from UIFont), a CGFontRef, or a string naming the font.
      * Defaults to the Helvetica font. Only used when the `string' property
      * is not an NSAttributedString.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFont:")
@@ -290,6 +310,8 @@ public class CATextLayer extends CALayer {
     /**
      * The font size. Defaults to 36. Only used when the `string' property
      * is not an NSAttributedString. Animatable (Mac OS X 10.6 and later.)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFontSize:")
@@ -299,6 +321,8 @@ public class CATextLayer extends CALayer {
      * The color object used to draw the text. Defaults to opaque white.
      * Only used when the `string' property is not an NSAttributedString.
      * Animatable (Mac OS X 10.6 and later.)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setForegroundColor:")
@@ -307,6 +331,8 @@ public class CATextLayer extends CALayer {
     /**
      * The text to be rendered, should be either an NSString or an
      * NSAttributedString. Defaults to nil.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setString:")
@@ -316,6 +342,8 @@ public class CATextLayer extends CALayer {
      * Describes how the string is truncated to fit within the layer
      * bounds. The possible options are `none', `start', `middle' and
      * `end'. Defaults to `none'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTruncationMode:")
@@ -324,6 +352,8 @@ public class CATextLayer extends CALayer {
     /**
      * The text to be rendered, should be either an NSString or an
      * NSAttributedString. Defaults to nil.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -335,6 +365,8 @@ public class CATextLayer extends CALayer {
      * Describes how the string is truncated to fit within the layer
      * bounds. The possible options are `none', `start', `middle' and
      * `end'. Defaults to `none'.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated

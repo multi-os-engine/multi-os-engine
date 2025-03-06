@@ -176,6 +176,8 @@ public class UNNotification extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The date displayed on the notification.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -196,6 +198,8 @@ public class UNNotification extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * The notification request that caused the notification to be delivered.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

@@ -99,6 +99,9 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("init")
     public native ARPositionalTrackingConfiguration init();
@@ -110,6 +113,8 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
      * and can again be saved using the `getCurrentWorldMap` method on the session.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -154,6 +159,8 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("planeDetection")
@@ -175,6 +182,8 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
      * and can again be saved using the `getCurrentWorldMap` method on the session.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInitialWorldMap:")
@@ -187,6 +196,8 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPlaneDetection:")

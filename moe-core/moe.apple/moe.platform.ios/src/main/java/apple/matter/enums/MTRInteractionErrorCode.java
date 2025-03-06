@@ -145,4 +145,18 @@ public final class MTRInteractionErrorCode {
      * Interaction Model specification.
      */
     @Generated @NInt public static final long FailsafeRequired = 0x00000000000000CAL;
+    /**
+     * These values come from the general status code table in the Matter
+     * Interaction Model specification.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated @NInt public static final long InvalidInState = 0x00000000000000CBL;
+    /**
+     * These values come from the general status code table in the Matter
+     * Interaction Model specification.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated @NInt public static final long NoCommandResponse = 0x00000000000000CCL;
 }

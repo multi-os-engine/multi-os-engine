@@ -135,11 +135,17 @@ public class MLImageSize extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native MLImageSize new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("pixelsHigh")
     @NInt
     public native long pixelsHigh();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("pixelsWide")
     @NInt

@@ -74,11 +74,23 @@ public class AttestationInfo extends NSObject {
             @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
             @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("certificationDeclaration")
     @NotNull
     public native NSData certificationDeclaration();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("challenge")
     @NotNull
@@ -94,6 +106,12 @@ public class AttestationInfo extends NSObject {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("dac")
     @NotNull
@@ -107,16 +125,34 @@ public class AttestationInfo extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("elements")
     @NotNull
     public native NSData elements();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("elementsSignature")
     @NotNull
     public native NSData elementsSignature();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("firmwareInfo")
     @NotNull
@@ -131,6 +167,12 @@ public class AttestationInfo extends NSObject {
     @Selector("init")
     public native AttestationInfo init();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("initWithChallenge:nonce:elements:elementsSignature:dac:pai:certificationDeclaration:firmwareInfo:")
     public native AttestationInfo initWithChallengeNonceElementsElementsSignatureDacPaiCertificationDeclarationFirmwareInfo(
@@ -165,11 +207,23 @@ public class AttestationInfo extends NSObject {
     @Selector("new")
     public static native AttestationInfo new_objc();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("nonce")
     @NotNull
     public native NSData nonce();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("pai")
     @NotNull
@@ -183,34 +237,82 @@ public class AttestationInfo extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setCertificationDeclaration:")
     public native void setCertificationDeclaration(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setChallenge:")
     public native void setChallenge(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setDac:")
     public native void setDac(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setElements:")
     public native void setElements(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setElementsSignature:")
     public native void setElementsSignature(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setFirmwareInfo:")
     public native void setFirmwareInfo(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setNonce:")
     public native void setNonce(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceAttestationInfo
+     */
+    @Deprecated
     @Generated
     @Selector("setPai:")
     public native void setPai(@NotNull NSData value);

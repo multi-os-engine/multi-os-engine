@@ -55,6 +55,9 @@ public interface INBookRestaurantReservationIntentHandling {
      *                   handling.
      * 
      * @see INEndWorkoutIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -74,12 +77,18 @@ public interface INBookRestaurantReservationIntentHandling {
      * @param completion The response handling block to invoke with the response to handling the intent.
      * 
      * @see INBookRestaurantReservationIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleBookRestaurantReservation:completion:")
     void handleBookRestaurantReservationCompletion(@NotNull INBookRestaurantReservationIntent intent,
             @NotNull @ObjCBlock(name = "call_handleBookRestaurantReservationCompletion") Block_handleBookRestaurantReservationCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveBookingDateComponentsForBookRestaurantReservation:withCompletion:")
@@ -89,6 +98,9 @@ public interface INBookRestaurantReservationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveGuestForBookRestaurantReservation:withCompletion:")
@@ -98,6 +110,9 @@ public interface INBookRestaurantReservationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveGuestProvidedSpecialRequestTextForBookRestaurantReservation:withCompletion:")
@@ -107,6 +122,9 @@ public interface INBookRestaurantReservationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolvePartySizeForBookRestaurantReservation:withCompletion:")
@@ -126,6 +144,9 @@ public interface INBookRestaurantReservationIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

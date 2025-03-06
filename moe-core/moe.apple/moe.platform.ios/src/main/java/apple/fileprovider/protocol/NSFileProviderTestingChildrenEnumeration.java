@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 public interface NSFileProviderTestingChildrenEnumeration extends NSFileProviderTestingOperation {
     /**
      * The identifier of the item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -29,6 +31,8 @@ public interface NSFileProviderTestingChildrenEnumeration extends NSFileProvider
 
     /**
      * The side of the operation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("side")

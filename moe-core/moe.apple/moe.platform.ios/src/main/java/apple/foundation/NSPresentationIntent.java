@@ -60,6 +60,9 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("blockQuoteIntentWithIdentity:nestedInsideIntent:")
@@ -87,6 +90,9 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("codeBlockIntentWithIdentity:languageHint:nestedInsideIntent:")
@@ -95,6 +101,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     /**
      * The column to which this cell belongs (0-based). If the intent is not a cell, this value is 0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("column")
@@ -103,6 +111,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     /**
      * If the intent is not a table, this value is `nil`.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -111,6 +121,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     /**
      * If the intent is not a table, this value is 0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("columnCount")
@@ -141,6 +153,9 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("headerIntentWithIdentity:level:nestedInsideIntent:")
@@ -149,6 +164,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     /**
      * If the intent is not a header, this value is 0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("headerLevel")
@@ -159,6 +176,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
      * An integer value which uniquely identifies this intent in the document. Identity disambiguates attributes which
      * apply to contiguous text -- for example, two headers in a row with the same level. It can also be used to track
      * the location in an attributed string of a particular part of a document, even after mutation.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("identity")
@@ -169,6 +188,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
      * The indentation level of this intent. Each nested list increases the indentation level by one; all elements
      * within the same list (and not then nested into a child list intent) have the same indentation level.
      * Text outside list intents has an indentation level of 0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("indentationLevel")
@@ -196,6 +217,9 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("intentKind")
     @NInt
@@ -204,6 +228,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     /**
      * Returns `YES` if this intent is equivalent to the other presentation intent. Equivalence is the same as equality
      * except that identity is not taken into account.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isEquivalentToPresentationIntent:")
@@ -220,12 +246,17 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     /**
      * If the intent is not a code block, this value is `nil`.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
     @Selector("languageHint")
     public native String languageHint();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("listItemIntentWithIdentity:ordinal:nestedInsideIntent:")
@@ -237,6 +268,9 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @Selector("new")
     public static native NSPresentationIntent new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("orderedListIntentWithIdentity:nestedInsideIntent:")
@@ -245,18 +279,26 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     /**
      * If the intent is not a list, this value is 0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("ordinal")
     @NInt
     public native long ordinal();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("paragraphIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent paragraphIntentWithIdentityNestedInsideIntent(@NInt long identity,
             @Nullable NSPresentationIntent parent);
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("parentIntent")
@@ -273,6 +315,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     /**
      * The row to which this cell belongs (0-based). If the intent is not a row, this value is 0. Header rows are always
      * row 0. If the table has more rows, those start at row 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("row")
@@ -297,18 +341,27 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("tableCellIntentWithIdentity:column:nestedInsideIntent:")
     public static native NSPresentationIntent tableCellIntentWithIdentityColumnNestedInsideIntent(@NInt long identity,
             @NInt long column, @Nullable NSPresentationIntent parent);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("tableHeaderRowIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent tableHeaderRowIntentWithIdentityNestedInsideIntent(@NInt long identity,
             @Nullable NSPresentationIntent parent);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("tableIntentWithIdentity:columnCount:alignments:nestedInsideIntent:")
@@ -316,18 +369,27 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
             @NInt long identity, @NInt long columnCount, @NotNull NSArray<? extends NSNumber> alignments,
             @Nullable NSPresentationIntent parent);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("tableRowIntentWithIdentity:row:nestedInsideIntent:")
     public static native NSPresentationIntent tableRowIntentWithIdentityRowNestedInsideIntent(@NInt long identity,
             @NInt long row, @Nullable NSPresentationIntent parent);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("thematicBreakIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent thematicBreakIntentWithIdentityNestedInsideIntent(@NInt long identity,
             @Nullable NSPresentationIntent parent);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("unorderedListIntentWithIdentity:nestedInsideIntent:")

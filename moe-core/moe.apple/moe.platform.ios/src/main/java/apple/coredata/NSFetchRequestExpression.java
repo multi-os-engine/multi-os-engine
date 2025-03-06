@@ -150,6 +150,8 @@ public class NSFetchRequestExpression extends NSExpression {
      * argument must be an expression which evaluates to an NSFetchRequest *, and the second must be an expression which
      * evaluates to an NSManagedObjectContext *. If the desired result is simply the count for the request, the
      * "countOnly" argument should be YES.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -279,6 +281,8 @@ public class NSFetchRequestExpression extends NSExpression {
 
     /**
      * Returns the expression for the managed object context: evaluating it must return an NSManagedObjectContext *.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -302,6 +306,8 @@ public class NSFetchRequestExpression extends NSExpression {
      * managed object context (from the contextExpression) will perform executeFetchRequest:error: with the
      * requestExpression; if the value returns YES, the managed object context will perform countForFetchRequest:error
      * with the requestExpression.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isCountOnlyRequest")
@@ -309,6 +315,8 @@ public class NSFetchRequestExpression extends NSExpression {
 
     /**
      * Returns the expression for the fetch request: evaluating it must return an NSFetchRequest *.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated

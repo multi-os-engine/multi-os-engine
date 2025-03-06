@@ -164,11 +164,10 @@ public class BAURLDownload extends BADownload implements NSCopying {
      *                                   request must be a https scheme.
      * @param essential                  Whether the download is essential. See @c BADownload.isEssential. Default is
      *                                   false.
-     * @param fileSize                   The size of the file to download. For Essential downloads, this field must be
-     *                                   accurate in order to show the user
-     *                                   accurate progress during app installation. If the size does not match the file
-     *                                   being downloaded, then the download will fail. It is recommended to
-     *                                   report an accurate @c fileSize for both Essential and Non-Essential downloads.
+     * @param fileSize                   The size of the file to download. This field must be accurate in order to show
+     *                                   the user accurate progress during app installation.
+     *                                   If the size does not match the file being downloaded, then the download will
+     *                                   fail.
      * @param applicationGroupIdentifier The identifier of the application group that should used to store the finished
      *                                   download.
      * @param priority                   A priority between @c BADownloaderPriorityMin - @c BADownloaderPriorityMax
@@ -191,8 +190,10 @@ public class BAURLDownload extends BADownload implements NSCopying {
      *                                   extension.
      * @param request                    The request used to perform the download. The URL provided inside of the
      *                                   request must be a https scheme.
-     * @param fileSize                   The size of the file to download. If the @c fileSize is not accurate, then the
-     *                                   download will fail if @c isEssential is true.
+     * @param fileSize                   The size of the file to download. This field must be accurate in order to show
+     *                                   the user accurate progress during app installation.
+     *                                   If the size does not match the file being downloaded, then the download will
+     *                                   fail.
      * @param applicationGroupIdentifier The identifier of the application group that should used to store the finished
      *                                   download.
      * 

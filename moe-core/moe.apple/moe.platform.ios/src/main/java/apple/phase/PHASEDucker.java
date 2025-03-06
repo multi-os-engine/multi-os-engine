@@ -53,6 +53,8 @@ public class PHASEDucker extends NSObject {
      * activate
      * 
      * Activates the ducker
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("activate")
@@ -72,6 +74,8 @@ public class PHASEDucker extends NSObject {
      * [@property] attackCurve
      * 
      * The type of curve function to use during the attack phase of gain reduction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("attackCurve")
@@ -84,6 +88,8 @@ public class PHASEDucker extends NSObject {
      * The time for the attenuation gain to ramp into effect.
      * [@note]
      * The attack time is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("attackTime")
@@ -118,6 +124,8 @@ public class PHASEDucker extends NSObject {
      * deactivate
      * 
      * Deactivates the ducker
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("deactivate")
@@ -137,6 +145,8 @@ public class PHASEDucker extends NSObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gain")
@@ -151,6 +161,8 @@ public class PHASEDucker extends NSObject {
      * [@property] identifier
      * 
      * The identifier that uniquely represents this ducker.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -198,6 +210,8 @@ public class PHASEDucker extends NSObject {
      *                     The type of curve function to use during the attack phase of gain reduction.
      * @param releaseCurve
      *                     The type of curve function to use during the release phase of gain reduction.
+     * 
+     *                     API-Since: 15.0
      */
     @Generated
     @Selector("initWithEngine:sourceGroups:targetGroups:gain:attackTime:releaseTime:attackCurve:releaseCurve:")
@@ -223,6 +237,8 @@ public class PHASEDucker extends NSObject {
      * [@property] active
      * 
      * YES if the ducker is active; otherwise, NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isActive")
@@ -246,6 +262,8 @@ public class PHASEDucker extends NSObject {
      * [@property] releaseCurve
      * 
      * The type of curve function to use during the release phase of gain reduction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("releaseCurve")
@@ -258,6 +276,8 @@ public class PHASEDucker extends NSObject {
      * The time for the ducked sounds to ramp back to their original level.
      * [@note]
      * The release time is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("releaseTime")
@@ -279,6 +299,8 @@ public class PHASEDucker extends NSObject {
      * [@property] sourceGroups
      * 
      * The source groups that will trigger the ducker when a sound in one of the source groups starts playback.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -293,6 +315,8 @@ public class PHASEDucker extends NSObject {
      * [@property] targetGroups
      * 
      * The target groups that will be ducked when a sound in one of the source groups triggers the ducker.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

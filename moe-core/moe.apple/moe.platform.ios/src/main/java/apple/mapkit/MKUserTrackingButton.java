@@ -289,6 +289,9 @@ public class MKUserTrackingButton extends UIView {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("mapView")
@@ -383,10 +386,16 @@ public class MKUserTrackingButton extends UIView {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMapView:")
     public native void setMapView_unsafe(@Nullable MKMapView value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setMapView(@Nullable MKMapView value) {
         Object __old = mapView();
@@ -431,6 +440,9 @@ public class MKUserTrackingButton extends UIView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
             @NInt long semanticContentAttribute, @NInt long layoutDirection);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("userTrackingButtonWithMapView:")
     public static native MKUserTrackingButton userTrackingButtonWithMapView(@Nullable MKMapView mapView);

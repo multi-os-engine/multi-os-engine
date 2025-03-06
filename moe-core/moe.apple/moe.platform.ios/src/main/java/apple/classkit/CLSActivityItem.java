@@ -101,6 +101,8 @@ public class CLSActivityItem extends CLSObject {
      * An identifier that is unique within its owning activity
      * 
      * The identifier can be used to look up existing activityItems in a given activity.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -151,9 +153,11 @@ public class CLSActivityItem extends CLSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Title of what this ActivityItem respresents.
+     * Title of what this ActivityItem represents.
      * 
      * This will be the title associated with the activity item in the generated progress report.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setTitle:")
@@ -178,9 +182,11 @@ public class CLSActivityItem extends CLSObject {
     }
 
     /**
-     * Title of what this ActivityItem respresents.
+     * Title of what this ActivityItem represents.
      * 
      * This will be the title associated with the activity item in the generated progress report.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated

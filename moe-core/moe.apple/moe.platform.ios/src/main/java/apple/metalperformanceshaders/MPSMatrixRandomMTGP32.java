@@ -112,6 +112,9 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
     @Selector("initWithCoder:")
     public native MPSMatrixRandomMTGP32 initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixRandomMTGP32 initWithCoderDevice(@NotNull NSCoder aDecoder,
@@ -122,6 +125,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
      * integer values with an initial seed of 0.
      * 
      * @param device The device the filter will run on
+     * 
+     *               API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -133,6 +138,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
      * @param device              The device the filter will run on
      * @param destinationDataType The data type of the result.
      * @param seed                The seed to initialize the random number generators with.
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:destinationDataType:seed:")
@@ -146,6 +153,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
      * @param destinationDataType    The data type of the result.
      * @param seed                   The seed to initialize the random number generators with.
      * @param distributionDescriptor A descriptor containing information about the distribution.
+     * 
+     *                               API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:destinationDataType:seed:distributionDescriptor:")
@@ -210,6 +219,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
      * Synchronize internal MTGP32 state between GPU and CPU.
      * 
      * @param commandBuffer The command buffer on which to encode the synchronization.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @Selector("synchronizeStateOnCommandBuffer:")

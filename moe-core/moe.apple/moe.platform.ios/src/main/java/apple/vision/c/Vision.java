@@ -351,7 +351,7 @@ public final class Vision {
      */
     @Deprecated @Generated @NUInt public static final long VNDetectFaceRectanglesRequestRevision1 = 0x0000000000000001L;
     /**
-     * This request revsion can calculate face roll and yaw properties. See [VNFaceObservation -roll] and
+     * This request revision can calculate face roll and yaw properties. See [VNFaceObservation -roll] and
      * [VNFaceObservation -yaw] respectively.
      * 
      * API-Since: 12.0
@@ -390,8 +390,9 @@ public final class Vision {
      * VNRecognizeTextRequestRevision1 only supports English
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
      */
-    @Generated @NUInt public static final long VNRecognizeTextRequestRevision1 = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long VNRecognizeTextRequestRevision1 = 0x0000000000000001L;
     /**
      * API-Since: 13.0
      */
@@ -511,8 +512,9 @@ public final class Vision {
      * generally more accurate.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
-    @Generated @NUInt public static final long VNRecognizeTextRequestRevision2 = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long VNRecognizeTextRequestRevision2 = 0x0000000000000002L;
 
     /**
      * API-Since: 14.0
@@ -1453,10 +1455,11 @@ public final class Vision {
      * expands the set of detected symbologies and uses updated detection methods in comparison to revision 1
      * 
      * API-Since: 15.0
+     * Deprecated-Since: 18.0
      */
-    @Generated @NUInt public static final long VNDetectBarcodesRequestRevision2 = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long VNDetectBarcodesRequestRevision2 = 0x0000000000000002L;
     /**
-     * This request revsion can calculate face pitch, in addition to roll and yaw, see [VNFaceObservation -pitch]
+     * This request revision can calculate face pitch, in addition to roll and yaw, see [VNFaceObservation -pitch]
      * property. In addition, all three properties - roll, yaw, and pitch are now reported in contiguous manner.
      * 
      * API-Since: 15.0
@@ -2066,7 +2069,7 @@ public final class Vision {
     @Generated @NUInt public static final long VNClassifyImageRequestRevision2 = 0x0000000000000002L;
     /**
      * expands set of detected symbologies, improves accuracy, offers supplemental payloads,
-     * adds inverted color support, and may produce observations outside image bounds in comparision to prior revisions
+     * adds inverted color support, and may produce observations outside image bounds in comparison to prior revisions
      * 
      * API-Since: 17.0
      */
@@ -2124,4 +2127,8 @@ public final class Vision {
      * API-Since: 17.0
      */
     @Generated @NUInt public static final long VNDetectHumanBodyPose3DRequestRevision1 = 0x0000000000000001L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NUInt public static final long VNCalculateImageAestheticsScoresRequestRevision1 = 0x0000000000000001L;
 }

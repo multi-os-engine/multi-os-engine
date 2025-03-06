@@ -104,6 +104,9 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
      * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("clipRectSource")
@@ -143,6 +146,8 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -154,6 +159,8 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
      * 
      * @param device The device the filter will run on
      * @return A valid MPSImageStatisticsMinAndMax object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -206,6 +213,9 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
      * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setClipRectSource:")

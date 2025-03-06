@@ -259,6 +259,8 @@ public class MPSTemporaryImage extends MPSImage {
      * 
      * @param commandBuffer  The command buffer on which the MPSTemporaryImages will be used
      * @param descriptorList A NSArray of MPSImageDescriptors, indicating images that will be created
+     * 
+     *                       API-Since: 10.0
      */
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:imageDescriptorList:")
@@ -292,6 +294,9 @@ public class MPSTemporaryImage extends MPSImage {
      * @return A valid MPSTemporaryImage. The object will be released when the command buffer
      *         is committed. The underlying texture will become invalid before this time
      *         due to the action of the readCount property.
+     * 
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("temporaryImageWithCommandBuffer:imageDescriptor:")
@@ -317,6 +322,8 @@ public class MPSTemporaryImage extends MPSImage {
      * @return A valid MPSTemporaryImage. The object will be released when the command buffer
      *         is committed. The underlying texture will become invalid before this time
      *         due to the action of the readCount property.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("temporaryImageWithCommandBuffer:textureDescriptor:")
@@ -369,6 +376,8 @@ public class MPSTemporaryImage extends MPSImage {
      * The Metal API Validation layer will assert if a MPSTemporaryImage is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("readCount")
@@ -401,6 +410,8 @@ public class MPSTemporaryImage extends MPSImage {
      * The Metal API Validation layer will assert if a MPSTemporaryImage is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setReadCount:")
@@ -408,6 +419,8 @@ public class MPSTemporaryImage extends MPSImage {
 
     /**
      * Get a well known MPSImageAllocator that makes MPSTemporaryImages
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

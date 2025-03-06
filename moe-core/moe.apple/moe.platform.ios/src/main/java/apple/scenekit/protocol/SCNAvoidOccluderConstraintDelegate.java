@@ -19,6 +19,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNAvoidOccluderConstraintDelegate")
 public interface SCNAvoidOccluderConstraintDelegate {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("avoidOccluderConstraint:didAvoidOccluder:forNode:")
@@ -27,6 +30,9 @@ public interface SCNAvoidOccluderConstraintDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("avoidOccluderConstraint:shouldAvoidOccluder:forNode:")

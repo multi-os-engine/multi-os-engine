@@ -50,6 +50,9 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("allItems")
@@ -122,10 +125,16 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Selector("initWithCoder:")
     public native INObjectCollection<?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithItems:")
     public native INObjectCollection<?> initWithItems(@NotNull NSArray<_ObjectType> items);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithSections:")
     public native INObjectCollection<?> initWithSections(
@@ -166,11 +175,17 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("sections")
     public native NSArray<? extends INObjectSection<_ObjectType>> sections();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setUsesIndexedCollation:")
     public native void setUsesIndexedCollation(boolean value);
@@ -193,6 +208,9 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("usesIndexedCollation")
     public native boolean usesIndexedCollation();

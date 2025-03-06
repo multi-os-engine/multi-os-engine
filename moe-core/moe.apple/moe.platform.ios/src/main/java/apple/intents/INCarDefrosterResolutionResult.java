@@ -202,7 +202,12 @@ public class INCarDefrosterResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarDefrosterResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithCarDefrosterToConfirm:")
@@ -214,7 +219,12 @@ public class INCarDefrosterResolutionResult extends INIntentResolutionResult {
      * The resolvedValue can be different than the original INCarDefroster. This allows app extensions to apply business
      * logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarDefrosterResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("successWithResolvedCarDefroster:")

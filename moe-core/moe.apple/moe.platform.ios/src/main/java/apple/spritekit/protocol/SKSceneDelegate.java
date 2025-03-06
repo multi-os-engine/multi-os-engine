@@ -34,6 +34,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKSceneDelegate")
 public interface SKSceneDelegate {
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("didApplyConstraintsForScene:")
@@ -41,6 +44,9 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("didEvaluateActionsForScene:")
@@ -48,6 +54,9 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("didFinishUpdateForScene:")
@@ -55,6 +64,9 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("didSimulatePhysicsForScene:")
@@ -62,6 +74,9 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("update:forScene:")

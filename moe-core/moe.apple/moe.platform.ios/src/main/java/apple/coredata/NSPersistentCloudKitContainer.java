@@ -138,6 +138,8 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      * 
      * Note: This method also validates the managed object model in use for a store, so a validation error
      * may be returned if the model is not valid for use with CloudKit.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initializeCloudKitSchemaWithOptions:error:")
@@ -180,22 +182,34 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     public static native NSPersistentCloudKitContainer persistentContainerWithNameManagedObjectModel(
             @NotNull String name, @NotNull NSManagedObjectModel model);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("recordForManagedObjectID:")
     public native CKRecord recordForManagedObjectID(@NotNull NSManagedObjectID managedObjectID);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("recordIDForManagedObjectID:")
     public native CKRecordID recordIDForManagedObjectID(@NotNull NSManagedObjectID managedObjectID);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("recordIDsForManagedObjectIDs:")
     public native NSDictionary<? extends NSManagedObjectID, ? extends CKRecordID> recordIDsForManagedObjectIDs(
             @NotNull NSArray<? extends NSManagedObjectID> managedObjectIDs);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("recordsForManagedObjectIDs:")

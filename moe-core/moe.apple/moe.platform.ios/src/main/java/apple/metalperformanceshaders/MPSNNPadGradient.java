@@ -171,6 +171,8 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSNNPadGradient.
      * @param device   The MTLDevice on which to make the MPSNNPadGradient.
      * @return A new MPSNNPadGradient object, or nil if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -183,6 +185,8 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
      * @param device The MTLDevice on which this filter will be used
      * 
      * @return A valid MPSNNPadGradient object or nil, if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithDevice:")

@@ -93,6 +93,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * 
      * Contour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
      * aid in detection. If the image already has a high contrast then this value should be set to 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contrastAdjustment")
@@ -128,6 +130,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     /**
      * Identifies to the request if detecting a dark object on a light background, or vice versa, to aid in detection.
      * The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("detectsDarkOnLight")
@@ -176,6 +180,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed),
      * such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the
      * maximum value ensures that the image gets processed in its original size and not downscaled.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumImageDimension")
@@ -201,6 +207,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * 
      * Contour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
      * aid in detection. If the image already has a high contrast then this value should be set to 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContrastAdjustment:")
@@ -218,6 +226,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     /**
      * Identifies to the request if detecting a dark object on a light background, or vice versa, to aid in detection.
      * The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDetectsDarkOnLight:")
@@ -230,6 +240,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed),
      * such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the
      * maximum value ensures that the image gets processed in its original size and not downscaled.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumImageDimension:")
@@ -267,6 +279,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
 
     /**
      * VNContoursObservation results.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

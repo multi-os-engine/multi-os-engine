@@ -128,6 +128,8 @@ public class CMSensorRecorder extends NSObject {
      * 
      * Discussion:
      * Determines whether accelerometer recording is available.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isAccelerometerRecordingAvailable")
@@ -190,6 +192,8 @@ public class CMSensorRecorder extends NSObject {
      * A total duration of 12 hours of data can be requested at any one time. Data can be delayed
      * for up to 3 minutes before being available for retrieval. An instance of CMSensorDataList
      * should only be enumerated from a single thread.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -206,6 +210,8 @@ public class CMSensorRecorder extends NSObject {
      * Discussion:
      * Starts recording accelerometer data for the duration given at 50hz. Data can be recorded
      * for up to 12 hours.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("recordAccelerometerForDuration:")

@@ -38,7 +38,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterPowerSource extends MTRCluster {
+public class MTRClusterPowerSource extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -470,4 +470,12 @@ public class MTRClusterPowerSource extends MTRCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("readAttributeEndpointListWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeEndpointListWithParams(@Nullable MTRReadParams params);
 }

@@ -146,6 +146,8 @@ public class ARRaycastQuery extends NSObject {
 
     /**
      * Type of target where the ray should terminate.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("target")
@@ -154,6 +156,8 @@ public class ARRaycastQuery extends NSObject {
 
     /**
      * The alignment of the target that should be considered for raycasting.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("targetAlignment")

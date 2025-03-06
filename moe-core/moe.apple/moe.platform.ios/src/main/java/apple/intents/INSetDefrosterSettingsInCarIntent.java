@@ -167,11 +167,23 @@ public class INSetDefrosterSettingsInCarIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetDefrosterSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("defroster")
     @NInt
     public native long defroster();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetDefrosterSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enable")

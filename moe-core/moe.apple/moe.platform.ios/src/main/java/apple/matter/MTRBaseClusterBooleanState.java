@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterBooleanState extends MTRCluster {
+public class MTRBaseClusterBooleanState extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }

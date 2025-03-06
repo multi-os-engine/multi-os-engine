@@ -153,6 +153,8 @@ public class MXSignpostMetric extends MXMetric {
      * [@property] signpostCategory
      * 
      * The category associated with this aggregated signpost.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -165,6 +167,8 @@ public class MXSignpostMetric extends MXMetric {
      * A class that encapsulates metrics associated with app specific signpost intervals.
      * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no intervals.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -175,6 +179,8 @@ public class MXSignpostMetric extends MXMetric {
      * [@property] signpostName
      * 
      * The name associated with this aggregated signpost.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -199,6 +205,8 @@ public class MXSignpostMetric extends MXMetric {
      * [@property] totalCount
      * 
      * The total number of signposts emit with the given signpostName in the aggregation period of the parent payload.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("totalCount")

@@ -112,6 +112,8 @@ public class AVExtendedTempoEvent extends AVMusicEvent {
      * @param tempo
      *              The new tempo in beats-per-minute. Range: Any positive value.
      *              The new tempo will begin at the timestamp for this event.
+     * 
+     *              API-Since: 16.0
      */
     @Generated
     @Selector("initWithTempo:")
@@ -155,6 +157,8 @@ public class AVExtendedTempoEvent extends AVMusicEvent {
     /**
      * [@property] tempo
      * The new tempo in beats-per-minute. Range: Any positive value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTempo:")
@@ -171,6 +175,8 @@ public class AVExtendedTempoEvent extends AVMusicEvent {
     /**
      * [@property] tempo
      * The new tempo in beats-per-minute. Range: Any positive value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("tempo")

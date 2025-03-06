@@ -60,4 +60,9 @@ public final class CXErrorCodeRequestTransactionError {
     @Generated
     private CXErrorCodeRequestTransactionError() {
     }
+
+    /**
+     * API-Since: 10.0
+     */
+    @Generated @NInt public static final long CallIsProtected = 0x0000000000000008L;
 }

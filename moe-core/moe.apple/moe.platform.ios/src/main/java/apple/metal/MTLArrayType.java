@@ -157,21 +157,33 @@ public class MTLArrayType extends MTLType {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("arrayLength")
     @NUInt
     public native long arrayLength();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("elementArrayType")
     public native MTLArrayType elementArrayType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("elementStructType")
     public native MTLStructType elementStructType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("elementType")
     @NUInt
@@ -181,6 +193,9 @@ public class MTLArrayType extends MTLType {
     @Selector("init")
     public native MTLArrayType init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stride")
     @NUInt

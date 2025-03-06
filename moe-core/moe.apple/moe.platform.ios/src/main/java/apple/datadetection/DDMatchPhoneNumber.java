@@ -128,6 +128,8 @@ public class DDMatchPhoneNumber extends DDMatch {
 
     /**
      * A string that categorizes a phone number, such as Home or Work.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -141,6 +143,8 @@ public class DDMatchPhoneNumber extends DDMatch {
 
     /**
      * A string that represents a phone number.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

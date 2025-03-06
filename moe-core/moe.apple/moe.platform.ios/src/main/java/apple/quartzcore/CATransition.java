@@ -173,6 +173,9 @@ public class CATransition extends CAAnimation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("endProgress")
     public native float endProgress();
@@ -185,6 +188,9 @@ public class CATransition extends CAAnimation {
     @Selector("initWithCoder:")
     public native CATransition initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setEndProgress:")
     public native void setEndProgress(float value);
@@ -194,6 +200,8 @@ public class CATransition extends CAAnimation {
      * and end execution. Legal values are numbers in the range [0,1].
      * `endProgress' must be greater than or equal to `startProgress'.
      * Default values are 0 and 1 respectively.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setStartProgress:")
@@ -204,6 +212,8 @@ public class CATransition extends CAAnimation {
      * transition direction for motion-based transitions, in which case
      * the legal values are `fromLeft', `fromRight', `fromTop' and
      * `fromBottom'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSubtype:")
@@ -212,6 +222,8 @@ public class CATransition extends CAAnimation {
     /**
      * The name of the transition. Current legal transition types include
      * `fade', `moveIn', `push' and `reveal'. Defaults to `fade'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setType:")
@@ -222,6 +234,8 @@ public class CATransition extends CAAnimation {
      * and end execution. Legal values are numbers in the range [0,1].
      * `endProgress' must be greater than or equal to `startProgress'.
      * Default values are 0 and 1 respectively.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("startProgress")
@@ -232,6 +246,8 @@ public class CATransition extends CAAnimation {
      * transition direction for motion-based transitions, in which case
      * the legal values are `fromLeft', `fromRight', `fromTop' and
      * `fromBottom'.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -241,6 +257,8 @@ public class CATransition extends CAAnimation {
     /**
      * The name of the transition. Current legal transition types include
      * `fade', `moveIn', `push' and `reveal'. Defaults to `fade'.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated

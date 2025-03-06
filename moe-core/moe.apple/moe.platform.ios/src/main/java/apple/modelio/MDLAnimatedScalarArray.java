@@ -94,26 +94,41 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementCount")
     @NUInt
     public native long elementCount();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getDoubleArray:maxCount:")
     @NUInt
     public native long getDoubleArrayMaxCount(@NotNull DoublePtr valuesArray, @NUInt long maxCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getDoubleArray:maxCount:atTime:")
     @NUInt
     public native long getDoubleArrayMaxCountAtTime(@NotNull DoublePtr array, @NUInt long maxCount, double time);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFloatArray:maxCount:")
     @NUInt
     public native long getFloatArrayMaxCount(@NotNull FloatPtr valuesArray, @NUInt long maxCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFloatArray:maxCount:atTime:")
     @NUInt
@@ -128,6 +143,9 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
     @Selector("init")
     public native MDLAnimatedScalarArray init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithElementCount:")
     public native MDLAnimatedScalarArray initWithElementCount(@NUInt long arrayElementCount);
@@ -159,11 +177,17 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
     @Selector("new")
     public static native MDLAnimatedScalarArray new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithDoubleArray:count:atTimes:count:")
     public native void resetWithDoubleArrayCountAtTimesCount(@NotNull ConstDoublePtr valuesArray,
             @NUInt long valuesCount, @NotNull ConstDoublePtr timesArray, @NUInt long timesCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithFloatArray:count:atTimes:count:")
     public native void resetWithFloatArrayCountAtTimesCount(@NotNull ConstFloatPtr valuesArray, @NUInt long valuesCount,
@@ -177,10 +201,16 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDoubleArray:count:atTime:")
     public native void setDoubleArrayCountAtTime(@NotNull ConstDoublePtr array, @NUInt long count, double time);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setFloatArray:count:atTime:")
     public native void setFloatArrayCountAtTime(@NotNull ConstFloatPtr array, @NUInt long count, double time);

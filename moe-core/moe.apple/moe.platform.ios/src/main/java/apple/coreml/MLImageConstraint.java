@@ -133,6 +133,8 @@ public class MLImageConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * The accepted kCVPixelFormatType for the image.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pixelFormatType")
@@ -140,6 +142,8 @@ public class MLImageConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * The required or default height of the image
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pixelsHigh")
@@ -148,6 +152,8 @@ public class MLImageConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * The required or default width of the image
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pixelsWide")

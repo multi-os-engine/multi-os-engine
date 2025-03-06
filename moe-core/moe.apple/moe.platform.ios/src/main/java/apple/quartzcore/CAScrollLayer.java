@@ -200,6 +200,8 @@ public class CAScrollLayer extends CALayer {
     /**
      * Defines the axes in which the layer may be scrolled. Possible values
      * are `none', `vertically', `horizontally' or `both' (the default).
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -208,6 +210,8 @@ public class CAScrollLayer extends CALayer {
 
     /**
      * Changes the origin of the layer to point 'p'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("scrollToPoint:")
@@ -215,6 +219,8 @@ public class CAScrollLayer extends CALayer {
 
     /**
      * Scroll the contents of the layer to ensure that rect 'r' is visible.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("scrollToRect:")
@@ -223,6 +229,8 @@ public class CAScrollLayer extends CALayer {
     /**
      * Defines the axes in which the layer may be scrolled. Possible values
      * are `none', `vertically', `horizontally' or `both' (the default).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setScrollMode:")

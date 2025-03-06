@@ -241,6 +241,9 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -275,6 +278,8 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * If you wish to capture a photo in a compressed format, such as JPEG, you must ensure that the format you want is
      * present in the receiver's availablePhotoCodecTypes array. If you've not yet added your receiver to an
      * AVCaptureSession with a video source, no codec types are available. This property is key-value observable.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -290,6 +295,8 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * format you want is present in the receiver's availablePhotoPixelFormatTypes array. If you've not yet added your
      * receiver to an AVCaptureSession with a video source, no pixel format types are available. This property is
      * key-value observable.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -339,6 +346,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * -captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:.
      * - If rawPhotoPixelFormatType is non-zero, highResolutionPhotoEnabled may be YES or NO, but the setting only
      * applies to the processed image, if you've specified one.
+     * - If rawPhotoPixelFormatType is non-zero, constantColorEnabled must be set to NO.
      * - If rawFileType is specified, it must be present in -availableRawPhotoFileTypes and must support the
      * rawPhotoPixelFormatType specified using -supportedRawPhotoPixelFormatTypesForFileType:.
      * Bayer RAW rules (isBayerRAWPixelFormat: returns yes for rawPhotoPixelFormatType):
@@ -385,8 +393,12 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * Deferred Photo Delivery rules:
      * - If the receiver's autoDeferredPhotoDeliveryEnabled is YES, your delegate must respond to
      * -captureOutput:didFinishCapturingDeferredPhotoProxy:error:.
+     * - The maxPhotoDimensions setting for 24MP (5712, 4284), when supported, is only serviced as 24MP via deferred
+     * photo delivery.
      * Color space rules:
      * - Photo capture is not supported when AVCaptureDevice has selected AVCaptureColorSpace_AppleLog as color space.
+     * 
+     * API-Since: 10.0
      * 
      * @param settings
      *                 An AVCapturePhotoSettings object you have configured. May not be nil.
@@ -400,6 +412,9 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     public native void capturePhotoWithSettingsDelegate(@NotNull AVCapturePhotoSettings settings,
             @NotNull @Mapped(ObjCObjectMapper.class) AVCapturePhotoCaptureDelegate delegate);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native AVCapturePhotoOutput init();
@@ -1481,6 +1496,8 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * AVCaptureDeviceFormat.supportedMaxPhotoDimensions for the current active format. Changing this property may
      * trigger a lengthy reconfiguration of the capture render pipeline so it is recommended that this is set before
      * calling -[AVCaptureSession startRunning].
+     * Note: When supported, the 24MP setting (5712, 4284) is only serviced as 24MP when opted-in to
+     * autoDeferredPhotoDeliveryEnabled.
      * 
      * API-Since: 16.0
      */
@@ -1515,6 +1532,8 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * AVCaptureDeviceFormat.supportedMaxPhotoDimensions for the current active format. Changing this property may
      * trigger a lengthy reconfiguration of the capture render pipeline so it is recommended that this is set before
      * calling -[AVCaptureSession startRunning].
+     * Note: When supported, the 24MP setting (5712, 4284) is only serviced as 24MP when opted-in to
+     * autoDeferredPhotoDeliveryEnabled.
      * 
      * API-Since: 16.0
      */
@@ -1836,4 +1855,130 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] availableRawPhotoCodecTypes
+     * 
+     * An array of available AVVideoCodecType values that may be used for the raw photo.
+     * 
+     * Not all codecs can be used for all rawPixelFormatType values and this call will show all of the possible codecs
+     * available. To check if a codec is available for a specific rawPixelFormatType and rawFileType, one should use
+     * supportedRawPhotoCodecTypesForRawPhotoPixelFormatType:fileType:.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("availableRawPhotoCodecTypes")
+    @NotNull
+    public native NSArray<String> availableRawPhotoCodecTypes();
+
+    /**
+     * [@property] constantColorEnabled
+     * 
+     * A BOOL value specifying whether the photo render pipeline is set up to perform constant color captures.
+     * 
+     * Default is NO. Set to YES to enable support for taking constant color photos. This property may only be set to
+     * YES if constantColorSupported is YES. Enabling constant color requires a lengthy reconfiguration of the capture
+     * render pipeline, so if you intend to capture constant color photos, you should set this property to YES before
+     * calling -[AVCaptureSession startRunning] or within -[AVCaptureSession beginConfiguration] and -[AVCaptureSession
+     * commitConfiguration] while running.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isConstantColorEnabled")
+    public native boolean isConstantColorEnabled();
+
+    /**
+     * [@property] constantColorSupported
+     * 
+     * A BOOL value specifying whether constant color capture is supported.
+     * 
+     * An object's color in a photograph is affected by the light sources illuminating the scene, so the color of the
+     * same object photographed in warm light might look markedly different than in colder light. In some use cases,
+     * such ambient light induced color variation is undesirable, and the user may prefer an estimate of what these
+     * materials would look like under a standard light such as daylight (D65), regardless of the lighting conditions at
+     * the time the photograph was taken. Some devices are capable of producing such constant color photos.
+     * 
+     * Constant color captures require the flash to be fired and may require pre-flash sequence to determine the correct
+     * focus and exposure, therefore it might take several seconds to acquire a constant color photo. Due to this flash
+     * requirement, a constant color capture can only be taken with AVCaptureFlashModeAuto or AVCaptureFlashModeOn as
+     * the flash mode, otherwise an exception is thrown.
+     * 
+     * Constant color can only be achieved when the flash has a discernible effect on the scene so it may not perform
+     * well in bright conditions such as direct sunlight. Use the constantColorConfidenceMap property to examine the
+     * confidence level, and therefore the usefulness, of each region of a constant color photo.
+     * 
+     * Constant color should not be used in conjunction with locked or manual white balance.
+     * 
+     * This property returns YES if the session's current configuration allows photos to be captured with constant
+     * color. When switching cameras or formats this property may change. When this property changes from YES to NO,
+     * constantColorEnabled also reverts to NO. If you've previously opted in for constant color and then change
+     * configurations, you may need to set constantColorEnabled = YES again. This property is key-value observable.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isConstantColorSupported")
+    public native boolean isConstantColorSupported();
+
+    /**
+     * [@property] shutterSoundSuppressionSupported
+     * 
+     * Specifies whether suppressing the shutter sound is supported.
+     * 
+     * On iOS, this property returns NO in jurisdictions where shutter sound production cannot be disabled. On all other
+     * platforms, it always returns NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isShutterSoundSuppressionSupported")
+    public native boolean isShutterSoundSuppressionSupported();
+
+    /**
+     * [@property] constantColorEnabled
+     * 
+     * A BOOL value specifying whether the photo render pipeline is set up to perform constant color captures.
+     * 
+     * Default is NO. Set to YES to enable support for taking constant color photos. This property may only be set to
+     * YES if constantColorSupported is YES. Enabling constant color requires a lengthy reconfiguration of the capture
+     * render pipeline, so if you intend to capture constant color photos, you should set this property to YES before
+     * calling -[AVCaptureSession startRunning] or within -[AVCaptureSession beginConfiguration] and -[AVCaptureSession
+     * commitConfiguration] while running.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setConstantColorEnabled:")
+    public native void setConstantColorEnabled(boolean value);
+
+    /**
+     * supportedRawPhotoCodecTypesForRawPhotoPixelFormatType:fileType:
+     * 
+     * An array of AVVideoCodecType values that are currently supported by the receiver for a particular file container
+     * and raw pixel format.
+     * 
+     * If you wish to capture a raw photo for storage using a Bayer RAW or Apple ProRAW pixel format and to be stored in
+     * a file container, such as DNG, you must ensure that the codec type you request is valid for that file and pixel
+     * format type. If no RAW codec types are supported for a given file type and/or pixel format type, an empty array
+     * is returned. If you have not yet added your receiver to an AVCaptureSession with a video source, an empty array
+     * is returned.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param pixelFormatType
+     *                        A Bayer RAW or Apple ProRAW pixel format OSType (defined in CVPixelBuffer.h).
+     * @param fileType
+     *                        The AVFileType container type intended for storage of a photo which can be retrieved from
+     *                        -availableRawPhotoFileTypes.
+     * @return
+     *         An array of AVVideoCodecType values supported by the receiver for the file type and and raw pixel format
+     *         in question.
+     */
+    @Generated
+    @Selector("supportedRawPhotoCodecTypesForRawPhotoPixelFormatType:fileType:")
+    @NotNull
+    public native NSArray<String> supportedRawPhotoCodecTypesForRawPhotoPixelFormatTypeFileType(int pixelFormatType,
+            @NotNull String fileType);
 }

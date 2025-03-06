@@ -175,12 +175,24 @@ public class UIDocumentMenuViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: UIDocumentMenuViewController is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     @Selector("addOptionWithTitle:image:order:handler:")
     public native void addOptionWithTitleImageOrderHandler(@NotNull String title, @Nullable UIImage image,
             @NUInt long order,
             @NotNull @ObjCBlock(name = "call_addOptionWithTitleImageOrderHandler") Block_addOptionWithTitleImageOrderHandler handler);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: UIDocumentMenuViewController is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -191,10 +203,22 @@ public class UIDocumentMenuViewController extends UIViewController {
     @Selector("init")
     public native UIDocumentMenuViewController init();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: UIDocumentMenuViewController is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithCoder:")
     public native UIDocumentMenuViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: UIDocumentMenuViewController is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
     public native UIDocumentMenuViewController initWithDocumentTypesInMode(@NotNull NSArray<String> allowedUTIs,
@@ -205,14 +229,32 @@ public class UIDocumentMenuViewController extends UIViewController {
     public native UIDocumentMenuViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: UIDocumentMenuViewController is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithURL:inMode:")
     public native UIDocumentMenuViewController initWithURLInMode(@NotNull NSURL url, @NUInt long mode);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: UIDocumentMenuViewController is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentMenuDelegate value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: UIDocumentMenuViewController is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentMenuDelegate value) {
         Object __old = delegate();

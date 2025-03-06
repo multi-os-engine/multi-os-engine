@@ -53,6 +53,7 @@ import apple.foundation.NSDictionary;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfoundation.protocol.AVMetricEventStreamPublisher;
 
 /**
  * API-Since: 4.0
@@ -61,7 +62,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class AVPlayerItem extends NSObject implements NSCopying {
+public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventStreamPublisher {
     static {
         NatJ.register();
     }
@@ -158,6 +159,13 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * Equivalent to +playerItemWithAsset:automaticallyLoadedAssetKeys:, passing @[ @"duration" ] as the value of
      * automaticallyLoadedAssetKeys.
      * 
+     * This method, along with the companion `asset` property, is MainActor-isolated for Swift clients because AVAsset
+     * is not Sendable. If you are using a Sendable subclass of AVAsset, such as AVURLAsset, an overload of this
+     * initializer will be chosen automatically to allow you to initialize an AVPlayerItem while not running on the main
+     * actor.
+     * 
+     * API-Since: 4.0
+     * 
      * @param asset
      * @return An instance of AVPlayerItem.
      */
@@ -174,6 +182,10 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * before the receiver achieves the status AVPlayerItemStatusReadyToPlay; i.e. when the item is ready to play, the
      * value of -[[AVPlayerItem asset] statusOfValueForKey:error:] will be one of the terminal status values greater
      * than AVKeyValueStatusLoading.
+     * 
+     * This method, along with the companion `asset` property, is MainActor-isolated for Swift clients because AVAsset
+     * is not Sendable. If you are using a Sendable subclass of AVAsset, such as AVURLAsset, you can use
+     * `init(asset:automaticallyLoadedAssetKeys:)` to initialize an AVPlayerItem while not running on the main actor.
      * 
      * API-Since: 7.0
      * 
@@ -194,6 +206,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * Returns an instance of AVPlayerItem for playing a resource at the specified location.
      * 
      * Equivalent to +playerItemWithAsset:, passing [AVAsset assetWithURL:URL] as the value of asset.
+     * 
+     * API-Since: 4.0
      * 
      * @param URL
      * @return An instance of AVPlayerItem.
@@ -286,6 +300,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * [@property] asset
      * 
      * Accessor for underlying AVAsset.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -300,6 +316,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * The inputParameters of the AVAudioMix must have trackIDs that correspond to a track of the receiver's asset.
      * Otherwise they will be ignored. (See AVAudioMix.h for the declaration of AVAudioMixInputParameters and
      * AVPlayerItem's asset property.)
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -460,6 +478,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * If currentTime is mapped to a particular (real-time) date, return that date.
      * 
      * @return Returns the date of current playback, or nil if playback is not mapped to any date.
+     * 
+     *         API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -486,6 +506,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * Returns the current time of the item. Not key-value observable; use -[AVPlayer
      * addPeriodicTimeObserverForInterval:queue:usingBlock:] instead.
+     * 
+     * API-Since: 4.0
      * 
      * @return A CMTime
      */
@@ -547,6 +569,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * The value of this property is an NSError that describes what caused the receiver to no longer be able to be
      * played.
      * If the receiver's status is not AVPlayerItemStatusFailed, the value of this property is nil.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -585,6 +609,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * the action indicated by the value of its actionAtItemEnd property (see AVPlayerActionAtItemEnd in AVPlayer.h).
      * 
      * The value of this property has no effect on playback when the rate is negative.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("forwardPlaybackEndTime")
@@ -603,6 +629,13 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * Equivalent to -initWithAsset:automaticallyLoadedAssetKeys:, passing @[ @"duration" ] as the value of
      * automaticallyLoadedAssetKeys.
      * 
+     * This method, along with the companion `asset` property, is MainActor-isolated for Swift clients because AVAsset
+     * is not Sendable. If you are using a Sendable subclass of AVAsset, such as AVURLAsset, an overload of this
+     * initializer will be chosen automatically to allow you to initialize an AVPlayerItem while not running on the main
+     * actor.
+     * 
+     * API-Since: 4.0
+     * 
      * @param asset
      * @return An instance of AVPlayerItem
      */
@@ -619,6 +652,10 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * before the receiver achieves the status AVPlayerItemStatusReadyToPlay; i.e. when the item is ready to play, the
      * value of -[[AVPlayerItem asset] statusOfValueForKey:error:] will be one of the terminal status values greater
      * than AVKeyValueStatusLoading.
+     * 
+     * This method, along with the companion `asset` property, is MainActor-isolated for Swift clients because AVAsset
+     * is not Sendable. If you are using a Sendable subclass of AVAsset, such as AVURLAsset, you can use
+     * `init(asset:automaticallyLoadedAssetKeys:)` to initialize an AVPlayerItem while not running on the main actor.
      * 
      * API-Since: 7.0
      * 
@@ -641,6 +678,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * Equivalent to -initWithAsset:, passing [AVAsset assetWithURL:URL] as the value of asset.
      * 
+     * API-Since: 4.0
+     * 
      * @param URL
      * @return An instance of AVPlayerItem
      */
@@ -650,6 +689,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
 
     /**
      * indicates that playback has consumed all buffered media and that playback will stall or end
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isPlaybackBufferEmpty")
@@ -663,6 +704,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * This property reports that the data buffer used for playback has reach capacity.
      * Despite the playback buffer reaching capacity there might not exist sufficient statistical
      * data to support a playbackLikelyToKeepUp prediction of YES. See playbackLikelyToKeepUp above.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isPlaybackBufferFull")
@@ -679,6 +722,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * reached capacity but there isn't the statistical data to support a prediction that playback is likely to
      * keep up. It is left to the application programmer to decide to continue media playback or not.
      * See playbackBufferFull below.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isPlaybackLikelyToKeepUp")
@@ -691,6 +736,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * ranges provided might be discontinuous.
      * 
      * Returns an NSArray of NSValues containing CMTimeRanges.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -772,6 +819,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * to obtain a valid
      * presentationSize as soon as it becomes available. (Note that the value of presentationSize may remain CGSizeZero,
      * e.g. for audio-only items.)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("presentationSize")
@@ -822,6 +871,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * the action indicated by the value of its actionAtItemEnd property (see AVPlayerActionAtItemEnd in AVPlayer.h).
      * 
      * The value of this property has no effect on playback when the rate is positive.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("reversePlaybackEndTime")
@@ -1003,6 +1054,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * discontinous.
      * 
      * Returns an NSArray of NSValues containing CMTimeRanges.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -1120,6 +1173,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * The inputParameters of the AVAudioMix must have trackIDs that correspond to a track of the receiver's asset.
      * Otherwise they will be ignored. (See AVAudioMix.h for the declaration of AVAudioMixInputParameters and
      * AVPlayerItem's asset property.)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAudioMix:")
@@ -1176,6 +1231,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * the action indicated by the value of its actionAtItemEnd property (see AVPlayerActionAtItemEnd in AVPlayer.h).
      * 
      * The value of this property has no effect on playback when the rate is negative.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setForwardPlaybackEndTime:")
@@ -1231,6 +1288,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * the action indicated by the value of its actionAtItemEnd property (see AVPlayerActionAtItemEnd in AVPlayer.h).
      * 
      * The value of this property has no effect on playback when the rate is positive.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setReversePlaybackEndTime:")
@@ -1310,6 +1369,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * property to determine the nature of the failure. The value of this property will not be updated after the
      * receiver
      * is removed from an AVPlayer. This property is key value observable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("status")
@@ -1323,7 +1384,9 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * The size of each step depends on the enabled AVPlayerItemTracks of the AVPlayerItem.
      * 
-     * This method must be invoked on the main thread/queue.
+     * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
+     * 
+     * API-Since: 4.0
      * 
      * @param stepCount
      *                  The number of steps by which to move. A positive number results in stepping forward, a negative
@@ -1400,6 +1463,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * Before the underlying media resource has been sufficiently loaded, its value is an empty NSArray. Use key-value
      * observation to obtain
      * a valid array of tracks as soon as it becomes available.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -1556,7 +1621,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * the capabilities of the output device. This property is not observable. Defaults to YES.
      * 
      * API-Since: 13.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use allowedAudioSpatializationFormats instead
      */
     @Deprecated
     @Generated
@@ -1588,7 +1654,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * the capabilities of the output device. This property is not observable. Defaults to YES.
      * 
      * API-Since: 13.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use allowedAudioSpatializationFormats instead
      */
     @Deprecated
     @Generated
@@ -1817,6 +1884,9 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Selector("automaticallyHandlesInterstitialEvents")
     public native boolean automaticallyHandlesInterstitialEvents();
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Owned
@@ -2016,4 +2086,18 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] integratedTimeline
+     * 
+     * Obtain an instance of AVPlayerItemIntegratedTimeline representing the timing and control of playback of the item
+     * with its scheduled AVPlayerInterstitialEvents. This value will return nil for AVPlayerItems in an interstitial
+     * player.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("integratedTimeline")
+    @NotNull
+    public native AVPlayerItemIntegratedTimeline integratedTimeline();
 }

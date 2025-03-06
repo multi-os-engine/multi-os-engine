@@ -180,7 +180,13 @@ public class ACAccountStore extends NSObject {
      * Returns the account type object matching the account type identifier. See
      * ACAccountType.h for well known account type identifiers
      * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accountTypeWithAccountTypeIdentifier:")
     public native ACAccountType accountTypeWithAccountTypeIdentifier(String typeIdentifier);
@@ -188,7 +194,13 @@ public class ACAccountStore extends NSObject {
     /**
      * Returns the account matching the given account identifier
      * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accountWithIdentifier:")
     public native ACAccount accountWithIdentifier(String identifier);
@@ -196,7 +208,13 @@ public class ACAccountStore extends NSObject {
     /**
      * An array of all the accounts in an account database
      * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accounts")
     public native NSArray<?> accounts();
@@ -204,7 +222,13 @@ public class ACAccountStore extends NSObject {
     /**
      * Returns the accounts matching a given account type.
      * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accountsWithAccountType:")
     public native NSArray<?> accountsWithAccountType(ACAccountType accountType);
@@ -217,7 +241,13 @@ public class ACAccountStore extends NSObject {
      * Removes an account from the account store. The completion handler for this method is called on an arbitrary
      * queue.
      * This call will fail if you don't have sufficient rights to remove the account in question.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("removeAccount:withCompletionHandler:")
     public native void removeAccountWithCompletionHandler(ACAccount account,
@@ -231,7 +261,13 @@ public class ACAccountStore extends NSObject {
      * new one.
      * However, if the user has deauthorized your app, this renewal request will return
      * ACAccountCredentialRenewResultRejected.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("renewCredentialsForAccount:completion:")
     public native void renewCredentialsForAccountCompletion(ACAccount account,
@@ -245,7 +281,13 @@ public class ACAccountStore extends NSObject {
      * appears in ACAccountType.h. This method will throw an NSInvalidArgumentException if the options
      * dictionary is not provided for such account types. Conversely, if the account type does not require
      * an options dictionary, the options parameter must be nil.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("requestAccessToAccountsWithType:options:completion:")
     public native void requestAccessToAccountsWithTypeOptionsCompletion(ACAccountType accountType,
@@ -269,7 +311,13 @@ public class ACAccountStore extends NSObject {
      * type supports authentication, the system will attempt to authenticate with the credentials provided.
      * Assuming a successful authentication, the account will be saved to the account store. The completion handler
      * for this method is called on an arbitrary queue.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("saveAccount:withCompletionHandler:")
     public native void saveAccountWithCompletionHandler(ACAccount account,

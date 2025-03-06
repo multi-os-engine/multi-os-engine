@@ -202,4 +202,14 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialAssertion extends NSOb
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Indicates that this assertion used the appid WebAuthn extension.
+     * This can only happen if the requesting app is a web browser and requested to use this extension.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("appID")
+    public native boolean appID();
 }

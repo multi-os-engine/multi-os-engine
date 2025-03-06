@@ -169,7 +169,11 @@ public class TWRequest extends NSObject {
 
     /**
      * The request URL
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -177,7 +181,11 @@ public class TWRequest extends NSObject {
     /**
      * Specify a named MIME multi-part value. As of version 6.0, if you set parameters,
      * the parameters will automatically be added as form data in the multi-part data.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("addMultiPartData:withName:type:")
     public native void addMultiPartDataWithNameType(NSData data, String name, String type);
@@ -186,6 +194,11 @@ public class TWRequest extends NSObject {
     @Selector("init")
     public native TWRequest init();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithURL:parameters:requestMethod:")
     public native TWRequest initWithURLParametersRequestMethod(NSURL url, NSDictionary<?, ?> parameters,
@@ -193,14 +206,22 @@ public class TWRequest extends NSObject {
 
     /**
      * The parameters
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
 
     /**
      * Issue the request. This block is not guaranteed to be called on any particular thread.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("performRequestWithHandler:")
     public native void performRequestWithHandler(
@@ -208,7 +229,11 @@ public class TWRequest extends NSObject {
 
     /**
      * The request method
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("requestMethod")
     @NInt
@@ -216,7 +241,11 @@ public class TWRequest extends NSObject {
 
     /**
      * Returns an OAuth compatible NSURLRequest for use with NSURLConnection.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("signedURLRequest")
     public native NSURLRequest signedURLRequest();
@@ -230,14 +259,22 @@ public class TWRequest extends NSObject {
 
     /**
      * Optional account information used to authenticate the request. Defaults to nil.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("account")
     public native ACAccount account();
 
     /**
      * Optional account information used to authenticate the request. Defaults to nil.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @Deprecated
     @Generated
     @Selector("setAccount:")
     public native void setAccount(ACAccount value);

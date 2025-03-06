@@ -94,6 +94,8 @@ public class CNObjectTracker extends NSObject {
      * - Parameters:
      * - time: the presentation time of the frame to be added to the detection track
      * - Returns: a prediction of where the object is in the source image
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("continueTrackingAt:sourceImage:sourceDisparity:")
@@ -118,6 +120,8 @@ public class CNObjectTracker extends NSObject {
      * - sourceImage: pixel buffer containing the image
      * - Returns: A prediction, which includes bounds that can be used to start tracking, or `nil` if no discernible
      * object is detected.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("findObjectAtPoint:sourceImage:")
@@ -128,6 +132,8 @@ public class CNObjectTracker extends NSObject {
     /**
      * Finish constructing the detection track and return it.
      * - Returns: a detection track which tracks the object
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("finishDetectionTrack")
@@ -147,6 +153,8 @@ public class CNObjectTracker extends NSObject {
      * Create a new detection track builder.
      * - Parameters:
      * - commandQueue: the command queue of a metal device to which commands should be submitted to perform work
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithCommandQueue:")
@@ -172,6 +180,8 @@ public class CNObjectTracker extends NSObject {
 
     /**
      * Indicates whether the current device supports object detection and tracking.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isSupported")
@@ -189,6 +199,8 @@ public class CNObjectTracker extends NSObject {
 
     /**
      * Reset the builder to construct a new detection track.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("resetDetectionTrack")
@@ -216,6 +228,8 @@ public class CNObjectTracker extends NSObject {
      * - sourceDisparity: disparity buffer containing depth information
      * - Returns: whether the object can be tracked
      * - Note: if the object can be tracked, a detection is added to the detection track being built
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("startTrackingAt:within:sourceImage:sourceDisparity:")

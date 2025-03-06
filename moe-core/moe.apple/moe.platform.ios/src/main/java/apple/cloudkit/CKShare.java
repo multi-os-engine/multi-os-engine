@@ -176,6 +176,8 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * Only available after share record has been saved to the server. This url is stable, and is tied to the
      * rootRecord. That is, if you share a rootRecord, delete the share, and re-share the same rootRecord via a newly
      * created share, that newly created share's url will be identical to the prior share's url
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -185,17 +187,23 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     /**
      * If a participant with a matching userIdentity already exists, then that existing participant's properties will be
      * updated; no new participant will be added.
+     * A `CKShareParticipant` instance that has already been added to one `CKShare` cannot be added to another, unless
+     * it is removed from the first `CKShare` through `removeParticipant`.
      * In order to modify the list of participants, a share must have publicPermission set to @c
      * CKShareParticipantPermissionNone. That is, you cannot mix-and-match private users and public users in the same
      * share.
-     * Only certain participant types may be added via this API
      * 
      * @see CKShareParticipantRole
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("addParticipant:")
     public native void addParticipant(@NotNull CKShareParticipant participant);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("currentUserParticipant")
@@ -224,17 +232,24 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     /**
      * When saving a newly created CKShare, you must save the share and its rootRecord in the same
      * CKModifyRecordsOperation batch.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithRootRecord:")
     public native CKShare initWithRootRecord(@NotNull CKRecord rootRecord);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithRootRecord:shareID:")
     public native CKShare initWithRootRecordShareID(@NotNull CKRecord rootRecord, @NotNull CKRecordID shareID);
 
     /**
      * Convenience methods for fetching special users from the participant array
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -245,6 +260,8 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * All participants on the share that the current user has permissions to see.
      * 
      * At the minimum that will include the owner and the current user.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -263,12 +280,20 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * Changing the public permission to @c CKShareParticipantPermissionNone will result in all participants being
      * removed from the share. You may subsequently choose to call @c addParticipant: before saving the share, those
      * participants will be added to the share.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("publicPermission")
     @NInt
     public native long publicPermission();
 
+    /**
+     * It's not allowed to call `removeParticipant` on a `CKShare` with a `CKShareParticipant` that has never been added
+     * to that share through `addParticipant`.
+     * 
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("removeParticipant:")
     public native void removeParticipant(@NotNull CKShareParticipant participant);
@@ -285,6 +310,8 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * Changing the public permission to @c CKShareParticipantPermissionNone will result in all participants being
      * removed from the share. You may subsequently choose to call @c addParticipant: before saving the share, those
      * participants will be added to the share.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPublicPermission:")

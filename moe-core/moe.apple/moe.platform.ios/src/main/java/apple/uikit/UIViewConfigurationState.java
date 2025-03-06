@@ -139,18 +139,30 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isDisabled")
     public native boolean isDisabled();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isFocused")
     public native boolean isFocused();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
@@ -188,14 +200,23 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     public native void setCustomStateForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object customState,
             @NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDisabled:")
     public native void setDisabled(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setFocused:")
     public native void setFocused(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
@@ -205,6 +226,9 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     public native void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) Object obj,
             @NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);

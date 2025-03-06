@@ -11,17 +11,17 @@ public final class BNNSShuffleType {
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSShuffleTypePixelShuffleNCHW = 0x00000000;
+    @Generated public static final int PixelShuffleNCHW = 0x00000000;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSShuffleTypePixelUnshuffleNCHW = 0x00000001;
+    @Generated public static final int PixelUnshuffleNCHW = 0x00000001;
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int BNNSShuffleTypeDepthToSpaceNCHW = 0x00000002;
+    @Generated public static final int DepthToSpaceNCHW = 0x00000002;
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int BNNSShuffleTypeSpaceToDepthNCHW = 0x00000003;
+    @Generated public static final int SpaceToDepthNCHW = 0x00000003;
 }

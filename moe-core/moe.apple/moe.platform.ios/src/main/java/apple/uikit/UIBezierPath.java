@@ -90,27 +90,45 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("bezierPath")
     public static native UIBezierPath bezierPath();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("bezierPathWithArcCenter:radius:startAngle:endAngle:clockwise:")
     public static native UIBezierPath bezierPathWithArcCenterRadiusStartAngleEndAngleClockwise(@ByValue CGPoint center,
             @NFloat double radius, @NFloat double startAngle, @NFloat double endAngle, boolean clockwise);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("bezierPathWithCGPath:")
     public static native UIBezierPath bezierPathWithCGPath(@NotNull CGPathRef CGPath);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("bezierPathWithOvalInRect:")
     public static native UIBezierPath bezierPathWithOvalInRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("bezierPathWithRect:")
     public static native UIBezierPath bezierPathWithRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("bezierPathWithRoundedRect:byRoundingCorners:cornerRadii:")
     public static native UIBezierPath bezierPathWithRoundedRectByRoundingCornersCornerRadii(@ByValue CGRect rect,
@@ -118,6 +136,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * rounds all corners with the same horizontal and vertical radius
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("bezierPathWithRoundedRect:cornerRadius:")
@@ -206,6 +226,9 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.2
+     */
     @NotNull
     @Generated
     @Selector("CGPath")
@@ -219,25 +242,39 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     public native void addArcWithCenterRadiusStartAngleEndAngleClockwise(@ByValue CGPoint center, @NFloat double radius,
             @NFloat double startAngle, @NFloat double endAngle, boolean clockwise);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("addClip")
     public native void addClip();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("addCurveToPoint:controlPoint1:controlPoint2:")
     public native void addCurveToPointControlPoint1ControlPoint2(@ByValue CGPoint endPoint,
             @ByValue CGPoint controlPoint1, @ByValue CGPoint controlPoint2);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("addLineToPoint:")
     public native void addLineToPoint(@ByValue CGPoint point);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("addQuadCurveToPoint:controlPoint:")
     public native void addQuadCurveToPointControlPoint(@ByValue CGPoint endPoint, @ByValue CGPoint controlPoint);
 
     /**
      * Appending paths
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("appendPath:")
@@ -245,6 +282,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Transforming paths
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("applyTransform:")
@@ -260,15 +299,24 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("bezierPathByReversingPath")
     public native UIBezierPath bezierPathByReversingPath();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("closePath")
     public native void closePath();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint point);
@@ -280,6 +328,9 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("currentPoint")
     @ByValue
@@ -291,6 +342,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Path operations on the current graphics context
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("fill")
@@ -298,21 +351,32 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * These methods do not affect the blend mode or alpha of the current graphics context
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("fillWithBlendMode:alpha:")
     public native void fillWithBlendModeAlpha(int blendMode, @NFloat double alpha);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("flatness")
     @NFloat
     public native double flatness();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("getLineDash:count:phase:")
     public native void getLineDashCountPhase(@Nullable NFloatPtr pattern, @Nullable NIntPtr count,
             @Nullable NFloatPtr phase);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("init")
     public native UIBezierPath init();
@@ -323,21 +387,31 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Path info
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("isEmpty")
     public native boolean isEmpty();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("lineCapStyle")
     public native int lineCapStyle();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("lineJoinStyle")
     public native int lineJoinStyle();
 
     /**
      * Drawing properties
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("lineWidth")
@@ -346,6 +420,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Used when lineJoinStyle is kCGLineJoinMiter
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("miterLimit")
@@ -354,11 +430,16 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Path construction
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("moveToPoint:")
     public native void moveToPoint(@ByValue CGPoint point);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("removeAllPoints")
     public native void removeAllPoints();
@@ -367,29 +448,45 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
      * Returns an immutable CGPathRef which is only valid until the UIBezierPath is further mutated.
      * Setting the path will create an immutable copy of the provided CGPathRef, so any further mutations on a provided
      * CGMutablePathRef will be ignored.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setCGPath:")
     public native void setCGPath(@NotNull CGPathRef value);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setFlatness:")
     public native void setFlatness(@NFloat double value);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setLineCapStyle:")
     public native void setLineCapStyle(int value);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setLineDash:count:phase:")
     public native void setLineDashCountPhase(@Nullable ConstNFloatPtr pattern, @NInt long count, @NFloat double phase);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setLineJoinStyle:")
     public native void setLineJoinStyle(int value);
 
     /**
      * Drawing properties
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setLineWidth:")
@@ -397,6 +494,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Used when lineJoinStyle is kCGLineJoinMiter
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setMiterLimit:")
@@ -404,21 +503,31 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Default is NO. When YES, the even-odd fill rule is used for drawing, clipping, and hit testing.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setUsesEvenOddFillRule:")
     public native void setUsesEvenOddFillRule(boolean value);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("stroke")
     public native void stroke();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("strokeWithBlendMode:alpha:")
     public native void strokeWithBlendModeAlpha(int blendMode, @NFloat double alpha);
 
     /**
      * Default is NO. When YES, the even-odd fill rule is used for drawing, clipping, and hit testing.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("usesEvenOddFillRule")

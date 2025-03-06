@@ -99,6 +99,8 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * distanceConstraintWithTarget
      * 
      * Creates and returns a SCNDistanceConstraint constraint.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("distanceConstraintWithTarget:")
@@ -143,6 +145,8 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * [@property] maximumDistance
      * 
      * The minimum distance. Defaults to MAXFLOAT. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumDistance")
@@ -153,6 +157,8 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * [@property] minimumDistance
      * 
      * The minimum distance. Defaults to 0. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumDistance")
@@ -176,6 +182,8 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * [@property] maximumDistance
      * 
      * The minimum distance. Defaults to MAXFLOAT. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumDistance:")
@@ -185,6 +193,8 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * [@property] minimumDistance
      * 
      * The minimum distance. Defaults to 0. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumDistance:")
@@ -194,6 +204,8 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * [@property] target
      * 
      * Defines the target node to keep distance with.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTarget:")
@@ -221,6 +233,8 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * [@property] target
      * 
      * Defines the target node to keep distance with.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

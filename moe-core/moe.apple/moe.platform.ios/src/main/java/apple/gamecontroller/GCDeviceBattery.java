@@ -65,6 +65,8 @@ public class GCDeviceBattery extends NSObject {
     /**
      * This is the battery level for controller.
      * Battery level ranges from 0.0 (fully discharged) to 1.0 (100% charged) and defaults to 0
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("batteryLevel")
@@ -75,6 +77,8 @@ public class GCDeviceBattery extends NSObject {
      * 
      * [@note] This property might be useful if you display the information about currently connected controller for
      * player's convenience
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("batteryState")

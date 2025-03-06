@@ -114,6 +114,8 @@ public class SCSensitivityAnalysis extends NSObject {
 
     /**
      * Set to YES if analyzed media contains sensitive content
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isSensitive")

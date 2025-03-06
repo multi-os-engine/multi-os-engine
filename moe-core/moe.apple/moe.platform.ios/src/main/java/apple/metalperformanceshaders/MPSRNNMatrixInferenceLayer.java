@@ -114,6 +114,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("bidirectionalCombineMode")
@@ -150,6 +152,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -204,6 +208,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      *                                    this parameter is ignored
      *                                    and can be nil. destinationBackwardMatrices may not alias to any of the source
      *                                    matrices.
+     * 
+     *                                    API-Since: 11.0
      */
     @Generated
     @Selector("encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardMatrices:destinationBackwardMatrices:")
@@ -213,6 +219,9 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
             @NotNull NSArray<? extends MPSMatrix> destinationForwardMatrices,
             @Nullable NSArray<? extends MPSMatrix> destinationBackwardMatrices);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("encodeSequenceToCommandBuffer:sourceMatrices:destinationMatrices:recurrentInputState:recurrentOutputStates:")
     public native void encodeSequenceToCommandBufferSourceMatricesDestinationMatricesRecurrentInputStateRecurrentOutputStates(
@@ -290,6 +299,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels input vector/matrix.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -329,6 +340,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * Number of layers in the filter-stack. This will be one when using initWithDevice:rnnDescriptor to initialize
      * this filter and the number of entries in the array 'rnnDescriptors' when initializing this filter with
      * initWithDevice:rnnDescriptors.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("numberOfLayers")
@@ -339,6 +352,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels in the output vector/matrix.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -350,6 +365,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("recurrentOutputIsTemporary")
@@ -369,6 +386,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBidirectionalCombineMode:")
@@ -379,6 +398,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecurrentOutputIsTemporary:")
@@ -390,6 +411,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStoreAllIntermediateStates:")
@@ -405,6 +428,8 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("storeAllIntermediateStates")

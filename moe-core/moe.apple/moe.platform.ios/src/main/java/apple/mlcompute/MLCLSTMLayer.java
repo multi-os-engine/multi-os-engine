@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * hiddenSize].
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -73,7 +72,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] biases
      * 
      * The array of tensors describing the bias terms for the input, hidden, cell and output gates
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biases")
@@ -83,7 +86,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] biasesParameters
      * 
      * The bias tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biasesParameters")
@@ -122,7 +129,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] descriptor
      * 
      * The LSTM descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -134,7 +145,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * The array of gate activations for input, hidden, cell and output gates
      * 
      * The default gate activations are: sigmoid, sigmoid, tanh, sigmoid
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("gateActivations")
@@ -149,7 +164,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] hiddenWeights
      * 
      * The array of tensors describing the hidden weights for the input, hidden, cell and output gates
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hiddenWeights")
@@ -159,7 +178,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] hiddenWeightsParameters
      * 
      * The hidden weights tensor parameters used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hiddenWeightsParameters")
@@ -173,7 +196,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] inputWeights
      * 
      * The array of tensors describing the input weights for the input, hidden, cell and output gates
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("inputWeights")
@@ -183,7 +210,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] inputWeightsParameters
      * 
      * The input weights tensor parameters used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("inputWeightsParameters")
@@ -220,7 +251,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * @param hiddenWeights An array of (layerCount * 4) tensors describing the hidden weights for the
      *                      input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
      * @return A new LSTM layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:inputWeights:hiddenWeights:biases:")
     public static native MLCLSTMLayer layerWithDescriptorInputWeightsHiddenWeightsBiases(
@@ -238,7 +273,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * @param peepholeWeights An array of (layerCount * 4) tensors describing the peephole weights for the
      *                        input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
      * @return A new LSTM layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:inputWeights:hiddenWeights:peepholeWeights:biases:")
     public static native MLCLSTMLayer layerWithDescriptorInputWeightsHiddenWeightsPeepholeWeightsBiases(
@@ -273,7 +312,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * @param outputResultActivation The neuron descriptor used for the activation function applied to output result.
      *                               Default is tanh.
      * @return A new LSTM layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:inputWeights:hiddenWeights:peepholeWeights:biases:gateActivations:outputResultActivation:")
     public static native MLCLSTMLayer layerWithDescriptorInputWeightsHiddenWeightsPeepholeWeightsBiasesGateActivationsOutputResultActivation(
@@ -292,7 +335,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] outputResultActivation
      * 
      * The output activation descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("outputResultActivation")
@@ -302,7 +349,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] peepholeWeights
      * 
      * The array of tensors describing the peephole weights for the input, hidden, cell and output gates
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("peepholeWeights")
@@ -312,7 +363,11 @@ public class MLCLSTMLayer extends MLCLayer {
      * [@property] peepholeWeightsParameters
      * 
      * The peephole weights tensor parameters used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("peepholeWeightsParameters")
@@ -334,6 +389,7 @@ public class MLCLSTMLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

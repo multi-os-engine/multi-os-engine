@@ -65,6 +65,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Double parameter used to control the beta1 of Adam optimizer. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -73,6 +75,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Double parameter used to control the beta2 of Adam optimizer. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -81,6 +85,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * MLMultiArray parameter returned when client requests for biases of a particular layer using a scoped parameter.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -118,6 +124,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Int64 parameter used to specify the number of epochs used by optimizer. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -126,6 +134,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Double parameter used to control the epsilon of Adam optimizer. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -169,6 +179,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Double parameter used to control the learning rate of an optimizer. Adjustable in progress
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -177,6 +189,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * String parameter used to specify the name of a linked model
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -185,6 +199,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * String parameteru sed to specify the search path for a linked model
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -193,6 +209,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Int64 parameter used to specify the size of a miniBatch used by optimizer. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -201,6 +219,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Double parameter used to control the momentum of gradient based optimizers. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -215,6 +235,8 @@ public class MLParameterKey extends MLKey {
     /**
      * Int64 parameter used to specify the number of neighbors to use for class affinity (applicable to kNN). Not
      * adjustable in progress
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -231,6 +253,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Returns a new MLParameterKey instance after adding additional scoping
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -239,6 +263,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Int64 parameter used to specify the seed to be used if shuffling data between epochs. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -251,6 +277,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * Bool parameter used to specify whether to shuffle the data between epochs. Adjustable at load-time
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -278,6 +306,8 @@ public class MLParameterKey extends MLKey {
 
     /**
      * MLMultiArray parameter returned when client requests for weights of a particular layer using a scoped parameter.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

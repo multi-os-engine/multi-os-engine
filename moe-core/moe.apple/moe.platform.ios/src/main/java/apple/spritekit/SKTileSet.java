@@ -168,6 +168,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
      * file.
      * 
      * @param url the URL of the tile set file
+     * 
+     *            API-Since: 10.0
      */
     @Generated
     @Selector("tileSetFromURL:")
@@ -178,6 +180,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
      * matching name cannot be found.
      * 
      * @param name the name of the tile set to search for
+     * 
+     *             API-Since: 10.0
      */
     @Generated
     @Selector("tileSetNamed:")
@@ -187,6 +191,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
      * Create a tile set with the specified tile groups.
      * 
      * @param tileGroups the tile groups that will be available for use with this set
+     * 
+     *                   API-Since: 10.0
      */
     @Generated
     @Selector("tileSetWithTileGroups:")
@@ -197,6 +203,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @param tileGroups  the tile groups that will be available for use with this set
      * @param tileSetType the type of tile set this will be
+     * 
+     *                    API-Since: 10.0
      */
     @Generated
     @Selector("tileSetWithTileGroups:tileSetType:")
@@ -215,6 +223,9 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("defaultTileGroup")
@@ -222,6 +233,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The default tile size is the value an SKTileMapNode will use for it's tiles when the tile set is assigned to it.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("defaultTileSize")
@@ -244,6 +257,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
      * Initilize a tile set with the specified tile groups.
      * 
      * @param tileGroups the tile groups that will be available for use with this set
+     * 
+     *                   API-Since: 10.0
      */
     @Generated
     @Selector("initWithTileGroups:")
@@ -254,6 +269,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @param tileGroups  the tile groups that will be available for use with this set
      * @param tileSetType the type of tile set this will be
+     * 
+     *                    API-Since: 10.0
      */
     @Generated
     @Selector("initWithTileGroups:tileSetType:")
@@ -262,18 +279,25 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Client-assignable name for the tile set. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDefaultTileGroup:")
     public native void setDefaultTileGroup(@Nullable SKTileGroup value);
 
     /**
      * The default tile size is the value an SKTileMapNode will use for it's tiles when the tile set is assigned to it.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDefaultTileSize:")
@@ -281,6 +305,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Client-assignable name for the tile set. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setName:")
@@ -288,6 +314,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The tile groups that this set provides for use.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTileGroups:")
@@ -296,6 +324,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to
      * SKTileSetTypeGrid.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setType:")
@@ -303,6 +333,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The tile groups that this set provides for use.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -312,6 +344,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to
      * SKTileSetTypeGrid.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("type")

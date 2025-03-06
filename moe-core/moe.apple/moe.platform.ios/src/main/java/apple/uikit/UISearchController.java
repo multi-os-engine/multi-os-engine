@@ -205,6 +205,9 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Selector("animationEnded:")
     public native void animationEnded(boolean transitionCompleted);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -224,6 +227,8 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * default is YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hidesNavigationBarDuringPresentation")
@@ -233,12 +238,17 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Selector("init")
     public native UISearchController init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UISearchController initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a search controller without a results controller
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -248,6 +258,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * Pass nil if you wish to display search results in the same view that you are searching. This is not supported on
      * tvOS; please provide a results controller on tvOS.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithSearchResultsController:")
@@ -282,6 +294,8 @@ public class UISearchController extends UIViewController implements UIViewContro
      * Setting this property to YES is a convenience method that performs a default presentation of the search
      * controller appropriate for how the controller is configured. Implement -presentSearchController: if the default
      * presentation is not adequate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isActive")
@@ -291,6 +305,8 @@ public class UISearchController extends UIViewController implements UIViewContro
      * Setting this property to YES is a convenience method that performs a default presentation of the search
      * controller appropriate for how the controller is configured. Implement -presentSearchController: if the default
      * presentation is not adequate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setActive:")
@@ -316,12 +332,17 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * You are free to become the search bar's delegate to monitor for text changes and button presses.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("searchBar")
     public native UISearchBar searchBar();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("searchResultsController")
@@ -329,6 +350,8 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * The object responsible for updating the content of the searchResultsController.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -336,10 +359,16 @@ public class UISearchController extends UIViewController implements UIViewContro
     @MappedReturn(ObjCObjectMapper.class)
     public native UISearchResultsUpdating searchResultsUpdater();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value) {
         Object __old = delegate();
@@ -365,6 +394,8 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * default is YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHidesNavigationBarDuringPresentation:")
@@ -382,6 +413,8 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * The object responsible for updating the content of the searchResultsController.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSearchResultsUpdater:")
@@ -390,6 +423,8 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * The object responsible for updating the content of the searchResultsController.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setSearchResultsUpdater(@Nullable @Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value) {

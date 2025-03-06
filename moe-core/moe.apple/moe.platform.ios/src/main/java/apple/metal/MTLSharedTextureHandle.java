@@ -99,6 +99,8 @@ public class MTLSharedTextureHandle extends NSObject implements NSSecureCoding {
      * The device this texture was created against.
      * 
      * This shared texture handle can only be used with this device.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -149,6 +151,8 @@ public class MTLSharedTextureHandle extends NSObject implements NSSecureCoding {
      * [@property] label
      * 
      * A copy of the original texture's label property, if any
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

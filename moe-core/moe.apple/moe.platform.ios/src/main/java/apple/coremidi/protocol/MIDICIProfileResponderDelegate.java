@@ -20,7 +20,10 @@ import org.jetbrains.annotations.NotNull;
  * A MIDICIProfileResponderDelegate is required to construct a MIDICIResponder.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported for CoreMIDI
  */
+@Deprecated
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -28,11 +31,22 @@ import org.jetbrains.annotations.NotNull;
 public interface MIDICIProfileResponderDelegate {
     /**
      * Allow a new MIDI-CI Initiator to create a session or reject the connection attempt
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("connectInitiator:withDeviceInfo:")
     boolean connectInitiatorWithDeviceInfo(@NotNull NSNumber initiatorMUID, @NotNull MIDICIDeviceInfo deviceInfo);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("handleDataForProfile:onChannel:data:")
@@ -43,14 +57,24 @@ public interface MIDICIProfileResponderDelegate {
 
     /**
      * Called when an initiator terminates its MIDI-CI connection
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("initiatorDisconnected:")
     void initiatorDisconnected(@NotNull NSNumber initiatorMUID);
 
     /**
      * These methods must be implemented if the associated responder implements MIDI-CI profiles.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("willSetProfile:onChannel:enabled:")

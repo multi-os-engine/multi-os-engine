@@ -90,6 +90,9 @@ public class INEditMessageIntent extends INIntent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("editedContent")
     @Nullable
@@ -108,6 +111,9 @@ public class INEditMessageIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INEditMessageIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithMessageIdentifier:editedContent:")
     public native INEditMessageIntent initWithMessageIdentifierEditedContent(@Nullable String messageIdentifier,
@@ -135,6 +141,9 @@ public class INEditMessageIntent extends INIntent {
     @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("messageIdentifier")
     @Nullable

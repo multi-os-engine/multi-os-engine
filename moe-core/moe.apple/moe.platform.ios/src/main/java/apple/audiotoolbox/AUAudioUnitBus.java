@@ -170,6 +170,8 @@ public class AUAudioUnitBus extends NSObject {
      * [@property] busType
      * 
      * The AUAudioUnitBusType.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("busType")
@@ -215,6 +217,8 @@ public class AUAudioUnitBus extends NSObject {
      * input to arrive, and how long it will take for its output to be presented.
      * 
      * Bridged to the v2 property kAudioUnitProperty_PresentationLatency.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("contextPresentationLatency")
@@ -226,6 +230,8 @@ public class AUAudioUnitBus extends NSObject {
      * The audio format and channel layout of audio being transferred on the bus.
      * 
      * Bridged to the v2 property kAudioUnitProperty_StreamFormat.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -236,6 +242,8 @@ public class AUAudioUnitBus extends NSObject {
      * [@property] index
      * 
      * The index of this bus in the containing array.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("index")
@@ -253,6 +261,8 @@ public class AUAudioUnitBus extends NSObject {
      * 
      * @param format   The initial format for the bus.
      * @param outError An error if the format is unsupported for the bus.
+     * 
+     *                 API-Since: 9.0
      */
     @Generated
     @Selector("initWithFormat:error:")
@@ -270,6 +280,8 @@ public class AUAudioUnitBus extends NSObject {
      * 
      * Bridged to the v2 properties kAudioUnitProperty_MakeConnection and
      * kAudioUnitProperty_SetRenderCallback.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isEnabled")
@@ -286,6 +298,8 @@ public class AUAudioUnitBus extends NSObject {
      * 
      * Bridged to the v2 properties kAudioUnitProperty_MakeConnection and
      * kAudioUnitProperty_SetRenderCallback.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -299,6 +313,8 @@ public class AUAudioUnitBus extends NSObject {
      * If supportedChannelCounts is set, then this value is derived from supportedChannelCounts. If
      * setting maximumChannelCount makes the current format unsupported, then format will be set to
      * nil. The default value is UINT_MAX.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumChannelCount")
@@ -308,6 +324,8 @@ public class AUAudioUnitBus extends NSObject {
      * [@property] name
      * 
      * A name for the bus. Can be set by host.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -318,6 +336,8 @@ public class AUAudioUnitBus extends NSObject {
      * [@property] ownerAudioUnit
      * 
      * The audio unit that owns the bus.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -363,6 +383,8 @@ public class AUAudioUnitBus extends NSObject {
      * input to arrive, and how long it will take for its output to be presented.
      * 
      * Bridged to the v2 property kAudioUnitProperty_PresentationLatency.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContextPresentationLatency:")
@@ -376,6 +398,8 @@ public class AUAudioUnitBus extends NSObject {
      * Audio units can generally be expected to support AVAudioFormat's standard format
      * (deinterleaved 32-bit float), at any sample rate. Channel counts can be more complex;
      * see AUAudioUnit.channelCapabilities.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFormat:error:")
@@ -390,6 +414,8 @@ public class AUAudioUnitBus extends NSObject {
      * If supportedChannelCounts is set, then this value is derived from supportedChannelCounts. If
      * setting maximumChannelCount makes the current format unsupported, then format will be set to
      * nil. The default value is UINT_MAX.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaximumChannelCount:")
@@ -399,6 +425,8 @@ public class AUAudioUnitBus extends NSObject {
      * [@property] name
      * 
      * A name for the bus. Can be set by host.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setName:")
@@ -412,6 +440,8 @@ public class AUAudioUnitBus extends NSObject {
      * If supportedChannelCounts is nil, then any number less than or equal to maximumChannelCount
      * is supported. If setting supportedChannelCounts makes the current format unsupported, then
      * format will be set to nil. The default value is nil.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSupportedChannelCounts:")
@@ -425,6 +455,8 @@ public class AUAudioUnitBus extends NSObject {
      * If supportedChannelCounts is nil, then any number less than or equal to maximumChannelCount
      * is supported. If setting supportedChannelCounts makes the current format unsupported, then
      * format will be set to nil. The default value is nil.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -435,6 +467,8 @@ public class AUAudioUnitBus extends NSObject {
      * [@property] supportedChannelLayoutTags
      * 
      * This is an array of NSNumbers representing AudioChannelLayoutTag.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

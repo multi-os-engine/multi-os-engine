@@ -142,6 +142,9 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("new")
     public static native NSPersistentStoreDescription new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("persistentStoreDescriptionWithURL:")
     public static native NSPersistentStoreDescription persistentStoreDescriptionWithURL(@NotNull NSURL URL);
@@ -167,11 +170,17 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("configuration")
@@ -191,6 +200,8 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     /**
      * Returns a store description instance with default values for the store located at `URL` that can be used
      * immediately with `addPersistentStoreWithDescription:completionHandler:`.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -198,6 +209,8 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
 
     /**
      * Store options
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isReadOnly")
@@ -205,79 +218,127 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
 
     /**
      * Store options
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setReadOnly:")
     public native void setReadOnly(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("options")
     public native NSDictionary<String, ? extends NSObject> options();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setConfiguration:")
     public native void setConfiguration(@Nullable String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setOption:forKey:")
     public native void setOptionForKey(@Nullable NSObject option, @NotNull String key);
 
     /**
      * addPersistentStore-time behaviours
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setShouldAddStoreAsynchronously:")
     public native void setShouldAddStoreAsynchronously(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setShouldInferMappingModelAutomatically:")
     public native void setShouldInferMappingModelAutomatically(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setShouldMigrateStoreAutomatically:")
     public native void setShouldMigrateStoreAutomatically(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTimeout:")
     public native void setTimeout(double value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setType:")
     public native void setType(@NotNull String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(@Nullable NSURL value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setValue:forPragmaNamed:")
     public native void setValueForPragmaNamed(@Nullable NSObject value, @NotNull String name);
 
     /**
      * addPersistentStore-time behaviours
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("shouldAddStoreAsynchronously")
     public native boolean shouldAddStoreAsynchronously();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("shouldInferMappingModelAutomatically")
     public native boolean shouldInferMappingModelAutomatically();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("shouldMigrateStoreAutomatically")
     public native boolean shouldMigrateStoreAutomatically();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("sqlitePragmas")
     public native NSDictionary<String, ? extends NSObject> sqlitePragmas();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("timeout")
     public native double timeout();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("type")

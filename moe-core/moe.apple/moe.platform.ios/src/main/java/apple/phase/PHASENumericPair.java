@@ -98,6 +98,8 @@ public class PHASENumericPair extends NSObject {
      * The first value in the numeric pair.
      * 
      * The default value is 0.0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("first")
@@ -123,6 +125,8 @@ public class PHASENumericPair extends NSObject {
      *               The second value in the pair.
      * @return
      *         A new pair.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithFirstValue:secondValue:")
@@ -169,6 +173,8 @@ public class PHASENumericPair extends NSObject {
      * The second value in the numeric pair.
      * 
      * The default value is 0.0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("second")
@@ -180,6 +186,8 @@ public class PHASENumericPair extends NSObject {
      * The first value in the numeric pair.
      * 
      * The default value is 0.0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFirst:")
@@ -191,6 +199,8 @@ public class PHASENumericPair extends NSObject {
      * The second value in the numeric pair.
      * 
      * The default value is 0.0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSecond:")

@@ -28,7 +28,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSURL;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -260,8 +264,8 @@ public class MTRBaseDevice extends NSObject {
     @Generated
     public interface Block_openCommissioningWindowWithDiscriminatorDurationQueueCompletion {
         @Generated
-        void call_openCommissioningWindowWithDiscriminatorDurationQueueCompletion(@Nullable MTRSetupPayload arg0,
-                @Nullable NSError arg1);
+        void call_openCommissioningWindowWithDiscriminatorDurationQueueCompletion(@Nullable MTRSetupPayload payload,
+                @Nullable NSError error);
     }
 
     /**
@@ -292,7 +296,7 @@ public class MTRBaseDevice extends NSObject {
     public interface Block_openCommissioningWindowWithSetupPasscodeDiscriminatorDurationQueueCompletion {
         @Generated
         void call_openCommissioningWindowWithSetupPasscodeDiscriminatorDurationQueueCompletion(
-                @Nullable MTRSetupPayload arg0, @Nullable NSError arg1);
+                @Nullable MTRSetupPayload payload, @Nullable NSError error);
     }
 
     /**
@@ -858,5 +862,39 @@ public class MTRBaseDevice extends NSObject {
         @Generated
         void call_writeAttributeWithEndpointIdClusterIdAttributeIdValueTimedWriteTimeoutClientQueueCompletion(
                 @Nullable NSArray<? extends NSDictionary<String, ?>> values, @Nullable NSError error);
+    }
+
+    /**
+     * Download log of the desired type from the device.
+     * 
+     * Note: The consumer of this API should move the file that the url points to or open it for reading before the
+     * completion handler returns. Otherwise, the file will be deleted, and the data will be lost.
+     * 
+     * @param type       The type of log being requested. This should correspond to a value in the enum
+     *                   MTRDiagnosticLogType.
+     * @param timeout    The timeout for getting the log. If the timeout expires, completion will be called with
+     *                   whatever
+     *                   has been retrieved by that point (which might be none or a partial log).
+     *                   If the timeout is set to 0, the request will not expire and completion will not be called until
+     *                   the log is fully retrieved or an error occurs.
+     * @param queue      The queue on which completion will be called.
+     * @param completion The completion handler that is called after attempting to retrieve the requested log.
+     *                   - In case of success, the completion handler is called with a non-nil URL and a nil error.
+     *                   - If there is an error, a non-nil error is used and the url can be non-nil too if some logs
+     *                   have already been downloaded.
+     * 
+     *                   API-Since: 17.6
+     */
+    @Generated
+    @Selector("downloadLogOfType:timeout:queue:completion:")
+    public native void downloadLogOfTypeTimeoutQueueCompletion(@NInt long type, double timeout,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_downloadLogOfTypeTimeoutQueueCompletion") @NotNull Block_downloadLogOfTypeTimeoutQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_downloadLogOfTypeTimeoutQueueCompletion {
+        @Generated
+        void call_downloadLogOfTypeTimeoutQueueCompletion(@Nullable NSURL url, @Nullable NSError error);
     }
 }

@@ -307,9 +307,13 @@ public class GKMatch extends NSObject {
     }
 
     /**
-     * Join a named voice chat channel
-     * Will return nil if parental controls are turned on
+     * This method is deprecated. GKVoiceChat is no longer supported. **
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("voiceChatWithName:")

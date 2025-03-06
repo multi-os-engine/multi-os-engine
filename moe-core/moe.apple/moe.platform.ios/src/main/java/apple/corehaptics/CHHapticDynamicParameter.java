@@ -117,6 +117,8 @@ public class CHHapticDynamicParameter extends NSObject {
      *                    The value for that parameter.
      * @param time
      *                    The time at which this parameter should be applied, relative to the start time of the pattern.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @Selector("initWithParameterID:value:relativeTime:")
@@ -153,6 +155,8 @@ public class CHHapticDynamicParameter extends NSObject {
     /**
      * [@property] parameterID
      * The ID of the dynamic parameter to use.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -162,6 +166,8 @@ public class CHHapticDynamicParameter extends NSObject {
     /**
      * [@property] relativeTime
      * The time at which the parameter should be applied, relative to the start time for the pattern.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("relativeTime")
@@ -178,6 +184,8 @@ public class CHHapticDynamicParameter extends NSObject {
     /**
      * [@property] relativeTime
      * The time at which the parameter should be applied, relative to the start time for the pattern.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRelativeTime:")
@@ -186,6 +194,8 @@ public class CHHapticDynamicParameter extends NSObject {
     /**
      * [@property] value
      * The value of the parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setValue:")
@@ -202,6 +212,8 @@ public class CHHapticDynamicParameter extends NSObject {
     /**
      * [@property] value
      * The value of the parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("value")

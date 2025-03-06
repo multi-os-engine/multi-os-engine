@@ -26,6 +26,9 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * A path indicating an attribute being requested (for read or subscribe).
@@ -38,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRAttributeRequestPath extends NSObject implements NSCopying {
+public class MTRAttributeRequestPath extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -196,4 +199,22 @@ public class MTRAttributeRequestPath extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTRAttributeRequestPath initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

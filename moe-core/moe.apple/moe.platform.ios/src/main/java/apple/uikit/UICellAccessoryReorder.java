@@ -144,6 +144,8 @@ public class UICellAccessoryReorder extends UICellAccessory {
     /**
      * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default
      * is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShowsVerticalSeparator:")
@@ -156,6 +158,8 @@ public class UICellAccessoryReorder extends UICellAccessory {
     /**
      * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default
      * is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("showsVerticalSeparator")

@@ -166,6 +166,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     /**
      * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after
      * minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("allowableMovement")
@@ -183,6 +185,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * Default is 0.5. Time in seconds the fingers must be held down for the gesture to be recognized
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("minimumPressDuration")
@@ -190,6 +194,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * Default is 0. The number of full taps required before the press for gesture to be recognized
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("numberOfTapsRequired")
@@ -207,6 +213,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     /**
      * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after
      * minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setAllowableMovement:")
@@ -214,6 +222,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * Default is 0.5. Time in seconds the fingers must be held down for the gesture to be recognized
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setMinimumPressDuration:")
@@ -221,6 +231,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * Default is 0. The number of full taps required before the press for gesture to be recognized
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setNumberOfTapsRequired:")

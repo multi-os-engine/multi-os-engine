@@ -107,6 +107,9 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
             @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
             @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("animatesWhenAdded")
     public native boolean animatesWhenAdded();
@@ -248,16 +251,25 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("glyphImage")
     public native UIImage glyphImage();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("glyphText")
     public native String glyphText();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("glyphTintColor")
@@ -316,6 +328,9 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("markerTintColor")
@@ -350,11 +365,17 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("selectedGlyphImage")
     public native UIImage selectedGlyphImage();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAnimatesWhenAdded:")
     public native void setAnimatesWhenAdded(boolean value);
@@ -419,30 +440,51 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setGlyphImage:")
     public native void setGlyphImage(@Nullable UIImage value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setGlyphText:")
     public native void setGlyphText(@Nullable String value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setGlyphTintColor:")
     public native void setGlyphTintColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMarkerTintColor:")
     public native void setMarkerTintColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSelectedGlyphImage:")
     public native void setSelectedGlyphImage(@Nullable UIImage value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSubtitleVisibility:")
     public native void setSubtitleVisibility(@NInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTitleVisibility:")
     public native void setTitleVisibility(@NInt long value);
@@ -451,6 +493,9 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("subtitleVisibility")
     @NInt
@@ -460,6 +505,9 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("titleVisibility")
     @NInt

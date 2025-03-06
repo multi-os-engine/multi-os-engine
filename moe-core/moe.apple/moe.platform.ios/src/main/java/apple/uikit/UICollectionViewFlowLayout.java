@@ -183,11 +183,17 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @ByValue
     public native CGSize estimatedItemSize();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("footerReferenceSize")
     @ByValue
     public native CGSize footerReferenceSize();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("headerReferenceSize")
     @ByValue
@@ -201,16 +207,25 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("initWithCoder:")
     public native UICollectionViewFlowLayout initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("itemSize")
     @ByValue
     public native CGSize itemSize();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("minimumInteritemSpacing")
     @NFloat
     public native double minimumInteritemSpacing();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("minimumLineSpacing")
     @NFloat
@@ -218,6 +233,8 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
 
     /**
      * default is UICollectionViewScrollDirectionVertical
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("scrollDirection")
@@ -241,6 +258,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("sectionHeadersPinToVisibleBounds")
     public native boolean sectionHeadersPinToVisibleBounds();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("sectionInset")
     @ByValue
@@ -256,28 +276,45 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("setEstimatedItemSize:")
     public native void setEstimatedItemSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setFooterReferenceSize:")
     public native void setFooterReferenceSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setHeaderReferenceSize:")
     public native void setHeaderReferenceSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setItemSize:")
     public native void setItemSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setMinimumInteritemSpacing:")
     public native void setMinimumInteritemSpacing(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setMinimumLineSpacing:")
     public native void setMinimumLineSpacing(@NFloat double value);
 
     /**
      * default is UICollectionViewScrollDirectionVertical
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setScrollDirection:")
@@ -300,6 +337,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("setSectionHeadersPinToVisibleBounds:")
     public native void setSectionHeadersPinToVisibleBounds(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setSectionInset:")
     public native void setSectionInset(@ByValue UIEdgeInsets value);

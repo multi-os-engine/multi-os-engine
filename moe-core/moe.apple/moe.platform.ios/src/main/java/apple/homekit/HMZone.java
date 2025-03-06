@@ -190,6 +190,8 @@ public class HMZone extends NSObject {
 
     /**
      * Name of the zone.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -212,6 +214,8 @@ public class HMZone extends NSObject {
 
     /**
      * Array of HMRoom objects that correspond to the rooms contained in this zone.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

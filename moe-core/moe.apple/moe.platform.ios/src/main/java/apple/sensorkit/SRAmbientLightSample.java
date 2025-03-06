@@ -77,6 +77,8 @@ public class SRAmbientLightSample extends NSObject {
     /**
      * Chromaticity is only valid on supporting devices. If not supported,
      * the values will be zero.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("chromaticity")
@@ -132,6 +134,9 @@ public class SRAmbientLightSample extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("lux")
@@ -142,6 +147,9 @@ public class SRAmbientLightSample extends NSObject {
     @Selector("new")
     public static native SRAmbientLightSample new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("placement")
     @NInt

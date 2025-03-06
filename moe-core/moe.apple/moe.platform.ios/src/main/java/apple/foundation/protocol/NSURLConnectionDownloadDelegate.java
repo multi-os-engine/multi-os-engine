@@ -68,6 +68,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLConnectionDownloadDelegate")
 public interface NSURLConnectionDownloadDelegate extends NSURLConnectionDelegate {
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connection:didWriteData:totalBytesWritten:expectedTotalBytes:")
@@ -76,11 +79,17 @@ public interface NSURLConnectionDownloadDelegate extends NSURLConnectionDelegate
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("connectionDidFinishDownloading:destinationURL:")
     void connectionDidFinishDownloadingDestinationURL(@NotNull NSURLConnection connection,
             @NotNull NSURL destinationURL);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @IsOptional
     @Selector("connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:")

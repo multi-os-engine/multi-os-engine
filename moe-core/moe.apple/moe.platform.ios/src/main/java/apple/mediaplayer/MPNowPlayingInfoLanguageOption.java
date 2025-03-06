@@ -161,6 +161,8 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
 
     /**
      * A user presentable display name for this option.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -169,6 +171,8 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
 
     /**
      * A unique identifier representing this option.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -179,6 +183,9 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @Selector("init")
     public native MPNowPlayingInfoLanguageOption init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithType:languageTag:characteristics:displayName:identifier:")
     public native MPNowPlayingInfoLanguageOption initWithTypeLanguageTagCharacteristicsDisplayNameIdentifier(
@@ -190,6 +197,8 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
      * Represents a special case that is used to
      * represent the best audible language option based on system preferences.
      * See AVPlayerItem-selectMediaOptionAutomaticallyInMediaSelectionGroup
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isAutomaticAudibleLanguageOption")
@@ -199,6 +208,8 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
      * Represents a special case that is used to
      * represent the best legible language option based on system preferences.
      * See AVPlayerItem-selectMediaOptionAutomaticallyInMediaSelectionGroup
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isAutomaticLegibleLanguageOption")
@@ -207,6 +218,8 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     /**
      * Characteristics describing the content of the language options.
      * See the LanguageOptionCharacteristics for the most commonly used values.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -215,6 +228,8 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
 
     /**
      * The type of language option.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("languageOptionType")
@@ -226,6 +241,8 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
      * A nil languageTag reprsents that this option should be disabled.
      * A languageTag with the value of MPLangaugeOptionAutoLangaugeTag represents
      * that the best langauge based on the system preferences should be used.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

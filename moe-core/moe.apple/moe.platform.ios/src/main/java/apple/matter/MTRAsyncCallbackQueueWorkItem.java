@@ -64,6 +64,12 @@ public class MTRAsyncCallbackQueueWorkItem extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("cancelHandler")
     @ObjCBlock(name = "call_cancelHandler_ret")
@@ -106,6 +112,12 @@ public class MTRAsyncCallbackQueueWorkItem extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("endWork")
     public native void endWork();
@@ -119,6 +131,12 @@ public class MTRAsyncCallbackQueueWorkItem extends NSObject {
     @Selector("init")
     public native MTRAsyncCallbackQueueWorkItem init();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("initWithQueue:")
     public native MTRAsyncCallbackQueueWorkItem initWithQueue(@NotNull dispatch_queue_t queue);
@@ -150,6 +168,12 @@ public class MTRAsyncCallbackQueueWorkItem extends NSObject {
     @Selector("new")
     public static native MTRAsyncCallbackQueueWorkItem new_objc();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("readyHandler")
     @ObjCBlock(name = "call_readyHandler_ret")
@@ -171,10 +195,22 @@ public class MTRAsyncCallbackQueueWorkItem extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("retryWork")
     public native void retryWork();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("setCancelHandler:")
     public native void setCancelHandler(
@@ -187,6 +223,12 @@ public class MTRAsyncCallbackQueueWorkItem extends NSObject {
         void call_setCancelHandler();
     }
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.2
+     * Deprecated-Message: This class was not intended to be part of the public Matter API
+     */
+    @Deprecated
     @Generated
     @Selector("setReadyHandler:")
     public native void setReadyHandler(@ObjCBlock(name = "call_setReadyHandler") @NotNull Block_setReadyHandler value);

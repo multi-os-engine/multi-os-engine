@@ -32,6 +32,8 @@ public interface UILargeContentViewerInteractionDelegate {
      * If you don’t implement this method and are using standard UIKit controls, the system performs a default action,
      * such as sending a touchUpInside event to the control.
      * This method is called only if the gesture ends successfully (not if it fails or gets canceled).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -45,6 +47,8 @@ public interface UILargeContentViewerInteractionDelegate {
      * Returns the item at a given point in the interaction's view's coordinate system.
      * If this is not implemented, -[UIView pointInside:withEvent:] will be called recursively on the interaction's view
      * to find an appropriate view.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -59,6 +63,8 @@ public interface UILargeContentViewerInteractionDelegate {
     /**
      * Returns the view controller whose region of the screen should be used to display the large content viewer.
      * If this is not implemented, a view controller that contains the interaction's view will be chosen.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

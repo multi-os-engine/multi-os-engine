@@ -373,6 +373,8 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
 
     /**
      * default is UIActivityIndicatorViewStyleMedium
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("activityIndicatorViewStyle")
@@ -439,6 +441,8 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
 
     /**
      * default is YES. calls -setHidden when animating gets set to NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("hidesWhenStopped")
@@ -450,6 +454,8 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
 
     /**
      * sizes the view according to the style
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithActivityIndicatorStyle:")
@@ -459,16 +465,24 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("initWithCoder:")
     public native UIActivityIndicatorView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UIActivityIndicatorView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isAnimating")
     public native boolean isAnimating();
 
     /**
      * default is UIActivityIndicatorViewStyleMedium
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setActivityIndicatorViewStyle:")
@@ -483,15 +497,23 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
 
     /**
      * default is YES. calls -setHidden when animating gets set to NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHidesWhenStopped:")
     public native void setHidesWhenStopped(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();

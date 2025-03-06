@@ -55,7 +55,12 @@ public interface MPPlayableContentDataSource {
      * content items to display.
      * Client applications should always call the completion handler after loading
      * has finished, if this method is implemented.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("beginLoadingChildItemsAtIndexPath:completionHandler:")
@@ -69,7 +74,12 @@ public interface MPPlayableContentDataSource {
      * playback progress as a property of its metadata.
      * If this method is not implemented, MediaPlayer will assume that progress is
      * not supported for any content items.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("childItemsDisplayPlaybackProgressAtIndexPath:")
@@ -80,7 +90,12 @@ public interface MPPlayableContentDataSource {
     /**
      * Returns the content item at the specified index path. If the content item is
      * mutated after returning, its updated contents will be sent to MediaPlayer.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("contentItemAtIndexPath:")
@@ -111,7 +126,12 @@ public interface MPPlayableContentDataSource {
      * Returns the number of child nodes at the specified index path. In a virtual
      * filesystem, this would be the number of files in a specific folder. An empty
      * index path represents the root node.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("numberOfChildItemsAtIndexPath:")
     @NInt

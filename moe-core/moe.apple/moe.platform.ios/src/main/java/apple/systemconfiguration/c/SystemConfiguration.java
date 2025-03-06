@@ -67,7 +67,9 @@ public final class SystemConfiguration {
      *         You must release the returned value.
      * 
      *         API-Since: 2.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -91,7 +93,9 @@ public final class SystemConfiguration {
      *         You must release the returned value.
      * 
      *         API-Since: 2.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -115,7 +119,9 @@ public final class SystemConfiguration {
      *         You must release the returned value.
      * 
      *         API-Since: 2.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -130,7 +136,9 @@ public final class SystemConfiguration {
      * instances.
      * 
      * API-Since: 2.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @CFunction
     @NUInt
@@ -151,7 +159,9 @@ public final class SystemConfiguration {
      *         FALSE if the status could not be determined.
      * 
      *         API-Since: 2.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilityGetFlags(@NotNull SCNetworkReachabilityRef target,
@@ -173,7 +183,9 @@ public final class SystemConfiguration {
      * @return Returns TRUE if the notification client was successfully set.
      * 
      *         API-Since: 2.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilitySetCallback(@NotNull SCNetworkReachabilityRef target,
@@ -195,7 +207,9 @@ public final class SystemConfiguration {
      *         FALSE otherwise.
      * 
      *         API-Since: 2.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilityScheduleWithRunLoop(@NotNull SCNetworkReachabilityRef target,
@@ -217,7 +231,9 @@ public final class SystemConfiguration {
      *         FALSE otherwise.
      * 
      *         API-Since: 2.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilityUnscheduleFromRunLoop(@NotNull SCNetworkReachabilityRef target,
@@ -237,7 +253,9 @@ public final class SystemConfiguration {
      *         FALSE otherwise.
      * 
      *         API-Since: 4.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilitySetDispatchQueue(@NotNull SCNetworkReachabilityRef target,

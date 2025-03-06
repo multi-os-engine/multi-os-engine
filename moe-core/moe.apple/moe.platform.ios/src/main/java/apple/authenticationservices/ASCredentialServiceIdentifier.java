@@ -113,6 +113,8 @@ public class ASCredentialServiceIdentifier extends NSObject implements NSCopying
      * Get the identifier.
      * 
      * @return The service identifier.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -132,6 +134,8 @@ public class ASCredentialServiceIdentifier extends NSObject implements NSCopying
      * 
      * @param identifier string value for the service identifier.
      * @param type       the type that the service identifier string represents.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("initWithIdentifier:type:")
@@ -194,6 +198,8 @@ public class ASCredentialServiceIdentifier extends NSObject implements NSCopying
      * Get the service identifier type.
      * 
      * @return The service identifier type.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("type")

@@ -162,7 +162,12 @@ public class MPPlayableContentManager extends NSObject {
 
     /**
      * Returns the application's instance of the content manager.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sharedContentManager")
@@ -179,7 +184,12 @@ public class MPPlayableContentManager extends NSObject {
 
     /**
      * Used to begin a synchronized update to multiple MPContentItems at once.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("beginUpdates")
     public native void beginUpdates();
@@ -195,12 +205,24 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("context")
     public native MPPlayableContentManagerContext context();
 
+    /**
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native MPPlayableContentDataSource dataSource();
 
+    /**
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -209,7 +231,12 @@ public class MPPlayableContentManager extends NSObject {
 
     /**
      * Ends a synchronized update.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("endUpdates")
     public native void endUpdates();
@@ -234,16 +261,33 @@ public class MPPlayableContentManager extends NSObject {
     /**
      * Tells the content manager that the data source has changed and that we need to
      * reload data from the data source.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
+    /**
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
+     */
+    @Deprecated
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value);
 
+    /**
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
+     */
+    @Deprecated
     @Generated
     public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value) {
         Object __old = dataSource();
@@ -256,10 +300,22 @@ public class MPPlayableContentManager extends NSObject {
         }
     }
 
+    /**
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value);
 
+    /**
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value) {
         Object __old = delegate();

@@ -101,6 +101,8 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
      * ARBodyTrackingConfiguration.
      * It is used to correct the transform's translation. Default value is 1.0.
      * 
+     * API-Since: 13.0
+     * 
      * @see -[ARSkeletonDefinition neutralBodySkeleton3D]
      */
     @Generated
@@ -172,6 +174,8 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
      * The tracked skeleton in 3D.
      * [@note] The default height of this skeleton, measured from lowest to highest joint in standing position, is
      * defined to be 1.71 meters.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

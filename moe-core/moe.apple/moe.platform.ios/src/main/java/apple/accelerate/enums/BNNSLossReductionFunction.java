@@ -11,21 +11,21 @@ public final class BNNSLossReductionFunction {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossReductionNone = 0x00000000;
+    @Generated public static final int None = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossReductionSum = 0x00000001;
+    @Generated public static final int Sum = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossReductionWeightedMean = 0x00000002;
+    @Generated public static final int WeightedMean = 0x00000002;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossReductionMean = 0x00000003;
+    @Generated public static final int Mean = 0x00000003;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSLossReductionNonZeroWeightMean = 0x00000004;
+    @Generated public static final int NonZeroWeightMean = 0x00000004;
 }

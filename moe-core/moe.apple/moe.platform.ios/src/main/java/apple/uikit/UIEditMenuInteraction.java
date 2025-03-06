@@ -91,6 +91,8 @@ public class UIEditMenuInteraction extends NSObject implements UIInteraction {
 
     /**
      * The object that defines the delegate of the interaction.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -108,6 +110,8 @@ public class UIEditMenuInteraction extends NSObject implements UIInteraction {
 
     /**
      * Dismiss the currently active menu if one is currently presented.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("dismissMenu")
@@ -124,6 +128,8 @@ public class UIEditMenuInteraction extends NSObject implements UIInteraction {
 
     /**
      * Creates a new edit menu interaction with the specified delegate.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithDelegate:")
@@ -154,6 +160,8 @@ public class UIEditMenuInteraction extends NSObject implements UIInteraction {
 
     /**
      * Returns the interaction's location within the given view.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("locationInView:")
@@ -170,6 +178,8 @@ public class UIEditMenuInteraction extends NSObject implements UIInteraction {
      * If a menu is already presented, it will be dismissed automatically before the new menu is presented.
      * 
      * [@NOTE] @c presentEditMenuWithConfiguration: is not supported on Mac Catalyst.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("presentEditMenuWithConfiguration:")
@@ -179,6 +189,8 @@ public class UIEditMenuInteraction extends NSObject implements UIInteraction {
      * Reloads the visible menu. This menu has no effect if there is no menu presented. This method will query
      * the menu again from the delegate method @c editMenuInteraction:menuForConfiguration:suggestedActions:
      * and refresh the UI with the updated menu.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("reloadVisibleMenu")
@@ -204,6 +216,8 @@ public class UIEditMenuInteraction extends NSObject implements UIInteraction {
      * Updates the position of the currently visible menu, with an option to animate the action. This method
      * has no effect if no menu is presented. This method will query the position from the delegate method
      * [@c] editMenuInteraction:targetRectForConfiguration: if it is implemented.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("updateVisibleMenuPositionAnimated:")

@@ -178,6 +178,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("alpha")
@@ -187,6 +189,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("beta")
@@ -196,6 +200,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("delta")
@@ -218,6 +224,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * @return A valid MPSCNNSpatialNormalization object or nil, if failure.
      * 
      *         NOTE: For now, kernelWidth must be equal to kernelHeight
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -229,6 +237,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -238,6 +248,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBeta:")
@@ -247,6 +259,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelta:")

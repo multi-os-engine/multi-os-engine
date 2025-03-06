@@ -60,6 +60,8 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
      *                    A PHASESoundEventNodeDefinition that will be a child node of this switch node
      * @param switchValue
      *                    A string value that the metaparameter will use to activate this subtree
+     * 
+     *                    API-Since: 15.0
      */
     @Generated
     @Selector("addSubtree:switchValue:")
@@ -128,6 +130,8 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
      *                                      switch node at runtime.
      * @return
      *         A new PHASESwitchNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithSwitchMetaParameterDefinition:")
@@ -146,6 +150,8 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
      *                                      An optional custom identifier to give to this object
      * @return
      *         A new PHASESwitchNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithSwitchMetaParameterDefinition:identifier:")
@@ -199,6 +205,8 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
      * [@property] mixerDefinition
      * 
      * The readonly property that returns the PHASEMixerDefinition this sampler was created with and assigned to.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

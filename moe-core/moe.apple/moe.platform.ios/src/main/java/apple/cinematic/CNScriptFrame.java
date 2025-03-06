@@ -60,6 +60,8 @@ public class CNScriptFrame extends NSObject implements NSCopying {
 
     /**
      * All detected objects in this frame.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("allDetections")
@@ -83,6 +85,8 @@ public class CNScriptFrame extends NSObject implements NSCopying {
     /**
      * The best detection to focus on in this frame among those with the given detectionGroupID.
      * For example, a face is preferred to the corresponding torso, even though both have the same detectionGroupID.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("bestDetectionForGroupID:")
@@ -127,6 +131,8 @@ public class CNScriptFrame extends NSObject implements NSCopying {
 
     /**
      * The detection in this frame with the given detection ID, if any.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionForID:")
@@ -138,6 +144,9 @@ public class CNScriptFrame extends NSObject implements NSCopying {
      * 
      * The focusDisparity of the focusDetection can be different from that of the frame such as when a rack focus is in
      * progress.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("focusDetection")
@@ -152,6 +161,9 @@ public class CNScriptFrame extends NSObject implements NSCopying {
      * 
      * Pass this to the rendering session when rendering the corresponding frame of the movie to focus at the
      * recommended depth.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("focusDisparity")
@@ -211,6 +223,8 @@ public class CNScriptFrame extends NSObject implements NSCopying {
 
     /**
      * The presentation time associated with the remaining properties.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("time")

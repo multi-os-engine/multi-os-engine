@@ -116,6 +116,8 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
 
     /**
      * conveniences
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -180,24 +182,35 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Selector("weakObjectsHashTable")
     public static native <_ObjectType> NSHashTable<_ObjectType> weakObjectsHashTable();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("addObject:")
     public native void addObject(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     /**
      * convenience
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("anyObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType anyObject();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("containsObject:")
     public native boolean containsObject(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
@@ -209,6 +222,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -232,41 +248,68 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Selector("initWithCoder:")
     public native NSHashTable<?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithOptions:capacity:")
     public native NSHashTable<?> initWithOptionsCapacity(@NUInt long options, @NUInt long initialCapacity);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithPointerFunctions:capacity:")
     public native NSHashTable<?> initWithPointerFunctionsCapacity(@NotNull NSPointerFunctions functions,
             @NUInt long initialCapacity);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("intersectHashTable:")
     public native void intersectHashTable(@NotNull NSHashTable<_ObjectType> other);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("intersectsHashTable:")
     public native boolean intersectsHashTable(@NotNull NSHashTable<_ObjectType> other);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("isEqualToHashTable:")
     public native boolean isEqualToHashTable(@NotNull NSHashTable<_ObjectType> other);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("isSubsetOfHashTable:")
     public native boolean isSubsetOfHashTable(@NotNull NSHashTable<_ObjectType> other);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("member:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType member(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("minusHashTable:")
     public native void minusHashTable(@NotNull NSHashTable<_ObjectType> other);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("objectEnumerator")
@@ -275,28 +318,41 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     /**
      * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
      * be subsequently modified and/or used directly in the creation of other pointer "collections".
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
     @Selector("pointerFunctions")
     public native NSPointerFunctions pointerFunctions();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("removeObject:")
     public native void removeObject(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     /**
      * create a set of the contents
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
     @Selector("setRepresentation")
     public native NSSet<_ObjectType> setRepresentation();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("unionHashTable:")
     public native void unionHashTable(@NotNull NSHashTable<_ObjectType> other);

@@ -88,6 +88,8 @@ public class TKTokenKeychainCertificate extends TKTokenKeychainItem {
 
     /**
      * Contains DER-encoded representation of an X.509 certificate.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class TKTokenKeychainCertificate extends TKTokenKeychainItem {
      * initialize TKTokenKeychainCertificate with data from SecCertificateRef. Use SecCertificateCreateWithData to
      * obtain SecCertificateRef. @c constraints property is initialized indicating that reading of certificate is always
      * allowed, all other operations are disallowed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithCertificate:objectID:")

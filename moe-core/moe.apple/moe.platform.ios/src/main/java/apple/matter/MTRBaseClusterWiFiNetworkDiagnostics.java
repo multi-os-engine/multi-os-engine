@@ -30,7 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Cluster WiFi Network Diagnostics
+ * Cluster Wi-Fi Network Diagnostics
  * 
  * The Wi-Fi Network Diagnostics Cluster provides a means to acquire standardized diagnostics metrics that MAY be used
  * by a Node to assist a user or Administrative Node in diagnosing potential problems.
@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterWiFiNetworkDiagnostics extends MTRCluster {
+public class MTRBaseClusterWiFiNetworkDiagnostics extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }

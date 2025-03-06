@@ -106,6 +106,8 @@ public class NSFileVersion extends NSObject {
     /**
      * Return an NSFileVersion that represents the contents of the file located by a URL, or nil if there is no such
      * file.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -178,6 +180,8 @@ public class NSFileVersion extends NSObject {
     /**
      * Return an array of NSFileVersions associated with the file located by a URL, or nil if there is no such file. The
      * array never contains an NSFileVersion equal to what +currentVersionOfItemAtURL: would return.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -190,6 +194,8 @@ public class NSFileVersion extends NSObject {
      * 
      * When removing versions of a file you should do it as part of a coordinated write to the file. The advice about
      * this for +addVersionOfItemAtURL:withContentsOfURL:options:error: applies here too.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("removeOtherVersionsOfItemAtURL:error:")
@@ -215,6 +221,8 @@ public class NSFileVersion extends NSObject {
     /**
      * Return an array of NSFileVersions that represent unresolved conflicts for the file located by a URL, or nil if
      * there is no such file.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -229,6 +237,8 @@ public class NSFileVersion extends NSObject {
     /**
      * For a file located by a URL, return the NSFileVersion identified by a persistent identifier of the sort returned
      * by -persistentIdentifier, or nil if the version no longer exists.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -239,6 +249,8 @@ public class NSFileVersion extends NSObject {
     /**
      * The location of the receiver's storage, or possibly nil if the receiver's storage has been deleted. The storage
      * is read-only. The URL will have an arcane path. You must not derive user-presentable text from it.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -276,6 +288,8 @@ public class NSFileVersion extends NSObject {
     /**
      * Whether the version was created as a result of the discovery of a conflict between two writers of the versioned
      * file.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isConflict")
@@ -291,6 +305,8 @@ public class NSFileVersion extends NSObject {
      * 
      * Once you have indicated that a conflict has been resolved you cannot make it unresolved again. Setting this to NO
      * causes an exception to be thrown.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isResolved")
@@ -306,6 +322,8 @@ public class NSFileVersion extends NSObject {
      * 
      * Once you have indicated that a conflict has been resolved you cannot make it unresolved again. Setting this to NO
      * causes an exception to be thrown.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setResolved:")
@@ -315,6 +333,8 @@ public class NSFileVersion extends NSObject {
      * The user-presentable name of the version, or possibly nil if the receiver's storage has been deleted. This will
      * be different from the user-presentable name of the versioned file if, for example, the file has been renamed
      * since the version was added.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -326,6 +346,8 @@ public class NSFileVersion extends NSObject {
      * storage has been deleted, or nil if no computer name was recorded. The computer name is guaranteed to have been
      * recorded only if the version is a conflict version. This will be different from that computer's current name if
      * the computer's name has been changed since the version was retrieved from that computer.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -334,6 +356,8 @@ public class NSFileVersion extends NSObject {
 
     /**
      * The modification date of the version, or possibly nil if the receiver's storage has been deleted.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -344,6 +368,8 @@ public class NSFileVersion extends NSObject {
      * An object that can be encoded and, after subsequent decoding, passed to
      * -versionOfItemAtURL:forPersistentIdentifier: to create a new instance of NSFileVersion that is equal to the
      * receiver.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -362,6 +388,8 @@ public class NSFileVersion extends NSObject {
      * 
      * When removing versions of a file you should do it as part of a coordinated write to the file. The advice about
      * this for +addVersionOfItemAtURL:withContentsOfURL:options:error: applies here too.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("removeAndReturnError:")
@@ -382,6 +410,8 @@ public class NSFileVersion extends NSObject {
      * should do it as part of a coordinated write to two files, using -[NSFileCoordinator
      * coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:], most likely using
      * NSFileCoordinatorWritingForReplacing for the file you're promoting the version to.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated

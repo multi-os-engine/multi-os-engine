@@ -171,6 +171,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Possible party size options for this ride. An empty array indicates selecting a party size is not required.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -179,6 +181,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * A message that is shown besides the available party sizes for the user.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -195,6 +199,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     /**
      * A message that includes warnings or disclaimers shown to the user before they confirm the request. For example:
      * "This ride may make multiple stops", or "This ride may be shared with other passengers".
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -207,6 +213,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * used for providing an ETA to the user.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -215,6 +223,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * A set of line items for fare pricing.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -223,6 +233,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * a unique identifier for this ride.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -237,6 +249,9 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("initWithCoder:")
     public native INRideOption initWithCoder(@NotNull NSCoder decoder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithName:estimatedPickupDate:")
     public native INRideOption initWithNameEstimatedPickupDate(@NotNull String name,
@@ -244,6 +259,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * a name for the ride option.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -252,6 +269,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * The indicative range of prices for this option.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -260,6 +279,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Possible party size options for this ride. An empty array indicates selecting a party size is not required.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAvailablePartySizeOptions:")
@@ -267,6 +288,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * A message that is shown besides the available party sizes for the user.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAvailablePartySizeOptionsSelectionPrompt:")
@@ -275,6 +298,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     /**
      * A message that includes warnings or disclaimers shown to the user before they confirm the request. For example:
      * "This ride may make multiple stops", or "This ride may be shared with other passengers".
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDisclaimerMessage:")
@@ -282,6 +307,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * used for providing an ETA to the user.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setEstimatedPickupDate:")
@@ -289,6 +316,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * A set of line items for fare pricing.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFareLineItems:")
@@ -296,6 +325,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * a unique identifier for this ride.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setIdentifier:")
@@ -303,6 +334,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * a name for the ride option.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setName:")
@@ -310,6 +343,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * The indicative range of prices for this option.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPriceRange:")
@@ -317,6 +352,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * eg "47.5x Surge" or "Sale"
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSpecialPricing:")
@@ -324,6 +361,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * a vendor-specific badge image that represents special pricing.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSpecialPricingBadgeImage:")
@@ -334,6 +373,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
      * selects this option, the system will open your application and continue this NSUserActivity in it.) Leave this
      * set to nil to allow an Apple client (e.g. Siri, Maps) to instead book the ride on your app's behalf, which is
      * preferred where possible.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUserActivityForBookingInApplication:")
@@ -341,6 +382,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * If true, the fare will be metered by the driver, and price range information will be noted as unavailable.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUsesMeteredFare:")
@@ -348,6 +391,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * eg "47.5x Surge" or "Sale"
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -356,6 +401,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * a vendor-specific badge image that represents special pricing.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -373,6 +420,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
      * selects this option, the system will open your application and continue this NSUserActivity in it.) Leave this
      * set to nil to allow an Apple client (e.g. Siri, Maps) to instead book the ride on your app's behalf, which is
      * preferred where possible.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -381,6 +430,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * If true, the fare will be metered by the driver, and price range information will be noted as unavailable.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

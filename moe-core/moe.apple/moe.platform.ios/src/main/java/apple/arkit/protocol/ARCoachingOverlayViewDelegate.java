@@ -22,6 +22,8 @@ public interface ARCoachingOverlayViewDelegate {
      * This is called when the view has been deactivated, either manually or automatically
      * 
      * @param coachingOverlayView The view that was deactivated
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -40,6 +42,8 @@ public interface ARCoachingOverlayViewDelegate {
      * implement this method to override this behavior. The delegate is then responsible for resetting the session.
      * 
      * @param coachingOverlayView The view currently active
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -55,6 +59,8 @@ public interface ARCoachingOverlayViewDelegate {
      * `ARCoachingOverlayView` to take over the full screen.
      * 
      * @param coachingOverlayView The view that will be activated
+     * 
+     *                            API-Since: 13.0
      */
     @Generated
     @IsOptional

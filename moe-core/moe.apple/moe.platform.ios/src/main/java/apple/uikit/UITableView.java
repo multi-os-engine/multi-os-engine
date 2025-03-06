@@ -412,6 +412,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is NO. Controls whether rows can be selected when in editing mode
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("allowsSelectionDuringEditing")
@@ -477,6 +479,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * Use -performBatchUpdates:completion: instead of these methods, which will be deprecated in a future release.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("beginUpdates")
@@ -485,6 +489,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index
      * path is out of range.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -500,29 +506,43 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("cellLayoutMarginsFollowReadableWidth")
     public native boolean cellLayoutMarginsFollowReadableWidth();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDataSource dataSource();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("deleteRowsAtIndexPaths:withRowAnimation:")
     public native void deleteRowsAtIndexPathsWithRowAnimation(@NotNull NSArray<? extends NSIndexPath> indexPaths,
             @NInt long animation);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("deleteSections:withRowAnimation:")
     public native void deleteSectionsWithRowAnimation(@NotNull NSIndexSet sections, @NInt long animation);
 
     /**
      * Used by the delegate to acquire an already allocated cell, in lieu of allocating a new one.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -550,6 +570,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("dequeueReusableHeaderFooterViewWithIdentifier:")
     public native UITableViewHeaderFooterView dequeueReusableHeaderFooterViewWithIdentifier(@NotNull String identifier);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("deselectRowAtIndexPath:animated:")
     public native void deselectRowAtIndexPathAnimated(@NotNull NSIndexPath indexPath, boolean animated);
@@ -558,6 +581,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("endUpdates")
     public native void endUpdates();
@@ -610,6 +636,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * returns nil if cell is not visible
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -618,6 +646,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * returns nil if point is outside of any row in the table
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -626,6 +656,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * returns nil or index path representing section and row of selection.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -634,6 +666,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * returns nil if rect not valid
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -650,6 +684,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("indexPathsForSelectedRows")
     public native NSArray<? extends NSIndexPath> indexPathsForSelectedRows();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("indexPathsForVisibleRows")
@@ -669,22 +706,32 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * must specify style at creation. -initWithFrame: calls this with UITableViewStylePlain
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithFrame:style:")
     public native UITableView initWithFrameStyle(@ByValue CGRect frame, @NInt long style);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("insertRowsAtIndexPaths:withRowAnimation:")
     public native void insertRowsAtIndexPathsWithRowAnimation(@NotNull NSArray<? extends NSIndexPath> indexPaths,
             @NInt long animation);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("insertSections:withRowAnimation:")
     public native void insertSectionsWithRowAnimation(@NotNull NSIndexSet sections, @NInt long animation);
 
     /**
      * default is NO. setting is not animated.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isEditing")
@@ -692,6 +739,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is NO. setting is not animated.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEditing:")
@@ -711,6 +760,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("moveSection:toSection:")
     public native void moveSectionToSection(@NInt long section, @NInt long newSection);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("numberOfRowsInSection:")
     @NInt
@@ -718,6 +770,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * Info
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("numberOfSections")
@@ -733,16 +787,25 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDataSourcePrefetching prefetchDataSource();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rectForFooterInSection:")
     @ByValue
     public native CGRect rectForFooterInSection(@NInt long section);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rectForHeaderInSection:")
     @ByValue
     public native CGRect rectForHeaderInSection(@NInt long section);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rectForRowAtIndexPath:")
     @ByValue
@@ -750,6 +813,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * includes header, footer and all rows
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("rectForSection:")
@@ -793,6 +858,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * Reloads everything from scratch. Redisplays visible rows. Note that this will cause any existing drop placeholder
      * rows to be removed.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("reloadData")
@@ -834,16 +901,24 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("rowHeight")
     @NFloat
     public native double rowHeight();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("scrollToNearestSelectedRowAtScrollPosition:animated:")
     public native void scrollToNearestSelectedRowAtScrollPositionAnimated(@NInt long scrollPosition, boolean animated);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("scrollToRowAtIndexPath:atScrollPosition:animated:")
     public native void scrollToRowAtIndexPathAtScrollPositionAnimated(@NotNull NSIndexPath indexPath,
@@ -851,6 +926,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sectionFooterHeight")
@@ -859,6 +936,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sectionHeaderHeight")
@@ -887,6 +966,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * show special section index list on right when row count reaches this value. default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sectionIndexMinimumDisplayRowCount")
@@ -907,6 +988,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * Selects and deselects rows. These methods will not call the delegate methods
      * (-tableView:willSelectRowAtIndexPath: or tableView:didSelectRowAtIndexPath:), nor will it send out a
      * notification.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("selectRowAtIndexPath:animated:scrollPosition:")
@@ -979,6 +1062,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is NO. Controls whether rows can be selected when in editing mode
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAllowsSelectionDuringEditing:")
@@ -1003,10 +1088,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("setCellLayoutMarginsFollowReadableWidth:")
     public native void setCellLayoutMarginsFollowReadableWidth(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
         Object __old = dataSource();
@@ -1019,10 +1110,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
         }
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -1035,6 +1132,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
         }
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setEditing:animated:")
     public native void setEditingAnimated(boolean editing, boolean animated);
@@ -1102,6 +1202,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setRowHeight:")
@@ -1109,6 +1211,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSectionFooterHeight:")
@@ -1116,6 +1220,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSectionHeaderHeight:")
@@ -1141,6 +1247,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * show special section index list on right when row count reaches this value. default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSectionIndexMinimumDisplayRowCount:")
@@ -1190,6 +1298,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * accessory view below content. default is nil. not to be confused with section footer
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTableFooterView:")
@@ -1197,11 +1307,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * accessory view for above row content. default is nil. not to be confused with section header
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTableHeaderView:")
     public native void setTableHeaderView(@Nullable UIView value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("style")
     @NInt
@@ -1209,6 +1324,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * accessory view below content. default is nil. not to be confused with section footer
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1217,12 +1334,17 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * accessory view for above row content. default is nil. not to be confused with section header
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
     @Selector("tableHeaderView")
     public native UIView tableHeaderView();
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("visibleCells")
@@ -1608,4 +1730,35 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Determines the type of items that will tightly hug their content.
+     * 
+     * The default value for this property is `UITableViewContentHuggingElementsSectionHeaders` on visionOS for plain
+     * style table views and `UITableViewContentHuggingElementsNone` on all other platforms.
+     * When the value of this property is `UITableViewContentHuggingElementsSectionHeaders`, any header view will not
+     * stretch the width of the table view if their content's intrinsic content size is less than the table view's
+     * width.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("contentHuggingElements")
+    @NInt
+    public native long contentHuggingElements();
+
+    /**
+     * Determines the type of items that will tightly hug their content.
+     * 
+     * The default value for this property is `UITableViewContentHuggingElementsSectionHeaders` on visionOS for plain
+     * style table views and `UITableViewContentHuggingElementsNone` on all other platforms.
+     * When the value of this property is `UITableViewContentHuggingElementsSectionHeaders`, any header view will not
+     * stretch the width of the table view if their content's intrinsic content size is less than the table view's
+     * width.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setContentHuggingElements:")
+    public native void setContentHuggingElements(@NInt long value);
 }

@@ -97,6 +97,9 @@ public class TKTokenSession extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -118,6 +121,8 @@ public class TKTokenSession extends NSObject {
 
     /**
      * @param token Token instance to which is this session instance bound.
+     * 
+     *              API-Since: 10.0
      */
     @Generated
     @Selector("initWithToken:")
@@ -158,10 +163,16 @@ public class TKTokenSession extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) TKTokenSessionDelegate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) TKTokenSessionDelegate value) {
         Object __old = delegate();
@@ -182,6 +193,9 @@ public class TKTokenSession extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("token")

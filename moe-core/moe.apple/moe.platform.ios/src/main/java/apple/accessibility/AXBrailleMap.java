@@ -110,6 +110,8 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Indicates the number of dots in each dimension. This size may change if the user zooms in the content.
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("dimensions")
@@ -125,6 +127,9 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.2
+     */
     @Generated
     @Selector("heightAtPoint:")
     public native float heightAtPoint(@ByValue CGPoint point);
@@ -164,6 +169,9 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("new")
     public static native AXBrailleMap new_objc();
 
+    /**
+     * API-Since: 15.2
+     */
     @Generated
     @Selector("presentImage:")
     public native void presentImage(@NotNull CGImageRef image);
@@ -181,6 +189,8 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
      * 1 indicates completely raised, 0 completely lowered.
      * The bottom, left is represented by { 0,0 }.
      * The top, right is represented by { dimensions.width - 1, dimensions.height - 1}
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("setHeight:atPoint:")

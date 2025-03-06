@@ -114,6 +114,7 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     public native MPSTriangleAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithCoder:group:")
     public native MPSTriangleAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
@@ -124,6 +125,7 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     public native MPSTriangleAccelerationStructure initWithDevice(
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithGroup:")
     public native MPSTriangleAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
@@ -168,7 +170,11 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
      * structure.
      * 
      * Note that this property is an alias for the polygonCount property.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setTriangleCount:")
     public native void setTriangleCount(@NUInt long value);
@@ -196,7 +202,11 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
      * structure.
      * 
      * Note that this property is an alias for the polygonCount property.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("triangleCount")
     @NUInt

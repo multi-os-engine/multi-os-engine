@@ -26,6 +26,8 @@ public interface UICalendarSelectionMultiDateDelegate {
      * @param dateComponents The date to be checked by selection.
      * 
      * @return YES if the date can be deselected, NO otherwise.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -42,6 +44,8 @@ public interface UICalendarSelectionMultiDateDelegate {
      * @param dateComponents The date to be checked by selection.
      * 
      * @return YES if the date can be selected, NO otherwise.
+     * 
+     *         API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -56,6 +60,8 @@ public interface UICalendarSelectionMultiDateDelegate {
      * 
      * @param selection      The @c UICalendarSelectionMultiDate
      * @param dateComponents The date that was deselected by the user.
+     * 
+     *                       API-Since: 16.0
      */
     @Generated
     @Selector("multiDateSelection:didDeselectDate:")
@@ -67,6 +73,8 @@ public interface UICalendarSelectionMultiDateDelegate {
      * 
      * @param selection      The @c UICalendarSelectionMultiDate
      * @param dateComponents The date that was selected by the user.
+     * 
+     *                       API-Since: 16.0
      */
     @Generated
     @Selector("multiDateSelection:didSelectDate:")

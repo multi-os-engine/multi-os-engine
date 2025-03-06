@@ -81,6 +81,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * Scale factor to apply to the product. This value should be equal
      * to the corresponding value in the forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("alpha")
@@ -120,6 +122,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -144,6 +148,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * to the forward kernel's input data. weightMatrix should contain the same values
      * used to compute the result of the forward kernel.
      * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer               A valid MTLCommandBuffer to receive the encoded kernel.
      * 
      * @param gradientMatrix              A valid MPSMatrix object which specifies the input gradient.
@@ -166,6 +172,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * This operation computes the resulting gradient of the loss function with respect
      * to the forward kernel's weight data. inputMatrix should contain the same values
      * used to compute the result of the forward kernel.
+     * 
+     * API-Since: 12.0
      * 
      * @param commandBuffer                 A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -208,12 +216,17 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixFullyConnectedGradient
      * @param device   The MTLDevice on which to make the MPSMatrixFullyConnectedGradient object.
      * @return A new MPSMatrixFullyConnected object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixFullyConnectedGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSMatrixFullyConnectedGradient initWithDevice(
@@ -259,6 +272,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * Scale factor to apply to the product. This value should be equal
      * to the corresponding value in the forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -273,6 +288,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
@@ -287,6 +304,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -302,6 +321,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceOutputFeatureChannels:")
@@ -320,6 +341,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -335,6 +358,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")
@@ -351,6 +376,8 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceOutputFeatureChannels")

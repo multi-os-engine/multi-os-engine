@@ -68,6 +68,8 @@ public class HKElectrocardiogram extends HKSample {
 
     /**
      * The average heart rate of the user while the electrocardiogram was recorded.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -97,6 +99,8 @@ public class HKElectrocardiogram extends HKSample {
 
     /**
      * The classification of this electrocardiogram sample.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("classification")
@@ -153,6 +157,8 @@ public class HKElectrocardiogram extends HKSample {
 
     /**
      * The number of voltage measurements in the electrocardiogram.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("numberOfVoltageMeasurements")
@@ -169,6 +175,8 @@ public class HKElectrocardiogram extends HKSample {
 
     /**
      * The frequency at which the data was sampled. This is reported in [HKUnit hertzUnit].
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -195,6 +203,8 @@ public class HKElectrocardiogram extends HKSample {
 
     /**
      * Whether the user experienced symptoms during this electrocardiogram.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("symptomsStatus")

@@ -165,14 +165,24 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * GL_FALSE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("colorMaterialEnabled")
     public native byte colorMaterialEnabled();
 
     /**
      * { 1.0, 1.0, 1.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("constantColor")
     @ByValue
@@ -180,7 +190,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Disabled
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("fog")
@@ -192,7 +207,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * @"GLKBaseEffect"
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("label")
@@ -200,7 +220,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Disabled
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("light0")
@@ -208,7 +233,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Disabled
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("light1")
@@ -216,7 +246,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Disabled
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("light2")
@@ -224,7 +259,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * { 0.2, 0.2, 0.2, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("lightModelAmbientColor")
     @ByValue
@@ -232,89 +272,150 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * GL_FALSE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("lightModelTwoSided")
     public native byte lightModelTwoSided();
 
     /**
      * GLKLightingTypePerVertex
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("lightingType")
     public native int lightingType();
 
     /**
      * Default material state
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("material")
     public native GLKEffectPropertyMaterial material();
 
+    @Deprecated
     @Generated
     @Selector("prepareToDraw")
     public native void prepareToDraw();
 
     /**
      * GL_FALSE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setColorMaterialEnabled:")
     public native void setColorMaterialEnabled(byte value);
 
     /**
      * { 1.0, 1.0, 1.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setConstantColor:")
     public native void setConstantColor(@ByValue GLKVector4 value);
 
     /**
      * @"GLKBaseEffect"
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setLabel:")
     public native void setLabel(@Nullable String value);
 
     /**
      * { 0.2, 0.2, 0.2, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setLightModelAmbientColor:")
     public native void setLightModelAmbientColor(@ByValue GLKVector4 value);
 
     /**
      * GL_FALSE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setLightModelTwoSided:")
     public native void setLightModelTwoSided(byte value);
 
     /**
      * GLKLightingTypePerVertex
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setLightingType:")
     public native void setLightingType(int value);
 
     /**
      * texture2d0, texture2d1
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setTextureOrder:")
     public native void setTextureOrder(@Nullable NSArray<? extends GLKEffectPropertyTexture> value);
 
     /**
      * GL_TRUE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setUseConstantColor:")
     public native void setUseConstantColor(byte value);
 
     /**
      * Disabled
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("texture2d0")
@@ -322,7 +423,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Disabled
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("texture2d1")
@@ -330,7 +436,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * texture2d0, texture2d1
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("textureOrder")
@@ -338,7 +449,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * Identity Matrices
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("transform")
@@ -346,7 +462,12 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     /**
      * GL_TRUE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("useConstantColor")
     public native byte useConstantColor();

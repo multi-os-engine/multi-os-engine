@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Allowed data types for multidimensional arrays
+ * The data type of scalars in the multi-array.
  * 
  * API-Since: 11.0
  */

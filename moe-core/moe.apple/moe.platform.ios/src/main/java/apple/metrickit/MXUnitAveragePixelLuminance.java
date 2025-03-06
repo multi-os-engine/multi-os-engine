@@ -65,6 +65,8 @@ public class MXUnitAveragePixelLuminance extends NSDimension {
 
     /**
      * Base unit - apl
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

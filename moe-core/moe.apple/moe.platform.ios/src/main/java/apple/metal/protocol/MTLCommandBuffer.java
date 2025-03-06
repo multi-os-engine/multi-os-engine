@@ -35,6 +35,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.MTLAccelerationStructurePassDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.ConstPtr;
+import org.moe.natj.objc.ObjCObject;
 
 /**
  * [@protocol] MTLCommandBuffer
@@ -52,6 +55,8 @@ public interface MTLCommandBuffer {
      * addCompletedHandler:block:
      * 
      * Add a block to be called when this command buffer has completed execution.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("addCompletedHandler:")
@@ -61,6 +66,8 @@ public interface MTLCommandBuffer {
      * addScheduledHandler:block:
      * 
      * Adds a block to be called when this command buffer has been scheduled for execution.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("addScheduledHandler:")
@@ -70,6 +77,8 @@ public interface MTLCommandBuffer {
      * blitCommandEncoder
      * 
      * returns a blit command encoder to encode into this command buffer.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -81,6 +90,8 @@ public interface MTLCommandBuffer {
      * [@property] commandQueue
      * 
      * The command queue this command buffer was created from.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -92,6 +103,8 @@ public interface MTLCommandBuffer {
      * commit
      * 
      * Commit a command buffer so it can be executed as soon as possible.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("commit")
@@ -101,6 +114,8 @@ public interface MTLCommandBuffer {
      * computeCommandEncoder
      * 
      * returns a compute command encoder to encode into this command buffer.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -112,6 +127,8 @@ public interface MTLCommandBuffer {
      * [@property] device
      * 
      * The device this resource was created against.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -123,6 +140,8 @@ public interface MTLCommandBuffer {
      * enqueue
      * 
      * Append this command buffer to the end of its MTLCommandQueue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("enqueue")
@@ -132,6 +151,8 @@ public interface MTLCommandBuffer {
      * [@property] error
      * 
      * If an error occurred during execution, the NSError may contain more details about the problem.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -142,6 +163,8 @@ public interface MTLCommandBuffer {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -152,6 +175,8 @@ public interface MTLCommandBuffer {
      * parallelRenderCommandEncoderWithDescriptor:
      * 
      * returns a parallel render pass encoder to encode into this command buffer.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -166,6 +191,8 @@ public interface MTLCommandBuffer {
      * Add a drawable present that will be invoked when this command buffer has been scheduled for execution.
      * 
      * The submission thread will be lock stepped with present call been serviced by window server
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentDrawable:")
@@ -178,6 +205,8 @@ public interface MTLCommandBuffer {
      * for execution.
      * 
      * The submission thread will be lock stepped with present call been serviced by window server
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentDrawable:atTime:")
@@ -187,6 +216,8 @@ public interface MTLCommandBuffer {
      * renderCommandEncoderWithDescriptor:
      * 
      * returns a render command endcoder to encode into this command buffer.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -198,6 +229,8 @@ public interface MTLCommandBuffer {
      * [@property] retainedReferences
      * 
      * If YES, this command buffer holds strong references to objects needed to execute this command buffer.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("retainedReferences")
@@ -207,6 +240,8 @@ public interface MTLCommandBuffer {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLabel:")
@@ -217,6 +252,8 @@ public interface MTLCommandBuffer {
      * 
      * status reports the current stage in the lifetime of MTLCommandBuffer, as it proceeds to enqueued, committed,
      * scheduled, and completed.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("status")
@@ -227,6 +264,8 @@ public interface MTLCommandBuffer {
      * waitUntilCompleted
      * 
      * Synchronously wait for this command buffer to complete.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("waitUntilCompleted")
@@ -236,6 +275,8 @@ public interface MTLCommandBuffer {
      * waitUntilScheduled
      * 
      * Synchronously wait for this command buffer to be scheduled.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("waitUntilScheduled")
@@ -466,4 +507,29 @@ public interface MTLCommandBuffer {
     @MappedReturn(ObjCObjectMapper.class)
     MTLAccelerationStructureCommandEncoder accelerationStructureCommandEncoderWithDescriptor(
             @NotNull MTLAccelerationStructurePassDescriptor descriptor);
+
+    /**
+     * useResidencySet
+     * 
+     * Marks the residency set as part of the current command buffer execution. This ensures that the residency set is
+     * resident during execution of the command buffer.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("useResidencySet:")
+    void useResidencySet(@Mapped(ObjCObjectMapper.class) @NotNull MTLResidencySet residencySet);
+
+    /**
+     * useResidencySets
+     * 
+     * Marks the residency sets as part of the current command buffer execution. This ensures that the residency sets
+     * are resident during execution of the command buffer.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("useResidencySets:count:")
+    void useResidencySetsCount(@ReferenceInfo(type = ObjCObject.class) @NotNull ConstPtr<ObjCObject> residencySets,
+            @NUInt long count);
 }

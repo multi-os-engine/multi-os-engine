@@ -422,6 +422,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -431,6 +433,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -456,12 +460,17 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * info that was fetched and cached from the data source and delegate
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("numberOfComponents")
     @NInt
     public native long numberOfComponents();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("numberOfRowsInComponent:")
     @NInt
@@ -469,15 +478,23 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * Reloading whole view or single component
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("reloadAllComponents")
     public native void reloadAllComponents();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("reloadComponent:")
     public native void reloadComponent(@NInt long component);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rowSizeForComponent:")
     @ByValue
@@ -485,6 +502,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * scrolls the specified row to center.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("selectRow:inComponent:animated:")
@@ -492,6 +511,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * returns selected row. -1 if nothing selected
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("selectedRowInComponent:")
@@ -500,6 +521,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDataSource:")
@@ -507,6 +530,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UIPickerViewDataSource value) {
@@ -522,6 +547,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -529,6 +556,8 @@ public class UIPickerView extends UIView implements NSCoding {
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPickerViewDelegate value) {
@@ -566,6 +595,8 @@ public class UIPickerView extends UIView implements NSCoding {
      * returns the view provided by the delegate via pickerView:viewForRow:forComponent:reusingView:
      * or nil if the row/component is not visible or the delegate does not implement
      * pickerView:viewForRow:forComponent:reusingView:
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

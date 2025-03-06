@@ -119,6 +119,8 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
      * Options controlling how batch normalization is calculated
      * 
      * Default: MPSCNNBatchNormalizationFlagsDefault
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("flags")
@@ -134,6 +136,9 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
     @Selector("init")
     public native MPSCNNBatchNormalizationNode init();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSource:dataSource:")
     public native MPSCNNBatchNormalizationNode initWithSourceDataSource(@NotNull MPSNNImageNode source,
@@ -166,6 +171,9 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
     @Selector("new")
     public static native MPSCNNBatchNormalizationNode new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSource:dataSource:")
     public static native MPSCNNBatchNormalizationNode nodeWithSourceDataSource(@NotNull MPSNNImageNode source,
@@ -183,6 +191,8 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
      * Options controlling how batch normalization is calculated
      * 
      * Default: MPSCNNBatchNormalizationFlagsDefault
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setFlags:")

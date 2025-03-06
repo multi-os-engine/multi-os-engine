@@ -51,6 +51,9 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("action")
     @NInt
@@ -112,6 +115,9 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     @Selector("init")
     public native ILClassificationResponse init();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithClassificationAction:")
     public native ILClassificationResponse initWithClassificationAction(@NInt long action);
@@ -164,6 +170,8 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
      * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
      * - All dictionary keys are NSStrings
      * - NSNumbers are not NaN or infinity
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -206,6 +214,8 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
      * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
      * - All dictionary keys are NSStrings
      * - NSNumbers are not NaN or infinity
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

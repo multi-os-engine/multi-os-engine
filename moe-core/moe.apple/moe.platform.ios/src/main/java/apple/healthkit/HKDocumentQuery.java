@@ -302,6 +302,8 @@ public class HKDocumentQuery extends HKQuery {
      * 
      * The XML content for documents may be large. This property can be used to control whether the query
      * returns the XML content for each record.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("includeDocumentData")
@@ -322,6 +324,8 @@ public class HKDocumentQuery extends HKQuery {
      * query will prompt the user to authorize your app to read individual documents. The query will then
      * return the documents that your app is authorized to read. The user will only be asked to authorize your
      * app to read documents that are new since the last time an HKDocumentQuery was executed.
+     * 
+     * API-Since: 10.0
      * 
      * @param documentType        The type of document to retreive.
      * @param predicate           The predicate which documents should match.
@@ -347,6 +351,8 @@ public class HKDocumentQuery extends HKQuery {
      * [@property] limit
      * 
      * The maximum number of documents the receiver will return upon completion.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("limit")
@@ -357,6 +363,8 @@ public class HKDocumentQuery extends HKQuery {
      * [@property] sortDescriptors
      * 
      * An array of NSSortDescriptors.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -493,4 +501,31 @@ public class HKDocumentQuery extends HKQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

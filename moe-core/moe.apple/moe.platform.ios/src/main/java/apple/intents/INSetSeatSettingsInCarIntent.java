@@ -167,16 +167,34 @@ public class INSetSeatSettingsInCarIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enableCooling")
     public native NSNumber enableCooling();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enableHeating")
     public native NSNumber enableHeating();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("enableMassage")
@@ -201,16 +219,34 @@ public class INSetSeatSettingsInCarIntent extends INIntent {
             @Nullable NSNumber enableHeating, @Nullable NSNumber enableCooling, @Nullable NSNumber enableMassage,
             @NInt long seat, @Nullable NSNumber level, @NInt long relativeLevelSetting);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("level")
     public native NSNumber level();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("relativeLevelSetting")
     @NInt
     public native long relativeLevelSetting();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetSeatSettingsInCarIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("seat")
     @NInt

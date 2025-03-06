@@ -158,18 +158,26 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
 
     /**
      * limits are imprecise/not strict
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("countLimit")
     @NUInt
     public native long countLimit();
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSCacheDelegate delegate();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("evictsObjectsWithDiscardedContent")
     public native boolean evictsObjectsWithDiscardedContent();
@@ -178,36 +186,56 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("init")
     public native NSCache<?, ?> init();
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     /**
      * limits are imprecise/not strict
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setCountLimit:")
     public native void setCountLimit(@NUInt long value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSCacheDelegate value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSCacheDelegate value) {
         Object __old = delegate();
@@ -220,22 +248,33 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
         }
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setEvictsObjectsWithDiscardedContent:")
     public native void setEvictsObjectsWithDiscardedContent(boolean value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(@NotNull String value);
 
     /**
      * 0 cost
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj,
             @NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setObject:forKey:cost:")
     public native void setObjectForKeyCost(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj,
@@ -243,6 +282,8 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
 
     /**
      * limits are imprecise/not strict
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTotalCostLimit:")
@@ -250,6 +291,8 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
 
     /**
      * limits are imprecise/not strict
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("totalCostLimit")

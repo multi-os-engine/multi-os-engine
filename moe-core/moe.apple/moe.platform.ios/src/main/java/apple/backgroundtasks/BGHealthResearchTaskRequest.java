@@ -134,6 +134,8 @@ public class BGHealthResearchTaskRequest extends BGProcessingTaskRequest {
 
     /**
      * A String indicating file protection availability required for processing.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("protectionTypeOfRequiredData")
@@ -150,6 +152,8 @@ public class BGHealthResearchTaskRequest extends BGProcessingTaskRequest {
 
     /**
      * A String indicating file protection availability required for processing.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setProtectionTypeOfRequiredData:")
@@ -157,6 +161,8 @@ public class BGHealthResearchTaskRequest extends BGProcessingTaskRequest {
 
     /**
      * A String indicating file protection availability required for processing.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     public void setProtectionTypeOfRequiredData(@NotNull String value) {

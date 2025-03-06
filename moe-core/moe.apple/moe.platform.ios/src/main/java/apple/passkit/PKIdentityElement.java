@@ -54,6 +54,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The address on record with the issuer.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -62,6 +64,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The user's age in years.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -73,6 +77,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
      * For example, ageThresholdElementWithAge:21 will return true if the user is at least 21 years old.
      * This value is only available for a given age if it was provided by the issuer. If this value
      * is not available, it will automatically fall back to a request for age.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -123,6 +129,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The user's date of birth.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -140,6 +148,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The document's expiration date. This is usually the expiration date of the corresponding physical
      * document, if applicable.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -149,6 +159,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The document's issue date. This is usually the issue date of the corresponding physical
      * document, if applicable.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -157,6 +169,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The doument's number, as defined by the document's issuing authority.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -165,6 +179,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The user's driving privileges.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -173,6 +189,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The user's family name or last name.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -181,6 +199,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The user's given name or first name.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -215,6 +235,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The state or government that issued the identity document.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -233,6 +255,8 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     /**
      * The portrait of the user on record with the issuer.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

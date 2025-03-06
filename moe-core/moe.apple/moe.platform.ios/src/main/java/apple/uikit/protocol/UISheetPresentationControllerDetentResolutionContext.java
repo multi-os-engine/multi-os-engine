@@ -23,6 +23,8 @@ public interface UISheetPresentationControllerDetentResolutionContext {
     /**
      * The trait collection of the sheet's containerView. Effectively the same as the window's traitCollection, and does
      * not include overrides from the sheet's overrideTraitCollection.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -31,6 +33,8 @@ public interface UISheetPresentationControllerDetentResolutionContext {
 
     /**
      * The maximum value a detent can have.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maximumDetentValue")

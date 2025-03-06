@@ -33,6 +33,8 @@ public interface GCDevicePhysicalInputStateDiff {
      *                The element to check. This may be a pointer to either the "live" element
      *                from the device's physical input, or a pointer to an element from any input
      *                state "snapshot" of the device's physical input.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("changeForElement:")
@@ -46,6 +48,8 @@ public interface GCDevicePhysicalInputStateDiff {
      * This method returns \c nil if the changed elements could not be determined -
      * typically because the input state queue filled up and older input state
      * snapshots were dropped.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

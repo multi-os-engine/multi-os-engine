@@ -72,6 +72,9 @@ public class INGetCarPowerLevelStatusIntent extends INIntent {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("carName")
@@ -104,6 +107,9 @@ public class INGetCarPowerLevelStatusIntent extends INIntent {
     @Selector("init")
     public native INGetCarPowerLevelStatusIntent init();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("initWithCarName:")
     public native INGetCarPowerLevelStatusIntent initWithCarName(@Nullable INSpeakableString carName);

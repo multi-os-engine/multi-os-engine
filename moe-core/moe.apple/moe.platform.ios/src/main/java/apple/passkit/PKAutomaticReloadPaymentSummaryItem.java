@@ -135,6 +135,8 @@ public class PKAutomaticReloadPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The threshold at which the reload amount will be applied.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setThresholdAmount:")
@@ -160,6 +162,8 @@ public class PKAutomaticReloadPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The threshold at which the reload amount will be applied.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

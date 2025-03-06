@@ -19,12 +19,18 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSCollectionLayoutEnvironment")
 public interface NSCollectionLayoutEnvironment {
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("container")
     @MappedReturn(ObjCObjectMapper.class)
     NSCollectionLayoutContainer container();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("traitCollection")

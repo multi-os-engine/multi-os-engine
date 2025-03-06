@@ -48,6 +48,9 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("additionalValueForKey:")
@@ -66,6 +69,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * The identifier of the app that will be shown.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -78,6 +83,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * A token representing an App Analytics campaign.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -127,6 +134,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
      * 
      * @param appIdentifier the app identifier of the app to show.
      * @param position      the desired position of the overlay.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @Selector("initWithAppIdentifier:position:")
@@ -162,6 +171,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * The position an overlay will show at on screen.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("position")
@@ -170,6 +181,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * The provider token for the developer that created the app being presented.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -184,6 +197,9 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAdditionalValue:forKey:")
     public native void setAdditionalValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
@@ -191,6 +207,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * The identifier of the app that will be shown.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAppIdentifier:")
@@ -198,6 +216,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * A token representing an App Analytics campaign.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCampaignToken:")
@@ -205,6 +225,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * The position an overlay will show at on screen.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPosition:")
@@ -212,6 +234,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * The provider token for the developer that created the app being presented.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setProviderToken:")
@@ -219,6 +243,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * Allows the user to interactively dismiss an overlay.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUserDismissible:")
@@ -234,6 +260,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * Allows the user to interactively dismiss an overlay.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("userDismissible")

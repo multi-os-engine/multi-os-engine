@@ -152,6 +152,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
 
     /**
      * An optional progress can be displayed on the document thumbnail while the document is loading (during opening).
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -173,6 +175,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
 
     /**
      * An optional progress can be displayed on the document thumbnail while the document is loading (during opening).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLoadingProgress:")
@@ -184,6 +188,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
      * controller's view
      * If UIDocumentBrowserViewController is being presented, this view should be a subview of the presenting view
      * controller's view
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTargetView:")
@@ -195,6 +201,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
      * controller's view
      * If UIDocumentBrowserViewController is being presented, this view should be a subview of the presenting view
      * controller's view
+     * 
+     * API-Since: 11.0
      */
     @Generated
     public void setTargetView(@Nullable UIView value) {
@@ -222,6 +230,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
      * controller's view
      * If UIDocumentBrowserViewController is being presented, this view should be a subview of the presenting view
      * controller's view
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

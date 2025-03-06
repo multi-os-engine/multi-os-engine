@@ -87,6 +87,8 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
      * 
      * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("comparisonType")
@@ -168,6 +170,8 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
      * 
      * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setComparisonType:")

@@ -58,6 +58,8 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
      * 
      * @param subtree
      *                Add a subtree of PHASESoundEventNodeDefinition nodes beneath this node.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("addSubtree:")
@@ -118,6 +120,8 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
      * 
      * @return
      *         A new PHASEContainerNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("init")
@@ -132,6 +136,8 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
      *                   An optional custom identifier to give to this object
      * @return
      *         A new PHASEContainerNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -166,6 +172,8 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
      * 
      * @return
      *         A new PHASEContainerNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Owned

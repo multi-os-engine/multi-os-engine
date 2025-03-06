@@ -40,6 +40,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -166,6 +169,8 @@ public class UIActivity extends NSObject {
 
     /**
      * activity must call this when activity is finished
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("activityDidFinish:")
@@ -173,6 +178,8 @@ public class UIActivity extends NSObject {
 
     /**
      * default returns nil. subclass must override and must return non-nil value
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -181,6 +188,8 @@ public class UIActivity extends NSObject {
 
     /**
      * default returns nil. subclass must override and must return non-nil value
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -189,6 +198,8 @@ public class UIActivity extends NSObject {
 
     /**
      * default returns nil. subclass may override to return custom activity type that is reported to completion handler
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -197,6 +208,8 @@ public class UIActivity extends NSObject {
 
     /**
      * return non-nil to have view controller presented modally. call activityDidFinish at end. default returns nil
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -205,6 +218,8 @@ public class UIActivity extends NSObject {
 
     /**
      * override this to return availability of activity based on items. default returns NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("canPerformWithActivityItems:")
@@ -217,6 +232,8 @@ public class UIActivity extends NSObject {
     /**
      * if no view controller, this method is called. call activityDidFinish when done. default calls [self
      * activityDidFinish:NO]
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("performActivity")
@@ -224,6 +241,8 @@ public class UIActivity extends NSObject {
 
     /**
      * override to extract items and set up your HI. default does nothing
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("prepareWithActivityItems:")

@@ -267,10 +267,16 @@ public class UIContentUnavailableView extends UIView implements UIContentView {
     @Selector("init")
     public native UIContentUnavailableView init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIContentUnavailableView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native UIContentUnavailableView initWithConfiguration(
@@ -295,6 +301,8 @@ public class UIContentUnavailableView extends UIView implements UIContentView {
 
     /**
      * Whether the content can scroll. Default is NO.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isScrollEnabled")
@@ -415,6 +423,8 @@ public class UIContentUnavailableView extends UIView implements UIContentView {
 
     /**
      * Whether the content can scroll. Default is NO.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setScrollEnabled:")

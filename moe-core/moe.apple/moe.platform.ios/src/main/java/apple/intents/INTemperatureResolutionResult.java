@@ -101,6 +101,8 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the temperature with which the user wants to
      * continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -118,6 +120,8 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided temperatures.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -184,6 +188,8 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
      * resolvedTemperature can be different than the original temperature. This allows app extensions to apply business
      * logic constraints to the temperature. For example, constraining it to a maximum or minimum value.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

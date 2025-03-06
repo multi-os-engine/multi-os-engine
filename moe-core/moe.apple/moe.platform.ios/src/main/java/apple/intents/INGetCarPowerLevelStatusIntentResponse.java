@@ -79,6 +79,9 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("chargePercentRemaining")
@@ -94,6 +97,9 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -109,12 +115,17 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     /**
      * The distance that the car can travel on the remaining resources.
+     * 
+     * API-Since: 10.3
      */
     @Nullable
     @Generated
     @Selector("distanceRemaining")
     public native NSMeasurement<NSUnitLength> distanceRemaining();
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("fuelPercentRemaining")
@@ -137,6 +148,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -182,17 +195,25 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("setChargePercentRemaining:")
     public native void setChargePercentRemaining(@Nullable NSNumber value);
 
     /**
      * The distance that the car can travel on the remaining resources.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("setDistanceRemaining:")
     public native void setDistanceRemaining(@Nullable NSMeasurement<NSUnitLength> value);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("setFuelPercentRemaining:")
     public native void setFuelPercentRemaining(@Nullable NSNumber value);

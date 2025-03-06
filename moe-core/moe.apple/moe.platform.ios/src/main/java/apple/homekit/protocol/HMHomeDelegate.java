@@ -53,6 +53,8 @@ public interface HMHomeDelegate {
      * @param home      Sender of the message.
      * 
      * @param accessory Accessory that was added to the home.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -67,6 +69,8 @@ public interface HMHomeDelegate {
      * @param home      Sender of this message.
      * 
      * @param actionSet Action set that was added to the home.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -81,6 +85,8 @@ public interface HMHomeDelegate {
      * @param home Sender of the message.
      * 
      * @param room Room that was added to the home.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -97,6 +103,8 @@ public interface HMHomeDelegate {
      * @param room Room that was added to the zone.
      * 
      * @param zone Zone that was modified.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -113,6 +121,8 @@ public interface HMHomeDelegate {
      * @param service Service that was added to the service group.
      * 
      * @param group   Service group that was modified.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -128,6 +138,8 @@ public interface HMHomeDelegate {
      * @param home  Sender of the message.
      * 
      * @param group Service group that was added to the home.
+     * 
+     *              API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -142,6 +154,8 @@ public interface HMHomeDelegate {
      * @param home    Sender of the message.
      * 
      * @param trigger Trigger that was added to the home.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -156,6 +170,8 @@ public interface HMHomeDelegate {
      * @param home Sender of this message.
      * 
      * @param user User who was granted access to the home.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -170,6 +186,8 @@ public interface HMHomeDelegate {
      * @param home Sender of the message.
      * 
      * @param zone Zone that was added to the home.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -187,6 +205,8 @@ public interface HMHomeDelegate {
      * @param error     Error encountered by accessory.
      * 
      * @param accessory Accessory that encountered the error
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -202,6 +222,8 @@ public interface HMHomeDelegate {
      * @param home      Sender of the message.
      * 
      * @param accessory Accessory that was removed from the home.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -216,6 +238,8 @@ public interface HMHomeDelegate {
      * @param home      Sender of this message.
      * 
      * @param actionSet Action set that was removed from the home.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -230,6 +254,8 @@ public interface HMHomeDelegate {
      * @param home Sender of the message.
      * 
      * @param room Room that was removed from the home.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -246,6 +272,8 @@ public interface HMHomeDelegate {
      * @param room Room that was removed from the zone.
      * 
      * @param zone Zone that was modified.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -262,6 +290,8 @@ public interface HMHomeDelegate {
      * @param service Service that was removed from the service group.
      * 
      * @param group   Service group that was modified.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -277,6 +307,8 @@ public interface HMHomeDelegate {
      * @param home  Sender of the message.
      * 
      * @param group Service group that was removed from the home.
+     * 
+     *              API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -291,6 +323,8 @@ public interface HMHomeDelegate {
      * @param home    Sender of the message.
      * 
      * @param trigger Trigger that was removed from the home.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -305,6 +339,8 @@ public interface HMHomeDelegate {
      * @param home Sender of this message.
      * 
      * @param user User whose access was revoked from the home.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -319,6 +355,8 @@ public interface HMHomeDelegate {
      * @param home Sender of the message.
      * 
      * @param zone Zone that was removed from the home.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -333,6 +371,8 @@ public interface HMHomeDelegate {
      * @param home      Sender of this message.
      * 
      * @param accessory Accessory that was unblocked
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -348,6 +388,8 @@ public interface HMHomeDelegate {
      * @param home      Sender of this message.
      * 
      * @param actionSet Action set that was modified.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -362,6 +404,8 @@ public interface HMHomeDelegate {
      * @param home      Sender of this message.
      * 
      * @param actionSet Action set that was modified.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -376,6 +420,8 @@ public interface HMHomeDelegate {
      * @param home Sender of this message.
      * 
      * @param room Room that was modified.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -389,7 +435,9 @@ public interface HMHomeDelegate {
      * 
      * @param home  Sender of this message.
      * 
-     * @param group The service group that was modfied.
+     * @param group The service group that was modified.
+     * 
+     *              API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -404,6 +452,8 @@ public interface HMHomeDelegate {
      * @param home    Sender of this message.
      * 
      * @param trigger Trigger that was modified.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -418,6 +468,8 @@ public interface HMHomeDelegate {
      * @param home Sender of this message.
      * 
      * @param zone Zone that was modified.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -434,6 +486,8 @@ public interface HMHomeDelegate {
      * @param room      New room for the accessory.
      * 
      * @param accessory Accessory that was assigned a new room.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -451,6 +505,8 @@ public interface HMHomeDelegate {
      * @param home    Sender of this message.
      * 
      * @param trigger The trigger that was updated.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -463,6 +519,8 @@ public interface HMHomeDelegate {
      * Informs the delegate of a change in the name of a home.
      * 
      * @param home Sender of this message.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @IsOptional

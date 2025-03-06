@@ -26,7 +26,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.2
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.SubscriptionPeriod
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -126,7 +129,10 @@ public class SKProductSubscriptionPeriod extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionPeriod
      */
+    @Deprecated
     @Generated
     @Selector("numberOfUnits")
     @NUInt
@@ -150,7 +156,10 @@ public class SKProductSubscriptionPeriod extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionPeriod
      */
+    @Deprecated
     @Generated
     @Selector("unit")
     @NUInt

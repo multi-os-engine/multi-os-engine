@@ -31,6 +31,8 @@ public interface UICollectionViewDragDelegate {
      * Allows customization of the preview used for the item being lifted from or cancelling back to the collection
      * view.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -44,6 +46,8 @@ public interface UICollectionViewDragDelegate {
     /**
      * Controls whether move operations (see UICollectionViewDropProposal.operation) are allowed for the drag session.
      * If not implemented this will default to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -55,6 +59,8 @@ public interface UICollectionViewDragDelegate {
 
     /**
      * Called to signal the end of the drag session.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -68,6 +74,8 @@ public interface UICollectionViewDragDelegate {
      * Controls whether the drag session is restricted to the source application.
      * If YES the current drag session will not be permitted to drop into another application.
      * If not implemented this will default to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -80,6 +88,8 @@ public interface UICollectionViewDragDelegate {
     /**
      * Called after the lift animation has completed to signal the start of a drag session.
      * This call will always be balanced with a corresponding call to -collectionView:dragSessionDidEnd:
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -95,6 +105,8 @@ public interface UICollectionViewDragDelegate {
      * desired.
      * If not implemented, or if an empty array is returned, no items will be added to the drag and the gesture
      * will be handled normally.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -109,6 +121,8 @@ public interface UICollectionViewDragDelegate {
     /**
      * Provide items to begin a drag associated with a given indexPath.
      * If an empty array is returned a drag session will not begin.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

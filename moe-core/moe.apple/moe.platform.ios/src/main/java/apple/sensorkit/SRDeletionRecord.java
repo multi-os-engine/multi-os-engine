@@ -95,6 +95,9 @@ public class SRDeletionRecord extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("endTime")
     public native double endTime();
@@ -139,6 +142,9 @@ public class SRDeletionRecord extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native SRDeletionRecord new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reason")
     @NInt
@@ -156,6 +162,9 @@ public class SRDeletionRecord extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("startTime")
     public native double startTime();

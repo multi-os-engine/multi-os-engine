@@ -81,6 +81,9 @@ public class SRWristDetection extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("crownOrientation")
     @NInt
@@ -130,6 +133,9 @@ public class SRWristDetection extends NSObject {
     @Selector("new")
     public static native SRWristDetection new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("onWrist")
     public native boolean onWrist();
@@ -155,6 +161,9 @@ public class SRWristDetection extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("wristLocation")
     @NInt

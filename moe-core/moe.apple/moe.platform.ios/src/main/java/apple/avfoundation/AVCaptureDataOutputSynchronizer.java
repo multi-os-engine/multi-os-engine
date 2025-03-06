@@ -110,6 +110,8 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
      * [@property] dataOutputs
      * 
      * The data outputs provided in the initializer method.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -128,6 +130,8 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
      * The value of this property is an object conforming to the AVCaptureDataOutputSynchronizerDelegate protocol that
      * will receive synchronized data output. The delegate is set using the -setDelegate:queue: method. This property is
      * key-value observable.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -141,6 +145,8 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
      * The dispatch queue on which all AVCaptureDataOutputSynchronizerDelegate methods will be called.
      * 
      * The value of this property is a dispatch_queue_t. The queue is set using the -setDelegate:queue: method.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -169,6 +175,8 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
      *                    An array of capture data outputs where the first is the primary output.
      * @return
      *         A newly initialized AVCaptureDataOutputSynchronizer instance.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDataOutputs:")
@@ -224,7 +232,10 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
      * delegateCallbackQueue.
      * 
      * A serial dispatch queue must be used to guarantee that synchronized data will be delivered in order. The
-     * delegateCallbackQueue parameter may not be NULL, except when setting the delegate to nil.
+     * delegateCallbackQueue parameter may not be NULL, except when setting the delegate to nil otherwise
+     * -setDelegate:queue: throws an NSInvalidArgumentException.
+     * 
+     * API-Since: 11.0
      * 
      * @param delegate
      *                              An object conforming to the AVCaptureDataOutputSynchronizerDelegate protocol that

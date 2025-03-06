@@ -120,6 +120,8 @@ public class DCDevice extends NSObject {
     /**
      * A representation of the device for which you want to query the two bits of
      * data.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -165,6 +167,8 @@ public class DCDevice extends NSObject {
      * - completion: A completion block that includes the following parameters:
      * - `token`: An ephemeral token that identifies the current device.
      * - `error`: The error that occurred, if any.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("generateTokenWithCompletionHandler:")
@@ -207,6 +211,8 @@ public class DCDevice extends NSObject {
     /**
      * A Boolean value that indicates whether the device supports the DeviceCheck
      * API.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isSupported")

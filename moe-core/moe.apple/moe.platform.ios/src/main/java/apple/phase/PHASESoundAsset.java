@@ -90,6 +90,8 @@ public class PHASESoundAsset extends PHASEAsset {
      * [@property] data
      * 
      * The buffer for the sound asset, if applicable.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -160,6 +162,8 @@ public class PHASESoundAsset extends PHASEAsset {
      * [@property] type
      * 
      * The sound asset type.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("type")
@@ -170,6 +174,8 @@ public class PHASESoundAsset extends PHASEAsset {
      * [@property] url
      * 
      * The URL of the sound asset, if applicable.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

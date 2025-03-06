@@ -107,6 +107,8 @@ public class VNRecognizedPoint3D extends VNPoint3D {
      * 
      * The string is defined by the model that recognized the point. Usually these are technical labels that are not
      * localized and not meant to be used directly to be presented to an end user in the UI.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("identifier")

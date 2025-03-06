@@ -24,6 +24,8 @@ import org.jetbrains.annotations.Nullable;
 public interface CPListTemplateItem {
     /**
      * Any custom user info related to this item.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -31,6 +33,8 @@ public interface CPListTemplateItem {
 
     /**
      * The primary text shown in a cell displaying this list item.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -39,6 +43,8 @@ public interface CPListTemplateItem {
 
     /**
      * Any custom user info related to this item.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

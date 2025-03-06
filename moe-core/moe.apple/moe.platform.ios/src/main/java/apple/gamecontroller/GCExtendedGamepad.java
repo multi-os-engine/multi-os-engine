@@ -167,27 +167,42 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * X B
      * \ /
      * A
+     * 
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("buttonB")
     public native GCControllerButtonInput buttonB();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("buttonY")
     public native GCControllerButtonInput buttonY();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("controller")
@@ -195,6 +210,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
 
     /**
      * Required to be analog in the Extended profile. All the elements of this directional input are thus analog.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -207,6 +224,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
 
     /**
      * Shoulder buttons are required to be analog inputs.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -216,6 +235,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional
      * input are thus analog.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -225,6 +246,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game
      * for example.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -233,6 +256,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
 
     /**
      * Shoulder buttons are required to be analog inputs.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -242,12 +267,17 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional
      * input are thus analog.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("rightThumbstick")
     public native GCControllerDirectionPad rightThumbstick();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("rightTrigger")
@@ -272,11 +302,17 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Selector("saveSnapshot")
     public native GCExtendedGamepadSnapshot saveSnapshot();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("valueChangedHandler")

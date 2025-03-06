@@ -179,12 +179,17 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("becomeFirstResponder")
     public native boolean becomeFirstResponder();
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("canBecomeFirstResponder")
@@ -200,6 +205,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
 
     /**
      * default is YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("canResignFirstResponder")
@@ -284,6 +291,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("inputViewController")
     public native UIInputViewController inputViewController();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isFirstResponder")
     public native boolean isFirstResponder();
@@ -329,6 +339,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("motionEnded:withEvent:")
     public native void motionEndedWithEvent(@NInt long motion, @Nullable UIEvent event);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("nextResponder")
@@ -394,6 +407,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("remoteControlReceivedWithEvent:")
     public native void remoteControlReceivedWithEvent(@Nullable UIEvent event);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("resignFirstResponder")
     public native boolean resignFirstResponder();
@@ -478,15 +494,23 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
      * touch it is handling (those touches it received in touchesBegan:withEvent:).
      * *** You must handle cancelled touches to ensure correct behavior in your application. Failure to
      * do so is very likely to lead to incorrect behavior or crashes.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("touchesBegan:withEvent:")
     public native void touchesBeganWithEvent(@NotNull NSSet<? extends UITouch> touches, @Nullable UIEvent event);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("touchesCancelled:withEvent:")
     public native void touchesCancelledWithEvent(@NotNull NSSet<? extends UITouch> touches, @Nullable UIEvent event);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("touchesEnded:withEvent:")
     public native void touchesEndedWithEvent(@NotNull NSSet<? extends UITouch> touches, @Nullable UIEvent event);
@@ -498,6 +522,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("touchesEstimatedPropertiesUpdated:")
     public native void touchesEstimatedPropertiesUpdated(@NotNull NSSet<? extends UITouch> touches);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("touchesMoved:withEvent:")
     public native void touchesMovedWithEvent(@NotNull NSSet<? extends UITouch> touches, @Nullable UIEvent event);
@@ -666,4 +693,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("showWritingTools:")
+    public native void showWritingTools(@Mapped(ObjCObjectMapper.class) @NotNull Object sender);
 }

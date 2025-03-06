@@ -88,6 +88,8 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -166,6 +168,8 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
      * INPlaybackRepeatMode. The resolvedValue can be different than the original INPlaybackRepeatMode. This allows app
      * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

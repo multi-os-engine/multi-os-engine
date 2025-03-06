@@ -17,6 +17,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CTSubscriberDelegate")
 public interface CTSubscriberDelegate {
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("subscriberTokenRefreshed:")
     void subscriberTokenRefreshed(@NotNull CTSubscriber subscriber);

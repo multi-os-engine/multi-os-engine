@@ -88,6 +88,8 @@ public class UITextItemMenuPreview extends NSObject {
 
     /**
      * Show the default system preview for the given text item.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("defaultPreview")
@@ -109,6 +111,8 @@ public class UITextItemMenuPreview extends NSObject {
 
     /**
      * Show the specified preview view for the given text item.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithView:")

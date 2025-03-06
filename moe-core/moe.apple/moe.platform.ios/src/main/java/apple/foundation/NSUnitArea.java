@@ -60,6 +60,9 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("acres")
@@ -75,6 +78,9 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("allocWithZone:")
     public static native NSUnitArea allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("ares")
@@ -123,6 +129,9 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("hectares")
@@ -167,21 +176,33 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareCentimeters")
     public static native NSUnitArea squareCentimeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareFeet")
     public static native NSUnitArea squareFeet();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareInches")
     public static native NSUnitArea squareInches();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareKilometers")
@@ -189,37 +210,57 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - squareMeters
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("squareMegameters")
     public static native NSUnitArea squareMegameters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareMeters")
     public static native NSUnitArea squareMeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareMicrometers")
     public static native NSUnitArea squareMicrometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareMiles")
     public static native NSUnitArea squareMiles();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareMillimeters")
     public static native NSUnitArea squareMillimeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareNanometers")
     public static native NSUnitArea squareNanometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("squareYards")

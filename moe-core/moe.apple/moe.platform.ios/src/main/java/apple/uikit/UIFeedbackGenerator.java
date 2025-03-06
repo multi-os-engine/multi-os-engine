@@ -39,6 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UIInteraction;
 
 /**
  * UIFeedbackGenerator is an abstract class that should not be used directly
@@ -49,7 +50,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIFeedbackGenerator extends NSObject {
+public class UIFeedbackGenerator extends NSObject implements UIInteraction {
     static {
         NatJ.register();
     }
@@ -159,6 +160,11 @@ public class UIFeedbackGenerator extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native UIFeedbackGenerator init();
@@ -167,6 +173,8 @@ public class UIFeedbackGenerator extends NSObject {
      * informs self that it will likely receive events soon, so that it can ensure minimal latency for any feedback
      * generated
      * safe to call more than once before the generator receives an event, if events are still imminently possible
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("prepare")
@@ -176,4 +184,26 @@ public class UIFeedbackGenerator extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("didMoveToView:")
+    public native void didMoveToView(@Nullable UIView view);
+
+    /**
+     * initalize the generator with a view to attach it to the provided view as an interaction.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("feedbackGeneratorForView:")
+    public static native UIFeedbackGenerator feedbackGeneratorForView(@NotNull UIView view);
+
+    @Generated
+    @Selector("view")
+    @Nullable
+    public native UIView view();
+
+    @Generated
+    @Selector("willMoveToView:")
+    public native void willMoveToView(@Nullable UIView view);
 }

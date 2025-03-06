@@ -40,6 +40,8 @@ public interface MTROperationalCertificateIssuer {
      * The csrNonce in the provided MTROperationalCSRInfo will be the nonce that was
      * sent in the CSRRequest command, which will be guaranteed, at this point, to
      * match the nonce in the CSRResponse command.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("issueOperationalCertificateForRequest:attestationInfo:controller:completion:")
@@ -80,6 +82,8 @@ public interface MTROperationalCertificateIssuer {
      * 
      * This will be read on an arbitrary queue and must not block or call any
      * Matter APIs.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("shouldSkipAttestationCertificateValidation")

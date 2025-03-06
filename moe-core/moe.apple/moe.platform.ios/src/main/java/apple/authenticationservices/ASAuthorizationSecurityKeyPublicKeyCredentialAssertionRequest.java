@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASAuthorizationWebBrowserSecurityKeyPublicKeyCredentialAssertionRequest;
 
 /**
  * API-Since: 15.0
@@ -37,7 +38,8 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest extends ASAuthorizationRequest implements
-        ASAuthorizationPublicKeyCredentialAssertionRequest {
+        ASAuthorizationPublicKeyCredentialAssertionRequest,
+        ASAuthorizationWebBrowserSecurityKeyPublicKeyCredentialAssertionRequest {
     static {
         NatJ.register();
     }
@@ -216,4 +218,28 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest exten
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Use this value to request the appid WebAuthn extension. This can only be requested by web browsers.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("appID")
+    @Nullable
+    public native String appID();
+
+    @Generated
+    @Selector("clientData")
+    @Nullable
+    public native ASPublicKeyCredentialClientData clientData();
+
+    /**
+     * Use this value to request the appid WebAuthn extension. This can only be requested by web browsers.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("setAppID:")
+    public native void setAppID(@Nullable String value);
 }

@@ -115,6 +115,9 @@ public class INSetTaskAttributeTemporalEventTriggerResolutionResult extends INTe
     @Selector("init")
     public native INSetTaskAttributeTemporalEventTriggerResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTemporalEventTriggerResolutionResult:")
     public native INSetTaskAttributeTemporalEventTriggerResolutionResult initWithTemporalEventTriggerResolutionResult(
@@ -184,6 +187,9 @@ public class INSetTaskAttributeTemporalEventTriggerResolutionResult extends INTe
     @Selector("unsupported")
     public static native INSetTaskAttributeTemporalEventTriggerResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

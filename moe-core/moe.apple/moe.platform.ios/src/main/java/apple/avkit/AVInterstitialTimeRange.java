@@ -185,6 +185,8 @@ public class AVInterstitialTimeRange extends NSObject implements NSCopying, NSSe
      * [@property] timeRange
      * 
      * The time range of the interstitial.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("timeRange")

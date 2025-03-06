@@ -104,6 +104,8 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
      * If sampleBufferWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
      * 
      * AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("droppedReason")
@@ -164,6 +166,8 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
      * property is never NULL. If a data output has no data to return, it is simply not present in the dictionary of
      * synchronized data returned by AVCaptureDataOutputSynchronizer's
      * -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -177,6 +181,8 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
      * 
      * AVCaptureVideoDataOutput has a delegate callback for dropped sample buffers. AVCaptureAudioDataOutput does not.
      * Therefore, sampleBufferWasDropped may be YES for video, but never for audio.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sampleBufferWasDropped")

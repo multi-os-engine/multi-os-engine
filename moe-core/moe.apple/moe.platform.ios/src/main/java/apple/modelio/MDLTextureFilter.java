@@ -161,55 +161,91 @@ public class MDLTextureFilter extends NSObject {
     @Selector("init")
     public native MDLTextureFilter init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("magFilter")
     @NUInt
     public native long magFilter();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("minFilter")
     @NUInt
     public native long minFilter();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("mipFilter")
     @NUInt
     public native long mipFilter();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rWrapMode")
     @NUInt
     public native long rWrapMode();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("sWrapMode")
     @NUInt
     public native long sWrapMode();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setMagFilter:")
     public native void setMagFilter(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setMinFilter:")
     public native void setMinFilter(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setMipFilter:")
     public native void setMipFilter(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setRWrapMode:")
     public native void setRWrapMode(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setSWrapMode:")
     public native void setSWrapMode(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setTWrapMode:")
     public native void setTWrapMode(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("tWrapMode")
     @NUInt

@@ -169,6 +169,9 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("bookingDate")
@@ -176,6 +179,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * A nullable string describing the booking
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -184,6 +189,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * A vendor specific identifier that refers to this booking.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -209,6 +216,9 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("initWithCoder:")
     public native INRestaurantReservationBooking initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:")
     public native INRestaurantReservationBooking initWithRestaurantBookingDatePartySizeBookingIdentifier(
@@ -217,6 +227,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * Boolean indicating whether timeslot is available for booking. Defaults to YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isBookingAvailable")
@@ -224,16 +236,24 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * Boolean indicating whether timeslot is available for booking. Defaults to YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBookingAvailable:")
     public native void setBookingAvailable(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("offers")
     public native NSArray<? extends INRestaurantOffer> offers();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("partySize")
     @NUInt
@@ -241,6 +261,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * YES means an email address is required to book. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requiresEmailAddress")
@@ -248,6 +270,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * YES means restaurant must be contacted by phone before confirmation is given. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requiresManualRequest")
@@ -255,6 +279,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * YES means a name is required to book. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requiresName")
@@ -262,22 +288,32 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * YES means a phone number required to book. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("requiresPhoneNumber")
     public native boolean requiresPhoneNumber();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setBookingDate:")
     public native void setBookingDate(@NotNull NSDate value);
 
     /**
      * A nullable string describing the booking
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBookingDescription:")
@@ -285,21 +321,31 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * A vendor specific identifier that refers to this booking.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBookingIdentifier:")
     public native void setBookingIdentifier(@NotNull String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setOffers:")
     public native void setOffers(@Nullable NSArray<? extends INRestaurantOffer> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPartySize:")
     public native void setPartySize(@NUInt long value);
 
     /**
      * YES means an email address is required to book. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRequiresEmailAddress:")
@@ -307,6 +353,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * YES means restaurant must be contacted by phone before confirmation is given. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRequiresManualRequest:")
@@ -314,6 +362,8 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * YES means a name is required to book. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRequiresName:")
@@ -321,11 +371,16 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     /**
      * YES means a phone number required to book. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRequiresPhoneNumber:")
     public native void setRequiresPhoneNumber(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRestaurant:")
     public native void setRestaurant(@NotNull INRestaurant value);

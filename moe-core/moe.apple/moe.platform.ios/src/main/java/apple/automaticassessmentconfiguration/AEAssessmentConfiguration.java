@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
  * API-Since: 13.4
@@ -285,4 +286,35 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("configurationsByApplication")
+    @NotNull
+    public native NSDictionary<? extends AEAssessmentApplication, ? extends AEAssessmentParticipantConfiguration> configurationsByApplication();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("mainParticipantConfiguration")
+    @NotNull
+    public native AEAssessmentParticipantConfiguration mainParticipantConfiguration();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("removeApplication:")
+    public native void removeApplication(@NotNull AEAssessmentApplication application);
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("setConfiguration:forApplication:")
+    public native void setConfigurationForApplication(@NotNull AEAssessmentParticipantConfiguration configuration,
+            @NotNull AEAssessmentApplication application);
 }

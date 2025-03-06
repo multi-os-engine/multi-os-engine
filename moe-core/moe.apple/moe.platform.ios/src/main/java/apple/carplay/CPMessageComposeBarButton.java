@@ -102,6 +102,8 @@ public class CPMessageComposeBarButton extends CPBarButton {
      * 
      * [@note] This button type does not use a handler. Instead, tapping this button will activate Siri
      * and launch into a compose message flow.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("init")
@@ -116,6 +118,8 @@ public class CPMessageComposeBarButton extends CPBarButton {
      * 
      * [@note] This button type does not use a handler. Instead, tapping this button will activate Siri
      * and launch into a compose message flow.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithImage:")

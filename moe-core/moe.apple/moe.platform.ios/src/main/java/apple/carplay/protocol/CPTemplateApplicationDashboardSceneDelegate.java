@@ -29,6 +29,8 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
      * 
      * [@note] The dashboardController object will be strongly retained by the CPTemplateApplicationDashboardScene, the
      * delegate does not need to retain it.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @IsOptional
@@ -41,6 +43,8 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
 
     /**
      * The Dashboard navigation widget has disconnected.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @IsOptional

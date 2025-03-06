@@ -57,6 +57,8 @@ public interface INResumeWorkoutIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INResumeWorkoutIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -76,6 +78,8 @@ public interface INResumeWorkoutIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INResumeWorkoutIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleResumeWorkout:completion:")
@@ -92,6 +96,8 @@ public interface INResumeWorkoutIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

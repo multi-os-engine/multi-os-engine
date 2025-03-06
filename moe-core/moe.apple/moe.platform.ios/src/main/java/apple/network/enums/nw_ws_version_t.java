@@ -16,9 +16,9 @@ public final class nw_ws_version_t {
     /**
      * [@const] nw_ws_version_invalid An invalid WebSocket version
      */
-    @Generated public static final int nw_ws_version_invalid = 0x00000000;
+    @Generated public static final int _invalid = 0x00000000;
     /**
      * [@const] nw_ws_version_13 WebSocket v13 as defined in RFC 6455
      */
-    @Generated public static final int nw_ws_version_13 = 0x00000001;
+    @Generated public static final int _13 = 0x00000001;
 }

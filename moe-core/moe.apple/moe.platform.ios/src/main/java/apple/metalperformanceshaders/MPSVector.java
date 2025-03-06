@@ -96,6 +96,8 @@ public class MPSVector extends NSObject {
      * [@property] data
      * 
      * An MTLBuffer to store the data.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -107,6 +109,8 @@ public class MPSVector extends NSObject {
      * [@property] dataType
      * 
      * The type of the MPSVector data.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dataType")
@@ -124,6 +128,8 @@ public class MPSVector extends NSObject {
      * [@property] device
      * 
      * The device on which the MPSVector will be used.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -151,6 +157,9 @@ public class MPSVector extends NSObject {
      * 
      * (descriptor.vectors-1) * descriptor.vectorBytes +
      * descriptor.length * (element size) bytes.
+     * 
+     * 
+     * API-Since: 11.0
      * 
      * @param buffer     The MTLBuffer object which contains the data to use for the
      *                   MPSVector. May not be NULL.
@@ -190,6 +199,8 @@ public class MPSVector extends NSObject {
      * [@property] length
      * 
      * The number of elements in the vector.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("length")
@@ -222,6 +233,8 @@ public class MPSVector extends NSObject {
      * 
      * The stride, in bytes, between corresponding elements of
      * consecutive vectors.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("vectorBytes")
@@ -232,6 +245,8 @@ public class MPSVector extends NSObject {
      * [@property] vectors
      * 
      * The number of vectors in the MPSVector.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("vectors")

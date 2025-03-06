@@ -78,6 +78,8 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
      * the same queue.
      * (if you violate this restriction and mix calls between the main queue and some background queue, the framework
      * will log and/or assert to avoid deadlocks)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("applySnapshot:animatingDifferences:")
@@ -85,6 +87,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
             @NotNull NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot,
             boolean animatingDifferences);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("applySnapshot:animatingDifferences:completion:")
     public native void applySnapshotAnimatingDifferencesCompletion(
@@ -130,6 +135,8 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
 
     /**
      * Default value is UITableViewRowAnimationAutomatic. Change takes effect on the next update.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("defaultRowAnimation")
@@ -145,6 +152,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("indexPathForItemIdentifier:")
@@ -155,6 +165,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Selector("init")
     public native UITableViewDiffableDataSource<?, ?> init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTableView:cellProvider:")
     public native UITableViewDiffableDataSource<?, ?> initWithTableViewCellProvider(@NotNull UITableView tableView,
@@ -188,6 +201,8 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
 
     /**
      * convert item NSIndexPath <-> ItemIdentifierType
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -227,6 +242,8 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
 
     /**
      * Default value is UITableViewRowAnimationAutomatic. Change takes effect on the next update.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDefaultRowAnimation:")
@@ -239,6 +256,8 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     /**
      * Create a snapshot of the current UITableView data source state.
      * This snapshot can be mutated and later applied via -applySnapshot:animatingDifferences:
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

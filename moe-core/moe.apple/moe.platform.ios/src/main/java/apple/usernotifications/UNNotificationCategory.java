@@ -91,6 +91,9 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("categoryWithIdentifier:actions:intentIdentifiers:options:")
     public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersOptions(
@@ -174,6 +177,8 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     /**
      * The UNNotificationActions in the order they will be displayed.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -194,6 +199,8 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     /**
      * The unique identifier for this category. The UNNotificationCategory's actions will be displayed on notifications
      * when the UNNotificationCategory's identifier matches the UNNotificationRequest's categoryIdentifier.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -211,12 +218,17 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     /**
      * The intents supported support for notifications of this category. See <Intents/INIntentIdentifiers.h> for
      * possible values.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("intentIdentifiers")
     public native NSArray<String> intentIdentifiers();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("options")
     @NUInt

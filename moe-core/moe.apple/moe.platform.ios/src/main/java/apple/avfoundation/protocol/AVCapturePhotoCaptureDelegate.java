@@ -80,6 +80,8 @@ public interface AVCapturePhotoCaptureDelegate {
      * The timing of this callback is analogous to AVCaptureStillImageOutput's capturingStillImage property changing
      * from YES to NO.
      * 
+     * API-Since: 10.0
+     * 
      * @param output
      *                         The calling instance of AVCapturePhotoOutput.
      * @param resolvedSettings
@@ -100,6 +102,8 @@ public interface AVCapturePhotoCaptureDelegate {
      * A callback fired when the photo capture is completed and no more callbacks will be fired.
      * 
      * This callback always fires last and when it does, you may clean up any state relating to this photo capture.
+     * 
+     * API-Since: 10.0
      * 
      * @param output
      *                         The calling instance of AVCapturePhotoOutput.
@@ -270,6 +274,8 @@ public interface AVCapturePhotoCaptureDelegate {
      * after you call -capturePhotoWithSettings:delegate:, so you can know what to expect in the remainder of your
      * callbacks.
      * 
+     * API-Since: 10.0
+     * 
      * @param output
      *                         The calling instance of AVCapturePhotoOutput.
      * @param resolvedSettings
@@ -292,6 +298,8 @@ public interface AVCapturePhotoCaptureDelegate {
      * The timing of this callback is analogous to AVCaptureStillImageOutput's capturingStillImage property changing
      * from NO to YES. The callback is delivered right after the shutter sound is heard (note that shutter sounds are
      * suppressed when Live Photos are being captured).
+     * 
+     * API-Since: 10.0
      * 
      * @param output
      *                         The calling instance of AVCapturePhotoOutput.

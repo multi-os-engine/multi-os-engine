@@ -174,6 +174,8 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
      * to YES in the layer hierarchy to get the same result when attaching a CALayer to a
      * AVVideoCompositionCoreAnimationTool
      * as when using it to back a UIView.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:")
@@ -193,6 +195,8 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
      * to YES in the layer hierarchy to get the same result when attaching a CALayer to a
      * AVVideoCompositionCoreAnimationTool
      * as when using it to back a UIView.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:")

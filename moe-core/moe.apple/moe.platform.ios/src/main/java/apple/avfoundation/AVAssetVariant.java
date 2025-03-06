@@ -66,6 +66,8 @@ public class AVAssetVariant extends NSObject {
      * [@property] audioAttributes
      * 
      * Provides variant's audio rendition attributes. If no audio attributes are declared, it will be nil.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -80,6 +82,8 @@ public class AVAssetVariant extends NSObject {
      * [@property] averageBitRate
      * 
      * If it is not declared, the value will be negative.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("averageBitRate")
@@ -154,6 +158,8 @@ public class AVAssetVariant extends NSObject {
      * [@property] peakBitRate
      * 
      * If it is not declared, the value will be negative.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("peakBitRate")
@@ -184,6 +190,8 @@ public class AVAssetVariant extends NSObject {
      * [@property] videoAttributes
      * 
      * Provides variant's video rendition attributes. If no video attributes are declared, it will be nil.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

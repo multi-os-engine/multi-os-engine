@@ -123,6 +123,8 @@ public class SHRange extends NSObject implements NSSecureCoding, NSCopying {
      * Convenience constructor for creating a range
      * [@note] lowerBound should be less than or equal to upperBound
      * 
+     * API-Since: 16.0
+     * 
      * @param lowerBound The lower bound of this range
      * @param upperBound The upper bound of this range
      */
@@ -154,6 +156,8 @@ public class SHRange extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * The lowerBound of this time range
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lowerBound")
@@ -167,6 +171,8 @@ public class SHRange extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Convenience constructor for creating a range
      * [@note] lowerBound should be less than or equal to upperBound
+     * 
+     * API-Since: 16.0
      * 
      * @param lowerBound The lower bound of this range
      * @param upperBound The upper bound of this range
@@ -203,6 +209,8 @@ public class SHRange extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * The upperBound of this time range, not included in this range
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("upperBound")

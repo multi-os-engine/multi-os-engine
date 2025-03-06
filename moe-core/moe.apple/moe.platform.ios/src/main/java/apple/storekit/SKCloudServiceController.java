@@ -44,7 +44,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.3
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use MusicKit
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -75,7 +78,10 @@ public class SKCloudServiceController extends NSObject {
 
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicAuthorization.currentStatus from MusicKit
      */
+    @Deprecated
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -148,7 +154,10 @@ public class SKCloudServiceController extends NSObject {
 
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicAuthorization.request() from MusicKit
      */
+    @Deprecated
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
@@ -181,7 +190,10 @@ public class SKCloudServiceController extends NSObject {
 
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscription.current from MusicKit
      */
+    @Deprecated
     @Generated
     @Selector("requestCapabilitiesWithCompletionHandler:")
     public native void requestCapabilitiesWithCompletionHandler(
@@ -189,7 +201,10 @@ public class SKCloudServiceController extends NSObject {
 
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Storefront.current.id
      */
+    @Deprecated
     @Generated
     @Selector("requestStorefrontIdentifierWithCompletionHandler:")
     public native void requestStorefrontIdentifierWithCompletionHandler(
@@ -237,7 +252,10 @@ public class SKCloudServiceController extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicDataRequest.currentCountryCode from MusicKit
      */
+    @Deprecated
     @Generated
     @Selector("requestStorefrontCountryCodeWithCompletionHandler:")
     public native void requestStorefrontCountryCodeWithCompletionHandler(
@@ -253,7 +271,10 @@ public class SKCloudServiceController extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicKit
      */
+    @Deprecated
     @Generated
     @Selector("requestUserTokenForDeveloperToken:completionHandler:")
     public native void requestUserTokenForDeveloperTokenCompletionHandler(@NotNull String developerToken,

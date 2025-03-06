@@ -61,6 +61,8 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     /**
      * Whether or not AR Quick Look allows content scaling in AR mode.
      * Defaults to `YES` which allows scaling content in AR mode.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowsContentScaling")
@@ -88,6 +90,8 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be
      * shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will
      * default to sharing the 3D content.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -138,6 +142,8 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
      * 
      * @param url A file URL to 3D content file (e.g. usdz).
      * @return The preview object to display in AR Quick Look.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithFileAtURL:")
@@ -192,6 +198,8 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     /**
      * Whether or not AR Quick Look allows content scaling in AR mode.
      * Defaults to `YES` which allows scaling content in AR mode.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowsContentScaling:")
@@ -204,6 +212,8 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be
      * shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will
      * default to sharing the 3D content.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCanonicalWebPageURL:")

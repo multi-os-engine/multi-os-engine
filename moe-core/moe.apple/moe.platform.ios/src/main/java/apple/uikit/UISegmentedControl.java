@@ -440,6 +440,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("backgroundImageForState:barMetrics:")
     public native UIImage backgroundImageForStateBarMetrics(@NUInt long state, @NInt long barMetrics);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("contentOffsetForSegmentAtIndex:")
     @ByValue
@@ -467,6 +470,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("imageForSegmentAtIndex:")
@@ -480,6 +486,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("initWithCoder:")
     public native UISegmentedControl initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UISegmentedControl initWithFrame(@ByValue CGRect frame);
@@ -488,11 +497,16 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * Initializes the segmented control with the given items. Items may be NSStrings, UIImages, or (as of iOS 14.0)
      * UIActions. When constructing from a UIAction segments will prefer images over titles when both are provided. The
      * segmented control is automatically sized to fit content.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithItems:")
     public native UISegmentedControl initWithItems(@Nullable NSArray<?> items);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("insertSegmentWithImage:atIndex:animated:")
     public native void insertSegmentWithImageAtIndexAnimated(@Nullable UIImage image, @NUInt long segment,
@@ -500,18 +514,25 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * insert before segment number. 0..#segments. value pinned
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("insertSegmentWithTitle:atIndex:animated:")
     public native void insertSegmentWithTitleAtIndexAnimated(@Nullable String title, @NUInt long segment,
             boolean animated);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isEnabledForSegmentAtIndex:")
     public native boolean isEnabledForSegmentAtIndex(@NUInt long segment);
 
     /**
      * if set, then we don't keep showing selected state after tracking ends. default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isMomentary")
@@ -519,20 +540,31 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * if set, then we don't keep showing selected state after tracking ends. default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMomentary:")
     public native void setMomentary(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("numberOfSegments")
     @NUInt
     public native long numberOfSegments();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("removeAllSegments")
     public native void removeAllSegments();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("removeSegmentAtIndex:animated:")
     public native void removeSegmentAtIndexAnimated(@NUInt long segment, boolean animated);
@@ -553,6 +585,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * is pressed
      * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to
      * UISegmentedControlNoSegment to turn off selection
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("selectedSegmentIndex")
@@ -591,6 +625,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * adjust offset of image or text inside the segment. default is (0,0)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContentOffset:forSegmentAtIndex:")
@@ -622,6 +658,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * default is YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEnabled:forSegmentAtIndex:")
@@ -629,6 +667,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setImage:forSegmentAtIndex:")
@@ -649,6 +689,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * is pressed
      * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to
      * UISegmentedControlNoSegment to turn off selection
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelectedSegmentIndex:")
@@ -656,6 +698,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitle:forSegmentAtIndex:")
@@ -673,11 +717,16 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * set to 0.0 width to autosize. default is 0.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setWidth:forSegmentAtIndex:")
     public native void setWidthForSegmentAtIndex(@NFloat double width, @NUInt long segment);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("titleForSegmentAtIndex:")
@@ -691,6 +740,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("widthForSegmentAtIndex:")
     @NFloat

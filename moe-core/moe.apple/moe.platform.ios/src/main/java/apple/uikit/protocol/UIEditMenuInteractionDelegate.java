@@ -36,6 +36,8 @@ public interface UIEditMenuInteractionDelegate {
      *                         include these actions in the hierarchy to display them in the resulting menu.
      * 
      * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
+     * 
+     *         API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -51,6 +53,8 @@ public interface UIEditMenuInteractionDelegate {
      * Called when the interaction begins, or when @c updateVisibleMenuPosition(animated:) is called.
      * 
      * [@c] CGRectNull to use the default rect.
+     * 
+     * API-Since: 16.0
      * 
      * @param interaction   The UIEditMenuInteraction.
      * @param configuration The UIEditMenuConfiguration object used to present the menu.
@@ -76,6 +80,8 @@ public interface UIEditMenuInteractionDelegate {
      * @param configuration The configuration object of the menu about to be dismissed by this interaction.
      * @param animator      Dismiss animator. Add animations to this object to run them alongside the dismiss
      *                      transition.
+     * 
+     *                      API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -93,6 +99,8 @@ public interface UIEditMenuInteractionDelegate {
      * @param configuration The configuration object of the menu about to be presented by this interaction.
      * @param animator      Appearance animator. Add animations to this object to run them alongside the appearance
      *                      transition.
+     * 
+     *                      API-Since: 16.0
      */
     @Generated
     @IsOptional

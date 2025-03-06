@@ -140,6 +140,8 @@ public class MTRClusterStateCacheContainer extends NSObject {
      * 
      * [@note] not all combinations of wildcards might be supported.
      * 
+     * API-Since: 16.4
+     * 
      * @param endpointID  endpoint ID of the attributes. Nil means wildcard.
      * @param clusterID   cluster ID of the attributes. Nil means wildcard.
      * @param attributeID attribute ID of the attributes. Nil means wildcard.

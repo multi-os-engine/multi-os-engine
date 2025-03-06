@@ -188,12 +188,17 @@ public class CAGradientLayer extends CALayer {
     /**
      * The array of CGColorRef objects defining the color of each gradient
      * stop. Defaults to nil. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
     @Selector("colors")
     public native NSArray<?> colors();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("endPoint")
     @ByValue
@@ -218,6 +223,8 @@ public class CAGradientLayer extends CALayer {
      * assumed to spread uniformly across the [0,1] range. When rendered,
      * the colors are mapped to the output colorspace before being
      * interpolated. Defaults to nil. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -227,11 +234,16 @@ public class CAGradientLayer extends CALayer {
     /**
      * The array of CGColorRef objects defining the color of each gradient
      * stop. Defaults to nil. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setColors:")
     public native void setColors(@Nullable NSArray<?> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setEndPoint:")
     public native void setEndPoint(@ByValue CGPoint value);
@@ -243,6 +255,8 @@ public class CAGradientLayer extends CALayer {
      * assumed to spread uniformly across the [0,1] range. When rendered,
      * the colors are mapped to the output colorspace before being
      * interpolated. Defaults to nil. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setLocations:")
@@ -256,6 +270,8 @@ public class CAGradientLayer extends CALayer {
      * layer's bounds rectangle when drawn. (I.e. [0,0] is the bottom-left
      * corner of the layer, [1,1] is the top-right corner.) The default values
      * are [.5,0] and [.5,1] respectively. Both are animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setStartPoint:")
@@ -264,6 +280,8 @@ public class CAGradientLayer extends CALayer {
     /**
      * The kind of gradient that will be drawn. Currently, the only allowed
      * values are `axial' (the default value), `radial', and `conic'.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setType:")
@@ -277,6 +295,8 @@ public class CAGradientLayer extends CALayer {
      * layer's bounds rectangle when drawn. (I.e. [0,0] is the bottom-left
      * corner of the layer, [1,1] is the top-right corner.) The default values
      * are [.5,0] and [.5,1] respectively. Both are animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("startPoint")
@@ -286,6 +306,8 @@ public class CAGradientLayer extends CALayer {
     /**
      * The kind of gradient that will be drawn. Currently, the only allowed
      * values are `axial' (the default value), `radial', and `conic'.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated

@@ -153,6 +153,8 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -192,6 +194,8 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'U_ij' from the simple RNN layer formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -212,6 +216,8 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputWeights:")
@@ -222,6 +228,8 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'U_ij' from the simple RNN layer formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecurrentWeights:")

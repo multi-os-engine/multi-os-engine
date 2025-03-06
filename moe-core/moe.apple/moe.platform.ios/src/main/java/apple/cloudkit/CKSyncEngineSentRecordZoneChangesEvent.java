@@ -95,6 +95,9 @@ public class CKSyncEngineSentRecordZoneChangesEvent extends CKSyncEngineEvent {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("deletedRecordIDs")
     @NotNull
@@ -104,11 +107,17 @@ public class CKSyncEngineSentRecordZoneChangesEvent extends CKSyncEngineEvent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("failedRecordDeletes")
     @NotNull
     public native NSDictionary<? extends CKRecordID, ? extends NSError> failedRecordDeletes();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("failedRecordSaves")
     @NotNull
@@ -158,6 +167,9 @@ public class CKSyncEngineSentRecordZoneChangesEvent extends CKSyncEngineEvent {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("savedRecords")
     @NotNull

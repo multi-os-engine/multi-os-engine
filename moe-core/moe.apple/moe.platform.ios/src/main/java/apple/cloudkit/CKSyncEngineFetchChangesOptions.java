@@ -111,6 +111,8 @@ public class CKSyncEngineFetchChangesOptions extends NSObject implements NSCopyi
     /**
      * Initializes a set of options with the specific scope.
      * If no scope is provided, the default scope will include everything.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithScope:")
@@ -149,6 +151,8 @@ public class CKSyncEngineFetchChangesOptions extends NSObject implements NSCopyi
      * You might set an operation group with a particular name in order to help you analyze telemetry in the CloudKit
      * Console.
      * If you don't provide an operation group, a default one will be created for you.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("operationGroup")
@@ -164,6 +168,8 @@ public class CKSyncEngineFetchChangesOptions extends NSObject implements NSCopyi
      * 
      * Any zones not included in this list will be prioritized in a default manner.
      * If a zone in this list has no changes to fetch, then that zone will be ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("prioritizedZoneIDs")
@@ -180,6 +186,8 @@ public class CKSyncEngineFetchChangesOptions extends NSObject implements NSCopyi
 
     /**
      * The scope in which to fetch changes from the server.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("scope")
@@ -192,6 +200,8 @@ public class CKSyncEngineFetchChangesOptions extends NSObject implements NSCopyi
      * You might set an operation group with a particular name in order to help you analyze telemetry in the CloudKit
      * Console.
      * If you don't provide an operation group, a default one will be created for you.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setOperationGroup:")
@@ -206,6 +216,8 @@ public class CKSyncEngineFetchChangesOptions extends NSObject implements NSCopyi
      * 
      * Any zones not included in this list will be prioritized in a default manner.
      * If a zone in this list has no changes to fetch, then that zone will be ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPrioritizedZoneIDs:")
@@ -213,6 +225,8 @@ public class CKSyncEngineFetchChangesOptions extends NSObject implements NSCopyi
 
     /**
      * The scope in which to fetch changes from the server.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setScope:")

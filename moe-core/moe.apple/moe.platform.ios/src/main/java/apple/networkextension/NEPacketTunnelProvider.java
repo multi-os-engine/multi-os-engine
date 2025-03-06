@@ -42,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.network.opaque.nw_interface_t;
 
 /**
  * [@interface] NEPacketTunnelProvider
@@ -197,7 +198,10 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
      * @return An NWTCPConnection object.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use the `virtualInterface` property with `nw_parameters_require_interface`
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:")
@@ -219,7 +223,10 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
      * @return An NWUDPSession object.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use the `virtualInterface` property with `nw_parameters_require_interface`
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("createUDPSessionThroughTunnelToEndpoint:fromEndpoint:")
@@ -299,4 +306,22 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] virtualInterface
+     * 
+     * The virtual network interface used to route packets to the packet tunnel provider.
+     * 
+     * For NEPacketTunnelProvider sub-classes, this property will be non-nil when `-[NEPacketTunnelProvider
+     * startTunnelWithOptions:completionHandler:]` is called. For NEEthernetTunnelProvider sub-classes, this property
+     * will be non-nil when the completion handler passed to `-[NETunnelProvider
+     * setTunnelNetworkSettings:completionHandler:]` is executed. To create a connection through the tunnel, pass this
+     * interface to `nw_parameters_require_interface`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("virtualInterface")
+    @Nullable
+    public native nw_interface_t virtualInterface();
 }

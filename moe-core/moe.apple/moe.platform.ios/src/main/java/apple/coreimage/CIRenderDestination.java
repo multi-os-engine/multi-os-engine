@@ -280,7 +280,7 @@ public class CIRenderDestination extends NSObject {
 
     /**
      * Instructs the render to add pseudo-random luma noise given the depth of the destination.
-     * The magnitude of the noise is approximatly ±pow(2,-(bitPerComponent+1))
+     * The magnitude of the noise is approximately ±pow(2,-(bitPerComponent+1))
      */
     @Generated
     @Selector("isDithered")
@@ -376,7 +376,7 @@ public class CIRenderDestination extends NSObject {
 
     /**
      * Instructs the render to add pseudo-random luma noise given the depth of the destination.
-     * The magnitude of the noise is approximatly ±pow(2,-(bitPerComponent+1))
+     * The magnitude of the noise is approximately ±pow(2,-(bitPerComponent+1))
      */
     @Generated
     @Selector("setDithered:")

@@ -22,6 +22,8 @@ public interface UIItemProviderPresentationSizeProviding {
      * When the object is registered to NSItemProvider, this property will be used to automatically set
      * the `preferredPresentationSize` property on NSItemProvider.
      * Return CGSizeZero to indicate that this information is not available.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("preferredPresentationSizeForItemProvider")

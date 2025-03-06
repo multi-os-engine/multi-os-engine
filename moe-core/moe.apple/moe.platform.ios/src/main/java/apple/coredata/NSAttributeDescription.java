@@ -172,12 +172,17 @@ public class NSAttributeDescription extends NSPropertyDescription {
     /**
      * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id
      * value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("attributeType")
     @NUInt
     public native long attributeType();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("attributeValueClassName")
@@ -185,6 +190,8 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     /**
      * value is retained and not copied
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -210,17 +217,24 @@ public class NSAttributeDescription extends NSPropertyDescription {
     /**
      * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id
      * value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setAttributeType:")
     public native void setAttributeType(@NUInt long value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAttributeValueClassName:")
     public native void setAttributeValueClassName(@Nullable String value);
 
     /**
      * value is retained and not copied
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setDefaultValue:")

@@ -140,6 +140,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
      * If non-zero when generating images, image metadata information (if present) will be used to determine the scale
      * to assign to the image. If zero all images will be assigned a scale of 1.0. Always assigns integral scales.
      * Defaults to 0.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("pixelsPerInch")
@@ -149,6 +151,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
     /**
      * If set, images loaded will be thumbnails of approximately the given size. Default value is CGSizeZero, indicating
      * that thumb-nailing is disabled. This size is always in pixels.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preferredThumbnailSize")
@@ -158,6 +162,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
     /**
      * For image types that may decode as either SDR or HDR, prefer the HDR variant. Images that may only decode as
      * either SDR or HDR are unaffected. Default depends on system capabilities.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("prefersHighDynamicRange")
@@ -165,6 +171,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
 
     /**
      * If set, images vended by the loader are automatically prepared for display. Default is NO.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preparesImagesForDisplay")
@@ -182,6 +190,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
      * If non-zero when generating images, image metadata information (if present) will be used to determine the scale
      * to assign to the image. If zero all images will be assigned a scale of 1.0. Always assigns integral scales.
      * Defaults to 0.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPixelsPerInch:")
@@ -190,6 +200,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
     /**
      * If set, images loaded will be thumbnails of approximately the given size. Default value is CGSizeZero, indicating
      * that thumb-nailing is disabled. This size is always in pixels.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPreferredThumbnailSize:")
@@ -198,6 +210,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
     /**
      * For image types that may decode as either SDR or HDR, prefer the HDR variant. Images that may only decode as
      * either SDR or HDR are unaffected. Default depends on system capabilities.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPrefersHighDynamicRange:")
@@ -205,6 +219,8 @@ public class UIImageReaderConfiguration extends NSObject implements NSCopying {
 
     /**
      * If set, images vended by the loader are automatically prepared for display. Default is NO.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPreparesImagesForDisplay:")

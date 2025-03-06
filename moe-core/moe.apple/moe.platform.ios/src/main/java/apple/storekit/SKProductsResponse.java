@@ -42,7 +42,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Get products using Product.products(for:)
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -165,7 +168,10 @@ public class SKProductsResponse extends NSObject {
      * Array of invalid product identifiers.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Get products using Product.products(for:)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("invalidProductIdentifiers")
@@ -175,7 +181,10 @@ public class SKProductsResponse extends NSObject {
      * Array of SKProduct instances.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Get products using Product.products(for:)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("products")

@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 public interface NSFileProviderChangeObserver {
     /**
      * Delete existing items. No-op if the item was unknown.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("didDeleteItemsWithIdentifiers:")
@@ -30,6 +32,8 @@ public interface NSFileProviderChangeObserver {
 
     /**
      * Send updates to existing items, or insert new items.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("didUpdateItems:")
@@ -51,6 +55,8 @@ public interface NSFileProviderChangeObserver {
      * Sync anchor data is limited to 500 bytes. Setting a larger anchor has the
      * same effect as calling finishEnumeratingWithError with an expired sync anchor
      * error.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("finishEnumeratingChangesUpToSyncAnchor:moreComing:")
@@ -60,6 +66,8 @@ public interface NSFileProviderChangeObserver {
      * If the enumeration fails with NSFileProviderErrorSyncAnchorExpired, we will
      * drop all cached data and start the enumeration over starting with sync anchor
      * nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("finishEnumeratingWithError:")

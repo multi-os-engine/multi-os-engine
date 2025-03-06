@@ -53,6 +53,9 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("allAttachments")
@@ -70,6 +73,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     /**
      * The total allocation size of the IOSurface
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allocationSize")
@@ -80,11 +85,16 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      * This property returns YES if it is legal to choose an OpenGL or Metal pixel format with a bytes per pixel
      * value that is different than the bytesPerElement value(s) of this IOSurface. Returns NO if the bytes per pixel
      * value must be an exact match.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsPixelSizeCasting")
     public native boolean allowsPixelSizeCasting();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("attachmentForKey:")
@@ -95,21 +105,33 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("baseAddress")
     public native VoidPtr baseAddress();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("baseAddressOfPlaneAtIndex:")
     public native VoidPtr baseAddressOfPlaneAtIndex(@NUInt long planeIndex);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bytesPerElement")
     @NInt
     public native long bytesPerElement();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bytesPerElementOfPlaneAtIndex:")
     @NInt
@@ -117,12 +139,17 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     /**
      * Note: These properties may not return well-defined values for planar surfaces
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("bytesPerRow")
     @NInt
     public native long bytesPerRow();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bytesPerRowOfPlaneAtIndex:")
     @NInt
@@ -153,6 +180,9 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("decrementUseCount")
     public native void decrementUseCount();
@@ -161,21 +191,33 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementHeight")
     @NInt
     public native long elementHeight();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementHeightOfPlaneAtIndex:")
     @NInt
     public native long elementHeightOfPlaneAtIndex(@NUInt long planeIndex);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementWidth")
     @NInt
     public native long elementWidth();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementWidthOfPlaneAtIndex:")
     @NInt
@@ -190,16 +232,25 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("height")
     @NInt
     public native long height();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("heightOfPlaneAtIndex:")
     @NInt
     public native long heightOfPlaneAtIndex(@NUInt long planeIndex);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("incrementUseCount")
     public native void incrementUseCount();
@@ -214,6 +265,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     /**
      * Create a new IOSurface
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithProperties:")
@@ -248,6 +301,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      * implementation, when the per-process usage count goes from zero to one, the system wide usage count is
      * incremented by one. When the per-process usage count drops back to zero (either via explicit decrement
      * calls or the process terminates), the global usage count is decremented by one.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isInUse")
@@ -266,6 +321,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      * The localUseCount property returns the local per-process usage count for an IOSurface. This call is only
      * provided for logging/debugging purposes and should never be used to determine whether an IOSurface is
      * considered to be "in use". The isInUse property is the only call that should be used for that purpose.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("localUseCount")
@@ -291,6 +348,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      * Note: Locking and unlocking a IOSurface is not a particularly cheap operation,
      * so care should be taken to avoid the calls whenever possible. The seed values are
      * particularly useful for keeping a cache of the buffer contents.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("lockWithOptions:seed:")
@@ -301,22 +360,33 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native IOSurface new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("pixelFormat")
     public native int pixelFormat();
 
     /**
      * Return the number of planes in this buffer. Will be 0 if the surface is non-planar
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("planeCount")
     @NUInt
     public native long planeCount();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("removeAllAttachments")
     public native void removeAllAttachments();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("removeAttachmentForKey:")
     public native void removeAttachmentForKey(@NotNull String key);
@@ -332,11 +402,16 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     /**
      * This will return the current seed value of the buffer and is a cheap property to read to see
      * if the contents of the buffer have changed since the last lock/unlock.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("seed")
     public native int seed();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAllAttachments:")
     public native void setAllAttachments(@NotNull NSDictionary<String, ?> dict);
@@ -345,6 +420,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      * These calls let you attach property list types to a IOSurface buffer. These calls are
      * expensive (they essentially must serialize the data into the kernel) and thus should be avoided whenever
      * possible. Note: These functions can not be used to change the underlying surface properties.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAttachment:forKey:")
@@ -378,6 +455,9 @@ public class IOSurface extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("unlockWithOptions:seed:")
     public native int unlockWithOptionsSeed(int options, @Nullable IntPtr seed);
@@ -389,6 +469,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     /**
      * Basic surface layout information
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("width")
@@ -399,6 +481,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      * These properties return information about a particular plane of a IOSurface. They will
      * raise if called on non-planar surfaces or if the index value is not less than the number
      * of planes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("widthOfPlaneAtIndex:")
@@ -409,4 +493,11 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("surfaceID")
+    public native int surfaceID();
 }

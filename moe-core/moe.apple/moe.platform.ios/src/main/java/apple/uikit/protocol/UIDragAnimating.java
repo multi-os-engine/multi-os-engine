@@ -24,6 +24,8 @@ public interface UIDragAnimating {
      * 
      * Animatable view properties that are set by the animation block will be
      * animated to their new values.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("addAnimations:")
@@ -36,6 +38,9 @@ public interface UIDragAnimating {
         void call_addAnimations();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("addCompletion:")
     void addCompletion(@NotNull @ObjCBlock(name = "call_addCompletion") Block_addCompletion completion);

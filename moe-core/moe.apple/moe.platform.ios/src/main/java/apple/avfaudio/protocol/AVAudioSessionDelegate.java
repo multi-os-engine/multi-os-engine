@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVAudioSessionDelegate {
     /**
      * something has caused your audio session to be interrupted
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("beginInterruption")
@@ -34,7 +39,12 @@ public interface AVAudioSessionDelegate {
 
     /**
      * endInterruptionWithFlags: will be called instead if implemented.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("endInterruption")
@@ -56,7 +66,12 @@ public interface AVAudioSessionDelegate {
 
     /**
      * notification for input become available or unavailable
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("inputIsAvailableChanged:")

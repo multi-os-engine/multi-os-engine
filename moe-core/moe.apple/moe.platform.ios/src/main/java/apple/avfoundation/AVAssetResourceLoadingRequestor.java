@@ -128,6 +128,8 @@ public class AVAssetResourceLoadingRequestor extends NSObject {
      * [@property] providesExpiredSessionReports
      * 
      * Whether the requestor provides expired session reports (see AVContentKeySession)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("providesExpiredSessionReports")

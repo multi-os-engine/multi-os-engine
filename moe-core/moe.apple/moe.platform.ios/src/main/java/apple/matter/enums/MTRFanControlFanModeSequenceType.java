@@ -41,13 +41,13 @@ public final class MTRFanControlFanModeSequenceType {
     /**
      * API-Since: 16.1
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Please use MTRFanControlFanModeSequenceOffOnAuto
+     * Deprecated-Message: Please use MTRFanControlFanModeSequenceOffHighAuto
      */
     @Generated @Deprecated public static final byte OnAuto = 4;
     /**
      * API-Since: 16.1
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Please use MTRFanControlFanModeSequenceOffOn
+     * Deprecated-Message: Please use MTRFanControlFanModeSequenceOffHigh
      */
     @Generated @Deprecated public static final byte On = 5;
 }

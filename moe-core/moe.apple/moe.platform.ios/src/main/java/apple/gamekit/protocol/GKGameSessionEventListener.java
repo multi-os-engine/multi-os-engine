@@ -39,6 +39,11 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameSessionEventListener")
 public interface GKGameSessionEventListener {
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:didAddPlayer:")
@@ -46,6 +51,11 @@ public interface GKGameSessionEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:didReceiveData:fromPlayer:")
@@ -54,6 +64,11 @@ public interface GKGameSessionEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:withData:fromPlayer:")
@@ -62,6 +77,11 @@ public interface GKGameSessionEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:didRemovePlayer:")
@@ -69,6 +89,11 @@ public interface GKGameSessionEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:player:didChangeConnectionState:")
@@ -77,6 +102,11 @@ public interface GKGameSessionEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:player:didSaveData:")

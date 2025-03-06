@@ -29,6 +29,8 @@ public interface MTRStorage {
     /**
      * Delete the key and corresponding data. Returns YES if the key was present,
      * NO if the key was not present.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("removeStorageDataForKey:")
@@ -37,6 +39,8 @@ public interface MTRStorage {
     /**
      * Set the data for the viven key to the given value. Returns YES if the key
      * was set successfully, NO otherwise.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setStorageData:forKey:")
@@ -45,6 +49,8 @@ public interface MTRStorage {
     /**
      * Get the data for the given key. Returns nil if there is no data for the
      * key.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("storageDataForKey:")

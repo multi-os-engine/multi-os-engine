@@ -85,6 +85,9 @@ public class UIFontMetrics extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("defaultMetrics")
@@ -103,6 +106,9 @@ public class UIFontMetrics extends NSObject {
     @Selector("init")
     public native UIFontMetrics init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initForTextStyle:")
     public native UIFontMetrics initForTextStyle(@NotNull String textStyle);
@@ -129,6 +135,9 @@ public class UIFontMetrics extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("metricsForTextStyle:")
     public static native UIFontMetrics metricsForTextStyle(@NotNull String textStyle);
@@ -146,6 +155,9 @@ public class UIFontMetrics extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("scaledFontForFont:")
@@ -157,6 +169,9 @@ public class UIFontMetrics extends NSObject {
     public native UIFont scaledFontForFontCompatibleWithTraitCollection(@NotNull UIFont font,
             @Nullable UITraitCollection traitCollection);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("scaledFontForFont:maximumPointSize:")
@@ -168,6 +183,9 @@ public class UIFontMetrics extends NSObject {
     public native UIFont scaledFontForFontMaximumPointSizeCompatibleWithTraitCollection(@NotNull UIFont font,
             @NFloat double maximumPointSize, @Nullable UITraitCollection traitCollection);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("scaledValueForValue:")
     @NFloat

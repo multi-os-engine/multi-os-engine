@@ -131,6 +131,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      * @param cgImage           The CGImageRef of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedCGImage:options:completionHandler:")
@@ -168,6 +170,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      *                          every other orientation information.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedCGImage:orientation:options:completionHandler:")
@@ -200,6 +204,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      * @param ciImage           The CIImage of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedCIImage:options:completionHandler:")
@@ -237,6 +243,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      *                          every other orientation information.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedCIImage:orientation:options:completionHandler:")
@@ -269,6 +277,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      * @param pixelBuffer       The pixel buffer containing the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:options:completionHandler:")
@@ -307,6 +317,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      *                          every other orientation information.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:orientation:options:completionHandler:")
@@ -339,6 +351,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      * @param imageData         The data of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedImageData:options:completionHandler:")
@@ -377,6 +391,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      *                          every other orientation information.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedImageData:orientation:options:completionHandler:")
@@ -409,6 +425,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      * @param imageURL          The URL of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedImageURL:options:completionHandler:")
@@ -446,6 +464,8 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
      *                          every other orientation information.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithTargetedImageURL:orientation:options:completionHandler:")

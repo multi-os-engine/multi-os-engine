@@ -306,6 +306,8 @@ public class HKSampleQuery extends HKQuery {
      * @param limit           The maximum number of samples to return. Pass HKObjectQueryNoLimit for no limit.
      * @param sortDescriptors The sort descriptors to use to order the resulting samples.
      * @param resultsHandler  The block to invoke with results when the query has finished executing.
+     * 
+     *                        API-Since: 8.0
      */
     @Generated
     @Selector("initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:")
@@ -318,6 +320,8 @@ public class HKSampleQuery extends HKQuery {
      * [@property] limit
      * 
      * The maximum number of results the receiver will return upon completion.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("limit")
@@ -328,6 +332,8 @@ public class HKSampleQuery extends HKQuery {
      * [@property] sortDescriptors
      * 
      * An array of NSSortDescriptors.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -524,4 +530,31 @@ public class HKSampleQuery extends HKQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

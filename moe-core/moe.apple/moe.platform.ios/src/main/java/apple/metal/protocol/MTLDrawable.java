@@ -42,6 +42,8 @@ import org.jetbrains.annotations.NotNull;
 public interface MTLDrawable {
     /**
      * Present this drawable as soon as possible
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("present")
@@ -49,6 +51,8 @@ public interface MTLDrawable {
 
     /**
      * Present this drawable at the given host time
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentAtTime:")

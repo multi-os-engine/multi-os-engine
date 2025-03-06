@@ -86,6 +86,8 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     /**
      * Default NSIndexTypeBinary
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("collationType")
@@ -109,6 +111,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("indexDescription")
@@ -122,6 +127,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("initWithCoder:")
     public native NSFetchIndexElementDescription initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithProperty:collationType:")
     public native NSFetchIndexElementDescription initWithPropertyCollationType(@NotNull NSPropertyDescription property,
@@ -142,6 +150,8 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     /**
      * Default YES. Control whether this is an ascending or descending index for indexes which support direction.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isAscending")
@@ -163,12 +173,17 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     /**
      * This may be an NSExpressionDescription that expresses a function
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
     @Selector("property")
     public native NSPropertyDescription property();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("propertyName")
@@ -184,6 +199,8 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     /**
      * Default YES. Control whether this is an ascending or descending index for indexes which support direction.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAscending:")
@@ -191,6 +208,8 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     /**
      * Default NSIndexTypeBinary
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCollationType:")

@@ -100,6 +100,8 @@ public class ILMessageFilterExtensionContext extends NSExtensionContext {
      * is formatted, restrictions on the URL, etc.
      * 
      * @param completion Completion block containing either the network response to the HTTPS request or an error.
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("deferQueryRequestToNetworkWithCompletion:")

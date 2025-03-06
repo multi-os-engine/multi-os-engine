@@ -37,7 +37,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSUUID;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -174,6 +178,8 @@ public class MTRDeviceController extends NSObject {
      * deviceAttestationFailedForController:opaqueDeviceHandle:error: or
      * deviceAttestationCompletedForController:opaqueDeviceHandle:attestationDeviceInfo:error:
      * is called to continue commissioning the device.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("continueCommissioningDevice:ignoreAttestationFailure:error:")
@@ -208,6 +214,8 @@ public class MTRDeviceController extends NSObject {
 
     /**
      * Returns a deserialized read parameter object from an object received over XPC
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("decodeXPCReadParams:")
@@ -216,6 +224,8 @@ public class MTRDeviceController extends NSObject {
 
     /**
      * Returns a decoded values object from a values object received from XPC for read, write and command interactions
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("decodeXPCResponseValues:")
@@ -225,6 +235,8 @@ public class MTRDeviceController extends NSObject {
 
     /**
      * Returns a deserialized subscribe parameter object from an object received over XPC
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("decodeXPCSubscribeParams:")
@@ -249,6 +261,8 @@ public class MTRDeviceController extends NSObject {
 
     /**
      * Returns a serialized read parameter object to send over XPC
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("encodeXPCReadParams:")
@@ -257,6 +271,8 @@ public class MTRDeviceController extends NSObject {
 
     /**
      * Returns an encoded values object to send over XPC for read, write and command interactions
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("encodeXPCResponseValues:")
@@ -266,6 +282,8 @@ public class MTRDeviceController extends NSObject {
 
     /**
      * Returns a serialized subscribe parameter object to send over XPC
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("encodeXPCSubscribeParams:")
@@ -298,7 +316,7 @@ public class MTRDeviceController extends NSObject {
     @Generated
     public interface Block_getBaseDeviceQueueCompletionHandler {
         @Generated
-        void call_getBaseDeviceQueueCompletionHandler(@Nullable MTRBaseDevice arg0, @Nullable NSError arg1);
+        void call_getBaseDeviceQueueCompletionHandler(@Nullable MTRBaseDevice device, @Nullable NSError error);
     }
 
     /**
@@ -337,6 +355,8 @@ public class MTRDeviceController extends NSObject {
 
     /**
      * If true, the controller has not been shut down yet.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("isRunning")
@@ -414,16 +434,11 @@ public class MTRDeviceController extends NSObject {
             @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 
     /**
-     * Optionally pre-warm the controller for setting up a commissioning session.
-     * This may be called before setupCommissioningSessionWithPayload if it's known
-     * that a commissioning attempt will soon take place but the commissioning
-     * payload is not known yet.
-     * 
-     * For example this may do a BLE scan in advance so results are ready earlier
-     * once the discriminator is known.
-     * 
      * API-Since: 16.4
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: -[MTRDeviceControllerFactory preWarmCommissioningSession]
      */
+    @Deprecated
     @Generated
     @Selector("preWarmCommissioningSession")
     public native void preWarmCommissioningSession();
@@ -602,6 +617,8 @@ public class MTRDeviceController extends NSObject {
      * Shut down the controller. Calls to shutdown after the first one are NO-OPs.
      * This must be called, either directly or via shutting down the
      * MTRDeviceControllerFactory, to avoid leaking the controller.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("shutdown")
@@ -675,4 +692,146 @@ public class MTRDeviceController extends NSObject {
     @Selector("xpcInterfaceForServerProtocol")
     @NotNull
     public static native NSXPCInterface xpcInterfaceForServerProtocol();
+
+    /**
+     * Adds a Delegate to the device controller as well as the Queue on which the Delegate callbacks will be triggered
+     * 
+     * Multiple delegates can be added to monitor MTRDeviceController state changes. Note that there should only
+     * be one delegate that responds to pairing related callbacks.
+     * 
+     * If a delegate is added a second time, the call would be ignored.
+     * 
+     * All delegates are held by weak references, and so if a delegate object goes away, it will be automatically
+     * removed.
+     * 
+     * @param[in] delegate The delegate the commissioning process should use
+     * 
+     * @param[in] queue The queue on which the callbacks will be delivered
+     * 
+     *            API-Since: 18.2
+     */
+    @Generated
+    @Selector("addDeviceControllerDelegate:queue:")
+    public native void addDeviceControllerDelegateQueue(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTRDeviceControllerDelegate delegate,
+            @NotNull dispatch_queue_t queue);
+
+    /**
+     * Add a server endpoint for this controller. The endpoint starts off enabled.
+     * 
+     * Will fail in the following cases:
+     * 
+     * 1) There is already an endpoint defined with the given endpoint id.
+     * 2) There are too many endpoints defined already.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("addServerEndpoint:")
+    public native boolean addServerEndpoint(@NotNull MTRServerEndpoint endpoint);
+
+    /**
+     * Initialize a device controller with the provided parameters. This will:
+     * 
+     * 1) Auto-start the MTRDeviceControllerFactory in storage-per-controller mode
+     * if it has not already been started.
+     * 2) Return nil or a running controller.
+     * 
+     * Once this returns non-nil, it's the caller's responsibility to call shutdown
+     * on the controller to avoid leaking it.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("initWithParameters:error:")
+    @Nullable
+    public native MTRDeviceController initWithParametersError(@NotNull MTRDeviceControllerAbstractParameters parameters,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * If true, the controller has been suspended via `suspend` and not resumed yet.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("isSuspended")
+    public native boolean isSuspended();
+
+    /**
+     * Removes a Delegate from the device controller
+     * 
+     * @param[in] delegate The delegate to be removed
+     * 
+     *            API-Since: 18.2
+     */
+    @Generated
+    @Selector("removeDeviceControllerDelegate:")
+    public native void removeDeviceControllerDelegate(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTRDeviceControllerDelegate delegate);
+
+    /**
+     * Remove the given server endpoint without being notified when the removal
+     * completes.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("removeServerEndpoint:")
+    public native void removeServerEndpoint(@NotNull MTRServerEndpoint endpoint);
+
+    /**
+     * Remove the given server endpoint from this controller. If the endpoint is
+     * not attached to this controller, will just call the completion and do nothing
+     * else.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("removeServerEndpoint:queue:completion:")
+    public native void removeServerEndpointQueueCompletion(@NotNull MTRServerEndpoint endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_removeServerEndpointQueueCompletion") @NotNull Block_removeServerEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeServerEndpointQueueCompletion {
+        @Generated
+        void call_removeServerEndpointQueueCompletion();
+    }
+
+    /**
+     * Resume the controller. This has no effect if the controller is not
+     * suspended.
+     * 
+     * A resume following any number of suspend calls will resume the controller;
+     * there does not need to be a resume call to match every suspend call.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("resume")
+    public native void resume();
+
+    /**
+     * Suspend the controller. This will attempt to stop all network traffic associated
+     * with the controller. The controller will remain suspended until it is
+     * resumed.
+     * 
+     * Suspending an already-suspended controller has no effect.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("suspend")
+    public native void suspend();
+
+    /**
+     * The ID assigned to this controller at creation time.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("uniqueIdentifier")
+    @NotNull
+    public native NSUUID uniqueIdentifier();
 }

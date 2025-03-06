@@ -197,6 +197,8 @@ public class CKSyncEngine extends NSObject {
      * Cancels any currently executing or pending sync operations.
      * 
      * Note that cancellation does not happen synchronously, and it's possible some in-flight operations will succeed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("cancelOperationsWithCompletionHandler:")
@@ -233,6 +235,8 @@ public class CKSyncEngine extends NSObject {
 
     /**
      * The database this sync engine will sync with.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("database")
@@ -259,6 +263,8 @@ public class CKSyncEngine extends NSObject {
      * Fetching changes from the server might result in some events being posted to your delegate via `handleEvent`.
      * For example, you might receive a `CKSyncEngineWillFetchChangesEvent` or `CKSyncEngineWillFetchChangesEvent`.
      * This will not complete until all the relevant events have been handled by your delegate.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fetchChangesWithCompletionHandler:")
@@ -275,6 +281,8 @@ public class CKSyncEngine extends NSObject {
     /**
      * Fetches changes from the server with the specified options.
      * See ``fetchChangesWithCompletionHandler:`` for more information.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fetchChangesWithOptions:completionHandler:")
@@ -300,6 +308,8 @@ public class CKSyncEngine extends NSObject {
     /**
      * Initializes a `CKSyncEngine` with the given configuration.
      * See properties on ``CKSyncEngineConfiguration`` for more details on all the options.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithConfiguration:")
@@ -352,6 +362,8 @@ public class CKSyncEngine extends NSObject {
      * Sending changes to the server might result in some events being posted to your delegate via `handleEvent`.
      * For example, you might receive a `CKSyncEngineWillSendChangesEvent` or `CKSyncEngineDidSendChangesEvent`.
      * This function will not return until all the relevant events have been handled by your delegate.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sendChangesWithCompletionHandler:")
@@ -368,6 +380,8 @@ public class CKSyncEngine extends NSObject {
     /**
      * Sends pending changes to the server with the specified options.
      * See discussion in ``sendChangesWithCompletionHandler:`` for more information.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sendChangesWithOptions:completionHandler:")
@@ -388,6 +402,8 @@ public class CKSyncEngine extends NSObject {
     /**
      * A collection of state properties used to efficiently manage sync engine operation.
      * See ``CKSyncEngineState`` for more details.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("state")

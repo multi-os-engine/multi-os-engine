@@ -106,7 +106,7 @@ public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
      * sendCommandAPDU:completionHandler:
      * 
      * Send a command APDU to the tag and receives a response APDU. Note that a SELECT command with a P1 value of 0x04
-     * (seelction by DF name)
+     * (selection by DF name)
      * will be checked against the values listed in the
      * "com.apple.developer.nfc.readersession.iso7816.select-identifiers" in the Info.plist.
      * Selecting an application outside of the permissible list will result in a NFCReaderErrorSecurityViolation error.

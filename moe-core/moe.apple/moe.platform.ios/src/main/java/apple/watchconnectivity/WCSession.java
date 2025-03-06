@@ -120,6 +120,8 @@ public class WCSession extends NSObject {
 
     /**
      * Use the default session for all transferring of content and state monitoring.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -154,6 +156,8 @@ public class WCSession extends NSObject {
 
     /**
      * Check if session is supported on this iOS device. Session is always available on WatchOS
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isSupported")
@@ -195,6 +199,8 @@ public class WCSession extends NSObject {
      * begin receiving delegate callbacks. Calling activate without a delegate set is undefined. If the
      * WCSessionDelegate session:activationDidCompleteWithState:error: is implemented this method becomes an
      * asynchronous call.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("activateSession")
@@ -216,6 +222,8 @@ public class WCSession extends NSObject {
      * exits. The counterpart app will receive a delegate callback on next launch if the applicationContext has
      * successfully arrived. If there is no app context, it should be updated with an empty dictionary. The
      * applicationContext dictionary can only accept the property list types.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -224,6 +232,8 @@ public class WCSession extends NSObject {
 
     /**
      * A delegate must exist before the session will allow sends.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -260,6 +270,8 @@ public class WCSession extends NSObject {
 
     /**
      * The counterpart app must be reachable for a send message to succeed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isReachable")
@@ -275,6 +287,8 @@ public class WCSession extends NSObject {
     /**
      * Returns an array of file transfers that are still transferring (i.e. have not been cancelled, failed, or been
      * received by the counterpart app).
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -284,6 +298,8 @@ public class WCSession extends NSObject {
     /**
      * Returns an array of user info transfers that are still transferring (i.e. have not been cancelled, failed, or
      * been received by the counterpart app).
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -292,6 +308,8 @@ public class WCSession extends NSObject {
 
     /**
      * Stores the most recently received applicationContext from the counterpart app.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -318,6 +336,8 @@ public class WCSession extends NSObject {
      * If the sending app exits before the message is dispatched the send will fail. If the counterpart app is not
      * running the counterpart app will be launched upon receiving the message (iOS counterpart app only). The message
      * dictionary can only accept the property list types.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("sendMessage:replyHandler:errorHandler:")
@@ -329,6 +349,8 @@ public class WCSession extends NSObject {
      * Clients can use this method to send message data. All the policies of send message apply to send message data.
      * Send message data is meant for clients that have an existing transfer format and do not need the convenience of
      * the send message dictionary.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("sendMessageData:replyHandler:errorHandler:")
@@ -338,6 +360,8 @@ public class WCSession extends NSObject {
 
     /**
      * A delegate must exist before the session will allow sends.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -345,6 +369,8 @@ public class WCSession extends NSObject {
 
     /**
      * A delegate must exist before the session will allow sends.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WCSessionDelegate value) {
@@ -379,6 +405,8 @@ public class WCSession extends NSObject {
      * The system will enqueue the file and transfer it to the counterpart app at an opportune time. The transfer of a
      * file will continue after the sending app has exited. The counterpart app will receive a delegate callback on next
      * launch if the file has successfully arrived. The metadata dictionary can only accept the property list types.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -391,12 +419,17 @@ public class WCSession extends NSObject {
      * transfer of user info will continue after the sending app has exited. The counterpart app will receive a delegate
      * callback on next launch if the file has successfully arrived. The userInfo dictionary can only accept the
      * property list types.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("transferUserInfo:")
     public native WCSessionUserInfoTransfer transferUserInfo(@NotNull NSDictionary<String, ?> userInfo);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("updateApplicationContext:error:")
     public native boolean updateApplicationContextError(@NotNull NSDictionary<String, ?> applicationContext,

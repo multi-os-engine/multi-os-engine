@@ -62,6 +62,8 @@ public class AAAttribution extends NSObject {
 
     /**
      * Generates a token.
+     * 
+     * API-Since: 14.3
      */
     @Nullable
     @Generated

@@ -95,6 +95,8 @@ public class AVAudioUnit extends AVAudioNode {
      * [@property] audioComponentDescription
      * 
      * AudioComponentDescription of the underlying audio unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("audioComponentDescription")
@@ -112,6 +114,8 @@ public class AVAudioUnit extends AVAudioNode {
      * No operations that may conflict with state maintained by the engine should be performed
      * directly on the audio unit. These include changing initialization state, stream formats,
      * channel layouts or connections to other audio units.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -227,6 +231,8 @@ public class AVAudioUnit extends AVAudioNode {
      * 
      * If the .aupreset file cannot be successfully loaded, an error is returned.
      * 
+     * API-Since: 8.0
+     * 
      * @param url
      *                 NSURL of the .aupreset file.
      * @param outError
@@ -241,6 +247,8 @@ public class AVAudioUnit extends AVAudioNode {
      * [@property] manufacturerName
      * 
      * Manufacturer name of the audio unit.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -251,6 +259,8 @@ public class AVAudioUnit extends AVAudioNode {
      * [@property] name
      * 
      * Name of the audio unit.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -282,6 +292,8 @@ public class AVAudioUnit extends AVAudioNode {
      * [@property] version
      * 
      * Version number of the audio unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("version")

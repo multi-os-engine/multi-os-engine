@@ -255,6 +255,8 @@ public class AVRoutePickerView extends UIView {
      * [@property] delegate
      * 
      * The route picker view's delegate.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -418,6 +420,8 @@ public class AVRoutePickerView extends UIView {
      * [@property] delegate
      * 
      * The route picker view's delegate.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -427,6 +431,8 @@ public class AVRoutePickerView extends UIView {
      * [@property] delegate
      * 
      * The route picker view's delegate.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVRoutePickerViewDelegate value) {

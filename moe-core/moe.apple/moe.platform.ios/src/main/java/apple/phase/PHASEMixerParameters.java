@@ -58,6 +58,8 @@ public class PHASEMixerParameters extends NSObject {
      *                   The unique identifier assigned to a spatial submixer object.
      * @param listener
      *                   The PHASEListener object that this mixer will use to orient sounds.
+     * 
+     *                   API-Since: 15.0
      */
     @Generated
     @Selector("addAmbientMixerParametersWithIdentifier:listener:")
@@ -75,6 +77,8 @@ public class PHASEMixerParameters extends NSObject {
      *                   The PHASESource object that this mixer will use to spatialize sounds.
      * @param listener
      *                   The PHASEListener object that this mixer will use to spatialize sounds.
+     * 
+     *                   API-Since: 15.0
      */
     @Generated
     @Selector("addSpatialMixerParametersWithIdentifier:source:listener:")

@@ -30,6 +30,8 @@ public interface AVCustomRoutingControllerDelegate {
      * - controller: A custom routing controller.
      * 
      * - customActionItem: The selected action item.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -48,6 +50,8 @@ public interface AVCustomRoutingControllerDelegate {
      * - controller: A custom routing controller.
      * 
      * - event: An event that times out.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -71,6 +75,8 @@ public interface AVCustomRoutingControllerDelegate {
      * the completion handler if the activation, reactivation, or deactivation of
      * the route succeeds, and
      * <doc://com.apple.documentation/documentation/objectivec/no>, otherwise.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("customRoutingController:handleEvent:completionHandler:")

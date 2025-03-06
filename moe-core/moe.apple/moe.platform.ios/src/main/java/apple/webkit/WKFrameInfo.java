@@ -180,6 +180,8 @@ public class WKFrameInfo extends NSObject implements NSCopying {
     /**
      * A Boolean value indicating whether the frame is the main frame
      * or a subframe.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isMainFrame")
@@ -187,6 +189,8 @@ public class WKFrameInfo extends NSObject implements NSCopying {
 
     /**
      * The frame's current request.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

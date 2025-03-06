@@ -20,6 +20,8 @@ import apple.corefoundation.struct.CGSize;
 public interface NSCollectionLayoutContainer {
     /**
      * values < 1.0 are interpreted as fractional values (e.g. leading:0.15 == 15% width)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("contentInsets")
@@ -28,6 +30,8 @@ public interface NSCollectionLayoutContainer {
 
     /**
      * resolved size of container (before any insets are applied)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("contentSize")
@@ -36,6 +40,8 @@ public interface NSCollectionLayoutContainer {
 
     /**
      * resolved value after resolving any unit values
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("effectiveContentInsets")
@@ -44,6 +50,8 @@ public interface NSCollectionLayoutContainer {
 
     /**
      * after insets are applied
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("effectiveContentSize")

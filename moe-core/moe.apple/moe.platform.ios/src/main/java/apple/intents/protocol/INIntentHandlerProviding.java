@@ -38,6 +38,8 @@ import org.jetbrains.annotations.Nullable;
 public interface INIntentHandlerProviding {
     /**
      * Override this function to provide classes other than the extension's principal class to handle a given intent
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

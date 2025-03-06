@@ -155,6 +155,9 @@ public class NSMetadataQueryResultGroup extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("attribute")
@@ -166,6 +169,8 @@ public class NSMetadataQueryResultGroup extends NSObject {
 
     /**
      * uncertain whether this will do anything useful for non-leaf groups
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -173,6 +178,9 @@ public class NSMetadataQueryResultGroup extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object resultAtIndex(@NUInt long idx);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("resultCount")
     @NUInt
@@ -180,6 +188,8 @@ public class NSMetadataQueryResultGroup extends NSObject {
 
     /**
      * this is for K-V Bindings, and causes side-effects on the query
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -188,12 +198,17 @@ public class NSMetadataQueryResultGroup extends NSObject {
 
     /**
      * nil if this is a leaf
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
     @Selector("subgroups")
     public native NSArray<? extends NSMetadataQueryResultGroup> subgroups();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("value")

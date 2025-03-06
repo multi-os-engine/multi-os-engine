@@ -38,7 +38,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKAchievementViewControllerDelegate {
     /**
      * The achievement view has finished
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("achievementViewControllerDidFinish:")
     void achievementViewControllerDidFinish(GKAchievementViewController viewController);

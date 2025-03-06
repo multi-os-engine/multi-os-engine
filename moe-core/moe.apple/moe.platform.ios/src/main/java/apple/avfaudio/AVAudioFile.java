@@ -109,6 +109,8 @@ public class AVAudioFile extends NSObject {
      * [@property] fileFormat
      * 
      * The on-disk format of the file.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -122,6 +124,8 @@ public class AVAudioFile extends NSObject {
      * 
      * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position
      * by the number of frames read or written.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("framePosition")
@@ -149,6 +153,8 @@ public class AVAudioFile extends NSObject {
      *                    whether to use an interleaved processing format
      * @param outError
      *                    on exit, if an error occurs, a description of the error
+     * 
+     *                    API-Since: 8.0
      */
     @Generated
     @Selector("initForReading:commonFormat:interleaved:error:")
@@ -161,6 +167,8 @@ public class AVAudioFile extends NSObject {
      * Open a file for reading.
      * 
      * This opens the file for reading using the standard format (deinterleaved floating point).
+     * 
+     * API-Since: 8.0
      * 
      * @param fileURL
      *                 the file to open
@@ -179,6 +187,8 @@ public class AVAudioFile extends NSObject {
      * 
      * The file type to create can be set through the corresponding settings key. If not set, it will be
      * inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
+     * 
+     * API-Since: 8.0
      * 
      * @param fileURL
      *                    the path at which to create the file
@@ -208,6 +218,8 @@ public class AVAudioFile extends NSObject {
      * inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
      * 
      * This opens the file for writing using the standard format (deinterleaved floating point).
+     * 
+     * API-Since: 8.0
      * 
      * @param fileURL
      *                 the path at which to create the file
@@ -252,6 +264,8 @@ public class AVAudioFile extends NSObject {
      * The number of sample frames in the file.
      * 
      * Note: this can be expensive to compute for the first time.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("length")
@@ -266,6 +280,8 @@ public class AVAudioFile extends NSObject {
      * [@property] processingFormat
      * 
      * The processing format of the file.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -279,6 +295,8 @@ public class AVAudioFile extends NSObject {
      * 
      * Reading sequentially from framePosition, attempts to fill the buffer to its capacity. On
      * return, the buffer's length indicates the number of sample frames successfully read.
+     * 
+     * API-Since: 8.0
      * 
      * @param buffer
      *                 The buffer into which to read from the file. Its format must match the file's
@@ -299,6 +317,8 @@ public class AVAudioFile extends NSObject {
      * Read a portion of a buffer.
      * 
      * Like `readIntoBuffer:error:`, but can be used to read fewer frames than buffer.frameCapacity.
+     * 
+     * API-Since: 8.0
      * 
      * @param frames
      *                 The number of frames to read.
@@ -330,6 +350,8 @@ public class AVAudioFile extends NSObject {
      * 
      * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position
      * by the number of frames read or written.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFramePosition:")
@@ -347,6 +369,8 @@ public class AVAudioFile extends NSObject {
      * [@property] url
      * 
      * The URL the file is reading or writing.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -365,6 +389,8 @@ public class AVAudioFile extends NSObject {
      * 
      * Writes sequentially. The buffer's frameLength signifies how much of the buffer is to be written.
      * 
+     * API-Since: 8.0
+     * 
      * @param buffer
      *                 The buffer from which to write to the file. Its format must match the file's
      *                 processing format.
@@ -382,4 +408,35 @@ public class AVAudioFile extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * close
+     * 
+     * Close the audio file.
+     * 
+     * The underlying file will be closed if open.
+     * 
+     * - It is normally unnecessary to close a file opened for reading (it will be automatically closed
+     * when the object is released)
+     * - It is only necessary to close a file opened for writing in order to achieve specific control over
+     * when the file's header is updated.
+     * 
+     * Note: Once closed, further file read or write operations will fail with kAudio_FileNotFoundError.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("close")
+    public native void close();
+
+    /**
+     * [@property] isOpen
+     * 
+     * Whether the file is open or not.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isOpen")
+    public native boolean isOpen();
 }

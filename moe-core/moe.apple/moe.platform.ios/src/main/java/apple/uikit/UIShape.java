@@ -91,6 +91,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A capsule shape, equivalent to a rounded rectangle where the corner
      * radius is chosen as half the length of the rectangle’s smallest edge.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("capsuleShape")
@@ -100,6 +102,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A circular shape, with a radius equals half the length of the frame
      * rectangle’s smallest edge.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("circleShape")
@@ -134,6 +138,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A fixed rectangle shape using `rect` as its shape, regardless of the
      * frame in which it is contained.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fixedRectShapeWithRect:")
@@ -143,6 +149,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A fixed rectangle shape using `rect` as its shape, regardless of the
      * frame in which it is contained, with rounded corners using `cornerRadius`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fixedRectShapeWithRect:cornerRadius:")
@@ -152,6 +160,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A fixed rectangle shape using `rect` as its shape, regardless of the
      * frame in which it is contained, with rounded corners using `cornerRadius`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fixedRectShapeWithRect:cornerRadius:cornerCurve:maskedCorners:")
@@ -197,6 +207,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
 
     /**
      * A rectangular shape.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("rectShape")
@@ -206,6 +218,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A rectangular shape with rounded corners, aligned inside the frame of
      * in which it is contained.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("rectShapeWithCornerRadius:")
@@ -215,6 +229,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A rectangular shape with rounded corners, aligned inside the frame of
      * in which it is contained.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("rectShapeWithCornerRadius:cornerCurve:")
@@ -225,6 +241,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * A rectangular shape with rounded corners, aligned inside the frame of
      * in which it is contained.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("rectShapeWithCornerRadius:cornerCurve:maskedCorners:")
@@ -258,6 +276,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
      * effect. For some shapes like rounded rectangles, this can also modify
      * the corner radii of the shape to ensure the resulting corners are
      * concentric.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shapeByApplyingInset:")
@@ -273,6 +293,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
      * effect. For some shapes like rounded rectangles, this can also modify
      * the corner radii of the shape to ensure the resulting corners are
      * concentric.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shapeByApplyingInsets:")
@@ -281,6 +303,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
 
     /**
      * A shape with a custom bezier path.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shapeWithBezierPath:")
@@ -289,6 +313,8 @@ public class UIShape extends NSObject implements UIShapeProvider, NSCopying {
     /**
      * Creates a dynamic shape that can be resolved using the provided
      * `UIShapeProvider` based on context like its containing rect.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shapeWithProvider:")

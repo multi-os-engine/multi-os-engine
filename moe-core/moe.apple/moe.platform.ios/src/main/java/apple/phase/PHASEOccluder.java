@@ -115,6 +115,8 @@ public class PHASEOccluder extends PHASEObject {
      * [@note]
      * This function is thread-safe.
      * Clients can safely run this function to create multiple occluders from multiple threads, if required.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithEngine:shapes:")
@@ -164,6 +166,8 @@ public class PHASEOccluder extends PHASEObject {
      * [@property] shapes
      * 
      * Array of shapes associated with this occluder.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

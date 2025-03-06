@@ -133,6 +133,9 @@ public class MTLSharedEventHandle extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("label")

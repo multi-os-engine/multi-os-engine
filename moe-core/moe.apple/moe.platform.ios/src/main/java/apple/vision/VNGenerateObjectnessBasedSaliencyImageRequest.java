@@ -174,6 +174,8 @@ public class VNGenerateObjectnessBasedSaliencyImageRequest extends VNImageBasedR
 
     /**
      * VNSaliencyImageObservation results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

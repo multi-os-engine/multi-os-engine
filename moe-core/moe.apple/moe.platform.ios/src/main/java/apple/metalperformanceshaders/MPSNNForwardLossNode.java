@@ -88,6 +88,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("delta")
     public native float delta();
@@ -96,10 +99,16 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("epsilon")
     public native float epsilon();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gradientFilterWithSource:")
@@ -108,6 +117,8 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     /**
      * ! @abstract Returns the gradient filter for predictions, if you want also gradients for labels then use
      * -gradientFiltersWithSource(s):
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -115,12 +126,18 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public native MPSNNLossGradientNode gradientFilterWithSources(
             @NotNull NSArray<? extends MPSNNImageNode> sourceGradient);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gradientFiltersWithSource:")
     public native NSArray<? extends MPSNNLossGradientNode> gradientFiltersWithSource(
             @NotNull MPSNNImageNode sourceGradient);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("gradientFiltersWithSources:")
@@ -136,11 +153,17 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSNNForwardLossNode init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSource:labels:lossDescriptor:")
     public native MPSNNForwardLossNode initWithSourceLabelsLossDescriptor(@NotNull MPSNNImageNode source,
             @NotNull MPSNNImageNode labels, @NotNull MPSCNNLossDescriptor descriptor);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSource:labels:weights:lossDescriptor:")
     public native MPSNNForwardLossNode initWithSourceLabelsWeightsLossDescriptor(@NotNull MPSNNImageNode source,
@@ -152,6 +175,8 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: logits, Node1: labels, Node2: weights
      * @return A new MPSNNFilter node.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSources:lossDescriptor:")
@@ -180,10 +205,16 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("labelSmoothing")
     public native float labelSmoothing();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("lossType")
     public native int lossType();
@@ -193,11 +224,17 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("new")
     public static native MPSNNForwardLossNode new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nodeWithSource:labels:lossDescriptor:")
     public static native MPSNNForwardLossNode nodeWithSourceLabelsLossDescriptor(@NotNull MPSNNImageNode source,
             @NotNull MPSNNImageNode labels, @NotNull MPSCNNLossDescriptor descriptor);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nodeWithSource:labels:weights:lossDescriptor:")
     public static native MPSNNForwardLossNode nodeWithSourceLabelsWeightsLossDescriptor(@NotNull MPSNNImageNode source,
@@ -209,12 +246,17 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: logits, Node1: labels, Node2: weights
      * @return A new MPSNNFilter node.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSources:lossDescriptor:")
     public static native MPSNNForwardLossNode nodeWithSourcesLossDescriptor(
             @NotNull NSArray<? extends MPSNNImageNode> sourceNodes, @NotNull MPSCNNLossDescriptor descriptor);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("numberOfClasses")
     @NUInt
@@ -225,6 +267,8 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
      * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -232,6 +276,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public native MPSNNLossCallback propertyCallBack();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -249,6 +296,8 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
      * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPropertyCallBack:")
@@ -267,6 +316,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("weight")
     public native float weight();

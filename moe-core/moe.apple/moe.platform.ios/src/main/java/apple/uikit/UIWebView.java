@@ -452,10 +452,22 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("canGoBack")
     public native boolean canGoBack();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("canGoForward")
     public native boolean canGoForward();
@@ -468,6 +480,12 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @NUInt
     public native long dataDetectorTypes();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -495,10 +513,22 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @NFloat
     public native double gapBetweenPages();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("goBack")
     public native void goBack();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("goForward")
     public native void goForward();
@@ -515,6 +545,12 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("initWithFrame:")
     public native UIWebView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
@@ -528,15 +564,33 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("keyboardDisplayRequiresUserAction")
     public native boolean keyboardDisplayRequiresUserAction();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("loadData:MIMEType:textEncodingName:baseURL:")
     public native void loadDataMIMETypeTextEncodingNameBaseURL(@NotNull NSData data, @NotNull String MIMEType,
             @NotNull String textEncodingName, @NotNull NSURL baseURL);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("loadHTMLString:baseURL:")
     public native void loadHTMLStringBaseURL(@NotNull String string, @Nullable NSURL baseURL);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("loadRequest:")
     public native void loadRequest(@NotNull NSURLRequest request);
@@ -591,15 +645,33 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @NInt
     public native long paginationMode();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("reload")
     public native void reload();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("scalesPageToFit")
     public native boolean scalesPageToFit();
@@ -706,10 +778,22 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIWebViewDelegate value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIWebViewDelegate value) {
         Object __old = delegate();
@@ -786,6 +870,12 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("setPaginationMode:")
     public native void setPaginationMode(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("setScalesPageToFit:")
     public native void setScalesPageToFit(boolean value);
@@ -799,10 +889,22 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("setSuppressesIncrementalRendering:")
     public native void setSuppressesIncrementalRendering(boolean value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Generated
     @Selector("stopLoading")
     public native void stopLoading();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported; please adopt WKWebView.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("stringByEvaluatingJavaScriptFromString:")

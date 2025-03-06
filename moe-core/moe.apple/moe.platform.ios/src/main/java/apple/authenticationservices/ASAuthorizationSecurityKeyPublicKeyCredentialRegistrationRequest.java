@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASAuthorizationWebBrowserSecurityKeyPublicKeyCredentialRegistrationRequest;
 
 /**
  * API-Since: 15.0
@@ -37,7 +38,8 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest extends ASAuthorizationRequest implements
-        ASAuthorizationPublicKeyCredentialRegistrationRequest {
+        ASAuthorizationPublicKeyCredentialRegistrationRequest,
+        ASAuthorizationWebBrowserSecurityKeyPublicKeyCredentialRegistrationRequest {
     static {
         NatJ.register();
     }
@@ -106,6 +108,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     /**
      * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should
      * choose from these parameters when creating the credential.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -133,6 +137,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
      * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential
      * already exists on the authenticator which matches one or more of these descriptors, a new credential will not be
      * created and authentication will fail.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -192,6 +198,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
 
     /**
      * A preference whether the authenticator should store the private key of the newly created credential.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -217,6 +225,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     /**
      * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should
      * choose from these parameters when creating the credential.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCredentialParameters:")
@@ -231,6 +241,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
      * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential
      * already exists on the authenticator which matches one or more of these descriptors, a new credential will not be
      * created and authentication will fail.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setExcludedCredentials:")
@@ -243,6 +255,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
 
     /**
      * A preference whether the authenticator should store the private key of the newly created credential.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setResidentKeyPreference:")
@@ -293,4 +307,9 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("clientData")
+    @Nullable
+    public native ASPublicKeyCredentialClientData clientData();
 }

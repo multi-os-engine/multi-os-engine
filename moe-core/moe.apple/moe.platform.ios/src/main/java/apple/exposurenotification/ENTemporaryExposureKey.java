@@ -121,6 +121,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Key material used to generate Rolling Proximity Identifiers.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -147,6 +149,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Duration this key is valid. It's the number of 10-minute windows between key rolling.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("rollingPeriod")
@@ -154,6 +158,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Interval number when the key's EKRollingPeriod started.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("rollingStartNumber")
@@ -161,6 +167,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Key material used to generate Rolling Proximity Identifiers.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setKeyData:")
@@ -168,6 +176,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Duration this key is valid. It's the number of 10-minute windows between key rolling.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setRollingPeriod:")
@@ -175,6 +185,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Interval number when the key's EKRollingPeriod started.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setRollingStartNumber:")
@@ -182,6 +194,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Risk of transmission associated with the person this key came from.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setTransmissionRiskLevel:")
@@ -197,6 +211,8 @@ public class ENTemporaryExposureKey extends NSObject {
 
     /**
      * Risk of transmission associated with the person this key came from.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("transmissionRiskLevel")

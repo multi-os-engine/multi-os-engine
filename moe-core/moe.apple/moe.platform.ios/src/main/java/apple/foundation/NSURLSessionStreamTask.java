@@ -190,6 +190,8 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      * message. When that message is received, the task object is
      * considered completed and will not receive any more delegate
      * messages.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("captureStreams")
@@ -199,6 +201,8 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      * Enqueue a request to close the read side of the underlying socket.
      * All outstanding IO will complete before the read side is closed.
      * You may continue writing to the server.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("closeRead")
@@ -210,6 +214,8 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      * socket is closed. The server, however, may continue to write bytes
      * back to the client, so best practice is to continue reading from
      * the server until you receive EOF.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("closeWrite")
@@ -231,6 +237,8 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      * handler on the sessions delegate queue with the data or an error.
      * If an error occurs, any outstanding reads will also fail, and new
      * read requests will error out immediately.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("readDataOfMinLength:maxLength:timeout:completionHandler:")
@@ -242,6 +250,8 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      * Begin encrypted handshake. The handshake begins after all pending
      * IO has completed. TLS authentication callbacks are sent to the
      * session's -URLSession:task:didReceiveChallenge:completionHandler:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("startSecureConnection")
@@ -268,6 +278,8 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      * occur. Note that invocation of the completion handler does not
      * guarantee that the remote side has received all the bytes, only
      * that they have been written to the kernel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("writeData:timeout:completionHandler:")

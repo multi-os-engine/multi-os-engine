@@ -41,6 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGAffineTransform;
 
 /**
  * UITextSelectionRect defines an annotated selection rect used by the system to
@@ -165,6 +166,8 @@ public class UITextSelectionRect extends NSObject {
 
     /**
      * Returns YES if the rect contains the end of the selection.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("containsEnd")
@@ -172,6 +175,8 @@ public class UITextSelectionRect extends NSObject {
 
     /**
      * Returns YES if the rect contains the start of the selection.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("containsStart")
@@ -183,16 +188,24 @@ public class UITextSelectionRect extends NSObject {
 
     /**
      * Returns YES if the rect is for vertically oriented text.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isVertical")
     public native boolean isVertical();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("rect")
     @ByValue
     public native CGRect rect();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("writingDirection")
     @NInt
@@ -202,4 +215,16 @@ public class UITextSelectionRect extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Custom transform for highlight rects.
+     * This transform is assumed to be in the `textInputView` coordinate space.
+     * Default is CGAffineTransformIdentity (no transform applied).
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("transform")
+    @ByValue
+    public native CGAffineTransform transform();
 }

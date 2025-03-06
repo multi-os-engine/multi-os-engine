@@ -24,6 +24,8 @@ public interface CHHapticParameterAttributes {
      * [@property] maxValue
      * 
      * The default value for the parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("defaultValue")
@@ -33,6 +35,8 @@ public interface CHHapticParameterAttributes {
      * [@property] maxValue
      * 
      * The maximum value for the parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maxValue")
@@ -42,6 +46,8 @@ public interface CHHapticParameterAttributes {
      * [@property] minValue
      * 
      * The minimum value for the parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minValue")

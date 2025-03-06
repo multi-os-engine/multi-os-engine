@@ -771,4 +771,47 @@ public class MTRClusterTestCluster extends MTRClusterUnitTesting {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use testNullableOptionalRequestWithExpectedValues:expectedValueInterval:completion:
+     */
+    @Generated
+    @Deprecated
+    @Selector("testNullableOptionalRequestWithExpectedValues:expectedValueInterval:completionHandler:")
+    public native void testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletionHandler(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletionHandler") @NotNull Block_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletionHandler {
+        @Generated
+        void call_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletionHandler(
+                @Nullable MTRTestClusterClusterTestNullableOptionalResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use
+     * testSimpleOptionalArgumentRequestWithExpectedValues:expectedValueInterval:completion:
+     */
+    @Generated
+    @Deprecated
+    @Selector("testSimpleOptionalArgumentRequestWithExpectedValues:expectedValueInterval:completionHandler:")
+    public native void testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletionHandler(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletionHandler") @NotNull Block_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletionHandler {
+        @Generated
+        void call_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletionHandler(
+                @Nullable NSError error);
+    }
 }

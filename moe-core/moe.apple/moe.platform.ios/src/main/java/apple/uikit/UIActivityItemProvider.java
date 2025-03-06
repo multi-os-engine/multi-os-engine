@@ -46,7 +46,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.intents.INPerson;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -164,6 +168,8 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     /**
      * activity type available when -item is called. nil at other times. use this in your -item method to customize the
      * data to return
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -212,6 +218,8 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
 
     /**
      * placeHolder is the return value for -activityViewControllerPlaceholderItem:
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("initWithPlaceholderItem:")
@@ -221,6 +229,8 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     /**
      * called on secondary thread when user selects an activity. you must subclass and return a non-nil value. The item
      * can use the UIActivityItemSource protocol to return extra information
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -228,6 +238,9 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @MappedReturn(ObjCObjectMapper.class)
     public native Object item();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("placeholderItem")
@@ -245,4 +258,11 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("activityViewControllerShareRecipients:")
+    @NotNull
+    public native NSArray<? extends INPerson> activityViewControllerShareRecipients(
+            @NotNull UIActivityViewController activityViewController);
 }

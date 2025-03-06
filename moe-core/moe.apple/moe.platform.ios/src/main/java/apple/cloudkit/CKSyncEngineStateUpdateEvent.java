@@ -151,6 +151,9 @@ public class CKSyncEngineStateUpdateEvent extends CKSyncEngineEvent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("stateSerialization")
     @NotNull

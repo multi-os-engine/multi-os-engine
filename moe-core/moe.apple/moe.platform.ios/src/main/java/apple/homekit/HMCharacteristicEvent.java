@@ -167,6 +167,8 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     /**
      * The characteristic associated with the event.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -197,6 +199,8 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     /**
      * The value of the characteristic that triggers the event.
      * A value of nil corresponds to any change in the value of the characteristic.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

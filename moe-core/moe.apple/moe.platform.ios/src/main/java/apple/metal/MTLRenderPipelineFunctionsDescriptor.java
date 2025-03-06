@@ -102,6 +102,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * 
      * The set of additional binary functions to be accessed from the fragment function in an incrementally created
      * pipeline state.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -157,6 +159,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * 
      * The set of additional binary functions to be accessed from the fragment function in an incrementally created
      * pipeline state.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentAdditionalBinaryFunctions:")
@@ -167,6 +171,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * 
      * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline
      * state.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTileAdditionalBinaryFunctions:")
@@ -181,6 +187,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * 
      * The set of additional binary functions to be accessed from the vertex function in an incrementally created
      * pipeline state.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexAdditionalBinaryFunctions:")
@@ -195,6 +203,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * 
      * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline
      * state.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -211,6 +221,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * 
      * The set of additional binary functions to be accessed from the vertex function in an incrementally created
      * pipeline state.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

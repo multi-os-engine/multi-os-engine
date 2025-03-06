@@ -75,6 +75,8 @@ public class UITableViewPlaceholder extends NSObject {
 
     /**
      * Called whenever the placeholder cell is visible to update the contents of the cell.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -121,6 +123,8 @@ public class UITableViewPlaceholder extends NSObject {
      * requiring a data source update.
      * You may use UITableViewAutomaticDimension for the rowHeight to have the placeholder cell self-size if the table
      * view is using estimated row heights.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithInsertionIndexPath:reuseIdentifier:rowHeight:")
@@ -164,6 +168,8 @@ public class UITableViewPlaceholder extends NSObject {
 
     /**
      * Called whenever the placeholder cell is visible to update the contents of the cell.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellUpdateHandler:")

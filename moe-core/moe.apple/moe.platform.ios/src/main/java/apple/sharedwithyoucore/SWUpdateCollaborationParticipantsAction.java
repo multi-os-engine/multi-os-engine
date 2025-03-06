@@ -50,6 +50,9 @@ public class SWUpdateCollaborationParticipantsAction extends SWAction implements
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("addedIdentities")
@@ -90,6 +93,9 @@ public class SWUpdateCollaborationParticipantsAction extends SWAction implements
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("collaborationMetadata")
@@ -154,6 +160,9 @@ public class SWUpdateCollaborationParticipantsAction extends SWAction implements
     @Selector("new")
     public static native SWUpdateCollaborationParticipantsAction new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("removedIdentities")

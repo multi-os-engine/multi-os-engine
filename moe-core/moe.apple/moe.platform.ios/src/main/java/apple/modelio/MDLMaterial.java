@@ -175,12 +175,17 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      * If a property is not found by propertyForKey and baseMaterial is not nil,
      * propertyForKey will invoke propertyForKey on baseMaterial.
      * All other selectors disregard baseMaterial.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("baseMaterial")
     public native MDLMaterial baseMaterial();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -196,6 +201,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("init")
     public native MDLMaterial init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithName:scatteringFunction:")
     public native MDLMaterial initWithNameScatteringFunction(@NotNull String name,
@@ -203,6 +211,8 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     /**
      * Default is MDLMaterialFaceFront
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("materialFace")
@@ -214,11 +224,17 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MDLMaterialProperty objectAtIndexedSubscript(@NUInt long idx);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
@@ -234,6 +250,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("propertiesWithSemantic:")
     public native NSArray<? extends MDLMaterialProperty> propertiesWithSemantic(@NUInt long semantic);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("propertyNamed:")
@@ -242,20 +261,31 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     /**
      * Returns the first occurence of the property that matches the semantic.
      * Not recommended to use when there are multiple properties with same semantic.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("propertyWithSemantic:")
     public native MDLMaterialProperty propertyWithSemantic(@NUInt long semantic);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("removeAllProperties")
     public native void removeAllProperties();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("removeProperty:")
     public native void removeProperty(@NotNull MDLMaterialProperty property);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("scatteringFunction")
@@ -265,6 +295,8 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      * If a property is not found by propertyForKey and baseMaterial is not nil,
      * propertyForKey will invoke propertyForKey on baseMaterial.
      * All other selectors disregard baseMaterial.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBaseMaterial:")
@@ -272,6 +304,8 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     /**
      * Default is MDLMaterialFaceFront
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaterialFace:")
@@ -281,6 +315,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("setName:")
     public native void setName(@NotNull String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setProperty:")
     public native void setProperty(@NotNull MDLMaterialProperty property);
@@ -291,8 +328,8 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      * MDLTextureSampler values. The transforms on the samplers will be identity, the
      * wrap modes will be clamp, and the filter modes will be linear.
      * 
-     * @param resolver If non-nil, the resolver can be invoked to convert stringValues
-     *                 to NSURLs for loading.
+     * @param resolver The resolver can be invoked to convert stringValues or NSURLs
+     *                 to an MDLTextureSampler.
      * 
      *                 API-Since: 11.0
      */
@@ -304,7 +341,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      * Iterates all material properties. If they are string values, they are resolved into
      * valid paths as NSURL values.
      * 
-     * @param resolver If non-nil, the resolver can be invoked to convert stringValues
+     * @param resolver The resolver can be invoked to convert stringValues
      *                 to NSURLs for loading.
      * 
      *                 API-Since: 11.0

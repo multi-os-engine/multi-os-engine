@@ -41,6 +41,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     /**
      * Returns a pointer to the bias terms for the batch normalization.
      * If NULL then no bias is to be applied.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -69,6 +71,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * NSSecureCoding compatibility.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @IsOptional
@@ -82,6 +86,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * 
      * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
      * Defalt value if method unavailable: FLT_MIN
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @IsOptional
@@ -92,6 +98,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * Returns a pointer to the scale factors for the batch normalization.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -100,6 +108,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * NSSecureCoding compatibility.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -113,6 +123,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * A label that is transferred to the batch normalization filter at init time
      * 
      * Overridden by a MPSCNNBatchNormalizationNode.label if it is non-nil.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -129,6 +141,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * 
      * @return Returns YES on success. If NO is returned, expect MPS
      *         object construction to fail.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("load")
@@ -137,6 +151,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     /**
      * Returns a pointer to batch mean values with which to initialize
      * the state for a subsequent batch normalization.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -146,6 +162,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     /**
      * Returns the number of feature channels within images to be normalized
      * using the supplied parameters.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("numberOfFeatureChannels")
@@ -157,6 +175,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * 
      * Each load alert will be balanced by a purge later, when MPS
      * no longer needs the data from this object.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("purge")
@@ -164,6 +184,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * NSSecureCoding compatibility.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @IsOptional
@@ -181,6 +203,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      *                                beta values and the gradient values.
      * 
      * @return A boolean value indicating if the update was performed.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @IsOptional
@@ -204,6 +228,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * @return A MPSCNNNormalizationMeanAndVarianceState object containing updated mean and variance values. If NULL,
      *         the MPSNNGraph
      *         batch normalization filter gamma and beta values will remain unmodified.
+     * 
+     *         API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -262,6 +288,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     /**
      * Returns a pointer to batch variance values with which to initialize
      * the state for a subsequent batch normalization.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated

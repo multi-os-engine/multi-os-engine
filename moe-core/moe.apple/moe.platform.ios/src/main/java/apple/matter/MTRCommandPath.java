@@ -24,10 +24,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * A path indicating a specific command on a device (i.e. without any
  * wildcards).
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
@@ -88,6 +92,9 @@ public class MTRCommandPath extends MTRClusterPath {
     public static native MTRClusterPath clusterPathWithEndpointIDClusterID(@NotNull NSNumber endpointID,
             @NotNull NSNumber clusterID);
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("command")
     @NotNull
@@ -182,4 +189,18 @@ public class MTRCommandPath extends MTRClusterPath {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTRCommandPath initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

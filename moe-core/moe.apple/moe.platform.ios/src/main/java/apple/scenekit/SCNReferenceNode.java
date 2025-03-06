@@ -163,6 +163,8 @@ public class SCNReferenceNode extends SCNNode {
      * referenceNodeWithURL:
      * 
      * Creates a reference node with a url.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("referenceNodeWithURL:")
@@ -201,6 +203,8 @@ public class SCNReferenceNode extends SCNNode {
      * initWithCoder:
      * 
      * Support coding and decoding via NSKeyedArchiver.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithCoder:")
@@ -210,6 +214,8 @@ public class SCNReferenceNode extends SCNNode {
      * initWithURL:
      * 
      * Creates a reference node with a url.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -219,6 +225,8 @@ public class SCNReferenceNode extends SCNNode {
      * [@property] loaded
      * 
      * Indicates whether the referenced URL has been loaded.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isLoaded")
@@ -229,6 +237,8 @@ public class SCNReferenceNode extends SCNNode {
      * 
      * Force the reference to be loaded if it hasn't been loaded already. The resolved nodes will be added
      * as child nodes of the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("load")
@@ -239,6 +249,8 @@ public class SCNReferenceNode extends SCNNode {
      * 
      * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
      * SCNReferenceLoadingPolicyImmediately.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("loadingPolicy")
@@ -249,6 +261,8 @@ public class SCNReferenceNode extends SCNNode {
      * [@property] referenceURL
      * 
      * Specifies the url to resolve.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -260,6 +274,8 @@ public class SCNReferenceNode extends SCNNode {
      * 
      * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
      * SCNReferenceLoadingPolicyImmediately.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLoadingPolicy:")
@@ -269,6 +285,8 @@ public class SCNReferenceNode extends SCNNode {
      * [@property] referenceURL
      * 
      * Specifies the url to resolve.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setReferenceURL:")
@@ -284,6 +302,8 @@ public class SCNReferenceNode extends SCNNode {
      * unload
      * 
      * Remove the child nodes and mark as unloaded.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("unload")

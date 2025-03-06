@@ -121,11 +121,17 @@ public class UISceneSizeRestrictions extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("maximumSize")
     @ByValue
     public native CGSize maximumSize();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("minimumSize")
     @ByValue
@@ -144,10 +150,16 @@ public class UISceneSizeRestrictions extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setMaximumSize:")
     public native void setMaximumSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setMinimumSize:")
     public native void setMinimumSize(@ByValue CGSize value);

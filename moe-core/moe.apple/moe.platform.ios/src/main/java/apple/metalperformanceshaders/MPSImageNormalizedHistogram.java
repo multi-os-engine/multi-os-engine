@@ -105,6 +105,8 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("clipRectSource")
@@ -142,6 +144,9 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      *                        - histogram results for the G channel for all bins followed by
      *                        - histogram results for the B channel for all bins followed by
      *                        - histogram results for the A channel for all bins
+     * 
+     * 
+     *                        API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:minmaxTexture:histogram:histogramOffset:")
@@ -167,6 +172,8 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      *                     the source parameter of -encodeToCommandBuffer:
      *                     sourceTexture:histogram:histogramOffset
      * @return The number of bytes needed to store the result histograms.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("histogramSizeForSourceFormat:")
@@ -211,6 +218,8 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * @param device        The device the filter will run on
      * @param histogramInfo Pointer to the MPSImageHistogramInfo struct
      * @return A valid MPSImageNormalizedHistogram object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:histogramInfo:")
@@ -261,6 +270,8 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setClipRectSource:")
@@ -277,6 +288,8 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * 
      * Indicates that the memory region in which the histogram results are to be written in the
      * histogram buffer are to be zero-initialized or not. Default: YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setZeroHistogram:")
@@ -308,6 +321,8 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * 
      * Indicates that the memory region in which the histogram results are to be written in the
      * histogram buffer are to be zero-initialized or not. Default: YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("zeroHistogram")

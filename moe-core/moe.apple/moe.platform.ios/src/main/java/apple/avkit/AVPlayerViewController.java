@@ -243,6 +243,8 @@ public class AVPlayerViewController extends UIViewController {
      * [@property] player
      * 
      * The player from which to source the media content for the view controller.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -295,6 +297,8 @@ public class AVPlayerViewController extends UIViewController {
      * [@property] player
      * 
      * The player from which to source the media content for the view controller.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPlayer:")
@@ -330,6 +334,8 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize.
      * AVLayerVideoGravityResizeAspect is default.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVideoGravity:")
@@ -375,6 +381,8 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize.
      * AVLayerVideoGravityResizeAspect is default.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

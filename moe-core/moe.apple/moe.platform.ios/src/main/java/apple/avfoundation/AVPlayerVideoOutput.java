@@ -102,6 +102,8 @@ public class AVPlayerVideoOutput extends NSObject {
      * 
      * The client is responsible for releasing the returned CMTaggedBufferGroup.
      * 
+     * API-Since: 17.2
+     * 
      * @param hostTime
      *                              A CMTime that expresses a desired host time.
      * @param presentationTimeStamp
@@ -145,10 +147,12 @@ public class AVPlayerVideoOutput extends NSObject {
      * 
      * Creates an instance of AVPlayerVideoOutput, initialized with the specified video output specification.
      * 
-     * Pixel buffer attributes will be selected from the input AVVideoOutputSpecification based on the data channels
-     * selected for an item.
-     * If no pixel buffer attributes were set for the selected tag collection, then the default pixel buffer attributes
-     * from the AVVideoOutputSpecification will be used if those were set.
+     * Output settings will be selected from the input AVVideoOutputSpecification based on the data channels selected
+     * for an item.
+     * If no output settings were set for the selected tag collection, then the default output settings from the
+     * AVVideoOutputSpecification will be used if those were set.
+     * 
+     * API-Since: 17.2
      * 
      * @param specification
      *                      An instance of AVVideoOutputSpecification, used to recommend data channels to the AVPlayer

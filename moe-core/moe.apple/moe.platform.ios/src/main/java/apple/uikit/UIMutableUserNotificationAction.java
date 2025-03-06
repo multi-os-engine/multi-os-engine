@@ -169,7 +169,12 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * How the application should be activated in response to the action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("activationMode")
     @NUInt
@@ -187,7 +192,12 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * The unique identifier for this action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("identifier")
@@ -204,7 +214,12 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     /**
      * Whether this action is secure and should require unlocking before being performed. If the activation mode is
      * UIUserNotificationActivationModeForeground, then the action is considered secure and this property is ignored.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("isAuthenticationRequired")
     public native boolean isAuthenticationRequired();
@@ -212,21 +227,36 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     /**
      * Whether this action is secure and should require unlocking before being performed. If the activation mode is
      * UIUserNotificationActivationModeForeground, then the action is considered secure and this property is ignored.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("setAuthenticationRequired:")
     public native void setAuthenticationRequired(boolean value);
 
     /**
      * Whether this action should be indicated as destructive when displayed.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("isDestructive")
     public native boolean isDestructive();
 
     /**
      * Whether this action should be indicated as destructive when displayed.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("setDestructive:")
     public native void setDestructive(boolean value);
@@ -243,7 +273,12 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * How the application should be activated in response to the action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("setActivationMode:")
     public native void setActivationMode(@NUInt long value);
@@ -259,7 +294,12 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * The unique identifier for this action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(@Nullable String value);
@@ -275,7 +315,12 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * The localized title to display for this action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@Nullable String value);
@@ -288,7 +333,12 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * The localized title to display for this action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("title")

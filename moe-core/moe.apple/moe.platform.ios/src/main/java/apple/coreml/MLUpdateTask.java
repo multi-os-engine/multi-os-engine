@@ -145,6 +145,8 @@ public class MLUpdateTask extends MLTask {
 
     /**
      * Request a resume with new parameters. Should be used within a progressHandler
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resumeWithParameters:")
@@ -160,6 +162,8 @@ public class MLUpdateTask extends MLTask {
 
     /**
      * Update via task control with completion handler
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:configuration:completionHandler:error:")
@@ -179,6 +183,8 @@ public class MLUpdateTask extends MLTask {
 
     /**
      * Update via task control and custom progress callbacks
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:configuration:progressHandlers:error:")

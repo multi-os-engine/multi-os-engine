@@ -42,6 +42,8 @@ public interface INCreateNoteIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INCreateNoteIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -68,6 +70,8 @@ public interface INCreateNoteIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INCreateNoteIntentResponse
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("handleCreateNote:completion:")
@@ -81,6 +85,9 @@ public interface INCreateNoteIntentHandling {
         void call_handleCreateNoteCompletion(@NotNull INCreateNoteIntentResponse response);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveContentForCreateNote:withCompletion:")
@@ -96,6 +103,9 @@ public interface INCreateNoteIntentHandling {
         void call_resolveContentForCreateNoteWithCompletion(@NotNull INNoteContentResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveGroupNameForCreateNote:withCompletion:")
@@ -122,6 +132,8 @@ public interface INCreateNoteIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional

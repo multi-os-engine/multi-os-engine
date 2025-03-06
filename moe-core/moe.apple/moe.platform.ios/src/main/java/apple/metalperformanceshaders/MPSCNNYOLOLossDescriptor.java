@@ -85,6 +85,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -97,6 +99,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -137,6 +141,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * };
      * NSData* labelsInputData = [NSData dataWithBytes: gAnchorBoxes length: MAX_NUM_ANCHOR_BOXES * sizeof(anchorBox)];
      * [@endcode]
+     * 
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -174,6 +181,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -191,6 +200,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * @param anchorBoxes        This is an NSData which has an array of anchorBoxes defined as a struct{ float width;
      *                           float height; };
      * @return A valid MPSCNNYOLOLossDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -205,6 +216,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -262,6 +275,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence, default is 0.3
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("maxIOUForObjectAbsence")
@@ -272,6 +287,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, default is 0.7
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("minIOUForObjectPresence")
@@ -286,6 +303,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] numberOfAnchorBoxes
      * 
      * number of anchor boxes used to detect object per grid cell
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("numberOfAnchorBoxes")
@@ -296,6 +315,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] reductionType
      * 
      * ReductionType shared accross all losses (so they may generate same sized output)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("reductionType")
@@ -306,6 +327,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. Default is YES
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("rescore")
@@ -323,6 +346,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleClass
      * 
      * scale factor for no object classes loss and loss gradient default is 2.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("scaleClass")
@@ -332,6 +357,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleNoObject
      * 
      * scale factor for no object confidence loss and loss gradient default is 5.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("scaleNoObject")
@@ -341,6 +368,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleObject
      * 
      * scale factor for no object confidence loss and loss gradient default is 100.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("scaleObject")
@@ -350,6 +379,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleWH
      * 
      * scale factor for WH loss and loss gradient default is 10.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("scaleWH")
@@ -359,6 +390,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleXY
      * 
      * scale factor for XY loss and loss gradient default is 10.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("scaleXY")
@@ -384,6 +417,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * };
      * NSData* labelsInputData = [NSData dataWithBytes: gAnchorBoxes length: MAX_NUM_ANCHOR_BOXES * sizeof(anchorBox)];
      * [@endcode]
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAnchorBoxes:")
@@ -395,6 +431,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setClassesLossDescriptor:")
@@ -406,6 +444,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setConfidenceLossDescriptor:")
@@ -416,6 +456,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence, default is 0.3
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMaxIOUForObjectAbsence:")
@@ -426,6 +468,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, default is 0.7
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMinIOUForObjectPresence:")
@@ -435,6 +479,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] numberOfAnchorBoxes
      * 
      * number of anchor boxes used to detect object per grid cell
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setNumberOfAnchorBoxes:")
@@ -444,6 +490,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] reductionType
      * 
      * ReductionType shared accross all losses (so they may generate same sized output)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setReductionType:")
@@ -454,6 +502,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. Default is YES
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setRescore:")
@@ -463,6 +513,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleClass
      * 
      * scale factor for no object classes loss and loss gradient default is 2.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setScaleClass:")
@@ -472,6 +524,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleNoObject
      * 
      * scale factor for no object confidence loss and loss gradient default is 5.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setScaleNoObject:")
@@ -481,6 +535,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleObject
      * 
      * scale factor for no object confidence loss and loss gradient default is 100.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setScaleObject:")
@@ -490,6 +546,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleWH
      * 
      * scale factor for WH loss and loss gradient default is 10.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setScaleWH:")
@@ -499,6 +557,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * [@property] scaleXY
      * 
      * scale factor for XY loss and loss gradient default is 10.0
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setScaleXY:")
@@ -514,6 +574,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setWHLossDescriptor:")
@@ -525,6 +587,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setXYLossDescriptor:")

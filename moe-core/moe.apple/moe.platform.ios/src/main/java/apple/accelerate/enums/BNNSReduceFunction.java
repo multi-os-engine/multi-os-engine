@@ -11,77 +11,77 @@ public final class BNNSReduceFunction {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionMax = 0x00000000;
+    @Generated public static final int Max = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionMin = 0x00000001;
+    @Generated public static final int Min = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionArgMax = 0x00000002;
+    @Generated public static final int ArgMax = 0x00000002;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionArgMin = 0x00000003;
+    @Generated public static final int ArgMin = 0x00000003;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionMean = 0x00000004;
+    @Generated public static final int Mean = 0x00000004;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionMeanNonZero = 0x00000005;
+    @Generated public static final int MeanNonZero = 0x00000005;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionSum = 0x00000006;
+    @Generated public static final int Sum = 0x00000006;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionSumSquare = 0x00000007;
+    @Generated public static final int SumSquare = 0x00000007;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionSumLog = 0x00000008;
+    @Generated public static final int SumLog = 0x00000008;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionL1Norm = 0x00000009;
+    @Generated public static final int L1Norm = 0x00000009;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionLogicalOr = 0x0000000A;
+    @Generated public static final int LogicalOr = 0x0000000A;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSReduceFunctionLogicalAnd = 0x0000000B;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSReduceFunctionAny = 0x0000000A;
-    /**
-     * API-Since: 14.0
-     */
-    @Generated public static final int BNNSReduceFunctionAll = 0x0000000B;
+    @Generated public static final int LogicalAnd = 0x0000000B;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSReduceFunctionL2Norm = 0x0000000C;
+    @Generated public static final int L2Norm = 0x0000000C;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSReduceFunctionLogSumExp = 0x0000000D;
+    @Generated public static final int LogSumExp = 0x0000000D;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSReduceFunctionProduct = 0x0000000E;
+    @Generated public static final int Product = 0x0000000E;
     /**
      * API-Since: 16.0
      */
-    @Generated public static final int BNNSReduceFunctionNone = 0x0000000F;
+    @Generated public static final int None = 0x0000000F;
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int BNNSReduceFunctionLogSum = 0x00000010;
+    @Generated public static final int LogSum = 0x00000010;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int Any = 0x0000000A;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated public static final int All = 0x0000000B;
 }

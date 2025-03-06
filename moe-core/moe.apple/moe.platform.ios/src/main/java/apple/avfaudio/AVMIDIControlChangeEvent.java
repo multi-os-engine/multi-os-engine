@@ -113,6 +113,8 @@ public class AVMIDIControlChangeEvent extends AVMIDIChannelEvent {
      * @param value
      *                    The value for this control change. Range: Depends on the type (see the General MIDI
      *                    specification).
+     * 
+     *                    API-Since: 16.0
      */
     @Generated
     @Selector("initWithChannel:messageType:value:")
@@ -144,6 +146,8 @@ public class AVMIDIControlChangeEvent extends AVMIDIChannelEvent {
     /**
      * [@property] messageType
      * The type of control change message, specified as an AVMIDIControlChangeMessageType.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("messageType")
@@ -175,6 +179,8 @@ public class AVMIDIControlChangeEvent extends AVMIDIChannelEvent {
      * [@property] value
      * The value of the control change event. The range of this value depends on the type (see the General MIDI
      * specification).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("value")

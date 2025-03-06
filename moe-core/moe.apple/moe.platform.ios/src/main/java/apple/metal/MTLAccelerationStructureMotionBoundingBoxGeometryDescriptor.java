@@ -65,6 +65,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
     /**
      * Bounding box buffer containing MTLAxisAlignedBoundingBoxes similar to what
      * MTLAccelerationStructureBoundingBoxGeometryDescriptor has but array of the values.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -73,6 +75,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
 
     /**
      * Number of bounding boxes
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("boundingBoxCount")
@@ -82,6 +86,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
     /**
      * Stride, in bytes, between bounding boxes in the bounding box buffer. Must be at least 24
      * bytes and must be a multiple of 4 bytes. Defaults to 24 bytes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("boundingBoxStride")
@@ -117,6 +123,9 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("descriptor")
     public static native MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor descriptor();
@@ -168,6 +177,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
     /**
      * Bounding box buffer containing MTLAxisAlignedBoundingBoxes similar to what
      * MTLAccelerationStructureBoundingBoxGeometryDescriptor has but array of the values.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBoundingBoxBuffers:")
@@ -175,6 +186,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
 
     /**
      * Number of bounding boxes
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBoundingBoxCount:")
@@ -183,6 +196,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
     /**
      * Stride, in bytes, between bounding boxes in the bounding box buffer. Must be at least 24
      * bytes and must be a multiple of 4 bytes. Defaults to 24 bytes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBoundingBoxStride:")

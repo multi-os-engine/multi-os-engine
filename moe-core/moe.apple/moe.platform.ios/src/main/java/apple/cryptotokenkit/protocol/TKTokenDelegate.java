@@ -38,6 +38,8 @@ public interface TKTokenDelegate {
      * was not yet seen by this token instance).
      * 
      * @param token Related token instance.
+     * 
+     *              API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -49,6 +51,8 @@ public interface TKTokenDelegate {
      * Terminates previously created session, implementation should free all associated resources.
      * 
      * @param token Related token instance.
+     * 
+     *              API-Since: 10.0
      */
     @Generated
     @IsOptional

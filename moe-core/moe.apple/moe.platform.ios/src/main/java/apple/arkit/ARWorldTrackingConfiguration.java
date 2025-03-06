@@ -100,6 +100,9 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("init")
     public native ARWorldTrackingConfiguration init();
@@ -142,6 +145,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("planeDetection")
@@ -163,6 +168,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
      * ARPlaneDetectionNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPlaneDetection:")

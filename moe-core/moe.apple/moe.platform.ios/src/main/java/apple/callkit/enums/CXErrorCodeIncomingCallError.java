@@ -53,4 +53,8 @@ public final class CXErrorCodeIncomingCallError {
      * API-Since: 10.0
      */
     @Generated @NInt public static final long FilteredDuringRestrictedSharingMode = 0x0000000000000005L;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated @NInt public static final long CallIsProtected = 0x0000000000000006L;
 }

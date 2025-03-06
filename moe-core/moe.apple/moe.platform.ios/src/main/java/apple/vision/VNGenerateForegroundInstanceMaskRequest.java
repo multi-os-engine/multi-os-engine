@@ -153,6 +153,8 @@ public class VNGenerateForegroundInstanceMaskRequest extends VNImageBasedRequest
 
     /**
      * VNObservation results.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("results")

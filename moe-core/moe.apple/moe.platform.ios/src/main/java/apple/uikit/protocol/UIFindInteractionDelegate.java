@@ -25,6 +25,8 @@ public interface UIFindInteractionDelegate {
      * Called when the search operation begins (and the system search UI appears).
      * This would be a good time to decorate your view to indicate that a search operation is about to occur.
      * System text elements will apply a dimming view around all non-highlighted search results, for instance.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -38,6 +40,8 @@ public interface UIFindInteractionDelegate {
      * Called when the current search session has changed or ended. This would be a good time to remove all
      * decorations applied to found search results, and any decorations added when the search operation began
      * (such as a dimming view).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -51,6 +55,8 @@ public interface UIFindInteractionDelegate {
      * Called when a find session is requested to begin by the user. Return an instance of a UIFindSession
      * implementation to allow the
      * find session to begin, otherwise return nil to prevent the system find panel from appearing.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

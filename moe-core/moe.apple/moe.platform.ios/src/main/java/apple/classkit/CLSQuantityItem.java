@@ -110,6 +110,8 @@ public class CLSQuantityItem extends CLSActivityItem {
      * 
      * @param identifier An identifier that is unique within activity.
      * @param title      Title of the quantity. Ex @em Hints
+     * 
+     *                   API-Since: 11.3
      */
     @Generated
     @Selector("initWithIdentifier:title:")
@@ -144,6 +146,8 @@ public class CLSQuantityItem extends CLSActivityItem {
 
     /**
      * Quantity awarded.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("quantity")
@@ -159,6 +163,8 @@ public class CLSQuantityItem extends CLSActivityItem {
 
     /**
      * Quantity awarded.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setQuantity:")

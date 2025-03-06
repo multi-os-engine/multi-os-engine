@@ -162,6 +162,9 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("down")
@@ -171,37 +174,58 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Selector("init")
     public native GCControllerDirectionPad init();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("left")
     public native GCControllerButtonInput left();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("right")
     public native GCControllerButtonInput right();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("up")
     public native GCControllerButtonInput up();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")
     public native Block_valueChangedHandler_ret valueChangedHandler();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("xAxis")
     public native GCControllerAxisInput xAxis();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("yAxis")

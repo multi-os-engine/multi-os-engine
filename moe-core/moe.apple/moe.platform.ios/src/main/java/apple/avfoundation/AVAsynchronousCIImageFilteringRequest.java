@@ -167,6 +167,8 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
 
     /**
      * The time for which the frame should be filtered
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("compositionTime")
@@ -182,6 +184,8 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
 
     /**
      * Callback the filter should call when filtering failed. The error parameter should describe the actual error.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("finishWithError:")
@@ -193,6 +197,8 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
      * 
      * It is safe to pass in the sourceImage in which case the filter will appear to have no effect, essentially
      * functioning as a pass-through.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("finishWithImage:context:")
@@ -204,6 +210,8 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
 
     /**
      * Width and height for rendering frames.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("renderSize")
@@ -213,6 +221,8 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     /**
      * CIImage for the first enabled source video track. Unlike AVAsynchronousVideoCompositionRequest,
      * renderContext.renderTransform is already applied to the source image.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

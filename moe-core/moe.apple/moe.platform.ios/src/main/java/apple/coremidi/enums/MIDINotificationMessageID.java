@@ -55,4 +55,6 @@ public final class MIDINotificationMessageID {
     @Generated
     private MIDINotificationMessageID() {
     }
+
+    @Generated public static final int InternalStart = 0x00001000;
 }

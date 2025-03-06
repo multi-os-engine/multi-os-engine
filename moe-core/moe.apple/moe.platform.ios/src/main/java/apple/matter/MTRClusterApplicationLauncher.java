@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterApplicationLauncher extends MTRCluster {
+public class MTRClusterApplicationLauncher extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -375,4 +375,58 @@ public class MTRClusterApplicationLauncher extends MTRCluster {
     public native void writeAttributeCurrentAppWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("hideAppWithExpectedValues:expectedValueInterval:completion:")
+    public native void hideAppWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_hideAppWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_hideAppWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_hideAppWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_hideAppWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRApplicationLauncherClusterLauncherResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("launchAppWithExpectedValues:expectedValueInterval:completion:")
+    public native void launchAppWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_launchAppWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_launchAppWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_launchAppWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_launchAppWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRApplicationLauncherClusterLauncherResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("stopAppWithExpectedValues:expectedValueInterval:completion:")
+    public native void stopAppWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_stopAppWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_stopAppWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stopAppWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_stopAppWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRApplicationLauncherClusterLauncherResponseParams data, @Nullable NSError error);
+    }
 }

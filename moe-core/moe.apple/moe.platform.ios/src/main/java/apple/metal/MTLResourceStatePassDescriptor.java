@@ -150,6 +150,8 @@ public class MTLResourceStatePassDescriptor extends NSObject implements NSCopyin
      * resourceStatePassDescriptor
      * 
      * Create an autoreleased default frame buffer descriptor
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

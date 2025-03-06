@@ -174,6 +174,8 @@ public class UIPinchGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * scale relative to the touch points in screen coordinates
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("scale")
@@ -182,6 +184,8 @@ public class UIPinchGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * scale relative to the touch points in screen coordinates
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setScale:")
@@ -189,6 +193,8 @@ public class UIPinchGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * velocity of the pinch in scale/second
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("velocity")

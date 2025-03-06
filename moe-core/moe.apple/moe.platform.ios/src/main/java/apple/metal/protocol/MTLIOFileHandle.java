@@ -25,6 +25,8 @@ public interface MTLIOFileHandle {
      * [@property] label
      * 
      * An optional label for this handle.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -35,6 +37,8 @@ public interface MTLIOFileHandle {
      * [@property] label
      * 
      * An optional label for this handle.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setLabel:")

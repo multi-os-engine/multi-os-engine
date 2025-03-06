@@ -219,6 +219,8 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
      * @return
      *         An indication of success. NO will be returned if the specified time is beyond the duration of the last
      *         volume ramp that has been set.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("getVolumeRampForTime:startVolume:endVolume:timeRange:")
@@ -240,6 +242,8 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
      * [@property] trackID
      * 
      * Indicates the trackID of the audio track to which the parameters should be applied.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("trackID")

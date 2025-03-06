@@ -266,11 +266,17 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
             @Nullable NSPersonNameComponents nameComponents, @Nullable String displayName, @Nullable INImage image,
             @Nullable String rating);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("rating")

@@ -108,6 +108,8 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      * [@property] fillValue
      * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("fillValue")
@@ -132,6 +134,8 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      *                          the pad-node and its gradient are the only nodes that support
      *                          the extended edge-modes, ie. the ones beyond MPSImageEdgeModeClamp.
      * @return A new MPSNNFilter node for a MPSNNPad kernel.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithSource:paddingSizeBefore:paddingSizeAfter:edgeMode:")
@@ -176,6 +180,8 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      *                          the pad-node and its gradient are the only nodes that support
      *                          the extended edge-modes, ie. the ones beyond MPSImageEdgeModeClamp.
      * @return A new MPSNNFilter node for a MPSNNPad kernel.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("nodeWithSource:paddingSizeBefore:paddingSizeAfter:edgeMode:")
@@ -195,6 +201,8 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      * [@property] fillValue
      * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setFillValue:")

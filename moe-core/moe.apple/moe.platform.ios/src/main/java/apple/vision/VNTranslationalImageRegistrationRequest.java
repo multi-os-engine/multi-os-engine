@@ -314,6 +314,8 @@ public class VNTranslationalImageRegistrationRequest extends VNImageRegistration
 
     /**
      * VNImageTranslationAlignmentObservation results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

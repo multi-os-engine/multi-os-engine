@@ -120,8 +120,8 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
      * 
      * Creates and returns a geometry element from the given data and data format info.
      * 
-     * @param data           The data that contains element indexes. You can pass nil to use an implicit vertex ordering
-     *                       (0,1,2...).
+     * @param data           The data that contains element indices. You can pass nil to use an implicit vertex ordering
+     *                       (0,1,2,…).
      * @param primitiveType  The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
      * @param primitiveCount The number of primitives in the data.
      * @param bytesPerIndex  The number of bytes that represent a single index value in the data.
@@ -352,11 +352,11 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     public native void setPrimitiveRange(@ByValue NSRange value);
 
     /**
-     * geometryElementWithBuffer:primitiveType:primitiveCount:bytesPerIndex
+     * geometryElementWithBuffer:primitiveType:primitiveCount:bytesPerIndex:
      * 
      * Creates and returns a geometry element from the given Metal buffer and parameters.
      * 
-     * @param buffer         The buffer that contains element indexes.
+     * @param buffer         The buffer that contains element indices.
      * @param primitiveType  The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
      * @param primitiveCount The number of primitives in the data.
      * @param bytesPerIndex  The number of bytes that represent a single index value in the data.
@@ -373,4 +373,56 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("geometryElementWithBuffer:primitiveType:primitiveCount:indicesChannelCount:interleavedIndicesChannels:bytesPerIndex:")
+    public static native SCNGeometryElement geometryElementWithBufferPrimitiveTypePrimitiveCountIndicesChannelCountInterleavedIndicesChannelsBytesPerIndex(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer, @NInt long primitiveType,
+            @NInt long primitiveCount, @NInt long indicesChannelCount, boolean interleavedIndicesChannels,
+            @NInt long bytesPerIndex);
+
+    /**
+     * geometryElementWithData:primitiveType:primitiveCount:indicesChannelCount:interleavedIndicesChannels:bytesPerIndex:
+     * 
+     * @param data                       The data that contains element indices. You can pass nil to use an implicit
+     *                                   vertex ordering (0,1,2,…).
+     * @param primitiveType              The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
+     * @param primitiveCount             The number of primitives in the data.
+     * @param indicesChannelCount        The number of channels for the vertex indices.
+     * @param interleavedIndicesChannels Whether the channels are interleaved.
+     * @param bytesPerIndex              The number of bytes that represent a single index value in the data.
+     * 
+     *                                   API-Since: 16.0
+     */
+    @Generated
+    @Selector("geometryElementWithData:primitiveType:primitiveCount:indicesChannelCount:interleavedIndicesChannels:bytesPerIndex:")
+    public static native SCNGeometryElement geometryElementWithDataPrimitiveTypePrimitiveCountIndicesChannelCountInterleavedIndicesChannelsBytesPerIndex(
+            @Nullable NSData data, @NInt long primitiveType, @NInt long primitiveCount, @NInt long indicesChannelCount,
+            boolean interleavedIndicesChannels, @NInt long bytesPerIndex);
+
+    /**
+     * [@property] interleavedIndicesChannels
+     * 
+     * Determines whether the channels are interleaved.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("hasInterleavedIndicesChannels")
+    public native boolean hasInterleavedIndicesChannels();
+
+    /**
+     * [@property] indicesChannelCount
+     * 
+     * The number of channels in the geometry element.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("indicesChannelCount")
+    @NInt
+    public native long indicesChannelCount();
 }

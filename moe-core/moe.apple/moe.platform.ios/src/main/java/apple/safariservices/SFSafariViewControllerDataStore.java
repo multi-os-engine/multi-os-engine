@@ -84,6 +84,8 @@ public class SFSafariViewControllerDataStore extends NSObject {
     /**
      * Clear associated website data accrued from browsing activity within your app. This includes all local storage,
      * cached resources, and cookies.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("clearWebsiteDataWithCompletionHandler:")
@@ -101,6 +103,9 @@ public class SFSafariViewControllerDataStore extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("defaultDataStore")

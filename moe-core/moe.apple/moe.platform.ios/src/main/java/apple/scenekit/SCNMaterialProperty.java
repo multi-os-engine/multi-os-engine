@@ -49,6 +49,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSData;
+import apple.foundation.NSError;
+import apple.foundation.NSURL;
+import apple.metal.protocol.MTLDevice;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * SCNMaterialProperty
@@ -595,4 +601,53 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * precomputedLightingEnvironmentContentsWithData:error:
+     * 
+     * Returns an object suitable for a scene's `lightingEnvironment.contents` and initialized with data that was
+     * previously created by `+precomputedLightingEnvironmentDataForContents:device:error:`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("precomputedLightingEnvironmentContentsWithData:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public static native Object precomputedLightingEnvironmentContentsWithDataError(@NotNull NSData data,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * precomputedLightingEnvironmentContentsWithURL:error:
+     * 
+     * Returns an object suitable for a scene's `lightingEnvironment.contents` and initialized with data that was
+     * previously created by `+precomputedLightingEnvironmentDataForContents:device:error:`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("precomputedLightingEnvironmentContentsWithURL:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public static native Object precomputedLightingEnvironmentContentsWithURLError(@NotNull NSURL url,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * precomputedLightingEnvironmentDataForContents:device:error:
+     * 
+     * Returns an `NSData` instance containing the result of CPU and GPU-intensive operations that is suitable for
+     * caching.
+     * 
+     * This method can be leveraged in a custom offline asset pipeline, or at run time at a convenient time before the
+     * scene is presented to the user.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("precomputedLightingEnvironmentDataForContents:device:error:")
+    @Nullable
+    public static native NSData precomputedLightingEnvironmentDataForContentsDeviceError(
+            @Mapped(ObjCObjectMapper.class) @NotNull Object contents,
+            @Mapped(ObjCObjectMapper.class) @Nullable MTLDevice device,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

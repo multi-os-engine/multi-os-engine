@@ -165,6 +165,8 @@ public class HMHomeAccessControl extends HMAccessControl {
 
     /**
      * Specifies if the user has administrative privileges for the home.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isAdministrator")

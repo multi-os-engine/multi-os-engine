@@ -78,6 +78,9 @@ public class SFSpeechRecognizer extends NSObject {
     @Selector("allocWithZone:")
     public static native SFSpeechRecognizer allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -148,6 +151,9 @@ public class SFSpeechRecognizer extends NSObject {
     @Selector("new")
     public static native SFSpeechRecognizer new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
@@ -173,6 +179,8 @@ public class SFSpeechRecognizer extends NSObject {
      * Locales which support speech recognition.
      * Note that supported does not mean currently available; some locales may require an internet connection, for
      * example.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -186,12 +194,17 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * Default task for requests, overrides SFSpeechRecognitionTaskHintUnspecified for requests
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("defaultTaskHint")
     @NInt
     public native long defaultTaskHint();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -200,6 +213,8 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * Returns speech recognizer with user's current locale, or nil if is not supported
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("init")
@@ -207,15 +222,23 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * returns nil if the locale is not supported
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithLocale:")
     public native SFSpeechRecognizer initWithLocale(@NotNull NSLocale locale);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("locale")
@@ -224,6 +247,8 @@ public class SFSpeechRecognizer extends NSObject {
     /**
      * Queue used the recognizer for recognition task handlers and delegate messages
      * Defaults to the main queue
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -233,6 +258,8 @@ public class SFSpeechRecognizer extends NSObject {
     /**
      * Advanced API: Recognize a custom request with with a delegate
      * The delegate will be weakly referenced by the returned task
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -245,6 +272,8 @@ public class SFSpeechRecognizer extends NSObject {
      * Recognize speech utterance with a request
      * If request.shouldReportPartialResults is true, result handler will be called
      * repeatedly with partial results, then finally with a final result or an error.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -255,15 +284,23 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * Default task for requests, overrides SFSpeechRecognitionTaskHintUnspecified for requests
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDefaultTaskHint:")
     public native void setDefaultTaskHint(@NInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SFSpeechRecognizerDelegate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SFSpeechRecognizerDelegate value) {
         Object __old = delegate();
@@ -279,6 +316,8 @@ public class SFSpeechRecognizer extends NSObject {
     /**
      * Queue used the recognizer for recognition task handlers and delegate messages
      * Defaults to the main queue
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setQueue:")

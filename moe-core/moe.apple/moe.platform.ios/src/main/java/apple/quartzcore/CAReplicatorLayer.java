@@ -205,10 +205,16 @@ public class CAReplicatorLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAReplicatorLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("instanceAlphaOffset")
     public native float instanceAlphaOffset();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("instanceBlueOffset")
     public native float instanceBlueOffset();
@@ -216,6 +222,8 @@ public class CAReplicatorLayer extends CALayer {
     /**
      * The color to multiply the first object by (the source object). Defaults
      * to opaque white. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -225,6 +233,8 @@ public class CAReplicatorLayer extends CALayer {
     /**
      * The number of copies to create, including the source object.
      * Default value is one (i.e. no extra copies). Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("instanceCount")
@@ -234,11 +244,16 @@ public class CAReplicatorLayer extends CALayer {
     /**
      * The temporal delay between replicated copies. Defaults to zero.
      * Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("instanceDelay")
     public native double instanceDelay();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("instanceGreenOffset")
     public native float instanceGreenOffset();
@@ -247,6 +262,8 @@ public class CAReplicatorLayer extends CALayer {
      * The color components added to the color of instance k-1 to produce
      * the modulation color of instance k. Defaults to the clear color (no
      * change). Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("instanceRedOffset")
@@ -257,6 +274,8 @@ public class CAReplicatorLayer extends CALayer {
      * is applied relative to the center of the replicator layer, i.e. the
      * superlayer of each replicated sublayer. Defaults to the identity
      * matrix. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("instanceTransform")
@@ -268,15 +287,23 @@ public class CAReplicatorLayer extends CALayer {
      * not (i.e. whether it's treated similarly to a transform layer or
      * not). Defaults to NO. If YES, the standard restrictions apply (see
      * CATransformLayer.h).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("preservesDepth")
     public native boolean preservesDepth();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setInstanceAlphaOffset:")
     public native void setInstanceAlphaOffset(float value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setInstanceBlueOffset:")
     public native void setInstanceBlueOffset(float value);
@@ -284,6 +311,8 @@ public class CAReplicatorLayer extends CALayer {
     /**
      * The color to multiply the first object by (the source object). Defaults
      * to opaque white. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setInstanceColor:")
@@ -292,6 +321,8 @@ public class CAReplicatorLayer extends CALayer {
     /**
      * The number of copies to create, including the source object.
      * Default value is one (i.e. no extra copies). Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setInstanceCount:")
@@ -300,11 +331,16 @@ public class CAReplicatorLayer extends CALayer {
     /**
      * The temporal delay between replicated copies. Defaults to zero.
      * Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setInstanceDelay:")
     public native void setInstanceDelay(double value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setInstanceGreenOffset:")
     public native void setInstanceGreenOffset(float value);
@@ -313,6 +349,8 @@ public class CAReplicatorLayer extends CALayer {
      * The color components added to the color of instance k-1 to produce
      * the modulation color of instance k. Defaults to the clear color (no
      * change). Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setInstanceRedOffset:")
@@ -323,6 +361,8 @@ public class CAReplicatorLayer extends CALayer {
      * is applied relative to the center of the replicator layer, i.e. the
      * superlayer of each replicated sublayer. Defaults to the identity
      * matrix. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setInstanceTransform:")
@@ -333,6 +373,8 @@ public class CAReplicatorLayer extends CALayer {
      * not (i.e. whether it's treated similarly to a transform layer or
      * not). Defaults to NO. If YES, the standard restrictions apply (see
      * CATransformLayer.h).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setPreservesDepth:")

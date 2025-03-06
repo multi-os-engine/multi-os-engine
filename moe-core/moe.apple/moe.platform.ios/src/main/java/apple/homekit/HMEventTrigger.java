@@ -150,6 +150,8 @@ public class HMEventTrigger extends HMTrigger {
      * @param dateComponents Date components representing the time to compare against when the event occurs.
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -188,6 +190,8 @@ public class HMEventTrigger extends HMTrigger {
      * @param dateComponents Date components representing the time to compare against when the event occurs.
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -226,6 +230,8 @@ public class HMEventTrigger extends HMTrigger {
      * @param dateComponents Date components representing the time to compare against when the event occurs.
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -246,6 +252,8 @@ public class HMEventTrigger extends HMTrigger {
      * @param value          The value of the characteristic to compare when evaluating the predicate.
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -296,6 +304,8 @@ public class HMEventTrigger extends HMTrigger {
 
     /**
      * The events associated with the trigger.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -326,6 +336,8 @@ public class HMEventTrigger extends HMTrigger {
 
     /**
      * The predicate to evaluate before executing the action sets associated with the trigger.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

@@ -54,7 +54,7 @@ import org.jetbrains.annotations.Nullable;
  * confirm that they’re comfortable using this UI element when they want to
  * grant temporary access to their location data. If the user agrees, the app
  * receives temporary
- * <doc://com.apple.documentation/documentation/corelocation/clauthorizationstatus/kclauthorizationstatusauthorizedwheninuse>
+ * <doc://com.apple.documentation/documentation/corelocation/clauthorizationstatus/authorizedwheninuse>
  * authorization, like when the user chooses _Allow Once_ in response to your
  * app’s standard location authorization request. This temporary authorization
  * expires when your app is no longer in use.
@@ -295,6 +295,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The corner radius of the button.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("cornerRadius")
@@ -315,6 +317,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The font size of the text on the button.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("fontSize")
@@ -328,6 +332,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The style of the location arrow icon on the button.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("icon")
@@ -378,6 +384,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The text of the button label.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("label")
@@ -486,6 +494,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The corner radius of the button.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCornerRadius:")
@@ -493,6 +503,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The font size of the text on the button.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFontSize:")
@@ -500,6 +512,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The style of the location arrow icon on the button.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIcon:")
@@ -507,6 +521,8 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
 
     /**
      * The text of the button label.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLabel:")

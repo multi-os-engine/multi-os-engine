@@ -178,6 +178,8 @@ public class AVPlayerItemOutput extends NSObject {
      * @param hostTimeInSeconds
      *                          The timestamp value to convert to item time.
      * @return The equivalent item time.
+     * 
+     *         API-Since: 6.0
      */
     @Generated
     @Selector("itemTimeForHostTime:")
@@ -196,6 +198,8 @@ public class AVPlayerItemOutput extends NSObject {
      * @param machAbsoluteTime
      *                         The Mach host time to convert to item time.
      * @return The equivalent item time.
+     * 
+     *         API-Since: 6.0
      */
     @Generated
     @Selector("itemTimeForMachAbsoluteTime:")

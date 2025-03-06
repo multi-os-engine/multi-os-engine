@@ -88,6 +88,8 @@ public class CLMonitoringRecord extends NSObject implements NSSecureCoding {
      * 
      * Discussion:
      * The condition for which events are being monitored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("condition")
@@ -147,6 +149,9 @@ public class CLMonitoringRecord extends NSObject implements NSSecureCoding {
      * Discussion:
      * Contains the specifics of the last event such as state, date and the
      * specifics of the condition, if applicable.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("lastEvent")

@@ -206,6 +206,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Add a container to the end of the array. Must invalidate layout of all glyphs after the previous last container
      * (i.e., glyphs that were not previously laid out because they would not fit anywhere).
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addTextContainer:")
@@ -226,6 +228,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * For a glyph corresponding to an attachment, this method returns the size the attachment cell will occupy. Returns
      * {-1,-1} if no attachment size has been set for the specified glyph.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("attachmentSizeForGlyphAtIndex:")
@@ -237,6 +241,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * given container. The range is intersected with the container's range before computing the bounding rect. This
      * method can be used to translate glyph ranges into display rectangles for invalidation. Bounding rects are always
      * in container coordinates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("boundingRectForGlyphRange:inTextContainer:")
@@ -247,6 +253,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * If non-contiguous layout is not enabled, this will cause generation of all glyphs up to and including glyphIndex.
      * It will return the character index for the first character associated with the glyph at the specified index.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("characterIndexForGlyphAtIndex:")
@@ -264,6 +272,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * only character indexes for which there is an insertion point (see next method). The partial fraction is a
      * fraction of the distance from the insertion point logically before the given character to the next one, which may
      * be either to the right or to the left depending on directionality.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("characterIndexForPoint:inTextContainer:fractionOfDistanceBetweenInsertionPoints:")
@@ -281,6 +291,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * character(s) corresponding to the preceding glyph, and actualGlyphRange will also be zero-length. If
      * non-contiguous layout is not enabled, this will force the generation of glyphs for all characters up to and
      * including the end of the returned range.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("characterRangeForGlyphRange:actualGlyphRange:")
@@ -290,6 +302,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * Delegate ***************************
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -305,11 +319,16 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * and marked range aspects of the text display, along with block decoration such as table backgrounds and borders.
      * -drawGlyphsForGlyphRange:atPoint: draws the actual glyphs, including attachments, as well as any underlines or
      * strikethroughs. In either case all of the specified glyphs must lie in a single container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("drawBackgroundForGlyphRange:atPoint:")
     public native void drawBackgroundForGlyphRangeAtPoint(@ByValue NSRange glyphsToShow, @ByValue CGPoint origin);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("drawGlyphsForGlyphRange:atPoint:")
     public native void drawGlyphsForGlyphRangeAtPoint(@ByValue NSRange glyphsToShow, @ByValue CGPoint origin);
@@ -317,6 +336,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * These two methods parallel the two corresponding underline methods, but draw strikethroughs instead of
      * underlines.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("drawStrikethroughForGlyphRange:strikethroughType:baselineOffset:lineFragmentRect:lineFragmentGlyphRange:containerOrigin:")
@@ -334,6 +355,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * the underlineType: indicates that only words, (i.e., no whitespace), should be underlined, then
      * -underlineGlyphRange... will carve the range it is passed up into words and only pass word ranges to
      * -drawUnderline.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("drawUnderlineForGlyphRange:underlineType:baselineOffset:lineFragmentRect:lineFragmentGlyphRange:containerOrigin:")
@@ -345,6 +368,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * Returns whether the glyph will draw outside of its line fragment rect. This will cause glyph generation and
      * layout for the line fragment containing the specified glyph, or if non-contiguous layout is not enabled, up to
      * and including that line fragment.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("drawsOutsideLineFragmentForGlyphAtIndex:")
@@ -359,28 +384,45 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * layout. This is particularly important if non-contiguous layout is enabled. The layout manager still reserves the
      * right to perform glyph generation or layout for larger ranges. If non-contiguous layout is not enabled, then the
      * range in question will always effectively be extended to start at the beginning of the text.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("ensureGlyphsForCharacterRange:")
     public native void ensureGlyphsForCharacterRange(@ByValue NSRange charRange);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("ensureGlyphsForGlyphRange:")
     public native void ensureGlyphsForGlyphRange(@ByValue NSRange glyphRange);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("ensureLayoutForBoundingRect:inTextContainer:")
     public native void ensureLayoutForBoundingRectInTextContainer(@ByValue CGRect bounds,
             @NotNull NSTextContainer container);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("ensureLayoutForCharacterRange:")
     public native void ensureLayoutForCharacterRange(@ByValue NSRange charRange);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("ensureLayoutForGlyphRange:")
     public native void ensureLayoutForGlyphRange(@ByValue NSRange glyphRange);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("ensureLayoutForTextContainer:")
     public native void ensureLayoutForTextContainer(@NotNull NSTextContainer container);
@@ -418,17 +460,25 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * fragment rects. Typically the extra line fragment is placed in the last document content text container along
      * with other normal line fragment rects. Line fragment rects and line fragment used rects are always in container
      * coordinates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("extraLineFragmentRect")
     @ByValue
     public native CGRect extraLineFragmentRect();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("extraLineFragmentTextContainer")
     public native NSTextContainer extraLineFragmentTextContainer();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("extraLineFragmentUsedRect")
     @ByValue
@@ -450,16 +500,25 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
             @NotNull @ReferenceInfo(type = CGRect.class) ConstPtr<CGRect> rectArray, @NUInt long rectCount,
             @ByValue NSRange charRange, @NotNull UIColor color);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("firstUnlaidCharacterIndex")
     @NUInt
     public native long firstUnlaidCharacterIndex();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("firstUnlaidGlyphIndex")
     @NUInt
     public native long firstUnlaidGlyphIndex();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("fractionOfDistanceThroughGlyphForPoint:inTextContainer:")
     @NFloat
@@ -469,6 +528,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Returns (by reference for the "get" method) the character index or glyph index or both of the first unlaid
      * character/glyph in the layout manager at this time.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("getFirstUnlaidCharacterIndex:glyphIndex:")
@@ -501,6 +562,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * indexes. Positions indicate a transverse offset relative to the line fragment rect's origin. Internal caching is
      * used to ensure that repeated calls to this method for the same line fragment (possibly with differing values for
      * other arguments) will not be significantly more expensive than a single call.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("getLineFragmentInsertionPointsForCharacterAtIndex:alternatePositions:inDisplayOrder:positions:characterIndexes:")
@@ -527,12 +590,17 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * If non-contiguous layout is not enabled, this will cause generation of all glyphs up to and including those
      * associated with the specified character. It will return the glyph index for the first glyph associated with the
      * character at the specified index.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("glyphIndexForCharacterAtIndex:")
     @NUInt
     public native long glyphIndexForCharacterAtIndex(@NUInt long charIndex);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("glyphIndexForPoint:inTextContainer:")
     @NUInt
@@ -546,6 +614,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * boundingRectForGlyphRange:inTextContainer: and test whether the point falls in the rect returned by that method.
      * If partialFraction is non-NULL, it will return by reference the fraction of the distance between the location of
      * the glyph returned and the location of the next glyph.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("glyphIndexForPoint:inTextContainer:fractionOfDistanceThroughGlyph:")
@@ -559,6 +629,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * fall into the rect at all. At most this will return the glyph range for the whole container. The
      * WithoutAdditionalLayout variant will not generate glyphs or perform layout in attempting to answer, and thus may
      * not be entirely correct. Bounding rects are always in container coordinates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("glyphRangeForBoundingRect:inTextContainer:")
@@ -566,6 +638,9 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     public native NSRange glyphRangeForBoundingRectInTextContainer(@ByValue CGRect bounds,
             @NotNull NSTextContainer container);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("glyphRangeForBoundingRectWithoutAdditionalLayout:inTextContainer:")
     @ByValue
@@ -582,6 +657,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * zero-length range just after the glyph(s) corresponding to the preceding character, and actualCharRange will also
      * be zero-length. If non-contiguous layout is not enabled, this will force the generation of glyphs for all
      * characters up to and including the end of the specified range.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("glyphRangeForCharacterRange:actualCharacterRange:")
@@ -592,6 +669,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Returns the range of characters which have been laid into the given container. This is a less efficient method
      * than the similar -textContainerForGlyphAtIndex:effectiveRange:.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("glyphRangeForTextContainer:")
@@ -627,6 +706,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * Designated Initializer. Sets up this instance. The NSLayoutManager starts off without an NSTextStorage.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("init")
@@ -639,6 +720,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Insert a container into the array before the container at index. Must invalidate layout of all glyphs in the
      * containers from the one previously at index to the last container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("insertTextContainer:atIndex:")
@@ -649,11 +732,16 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * parts of the range are remembered and will be redisplayed at some point later when the layout is available. For
      * the glyph range variant any part of the range that does not yet have glyphs generated is ignored. Neither method
      * actually causes layout.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidateDisplayForCharacterRange:")
     public native void invalidateDisplayForCharacterRange(@ByValue NSRange charRange);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("invalidateDisplayForGlyphRange:")
     public native void invalidateDisplayForGlyphRange(@ByValue NSRange glyphRange);
@@ -662,6 +750,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * This removes all glyphs for the old character range, adjusts the character indices of all the subsequent glyphs
      * by the change in length, and invalidates the new character range. If actualCharRange is non-NULL it will be set
      * to the actual range invalidated after any necessary expansion.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidateGlyphsForCharacterRange:changeInLength:actualCharacterRange:")
@@ -691,6 +781,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * range of glyphs that are in that fragment. This will cause glyph generation and layout for the line fragment
      * containing the specified glyph, or if non-contiguous layout is not enabled, up to and including that line
      * fragment. Line fragment rects are always in container coordinates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("lineFragmentRectForGlyphAtIndex:effectiveRange:")
@@ -712,6 +804,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * whole range of glyphs that are in that fragment. This will cause glyph generation and layout for the line
      * fragment containing the specified glyph, or if non-contiguous layout is not enabled, up to and including that
      * line fragment. Line fragment used rects are always in container coordinates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("lineFragmentUsedRectForGlyphAtIndex:effectiveRange:")
@@ -735,6 +829,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * set. Glyph locations are relative to their line fragment rect's origin. This will cause glyph generation and
      * layout for the line fragment containing the specified glyph, or if non-contiguous layout is not enabled, up to
      * and including that line fragment.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("locationForGlyphAtIndex:")
@@ -745,6 +841,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * Some glyphs are not shown. This method returns whether the given glyph has been designated as not shown. This
      * will cause glyph generation and layout for the line fragment containing the specified glyph, or if non-contiguous
      * layout is not enabled, up to and including that line fragment.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("notShownAttributeForGlyphAtIndex:")
@@ -753,6 +851,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Returns the total number of glyphs. If non-contiguous layout is not enabled, this will force generation of glyphs
      * for all characters.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("numberOfGlyphs")
@@ -787,6 +887,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Returns the range including the first glyph from glyphIndex on back that has a location set and up to, but not
      * including the next glyph that has a location set.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("rangeOfNominallySpacedGlyphsContainingIndex:")
@@ -796,6 +898,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Removes the container at index from the array. Must invalidate layout of all glyphs in the container being
      * removed and any containers which come after it.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("removeTextContainerAtIndex:")
@@ -816,6 +920,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * For a glyph corresponding to an attachment, this method should be called to set the size the attachment cell will
      * occupy.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAttachmentSize:forGlyphRange:")
@@ -823,6 +929,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * Delegate ***************************
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -830,6 +938,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * Delegate ***************************
+     * 
+     * API-Since: 7.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSLayoutManagerDelegate value) {
@@ -848,6 +958,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * commonly happen if a fixed line height is used (consider a 12 point line height and a 24 point glyph). This
      * information is important for determining whether additional lines need to be redrawn as a result of changes to
      * any given line fragment.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDrawsOutsideLineFragment:forGlyphAtIndex:")
@@ -858,6 +970,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * ends with a hard line break or when the text backing is totally empty, to define the extra line which needs to be
      * displayed at the end of the text. Line fragment rects and line fragment used rects are always in container
      * coordinates. This method should be invoked only when there is a non-empty extra line fragment.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setExtraLineFragmentRect:usedRect:textContainer:")
@@ -903,6 +1017,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * course of layout, all glyphs should end up being included in a range passed to this method, but only glyphs which
      * start a new line fragment should be at the start of such ranges. Line fragment rects and line fragment used rects
      * are always in container coordinates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLineFragmentRect:forGlyphRange:usedRect:")
@@ -915,6 +1031,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * should end up being included in a range passed to this method, but only glyphs which start a new nominal range
      * should be at the start of such ranges. The first glyph in a line fragment should always start a new nominal
      * range. Glyph locations are given relative to their line fragment rect's origin.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLocation:forStartOfGlyphRange:")
@@ -923,6 +1041,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Some glyphs are not shown. The typesetter decides which ones and sets this attribute in the layout manager to
      * ensure that those glyphs will not be displayed.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setNotShownAttribute:forGlyphAtIndex:")
@@ -930,6 +1050,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * If YES, then control characters will be rendered visibly (usually like "^M"). The default is NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setShowsControlCharacters:")
@@ -938,6 +1060,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * If YES, then whitespace and other "invisible" characters will be shown with special glyphs or other drawing. The
      * default is NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setShowsInvisibleCharacters:")
@@ -950,6 +1074,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * values. In the course of layout, all glyphs should end up being included in a range passed to this method. The
      * range passed in is not expected to be the entire range of glyphs for that text container; usually, in fact, it
      * will be the range for a given line fragment being laid out in that container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTextContainer:forGlyphRange:")
@@ -959,6 +1085,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * Accessor for the NSTextStorage object owning the receiver.
      * Avoid assigning a text storage directly through this property. Adding a layout manager to a text storage through
      * -[NSTextStorage addLayoutManager:] will use the property for assigning the new text storage.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTextStorage:")
@@ -968,6 +1096,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * Accessor for the NSTextStorage object owning the receiver.
      * Avoid assigning a text storage directly through this property. Adding a layout manager to a text storage through
      * -[NSTextStorage addLayoutManager:] will use the property for assigning the new text storage.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     public void setTextStorage(@Nullable NSTextStorage value) {
@@ -985,6 +1115,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * By default, a layout manager will use leading as specified by the font. However, this is not appropriate for most
      * UI text, for which a fixed leading is usually specified by UI layout guidelines. These methods allow the use of
      * the font's leading to be turned off.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setUsesFontLeading:")
@@ -1012,6 +1144,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * If YES, then control characters will be rendered visibly (usually like "^M"). The default is NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("showsControlCharacters")
@@ -1020,11 +1154,16 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * If YES, then whitespace and other "invisible" characters will be shown with special glyphs or other drawing. The
      * default is NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("showsInvisibleCharacters")
     public native boolean showsInvisibleCharacters();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("strikethroughGlyphRange:strikethroughType:lineFragmentRect:lineFragmentGlyphRange:containerOrigin:")
     public native void strikethroughGlyphRangeStrikethroughTypeLineFragmentRectLineFragmentGlyphRangeContainerOrigin(
@@ -1034,6 +1173,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Called by NSTextContainer whenever it changes size or shape. Invalidates layout of all glyphs in container and
      * all subsequent containers.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("textContainerChangedGeometry:")
@@ -1045,6 +1186,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * specified glyph, or if non-contiguous layout is not enabled, up to and including that line fragment; if
      * non-contiguous layout is not enabled and effectiveGlyphRange is non-NULL, this will additionally cause glyph
      * generation and layout for the entire text container containing the specified glyph.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -1063,6 +1206,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * NSTextContainer objects owner by the receiver.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -1073,6 +1218,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * Accessor for the NSTextStorage object owning the receiver.
      * Avoid assigning a text storage directly through this property. Adding a layout manager to a text storage through
      * -[NSTextStorage addLayoutManager:] will use the property for assigning the new text storage.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -1090,6 +1237,9 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     @ByValue
     public native NSRange truncatedGlyphRangeInLineFragmentForGlyphAtIndex(@NUInt long glyphIndex);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("underlineGlyphRange:underlineType:lineFragmentRect:lineFragmentGlyphRange:containerOrigin:")
     public native void underlineGlyphRangeUnderlineTypeLineFragmentRectLineFragmentGlyphRangeContainerOrigin(
@@ -1100,6 +1250,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * Returns the container's currently used area. This determines the size that the view would need to be in order to
      * display all the glyphs that are currently laid into the container. This causes neither glyph generation nor
      * layout. Used rects are always in container coordinates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("usedRectForTextContainer:")
@@ -1110,6 +1262,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * By default, a layout manager will use leading as specified by the font. However, this is not appropriate for most
      * UI text, for which a fixed leading is usually specified by UI layout guidelines. These methods allow the use of
      * the font's leading to be turned off.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("usesFontLeading")

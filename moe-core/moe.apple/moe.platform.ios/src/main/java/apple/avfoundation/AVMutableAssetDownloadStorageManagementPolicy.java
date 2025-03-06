@@ -99,6 +99,8 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
      * [@property] expirationDate
      * 
      * Returns the expiration date of asset.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -148,6 +150,8 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
      * 
      * Assets with default priority will be purged first before assets with higher priorities.
      * In case this is not set, default priority is used.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -166,6 +170,8 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
      * [@property] expirationDate
      * 
      * Returns the expiration date of asset.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setExpirationDate:")
@@ -178,6 +184,8 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
      * 
      * Assets with default priority will be purged first before assets with higher priorities.
      * In case this is not set, default priority is used.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPriority:")

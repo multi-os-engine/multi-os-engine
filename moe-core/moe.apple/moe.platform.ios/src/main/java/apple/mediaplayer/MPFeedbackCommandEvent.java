@@ -170,6 +170,8 @@ public class MPFeedbackCommandEvent extends MPRemoteCommandEvent {
      * For like/dislike, a "negative like" might be treated differently from a
      * dislike command. The app might want to remove the "like" flag from the
      * current track, but not treat it as a dislike command.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("isNegative")

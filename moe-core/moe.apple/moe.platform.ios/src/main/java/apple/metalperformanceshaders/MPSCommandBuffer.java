@@ -44,6 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.MTLAccelerationStructurePassDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.protocol.MTLResidencySet;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.ConstPtr;
+import org.moe.natj.objc.ObjCObject;
 
 /**
  * MPSCommandBuffer
@@ -143,6 +147,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * [@property] commandBuffer
      * 
      * The Metal Command Buffer that was used to initialize this object.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -154,6 +160,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * Initializes a MPSCommandBuffer object from a given command queue.
      * 
      * @return A pointer to the newly initialized MPSCommandBuffer object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("commandBufferFromCommandQueue:")
@@ -167,6 +175,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * Please use the rootCommandBuffer method to get the current alive underlying MTLCommandBuffer.
      * 
      * @return A pointer to the newly initialized MPSCommandBuffer object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("commandBufferWithCommandBuffer:")
@@ -222,6 +232,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * If the underlying MTLCommandBuffer also implements -commitAndContinue, then the message
      * will be forwarded to that object instead. In this way, underlying predicate objects and
      * other state will be preserved.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("commitAndContinue")
@@ -291,6 +303,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * 
      * If multiple MPSCommandBuffers reference the same MTLCommandBuffer, changing
      * the heapProvider on one will change the heap provider for all of them.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -309,6 +323,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * Please use the rootCommandBuffer method to get the current alive underlying MTLCommandBuffer.
      * 
      * @return A pointer to the newly initialized MPSCommandBuffer object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCommandBuffer:")
@@ -370,6 +386,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * [@property] predicate
      * 
      * A GPU predicate object. Default: nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -386,6 +404,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * will be used.
      * 
      * @param size The minimum size of the free store needed
+     * 
+     *             API-Since: 13.0
      */
     @Generated
     @Selector("prefetchHeapForWorkloadSize:")
@@ -445,6 +465,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * In some circumstances, it is preferable to use the root command buffer,
      * particularly when trying to identify the command buffer that will be commited
      * by -commitAndContinue.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -468,6 +490,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * 
      * If multiple MPSCommandBuffers reference the same MTLCommandBuffer, changing
      * the heapProvider on one will change the heap provider for all of them.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setHeapProvider:")
@@ -481,6 +505,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * [@property] predicate
      * 
      * A GPU predicate object. Default: nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPredicate:")
@@ -561,4 +587,13 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("useResidencySet:")
+    public native void useResidencySet(@Mapped(ObjCObjectMapper.class) @NotNull MTLResidencySet residencySet);
+
+    @Generated
+    @Selector("useResidencySets:count:")
+    public native void useResidencySetsCount(
+            @ReferenceInfo(type = ObjCObject.class) @NotNull ConstPtr<ObjCObject> residencySets, @NUInt long count);
 }

@@ -8,10 +8,10 @@ public final class SparseStatus_t {
     private SparseStatus_t() {
     }
 
-    @Generated public static final int SparseStatusOK = 0x00000000;
-    @Generated public static final int SparseFactorizationFailed = 0xFFFFFFFF;
-    @Generated public static final int SparseMatrixIsSingular = 0xFFFFFFFE;
-    @Generated public static final int SparseInternalError = 0xFFFFFFFD;
-    @Generated public static final int SparseParameterError = 0xFFFFFFFC;
-    @Generated public static final int SparseStatusReleased = 0x80000001;
+    @Generated public static final int StatusOK = 0x00000000;
+    @Generated public static final int FactorizationFailed = 0xFFFFFFFF;
+    @Generated public static final int MatrixIsSingular = 0xFFFFFFFE;
+    @Generated public static final int InternalError = 0xFFFFFFFD;
+    @Generated public static final int ParameterError = 0xFFFFFFFC;
+    @Generated public static final int StatusReleased = 0x80000001;
 }

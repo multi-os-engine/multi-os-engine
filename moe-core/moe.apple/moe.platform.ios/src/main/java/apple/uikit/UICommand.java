@@ -54,6 +54,8 @@ public class UICommand extends UIMenuElement implements UIMenuLeaf {
 
     /**
      * Action to take on choosing this command.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -72,6 +74,8 @@ public class UICommand extends UIMenuElement implements UIMenuLeaf {
 
     /**
      * Alternates that differ in modifier flags, if any.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -175,6 +179,9 @@ public class UICommand extends UIMenuElement implements UIMenuLeaf {
     @Selector("init")
     public native UICommand init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UICommand initWithCoder(@NotNull NSCoder coder);
@@ -208,6 +215,8 @@ public class UICommand extends UIMenuElement implements UIMenuLeaf {
 
     /**
      * Property list object to distinguish commands, if needed.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

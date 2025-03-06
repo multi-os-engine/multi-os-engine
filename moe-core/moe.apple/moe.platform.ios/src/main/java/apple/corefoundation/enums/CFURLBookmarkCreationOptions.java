@@ -20,6 +20,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
+ * there is a local version of this item and it is the most up-to-date version known to this device.
+ * 
  * API-Since: 4.0
  */
 @Generated

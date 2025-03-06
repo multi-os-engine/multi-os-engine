@@ -183,7 +183,12 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
 
     /**
      * Identity for all
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("modelviewMatrix")
     @ByValue
@@ -191,7 +196,12 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
 
     /**
      * Identity
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("normalMatrix")
     @ByValue
@@ -199,7 +209,12 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
 
     /**
      * Identity for all
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("projectionMatrix")
     @ByValue
@@ -207,14 +222,24 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
 
     /**
      * Identity for all
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setModelviewMatrix:")
     public native void setModelviewMatrix(@ByValue GLKMatrix4 value);
 
     /**
      * Identity for all
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setProjectionMatrix:")
     public native void setProjectionMatrix(@ByValue GLKMatrix4 value);

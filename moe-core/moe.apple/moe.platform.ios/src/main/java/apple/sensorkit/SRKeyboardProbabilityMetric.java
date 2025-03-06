@@ -92,6 +92,8 @@ public class SRKeyboardProbabilityMetric<_UnitType> extends NSObject {
 
     /**
      * Sample values from probability distribution
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

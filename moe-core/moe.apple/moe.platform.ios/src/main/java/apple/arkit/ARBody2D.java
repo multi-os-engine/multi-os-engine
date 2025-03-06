@@ -140,6 +140,8 @@ public class ARBody2D extends NSObject {
 
     /**
      * The body's skeleton.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

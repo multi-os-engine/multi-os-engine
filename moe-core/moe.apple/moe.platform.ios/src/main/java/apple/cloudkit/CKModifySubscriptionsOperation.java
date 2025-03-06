@@ -159,10 +159,16 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native CKModifySubscriptionsOperation init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithSubscriptionsToSave:subscriptionIDsToDelete:")
     public native CKModifySubscriptionsOperation initWithSubscriptionsToSaveSubscriptionIDsToDelete(
@@ -180,6 +186,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -198,25 +206,39 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setModifySubscriptionsCompletionBlock:")
     public native void setModifySubscriptionsCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setModifySubscriptionsCompletionBlock") Block_setModifySubscriptionsCompletionBlock value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setSubscriptionIDsToDelete:")
     public native void setSubscriptionIDsToDelete(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setSubscriptionsToSave:")
     public native void setSubscriptionsToSave(@Nullable NSArray<? extends CKSubscription> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("subscriptionIDsToDelete")
     public native NSArray<String> subscriptionIDsToDelete();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("subscriptionsToSave")

@@ -164,6 +164,8 @@ public class UIFocusUpdateContext extends NSObject {
 
     /**
      * The focus heading in which the update is occurring.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("focusHeading")
@@ -190,6 +192,8 @@ public class UIFocusUpdateContext extends NSObject {
      * The view that will be focused after the update. May be nil if no view will be focused.
      * If nextFocusedItem is not a view, this returns that item's containing view, otherwise they are equal.
      * NOTE: This property will be deprecated in a future release. Use nextFocusedItem instead.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -213,6 +217,8 @@ public class UIFocusUpdateContext extends NSObject {
      * focus.
      * If previouslyFocusedItem is not a view, this returns that item's containing view, otherwise they are equal.
      * NOTE: This property will be deprecated in a future release. Use previouslyFocusedItem instead.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

@@ -69,6 +69,8 @@ public class MXMetricManager extends NSObject {
      * 
      * Subscribers can receive metric payloads by conforming to the MXMetricManagerSubscriber protocol.
      * 
+     * API-Since: 13.0
+     * 
      * @param subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
      */
     @Generated
@@ -158,6 +160,8 @@ public class MXMetricManager extends NSObject {
      * 
      * @param category A string used to define a log category
      * @return A log handle that can be used with the logging framework.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -186,6 +190,8 @@ public class MXMetricManager extends NSObject {
      * 
      * The subscriber indicated, if previously registered, will no longer receive metric payloads.
      * 
+     * API-Since: 13.0
+     * 
      * @param subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
      */
     @Generated
@@ -208,6 +214,8 @@ public class MXMetricManager extends NSObject {
      * [@property] sharedManager
      * 
      * Singleton instance of MXMetricManager.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

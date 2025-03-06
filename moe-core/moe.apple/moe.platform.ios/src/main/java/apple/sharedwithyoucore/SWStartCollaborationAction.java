@@ -86,6 +86,9 @@ public class SWStartCollaborationAction extends SWAction implements NSSecureCodi
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("collaborationMetadata")
@@ -110,6 +113,9 @@ public class SWStartCollaborationAction extends SWAction implements NSSecureCodi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("fulfillUsingURL:collaborationIdentifier:")
     public native void fulfillUsingURLCollaborationIdentifier(@NotNull NSURL url,

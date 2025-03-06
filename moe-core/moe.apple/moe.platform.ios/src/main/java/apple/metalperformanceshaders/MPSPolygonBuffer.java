@@ -90,6 +90,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Deprecated
     @NotNull
     @Generated
     @Owned
@@ -116,7 +117,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("indexBuffer")
@@ -127,7 +132,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("indexBufferOffset")
     @NUInt
@@ -135,11 +144,16 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initialize the polygon buffer
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("init")
     public native MPSPolygonBuffer init();
 
+    @Deprecated
     @Generated
     @Selector("initWithCoder:")
     public native MPSPolygonBuffer initWithCoder(@NotNull NSCoder aDecoder);
@@ -169,7 +183,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("maskBuffer")
@@ -178,7 +196,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("maskBufferOffset")
     @NUInt
@@ -189,6 +211,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     @Selector("new")
     public static native MPSPolygonBuffer new_objc();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
+     */
+    @Deprecated
     @Generated
     @Selector("polygonBuffer")
     public static native MPSPolygonBuffer polygonBuffer();
@@ -196,7 +223,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("polygonCount")
     @NUInt
@@ -213,7 +244,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setIndexBuffer:")
     public native void setIndexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -222,7 +257,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setIndexBufferOffset:")
     public native void setIndexBufferOffset(@NUInt long value);
@@ -230,14 +269,22 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setMaskBuffer:")
     public native void setMaskBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setMaskBufferOffset:")
     public native void setMaskBufferOffset(@NUInt long value);
@@ -245,7 +292,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setPolygonCount:")
     public native void setPolygonCount(@NUInt long value);
@@ -269,7 +320,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * triangle is degenerate (zero or negative area), the entire quadrilateral will be ignored. This
      * can be used to pad quadrilateral indices if needed. All four vertices of a quadrilateral must
      * be coplanar and the quadrilateral must be convex.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setVertexBuffer:")
     public native void setVertexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -277,7 +332,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setVertexBufferOffset:")
     public native void setVertexBufferOffset(@NUInt long value);
@@ -316,7 +375,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * triangle is degenerate (zero or negative area), the entire quadrilateral will be ignored. This
      * can be used to pad quadrilateral indices if needed. All four vertices of a quadrilateral must
      * be coplanar and the quadrilateral must be convex.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("vertexBuffer")
@@ -326,7 +389,11 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     /**
      * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("vertexBufferOffset")
     @NUInt

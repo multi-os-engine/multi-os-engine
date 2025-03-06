@@ -166,6 +166,8 @@ public class WKScriptMessage extends NSObject {
      * 
      * Allowed types are NSNumber, NSString, NSDate, NSArray,
      * NSDictionary, and NSNull.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -175,6 +177,8 @@ public class WKScriptMessage extends NSObject {
 
     /**
      * The frame sending the message.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -187,6 +191,8 @@ public class WKScriptMessage extends NSObject {
 
     /**
      * The name of the message handler to which the message is sent.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -195,6 +201,8 @@ public class WKScriptMessage extends NSObject {
 
     /**
      * The web view sending the message.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

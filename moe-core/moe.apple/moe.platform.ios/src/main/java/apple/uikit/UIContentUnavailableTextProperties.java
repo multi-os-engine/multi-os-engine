@@ -53,6 +53,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * Whether the font size of the text is automatically adjusted when necessary to fit in the available width.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
@@ -70,6 +72,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * Whether the text is tightened before truncating.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
@@ -102,6 +106,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The color of the text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("color")
@@ -129,6 +135,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The font used for the text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("font")
@@ -172,6 +180,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The line break mode to use for the text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("lineBreakMode")
@@ -180,6 +190,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * When `adjustsFontSizeToFitWidth` is enabled, the smallest multiplier for the font size used to make the text fit.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("minimumScaleFactor")
@@ -193,6 +205,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The maximum number of lines for the text. 0 indicates the number of lines is unlimited.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("numberOfLines")
@@ -209,6 +223,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * Whether the font size of the text is automatically adjusted when necessary to fit in the available width.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
@@ -216,6 +232,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * Whether the text is tightened before truncating.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAllowsDefaultTighteningForTruncation:")
@@ -223,6 +241,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The color of the text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setColor:")
@@ -230,6 +250,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The font used for the text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setFont:")
@@ -237,6 +259,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The line break mode to use for the text.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setLineBreakMode:")
@@ -244,6 +268,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * When `adjustsFontSizeToFitWidth` is enabled, the smallest multiplier for the font size used to make the text fit.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMinimumScaleFactor:")
@@ -251,6 +277,8 @@ public class UIContentUnavailableTextProperties extends NSObject implements NSCo
 
     /**
      * The maximum number of lines for the text. 0 indicates the number of lines is unlimited.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setNumberOfLines:")

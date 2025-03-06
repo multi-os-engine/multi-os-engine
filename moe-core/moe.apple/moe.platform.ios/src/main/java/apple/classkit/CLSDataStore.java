@@ -55,6 +55,8 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Returns the context that is currently active. If no context is active, this will return nil.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -116,6 +118,8 @@ public class CLSDataStore extends NSObject {
      * [@code] -[CLSDataStoreDelegate createContextForIdentifier:parentContext:parentIdentifierPath:] @endcode
      * If the dataStore does not have a delegate and there are missing contexts then an incomplete list of contexts will
      * be passed to the completion handler. Completion block may be called on a background thread.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("contextsMatchingIdentifierPath:completion:")
@@ -135,6 +139,8 @@ public class CLSDataStore extends NSObject {
      * 
      * For example: NSPredicate<topic == CLSContextTopicMath AND parent == someContext>. Completion block may be called
      * on a background thread.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("contextsMatchingPredicate:completion:")
@@ -155,6 +161,8 @@ public class CLSDataStore extends NSObject {
 
     /**
      * The data store delegate allows for easy population of the app's context hierarchy.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -201,6 +209,8 @@ public class CLSDataStore extends NSObject {
      * Fetch the top level context for the current app.
      * 
      * The main context is automatically created. Add child contexts to this context to persist them in the data store.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -216,6 +226,8 @@ public class CLSDataStore extends NSObject {
      * Mark a context for removal.
      * 
      * Save to commit removal. Removal cascades and deletes all descendants.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("removeContext:")
@@ -231,6 +243,8 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Returns the most recently started activity that is running.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -242,6 +256,8 @@ public class CLSDataStore extends NSObject {
      * 
      * Save new/modified/removed contexts, activities, etc. to the local store. In case of an error -[NSError userInfo]
      * will contain the object that caused the error under the CLSErrorObjectKey..
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("saveWithCompletion:")
@@ -257,6 +273,8 @@ public class CLSDataStore extends NSObject {
 
     /**
      * The data store delegate allows for easy population of the app's context hierarchy.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setDelegate:")
@@ -264,6 +282,8 @@ public class CLSDataStore extends NSObject {
 
     /**
      * The data store delegate allows for easy population of the app's context hierarchy.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CLSDataStoreDelegate value) {
@@ -285,6 +305,8 @@ public class CLSDataStore extends NSObject {
      * The data store provides read/write access to your app's ClassKit data.
      * 
      * Data written to the data store is automatically synced via iCloud across the user's devices.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated

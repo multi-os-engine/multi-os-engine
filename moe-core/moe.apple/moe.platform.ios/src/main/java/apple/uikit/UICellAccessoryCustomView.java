@@ -85,6 +85,9 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("customView")
@@ -107,6 +110,9 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("init")
     public native UICellAccessoryCustomView init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UICellAccessoryCustomView initWithCoder(@NotNull NSCoder coder);
@@ -116,6 +122,8 @@ public class UICellAccessoryCustomView extends UICellAccessory {
      * translatesAutoresizingMaskIntoConstraints
      * enabled, but may use auto layout constraints internally for layout of subviews and/or to indicate its preferred
      * size.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithCustomView:placement:")
@@ -147,6 +155,8 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     /**
      * Whether the current frame size of the view is preserved (YES), or whether it is sized during layout of
      * accessories (NO). Default is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maintainsFixedSize")
@@ -157,6 +167,9 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("new")
     public static native UICellAccessoryCustomView new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("placement")
     @NInt
@@ -166,6 +179,8 @@ public class UICellAccessoryCustomView extends UICellAccessory {
      * Allows customizing the relative position of the accessory amongst any other accessories displayed on the same
      * edge.
      * The default is to insert the accessory at a position closest to the inside of the cell.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("position")
@@ -191,6 +206,8 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     /**
      * Whether the current frame size of the view is preserved (YES), or whether it is sized during layout of
      * accessories (NO). Default is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaintainsFixedSize:")
@@ -200,6 +217,8 @@ public class UICellAccessoryCustomView extends UICellAccessory {
      * Allows customizing the relative position of the accessory amongst any other accessories displayed on the same
      * edge.
      * The default is to insert the accessory at a position closest to the inside of the cell.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPosition:")

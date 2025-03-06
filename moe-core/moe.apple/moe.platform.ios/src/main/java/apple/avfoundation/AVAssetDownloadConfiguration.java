@@ -77,6 +77,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * 
      * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
      * the Settings app. Must work with +[UIImage imageWithData:].
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -95,6 +97,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
      * content configurations can be augmented with additional content configurations or removed entirely if no
      * auxiliary content is desired.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -142,6 +146,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * @param title
      *              A human readable title for this asset, expected to be as suitable as possible for the user's
      *              preferred languages. Will show up in the usage pane of the settings app.
+     * 
+     *              API-Since: 15.0
      */
     @Generated
     @Selector("downloadConfigurationWithAsset:title:")
@@ -193,6 +199,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * For example, if the primary content configuration represents stereo renditions and auxiliary content
      * configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to
      * avoid downloading duplicate video renditions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("optimizesAuxiliaryContentConfigurations")
@@ -202,6 +210,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * [@property] primaryContentConfiguration
      * 
      * The primary content for the download.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -221,6 +231,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * 
      * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
      * the Settings app. Must work with +[UIImage imageWithData:].
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setArtworkData:")
@@ -234,6 +246,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
      * content configurations can be augmented with additional content configurations or removed entirely if no
      * auxiliary content is desired.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAuxiliaryContentConfigurations:")
@@ -249,6 +263,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * For example, if the primary content configuration represents stereo renditions and auxiliary content
      * configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to
      * avoid downloading duplicate video renditions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setOptimizesAuxiliaryContentConfigurations:")

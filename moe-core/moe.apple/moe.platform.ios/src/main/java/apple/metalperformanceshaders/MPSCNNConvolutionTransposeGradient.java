@@ -96,6 +96,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * [@property] dataSource
      * 
      * dataSource with which gradient object was created
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * 
      * Option to control which gradient to compute. Default is MPSCNNConvolutionGradientOptionAll
      * which means both gradient with respect to data and gradient with respect to weight and bias are computed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("gradientOption")
@@ -126,6 +130,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * [@property] groups
      * 
      * Number of groups input and output channels are divided into.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("groups")
@@ -157,6 +163,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -176,6 +184,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      *                protocol. Note that same data source as provided to forward convolution should be used.
      * 
      * @return A valid MPSCNNConvolutionTransposeGradient object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:weights:")
@@ -215,6 +225,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * Weights and biases
      * gradients needed for update are obtained from MPSCNNConvolutionGradientState object. Data provider passed in init
      * call is used for this purpose.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("reloadWeightsAndBiasesFromDataSource")
@@ -231,6 +243,9 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      *                      and producing updateBuffer metal buffer.
      * @param state         MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have
      *                      updated weights produced by application's update kernel.
+     * 
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @Selector("reloadWeightsAndBiasesWithCommandBuffer:state:")
@@ -251,6 +266,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * 
      * Option to control which gradient to compute. Default is MPSCNNConvolutionGradientOptionAll
      * which means both gradient with respect to data and gradient with respect to weight and bias are computed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setGradientOption:")
@@ -267,6 +284,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * outputFeatureChannels
      * or the feature channels of destination image in forward convolution i.e.
      * dataSource.descriptor.outputFeatureChannels
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sourceGradientFeatureChannels")
@@ -281,6 +300,8 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
      * This is same as dataSource.descriptor.inputFeatureChannels. This is also the number of feature channels in
      * destinatin image
      * here i.e. gradient with respect to data.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sourceImageFeatureChannels")

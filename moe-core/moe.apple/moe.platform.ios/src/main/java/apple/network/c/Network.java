@@ -9149,7 +9149,6 @@ public final class Network {
     @CFunction
     public static native char nw_quic_get_stream_usable_datagram_frame_size(@NotNull nw_protocol_metadata_t metadata);
 
-    @Generated public static final double NW_NOT_i386_MAC = 1.0;
     @Generated public static final double NW_FRAMER_CREATE_FLAGS_DEFAULT = 0.0;
 
     /**

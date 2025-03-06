@@ -87,6 +87,8 @@ public class CLCircularGeographicCondition extends CLCondition implements NSSecu
      * *
      * 
      * * The center of the circular geographic condition
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("center")
@@ -129,6 +131,8 @@ public class CLCircularGeographicCondition extends CLCondition implements NSSecu
      * 
      * Returns an instance of circular geographic condition initialized
      * with given center and radius
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithCenter:radius:")
@@ -170,6 +174,8 @@ public class CLCircularGeographicCondition extends CLCondition implements NSSecu
      * radius
      * 
      * The radius of the circular geographic condition
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("radius")

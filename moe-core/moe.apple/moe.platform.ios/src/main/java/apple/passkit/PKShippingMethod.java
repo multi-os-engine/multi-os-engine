@@ -173,6 +173,8 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     /**
      * Additional localized information about the shipping method, e.g. "Ships in 24 hours" or
      * "Arrives Friday April 4."
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -182,6 +184,8 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     /**
      * Application-defined unique identifier for this shipping method. The application will receive this
      * in paymentAuthorizationViewController:didAuthorizePayment:completion:.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -195,6 +199,8 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     /**
      * Additional localized information about the shipping method, e.g. "Ships in 24 hours" or
      * "Arrives Friday April 4."
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDetail:")
@@ -203,6 +209,8 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     /**
      * Application-defined unique identifier for this shipping method. The application will receive this
      * in paymentAuthorizationViewController:didAuthorizePayment:completion:.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIdentifier:")

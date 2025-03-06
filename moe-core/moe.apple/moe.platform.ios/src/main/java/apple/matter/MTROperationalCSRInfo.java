@@ -65,6 +65,8 @@ public class MTROperationalCSRInfo extends NSObject {
      * challenge from the secure session.
      * 
      * The attestation challenge is available in MTRAttestionInfo.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("attestationSignature")
@@ -98,6 +100,8 @@ public class MTROperationalCSRInfo extends NSObject {
 
     /**
      * DER-encoded certificate signing request.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("csr")
@@ -107,6 +111,8 @@ public class MTROperationalCSRInfo extends NSObject {
     /**
      * TLV-encoded nocsr-elements structure. This includes the "csr" and "csrNonce"
      * fields, and can include additional vendor-specific information.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("csrElementsTLV")
@@ -115,6 +121,8 @@ public class MTROperationalCSRInfo extends NSObject {
 
     /**
      * The nonce associated with this CSR.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("csrNonce")

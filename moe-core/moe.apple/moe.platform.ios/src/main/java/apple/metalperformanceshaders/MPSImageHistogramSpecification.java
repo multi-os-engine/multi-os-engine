@@ -208,6 +208,8 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
      *                               alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:]
      *                               offset
      *                               parameter.
+     * 
+     *                               API-Since: 9.0
      */
     @Generated
     @Selector("encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:")
@@ -255,6 +257,8 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
      * @param device        The device the filter will run on
      * @param histogramInfo Pointer to the MPSHistogramInfo struct
      * @return A valid MPSImageHistogramSpecification object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:histogramInfo:")

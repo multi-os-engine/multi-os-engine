@@ -113,6 +113,8 @@ public class SFSafariViewControllerPrewarmingToken extends NSObject {
     /**
      * Ends all prewarmed connections associated with the token, except for connections
      * that are also kept alive by other tokens.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("invalidate")

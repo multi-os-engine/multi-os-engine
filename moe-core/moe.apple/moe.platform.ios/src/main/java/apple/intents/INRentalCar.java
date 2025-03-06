@@ -117,6 +117,9 @@ public class INRentalCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INRentalCar initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithRentalCompanyName:type:make:model:rentalCarDescription:")
     public native INRentalCar initWithRentalCompanyNameTypeMakeModelRentalCarDescription(
@@ -145,11 +148,17 @@ public class INRentalCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("make")
     public native String make();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("model")
@@ -160,11 +169,17 @@ public class INRentalCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native INRentalCar new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("rentalCarDescription")
     public native String rentalCarDescription();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("rentalCompanyName")
@@ -196,6 +211,9 @@ public class INRentalCar extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("type")

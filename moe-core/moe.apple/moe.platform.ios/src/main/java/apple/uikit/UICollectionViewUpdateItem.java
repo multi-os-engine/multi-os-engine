@@ -160,6 +160,8 @@ public class UICollectionViewUpdateItem extends NSObject {
 
     /**
      * nil for UICollectionUpdateActionDelete
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -168,6 +170,8 @@ public class UICollectionViewUpdateItem extends NSObject {
 
     /**
      * nil for UICollectionUpdateActionInsert
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -178,6 +182,9 @@ public class UICollectionViewUpdateItem extends NSObject {
     @Selector("init")
     public native UICollectionViewUpdateItem init();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("updateAction")
     @NInt

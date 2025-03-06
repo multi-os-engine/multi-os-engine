@@ -378,6 +378,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * single event. returns NSArray of NSString selector names. returns nil if none
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -391,6 +393,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * passing in nil as the target goes up the responder chain. The action may optionally include the sender and the
      * event in that order
      * the action cannot be NULL. Note that the target is not retained.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("addTarget:action:forControlEvents:")
@@ -399,6 +403,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * list of all events that have at least one action
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("allControlEvents")
@@ -407,6 +413,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * set may include NSNull to indicate at least one nil target
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -460,12 +468,17 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("beginTrackingWithTouch:withEvent:")
     public native boolean beginTrackingWithTouchWithEvent(@NotNull UITouch touch, @Nullable UIEvent event);
 
     /**
      * event may be nil if cancelled for non-event reasons, e.g. removed from window
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("cancelTrackingWithEvent:")
@@ -473,6 +486,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * how to position content horizontally inside control. default is center
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("contentHorizontalAlignment")
@@ -481,18 +496,25 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * how to position content vertically inside control. default is center
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("contentVerticalAlignment")
     @NInt
     public native long contentVerticalAlignment();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("continueTrackingWithTouch:withEvent:")
     public native boolean continueTrackingWithTouchWithEvent(@NotNull UITouch touch, @Nullable UIEvent event);
 
     /**
      * touch is sometimes nil if cancelTracking calls through to this.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("endTrackingWithTouch:withEvent:")
@@ -502,16 +524,24 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("init")
     public native UIControl init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIControl initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UIControl initWithFrame(@ByValue CGRect frame);
 
     /**
      * default is YES. if NO, ignores touch events and subclasses may draw differently
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isEnabled")
@@ -519,6 +549,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * default is YES. if NO, ignores touch events and subclasses may draw differently
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -526,6 +558,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * default is NO. this gets set/cleared automatically when touch enters/exits during tracking and cleared on up
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isHighlighted")
@@ -533,6 +567,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * default is NO. this gets set/cleared automatically when touch enters/exits during tracking and cleared on up
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHighlighted:")
@@ -540,6 +576,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * default is NO may be used by some subclasses or by application
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isSelected")
@@ -547,6 +585,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * default is NO may be used by some subclasses or by application
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelected:")
@@ -554,17 +594,24 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * valid during tracking only
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isTouchInside")
     public native boolean isTouchInside();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isTracking")
     public native boolean isTracking();
 
     /**
      * remove the target/action for a set of events. pass in NULL for the action to remove all actions for that target
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("removeTarget:action:forControlEvents:")
@@ -574,6 +621,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     /**
      * Dispatch the target-action pair. This method is called repeatedly by -sendActionsForControlEvents: and is a point
      * at which you can observe or override behavior.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sendAction:to:forEvent:")
@@ -582,6 +631,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * send all actions associated with the given control events
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sendActionsForControlEvents:")
@@ -589,6 +640,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * how to position content horizontally inside control. default is center
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContentHorizontalAlignment:")
@@ -596,6 +649,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * how to position content vertically inside control. default is center
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContentVerticalAlignment:")
@@ -603,6 +658,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * could be more than one state (e.g. disabled|selected). synthesized from other flags.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("state")
@@ -658,6 +715,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     /**
      * how to position content horizontally inside control, guaranteed to return 'left' or 'right' for any 'leading' or
      * 'trailing'
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("effectiveContentHorizontalAlignment")
@@ -916,4 +975,13 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Performs the control's primary action.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("performPrimaryAction")
+    public native void performPrimaryAction();
 }

@@ -81,6 +81,8 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * the delegateCallbackQueue is blocked. When the value of this property is NO, delegates will be allowed more time
      * to process old depth data before new depth data are discarded, but application memory usage may increase as a
      * result. The default value is YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alwaysDiscardsLateDepthData")
@@ -122,6 +124,8 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * 
      * The value of this property is an object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives
      * depth data as it is captured. The delegate is set using the setDelegate:callbackQueue: method.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -135,6 +139,8 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * The dispatch queue on which all delegate methods are called.
      * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setDelegate:queue: method.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -150,6 +156,9 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("init")
     public native AVCaptureDepthDataOutput init();
@@ -177,6 +186,8 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * maps due to factors such as low light or lens occlusion. When filtering is enabled, the depth data output
      * interpolates missing depth data values. Filtering should be disabled if you desire the raw depth data values. The
      * default value is YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isFilteringEnabled")
@@ -191,6 +202,9 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -214,6 +228,8 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * the delegateCallbackQueue is blocked. When the value of this property is NO, delegates will be allowed more time
      * to process old depth data before new depth data are discarded, but application memory usage may increase as a
      * result. The default value is YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAlwaysDiscardsLateDepthData:")
@@ -238,7 +254,10 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * fails to keep up.
      * 
      * A serial dispatch queue must be used to guarantee that depth data will be delivered in order. The callbackQueue
-     * parameter may not be NULL, except when setting the delegate to nil.
+     * parameter may not be NULL, except when setting the delegate to nil otherwise -setDelegate:callbackQueue: throws
+     * an NSInvalidArgumentException.
+     * 
+     * API-Since: 11.0
      * 
      * @param delegate
      *                      An object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives depth
@@ -262,6 +281,8 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * maps due to factors such as low light or lens occlusion. When filtering is enabled, the depth data output
      * interpolates missing depth data values. Filtering should be disabled if you desire the raw depth data values. The
      * default value is YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFilteringEnabled:")

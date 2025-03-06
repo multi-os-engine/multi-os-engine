@@ -84,6 +84,8 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     /**
      * Creates an attachment for the data at URL with an optional options dictionary. URL must be a file URL. Returns
      * nil if the data at URL is not supported.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("attachmentWithIdentifier:URL:options:error:")
@@ -184,6 +186,8 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     /**
      * The URL to the attachment's data. If you have obtained this attachment from UNUserNotificationCenter then the URL
      * will be security-scoped.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -203,6 +207,8 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
 
     /**
      * The identifier of this attachment
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -225,6 +231,8 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
 
     /**
      * The UTI of the attachment.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

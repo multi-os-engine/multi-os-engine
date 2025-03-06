@@ -142,6 +142,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * @param completionHandler    The block to be invoked after the request has completed its processing. The
      *                             completion handler gets executed on the same dispatch queue as the request being
      *                             executed.
+     * 
+     *                             API-Since: 14.0
      */
     @Generated
     @Selector("initWithFrameAnalysisSpacing:trajectoryLength:completionHandler:")
@@ -207,6 +209,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * unwanted trajectories from larger objects moving through the scene. The default is 1.0, which means no filtering
      * is applied. Changing the maximum from frame to frame can produce eratic trajectories as objects will either
      * disappear or be added to the tracking base on this filtering. The size is specified in normalized coordinates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("objectMaximumNormalizedRadius")
@@ -217,6 +221,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * noise and small objects. The default is 0.0, which means no filtering is applied. Changing the property from
      * frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base
      * on this filtering. The value is specified in normalized coordinates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("objectMinimumNormalizedRadius")
@@ -232,6 +238,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
 
     /**
      * Provides VNTrajectoryObservation results.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -261,6 +269,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * unwanted trajectories from larger objects moving through the scene. The default is 1.0, which means no filtering
      * is applied. Changing the maximum from frame to frame can produce eratic trajectories as objects will either
      * disappear or be added to the tracking base on this filtering. The size is specified in normalized coordinates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setObjectMaximumNormalizedRadius:")
@@ -271,6 +281,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * noise and small objects. The default is 0.0, which means no filtering is applied. Changing the property from
      * frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base
      * on this filtering. The value is specified in normalized coordinates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setObjectMinimumNormalizedRadius:")
@@ -291,6 +303,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
 
     /**
      * The number of points required to analyze a parabola that indicates a trajectory.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("trajectoryLength")

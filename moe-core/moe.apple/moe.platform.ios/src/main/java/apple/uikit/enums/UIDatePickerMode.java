@@ -35,11 +35,19 @@ public final class UIDatePickerMode {
      */
     @Generated @NInt public static final long DateAndTime = 0x0000000000000002L;
     /**
-     * Displays hour and minute (e.g. 1 | 53)
+     * Displays hour and minute (e.g. 1 | 53); only supported in `UIDatePickerStyleWheels`
      */
     @Generated @NInt public static final long CountDownTimer = 0x0000000000000003L;
 
     @Generated
     private UIDatePickerMode() {
     }
+
+    /**
+     * Displays year and month depending on the locale setting (e.g. March | 2024); only supported in
+     * `UIDatePickerStyleWheels`
+     * 
+     * API-Since: 17.4
+     */
+    @Generated @NInt public static final long YearAndMonth = 0x0000000000000004L;
 }

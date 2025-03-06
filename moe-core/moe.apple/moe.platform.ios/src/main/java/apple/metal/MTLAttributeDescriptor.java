@@ -159,6 +159,9 @@ public class MTLAttributeDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("bufferIndex")
     @NUInt
@@ -171,6 +174,9 @@ public class MTLAttributeDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("format")
     @NUInt
@@ -180,19 +186,31 @@ public class MTLAttributeDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLAttributeDescriptor init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setBufferIndex:")
     public native void setBufferIndex(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setFormat:")
     public native void setFormat(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@NUInt long value);

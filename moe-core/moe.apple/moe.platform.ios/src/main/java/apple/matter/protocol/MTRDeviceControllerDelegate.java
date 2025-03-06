@@ -14,6 +14,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.matter.MTRMetrics;
 
 /**
  * The protocol definition for the MTRDeviceControllerDelegate.
@@ -63,6 +64,8 @@ public interface MTRDeviceControllerDelegate {
     /**
      * Notify the delegate when a commissioning session is established or the
      * establishment has errored out.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @IsOptional
@@ -91,11 +94,46 @@ public interface MTRDeviceControllerDelegate {
 
     /**
      * Notify the delegate when commissioning status gets updated.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @IsOptional
     @Selector("controller:statusUpdate:")
     default void controllerStatusUpdate(@NotNull MTRDeviceController controller, @NInt long status) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Notify the delegate when commissioning is completed.
+     * 
+     * Exactly one of error and nodeID will be nil.
+     * 
+     * If nodeID is not nil, then it represents the node id the node was assigned, as encoded in its operational
+     * certificate.
+     * 
+     * The metrics object contains information corresponding to the commissioning session.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @IsOptional
+    @Selector("controller:commissioningComplete:nodeID:metrics:")
+    default void controllerCommissioningCompleteNodeIDMetrics(@NotNull MTRDeviceController controller,
+            @Nullable NSError error, @Nullable NSNumber nodeID, @NotNull MTRMetrics metrics) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Notify the delegate when the suspended state changed of the controller, after this happens
+     * the controller will be in the specified state.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @IsOptional
+    @Selector("controller:suspendedChangedTo:")
+    default void controllerSuspendedChangedTo(@NotNull MTRDeviceController controller, boolean suspended) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

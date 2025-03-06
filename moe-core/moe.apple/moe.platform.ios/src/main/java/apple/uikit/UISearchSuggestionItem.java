@@ -135,6 +135,8 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
 
     /**
      * Initializes a search suggestion object with a specified search suggestion string.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithLocalizedSuggestion:")
@@ -142,6 +144,8 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
 
     /**
      * Initializes a search suggestion object with a specified search suggestion string and a description string.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithLocalizedSuggestion:localizedDescription:")
@@ -151,6 +155,8 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
     /**
      * Initializes a search suggestion object with a specified search suggestion string, a description string, and a
      * search icon image.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithLocalizedSuggestion:localizedDescription:iconImage:")

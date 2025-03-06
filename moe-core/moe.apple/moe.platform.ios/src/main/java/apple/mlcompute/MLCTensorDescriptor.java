@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCTensorDescriptor specifies a tensor descriptor.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -76,7 +75,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * We populate this only when sequenceLengths is valid. The length of this array should be
      * the maximum sequence length in sequenceLengths (i.e sequenceLengths[0]).
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("batchSizePerSequenceStep")
@@ -108,10 +111,14 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * This method is provided as an easy to use API to create a bias tensor.
      * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     * 
      * @param featureChannelCount The number of input feature channels
      * @param dataType            The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("convolutionBiasesDescriptorWithFeatureChannelCount:dataType:")
@@ -123,11 +130,15 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * This method is provided as an easy to use API to create a weight tensor for a kernel of size 1.
      * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     * 
      * @param inputFeatureChannelCount  The number of input feature channels
      * @param outputFeatureChannelCount The number of output feature channels
      * @param dataType                  The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("convolutionWeightsDescriptorWithInputFeatureChannelCount:outputFeatureChannelCount:dataType:")
@@ -139,6 +150,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * This method is provided as an easy to use API to create a weight tensor.
      * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     * 
      * @param width                     The tensor width
      * @param height                    The tensor height
      * @param inputFeatureChannelCount  The number of input feature channels
@@ -146,6 +160,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * @param dataType                  The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("convolutionWeightsDescriptorWithWidth:height:inputFeatureChannelCount:outputFeatureChannelCount:dataType:")
@@ -164,7 +179,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] dataType
      * 
      * The tensor data type. The default is MLCDataTypeFloat32.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dataType")
     public native int dataType();
@@ -183,7 +202,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * @param shape    The tensor shape
      * @param dataType The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithShape:dataType:")
     public static native MLCTensorDescriptor descriptorWithShapeDataType(@NotNull NSArray<? extends NSNumber> shape,
@@ -194,12 +217,16 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * This method is provided as an easy to use API to create sequence tensors used by recurrent layers.
      * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     * 
      * @param shape           The tensor shape
      * @param sequenceLengths The sequence lengths in tensor
      * @param sortedSequences A boolean to indicate whether sequences are sorted
      * @param dataType        The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithShape:sequenceLengths:sortedSequences:dataType:")
     public static native MLCTensorDescriptor descriptorWithShapeSequenceLengthsSortedSequencesDataType(
@@ -211,12 +238,16 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * This method is provided as an easy to use API to create [NCHW] tensors used by convolutional layers.
      * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     * 
      * @param width           The tensor width
      * @param height          The tensor height
      * @param featureChannels The number of feature channels
      * @param batchSize       The batch size
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithWidth:height:featureChannelCount:batchSize:")
     public static native MLCTensorDescriptor descriptorWithWidthHeightFeatureChannelCountBatchSize(@NUInt long width,
@@ -227,6 +258,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * This method is provided as an easy to use API to create [NCHW] tensors used by convolutional layers.
      * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     * 
      * @param width               The tensor width
      * @param height              The tensor height
      * @param featureChannelCount The number of feature channels
@@ -234,6 +268,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * @param dataType            The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithWidth:height:featureChannelCount:batchSize:dataType:")
     public static native MLCTensorDescriptor descriptorWithWidthHeightFeatureChannelCountBatchSizeDataType(
@@ -244,7 +279,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] dimensionCount
      * 
      * The number of dimensions in the tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dimensionCount")
     @NUInt
@@ -285,7 +324,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] maxTensorDimensions
      * 
      * The maximum number of tensor dimensions supported
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("maxTensorDimensions")
     @NUInt
@@ -308,7 +351,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] sequenceLengths
      * 
      * TODO
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("sequenceLengths")
@@ -322,7 +369,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] shape
      * 
      * The size in each dimension
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("shape")
@@ -332,7 +383,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] sortedSequences
      * 
      * Specifies whether the sequences are sorted or not.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("sortedSequences")
     public native boolean sortedSequences();
@@ -341,7 +396,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] stride
      * 
      * The stride in bytes in each dimension
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("stride")
@@ -355,7 +414,11 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * [@property] tensorAllocationSizeInBytes
      * 
      * The allocation size in bytes for a tensor.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("tensorAllocationSizeInBytes")
     @NUInt

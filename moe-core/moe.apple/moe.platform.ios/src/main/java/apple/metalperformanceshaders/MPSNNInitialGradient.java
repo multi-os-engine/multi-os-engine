@@ -147,6 +147,8 @@ public class MPSNNInitialGradient extends MPSCNNKernel {
      * 
      * @param device The MTLDevice on which this MPSNNInitialGradient filter will be used.
      * @return A valid MPSNNInitialGradient object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")

@@ -179,6 +179,9 @@ public class PKPaymentButton extends UIButton {
     @Selector("buttonWithType:")
     public static native PKPaymentButton buttonWithType(@NInt long buttonType);
 
+    /**
+     * API-Since: 8.3
+     */
     @Generated
     @Selector("buttonWithType:style:")
     public static native PKPaymentButton buttonWithTypeStyle(@NInt long buttonType, @NInt long buttonStyle);

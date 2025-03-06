@@ -118,6 +118,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     /**
      * Unique identifier
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -159,6 +161,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
      * A flag that indicates whether the option is selected.
      * 
      * This property should only be set directly when the option represents an individual switch. Defaults to NO
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isSelected")
@@ -183,6 +187,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
      * 
      * @param title      A localized title string to be used when displaying the option
      * @param identifier The unique identifier for the option
+     * 
+     *                   API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -192,6 +198,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     /**
      * An array of option identifiers that must already be selected in order to be interacted with
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -208,6 +216,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     /**
      * An array of option identifiers that must already be selected in order to be interacted with
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setRequiredOptionsIdentifiers:")
@@ -217,6 +227,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
      * A flag that indicates whether the option is selected.
      * 
      * This property should only be set directly when the option represents an individual switch. Defaults to NO
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSelected:")
@@ -224,6 +236,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     /**
      * A localized subtitle string to be used when displaying the option
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setSubtitle:")
@@ -231,6 +245,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     /**
      * A localized title string to be used when displaying the option
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTitle:")
@@ -242,6 +258,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     /**
      * A localized subtitle string to be used when displaying the option
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -264,6 +282,8 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     /**
      * A localized title string to be used when displaying the option
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

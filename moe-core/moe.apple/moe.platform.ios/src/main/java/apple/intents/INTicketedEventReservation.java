@@ -106,6 +106,9 @@ public class INTicketedEventReservation extends INReservation implements NSCopyi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("event")
@@ -124,6 +127,9 @@ public class INTicketedEventReservation extends INReservation implements NSCopyi
     @Selector("initWithCoder:")
     public native INTicketedEventReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:reservedSeat:event:")
     public native INTicketedEventReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsReservedSeatEvent(
@@ -159,6 +165,9 @@ public class INTicketedEventReservation extends INReservation implements NSCopyi
     @Selector("new")
     public static native INTicketedEventReservation new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservedSeat")

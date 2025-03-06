@@ -23,10 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
 
 /**
  * MTRCluster
  * This is the base class for clusters.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
@@ -150,4 +153,14 @@ public class MTRCluster extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The endpoint this cluster lives on.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("endpointID")
+    @NotNull
+    public native NSNumber endpointID();
 }

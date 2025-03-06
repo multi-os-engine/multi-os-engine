@@ -38,6 +38,8 @@ public interface UIContextMenuInteractionDelegate {
      *         to indicate to users that it's possible for a menu to be presented from this view, but that there are no
      *         actions to
      *         present at this particular time.
+     * 
+     *         API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -94,6 +96,8 @@ public interface UIContextMenuInteractionDelegate {
      * @param interaction   The UIContextMenuInteraction.
      * @param configuration The configuration of the menu about to be displayed by this interaction.
      * @param animator      Appearance animator. Add animations to run them alongside the appearance transition.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -110,6 +114,8 @@ public interface UIContextMenuInteractionDelegate {
      * @param interaction   The UIContextMenuInteraction.
      * @param configuration Ending configuration.
      * @param animator      Disappearance animator. Add animations to run them alongside the disappearance transition.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @IsOptional

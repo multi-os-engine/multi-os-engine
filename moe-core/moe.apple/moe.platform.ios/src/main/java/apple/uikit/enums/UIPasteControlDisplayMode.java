@@ -24,4 +24,8 @@ public final class UIPasteControlDisplayMode {
      * API-Since: 16.0
      */
     @Generated @NUInt public static final long LabelOnly = 0x0000000000000002L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long ArrowAndLabel = 0x0000000000000003L;
 }

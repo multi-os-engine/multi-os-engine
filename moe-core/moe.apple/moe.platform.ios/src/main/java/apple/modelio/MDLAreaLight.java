@@ -173,10 +173,16 @@ public class MDLAreaLight extends MDLPhysicallyPlausibleLight {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("areaRadius")
     public native float areaRadius();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("aspect")
     public native float aspect();
@@ -185,10 +191,16 @@ public class MDLAreaLight extends MDLPhysicallyPlausibleLight {
     @Selector("init")
     public native MDLAreaLight init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAreaRadius:")
     public native void setAreaRadius(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAspect:")
     public native void setAspect(float value);

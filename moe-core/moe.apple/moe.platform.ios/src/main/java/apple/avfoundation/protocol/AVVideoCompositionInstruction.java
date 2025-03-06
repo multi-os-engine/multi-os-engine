@@ -48,6 +48,8 @@ public interface AVVideoCompositionInstruction {
      * If YES, rendering a frame from the same source buffers and the same composition instruction at 2 different
      * compositionTime may yield different output frames. If NO, 2 such compositions would yield the
      * same frame. The media pipeline may be able to avoid some duplicate processing when containsTweening is NO
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("containsTweening")
@@ -56,6 +58,8 @@ public interface AVVideoCompositionInstruction {
     /**
      * If NO, indicates that post-processing should be skipped for the duration of this instruction.
      * See +[AVVideoCompositionCoreAnimationTool videoCompositionToolWithPostProcessingAsVideoLayer:inLayer:].
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("enablePostProcessing")
@@ -63,6 +67,8 @@ public interface AVVideoCompositionInstruction {
 
     /**
      * kCMPersistentTrackID_Invalid if not a passthrough instruction
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("passthroughTrackID")
@@ -71,6 +77,8 @@ public interface AVVideoCompositionInstruction {
     /**
      * List of video track IDs required to compose frames for this instruction. If the value of this property is nil,
      * all source tracks will be considered required for composition
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -80,6 +88,8 @@ public interface AVVideoCompositionInstruction {
     /**
      * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of
      * instructions described in connection with AVVideoComposition's instructions key above.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("timeRange")

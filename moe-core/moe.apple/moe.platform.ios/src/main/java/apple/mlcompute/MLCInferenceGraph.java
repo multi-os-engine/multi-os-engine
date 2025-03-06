@@ -34,8 +34,7 @@ import org.jetbrains.annotations.Nullable;
  * plus additional layers added directly to the inference graph.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -61,7 +60,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * 
      * @param inputs The inputs
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("addInputs:")
     public native boolean addInputs(@NotNull NSDictionary<String, ? extends MLCTensor> inputs);
@@ -78,7 +81,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * @param lossLabels       The loss label inputs
      * @param lossLabelWeights The loss label weights
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("addInputs:lossLabels:lossLabelWeights:")
     public native boolean addInputsLossLabelsLossLabelWeights(@NotNull NSDictionary<String, ? extends MLCTensor> inputs,
@@ -90,7 +97,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * 
      * @param outputs The outputs
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("addOutputs:")
     public native boolean addOutputs(@NotNull NSDictionary<String, ? extends MLCTensor> outputs);
@@ -136,7 +147,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * @param options The compiler options to use when compiling the training graph
      * @param device  The MLCDevice object
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("compileWithOptions:device:")
     public native boolean compileWithOptionsDevice(long options, @NotNull MLCDevice device);
@@ -175,7 +190,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * Returns the total size in bytes of device memory used by all intermediate tensors in the inference graph
      * 
      * @return A NSUInteger value
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("deviceMemorySize")
     @NUInt
@@ -196,7 +215,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeWithInputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataBatchSizeOptionsCompletionHandler(
@@ -228,7 +251,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler(
@@ -264,7 +291,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:outputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler(
@@ -298,7 +329,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeWithInputsData:outputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler(
@@ -314,6 +349,7 @@ public class MLCInferenceGraph extends MLCGraph {
                 @Nullable NSError error, double executionTime);
     }
 
+    @Deprecated
     @Generated
     @Selector("graph")
     public static native MLCInferenceGraph graph();
@@ -323,7 +359,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * 
      * @param graphObjects The layers from these graph objects will be added to the training graph
      * @return A new inference graph object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("graphWithGraphObjects:")
     public static native MLCInferenceGraph graphWithGraphObjects(@NotNull NSArray<? extends MLCGraph> graphObjects);
@@ -367,7 +407,11 @@ public class MLCInferenceGraph extends MLCGraph {
      * 
      * @param graphs The list of inference graphs to link
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("linkWithGraphs:")
     public native boolean linkWithGraphs(@NotNull NSArray<? extends MLCInferenceGraph> graphs);

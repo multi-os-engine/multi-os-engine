@@ -54,6 +54,8 @@ public class DDMatchFlightNumber extends DDMatch {
 
     /**
      * The name of an airline.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -105,6 +107,8 @@ public class DDMatchFlightNumber extends DDMatch {
 
     /**
      * A string that represents a flight number.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

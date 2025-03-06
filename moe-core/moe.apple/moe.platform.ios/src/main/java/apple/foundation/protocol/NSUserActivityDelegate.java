@@ -43,6 +43,8 @@ public interface NSUserActivityDelegate {
      * If supportsContinuationStreams is set to YES the continuing side can request streams back to this user activity.
      * This delegate callback will be received with the incoming streams from the other side. The streams will be in an
      * unopened state. The streams should be opened immediately to start receiving requests from the continuing side.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -54,6 +56,8 @@ public interface NSUserActivityDelegate {
 
     /**
      * The user activity was continued on another device.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -65,6 +69,8 @@ public interface NSUserActivityDelegate {
     /**
      * The user activity will be saved (to be continued or persisted). The receiver should update the activity with
      * current activity state.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional

@@ -167,6 +167,8 @@ public class RPBroadcastActivityViewController extends UIViewController {
      * @param broadcastActivityViewController The RPBroadcastActivityViewController which can be presented.
      * @param error                           Optional error in the RPRecordingErrorCode domain which is supplied in the
      *                                        event the view controller could not be loaded.
+     * 
+     *                                        API-Since: 10.0
      */
     @Generated
     @Selector("loadBroadcastActivityViewControllerWithHandler:")
@@ -201,6 +203,8 @@ public class RPBroadcastActivityViewController extends UIViewController {
 
     /**
      * Delegate that is notified when the activity view controller is complete.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -223,6 +227,8 @@ public class RPBroadcastActivityViewController extends UIViewController {
 
     /**
      * Delegate that is notified when the activity view controller is complete.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -231,6 +237,8 @@ public class RPBroadcastActivityViewController extends UIViewController {
 
     /**
      * Delegate that is notified when the activity view controller is complete.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value) {

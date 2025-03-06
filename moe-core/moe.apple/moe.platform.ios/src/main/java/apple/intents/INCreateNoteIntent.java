@@ -82,6 +82,9 @@ public class INCreateNoteIntent extends INIntent {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("content")
@@ -95,6 +98,9 @@ public class INCreateNoteIntent extends INIntent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("groupName")
@@ -113,6 +119,9 @@ public class INCreateNoteIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INCreateNoteIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithTitle:content:groupName:")
     public native INCreateNoteIntent initWithTitleContentGroupName(@Nullable INSpeakableString title,
@@ -171,6 +180,9 @@ public class INCreateNoteIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("title")

@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * An arithmetic layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -131,7 +130,11 @@ public class MLCArithmeticLayer extends MLCLayer {
      * 
      * @param operation The arithmetic operation
      * @return A new arithmetic layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithOperation:")
     public static native MLCArithmeticLayer layerWithOperation(int operation);
@@ -145,7 +148,11 @@ public class MLCArithmeticLayer extends MLCLayer {
      * [@property] operation
      * 
      * The arithmetic operation.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("operation")
     public native int operation();
@@ -166,6 +173,7 @@ public class MLCArithmeticLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

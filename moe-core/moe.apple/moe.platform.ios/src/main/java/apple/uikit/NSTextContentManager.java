@@ -60,6 +60,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("addTextLayoutManager:")
     public native void addTextLayoutManager(@NotNull NSTextLayoutManager textLayoutManager);
@@ -87,6 +90,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     /**
      * Automatically synchronizes all text layout managers when hasEditingTransaction becoming NO. YES by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("automaticallySynchronizesTextLayoutManagers")
@@ -94,6 +99,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     /**
      * Automatically synchronizes the backing store when hasEditingTransaction becoming NO. NO by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("automaticallySynchronizesToBackingStore")
@@ -124,6 +131,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -155,6 +165,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * When YES, there is an active editing transaction from primaryTextLayoutManager. the synchronization operations to
      * non-primary text layout managers and the backing store block (or fails when synchronous) while this property is
      * YES. Non-primary text layout managers should avoid accessing the elements while this is YES. KVO-compliant
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("hasEditingTransaction")
@@ -165,6 +177,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native NSTextContentManager init();
@@ -219,6 +234,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * Invoked by primaryTextLayoutManager controlling the active editing transaction. Can be nested. The outer most
      * transaction toggles hasEditingTransaction and sends synchronization messages if enabled after invoking
      * transaction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("performEditingTransactionUsingBlock:")
@@ -236,6 +253,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * The primary NSTextLayoutManager interacting with the user allowing to edit. Setting an NSTextLayoutManager not in
      * textLayoutManagers will reset to nil. It automatically synchronizes pending edits before switching to a new
      * primary object. The operation is synchronous. KVO-compliant
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -246,12 +265,17 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * Records information about an edit action to the transaction. originalTextRange is the range edited before the
      * action, and newTextRange is the corresponding range after the action. The concrete subclass should invoke this
      * method for each edit action.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("recordEditActionInRange:newTextRange:")
     public native void recordEditActionInRangeNewTextRange(@NotNull NSTextRange originalTextRange,
             @NotNull NSTextRange newTextRange);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("removeTextLayoutManager:")
     public native void removeTextLayoutManager(@NotNull NSTextLayoutManager textLayoutManager);
@@ -271,6 +295,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     /**
      * Automatically synchronizes all text layout managers when hasEditingTransaction becoming NO. YES by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAutomaticallySynchronizesTextLayoutManagers:")
@@ -278,15 +304,23 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     /**
      * Automatically synchronizes the backing store when hasEditingTransaction becoming NO. NO by default.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAutomaticallySynchronizesToBackingStore:")
     public native void setAutomaticallySynchronizesToBackingStore(boolean value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -303,6 +337,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * The primary NSTextLayoutManager interacting with the user allowing to edit. Setting an NSTextLayoutManager not in
      * textLayoutManagers will reset to nil. It automatically synchronizes pending edits before switching to a new
      * primary object. The operation is synchronous. KVO-compliant
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPrimaryTextLayoutManager:")
@@ -330,6 +366,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * Synchronizes changes to all non-primary text layout managers. If completionHandler=nil, performs the operation
      * synchronously. completionHandler gets passed error if failed. It should block (or fail if synchronous) when there
      * is an active transaction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("synchronizeTextLayoutManagers:")
@@ -352,6 +390,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * Returns an array of NSTextElement intersecting the specified range in sequence. It can return a set of elements
      * not filling the entire range specified if the entire range is not synchronously available. Uses
      * -enumerateTextElementsFromLocation:options:usingBlock: to fill the array.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -360,6 +400,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     /**
      * An array of NSTextLayoutManager. KVO-compliant
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

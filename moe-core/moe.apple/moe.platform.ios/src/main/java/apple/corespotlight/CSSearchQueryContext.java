@@ -104,11 +104,17 @@ public class CSSearchQueryContext extends NSObject implements NSSecureCoding, NS
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("fetchAttributes")
     public native NSArray<String> fetchAttributes();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("filterQueries")
@@ -149,6 +155,9 @@ public class CSSearchQueryContext extends NSObject implements NSSecureCoding, NS
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("keyboardLanguage")
@@ -167,14 +176,23 @@ public class CSSearchQueryContext extends NSObject implements NSSecureCoding, NS
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setFetchAttributes:")
     public native void setFetchAttributes(@NotNull NSArray<String> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setFilterQueries:")
     public native void setFilterQueries(@NotNull NSArray<String> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setKeyboardLanguage:")
     public native void setKeyboardLanguage(@Nullable String value);

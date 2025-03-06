@@ -115,6 +115,8 @@ public class VNStatefulRequest extends VNImageBasedRequest {
      * The request will not process buffers that fall within the `frameAnalysisSpacing` after it has performed the
      * analysis. The analysis is not done by wall time but by analysis of of the time stamps of the samplebuffers being
      * processed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("frameAnalysisSpacing")
@@ -145,6 +147,8 @@ public class VNStatefulRequest extends VNImageBasedRequest {
      * @param completionHandler    The block to be invoked after the request has completed its processing. The
      *                             completion handler gets executed on the same dispatch queue as the request being
      *                             executed.
+     * 
+     *                             API-Since: 14.0
      */
     @Generated
     @Selector("initWithFrameAnalysisSpacing:completionHandler:")
@@ -188,6 +192,8 @@ public class VNStatefulRequest extends VNImageBasedRequest {
      * would be that a movement detection requires at least 5 frames to be detected. The minimumLatencyFrameCount for
      * that request would report 5 and only after 5 frames have been processed an observation would be returned in the
      * results. This latency is indicative of how responsive a request is in respect to the incoming data.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("minimumLatencyFrameCount")

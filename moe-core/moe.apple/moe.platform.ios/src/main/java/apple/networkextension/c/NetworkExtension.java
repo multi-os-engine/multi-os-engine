@@ -287,4 +287,15 @@ public final class NetworkExtension {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String NERelayConfigurationDidChangeNotification();
+
+    /**
+     * [@const] NERelayClientErrorDomain The NERelay error domain as detected by the client
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NERelayClientErrorDomain();
 }

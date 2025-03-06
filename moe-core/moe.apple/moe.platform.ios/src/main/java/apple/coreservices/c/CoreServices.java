@@ -550,7 +550,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSymLink or UTType.symbolicLink (swift) instead.
+     * Deprecated-Message: Use UTTypeSymbolicLink or UTType.symbolicLink (swift) instead.
      */
     @NotNull
     @Deprecated

@@ -110,6 +110,8 @@ public class VNClassificationObservation extends VNObservation {
      * 'cat' or 'hotdog'. The string is defined in the model that was used for the classification. Usually these are
      * technical labels that are not localized and not meant to be used directly to be presented to an end user in the
      * UI.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -191,6 +193,8 @@ public class VNClassificationObservation extends VNObservation {
      * 
      * @return YES if the precision value for the operation point specified by a recall value has the minimum value;
      *         otherwise, NO.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("hasMinimumPrecision:forRecall:")
@@ -205,6 +209,8 @@ public class VNClassificationObservation extends VNObservation {
      * 
      * @return YES if the recall value for the operation point specified by a precision value has the minimum value;
      *         otherwise, NO.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("hasMinimumRecall:forPrecision:")
@@ -214,6 +220,8 @@ public class VNClassificationObservation extends VNObservation {
      * Determine whether or not precision/recall curves are available with the observation.
      * 
      * If this property is YES, then all other precision/recall related methods in this addition can be called.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hasPrecisionRecallCurve")

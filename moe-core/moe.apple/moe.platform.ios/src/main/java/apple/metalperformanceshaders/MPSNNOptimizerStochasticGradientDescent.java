@@ -132,6 +132,10 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
      * 
+     * 
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
      *                                        state with gradients for this update.
@@ -176,6 +180,10 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
      * 
+     * 
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with
      *                                gradients and original gamma/beta for this update.
@@ -215,6 +223,10 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * where,
      * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
+     * 
+     * 
+     * 
+     * API-Since: 12.0
      * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
@@ -270,6 +282,10 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
      * 
+     * 
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputGradientVector A valid MPSVector object which specifies the input vector of gradients for this
      *                            update.
@@ -316,12 +332,17 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * @param learningRate The learningRate which will be applied
      * 
      * @return A valid MPSNNOptimizerStochasticGradientDescent object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:learningRate:")
     public native MPSNNOptimizerStochasticGradientDescent initWithDeviceLearningRate(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float learningRate);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithDevice:momentumScale:useNestrovMomentum:optimizerDescriptor:")
     public native MPSNNOptimizerStochasticGradientDescent initWithDeviceMomentumScaleUseNestrovMomentumOptimizerDescriptor(
@@ -356,6 +377,9 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * The momentumScale at which we update momentum for values array
      * 
      * Default value is 0.0
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("momentumScale")
@@ -392,6 +416,9 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("useNestrovMomentum")
     public native boolean useNestrovMomentum();

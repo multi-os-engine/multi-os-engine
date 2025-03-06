@@ -11,9 +11,9 @@ public final class BNNSPointerSpecifier {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSPointerSpecifierAlpha = 0x00000000;
+    @Generated public static final int Alpha = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSPointerSpecifierBeta = 0x00000001;
+    @Generated public static final int Beta = 0x00000001;
 }

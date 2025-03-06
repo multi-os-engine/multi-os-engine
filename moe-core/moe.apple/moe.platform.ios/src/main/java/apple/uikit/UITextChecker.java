@@ -84,6 +84,8 @@ public class UITextChecker extends NSObject {
     /**
      * Entries in the availableLanguages list are all available spellchecking languages in user preference order,
      * usually language abbreviations such as en_US.
+     * 
+     * API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -119,6 +121,9 @@ public class UITextChecker extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("hasLearnedWord:")
     public static native boolean hasLearnedWord(@NotNull String word);
@@ -153,6 +158,8 @@ public class UITextChecker extends NSObject {
     /**
      * These allow clients to programmatically instruct the checker to learn and unlearn words, and to determine whether
      * a word has been learned (and hence can potentially be unlearned).
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("learnWord:")
@@ -179,6 +186,9 @@ public class UITextChecker extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("unlearnWord:")
     public static native void unlearnWord(@NotNull String word);
@@ -191,6 +201,8 @@ public class UITextChecker extends NSObject {
     /**
      * Returns an array of strings, in the order in which they should be presented, representing complete words that the
      * user might be trying to type when starting by typing the partial word at the given range in the given string.
+     * 
+     * API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -201,6 +213,8 @@ public class UITextChecker extends NSObject {
     /**
      * Returns an array of strings, in the order in which they should be presented, representing guesses for words that
      * might have been intended in place of the misspelled word at the given range in the given string.
+     * 
+     * API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -210,11 +224,16 @@ public class UITextChecker extends NSObject {
 
     /**
      * Methods for dealing with ignored words.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("ignoreWord:")
     public native void ignoreWord(@NotNull String wordToIgnore);
 
+    /**
+     * API-Since: 3.2
+     */
     @Nullable
     @Generated
     @Selector("ignoredWords")
@@ -229,6 +248,8 @@ public class UITextChecker extends NSObject {
      * is found. Checking is limited to the range specified, and starts at the specified offset (which should lie within
      * the range), but if wrapFlag is YES then it will check from the beginning of the range if no misspelling is found
      * between startingOffset and the end of the range.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("rangeOfMisspelledWordInString:range:startingAt:wrap:language:")
@@ -236,6 +257,9 @@ public class UITextChecker extends NSObject {
     public native NSRange rangeOfMisspelledWordInStringRangeStartingAtWrapLanguage(@NotNull String stringToCheck,
             @ByValue NSRange range, @NInt long startingOffset, boolean wrapFlag, @NotNull String language);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setIgnoredWords:")
     public native void setIgnoredWords(@Nullable NSArray<String> value);

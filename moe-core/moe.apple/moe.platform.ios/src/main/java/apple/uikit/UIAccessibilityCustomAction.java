@@ -164,6 +164,9 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Selector("init")
     public native UIAccessibilityCustomAction init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithName:target:selector:")
     public native UIAccessibilityCustomAction initWithNameTargetSelector(@NotNull String name,
@@ -171,6 +174,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * A localized name that describes the action.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -182,6 +187,8 @@ public class UIAccessibilityCustomAction extends NSObject {
      * It must conform to one of the following signatures:
      * - (BOOL)myPerformActionMethod;
      * - (BOOL)myPerformActionMethod:(UIAccessibilityCustomAction *)action;
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -190,6 +197,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * A localized name that describes the action.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setName:")
@@ -200,6 +209,8 @@ public class UIAccessibilityCustomAction extends NSObject {
      * It must conform to one of the following signatures:
      * - (BOOL)myPerformActionMethod;
      * - (BOOL)myPerformActionMethod:(UIAccessibilityCustomAction *)action;
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSelector:")
@@ -207,6 +218,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * The object that will perform the action.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTarget:")
@@ -214,6 +227,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * The object that will perform the action.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
@@ -229,6 +244,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * The object that will perform the action.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -334,6 +351,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * An image representing the action to be shown with some assistive technologies such as Switch Control.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -391,6 +410,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * An image representing the action to be shown with some assistive technologies such as Switch Control.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setImage:")
@@ -400,4 +421,25 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A localized name that describes the action's category. If nil, the category will be the default "Actions"
+     * category
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("category")
+    @Nullable
+    public native String category();
+
+    /**
+     * A localized name that describes the action's category. If nil, the category will be the default "Actions"
+     * category
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setCategory:")
+    public native void setCategory(@Nullable String value);
 }

@@ -34,6 +34,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CXCallDirectoryExtensionContextDelegate")
 public interface CXCallDirectoryExtensionContextDelegate {
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("requestFailedForExtensionContext:withError:")
     void requestFailedForExtensionContextWithError(@NotNull CXCallDirectoryExtensionContext extensionContext,

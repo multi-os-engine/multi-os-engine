@@ -144,6 +144,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * A string to help identify this object.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -155,6 +157,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * 
      * Use setLayer:atIndex: to add or set the layer.
      * Identical to "layers[layerIndex]".
+     * 
+     * API-Since: 13.0
      * 
      * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't
      *         been set for this index.
@@ -169,6 +173,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * 
      * This property is modified by setting new layer instances using setLayer:atIndex: or assigning to layers[X]
      * 
+     * API-Since: 13.0
+     * 
      * @return The number of subsequent non-nil layer instances stored in the descriptor, starting at index 0.
      */
     @Generated
@@ -181,6 +187,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * 
      * Accesses the layers currently stored in the descriptor.
      * Syntactic sugar around "layerAtIndex:" and "setLayer:atIndex:"
+     * 
+     * API-Since: 13.0
      * 
      * @return A modifiable array of layers
      */
@@ -202,6 +210,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      *                   The depth component of MTLSize is ignored.
      * @return A descriptor containing no layers. Add or remove layers using setObject:atIndexedSubscript:.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -218,6 +228,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      *                   The depth component of MTLSize is ignored.
      * @param layer      The single layer describing how the rasterization rate varies in screen space
      * @return A descriptor containing a single layer. Add or remove layers using setObject:atIndexedSubscript:.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -232,6 +244,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * 
      * The function copies the array of pointers internally, the caller need not keep the array alive after creating the
      * descriptor.
+     * 
+     * API-Since: 13.0
      * 
      * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      *                   The depth component of MTLSize is ignored.
@@ -262,6 +276,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * The region always has its origin at [0, 0].
      * The depth component of MTLSize is ignored.
      * 
+     * API-Since: 13.0
+     * 
      * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      */
     @Generated
@@ -275,6 +291,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * A string to help identify this object.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLabel:")
@@ -288,6 +306,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * The previous instance at the index, if any, will be overwritten.
      * Set nil to an index to remove the layer at that index from the descriptor.
      * Identical to "layers[layerIndex] = layer".
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLayer:atIndex:")
@@ -298,6 +318,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * 
      * The region always has its origin at [0, 0].
      * The depth component of MTLSize is ignored.
+     * 
+     * API-Since: 13.0
      * 
      * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      */

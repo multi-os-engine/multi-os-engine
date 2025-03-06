@@ -418,6 +418,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * default is 0. Value is pinned to 0..numberOfPages-1
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("currentPage")
@@ -449,6 +451,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * hides the indicator if there is only one page, default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("hidesForSinglePage")
@@ -468,6 +472,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("numberOfPages")
@@ -486,6 +492,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * default is 0. Value is pinned to 0..numberOfPages-1
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCurrentPage:")
@@ -515,6 +523,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * hides the indicator if there is only one page, default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHidesForSinglePage:")
@@ -522,6 +532,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setNumberOfPages:")
@@ -539,6 +551,8 @@ public class UIPageControl extends UIControl {
     /**
      * Returns the minimum size required to display indicators for the given page count. Can be used to size the control
      * if the page count could change.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sizeForNumberOfPages:")

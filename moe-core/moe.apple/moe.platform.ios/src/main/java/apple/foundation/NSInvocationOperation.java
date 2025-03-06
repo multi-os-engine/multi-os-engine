@@ -159,21 +159,33 @@ public class NSInvocationOperation extends NSOperation {
     @Selector("init")
     public native NSInvocationOperation init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithInvocation:")
     public native NSInvocationOperation initWithInvocation(@NotNull NSInvocation inv);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithTarget:selector:object:")
     public native NSInvocationOperation initWithTargetSelectorObject(
             @NotNull @Mapped(ObjCObjectMapper.class) Object target, @NotNull SEL sel,
             @Nullable @Mapped(ObjCObjectMapper.class) Object arg);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("invocation")
     public native NSInvocation invocation();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("result")

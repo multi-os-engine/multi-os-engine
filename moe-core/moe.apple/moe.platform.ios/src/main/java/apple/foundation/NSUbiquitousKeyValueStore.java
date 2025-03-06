@@ -98,6 +98,9 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("defaultStore")
@@ -160,30 +163,48 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("arrayForKey:")
     public native NSArray<?> arrayForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("boolForKey:")
     public native boolean boolForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("dataForKey:")
     public native NSData dataForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("dictionaryForKey:")
     public native NSDictionary<String, ?> dictionaryForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<String, ?> dictionaryRepresentation();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("doubleForKey:")
     public native double doubleForKey(@NotNull String aKey);
@@ -192,57 +213,96 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Selector("init")
     public native NSUbiquitousKeyValueStore init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("longLongForKey:")
     public native long longLongForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setArray:forKey:")
     public native void setArrayForKey(@Nullable NSArray<?> anArray, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setBool:forKey:")
     public native void setBoolForKey(boolean value, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setData:forKey:")
     public native void setDataForKey(@Nullable NSData aData, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setDictionary:forKey:")
     public native void setDictionaryForKey(@Nullable NSDictionary<String, ?> aDictionary, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setDouble:forKey:")
     public native void setDoubleForKey(double value, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setLongLong:forKey:")
     public native void setLongLongForKey(long value, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setString:forKey:")
     public native void setStringForKey(@Nullable String aString, @NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("stringForKey:")
     public native String stringForKey(@NotNull String aKey);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("synchronize")
     public native boolean synchronize();

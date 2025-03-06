@@ -389,4 +389,20 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("alternateIdentifiers")
+    @NotNull
+    public native NSSet<? extends MKMapItemIdentifier> alternateIdentifiers();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("identifier")
+    @Nullable
+    public native MKMapItemIdentifier identifier();
 }

@@ -174,6 +174,8 @@ public class CSSearchableIndex extends NSObject {
 
     /**
      * Begin a batch of index adds, updates, or deletes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("beginIndexBatch")
@@ -213,6 +215,8 @@ public class CSSearchableIndex extends NSObject {
     /**
      * End a batch passing in client state information to be persisted in the index. The completion handler will be
      * called once the client state has been persisted.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("endIndexBatchWithClientState:completionHandler:")
@@ -221,6 +225,8 @@ public class CSSearchableIndex extends NSObject {
 
     /**
      * Async fetches the app's last stored client state information.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("fetchLastClientStateWithCompletionHandler:")
@@ -344,4 +350,24 @@ public class CSSearchableIndex extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * End a batch passing in expected client state information to be persisted in the index, along with new client
+     * state for the current batch. The completion handler will be called once the client state has been persisted. If
+     * the client state does not match expected, an error of CSIndexErrorCodeMismatchedClientState will be returned.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("endIndexBatchWithExpectedClientState:newClientState:completionHandler:")
+    public native void endIndexBatchWithExpectedClientStateNewClientStateCompletionHandler(
+            @Nullable NSData expectedClientState, @NotNull NSData newClientState,
+            @ObjCBlock(name = "call_endIndexBatchWithExpectedClientStateNewClientStateCompletionHandler") @Nullable Block_endIndexBatchWithExpectedClientStateNewClientStateCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_endIndexBatchWithExpectedClientStateNewClientStateCompletionHandler {
+        @Generated
+        void call_endIndexBatchWithExpectedClientStateNewClientStateCompletionHandler(@Nullable NSError error);
+    }
 }

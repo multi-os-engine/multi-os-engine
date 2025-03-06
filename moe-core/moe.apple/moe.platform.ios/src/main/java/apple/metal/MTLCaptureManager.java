@@ -95,6 +95,8 @@ public class MTLCaptureManager extends NSObject {
      * Default scope to be captured when a capture is initiated from Xcode’s capture button. When nil, it’ll fall back
      * to presentDrawable:, presentDrawable:atTime:, presentDrawable:afterMinimumDuration: in MTLCommandBuffer or
      * present:, present:atTime:, present:afterMinimumDuration: in MTLDrawable.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -130,6 +132,8 @@ public class MTLCaptureManager extends NSObject {
 
     /**
      * Query if a capture is currently in progress
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isCapturing")
@@ -151,6 +155,8 @@ public class MTLCaptureManager extends NSObject {
 
     /**
      * Creates a new capture scope for the given command queue
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -161,6 +167,8 @@ public class MTLCaptureManager extends NSObject {
 
     /**
      * Creates a new capture scope for the given capture device
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -180,6 +188,8 @@ public class MTLCaptureManager extends NSObject {
      * Default scope to be captured when a capture is initiated from Xcode’s capture button. When nil, it’ll fall back
      * to presentDrawable:, presentDrawable:atTime:, presentDrawable:afterMinimumDuration: in MTLCommandBuffer or
      * present:, present:atTime:, present:afterMinimumDuration: in MTLDrawable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDefaultCaptureScope:")
@@ -194,6 +204,8 @@ public class MTLCaptureManager extends NSObject {
      * The capture manager allows the user to create capture scopes and trigger captures from code.
      * When a capture has been completed, it will be displayed in Xcode and the application will be paused.
      * [@remarks] only MTLCommandBuffers created after starting a capture and committed before stopping it are captured.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -243,6 +255,8 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Stops a capture started from startCaptureWithDevice:/startCaptureWithCommandQueue:/startCaptureWithScope: or from
      * Xcode’s capture button
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("stopCapture")

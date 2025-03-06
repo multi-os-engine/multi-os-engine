@@ -120,6 +120,8 @@ public class MPSImageDivide extends MPSImageArithmetic {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSImageDivide object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:")

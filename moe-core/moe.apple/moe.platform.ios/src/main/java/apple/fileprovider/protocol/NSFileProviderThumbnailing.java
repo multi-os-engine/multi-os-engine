@@ -66,6 +66,8 @@ public interface NSFileProviderThumbnailing {
      * services exposed on the item. The system will call `cancel` on the progress if the
      * operation takes too much time. The extension is then expected to quickly call the completion
      * handler.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

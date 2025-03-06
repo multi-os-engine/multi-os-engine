@@ -162,6 +162,8 @@ public class MLModel extends NSObject {
 
     /**
      * A model holds a description of its required inputs and expected outputs.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -170,6 +172,8 @@ public class MLModel extends NSObject {
 
     /**
      * Construct a model with a default MLModelConfiguration object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("modelWithContentsOfURL:error:")
@@ -182,7 +186,16 @@ public class MLModel extends NSObject {
     public static native MLModel new_objc();
 
     /**
-     * Convenience method to run a prediction synchronously with default prediction options.
+     * Run a prediction on a model synchronously.
+     * 
+     * This is a convenience overload method of `prediction(from:options:)` that uses the default prediction options.
+     * 
+     * - Parameters
+     * - input: The input features to make a prediction from.
+     * - error: The output parameter to be filled with error information on failure.
+     * - Returns: The output features from the prediction.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -195,11 +208,13 @@ public class MLModel extends NSObject {
     /**
      * Run a prediction on a model synchronously
      * 
-     * [@returns] The output features from the prediction
+     * - Parameters
+     * - input: The input features to make a prediction from.
+     * - options: Prediction options to modify how the prediction is run.
+     * - error: The output parameter to be filled with error information on failure.
+     * - Returns: The output features from the prediction.
      * 
-     * @param input   The input features to make a prediction from
-     * @param options Prediction options to modify how the prediction is run
-     * @param error   The out parameter for error when nil is returned. On success, it is nil
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -384,7 +399,16 @@ public class MLModel extends NSObject {
     public static native NSArray<?> availableComputeDevices();
 
     /**
-     * Convenience method to run a prediction asynchronously with default prediction options.
+     * Run a prediction on a model asynchronously.
+     * 
+     * This is a convenience overload method of `prediction(from:options:) async` that uses the default prediction
+     * options.
+     * 
+     * - Parameters
+     * - input: The input features to make a prediction from.
+     * - completionHandler: A block that will be invoked once the prediction has completed successfully or
+     * unsuccessfully. On success, it is invoked with a valid model output. On failure, it is invoked with a nil output
+     * and NSError
      * 
      * API-Since: 17.0
      */
@@ -405,13 +429,14 @@ public class MLModel extends NSObject {
     /**
      * Run a prediction on a model asynchronously.
      * 
-     * @param input             The input features to make a prediction from
-     * @param options           Prediction options to modify how the prediction is run
-     * @param completionHandler A block that will be invoked once the prediction has completed successfully or
-     *                          unsuccessfully. On success, it is invoked with a valid model output. On failure, it is
-     *                          invoked with a nil output and NSError
+     * - Parameters
+     * - input: The input features to make a prediction from.
+     * - options: Prediction options to modify how the prediction is run.
+     * - completionHandler: A block that will be invoked once the prediction has completed successfully or
+     * unsuccessfully. On success, it is invoked with a valid model output. On failure, it is invoked with a nil output
+     * and NSError
      * 
-     *                          API-Since: 17.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("predictionFromFeatures:options:completionHandler:")
@@ -431,4 +456,124 @@ public class MLModel extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Creates a new state object.
+     * 
+     * Core ML framework will allocate the state buffers declared in the model.
+     * 
+     * The allocated state buffers are initialized to zeros. To initialize with different values, use
+     * `.withMultiArray(for:)` to get the mutable `MLMultiArray`-view to the state buffer.
+     * 
+     * It returns an empty state when the model is stateless. One can use the empty state with stateful prediction
+     * functions such as `prediction(from:using:)` and those predictions will be stateless. This simplifies the call
+     * site which may or may not use a stateful model.
+     * 
+     * ```swift
+     * // Create state that contains two state buffers: s1 and s2.
+     * // Then, initialize s1 to 1.0 and s2 to 2.0.
+     * let state = model.newState()
+     * state.withMultiArray(for: "s1") { stateMultiArray in
+     * stateMultiArray[0] = 1.0
+     * }
+     * state.withMultiArray(for: "s2") { stateMultiArray in
+     * stateMultiArray[0] = 2.0
+     * }
+     * ```
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("newState")
+    @NotNull
+    public native MLState newState();
+
+    /**
+     * Run a stateful prediction synchronously.
+     * 
+     * Use this method to run predictions on a stateful model.
+     * 
+     * ```swift
+     * let state = model.newState()
+     * let prediction = try model.prediction(from: inputFeatures, using: state)
+     * ```
+     * 
+     * - Parameters:
+     * - inputFeatures: The input features as declared in the model description.
+     * - state: The state object created by `newState()` method.
+     * - error: The output parameter to receive an error information on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("predictionFromFeatures:usingState:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MLFeatureProvider predictionFromFeaturesUsingStateError(
+            @Mapped(ObjCObjectMapper.class) @NotNull MLFeatureProvider inputFeatures, @NotNull MLState state,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Run a stateful prediction asynchronously.
+     * 
+     * Use this method to run predictions on a stateful model.
+     * 
+     * Do not request a prediction while another prediction that shares the same state is in-flight, otherwise the
+     * behavior is undefined.
+     * 
+     * ```swift
+     * let state = model.newState()
+     * let prediction = try await model.prediction(from: inputFeatures, using: state)
+     * ```
+     * 
+     * - Parameters
+     * - input: The input features to make a prediction from.
+     * - state: The state object created by `newState()` method.
+     * - options: Prediction options to modify how the prediction is run.
+     * - completionHandler: A block that will be invoked once the prediction has completed successfully or
+     * unsuccessfully. On success, it is invoked with a valid model output. On failure, it is invoked with a nil output
+     * and NSError
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("predictionFromFeatures:usingState:options:completionHandler:")
+    public native void predictionFromFeaturesUsingStateOptionsCompletionHandler(
+            @Mapped(ObjCObjectMapper.class) @NotNull MLFeatureProvider inputFeatures, @NotNull MLState state,
+            @NotNull MLPredictionOptions options,
+            @ObjCBlock(name = "call_predictionFromFeaturesUsingStateOptionsCompletionHandler") @NotNull Block_predictionFromFeaturesUsingStateOptionsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_predictionFromFeaturesUsingStateOptionsCompletionHandler {
+        @Generated
+        void call_predictionFromFeaturesUsingStateOptionsCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) @Nullable Object output, @Nullable NSError error);
+    }
+
+    /**
+     * Run a stateful prediction synchronously with options.
+     * 
+     * Use this method to run predictions on a stateful model.
+     * 
+     * ```swift
+     * let state = model.newState()
+     * let prediction = try model.prediction(from: inputFeatures, using: state, options: predictionOptions)
+     * ```
+     * 
+     * - Parameters:
+     * - inputFeatures: The input features as declared in the model description.
+     * - state: The state object created by `newState()` method.
+     * - options: The prediction options.
+     * - error: The output parameter to receive an error information on failure.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("predictionFromFeatures:usingState:options:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MLFeatureProvider predictionFromFeaturesUsingStateOptionsError(
+            @Mapped(ObjCObjectMapper.class) @NotNull MLFeatureProvider inputFeatures, @NotNull MLState state,
+            @NotNull MLPredictionOptions options, @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

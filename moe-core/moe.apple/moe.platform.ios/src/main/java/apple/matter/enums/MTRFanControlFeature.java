@@ -27,4 +27,12 @@ public final class MTRFanControlFeature {
      * API-Since: 16.1
      */
     @Generated public static final int Wind = 0x00000008;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int Step = 0x00000010;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int AirflowDirection = 0x00000020;
 }

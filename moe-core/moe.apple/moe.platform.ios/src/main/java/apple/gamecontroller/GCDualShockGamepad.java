@@ -147,15 +147,23 @@ public class GCDualShockGamepad extends GCExtendedGamepad {
 
     /**
      * DualShock controllers have a touchpad with a button and two-finger tracking.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("touchpadButton")
     public native GCControllerButtonInput touchpadButton();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("touchpadPrimary")
     public native GCControllerDirectionPad touchpadPrimary();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("touchpadSecondary")
     public native GCControllerDirectionPad touchpadSecondary();

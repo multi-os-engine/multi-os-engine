@@ -188,12 +188,17 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The course of this location is significant; see below.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("location")
     public native CLLocation location();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("manufacturer")
@@ -202,17 +207,25 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
     /**
      * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the
      * .vehicleLocation property, and rotated to match that location's course.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("mapAnnotationImage")
     public native INImage mapAnnotationImage();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("model")
     public native String model();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("registrationPlate")
@@ -220,11 +233,16 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The course of this location is significant; see below.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocation:")
     public native void setLocation(@Nullable CLLocation value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setManufacturer:")
     public native void setManufacturer(@Nullable String value);
@@ -232,15 +250,23 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
     /**
      * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the
      * .vehicleLocation property, and rotated to match that location's course.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMapAnnotationImage:")
     public native void setMapAnnotationImage(@Nullable INImage value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setModel:")
     public native void setModel(@Nullable String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRegistrationPlate:")
     public native void setRegistrationPlate(@Nullable String value);

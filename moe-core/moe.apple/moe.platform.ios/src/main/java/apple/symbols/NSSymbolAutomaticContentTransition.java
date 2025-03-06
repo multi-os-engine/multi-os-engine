@@ -161,6 +161,8 @@ public class NSSymbolAutomaticContentTransition extends NSSymbolContentTransitio
 
     /**
      * The default automatic transition, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("transition")

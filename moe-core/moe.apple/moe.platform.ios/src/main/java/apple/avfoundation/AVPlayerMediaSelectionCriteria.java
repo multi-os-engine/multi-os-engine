@@ -181,6 +181,8 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
      *                                      media with the characteristic for which the receiver is set on the AVPlayer
      *                                      as the selection criteria. Can be nil.
      * @return An instance of AVPlayerMediaSelectionCriteria.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @Selector("initWithPreferredLanguages:preferredMediaCharacteristics:")
@@ -195,6 +197,8 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
      * the group will be considered the best match.
      * When making selections, AVPlayer treats language preferences as criteria that supersede preferred media
      * characteristics.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -211,6 +215,8 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
      * may include AVMediaCharacteristicDescribesVideoForAccessibility.
      * When making automatic selections, AVPlayer treats preferred media characteristics as criteria that are superseded
      * by language preferences.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated

@@ -30,6 +30,8 @@ public interface UICollectionViewDropCoordinator {
     /**
      * The last hit-tested index path known during the drop session.
      * If this is nil, the proposal's intent will be .unspecified
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -41,6 +43,8 @@ public interface UICollectionViewDropCoordinator {
      * The rect is in the coordinate space of the cell at this index path.
      * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to
      * shrink the item to a single point.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -56,6 +60,8 @@ public interface UICollectionViewDropCoordinator {
      * 
      * To tweak the appearance of the preview being dropping (e.g. supply a clipping path), see
      * -collectionView:dropPreviewParametersForItemAtIndexPath:
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -78,6 +84,8 @@ public interface UICollectionViewDropCoordinator {
      * 
      * UICollectionViewDropPlaceholderContext also conforms to UIDragAnimating to allow adding alongside animations and
      * completion handlers.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -88,6 +96,8 @@ public interface UICollectionViewDropCoordinator {
 
     /**
      * Animate the dragItem to a location specified by the UIDragPreviewTarget.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -97,6 +107,8 @@ public interface UICollectionViewDropCoordinator {
 
     /**
      * Ordered list of items available for this drop.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -105,12 +117,17 @@ public interface UICollectionViewDropCoordinator {
 
     /**
      * The current drop proposal at the time of the drop.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
     @Selector("proposal")
     UICollectionViewDropProposal proposal();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("session")

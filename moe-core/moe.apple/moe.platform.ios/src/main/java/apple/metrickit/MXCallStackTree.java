@@ -65,6 +65,8 @@ public class MXCallStackTree extends NSObject implements NSSecureCoding {
      * callstacks associated with individual threads.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 14.0
      */
     @NotNull
     @Generated

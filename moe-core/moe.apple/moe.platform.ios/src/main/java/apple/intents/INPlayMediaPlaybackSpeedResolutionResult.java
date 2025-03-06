@@ -110,6 +110,9 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
     @Selector("init")
     public native INPlayMediaPlaybackSpeedResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDoubleResolutionResult:")
     public native INPlayMediaPlaybackSpeedResolutionResult initWithDoubleResolutionResult(
@@ -178,6 +181,9 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
     @Selector("unsupported")
     public static native INPlayMediaPlaybackSpeedResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

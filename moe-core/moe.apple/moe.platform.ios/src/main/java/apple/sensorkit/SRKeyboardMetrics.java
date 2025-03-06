@@ -61,6 +61,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of any key and touch down on a sequential character key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -69,6 +71,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of any key and touch down on a plane change key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -92,6 +96,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup on a character key and touch down on the next sequential key (any key)
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -100,6 +106,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a character key and touch down of a sequential delete key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -108,6 +116,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a character key and touch down of a sequential plane change key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -116,6 +126,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup on a character key and touch down on a word in the prediction bar
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -124,6 +136,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a character key and touch down of a sequential space key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -146,6 +160,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch down to the center of the delete key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -154,6 +170,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a delete key and touch down of a sequential character key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -162,6 +180,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a delete key and touch down of a sequential delete key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -170,6 +190,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of the delete key and touch down of a sequential delete key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -178,6 +200,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a delete key and touch down of a sequential path
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -186,6 +210,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a delete key and touch down of a sequential plane change key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -194,6 +220,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a delete key and touch down of a sequential Shift key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -202,6 +230,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a delete key and touch down of a sequential space key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -210,6 +240,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touch down and touchup of all delete key events in the session.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -218,6 +250,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch up to the center of the delete key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -230,6 +264,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch down to the center of any key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -238,6 +274,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration over which these metrics were calculated
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("duration")
@@ -245,6 +283,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The count of emoji typed per category in the session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("emojiCountForSentimentCategory:")
@@ -258,6 +298,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The height of the keyboard in mm in the session
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -302,6 +344,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The identifier of the keyboard in the keyboard list
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -310,6 +354,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch down to the center of the intended key of the characters of a long word
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -318,6 +364,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touch down and touch down of the character keys of all the long words in the session.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -326,6 +374,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touch down and touchup of the character keys of all the long words in the session.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -334,6 +384,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch up to the center of the intended key of the characters of a long word
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -347,6 +399,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * sample values of the ratio of error distance between intended and actual path
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -355,6 +409,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a delete key and touch down of a sequential path (ie. Continuous Path)
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -363,6 +419,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a path and touch down of a sequential path
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -371,6 +429,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a path and touch down of a sequential space key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -379,6 +439,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The words per minute typed using continuous path during the session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("pathTypingSpeed")
@@ -386,6 +448,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a plane change key and touch down of any key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -394,6 +458,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup on a plane change key and touch down on the next sequential key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -414,6 +480,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch down to the center of the intended key of a character in a short word
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -422,6 +490,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup on a character key and touch down on any sequential character key in a short word
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -430,6 +500,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touch down and touchup of all character keys in short words in the session.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -438,6 +510,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch up to the center of the intended key of a character in a short word
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -446,6 +520,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch down to the right centroid of the space key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -454,6 +530,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a space key and touch down of a sequential character key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -462,6 +540,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a space key and touch down of a sequential delete key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -470,6 +550,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup on the space key and touch down to begin a sequential path
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -478,6 +560,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a space key and touch down of a sequential plane change key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -486,6 +570,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup on the space key and touch down of a sequential selection from the prediction bar
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -494,6 +580,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a space key and touch down of a sequential Shift key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -502,6 +590,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touchup of a space key and touch down of a sequential space key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -510,6 +600,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touch down and touchup of all space key events in the session.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -518,6 +610,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch up to the right centroid of the space key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -530,6 +624,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of altered words during the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalAlteredWords")
@@ -538,6 +634,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of autocorrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalAutoCorrections")
@@ -546,6 +644,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of deletes during the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalDeletes")
@@ -554,6 +654,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of drags during the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalDrags")
@@ -562,6 +664,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of emojis used during the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalEmojis")
@@ -570,6 +674,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of hit test corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalHitTestCorrections")
@@ -578,6 +684,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of insert key corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalInsertKeyCorrections")
@@ -586,6 +694,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of near key corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalNearKeyCorrections")
@@ -594,6 +704,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total length of paths completed in the session
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -603,6 +715,8 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The total number of pauses made while entering the path for any words composed using continuous path during the
      * session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("totalPathPauses")
@@ -611,6 +725,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total time taken to complete paths in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalPathTime")
@@ -618,6 +734,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of paths used during the sesion
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalPaths")
@@ -626,6 +744,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of pauses during the session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("totalPauses")
@@ -634,6 +754,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of retro corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalRetroCorrections")
@@ -642,6 +764,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of skip touch corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalSkipTouchCorrections")
@@ -650,6 +774,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of space corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalSpaceCorrections")
@@ -658,6 +784,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of substitution corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalSubstitutionCorrections")
@@ -666,6 +794,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of taps during the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalTaps")
@@ -674,6 +804,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of transposition corrections in the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalTranspositionCorrections")
@@ -682,6 +814,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total amount of time typing during the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalTypingDuration")
@@ -689,6 +823,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * Total number of continuous typing episodes during the session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("totalTypingEpisodes")
@@ -697,6 +833,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The total number of words typed during the session
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("totalWords")
@@ -705,6 +843,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touch down to touch down for any key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -713,6 +853,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The duration between touch down to touchup for any key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -721,6 +863,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The words per minute typed during the session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("typingSpeed")
@@ -728,6 +872,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The distance from the touch up to the center of any key
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -736,6 +882,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The version of keyboard metrics
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -744,6 +892,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The width of the keyboard in mm in the session
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -752,6 +902,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The count of words typed per category in the session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("wordCountForSentimentCategory:")

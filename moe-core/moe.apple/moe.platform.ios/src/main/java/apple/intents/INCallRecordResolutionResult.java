@@ -82,6 +82,8 @@ public class INCallRecordResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the callRecord with which the user wants to continue.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -105,6 +107,8 @@ public class INCallRecordResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INCallRecord.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -175,6 +179,8 @@ public class INCallRecordResolutionResult extends INIntentResolutionResult {
      * The resolvedCallRecord can be different than the original INCallRecord. This allows app extensions to apply
      * business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

@@ -111,6 +111,8 @@ public class ARVideoFormat extends NSObject implements NSCopying {
 
     /**
      * Frame rate.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("framesPerSecond")
@@ -124,6 +126,8 @@ public class ARVideoFormat extends NSObject implements NSCopying {
 
     /**
      * Image resolution.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("imageResolution")

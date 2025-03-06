@@ -115,6 +115,8 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * 
      * [@note] Your app should use this method in one of the six concrete subclasses of @c CPNowPlayingButton.
      * Do not initialize this class directly.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithHandler:")
@@ -146,6 +148,8 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isEnabled")
@@ -159,6 +163,8 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
      * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle
      * states.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isSelected")
@@ -191,6 +197,8 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -204,6 +212,8 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
      * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle
      * states.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSelected:")

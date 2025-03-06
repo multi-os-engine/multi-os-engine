@@ -73,6 +73,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     /**
      * Insets to apply to the bottom separator of the item that this configuration is applied to. Defaults to
      * UIListSeparatorAutomaticInsets.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("bottomSeparatorInsets")
@@ -81,6 +83,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The visibility of the bottom separator for the item that this configuration is applied to.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("bottomSeparatorVisibility")
@@ -110,6 +114,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The color to use for the separators for the item this configuration is applied to.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -152,6 +158,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
      * Initializes a list separator configuration with the appropriate defaults for the passed in list appearance.
      * 
      * @param listAppearance The appearance of the list consuming this separator configuration
+     * 
+     *                       API-Since: 14.5
      */
     @Generated
     @Selector("initWithListAppearance:")
@@ -182,6 +190,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     /**
      * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple
      * selection group.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -204,6 +214,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     /**
      * Insets to apply to the bottom separator of the item that this configuration is applied to. Defaults to
      * UIListSeparatorAutomaticInsets.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setBottomSeparatorInsets:")
@@ -211,6 +223,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The visibility of the bottom separator for the item that this configuration is applied to.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setBottomSeparatorVisibility:")
@@ -218,6 +232,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The color to use for the separators for the item this configuration is applied to.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setColor:")
@@ -226,6 +242,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     /**
      * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple
      * selection group.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setMultipleSelectionColor:")
@@ -234,6 +252,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     /**
      * Insets to apply to the top separator of the item that this configuration is applied to. Defaults to
      * UIListSeparatorAutomaticInsets.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setTopSeparatorInsets:")
@@ -241,6 +261,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The visibility of the top separator for the item that this configuration is applied to.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setTopSeparatorVisibility:")
@@ -276,6 +298,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     /**
      * Insets to apply to the top separator of the item that this configuration is applied to. Defaults to
      * UIListSeparatorAutomaticInsets.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("topSeparatorInsets")
@@ -284,6 +308,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The visibility of the top separator for the item that this configuration is applied to.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("topSeparatorVisibility")

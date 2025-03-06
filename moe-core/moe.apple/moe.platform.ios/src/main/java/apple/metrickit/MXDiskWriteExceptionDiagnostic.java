@@ -73,6 +73,8 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
      * [@property] callStackTree
      * 
      * The application call stack tree associated with the excessive disk writes.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -180,6 +182,8 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
      * Total disk writes caused in the scope of this disk write exception.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

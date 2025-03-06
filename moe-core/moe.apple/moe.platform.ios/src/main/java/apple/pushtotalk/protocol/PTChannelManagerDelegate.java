@@ -29,6 +29,8 @@ public interface PTChannelManagerDelegate {
     /**
      * This method is called when the user begins pressing the Talk button in the system user interface, when a
      * programmatic transmit start request succeeds, or transmitting began due to a hands-free accessory button press.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("channelManager:channelUUID:didBeginTransmittingFromSource:")
@@ -38,17 +40,25 @@ public interface PTChannelManagerDelegate {
     /**
      * This method is called when the user stops pressing the Talk button in the system user interface, when a
      * programmatic transmit stop request succeeds, or transmitting ends due to a hands-free accessory button press.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("channelManager:channelUUID:didEndTransmittingFromSource:")
     void channelManagerChannelUUIDDidEndTransmittingFromSource(@NotNull PTChannelManager channelManager,
             @NotNull NSUUID channelUUID, @NInt long source);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("channelManager:didActivateAudioSession:")
     void channelManagerDidActivateAudioSession(@NotNull PTChannelManager channelManager,
             @NotNull AVAudioSession audioSession);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("channelManager:didDeactivateAudioSession:")
     void channelManagerDidDeactivateAudioSession(@NotNull PTChannelManager channelManager,
@@ -56,6 +66,8 @@ public interface PTChannelManagerDelegate {
 
     /**
      * This method is called when your channel becomes active in the system user interface
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("channelManager:didJoinChannelWithUUID:reason:")
@@ -64,12 +76,17 @@ public interface PTChannelManagerDelegate {
 
     /**
      * This method is called once your channel is ended
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("channelManager:didLeaveChannelWithUUID:reason:")
     void channelManagerDidLeaveChannelWithUUIDReason(@NotNull PTChannelManager channelManager,
             @NotNull NSUUID channelUUID, @NInt long reason);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("channelManager:failedToBeginTransmittingInChannelWithUUID:error:")
@@ -78,6 +95,9 @@ public interface PTChannelManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("channelManager:failedToJoinChannelWithUUID:error:")
@@ -86,6 +106,9 @@ public interface PTChannelManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("channelManager:failedToLeaveChannelWithUUID:error:")
@@ -94,6 +117,9 @@ public interface PTChannelManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @IsOptional
     @Selector("channelManager:failedToStopTransmittingInChannelWithUUID:error:")
@@ -107,6 +133,8 @@ public interface PTChannelManagerDelegate {
      * ephemeral and is only valid while joined to the channel; it is invalidated when the user or a push request leave
      * the channel. When sending pushes, the apns-topic header field must use your app’s bundle ID with .voip-ptt
      * appended to the end
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("channelManager:receivedEphemeralPushToken:")
@@ -115,6 +143,8 @@ public interface PTChannelManagerDelegate {
     /**
      * This method is called for each incoming push. You must instantiate and return nonnil PTPushResult for each
      * incoming push. The system will fulfill the action specified by the PTPushResult on your behalf automatically.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

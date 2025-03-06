@@ -19,6 +19,8 @@ public interface UILetterformAwareAdjusting {
     /**
      * `sizingRule` defaults to `UILetterformAwareSizingRuleTypographic` and determines what rule is used during the
      * calculation of `-sizeThatFits:` and `-intrinsicContentSize`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSizingRule:")
@@ -27,6 +29,8 @@ public interface UILetterformAwareAdjusting {
     /**
      * `sizingRule` defaults to `UILetterformAwareSizingRuleTypographic` and determines what rule is used during the
      * calculation of `-sizeThatFits:` and `-intrinsicContentSize`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sizingRule")

@@ -124,6 +124,8 @@ public class NSListFormatter extends NSFormatter {
     /**
      * Specifies how each object should be formatted. If not set, the object is formatted using its instance method in
      * the following order: -descriptionWithLocale:, -localizedDescription, and -description.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -138,6 +140,8 @@ public class NSListFormatter extends NSFormatter {
     /**
      * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to
      * autoupdatingCurrentLocale on assignment of nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("locale")
@@ -147,6 +151,8 @@ public class NSListFormatter extends NSFormatter {
      * Convenience method to return a string constructed from an array of strings using the list format specific to the
      * current locale. It is recommended to join only disjointed strings that are ready to display in a bullet-point
      * list. Sentences, phrases with punctuations, and appositions may not work well when joined together.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -169,6 +175,8 @@ public class NSListFormatter extends NSFormatter {
     /**
      * Specifies how each object should be formatted. If not set, the object is formatted using its instance method in
      * the following order: -descriptionWithLocale:, -localizedDescription, and -description.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setItemFormatter:")
@@ -177,6 +185,8 @@ public class NSListFormatter extends NSFormatter {
     /**
      * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to
      * autoupdatingCurrentLocale on assignment of nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLocale:")
@@ -189,6 +199,8 @@ public class NSListFormatter extends NSFormatter {
     /**
      * Inherited from NSFormatter. `obj` must be an instance of NSArray. Returns nil if `obj` is nil, not an instance of
      * NSArray, or if the list formatter cannot generate a string representation for all objects in the array.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -203,6 +215,8 @@ public class NSListFormatter extends NSFormatter {
      * 
      * Returns nil if `items` is nil or if the list formatter cannot generate a string representation for all items in
      * the array.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

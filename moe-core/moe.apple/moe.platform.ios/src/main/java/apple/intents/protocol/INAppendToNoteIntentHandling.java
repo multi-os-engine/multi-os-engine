@@ -45,7 +45,12 @@ public interface INAppendToNoteIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INAppendToNoteIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INAppendToNoteIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmAppendToNote:completion:")
@@ -71,7 +76,12 @@ public interface INAppendToNoteIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INAppendToNoteIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INAppendToNoteIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleAppendToNote:completion:")
     void handleAppendToNoteCompletion(@NotNull INAppendToNoteIntent intent,
@@ -84,6 +94,12 @@ public interface INAppendToNoteIntentHandling {
         void call_handleAppendToNoteCompletion(@NotNull INAppendToNoteIntentResponse response);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveContentForAppendToNote:withCompletion:")
@@ -109,7 +125,12 @@ public interface INAppendToNoteIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INAppendToNoteIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTargetNoteForAppendToNote:withCompletion:")

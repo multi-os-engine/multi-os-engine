@@ -179,6 +179,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * this protocol uses errors to indicate authentication failure,
      * then this method will return the error. Otherwise it will
      * return nil.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -192,6 +194,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * this protocol uses responses to indicate authentication failure,
      * then this method will return the response. Otherwise it will
      * return nil.
+     * 
+     * API-Since: 2.0
      * 
      * @return The failure response or nil
      */
@@ -211,6 +215,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * 
      * This initializer may be useful to subclassers that want to proxy
      * one type of authentication challenge to look like another type.
+     * 
+     * API-Since: 2.0
      * 
      * @return A new challenge initialized with the parameters from the passed in challenge
      */
@@ -235,6 +241,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * @param response             The NSURLResponse for the authentication failure, if applicable, else nil
      * @param error                The NSError for the authentication failure, if applicable, else nil
      * @return An authentication challenge initialized with the specified parameters
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithProtectionSpace:proposedCredential:previousFailureCount:failureResponse:error:sender:")
@@ -247,6 +255,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * Get count of previous failed authentication attempts
      * 
      * @return The count of previous failures
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("previousFailureCount")
@@ -264,6 +274,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * credential is not ready to use as-is, but provides a default
      * username the client could use when prompting.
      * 
+     * API-Since: 2.0
+     * 
      * @return The proposed credential
      */
     @Nullable
@@ -275,6 +287,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * Get a description of the protection space that requires authentication
      * 
      * @return The protection space that needs authentication
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -285,6 +299,8 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * Get the sender of this challenge
      * 
      * The sender is the object you should reply to when done processing the challenge.
+     * 
+     * API-Since: 2.0
      * 
      * @return The sender of the challenge
      */

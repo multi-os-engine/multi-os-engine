@@ -124,6 +124,8 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
      *                   device lock. Subsequent requests for the HKWorkoutRoute can be made through HKSampleQuery or
      *                   similar
      *                   queries. workoutRoute cannot be associated to another workout.
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("finishRouteWithWorkout:metadata:completion:")
@@ -159,6 +161,8 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
      * 
      * @param healthStore Specifies the HKHealthStore object to use for building the series.
      * @param device      The optional device represents the HKDevice from which the data is provided.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("initWithHealthStore:device:")
@@ -181,6 +185,8 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
      *                   complete.
      *                   If data was previously saved, then the HKWorkoutRoute may be retrieved by the
      *                   finishRouteWithMetadata: method.
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("insertRouteData:completion:")
@@ -259,6 +265,8 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
      *                   will contain the error encountered during the insertion operation. When an error occurs, the
      *                   builder's
      *                   metadata will remain unchanged.
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("addMetadata:completion:")

@@ -104,6 +104,8 @@ public class AVExternalStorageDeviceDiscoverySession extends NSObject {
      * 
      * An array of AVExternalStorageDevice objects connected to this device. The list is updated when the external
      * storage device detected status changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("externalStorageDevices")
@@ -142,6 +144,8 @@ public class AVExternalStorageDeviceDiscoverySession extends NSObject {
      * Whether the external storage devices are supported by this device.
      * 
      * A value of YES indicates that external storage devices are supported while NO indicates it is not.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isSupported")
@@ -176,6 +180,8 @@ public class AVExternalStorageDeviceDiscoverySession extends NSObject {
      * 
      *            There is only one external storage device discovery session for each host device which can be accessed
      *            using this method. Will return nil if the device doesn't support external storage devices.
+     * 
+     *            API-Since: 17.0
      */
     @Generated
     @Selector("sharedSession")

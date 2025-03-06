@@ -53,6 +53,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The sixteen byte Thread network pre-shared key for the Commissioner.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -71,6 +73,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
      * ``THCredentials/networkKey``, ``THCredentials/networkName``,
      * ``THCredentials/panID``, and ``THCredentials/PSKC`` when you call
      * ``THClient/storeCredentialsForBorderAgent:activeOperationalDataSet:completion:``.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -96,6 +100,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
      * 
      * This property’s value is the MAC Extended Address, a random identifier that
      * the active Thread network border router generates.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -115,6 +121,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The Thread network radio channel.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("channel")
@@ -132,6 +140,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The date and time that the framework stored the credential in the database.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -152,6 +162,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The Thread network extended PAN identifier.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -195,6 +207,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The date and time that the framework updated the credential in the database.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -203,6 +217,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The sixteen byte Thread network key.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -211,6 +227,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The Thread network name.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -224,6 +242,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The two byte Thead network PAN identifier.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -240,6 +260,8 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     /**
      * The Thread network radio channel.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setChannel:")

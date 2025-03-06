@@ -147,6 +147,8 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
      * 
      * load a reverb preset
      * Default: AVAudioUnitReverbPresetMediumHall
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("loadFactoryPreset:")
@@ -175,6 +177,8 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
      * Blend of the wet and dry signals
      * Range: 0 (all dry) -> 100 (all wet)
      * Unit: Percent
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setWetDryMix:")
@@ -195,6 +199,8 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
      * Blend of the wet and dry signals
      * Range: 0 (all dry) -> 100 (all wet)
      * Unit: Percent
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("wetDryMix")

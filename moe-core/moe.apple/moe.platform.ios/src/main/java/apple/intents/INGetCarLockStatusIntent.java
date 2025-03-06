@@ -72,6 +72,9 @@ public class INGetCarLockStatusIntent extends INIntent {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("carName")
@@ -104,6 +107,9 @@ public class INGetCarLockStatusIntent extends INIntent {
     @Selector("init")
     public native INGetCarLockStatusIntent init();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("initWithCarName:")
     public native INGetCarLockStatusIntent initWithCarName(@Nullable INSpeakableString carName);

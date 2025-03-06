@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
  * [@protocol] NFCNDEFReaderSessionDelegate
  * 
  * NDEF reader session callbacks. Presence of the -readerSession:didDetectTags: optional method will change the session
- * behaviour
+ * behavior
  * into a read-write session where @link NFCNDEFTag @link/ objects are returned.
  * 
  * [@note] A read-write session does not trigger the -readerSession:didDetectNDEFs: method.

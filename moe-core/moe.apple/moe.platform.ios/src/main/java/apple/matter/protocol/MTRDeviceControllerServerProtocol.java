@@ -15,6 +15,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.NInt;
 
 /**
  * Protocol that remote object must support over XPC
@@ -190,5 +191,27 @@ public interface MTRDeviceControllerServerProtocol {
         @Generated
         void call_writeAttributeWithControllerNodeIdEndpointIdClusterIdAttributeIdValueTimedWriteTimeoutCompletion(
                 @Mapped(ObjCObjectMapper.class) @Nullable Object values, @Nullable NSError error);
+    }
+
+    /**
+     * Requests downloading some logs
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @IsOptional
+    @Selector("downloadLogWithController:nodeId:type:timeout:completion:")
+    default void downloadLogWithControllerNodeIdTypeTimeoutCompletion(
+            @Mapped(ObjCObjectMapper.class) @Nullable Object controller, @NotNull NSNumber nodeId, @NInt long type,
+            double timeout,
+            @ObjCBlock(name = "call_downloadLogWithControllerNodeIdTypeTimeoutCompletion") @NotNull Block_downloadLogWithControllerNodeIdTypeTimeoutCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_downloadLogWithControllerNodeIdTypeTimeoutCompletion {
+        @Generated
+        void call_downloadLogWithControllerNodeIdTypeTimeoutCompletion(@Nullable String url, @Nullable NSError error);
     }
 }

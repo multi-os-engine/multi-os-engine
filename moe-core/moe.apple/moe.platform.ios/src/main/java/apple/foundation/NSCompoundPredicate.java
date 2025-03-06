@@ -74,6 +74,8 @@ public class NSCompoundPredicate extends NSPredicate {
 
     /**
      * Convenience Methods **
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -146,11 +148,17 @@ public class NSCompoundPredicate extends NSPredicate {
     @Selector("new")
     public static native NSCompoundPredicate new_objc();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("notPredicateWithSubpredicate:")
     public static native NSCompoundPredicate notPredicateWithSubpredicate(@NotNull NSPredicate predicate);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("orPredicateWithSubpredicates:")
@@ -210,6 +218,9 @@ public class NSCompoundPredicate extends NSPredicate {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("compoundPredicateType")
     @NUInt
@@ -219,15 +230,24 @@ public class NSCompoundPredicate extends NSPredicate {
     @Selector("init")
     public native NSCompoundPredicate init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native NSCompoundPredicate initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithType:subpredicates:")
     public native NSCompoundPredicate initWithTypeSubpredicates(@NUInt long type,
             @NotNull NSArray<? extends NSPredicate> subpredicates);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("subpredicates")

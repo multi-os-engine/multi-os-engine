@@ -165,6 +165,8 @@ public class NSPropertyMapping extends NSObject {
 
     /**
      * Returns/sets the name of the property in the destination entity for the mapping.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -173,6 +175,8 @@ public class NSPropertyMapping extends NSObject {
 
     /**
      * Returns/sets the name of the property in the destination entity for the mapping.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setName:")
@@ -180,6 +184,8 @@ public class NSPropertyMapping extends NSObject {
 
     /**
      * Returns/sets the user info for the property mapping.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -188,6 +194,8 @@ public class NSPropertyMapping extends NSObject {
     /**
      * Returns/sets the value expression for the property mapping. The expression is used to create the value for the
      * destination property.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setValueExpression:")
@@ -195,6 +203,8 @@ public class NSPropertyMapping extends NSObject {
 
     /**
      * Returns/sets the user info for the property mapping.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -204,6 +214,8 @@ public class NSPropertyMapping extends NSObject {
     /**
      * Returns/sets the value expression for the property mapping. The expression is used to create the value for the
      * destination property.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated

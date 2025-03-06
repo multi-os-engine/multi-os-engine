@@ -96,6 +96,8 @@ public class QLFileThumbnailRequest extends NSObject {
 
     /**
      * The url of the file for which a thumbnail is being requested.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -136,6 +138,8 @@ public class QLFileThumbnailRequest extends NSObject {
     /**
      * The maximum size of the generated thumbnail that will be accepted. This is also the preferred size, ideally
      * either the width or the height will match the maximumSize's width or height respectively.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumSize")
@@ -144,6 +148,8 @@ public class QLFileThumbnailRequest extends NSObject {
 
     /**
      * The minimum size of the generated thumbnail that will be accepted.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumSize")
@@ -165,6 +171,8 @@ public class QLFileThumbnailRequest extends NSObject {
 
     /**
      * The scale of the requested thumbnail.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("scale")

@@ -75,11 +75,17 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bottomLeft")
     @ByValue
     public native CGPoint bottomLeft();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bottomRight")
     @ByValue
@@ -184,11 +190,17 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("topLeft")
     @ByValue
     public native CGPoint topLeft();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("topRight")
     @ByValue

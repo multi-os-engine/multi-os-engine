@@ -97,6 +97,8 @@ public class MPSCNNDepthWiseConvolutionDescriptor extends MPSCNNConvolutionDescr
      * Ratio of outputFeactureChannel to inputFeatureChannels for depthwise convolution i.e. how many output feature
      * channels are
      * produced by each input channel.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("channelMultiplier")

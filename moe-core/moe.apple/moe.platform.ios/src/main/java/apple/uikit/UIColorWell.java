@@ -327,6 +327,8 @@ public class UIColorWell extends UIControl {
     /**
      * Sets the selected color on the color picker and is updated when the user changes the selection.
      * Does support KVO and does send `UIControlEventValueChanged`.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -396,6 +398,8 @@ public class UIColorWell extends UIControl {
     /**
      * Sets the selected color on the color picker and is updated when the user changes the selection.
      * Does support KVO and does send `UIControlEventValueChanged`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSelectedColor:")
@@ -405,6 +409,8 @@ public class UIColorWell extends UIControl {
      * Controls whether alpha is supported or not.
      * 
      * If set to `NO` users are only able to pick fully opaque colors.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSupportsAlpha:")
@@ -414,6 +420,8 @@ public class UIColorWell extends UIControl {
      * Title for the color picker.
      * 
      * Should explain what kind of color to pick. Example values are "Stroke Color" or "Fill Color".
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTitle:")
@@ -431,6 +439,8 @@ public class UIColorWell extends UIControl {
      * Controls whether alpha is supported or not.
      * 
      * If set to `NO` users are only able to pick fully opaque colors.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("supportsAlpha")
@@ -440,6 +450,8 @@ public class UIColorWell extends UIControl {
      * Title for the color picker.
      * 
      * Should explain what kind of color to pick. Example values are "Stroke Color" or "Fill Color".
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

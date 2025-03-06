@@ -78,11 +78,16 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     /**
      * convenience: appends into last section
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("appendItemsWithIdentifiers:")
     public native void appendItemsWithIdentifiers(@NotNull NSArray<_ItemIdentifierType> identifiers);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("appendItemsWithIdentifiers:intoSectionWithIdentifier:")
     public native void appendItemsWithIdentifiersIntoSectionWithIdentifier(
@@ -91,6 +96,8 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     /**
      * section operations
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("appendSectionsWithIdentifiers:")
@@ -132,14 +139,23 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("deleteAllItems")
     public native void deleteAllItems();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("deleteItemsWithIdentifiers:")
     public native void deleteItemsWithIdentifiers(@NotNull NSArray<_ItemIdentifierType> identifiers);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("deleteSectionsWithIdentifiers:")
     public native void deleteSectionsWithIdentifiers(@NotNull NSArray<_SectionIdentifierType> sectionIdentifiers);
@@ -155,6 +171,8 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     /**
      * If item identifier is not present returns NSNotFound
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("indexOfItemIdentifier:")
@@ -164,6 +182,8 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     /**
      * If section identifier is not present returns NSNotFound
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("indexOfSectionIdentifier:")
@@ -175,24 +195,36 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("init")
     public native NSDiffableDataSourceSnapshot<?, ?> init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("insertItemsWithIdentifiers:afterItemWithIdentifier:")
     public native void insertItemsWithIdentifiersAfterItemWithIdentifier(
             @NotNull NSArray<_ItemIdentifierType> identifiers,
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("insertItemsWithIdentifiers:beforeItemWithIdentifier:")
     public native void insertItemsWithIdentifiersBeforeItemWithIdentifier(
             @NotNull NSArray<_ItemIdentifierType> identifiers,
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("insertSectionsWithIdentifiers:afterSectionWithIdentifier:")
     public native void insertSectionsWithIdentifiersAfterSectionWithIdentifier(
             @NotNull NSArray<_SectionIdentifierType> sectionIdentifiers,
             @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("insertSectionsWithIdentifiers:beforeSectionWithIdentifier:")
     public native void insertSectionsWithIdentifiersBeforeSectionWithIdentifier(
@@ -216,11 +248,17 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("itemIdentifiers")
     public native NSArray<_ItemIdentifierType> itemIdentifiers();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("itemIdentifiersInSectionWithIdentifier:")
@@ -232,24 +270,36 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("moveItemWithIdentifier:afterItemWithIdentifier:")
     public native void moveItemWithIdentifierAfterItemWithIdentifier(
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType fromIdentifier,
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType toIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("moveItemWithIdentifier:beforeItemWithIdentifier:")
     public native void moveItemWithIdentifierBeforeItemWithIdentifier(
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType fromIdentifier,
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType toIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("moveSectionWithIdentifier:afterSectionWithIdentifier:")
     public native void moveSectionWithIdentifierAfterSectionWithIdentifier(
             @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType fromSectionIdentifier,
             @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("moveSectionWithIdentifier:beforeSectionWithIdentifier:")
     public native void moveSectionWithIdentifierBeforeSectionWithIdentifier(
@@ -263,27 +313,41 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     /**
      * structure
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("numberOfItems")
     @NInt
     public native long numberOfItems();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("numberOfItemsInSection:")
     @NInt
     public native long numberOfItemsInSection(
             @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("numberOfSections")
     @NInt
     public native long numberOfSections();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reloadItemsWithIdentifiers:")
     public native void reloadItemsWithIdentifiers(@NotNull NSArray<_ItemIdentifierType> identifiers);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reloadSectionsWithIdentifiers:")
     public native void reloadSectionsWithIdentifiers(@NotNull NSArray<_SectionIdentifierType> sectionIdentifiers);
@@ -296,6 +360,9 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("sectionIdentifierForSectionContainingItemIdentifier:")
@@ -303,6 +370,9 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     public native _SectionIdentifierType sectionIdentifierForSectionContainingItemIdentifier(
             @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("sectionIdentifiers")

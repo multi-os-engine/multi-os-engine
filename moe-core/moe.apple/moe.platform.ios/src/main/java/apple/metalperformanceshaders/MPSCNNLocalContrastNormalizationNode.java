@@ -116,10 +116,16 @@ public class MPSCNNLocalContrastNormalizationNode extends MPSCNNNormalizationNod
     @Selector("init")
     public native MPSCNNLocalContrastNormalizationNode init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNLocalContrastNormalizationNode initWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:kernelSize:")
     public native MPSCNNLocalContrastNormalizationNode initWithSourceKernelSize(@NotNull MPSNNImageNode sourceNode,
@@ -142,11 +148,17 @@ public class MPSCNNLocalContrastNormalizationNode extends MPSCNNNormalizationNod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("kernelHeight")
     @NUInt
     public native long kernelHeight();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("kernelWidth")
     @NUInt
@@ -166,19 +178,31 @@ public class MPSCNNLocalContrastNormalizationNode extends MPSCNNNormalizationNod
     @Selector("nodeWithSource:")
     public static native MPSCNNLocalContrastNormalizationNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:kernelSize:")
     public static native MPSCNNLocalContrastNormalizationNode nodeWithSourceKernelSize(
             @NotNull MPSNNImageNode sourceNode, @NUInt long kernelSize);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("p0")
     public native float p0();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("pm")
     public native float pm();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("ps")
     public native float ps();
@@ -191,22 +215,37 @@ public class MPSCNNLocalContrastNormalizationNode extends MPSCNNNormalizationNod
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setKernelHeight:")
     public native void setKernelHeight(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setKernelWidth:")
     public native void setKernelWidth(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setP0:")
     public native void setP0(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPm:")
     public native void setPm(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPs:")
     public native void setPs(float value);

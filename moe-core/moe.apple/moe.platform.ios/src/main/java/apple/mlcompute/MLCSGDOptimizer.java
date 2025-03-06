@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCSGDOptimizer specifies a stochastic gradient descent optimizer.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -141,7 +140,11 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
      * The momentum factor. A hyper-parameter.
      * 
      * The default is 0.0.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("momentumScale")
     public native float momentumScale();
@@ -155,7 +158,11 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
      * Create an MLCSGDOptimizer object with defaults
      * 
      * @return A new MLCSGDOptimizer object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("optimizerWithDescriptor:")
     public static native MLCSGDOptimizer optimizerWithDescriptor(@NotNull MLCOptimizerDescriptor optimizerDescriptor);
@@ -167,7 +174,11 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
      * @param momentumScale        The momentum scale
      * @param usesNesterovMomentum A boolean to enable / disable nesterov momentum
      * @return A new MLCSGDOptimizer object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("optimizerWithDescriptor:momentumScale:usesNesterovMomentum:")
     public static native MLCSGDOptimizer optimizerWithDescriptorMomentumScaleUsesNesterovMomentum(
@@ -195,7 +206,11 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
      * A boolean that specifies whether to apply nesterov momentum or not.
      * 
      * The default is false.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("usesNesterovMomentum")
     public native boolean usesNesterovMomentum();

@@ -18,6 +18,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CAMetalDisplayLinkDelegate")
 public interface CAMetalDisplayLinkDelegate {
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("metalDisplayLink:needsUpdate:")
     void metalDisplayLinkNeedsUpdate(@NotNull CAMetalDisplayLink link, @NotNull CAMetalDisplayLinkUpdate update);

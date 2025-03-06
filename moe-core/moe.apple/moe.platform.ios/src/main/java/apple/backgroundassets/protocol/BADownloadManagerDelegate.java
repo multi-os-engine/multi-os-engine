@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface BADownloadManagerDelegate {
     /**
      * A download has tried to start but gotten a challenge quest.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @IsOptional
@@ -47,6 +49,8 @@ public interface BADownloadManagerDelegate {
 
     /**
      * A download has made progress in bytes / total so far / total expected.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @IsOptional
@@ -58,6 +62,8 @@ public interface BADownloadManagerDelegate {
 
     /**
      * A download has failed with a specific error.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @IsOptional
@@ -75,6 +81,8 @@ public interface BADownloadManagerDelegate {
      * modifying
      * the file, as this may remove the system's ability to delete the file.
      * 
+     * API-Since: 16.1
+     * 
      * @param fileURL A location to the file that has been downloaded.
      */
     @Generated
@@ -86,6 +94,8 @@ public interface BADownloadManagerDelegate {
 
     /**
      * A download has started.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @IsOptional
@@ -96,6 +106,8 @@ public interface BADownloadManagerDelegate {
 
     /**
      * A download has paused.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @IsOptional

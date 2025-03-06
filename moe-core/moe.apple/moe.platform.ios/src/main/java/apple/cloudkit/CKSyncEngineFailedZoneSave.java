@@ -89,6 +89,9 @@ public class CKSyncEngineFailedZoneSave extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("error")
     @NotNull
@@ -130,6 +133,9 @@ public class CKSyncEngineFailedZoneSave extends NSObject {
     @Selector("new")
     public static native CKSyncEngineFailedZoneSave new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("recordZone")
     @NotNull

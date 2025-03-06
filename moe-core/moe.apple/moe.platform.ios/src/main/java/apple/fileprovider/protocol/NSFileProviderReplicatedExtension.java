@@ -52,10 +52,18 @@ import org.jetbrains.annotations.Nullable;
  * - downloads. The system has a per-domain limit on the number of concurrent calls to fetchContents and similar calls.
  * That limit is configurable by setting the NSExtensionFileProviderDownloadPipelineDepth key to an integer
  * value (between 1 and 128) in the Info.plist of the extension.
+ * The configuration key is honored starting in macOS 11.0 and iOS 16.0.
  * - uploads. The system has a per-domain limit on the number of concurrent calls to createItemBasedOnTemplate and
- * modifyItem when the call includes new content to be uploaded. That limit is configurable by setting the
- * NSExtensionFileProviderUploadPipelineDepth key to an integer value (between 1 and 128) in the Info.plist
- * of the extension.
+ * modifyItem when the call includes new content to be uploaded.
+ * That limit is configurable by setting the NSExtensionFileProviderUploadPipelineDepth key to an integer value
+ * (between 1 and 128) in the Info.plist of the extension.
+ * The configuration key is honored starting in macOS 12.0 and iOS 16.0.
+ * - metadata-only uploads. The system has a per-domain limit on the number of concurrent calls to
+ * createItemBasedOnTemplate
+ * and modifyItem when the call does not include new content to be uploaded.
+ * That limit is configurable by setting the NSExtensionFileProviderMetadataOnlyUploadPipelineDepth key to an
+ * integer value (between 1 and 128) in the Info.plist of the extension.
+ * The configuration key is honored starting in macOS 15.0 and iOS 18.0.
  * 
  * API-Since: 16.0
  */
@@ -195,12 +203,12 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * collision, by renaming one of the colliding items. When the collision is resolved,
      * the system will call createItemBasedOnTemplate again.
      * 
-     * The extension can also report the NSFileProviderErrorNotAuthenticated,
-     * NSFileProviderErrorServerUnreachable, NSFileProviderErrorInsufficientQuota
-     * or NSFileProviderErrorCannotSynchronize in case the modification cannot be applied
-     * because of the current state of the system / domain. In that case, the system will
-     * present an appropriate error message and back off until the next time it is signalled.
-     * The provider can signal the error resolution by calling signalErrorResolved:completionHandler:.
+     * The extension can also report NSFileProviderErrorNotAuthenticated,
+     * NSFileProviderErrorCannotSynchronize, or NSFileProviderErrorExcludedFromSync,
+     * in case the modification cannot be applied because of the current state of the
+     * system / domain. In that case, the system will present an appropriate error message
+     * and back off until the next time it is signalled. The provider can signal the error
+     * resolution by calling signalErrorResolved:completionHandler:.
      * 
      * Any other error, including crashes of the extension process, will be considered to be transient
      * and will cause the creation to be retried.
@@ -225,6 +233,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * call if it stops making progress or if upload takes an unexpectedly long time. In that case, the system
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -324,6 +334,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * call if it stops making progress or if the deletion takes an unexpectedly long time. In that case,the system
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -437,6 +449,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * call if it stops making progress or if download takes an unexpectedly long time. In that case, the system
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -481,6 +495,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * Execution time:
      * ---------------
      * This call is not expected to take more than a few seconds to complete.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -499,6 +515,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
 
     /**
      * Create a new instance of the replicated provider for the specified domain.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -513,6 +531,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * is created by the system. This method is called before an instance is discarded and should
      * make sure that all references to the instance are released so that the instance can be
      * deallocated.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("invalidate")
@@ -559,6 +579,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * NSFileProviderErrorServerUnreachable). The system will call `cancel` on the progress if the
      * operation takes too much time. The extension is then expected to quickly call the completion
      * handler.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -630,6 +652,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * Execution time:
      * ---------------
      * This call is not expected to take more than a few seconds to complete.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -718,8 +742,9 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * fetchContents to retrieve the new contents and replace them on disk.
      * 
      * The `baseVersion` might contain one or both component set to
-     * `NSFileProviderItemVersionComponentZero` in case there has never been a version for
-     * which the item on disk and the item in the provider were known to be in sync.
+     * `+[NSFileProviderItemVersion beforeFirstSyncComponent]`, in case
+     * there has never been a version for which the item on disk and the item in the provider
+     * were known to be in sync.
      * 
      * Structural consistency and Cycle handling:
      * ------------------------------------------
@@ -780,12 +805,12 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * the colliding items. When the collision is resolved, the system will call
      * modifyItem again.
      * 
-     * The extension can also report the NSFileProviderErrorNotAuthenticated,
-     * NSFileProviderErrorServerUnreachable, NSFileProviderErrorInsufficientQuota
-     * or NSFileProviderErrorCannotSynchronize in case the modification cannot be applied
-     * because of the current state of the system / domain. In that case, the system will
-     * present an appropriate error message and back off until the next time it is signalled.
-     * The provider can signal the error resolution by calling signalErrorResolved:completionHandler:.
+     * The extension can also report NSFileProviderErrorNotAuthenticated,
+     * NSFileProviderErrorCannotSynchronize, or NSFileProviderErrorExcludedFromSync,
+     * in case the modification cannot be applied because of the current state of the
+     * system / domain. In that case, the system will present an appropriate error message
+     * and back off until the next time it is signalled. The provider can signal the error
+     * resolution by calling signalErrorResolved:completionHandler:.
      * 
      * Any other error, including crashes of the extension process, will be considered to be transient
      * and will cause the modification to be retried.
@@ -810,6 +835,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * call if it stops making progress or if upload takes an unexpectedly long time. In that case, the system
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

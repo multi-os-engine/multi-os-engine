@@ -181,6 +181,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * Utility method with implementation provided by NSAtomicStore
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("addCacheNodes:")
@@ -188,6 +190,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * Utility method with implementation provided by NSAtomicStore
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -196,6 +200,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * Utility method with implementation provided by NSAtomicStore
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -208,6 +214,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * API method that may be overriden by subclasses for custom initialization
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
@@ -217,6 +225,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * API method that must be overriden by subclasses
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("load:")
@@ -224,6 +234,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * API method that must be overriden by subclasses
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -232,6 +244,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * API method that must be overriden by subclasses
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -241,6 +255,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * Utility method with implementation provided by NSAtomicStore
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -250,6 +266,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * Utility method with implementation provided by NSAtomicStore
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -259,6 +277,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * API method that must be overriden by subclasses
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("save:")
@@ -266,6 +286,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * API method that must be overriden by subclasses
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("updateCacheNode:fromManagedObject:")
@@ -274,6 +296,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     /**
      * Called before cache nodes are removed
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willRemoveCacheNodes:")

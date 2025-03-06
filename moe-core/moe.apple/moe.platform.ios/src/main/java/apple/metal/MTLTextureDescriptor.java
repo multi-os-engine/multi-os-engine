@@ -160,6 +160,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * texture2DDescriptorWithPixelFormat:width:height:mipmapped:
      * 
      * Create a TextureDescriptor for a common 2D texture.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -171,6 +173,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * textureCubeDescriptorWithPixelFormat:size:mipmapped:
      * 
      * Create a TextureDescriptor for a common Cube texture.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -190,6 +194,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * 
      * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something
      * greater than 1 and less than 2048.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("arrayLength")
@@ -221,6 +227,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * The depth of the texture to create. The default value is 1.
      * 
      * depth When allocating any texture types other than 3D, depth must be 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("depth")
@@ -233,6 +241,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * The height of the texture to create. The default value is 1.
      * 
      * height If allocating a 1D texture, height must be 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("height")
@@ -249,6 +259,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * The number of mipmap levels to allocate. The default value is 1.
      * 
      * When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("mipmapLevelCount")
@@ -260,6 +272,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * 
      * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the
      * caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pixelFormat")
@@ -272,6 +286,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * Options to control memory allocation parameters, etc.
      * 
      * Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("resourceOptions")
@@ -285,6 +301,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * 
      * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next
      * supported value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sampleCount")
@@ -298,6 +316,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * 
      * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something
      * greater than 1 and less than 2048.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setArrayLength:")
@@ -320,6 +340,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * The depth of the texture to create. The default value is 1.
      * 
      * depth When allocating any texture types other than 3D, depth must be 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDepth:")
@@ -331,6 +353,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * The height of the texture to create. The default value is 1.
      * 
      * height If allocating a 1D texture, height must be 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHeight:")
@@ -342,6 +366,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * The number of mipmap levels to allocate. The default value is 1.
      * 
      * When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMipmapLevelCount:")
@@ -352,6 +378,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * 
      * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the
      * caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPixelFormat:")
@@ -363,6 +391,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * Options to control memory allocation parameters, etc.
      * 
      * Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setResourceOptions:")
@@ -375,6 +405,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * 
      * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next
      * supported value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSampleCount:")
@@ -395,6 +427,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * [@property] type
      * 
      * The overall type of the texture to be created. The default value is MTLTextureType2D.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTextureType:")
@@ -415,6 +449,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * [@property] width
      * 
      * The width of the texture to create. The default value is 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setWidth:")
@@ -436,6 +472,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * [@property] type
      * 
      * The overall type of the texture to be created. The default value is MTLTextureType2D.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("textureType")
@@ -458,6 +496,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * [@property] width
      * 
      * The width of the texture to create. The default value is 1.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("width")

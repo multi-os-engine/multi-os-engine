@@ -75,6 +75,8 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
      * [@property] callStackTree
      * 
      * The application call stack tree associated with the excessive CPU consumption.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -182,6 +184,8 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
      * Total CPU time consumed in the scope of this CPU exception.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -194,6 +198,8 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
      * Total time that the application was sampled for during the CPU exception.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

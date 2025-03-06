@@ -162,6 +162,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * BOOL. Whether the containing window should be resizable. nil if resizability was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -170,6 +172,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * CGFloat. The height coordinate of the containing window. nil if the height was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -182,6 +186,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * BOOL. Whether the menu bar should be visible. nil if menu bar visibility was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -190,6 +196,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * BOOL. Whether the status bar should be visible. nil if status bar visibility was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -198,6 +206,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * BOOL. Whether toolbars should be visible. nil if toolbar visibility was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -206,6 +216,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * CGFloat. The width coordinate of the containing window. nil if the width was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -214,6 +226,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * CGFloat. The x coordinate of the containing window. nil if the x coordinate was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -222,6 +236,8 @@ public class WKWindowFeatures extends NSObject {
 
     /**
      * CGFloat. The y coordinate of the containing window. nil if the y coordinate was not specified.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

@@ -167,6 +167,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * Create a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
      * 
      * @param texture the texture to reference for size and content
+     * 
+     *                API-Since: 10.0
      */
     @Generated
     @Selector("tileDefinitionWithTexture:")
@@ -178,6 +180,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * @param texture       the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
      * @param size          the size of the tile in points
+     * 
+     *                      API-Since: 10.0
      */
     @Generated
     @Selector("tileDefinitionWithTexture:normalTexture:size:")
@@ -189,6 +193,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * 
      * @param texture the texture to reference for content
      * @param size    the size of the tile in points
+     * 
+     *                API-Since: 10.0
      */
     @Generated
     @Selector("tileDefinitionWithTexture:size:")
@@ -204,6 +210,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * @param size           the size of the tile in points
      * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before
      *                       switching to the next texture in the sequence
+     * 
+     *                       API-Since: 10.0
      */
     @Generated
     @Selector("tileDefinitionWithTextures:normalTextures:size:timePerFrame:")
@@ -219,6 +227,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * @param size         the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before
      *                     switching to the next texture in the sequence
+     * 
+     *                     API-Since: 10.0
      */
     @Generated
     @Selector("tileDefinitionWithTextures:size:timePerFrame:")
@@ -244,6 +254,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * When set to YES, the tile definition's images will be flipped horizontally (i.e., the left of the image becomes
      * the right). Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("flipHorizontally")
@@ -252,6 +264,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * When set to YES, the tile definition's images will be flipped vertically (i.e., the top of the image becomes the
      * bottom). Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("flipVertically")
@@ -269,6 +283,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * Initilize a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
      * 
      * @param texture the texture to reference for size and content
+     * 
+     *                API-Since: 10.0
      */
     @Generated
     @Selector("initWithTexture:")
@@ -280,6 +296,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * @param texture       the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
      * @param size          the size of the tile in points
+     * 
+     *                      API-Since: 10.0
      */
     @Generated
     @Selector("initWithTexture:normalTexture:size:")
@@ -291,6 +309,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * 
      * @param texture the texture to reference for content
      * @param size    the size of the tile in points
+     * 
+     *                API-Since: 10.0
      */
     @Generated
     @Selector("initWithTexture:size:")
@@ -305,6 +325,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * @param size           the size of the tile in points
      * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before
      *                       switching to the next texture in the sequence
+     * 
+     *                       API-Since: 10.0
      */
     @Generated
     @Selector("initWithTextures:normalTextures:size:timePerFrame:")
@@ -320,6 +342,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * @param size         the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before
      *                     switching to the next texture in the sequence
+     * 
+     *                     API-Since: 10.0
      */
     @Generated
     @Selector("initWithTextures:size:timePerFrame:")
@@ -328,6 +352,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Client-assignable name for the tile definition. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -337,6 +363,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * The textures to use for generating normals that lights use to light this tile. These will only be used if the
      * tile is lit by at least one light. Each normal texture corresponds to a texture in the textures property.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -349,6 +377,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * assigned to the rule make it more likely for this definition to be selected; lower values make it less likely.
      * Defaults to 1. When set to 0, the definition will never be chosen as long as there is at least one other
      * definition with a placementWeight above 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("placementWeight")
@@ -358,6 +388,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * The rotation of the tile definition's images can be set in 90 degree increments. Defaults to
      * SKTileDefinitionRotation0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("rotation")
@@ -367,6 +399,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * When set to YES, the tile definition's images will be flipped horizontally (i.e., the left of the image becomes
      * the right). Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFlipHorizontally:")
@@ -375,6 +409,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * When set to YES, the tile definition's images will be flipped vertically (i.e., the top of the image becomes the
      * bottom). Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFlipVertically:")
@@ -382,6 +418,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Client-assignable name for the tile definition. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setName:")
@@ -390,6 +428,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * The textures to use for generating normals that lights use to light this tile. These will only be used if the
      * tile is lit by at least one light. Each normal texture corresponds to a texture in the textures property.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setNormalTextures:")
@@ -401,6 +441,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * assigned to the rule make it more likely for this definition to be selected; lower values make it less likely.
      * Defaults to 1. When set to 0, the definition will never be chosen as long as there is at least one other
      * definition with a placementWeight above 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPlacementWeight:")
@@ -409,6 +451,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * The rotation of the tile definition's images can be set in 90 degree increments. Defaults to
      * SKTileDefinitionRotation0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRotation:")
@@ -416,6 +460,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * The size of the tile in points.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSize:")
@@ -425,6 +471,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * The textures used to draw the tile. Non-animated tiles use only one texture. When more than one texture is
      * present, the tile will swap through them in sequence, showing each for the duration specified in the timePerFrame
      * property. After displaying the last texture in the array, the sequence is repeated from the first texture.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTextures:")
@@ -433,6 +481,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * The duration, in seconds, that each texture in the textures array is displayed before switching to the next
      * texture in the sequence. Only used when there is more than one texture available.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTimePerFrame:")
@@ -440,6 +490,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * An optional dictionary that can be used to store your own data for each tile definition. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUserData:")
@@ -447,6 +499,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * The size of the tile in points.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("size")
@@ -457,6 +511,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * The textures used to draw the tile. Non-animated tiles use only one texture. When more than one texture is
      * present, the tile will swap through them in sequence, showing each for the duration specified in the timePerFrame
      * property. After displaying the last texture in the array, the sequence is repeated from the first texture.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -466,6 +522,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * The duration, in seconds, that each texture in the textures array is displayed before switching to the next
      * texture in the sequence. Only used when there is more than one texture available.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("timePerFrame")
@@ -474,6 +532,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * An optional dictionary that can be used to store your own data for each tile definition. Defaults to nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

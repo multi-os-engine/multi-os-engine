@@ -93,6 +93,12 @@ public class INCreateTaskListIntent extends INIntent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("groupName")
@@ -111,6 +117,12 @@ public class INCreateTaskListIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INCreateTaskListIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTitle:taskTitles:groupName:")
     public native INCreateTaskListIntent initWithTitleTaskTitlesGroupName(@Nullable INSpeakableString title,
@@ -169,11 +181,23 @@ public class INCreateTaskListIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("taskTitles")
     public native NSArray<? extends INSpeakableString> taskTitles();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("title")

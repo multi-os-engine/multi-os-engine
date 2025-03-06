@@ -11,9 +11,9 @@ public final class BNNSInterpolationMethod {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSInterpolationMethodNearest = 0x00000000;
+    @Generated public static final int Nearest = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSInterpolationMethodLinear = 0x00000001;
+    @Generated public static final int Linear = 0x00000001;
 }

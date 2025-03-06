@@ -60,6 +60,8 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
 
     /**
      * filter parameter a
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("a")
@@ -85,6 +87,8 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
 
     /**
      * filter parameter b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("b")
@@ -178,6 +182,8 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
 
     /**
      * filter parameter c
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("c")

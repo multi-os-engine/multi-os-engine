@@ -24,6 +24,8 @@ import org.jetbrains.annotations.NotNull;
 public interface GCSwitchElement extends GCPhysicalInputElement {
     /**
      * Get the input containing the absolute position of the switch.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

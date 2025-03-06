@@ -106,6 +106,9 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -138,6 +141,8 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
      * @param shortcut The shortcut is what will be run when the resulting voice shortcut is invoked. It also provides
      *                 the suggested invocation phrase, via the @c suggestedInvocationPhrase property on the intent or
      *                 user activity.
+     * 
+     *                 API-Since: 12.0
      */
     @Generated
     @Selector("initWithShortcut:")
@@ -178,11 +183,17 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutViewControllerDelegate value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     public void setDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutViewControllerDelegate value) {

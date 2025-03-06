@@ -103,6 +103,9 @@ public class INUnsendMessagesIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INUnsendMessagesIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithMessageIdentifiers:")
     public native INUnsendMessagesIntent initWithMessageIdentifiers(@Nullable NSArray<String> messageIdentifiers);
@@ -129,6 +132,9 @@ public class INUnsendMessagesIntent extends INIntent {
     @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("messageIdentifiers")
     @Nullable

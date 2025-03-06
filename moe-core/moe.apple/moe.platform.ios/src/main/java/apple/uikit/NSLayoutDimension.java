@@ -162,6 +162,8 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
 
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor * multiplier.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -171,6 +173,8 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
 
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor * multiplier + constant.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -180,41 +184,61 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
 
     /**
      * These methods return an inactive constraint of the form thisVariable = constant.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("constraintEqualToConstant:")
     public native NSLayoutConstraint constraintEqualToConstant(@NFloat double c);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:multiplier:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplier(@NotNull NSLayoutDimension anchor,
             @NFloat double m);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:multiplier:constant:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplierConstant(
             @NotNull NSLayoutDimension anchor, @NFloat double m, @NFloat double c);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToConstant:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToConstant(@NFloat double c);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:multiplier:")
     public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplier(@NotNull NSLayoutDimension anchor,
             @NFloat double m);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:multiplier:constant:")
     public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplierConstant(
             @NotNull NSLayoutDimension anchor, @NFloat double m, @NFloat double c);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToConstant:")

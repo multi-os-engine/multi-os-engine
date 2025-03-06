@@ -107,6 +107,8 @@ public class MPSCNNNeuronReLUNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:")
@@ -114,6 +116,8 @@ public class MPSCNNNeuronReLUNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:a:")
@@ -148,11 +152,16 @@ public class MPSCNNNeuronReLUNode extends MPSCNNNeuronNode {
 
     /**
      * Create an autoreleased node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronReLUNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:a:")
     public static native MPSCNNNeuronReLUNode nodeWithSourceA(@NotNull MPSNNImageNode sourceNode, float a);

@@ -165,6 +165,8 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     /**
      * indicates the end date of the metadata
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -182,6 +184,8 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     /**
      * an array of AVMetadataItems
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -190,6 +194,8 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     /**
      * indicates the end date of the metadata
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEndDate:")
@@ -197,6 +203,8 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     /**
      * an array of AVMetadataItems
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setItems:")
@@ -204,6 +212,8 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     /**
      * indicates the start date of the metadata
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStartDate:")
@@ -211,6 +221,8 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     /**
      * indicates the start date of the metadata
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

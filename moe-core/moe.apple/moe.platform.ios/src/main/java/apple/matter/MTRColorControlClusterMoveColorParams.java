@@ -181,6 +181,8 @@ public class MTRColorControlClusterMoveColorParams extends NSObject implements N
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("serverSideProcessingTimeout")
@@ -222,6 +224,8 @@ public class MTRColorControlClusterMoveColorParams extends NSObject implements N
      * passes.
      * 
      * If nil, the framework will try to select an appropriate timeout value itself.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setServerSideProcessingTimeout:")
@@ -239,6 +243,9 @@ public class MTRColorControlClusterMoveColorParams extends NSObject implements N
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setTimedInvokeTimeoutMs:")
@@ -264,6 +271,9 @@ public class MTRColorControlClusterMoveColorParams extends NSObject implements N
      * desired security properties but large enough that it will allow a round-trip
      * from the sever to the client (for the status response and actual invoke
      * request) within the timeout window.
+     * 
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("timedInvokeTimeoutMs")

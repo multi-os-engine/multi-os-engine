@@ -215,7 +215,9 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     public native CSSearchableItem initWithCoder(@NotNull NSCoder coder);
 
     /**
-     * Can be null, one will be generated
+     * uniqueIdentifier can be null, in which case one will be generated.
+     * If passing in null, you must retrieve and store the generated identifier in persistent storage, so that you can
+     * open the appropriate item when recalled in a query
      */
     @Generated
     @Selector("initWithUniqueIdentifier:domainIdentifier:attributeSet:")
@@ -293,4 +295,32 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A flag to specify whether or not this item should be treated as an update
+     * By default index insertions are treated as a full delete of any existing item, followed by an insert, and the
+     * client needs to specify whether or not this should be treated as an update.
+     * If an item is marked as an update, but does not already exist in the index, it will be dropped during the
+     * attempted indexing.
+     * In update mode, attributes can be marked as deleted by setting their value to nil.
+     * 
+     * API-Since: 9.0
+     */
+    @Generated
+    @Selector("isUpdate")
+    public native boolean isUpdate();
+
+    /**
+     * A flag to specify whether or not this item should be treated as an update
+     * By default index insertions are treated as a full delete of any existing item, followed by an insert, and the
+     * client needs to specify whether or not this should be treated as an update.
+     * If an item is marked as an update, but does not already exist in the index, it will be dropped during the
+     * attempted indexing.
+     * In update mode, attributes can be marked as deleted by setting their value to nil.
+     * 
+     * API-Since: 9.0
+     */
+    @Generated
+    @Selector("setIsUpdate:")
+    public native void setIsUpdate(boolean value);
 }

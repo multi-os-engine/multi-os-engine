@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVVideoOutputSpecification
  * 
- * AVVideoOutputSpecification offers a way to package CMTagCollections together with pixel buffer attributes. Allowing
- * for direct association between pixel buffer attributes and specific tag collections, as well as default pixel buffer
- * attributes which can be associated with all tag collections which do not have a specified mapping.
+ * AVVideoOutputSpecification offers a way to package CMTagCollections together with output settings. Allowing for
+ * direct association between output settings and specific tag collections, as well as default output settings which can
+ * be associated with all tag collections which do not have a specified mapping.
  * 
  * For more information about working with CMTagCollections and CMTags first look at <CoreMedia/CMTagCollection.h>
  * 
@@ -111,7 +111,14 @@ public class AVVideoOutputSpecification extends NSObject implements NSCopying {
      * 
      * NSDictionary where keys are of type NSString, values should match the type specified by the corresponding keys
      * documentation in <CoreVideo/CVPixelBuffer.h>
+     * [@note] Pixel buffer attributes are translated into output settings, therefore, the rules of
+     * defaultOutputSettings apply to defaultPixelBufferAttributes as well. If defaultPixelBufferAttributes are set
+     * after setting defaultOutputSettings, the set output settings will be overridden and vice-versa.
+     * 
+     * API-Since: 17.2
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("defaultPixelBufferAttributes")
     @Nullable
@@ -138,6 +145,8 @@ public class AVVideoOutputSpecification extends NSObject implements NSCopying {
      * This method throws an exception for the following reasons:
      * - tagCollections is nil or has a count of 0.
      * - tagCollections contains elements that are not of the type CMTagCollection.
+     * 
+     * API-Since: 17.2
      * 
      * @param tagCollections
      *                       Expects a non-empty array of CMTagCollections. Tag collections are given priority based on
@@ -177,9 +186,11 @@ public class AVVideoOutputSpecification extends NSObject implements NSCopying {
     /**
      * [@property] preferredTagCollections
      * 
-     * Tag collections held by AVTaggedVideoOutputSpecification.
+     * Tag collections held by AVVideoOutputSpecification.
      * 
      * Returns an array of CMTagCollections.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("preferredTagCollections")
@@ -202,7 +213,14 @@ public class AVVideoOutputSpecification extends NSObject implements NSCopying {
      * 
      * NSDictionary where keys are of type NSString, values should match the type specified by the corresponding keys
      * documentation in <CoreVideo/CVPixelBuffer.h>
+     * [@note] Pixel buffer attributes are translated into output settings, therefore, the rules of
+     * defaultOutputSettings apply to defaultPixelBufferAttributes as well. If defaultPixelBufferAttributes are set
+     * after setting defaultOutputSettings, the set output settings will be overridden and vice-versa.
+     * 
+     * API-Since: 17.2
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setDefaultPixelBufferAttributes:")
     public native void setDefaultPixelBufferAttributes(@Nullable NSDictionary<String, ?> value);
@@ -214,6 +232,13 @@ public class AVVideoOutputSpecification extends NSObject implements NSCopying {
      * 
      * If this method is called twice on the same tag collection, the first requested pixel buffer attributes will be
      * overridden.
+     * [@note] Pixel buffer attributes are translated into output settings, therefore, the rules of
+     * `-setOutputSettings:forTagCollection` apply to this method as well.
+     * Namely, if you set pixel buffer attributes for a tag collection and then output settings for that same tag
+     * collection, your pixel buffer attributes will be overridden and vice-versa.
+     * 
+     * API-Since: 17.2
+     * Deprecated-Since: 100000.0
      * 
      * @param pixelBufferAttributes
      *                              The client requirements for CVPixelBuffers related to the tags in tagCollection,
@@ -221,6 +246,7 @@ public class AVVideoOutputSpecification extends NSObject implements NSCopying {
      * @param tagCollection
      *                              A single tag collection for which these pixel buffer attributes should map to.
      */
+    @Deprecated
     @Generated
     @Selector("setOutputPixelBufferAttributes:forTagCollection:")
     public native void setOutputPixelBufferAttributesForTagCollection(
@@ -243,4 +269,79 @@ public class AVVideoOutputSpecification extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] defaultOutputSettings
+     * 
+     * The default client requirements for output CVPixelBuffers related to all tag collections not explicitly set with
+     * -setOutputSettings:forTagCollection, expressed using the constants in AVVideoSettings.h.
+     * For uncompressed video output, start with kCVPixelBuffer* keys in <CoreVideo/CVPixelBuffer.h>.
+     * In addition to the keys in CVPixelBuffer.h, uncompressed video settings dictionaries may also contain the
+     * following keys:
+     * - AVVideoAllowWideColorKey
+     * 
+     * NSDictionary where keys are of type NSString, values should match the type specified by the corresponding keys
+     * documentation in <AVFoundation/AVVideoSettings.h> and <CoreVideo/CVPixelBuffer.h>.
+     * [@note] The setter for this property throws an exception for any of the following reasons:
+     * - The settings will yield compressed output
+     * - The settings do not honor the requirements list above for outputSettings.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("defaultOutputSettings")
+    @Nullable
+    public native NSDictionary<String, ?> defaultOutputSettings();
+
+    /**
+     * [@property] defaultOutputSettings
+     * 
+     * The default client requirements for output CVPixelBuffers related to all tag collections not explicitly set with
+     * -setOutputSettings:forTagCollection, expressed using the constants in AVVideoSettings.h.
+     * For uncompressed video output, start with kCVPixelBuffer* keys in <CoreVideo/CVPixelBuffer.h>.
+     * In addition to the keys in CVPixelBuffer.h, uncompressed video settings dictionaries may also contain the
+     * following keys:
+     * - AVVideoAllowWideColorKey
+     * 
+     * NSDictionary where keys are of type NSString, values should match the type specified by the corresponding keys
+     * documentation in <AVFoundation/AVVideoSettings.h> and <CoreVideo/CVPixelBuffer.h>.
+     * [@note] The setter for this property throws an exception for any of the following reasons:
+     * - The settings will yield compressed output
+     * - The settings do not honor the requirements list above for outputSettings.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDefaultOutputSettings:")
+    public native void setDefaultOutputSettings(@Nullable NSDictionary<String, ?> value);
+
+    /**
+     * setOutputSettings:forTagCollection
+     * 
+     * Specifies a mapping between a tag collection and a set of output settings.
+     * 
+     * If this method is called twice on the same tag collection, the first requested output settings will be
+     * overridden.
+     * [@note] This method throws an exception for any of the following reasons:
+     * - The settings will yield compressed output
+     * - The settings do not honor the requirements list above for outputSettings.
+     * - tagCollection does not match with any tag collection in -preferredTagCollections.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param outputSettings
+     *                       The client requirements for output CVPixelBuffers related to the tags in tagCollection,
+     *                       expressed using the constants in AVVideoSettings.h.
+     *                       For uncompressed video output, start with kCVPixelBuffer* keys in
+     *                       <CoreVideo/CVPixelBuffer.h>.
+     *                       In addition to the keys in CVPixelBuffer.h, uncompressed video settings dictionaries may
+     *                       also contain the following keys:
+     *                       - AVVideoAllowWideColorKey
+     * @param tagCollection
+     *                       A single tag collection for which these output settings should map to.
+     */
+    @Generated
+    @Selector("setOutputSettings:forTagCollection:")
+    public native void setOutputSettingsForTagCollection(@Nullable NSDictionary<String, ?> outputSettings,
+            @NotNull CMTagCollectionRef tagCollection);
 }

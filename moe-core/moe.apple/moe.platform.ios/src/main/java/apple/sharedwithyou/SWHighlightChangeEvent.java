@@ -81,6 +81,8 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
 
     /**
      * The type of change event for the highlight.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("changeEventTrigger")
@@ -139,6 +141,8 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
      * 
      * @param highlight The object on which the event occurred.
      * @param trigger   The trigger change event for the highlight.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("initWithHighlight:trigger:")

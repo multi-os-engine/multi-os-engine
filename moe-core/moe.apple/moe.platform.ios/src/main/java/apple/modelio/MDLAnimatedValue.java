@@ -84,6 +84,9 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("clear")
     public native void clear();
@@ -103,6 +106,9 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getTimes:maxCount:")
     @NUInt
@@ -130,11 +136,17 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("interpolation")
     @NUInt
     public native long interpolation();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("isAnimated")
     public native boolean isAnimated();
@@ -148,15 +160,24 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("keyTimes")
     public native NSArray<? extends NSNumber> keyTimes();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("maximumTime")
     public native double maximumTime();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("minimumTime")
     public native double minimumTime();
@@ -166,6 +187,9 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("new")
     public static native MDLAnimatedValue new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("precision")
     @NUInt
@@ -179,6 +203,9 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setInterpolation:")
     public native void setInterpolation(@NUInt long value);
@@ -191,6 +218,9 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("timeSampleCount")
     @NUInt

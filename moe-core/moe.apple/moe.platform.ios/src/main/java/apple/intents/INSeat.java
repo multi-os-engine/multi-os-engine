@@ -117,6 +117,9 @@ public class INSeat extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INSeat initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSeatSection:seatRow:seatNumber:seatingType:")
     public native INSeat initWithSeatSectionSeatRowSeatNumberSeatingType(@Nullable String seatSection,
@@ -157,21 +160,33 @@ public class INSeat extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("seatNumber")
     public native String seatNumber();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("seatRow")
     public native String seatRow();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("seatSection")
     public native String seatSection();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("seatingType")

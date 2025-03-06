@@ -93,7 +93,9 @@ public class MTRDeviceControllerFactory extends NSObject {
      * the startupParams.
      * 
      * This method can only be used if the factory was initialized with storage.
-     * When using per-controller storage, use createController.
+     * When using per-controller storage, use [MTRDeviceController initWithParameters:error:].
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("createControllerOnExistingFabric:error:")
@@ -111,7 +113,9 @@ public class MTRDeviceControllerFactory extends NSObject {
      * the startupParams.
      * 
      * This method can only be used if the factory was initialized with storage.
-     * When using per-controller storage, use createController.
+     * When using per-controller storage, use [MTRDeviceController initWithParameters:error:].
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("createControllerOnNewFabric:error:")
@@ -154,6 +158,8 @@ public class MTRDeviceControllerFactory extends NSObject {
      * If true, the factory is in a state where it can create controllers:
      * startControllerFactory has been called, but stopControllerFactory has not been called
      * since then.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("isRunning")
@@ -175,6 +181,8 @@ public class MTRDeviceControllerFactory extends NSObject {
      * not running or if there is an error reading fabric information.
      * 
      * All entries in this list will have a non-nil rootCertificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("knownFabrics")
@@ -201,6 +209,8 @@ public class MTRDeviceControllerFactory extends NSObject {
     /**
      * Return the single MTRDeviceControllerFactory we support existing. It starts off
      * in a "not started" state.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("sharedInstance")
@@ -216,6 +226,8 @@ public class MTRDeviceControllerFactory extends NSObject {
      * @param[in] startupParams data needed to start up the controller factory.
      * 
      * @return Whether startup succeded.
+     * 
+     *         API-Since: 16.4
      */
     @Generated
     @Selector("startControllerFactory:error:")
@@ -228,6 +240,8 @@ public class MTRDeviceControllerFactory extends NSObject {
      * 
      * Repeated calls to stopControllerFactory without calls to
      * startControllerFactory in between are NO-OPs.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("stopControllerFactory")
@@ -246,4 +260,20 @@ public class MTRDeviceControllerFactory extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * If possible, pre-warm the Matter stack for setting up a commissioning session.
+     * 
+     * This may be called before -[MTRDeviceController setupCommissioningSessionWithPayload:]
+     * if it is known that a commissioning attempt will soon take place, but the commissioning
+     * payload is not known yet.
+     * 
+     * The controller factory must be running for pre-warming to take place. Pre-warming can take place
+     * before any controllers are started.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("preWarmCommissioningSession")
+    public native void preWarmCommissioningSession();
 }

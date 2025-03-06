@@ -43,6 +43,8 @@ public interface CNContactViewControllerDelegate {
      * If creating a new contact, the new contact added to the contacts list will be passed.
      * If adding to an existing contact, the existing contact will be passed.
      * [@note] It is up to the delegate to dismiss the view controller.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -58,6 +60,8 @@ public interface CNContactViewControllerDelegate {
      * Return @c NO if you do not want anything to be done or if you are handling the actions yourself.
      * 
      * @return @c YES if you want the default action performed for the property otherwise return @c NO.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @IsOptional

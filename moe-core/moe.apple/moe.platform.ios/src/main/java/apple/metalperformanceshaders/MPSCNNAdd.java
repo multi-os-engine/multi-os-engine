@@ -120,6 +120,8 @@ public class MPSCNNAdd extends MPSCNNArithmetic {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSCNNAdd object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

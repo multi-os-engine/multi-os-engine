@@ -97,6 +97,9 @@ public class UIDevice extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("currentDevice")
@@ -256,6 +259,8 @@ public class UIDevice extends NSObject {
 
     /**
      * localized version of model
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -264,6 +269,8 @@ public class UIDevice extends NSObject {
 
     /**
      * e.g. @"iPhone", @"iPod touch"
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -272,6 +279,8 @@ public class UIDevice extends NSObject {
 
     /**
      * Synonym for model. Prior to iOS 16, user-assigned device name (e.g. @"My iPhone").
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -307,6 +316,8 @@ public class UIDevice extends NSObject {
 
     /**
      * e.g. @"iOS"
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -315,6 +326,8 @@ public class UIDevice extends NSObject {
 
     /**
      * e.g. @"4.0"
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated

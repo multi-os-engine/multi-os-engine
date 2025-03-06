@@ -82,6 +82,9 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("configurationHandler")
@@ -104,6 +107,9 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("elementKind")
@@ -145,6 +151,9 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("new")
     public static native UICollectionViewSupplementaryRegistration new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("registrationWithSupplementaryClass:elementKind:configurationHandler:")
     public static native UICollectionViewSupplementaryRegistration registrationWithSupplementaryClassElementKindConfigurationHandler(
@@ -191,11 +200,17 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("supplementaryClass")
     public native Class supplementaryClass();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("supplementaryNib")

@@ -166,6 +166,8 @@ public class CXPlayDTMFCallAction extends CXCallAction {
 
     /**
      * The string representation of the digits that should be played as DTMF tones
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -180,17 +182,25 @@ public class CXPlayDTMFCallAction extends CXCallAction {
     @Selector("initWithCallUUID:")
     public native CXPlayDTMFCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCallUUID:digits:type:")
     public native CXPlayDTMFCallAction initWithCallUUIDDigitsType(@NotNull NSUUID callUUID, @NotNull String digits,
             @NInt long type);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native CXPlayDTMFCallAction initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * The string representation of the digits that should be played as DTMF tones
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDigits:")
@@ -198,6 +208,8 @@ public class CXPlayDTMFCallAction extends CXCallAction {
 
     /**
      * Whether or not the string of digits represents tones following a hard or soft pause
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setType:")
@@ -211,6 +223,8 @@ public class CXPlayDTMFCallAction extends CXCallAction {
 
     /**
      * Whether or not the string of digits represents tones following a hard or soft pause
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("type")

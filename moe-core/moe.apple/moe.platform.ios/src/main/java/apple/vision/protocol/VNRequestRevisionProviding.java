@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface VNRequestRevisionProviding {
     /**
      * The revision of the VNRequest subclass that was used to generate the object that implements this protocol.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("requestRevision")

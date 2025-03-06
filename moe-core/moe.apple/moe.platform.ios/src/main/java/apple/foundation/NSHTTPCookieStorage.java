@@ -183,6 +183,8 @@ public class NSHTTPCookieStorage extends NSObject {
      * Starting in OS X 10.11, each app has its own sharedHTTPCookieStorage singleton,
      * which will not be shared with other applications.
      * 
+     * API-Since: 2.0
+     * 
      * @return The shared cookie storage
      */
     @NotNull
@@ -202,6 +204,8 @@ public class NSHTTPCookieStorage extends NSObject {
     /**
      * The cookie accept policy preference of the
      * receiver.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("cookieAcceptPolicy")
@@ -212,6 +216,8 @@ public class NSHTTPCookieStorage extends NSObject {
      * Get all the cookies
      * 
      * @return An NSArray of NSHTTPCookies
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -228,6 +234,8 @@ public class NSHTTPCookieStorage extends NSObject {
      * <tt>+[NSCookie requestHeaderFieldsWithCookies:]</tt> to turn this array
      * into a set of header fields to add to a request.
      * 
+     * API-Since: 2.0
+     * 
      * @param URL The URL for which to get cookies.
      * @return an NSArray of NSHTTPCookie objects.
      */
@@ -240,6 +248,8 @@ public class NSHTTPCookieStorage extends NSObject {
      * deleteCookie:
      * 
      * Delete the specified cookie
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("deleteCookie:")
@@ -275,6 +285,8 @@ public class NSHTTPCookieStorage extends NSObject {
      * 
      * The cookie will override an existing cookie with the
      * same name, domain and path, if any.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCookie:")
@@ -283,6 +295,8 @@ public class NSHTTPCookieStorage extends NSObject {
     /**
      * The cookie accept policy preference of the
      * receiver.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCookieAcceptPolicy:")
@@ -302,6 +316,8 @@ public class NSHTTPCookieStorage extends NSObject {
      * cookiesWithResponseHeaderFields:forURL:]</tt> on a header field
      * dictionary and then use this method to store the resulting cookies
      * in accordance with policy settings.
+     * 
+     * API-Since: 2.0
      * 
      * @param cookies         The cookies to set.
      * @param URL             The URL from which the cookies were sent.

@@ -113,6 +113,8 @@ public class MXAppResponsivenessMetric extends MXMetric {
      * histogram.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

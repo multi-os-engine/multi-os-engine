@@ -180,6 +180,8 @@ public class MPSImageAreaMax extends MPSUnaryImageKernel {
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel. Must be an odd number.
      * @param kernelHeight The height of the kernel. Must be an odd number.
+     * 
+     *                     API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -191,6 +193,8 @@ public class MPSImageAreaMax extends MPSUnaryImageKernel {
      * [@property] kernelHeight
      * 
      * The height of the filter window. Must be an odd number.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -201,6 +205,8 @@ public class MPSImageAreaMax extends MPSUnaryImageKernel {
      * [@property] kernelWidth
      * 
      * The width of the filter window. Must be an odd number.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelWidth")

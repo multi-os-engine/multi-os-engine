@@ -100,6 +100,9 @@ public class UIDragItem extends NSObject {
     @Selector("init")
     public native UIDragItem init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithItemProvider:")
     public native UIDragItem initWithItemProvider(@NotNull NSItemProvider itemProvider);
@@ -121,6 +124,9 @@ public class UIDragItem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("itemProvider")
@@ -134,6 +140,8 @@ public class UIDragItem extends NSObject {
     /**
      * Use `localObject` to attach additional information to
      * this drag item, visible only inside the app that started the drag.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -159,6 +167,8 @@ public class UIDragItem extends NSObject {
      * 
      * To use the default preview, set `previewProvider` to nil.
      * To hide the preview, set `previewProvider` to a block that returns nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -185,6 +195,8 @@ public class UIDragItem extends NSObject {
     /**
      * Use `localObject` to attach additional information to
      * this drag item, visible only inside the app that started the drag.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLocalObject:")
@@ -203,6 +215,8 @@ public class UIDragItem extends NSObject {
      * 
      * To use the default preview, set `previewProvider` to nil.
      * To hide the preview, set `previewProvider` to a block that returns nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPreviewProvider:")
@@ -234,4 +248,14 @@ public class UIDragItem extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Requests for the drop preview to be updated if an active drop animation is in progress, and can handle updates.
+     * If no active drop animation is in progress for the specified item, then nothing happens.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setNeedsDropPreviewUpdate")
+    public native void setNeedsDropPreviewUpdate();
 }

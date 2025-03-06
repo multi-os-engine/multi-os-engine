@@ -163,6 +163,8 @@ public class WKBackForwardList extends NSObject {
     /**
      * The item immediately preceding the current item, or nil
      * if there isn't one.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -174,6 +176,8 @@ public class WKBackForwardList extends NSObject {
      * 
      * The items are in the order in which they were originally
      * visited.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -182,6 +186,8 @@ public class WKBackForwardList extends NSObject {
 
     /**
      * The current item.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -191,6 +197,8 @@ public class WKBackForwardList extends NSObject {
     /**
      * The item immediately following the current item, or nil
      * if there isn't one.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -202,6 +210,8 @@ public class WKBackForwardList extends NSObject {
      * 
      * The items are in the order in which they were originally
      * visited.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -221,6 +231,8 @@ public class WKBackForwardList extends NSObject {
      *              immediately following item, and so on.
      * @return The item at the specified distance from the current item, or nil
      *         if the index parameter exceeds the limits of the list.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated

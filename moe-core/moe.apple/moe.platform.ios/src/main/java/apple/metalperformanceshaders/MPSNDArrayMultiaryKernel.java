@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.protocol.MTLComputeCommandEncoder;
 
 /**
  * API-Since: 13.0
@@ -104,6 +105,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      *                     Ordering to be defined by subclass
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -119,6 +122,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      * @param sourceArrays The list of sources for the filter in a NSArray.
      *                     Ordering to be defined by subclass
      * @param destination  The NDArray to receive the result
+     * 
+     *                     API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:destinationArray:")
@@ -135,6 +140,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      * @param outGradientState The output gradient state to record the operation for later use by gradient
      * @param destination      A destination array to contain the result of the calculation
      *                         when the command buffer completes successfully.
+     * 
+     *                         API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:resultState:destinationArray:")
@@ -156,6 +163,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      *                               buffers as needed
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -181,6 +190,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * NSSecureCoding support
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -191,6 +202,9 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Selector("initWithDevice:")
     public native MPSNDArrayMultiaryKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDevice:sourceCount:")
     public native MPSNDArrayMultiaryKernel initWithDeviceSourceCount(
@@ -258,4 +272,23 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * 
+     * @param encoder       The MTLComputeCommandEncoder that the kernel will be encoded on
+     * @param commandBuffer The command buffer into which to encode the kernel
+     * @param sourceArrays  The list of sources for the filter in a NSArray.
+     *                      Ordering to be defined by subclass
+     * @param destination   A destination array to contain the result of the calculation
+     *                      when the command buffer completes successfully.
+     * 
+     *                      API-Since: 18.0
+     */
+    @Generated
+    @Selector("encodeToCommandEncoder:commandBuffer:sourceArrays:destinationArray:")
+    public native void encodeToCommandEncoderCommandBufferSourceArraysDestinationArray(
+            @Mapped(ObjCObjectMapper.class) @Nullable MTLComputeCommandEncoder encoder,
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSNDArray> sourceArrays, @NotNull MPSNDArray destination);
 }

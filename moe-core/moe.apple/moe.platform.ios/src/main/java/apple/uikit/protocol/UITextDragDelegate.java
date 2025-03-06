@@ -32,6 +32,8 @@ public interface UITextDragDelegate {
      * Note: This will not be called for items obtained from a UITextDragRequest’s suggestedItems
      * (via textDraggableView:itemsForDrag:).
      * The text control will use its own previews for those items.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -45,6 +47,8 @@ public interface UITextDragDelegate {
     /**
      * Called when a drag out of this text control has ended.
      * The operation tells you what happened on the drop side.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -58,6 +62,8 @@ public interface UITextDragDelegate {
      * Called when the user actually begins dragging.
      * At that point, the text has lifted out of the text control.
      * `textDraggableView:dragSessionDidEnd:withOperation:` will be called when the drag ends.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -77,6 +83,8 @@ public interface UITextDragDelegate {
      * Note: this method might be called more than once. For instance, if the control
      * is asked to provide more items to add to an existing session.
      * You can detect this by checking the `existingItems` in the drag request.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -91,6 +99,8 @@ public interface UITextDragDelegate {
      * Called when the lift animation is about to start.
      * Use the animator to animate your own changes alongside the system animation,
      * or to be called when the lift animation completes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

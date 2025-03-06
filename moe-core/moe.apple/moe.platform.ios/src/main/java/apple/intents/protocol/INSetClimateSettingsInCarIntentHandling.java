@@ -68,7 +68,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
      *                   handling.
      * 
      * @see INSetClimateSettingsInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSetClimateSettingsInCar:completion:")
@@ -87,12 +92,23 @@ public interface INSetClimateSettingsInCarIntentHandling {
      *                   details of the result of having executed the intent
      * 
      * @see INSetClimateSettingsInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSetClimateSettingsInCar:completion:")
     void handleSetClimateSettingsInCarCompletion(@NotNull INSetClimateSettingsInCarIntent intent,
             @NotNull @ObjCBlock(name = "call_handleSetClimateSettingsInCarCompletion") Block_handleSetClimateSettingsInCarCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveAirCirculationModeForSetClimateSettingsInCar:withCompletion:")
@@ -102,6 +118,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveClimateZoneForSetClimateSettingsInCar:withCompletion:")
@@ -111,6 +133,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableAirConditionerForSetClimateSettingsInCar:withCompletion:")
@@ -120,6 +148,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableAutoModeForSetClimateSettingsInCar:withCompletion:")
@@ -129,6 +163,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableClimateControlForSetClimateSettingsInCar:withCompletion:")
@@ -148,7 +188,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveEnableFanForSetClimateSettingsInCar:withCompletion:")
@@ -158,6 +203,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveFanSpeedIndexForSetClimateSettingsInCar:withCompletion:")
@@ -167,6 +218,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveFanSpeedPercentageForSetClimateSettingsInCar:withCompletion:")
@@ -176,6 +233,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveRelativeFanSpeedSettingForSetClimateSettingsInCar:withCompletion:")
@@ -185,6 +248,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveRelativeTemperatureSettingForSetClimateSettingsInCar:withCompletion:")
@@ -194,6 +263,12 @@ public interface INSetClimateSettingsInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetClimateSettingsInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTemperatureForSetClimateSettingsInCar:withCompletion:")

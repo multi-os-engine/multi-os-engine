@@ -27,6 +27,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIWindowSceneDelegate")
 public interface UIWindowSceneDelegate extends UISceneDelegate {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("setWindow:")
@@ -34,6 +37,9 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -83,6 +89,8 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
      * CKAcceptSharesOperation, then start using
      * the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a
      * zone matching that of the record's owner.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

@@ -209,6 +209,8 @@ public class HKCDADocumentSample extends HKDocumentSample {
      * accessible to an app. The authorization request occurs the first time a document matches the predicate
      * of an executed HKDocumentQuery. This property will always be nil if the sample is returned by an
      * HKSampleQuery or an HKAnchoredObjectQuery.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

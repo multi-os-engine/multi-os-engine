@@ -165,6 +165,8 @@ public class WKSecurityOrigin extends NSObject {
 
     /**
      * The security origin's host.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -177,6 +179,8 @@ public class WKSecurityOrigin extends NSObject {
 
     /**
      * The security origin's port.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("port")
@@ -185,6 +189,8 @@ public class WKSecurityOrigin extends NSObject {
 
     /**
      * The security origin's protocol.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

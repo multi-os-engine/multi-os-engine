@@ -86,6 +86,12 @@ public class INGetVisualCodeIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INGetVisualCodeIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -116,7 +122,12 @@ public class INGetVisualCodeIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INGetVisualCodeIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INGetVisualCodeIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -165,6 +176,12 @@ public class INGetVisualCodeIntentResponse extends INIntentResponse {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INGetVisualCodeIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setVisualCodeImage:")
     public native void setVisualCodeImage(@Nullable INImage value);
@@ -188,6 +205,12 @@ public class INGetVisualCodeIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INGetVisualCodeIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("visualCodeImage")

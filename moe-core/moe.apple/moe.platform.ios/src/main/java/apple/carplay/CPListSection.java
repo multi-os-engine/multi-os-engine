@@ -107,6 +107,8 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     /**
      * Optional string to use for a simple header in this section.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -121,10 +123,16 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPListSection initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithItems:")
     public native CPListSection initWithItems(@NotNull NSArray<?> items);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithItems:header:sectionIndexTitle:")
     public native CPListSection initWithItemsHeaderSectionIndexTitle(@NotNull NSArray<?> items, @Nullable String header,
@@ -149,6 +157,8 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     /**
      * Items appearing in this section.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -177,6 +187,8 @@ public class CPListSection extends NSObject implements NSSecureCoding {
      * An optional section index title to use in a table displaying this section.
      * The system will enforce a maximum length of 1 for each section index title - in other words,
      * you must choose single-character section index titles.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -209,6 +221,8 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     /**
      * Search for an item in this section, returning its index
      * or @c NSNotFound if not found.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("indexOfItem:")
@@ -217,6 +231,8 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     /**
      * Convenience access to the item in this section at the specified index.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

@@ -163,6 +163,8 @@ public class HMCameraSnapshotControl extends HMCameraControl {
 
     /**
      * Delegate that receives updates on the camera snapshot changes.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -170,12 +172,21 @@ public class HMCameraSnapshotControl extends HMCameraControl {
     @MappedReturn(ObjCObjectMapper.class)
     public native HMCameraSnapshotControlDelegate delegate();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: HMCameraSnapshotControl objects are created by their parent container objects. Directly
+     * creating them is not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMCameraSnapshotControl init();
 
     /**
      * Represents the most recent snapshot taken from the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -184,6 +195,8 @@ public class HMCameraSnapshotControl extends HMCameraControl {
 
     /**
      * Delegate that receives updates on the camera snapshot changes.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -192,6 +205,8 @@ public class HMCameraSnapshotControl extends HMCameraControl {
 
     /**
      * Delegate that receives updates on the camera snapshot changes.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMCameraSnapshotControlDelegate value) {
@@ -207,6 +222,8 @@ public class HMCameraSnapshotControl extends HMCameraControl {
 
     /**
      * Takes an image snapshot.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("takeSnapshot")

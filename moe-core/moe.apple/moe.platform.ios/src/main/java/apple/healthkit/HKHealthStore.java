@@ -143,6 +143,8 @@ public class HKHealthStore extends NSObject {
      * HealthKit is not supported on all iOS devices. Using HKHealthStore APIs on devices which are not
      * supported will result in errors with the HKErrorHealthDataUnavailable code. Call isHealthDataAvailable
      * before attempting to use other parts of the framework.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isHealthDataAvailable")
@@ -209,6 +211,8 @@ public class HKHealthStore extends NSObject {
      * authorizationStatusForType:
      * 
      * Returns the application's authorization status for the given object type.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("authorizationStatusForType:")
@@ -222,6 +226,8 @@ public class HKHealthStore extends NSObject {
      * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierBiologicalSex.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -236,6 +242,8 @@ public class HKHealthStore extends NSObject {
      * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierBloodType.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -275,6 +283,8 @@ public class HKHealthStore extends NSObject {
      * Deletes a single HKObject from the HealthKit database.
      * 
      * See deleteObjects:withCompletion:.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deleteObject:withCompletion:")
@@ -369,6 +379,8 @@ public class HKHealthStore extends NSObject {
      * 
      * If a query would retrieve objects with an HKObjectType property, then the application must request
      * authorization to access objects of that type before executing the query.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("executeQuery:")
@@ -456,6 +468,8 @@ public class HKHealthStore extends NSObject {
      * To customize the messages displayed on the authorization sheet, set the following keys in your app's
      * Info.plist file. Set the NSHealthShareUsageDescription key to customize the message for reading data.
      * Set the NSHealthUpdateUsageDescription key to customize the message for writing data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("requestAuthorizationToShareTypes:readTypes:completion:")
@@ -480,6 +494,8 @@ public class HKHealthStore extends NSObject {
      * 
      * This operation is performed asynchronously and the completion will be executed on an arbitrary
      * background queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("saveObject:withCompletion:")
@@ -492,6 +508,8 @@ public class HKHealthStore extends NSObject {
      * Saves an array of HKObjects.
      * 
      * See discussion of saveObject:withCompletion:.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("saveObjects:withCompletion:")
@@ -544,6 +562,8 @@ public class HKHealthStore extends NSObject {
      * 
      * Calling this method will prevent the handlers of the query from being invoked in the future. If the
      * query is already stopped, this method does nothing.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopQuery:")
@@ -890,5 +910,55 @@ public class HKHealthStore extends NSObject {
     public interface Block_workoutSessionMirroringStartHandler_ret {
         @Generated
         void call_workoutSessionMirroringStartHandler_ret(@NotNull HKWorkoutSession arg0);
+    }
+
+    /**
+     * relateWorkoutEffortSample:withWorkout:activity:completion
+     * 
+     * Relates a workout effort sample with a workout
+     * 
+     * @param sample     The workout effort sample
+     * @param workout    The HKWorkout to relate the sample to
+     * @param activity   The HKWorkoutActivity on the HKWorkout
+     * @param completion The block to be called when the sample has been related
+     * 
+     *                   API-Since: 18.0
+     */
+    @Generated
+    @Selector("relateWorkoutEffortSample:withWorkout:activity:completion:")
+    public native void relateWorkoutEffortSampleWithWorkoutActivityCompletion(@NotNull HKSample sample,
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity,
+            @ObjCBlock(name = "call_relateWorkoutEffortSampleWithWorkoutActivityCompletion") @NotNull Block_relateWorkoutEffortSampleWithWorkoutActivityCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_relateWorkoutEffortSampleWithWorkoutActivityCompletion {
+        @Generated
+        void call_relateWorkoutEffortSampleWithWorkoutActivityCompletion(boolean success, @Nullable NSError error);
+    }
+
+    /**
+     * unrelateWorkoutEffortSample:fromWorkout:activity:completion
+     * 
+     * Unrelates a workout effort sample from a workout
+     * 
+     * @param sample     The workout effort sample
+     * @param workout    The HKWorkout to unrelate the sample from
+     * @param activity   The HKWorkoutActivity on the HKWorkout
+     * @param completion The block to be called when the sample has been unrelated
+     * 
+     *                   API-Since: 18.0
+     */
+    @Generated
+    @Selector("unrelateWorkoutEffortSample:fromWorkout:activity:completion:")
+    public native void unrelateWorkoutEffortSampleFromWorkoutActivityCompletion(@NotNull HKSample sample,
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity,
+            @ObjCBlock(name = "call_unrelateWorkoutEffortSampleFromWorkoutActivityCompletion") @NotNull Block_unrelateWorkoutEffortSampleFromWorkoutActivityCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_unrelateWorkoutEffortSampleFromWorkoutActivityCompletion {
+        @Generated
+        void call_unrelateWorkoutEffortSampleFromWorkoutActivityCompletion(boolean success, @Nullable NSError error);
     }
 }

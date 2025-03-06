@@ -98,6 +98,8 @@ public class ASCredentialIdentityStore extends NSObject {
      * incremental
      * updates.
      * 
+     * API-Since: 12.0
+     * 
      * @param completion completion handler to be called with the current state of the store.
      */
     @Generated
@@ -155,6 +157,8 @@ public class ASCredentialIdentityStore extends NSObject {
      *                   If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain will be
      *                   provided and none of
      *                   the existing credential identities will be removed from the store.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("removeAllCredentialIdentitiesWithCompletion:")
@@ -269,6 +273,9 @@ public class ASCredentialIdentityStore extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("sharedStore")
@@ -367,4 +374,29 @@ public class ASCredentialIdentityStore extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * List the currently saved credential identities.
+     * 
+     * Call this method to get a list of all credential identities saved in the store for your extension.
+     * 
+     * API-Since: 17.4
+     * 
+     * @param serviceIdentifier       Specify a service identifier to get only credential identities for that service.
+     *                                Pass nil to get credential identities for all services.
+     * @param credentialIdentityTypes Specify one or more types to get only credential identities of those types.
+     *                                Pass ASCredentialIdentityTypesAll to get credential identities of all types.
+     */
+    @Generated
+    @Selector("getCredentialIdentitiesForService:credentialIdentityTypes:completionHandler:")
+    public native void getCredentialIdentitiesForServiceCredentialIdentityTypesCompletionHandler(
+            @Nullable ASCredentialServiceIdentifier serviceIdentifier, @NUInt long credentialIdentityTypes,
+            @ObjCBlock(name = "call_getCredentialIdentitiesForServiceCredentialIdentityTypesCompletionHandler") @NotNull Block_getCredentialIdentitiesForServiceCredentialIdentityTypesCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getCredentialIdentitiesForServiceCredentialIdentityTypesCompletionHandler {
+        @Generated
+        void call_getCredentialIdentitiesForServiceCredentialIdentityTypesCompletionHandler(@NotNull NSArray<?> arg0);
+    }
 }

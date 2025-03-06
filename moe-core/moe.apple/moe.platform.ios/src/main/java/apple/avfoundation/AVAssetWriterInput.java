@@ -132,6 +132,8 @@ public class AVAssetWriterInput extends NSObject {
      * AVVideoCodecTypeJPEG. AVVideoCodecTypeH264 is not supported on iPhone 3G. For AVVideoScalingModeKey, the value
      * AVVideoScalingModeFit is not supported.
      * 
+     * API-Since: 4.1
+     * 
      * @param mediaType
      *                       The media type of samples that will be accepted by the input. Media types are defined in
      *                       AVMediaFormat.h.
@@ -389,6 +391,8 @@ public class AVAssetWriterInput extends NSObject {
      * This method throws an exception if the sample buffer's media type does not match the asset writer input's media
      * type.
      * 
+     * API-Since: 4.1
+     * 
      * @param sampleBuffer
      *                     The CMSampleBuffer to be appended.
      * @return
@@ -490,6 +494,8 @@ public class AVAssetWriterInput extends NSObject {
      * For best results, do not set both this property and performsMultiPassEncodingIfSupported to YES.
      * 
      * This property cannot be set after writing on the receiver's AVAssetWriter has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("expectsMediaDataInRealTime")
@@ -563,6 +569,8 @@ public class AVAssetWriterInput extends NSObject {
      * AVVideoHeightKey)
      * - the output scaling mode is AVVideoScalingModeFit
      * - the output settings contain AVSampleRateConverterAudioQualityKey or AVVideoDecompressionPropertiesKey
+     * 
+     * API-Since: 4.1
      * 
      * @param mediaType
      *                       The media type of samples that will be accepted by the input. Media types are defined in
@@ -655,6 +663,8 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * This property is key value observable. Observers should not assume that they will be notified of changes on a
      * specific thread.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("isReadyForMoreMediaData")
@@ -695,6 +705,8 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * Before calling this method, you must ensure that the receiver is attached to an AVAssetWriter via a prior call to
      * -addInput: and that -startWriting has been called on the asset writer.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("markAsFinished")
@@ -782,6 +794,8 @@ public class AVAssetWriterInput extends NSObject {
      * The media type of the samples that can be appended to the receiver.
      * 
      * The value of this property is one of the media types defined in AVMediaFormat.h.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -797,6 +811,8 @@ public class AVAssetWriterInput extends NSObject {
      * metadata to be written in the output file.
      * 
      * This property cannot be set after writing on the receiver's AVAssetWriter has started.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -828,6 +844,8 @@ public class AVAssetWriterInput extends NSObject {
      * The value of this property is an NSDictionary that contains values for keys as specified by either
      * AVAudioSettings.h for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo. A value of nil indicates that
      * the receiver will pass through appended samples, doing no processing before they are written to the output file.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -981,6 +999,8 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * This method throws an exception if this method is called more than once.
      * 
+     * API-Since: 4.1
+     * 
      * @param queue
      *              The queue on which the block should be invoked.
      * @param block
@@ -1071,6 +1091,8 @@ public class AVAssetWriterInput extends NSObject {
      * For best results, do not set both this property and performsMultiPassEncodingIfSupported to YES.
      * 
      * This property cannot be set after writing on the receiver's AVAssetWriter has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setExpectsMediaDataInRealTime:")
@@ -1165,6 +1187,8 @@ public class AVAssetWriterInput extends NSObject {
      * metadata to be written in the output file.
      * 
      * This property cannot be set after writing on the receiver's AVAssetWriter has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setMetadata:")
@@ -1324,6 +1348,8 @@ public class AVAssetWriterInput extends NSObject {
      * If no value is specified, the identity transform is used.
      * 
      * This property cannot be set after writing on the receiver's AVAssetWriter has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setTransform:")
@@ -1354,6 +1380,8 @@ public class AVAssetWriterInput extends NSObject {
      * If no value is specified, the identity transform is used.
      * 
      * This property cannot be set after writing on the receiver's AVAssetWriter has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("transform")

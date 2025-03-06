@@ -122,6 +122,8 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
      * sourceMatrix must be at least size order x order starting at
      * primarySourceMatrixOrigin.
      * 
+     * API-Since: 11.0
+     * 
      * @param commandBuffer       A valid MTLCommandBuffer to receive the
      *                            encoded filter
      * 
@@ -200,6 +202,8 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
      *                               hand sides.
      * 
      * @return A valid MPSMatrixSolveTriangular object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:right:upper:transpose:unit:order:numberOfRightHandSides:alpha:")

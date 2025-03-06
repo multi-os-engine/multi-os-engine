@@ -79,6 +79,9 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
         super(peer);
     }
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("a")
     public native float a();
@@ -101,10 +104,16 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("b")
     public native float b();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("c")
     public native float c();
@@ -130,6 +139,9 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.3
+     */
     @Nullable
     @Generated
     @Selector("data")
@@ -168,6 +180,8 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -218,6 +232,9 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("neuronType")
     public native int neuronType();

@@ -186,6 +186,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("clipRect")
@@ -241,6 +243,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * @return On success, YES is returned. The texture may have been replaced with a new
      *         texture if a copyAllocator was provided. On failure, NO is returned. The
      *         texture is unmodified.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:")
@@ -299,6 +303,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * @return On success, YES is returned. The texture may have been replaced with a new
      *         texture if a copyAllocator was provided. On failure, NO is returned. The
      *         texture is unmodified.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:")
@@ -316,6 +322,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * @param secondaryTexture   A valid MTLTexture containing the secondary source image.
      * @param destinationTexture A valid MTLTexture to be overwritten by result image. destinationTexture may not alias
      *                           the source textures.
+     * 
+     *                           API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:")
@@ -336,6 +344,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * @return a pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -354,6 +364,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * would produce unexpected results.)
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("primaryEdgeMode")
@@ -369,6 +381,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("primaryOffset")
@@ -400,6 +414,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * 
      * @param destinationSize The size of the full virtual destination image.
      * @return The area in the virtual source image that will be read.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("primarySourceRegionForDestinationSize:")
@@ -419,6 +435,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * would produce unexpected results.)
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("secondaryEdgeMode")
@@ -434,6 +452,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and secondary source image align.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("secondaryOffset")
@@ -465,6 +485,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * 
      * @param destinationSize The size of the full virtual destination image.
      * @return The area in the virtual source image that will be read.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("secondarySourceRegionForDestinationSize:")
@@ -481,6 +503,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setClipRect:")
@@ -499,6 +523,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * would produce unexpected results.)
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPrimaryEdgeMode:")
@@ -513,6 +539,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPrimaryOffset:")
@@ -531,6 +559,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * would produce unexpected results.)
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSecondaryEdgeMode:")
@@ -545,6 +575,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and secondary source image align.
      * 
      * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSecondaryOffset:")
@@ -580,6 +612,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * @param secondaryImage   A valid MPSImage containing the secondary source image.
      * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias the
      *                         source images.
+     * 
+     *                         API-Since: 9.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:")

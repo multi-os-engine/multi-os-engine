@@ -137,9 +137,11 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject implements N
     /**
      * quantityForLead:
      * 
-     * Returns an HKQuantity for the specified lead with a unit compatible with [HKUnit voltageUnit].
+     * Returns an HKQuantity for the specified lead with a unit compatible with [HKUnit voltUnit].
      * 
      * @param lead The HKElectrocardiogramLead for which voltage quantity will be returned.
+     * 
+     *             API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -164,6 +166,8 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject implements N
 
     /**
      * The time interval between this voltage measurement and the start of the sample.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("timeSinceSampleStart")

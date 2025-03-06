@@ -94,6 +94,8 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
      * Certificates is an array of NSData, each a DER encoded X.509 certificate, with the leaf first and root last.
      * The continuation handler must be called within 20 seconds or an error will be displayed.
      * Subsequent to timeout, the continuation handler is invalid and invocations will be ignored.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("generateAddPaymentPassRequestForPassEntryWithIdentifier:configuration:certificateChain:nonce:nonceSignature:completionHandler:")
@@ -146,6 +148,9 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
     @Selector("new")
     public static native PKIssuerProvisioningExtensionHandler new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("passEntriesWithCompletion:")
     public native void passEntriesWithCompletion(
@@ -158,6 +163,9 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
         void call_passEntriesWithCompletion(@NotNull NSArray<? extends PKIssuerProvisioningExtensionPassEntry> entries);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("remotePassEntriesWithCompletion:")
     public native void remotePassEntriesWithCompletion(
@@ -183,6 +191,9 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("statusWithCompletion:")
     public native void statusWithCompletion(

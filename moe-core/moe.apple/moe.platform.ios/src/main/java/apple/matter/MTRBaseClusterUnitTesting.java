@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterUnitTesting extends MTRCluster {
+public class MTRBaseClusterUnitTesting extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -5713,9 +5713,10 @@ public class MTRBaseClusterUnitTesting extends MTRCluster {
     }
 
     /**
-     * Command Test
-     * 
-     * Simple command without any parameters and without a specific response
+     * * Command Test
+     * *
+     * * Simple command without any parameters and without a specific response.
+     * To aid in unit testing, this command will re-initialize attribute storage to defaults.
      * 
      * API-Since: 16.4
      */
@@ -8318,5 +8319,36 @@ public class MTRBaseClusterUnitTesting extends MTRCluster {
     public interface Block_writeAttributeWriteOnlyInt8uWithValueParamsCompletion {
         @Generated
         void call_writeAttributeWriteOnlyInt8uWithValueParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("testNullableOptionalRequestWithCompletion:")
+    public native void testNullableOptionalRequestWithCompletion(
+            @ObjCBlock(name = "call_testNullableOptionalRequestWithCompletion") @NotNull Block_testNullableOptionalRequestWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testNullableOptionalRequestWithCompletion {
+        @Generated
+        void call_testNullableOptionalRequestWithCompletion(
+                @Nullable MTRUnitTestingClusterTestNullableOptionalResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("testSimpleOptionalArgumentRequestWithCompletion:")
+    public native void testSimpleOptionalArgumentRequestWithCompletion(
+            @ObjCBlock(name = "call_testSimpleOptionalArgumentRequestWithCompletion") @NotNull Block_testSimpleOptionalArgumentRequestWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testSimpleOptionalArgumentRequestWithCompletion {
+        @Generated
+        void call_testSimpleOptionalArgumentRequestWithCompletion(@Nullable NSError error);
     }
 }

@@ -100,6 +100,8 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
 
     /**
      * Indicates if all fonts should be shown in the system font instead of themselves.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("displayUsingSystemFont")
@@ -108,7 +110,12 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     /**
      * Generate a filter predicate to filter to fonts that support one of the specified language identifiers (conforming
      * to UTS #35).
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use languageFilter
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("filterPredicateForFilteredLanguages:")
@@ -117,7 +124,12 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     /**
      * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of
      * string language identifiers (conforming to UTS #35) supported by the font.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use languageFilter
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("filteredLanguagesPredicate")
@@ -125,6 +137,8 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
 
     /**
      * Filter to fonts with just the specified traits.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("filteredTraits")
@@ -137,6 +151,8 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
 
     /**
      * Indicates if individual faces can be selected instead of just families.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("includeFaces")
@@ -183,6 +199,8 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
 
     /**
      * Indicates if all fonts should be shown in the system font instead of themselves.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDisplayUsingSystemFont:")
@@ -191,13 +209,20 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     /**
      * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of
      * string language identifiers (conforming to UTS #35) supported by the font.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use languageFilter
      */
+    @Deprecated
     @Generated
     @Selector("setFilteredLanguagesPredicate:")
     public native void setFilteredLanguagesPredicate(@Nullable NSPredicate value);
 
     /**
      * Filter to fonts with just the specified traits.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setFilteredTraits:")
@@ -205,6 +230,8 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
 
     /**
      * Indicates if individual faces can be selected instead of just families.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setIncludeFaces:")

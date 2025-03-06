@@ -145,6 +145,9 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -187,6 +190,9 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Selector("availableVideoCodecTypes")
     public native NSArray<String> availableVideoCodecTypes();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("init")
     public native AVCaptureMovieFileOutput init();
@@ -198,6 +204,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of top-level
      * metadata to be written in each output file.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -218,6 +226,9 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * written, if there is one.
      * 
      * For best writing performance on external storage devices, set the movieFragmentInterval to 10 seconds or greater.
+     * If the size of a movie fragment is greater than or equal to 2GB, an interval is added at 2GB mark.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("movieFragmentInterval")
@@ -275,6 +286,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of top-level
      * metadata to be written in each output file.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMetadata:")
@@ -294,6 +307,9 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * written, if there is one.
      * 
      * For best writing performance on external storage devices, set the movieFragmentInterval to 10 seconds or greater.
+     * If the size of a movie fragment is greater than or equal to 2GB, an interval is added at 2GB mark.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMovieFragmentInterval:")
@@ -498,4 +514,57 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] spatialVideoCaptureEnabled
+     * 
+     * Enable or disable capturing spatial video to a file.
+     * 
+     * This property enables capturing spatial video to a file. By default, this property is set to NO. Check
+     * spatialVideoCaptureSupported before setting this property, as setting to YES will throw an exception if the
+     * feature is not supported.
+     * 
+     * On iOS, enabling spatial video will overwrite the connected AVCaptureDevice's `videoZoomFactor`,
+     * `minAvailableVideoZoomFactor`, and `maxAvailableVideoZoomFactor` to the field of view of the narrower camera in
+     * the pair.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isSpatialVideoCaptureEnabled")
+    public native boolean isSpatialVideoCaptureEnabled();
+
+    /**
+     * [@property] spatialVideoCaptureSupported
+     * 
+     * Returns whether or not capturing spatial video to a file is supported. Note that in order to be supported, two
+     * conditions must be met. (1) The source AVCaptureDevice's activeFormat.spatialVideoCaptureSupported property must
+     * return YES. (2) The video AVCaptureConnection's activeVideoStabilizationMode property must return
+     * AVCaptureVideoStabilizationModeCinematic, AVCaptureVideoStabilizationModeCinematicExtended, or
+     * AVCaptureVideoStabilizationModeCinematicExtendedEnhanced.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isSpatialVideoCaptureSupported")
+    public native boolean isSpatialVideoCaptureSupported();
+
+    /**
+     * [@property] spatialVideoCaptureEnabled
+     * 
+     * Enable or disable capturing spatial video to a file.
+     * 
+     * This property enables capturing spatial video to a file. By default, this property is set to NO. Check
+     * spatialVideoCaptureSupported before setting this property, as setting to YES will throw an exception if the
+     * feature is not supported.
+     * 
+     * On iOS, enabling spatial video will overwrite the connected AVCaptureDevice's `videoZoomFactor`,
+     * `minAvailableVideoZoomFactor`, and `maxAvailableVideoZoomFactor` to the field of view of the narrower camera in
+     * the pair.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSpatialVideoCaptureEnabled:")
+    public native void setSpatialVideoCaptureEnabled(boolean value);
 }

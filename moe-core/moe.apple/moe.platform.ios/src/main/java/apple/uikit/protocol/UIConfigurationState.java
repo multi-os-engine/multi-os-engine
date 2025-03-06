@@ -25,6 +25,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UIConfigurationState extends NSCopying, NSSecureCoding {
     /**
      * Returns the custom state for the specified key.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -34,12 +36,17 @@ public interface UIConfigurationState extends NSCopying, NSSecureCoding {
 
     /**
      * Returns a new instance with the specified trait collection.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
     @Selector("initWithTraitCollection:")
     UIConfigurationState initWithTraitCollection(@NotNull UITraitCollection traitCollection);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
@@ -48,19 +55,30 @@ public interface UIConfigurationState extends NSCopying, NSSecureCoding {
 
     /**
      * Sets the custom state for the specified key.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCustomState:forKey:")
     void setCustomStateForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object customState, @NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) Object obj, @NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setTraitCollection:")
     void setTraitCollection(@NotNull UITraitCollection value);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("traitCollection")

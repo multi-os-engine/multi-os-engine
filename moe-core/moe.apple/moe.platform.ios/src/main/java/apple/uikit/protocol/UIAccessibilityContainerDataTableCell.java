@@ -20,6 +20,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccessibilityContainerDataTableCell")
 public interface UIAccessibilityContainerDataTableCell {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("accessibilityColumnRange")
     @ByValue
@@ -28,6 +31,8 @@ public interface UIAccessibilityContainerDataTableCell {
     /**
      * The row/column index + the row/column span.
      * default == { NSNotFound, 0 }
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("accessibilityRowRange")

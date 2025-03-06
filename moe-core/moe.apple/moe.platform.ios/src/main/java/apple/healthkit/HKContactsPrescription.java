@@ -74,6 +74,8 @@ public class HKContactsPrescription extends HKVisionPrescription implements NSSe
      * [@property] brand
      * 
      * The prescribed brand after contact lens fitting
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -148,6 +150,8 @@ public class HKContactsPrescription extends HKVisionPrescription implements NSSe
      * [@property] leftEye
      * 
      * The left eye lens specification
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -169,6 +173,8 @@ public class HKContactsPrescription extends HKVisionPrescription implements NSSe
      * @param expirationDate        The date the prescription expires
      * @param device                The device that generated the sample
      * @param metadata              The metadata for the sample
+     * 
+     *                              API-Since: 16.0
      */
     @Generated
     @Selector("prescriptionWithRightEyeSpecification:leftEyeSpecification:brand:dateIssued:expirationDate:device:metadata:")
@@ -196,6 +202,8 @@ public class HKContactsPrescription extends HKVisionPrescription implements NSSe
      * [@property] rightEye
      * 
      * The right eye lens specification
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

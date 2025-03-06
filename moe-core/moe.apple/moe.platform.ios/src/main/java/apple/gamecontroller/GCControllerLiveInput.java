@@ -251,6 +251,8 @@ public class GCControllerLiveInput extends GCControllerInputState implements GCD
      * control remapping functionality, or if your app streams controller input
      * to a remote device that implements control remapping functionality, you
      * should access controller physical input through this interface.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("unmappedInput")

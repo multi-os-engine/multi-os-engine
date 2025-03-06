@@ -99,6 +99,8 @@ public class UIScribbleInteraction extends NSObject implements UIInteraction {
 
     /**
      * The delegate for the interaction, specified on init.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -123,6 +125,9 @@ public class UIScribbleInteraction extends NSObject implements UIInteraction {
     @Selector("init")
     public native UIScribbleInteraction init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithDelegate:")
     public native UIScribbleInteraction initWithDelegate(
@@ -144,6 +149,8 @@ public class UIScribbleInteraction extends NSObject implements UIInteraction {
     /**
      * Indicates if the user is actively writing. It will be set to YES in between calls to
      * scribbleInteractionWillBeginWriting: and scribbleInteractionDidFinishWriting:
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isHandlingWriting")
@@ -154,6 +161,8 @@ public class UIScribbleInteraction extends NSObject implements UIInteraction {
      * instead of the keyboard. In this case it is recommended to adjust the layout of UI elements that are not optimal
      * for direct handwriting input. For example, small or resizable text fields that expect more than a few words could
      * be made taller and reserve some whitespace at the bottom.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isPencilInputExpected")

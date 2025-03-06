@@ -231,6 +231,9 @@ public class UIPasteControl extends UIControl {
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("configuration")
@@ -257,14 +260,23 @@ public class UIPasteControl extends UIControl {
     @Selector("init")
     public native UIPasteControl init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIPasteControl initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native UIPasteControl initWithConfiguration(@NotNull UIPasteControlConfiguration configuration);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UIPasteControl initWithFrame(@ByValue CGRect frame);
@@ -395,10 +407,16 @@ public class UIPasteControl extends UIControl {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIPasteConfigurationSupporting value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     public void setTarget(@Nullable @Mapped(ObjCObjectMapper.class) UIPasteConfigurationSupporting value) {
         Object __old = target();
@@ -419,6 +437,9 @@ public class UIPasteControl extends UIControl {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("target")

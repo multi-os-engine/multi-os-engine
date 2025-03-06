@@ -179,6 +179,8 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      * Returns the data of the receiver.
      * 
      * @return The data of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -211,6 +213,8 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      * @param data     an NSData object representing the URL content
      *                 corresponding to the given response.
      * @return an initialized NSCachedURLResponse.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithResponse:data:")
@@ -229,6 +233,8 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      *                      stored with the NSCachedURLResponse.
      * @param storagePolicy an NSURLCacheStoragePolicy constant.
      * @return an initialized NSCachedURLResponse.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithResponse:data:userInfo:storagePolicy:")
@@ -239,6 +245,8 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      * Returns the response wrapped by this instance.
      * 
      * @return The response wrapped by this instance.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -249,6 +257,8 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      * Returns the NSURLCacheStoragePolicy constant of the receiver.
      * 
      * @return The NSURLCacheStoragePolicy constant of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("storagePolicy")
@@ -265,6 +275,8 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      * Returns the userInfo dictionary of the receiver.
      * 
      * @return The userInfo dictionary of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated

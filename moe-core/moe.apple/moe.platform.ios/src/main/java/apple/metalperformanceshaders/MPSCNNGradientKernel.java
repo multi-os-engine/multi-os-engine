@@ -161,6 +161,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * @param gradientState  The MPSNNGradientState or MPSNNBinaryGradientState subclass produced by the forward
      *                       inference pass
      * @return The result gradient from the gradient filter
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -195,6 +197,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * @param gradientState       The MPSNNGradientState and MPSNNBinaryGradientState subclass produced by the
      *                            forward pass
      * @param destinationGradient The MPSImage into which to write the filter result
+     * 
+     *                            API-Since: 11.3
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:gradientState:destinationGradient:")
@@ -227,6 +231,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -240,6 +246,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * @return A pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")
@@ -274,6 +282,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * The kernel offset is the offset after upsampling. Both the source offset
      * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("kernelOffsetX")
@@ -292,6 +302,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * The kernel offset is the offset after upsampling. Both the source offset
      * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("kernelOffsetY")
@@ -328,6 +340,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * The kernel offset is the offset after upsampling. Both the source offset
      * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setKernelOffsetX:")
@@ -345,6 +359,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * The kernel offset is the offset after upsampling. Both the source offset
      * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setKernelOffsetY:")

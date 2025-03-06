@@ -60,11 +60,17 @@ public class INPaymentAmount extends NSObject implements NSCopying, NSSecureCodi
     @Selector("allocWithZone:")
     public static native INPaymentAmount allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("amount")
     public native INCurrencyAmount amount();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("amountType")
     @NInt
@@ -123,6 +129,9 @@ public class INPaymentAmount extends NSObject implements NSCopying, NSSecureCodi
     @Selector("init")
     public native INPaymentAmount init();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("initWithAmountType:amount:")
     public native INPaymentAmount initWithAmountTypeAmount(@NInt long amountType, @NotNull INCurrencyAmount amount);

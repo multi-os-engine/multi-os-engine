@@ -155,16 +155,9 @@ public class ADClient extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * sharedClient
-     * 
-     * This is no longer a singleton and returns a new instance for every call.
-     * 
      * API-Since: 7.1
      * Deprecated-Since: 14.5
      * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
-     * 
-     * @return
-     *         An instance of ADClient.
      */
     @NotNull
     @Deprecated
@@ -181,47 +174,14 @@ public class ADClient extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addClientToSegments:replaceExisting:
-     * 
-     * This method does nothing and immediately returns.
-     * 
-     * API-Since: 8.0
-     * Deprecated-Since: 13.0
-     * 
-     * @param segmentIdentifiers
-     *                           This parameter is unused.
-     * 
-     * @param replaceExisting
-     *                           This parameter is unused.
-     */
-    @Deprecated
-    @Generated
-    @Selector("addClientToSegments:replaceExisting:")
-    public native void addClientToSegmentsReplaceExisting(@NotNull NSArray<String> segmentIdentifiers,
-            boolean replaceExisting);
-
     @Generated
     @Selector("init")
     public native ADClient init();
 
     /**
-     * requestAttributionDetailsWithBlock:
-     * 
-     * Provides a way for an app to determine when an an was shown to the user
-     * which resulted in the user's purchase of the app.
-     * 
      * API-Since: 9.0
      * Deprecated-Since: 14.5
      * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
-     * 
-     * @param completionHandler
-     *                          A block which will be called with details related to the attribution status of the app.
-     *                          The attributionDetails dictionary will contain purchase and impression dates
-     *                          as well as other specific campaign related information. If the attributionDetails
-     *                          dictionary is nil, an NSError is passed with an ADClientError enum.
-     * 
-     *                          The handler will be called on an arbitrary queue.
      */
     @Deprecated
     @Generated

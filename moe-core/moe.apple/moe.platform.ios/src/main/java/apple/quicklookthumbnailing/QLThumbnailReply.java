@@ -153,6 +153,8 @@ public class QLThumbnailReply extends NSObject {
      *                     UIKit or AppKit.
      *                     Return YES if the thumbnail was successfully drawn into the current context. Return NO
      *                     otherwise.
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("replyWithContextSize:currentContextDrawingBlock:")
@@ -181,6 +183,8 @@ public class QLThumbnailReply extends NSObject {
      * @param drawingBlock The thumbnail should be drawn into the context passed to this block. It is a context of type
      *                     CGBitmapContext, set up to be used with the coordinate system of Core Graphics.
      *                     Return YES if the thumbnail was successfully drawn into the context. Return NO otherwise.
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("replyWithContextSize:drawingBlock:")
@@ -197,6 +201,8 @@ public class QLThumbnailReply extends NSObject {
     /**
      * You can create a reply object with a file URL of an image that will be used as the thumbnail.
      * The image will be downscaled to fit the size of the QLFileThumbnailRequest if necessary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("replyWithImageFileURL:")

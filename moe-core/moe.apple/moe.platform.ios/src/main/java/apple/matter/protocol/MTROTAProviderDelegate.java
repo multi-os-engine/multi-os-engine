@@ -158,7 +158,7 @@ public interface MTROTAProviderDelegate {
     public interface Block_handleBDXTransferSessionBeginForNodeIDControllerFileDesignatorOffsetCompletionHandler {
         @Generated
         void call_handleBDXTransferSessionBeginForNodeIDControllerFileDesignatorOffsetCompletionHandler(
-                @Nullable NSError arg0);
+                @Nullable NSError error);
     }
 
     /**

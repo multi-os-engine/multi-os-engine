@@ -26,6 +26,8 @@ public interface AVRoutePickerViewDelegate {
      * routePickerViewDidEndPresentingRoutes:
      * 
      * Informs the delegate that the route picker view finished presenting routes to the user.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -38,6 +40,8 @@ public interface AVRoutePickerViewDelegate {
      * routePickerViewWillBeginPresentingRoutes:
      * 
      * Informs the delegate that the route picker view will start presenting routes to the user.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

@@ -79,6 +79,8 @@ public class DDMatchPostalAddress extends DDMatch {
 
     /**
      * The city name in a postal address.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -97,6 +99,8 @@ public class DDMatchPostalAddress extends DDMatch {
 
     /**
      * The country or region name in a postal address.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -149,6 +153,8 @@ public class DDMatchPostalAddress extends DDMatch {
 
     /**
      * The postal code in a postal address.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -169,6 +175,8 @@ public class DDMatchPostalAddress extends DDMatch {
 
     /**
      * The state name in a postal address.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -177,6 +185,8 @@ public class DDMatchPostalAddress extends DDMatch {
 
     /**
      * The street name in a postal address.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

@@ -89,6 +89,9 @@ public class MPMusicPlayerPlayParameters extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("dictionary")
@@ -103,6 +106,9 @@ public class MPMusicPlayerPlayParameters extends NSObject {
     @Selector("init")
     public native MPMusicPlayerPlayParameters init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDictionary:")
     public native MPMusicPlayerPlayParameters initWithDictionary(@NotNull NSDictionary<String, ?> dictionary);

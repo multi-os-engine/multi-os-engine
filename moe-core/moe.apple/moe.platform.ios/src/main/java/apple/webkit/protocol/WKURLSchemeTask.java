@@ -28,6 +28,8 @@ public interface WKURLSchemeTask {
      * An exception will be thrown if your app has been told to stop loading this task via the registered
      * WKURLSchemeHandler object.
      * 
+     * API-Since: 11.0
+     * 
      * @param error A description of the error that caused the task to fail.
      */
     @Generated
@@ -42,6 +44,8 @@ public interface WKURLSchemeTask {
      * failed.
      * An exception will be thrown if your app has been told to stop loading this task via the registered
      * WKURLSchemeHandler object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("didFinish")
@@ -58,6 +62,8 @@ public interface WKURLSchemeTask {
      * An exception will be thrown if your app has been told to stop loading this task via the registered
      * WKURLSchemeHandler object.
      * 
+     * API-Since: 11.0
+     * 
      * @param data The data to add.
      */
     @Generated
@@ -73,6 +79,8 @@ public interface WKURLSchemeTask {
      * An exception will be thrown if your app has been told to stop loading this task via the registered
      * WKURLSchemeHandler object.
      * 
+     * API-Since: 11.0
+     * 
      * @param response The response to use.
      */
     @Generated
@@ -81,6 +89,8 @@ public interface WKURLSchemeTask {
 
     /**
      * The request to load for this task.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

@@ -64,6 +64,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     /**
      * The overall appearance of the section.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("appearance")
@@ -77,6 +79,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     /**
      * The background color of the section.
      * Defaults to nil, indicating the system background color for the specified appearance is used.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -121,6 +125,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     /**
      * Defines whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("footerMode")
@@ -134,6 +140,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     /**
      * Defines whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("headerMode")
@@ -144,6 +152,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("init")
     public native UICollectionLayoutListConfiguration init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithAppearance:")
     public native UICollectionLayoutListConfiguration initWithAppearance(@NInt long appearance);
@@ -204,6 +215,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     /**
      * The background color of the section.
      * Defaults to nil, indicating the system background color for the specified appearance is used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -211,6 +224,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     /**
      * Defines whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setFooterMode:")
@@ -218,6 +233,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     /**
      * Defines whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setHeaderMode:")
@@ -395,4 +412,35 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Determines the type of items that will tightly hug their content.
+     * 
+     * The default value for this property is `UICollectionLayoutListContentHuggingElementsSupplementaryHeader` on
+     * visionOS for plain style table views and an empty set on all other platforms.
+     * When the value of this property is `UICollectionLayoutListContentHuggingElementsSupplementaryHeader`, the header
+     * view will not stretch the width of the collection view if its content's intrinsic content size is less than the
+     * collection view's width.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("contentHuggingElements")
+    @NUInt
+    public native long contentHuggingElements();
+
+    /**
+     * Determines the type of items that will tightly hug their content.
+     * 
+     * The default value for this property is `UICollectionLayoutListContentHuggingElementsSupplementaryHeader` on
+     * visionOS for plain style table views and an empty set on all other platforms.
+     * When the value of this property is `UICollectionLayoutListContentHuggingElementsSupplementaryHeader`, the header
+     * view will not stretch the width of the collection view if its content's intrinsic content size is less than the
+     * collection view's width.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setContentHuggingElements:")
+    public native void setContentHuggingElements(@NUInt long value);
 }

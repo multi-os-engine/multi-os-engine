@@ -171,6 +171,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * indicates the thickness of the edge processing region on the left, top, right and bottom edges, in pixels.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("edgeWidths")
@@ -180,6 +182,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
     /**
      * hints the custom compositor that it may use higher quality, potentially slower algorithms.
      * Generally true for non real time use cases.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("highQualityRendering")
@@ -191,6 +195,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * caller must CFRelease
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -199,6 +205,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * indicates the pixel aspect ratio for rendered frames.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("pixelAspectRatio")
@@ -207,6 +215,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * indicates a scaling ratio that should be applied when rendering frames.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("renderScale")
@@ -214,6 +224,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * incorporates renderScale, pixelAspectRatio, edgeWidths
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("renderTransform")
@@ -222,6 +234,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * indicates the width and height for rendering frames.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("size")
@@ -230,6 +244,8 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * The AVVideoComposition being rendered.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

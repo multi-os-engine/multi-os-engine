@@ -116,6 +116,8 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
      * year, weekday, quarter, week of the year / month are not used in calculation for next fire date.
      * If its expected to fire on the same day, it should be at least 1 minute ahead or it could get scheduled for the
      * next recurrent day.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -143,6 +145,8 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
      * @param fireDateComponents The date component that specifies the time when the event is fired
      * 
      * @return Instance object representing the event trigger.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithFireDateComponents:")

@@ -764,4 +764,37 @@ public class MKAnnotationView extends UIView {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The offset (in points) that selection accessories reference.
+     * 
+     * By default, the center point of an annotation view is referenced
+     * by accessories positioned adjacent to the annotation view on the map.
+     * You can use this property to reposition the reference point as
+     * necessary. MapKit measures the x- and y-offset values in points.
+     * Positive offset values move the reference point down and to the right,
+     * and negative values move it up and to the left.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("accessoryOffset")
+    @ByValue
+    public native CGPoint accessoryOffset();
+
+    /**
+     * The offset (in points) that selection accessories reference.
+     * 
+     * By default, the center point of an annotation view is referenced
+     * by accessories positioned adjacent to the annotation view on the map.
+     * You can use this property to reposition the reference point as
+     * necessary. MapKit measures the x- and y-offset values in points.
+     * Positive offset values move the reference point down and to the right,
+     * and negative values move it up and to the left.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setAccessoryOffset:")
+    public native void setAccessoryOffset(@ByValue CGPoint value);
 }

@@ -45,6 +45,8 @@ public interface ILMessageFilterQueryHandling {
      * @param queryRequest A query request to be handled which describes a received message.
      * @param context      Extension context which offers API to defer request to network if necessary.
      * @param completion   Completion block for returning a response.
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("handleQueryRequest:context:completion:")

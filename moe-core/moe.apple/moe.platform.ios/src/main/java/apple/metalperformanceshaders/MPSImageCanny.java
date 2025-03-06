@@ -125,6 +125,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * Returns a pointer to the array of three floats used to convert RGBA, RGB or RG images
      * to the destination format when the destination is monochrome.
      * Value is readonly and user should not modify or free.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -149,6 +151,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * 
      * Read-write value used to set the high threshold for double thresholding, value is normalized.
      * Default is 0.4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("highThreshold")
@@ -174,6 +178,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -191,6 +197,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * 
      * @param device The device the filter will run on
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -219,6 +227,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * @param sigma     The standard deviation of gaussian blur filter.
      *                  Gaussian weight, centered at 0, at integer grid n is given as
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("initWithDevice:linearToGrayScaleTransform:sigma:")
@@ -252,6 +262,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * 
      * Read-write value used to set the low threshold for double thresholding, value is normalized.
      * Default is 0.2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("lowThreshold")
@@ -275,6 +287,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * 
      * Read-write value used to set the high threshold for double thresholding, value is normalized.
      * Default is 0.4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setHighThreshold:")
@@ -285,6 +299,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * 
      * Read-write value used to set the low threshold for double thresholding, value is normalized.
      * Default is 0.2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLowThreshold:")
@@ -301,6 +317,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * for the approximate canny implementation is improved and should provide similar enough results for most cases.
      * Extra tuning of the high and low thresholds as well as sigma may help achieve a more similar output in this mode.
      * Default is YES
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUseFastMode:")
@@ -314,6 +332,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * [@property] sigma
      * 
      * Read-only sigma value used in performing Gaussian blur of the image
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sigma")
@@ -344,6 +364,8 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * for the approximate canny implementation is improved and should provide similar enough results for most cases.
      * Extra tuning of the high and low thresholds as well as sigma may help achieve a more similar output in this mode.
      * Default is YES
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("useFastMode")

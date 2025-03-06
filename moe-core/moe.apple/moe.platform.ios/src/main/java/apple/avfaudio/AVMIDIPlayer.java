@@ -97,6 +97,8 @@ public class AVMIDIPlayer extends NSObject {
      * 
      * Setting this positions the player to the specified time. No range checking on the time value is done.
      * This can be set while the player is playing, in which case playback will resume at the new time.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("currentPosition")
@@ -114,6 +116,8 @@ public class AVMIDIPlayer extends NSObject {
      * [@property] duration
      * 
      * The length of the currently loaded file in seconds.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("duration")
@@ -136,6 +140,8 @@ public class AVMIDIPlayer extends NSObject {
      * 'bankURL' should contain the path to a SoundFont2 or DLS bank to be used
      * by the MIDI synthesizer. For OSX it can be set to nil for the default,
      * but for iOS it must always refer to a valid bank file.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithContentsOfURL:soundBankURL:error:")
@@ -150,6 +156,8 @@ public class AVMIDIPlayer extends NSObject {
      * 'bankURL' should contain the path to a SoundFont2 or DLS bank to be used
      * by the MIDI synthesizer. For OSX it can be set to nil for the default,
      * but for iOS it must always refer to a valid bank file.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithData:soundBankURL:error:")
@@ -173,6 +181,8 @@ public class AVMIDIPlayer extends NSObject {
      * [@property] playing
      * 
      * Indicates whether or not the player is playing
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isPlaying")
@@ -196,6 +206,8 @@ public class AVMIDIPlayer extends NSObject {
      * play:
      * 
      * Play the sequence.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("play:")
@@ -214,6 +226,8 @@ public class AVMIDIPlayer extends NSObject {
      * Get ready to play the sequence by prerolling all events
      * 
      * Happens automatically on play if it has not already been called, but may produce a delay in startup.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("prepareToPlay")
@@ -225,6 +239,8 @@ public class AVMIDIPlayer extends NSObject {
      * The playback rate of the player
      * 
      * 1.0 is normal playback rate. Rate must be > 0.0.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("rate")
@@ -245,6 +261,8 @@ public class AVMIDIPlayer extends NSObject {
      * 
      * Setting this positions the player to the specified time. No range checking on the time value is done.
      * This can be set while the player is playing, in which case playback will resume at the new time.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCurrentPosition:")
@@ -256,6 +274,8 @@ public class AVMIDIPlayer extends NSObject {
      * The playback rate of the player
      * 
      * 1.0 is normal playback rate. Rate must be > 0.0.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRate:")
@@ -269,6 +289,8 @@ public class AVMIDIPlayer extends NSObject {
      * stop
      * 
      * Stop playing the sequence.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stop")

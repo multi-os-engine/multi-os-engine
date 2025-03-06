@@ -114,6 +114,7 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     public native MPSQuadrilateralAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithCoder:group:")
     public native MPSQuadrilateralAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
@@ -124,6 +125,7 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     public native MPSQuadrilateralAccelerationStructure initWithDevice(
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithGroup:")
     public native MPSQuadrilateralAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
@@ -158,7 +160,11 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     /**
      * Number of quads. Changes to this property require rebuilding the acceleration
      * structure. This is an alias for the polygonCount property.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("quadrilateralCount")
     @NUInt
@@ -175,7 +181,11 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     /**
      * Number of quads. Changes to this property require rebuilding the acceleration
      * structure. This is an alias for the polygonCount property.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setQuadrilateralCount:")
     public native void setQuadrilateralCount(@NUInt long value);

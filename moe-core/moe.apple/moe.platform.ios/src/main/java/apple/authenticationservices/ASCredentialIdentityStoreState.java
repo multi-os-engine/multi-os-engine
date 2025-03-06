@@ -114,6 +114,8 @@ public class ASCredentialIdentityStoreState extends NSObject {
      * Get the enabled state of the credential identity store.
      * [@dicussion] You can only modify the credential identity store when it is enabled.
      * 
+     * API-Since: 12.0
+     * 
      * @return YES if the credential identity store is enabled.
      */
     @Generated
@@ -158,6 +160,8 @@ public class ASCredentialIdentityStoreState extends NSObject {
      * are supported, you can update the credential identity store with only the new changes
      * since the last time it was updated. Otherwise, you should update the credential identity
      * store by adding all credential identities.
+     * 
+     * API-Since: 12.0
      * 
      * @return YES if the credential identity store supports incremental updates.
      */

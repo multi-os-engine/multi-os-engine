@@ -52,6 +52,8 @@ public class MTLAccelerationStructurePassDescriptor extends NSObject implements 
      * accelerationStructurePassDescriptor
      * 
      * Create an autoreleased default acceleration structure pass descriptor
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -160,6 +162,8 @@ public class MTLAccelerationStructurePassDescriptor extends NSObject implements 
      * [@property] sampleBufferAttachments
      * 
      * An array of sample buffers and associated sample indices.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

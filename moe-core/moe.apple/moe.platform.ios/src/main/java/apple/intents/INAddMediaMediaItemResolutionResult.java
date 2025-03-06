@@ -115,6 +115,9 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
     @Selector("init")
     public native INAddMediaMediaItemResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMediaItemResolutionResult:")
     public native INAddMediaMediaItemResolutionResult initWithMediaItemResolutionResult(
@@ -177,6 +180,8 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
 
     /**
      * Convenience method to return multiple success resolution results for an array of INMediaItems
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -193,6 +198,9 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
     @Selector("unsupported")
     public static native INAddMediaMediaItemResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

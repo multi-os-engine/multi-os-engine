@@ -99,6 +99,8 @@ public class AVAssetImageGenerator extends NSObject {
      * 
      * AVAssetImageGenerator will use the default enabled video track(s) to generate images.
      * 
+     * API-Since: 4.0
+     * 
      * @param asset
      *              The asset from which images will be extracted.
      * @return An instance of AVAssetImageGenerator
@@ -195,6 +197,8 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * Specifies the aperture mode for the generated image. Default is AVAssetImageGeneratorApertureModeCleanAperture.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -205,6 +209,8 @@ public class AVAssetImageGenerator extends NSObject {
      * Specifies whether or not to apply the track's preferredTransform (see -[AVAssetTrack preferredTransform]) when
      * extracting an image from the asset.
      * Default is NO. Only rotation by 90, 180, or 270 degrees is supported.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("appliesPreferredTrackTransform")
@@ -228,6 +234,8 @@ public class AVAssetImageGenerator extends NSObject {
      * Calls the handler block with AVAssetImageGeneratorCancelled for each image time in every previous invocation of
      * -generateCGImagesAsynchronouslyForTimes:completionHandler:
      * for which images have not yet been supplied.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("cancelAllCGImageGeneration")
@@ -250,7 +258,8 @@ public class AVAssetImageGenerator extends NSObject {
      * lead to media services being reset.
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use generateCGImageAsynchronouslyForTime:completionHandler: instead
      * 
      * @param requestedTime
      *                      The time at which the image of the asset is to be created.
@@ -293,6 +302,8 @@ public class AVAssetImageGenerator extends NSObject {
      * The generated image is not retained. Clients should retain the image if they wish it to persist after the
      * completion handler returns.
      * 
+     * API-Since: 4.0
+     * 
      * @param requestedTimes
      *                       An NSArray of NSValues, each containing a CMTime, specifying the asset times at which an
      *                       image is requested.
@@ -326,6 +337,8 @@ public class AVAssetImageGenerator extends NSObject {
      * 
      * AVAssetImageGenerator will use the default enabled video track(s) to generate images.
      * 
+     * API-Since: 4.0
+     * 
      * @param asset
      *              The asset from which images will be extracted.
      * @return An instance of AVAssetImageGenerator
@@ -339,6 +352,8 @@ public class AVAssetImageGenerator extends NSObject {
      * AVAssetImageGenerator will scale images such that they fit within the defined bounding box.
      * Images will never be scaled up. The aspect ratio of the scaled image will be defined by the apertureMode
      * property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("maximumSize")
@@ -369,6 +384,8 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * Specifies the aperture mode for the generated image. Default is AVAssetImageGeneratorApertureModeCleanAperture.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setApertureMode:")
@@ -378,6 +395,8 @@ public class AVAssetImageGenerator extends NSObject {
      * Specifies whether or not to apply the track's preferredTransform (see -[AVAssetTrack preferredTransform]) when
      * extracting an image from the asset.
      * Default is NO. Only rotation by 90, 180, or 270 degrees is supported.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAppliesPreferredTrackTransform:")
@@ -388,6 +407,8 @@ public class AVAssetImageGenerator extends NSObject {
      * AVAssetImageGenerator will scale images such that they fit within the defined bounding box.
      * Images will never be scaled up. The aspect ratio of the scaled image will be defined by the apertureMode
      * property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMaximumSize:")
@@ -425,6 +446,8 @@ public class AVAssetImageGenerator extends NSObject {
      * - "renderSize" width or height is less than zero
      * - "frameDuration" is invalid or less than or equal to zero
      * - "sourceTrackIDForFrameTiming" is less than zero
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVideoComposition:")
@@ -442,6 +465,8 @@ public class AVAssetImageGenerator extends NSObject {
      * - "renderSize" width or height is less than zero
      * - "frameDuration" is invalid or less than or equal to zero
      * - "sourceTrackIDForFrameTiming" is less than zero
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -495,4 +520,31 @@ public class AVAssetImageGenerator extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] dynamicRangePolicy
+     * 
+     * Configures the video dynamic range for the output CGImage
+     * 
+     * Default is AVAssetImageGeneratorDynamicRangePolicyForceSDR
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("dynamicRangePolicy")
+    @NotNull
+    public native String dynamicRangePolicy();
+
+    /**
+     * [@property] dynamicRangePolicy
+     * 
+     * Configures the video dynamic range for the output CGImage
+     * 
+     * Default is AVAssetImageGeneratorDynamicRangePolicyForceSDR
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDynamicRangePolicy:")
+    public native void setDynamicRangePolicy(@NotNull String value);
 }

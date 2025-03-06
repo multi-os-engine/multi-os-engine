@@ -117,6 +117,8 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * @see GCControllerDidConnectNotification
      * @see GCControllerDidDisconnectNotification
+     * 
+     *      API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -206,6 +208,8 @@ public class GCController extends NSObject implements GCDevice {
      *                          will not be notified when discovery stops)
      * @see stopWirelessControllerDiscovery
      * @see controllers
+     * 
+     *      API-Since: 7.0
      */
     @Generated
     @Selector("startWirelessControllerDiscoveryWithCompletionHandler:")
@@ -221,6 +225,8 @@ public class GCController extends NSObject implements GCDevice {
      * startWirelessControllerDiscoveryWithCompletionHandler: has been called.
      * 
      * @see startWirelessControllerDiscoveryWithCompletionHandler:
+     * 
+     *      API-Since: 7.0
      */
     @Generated
     @Selector("stopWirelessControllerDiscovery")
@@ -267,6 +273,9 @@ public class GCController extends NSObject implements GCDevice {
     @ObjCBlock(name = "call_controllerPausedHandler_ret")
     public native Block_controllerPausedHandler_ret controllerPausedHandler();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("extendedGamepad")
@@ -317,11 +326,16 @@ public class GCController extends NSObject implements GCDevice {
      * may suggest that interaction with the device may use other inputs easily. This is presented to developers to
      * allow them to
      * make informed decisions about UI and interactions to choose for their game in this situation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isAttachedToDevice")
     public native boolean isAttachedToDevice();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("microGamepad")
@@ -356,6 +370,8 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * Negative values less than GCControllerPlayerIndexUnset will just map back to GCControllerPlayerIndexUnset when
      * read back.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("playerIndex")
@@ -410,6 +426,8 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * Negative values less than GCControllerPlayerIndexUnset will just map back to GCControllerPlayerIndexUnset when
      * read back.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPlayerIndex:")

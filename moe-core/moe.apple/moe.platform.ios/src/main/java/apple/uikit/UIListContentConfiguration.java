@@ -84,6 +84,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * An attributed variant of the primary text, which supersedes the `text` and some properties of the
      * `textProperties` if set.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -97,6 +99,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
      * vertical axes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("axesPreservingSuperviewLayoutMargins")
@@ -116,6 +120,12 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a list cell.
+     * From iOS 18 onwards, the configuration will automatically adopt the appropriate style for a list when updating
+     * for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to a cell in a plain-style list.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -150,6 +160,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or
      * both axes, these are just minimum margins, as inherited margins may be larger.)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("directionalLayoutMargins")
@@ -162,7 +174,11 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a grouped list footer.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("groupedFooterConfiguration")
@@ -170,7 +186,11 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a grouped list header.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("groupedHeaderConfiguration")
@@ -183,6 +203,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * The image to display.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -191,6 +213,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Additional properties to configure the image.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -199,6 +223,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Padding between the image and text. Only applies when there is both an image and text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("imageToTextPadding")
@@ -247,7 +273,11 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a plain list footer.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("plainFooterConfiguration")
@@ -255,7 +285,11 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a plain list header.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("plainHeaderConfiguration")
@@ -264,6 +298,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * When YES, the text and secondary text will be positioned side-by-side if there is sufficient space. Otherwise,
      * the text will be stacked in a vertical layout.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("prefersSideBySideTextAndSecondaryText")
@@ -280,6 +316,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the
      * `secondaryTextProperties` if set.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -288,6 +326,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * The secondary text.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -296,6 +336,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Additional properties to configure the secondary text.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -305,6 +347,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * An attributed variant of the primary text, which supersedes the `text` and some properties of the
      * `textProperties` if set.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAttributedText:")
@@ -313,6 +357,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
      * vertical axes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAxesPreservingSuperviewLayoutMargins:")
@@ -321,6 +367,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or
      * both axes, these are just minimum margins, as inherited margins may be larger.)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDirectionalLayoutMargins:")
@@ -328,6 +376,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * The image to display.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setImage:")
@@ -335,6 +385,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Padding between the image and text. Only applies when there is both an image and text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setImageToTextPadding:")
@@ -343,6 +395,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * When YES, the text and secondary text will be positioned side-by-side if there is sufficient space. Otherwise,
      * the text will be stacked in a vertical layout.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPrefersSideBySideTextAndSecondaryText:")
@@ -351,6 +405,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the
      * `secondaryTextProperties` if set.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSecondaryAttributedText:")
@@ -358,6 +414,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * The secondary text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSecondaryText:")
@@ -365,6 +423,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * The primary text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setText:")
@@ -373,6 +433,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Horizontal (minimum) padding between the text and secondary text. Only applies when there is both text and
      * secondary text, and they are in a side-by-side layout.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTextToSecondaryTextHorizontalPadding:")
@@ -381,6 +443,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Vertical padding between the text and secondary text. Only applies when there is both text and secondary text,
      * and they are in a stacked layout.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTextToSecondaryTextVerticalPadding:")
@@ -392,7 +456,11 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a sidebar list cell.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sidebarCellConfiguration")
@@ -400,7 +468,11 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a sidebar list header.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sidebarHeaderConfiguration")
@@ -408,7 +480,11 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a sidebar list cell with subtitle text.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sidebarSubtitleCellConfiguration")
@@ -416,6 +492,12 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a list cell with subtitle text.
+     * From iOS 18 onwards, the configuration will automatically adopt the appropriate style for a list when updating
+     * for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to a subtitle cell in a plain-style list.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -438,6 +520,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * The primary text.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -446,6 +530,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Additional properties to configure the primary text.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -455,6 +541,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Horizontal (minimum) padding between the text and secondary text. Only applies when there is both text and
      * secondary text, and they are in a side-by-side layout.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("textToSecondaryTextHorizontalPadding")
@@ -464,6 +552,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Vertical padding between the text and secondary text. Only applies when there is both text and secondary text,
      * and they are in a stacked layout.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("textToSecondaryTextVerticalPadding")
@@ -478,6 +568,12 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a list cell with side-by-side value text.
+     * From iOS 18 onwards, the configuration will automatically adopt the appropriate style for a list when updating
+     * for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to the appearance of a value cell in a plain-style list.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -513,4 +609,49 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The alpha to apply to the entire content view. Defaults to 1.0.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("alpha")
+    @NFloat
+    public native double alpha();
+
+    /**
+     * Represents a generic footer configuration that automatically adopts the style of a containing list when updating
+     * for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to the footer configuration for a plain-style list.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("footerConfiguration")
+    @NotNull
+    public static native UIListContentConfiguration footerConfiguration();
+
+    /**
+     * Represents a generic header configuration that automatically adopts the style of a containing list when updating
+     * for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to the header configuration for a plain-style list.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("headerConfiguration")
+    @NotNull
+    public static native UIListContentConfiguration headerConfiguration();
+
+    /**
+     * The alpha to apply to the entire content view. Defaults to 1.0.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setAlpha:")
+    public native void setAlpha(@NFloat double value);
 }

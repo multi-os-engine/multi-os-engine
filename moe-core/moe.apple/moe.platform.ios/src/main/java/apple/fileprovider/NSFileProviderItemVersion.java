@@ -113,6 +113,8 @@ public class NSFileProviderItemVersion extends NSObject {
      * 
      * Note that the resource fork of the file is considered content, so this version
      * data should change when either the data fork or the resource fork changes.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -141,6 +143,8 @@ public class NSFileProviderItemVersion extends NSObject {
      * for metadata.
      * 
      * Components are limited to 128 bytes in size.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithContentVersion:metadataVersion:")
@@ -178,6 +182,8 @@ public class NSFileProviderItemVersion extends NSObject {
      * - if the metadata version changes without any corresponding observable changes in the metadata returned
      * to the system, the system will simply store the updated metadata version (to return it as the base version
      * of a possible future change request).
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

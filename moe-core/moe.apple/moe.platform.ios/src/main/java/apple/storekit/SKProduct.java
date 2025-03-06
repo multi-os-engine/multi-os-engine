@@ -45,7 +45,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -162,7 +165,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("downloadContentLengths")
@@ -170,7 +176,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("downloadContentVersion")
@@ -184,14 +193,20 @@ public class SKProduct extends NSObject {
      * YES if this product has content downloadable using SKDownload
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("isDownloadable")
     public native boolean isDownloadable();
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.description
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("localizedDescription")
@@ -199,7 +214,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.displayName
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("localizedTitle")
@@ -207,7 +225,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.displayPrice
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("price")
@@ -215,7 +236,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.displayPrice
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("priceLocale")
@@ -223,7 +247,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.id
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("productIdentifier")
@@ -239,7 +266,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 12.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.subscription.promotionalOffers
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("discounts")
@@ -247,7 +277,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.subscription.introductionaryOffer
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("introductoryPrice")
@@ -255,7 +288,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.subscription.subscriptionGroupID
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("subscriptionGroupIdentifier")
@@ -263,7 +299,10 @@ public class SKProduct extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.subscription.subscriptionPeriod
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("subscriptionPeriod")
@@ -273,7 +312,10 @@ public class SKProduct extends NSObject {
      * YES if this product allows for sharing among family members
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.isFamilyShareable
      */
+    @Deprecated
     @Generated
     @Selector("isFamilyShareable")
     public native boolean isFamilyShareable();

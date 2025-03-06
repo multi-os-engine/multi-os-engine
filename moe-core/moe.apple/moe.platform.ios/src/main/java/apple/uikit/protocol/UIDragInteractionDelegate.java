@@ -32,6 +32,8 @@ public interface UIDragInteractionDelegate {
      * Called when the cancel animation is about to start, once for each item,
      * whether it is visible or not.
      * Use the animator to animate your own changes alongside the system animation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -58,6 +60,8 @@ public interface UIDragInteractionDelegate {
      * 
      * Use the point, in the view's coordinate space, to determine what part of your view
      * has been touched.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -77,6 +81,8 @@ public interface UIDragInteractionDelegate {
      * to last.
      * 
      * If an empty array is returned, then no drag will begin.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -90,6 +96,8 @@ public interface UIDragInteractionDelegate {
      * items, you may want them not to shrink like they otherwise would.
      * 
      * If not implemented, defaults to false.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -108,6 +116,8 @@ public interface UIDragInteractionDelegate {
      * - nil, to fade the drag item in place
      * - [defaultPreview retargetedPreviewWithTarget:] to move the preview to a different target
      * - a UITargetedDragPreview that you create however you like
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -123,6 +133,8 @@ public interface UIDragInteractionDelegate {
      * Provide a preview to display while lifting the drag item.
      * Return nil to indicate that this item is not visible and should have no lift animation.
      * If not implemented, a UITargetedDragPreview initialized with interaction.view will be used.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -139,6 +151,8 @@ public interface UIDragInteractionDelegate {
      * 
      * If the operation is UIDropOperationCopy or UIDropOperationMove,
      * then data transfer will begin, and -dragInteraction:sessionDidTransferItems: will be called later.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -157,6 +171,8 @@ public interface UIDragInteractionDelegate {
      * This method is called on the delegates of all interactions that ever added items
      * to this session. `addingInteraction` is the interaction that is causing
      * these new items to be dragged.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -173,6 +189,8 @@ public interface UIDragInteractionDelegate {
      * If the operation is UIDropOperationCancel or UIDropOperationForbidden,
      * the delegate should prepare its views to show an appropriate appearance
      * before the cancel animation starts.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -191,6 +209,8 @@ public interface UIDragInteractionDelegate {
      * -dragInteraction:session:willEndWithOperation: and -dragInteraction:session:didEndWithOperation:.
      * 
      * If not implemented, defaults to true.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -203,6 +223,8 @@ public interface UIDragInteractionDelegate {
     /**
      * Called when the drag has moved (because the user's touch moved).
      * Use -[UIDragSession locationInView:] to get its new location.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -216,6 +238,8 @@ public interface UIDragInteractionDelegate {
      * Called after a drop happened and the handler of the drop has received
      * all of the data that it requested. You may now clean up any extra information
      * relating to those items or their item providers.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -236,6 +260,8 @@ public interface UIDragInteractionDelegate {
      * To continue without adding items, return nil.
      * 
      * If this method is not implemented, defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -260,6 +286,8 @@ public interface UIDragInteractionDelegate {
      * If not implemented, defaults to false.
      * 
      * Note that this method is called only on devices that support dragging across applications.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -272,6 +300,8 @@ public interface UIDragInteractionDelegate {
     /**
      * Called when the the items are in their fully lifted appearance,
      * and the user has started to drag the items away.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -285,6 +315,8 @@ public interface UIDragInteractionDelegate {
      * Called when the lift animation is about to start.
      * Use the animator to animate your own changes alongside the system animation,
      * or to be called when the lift animation completes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

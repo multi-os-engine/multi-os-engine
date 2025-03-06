@@ -63,6 +63,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
 
     /**
      * Creates a hover style with the default shape and a `UIHoverAutomaticEffect`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("automaticStyle")
@@ -112,6 +114,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
     /**
      * The effect to apply to the view with this style. Use `UIHoverAutomaticEffect`
      * to apply a system-default effect to the view.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -145,6 +149,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
      * Whether the effect to apply to the view with this style is enabled.
      * Use this property to temporarily disable a view's hover effect without
      * removing it from the view entirely.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isEnabled")
@@ -175,6 +181,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
     /**
      * The effect to apply to the view with this style. Use `UIHoverAutomaticEffect`
      * to apply a system-default effect to the view.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setEffect:")
@@ -184,6 +192,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
      * Whether the effect to apply to the view with this style is enabled.
      * Use this property to temporarily disable a view's hover effect without
      * removing it from the view entirely.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -192,6 +202,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
     /**
      * The shape to use for the hover effect. If a `nil` shape is used, a
      * system-default shape will be chosen based on the view.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setShape:")
@@ -204,6 +216,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
     /**
      * The shape to use for the hover effect. If a `nil` shape is used, a
      * system-default shape will be chosen based on the view.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shape")
@@ -212,6 +226,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
 
     /**
      * Creates a hover style with the provided effect and shape.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("styleWithEffect:shape:")
@@ -220,6 +236,8 @@ public class UIHoverStyle extends NSObject implements NSCopying {
 
     /**
      * Creates a hover style with the provided shape and a `UIHoverAutomaticEffect`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("styleWithShape:")

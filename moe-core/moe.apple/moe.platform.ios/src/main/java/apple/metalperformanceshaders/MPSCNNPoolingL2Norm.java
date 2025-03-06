@@ -119,6 +119,8 @@ public class MPSCNNPoolingL2Norm extends MPSCNNPooling {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -144,6 +146,9 @@ public class MPSCNNPoolingL2Norm extends MPSCNNPooling {
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")

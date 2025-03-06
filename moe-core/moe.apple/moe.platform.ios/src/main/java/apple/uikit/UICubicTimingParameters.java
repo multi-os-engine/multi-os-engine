@@ -162,16 +162,25 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("animationCurve")
     @NInt
     public native long animationCurve();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("controlPoint1")
     @ByValue
     public native CGPoint controlPoint1();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("controlPoint2")
     @ByValue
@@ -195,11 +204,16 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
 
     /**
      * initializes with the default CA timing curve
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("init")
     public native UICubicTimingParameters init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithAnimationCurve:")
     public native UICubicTimingParameters initWithAnimationCurve(@NInt long curve);
@@ -208,6 +222,9 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
     @Selector("initWithCoder:")
     public native UICubicTimingParameters initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithControlPoint1:controlPoint2:")
     public native UICubicTimingParameters initWithControlPoint1ControlPoint2(@ByValue CGPoint point1,

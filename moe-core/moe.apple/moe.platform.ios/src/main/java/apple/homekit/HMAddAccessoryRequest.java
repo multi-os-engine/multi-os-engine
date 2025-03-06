@@ -115,6 +115,13 @@ public class HMAddAccessoryRequest extends NSObject {
     @Selector("home")
     public native HMHome home();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: HMAddAccessoryRequest objects are created by their associated objects. Directly creating them
+     * is not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMAddAccessoryRequest init();

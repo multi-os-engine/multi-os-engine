@@ -37,15 +37,15 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class quadrature_status {
-    @Generated public static final int QUADRATURE_SUCCESS = 0x00000000;
-    @Generated public static final int QUADRATURE_ERROR = 0xFFFFFFFF;
-    @Generated public static final int QUADRATURE_INVALID_ARG_ERROR = 0xFFFFFFFE;
-    @Generated public static final int QUADRATURE_ALLOC_ERROR = 0xFFFFFFFD;
-    @Generated public static final int QUADRATURE_INTERNAL_ERROR = 0xFFFFFF9D;
-    @Generated public static final int QUADRATURE_INTEGRATE_MAX_EVAL_ERROR = 0xFFFFFF9B;
-    @Generated public static final int QUADRATURE_INTEGRATE_BAD_BEHAVIOUR_ERROR = 0xFFFFFF9A;
-
     @Generated
     private quadrature_status() {
     }
+
+    @Generated public static final int SUCCESS = 0x00000000;
+    @Generated public static final int ERROR = 0xFFFFFFFF;
+    @Generated public static final int INVALID_ARG_ERROR = 0xFFFFFFFE;
+    @Generated public static final int ALLOC_ERROR = 0xFFFFFFFD;
+    @Generated public static final int INTERNAL_ERROR = 0xFFFFFF9D;
+    @Generated public static final int INTEGRATE_MAX_EVAL_ERROR = 0xFFFFFF9B;
+    @Generated public static final int INTEGRATE_BAD_BEHAVIOUR_ERROR = 0xFFFFFF9A;
 }

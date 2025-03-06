@@ -157,6 +157,9 @@ public class UIDictationPhrase extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.1
+     */
     @Nullable
     @Generated
     @Selector("alternativeInterpretations")
@@ -170,6 +173,8 @@ public class UIDictationPhrase extends NSObject {
      * -text returns the most likely interpretation for a phrase. If there are other
      * interpretations, -alternativeInterpretations will return an array of them, with
      * the first being most likely and the last being least likely.
+     * 
+     * API-Since: 5.1
      */
     @NotNull
     @Generated

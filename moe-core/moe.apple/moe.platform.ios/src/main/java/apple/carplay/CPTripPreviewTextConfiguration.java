@@ -48,6 +48,9 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("additionalRoutesButtonTitle")
@@ -113,6 +116,9 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("initWithCoder:")
     public native CPTripPreviewTextConfiguration initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithStartButtonTitle:additionalRoutesButtonTitle:overviewButtonTitle:")
     public native CPTripPreviewTextConfiguration initWithStartButtonTitleAdditionalRoutesButtonTitleOverviewButtonTitle(
@@ -146,6 +152,9 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("new")
     public static native CPTripPreviewTextConfiguration new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("overviewButtonTitle")
@@ -163,6 +172,9 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("startButtonTitle")

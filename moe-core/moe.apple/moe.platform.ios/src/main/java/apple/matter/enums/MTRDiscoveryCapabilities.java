@@ -10,7 +10,7 @@ public final class MTRDiscoveryCapabilities {
     }
 
     /**
-     * Device capabilities are not known (e.g. all we have is a numeric code).
+     * Device capabilities are not known (e.g. we parsed a Manual Pairing Code).
      */
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
     /**
@@ -30,5 +30,8 @@ public final class MTRDiscoveryCapabilities {
      * Device supports On Network setup
      */
     @Generated @NUInt public static final long OnNetwork = 0x0000000000000004L;
+    /**
+     * Note: New values added here need to be included in MTRDiscoveryCapabilitiesAsString()
+     */
     @Generated @NUInt public static final long AllMask = 0x0000000000000007L;
 }

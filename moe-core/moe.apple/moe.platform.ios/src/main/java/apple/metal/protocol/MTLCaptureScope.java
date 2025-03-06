@@ -21,6 +21,8 @@ import org.jetbrains.annotations.Nullable;
 public interface MTLCaptureScope {
     /**
      * Marks the begin of the capture scope. Note: This method should be invoked repeatedly per frame.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("beginScope")
@@ -29,6 +31,8 @@ public interface MTLCaptureScope {
     /**
      * If set, this scope will only capture Metal commands from the associated command queue. Defaults to nil (all
      * command queues from the associated device are captured).
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -38,6 +42,8 @@ public interface MTLCaptureScope {
 
     /**
      * Associated device: this scope will capture Metal commands from the associated device
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -47,6 +53,8 @@ public interface MTLCaptureScope {
 
     /**
      * Marks the end of the capture scope. Note: This method should be invoked repeatedly per frame.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("endScope")
@@ -56,6 +64,8 @@ public interface MTLCaptureScope {
      * Scope label
      * [@remarks] Created capture scopes are listed in Xcode when long-pressing the capture button, performing the
      * capture over the selected scope
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -66,6 +76,8 @@ public interface MTLCaptureScope {
      * Scope label
      * [@remarks] Created capture scopes are listed in Xcode when long-pressing the capture button, performing the
      * capture over the selected scope
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLabel:")

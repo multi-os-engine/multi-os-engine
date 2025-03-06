@@ -205,6 +205,8 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
      * of the convolution effect. It can also just be used to increase the brightness of the image.
      * 
      * Default value is 0.0f.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("bias")
@@ -227,6 +229,8 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
      * @param kernelWeights A pointer to an array of kernelWidth * kernelHeight values to be used as the kernel.
      *                      These are in row major order.
      * @return A valid MPSImageConvolution object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
@@ -238,6 +242,8 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
      * [@property] kernelHeight
      * 
      * The height of the filter window. Must be an odd number.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -248,6 +254,8 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
      * [@property] kernelWidth
      * 
      * The width of the filter window. Must be an odd number.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelWidth")
@@ -265,6 +273,8 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
      * of the convolution effect. It can also just be used to increase the brightness of the image.
      * 
      * Default value is 0.0f.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBias:")

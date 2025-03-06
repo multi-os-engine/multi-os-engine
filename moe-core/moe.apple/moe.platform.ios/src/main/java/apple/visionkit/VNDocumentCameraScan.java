@@ -105,6 +105,8 @@ public class VNDocumentCameraScan extends NSObject {
      * 
      * - Parameter index: The index of the image in the scanned document you'd like to return. Page `1` is at index `0`.
      * - Returns: The image of the page at the specified index. If no page exists, this method returns `nil`.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -144,6 +146,8 @@ public class VNDocumentCameraScan extends NSObject {
 
     /**
      * The number of pages in the scanned document.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("pageCount")
@@ -168,6 +172,8 @@ public class VNDocumentCameraScan extends NSObject {
 
     /**
      * The title of the scanned document.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

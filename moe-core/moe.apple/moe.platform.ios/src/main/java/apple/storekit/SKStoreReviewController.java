@@ -29,7 +29,10 @@ import org.jetbrains.annotations.Nullable;
  * Controller class to request a review from the current user
  * 
  * API-Since: 10.3
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use AppStore.requestReview(in:)
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -139,6 +142,7 @@ public class SKStoreReviewController extends NSObject {
      * 
      * API-Since: 10.3
      * Deprecated-Since: 14.0
+     * Deprecated-Message: Use -[SKStoreReviewController requestReviewInScene:]
      */
     @Deprecated
     @Generated
@@ -176,7 +180,10 @@ public class SKStoreReviewController extends NSObject {
      * available to the App Store by appending the query params "action=write-review" to a product URL.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use AppStore.requestReview(in:)
      */
+    @Deprecated
     @Generated
     @Selector("requestReviewInScene:")
     public static native void requestReviewInScene(@NotNull UIWindowScene windowScene);

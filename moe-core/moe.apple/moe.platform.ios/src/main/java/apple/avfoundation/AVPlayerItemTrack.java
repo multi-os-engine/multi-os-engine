@@ -174,6 +174,8 @@ public class AVPlayerItemTrack extends NSObject {
      * Clients must serialize their access to the resulting AVAssetTrack and related objects on the associated
      * AVPlayer's
      * notification queue. By default, this queue is the main queue.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -207,6 +209,8 @@ public class AVPlayerItemTrack extends NSObject {
      * Indicates whether the track is enabled for presentation during playback.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isEnabled")
@@ -218,6 +222,8 @@ public class AVPlayerItemTrack extends NSObject {
      * Indicates whether the track is enabled for presentation during playback.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setEnabled:")

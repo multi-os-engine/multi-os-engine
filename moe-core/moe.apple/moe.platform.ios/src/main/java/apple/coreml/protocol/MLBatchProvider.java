@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 public interface MLBatchProvider {
     /**
      * Total number of feature providers
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("count")
@@ -31,6 +33,8 @@ public interface MLBatchProvider {
 
     /**
      * Indexed access to collection
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

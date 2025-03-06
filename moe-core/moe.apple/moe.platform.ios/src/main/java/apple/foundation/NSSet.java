@@ -48,6 +48,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * Immutable Set ***************
@@ -176,7 +177,7 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("setWithObjects:count:")
     public static native <_ObjectType> NSSet<?> setWithObjectsCount(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("setWithSet:")
@@ -298,7 +299,7 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("initWithObjects:count:")
     public native NSSet<?> initWithObjectsCount(
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")

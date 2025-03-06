@@ -96,6 +96,8 @@ public class AVAudioMixingDestination extends NSObject implements AVAudioMixing 
      * [@property] connectionPoint
      * 
      * Returns the underlying mixer connection point
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

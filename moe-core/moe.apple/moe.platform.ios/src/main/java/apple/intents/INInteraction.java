@@ -115,6 +115,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * delete all the interactions ever donated by the calling app
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("deleteAllInteractionsWithCompletion:")
@@ -123,6 +125,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * delete this app's interactions with the specified group identifier
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("deleteInteractionsWithGroupIdentifier:completion:")
@@ -131,6 +135,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * delete the interactions with the specified identifiers that were donated by this app
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("deleteInteractionsWithIdentifiers:completion:")
@@ -208,6 +214,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     /**
      * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it
      * defaults to the time of creation of this interaction object
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -216,6 +224,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * Indicates the direction of the interaction
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("direction")
@@ -224,6 +234,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * donate this interaction to the system
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("donateInteractionWithCompletion:")
@@ -236,6 +248,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * A user-defined identifier for the interaction group, this is handy during deletion time
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -245,6 +259,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     /**
      * A unique identifier for the interaction. It defaults to a globally unique identifier.
      * The app can override with their own identifier that is unique in the app's domain
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -259,10 +275,16 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("initWithCoder:")
     public native INInteraction initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithIntent:response:")
     public native INInteraction initWithIntentResponse(@NotNull INIntent intent, @Nullable INIntentResponse response);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("intent")
@@ -271,12 +293,17 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     /**
      * Indicates the state of execution of the intent
      * This is consistent with the response state of the intentResponse, if specified
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("intentHandlingStatus")
     @NInt
     public native long intentHandlingStatus();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("intentResponse")
@@ -285,6 +312,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     /**
      * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it
      * defaults to the time of creation of this interaction object
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDateInterval:")
@@ -292,6 +321,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * Indicates the direction of the interaction
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDirection:")
@@ -299,6 +330,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * A user-defined identifier for the interaction group, this is handy during deletion time
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setGroupIdentifier:")
@@ -307,6 +340,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     /**
      * A unique identifier for the interaction. It defaults to a globally unique identifier.
      * The app can override with their own identifier that is unique in the app's domain
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setIdentifier:")

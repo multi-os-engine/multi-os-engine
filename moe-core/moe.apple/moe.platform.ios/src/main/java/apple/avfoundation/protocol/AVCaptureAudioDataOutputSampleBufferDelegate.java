@@ -54,6 +54,8 @@ public interface AVCaptureAudioDataOutputSampleBufferDelegate {
      * Clients that need to reference the CMSampleBuffer object outside of the scope of this method must CFRetain it and
      * then CFRelease it when they are finished with it.
      * 
+     * API-Since: 4.0
+     * 
      * @param output
      *                     The AVCaptureAudioDataOutput instance that output the samples.
      * @param sampleBuffer

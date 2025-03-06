@@ -92,6 +92,9 @@ public class NSMorphologyPronoun extends NSObject implements NSCopying, NSSecure
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("dependentMorphology")
     @Nullable
@@ -118,6 +121,9 @@ public class NSMorphologyPronoun extends NSObject implements NSCopying, NSSecure
     @Selector("initWithCoder:")
     public native NSMorphologyPronoun initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithPronoun:morphology:dependentMorphology:")
     public native NSMorphologyPronoun initWithPronounMorphologyDependentMorphology(@NotNull String pronoun,
@@ -145,6 +151,9 @@ public class NSMorphologyPronoun extends NSObject implements NSCopying, NSSecure
     @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("morphology")
     @NotNull
@@ -155,6 +164,9 @@ public class NSMorphologyPronoun extends NSObject implements NSCopying, NSSecure
     @Selector("new")
     public static native NSMorphologyPronoun new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("pronoun")
     @NotNull

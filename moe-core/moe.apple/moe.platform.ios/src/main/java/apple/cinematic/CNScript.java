@@ -65,6 +65,9 @@ public class CNScript extends NSObject {
      * Add user created detection track.
      * 
      * - Returns: the detectionID assigned to the added track, which can be used for later lookup or decision creation.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addDetectionTrack:")
@@ -77,6 +80,9 @@ public class CNScript extends NSObject {
      * not within the time range of the cinematic script.
      * 
      * - Returns: whether adding was successful
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addUserDecision:")
@@ -84,6 +90,9 @@ public class CNScript extends NSObject {
 
     /**
      * All detection tracks that have been added since recording.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addedDetectionTracks")
@@ -107,6 +116,8 @@ public class CNScript extends NSObject {
     /**
      * All base decisions made automatically during recording in the given time range. These apply if no user decision
      * overrides them.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("baseDecisionsInTimeRange:")
@@ -126,6 +137,8 @@ public class CNScript extends NSObject {
 
     /**
      * Changes made since cinematic asset was recorded. Can be used to checkpoint and later restore changes made so far.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("changes")
@@ -134,6 +147,8 @@ public class CNScript extends NSObject {
 
     /**
      * Changes trimmed and time range shifted to start at zero — for use with a similarly trimmed cinematic asset.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("changesTrimmedByTimeRange:")
@@ -156,6 +171,8 @@ public class CNScript extends NSObject {
 
     /**
      * The decision that occurs after the given time. Pass the time of an existing decision to find the next one.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("decisionAfterTime:")
@@ -164,6 +181,8 @@ public class CNScript extends NSObject {
 
     /**
      * The closest decision to the given time within the given tolerance. Returns `nil` if there are none.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("decisionAtTime:tolerance:")
@@ -172,6 +191,8 @@ public class CNScript extends NSObject {
 
     /**
      * The decision that occurs before the given time. Pass the time of an existing decisions to find the previous one.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("decisionBeforeTime:")
@@ -180,6 +201,8 @@ public class CNScript extends NSObject {
 
     /**
      * All decisions within the given time range.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("decisionsInTimeRange:")
@@ -192,6 +215,8 @@ public class CNScript extends NSObject {
 
     /**
      * A detection track representing all detections that would be chosen by a given decision.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionTrackForDecision:")
@@ -200,6 +225,8 @@ public class CNScript extends NSObject {
 
     /**
      * A detection track representing all detections with the given detectionID over the entire cinematic script.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionTrackForID:")
@@ -212,6 +239,9 @@ public class CNScript extends NSObject {
      * Pass this to the rendering session in the rendering frame attributes to match the selected aperture.
      * Change this property when the user selects a different aperture for the edited movie.
      * Changes to this property are reflected in the script changes for later restoration.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fNumber")
@@ -219,6 +249,8 @@ public class CNScript extends NSObject {
 
     /**
      * The closest frame to the given time within the given tolerance. Returns `nil` if there are none.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("frameAtTime:tolerance:")
@@ -227,6 +259,8 @@ public class CNScript extends NSObject {
 
     /**
      * All frames within the given time range.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("framesInTimeRange:")
@@ -275,6 +309,9 @@ public class CNScript extends NSObject {
      * no progress is reported.
      * - completionHandler: called with the loaded cinematic script when done, or with with an error if it fails. If
      * progress is canceled before it completes, the completion handler is called with an error.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("loadFromAsset:changes:progress:completionHandler:")
@@ -298,6 +335,8 @@ public class CNScript extends NSObject {
      * The primary decision that is in effect at the specified time, unless if it's outside the time range of the
      * cinematic script.
      * Also represents the decision that is being transitioned away from if the given time is during a focus transition.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("primaryDecisionAtTime:")
@@ -310,6 +349,8 @@ public class CNScript extends NSObject {
      * - Parameters:
      * - changes: optional changes since asset was recorded. Can be obtained from a previous editing session. If `nil`,
      * the asset is reloaded as originally recorded.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("reloadWithChanges:")
@@ -317,6 +358,9 @@ public class CNScript extends NSObject {
 
     /**
      * Remove all user decisions and revert to base decisions only.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("removeAllUserDecisions")
@@ -328,6 +372,9 @@ public class CNScript extends NSObject {
      * Tracks created at recording time cannot be removed.
      * 
      * - Returns: whether removal was successful
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("removeDetectionTrack:")
@@ -340,6 +387,9 @@ public class CNScript extends NSObject {
      * Decisions that are not user decisions cannot be removed.
      * 
      * - Returns: whether removal was successful
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("removeUserDecision:")
@@ -355,6 +405,8 @@ public class CNScript extends NSObject {
 
     /**
      * The secondary decision that is being transitioned towards if the given time is during a focus transition.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("secondaryDecisionAtTime:")
@@ -367,6 +419,9 @@ public class CNScript extends NSObject {
      * Pass this to the rendering session in the rendering frame attributes to match the selected aperture.
      * Change this property when the user selects a different aperture for the edited movie.
      * Changes to this property are reflected in the script changes for later restoration.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setFNumber:")
@@ -382,6 +437,8 @@ public class CNScript extends NSObject {
 
     /**
      * The time range of the cinematic asset. All frames, decisions, and detections are within this time range.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timeRange")
@@ -390,6 +447,8 @@ public class CNScript extends NSObject {
 
     /**
      * The time range during which the focus transition away from the given decision occurs.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timeRangeOfTransitionAfterDecision:")
@@ -398,6 +457,8 @@ public class CNScript extends NSObject {
 
     /**
      * The time range during which the focus transition towards the given decision occurs.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timeRangeOfTransitionBeforeDecision:")
@@ -411,6 +472,8 @@ public class CNScript extends NSObject {
 
     /**
      * All user decisions in the given time range. Includes user decisions made during recording or added to the script.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userDecisionsInTimeRange:")

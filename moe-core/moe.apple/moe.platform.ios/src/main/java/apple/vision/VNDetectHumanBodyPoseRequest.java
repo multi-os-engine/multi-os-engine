@@ -159,6 +159,8 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
 
     /**
      * VNHumanBodyPoseObservation results.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

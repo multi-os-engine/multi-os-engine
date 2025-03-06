@@ -104,6 +104,8 @@ public class UIPointerEffect extends NSObject implements NSCopying, UIHoverEffec
      * UIPointerEffect attempts to determine the appropriate effect for the given preview automatically.
      * Use one of its subclasses to request a specific system-provided effect.
      * 
+     * API-Since: 13.4
+     * 
      * @param preview A UITargetedPreview object describing a view with which to construct the effect.
      */
     @Generated
@@ -146,6 +148,9 @@ public class UIPointerEffect extends NSObject implements NSCopying, UIHoverEffec
     @Selector("new")
     public static native UIPointerEffect new_objc();
 
+    /**
+     * API-Since: 13.4
+     */
     @NotNull
     @Generated
     @Selector("preview")

@@ -1903,6 +1903,10 @@ public final class CoreImage {
      * If the value of any of these keys is @YES, the auxiliary image be returned if present.
      * The returned image will be a monochrome image.
      * 
+     * The kCIImageAuxiliaryHDRGainMap option will return as a CIImage the auxiliary data returned
+     * by either kCGImageAuxiliaryDataTypeHDRGainMap or kCGImageAuxiliaryDataTypeISOGainMap.
+     * If the file contains both gain maps, then the kCGImageAuxiliaryDataTypeISOGainMap data is returned.
+     * 
      * API-Since: 11.0
      */
     @NotNull
@@ -2361,4 +2365,57 @@ public final class CoreImage {
     public static native String kCIContextMemoryLimit();
 
     @Generated public static final double COREIMAGE_SUPPORTS_OPENGLES = 1.0;
+
+    /**
+     * A float value for overriding the image's content headroom.
+     * This option is supported by:
+     * imageWithContentsOfURL:options:, initWithContentsOfURL:options,
+     * imageWithData:options:, initWithData:options:,
+     * imageWithCGImage:options:, initWithCGImage:options:,
+     * imageWithCGImageSource:options:, initWithCGImageSource:options:,
+     * imageWithIOSurface:options:, initWithIOSurface:options:,
+     * 
+     * If the value for this option is a NSNumber greater than or equal to 1.0,
+     * then it will override the automatic behavior of the 'headroom' property.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIImageContentHeadroom();
+
+    /**
+     * The value for kCIImageRepresentationHDRImage should be a HDR CIImage object.
+     * This optional image can be passed to JPEGRepresentationOfImage or HEIFRepresentationOfImage.
+     * 
+     * When provided, Core Image will calculate a HDRGainMap image from the ratio of the HDR image to
+     * the primary SDR image.
+     * 
+     * If the the HDR CIImage has a .contentHeadroom property, then that will be used when calculating the
+     * HDRGainMap image and metadata.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIImageRepresentationHDRImage();
+
+    /**
+     * The value for kCIImageRepresentationHDRGainMapImage should be a monochome CIImage object.
+     * The image.properties should contain information equivalent to what is returned when initialtizing
+     * an image using the kCIImageAuxiliaryHDRGainMap option.
+     * 
+     * 
+     * API-Since: 14.1
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIImageRepresentationHDRGainMapImage();
 }

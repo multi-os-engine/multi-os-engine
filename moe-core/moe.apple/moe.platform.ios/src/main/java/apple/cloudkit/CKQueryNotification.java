@@ -175,6 +175,9 @@ public class CKQueryNotification extends CKNotification {
     @Selector("init")
     public native CKQueryNotification init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("queryNotificationReason")
     @NInt
@@ -184,12 +187,17 @@ public class CKQueryNotification extends CKNotification {
      * A set of key->value pairs for creates and updates.
      * 
      * You request the server fill out this property via the `desiredKeys` property of `CKSubscription.NotificationInfo`
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("recordFields")
     public native NSDictionary<String, ?> recordFields();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordID")

@@ -119,15 +119,24 @@ public class MIDINetworkHost extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("hostWithName:address:port:")
     public static native MIDINetworkHost hostWithNameAddressPort(@NotNull String name, @NotNull String address,
             @NUInt long port);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("hostWithName:netService:")
     public static native MIDINetworkHost hostWithNameNetService(@NotNull String name, @NotNull NSNetService netService);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("hostWithName:netServiceName:netServiceDomain:")
     public static native MIDINetworkHost hostWithNameNetServiceNameNetServiceDomain(@NotNull String name,
@@ -183,12 +192,17 @@ public class MIDINetworkHost extends NSObject {
 
     /**
      * IP address or hostname
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
     @Selector("address")
     public native String address();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("hasSameAddressAs:")
     public native boolean hasSameAddressAs(@NotNull MIDINetworkHost other);
@@ -199,6 +213,8 @@ public class MIDINetworkHost extends NSObject {
 
     /**
      * user's tag
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -207,6 +223,8 @@ public class MIDINetworkHost extends NSObject {
 
     /**
      * NSNetService domain
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -215,6 +233,8 @@ public class MIDINetworkHost extends NSObject {
 
     /**
      * NSNetService name
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
@@ -223,6 +243,8 @@ public class MIDINetworkHost extends NSObject {
 
     /**
      * UDP port
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("port")

@@ -118,6 +118,12 @@ public class INDeleteTasksTaskResolutionResult extends INTaskResolutionResult {
     @Selector("init")
     public native INDeleteTasksTaskResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksTaskResolutionResult is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTaskResolutionResult:")
     public native INDeleteTasksTaskResolutionResult initWithTaskResolutionResult(
@@ -186,6 +192,12 @@ public class INDeleteTasksTaskResolutionResult extends INTaskResolutionResult {
     @Selector("unsupported")
     public static native INDeleteTasksTaskResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INDeleteTasksTaskResolutionResult is deprecated. There is no replacement.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

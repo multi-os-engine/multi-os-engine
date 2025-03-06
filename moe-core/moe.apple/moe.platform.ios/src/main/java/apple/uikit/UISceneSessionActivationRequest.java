@@ -136,6 +136,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
 
     /**
      * Optional parameters used for further customizing the request.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("options")
@@ -144,6 +146,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
 
     /**
      * Creates a request for activating a session with the role of `UIWindowSceneSessionRoleApplication`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("request")
@@ -152,6 +156,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
     /**
      * Creates a request for activating a session with the specified `role`.
      * - Parameter role: The requested scene session role.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("requestWithRole:")
@@ -160,6 +166,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
     /**
      * Creates a request for activating an existing scene session.
      * - Parameter session: The existing session to activate.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("requestWithSession:")
@@ -176,6 +184,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
     /**
      * The role to request. If the request was created using `requestWithSession:`, this reflects
      * the role of the `session`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("role")
@@ -184,6 +194,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
 
     /**
      * The specific scene session that should be activated, if provided when creating the request.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("session")
@@ -192,6 +204,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
 
     /**
      * Optional parameters used for further customizing the request.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setOptions:")
@@ -202,6 +216,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
      * 
      * Only sessions with a matching `role` will have their `activationConditions` evaluated
      * against the user activity's `targetContentIdentifier`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setUserActivity:")
@@ -225,6 +241,8 @@ public class UISceneSessionActivationRequest extends NSObject implements NSCopyi
      * 
      * Only sessions with a matching `role` will have their `activationConditions` evaluated
      * against the user activity's `targetContentIdentifier`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userActivity")

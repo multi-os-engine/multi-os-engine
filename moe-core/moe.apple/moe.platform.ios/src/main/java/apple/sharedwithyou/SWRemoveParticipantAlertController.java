@@ -49,6 +49,9 @@ public class SWRemoveParticipantAlertController extends UIViewController {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("alertControllerWithParticipant:highlight:")
     public static native SWRemoveParticipantAlertController alertControllerWithParticipantHighlight(

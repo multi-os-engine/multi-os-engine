@@ -119,6 +119,8 @@ public class VNTrackingRequest extends VNImageBasedRequest {
      * returned from a tracker continues the use of that tracker, to track the region to the next frame. In general,
      * unless documented in the request's documentation, the rectangle must be defined in normalized coordinates (both
      * dimensions normalized to [0,1] with the origin at the lower-left corner).
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -144,6 +146,8 @@ public class VNTrackingRequest extends VNImageBasedRequest {
      * This property allows marking the last frame for tracking using current tracker. If set to YES, the results for
      * this frame will be processed and returned and the current tracker will be released to the pool of available
      * trackers
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isLastFrame")
@@ -179,6 +183,8 @@ public class VNTrackingRequest extends VNImageBasedRequest {
      * returned from a tracker continues the use of that tracker, to track the region to the next frame. In general,
      * unless documented in the request's documentation, the rectangle must be defined in normalized coordinates (both
      * dimensions normalized to [0,1] with the origin at the lower-left corner).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputObservation:")
@@ -190,6 +196,8 @@ public class VNTrackingRequest extends VNImageBasedRequest {
      * This property allows marking the last frame for tracking using current tracker. If set to YES, the results for
      * this frame will be processed and returned and the current tracker will be released to the pool of available
      * trackers
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLastFrame:")
@@ -201,6 +209,8 @@ public class VNTrackingRequest extends VNImageBasedRequest {
      * Tracking level allows tuning tracking algorithm to prefer speed (VNRequestTrackingLevelFast) vs. tracking object
      * location accuracy (VNRequestTrackingLevelAccurate). This property has no effect on general purpose object tracker
      * (VNTrackObjectRequest) revision 2 (VNTrackObjectRequestRevision2)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTrackingLevel:")
@@ -220,6 +230,8 @@ public class VNTrackingRequest extends VNImageBasedRequest {
      * Tracking level allows tuning tracking algorithm to prefer speed (VNRequestTrackingLevelFast) vs. tracking object
      * location accuracy (VNRequestTrackingLevelAccurate). This property has no effect on general purpose object tracker
      * (VNTrackObjectRequest) revision 2 (VNTrackObjectRequestRevision2)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("trackingLevel")

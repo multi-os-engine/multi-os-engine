@@ -99,6 +99,8 @@ public class DDMatchCalendarEvent extends DDMatch {
 
     /**
      * A date that represents the end of the event.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -107,6 +109,8 @@ public class DDMatchCalendarEvent extends DDMatch {
 
     /**
      * The time zone for the event’s end date.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -137,6 +141,8 @@ public class DDMatchCalendarEvent extends DDMatch {
 
     /**
      * A Boolean value that indicates whether the event is an all-day event.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isAllDay")
@@ -170,6 +176,8 @@ public class DDMatchCalendarEvent extends DDMatch {
 
     /**
      * A date that represents the start of the event.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -178,6 +186,8 @@ public class DDMatchCalendarEvent extends DDMatch {
 
     /**
      * The time zone for the event’s start date.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

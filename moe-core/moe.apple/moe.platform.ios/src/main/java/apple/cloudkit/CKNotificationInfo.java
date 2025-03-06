@@ -242,6 +242,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * - NSDate
      * - NSNumber
      * - NSString
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -321,6 +323,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * - NSDate
      * - NSNumber
      * - NSString
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDesiredKeys:")
@@ -338,6 +342,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * downloads in the application.
      * 
      * Default value is @c NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setShouldSendContentAvailable:")
@@ -362,6 +368,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * downloads in the application.
      * 
      * Default value is @c NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shouldSendContentAvailable")

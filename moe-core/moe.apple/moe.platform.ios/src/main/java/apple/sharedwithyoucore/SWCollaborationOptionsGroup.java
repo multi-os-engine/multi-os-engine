@@ -113,6 +113,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
 
     /**
      * Localized string to describe or provide additional information about the group of options
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -126,6 +128,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
 
     /**
      * A unique identifier
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -145,6 +149,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
      * 
      * @param identifier unique identifier for the group
      * @param options    SWCollaborationOptions to display in the section
+     * 
+     *                   API-Since: 16.0
      */
     @Generated
     @Selector("initWithIdentifier:options:")
@@ -180,6 +186,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
 
     /**
      * SWCollaborationOptions to be displayed in the group
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -191,6 +199,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
      * 
      * @param identifier unique identifier for the group
      * @param options    SWCollaborationOptions to display in the group
+     * 
+     *                   API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -208,6 +218,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
 
     /**
      * Localized string to describe or provide additional information about the group of options
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setFooter:")
@@ -215,6 +227,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
 
     /**
      * SWCollaborationOptions to be displayed in the group
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setOptions:")
@@ -222,6 +236,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
 
     /**
      * Localized string used to title the section
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTitle:")
@@ -247,6 +263,8 @@ public class SWCollaborationOptionsGroup extends NSObject implements NSCopying, 
 
     /**
      * Localized string used to title the section
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

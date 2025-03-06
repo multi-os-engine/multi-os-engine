@@ -169,6 +169,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     /**
      * a string representing restaurant specific information related to the reservation: things like late policies,
      * parking instructions, or specials
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -184,12 +186,17 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     /**
      * date indicating when the status was updated to its current value
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("dateStatusModified")
     public native NSDate dateStatusModified();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("guest")
@@ -197,6 +204,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     /**
      * any user-specified special request text submitted with the reservation
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -217,6 +226,9 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
             @NotNull INRestaurant restaurant, @NotNull NSDate bookingDate, @NUInt long partySize,
             @NotNull String bookingIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:guest:status:dateStatusModified:")
     public native INRestaurantReservationUserBooking initWithRestaurantBookingDatePartySizeBookingIdentifierGuestStatusDateStatusModified(
@@ -226,6 +238,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     /**
      * an offer, if any, attached to the booking
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -235,6 +249,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     /**
      * a string representing restaurant specific information related to the reservation: things like late policies,
      * parking instructions, or specials
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAdvisementText:")
@@ -242,17 +258,24 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     /**
      * date indicating when the status was updated to its current value
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDateStatusModified:")
     public native void setDateStatusModified(@NotNull NSDate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setGuest:")
     public native void setGuest(@NotNull INRestaurantGuest value);
 
     /**
      * any user-specified special request text submitted with the reservation
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setGuestProvidedSpecialRequestText:")
@@ -260,6 +283,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     /**
      * an offer, if any, attached to the booking
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSelectedOffer:")
@@ -267,6 +292,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     /**
      * an enum indicating whether a booking was denied, pending, or confirmed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStatus:")
@@ -274,6 +301,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     /**
      * an enum indicating whether a booking was denied, pending, or confirmed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("status")

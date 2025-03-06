@@ -38,28 +38,40 @@ public final class INMessageType {
     @Generated @NInt public static final long Sticker = 0x0000000000000005L;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use INMessageReaction
      */
-    @Generated @NInt public static final long TapbackLiked = 0x0000000000000006L;
+    @Deprecated @Generated @NInt public static final long TapbackLiked = 0x0000000000000006L;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use INMessageReaction
      */
-    @Generated @NInt public static final long TapbackDisliked = 0x0000000000000007L;
+    @Deprecated @Generated @NInt public static final long TapbackDisliked = 0x0000000000000007L;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use INMessageReaction
      */
-    @Generated @NInt public static final long TapbackEmphasized = 0x0000000000000008L;
+    @Deprecated @Generated @NInt public static final long TapbackEmphasized = 0x0000000000000008L;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use INMessageReaction
      */
-    @Generated @NInt public static final long TapbackLoved = 0x0000000000000009L;
+    @Deprecated @Generated @NInt public static final long TapbackLoved = 0x0000000000000009L;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use INMessageReaction
      */
-    @Generated @NInt public static final long TapbackQuestioned = 0x000000000000000AL;
+    @Deprecated @Generated @NInt public static final long TapbackQuestioned = 0x000000000000000AL;
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.1
+     * Deprecated-Message: Use INMessageReaction
      */
-    @Generated @NInt public static final long TapbackLaughed = 0x000000000000000BL;
+    @Deprecated @Generated @NInt public static final long TapbackLaughed = 0x000000000000000BL;
     /**
      * API-Since: 11.0
      */
@@ -117,7 +129,21 @@ public final class INMessageType {
      */
     @Generated @NInt public static final long Link = 0x0000000000000019L;
     /**
+     * The message contains a reaction to another message.
+     * 
      * API-Since: 17.0
      */
     @Generated @NInt public static final long Reaction = 0x000000000000001AL;
+    /**
+     * Media content containing an animated image, such as a GIF.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long MediaAnimatedImage = 0x000000000000001BL;
+    /**
+     * The message contains an attachment from a third party application.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long ThirdPartyAttachment = 0x000000000000001CL;
 }

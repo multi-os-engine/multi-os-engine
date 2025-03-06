@@ -123,6 +123,8 @@ public class TKTokenKeyAlgorithm extends NSObject {
 
     /**
      * Checks if specified algorithm is base operation algorithm.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isAlgorithm:")
@@ -161,6 +163,8 @@ public class TKTokenKeyAlgorithm extends NSObject {
     /**
      * Checks whether specified algorithm is either target algorithm or one of the algorithms through which the
      * operation passed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportsAlgorithm:")

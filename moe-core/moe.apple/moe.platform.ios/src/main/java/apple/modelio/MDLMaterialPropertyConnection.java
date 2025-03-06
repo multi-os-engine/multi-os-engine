@@ -164,12 +164,17 @@ public class MDLMaterialPropertyConnection extends NSObject implements MDLNamed 
 
     /**
      * Connects the output to the input
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithOutput:input:")
     public native MDLMaterialPropertyConnection initWithOutputInput(@NotNull MDLMaterialProperty output,
             @NotNull MDLMaterialProperty input);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("input")
@@ -180,6 +185,9 @@ public class MDLMaterialPropertyConnection extends NSObject implements MDLNamed 
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("output")

@@ -196,6 +196,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * it performs a local mean subtraction. The
      * MPSCNNLocalContrastNormalizationNode used with
      * the MPSNNGraph uses 1.0 as a default.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("alpha")
@@ -205,6 +207,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 0.5
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("beta")
@@ -214,6 +218,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1/1024
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("delta")
@@ -237,6 +243,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * @return A valid MPSCNNLocalContrastNormalization object or nil, if failure.
      * 
      *         NOTE: For now, kernelWidth must be equal to kernelHeight
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -248,6 +256,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] p0
      * 
      * The value of p0. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("p0")
@@ -257,6 +267,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] pm
      * 
      * The value of pm. Default is 0.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("pm")
@@ -266,6 +278,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] ps
      * 
      * The value of ps. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("ps")
@@ -281,6 +295,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * it performs a local mean subtraction. The
      * MPSCNNLocalContrastNormalizationNode used with
      * the MPSNNGraph uses 1.0 as a default.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -290,6 +306,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 0.5
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBeta:")
@@ -299,6 +317,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1/1024
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelta:")
@@ -308,6 +328,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] p0
      * 
      * The value of p0. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setP0:")
@@ -317,6 +339,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] pm
      * 
      * The value of pm. Default is 0.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPm:")
@@ -326,6 +350,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * [@property] ps
      * 
      * The value of ps. Default is 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPs:")

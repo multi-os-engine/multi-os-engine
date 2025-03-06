@@ -81,6 +81,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * An identifier for the vehicles. Use this same value as the carIdentifier property of
      * INGetCarPowerLevelStatusResponse. Do not use the VIN (or the equivalent code) as the identifier.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -99,6 +101,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Color of the vehicle.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -122,6 +126,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A user-defined display name for the vehicle that is expected to be set in the OEM app.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -139,6 +145,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A data structure containing the bluetooth identifier and the iAP 2 identifier of the head unit of the vehicle.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -151,6 +159,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Instantiates an INCar object.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithCarIdentifier:displayName:year:make:model:color:headUnit:supportedChargingConnectors:")
@@ -187,6 +197,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Make of the vehicle. Should be set by the OEM app. This is later used by Maps to be shown to the user.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -195,6 +207,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Use this method to read the maximum power set for each charging connector type.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -204,6 +218,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Model name of the vehicle. Should be set by the OEM app. This is later used by Maps to be shown to the user.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -226,6 +242,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Use this method to set the maximum supported power for each charging connector type a vehicle supports. This
      * function can be called multiple times for different connector types.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumPower:forChargingConnectorType:")
@@ -242,6 +260,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * An array containing the supported charging connectors of a vehicle.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -265,6 +285,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Manufacturing year of the vehicle.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

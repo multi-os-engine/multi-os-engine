@@ -17,13 +17,13 @@ public final class nw_report_resolution_source_t {
     /**
      * [@const] nw_report_resolution_source_query A query was sent over the network
      */
-    @Generated public static final int nw_report_resolution_source_query = 0x00000001;
+    @Generated public static final int _query = 0x00000001;
     /**
      * [@const] nw_report_resolution_source_cache The local cache was used
      */
-    @Generated public static final int nw_report_resolution_source_cache = 0x00000002;
+    @Generated public static final int _cache = 0x00000002;
     /**
      * [@const] nw_report_resolution_source_expired_cache An expired entry in the local cache was used
      */
-    @Generated public static final int nw_report_resolution_source_expired_cache = 0x00000003;
+    @Generated public static final int _expired_cache = 0x00000003;
 }

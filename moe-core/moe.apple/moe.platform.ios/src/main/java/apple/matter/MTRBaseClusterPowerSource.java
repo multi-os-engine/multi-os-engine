@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterPowerSource extends MTRCluster {
+public class MTRBaseClusterPowerSource extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -4706,4 +4706,62 @@ public class MTRBaseClusterPowerSource extends MTRCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("readAttributeEndpointListWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeEndpointListWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeEndpointListWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeEndpointListWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeEndpointListWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeEndpointListWithClusterStateCacheEndpointQueueCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("readAttributeEndpointListWithCompletion:")
+    public native void readAttributeEndpointListWithCompletion(
+            @ObjCBlock(name = "call_readAttributeEndpointListWithCompletion") @NotNull Block_readAttributeEndpointListWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeEndpointListWithCompletion {
+        @Generated
+        void call_readAttributeEndpointListWithCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("subscribeAttributeEndpointListWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeEndpointListWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
 }

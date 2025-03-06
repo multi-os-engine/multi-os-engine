@@ -90,6 +90,9 @@ public class PHPersistentChangeFetchResult extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("enumerateChangesWithBlock:")
     public native void enumerateChangesWithBlock(

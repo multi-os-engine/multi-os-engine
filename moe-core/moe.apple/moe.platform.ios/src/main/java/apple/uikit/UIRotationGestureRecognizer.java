@@ -174,6 +174,8 @@ public class UIRotationGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * rotation in radians
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("rotation")
@@ -182,6 +184,8 @@ public class UIRotationGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * rotation in radians
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setRotation:")
@@ -189,6 +193,8 @@ public class UIRotationGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * velocity of the pinch in radians/second
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("velocity")

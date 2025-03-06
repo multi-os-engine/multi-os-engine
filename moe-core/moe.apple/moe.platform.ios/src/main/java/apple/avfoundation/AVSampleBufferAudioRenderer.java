@@ -86,6 +86,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * If the timebase's rate is not supported by the audioTimePitchAlgorithm, audio will be muted.
      * 
      * Modifying this property while the timebase's rate is not 0.0 may cause the rate to briefly change to 0.0.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -138,6 +140,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * The value of this property is an NSError that describes what caused the renderer to no longer be able to render
      * sample buffers. The value of this property is nil unless the value of status is
      * AVQueuedSampleBufferRenderingStatusFailed.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -163,6 +167,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * remains unchanged. A flush can fail becuse the source time was too close to (or earlier than) the current time or
      * because the current configuration of the receiver does not support flushing at a particular time. In these cases,
      * the caller can choose to flush all enqueued media data by invoking the -flush method.
+     * 
+     * API-Since: 11.0
      * 
      * @param completionHandler
      *                          A block that is invoked, possibly asynchronously, after the flush operation completes or
@@ -208,6 +214,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
      * 
      * Setting this property only affects audio muting for the renderer instance and not for the device.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isMuted")
@@ -260,6 +268,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * If the timebase's rate is not supported by the audioTimePitchAlgorithm, audio will be muted.
      * 
      * Modifying this property while the timebase's rate is not 0.0 may cause the rate to briefly change to 0.0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
@@ -271,6 +281,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
      * 
      * Setting this property only affects audio muting for the renderer instance and not for the device.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMuted:")
@@ -291,6 +303,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * 
      * This property is most useful on iOS to control the volume of the AVSampleBufferAudioRenderer relative to other
      * audio output, not for setting absolute volume.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setVolume:")
@@ -310,6 +324,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * information on the error encountered. This is terminal status from which recovery is not always possible.
      * 
      * This property is key value observable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("status")
@@ -345,6 +361,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * 
      * This property is most useful on iOS to control the volume of the AVSampleBufferAudioRenderer relative to other
      * audio output, not for setting absolute volume.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("volume")

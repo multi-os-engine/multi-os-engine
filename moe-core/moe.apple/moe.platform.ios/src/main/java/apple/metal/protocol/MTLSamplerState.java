@@ -45,6 +45,8 @@ public interface MTLSamplerState {
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -56,6 +58,8 @@ public interface MTLSamplerState {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

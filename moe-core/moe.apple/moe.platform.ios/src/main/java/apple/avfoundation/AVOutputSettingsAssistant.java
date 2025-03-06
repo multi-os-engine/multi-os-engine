@@ -188,6 +188,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * 
      * Use +availableOutputSettingsPresets to get a list of presets identifiers that can be used with this method.
      * 
+     * API-Since: 7.0
+     * 
      * @param presetIdentifier
      *                         The string identifier, for example AVOutputSettingsPreset1280x720, for the desired preset
      * @return
@@ -226,6 +228,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * AVAssetWriterInput
      * 
      * The value of this property may change as a result of setting a new value for the sourceAudioFormat property.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -243,6 +247,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * 
      * Use [[UTType typeWithIdentifier:outputFileType] preferredFilenameExtension] to get a suitable file extension for
      * a given file type.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -262,6 +268,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the audioSettings property.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSourceAudioFormat:")
@@ -280,6 +288,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * rate of 30fps.
      * 
      * It is an error to set this property to a value that is not positive or not numeric. See CMTIME_IS_NUMERIC.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSourceVideoAverageFrameDuration:")
@@ -298,6 +308,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the videoSettings property.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSourceVideoFormat:")
@@ -339,6 +351,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the audioSettings property.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -358,6 +372,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * rate of 30fps.
      * 
      * It is an error to set this property to a value that is not positive or not numeric. See CMTIME_IS_NUMERIC.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("sourceVideoAverageFrameDuration")
@@ -377,6 +393,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the videoSettings property.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -414,6 +432,8 @@ public class AVOutputSettingsAssistant extends NSObject {
      * AVAssetWriterInput
      * 
      * The value of this property may change as a result of setting a new value for the sourceVideoFormat property.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated

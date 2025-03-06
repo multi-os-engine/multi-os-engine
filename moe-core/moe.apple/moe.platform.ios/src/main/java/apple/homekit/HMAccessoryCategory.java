@@ -161,6 +161,8 @@ public class HMAccessoryCategory extends NSObject {
 
     /**
      * A type identifier that represents the category.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -173,6 +175,8 @@ public class HMAccessoryCategory extends NSObject {
 
     /**
      * The localized description of the category.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

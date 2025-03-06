@@ -89,6 +89,8 @@ public interface AVAudioMixing extends AVAudioStereoMixing, AVAudio3DMixing {
      * Range: 0.0 -> 1.0
      * Default: 1.0
      * Mixers: AVAudioMixerNode, AVAudioEnvironmentNode
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVolume:")
@@ -102,6 +104,8 @@ public interface AVAudioMixing extends AVAudioStereoMixing, AVAudio3DMixing {
      * Range: 0.0 -> 1.0
      * Default: 1.0
      * Mixers: AVAudioMixerNode, AVAudioEnvironmentNode
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("volume")

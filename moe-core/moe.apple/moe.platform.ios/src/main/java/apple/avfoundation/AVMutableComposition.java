@@ -116,6 +116,8 @@ public class AVMutableComposition extends AVComposition {
      * composition
      * 
      * Returns an empty AVMutableComposition.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("composition")
@@ -215,6 +217,8 @@ public class AVMutableComposition extends AVComposition {
      * If the specified preferred track ID is not available, or kCMPersistentTrackID_Invalid was passed in, a unique
      * track ID will be generated.
      * 
+     * API-Since: 4.0
+     * 
      * @param mediaType
      *                         The media type of the new track.
      * @param preferredTrackID
@@ -245,6 +249,8 @@ public class AVMutableComposition extends AVComposition {
      * which you want a subsequently created track to present its media.
      * Note that you cannot add empty time ranges to the end of a composition.
      * 
+     * API-Since: 4.0
+     * 
      * @param timeRange
      *                  Specifies the empty timeRange to be inserted.
      */
@@ -263,16 +269,20 @@ public class AVMutableComposition extends AVComposition {
      * Note that the media data for the inserted timeRange will be presented at its natural duration and rate. It can be
      * scaled to a different duration and presented at a different rate via -scaleTimeRange:toDuration:.
      * Existing content at the specified startTime will be pushed out by the duration of timeRange.
-     * Note that metadata will not be automatically copied.
+     * Note that this operation only inserts one or more track segments into affected AVMutableCompositionTracks; it
+     * does not affect the values of other track properties, either to match the corresponding values of tracks in the
+     * source asset or for any other purpose.
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * 
      * @param timeRange
      *                  Specifies the timeRange of the asset to be inserted.
      * @param asset
      *                  Specifies the asset that contains the tracks that are to be inserted. Only instances of
      *                  AVURLAsset and AVComposition are supported (AVComposition starting in macOS 10.10 and iOS 8.0).
+     *                  The asset should have its tracks loaded, and the tracks should have their formatDescriptions
+     *                  loaded before invoking this method to avoid blocking.
      * @param startTime
      *                  Specifies the time at which the inserted tracks are to be presented by the composition.
      * @param outError
@@ -303,6 +313,8 @@ public class AVMutableComposition extends AVComposition {
      * 
      * Similar to -[AVAsset compatibleTrackForCompositionTrack:].
      * 
+     * API-Since: 4.0
+     * 
      * @param track
      *              A reference to the AVAssetTrack from which a timeRange may be inserted.
      * @return An AVMutableCompositionTrack that can accommodate the insertion, or, if no such track is available, nil.
@@ -319,6 +331,8 @@ public class AVMutableComposition extends AVComposition {
      * 
      * If not set, the value is the size of the composition's first video track. Set to CGSizeZero to revert to default
      * behavior.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("naturalSize")
@@ -336,6 +350,8 @@ public class AVMutableComposition extends AVComposition {
      * 
      * After removing, existing content after timeRange will be pulled in.
      * 
+     * API-Since: 4.0
+     * 
      * @param timeRange
      *                  Specifies the timeRange to be removed.
      */
@@ -351,6 +367,8 @@ public class AVMutableComposition extends AVComposition {
      * If you retain a reference to the removed track, note that its @"composition" key will have the value nil, and the
      * values of its other properties are undefined.
      * 
+     * API-Since: 4.0
+     * 
      * @param track
      *              A reference to the AVCompositionTrack to be removed.
      */
@@ -365,6 +383,8 @@ public class AVMutableComposition extends AVComposition {
      * 
      * Each trackSegment affected by the scaling operation will be presented at a rate equal to source.duration /
      * target.duration of its resulting timeMapping.
+     * 
+     * API-Since: 4.0
      * 
      * @param timeRange
      *                  Specifies the timeRange of the composition to be scaled.
@@ -382,6 +402,8 @@ public class AVMutableComposition extends AVComposition {
      * 
      * If not set, the value is the size of the composition's first video track. Set to CGSizeZero to revert to default
      * behavior.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setNaturalSize:")
@@ -393,6 +415,8 @@ public class AVMutableComposition extends AVComposition {
      * Provides an instance of AVMutableCompositionTrack that represents the track of the specified trackID.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 4.0
      * 
      * @param trackID
      *                The trackID of the requested AVMutableCompositionTrack.
@@ -407,6 +431,8 @@ public class AVMutableComposition extends AVComposition {
      * [@property] tracks
      * 
      * Provides the array of AVMutableCompositionTracks contained by the composition.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -420,6 +446,8 @@ public class AVMutableComposition extends AVComposition {
      * characteristic.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 4.0
      * 
      * @param mediaCharacteristic
      *                            The media characteristic according to which the receiver filters its
@@ -439,6 +467,8 @@ public class AVMutableComposition extends AVComposition {
      * Provides an array of AVMutableCompositionTracks of the asset that present media of the specified media type.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 4.0
      * 
      * @param mediaType
      *                  The media type according to which the receiver filters its AVMutableCompositionTracks. (Media
@@ -543,9 +573,11 @@ public class AVMutableComposition extends AVComposition {
      * Note that the media data for the inserted timeRange will be presented at its natural duration and rate. It can be
      * scaled to a different duration and presented at a different rate via -scaleTimeRange:toDuration:.
      * Existing content at the specified startTime will be pushed out by the duration of timeRange.
-     * Note that metadata will not be automatically copied.
+     * Note that this operation only inserts one or more track segments into affected AVMutableCompositionTracks; it
+     * does not affect the values of other track properties, either to match the corresponding values of tracks in the
+     * source asset or for any other purpose.
      * 
-     * API-Since: 16.0
+     * API-Since: 4.0
      * 
      * @param timeRange
      *                          Specifies the timeRange of the asset to be inserted.
@@ -578,6 +610,8 @@ public class AVMutableComposition extends AVComposition {
      * - Returns: Information about the composition tracks added to the mutable composition.
      * Be sure to call insertTimeRange on the result to specify at least one time range of cinematic asset you'd like in
      * the composition.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addTracksForCinematicAssetInfo:preferredStartingTrackID:")

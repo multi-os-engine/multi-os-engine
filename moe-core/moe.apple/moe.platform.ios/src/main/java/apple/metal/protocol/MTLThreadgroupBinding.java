@@ -16,6 +16,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLThreadgroupBinding")
 public interface MTLThreadgroupBinding extends MTLBinding {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("threadgroupMemoryAlignment")
     @NUInt
@@ -23,6 +26,8 @@ public interface MTLThreadgroupBinding extends MTLBinding {
 
     /**
      * sizeof(T) for T *argName
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("threadgroupMemoryDataSize")

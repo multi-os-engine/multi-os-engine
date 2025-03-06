@@ -86,6 +86,8 @@ public class QLPreviewReplyAttachment extends NSObject {
 
     /**
      * The content type of the attachment for an html preview
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -94,6 +96,8 @@ public class QLPreviewReplyAttachment extends NSObject {
 
     /**
      * The data content of an html preview
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -122,6 +126,8 @@ public class QLPreviewReplyAttachment extends NSObject {
      * 
      * @param data        The data content of an html preview
      * @param contentType The UTType of the attachment for an html preview
+     * 
+     *                    API-Since: 15.0
      */
     @Generated
     @Selector("initWithData:contentType:")

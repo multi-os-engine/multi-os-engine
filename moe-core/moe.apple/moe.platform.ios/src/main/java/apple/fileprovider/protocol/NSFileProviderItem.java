@@ -35,6 +35,8 @@ public interface NSFileProviderItem {
      * will allow for the item.
      * 
      * Capabilities on an item only apply to the item itself. They are not inherited by the children of directories.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -44,6 +46,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -52,6 +57,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -60,6 +68,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -68,6 +79,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -78,6 +92,8 @@ public interface NSFileProviderItem {
 
     /**
      * An error that occurred while downloading from your remote server.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -117,6 +133,8 @@ public interface NSFileProviderItem {
      * The filename property must not be an empty string, including when the item identifier is
      * NSFileProviderRootContainerItemIdentifier. The filename for NSFileProviderRootContainerItemIdentifier
      * may be displayed in the user interface. Therefore it should be a user-friendly string.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -129,6 +147,8 @@ public interface NSFileProviderItem {
      * 
      * When using NSFileProviderReplicatedExtension, downloaded and downloading are ignored, as they can be
      * inferred from the result of calls to fetchContentsForItemWithIdentifier.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -137,6 +157,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("isDownloading")
@@ -144,6 +167,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("isMostRecentVersionDownloaded")
@@ -151,6 +177,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("isShared")
@@ -158,6 +187,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("isSharedByCurrentUser")
@@ -190,6 +222,8 @@ public interface NSFileProviderItem {
      * evicted from the local disk. If you choose to finish uploading items after calling the completion handler
      * of creteItem/modifyItem, you must set the uploaded flag to false, in order for the item to be excluded from
      * eviction.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -198,6 +232,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("isUploading")
@@ -210,6 +247,8 @@ public interface NSFileProviderItem {
      * 
      * The itemIdentifier should not contain sensitive information, as it may be recorded in system logs and
      * diagnostic files.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -226,6 +265,8 @@ public interface NSFileProviderItem {
      * recent list of the UIDocumentBrowserViewController.
      * 
      * This property must not be shared between users, even if the item is.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -235,6 +276,9 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -246,6 +290,8 @@ public interface NSFileProviderItem {
     /**
      * ownerNameComponents should be nil when sharedByCurrentUser is equal to YES or
      * when the item is not shared.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -268,6 +314,8 @@ public interface NSFileProviderItem {
      * hierarchy (ie. it is not NSFileProviderWorkingSetContainerItemIdentifier).
      * 
      * The parents of trashed items and of the root item are ignored.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -284,6 +332,8 @@ public interface NSFileProviderItem {
      * 
      * Starting in macOS 12 and iOS 15, the system suppports the value of the
      * `com.apple.metadata:_kMDItemUserTags` xattr as a valid `tagData` blob input.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -326,6 +376,8 @@ public interface NSFileProviderItem {
      * 
      * \seealso NSFileProviderErrorInsufficientQuota
      * \seealso NSFileProviderErrorServerUnreachable
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -573,6 +625,8 @@ public interface NSFileProviderItem {
      * </array>
      * </array>
      * ```
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

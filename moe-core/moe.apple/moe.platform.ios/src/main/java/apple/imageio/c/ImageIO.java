@@ -4199,6 +4199,7 @@ public final class ImageIO {
      * - the depth data (CFDataRef) - (kCGImageAuxiliaryDataInfoData),
      * - the depth data description (CFDictionary) - (kCGImageAuxiliaryDataInfoDataDescription)
      * - metadata (CGImageMetadataRef) - (kCGImageAuxiliaryDataInfoMetadata)
+     * - optional color space (CGColorSpaceRef) - (kCGImageAuxiliaryDataInfoColorSpace)
      * CGImageSourceCopyAuxiliaryDataInfoAtIndex returns nil if the image did not contain ‘auxiliaryImageDataType’ data.
      * 
      * API-Since: 11.0
@@ -4259,6 +4260,7 @@ public final class ImageIO {
      * kCGImageAuxiliaryDataInfoData - the depth data (CFDataRef)
      * kCGImageAuxiliaryDataInfoDataDescription - the depth data description (CFDictionary)
      * kCGImageAuxiliaryDataInfoMetadata - metadata (CGImageMetadataRef)
+     * kCGImageAuxiliaryDataInfoColorSpace - the color space associated with the aux image (CGColorSpaceRef)
      * 
      * API-Since: 11.0
      */
@@ -7057,4 +7059,207 @@ public final class ImageIO {
     @CVariable()
     @NotNull
     public static native CFStringRef kCGImagePropertyAVISDictionary();
+
+    /**
+     * To limit the image formats that ImageIO can decode, you can call 'CGImageSourceSetAllowableTypes' with
+     * an array of type identifiers.
+     * The 'allowableTypes' array should contain valid type identifiers.
+     * CGImageSourceSetAllowableTypes can only be called once.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @CFunction
+    public static native int CGImageSourceSetAllowableTypes(@NotNull CFArrayRef allowableTypes);
+
+    /**
+     * kCGImageSourceGenerateImageSpecificLumaScaling - generate a global tone mapping function based on the gain map.
+     * Dafault value is "YES" (kCFBooleanTrue)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageSourceGenerateImageSpecificLumaScaling();
+
+    /**
+     * HDR-support
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeRequest();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeToSDR();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeToISOHDR();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeToISOGainmap();
+
+    /**
+     * kCGImageSourceEncodeRequestOptions - CFDictionaryRef to specify additional options
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeRequestOptions();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeBaseIsSDR();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeTonemapMode();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyTIFFXPosition();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyTIFFYPosition();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageAuxiliaryDataTypeISOGainMap();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageAuxiliaryDataInfoColorSpace();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyGroupImageIndexMonoscopic();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyGroupImageIsMonoscopicImage();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyGroupImageStereoAggressors();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIIOStereoAggressors_Type();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIIOStereoAggressors_SubTypeURI();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIIOStereoAggressors_Severity();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyGroupMonoscopicImageLocation();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIIOMonoscopicImageLocation_Unspecified();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIIOMonoscopicImageLocation_Left();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIIOMonoscopicImageLocation_Right();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kIIOMonoscopicImageLocation_Center();
 }

@@ -61,6 +61,9 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("activityNames")
     public native NSArray<String> activityNames();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("albumName")
@@ -76,6 +79,9 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("allocWithZone:")
     public static native INMediaSearch allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("artistName")
@@ -125,6 +131,9 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("genreNames")
@@ -143,6 +152,9 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native INMediaSearch initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMediaType:sortOrder:mediaName:artistName:albumName:genreNames:moodNames:releaseDate:reference:mediaIdentifier:")
     public native INMediaSearch initWithMediaTypeSortOrderMediaNameArtistNameAlbumNameGenreNamesMoodNamesReleaseDateReferenceMediaIdentifier(
@@ -172,21 +184,33 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaIdentifier")
     public native String mediaIdentifier();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaName")
     public native String mediaName();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("mediaType")
     @NInt
     public native long mediaType();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("moodNames")
@@ -197,11 +221,17 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("new")
     public static native INMediaSearch new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reference")
     @NInt
     public native long reference();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("releaseDate")
@@ -219,6 +249,9 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("sortOrder")
     @NInt

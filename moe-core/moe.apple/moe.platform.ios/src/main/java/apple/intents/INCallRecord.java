@@ -66,16 +66,25 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("callCapability")
     @NInt
     public native long callCapability();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("callDuration")
     public native NSNumber callDuration();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("callRecordType")
     @NInt
@@ -119,6 +128,9 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("dateCreated")
@@ -141,6 +153,9 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("identifier")
@@ -221,6 +236,9 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("unseen")
@@ -253,6 +271,9 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("numberOfCalls")
     public native NSNumber numberOfCalls();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:")
     public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseen(

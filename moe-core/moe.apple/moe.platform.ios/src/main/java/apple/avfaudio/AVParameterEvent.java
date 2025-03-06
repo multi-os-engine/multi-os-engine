@@ -103,6 +103,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] element
      * The element index within the scope (see AudioUnitElement).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("element")
@@ -130,6 +132,8 @@ public class AVParameterEvent extends AVMusicEvent {
      *                    The element index within the scope (see AudioUnitElement).
      * @param value
      *                    The value of the parameter to be set. Range: Dependent on parameter.
+     * 
+     *                    API-Since: 16.0
      */
     @Generated
     @Selector("initWithParameterID:scope:element:value:")
@@ -166,6 +170,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] parameterID
      * The ID of the parameter (see AudioUnitParameterID).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("parameterID")
@@ -182,6 +188,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] scope
      * The audio unit scope for the parameter (see AudioUnitScope).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("scope")
@@ -190,6 +198,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] element
      * The element index within the scope (see AudioUnitElement).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setElement:")
@@ -198,6 +208,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] parameterID
      * The ID of the parameter (see AudioUnitParameterID).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setParameterID:")
@@ -206,6 +218,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] scope
      * The audio unit scope for the parameter (see AudioUnitScope).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setScope:")
@@ -214,6 +228,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] value
      * The value of the parameter to be set. Range: Dependent on parameter.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setValue:")
@@ -230,6 +246,8 @@ public class AVParameterEvent extends AVMusicEvent {
     /**
      * [@property] value
      * The value of the parameter to be set. Range: Dependent on parameter.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("value")

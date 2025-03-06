@@ -175,6 +175,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * The application badge number. nil means no change. 0 to hide.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -224,6 +226,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * The application badge number. nil means no change. 0 to hide.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBadge:")

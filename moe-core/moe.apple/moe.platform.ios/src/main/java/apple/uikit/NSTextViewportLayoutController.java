@@ -55,6 +55,8 @@ public class NSTextViewportLayoutController extends NSObject {
      * Adjusts the viewport rect by the specified offset if needed.
      * This is used to artificially move the viewport without affecting viewport content, can be both positive/negative
      * offset.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("adjustViewportByVerticalOffset:")
@@ -101,6 +103,8 @@ public class NSTextViewportLayoutController extends NSObject {
 
     /**
      * The viewport layout delegate.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -121,6 +125,9 @@ public class NSTextViewportLayoutController extends NSObject {
     @Selector("init")
     public native NSTextViewportLayoutController init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithTextLayoutManager:")
     public native NSTextViewportLayoutController initWithTextLayoutManager(
@@ -150,6 +157,8 @@ public class NSTextViewportLayoutController extends NSObject {
 
     /**
      * Performs layout in the viewport.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("layoutViewport")
@@ -164,6 +173,8 @@ public class NSTextViewportLayoutController extends NSObject {
      * Relocates the viewport to start with the specified *location*.
      * This is used to programmatically scroll to the specified *location*.
      * Returns the suggested viewport anchor point.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("relocateViewportToTextLocation:")
@@ -181,6 +192,8 @@ public class NSTextViewportLayoutController extends NSObject {
 
     /**
      * The viewport layout delegate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -189,6 +202,8 @@ public class NSTextViewportLayoutController extends NSObject {
 
     /**
      * The viewport layout delegate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSTextViewportLayoutControllerDelegate value) {
@@ -212,6 +227,8 @@ public class NSTextViewportLayoutController extends NSObject {
 
     /**
      * The provider of viewport text layout fragments.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -226,6 +243,8 @@ public class NSTextViewportLayoutController extends NSObject {
     /**
      * The viewport of the current layout.
      * Not KVO-compliant.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("viewportBounds")
@@ -235,6 +254,8 @@ public class NSTextViewportLayoutController extends NSObject {
     /**
      * The text range of the current viewport layout.
      * Not KVO-compliant.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

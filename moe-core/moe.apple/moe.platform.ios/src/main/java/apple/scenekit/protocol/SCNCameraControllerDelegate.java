@@ -18,6 +18,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNCameraControllerDelegate")
 public interface SCNCameraControllerDelegate {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("cameraInertiaDidEndForController:")
@@ -25,6 +28,9 @@ public interface SCNCameraControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("cameraInertiaWillStartForController:")

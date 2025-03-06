@@ -61,8 +61,8 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout, NSTextAttachmentContainer,
-        NSSecureCoding, UIAccessibilityContentSizeCategoryImageAdjusting {
+public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout, NSSecureCoding,
+        NSTextAttachmentContainer, UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -216,6 +216,8 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     /**
      * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of
      * invalidating -image, -contents, and fileType properties.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -288,6 +290,8 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     /**
      * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of
      * invalidating -image, -contents, and fileType properties.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setFileWrapper:")

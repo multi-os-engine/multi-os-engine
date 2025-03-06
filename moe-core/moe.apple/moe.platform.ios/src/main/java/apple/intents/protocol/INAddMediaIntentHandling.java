@@ -43,6 +43,8 @@ public interface INAddMediaIntentHandling {
      *                   intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INAddMediaIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -69,6 +71,8 @@ public interface INAddMediaIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INAddMediaIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("handleAddMedia:completion:")
@@ -82,6 +86,9 @@ public interface INAddMediaIntentHandling {
         void call_handleAddMediaCompletion(@NotNull INAddMediaIntentResponse response);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveMediaDestinationForAddMedia:withCompletion:")
@@ -108,6 +115,8 @@ public interface INAddMediaIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional

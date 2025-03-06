@@ -101,6 +101,9 @@ public class PHASECardioidDirectivityModelParameters extends PHASEDirectivityMod
     @Selector("init")
     public native PHASECardioidDirectivityModelParameters init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithSubbandParameters:")
     public native PHASECardioidDirectivityModelParameters initWithSubbandParameters(
@@ -149,6 +152,8 @@ public class PHASECardioidDirectivityModelParameters extends PHASEDirectivityMod
      * [@property] subbandParameters
      * 
      * An array of subband parameters.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

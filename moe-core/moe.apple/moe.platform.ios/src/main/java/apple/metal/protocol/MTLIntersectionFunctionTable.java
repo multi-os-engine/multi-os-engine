@@ -9,7 +9,6 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstNUIntPtr;
-import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -18,6 +17,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * API-Since: 14.0
@@ -27,23 +27,35 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLIntersectionFunctionTable")
 public interface MTLIntersectionFunctionTable extends MTLResource {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setBuffer:offset:atIndex:")
     void setBufferOffsetAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setBuffers:offsets:withRange:")
-    void setBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setFunction:atIndex:")
     void setFunctionAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunctionHandle function, @NUInt long index);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setFunctions:withRange:")
-    void setFunctionsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functions,
+    void setFunctionsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> functions,
             @ByValue NSRange range);
 
     /**
@@ -53,6 +65,8 @@ public interface MTLIntersectionFunctionTable extends MTLResource {
      * ray/triangle intersections will be ignored if a call to the function at the given index
      * would be required. Ray/triangle intersections are always accepted if an intersection
      * function table is not provided.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOpaqueTriangleIntersectionFunctionWithSignature:atIndex:")
@@ -65,20 +79,28 @@ public interface MTLIntersectionFunctionTable extends MTLResource {
      * ray/triangle intersections will be ignored if a call to the function at that index
      * would be required. Ray/triangle intersections are always accepted if an intersection
      * function table is not provided.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOpaqueTriangleIntersectionFunctionWithSignature:withRange:")
     void setOpaqueTriangleIntersectionFunctionWithSignatureWithRange(@NUInt long signature, @ByValue NSRange range);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setVisibleFunctionTable:atBufferIndex:")
     void setVisibleFunctionTableAtBufferIndex(
             @Nullable @Mapped(ObjCObjectMapper.class) MTLVisibleFunctionTable functionTable, @NUInt long bufferIndex);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setVisibleFunctionTables:withBufferRange:")
     void setVisibleFunctionTablesWithBufferRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> functionTables,
             @ByValue NSRange bufferRange);
 
     /**
@@ -100,6 +122,8 @@ public interface MTLIntersectionFunctionTable extends MTLResource {
      * ray/curve intersections will be ignored if a call to the function at the given index
      * would be required. Ray/curve intersections are always accepted if an intersection
      * function table is not provided.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOpaqueCurveIntersectionFunctionWithSignature:atIndex:")
@@ -112,6 +136,8 @@ public interface MTLIntersectionFunctionTable extends MTLResource {
      * ray/curve intersections will be ignored if a call to the function at that index
      * would be required. Ray/curve intersections are always accepted if an intersection
      * function table is not provided.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOpaqueCurveIntersectionFunctionWithSignature:withRange:")

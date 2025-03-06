@@ -170,6 +170,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * The call includes video in addition to audio.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("hasVideo")
@@ -183,6 +185,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
      * Override the computed caller name to a provider-defined value.
      * Normally the system will determine the appropriate caller name to display (e.g. using the user's contacts) based
      * on the supplied caller identifier. Set this property to customize.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -191,6 +195,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Handle for the remote party (for an incoming call, the caller; for an outgoing call, the callee)
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -199,6 +205,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * The call includes video in addition to audio.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setHasVideo:")
@@ -208,6 +216,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
      * Override the computed caller name to a provider-defined value.
      * Normally the system will determine the appropriate caller name to display (e.g. using the user's contacts) based
      * on the supplied caller identifier. Set this property to customize.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocalizedCallerName:")
@@ -215,6 +225,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Handle for the remote party (for an incoming call, the caller; for an outgoing call, the callee)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRemoteHandle:")
@@ -222,6 +234,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * The call can send DTMF tones via hard pause digits or in-call keypad entries
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSupportsDTMF:")
@@ -229,6 +243,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Whether the call can be grouped (merged) with other calls when it is ungrouped
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSupportsGrouping:")
@@ -236,6 +252,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Whether the call can be held on its own or swapped with another call
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSupportsHolding:")
@@ -243,6 +261,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * The call can be ungrouped (taken private) when it is grouped
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSupportsUngrouping:")
@@ -250,6 +270,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * The call can send DTMF tones via hard pause digits or in-call keypad entries
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportsDTMF")
@@ -257,6 +279,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Whether the call can be grouped (merged) with other calls when it is ungrouped
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportsGrouping")
@@ -264,6 +288,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Whether the call can be held on its own or swapped with another call
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportsHolding")
@@ -271,6 +297,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * The call can be ungrouped (taken private) when it is grouped
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportsUngrouping")

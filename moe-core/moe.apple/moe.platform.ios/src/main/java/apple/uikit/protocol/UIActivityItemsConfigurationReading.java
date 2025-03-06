@@ -26,6 +26,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIActivityItemsConfigurationReading")
 public interface UIActivityItemsConfigurationReading {
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -35,6 +38,9 @@ public interface UIActivityItemsConfigurationReading {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -44,6 +50,9 @@ public interface UIActivityItemsConfigurationReading {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -55,6 +64,8 @@ public interface UIActivityItemsConfigurationReading {
 
     /**
      * If not implemented, defaults to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -63,6 +74,9 @@ public interface UIActivityItemsConfigurationReading {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -71,6 +85,9 @@ public interface UIActivityItemsConfigurationReading {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("itemProvidersForActivityItemsConfiguration")

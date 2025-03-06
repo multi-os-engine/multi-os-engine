@@ -1322,4 +1322,26 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyCreditsStartTime();
+
+    /**
+     * NSString
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MPNowPlayingInfoPropertyInternationalStandardRecordingCode();
+
+    /**
+     * NSNumber (BOOL)
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MPNowPlayingInfoPropertyExcludeFromSuggestions();
 }

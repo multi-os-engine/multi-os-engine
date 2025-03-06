@@ -176,6 +176,9 @@ public class SFSafariViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -199,6 +202,8 @@ public class SFSafariViewController extends UIViewController {
      * Returns a view controller that loads a URL.
      * 
      * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
+     * 
+     *            API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -230,11 +235,17 @@ public class SFSafariViewController extends UIViewController {
     @Selector("preferredControlTintColor")
     public native UIColor preferredControlTintColor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value) {
         Object __old = delegate();

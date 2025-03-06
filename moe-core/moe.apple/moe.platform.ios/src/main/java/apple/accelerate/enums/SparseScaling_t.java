@@ -8,7 +8,7 @@ public final class SparseScaling_t {
     private SparseScaling_t() {
     }
 
-    @Generated public static final byte SparseScalingDefault = 0;
-    @Generated public static final byte SparseScalingUser = 1;
-    @Generated public static final byte SparseScalingEquilibriationInf = 2;
+    @Generated public static final byte Default = 0;
+    @Generated public static final byte User = 1;
+    @Generated public static final byte EquilibriationInf = 2;
 }

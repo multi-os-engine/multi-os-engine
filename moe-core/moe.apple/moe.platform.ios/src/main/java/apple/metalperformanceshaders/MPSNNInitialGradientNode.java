@@ -112,6 +112,8 @@ public class MPSNNInitialGradientNode extends MPSNNFilterNode {
      * 
      * @param source The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for a MPSNNInitialGradient kernel.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSource:")
@@ -149,6 +151,8 @@ public class MPSNNInitialGradientNode extends MPSNNFilterNode {
      * 
      * @param source The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for a MPSNNInitialGradient kernel.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSource:")

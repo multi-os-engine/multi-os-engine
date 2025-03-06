@@ -83,16 +83,25 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("content")
     public native String content();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dateSearchType")
     @NInt
     public native long dateSearchType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("dateTime")
@@ -149,6 +158,9 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("itemType")
     @NInt
@@ -159,11 +171,17 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("location")
     public native CLPlacemark location();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("locationSearchType")
     @NInt
@@ -186,6 +204,9 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("status")
     @NInt
@@ -205,6 +226,9 @@ public class INSearchForNotebookItemsIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("title")

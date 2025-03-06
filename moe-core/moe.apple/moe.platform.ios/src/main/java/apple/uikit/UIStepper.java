@@ -417,6 +417,8 @@ public class UIStepper extends UIControl {
 
     /**
      * if YES, press & hold repeatedly alters value. default = YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("autorepeat")
@@ -468,6 +470,8 @@ public class UIStepper extends UIControl {
 
     /**
      * if YES, value change events are sent any time the value changes during interaction. default = YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isContinuous")
@@ -475,6 +479,8 @@ public class UIStepper extends UIControl {
 
     /**
      * if YES, value change events are sent any time the value changes during interaction. default = YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContinuous:")
@@ -482,6 +488,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default 100. must be greater than minimumValue
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("maximumValue")
@@ -489,6 +497,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default 0. must be less than maximumValue
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("minimumValue")
@@ -496,6 +506,8 @@ public class UIStepper extends UIControl {
 
     /**
      * if YES, press & hold repeatedly alters value. default = YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAutorepeat:")
@@ -542,6 +554,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default 100. must be greater than minimumValue
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setMaximumValue:")
@@ -549,6 +563,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default 0. must be less than maximumValue
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setMinimumValue:")
@@ -556,6 +572,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default 1. must be greater than 0
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setStepValue:")
@@ -563,6 +581,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default is 0. sends UIControlEventValueChanged. clamped to min/max
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setValue:")
@@ -570,6 +590,8 @@ public class UIStepper extends UIControl {
 
     /**
      * if YES, value wraps from min <-> max. default = NO
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setWraps:")
@@ -577,6 +599,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default 1. must be greater than 0
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("stepValue")
@@ -584,6 +608,8 @@ public class UIStepper extends UIControl {
 
     /**
      * default is 0. sends UIControlEventValueChanged. clamped to min/max
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("value")
@@ -591,6 +617,8 @@ public class UIStepper extends UIControl {
 
     /**
      * if YES, value wraps from min <-> max. default = NO
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("wraps")

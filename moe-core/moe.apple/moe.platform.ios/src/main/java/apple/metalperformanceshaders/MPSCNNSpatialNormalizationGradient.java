@@ -88,6 +88,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("alpha")
@@ -101,6 +103,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("beta")
@@ -135,6 +139,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("delta")
@@ -169,6 +175,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -189,6 +197,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * @return A valid MPSCNNSpatialNormalization object or nil, if failure.
      * 
      *         NOTE: For now, kernelWidth must be equal to kernelHeight
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -235,6 +245,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setAlpha:")
@@ -244,6 +256,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setBeta:")
@@ -253,6 +267,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setDelta:")

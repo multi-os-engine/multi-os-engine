@@ -71,6 +71,8 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
      * 
      * Blend shapes coefficients define the amount of displacement of a neutral shape at a specific location on the
      * face.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -108,6 +110,8 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The face geometry updated based on the computed blend shapes.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

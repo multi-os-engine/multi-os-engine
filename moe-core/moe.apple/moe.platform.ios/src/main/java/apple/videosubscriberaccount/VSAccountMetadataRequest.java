@@ -162,6 +162,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Attributes to add to a SAML attributeQuery request and sent to the account provider.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -171,6 +173,8 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * Identifies who is making the request.
      * For use by applications using the SAML authentication scheme only.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -179,6 +183,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Requests that the TV Provider reauthenticate the user if they are already authenticated.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("forceAuthentication")
@@ -186,6 +192,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Whether to request information that identifies the account provider.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("includeAccountProviderIdentifier")
@@ -193,6 +201,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Whether to request the expiration date of the subscriber's current authentication.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("includeAuthenticationExpirationDate")
@@ -204,6 +214,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Whether the user might expect to be prompted to authenticate in order to complete this request.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isInterruptionAllowed")
@@ -211,6 +223,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Whether the user might expect to be prompted to authenticate in order to complete this request.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setInterruptionAllowed:")
@@ -220,6 +234,8 @@ public class VSAccountMetadataRequest extends NSObject {
      * A brief, user-presentable name for the video that the app will play if it receives a successful response.
      * For example, "What's New in Swift" or "Office Space"
      * Do not provide a value if the request will not be used to play a specific video.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -228,6 +244,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Attributes to add to a SAML attributeQuery request and sent to the account provider.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAttributeNames:")
@@ -236,6 +254,8 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * Identifies who is making the request.
      * For use by applications using the SAML authentication scheme only.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setChannelIdentifier:")
@@ -243,6 +263,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Requests that the TV Provider reauthenticate the user if they are already authenticated.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setForceAuthentication:")
@@ -250,6 +272,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Whether to request information that identifies the account provider.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setIncludeAccountProviderIdentifier:")
@@ -257,6 +281,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Whether to request the expiration date of the subscriber's current authentication.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setIncludeAuthenticationExpirationDate:")
@@ -266,6 +292,8 @@ public class VSAccountMetadataRequest extends NSObject {
      * A brief, user-presentable name for the video that the app will play if it receives a successful response.
      * For example, "What's New in Swift" or "Office Space"
      * Do not provide a value if the request will not be used to play a specific video.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocalizedVideoTitle:")
@@ -273,6 +301,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * If non-empty, limits which account providers can respond to the request.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSupportedAccountProviderIdentifiers:")
@@ -291,6 +321,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * A value that the account provider may use to verify the identity of the requesting app.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setVerificationToken:")
@@ -298,6 +330,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * If non-empty, limits which account providers can respond to the request.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -318,6 +352,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * A value that the account provider may use to verify the identity of the requesting app.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

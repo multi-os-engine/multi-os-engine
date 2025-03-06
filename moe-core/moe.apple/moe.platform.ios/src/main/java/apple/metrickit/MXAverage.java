@@ -72,6 +72,8 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
      * [@property] averageMeasurement
      * 
      * An NSMeasurement that contains the average measurement.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -165,6 +167,8 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
      * An NSInteger representation of the number of samples in the distribution used to formulate the average.
      * 
      * This value is negative if an unknown number of samples was used to compute the average.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sampleCount")
@@ -181,6 +185,8 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
      * An double representation of the standard deviation of the distribution.
      * 
      * This value is negative an unknown number of samples was used to compute the standard deviation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("standardDeviation")

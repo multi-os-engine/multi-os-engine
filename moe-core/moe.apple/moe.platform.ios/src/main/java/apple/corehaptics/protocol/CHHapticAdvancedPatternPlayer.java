@@ -32,6 +32,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * [@property] completionHandler
      * 
      * The block or enclosure that will be called when the player finishes.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -50,6 +52,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * [@property] isMuted
      * 
      * When set to YES, all audio and haptic output will be silenced.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMuted")
@@ -60,6 +64,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * 
      * When set to YES, the player will loop back to the beginning of the pattern whenever playback
      * reaches the `loopEnd` time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("loopEnabled")
@@ -71,6 +77,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * The time in seconds at which the pattern will loop back if looping is enabled.
      * 
      * If set to 0.0, the loop length will be set to the end of the last event in the pattern.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("loopEnd")
@@ -82,6 +90,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * Pause playback of the pattern at the specified time (see `CHHapticEngine(currentTime)`).
      * 
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern will be paused immediately.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("pauseAtTime:error:")
@@ -96,6 +106,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * This rate factor scales the relative times of all events and parameters as they are played, as well as the
      * durations of Continuous events. It does not affect the pitches of the events. Any value greater than
      * 0.0 is valid; all others are ignored.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("playbackRate")
@@ -108,6 +120,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * 
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern is resumed as soon as possible.
      * Playback will resume at the time offset in the pattern at which it was paused.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resumeAtTime:error:")
@@ -122,6 +136,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * set to >= the duration of the pattern, playback will terminate as soon as possible
      * unless the player is looped, in which case playback will start at the beginning of
      * the loop.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("seekToOffset:error:")
@@ -131,6 +147,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * [@property] completionHandler
      * 
      * The block or enclosure that will be called when the player finishes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCompletionHandler:")
@@ -147,6 +165,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * [@property] isMuted
      * 
      * When set to YES, all audio and haptic output will be silenced.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setIsMuted:")
@@ -157,6 +177,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * 
      * When set to YES, the player will loop back to the beginning of the pattern whenever playback
      * reaches the `loopEnd` time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLoopEnabled:")
@@ -168,6 +190,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * The time in seconds at which the pattern will loop back if looping is enabled.
      * 
      * If set to 0.0, the loop length will be set to the end of the last event in the pattern.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLoopEnd:")
@@ -182,6 +206,8 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * This rate factor scales the relative times of all events and parameters as they are played, as well as the
      * durations of Continuous events. It does not affect the pitches of the events. Any value greater than
      * 0.0 is valid; all others are ignored.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPlaybackRate:")

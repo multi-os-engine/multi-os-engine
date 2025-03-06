@@ -164,6 +164,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
      * [@property] computeFunction
      * 
      * The function to use with the MTLComputePipelineState
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -186,6 +188,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -196,6 +200,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
      * reset
      * 
      * Restore all compute pipeline descriptor properties to their default values.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("reset")
@@ -205,6 +211,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
      * [@property] computeFunction
      * 
      * The function to use with the MTLComputePipelineState
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setComputeFunction:")
@@ -214,6 +222,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLabel:")
@@ -234,6 +244,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
      * [@property] threadGroupSizeIsMultipleOfThreadExecutionWidth
      * 
      * An optimization flag, set if the thread group size will always be a multiple of thread execution width
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setThreadGroupSizeIsMultipleOfThreadExecutionWidth:")
@@ -255,6 +267,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
      * [@property] threadGroupSizeIsMultipleOfThreadExecutionWidth
      * 
      * An optimization flag, set if the thread group size will always be a multiple of thread execution width
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("threadGroupSizeIsMultipleOfThreadExecutionWidth")
@@ -516,4 +530,33 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setShaderValidation:")
+    public native void setShaderValidation(@NInt long value);
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("shaderValidation")
+    @NInt
+    public native long shaderValidation();
 }

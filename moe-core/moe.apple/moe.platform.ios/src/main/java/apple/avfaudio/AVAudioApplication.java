@@ -199,6 +199,8 @@ public class AVAudioApplication extends NSObject {
 
     /**
      * Returns the singleton instance
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sharedInstance")
@@ -218,4 +220,38 @@ public class AVAudioApplication extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Returns an enum indicating whether the user has granted or denied permission to inject audio into input,
+     * or has not been asked
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("microphoneInjectionPermission")
+    @NInt
+    public native long microphoneInjectionPermission();
+
+    /**
+     * Checks to see if calling process has permission to inject audio to input stream.
+     * 
+     * The 'response' block will be called immediately if permission has already been granted or
+     * denied or if the service is disabled by the user. Otherwise, it presents a dialog to notify the
+     * user and allow them to choose, and calls the block once the UI has been dismissed.
+     * 'granted' indicates whether permission has been granted. Note that the block may be
+     * called in a different thread context.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("requestMicrophoneInjectionPermissionWithCompletionHandler:")
+    public static native void requestMicrophoneInjectionPermissionWithCompletionHandler(
+            @ObjCBlock(name = "call_requestMicrophoneInjectionPermissionWithCompletionHandler") @NotNull Block_requestMicrophoneInjectionPermissionWithCompletionHandler response);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestMicrophoneInjectionPermissionWithCompletionHandler {
+        @Generated
+        void call_requestMicrophoneInjectionPermissionWithCompletionHandler(@NInt long permission);
+    }
 }

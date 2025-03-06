@@ -79,6 +79,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Apple Music ID
      * [@note] This may be fetched using the key @c SHMediaItemAppleMusicID
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -88,6 +90,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Apple Music URL
      * [@note] This may be fetched using the key @c SHMediaItemAppleMusicURL
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -97,6 +101,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Artist
      * [@note] This may be fetched using the key @c SHMediaItemArtist
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -106,6 +112,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Artwork URL
      * [@note] This may be fetched using the key @c SHMediaItemArtworkURL
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -159,6 +167,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Whether this object represents explicit material
      * [@note] This may be fetched using the key @c SHMediaItemExplicitContent
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("explicitContent")
@@ -168,6 +178,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * Fetch a @c SHMediaItem by Shazam ID
      * 
      * The completionHandler will contain a @c SHMediaItem if the ShazamID is valid, otherwise nil and an error
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("fetchMediaItemWithShazamID:completionHandler:")
@@ -186,6 +198,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * [@note] This may be fetched using the key @c SHMediaItemGenres
      * 
      * An array of strings representing the genres of the media item. Will return an empty array if there are no genres.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -225,6 +239,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The International Standard Recording Code
      * [@note] This may be fetched using the key @c SHMediaItemISRC
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -241,6 +257,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * You may add your own keys here to return custom data, custom data should conform to NSCoding
      * 
+     * API-Since: 15.0
+     * 
      * @param properties A dictionary of @c SHMediaItemProperty and their values
      */
     @Generated
@@ -256,6 +274,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * Use subscripting to retrieve values
      * 
      * @param key The `SHMediaItemProperty` or custom key for a value
+     * 
+     *            API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -278,6 +298,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Shazam Media ID
      * [@note] This may be fetched using the key @c SHMediaItemShazamID
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -287,6 +309,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Subtitle
      * [@note] This may be fetched using the key @c SHMediaItemSubtitle
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -310,6 +334,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Title
      * [@note] This may be fetched using the key @c SHMediaItemTitle
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -335,6 +361,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The VideoURL
      * [@note] This may be fetched using the key @c SHMediaItemVideoURL
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -346,6 +374,8 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * The URL will point to a page that displays the current object in its entirety
      * [@note] This may be fetched using the key @c SHMediaItemWebURL
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

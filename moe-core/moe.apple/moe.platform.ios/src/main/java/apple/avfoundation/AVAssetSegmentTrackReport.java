@@ -100,6 +100,8 @@ public class AVAssetSegmentTrackReport extends NSObject {
      * [@property] duration
      * 
      * Indicates the duration for this track. The value is kCMTimeInvalid if there is no information available.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("duration")
@@ -111,6 +113,8 @@ public class AVAssetSegmentTrackReport extends NSObject {
      * 
      * Indicates the earliest presentation timestamp (PTS) for this track. The value is kCMTimeInvalid if there is no
      * information available.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("earliestPresentationTimeStamp")
@@ -122,6 +126,8 @@ public class AVAssetSegmentTrackReport extends NSObject {
      * 
      * Provides information on the first video sample in this track. The value is nil if this track is not video track
      * or no information available.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -163,6 +169,8 @@ public class AVAssetSegmentTrackReport extends NSObject {
      * [@property] mediaType
      * 
      * Indicates the media type for this track. Media types are declared in AVMediaFormat.h.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -194,6 +202,8 @@ public class AVAssetSegmentTrackReport extends NSObject {
      * [@property] trackID
      * 
      * Indicates the persistent unique identifier for this track.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("trackID")

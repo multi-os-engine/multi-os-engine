@@ -364,6 +364,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * for one cycle of images. default is number of images * 1/30th of a second (i.e. 30 fps)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("animationDuration")
@@ -371,6 +373,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * The array must contain UIImages. Setting hides the single image. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -379,6 +383,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * 0 means infinite (default is 0)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("animationRepeatCount")
@@ -454,6 +460,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -472,6 +480,9 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Selector("initWithFrame:")
     public native UIImageView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithImage:")
     public native UIImageView initWithImage(@Nullable UIImage image);
@@ -484,6 +495,9 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     public native UIImageView initWithImageHighlightedImage(@Nullable UIImage image,
             @Nullable UIImage highlightedImage);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isAnimating")
     public native boolean isAnimating();
@@ -508,6 +522,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isUserInteractionEnabled")
@@ -515,6 +531,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setUserInteractionEnabled:")
@@ -522,6 +540,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * for one cycle of images. default is number of images * 1/30th of a second (i.e. 30 fps)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAnimationDuration:")
@@ -529,6 +549,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * The array must contain UIImages. Setting hides the single image. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAnimationImages:")
@@ -536,6 +558,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * 0 means infinite (default is 0)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAnimationRepeatCount:")
@@ -561,6 +585,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setImage:")
@@ -576,10 +602,16 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();
@@ -679,6 +711,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     /**
      * The resolved treatment to use for HDR images.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("imageDynamicRange")
@@ -688,6 +722,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     /**
      * The preferred treatment to use for HDR images. By default the image view will defer to the value from its
      * traitCollection.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("preferredImageDynamicRange")
@@ -776,6 +812,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     /**
      * The preferred treatment to use for HDR images. By default the image view will defer to the value from its
      * traitCollection.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setPreferredImageDynamicRange:")

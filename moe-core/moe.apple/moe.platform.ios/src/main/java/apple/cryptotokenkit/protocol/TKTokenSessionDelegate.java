@@ -45,6 +45,8 @@ public interface TKTokenSessionDelegate {
      *         properties (e.g. 'password') before triggering 'finishWithError:'. When no authentication is actually
      *         needed (typically because the session is already authenticated for requested constraint), return instance
      *         of TKTokenAuthOperation class instead of any specific subclass.
+     * 
+     *         API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -66,6 +68,8 @@ public interface TKTokenSessionDelegate {
      * @param error       Error details (see TKError.h). If authentication is required (by invoking
      *                    beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Resulting decrypted plaintext, or nil if an error happened.
+     * 
+     *         API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -89,6 +93,8 @@ public interface TKTokenSessionDelegate {
      * @param error                   Error details (see TKError.h). If authentication is required (by invoking
      *                                beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Result of key exchange operation, or nil if the operation failed.
+     * 
+     *         API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -112,6 +118,8 @@ public interface TKTokenSessionDelegate {
      * @param error       Error details (see TKError.h). If authentication is required (by invoking
      *                    beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Resulting signature, or nil if an error happened.
+     * 
+     *         API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -132,6 +140,8 @@ public interface TKTokenSessionDelegate {
      * @param keyObjectID Identifier of the private key object.
      * @param algorithm   Algorithm with which the oepration should be performed.
      * @return YES if the operation is supported, NO otherwise.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @IsOptional

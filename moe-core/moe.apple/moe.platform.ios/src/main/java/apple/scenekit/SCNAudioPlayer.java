@@ -77,6 +77,8 @@ public class SCNAudioPlayer extends NSObject {
      * [@property] audioPlayerWithAVAudioNode:
      * 
      * Create an audio player with a custom AVAudioNode instance.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("audioPlayerWithAVAudioNode:")
@@ -86,6 +88,8 @@ public class SCNAudioPlayer extends NSObject {
      * [@property] audioPlayerWithSource:
      * 
      * Create an audio player with a source.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("audioPlayerWithSource:")
@@ -182,6 +186,8 @@ public class SCNAudioPlayer extends NSObject {
      * 
      * The audioNode. If this player was not initialised with a custom AVAudioNode this contains the internal audio
      * player node used by scene kit internally.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -192,6 +198,8 @@ public class SCNAudioPlayer extends NSObject {
      * [@property] audioSource
      * 
      * The audioSource if there is one.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -202,6 +210,8 @@ public class SCNAudioPlayer extends NSObject {
      * [@property] playbackFinished
      * 
      * This block is called when the playback stops in case a valid audio source is present.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -218,6 +228,8 @@ public class SCNAudioPlayer extends NSObject {
      * 
      * Init an audio player with an AVAudioNode. Most people should use audioPlayerWithAVAudioNode as it permits to
      * recycle previous players instead of creating new ones for each instance.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithAVAudioNode:")
@@ -228,6 +240,8 @@ public class SCNAudioPlayer extends NSObject {
      * 
      * Init an audio player with a source. Most people should use audioPlayerWithSource as it permits to recycle
      * previous players instead of creating new ones for each instance.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithSource:")
@@ -237,6 +251,8 @@ public class SCNAudioPlayer extends NSObject {
      * [@property] playbackFinished
      * 
      * This block is called when the playback stops in case a valid audio source is present.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDidFinishPlayback:")
@@ -247,6 +263,8 @@ public class SCNAudioPlayer extends NSObject {
      * [@property] playbackStarted
      * 
      * This block is called when the playback starts in case a valid audio source is present.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setWillStartPlayback:")
@@ -257,6 +275,8 @@ public class SCNAudioPlayer extends NSObject {
      * [@property] playbackStarted
      * 
      * This block is called when the playback starts in case a valid audio source is present.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

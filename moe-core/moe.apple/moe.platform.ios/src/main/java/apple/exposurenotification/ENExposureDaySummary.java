@@ -85,6 +85,9 @@ public class ENExposureDaySummary extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.5
+     */
     @Nullable
     @Generated
     @Selector("confirmedClinicalDiagnosisSummary")
@@ -92,6 +95,8 @@ public class ENExposureDaySummary extends NSObject {
 
     /**
      * Summary of all exposures on this day of a specific diagnosis report type.
+     * 
+     * API-Since: 12.5
      */
     @Nullable
     @Generated
@@ -100,6 +105,8 @@ public class ENExposureDaySummary extends NSObject {
 
     /**
      * Day the exposure occurred.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -108,6 +115,8 @@ public class ENExposureDaySummary extends NSObject {
 
     /**
      * Summary of all exposures on this day.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -158,6 +167,9 @@ public class ENExposureDaySummary extends NSObject {
     @Selector("new")
     public static native ENExposureDaySummary new_objc();
 
+    /**
+     * API-Since: 12.5
+     */
     @Nullable
     @Generated
     @Selector("recursiveSummary")
@@ -171,6 +183,9 @@ public class ENExposureDaySummary extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.5
+     */
     @Nullable
     @Generated
     @Selector("selfReportedSummary")

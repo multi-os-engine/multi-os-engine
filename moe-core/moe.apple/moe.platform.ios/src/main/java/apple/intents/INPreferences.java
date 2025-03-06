@@ -159,6 +159,9 @@ public class INPreferences extends NSObject {
     @NInt
     public static native long siriAuthorizationStatus();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("siriLanguageCode")

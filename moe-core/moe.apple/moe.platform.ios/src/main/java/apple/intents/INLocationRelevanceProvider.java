@@ -106,6 +106,8 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
 
     /**
      * Initializes a location relevance provider with the specified region.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithRegion:")
@@ -142,6 +144,8 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
      * The region representing the relevant location.
      * 
      * @see CLCircularRegion
+     * 
+     *      API-Since: 12.0
      */
     @NotNull
     @Generated

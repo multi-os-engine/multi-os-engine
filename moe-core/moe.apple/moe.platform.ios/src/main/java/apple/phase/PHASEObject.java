@@ -65,6 +65,8 @@ public class PHASEObject extends NSObject implements NSCopying {
      *              Returns an error if the child already has a parent.
      * @return
      *         YES for success
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("addChild:error:")
@@ -100,6 +102,8 @@ public class PHASEObject extends NSObject implements NSCopying {
      * [@property] children
      * 
      * The children of this object.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -144,6 +148,8 @@ public class PHASEObject extends NSObject implements NSCopying {
      * initWithEngine:
      * 
      * Initialize a new object.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithEngine:")
@@ -180,6 +186,8 @@ public class PHASEObject extends NSObject implements NSCopying {
      * [@property] parent
      * 
      * The parent of this object, or nil if this object doesn't have a parent object.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -190,6 +198,8 @@ public class PHASEObject extends NSObject implements NSCopying {
      * removeChild:
      * 
      * Remove a child from this object.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("removeChild:")
@@ -199,6 +209,8 @@ public class PHASEObject extends NSObject implements NSCopying {
      * removeChildren
      * 
      * Remove all the children from this object
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("removeChildren")

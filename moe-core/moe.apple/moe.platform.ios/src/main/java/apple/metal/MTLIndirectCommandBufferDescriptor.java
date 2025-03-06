@@ -88,6 +88,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
      * A bitfield of the command types that be encoded.
      * 
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("commandTypes")
@@ -109,6 +111,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * Whether the render or compute pipeline can set arguments.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("inheritBuffers")
@@ -151,6 +155,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * The maximum bind index of fragment argument buffers that can be set per command.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("maxFragmentBufferBindCount")
@@ -169,6 +175,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * The maximum bind index of vertex argument buffers that can be set per command.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("maxVertexBufferBindCount")
@@ -192,6 +200,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
      * A bitfield of the command types that be encoded.
      * 
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setCommandTypes:")
@@ -199,6 +209,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * Whether the render or compute pipeline can set arguments.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setInheritBuffers:")
@@ -215,6 +227,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * The maximum bind index of fragment argument buffers that can be set per command.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMaxFragmentBufferBindCount:")
@@ -231,6 +245,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * The maximum bind index of vertex argument buffers that can be set per command.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMaxVertexBufferBindCount:")

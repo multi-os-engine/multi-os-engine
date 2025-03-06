@@ -169,6 +169,8 @@ public class CXSetGroupCallAction extends CXCallAction {
      * 
      * - If the call for this action's UUID is already in a group, it should leave that group if necessary.
      * - If nil, leave any group the call is currently in.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -183,11 +185,17 @@ public class CXSetGroupCallAction extends CXCallAction {
     @Selector("initWithCallUUID:")
     public native CXSetGroupCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCallUUID:callUUIDToGroupWith:")
     public native CXSetGroupCallAction initWithCallUUIDCallUUIDToGroupWith(@NotNull NSUUID callUUID,
             @Nullable NSUUID callUUIDToGroupWith);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native CXSetGroupCallAction initWithCoder(@NotNull NSCoder aDecoder);
@@ -197,6 +205,8 @@ public class CXSetGroupCallAction extends CXCallAction {
      * 
      * - If the call for this action's UUID is already in a group, it should leave that group if necessary.
      * - If nil, leave any group the call is currently in.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setCallUUIDToGroupWith:")

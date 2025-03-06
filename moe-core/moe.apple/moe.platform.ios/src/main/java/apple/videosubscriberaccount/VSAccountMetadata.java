@@ -165,6 +165,8 @@ public class VSAccountMetadata extends NSObject {
      * The SAML AttributeQuery response received from the account provider.
      * The value might be nil if your account metadata request did not specify any SAML attributes or if the user does
      * not have a valid authentication.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -174,6 +176,8 @@ public class VSAccountMetadata extends NSObject {
     /**
      * A value that uniquely identifies the account provider.
      * You may use this value to brand your app.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -195,6 +199,8 @@ public class VSAccountMetadata extends NSObject {
     /**
      * Specifies when the user might need to re-authenticate with the account provider.
      * The value might be nil if the user is not currently authenticated.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -208,6 +214,8 @@ public class VSAccountMetadata extends NSObject {
     /**
      * An opaque blob of data that can be used to cryptographically verify that the
      * SAML AttributeQuery response actually came from the account provider.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

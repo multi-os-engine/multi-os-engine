@@ -173,6 +173,8 @@ public class VNDetectHumanRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * VNHumanObservation results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

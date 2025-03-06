@@ -106,6 +106,9 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("displayString")
@@ -133,10 +136,16 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("initWithCoder:")
     public native INObject initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithIdentifier:displayString:")
     public native INObject initWithIdentifierDisplayString(@Nullable String identifier, @NotNull String displayString);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithIdentifier:displayString:pronunciationHint:")
     public native INObject initWithIdentifierDisplayStringPronunciationHint(@Nullable String identifier,

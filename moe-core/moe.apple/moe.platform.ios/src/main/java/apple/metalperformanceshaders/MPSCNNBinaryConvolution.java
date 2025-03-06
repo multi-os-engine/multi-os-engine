@@ -177,6 +177,8 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -233,6 +235,8 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      * @param flags            See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
      * 
      * @return A valid MPSCNNBinaryConvolution object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:convolutionData:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
@@ -267,6 +271,8 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      * @param flags           See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
      * 
      * @return A valid MPSCNNBinaryConvolution object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:convolutionData:scaleValue:type:flags:")
@@ -275,6 +281,9 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
             @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, float scaleValue,
             @NUInt long type, @NUInt long flags);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("inputFeatureChannels")
     @NUInt
@@ -311,6 +320,8 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the output image.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("outputFeatureChannels")

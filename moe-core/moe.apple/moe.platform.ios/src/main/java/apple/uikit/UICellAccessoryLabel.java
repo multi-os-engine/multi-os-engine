@@ -51,6 +51,8 @@ public class UICellAccessoryLabel extends UICellAccessory {
 
     /**
      * Whether the label automatically adjusts its font based on the content size category. Default is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("adjustsFontForContentSizeCategory")
@@ -101,6 +103,8 @@ public class UICellAccessoryLabel extends UICellAccessory {
 
     /**
      * The font used for the label. Default is the preferred font for UIFontTextStyleBody.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -116,12 +120,17 @@ public class UICellAccessoryLabel extends UICellAccessory {
     @Selector("init")
     public native UICellAccessoryLabel init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UICellAccessoryLabel initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a new label accessory using the provided text.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithText:")
@@ -164,6 +173,8 @@ public class UICellAccessoryLabel extends UICellAccessory {
 
     /**
      * Whether the label automatically adjusts its font based on the content size category. Default is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
@@ -171,6 +182,8 @@ public class UICellAccessoryLabel extends UICellAccessory {
 
     /**
      * The font used for the label. Default is the preferred font for UIFontTextStyleBody.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setFont:")
@@ -194,6 +207,9 @@ public class UICellAccessoryLabel extends UICellAccessory {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("text")

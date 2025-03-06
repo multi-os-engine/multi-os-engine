@@ -57,6 +57,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.NSAdaptiveImageGlyph;
 
 /**
  * API-Since: 3.2
@@ -191,6 +192,9 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.2
+     */
     @Nullable
     @Generated
     @Selector("attribute:atIndex:effectiveRange:")
@@ -198,6 +202,9 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     public native Object attributeAtIndexEffectiveRange(@NotNull String attrName, @NUInt long location,
             @Nullable NSRange range);
 
+    /**
+     * API-Since: 3.2
+     */
     @Nullable
     @Generated
     @Selector("attribute:atIndex:longestEffectiveRange:inRange:")
@@ -205,17 +212,26 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     public native Object attributeAtIndexLongestEffectiveRangeInRange(@NotNull String attrName, @NUInt long location,
             @Nullable NSRange range, @ByValue NSRange rangeLimit);
 
+    /**
+     * API-Since: 3.2
+     */
     @NotNull
     @Generated
     @Selector("attributedSubstringFromRange:")
     public native NSAttributedString attributedSubstringFromRange(@ByValue NSRange range);
 
+    /**
+     * API-Since: 3.2
+     */
     @NotNull
     @Generated
     @Selector("attributesAtIndex:effectiveRange:")
     public native NSDictionary<String, ?> attributesAtIndexEffectiveRange(@NUInt long location,
             @Nullable NSRange range);
 
+    /**
+     * API-Since: 3.2
+     */
     @NotNull
     @Generated
     @Selector("attributesAtIndex:longestEffectiveRange:inRange:")
@@ -321,6 +337,9 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("init")
     public native NSAttributedString init();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("initWithAttributedString:")
     public native NSAttributedString initWithAttributedString(@NotNull NSAttributedString attrStr);
@@ -351,10 +370,16 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
             @Nullable @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<?, ?>> dict,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("initWithString:")
     public native NSAttributedString initWithString(@NotNull String str);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("initWithString:attributes:")
     public native NSAttributedString initWithStringAttributes(@NotNull String str,
@@ -376,10 +401,16 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
             @Nullable @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("isEqualToAttributedString:")
     public native boolean isEqualToAttributedString(@NotNull NSAttributedString other);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("length")
     @NUInt
@@ -402,6 +433,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Override these two APIs when subclassing NSAttributedString
+     * 
+     * API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -759,4 +792,36 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A convenience method for creating an attributed string containing an NSAdaptiveImageGlyph with attributes using
+     * NSAttachmentCharacter as the base character.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("attributedStringWithAdaptiveImageGlyph:attributes:")
+    public static native NSAttributedString attributedStringWithAdaptiveImageGlyphAttributes(
+            @NotNull NSAdaptiveImageGlyph adaptiveImageGlyph, @NotNull NSDictionary<String, ?> attributes);
+
+    /**
+     * A convenience method for creating an attributed string containing an attachment with attributes using
+     * NSAttachmentCharacter as the base character.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("attributedStringWithAttachment:attributes:")
+    public static native NSAttributedString attributedStringWithAttachmentAttributes(
+            @NotNull NSTextAttachment attachment, @NotNull NSDictionary<String, ?> attributes);
+
+    /**
+     * Returns YES when any attribute preferring RTFD found in range. This method should be preferred over
+     * containsAttachmentsInRange() for determining its preferred external document format.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prefersRTFDInRange:")
+    public native boolean prefersRTFDInRange(@ByValue NSRange range);
 }

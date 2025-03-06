@@ -279,6 +279,9 @@ public class MPSCNNLoss extends MPSCNNKernel {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("delta")
     public native float delta();
@@ -297,6 +300,8 @@ public class MPSCNNLoss extends MPSCNNKernel {
      * @param sourceImage   The source image from the previous filter in the graph (in the inference direction).
      * @param labels        The object containing the target data (labels) and optionally, weights for the labels.
      * @return The MPSImage containing the gradient result.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -318,6 +323,8 @@ public class MPSCNNLoss extends MPSCNNKernel {
      * @param sourceImage      The source image from the previous filter in the graph (in the inference direction).
      * @param labels           The object containing the target data (labels) and optionally, weights for the labels.
      * @param destinationImage The MPSImage into which to write the gradient result.
+     * 
+     *                         API-Since: 11.3
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:destinationImage:")
@@ -325,6 +332,9 @@ public class MPSCNNLoss extends MPSCNNKernel {
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
             @NotNull MPSCNNLossLabels labels, @NotNull MPSImage destinationImage);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("epsilon")
     public native float epsilon();
@@ -344,6 +354,8 @@ public class MPSCNNLoss extends MPSCNNKernel {
 
     /**
      * <NSSecureCoding> support
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -360,6 +372,8 @@ public class MPSCNNLoss extends MPSCNNKernel {
      * @param device         The device the filter will run on.
      * @param lossDescriptor The loss descriptor.
      * @return A valid MPSCNNLoss object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
@@ -388,12 +402,17 @@ public class MPSCNNLoss extends MPSCNNKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("labelSmoothing")
     public native float labelSmoothing();
 
     /**
      * See MPSCNNLossDescriptor for information about the following properties.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("lossType")
@@ -404,11 +423,17 @@ public class MPSCNNLoss extends MPSCNNKernel {
     @Selector("new")
     public static native MPSCNNLoss new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("numberOfClasses")
     @NUInt
     public native long numberOfClasses();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -444,6 +469,9 @@ public class MPSCNNLoss extends MPSCNNKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("weight")
     public native float weight();

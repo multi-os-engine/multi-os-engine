@@ -22,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 public interface UIContentView {
     /**
      * Returns the current configuration of the view. Setting this property applies the new configuration to the view.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -31,6 +33,8 @@ public interface UIContentView {
 
     /**
      * Returns the current configuration of the view. Setting this property applies the new configuration to the view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setConfiguration:")

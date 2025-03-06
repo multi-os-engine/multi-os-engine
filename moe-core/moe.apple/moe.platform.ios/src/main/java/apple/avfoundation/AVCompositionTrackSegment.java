@@ -107,6 +107,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      * @param timeRange
      *                  The timeRange of the empty AVCompositionTrackSegment.
      * @return An instance of AVCompositionTrackSegment.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("compositionTrackSegmentWithTimeRange:")
@@ -120,6 +122,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      * To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the
      * timeMapping.
      * Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
+     * 
+     * API-Since: 4.0
      * 
      * @param URL
      *                        An instance of NSURL that references the container file to be presented by the
@@ -214,6 +218,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      * @param timeRange
      *                  The timeRange of the empty AVCompositionTrackSegment.
      * @return An instance of AVCompositionTrackSegment.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("initWithTimeRange:")
@@ -227,6 +233,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      * To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the
      * timeMapping.
      * Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
+     * 
+     * API-Since: 4.0
      * 
      * @param URL
      *                        An instance of NSURL that references the container file to be presented by the
@@ -251,6 +259,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      * indicates whether the AVCompositionTrackSegment is an empty segment;
      * an empty segment has a valid target time range but nil sourceURL and kCMTimeInvalid source start time; all other
      * fields are undefined
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isEmpty")
@@ -258,6 +268,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     /**
      * indicates the track of the container file of the media presented by the AVCompositionTrackSegment
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("sourceTrackID")
@@ -265,6 +277,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     /**
      * indicates the container file of the media presented by the AVCompositionTrackSegment
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated

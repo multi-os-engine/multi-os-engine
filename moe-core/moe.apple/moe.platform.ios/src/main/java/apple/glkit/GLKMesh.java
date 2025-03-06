@@ -152,12 +152,17 @@ public class GLKMesh extends NSObject {
      * [@dicussion] A convenience method to create GLKit meshes from each mesh in a Model/IO asset. Resulting meshes are
      * returned while Model I/O meshes from which they were generated will appear in the sourceMeshes array.
      * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     * 
      * @return An array of GLKit meshes built an asset
      * @param asset        Model I/O asset from which to create GLKit meshes
      * @param sourceMeshes Model I/O meshes corresponding the newly created GLKMeshes
      * @param error        Pointer to an NSError object set if an error occurred
      * @param return       GLKit meshes created from the Model I/O asset
      */
+    @Deprecated
     @Nullable
     @Generated
     @Owned
@@ -200,7 +205,13 @@ public class GLKMesh extends NSObject {
      * [@error] Pointer to an NSError object which will be set if an error occurred
      * 
      * @param mesh Model I/O Mesh from which to create this GLKit mesh
+     * 
+     *             API-Since: 9.0
+     *             Deprecated-Since: 12.0
+     *             Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these
+     *             warnings)
      */
+    @Deprecated
     @Generated
     @Selector("initWithMesh:error:")
     public native GLKMesh initWithMeshError(@NotNull MDLMesh mesh,
@@ -212,7 +223,12 @@ public class GLKMesh extends NSObject {
      * Name of the mesh copies from the originating Model I/O mesh
      * 
      * Can be used by the app to identiry the mesh in it's scene/world/renderer etc.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("name")
@@ -224,7 +240,12 @@ public class GLKMesh extends NSObject {
      * Submeshes containing index buffers to rendering mesh verticies.
      * 
      * Submeshes may also contain texture materials to apply when rendering this object
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("submeshes")
@@ -234,7 +255,12 @@ public class GLKMesh extends NSObject {
      * [@property] vertexBuffers
      * 
      * Array of buffers in which mesh vertex data resides
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("vertexBuffers")
@@ -244,7 +270,12 @@ public class GLKMesh extends NSObject {
      * [@property] vertexCount
      * 
      * Number of verticies in the vertexBuffers
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("vertexCount")
     @NUInt
@@ -257,7 +288,12 @@ public class GLKMesh extends NSObject {
      * 
      * This is not directly used by this object, but the application can use this information to determine rendering
      * state or setup a vertex attribute object.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("vertexDescriptor")

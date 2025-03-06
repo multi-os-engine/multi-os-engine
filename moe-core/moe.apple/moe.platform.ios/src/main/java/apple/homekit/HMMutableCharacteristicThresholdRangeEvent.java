@@ -75,6 +75,8 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
 
     /**
      * The characteristic associated with the event.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -154,6 +156,8 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
 
     /**
      * The characteristic associated with the event.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCharacteristic:")
@@ -161,6 +165,8 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
 
     /**
      * The range of the characteristic value that triggers the event.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setThresholdRange:")
@@ -176,6 +182,8 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
 
     /**
      * The range of the characteristic value that triggers the event.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

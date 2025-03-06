@@ -95,6 +95,8 @@ public class HKVisionPrescription extends HKSample implements NSSecureCoding, NS
      * [@property] dateIssued
      * 
      * The date the prescription was issued
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -113,6 +115,8 @@ public class HKVisionPrescription extends HKSample implements NSSecureCoding, NS
      * [@property] expirationDate
      * 
      * The date the prescription will expire
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -163,6 +167,8 @@ public class HKVisionPrescription extends HKSample implements NSSecureCoding, NS
      * [@property] prescriptionType
      * 
      * A vision prescription type (glasses or contacts)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("prescriptionType")
@@ -177,6 +183,8 @@ public class HKVisionPrescription extends HKSample implements NSSecureCoding, NS
      * @param expirationDate The date the prescription expires
      * @param device         The device that generated the sample
      * @param metadata       The metadata for the sample
+     * 
+     *                       API-Since: 16.0
      */
     @Generated
     @Selector("prescriptionWithType:dateIssued:expirationDate:device:metadata:")

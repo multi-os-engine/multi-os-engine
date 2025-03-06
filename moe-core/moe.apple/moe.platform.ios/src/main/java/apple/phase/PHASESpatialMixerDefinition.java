@@ -98,6 +98,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      * [@property] distanceModelParameters
      * 
      * Distance model parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -122,6 +124,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      *                        A spatial pipeline.
      * @return
      *         A new PHASESpatialMixerDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithSpatialPipeline:")
@@ -138,6 +142,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      *                        An optional custom identifier to give to this object
      * @return
      *         A new PHASESpatialMixerDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithSpatialPipeline:identifier:")
@@ -170,6 +176,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      * [@property] listenerDirectivityModelParameters
      * 
      * Listener directivity model parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -193,6 +201,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      * [@property] distanceModelParameters
      * 
      * Distance model parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDistanceModelParameters:")
@@ -202,6 +212,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      * [@property] listenerDirectivityModelParameters
      * 
      * Listener directivity model parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setListenerDirectivityModelParameters:")
@@ -211,6 +223,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      * [@property] sourceDirectivityModelParameters
      * 
      * Source directivity model parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSourceDirectivityModelParameters:")
@@ -224,6 +238,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      * [@property] sourceDirectivityModelParameters
      * 
      * Source directivity model parameters (optional).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -234,6 +250,8 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
      * [@property] spatialPipeline
      * 
      * Spatial Pipeline.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

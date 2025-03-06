@@ -61,6 +61,8 @@ public interface INStartWorkoutIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INStartWorkoutIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -80,12 +82,17 @@ public interface INStartWorkoutIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INStartWorkoutIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleStartWorkout:completion:")
     void handleStartWorkoutCompletion(@NotNull INStartWorkoutIntent intent,
             @NotNull @ObjCBlock(name = "call_handleStartWorkoutCompletion") Block_handleStartWorkoutCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveGoalValueForStartWorkout:withCompletion:")
@@ -94,6 +101,9 @@ public interface INStartWorkoutIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveIsOpenEndedForStartWorkout:withCompletion:")
@@ -102,6 +112,9 @@ public interface INStartWorkoutIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveWorkoutGoalUnitTypeForStartWorkout:withCompletion:")
@@ -110,6 +123,9 @@ public interface INStartWorkoutIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveWorkoutLocationTypeForStartWorkout:withCompletion:")
@@ -128,6 +144,8 @@ public interface INStartWorkoutIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

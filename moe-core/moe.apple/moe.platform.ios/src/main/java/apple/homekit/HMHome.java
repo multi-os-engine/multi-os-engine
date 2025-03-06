@@ -172,6 +172,8 @@ public class HMHome extends NSObject {
 
     /**
      * Array of HMAccessory objects that represents all accessories added to the home.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -180,6 +182,8 @@ public class HMHome extends NSObject {
 
     /**
      * Array of HMActionSet objects that represents all the action sets in the home.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -365,6 +369,8 @@ public class HMHome extends NSObject {
 
     /**
      * Delegate that receives updates on the state of the home.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -380,6 +386,8 @@ public class HMHome extends NSObject {
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("executeActionSet:completionHandler:")
@@ -402,6 +410,8 @@ public class HMHome extends NSObject {
 
     /**
      * Specifies whether this home is the primary home.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isPrimary")
@@ -428,6 +438,8 @@ public class HMHome extends NSObject {
 
     /**
      * The name of the home.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -548,6 +560,8 @@ public class HMHome extends NSObject {
      * to a service that is not necessarily located in one particular room.
      * 
      * @return HMRoom that represents the home.
+     * 
+     *         API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -556,6 +570,8 @@ public class HMHome extends NSObject {
 
     /**
      * Array of HMRoom objects that represents all rooms in the home.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -564,6 +580,8 @@ public class HMHome extends NSObject {
 
     /**
      * Array of HMServiceGroup objects that represents all service groups in the home.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -577,6 +595,8 @@ public class HMHome extends NSObject {
      * 
      * @return Array of HMService objects that match the specified service types,
      *         nil if no matching services were found.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -585,6 +605,8 @@ public class HMHome extends NSObject {
 
     /**
      * Delegate that receives updates on the state of the home.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -592,6 +614,8 @@ public class HMHome extends NSObject {
 
     /**
      * Delegate that receives updates on the state of the home.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMHomeDelegate value) {
@@ -607,6 +631,8 @@ public class HMHome extends NSObject {
 
     /**
      * Array of HMTrigger objects that represents all the triggers in the home.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -670,6 +696,8 @@ public class HMHome extends NSObject {
 
     /**
      * Array of HMZone objects that represents all the zones in the home.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -903,4 +931,26 @@ public class HMHome extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Block generating XPC connection on demand through which to access the Matter controller associated with this
+     * home.
+     * This property can be passed as part of an MTRXPCDeviceControllerParameters to create an MTRDeviceController that
+     * will have access to the Apple Home Fabric.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("matterStartupParametersXPCConnectBlock")
+    @ObjCBlock(name = "call_matterStartupParametersXPCConnectBlock_ret")
+    @NotNull
+    public native Block_matterStartupParametersXPCConnectBlock_ret matterStartupParametersXPCConnectBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_matterStartupParametersXPCConnectBlock_ret {
+        @Generated
+        @NotNull
+        NSXPCConnection call_matterStartupParametersXPCConnectBlock_ret();
+    }
 }

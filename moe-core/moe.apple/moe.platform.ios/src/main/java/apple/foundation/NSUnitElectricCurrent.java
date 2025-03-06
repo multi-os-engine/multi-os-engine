@@ -70,6 +70,9 @@ public class NSUnitElectricCurrent extends NSDimension implements NSSecureCoding
     @Selector("allocWithZone:")
     public static native NSUnitElectricCurrent allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("amperes")
@@ -140,6 +143,9 @@ public class NSUnitElectricCurrent extends NSDimension implements NSSecureCoding
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kiloamperes")
@@ -147,17 +153,25 @@ public class NSUnitElectricCurrent extends NSDimension implements NSSecureCoding
 
     /**
      * Base unit - amperes
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("megaamperes")
     public static native NSUnitElectricCurrent megaamperes();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("microamperes")
     public static native NSUnitElectricCurrent microamperes();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milliamperes")

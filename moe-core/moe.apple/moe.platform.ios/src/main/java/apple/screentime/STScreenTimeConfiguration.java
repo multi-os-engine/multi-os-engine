@@ -93,6 +93,8 @@ public class STScreenTimeConfiguration extends NSObject {
     /**
      * A Boolean that indicates whether the device is currently enforcing child
      * restrictions.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("enforcesChildRestrictions")

@@ -62,6 +62,9 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("barCollapsingEnabled")
     public native boolean barCollapsingEnabled();
@@ -105,6 +108,8 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * Indicates if SFSafariViewController should automatically show the Reader version of web pages. This will only
      * happen when Safari Reader is available on a web page.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("entersReaderIfAvailable")
@@ -154,6 +159,9 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setBarCollapsingEnabled:")
     public native void setBarCollapsingEnabled(boolean value);
@@ -161,6 +169,8 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * Indicates if SFSafariViewController should automatically show the Reader version of web pages. This will only
      * happen when Safari Reader is available on a web page.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setEntersReaderIfAvailable:")

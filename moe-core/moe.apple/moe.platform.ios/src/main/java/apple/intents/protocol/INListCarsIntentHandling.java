@@ -40,6 +40,8 @@ public interface INListCarsIntentHandling {
      *                   intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INListCarsIntentResponse
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -66,6 +68,8 @@ public interface INListCarsIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INListCarsIntentResponse
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("handleListCars:completion:")

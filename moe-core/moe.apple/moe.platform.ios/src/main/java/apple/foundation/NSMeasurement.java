@@ -167,6 +167,8 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
      * (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the NSUnit object. It will return YES if the unit type of the
      * given unit is the same as the unit type of the unit within the NSMeasurement object and NO if not.
      * Note: This method will return NO if given or called on a dimensionless unit.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canBeConvertedToUnit:")
@@ -179,6 +181,9 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("doubleValue")
     public native double doubleValue();
@@ -195,6 +200,9 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
     @Selector("initWithCoder:")
     public native NSMeasurement<?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithDoubleValue:unit:")
     public native NSMeasurement<?> initWithDoubleValueUnit(double doubleValue, @NotNull NSUnit unit);
@@ -208,6 +216,8 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
      * 
      * @return A new NSMeasurement object with the adjusted value and a unit that is the same type as the current
      *         NSMeasurement instance.
+     * 
+     *         API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -221,12 +231,17 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
      * dimensionalities), measurementByConvertingToUnit: will throw an InvalidArgumentException.
      * 
      * @return A new NSMeasurement object with the given unit and converted value.
+     * 
+     *         API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("measurementByConvertingToUnit:")
     public native NSMeasurement<?> measurementByConvertingToUnit(@NotNull NSUnit unit);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("measurementBySubtractingMeasurement:")
@@ -238,6 +253,9 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("unit")

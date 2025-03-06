@@ -91,6 +91,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * [@property] channelCount
      * 
      * The number of channels of audio data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("channelCount")
@@ -102,6 +104,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * The underlying AVAudioChannelLayout, if any.
      * 
      * Only formats with more than 2 channels are required to have channel layouts.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -122,6 +126,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * [@property] commonFormat
      * 
      * An `AVAudioCommonFormat` identifying the format
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("commonFormat")
@@ -170,6 +176,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      *                   the sample rate
      * @param layout
      *                   the channel layout. must not be nil.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("initStandardFormatWithSampleRate:channelLayout:")
@@ -182,6 +190,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * Initialize to deinterleaved float with the specified sample rate and channel count.
      * 
      * If the format specifies more than 2 channels, this method fails (returns nil).
+     * 
+     * API-Since: 8.0
      * 
      * @param sampleRate
      *                   the sample rate
@@ -219,6 +229,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * 
      * If the format specifies more than 2 channels, this method fails (returns nil).
      * 
+     * API-Since: 8.0
+     * 
      * @param format
      *                    the common format type
      * @param sampleRate
@@ -246,6 +258,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      *                    true if interleaved
      * @param layout
      *                    the channel layout. must not be nil.
+     * 
+     *                    API-Since: 8.0
      */
     @Generated
     @Selector("initWithCommonFormat:sampleRate:interleaved:channelLayout:")
@@ -266,6 +280,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * - AVLinearPCMBitDepthKey for linear PCM format specifies less than 8 or greater
      * than 32 bits
      * - values for the keys are not of the expected types
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithSettings:")
@@ -277,6 +293,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * Initialize from an AudioStreamBasicDescription.
      * 
      * If the format specifies more than 2 channels, this method fails (returns nil).
+     * 
+     * API-Since: 8.0
      * 
      * @param asbd
      *             the AudioStreamBasicDescription
@@ -292,6 +310,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * 
      * If the format specifies more than 2 channels, this method fails (returns nil) unless layout
      * is non-nil.
+     * 
+     * API-Since: 8.0
      * 
      * @param asbd
      *               the AudioStreamBasicDescription
@@ -328,6 +348,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * For AVAudioChannelLayout, a layout with standard mono/stereo tag is considered to be
      * equivalent to a nil layout. Otherwise, the layouts are compared for equality.
      * 
+     * API-Since: 8.0
+     * 
      * @param object
      *               the format to compare against
      */
@@ -341,6 +363,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * Describes whether the samples are interleaved.
      * 
      * For non-PCM formats, the value is undefined.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isInterleaved")
@@ -350,6 +374,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * [@property] standard
      * 
      * Describes whether the format is deinterleaved native-endian float.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isStandard")
@@ -396,6 +422,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * [@property] sampleRate
      * 
      * A sampling rate in Hertz.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sampleRate")
@@ -423,6 +451,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * [@property] settings
      * 
      * Returns the format represented as a dictionary with keys from AVAudioSettings.h.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -433,6 +463,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * [@property] streamDescription
      * 
      * Returns the AudioStreamBasicDescription, for use with lower-level audio API's.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

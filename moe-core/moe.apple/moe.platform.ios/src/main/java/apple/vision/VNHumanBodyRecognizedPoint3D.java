@@ -130,6 +130,9 @@ public class VNHumanBodyRecognizedPoint3D extends VNRecognizedPoint3D {
     @Selector("new")
     public static native VNHumanBodyRecognizedPoint3D new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("parentJoint")
     @NotNull

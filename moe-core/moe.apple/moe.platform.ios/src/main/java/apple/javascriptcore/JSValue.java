@@ -659,8 +659,8 @@ public class JSValue extends NSObject {
     /**
      * Convert a JSValue to a double.
      * 
-     * The JSValue is converted to a number according to the rules specified
-     * by the JavaScript language.
+     * Convert the JSValue to a number according to the rules specified by the JavaScript language. Unless the JSValue
+     * is a BigInt then this is equivalent to <code>Number(value)</code> in JavaScript.
      * 
      * @return The double result of the conversion.
      */
@@ -671,8 +671,8 @@ public class JSValue extends NSObject {
     /**
      * Convert a JSValue to an <code>int32_t</code>.
      * 
-     * The JSValue is converted to an integer according to the rules specified
-     * by the JavaScript language.
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the
+     * JSValue is a BigInt, then the value is truncated to an <code>int32_t</code>.
      * 
      * @return The <code>int32_t</code> result of the conversion.
      */
@@ -684,8 +684,7 @@ public class JSValue extends NSObject {
      * Convert a JSValue to a NSNumber.
      * 
      * If the JSValue represents a boolean, a NSNumber value of YES or NO
-     * will be returned. For all other types the value will be converted to a number according
-     * to the rules specified by the JavaScript language.
+     * will be returned. For all other types, the result is equivalent to <code>Number(value)</code> in JavaScript.
      * 
      * @return The NSNumber result of the conversion.
      */
@@ -833,8 +832,8 @@ public class JSValue extends NSObject {
     /**
      * Convert a JSValue to a <code>uint32_t</code>.
      * 
-     * The JSValue is converted to an integer according to the rules specified
-     * by the JavaScript language.
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the
+     * JSValue is a BigInt, then the value is truncated to a <code>uint32_t</code>.
      * 
      * @return The <code>uint32_t</code> result of the conversion.
      */
@@ -957,4 +956,161 @@ public class JSValue extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Compare a JSValue with a double.
+     * [@other] The double to compare with.
+     * 
+     * The JSValue is converted to a double according to the rules specified by the JavaScript language then compared
+     * with <code>other</code>.
+     * 
+     * API-Since: 18.0
+     * 
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @Selector("compareDouble:")
+    public native int compareDouble(double other);
+
+    /**
+     * Compare a JSValue with a <code>int64_t</code>.
+     * [@other] The <code>int64_t</code> to compare with.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language then compared
+     * with <code>other</code>.
+     * 
+     * API-Since: 18.0
+     * 
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @Selector("compareInt64:")
+    public native int compareInt64(long other);
+
+    /**
+     * Compare two JSValues.
+     * [@other] The JSValue to compare with.
+     * 
+     * The result is computed by comparing the results of JavaScript's <code>==</code>, <code><</code>, and
+     * <code>></code> operators. If either <code>self</code> or <code>other</code> is (or would coerce to)
+     * <code>NaN</code> in JavaScript, then the result is kJSRelationConditionUndefined.
+     * 
+     * API-Since: 18.0
+     * 
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @Selector("compareJSValue:")
+    public native int compareJSValue(@NotNull JSValue other);
+
+    /**
+     * Compare a JSValue with a <code>uint64_t</code>.
+     * [@other] The <code>uint64_t</code> to compare with.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language then compared
+     * with <code>other</code>.
+     * 
+     * API-Since: 18.0
+     * 
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @Selector("compareUInt64:")
+    public native int compareUInt64(long other);
+
+    /**
+     * [@property]
+     * 
+     * Check if a JSValue is a BigInt.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isBigInt")
+    public native boolean isBigInt();
+
+    /**
+     * Convert a JSValue to a <code>int64_t</code>.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the value
+     * is a BigInt, then the value is truncated to an <code>int64_t</code>.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("toInt64")
+    public native long toInt64();
+
+    /**
+     * Convert a JSValue to a <code>uint64_t</code>.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the value
+     * is a BigInt, then the value is truncated to a <code>uint64_t</code>.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("toUInt64")
+    public native long toUInt64();
+
+    /**
+     * Create a new BigInt value from a double.
+     * 
+     * If the value is not an integer, an exception is thrown.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param value   The value of the BigInt JavaScript value being created.
+     * @param context The JSContext to which the resulting JSValue belongs.
+     * @return The JSValue representing a JavaScript value with type BigInt.
+     */
+    @Generated
+    @Selector("valueWithNewBigIntFromDouble:inContext:")
+    @Nullable
+    public static native JSValue valueWithNewBigIntFromDoubleInContext(double value, @NotNull JSContext context);
+
+    /**
+     * Create a new BigInt value from a <code>int64_t</code>.
+     * 
+     * @param int64   The signed 64-bit integer of the BigInt JavaScript value being created.
+     * @param context The JSContext to which the resulting JSValue belongs.
+     * @return The JSValue representing a JavaScript value with type BigInt.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("valueWithNewBigIntFromInt64:inContext:")
+    @Nullable
+    public static native JSValue valueWithNewBigIntFromInt64InContext(long int64, @NotNull JSContext context);
+
+    /**
+     * Create a new BigInt value from a numeric string.
+     * 
+     * This is equivalent to calling the <code>BigInt</code> constructor from JavaScript with a string argument.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param string  The string representation of the BigInt JavaScript value being created.
+     * @param context The JSContext to which the resulting JSValue belongs.
+     * @return The JSValue representing a JavaScript value with type BigInt.
+     */
+    @Generated
+    @Selector("valueWithNewBigIntFromString:inContext:")
+    @Nullable
+    public static native JSValue valueWithNewBigIntFromStringInContext(@NotNull String string,
+            @NotNull JSContext context);
+
+    /**
+     * Create a new BigInt value from a <code>uint64_t</code>.
+     * 
+     * @param uint64  The unsigned 64-bit integer of the BigInt JavaScript value being created.
+     * @param context The JSContext to which the resulting JSValue belongs.
+     * @return The JSValue representing a JavaScript value with type BigInt.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @Selector("valueWithNewBigIntFromUInt64:inContext:")
+    @Nullable
+    public static native JSValue valueWithNewBigIntFromUInt64InContext(long uint64, @NotNull JSContext context);
 }

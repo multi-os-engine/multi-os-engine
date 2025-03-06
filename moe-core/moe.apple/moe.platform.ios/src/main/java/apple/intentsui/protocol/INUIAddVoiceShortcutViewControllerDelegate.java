@@ -25,6 +25,8 @@ public interface INUIAddVoiceShortcutViewControllerDelegate {
      * shortcut, or an error.
      * 
      * Your implementation of this method should dismiss the view controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("addVoiceShortcutViewController:didFinishWithVoiceShortcut:error:")
@@ -36,6 +38,8 @@ public interface INUIAddVoiceShortcutViewControllerDelegate {
      * Called if the user cancels the setup flow; the voice shortcut was not added.
      * 
      * Your implementation of this method should dismiss the view controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("addVoiceShortcutViewControllerDidCancel:")

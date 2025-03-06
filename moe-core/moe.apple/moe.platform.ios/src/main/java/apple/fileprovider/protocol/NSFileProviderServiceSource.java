@@ -31,6 +31,8 @@ public interface NSFileProviderServiceSource {
      * and setting up properties on the new connection, like its exported object and
      * interfaces (that both the file provider and the client application have agreed
      * on).
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -41,6 +43,8 @@ public interface NSFileProviderServiceSource {
     /**
      * The service name that uniquely identifies the service (using reverse domain
      * name notation for you service name is recommended).
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

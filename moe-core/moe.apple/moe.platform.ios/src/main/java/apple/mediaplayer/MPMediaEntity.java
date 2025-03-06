@@ -86,6 +86,8 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
 
     /**
      * Returns YES for properties which can be used to construct MPMediaPropertyPredicates.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("canFilterByProperty:")
@@ -229,6 +231,8 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     /**
      * Returns the value for the given entity property.
      * MPMediaItem and MPMediaPlaylist have their own properties
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated

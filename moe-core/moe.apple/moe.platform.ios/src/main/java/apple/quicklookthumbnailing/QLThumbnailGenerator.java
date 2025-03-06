@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uniformtypeidentifiers.UTType;
 
 /**
  * API-Since: 13.0
@@ -77,6 +78,8 @@ public class QLThumbnailGenerator extends NSObject {
      * Cancels the given QLThumbnailGenerationRequest.
      * 
      * @param request The request that should be cancelled.
+     * 
+     *                API-Since: 13.0
      */
     @Generated
     @Selector("cancelRequest:")
@@ -108,6 +111,8 @@ public class QLThumbnailGenerator extends NSObject {
      *                          If set, the error contains information about the issue that occurred while trying to
      *                          generate the thumbnail.
      *                          QLThumbnail error codes can be found in <QuickLookThumbnailing/QLThumbnailErrors.h>.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("generateBestRepresentationForRequest:completionHandler:")
@@ -136,6 +141,8 @@ public class QLThumbnailGenerator extends NSObject {
      *                      If set, the error contains information about the issue that occurred while trying to
      *                      generate the representation of the given type.
      *                      QLThumbnail error codes can be found in <QuickLookThumbnailing/QLThumbnailErrors.h>.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @Selector("generateRepresentationsForRequest:updateHandler:")
@@ -205,7 +212,11 @@ public class QLThumbnailGenerator extends NSObject {
      * @param completionHandler
      *                          Always called when the thumbnail generation is over. Will contain an error if the
      *                          thumbnail could not be successfully saved to disk at fileURL.
+     * 
+     *                          API-Since: 14.0
+     *                          Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("saveBestRepresentationForRequest:toFileAtURL:withContentType:completionHandler:")
     public native void saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(
@@ -223,6 +234,9 @@ public class QLThumbnailGenerator extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("sharedGenerator")
@@ -241,4 +255,31 @@ public class QLThumbnailGenerator extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Saves a thumbnail for the request on disk at fileURL.
+     * The file saved at fileURL has to be deleted when it is not used anymore.
+     * This is primarily intended for file provider extensions which need to upload thumbnails and have a small memory
+     * limit.
+     * 
+     * @param contentType       An image content type to save the thumbnail as, supported by CGImageDestination, such as
+     *                          UTTypePNG or UTTypeJPEG
+     * @param completionHandler
+     *                          Always called when the thumbnail generation is over. Will contain an error if the
+     *                          thumbnail could not be successfully saved to disk at fileURL.
+     * 
+     *                          API-Since: 13.0
+     */
+    @Generated
+    @Selector("saveBestRepresentationForRequest:toFileAtURL:asContentType:completionHandler:")
+    public native void saveBestRepresentationForRequestToFileAtURLAsContentTypeCompletionHandler(
+            @NotNull QLThumbnailGenerationRequest request, @NotNull NSURL fileURL, @NotNull UTType contentType,
+            @ObjCBlock(name = "call_saveBestRepresentationForRequestToFileAtURLAsContentTypeCompletionHandler") @NotNull Block_saveBestRepresentationForRequestToFileAtURLAsContentTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_saveBestRepresentationForRequestToFileAtURLAsContentTypeCompletionHandler {
+        @Generated
+        void call_saveBestRepresentationForRequestToFileAtURLAsContentTypeCompletionHandler(@Nullable NSError error);
+    }
 }

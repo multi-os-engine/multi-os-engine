@@ -83,6 +83,8 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
      * MTLCommandQueue captures a single command queue.
      * 
      * MTLCaptureScope captures between the next begin and end of the scope.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -117,6 +119,8 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
 
     /**
      * The destination you want the GPU trace to be captured to.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("destination")
@@ -162,6 +166,8 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     /**
      * URL the GPU Trace document will be captured to.
      * Must be specified when destiation is MTLCaptureDestinationGPUTraceDocument.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -186,6 +192,8 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
      * MTLCommandQueue captures a single command queue.
      * 
      * MTLCaptureScope captures between the next begin and end of the scope.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCaptureObject:")
@@ -193,6 +201,8 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
 
     /**
      * The destination you want the GPU trace to be captured to.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDestination:")
@@ -201,6 +211,8 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     /**
      * URL the GPU Trace document will be captured to.
      * Must be specified when destiation is MTLCaptureDestinationGPUTraceDocument.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOutputURL:")

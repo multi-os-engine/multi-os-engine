@@ -179,6 +179,8 @@ public class UNTextInputNotificationResponse extends UNNotificationResponse {
 
     /**
      * The text entered or chosen by the user.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] NFCReaderTransceiveErrorTagNotConnected Tag is not in the connected state.
  * [@constant] NFCReaderSessionInvalidationErrorUserCanceled Session is invalidated by the user.
  * [@constant] NFCReaderSessionInvalidationErrorSessionTimeout Session is timed out.
- * [@constant] NFCReaderSessionInvalidationErrorSessionTerminatedUnexpectedly Session is terminated unexpectly.
+ * [@constant] NFCReaderSessionInvalidationErrorSessionTerminatedUnexpectedly Session is terminated unexpectedly.
  * [@constant] NFCReaderSessionInvalidationErrorSystemIsBusy Core NFC is temporary unavailable due to system resource
  * constraints.
  * [@constant] NFCReaderSessionInvalidationErrorFirstNDEFTagRead Session is terminated after the 1st NDEF tag is read.

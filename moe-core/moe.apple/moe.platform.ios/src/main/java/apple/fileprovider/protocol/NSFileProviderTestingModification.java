@@ -28,6 +28,8 @@ import org.jetbrains.annotations.Nullable;
 public interface NSFileProviderTestingModification extends NSFileProviderTestingOperation {
     /**
      * The list of updated fields.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("changedFields")
@@ -36,6 +38,8 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
 
     /**
      * The domain version at the time the change was discovered on the source side.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -44,6 +48,8 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
 
     /**
      * The description of the item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -53,6 +59,8 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
 
     /**
      * The version of the target item on top of which the modification is applied
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -61,6 +69,8 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
 
     /**
      * The identifier of the target item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -69,6 +79,8 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
 
     /**
      * The target side of the operation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("targetSide")

@@ -83,6 +83,9 @@ public class INActivateCarSignalIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -113,6 +116,8 @@ public class INActivateCarSignalIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -158,6 +163,9 @@ public class INActivateCarSignalIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("setSignals:")
     public native void setSignals(@NUInt long value);
@@ -166,6 +174,9 @@ public class INActivateCarSignalIntentResponse extends INIntentResponse {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("signals")
     @NUInt

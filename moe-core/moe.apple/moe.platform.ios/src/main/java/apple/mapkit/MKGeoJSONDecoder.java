@@ -92,6 +92,9 @@ public class MKGeoJSONDecoder extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("geoJSONObjectsWithData:error:")

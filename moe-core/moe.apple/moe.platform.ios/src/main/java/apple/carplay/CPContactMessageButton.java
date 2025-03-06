@@ -111,6 +111,8 @@ public class CPContactMessageButton extends CPButton {
      * 
      * @param phoneOrEmail A phone or email address for this contact. This will not be displayed in the button,
      *                     but it is necessary for Siri to compose a message to this contact entity.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("initWithPhoneOrEmail:")
@@ -143,6 +145,9 @@ public class CPContactMessageButton extends CPButton {
     @Selector("new")
     public static native CPContactMessageButton new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("phoneOrEmail")

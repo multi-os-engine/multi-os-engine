@@ -72,6 +72,8 @@ public class CPInstrumentClusterController extends NSObject {
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 15.4
      */
     @NotNull
     @Generated
@@ -103,6 +105,9 @@ public class CPInstrumentClusterController extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @Selector("compassSetting")
     @NUInt
@@ -112,6 +117,9 @@ public class CPInstrumentClusterController extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 15.4
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -130,6 +138,8 @@ public class CPInstrumentClusterController extends NSObject {
     /**
      * inactiveDescriptionVariants is an array of @c NSString to be displayed when the user is not actively navigating,
      * arranged from most to least preferred.
+     * 
+     * API-Since: 15.4
      */
     @NotNull
     @Generated
@@ -155,6 +165,8 @@ public class CPInstrumentClusterController extends NSObject {
 
     /**
      * The UIWindow created for this CPInstrumentClusterController
+     * 
+     * API-Since: 15.4
      */
     @Nullable
     @Generated
@@ -196,16 +208,24 @@ public class CPInstrumentClusterController extends NSObject {
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 15.4
      */
     @Generated
     @Selector("setAttributedInactiveDescriptionVariants:")
     public native void setAttributedInactiveDescriptionVariants(@NotNull NSArray<? extends NSAttributedString> value);
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) CPInstrumentClusterControllerDelegate value);
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPInstrumentClusterControllerDelegate value) {
         Object __old = delegate();
@@ -221,6 +241,8 @@ public class CPInstrumentClusterController extends NSObject {
     /**
      * inactiveDescriptionVariants is an array of @c NSString to be displayed when the user is not actively navigating,
      * arranged from most to least preferred.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("setInactiveDescriptionVariants:")
@@ -230,6 +252,9 @@ public class CPInstrumentClusterController extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 15.4
+     */
     @Generated
     @Selector("speedLimitSetting")
     @NUInt

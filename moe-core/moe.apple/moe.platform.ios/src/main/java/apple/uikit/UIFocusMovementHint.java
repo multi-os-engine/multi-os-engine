@@ -126,6 +126,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
 
     /**
      * A 3D transform that contains the combined transformations of perspective, rotation and translation.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("interactionTransform")
@@ -143,6 +145,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
 
     /**
      * Value between {-1.0, -1.0} and {1.0, 1.0} representing how close focus is to moving in a particular direction.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("movementDirection")
@@ -157,6 +161,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     /**
      * A 3D transform representing the perspective matrix that should be applied to match the system interaction
      * hinting. Assumes a 0..1 near/far plane.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("perspectiveTransform")
@@ -174,6 +180,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     /**
      * A vector representing the X and Y axis rotation expressed in radians that should be applied to match the system
      * interaction hinting.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("rotation")
@@ -191,6 +199,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     /**
      * A vector representing the X and Y axis translation expressed in points that should be applied to match the system
      * interaction hinting.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("translation")

@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASAuthorizationWebBrowserPlatformPublicKeyCredentialProvider;
 
 /**
  * API-Since: 15.0
@@ -33,7 +34,8 @@ import org.jetbrains.annotations.Nullable;
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject implements ASAuthorizationProvider {
+public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject implements ASAuthorizationProvider,
+        ASAuthorizationWebBrowserPlatformPublicKeyCredentialProvider {
     static {
         NatJ.register();
     }
@@ -86,6 +88,8 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
      * Create a request to authenticate using an existing credential.
      * 
      * @param challenge The challenge to sign.
+     * 
+     *                  API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -100,6 +104,8 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
      * @param name      The user name for the new credential.
      * @param userID    An identifier to be stored alongside the credential, which will be returned with the credential
      *                  when it is used to authenticate.
+     * 
+     *                  API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -124,6 +130,9 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
     @Selector("init")
     public native ASAuthorizationPlatformPublicKeyCredentialProvider init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithRelyingPartyIdentifier:")
     public native ASAuthorizationPlatformPublicKeyCredentialProvider initWithRelyingPartyIdentifier(
@@ -158,6 +167,8 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
 
     /**
      * The Relying Party identifier used for all requests created by this object.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -189,4 +200,40 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("createCredentialAssertionRequestWithClientData:")
+    @NotNull
+    public native ASAuthorizationPlatformPublicKeyCredentialAssertionRequest createCredentialAssertionRequestWithClientData(
+            @NotNull ASPublicKeyCredentialClientData clientData);
+
+    /**
+     * Create a request to register a new platform credential.
+     * 
+     * @param challenge    The challenge to sign.
+     * @param name         The user name for the new credential.
+     * @param userID       An identifier to be stored alongside the credential, which will be returned with the
+     *                     credential when it is used to authenticate.
+     * @param requestStyle The style for this request.
+     * 
+     *                     API-Since: 18.0
+     */
+    @Generated
+    @Selector("createCredentialRegistrationRequestWithChallenge:name:userID:requestStyle:")
+    @NotNull
+    public native ASAuthorizationPlatformPublicKeyCredentialRegistrationRequest createCredentialRegistrationRequestWithChallengeNameUserIDRequestStyle(
+            @NotNull NSData challenge, @NotNull String name, @NotNull NSData userID, @NInt long requestStyle);
+
+    @Generated
+    @Selector("createCredentialRegistrationRequestWithClientData:name:userID:")
+    @NotNull
+    public native ASAuthorizationPlatformPublicKeyCredentialRegistrationRequest createCredentialRegistrationRequestWithClientDataNameUserID(
+            @NotNull ASPublicKeyCredentialClientData clientData, @NotNull String name, @NotNull NSData userID);
+
+    @Generated
+    @Selector("createCredentialRegistrationRequestWithClientData:name:userID:requestStyle:")
+    @NotNull
+    public native ASAuthorizationPlatformPublicKeyCredentialRegistrationRequest createCredentialRegistrationRequestWithClientDataNameUserIDRequestStyle(
+            @NotNull ASPublicKeyCredentialClientData clientData, @NotNull String name, @NotNull NSData userID,
+            @NInt long requestStyle);
 }

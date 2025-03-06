@@ -201,6 +201,8 @@ public class MPSState extends NSObject {
      * objects vary widely, it can be important to know what sort of state
      * object it is so that it can be handled correctly. MPSStates without
      * a resource are not temporary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isTemporary")
@@ -215,6 +217,8 @@ public class MPSState extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -264,6 +268,8 @@ public class MPSState extends NSObject {
      * MPSState object. When MPS decrements the read count on states or images
      * in a batch it only does so on unique objects. Your application should follow
      * the same convention. MPSStateBatchIncrementReadCount() is provided to help you.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("readCount")
@@ -282,6 +288,8 @@ public class MPSState extends NSObject {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLabel:")
@@ -325,6 +333,8 @@ public class MPSState extends NSObject {
      * MPSState object. When MPS decrements the read count on states or images
      * in a batch it only does so on unique objects. Your application should follow
      * the same convention. MPSStateBatchIncrementReadCount() is provided to help you.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReadCount:")
@@ -347,6 +357,8 @@ public class MPSState extends NSObject {
      * Return the buffer size of the MTLBuffer at index or 0 if it is not a MTLBuffer
      * 
      * Does not force allocation of the MTLResource
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("bufferSizeAtIndex:")
@@ -435,6 +447,8 @@ public class MPSState extends NSObject {
      * @return The MPSImageDescriptor to use to make a MPSImage to capture the results from the filter.
      *         The MPSImageDescriptor is assumed to be on an autoreleasepool. Your method must also set the
      *         kernel.offset property.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -443,6 +457,9 @@ public class MPSState extends NSObject {
             @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates,
             @NotNull MPSKernel kernel, @NotNull MPSImageDescriptor inDescriptor);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDevice:bufferSize:")
     public native MPSState initWithDeviceBufferSize(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -463,6 +480,9 @@ public class MPSState extends NSObject {
     public native MPSState initWithDeviceResourceList(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             @NotNull MPSStateResourceList resourceList);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSState initWithDeviceTextureDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -472,6 +492,8 @@ public class MPSState extends NSObject {
      * Create a MPSState with a non-temporary MTLResource
      * 
      * @param resource A MTLBuffer or MTLTexture. May be nil.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @Selector("initWithResource:")
@@ -484,6 +506,8 @@ public class MPSState extends NSObject {
      * your application should use -initWithTextures:bufferSizes:bufferCount:
      * whenever possible. This method is useful for cases when the
      * MTLResources must be initialized by the CPU.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithResources:")
@@ -548,6 +572,8 @@ public class MPSState extends NSObject {
      *                       or MTLTexture properties, but not the resource itself, please use
      *                       -bufferSizeAtIndex: or -textureInfoAtIndex: instead, as these will
      *                       not force the creation of the MTLResource.
+     * 
+     *                       API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -557,6 +583,8 @@ public class MPSState extends NSObject {
 
     /**
      * Return the number of MTLResource objects held by the state
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("resourceCount")
@@ -596,6 +624,8 @@ public class MPSState extends NSObject {
      * Return YES if the resource at index is a buffer
      * 
      * Does not force allocation of the MTLResource
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("resourceTypeAtIndex:")
@@ -623,6 +653,8 @@ public class MPSState extends NSObject {
      * Create a new autoreleased temporary state object without underlying resource
      * 
      * @param cmdBuf The command buffer with which the temporary resource is associated
+     * 
+     *               API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -635,6 +667,8 @@ public class MPSState extends NSObject {
      * 
      * @param cmdBuf     The command buffer against which the temporary resource is allocated
      * @param bufferSize The size of the buffer in bytes
+     * 
+     *                   API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -661,6 +695,8 @@ public class MPSState extends NSObject {
      * 
      * @param cmdBuf     The command buffer against which the temporary resource is allocated
      * @param descriptor A descriptor for the new temporary texture
+     * 
+     *                   API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -672,6 +708,8 @@ public class MPSState extends NSObject {
      * Return the texture size {width,height,depth} or {0,0,0} if it is not a MTLTexture
      * 
      * Does not force allocation of the MTLResource
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("textureInfoAtIndex:")

@@ -113,6 +113,9 @@ public class UIPasteboard extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("generalPasteboard")
@@ -150,16 +153,25 @@ public class UIPasteboard extends NSObject {
     @Selector("new")
     public static native UIPasteboard new_objc();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("pasteboardWithName:create:")
     public static native UIPasteboard pasteboardWithNameCreate(@NotNull String pasteboardName, boolean create);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("pasteboardWithUniqueName")
     public static native UIPasteboard pasteboardWithUniqueName();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("removePasteboardWithName:")
     public static native void removePasteboardWithName(@NotNull String pasteboardName);
@@ -195,10 +207,16 @@ public class UIPasteboard extends NSObject {
     @Selector("URLs")
     public native NSArray<? extends NSURL> URLs();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("addItems:")
     public native void addItems(@NotNull NSArray<? extends NSDictionary<String, ?>> items);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("changeCount")
     @NInt
@@ -214,20 +232,32 @@ public class UIPasteboard extends NSObject {
     @Selector("colors")
     public native NSArray<? extends UIColor> colors();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("containsPasteboardTypes:")
     public native boolean containsPasteboardTypes(@NotNull NSArray<String> pasteboardTypes);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("containsPasteboardTypes:inItemSet:")
     public native boolean containsPasteboardTypesInItemSet(@NotNull NSArray<String> pasteboardTypes,
             @Nullable NSIndexSet itemSet);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("dataForPasteboardType:")
     public native NSData dataForPasteboardType(@NotNull String pasteboardType);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("dataForPasteboardType:inItemSet:")
@@ -278,6 +308,9 @@ public class UIPasteboard extends NSObject {
     @Selector("init")
     public native UIPasteboard init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("isPersistent")
     public native boolean isPersistent();
@@ -292,6 +325,9 @@ public class UIPasteboard extends NSObject {
     @Selector("setPersistent:")
     public native void setPersistent(boolean persistent);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("itemSetWithPasteboardTypes:")
@@ -299,12 +335,17 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Direct access
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends NSDictionary<String, ?>> items();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("name")
@@ -312,6 +353,8 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Multiple items
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("numberOfItems")
@@ -320,12 +363,17 @@ public class UIPasteboard extends NSObject {
 
     /**
      * First item
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
     @Selector("pasteboardTypes")
     public native NSArray<String> pasteboardTypes();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("pasteboardTypesForItemSet:")
@@ -339,6 +387,9 @@ public class UIPasteboard extends NSObject {
     @Selector("setColors:")
     public native void setColors(@Nullable NSArray<? extends UIColor> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setData:forPasteboardType:")
     public native void setDataForPasteboardType(@NotNull NSData data, @NotNull String pasteboardType);
@@ -353,6 +404,8 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Direct access
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setItems:")
@@ -382,6 +435,9 @@ public class UIPasteboard extends NSObject {
     @Selector("setURLs:")
     public native void setURLs(@Nullable NSArray<? extends NSURL> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setValue:forPasteboardType:")
     public native void setValueForPasteboardType(@NotNull @Mapped(ObjCObjectMapper.class) Object value,
@@ -397,12 +453,18 @@ public class UIPasteboard extends NSObject {
     @Selector("strings")
     public native NSArray<String> strings();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("valueForPasteboardType:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForPasteboardType(@NotNull String pasteboardType);
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("valuesForPasteboardType:inItemSet:")

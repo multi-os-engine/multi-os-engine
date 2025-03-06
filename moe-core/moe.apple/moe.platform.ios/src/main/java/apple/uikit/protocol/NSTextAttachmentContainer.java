@@ -32,6 +32,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * This protocol defines the interface to attachment objects from NSLayoutManager
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("UIKit")

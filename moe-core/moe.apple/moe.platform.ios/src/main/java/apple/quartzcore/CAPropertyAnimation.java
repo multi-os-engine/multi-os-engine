@@ -84,6 +84,8 @@ public class CAPropertyAnimation extends CAAnimation {
     /**
      * Creates a new animation object with its `keyPath' property set to
      * 'path'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("animationWithKeyPath:")
@@ -195,6 +197,8 @@ public class CAPropertyAnimation extends CAAnimation {
      * presentation value. The addition function is type-dependent, e.g.
      * for affine transforms the two matrices are concatenated. Defaults to
      * NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isAdditive")
@@ -206,6 +210,8 @@ public class CAPropertyAnimation extends CAAnimation {
      * presentation value. The addition function is type-dependent, e.g.
      * for affine transforms the two matrices are concatenated. Defaults to
      * NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAdditive:")
@@ -217,6 +223,8 @@ public class CAPropertyAnimation extends CAAnimation {
      * value at the end of the previous repeat cycle, plus the value of the
      * current repeat cycle. If false, the value is simply the value
      * calculated for the current repeat cycle. Defaults to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isCumulative")
@@ -228,6 +236,8 @@ public class CAPropertyAnimation extends CAAnimation {
      * value at the end of the previous repeat cycle, plus the value of the
      * current repeat cycle. If false, the value is simply the value
      * calculated for the current repeat cycle. Defaults to NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCumulative:")
@@ -235,6 +245,8 @@ public class CAPropertyAnimation extends CAAnimation {
 
     /**
      * The key-path describing the property to be animated.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -243,6 +255,8 @@ public class CAPropertyAnimation extends CAAnimation {
 
     /**
      * The key-path describing the property to be animated.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setKeyPath:")
@@ -252,6 +266,8 @@ public class CAPropertyAnimation extends CAAnimation {
      * If non-nil a function that is applied to interpolated values
      * before they are set as the new presentation value of the animation's
      * target property. Defaults to nil.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setValueFunction:")
@@ -261,6 +277,8 @@ public class CAPropertyAnimation extends CAAnimation {
      * If non-nil a function that is applied to interpolated values
      * before they are set as the new presentation value of the animation's
      * target property. Defaults to nil.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

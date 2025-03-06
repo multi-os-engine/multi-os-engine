@@ -175,6 +175,8 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
      * seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples
      * earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as
      * possible.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("advanceIntervalForDelegateInvocation")
@@ -187,6 +189,8 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
      * 
      * The delegate is held using a zeroing-weak reference, so this property will have a value of nil after a delegate
      * that was previously set has been deallocated. This property is not key-value observable.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -200,6 +204,8 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
      * The dispatch queue on which messages are sent to the delegate.
      * 
      * This property is not key-value observable.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -218,6 +224,8 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
      * See AVMetadataIdentifiers.h for publicly defined metadata identifiers. Pass nil to receive all of the timed
      * metadata from all enabled AVPlayerItemTracks that carry timed metadata.
      * 
+     * API-Since: 8.0
+     * 
      * @param identifiers
      *                    A array of metadata identifiers indicating the metadata items that the output should provide.
      */
@@ -234,6 +242,8 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
      * seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples
      * earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as
      * possible.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAdvanceIntervalForDelegateInvocation:")
@@ -248,6 +258,8 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
      *                      An object conforming to AVPlayerItemMetadataOutputPushDelegate protocol.
      * @param delegateQueue
      *                      A dispatch queue on which all delegate methods will be called.
+     * 
+     *                      API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:queue:")

@@ -132,6 +132,8 @@ public class SWHighlightMentionEvent extends NSObject implements SWHighlightEven
      * 
      * @param highlight The object on which the event occurred.
      * @param handle    The CloudKit handle of the person being mentioned by the sender.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("initWithHighlight:mentionedPersonCloudKitShareHandle:")
@@ -143,6 +145,8 @@ public class SWHighlightMentionEvent extends NSObject implements SWHighlightEven
      * 
      * @param highlight The object on which the event occurred.
      * @param identity  The identity of the person being mentioned by the sender.
+     * 
+     *                  API-Since: 16.0
      */
     @Generated
     @Selector("initWithHighlight:mentionedPersonIdentity:")
@@ -173,6 +177,8 @@ public class SWHighlightMentionEvent extends NSObject implements SWHighlightEven
 
     /**
      * The person being mentioned by the sender.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

@@ -92,6 +92,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("frameInScreenCoordinates")
     @ByValue
@@ -122,6 +125,8 @@ public class GKAccessPoint extends NSObject {
     /**
      * set this true to enable access point in your app. Setting this will cause the access point to appear after the
      * notification banner is presented. If it already was presented it will appear immediately
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isActive")
@@ -129,6 +134,8 @@ public class GKAccessPoint extends NSObject {
 
     /**
      * observable property that indicates when the access point is visible.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isPresentingGameCenter")
@@ -138,6 +145,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isVisible")
     public native boolean isVisible();
@@ -149,6 +159,8 @@ public class GKAccessPoint extends NSObject {
 
     /**
      * These properties control the placement of the widget
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("location")
@@ -160,6 +172,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("new")
     public static native GKAccessPoint new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("parentWindow")
@@ -176,6 +191,8 @@ public class GKAccessPoint extends NSObject {
     /**
      * set this true to enable access point in your app. Setting this will cause the access point to appear after the
      * notification banner is presented. If it already was presented it will appear immediately
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActive:")
@@ -183,15 +200,23 @@ public class GKAccessPoint extends NSObject {
 
     /**
      * These properties control the placement of the widget
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLocation:")
     public native void setLocation(@NInt long value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setParentWindow:")
     public native void setParentWindow_unsafe(@Nullable UIWindow value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     public void setParentWindow(@Nullable UIWindow value) {
         Object __old = parentWindow();
@@ -207,6 +232,8 @@ public class GKAccessPoint extends NSObject {
     /**
      * Set this property to true if you wish to show the highlights for most recent achievement, current rank on default
      * leaderboard, etc
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShowHighlights:")
@@ -216,6 +243,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("shared")
@@ -224,6 +254,8 @@ public class GKAccessPoint extends NSObject {
     /**
      * Set this property to true if you wish to show the highlights for most recent achievement, current rank on default
      * leaderboard, etc
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("showHighlights")
@@ -237,6 +269,8 @@ public class GKAccessPoint extends NSObject {
      * this lets the developer trigger the access point as if the user had touched it. This is useful for games that use
      * controllers or the remote on AppleTV. the argument lets you specify a specific state (default, profile,
      * achievements, leaderboards) for GameCenterViewController
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("triggerAccessPointWithHandler:")
@@ -250,6 +284,9 @@ public class GKAccessPoint extends NSObject {
         void call_triggerAccessPointWithHandler();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("triggerAccessPointWithState:handler:")
     public native void triggerAccessPointWithStateHandler(@NInt long state,
@@ -271,4 +308,65 @@ public class GKAccessPoint extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("triggerAccessPointWithAchievementID:handler:")
+    public native void triggerAccessPointWithAchievementIDHandler(@NotNull String achievementID,
+            @ObjCBlock(name = "call_triggerAccessPointWithAchievementIDHandler") @Nullable Block_triggerAccessPointWithAchievementIDHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointWithAchievementIDHandler {
+        @Generated
+        void call_triggerAccessPointWithAchievementIDHandler();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("triggerAccessPointWithLeaderboardID:playerScope:timeScope:handler:")
+    public native void triggerAccessPointWithLeaderboardIDPlayerScopeTimeScopeHandler(@NotNull String leaderboardID,
+            @NInt long playerScope, @NInt long timeScope,
+            @ObjCBlock(name = "call_triggerAccessPointWithLeaderboardIDPlayerScopeTimeScopeHandler") @Nullable Block_triggerAccessPointWithLeaderboardIDPlayerScopeTimeScopeHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointWithLeaderboardIDPlayerScopeTimeScopeHandler {
+        @Generated
+        void call_triggerAccessPointWithLeaderboardIDPlayerScopeTimeScopeHandler();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("triggerAccessPointWithLeaderboardSetID:handler:")
+    public native void triggerAccessPointWithLeaderboardSetIDHandler(@NotNull String leaderboardSetID,
+            @ObjCBlock(name = "call_triggerAccessPointWithLeaderboardSetIDHandler") @Nullable Block_triggerAccessPointWithLeaderboardSetIDHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointWithLeaderboardSetIDHandler {
+        @Generated
+        void call_triggerAccessPointWithLeaderboardSetIDHandler();
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("triggerAccessPointWithPlayer:handler:")
+    public native void triggerAccessPointWithPlayerHandler(@NotNull GKPlayer player,
+            @ObjCBlock(name = "call_triggerAccessPointWithPlayerHandler") @Nullable Block_triggerAccessPointWithPlayerHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointWithPlayerHandler {
+        @Generated
+        void call_triggerAccessPointWithPlayerHandler();
+    }
 }

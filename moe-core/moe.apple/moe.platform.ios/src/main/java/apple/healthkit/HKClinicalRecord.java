@@ -59,6 +59,8 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
      * [@property] FHIRResource
      * 
      * The FHIR resource (where applicable) backing this sample.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -104,6 +106,9 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("clinicalType")
@@ -130,6 +135,8 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
      * The primary display name used in Health.
      * 
      * The display name is not localized, and is generally expected to be US English.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

@@ -54,6 +54,8 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
      * 
      * @param shape    The desired accessory shape.
      * @param position The desired accessory position.
+     * 
+     *                 API-Since: 15.0
      */
     @Generated
     @Selector("accessoryWithShape:position:")
@@ -72,6 +74,8 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
 
     /**
      * Returns an arrow shaped accessory with the given position.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -157,6 +161,8 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
     /**
      * Indicates whether the accessory is rotated to match its angle.
      * This is false by default for custom accessories, but varies for system vended ones.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("orientationMatchesAngle")
@@ -164,6 +170,8 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
 
     /**
      * This accessory shape's position relative to the pointer.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("position")
@@ -181,6 +189,8 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
     /**
      * Indicates whether the accessory is rotated to match its angle.
      * This is false by default for custom accessories, but varies for system vended ones.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setOrientationMatchesAngle:")
@@ -192,6 +202,8 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
 
     /**
      * This accessory's shape.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

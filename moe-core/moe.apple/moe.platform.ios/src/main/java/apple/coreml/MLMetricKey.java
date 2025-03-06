@@ -94,6 +94,8 @@ public class MLMetricKey extends MLKey {
 
     /**
      * Int64 metric indicating the index of the epoch
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -137,6 +139,8 @@ public class MLMetricKey extends MLKey {
 
     /**
      * Float metric indicating the current loss
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -145,6 +149,8 @@ public class MLMetricKey extends MLKey {
 
     /**
      * Int64 metric indicating the index of mini batches in the current epoch
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

@@ -28,6 +28,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTRNOCChainIssuer")
 public interface MTRNOCChainIssuer {
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTROperationalCertificateIssuer
+     */
+    @Deprecated
     @Generated
     @Selector("onNOCChainGenerationNeeded:attestationInfo:onNOCChainGenerationComplete:")
     void onNOCChainGenerationNeededAttestationInfoOnNOCChainGenerationComplete(@NotNull CSRInfo csrInfo,
@@ -38,8 +44,9 @@ public interface MTRNOCChainIssuer {
     @Generated
     public interface Block_onNOCChainGenerationNeededAttestationInfoOnNOCChainGenerationComplete {
         @Generated
-        void call_onNOCChainGenerationNeededAttestationInfoOnNOCChainGenerationComplete(@NotNull NSData arg0,
-                @NotNull NSData arg1, @NotNull NSData arg2, @Nullable NSData arg3, @Nullable NSNumber arg4,
-                @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> arg5);
+        void call_onNOCChainGenerationNeededAttestationInfoOnNOCChainGenerationComplete(
+                @NotNull NSData operationalCertificate, @NotNull NSData intermediateCertificate,
+                @NotNull NSData rootCertificate, @Nullable NSData ipk, @Nullable NSNumber adminSubject,
+                @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
     }
 }

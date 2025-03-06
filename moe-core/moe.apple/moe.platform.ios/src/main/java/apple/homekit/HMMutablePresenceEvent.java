@@ -137,6 +137,8 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
 
     /**
      * presenceEventType The event type that will trigger the event.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("presenceEventType")
@@ -145,6 +147,8 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
 
     /**
      * presenceUserType The user type whose presence will trigger the event.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("presenceUserType")
@@ -161,6 +165,8 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
 
     /**
      * presenceEventType The event type that will trigger the event.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPresenceEventType:")
@@ -168,6 +174,8 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
 
     /**
      * presenceUserType The user type whose presence will trigger the event.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPresenceUserType:")

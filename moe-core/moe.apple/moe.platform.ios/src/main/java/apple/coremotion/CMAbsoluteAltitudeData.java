@@ -52,6 +52,9 @@ public class CMAbsoluteAltitudeData extends CMLogItem {
      * 
      * Discussion:
      * The accuracy of the altitude estimate, in meters.
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("accuracy")
@@ -72,6 +75,9 @@ public class CMAbsoluteAltitudeData extends CMLogItem {
      * 
      * Discussion:
      * The absolute altitude of the device in meters relative to sea level; could be positive or negative.
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("altitude")
@@ -155,6 +161,9 @@ public class CMAbsoluteAltitudeData extends CMLogItem {
      * 
      * Discussion:
      * The precision of the altitude estimate, in meters.
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("precision")

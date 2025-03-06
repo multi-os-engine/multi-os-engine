@@ -27,9 +27,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Symbolic representation of a compute datatype
+ * The symbolic representation of a compute data type.
  * 
- * NSCopy will cause a refrence to be taken, this is so NSDictionary can work with the tensor.
+ * `NSCopy` will take a refrence, this is so `NSDictionary` can work with the tensor.
  * All tensors are created, owned and destroyed by the MPSGraph
  * 
  * API-Since: 14.0
@@ -95,7 +95,9 @@ public class MPSGraphTensor extends MPSGraphObject implements NSCopying {
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * dataType of the tensor
+     * The data type of the tensor.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dataType")
@@ -146,7 +148,9 @@ public class MPSGraphTensor extends MPSGraphObject implements NSCopying {
     public static native MPSGraphTensor new_objc();
 
     /**
-     * operation responsible for creating this tensor
+     * The operation responsible for creating this tensor.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

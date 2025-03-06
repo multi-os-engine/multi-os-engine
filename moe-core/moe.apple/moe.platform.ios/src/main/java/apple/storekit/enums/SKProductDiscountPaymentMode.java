@@ -5,7 +5,10 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * API-Since: 11.2
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.SubscriptionOffer.PaymentMode
  */
+@Deprecated
 @Generated
 public final class SKProductDiscountPaymentMode {
     @Generated
@@ -14,14 +17,20 @@ public final class SKProductDiscountPaymentMode {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.PaymentMode
      */
-    @Generated @NUInt public static final long PayAsYouGo = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long PayAsYouGo = 0x0000000000000000L;
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.PaymentMode
      */
-    @Generated @NUInt public static final long PayUpFront = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long PayUpFront = 0x0000000000000001L;
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.PaymentMode
      */
-    @Generated @NUInt public static final long FreeTrial = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long FreeTrial = 0x0000000000000002L;
 }

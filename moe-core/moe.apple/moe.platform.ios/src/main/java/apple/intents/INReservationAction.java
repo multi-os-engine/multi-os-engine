@@ -118,6 +118,9 @@ public class INReservationAction extends NSObject implements NSCopying, NSSecure
     @Selector("initWithCoder:")
     public native INReservationAction initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithType:validDuration:userActivity:")
     public native INReservationAction initWithTypeValidDurationUserActivity(@NInt long type,
@@ -176,16 +179,25 @@ public class INReservationAction extends NSObject implements NSCopying, NSSecure
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("validDuration")

@@ -100,6 +100,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
     /**
      * [@property] duration
      * The duration of this event in AVMusicTimeStamp beats. Range: Any nonnegative number.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("duration")
@@ -110,6 +112,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      * This represents the audio unit channel (i.e., Group Scope) which should handle this event.
      * Range: normally between 0 and 15, but may be higher if the AVMusicTrack's destinationAudioUnit
      * supports more channels.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("groupID")
@@ -143,6 +147,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      *                 supports more channels.
      * @param duration
      *                 The duration of this event in AVMusicTimeStamp beats. Range: Any nonnegative number.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @Selector("initWithMIDINote:velocity:groupID:duration:")
@@ -157,6 +163,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      * This initializer is identical to initWithMIDINote:velocity:groupID:duration with the addition of
      * an instrumentID parameter which will allow for the possibility of an externally-created custom instrument.
      * If this initializer is used, instrumentID should be set to AVExtendedNoteOnEventDefaultInstrument for now.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithMIDINote:velocity:instrumentID:groupID:duration:")
@@ -179,6 +187,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
     /**
      * [@property] instrumentID
      * This should be set to AVExtendedNoteOnEventDefaultInstrument.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("instrumentID")
@@ -198,6 +208,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      * The MIDI note number represented as a floating point. If the instrument within the AVMusicTrack's
      * destinationAudioUnit supports fractional values, this may be used to generate arbitrary
      * macro- and micro-tunings. Range: Destination-dependent, usually 0.0 - 127.0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("midiNote")
@@ -219,6 +231,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
     /**
      * [@property] duration
      * The duration of this event in AVMusicTimeStamp beats. Range: Any nonnegative number.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDuration:")
@@ -229,6 +243,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      * This represents the audio unit channel (i.e., Group Scope) which should handle this event.
      * Range: normally between 0 and 15, but may be higher if the AVMusicTrack's destinationAudioUnit
      * supports more channels.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setGroupID:")
@@ -237,6 +253,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
     /**
      * [@property] instrumentID
      * This should be set to AVExtendedNoteOnEventDefaultInstrument.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInstrumentID:")
@@ -247,6 +265,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      * The MIDI note number represented as a floating point. If the instrument within the AVMusicTrack's
      * destinationAudioUnit supports fractional values, this may be used to generate arbitrary
      * macro- and micro-tunings. Range: Destination-dependent, usually 0.0 - 127.0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMidiNote:")
@@ -257,6 +277,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      * The MIDI velocity represented as a floating point. If the instrument within the AVMusicTrack's
      * destinationAudioUnit supports fractional values, this may be used to generate very precise changes
      * in gain, etc. Range: Destination-dependent, usually 0.0 - 127.0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setVelocity:")
@@ -275,6 +297,8 @@ public class AVExtendedNoteOnEvent extends AVMusicEvent {
      * The MIDI velocity represented as a floating point. If the instrument within the AVMusicTrack's
      * destinationAudioUnit supports fractional values, this may be used to generate very precise changes
      * in gain, etc. Range: Destination-dependent, usually 0.0 - 127.0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("velocity")

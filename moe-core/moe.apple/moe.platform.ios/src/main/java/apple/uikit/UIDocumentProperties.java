@@ -51,6 +51,8 @@ public class UIDocumentProperties extends NSObject {
     /**
      * To support sharing, assign a closure to return a UIActivityViewController configured to share the represented
      * document.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -112,6 +114,8 @@ public class UIDocumentProperties extends NSObject {
     /**
      * To support drag & drop, assign a closure to return an array of drag items corresponding to the represented
      * document.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -138,6 +142,8 @@ public class UIDocumentProperties extends NSObject {
 
     /**
      * Initialize with metadata directly when the item is not backed by a url.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithMetadata:")
@@ -145,6 +151,8 @@ public class UIDocumentProperties extends NSObject {
 
     /**
      * When initializing with a url, UIKit will automatically lookup metadata based on the data at that url.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -174,6 +182,8 @@ public class UIDocumentProperties extends NSObject {
 
     /**
      * The metadata to use. UIKit will generate this automatically if a url is given at initialization time.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -196,6 +206,8 @@ public class UIDocumentProperties extends NSObject {
     /**
      * To support sharing, assign a closure to return a UIActivityViewController configured to share the represented
      * document.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setActivityViewControllerProvider:")
@@ -213,6 +225,8 @@ public class UIDocumentProperties extends NSObject {
     /**
      * To support drag & drop, assign a closure to return an array of drag items corresponding to the represented
      * document.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDragItemsProvider:")
@@ -229,6 +243,8 @@ public class UIDocumentProperties extends NSObject {
 
     /**
      * The metadata to use. UIKit will generate this automatically if a url is given at initialization time.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMetadata:")
@@ -240,6 +256,8 @@ public class UIDocumentProperties extends NSObject {
 
     /**
      * If enabled, shows an icon representation of the document in the navigation bar.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setWantsIconRepresentation:")
@@ -256,6 +274,8 @@ public class UIDocumentProperties extends NSObject {
 
     /**
      * If enabled, shows an icon representation of the document in the navigation bar.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("wantsIconRepresentation")

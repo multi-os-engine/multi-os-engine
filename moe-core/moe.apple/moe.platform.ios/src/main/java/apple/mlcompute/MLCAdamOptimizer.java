@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCAdamOptimizer specifies the Adam optimizer.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -74,7 +73,11 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * Coefficent used for computing running averages of gradient.
      * 
      * The default is 0.9.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("beta1")
     public native float beta1();
@@ -85,7 +88,11 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * Coefficent used for computing running averages of square of gradient.
      * 
      * The default is 0.999.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("beta2")
     public native float beta2();
@@ -132,7 +139,11 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * A term added to improve numerical stability.
      * 
      * The default is 1e-8.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("epsilon")
     public native float epsilon();
@@ -177,7 +188,11 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * Create a MLCAdamOptimizer object with defaults
      * 
      * @return A new MLCAdamOptimizer object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("optimizerWithDescriptor:")
     public static native MLCAdamOptimizer optimizerWithDescriptor(@NotNull MLCOptimizerDescriptor optimizerDescriptor);
@@ -191,7 +206,11 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * @param epsilon             The epsilon value to use to improve numerical stability
      * @param timeStep            The initial timestep to use for the update
      * @return A new MLCAdamOptimizer object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("optimizerWithDescriptor:beta1:beta2:epsilon:timeStep:")
     public static native MLCAdamOptimizer optimizerWithDescriptorBeta1Beta2EpsilonTimeStep(
@@ -240,7 +259,11 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * The current timestep used for the update.
      * 
      * The default is 1.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("timeStep")
     @NUInt
@@ -252,7 +275,11 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * Whether to use the AMSGrad variant of this algorithm
      * 
      * The default is false
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("usesAMSGrad")
     public native boolean usesAMSGrad();

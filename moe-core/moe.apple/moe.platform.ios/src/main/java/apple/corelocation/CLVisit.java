@@ -175,6 +175,8 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
      * Discussion:
      * The date when the visit began. This may be equal to [NSDate
      * distantPast] if the true arrival date isn't available.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -186,6 +188,8 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * Discussion:
      * The center of the region which the device is visiting.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("coordinate")
@@ -205,6 +209,8 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
      * Discussion:
      * The date when the visit ended. This is equal to [NSDate
      * distantFuture] if the device hasn't yet left.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -221,6 +227,8 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
      * Discussion:
      * An estimate of the radius (in meters) of the region which the
      * device is visiting.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("horizontalAccuracy")

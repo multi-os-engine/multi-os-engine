@@ -17,6 +17,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPointerInteractionAnimating")
 public interface UIPointerInteractionAnimating {
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("addAnimations:")
     void addAnimations(@NotNull @ObjCBlock(name = "call_addAnimations") Block_addAnimations animations);
@@ -28,6 +31,9 @@ public interface UIPointerInteractionAnimating {
         void call_addAnimations();
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("addCompletion:")
     void addCompletion(@NotNull @ObjCBlock(name = "call_addCompletion") Block_addCompletion completion);

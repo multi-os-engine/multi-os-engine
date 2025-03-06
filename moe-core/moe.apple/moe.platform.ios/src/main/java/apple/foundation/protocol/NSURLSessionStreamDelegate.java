@@ -45,6 +45,8 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
      * there is no guarantee that the future task will be able to connect
      * to the host, so callers should should be prepared for failure of
      * reads and writes over any new interface.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -61,6 +63,8 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
      * this delegate message is received, there may still be bytes
      * available. You only know that no more bytes are available when you
      * are able to read until EOF.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -76,6 +80,8 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
      * connection. This will only be invoked after all enqueued IO has
      * completed (including any necessary handshakes.) The streamTask
      * will not receive any further delegate messages.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -90,6 +96,8 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
      * Indicates that the write side of a connection has been closed.
      * Any outstanding writes complete, but future writes will immediately
      * fail.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional

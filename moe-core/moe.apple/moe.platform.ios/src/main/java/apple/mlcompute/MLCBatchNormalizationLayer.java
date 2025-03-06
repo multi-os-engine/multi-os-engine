@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A batch normalizaion layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -70,7 +69,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] beta
      * 
      * The beta tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("beta")
@@ -80,7 +83,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] betaParameter
      * 
      * The beta tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("betaParameter")
@@ -119,7 +126,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] featureChannelCount
      * 
      * The number of feature channels
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("featureChannelCount")
     @NUInt
@@ -129,7 +140,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] gamma
      * 
      * The gamma tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gamma")
@@ -139,7 +154,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] gammaParameter
      * 
      * The gamma tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gammaParameter")
@@ -186,7 +205,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * @param gamma               The gamma tensor
      * @param varianceEpsilon     The epslion value
      * @return A new batch normalization layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithFeatureChannelCount:mean:variance:beta:gamma:varianceEpsilon:")
     public static native MLCBatchNormalizationLayer layerWithFeatureChannelCountMeanVarianceBetaGammaVarianceEpsilon(
@@ -204,7 +227,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * @param varianceEpsilon     The epslion value
      * @param momentum            The momentum value for the running mean and variance computation
      * @return A new batch normalization layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithFeatureChannelCount:mean:variance:beta:gamma:varianceEpsilon:momentum:")
     public static native MLCBatchNormalizationLayer layerWithFeatureChannelCountMeanVarianceBetaGammaVarianceEpsilonMomentum(
@@ -215,7 +242,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] mean
      * 
      * The mean tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("mean")
@@ -227,7 +258,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * The value used for the running mean and variance computation
      * 
      * The default is 0.99f.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("momentum")
     public native float momentum();
@@ -253,6 +288,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -261,7 +297,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] variance
      * 
      * The variance tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("variance")
@@ -271,7 +311,11 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * [@property] varianceEpsilon
      * 
      * A value used for numerical stability
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("varianceEpsilon")
     public native float varianceEpsilon();

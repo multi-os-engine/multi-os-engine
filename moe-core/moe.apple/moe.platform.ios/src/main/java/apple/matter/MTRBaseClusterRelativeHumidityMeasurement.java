@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterRelativeHumidityMeasurement extends MTRCluster {
+public class MTRBaseClusterRelativeHumidityMeasurement extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }

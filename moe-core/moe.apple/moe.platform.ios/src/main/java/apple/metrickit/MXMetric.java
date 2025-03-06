@@ -74,6 +74,8 @@ public class MXMetric extends NSObject implements NSSecureCoding {
      * Convenience method to return a JSON representation of this metric.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated

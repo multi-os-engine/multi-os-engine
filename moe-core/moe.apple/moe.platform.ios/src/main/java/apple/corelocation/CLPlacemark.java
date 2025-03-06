@@ -185,6 +185,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * eg. US
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -204,6 +206,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * state, eg. CA
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -212,6 +216,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * eg. Golden Gate Park
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -227,6 +233,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * eg. United States
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -250,6 +258,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Initialize a newly allocated placemark from another placemark, copying its data.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithPlacemark:")
@@ -257,6 +267,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * eg. Lake Tahoe
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -265,6 +277,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * city, eg. Cupertino
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -276,6 +290,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Discussion:
      * Returns the geographic location associated with the placemark.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -284,6 +300,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * eg. Apple Inc.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -292,6 +310,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * eg. Pacific Ocean
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -300,12 +320,17 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * zip code, eg. 95014
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
     @Selector("postalCode")
     public native String postalCode();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("region")
@@ -313,6 +338,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * county, eg. Santa Clara
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -321,6 +348,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * neighborhood, common name, eg. Mission District
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -329,6 +358,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * eg. 1
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -343,6 +374,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * street name, eg. Infinite Loop
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated

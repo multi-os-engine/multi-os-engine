@@ -94,6 +94,9 @@ public class PTParticipant extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("image")
@@ -105,6 +108,8 @@ public class PTParticipant extends NSObject {
 
     /**
      * The name length must be greater than 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithName:image:")
@@ -132,6 +137,9 @@ public class PTParticipant extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("name")

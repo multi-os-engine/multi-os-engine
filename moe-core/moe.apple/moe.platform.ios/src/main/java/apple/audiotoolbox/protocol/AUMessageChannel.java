@@ -44,6 +44,8 @@ public interface AUMessageChannel {
      * @return
      *         An NSDictionary with custom data. The allowed classes for key and value types are
      *         NSArray, NSDictionary, NSOrderedSet, NSSet, NSString, NSData, NSNull, NSNumber, NSDate
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -59,6 +61,8 @@ public interface AUMessageChannel {
      * A callback for the AU to send a message to the host.
      * 
      * The host has to set a block on this property.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -83,6 +87,8 @@ public interface AUMessageChannel {
      * A callback for the AU to send a message to the host.
      * 
      * The host has to set a block on this property.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional

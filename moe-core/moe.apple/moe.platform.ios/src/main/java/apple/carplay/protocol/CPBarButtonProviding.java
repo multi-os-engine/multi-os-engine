@@ -19,6 +19,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPBarButtonProviding")
 public interface CPBarButtonProviding {
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("backButton")
@@ -29,12 +32,17 @@ public interface CPBarButtonProviding {
      * 
      * [@note] The navigation bar may display a maximum of 2 buttons in the leading space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
     @Selector("leadingNavigationBarButtons")
     NSArray<? extends CPBarButton> leadingNavigationBarButtons();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setBackButton:")
     void setBackButton(@Nullable CPBarButton value);
@@ -44,6 +52,8 @@ public interface CPBarButtonProviding {
      * 
      * [@note] The navigation bar may display a maximum of 2 buttons in the leading space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLeadingNavigationBarButtons:")
@@ -54,6 +64,8 @@ public interface CPBarButtonProviding {
      * 
      * [@note] The navigation bar may display a maximum of 2 buttons in the trailing space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setTrailingNavigationBarButtons:")
@@ -64,6 +76,8 @@ public interface CPBarButtonProviding {
      * 
      * [@note] The navigation bar may display a maximum of 2 buttons in the trailing space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

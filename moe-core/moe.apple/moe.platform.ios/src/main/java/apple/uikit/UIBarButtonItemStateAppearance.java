@@ -64,6 +64,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
 
     /**
      * A background image to display around the button
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -72,6 +74,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the backgroundImage.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("backgroundImagePositionAdjustment")
@@ -153,6 +157,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
 
     /**
      * A background image to display around the button
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackgroundImage:")
@@ -160,6 +166,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the backgroundImage.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBackgroundImagePositionAdjustment:")
@@ -167,6 +175,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the button's title position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitlePositionAdjustment:")
@@ -175,6 +185,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     /**
      * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
      * are supplied.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitleTextAttributes:")
@@ -190,6 +202,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
 
     /**
      * An offset to apply to the button's title position
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("titlePositionAdjustment")
@@ -199,6 +213,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     /**
      * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
      * are supplied.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

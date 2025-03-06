@@ -60,6 +60,8 @@ public interface INRequestRideIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INRequestRideIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -79,12 +81,17 @@ public interface INRequestRideIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INRequestRideIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleRequestRide:completion:")
     void handleRequestRideCompletion(@NotNull INRequestRideIntent intent,
             @NotNull @ObjCBlock(name = "call_handleRequestRideCompletion") Block_handleRequestRideCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveDropOffLocationForRequestRide:withCompletion:")
@@ -93,6 +100,9 @@ public interface INRequestRideIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolvePartySizeForRequestRide:withCompletion:")
@@ -111,6 +121,8 @@ public interface INRequestRideIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -120,6 +132,9 @@ public interface INRequestRideIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveRideOptionNameForRequestRide:withCompletion:")

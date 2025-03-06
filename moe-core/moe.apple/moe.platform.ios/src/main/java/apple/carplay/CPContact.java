@@ -51,6 +51,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * Action buttons that will be displayed when this @c CPContact is displayed in a @c CPContactTemplate.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -111,6 +113,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * An image representing the contact.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -119,6 +123,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * Optional text that will be displayed in addition to the contact name
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -146,6 +152,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
      * 
      * To properly size your list images, your app should consider the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      * 
      * @param name  The name to be displayed for this contact.
      * @param image An image for this contact. The maximum image size in points is CPButtonMaximumImageSize; larger
@@ -179,6 +187,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * The name that will be displayed for this contact.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -200,6 +210,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * Action buttons that will be displayed when this @c CPContact is displayed in a @c CPContactTemplate.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActions:")
@@ -207,6 +219,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * An image representing the contact.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setImage:")
@@ -214,6 +228,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * Optional text that will be displayed in addition to the contact name
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setInformativeText:")
@@ -221,6 +237,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * The name that will be displayed for this contact.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setName:")
@@ -228,6 +246,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * Optional text that will be displayed in addition to the contact name
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSubtitle:")
@@ -239,6 +259,8 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     /**
      * Optional text that will be displayed in addition to the contact name
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

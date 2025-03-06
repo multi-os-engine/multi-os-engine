@@ -147,6 +147,8 @@ public class SRFetchResult<_SampleType> extends NSObject implements NSCopying {
      * The caller is expected to know what the result type should be
      * [@note] This may thrown an exception if the sample could not be constructed from
      * the data in the datastore
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -164,6 +166,8 @@ public class SRFetchResult<_SampleType> extends NSObject implements NSCopying {
 
     /**
      * the timestamp the sample was written to the data store
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("timestamp")

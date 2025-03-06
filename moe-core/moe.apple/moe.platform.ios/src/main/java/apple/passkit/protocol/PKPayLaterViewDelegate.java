@@ -20,6 +20,8 @@ public interface PKPayLaterViewDelegate {
     /**
      * If rendering this view using manual layout, then conform to this protocol to layout the view when
      * PKPayLaterView's height changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("payLaterViewDidUpdateHeight:")

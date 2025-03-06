@@ -63,6 +63,8 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
      * preserving the values at the corner pixels.
      * The default is NO.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("alignCorners")
@@ -132,6 +134,8 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSNNResizeBilinear
      * @param device   The MTLDevice on which to make the MPSNNResizeBilinear
      * @return A new MPSNNResizeBilinear object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -152,6 +156,8 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
      *                     aligned,
      *                     preserving the values at the corner pixels.
      * @return A valid MPSNNResizeBilinear object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:resizeWidth:resizeHeight:alignCorners:")
@@ -190,6 +196,8 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
      * [@property] resizeHeight
      * 
      * The resize height.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("resizeHeight")
@@ -200,6 +208,8 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
      * [@property] resizeWidth
      * 
      * The resize width.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("resizeWidth")

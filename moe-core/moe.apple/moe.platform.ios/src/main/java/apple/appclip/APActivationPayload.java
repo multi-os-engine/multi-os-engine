@@ -73,6 +73,8 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
      * your App Clip, use `webpageURL` instead.
      * 
      * For more information, see <doc:responding-to-invocations>.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -153,6 +155,8 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
      * <doc://com.apple.documentation/documentation/corelocation> framework. For
      * more information, see
      * <doc://com.apple.documentation/documentation/corelocation/getting_the_current_location_of_a_device>.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("confirmAcquiredInRegion:completionHandler:")

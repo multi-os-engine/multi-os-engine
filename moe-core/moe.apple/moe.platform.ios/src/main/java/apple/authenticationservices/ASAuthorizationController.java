@@ -60,6 +60,8 @@ public class ASAuthorizationController extends NSObject {
 
     /**
      * Authorization requests that are being serviced by this controller
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -98,6 +100,8 @@ public class ASAuthorizationController extends NSObject {
     /**
      * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -123,6 +127,8 @@ public class ASAuthorizationController extends NSObject {
      * 
      * @param authorizationRequests At least one request should be provided. Requests of same type maybe honored in
      *                              first in first out order
+     * 
+     *                              API-Since: 13.0
      */
     @Generated
     @Selector("initWithAuthorizationRequests:")
@@ -163,6 +169,8 @@ public class ASAuthorizationController extends NSObject {
      * 
      * The instance will remain retained until the flow is either completed or canceled, and the delegate callback is
      * made.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("performRequests")
@@ -188,6 +196,8 @@ public class ASAuthorizationController extends NSObject {
     /**
      * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -197,6 +207,8 @@ public class ASAuthorizationController extends NSObject {
     /**
      * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value) {

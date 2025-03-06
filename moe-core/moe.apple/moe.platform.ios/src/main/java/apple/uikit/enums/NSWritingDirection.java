@@ -20,8 +20,6 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Values for NSWritingDirection
- * 
  * API-Since: 6.0
  */
 @Generated

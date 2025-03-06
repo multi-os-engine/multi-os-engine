@@ -19,23 +19,35 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFunctionLog")
 public interface MTLFunctionLog {
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("debugLocation")
     @MappedReturn(ObjCObjectMapper.class)
     MTLFunctionLogDebugLocation debugLocation();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("encoderLabel")
     String encoderLabel();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("function")
     @MappedReturn(ObjCObjectMapper.class)
     MTLFunction function();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("type")
     @NUInt

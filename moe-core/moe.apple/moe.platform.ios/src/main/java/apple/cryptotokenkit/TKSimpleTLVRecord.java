@@ -108,6 +108,8 @@ public class TKSimpleTLVRecord extends TKTLVRecord {
      * @param tag   Tag value for the new record.
      * @param value Value for the new record.
      * @return Newly created TLV record.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithTag:value:")

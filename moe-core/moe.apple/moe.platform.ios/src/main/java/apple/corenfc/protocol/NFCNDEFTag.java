@@ -95,7 +95,7 @@ public interface NFCNDEFTag extends NSSecureCoding, NSCopying {
      * writeLockWithCompletionHandler:
      * 
      * Locks the NDEF tag to read-only state; tag can no longer be written afterward. This is a permanent operation. A
-     * successful lock operaiton via this method
+     * successful lock operation via this method
      * will change the NFCNDEFStatus value of the tag to @link NFCNDEFStatusReadOnly @link/.
      * 
      * API-Since: 13.0

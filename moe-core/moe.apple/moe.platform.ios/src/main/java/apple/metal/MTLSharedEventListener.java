@@ -93,6 +93,9 @@ public class MTLSharedEventListener extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("dispatchQueue")
@@ -103,10 +106,16 @@ public class MTLSharedEventListener extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("init")
     public native MTLSharedEventListener init();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithDispatchQueue:")
     public native MTLSharedEventListener initWithDispatchQueue(@NotNull dispatch_queue_t dispatchQueue);

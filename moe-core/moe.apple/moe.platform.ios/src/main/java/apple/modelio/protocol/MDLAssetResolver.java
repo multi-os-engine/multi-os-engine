@@ -17,10 +17,16 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLAssetResolver")
 public interface MDLAssetResolver {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("canResolveAssetNamed:")
     boolean canResolveAssetNamed(@NotNull String name);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("resolveAssetNamed:")

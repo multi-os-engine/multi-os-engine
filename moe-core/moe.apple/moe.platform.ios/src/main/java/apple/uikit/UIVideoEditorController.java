@@ -176,6 +176,9 @@ public class UIVideoEditorController extends UINavigationController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.1
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -204,10 +207,16 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native UIVideoEditorController initWithRootViewController(@NotNull UIViewController rootViewController);
 
+    /**
+     * API-Since: 3.1
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 3.1
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -222,11 +231,16 @@ public class UIVideoEditorController extends UINavigationController {
 
     /**
      * default value is 10 minutes. set to 0 to specify no maximum duration.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setVideoMaximumDuration:")
     public native void setVideoMaximumDuration(double value);
 
+    /**
+     * API-Since: 3.1
+     */
     @Generated
     @Selector("setVideoPath:")
     public native void setVideoPath(@NotNull String value);
@@ -240,11 +254,16 @@ public class UIVideoEditorController extends UINavigationController {
 
     /**
      * default value is 10 minutes. set to 0 to specify no maximum duration.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("videoMaximumDuration")
     public native double videoMaximumDuration();
 
+    /**
+     * API-Since: 3.1
+     */
     @NotNull
     @Generated
     @Selector("videoPath")

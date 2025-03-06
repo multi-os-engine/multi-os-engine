@@ -69,6 +69,8 @@ public class ENExposureInfo extends NSObject {
      * Array index 2: Sum of durations for this exposure when attenuation <= Z
      * Array index 3: Sum of durations for this exposure when attenuation > Z
      * X, Y, Z come from the attenuationDurationThresholds on the configuration object.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -77,6 +79,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Duration-weighted average of the attenuations associated with this exposure.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("attenuationValue")
@@ -109,6 +113,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Date when the exposure occurred. This may have reduced precision, such as within 1 day of the actual time.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -144,6 +150,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Length of exposure in 5 minute increments with a 30 minute maximum.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("duration")
@@ -182,6 +190,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Metadata associated with the exposure.
+     * 
+     * API-Since: 12.5
      */
     @Nullable
     @Generated
@@ -211,6 +221,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Indicates the total risk calculated for this exposure incident. Capped to ENRiskScore range.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("totalRiskScore")
@@ -218,6 +230,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Indicates the total risk calculated for this exposure incident. Full range and not capped to ENRiskScore.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("totalRiskScoreFullRange")
@@ -225,6 +239,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Indicates the transmission risk associated with the diagnosis key.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("transmissionRiskLevel")

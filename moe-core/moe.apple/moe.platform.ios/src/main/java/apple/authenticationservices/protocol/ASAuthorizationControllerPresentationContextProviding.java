@@ -21,6 +21,8 @@ public interface ASAuthorizationControllerPresentationContextProviding {
     /**
      * Return a view anchor that is most appropriate for athorization UI to be presented over. This view will be used as
      * a hint if a credential provider requires user interaction.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

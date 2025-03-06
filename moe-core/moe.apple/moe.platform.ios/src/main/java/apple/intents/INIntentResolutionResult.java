@@ -133,6 +133,8 @@ public class INIntentResolutionResult extends NSObject {
 
     /**
      * This result is to tell Siri that the user must provide a non-nil value for this parameter in order to continue
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -147,6 +149,8 @@ public class INIntentResolutionResult extends NSObject {
     /**
      * This result is to tell Siri to continue regardless of whether the user has provided a value for this parameter or
      * not
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -171,6 +175,8 @@ public class INIntentResolutionResult extends NSObject {
 
     /**
      * This result is for informing Siri that this value is unsupported
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

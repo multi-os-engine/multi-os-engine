@@ -148,6 +148,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("sharedCommandCenter")
@@ -162,6 +165,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("bookmarkCommand")
@@ -175,16 +181,25 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("changePlaybackPositionCommand")
     public native MPChangePlaybackPositionCommand changePlaybackPositionCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("changePlaybackRateCommand")
     public native MPChangePlaybackRateCommand changePlaybackRateCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("changeRepeatModeCommand")
     public native MPChangeRepeatModeCommand changeRepeatModeCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("changeShuffleModeCommand")
@@ -198,6 +213,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("disableLanguageOptionCommand")
     public native MPRemoteCommand disableLanguageOptionCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("dislikeCommand")
@@ -220,6 +238,8 @@ public class MPRemoteCommandCenter extends NSObject {
      * These are generalized to three distinct actions. Your application can provide
      * additional context about these actions with the localizedTitle property in
      * MPFeedbackCommand.
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
@@ -228,6 +248,8 @@ public class MPRemoteCommandCenter extends NSObject {
 
     /**
      * Previous/Next Track Commands
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
@@ -236,17 +258,25 @@ public class MPRemoteCommandCenter extends NSObject {
 
     /**
      * Playback Commands
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
     @Selector("pauseCommand")
     public native MPRemoteCommand pauseCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("playCommand")
     public native MPRemoteCommand playCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("previousTrackCommand")
@@ -254,12 +284,17 @@ public class MPRemoteCommandCenter extends NSObject {
 
     /**
      * Rating Command
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
     @Selector("ratingCommand")
     public native MPRatingCommand ratingCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("seekBackwardCommand")
@@ -267,12 +302,17 @@ public class MPRemoteCommandCenter extends NSObject {
 
     /**
      * Seek Commands
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
     @Selector("seekForwardCommand")
     public native MPRemoteCommand seekForwardCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("skipBackwardCommand")
@@ -280,17 +320,25 @@ public class MPRemoteCommandCenter extends NSObject {
 
     /**
      * Skip Interval Commands
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
     @Selector("skipForwardCommand")
     public native MPSkipIntervalCommand skipForwardCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("stopCommand")
     public native MPRemoteCommand stopCommand();
 
+    /**
+     * API-Since: 7.1
+     */
     @NotNull
     @Generated
     @Selector("togglePlayPauseCommand")

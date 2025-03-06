@@ -165,11 +165,17 @@ public class MDLVertexAttributeData extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("dataStart")
     public native VoidPtr dataStart();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("format")
     @NUInt
@@ -179,27 +185,45 @@ public class MDLVertexAttributeData extends NSObject {
     @Selector("init")
     public native MDLVertexAttributeData init();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("map")
     public native MDLMeshBufferMap map();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDataStart:")
     public native void setDataStart(@NotNull VoidPtr value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setFormat:")
     public native void setFormat(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setMap:")
     public native void setMap(@NotNull MDLMeshBufferMap value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setStride:")
     public native void setStride(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("stride")
     @NUInt

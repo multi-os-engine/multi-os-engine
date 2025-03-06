@@ -163,6 +163,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * landscape orientation, D-pad input values will be transposed 90 degrees to match the new orientation.
      * 
      * The default value for this property is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsRotation")
@@ -172,6 +174,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * The Micro profile has two buttons that are optionally analog in the Micro profile.
      * Button A is the primary action button, it indicates affirmative action and should be used to advance in menus
      * or perform the primary action in gameplay.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -187,12 +191,17 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * used to present menu content or to retreat in a menu flow.
      * 
      * @see buttonA
+     * 
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("controller")
@@ -200,6 +209,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
 
     /**
      * Optionally analog in the Micro profile. All the elements of this directional input are either analog or digital.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -222,6 +233,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * by a developer using the dpad.
      * 
      * The default value for this property is NO, meaning a sliding window is used for the dpad.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("reportsAbsoluteDpadValues")
@@ -253,6 +266,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * landscape orientation, D-pad input values will be transposed 90 degrees to match the new orientation.
      * 
      * The default value for this property is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowsRotation:")
@@ -270,16 +285,24 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * by a developer using the dpad.
      * 
      * The default value for this property is NO, meaning a sliding window is used for the dpad.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setReportsAbsoluteDpadValues:")
     public native void setReportsAbsoluteDpadValues(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("valueChangedHandler")

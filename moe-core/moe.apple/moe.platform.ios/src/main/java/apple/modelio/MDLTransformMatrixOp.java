@@ -60,6 +60,9 @@ public class MDLTransformMatrixOp extends NSObject implements MDLTransformOp {
     @Selector("allocWithZone:")
     public static native MDLTransformMatrixOp allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("animatedValue")

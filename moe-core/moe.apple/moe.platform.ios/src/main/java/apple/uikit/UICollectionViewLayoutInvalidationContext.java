@@ -197,6 +197,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     /**
      * if YES, the layout should requery section and item counts from the collection view - set to YES when the
      * collection view is sent -reloadData and when items are inserted or deleted
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidateDataSourceCounts")
@@ -212,6 +214,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * set to YES when invalidation occurs because the collection view is sent -reloadData
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidateEverything")

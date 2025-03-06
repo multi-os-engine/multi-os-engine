@@ -176,6 +176,9 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithDisplayGamut:")
     public static native UITraitCollection traitCollectionWithDisplayGamut(@NInt long displayGamut);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("traitCollectionWithDisplayScale:")
@@ -189,6 +192,9 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithForceTouchCapability:")
     public static native UITraitCollection traitCollectionWithForceTouchCapability(@NInt long capability);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("traitCollectionWithHorizontalSizeClass:")
@@ -224,11 +230,17 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     public static native UITraitCollection traitCollectionWithTraitsFromCollections(
             @NotNull NSArray<? extends UITraitCollection> traitCollections);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("traitCollectionWithUserInterfaceIdiom:")
     public static native UITraitCollection traitCollectionWithUserInterfaceIdiom(@NInt long idiom);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("traitCollectionWithVerticalSizeClass:")
@@ -270,6 +282,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("displayScale")
@@ -292,12 +306,17 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIUserInterfaceSizeClassUnspecified
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("horizontalSizeClass")
     @NInt
     public native long horizontalSizeClass();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native UITraitCollection init();
@@ -334,6 +353,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIUserInterfaceIdiomUnspecified
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("userInterfaceIdiom")
@@ -342,6 +363,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIUserInterfaceSizeClassUnspecified
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("verticalSizeClass")
@@ -681,4 +704,25 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @NInt
     public native long valueForNSIntegerTrait(
             @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+
+    /**
+     * The list environment represents whether a given trait collection is from a view in a UITableView or a
+     * UICollectionView list section.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("listEnvironment")
+    @NInt
+    public native long listEnvironment();
+
+    /**
+     * Construct a new trait collection with the given `listEnvironment`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("traitCollectionWithListEnvironment:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithListEnvironment(@NInt long listEnvironment);
 }

@@ -95,6 +95,9 @@ public class INSendMessageIntentDonationMetadata extends INIntentDonationMetadat
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native INSendMessageIntentDonationMetadata init();
@@ -116,6 +119,9 @@ public class INSendMessageIntentDonationMetadata extends INIntentDonationMetadat
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("isReplyToCurrentUser")
     public native boolean isReplyToCurrentUser();
@@ -129,6 +135,9 @@ public class INSendMessageIntentDonationMetadata extends INIntentDonationMetadat
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("mentionsCurrentUser")
     public native boolean mentionsCurrentUser();
@@ -138,10 +147,16 @@ public class INSendMessageIntentDonationMetadata extends INIntentDonationMetadat
     @Selector("new")
     public static native INSendMessageIntentDonationMetadata new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("notifyRecipientAnyway")
     public native boolean notifyRecipientAnyway();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("recipientCount")
     @NUInt
@@ -155,18 +170,30 @@ public class INSendMessageIntentDonationMetadata extends INIntentDonationMetadat
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setMentionsCurrentUser:")
     public native void setMentionsCurrentUser(boolean value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setNotifyRecipientAnyway:")
     public native void setNotifyRecipientAnyway(boolean value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setRecipientCount:")
     public native void setRecipientCount(@NUInt long value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setReplyToCurrentUser:")
     public native void setReplyToCurrentUser(boolean value);

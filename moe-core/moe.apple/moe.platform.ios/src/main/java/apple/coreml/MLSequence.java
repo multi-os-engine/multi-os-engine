@@ -97,6 +97,8 @@ public class MLSequence extends NSObject implements NSSecureCoding {
 
     /**
      * Empty sequence of a sepcific type
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -125,6 +127,9 @@ public class MLSequence extends NSObject implements NSSecureCoding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("int64Values")
@@ -154,6 +159,8 @@ public class MLSequence extends NSObject implements NSSecureCoding {
 
     /**
      * int64 sequence, propery will be empty array if type is MLFeatureTypeInt64
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sequenceWithInt64Array:")
@@ -161,6 +168,8 @@ public class MLSequence extends NSObject implements NSSecureCoding {
 
     /**
      * String sequences, property will be empty array if type is MLFeatureTypeString
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sequenceWithStringArray:")
@@ -170,6 +179,9 @@ public class MLSequence extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("stringValues")
@@ -181,6 +193,8 @@ public class MLSequence extends NSObject implements NSSecureCoding {
 
     /**
      * Type of values held
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("type")

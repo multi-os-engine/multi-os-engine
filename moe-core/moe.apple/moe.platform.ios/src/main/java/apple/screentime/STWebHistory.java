@@ -100,6 +100,8 @@ public class STWebHistory extends NSObject {
     /**
      * Deletes all web history associated with the bundle identifier you specified
      * during initialization.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("deleteAllHistory")
@@ -110,6 +112,8 @@ public class STWebHistory extends NSObject {
      * 
      * - Parameters:
      * - interval: The date interval of web history you want to delete.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("deleteHistoryDuringInterval:")
@@ -123,6 +127,8 @@ public class STWebHistory extends NSObject {
      * 
      * - Parameters:
      * - url: The URL associated with the web history to delete.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("deleteHistoryForURL:")
@@ -153,6 +159,8 @@ public class STWebHistory extends NSObject {
      * - Parameters:
      * - bundleIdentifier: The bundle identifier.
      * - error: Any error that occurred while changing the bundle identifier.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithBundleIdentifier:error:")

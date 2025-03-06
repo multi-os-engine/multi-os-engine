@@ -168,6 +168,12 @@ public class INStartPhotoPlaybackIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -185,7 +191,12 @@ public class INStartPhotoPlaybackIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INStartPhotoPlaybackIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -195,11 +206,23 @@ public class INStartPhotoPlaybackIntentResponse extends INIntentResponse {
     @Selector("initWithCoder:")
     public native INStartPhotoPlaybackIntentResponse initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("searchResultsCount")
     public native NSNumber searchResultsCount();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setSearchResultsCount:")
     public native void setSearchResultsCount(@Nullable NSNumber value);

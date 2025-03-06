@@ -124,6 +124,8 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSNNCropAndResizeBilinear
      * @param device   The MTLDevice on which to make the MPSNNCropAndResizeBilinear
      * @return A new MPSNNResizeBilinear object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -144,6 +146,8 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      * @param regions         This is a pointer to "numberOfRegions" boxes which specify the locations in the
      *                        source image to use for each box/region to perform the resize operation.
      * @return A valid MPSNNCropAndResizeBilinear object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:resizeWidth:resizeHeight:numberOfRegions:regions:")
@@ -183,6 +187,8 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      * [@property] numberOfRegions
      * 
      * the number of bounding box i.e. regions to resize.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("numberOfRegions")
@@ -197,6 +203,8 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      * The coordinates specified are normalized values. A normalized region outside the
      * [0, 1] range is allowed, in which case we use extrapolation_value to extrapolate
      * the input image values.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -208,6 +216,8 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      * [@property] resizeHeight
      * 
      * The resize height.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("resizeHeight")
@@ -218,6 +228,8 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      * [@property] resizeWidth
      * 
      * The resize width.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("resizeWidth")

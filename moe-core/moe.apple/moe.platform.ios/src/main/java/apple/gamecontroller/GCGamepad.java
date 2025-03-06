@@ -169,27 +169,52 @@ public class GCGamepad extends GCPhysicalInputProfile {
      * X B
      * \ /
      * A
+     * 
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("buttonB")
     public native GCControllerButtonInput buttonB();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("buttonY")
     public native GCControllerButtonInput buttonY();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("controller")
@@ -197,7 +222,11 @@ public class GCGamepad extends GCPhysicalInputProfile {
 
     /**
      * Required to be analog in the Standard profile. All the elements of this directional input are thus analog.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("dpad")
@@ -209,7 +238,11 @@ public class GCGamepad extends GCPhysicalInputProfile {
 
     /**
      * Shoulder buttons are required to be analog inputs.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("leftShoulder")
@@ -217,7 +250,11 @@ public class GCGamepad extends GCPhysicalInputProfile {
 
     /**
      * Shoulder buttons are required to be analog inputs.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("rightShoulder")
@@ -231,17 +268,31 @@ public class GCGamepad extends GCPhysicalInputProfile {
      * 
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("saveSnapshot")
     public native GCGamepadSnapshot saveSnapshot();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("valueChangedHandler")

@@ -73,6 +73,8 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * [@property] averageQuantity
      * 
      * The average of the receiver's quantities
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -147,6 +149,8 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * [@property] maximumQuantity
      * 
      * The maximum of the receiver's quantities
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -157,6 +161,8 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * [@property] minimumQuantity
      * 
      * The minimum of the receiver's quantities
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -167,6 +173,8 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * [@property] mostRecentQuantity
      * 
      * The receiver's quantity with most recent date interval
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -177,6 +185,8 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * [@property] mostRecentQuantityDateInterval
      * 
      * The date interval for the receiver's most recent quantity
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

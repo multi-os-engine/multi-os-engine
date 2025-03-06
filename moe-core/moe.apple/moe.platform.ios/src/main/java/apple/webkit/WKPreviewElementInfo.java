@@ -173,6 +173,11 @@ public class WKPreviewElementInfo extends NSObject implements NSCopying {
     @Selector("init")
     public native WKPreviewElementInfo init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("linkURL")

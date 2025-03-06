@@ -3,7 +3,7 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * Optimization levels to tradeoff compilation time for even more runtime performance by running more passes.
+ * The optimization levels to trade compilation time for even more runtime performance by running more passes.
  */
 @Generated
 public final class MPSGraphOptimization {

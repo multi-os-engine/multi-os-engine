@@ -46,6 +46,8 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
 
     /**
      * dimension with an absolute point value
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -106,6 +108,9 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("dimension")
     @NFloat
@@ -113,6 +118,8 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
 
     /**
      * dimension is estimated with a point value. Actual size will be determined when the content is rendered.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -121,6 +128,8 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
 
     /**
      * dimension is computed as a fraction of the height of the containing group
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -129,6 +138,8 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
 
     /**
      * dimension is computed as a fraction of the width of the containing group
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -157,21 +168,32 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isAbsolute")
     public native boolean isAbsolute();
 
     /**
      * Returns `YES` if the receiver is `estimated` OR `uniformAcrossSiblings`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isEstimated")
     public native boolean isEstimated();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isFractionalHeight")
     public native boolean isFractionalHeight();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isFractionalWidth")
     public native boolean isFractionalWidth();

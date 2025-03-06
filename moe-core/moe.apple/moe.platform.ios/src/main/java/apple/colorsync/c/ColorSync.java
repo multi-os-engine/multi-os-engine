@@ -430,6 +430,10 @@ public final class ColorSync {
     public static native ConstVoidPtr ColorSyncCreateCodeFragment(@NotNull CFArrayRef profileSequence,
             @NotNull CFDictionaryRef options);
 
+    /**
+     * 15.0.0.2 BCD; uint32_t BCD = ((uint32_t)majorOS (= << 24) | (minorOS << 16) | (dotOS << 8) | (API version &
+     * 0xFF);
+     */
     @Generated
     @CFunction
     public static native int ColorSyncAPIVersion();
@@ -1514,4 +1518,14 @@ public final class ColorSync {
     public static native CFStringRef kColorSyncFixedPointRange();
 
     @Generated public static final double COLORSYNC_MD5_LENGTH = 16.0;
+
+    /**
+     * CFSTR("com.apple.cmm.TransformUseITU709OETF")
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kColorSyncTransformUseITU709OETF();
 }

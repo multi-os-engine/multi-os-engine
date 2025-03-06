@@ -176,6 +176,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the URI is unknown. Corresponds to "uri".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -241,6 +243,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "c-duration-watched".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("durationWatched")
@@ -267,6 +271,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "sc-indicated-bitrate".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("indicatedBitrate")
@@ -298,6 +304,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "bytes".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("numberOfBytesTransferred")
@@ -310,6 +318,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "c-frames-dropped".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("numberOfDroppedVideoFrames")
@@ -360,6 +370,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "s-ip-changes".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("numberOfServerAddressChanges")
@@ -373,6 +385,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "c-stalls".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("numberOfStalls")
@@ -386,6 +400,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "c-observed-bitrate".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("observedBitrate")
@@ -446,6 +462,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the GUID is unknown. Corresponds to "cs-guid".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -459,6 +477,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the date is unknown. Corresponds to "date".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -472,6 +492,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "c-start-time".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("playbackStartOffset")
@@ -499,6 +521,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * Value is negative if unknown. Corresponds to "c-duration-downloaded".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("segmentsDownloadedDuration")
@@ -511,6 +535,8 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
      * 
      * If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
      * This property is not observable.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated

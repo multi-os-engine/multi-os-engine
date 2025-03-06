@@ -33,6 +33,8 @@ public interface UIPointerInteractionDelegate {
      * 
      * @return A UIPointerRegion in which to apply a pointer style. Return nil to indicate that this interaction should
      *         not customize the pointer for the current location.
+     * 
+     *         API-Since: 13.4
      */
     @Nullable
     @Generated
@@ -51,6 +53,8 @@ public interface UIPointerInteractionDelegate {
      * @param region      The UIPointerRegion for which a style is being requested.
      * 
      * @return A UIPointerStyle describing the desired hover effect or pointer appearance for the given UIPointerRegion.
+     * 
+     *         API-Since: 13.4
      */
     @Nullable
     @Generated
@@ -68,6 +72,8 @@ public interface UIPointerInteractionDelegate {
      * @param region      The UIPointerRegion the pointer is about to enter.
      * @param animator    Region entrance animator. Add animations to run them alongside the pointer's entrance
      *                    animation.
+     * 
+     *                    API-Since: 13.4
      */
     @Generated
     @IsOptional
@@ -84,6 +90,8 @@ public interface UIPointerInteractionDelegate {
      * @param interaction This UIPointerInteraction.
      * @param region      The UIPointerRegion the pointer is about to exit.
      * @param animator    Region exit animator. Add animations to run them alongside the pointer's exit animation.
+     * 
+     *                    API-Since: 13.4
      */
     @Generated
     @IsOptional

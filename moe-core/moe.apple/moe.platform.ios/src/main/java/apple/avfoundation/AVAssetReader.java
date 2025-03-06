@@ -100,6 +100,8 @@ public class AVAssetReader extends NSObject {
      * If the specified asset belongs to a mutable subclass of AVAsset, AVMutableComposition or AVMutableMovie, the
      * results of any asset reading operation are undefined if you mutate the asset after invoking -startReading.
      * 
+     * API-Since: 4.1
+     * 
      * @param asset
      *                 The asset from which media data is to be read.
      * @param outError
@@ -209,6 +211,8 @@ public class AVAssetReader extends NSObject {
      * This method throws an exception if the output has already been added to an AVAssetReader or if reading has
      * started (`status` has progressed beyond AVAssetReaderStatusUnknown).
      * 
+     * API-Since: 4.1
+     * 
      * @param output
      *               The AVAssetReaderOutput object to be added.
      */
@@ -223,6 +227,8 @@ public class AVAssetReader extends NSObject {
      * 
      * The value of this property is an AVAsset. Concrete instances of AVAssetReader that are created with specific
      * AVAssetTrack instances must obtain those tracks from the asset returned by this property.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -236,6 +242,8 @@ public class AVAssetReader extends NSObject {
      * 
      * An output that reads from a track of an asset other than the asset used to initialize the receiver cannot be
      * added.
+     * 
+     * API-Since: 4.1
      * 
      * @param output
      *               The AVAssetReaderOutput object to be tested.
@@ -255,6 +263,8 @@ public class AVAssetReader extends NSObject {
      * this method to stop any background read ahead operations that the may have been in progress.
      * 
      * This method should not be called concurrently with any calls to -[AVAssetReaderOutput copyNextSampleBuffer].
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("cancelReading")
@@ -268,6 +278,8 @@ public class AVAssetReader extends NSObject {
      * The value of this property is an NSError that describes what caused the receiver to no longer be able to read its
      * asset. If the receiver's status is not AVAssetReaderStatusFailed, the value of this property is nil. This
      * property is thread safe.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -285,6 +297,8 @@ public class AVAssetReader extends NSObject {
      * 
      * If the specified asset belongs to a mutable subclass of AVAsset, AVMutableComposition or AVMutableMovie, the
      * results of any asset reading operation are undefined if you mutate the asset after invoking -startReading.
+     * 
+     * API-Since: 4.1
      * 
      * @param asset
      *                 The asset from which media data is to be read.
@@ -306,6 +320,8 @@ public class AVAssetReader extends NSObject {
      * 
      * The value of this property is an NSArray containing concrete instances of AVAssetReaderOutput. Outputs can be
      * added to the receiver using the addOutput: method.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -323,6 +339,8 @@ public class AVAssetReader extends NSObject {
      * CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity).
      * 
      * This property throws an exception if a value is set after reading has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setTimeRange:")
@@ -342,6 +360,8 @@ public class AVAssetReader extends NSObject {
      * This method throws an exception if reading has already started (`status` has progressed beyond
      * AVAssetReaderStatusUnknown).
      * 
+     * API-Since: 4.1
+     * 
      * @return
      *         A BOOL indicating whether reading could be started.
      */
@@ -358,6 +378,8 @@ public class AVAssetReader extends NSObject {
      * successfully, has been canceled, or has failed. Clients of AVAssetReaderOutput objects should check the value of
      * this property after -[AVAssetReaderOutput copyNextSampleBuffer] returns NULL to determine why no more samples
      * could be read. This property is thread safe.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("status")
@@ -375,6 +397,8 @@ public class AVAssetReader extends NSObject {
      * CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity).
      * 
      * This property throws an exception if a value is set after reading has started.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("timeRange")

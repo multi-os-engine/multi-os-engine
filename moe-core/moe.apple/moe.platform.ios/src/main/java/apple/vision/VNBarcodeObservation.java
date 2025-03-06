@@ -73,6 +73,8 @@ public class VNBarcodeObservation extends VNRectangleObservation {
 
     /**
      * An object that provides symbology-specific data for the barcode.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -155,6 +157,8 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     /**
      * The string representation of the barcode's payload. Depending on the symbology of the barcode and/or the payload
      * data itself, a string representation of the payload may not be available.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -189,6 +193,8 @@ public class VNBarcodeObservation extends VNRectangleObservation {
 
     /**
      * The symbology of the detected barcode.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

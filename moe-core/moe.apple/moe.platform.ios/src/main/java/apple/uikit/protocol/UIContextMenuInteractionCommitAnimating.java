@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIContextMenuInteractionCommitAnimating extends UIContextMenuInteractionAnimating {
     /**
      * Preferred animation style for the menu's commit action. Triggered when the user taps the preview.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredCommitStyle")
@@ -26,6 +28,8 @@ public interface UIContextMenuInteractionCommitAnimating extends UIContextMenuIn
 
     /**
      * Preferred animation style for the menu's commit action. Triggered when the user taps the preview.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredCommitStyle:")

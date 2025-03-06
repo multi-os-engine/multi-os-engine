@@ -38,6 +38,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.mapkit.MKSelectionAccessory;
 
 @Generated
 @Library("MapKit")
@@ -318,6 +319,29 @@ public interface MKMapViewDelegate {
     @Selector("mapView:didSelectAnnotation:")
     default void mapViewDidSelectAnnotation(@NotNull MKMapView mapView,
             @NotNull @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Specifies the accessory to display for a selected annotation
+     * 
+     * Called for all selected annotations. Not all types of annotations
+     * currently support displaying selection accessories. Please return `nil`
+     * for annotations where a selection accessory is not desired.
+     * 
+     * No accessory will be displayed if...
+     * - `nil` is returned
+     * - `- mapView:selectionAccessoryForAnnotation:` is not implemented
+     * - the accessory returned is not supported for `annotation`
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapView:selectionAccessoryForAnnotation:")
+    @Nullable
+    default MKSelectionAccessory mapViewSelectionAccessoryForAnnotation(@NotNull MKMapView mapView,
+            @Mapped(ObjCObjectMapper.class) @NotNull MKAnnotation annotation) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

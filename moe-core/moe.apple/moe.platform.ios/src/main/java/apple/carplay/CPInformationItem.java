@@ -91,6 +91,9 @@ public class CPInformationItem extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("detail")
@@ -118,6 +121,8 @@ public class CPInformationItem extends NSObject implements NSSecureCoding {
      * 
      * @param title  An optional string that will be styled by the template as the title text of the item.
      * @param detail An optional string that will be styled by the template as the detail text of the item.
+     * 
+     *               API-Since: 14.0
      */
     @Generated
     @Selector("initWithTitle:detail:")
@@ -176,6 +181,9 @@ public class CPInformationItem extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("title")

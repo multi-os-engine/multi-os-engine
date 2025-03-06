@@ -90,6 +90,8 @@ public class CLSObject extends NSObject implements NSSecureCoding {
 
     /**
      * The date this object was created.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -98,6 +100,8 @@ public class CLSObject extends NSObject implements NSSecureCoding {
 
     /**
      * The date this object was last modified.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated

@@ -69,6 +69,8 @@ public class MXUnitSignalBars extends NSDimension {
 
     /**
      * Base unit - bars
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

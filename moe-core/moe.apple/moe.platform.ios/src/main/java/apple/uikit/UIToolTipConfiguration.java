@@ -84,6 +84,8 @@ public class UIToolTipConfiguration extends NSObject {
 
     /**
      * Creates a UIToolTipConfiguration with the provided string, applied to the entire view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("configurationWithToolTip:")
@@ -91,6 +93,8 @@ public class UIToolTipConfiguration extends NSObject {
 
     /**
      * Creates a UIToolTipConfiguration with the provided string, applied to the specified region.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("configurationWithToolTip:inRect:")
@@ -156,6 +160,8 @@ public class UIToolTipConfiguration extends NSObject {
     /**
      * The rectangle containing the contents being annotated by the tool tip. Value is CGRectNull if the tool tip
      * applies to the entire view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sourceRect")
@@ -168,6 +174,8 @@ public class UIToolTipConfiguration extends NSObject {
 
     /**
      * The string to annotate the contents at a given point.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

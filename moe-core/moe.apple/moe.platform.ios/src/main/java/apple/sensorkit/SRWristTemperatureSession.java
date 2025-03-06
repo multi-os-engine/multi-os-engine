@@ -106,6 +106,9 @@ public class SRWristTemperatureSession extends NSObject implements NSCopying, NS
      * [@property] duration
      * 
      * Precise number of seconds temperatures were collected.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("duration")
@@ -171,6 +174,9 @@ public class SRWristTemperatureSession extends NSObject implements NSCopying, NS
      * [@property] startDate
      * 
      * Indicates when temperatures were collected.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("startDate")
@@ -195,6 +201,9 @@ public class SRWristTemperatureSession extends NSObject implements NSCopying, NS
      * [@property] temperatures
      * 
      * Enumerator which could be used to view calculated wrist temperatures, along with their reading accuracy.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("temperatures")
@@ -210,6 +219,9 @@ public class SRWristTemperatureSession extends NSObject implements NSCopying, NS
      * [@property] version
      * 
      * Algorithm version.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("version")

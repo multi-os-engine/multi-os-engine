@@ -56,6 +56,8 @@ public class ENManager extends NSObject {
     /**
      * Activates the object to prepare it for use. Properties may not be usable until the completion handler reports
      * success.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("activateWithCompletionHandler:")
@@ -66,7 +68,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_activateWithCompletionHandler {
         @Generated
-        void call_activateWithCompletionHandler(@Nullable NSError arg0);
+        void call_activateWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -86,7 +88,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_activityHandler_ret {
         @Generated
-        void call_activityHandler_ret(int arg0);
+        void call_activityHandler_ret(int activityFlags);
     }
 
     @Generated
@@ -102,6 +104,8 @@ public class ENManager extends NSObject {
     /**
      * Reports the current authorization status of the app.
      * Apps can use this property to preflight authorization in order to determine if the user will be prompted.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("authorizationStatus")
@@ -159,14 +163,16 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_detectExposuresWithConfigurationCompletionHandler {
         @Generated
-        void call_detectExposuresWithConfigurationCompletionHandler(@Nullable ENExposureDetectionSummary arg0,
-                @Nullable NSError arg1);
+        void call_detectExposuresWithConfigurationCompletionHandler(@Nullable ENExposureDetectionSummary summary,
+                @Nullable NSError error);
     }
 
     /**
      * Detects exposures using the specified configuration to control the scoring algorithm and URLs to specify the
      * files containing diagnosis keys the app has downloaded. The diagnosis key files must be signed appropriately.
      * When the app's ENAPIVersion is 2 or higher, keys already known to the system are included in the analysis.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -180,7 +186,7 @@ public class ENManager extends NSObject {
     public interface Block_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler {
         @Generated
         void call_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler(
-                @Nullable ENExposureDetectionSummary arg0, @Nullable NSError arg1);
+                @Nullable ENExposureDetectionSummary summary, @Nullable NSError error);
     }
 
     /**
@@ -198,7 +204,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_diagnosisKeysAvailableHandler_ret {
         @Generated
-        void call_diagnosisKeysAvailableHandler_ret(@NotNull NSArray<? extends ENTemporaryExposureKey> arg0);
+        void call_diagnosisKeysAvailableHandler_ret(@NotNull NSArray<? extends ENTemporaryExposureKey> keys);
     }
 
     /**
@@ -206,6 +212,8 @@ public class ENManager extends NSObject {
      * This will be NO until activateWithCompletionHandler has completed successfully.
      * Note that even if it's enabled, it may be inactive for other reasons, such as Bluetooth being turned off.
      * The exposureNotificationStatus property can be monitored for the overall status of Exposure Notification.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("exposureNotificationEnabled")
@@ -213,6 +221,8 @@ public class ENManager extends NSObject {
 
     /**
      * Overall status of Exposure Notification. KVO may be used to monitor for changes.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("exposureNotificationStatus")
@@ -222,6 +232,8 @@ public class ENManager extends NSObject {
     /**
      * Requests the temporary exposure keys used by this device to share with a server.
      * Each use of this API will present the user with system UI to authorize it.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("getDiagnosisKeysWithCompletionHandler:")
@@ -232,8 +244,8 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_getDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_getDiagnosisKeysWithCompletionHandler(@Nullable NSArray<? extends ENTemporaryExposureKey> arg0,
-                @Nullable NSError arg1);
+        void call_getDiagnosisKeysWithCompletionHandler(@Nullable NSArray<? extends ENTemporaryExposureKey> keys,
+                @Nullable NSError error);
     }
 
     /**
@@ -258,7 +270,7 @@ public class ENManager extends NSObject {
     public interface Block_getExposureInfoFromSummaryUserExplanationCompletionHandler {
         @Generated
         void call_getExposureInfoFromSummaryUserExplanationCompletionHandler(
-                @Nullable NSArray<? extends ENExposureInfo> arg0, @Nullable NSError arg1);
+                @Nullable NSArray<? extends ENExposureInfo> exposures, @Nullable NSError error);
     }
 
     /**
@@ -276,8 +288,8 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_getExposureWindowsFromSummaryCompletionHandler {
         @Generated
-        void call_getExposureWindowsFromSummaryCompletionHandler(@Nullable NSArray<? extends ENExposureWindow> arg0,
-                @Nullable NSError arg1);
+        void call_getExposureWindowsFromSummaryCompletionHandler(
+                @Nullable NSArray<? extends ENExposureWindow> exposureWindows, @Nullable NSError error);
     }
 
     /**
@@ -286,6 +298,8 @@ public class ENManager extends NSObject {
      * WARNING: This API is only for use by developers. It requires a special entitlement that is not allowed in the app
      * store.
      * It's only intended to allow developers to test without needing to wait 24 hours for a key to be released.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("getTestDiagnosisKeysWithCompletionHandler:")
@@ -296,8 +310,8 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_getTestDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_getTestDiagnosisKeysWithCompletionHandler(@Nullable NSArray<? extends ENTemporaryExposureKey> arg0,
-                @Nullable NSError arg1);
+        void call_getTestDiagnosisKeysWithCompletionHandler(@Nullable NSArray<? extends ENTemporaryExposureKey> keys,
+                @Nullable NSError error);
     }
 
     /**
@@ -314,7 +328,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_getUserTraveledWithCompletionHandler {
         @Generated
-        void call_getUserTraveledWithCompletionHandler(boolean arg0, @Nullable NSError arg1);
+        void call_getUserTraveledWithCompletionHandler(boolean traveled, @Nullable NSError error);
     }
 
     @Generated
@@ -343,6 +357,8 @@ public class ENManager extends NSObject {
      * Stops any outstanding operations and invalidates this object. Once this is called, the object can no longer be
      * used.
      * To start using ENManager again, a new instance of the class must be created and activated.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("invalidate")
@@ -351,6 +367,8 @@ public class ENManager extends NSObject {
     /**
      * Invoked exactly once when invalidation completes. This property is cleared before it's invoked to break retain
      * cycles.
+     * 
+     * API-Since: 12.5
      */
     @Nullable
     @Generated
@@ -396,7 +414,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_preAuthorizeDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_preAuthorizeDiagnosisKeysWithCompletionHandler(@Nullable NSError arg0);
+        void call_preAuthorizeDiagnosisKeysWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -415,7 +433,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_requestPreAuthorizedDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_requestPreAuthorizedDiagnosisKeysWithCompletionHandler(@Nullable NSError arg0);
+        void call_requestPreAuthorizedDiagnosisKeysWithCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
@@ -442,7 +460,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_setActivityHandler {
         @Generated
-        void call_setActivityHandler(int arg0);
+        void call_setActivityHandler(int activityFlags);
     }
 
     /**
@@ -459,7 +477,7 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_setDiagnosisKeysAvailableHandler {
         @Generated
-        void call_setDiagnosisKeysAvailableHandler(@NotNull NSArray<? extends ENTemporaryExposureKey> arg0);
+        void call_setDiagnosisKeysAvailableHandler(@NotNull NSArray<? extends ENTemporaryExposureKey> keys);
     }
 
     /**
@@ -467,6 +485,8 @@ public class ENManager extends NSObject {
      * If not previously authorized, this shows a user dialog for consent to enable Exposure Notification.
      * Note: Disabling stops Bluetooth advertising and scanning related to Exposure Notification, but the
      * Diagnosis Keys and data will remain.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setExposureNotificationEnabled:completionHandler:")
@@ -477,12 +497,14 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_setExposureNotificationEnabledCompletionHandler {
         @Generated
-        void call_setExposureNotificationEnabledCompletionHandler(@Nullable NSError arg0);
+        void call_setExposureNotificationEnabledCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * Invoked exactly once when invalidation completes. This property is cleared before it's invoked to break retain
      * cycles.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setInvalidationHandler:")

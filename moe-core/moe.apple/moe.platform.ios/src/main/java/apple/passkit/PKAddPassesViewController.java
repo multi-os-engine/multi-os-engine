@@ -182,6 +182,9 @@ public class PKAddPassesViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -204,6 +207,8 @@ public class PKAddPassesViewController extends UIViewController {
     /**
      * controller should be presented with -presentViewController:animated:completion:
      * pass should be a pass you want the user to add.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("initWithPass:")
@@ -216,11 +221,17 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("initWithPasses:")
     public native PKAddPassesViewController initWithPasses(@NotNull NSArray<? extends PKPass> passes);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) PKAddPassesViewControllerDelegate value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PKAddPassesViewControllerDelegate value) {
         Object __old = delegate();

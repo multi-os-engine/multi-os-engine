@@ -52,6 +52,8 @@ public class ASAuthorizationPublicKeyCredentialParameters extends NSObject imple
 
     /**
      * A COSE algorithm indentifier.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("algorithm")
@@ -121,6 +123,9 @@ public class ASAuthorizationPublicKeyCredentialParameters extends NSObject imple
     @Selector("init")
     public native ASAuthorizationPublicKeyCredentialParameters init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAlgorithm:")
     public native ASAuthorizationPublicKeyCredentialParameters initWithAlgorithm(@NInt long algorithm);

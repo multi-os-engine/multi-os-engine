@@ -135,6 +135,9 @@ public class MDLLightProbe extends MDLLight {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("lightProbeWithTextureSize:forLocation:lightsToConsider:objectsToConsider:reflectiveCubemap:irradianceCubemap:")
@@ -183,6 +186,9 @@ public class MDLLightProbe extends MDLLight {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("generateSphericalHarmonicsFromIrradiance:")
     public native void generateSphericalHarmonicsFromIrradiance(@NUInt long sphericalHarmonicsLevel);
@@ -191,26 +197,41 @@ public class MDLLightProbe extends MDLLight {
     @Selector("init")
     public native MDLLightProbe init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithReflectiveTexture:irradianceTexture:")
     public native MDLLightProbe initWithReflectiveTextureIrradianceTexture(@Nullable MDLTexture reflectiveTexture,
             @Nullable MDLTexture irradianceTexture);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("irradianceTexture")
     public native MDLTexture irradianceTexture();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("reflectiveTexture")
     public native MDLTexture reflectiveTexture();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("sphericalHarmonicsLevel")
     @NUInt

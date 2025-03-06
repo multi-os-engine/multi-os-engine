@@ -64,6 +64,8 @@ public class ASPasskeyRegistrationCredential extends NSObject implements ASAutho
 
     /**
      * The attestation object for this passkey registration result.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("attestationObject")
@@ -97,6 +99,8 @@ public class ASPasskeyRegistrationCredential extends NSObject implements ASAutho
 
     /**
      * The hash of the client data for this registration result.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("clientDataHash")
@@ -112,6 +116,8 @@ public class ASPasskeyRegistrationCredential extends NSObject implements ASAutho
 
     /**
      * The raw credential identifier of this passkey.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("credentialID")
@@ -121,10 +127,12 @@ public class ASPasskeyRegistrationCredential extends NSObject implements ASAutho
     /**
      * Creates and initializes an ASPasskeyRegistrationCredential object.
      * 
-     * @param relyingParty      the relying party identifier associated with this passkey.
-     * @param clientDataHash    the JSON encoded client data for this registration result.
+     * @param relyingParty      The relying party identifier associated with this passkey.
+     * @param clientDataHash    The JSON encoded client data for this registration result.
      * @param credentialID      The unique identifier for this passkey.
-     * @param attestationObject the attestation object for this passkey registration result.
+     * @param attestationObject The attestation object for this passkey registration result.
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("credentialWithRelyingParty:clientDataHash:credentialID:attestationObject:")
@@ -160,10 +168,12 @@ public class ASPasskeyRegistrationCredential extends NSObject implements ASAutho
     /**
      * Initializes an ASPasskeyRegistrationCredential object.
      * 
-     * @param relyingParty      the relying party identifier associated with this passkey.
-     * @param clientDataHash    the JSON encoded client data for this registration result.
+     * @param relyingParty      The relying party identifier associated with this passkey.
+     * @param clientDataHash    The JSON encoded client data for this registration result.
      * @param credentialID      The unique identifier for this passkey.
-     * @param attestationObject the attestation object for this passkey registration result.
+     * @param attestationObject The attestation object for this passkey registration result.
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("initWithRelyingParty:clientDataHash:credentialID:attestationObject:")
@@ -200,6 +210,8 @@ public class ASPasskeyRegistrationCredential extends NSObject implements ASAutho
 
     /**
      * The relying party identifier associated with this passkey.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("relyingParty")
@@ -241,4 +253,41 @@ public class ASPasskeyRegistrationCredential extends NSObject implements ASAutho
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The outputs for WebAuthn extensions processed by the credential provider.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("extensionOutput")
+    @Nullable
+    public native ASPasskeyRegistrationCredentialExtensionOutput extensionOutput();
+
+    /**
+     * Initializes an ASPasskeyRegistrationCredential object.
+     * 
+     * @param relyingParty      The relying party identifier associated with this passkey.
+     * @param clientDataHash    The JSON encoded client data for this registration result.
+     * @param credentialID      The unique identifier for this passkey.
+     * @param attestationObject The attestation object for this passkey registration result.
+     * @param extensionOutput   The output of WebAuthn extensions processed by the credential provider.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithRelyingParty:clientDataHash:credentialID:attestationObject:extensionOutput:")
+    public native ASPasskeyRegistrationCredential initWithRelyingPartyClientDataHashCredentialIDAttestationObjectExtensionOutput(
+            @NotNull String relyingParty, @NotNull NSData clientDataHash, @NotNull NSData credentialID,
+            @NotNull NSData attestationObject,
+            @Nullable ASPasskeyRegistrationCredentialExtensionOutput extensionOutput);
+
+    /**
+     * The outputs for WebAuthn extensions processed by the credential provider.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setExtensionOutput:")
+    public native void setExtensionOutput(@Nullable ASPasskeyRegistrationCredentialExtensionOutput value);
 }

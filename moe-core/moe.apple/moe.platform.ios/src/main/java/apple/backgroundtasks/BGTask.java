@@ -112,6 +112,8 @@ public class BGTask extends NSObject {
      * 
      * The handler may be called before the background process uses the full amount of its
      * allocated time.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -136,6 +138,8 @@ public class BGTask extends NSObject {
      * 
      * The identifier is the same as the one used to register the launch handler in
      * ``BGTaskScheduler/registerForTaskWithIdentifier:usingQueue:launchHandler:``.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -201,6 +205,8 @@ public class BGTask extends NSObject {
      * 
      * The handler may be called before the background process uses the full amount of its
      * allocated time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setExpirationHandler:")
@@ -227,6 +233,8 @@ public class BGTask extends NSObject {
      * 
      * - Parameters:
      * - success: A `Boolean` indicating if the task completed successfully or not.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTaskCompletedWithSuccess:")

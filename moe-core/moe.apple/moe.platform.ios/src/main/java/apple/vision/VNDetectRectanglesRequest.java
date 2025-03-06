@@ -132,6 +132,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumAspectRatio")
@@ -140,6 +142,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies the maximum number of rectangles to be returned. The default is 1. Setting this property to 0 will
      * allow an unlimited number of observations to be returned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumObservations")
@@ -148,6 +152,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumAspectRatio")
@@ -156,6 +162,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score
      * will not be returned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumConfidence")
@@ -164,6 +172,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range
      * [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumSize")
@@ -177,6 +187,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45],
      * default 30
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("quadratureTolerance")
@@ -192,6 +204,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumAspectRatio:")
@@ -200,6 +214,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies the maximum number of rectangles to be returned. The default is 1. Setting this property to 0 will
      * allow an unlimited number of observations to be returned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumObservations:")
@@ -207,6 +223,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumAspectRatio:")
@@ -215,6 +233,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score
      * will not be returned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumConfidence:")
@@ -223,6 +243,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range
      * [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumSize:")
@@ -231,6 +253,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     /**
      * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45],
      * default 30
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setQuadratureTolerance:")
@@ -266,6 +290,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * VNRectangleObservation results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

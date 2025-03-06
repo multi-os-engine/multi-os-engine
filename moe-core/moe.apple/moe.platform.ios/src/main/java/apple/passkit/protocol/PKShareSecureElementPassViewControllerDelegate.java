@@ -27,6 +27,8 @@ public interface PKShareSecureElementPassViewControllerDelegate {
      * Upon a successful share the share URL will be returned to be sent over an internal messaging channel.
      * In an activation code was attached to the share it will also be returned. It it is up to the delegate
      * to show the user the activationCode so that the recipient can successfully redeem the share.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @IsOptional
@@ -41,6 +43,8 @@ public interface PKShareSecureElementPassViewControllerDelegate {
      * Called once the share pass flow finishes.
      * 
      * The delegate is responsible for dismissing the view controller in this method.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("shareSecureElementPassViewController:didFinishWithResult:")

@@ -172,6 +172,7 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @NInt
     public static native long version_static();
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("allocator")
@@ -195,7 +196,12 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
      * 
      * Many GLKMeshBuffers may reference the same OpenGL buffer object, but each with its own offset. (i.e. Many
      * GLKMeshBuffers may be suballocated from a single OpenGL buffer object)
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("glBufferName")
     public native int glBufferName();
@@ -204,6 +210,7 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Selector("init")
     public native GLKMeshBuffer init();
 
+    @Deprecated
     @Generated
     @Selector("length")
     @NUInt
@@ -218,17 +225,24 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
      * [@property] offset
      * 
      * Byte offset of the data within the OpenGL buffer
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
 
+    @Deprecated
     @Generated
     @Selector("type")
     @NUInt
     public native long type();
 
+    @Deprecated
     @Nullable
     @Generated
     @Selector("zone")

@@ -84,6 +84,8 @@ public class CKSyncEngineAccountChangeEvent extends CKSyncEngineEvent {
 
     /**
      * The type of account change that occurred.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("changeType")
@@ -105,6 +107,8 @@ public class CKSyncEngineAccountChangeEvent extends CKSyncEngineEvent {
      * 
      * If the user just signed in or switched accounts, this will be the new user record ID.
      * If the user signed out, this will be `nil`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("currentUser")
@@ -160,6 +164,8 @@ public class CKSyncEngineAccountChangeEvent extends CKSyncEngineEvent {
      * 
      * If the user just signed in, this will be `nil`.
      * If the user signed out or switched accounts, this will be the old account.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("previousUser")

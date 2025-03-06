@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.accessorysetupkit.ASAccessory;
 
 /**
  * [@interface] NEHotspotConfigurationManager
@@ -69,7 +70,7 @@ public class NEHotspotConfigurationManager extends NSObject {
      * 
      * @param configuration     NEHotspotConfiguration object containing the Wi-Fi network configuration.
      * @param completionHandler A block that will be called when add/update operation is completed.
-     *                          This could be nil if application does not intend to receive the result.
+     *                          Pass nil if application does not intend to receive the result.
      *                          The NSError passed to this block will be nil if the configuration is successfully
      *                          stored, non-nil otherwise.
      *                          If the configuration is found invalid or API encounters some other error then
@@ -222,6 +223,9 @@ public class NEHotspotConfigurationManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("sharedManager")
@@ -240,4 +244,68 @@ public class NEHotspotConfigurationManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * joinAccessoryHotspot:
+     * 
+     * This function performs a one-time join of a Wi-Fi network configuration defined by an ASAccessory.
+     * This function implicitly sets joinOnce to YES. The network must support WPA/WPA2/WPA3 Personal security type.
+     * 
+     * @param accessory         Object of type ASAccessory class.
+     *                          This parameter is required to specify the Accessory Wi-Fi network.
+     * @param passphrase        The required passphrase credential.
+     *                          The passphrase with a length between 8 and 63 characters to join WPA/WPA2/WPA3 Personal
+     *                          networks.
+     * @param completionHandler A block that will be called when join operation is completed.
+     *                          Pass nil if application does not intend to receive the result.
+     *                          The NSError passed to this block will be nil if the hotspot is successfully joined,
+     *                          non-nil otherwise.
+     *                          If the configuration is found to be invalid or some other error is encountered then the
+     *                          completionHandler
+     *                          block is executed with with an instance of NSError containing an appropriate error code.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @Selector("joinAccessoryHotspot:passphrase:completionHandler:")
+    public native void joinAccessoryHotspotPassphraseCompletionHandler(@NotNull ASAccessory accessory,
+            @NotNull String passphrase,
+            @ObjCBlock(name = "call_joinAccessoryHotspotPassphraseCompletionHandler") @Nullable Block_joinAccessoryHotspotPassphraseCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_joinAccessoryHotspotPassphraseCompletionHandler {
+        @Generated
+        void call_joinAccessoryHotspotPassphraseCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * joinAccessoryHotspotWithoutSecurity:
+     * 
+     * This function performs a one-time join of an open Wi-Fi network configuration defined by an ASAccessory.
+     * This function implicitly sets joinOnce to YES.
+     * 
+     * @param accessory         Object of type ASAccessory class.
+     *                          This parameter is required to specify the Accessory Wi-Fi network.
+     * @param completionHandler A block that will be called when join operation is completed.
+     *                          Pass nil if application does not intend to receive the result.
+     *                          The NSError passed to this block will be nil if the hotspot is successfully joined,
+     *                          non-nil otherwise.
+     *                          If the configuration is found to be invalid or some other error is encountered then the
+     *                          completionHandler
+     *                          block is executed with with an instance of NSError containing an appropriate error code.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @Selector("joinAccessoryHotspotWithoutSecurity:completionHandler:")
+    public native void joinAccessoryHotspotWithoutSecurityCompletionHandler(@NotNull ASAccessory accessory,
+            @ObjCBlock(name = "call_joinAccessoryHotspotWithoutSecurityCompletionHandler") @Nullable Block_joinAccessoryHotspotWithoutSecurityCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_joinAccessoryHotspotWithoutSecurityCompletionHandler {
+        @Generated
+        void call_joinAccessoryHotspotWithoutSecurityCompletionHandler(@Nullable NSError error);
+    }
 }

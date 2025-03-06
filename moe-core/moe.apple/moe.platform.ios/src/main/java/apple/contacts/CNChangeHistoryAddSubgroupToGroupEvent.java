@@ -92,6 +92,9 @@ public class CNChangeHistoryAddSubgroupToGroupEvent extends CNChangeHistoryEvent
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("group")
@@ -149,6 +152,9 @@ public class CNChangeHistoryAddSubgroupToGroupEvent extends CNChangeHistoryEvent
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("subgroup")

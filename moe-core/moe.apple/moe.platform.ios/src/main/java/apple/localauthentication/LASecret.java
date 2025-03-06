@@ -129,6 +129,8 @@ public class LASecret extends NSObject {
      * 
      * @param handler Completion handler invoked with a generic secret stored along with the right or an error if no
      *                secret is found or the fetch operation fails.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("loadDataWithCompletion:")

@@ -183,7 +183,12 @@ public class GKPeerPickerController extends NSObject {
      * type. The delegate receives a -peerPickerController:didSelectConnectionType: callback when the user selects a
      * connection type. If desired, this property should be set prior to calling -show, and should not be set while the
      * picker is visible.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework.
      */
+    @Deprecated
     @Generated
     @Selector("connectionTypesMask")
     @NUInt
@@ -205,7 +210,12 @@ public class GKPeerPickerController extends NSObject {
 
     /**
      * Dismiss the picker.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework.
      */
+    @Deprecated
     @Generated
     @Selector("dismiss")
     public native void dismiss();
@@ -214,6 +224,12 @@ public class GKPeerPickerController extends NSObject {
     @Selector("init")
     public native GKPeerPickerController init();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework.
+     */
+    @Deprecated
     @Generated
     @Selector("isVisible")
     public native boolean isVisible();
@@ -228,7 +244,12 @@ public class GKPeerPickerController extends NSObject {
      * type. The delegate receives a -peerPickerController:didSelectConnectionType: callback when the user selects a
      * connection type. If desired, this property should be set prior to calling -show, and should not be set while the
      * picker is visible.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework.
      */
+    @Deprecated
     @Generated
     @Selector("setConnectionTypesMask:")
     public native void setConnectionTypesMask(@NUInt long value);
@@ -268,7 +289,12 @@ public class GKPeerPickerController extends NSObject {
 
     /**
      * Show the picker.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework.
      */
+    @Deprecated
     @Generated
     @Selector("show")
     public native void show();

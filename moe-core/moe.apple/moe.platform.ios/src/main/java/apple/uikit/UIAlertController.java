@@ -65,6 +65,9 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("alertControllerWithTitle:message:preferredStyle:")
     public static native UIAlertController alertControllerWithTitleMessagePreferredStyle(@Nullable String title,
@@ -175,15 +178,24 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("actions")
     public native NSArray<? extends UIAlertAction> actions();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("addAction:")
     public native void addAction(@NotNull UIAlertAction action);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("addTextFieldWithConfigurationHandler:")
     public native void addTextFieldWithConfigurationHandler(
@@ -202,6 +214,9 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     public native UIAlertController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("message")
@@ -215,11 +230,17 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("preferredAction")
     public native UIAlertAction preferredAction();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("preferredStyle")
     @NInt
     public native long preferredStyle();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(@Nullable String value);
@@ -231,15 +252,24 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("setPreferredAction:")
     public native void setPreferredAction(@Nullable UIAlertAction value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@Nullable String value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("textFields")
     public native NSArray<? extends UITextField> textFields();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("title")

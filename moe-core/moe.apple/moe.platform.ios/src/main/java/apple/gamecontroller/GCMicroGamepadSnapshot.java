@@ -177,19 +177,47 @@ public class GCMicroGamepadSnapshot extends GCMicroGamepad {
     @Selector("init")
     public native GCMicroGamepadSnapshot init();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithController:snapshotData:")
     public native GCMicroGamepadSnapshot initWithControllerSnapshotData(@NotNull GCController controller,
             @NotNull NSData data);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithSnapshotData:")
     public native GCMicroGamepadSnapshot initWithSnapshotData(@NotNull NSData data);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("setSnapshotData:")
     public native void setSnapshotData(@NotNull NSData value);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
+     * instead
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("snapshotData")

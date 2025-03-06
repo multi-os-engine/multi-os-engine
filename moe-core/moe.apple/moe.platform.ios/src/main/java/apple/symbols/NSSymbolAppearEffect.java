@@ -65,6 +65,8 @@ public class NSSymbolAppearEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer for an appear effect that appears scaling down.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("appearDownEffect")
@@ -73,6 +75,8 @@ public class NSSymbolAppearEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer for an appear effect that appears scaling up.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("appearUpEffect")
@@ -114,6 +118,8 @@ public class NSSymbolAppearEffect extends NSSymbolEffect {
 
     /**
      * The default appear effect, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -121,6 +127,8 @@ public class NSSymbolAppearEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates incrementally, by layer.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithByLayer")
@@ -129,6 +137,8 @@ public class NSSymbolAppearEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates all layers of the symbol simultaneously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithWholeSymbol")

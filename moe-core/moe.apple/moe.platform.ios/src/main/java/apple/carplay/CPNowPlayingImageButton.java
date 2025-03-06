@@ -105,6 +105,8 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
      * 
      * Animated images are not supported. If an animated image is assigned, only the first image will be used. If an
      * empty or zero-size image is provided, a system placeholder glyph will be displayed instead.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -128,6 +130,8 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
      * Initialize a button with a custom image.
      * 
      * Provided image should be dark variant and will be recolored.
+     * 
+     * API-Since: 14.0
      * 
      * @param image   A custom image for this button. The maximum image size is CPNowPlayingButtonMaximumImageSize;
      *                larger images will be scaled down.

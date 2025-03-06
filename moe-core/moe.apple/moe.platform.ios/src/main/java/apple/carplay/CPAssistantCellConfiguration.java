@@ -64,6 +64,8 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
 
     /**
      * The action that Siri will perform when users select the assistant cell.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("assistantAction")
@@ -123,6 +125,8 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
     /**
      * Initialize an Assistant Cell Configuration with a position, visibility, and action representing the SiriKit
      * intent that should be invoked when users select the assistant cell.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithPosition:visibility:assistantAction:")
@@ -160,6 +164,8 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
      * The position of the Assistant Cell.
      * 
      * [@note] The default value of this property is @c CPAssistantCellPositionTop.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("position")
@@ -201,6 +207,8 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
      * The visibility of the Assistant Cell.
      * 
      * [@note] The default value of this property is @c CPAssistantCellVisibilityOff.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("visibility")

@@ -47,6 +47,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The ad campaign identifier.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -55,6 +57,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The description of the ad.
+     * 
+     * API-Since: 14.5
      */
     @Nullable
     @Generated
@@ -63,6 +67,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The nonce used to generate the signature.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -71,6 +77,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The identifier for the ad network.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -79,6 +87,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * Name of entity that purchased the ad being presented.
+     * 
+     * API-Since: 14.5
      */
     @Nullable
     @Generated
@@ -87,6 +97,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The type of ad being presented.
+     * 
+     * API-Since: 14.5
      */
     @Nullable
     @Generated
@@ -95,6 +107,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The App Store item identifier for the app being advertised.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -190,6 +204,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The ad campaign identifier.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setAdCampaignIdentifier:")
@@ -197,6 +213,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The description of the ad.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setAdDescription:")
@@ -204,6 +222,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The nonce used to generate the signature.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setAdImpressionIdentifier:")
@@ -211,6 +231,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The identifier for the ad network.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setAdNetworkIdentifier:")
@@ -218,6 +240,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * Name of entity that purchased the ad being presented.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setAdPurchaserName:")
@@ -225,6 +249,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The type of ad being presented.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setAdType:")
@@ -232,6 +258,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The App Store item identifier for the app being advertised.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setAdvertisedAppStoreItemIdentifier:")
@@ -239,6 +267,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The signature of the impression.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setSignature:")
@@ -246,6 +276,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The App Store item identifier for the source app.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setSourceAppStoreItemIdentifier:")
@@ -253,6 +285,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The timestamp of the start and end call.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setTimestamp:")
@@ -260,6 +294,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The version of SKAdNetwork being used.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setVersion:")
@@ -267,6 +303,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The signature of the impression.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -275,6 +313,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The App Store item identifier for the source app.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -287,6 +327,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The timestamp of the start and end call.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -295,6 +337,8 @@ public class SKAdImpression extends NSObject {
 
     /**
      * The version of SKAdNetwork being used.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated

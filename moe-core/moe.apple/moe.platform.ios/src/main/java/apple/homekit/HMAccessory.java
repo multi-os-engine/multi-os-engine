@@ -195,6 +195,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Delegate object that receives updates on the state of the accessory.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -240,18 +242,29 @@ public class HMAccessory extends NSObject {
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("identifyWithCompletionHandler:")
     public native void identifyWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_identifyWithCompletionHandler") Block_identifyWithCompletionHandler completion);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: HMAccessory objects are created by their parent container objects. Directly creating them is
+     * not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMAccessory init();
 
     /**
      * TRUE if the accessory is blocked, FALSE otherwise.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isBlocked")
@@ -262,6 +275,8 @@ public class HMAccessory extends NSObject {
      * the accessory cannot be removed from the home directly. Only the bridge that owns
      * this accessory can be removed and removing the bridge will remove this accessory
      * from the home.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isBridged")
@@ -269,6 +284,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * TRUE if the accessory is currently reachable, FALSE otherwise.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isReachable")
@@ -279,6 +296,8 @@ public class HMAccessory extends NSObject {
      * 
      * Returns the accessory's name that is associated with HomeKit. The initial value is the name
      * provided by the accessory information service of the accessory.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -287,6 +306,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Room containing the accessory.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -295,6 +316,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Array of HMService objects that represent all the services provided by the accessory.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -303,6 +326,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Delegate object that receives updates on the state of the accessory.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -310,6 +335,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Delegate object that receives updates on the state of the accessory.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value) {

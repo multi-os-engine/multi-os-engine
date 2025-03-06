@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A batched matrix multiplication layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -99,7 +98,11 @@ public class MLCMatMulLayer extends MLCLayer {
      * [@property] descriptor
      * 
      * The matrix multiplication descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -141,7 +144,11 @@ public class MLCMatMulLayer extends MLCLayer {
      * 
      * @param descriptor A matrix multiply descriptor
      * @return A new layer for matrix multiplication.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:")
     public static native MLCMatMulLayer layerWithDescriptor(@NotNull MLCMatMulDescriptor descriptor);
@@ -167,6 +174,7 @@ public class MLCMatMulLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

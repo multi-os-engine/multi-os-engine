@@ -163,6 +163,9 @@ public class CKDatabaseNotification extends CKNotification {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("databaseScope")
     @NInt

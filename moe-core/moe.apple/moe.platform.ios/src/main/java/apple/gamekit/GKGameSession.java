@@ -117,7 +117,13 @@ public class GKGameSession extends NSObject {
     /**
      * Create a new session with the given title and maximum number of connected players. (You may pass 0 to use the
      * system limit of 16 players.)
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("createSessionInContainer:withTitle:maxConnectedPlayers:completionHandler:")
     public static native void createSessionInContainerWithTitleMaxConnectedPlayersCompletionHandler(
@@ -161,7 +167,13 @@ public class GKGameSession extends NSObject {
 
     /**
      * Load a specific session.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("loadSessionWithIdentifier:completionHandler:")
     public static native void loadSessionWithIdentifierCompletionHandler(@NotNull String identifier,
@@ -169,7 +181,13 @@ public class GKGameSession extends NSObject {
 
     /**
      * Load all sessions involving the current user.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("loadSessionsInContainer:completionHandler:")
     public static native void loadSessionsInContainerCompletionHandler(@Nullable String containerName,
@@ -192,7 +210,13 @@ public class GKGameSession extends NSObject {
 
     /**
      * Remove a session. If called by the owner this deletes the session from the server.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("removeSessionWithIdentifier:completionHandler:")
     public static native void removeSessionWithIdentifierCompletionHandler(@NotNull String identifier,
@@ -219,6 +243,13 @@ public class GKGameSession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("badgedPlayers")
@@ -226,7 +257,13 @@ public class GKGameSession extends NSObject {
 
     /**
      * Clear application badge state for players for this session.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("clearBadgeForPlayers:completionHandler:")
     public native void clearBadgeForPlayersCompletionHandler(@NotNull NSArray<? extends GKCloudPlayer> players,
@@ -234,12 +271,25 @@ public class GKGameSession extends NSObject {
 
     /**
      * Get the URL needed to share this session.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("getShareURLWithCompletionHandler:")
     public native void getShareURLWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_getShareURLWithCompletionHandler") Block_getShareURLWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("identifier")
@@ -249,11 +299,25 @@ public class GKGameSession extends NSObject {
     @Selector("init")
     public native GKGameSession init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("lastModifiedDate")
     public native NSDate lastModifiedDate();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("lastModifiedPlayer")
@@ -261,22 +325,49 @@ public class GKGameSession extends NSObject {
 
     /**
      * Load associated persistent data.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("loadDataWithCompletionHandler:")
     public native void loadDataWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_loadDataWithCompletionHandler") Block_loadDataWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @Generated
     @Selector("maxNumberOfConnectedPlayers")
     @NInt
     public native long maxNumberOfConnectedPlayers();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("owner")
     public native GKCloudPlayer owner();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("players")
@@ -284,7 +375,13 @@ public class GKGameSession extends NSObject {
 
     /**
      * Get the players with the given connection state.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("playersWithConnectionState:")
@@ -297,7 +394,13 @@ public class GKGameSession extends NSObject {
      * this case the data has not been saved. To resolve the conflict a client would call this method again, presumably
      * after merging data or giving the user a choice on how to resolve the conflict. (Note that when calling again it
      * is possible to get a new conflict, if another device has since written a new version.)
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("saveData:completionHandler:")
     public native void saveDataCompletionHandler(@NotNull NSData data,
@@ -305,7 +408,13 @@ public class GKGameSession extends NSObject {
 
     /**
      * Send data to all connected players.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("sendData:withTransportType:completionHandler:")
     public native void sendDataWithTransportTypeCompletionHandler(@NotNull NSData data, @NInt long transport,
@@ -315,7 +424,13 @@ public class GKGameSession extends NSObject {
      * Send a message to any players in the session. This uses an unreliable push mechanism. Message/data delivery is
      * not guaranteed and may take some time to arrive. Receiving players may optionally have their application badged
      * for this session.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("sendMessageWithLocalizedFormatKey:arguments:data:toPlayers:badgePlayers:completionHandler:")
     public native void sendMessageWithLocalizedFormatKeyArgumentsDataToPlayersBadgePlayersCompletionHandler(
@@ -327,12 +442,25 @@ public class GKGameSession extends NSObject {
      * Set your connection state. May fail if you attempt to connect but the connected player limit has already been
      * reached or there are network problems. The session's lastModifiedDate and lastModifiedPlayer will be updated upon
      * completion.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
      */
+    @Deprecated
     @Generated
     @Selector("setConnectionState:completionHandler:")
     public native void setConnectionStateCompletionHandler(@NInt long state,
             @NotNull @ObjCBlock(name = "call_setConnectionStateCompletionHandler") Block_setConnectionStateCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+     * GKTurnBasedMatchmakerViewController.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("title")

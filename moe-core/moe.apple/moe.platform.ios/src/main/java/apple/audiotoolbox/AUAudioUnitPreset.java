@@ -185,6 +185,8 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
      * [@property] name
      * 
      * The preset's name.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -195,6 +197,8 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
      * [@property] number
      * 
      * The preset's unique numeric identifier.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("number")
@@ -205,6 +209,8 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
      * [@property] name
      * 
      * The preset's name.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setName:")
@@ -214,6 +220,8 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
      * [@property] number
      * 
      * The preset's unique numeric identifier.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNumber:")

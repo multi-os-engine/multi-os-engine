@@ -103,6 +103,8 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
      *                     NO for all of the other inputs in the group.
      * @return
      *         An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @Selector("assetWriterInputGroupWithInputs:defaultInput:")
@@ -234,6 +236,8 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
      * The input designated at the defaultInput of the receiver.
      * 
      * The value of this property is a concrete instance of AVAssetWriterInput.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -258,6 +262,8 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
      *                     NO for all of the other inputs in the group.
      * @return
      *         An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @Selector("initWithInputs:defaultInput:")
@@ -270,6 +276,8 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
      * The inputs grouped together by the receiver.
      * 
      * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

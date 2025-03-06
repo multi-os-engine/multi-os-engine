@@ -23,12 +23,6 @@ public final class MTRClusterIDType {
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRClusterIDTypeScenesID
-     */
-    @Generated @Deprecated public static final int ScenesID = 0x00000005;
-    /**
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
      * Deprecated-Message: Please use MTRClusterIDTypeOnOffID
      */
     @Generated @Deprecated public static final int OnOffID = 0x00000006;
@@ -421,23 +415,23 @@ public final class MTRClusterIDType {
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int IDTypeScenesID = 0x00000005;
-    /**
-     * API-Since: 16.4
-     */
     @Generated public static final int IDTypeOnOffID = 0x00000006;
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The OnOffSwitchConfiguration cluster will be removed
      */
-    @Generated public static final int IDTypeOnOffSwitchConfigurationID = 0x00000007;
+    @Deprecated @Generated public static final int IDTypeOnOffSwitchConfigurationID = 0x00000007;
     /**
      * API-Since: 16.4
      */
     @Generated public static final int IDTypeLevelControlID = 0x00000008;
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BinaryInputBasic cluster will be removed
      */
-    @Generated public static final int IDTypeBinaryInputBasicID = 0x0000000F;
+    @Deprecated @Generated public static final int IDTypeBinaryInputBasicID = 0x0000000F;
     /**
      * API-Since: 16.4
      */
@@ -572,8 +566,10 @@ public final class MTRClusterIDType {
     @Generated public static final int IDTypeWindowCoveringID = 0x00000102;
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierControl cluster will be removed
      */
-    @Generated public static final int IDTypeBarrierControlID = 0x00000103;
+    @Deprecated @Generated public static final int IDTypeBarrierControlID = 0x00000103;
     /**
      * API-Since: 16.4
      */
@@ -672,10 +668,100 @@ public final class MTRClusterIDType {
     @Generated public static final int IDTypeAccountLoginID = 0x0000050E;
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The ElectricalMeasurement cluster will be removed
      */
-    @Generated public static final int IDTypeElectricalMeasurementID = 0x00000B04;
+    @Deprecated @Generated public static final int IDTypeElectricalMeasurementID = 0x00000B04;
     /**
      * API-Since: 16.4
      */
     @Generated public static final int IDTypeUnitTestingID = 0xFFF1FC05;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated public static final int IDTypeRVCRunModeID = 0x00000054;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated public static final int IDTypeRVCCleanModeID = 0x00000055;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeAirQualityID = 0x0000005B;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeSmokeCOAlarmID = 0x0000005C;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated public static final int IDTypeOperationalStateID = 0x00000060;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated public static final int IDTypeRVCOperationalStateID = 0x00000061;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeHEPAFilterMonitoringID = 0x00000071;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeActivatedCarbonFilterMonitoringID = 0x00000072;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeBooleanStateConfigurationID = 0x00000080;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeValveConfigurationAndControlID = 0x00000081;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeElectricalPowerMeasurementID = 0x00000090;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeElectricalEnergyMeasurementID = 0x00000091;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeCarbonMonoxideConcentrationMeasurementID = 0x0000040C;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeCarbonDioxideConcentrationMeasurementID = 0x0000040D;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeNitrogenDioxideConcentrationMeasurementID = 0x00000413;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeOzoneConcentrationMeasurementID = 0x00000415;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypePM25ConcentrationMeasurementID = 0x0000042A;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeFormaldehydeConcentrationMeasurementID = 0x0000042B;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypePM1ConcentrationMeasurementID = 0x0000042C;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypePM10ConcentrationMeasurementID = 0x0000042D;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeTotalVolatileOrganicCompoundsConcentrationMeasurementID = 0x0000042E;
+    /**
+     * API-Since: 17.6
+     */
+    @Generated public static final int IDTypeRadonConcentrationMeasurementID = 0x0000042F;
 }

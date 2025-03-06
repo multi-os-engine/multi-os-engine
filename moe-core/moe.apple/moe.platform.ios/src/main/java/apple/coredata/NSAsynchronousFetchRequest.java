@@ -158,17 +158,26 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
     public native Block_completionBlock_ret completionBlock();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("estimatedResultCount")
     @NInt
     public native long estimatedResultCount();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("fetchRequest")
@@ -178,11 +187,17 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @Selector("init")
     public native NSAsynchronousFetchRequest<?> init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithFetchRequest:completionBlock:")
     public native NSAsynchronousFetchRequest<?> initWithFetchRequestCompletionBlock(@NotNull NSFetchRequest<?> request,
             @Nullable @ObjCBlock(name = "call_initWithFetchRequestCompletionBlock") Block_initWithFetchRequestCompletionBlock blk);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setEstimatedResultCount:")
     public native void setEstimatedResultCount(@NInt long value);

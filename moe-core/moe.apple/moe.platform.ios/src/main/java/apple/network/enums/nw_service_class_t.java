@@ -17,26 +17,26 @@ public final class nw_service_class_t {
     /**
      * [@const] nw_service_class_best_effort Default priority traffic
      */
-    @Generated public static final int nw_service_class_best_effort = 0x00000000;
+    @Generated public static final int _best_effort = 0x00000000;
     /**
      * [@const] nw_service_class_background Bulk traffic, or traffic that can be de-prioritized behind foreground
      * traffic
      */
-    @Generated public static final int nw_service_class_background = 0x00000001;
+    @Generated public static final int _background = 0x00000001;
     /**
      * [@const] nw_service_class_interactive_video Interactive video traffic
      */
-    @Generated public static final int nw_service_class_interactive_video = 0x00000002;
+    @Generated public static final int _interactive_video = 0x00000002;
     /**
      * [@const] nw_service_class_interactive_voice Interactive voice traffic
      */
-    @Generated public static final int nw_service_class_interactive_voice = 0x00000003;
+    @Generated public static final int _interactive_voice = 0x00000003;
     /**
      * [@const] nw_service_class_responsive_data Interactive user data
      */
-    @Generated public static final int nw_service_class_responsive_data = 0x00000004;
+    @Generated public static final int _responsive_data = 0x00000004;
     /**
      * [@const] nw_service_class_signaling Bursty but short. Intolerant of delay and loss. For example, SIP.
      */
-    @Generated public static final int nw_service_class_signaling = 0x00000005;
+    @Generated public static final int _signaling = 0x00000005;
 }

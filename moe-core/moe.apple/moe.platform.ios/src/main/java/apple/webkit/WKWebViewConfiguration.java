@@ -183,6 +183,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * (YES) or use the native full-screen controller (NO).
      * 
      * The default value is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("allowsInlineMediaPlayback")
@@ -288,6 +290,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The preference settings to be used by the web view.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -301,6 +305,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * When a web view is initialized, a new web content process
      * will be created for it from the specified pool, or an existing process in
      * that pool will be used.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -322,6 +328,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * 
      * Possible values are described in WKSelectionGranularity.
      * The default value is WKSelectionGranularityDynamic.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("selectionGranularity")
@@ -344,6 +352,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * (YES) or use the native full-screen controller (NO).
      * 
      * The default value is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAllowsInlineMediaPlayback:")
@@ -427,6 +437,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The preference settings to be used by the web view.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPreferences:")
@@ -439,6 +451,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * When a web view is initialized, a new web content process
      * will be created for it from the specified pool, or an existing process in
      * that pool will be used.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setProcessPool:")
@@ -459,6 +473,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * 
      * Possible values are described in WKSelectionGranularity.
      * The default value is WKSelectionGranularityDynamic.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSelectionGranularity:")
@@ -469,6 +485,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * content rendering until it is fully loaded into memory.
      * 
      * The default value is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSuppressesIncrementalRendering:")
@@ -476,6 +494,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The user content controller to associate with the web view.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUserContentController:")
@@ -495,6 +515,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * content rendering until it is fully loaded into memory.
      * 
      * The default value is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("suppressesIncrementalRendering")
@@ -502,6 +524,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The user content controller to associate with the web view.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -656,4 +680,51 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A Boolean value indicating whether insertion of adaptive image glyphs is allowed.
+     * 
+     * The default value is `NO`. If `NO`, adaptive image glyphs are inserted as regular
+     * images. If `YES`, they are inserted with the full adaptive sizing behavior.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSupportsAdaptiveImageGlyph:")
+    public native void setSupportsAdaptiveImageGlyph(boolean value);
+
+    /**
+     * The preferred behavior of Writing Tools.
+     * 
+     * The default behavior is equivalent to `UIWritingToolsBehaviorLimited`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setWritingToolsBehavior:")
+    public native void setWritingToolsBehavior(@NInt long value);
+
+    /**
+     * A Boolean value indicating whether insertion of adaptive image glyphs is allowed.
+     * 
+     * The default value is `NO`. If `NO`, adaptive image glyphs are inserted as regular
+     * images. If `YES`, they are inserted with the full adaptive sizing behavior.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("supportsAdaptiveImageGlyph")
+    public native boolean supportsAdaptiveImageGlyph();
+
+    /**
+     * The preferred behavior of Writing Tools.
+     * 
+     * The default behavior is equivalent to `UIWritingToolsBehaviorLimited`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("writingToolsBehavior")
+    @NInt
+    public native long writingToolsBehavior();
 }

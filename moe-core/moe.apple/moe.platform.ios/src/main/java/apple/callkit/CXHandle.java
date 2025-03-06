@@ -185,10 +185,16 @@ public class CXHandle extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CXHandle initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithType:value:")
     public native CXHandle initWithTypeValue(@NInt long type, @NotNull String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isEqualToHandle:")
     public native boolean isEqualToHandle(@NotNull CXHandle handle);
@@ -199,11 +205,17 @@ public class CXHandle extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("value")

@@ -107,6 +107,8 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
      * [@property] delegate
      * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -158,6 +160,8 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
      * [@property] player
      * 
      * The AVPlayer this coordinator is controlling.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -176,6 +180,8 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
      * [@property] delegate
      * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -186,6 +192,8 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
      * [@property] delegate
      * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVPlayerPlaybackCoordinatorDelegate value) {

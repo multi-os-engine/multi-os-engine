@@ -107,6 +107,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * describes the order in which the image values are stored in the buffer associated
      * with the MPSMatrix.
      * Default: MPSDataLayoutFeatureChannelsxHeightxWidth
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dataLayout")
@@ -126,6 +128,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * 
      * The index of the destination matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("destinationMatrixBatchIndex")
@@ -140,6 +144,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("destinationMatrixOrigin")
@@ -159,6 +165,9 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * @param commandBuffer     A valid MTLCommandBuffer.
      * @param sourceImage       A valid MPSImage describing the image to copy from.
      * @param destinationMatrix A valid MPSMatrix or MPSTemporaryMatrix object describing the matrix to copy to.
+     * 
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationMatrix:")
@@ -191,6 +200,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -207,6 +218,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * @param device     The device the kernel will run on
      * @param dataLayout The data layout
      * @return A valid MPSMatrixCopy object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:dataLayout:")
@@ -253,6 +266,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * 
      * The index of the destination matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDestinationMatrixBatchIndex:")
@@ -266,6 +281,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDestinationMatrixOrigin:")

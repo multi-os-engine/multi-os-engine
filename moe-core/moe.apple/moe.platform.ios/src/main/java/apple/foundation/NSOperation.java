@@ -155,10 +155,16 @@ public class NSOperation extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("addDependency:")
     public native void addDependency(@NotNull NSOperation op);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -172,6 +178,9 @@ public class NSOperation extends NSObject {
     @ObjCBlock(name = "call_completionBlock_ret")
     public native Block_completionBlock_ret completionBlock();
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("dependencies")
@@ -188,29 +197,46 @@ public class NSOperation extends NSObject {
     @Selector("isAsynchronous")
     public native boolean isAsynchronous();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
     /**
      * To be deprecated; use and override 'asynchronous' below
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isConcurrent")
     public native boolean isConcurrent();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isExecuting")
     public native boolean isExecuting();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isFinished")
     public native boolean isFinished();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isReady")
     public native boolean isReady();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("main")
     public native void main();
@@ -231,11 +257,17 @@ public class NSOperation extends NSObject {
     @NInt
     public native long qualityOfService();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("queuePriority")
     @NInt
     public native long queuePriority();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("removeDependency:")
     public native void removeDependency(@NotNull NSOperation op);
@@ -262,6 +294,9 @@ public class NSOperation extends NSObject {
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setQueuePriority:")
     public native void setQueuePriority(@NInt long value);
@@ -276,6 +311,9 @@ public class NSOperation extends NSObject {
     @Selector("setThreadPriority:")
     public native void setThreadPriority(double value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("start")
     public native void start();

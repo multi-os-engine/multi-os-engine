@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * MIDICIProfileState
  * 
- * Lists the enabled and disabled profiles for a MIDI channel or port on a device.
+ * A list of the enabled and/or disabled profiles for a MIDI channel or port on a device.
  * 
  * API-Since: 12.0
  */
@@ -95,11 +95,17 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("disabledProfiles")
     public native NSArray<? extends MIDICIProfile> disabledProfiles();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("enabledProfiles")
@@ -123,10 +129,8 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     public native MIDICIProfileState initWithCoder(@NotNull NSCoder coder);
 
     /**
-     * API-Since: 12.0
-     * Deprecated-Since: 100000.0
+     * API-Since: 14.0
      */
-    @Deprecated
     @Generated
     @Selector("initWithEnabledProfiles:disabledProfiles:")
     public native MIDICIProfileState initWithEnabledProfilesDisabledProfiles(
@@ -191,13 +195,18 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * API-Since: 14.0
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithChannel:enabledProfiles:disabledProfiles:")
     public native MIDICIProfileState initWithChannelEnabledProfilesDisabledProfiles(byte midiChannelNum,
             @NotNull NSArray<? extends MIDICIProfile> enabled, @NotNull NSArray<? extends MIDICIProfile> disabled);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("midiChannel")
     public native byte midiChannel();

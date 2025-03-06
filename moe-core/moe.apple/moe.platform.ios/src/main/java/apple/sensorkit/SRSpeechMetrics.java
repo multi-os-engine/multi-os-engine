@@ -63,6 +63,9 @@ public class SRSpeechMetrics extends NSObject implements NSCopying, NSSecureCodi
     @Selector("allocWithZone:")
     public static native SRSpeechMetrics allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("audioLevel")
     @Nullable
@@ -160,6 +163,9 @@ public class SRSpeechMetrics extends NSObject implements NSCopying, NSSecureCodi
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("sessionFlags")
     @NUInt
@@ -169,6 +175,8 @@ public class SRSpeechMetrics extends NSObject implements NSCopying, NSSecureCodi
      * [@property] sessionIdentifier
      * 
      * Identifier of an audio session e.g., a Phone call or Siri utterance
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sessionIdentifier")
@@ -179,16 +187,25 @@ public class SRSpeechMetrics extends NSObject implements NSCopying, NSSecureCodi
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("soundClassification")
     @Nullable
     public native SNClassificationResult soundClassification();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("speechExpression")
     @Nullable
     public native SRSpeechExpression speechExpression();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("speechRecognition")
     @Nullable
@@ -226,6 +243,8 @@ public class SRSpeechMetrics extends NSObject implements NSCopying, NSSecureCodi
      * [@property] timestamp
      * 
      * The wall time when this sample was generated
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timestamp")

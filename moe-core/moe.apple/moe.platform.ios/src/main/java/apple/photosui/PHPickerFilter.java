@@ -312,4 +312,14 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The filter for spatial media.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("spatialMediaFilter")
+    @NotNull
+    public static native PHPickerFilter spatialMediaFilter();
 }

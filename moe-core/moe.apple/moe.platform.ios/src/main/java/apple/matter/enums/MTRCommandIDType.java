@@ -177,272 +177,6 @@ public final class MTRCommandIDType {
      */
     @Generated public static final int CommandIDTypeClusterGroupsCommandAddGroupIfIdentifyingID = 0x00000005;
     /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandAddSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandAddSceneID = 0x00000000;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandAddSceneResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandAddSceneResponseID = 0x00000000;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandViewSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandViewSceneID = 0x00000001;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandViewSceneResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandViewSceneResponseID = 0x00000001;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandRemoveSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandRemoveSceneID = 0x00000002;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandRemoveSceneResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandRemoveSceneResponseID = 0x00000002;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandRemoveAllScenesID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandRemoveAllScenesID = 0x00000003;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandRemoveAllScenesResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandRemoveAllScenesResponseID = 0x00000003;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandStoreSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandStoreSceneID = 0x00000004;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandStoreSceneResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandStoreSceneResponseID = 0x00000004;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandRecallSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandRecallSceneID = 0x00000005;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandGetSceneMembershipID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandGetSceneMembershipID = 0x00000006;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandGetSceneMembershipResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandGetSceneMembershipResponseID = 0x00000006;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandEnhancedAddSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandEnhancedAddSceneID = 0x00000040;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandEnhancedAddSceneResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandEnhancedAddSceneResponseID = 0x00000040;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandEnhancedViewSceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandEnhancedViewSceneID = 0x00000041;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandEnhancedViewSceneResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandEnhancedViewSceneResponseID = 0x00000041;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandCopySceneID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandCopySceneID = 0x00000042;
-    /**
-     * Cluster Scenes deprecated command id names
-     * 
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRCommandIDTypeClusterScenesCommandCopySceneResponseID
-     */
-    @Generated @Deprecated public static final int ClusterScenesCommandCopySceneResponseID = 0x00000042;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandAddSceneID = 0x00000000;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandAddSceneResponseID = 0x00000000;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandViewSceneID = 0x00000001;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandViewSceneResponseID = 0x00000001;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandRemoveSceneID = 0x00000002;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandRemoveSceneResponseID = 0x00000002;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandRemoveAllScenesID = 0x00000003;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandRemoveAllScenesResponseID = 0x00000003;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandStoreSceneID = 0x00000004;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandStoreSceneResponseID = 0x00000004;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandRecallSceneID = 0x00000005;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandGetSceneMembershipID = 0x00000006;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandGetSceneMembershipResponseID = 0x00000006;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandEnhancedAddSceneID = 0x00000040;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandEnhancedAddSceneResponseID = 0x00000040;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandEnhancedViewSceneID = 0x00000041;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandEnhancedViewSceneResponseID = 0x00000041;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandCopySceneID = 0x00000042;
-    /**
-     * Cluster Scenes commands
-     * 
-     * API-Since: 16.4
-     */
-    @Generated public static final int CommandIDTypeClusterScenesCommandCopySceneResponseID = 0x00000042;
-    /**
      * Cluster OnOff deprecated command id names
      * 
      * API-Since: 16.1
@@ -1997,14 +1731,18 @@ public final class MTRCommandIDType {
      * Cluster BarrierControl commands
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierControlGoToPercent command will be removed
      */
-    @Generated public static final int CommandIDTypeClusterBarrierControlCommandBarrierControlGoToPercentID = 0x00000000;
+    @Deprecated @Generated public static final int CommandIDTypeClusterBarrierControlCommandBarrierControlGoToPercentID = 0x00000000;
     /**
      * Cluster BarrierControl commands
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The BarrierControlStop command will be removed
      */
-    @Generated public static final int CommandIDTypeClusterBarrierControlCommandBarrierControlStopID = 0x00000001;
+    @Deprecated @Generated public static final int CommandIDTypeClusterBarrierControlCommandBarrierControlStopID = 0x00000001;
     /**
      * Cluster Thermostat deprecated command id names
      * 
@@ -2910,26 +2648,34 @@ public final class MTRCommandIDType {
      * Cluster ElectricalMeasurement commands
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GetProfileInfoResponseCommand command will be removed
      */
-    @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetProfileInfoResponseCommandID = 0x00000000;
+    @Deprecated @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetProfileInfoResponseCommandID = 0x00000000;
     /**
      * Cluster ElectricalMeasurement commands
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GetProfileInfoCommand command will be removed
      */
-    @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetProfileInfoCommandID = 0x00000000;
+    @Deprecated @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetProfileInfoCommandID = 0x00000000;
     /**
      * Cluster ElectricalMeasurement commands
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GetMeasurementProfileResponseCommand command will be removed
      */
-    @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetMeasurementProfileResponseCommandID = 0x00000001;
+    @Deprecated @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetMeasurementProfileResponseCommandID = 0x00000001;
     /**
      * Cluster ElectricalMeasurement commands
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: The GetMeasurementProfileCommand command will be removed
      */
-    @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetMeasurementProfileCommandID = 0x00000001;
+    @Deprecated @Generated public static final int CommandIDTypeClusterElectricalMeasurementCommandGetMeasurementProfileCommandID = 0x00000001;
     /**
      * Cluster TestCluster deprecated command id names
      * 
@@ -3406,4 +3152,124 @@ public final class MTRCommandIDType {
      * API-Since: 16.4
      */
     @Generated public static final int CommandIDTypeClusterUnitTestingCommandTestEmitTestFabricScopedEventRequestID = 0x00000015;
+    /**
+     * Cluster RVCRunMode commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCRunModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster RVCRunMode commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCRunModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster RVCCleanMode commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCCleanModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster RVCCleanMode commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCCleanModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster SmokeCOAlarm commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterSmokeCOAlarmCommandSelfTestRequestID = 0x00000000;
+    /**
+     * Cluster OperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterOperationalStateCommandPauseID = 0x00000000;
+    /**
+     * Cluster OperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterOperationalStateCommandStopID = 0x00000001;
+    /**
+     * Cluster OperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterOperationalStateCommandStartID = 0x00000002;
+    /**
+     * Cluster OperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterOperationalStateCommandResumeID = 0x00000003;
+    /**
+     * Cluster OperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterOperationalStateCommandOperationalCommandResponseID = 0x00000004;
+    /**
+     * Cluster RVCOperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCOperationalStateCommandPauseID = 0x00000000;
+    /**
+     * Cluster RVCOperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCOperationalStateCommandResumeID = 0x00000003;
+    /**
+     * Cluster RVCOperationalState commands
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCOperationalStateCommandOperationalCommandResponseID = 0x00000004;
+    /**
+     * Cluster HEPAFilterMonitoring commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterHEPAFilterMonitoringCommandResetConditionID = 0x00000000;
+    /**
+     * Cluster ActivatedCarbonFilterMonitoring commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterActivatedCarbonFilterMonitoringCommandResetConditionID = 0x00000000;
+    /**
+     * Cluster BooleanStateConfiguration commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterBooleanStateConfigurationCommandSuppressAlarmID = 0x00000000;
+    /**
+     * Cluster BooleanStateConfiguration commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterBooleanStateConfigurationCommandEnableDisableAlarmID = 0x00000001;
+    /**
+     * Cluster ValveConfigurationAndControl commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterValveConfigurationAndControlCommandOpenID = 0x00000000;
+    /**
+     * Cluster ValveConfigurationAndControl commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterValveConfigurationAndControlCommandCloseID = 0x00000001;
+    /**
+     * Cluster FanControl commands
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int CommandIDTypeClusterFanControlCommandStepID = 0x00000000;
 }

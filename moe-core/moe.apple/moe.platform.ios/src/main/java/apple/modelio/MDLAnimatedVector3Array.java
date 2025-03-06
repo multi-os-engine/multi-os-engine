@@ -88,6 +88,9 @@ public class MDLAnimatedVector3Array extends MDLAnimatedValue {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementCount")
     @NUInt
@@ -102,6 +105,9 @@ public class MDLAnimatedVector3Array extends MDLAnimatedValue {
     @Selector("init")
     public native MDLAnimatedVector3Array init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithElementCount:")
     public native MDLAnimatedVector3Array initWithElementCount(@NUInt long arrayElementCount);

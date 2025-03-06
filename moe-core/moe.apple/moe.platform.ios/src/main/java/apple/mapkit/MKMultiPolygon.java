@@ -118,6 +118,9 @@ public class MKMultiPolygon extends MKShape implements MKOverlay, MKGeoJSONObjec
     @Selector("init")
     public native MKMultiPolygon init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithPolygons:")
     public native MKMultiPolygon initWithPolygons(@NotNull NSArray<? extends MKPolygon> polygons);
@@ -154,6 +157,9 @@ public class MKMultiPolygon extends MKShape implements MKOverlay, MKGeoJSONObjec
     @Selector("new")
     public static native MKMultiPolygon new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("polygons")

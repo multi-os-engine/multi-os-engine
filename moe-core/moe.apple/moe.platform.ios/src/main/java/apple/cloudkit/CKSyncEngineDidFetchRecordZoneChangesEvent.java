@@ -96,6 +96,9 @@ public class CKSyncEngineDidFetchRecordZoneChangesEvent extends CKSyncEngineEven
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("error")
     @Nullable
@@ -163,6 +166,9 @@ public class CKSyncEngineDidFetchRecordZoneChangesEvent extends CKSyncEngineEven
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("zoneID")
     @NotNull

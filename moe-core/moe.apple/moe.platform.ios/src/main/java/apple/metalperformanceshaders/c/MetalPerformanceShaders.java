@@ -257,6 +257,7 @@ public final class MetalPerformanceShaders {
     /**
      * A utility function to get the size of an MPSDataType. This implementation
      * relies upon the specific bit pattern used to encode the type.
+     * It assumes bits per element is >= 8.
      */
     @Generated
     @Inline
@@ -267,4 +268,14 @@ public final class MetalPerformanceShaders {
     @Generated public static final double MetalPerformanceShaders_h = 1.0;
     @Generated public static final double MPSKernelTypes_h = 1.0;
     @Generated public static final double MPSDeviceCapsIndex = 127.0;
+
+    /**
+     * A utility function to get the size of an MPSDataType. This implementation
+     * relies upon the specific bit pattern used to encode the type.
+     */
+    @Generated
+    @Inline
+    @CFunction
+    @NUInt
+    public static native long MPSDataTypeBitsCount(int t);
 }

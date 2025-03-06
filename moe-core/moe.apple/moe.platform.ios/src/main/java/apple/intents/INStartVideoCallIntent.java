@@ -168,7 +168,12 @@ public class INStartVideoCallIntent extends INIntent {
 
     /**
      * Recipients of the video call.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartVideoCallIntent is deprecated. Please adopt INStartCallIntent instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("contacts")
@@ -182,6 +187,12 @@ public class INStartVideoCallIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INStartVideoCallIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartVideoCallIntent is deprecated. Please adopt INStartCallIntent instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContacts:")
     public native INStartVideoCallIntent initWithContacts(@Nullable NSArray<? extends INPerson> contacts);

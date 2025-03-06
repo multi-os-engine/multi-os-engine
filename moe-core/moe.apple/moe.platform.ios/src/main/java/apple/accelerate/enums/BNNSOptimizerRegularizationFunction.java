@@ -11,13 +11,13 @@ public final class BNNSOptimizerRegularizationFunction {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSOptimizerRegularizationNone = 0x00000000;
+    @Generated public static final int None = 0x00000000;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSOptimizerRegularizationL1 = 0x00000001;
+    @Generated public static final int L1 = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSOptimizerRegularizationL2 = 0x00000002;
+    @Generated public static final int L2 = 0x00000002;
 }

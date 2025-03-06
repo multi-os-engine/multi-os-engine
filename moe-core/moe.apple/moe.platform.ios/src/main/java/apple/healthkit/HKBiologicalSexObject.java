@@ -170,6 +170,9 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("biologicalSex")
     @NInt

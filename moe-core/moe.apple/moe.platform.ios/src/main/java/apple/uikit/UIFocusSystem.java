@@ -96,6 +96,8 @@ public class UIFocusSystem extends NSObject {
 
     /**
      * Returns true if `environment` is an ancestor of `otherEnvironment`, or false if otherwise.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("environment:containsEnvironment:")

@@ -184,6 +184,8 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
      * 
      * Discussion:
      * The time of occurence of event.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -213,6 +215,8 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
      * 
      * Discussion:
      * Event type describing the transition of pedestrian activity.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("type")

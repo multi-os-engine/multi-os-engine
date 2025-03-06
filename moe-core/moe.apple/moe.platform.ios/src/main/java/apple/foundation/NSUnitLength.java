@@ -70,6 +70,9 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("allocWithZone:")
     public static native NSUnitLength allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("astronomicalUnits")
@@ -95,6 +98,9 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("centimeters")
@@ -114,11 +120,17 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("decameters")
     public static native NSUnitLength decameters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("decimeters")
@@ -128,16 +140,25 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("fathoms")
     public static native NSUnitLength fathoms();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("feet")
     public static native NSUnitLength feet();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("furlongs")
@@ -148,11 +169,17 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("hectometers")
     public static native NSUnitLength hectometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("inches")
@@ -180,11 +207,17 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilometers")
     public static native NSUnitLength kilometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("lightyears")
@@ -192,37 +225,57 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - meters
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("megameters")
     public static native NSUnitLength megameters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("meters")
     public static native NSUnitLength meters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("micrometers")
     public static native NSUnitLength micrometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("miles")
     public static native NSUnitLength miles();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("millimeters")
     public static native NSUnitLength millimeters();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("nanometers")
     public static native NSUnitLength nanometers();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("nauticalMiles")
@@ -233,11 +286,17 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitLength new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("parsecs")
     public static native NSUnitLength parsecs();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("picometers")
@@ -251,6 +310,9 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("scandinavianMiles")
@@ -273,6 +335,9 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("yards")

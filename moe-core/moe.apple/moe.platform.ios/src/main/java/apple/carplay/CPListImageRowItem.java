@@ -99,6 +99,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * 
      * [@note] The maximum number of images shown is @c CPMaximumNumberOfGridImages.
      * If you supply more images, only the first @c CPMaximumNumberOfGridImages will be used.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -137,6 +139,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithText:images:")
@@ -167,6 +171,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
 
     /**
      * The image row item that the user selected.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -195,6 +201,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumImageSize")
@@ -221,6 +229,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
 
     /**
      * The image row item that the user selected.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setListImageRowHandler:")
@@ -244,6 +254,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
 
     /**
      * The primary text shown in a cell displaying this list item.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setText:")
@@ -281,6 +293,10 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * 
      * @see To update/reload the title of the image row item, assign to
      *      the @c text property of the image row item.
+     * @see To update/reload the title labels displayed below each image, assign to
+     *      the @c imageTitles property of the image row item.
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("updateImages:")
@@ -309,4 +325,61 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Update the titles displayed each image in this image row item. If this image row
+     * item is already displayed in a list template, then it will be automatically
+     * reloaded.
+     * 
+     * @see To update/reload the title of the image row item, assign to
+     *      the @c text property of the image row item.
+     * 
+     *      API-Since: 17.4
+     */
+    @Generated
+    @Selector("imageTitles")
+    @NotNull
+    public native NSArray<String> imageTitles();
+
+    /**
+     * Initialize a list image row item with a text string, an array of @c UIImage
+     * for the grid of images, and an array of @c NSString titles, one displayed below each image.
+     * 
+     * The number of titles in the @c imageTitles list should be equal to the number of images in the
+     * [@c] images list.
+     * 
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * [@note] The expected image size is given by +[CPListImageRowItem maximumImageSize]. Images provided
+     * will be resized to this size if necessary.
+     * 
+     * To properly size your images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("initWithText:images:imageTitles:")
+    public native CPListImageRowItem initWithTextImagesImageTitles(@NotNull String text,
+            @NotNull NSArray<? extends UIImage> images, @NotNull NSArray<String> imageTitles);
+
+    /**
+     * Update the titles displayed each image in this image row item. If this image row
+     * item is already displayed in a list template, then it will be automatically
+     * reloaded.
+     * 
+     * @see To update/reload the title of the image row item, assign to
+     *      the @c text property of the image row item.
+     * 
+     *      API-Since: 17.4
+     */
+    @Generated
+    @Selector("setImageTitles:")
+    public native void setImageTitles(@NotNull NSArray<String> value);
 }

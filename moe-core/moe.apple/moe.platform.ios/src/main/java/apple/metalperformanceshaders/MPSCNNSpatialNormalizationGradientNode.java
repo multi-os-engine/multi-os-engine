@@ -59,6 +59,8 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("alpha")
@@ -72,6 +74,8 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("beta")
@@ -106,6 +110,8 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("delta")
@@ -124,6 +130,9 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     @Selector("init")
     public native MPSCNNSpatialNormalizationGradientNode init();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelSize:")
     public native MPSCNNSpatialNormalizationGradientNode initWithSourceGradientSourceImageGradientStateKernelSize(
@@ -147,11 +156,17 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("kernelHeight")
     @NUInt
     public native long kernelHeight();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("kernelWidth")
     @NUInt
@@ -167,6 +182,9 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     @Selector("new")
     public static native MPSCNNSpatialNormalizationGradientNode new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelSize:")
     public static native MPSCNNSpatialNormalizationGradientNode nodeWithSourceGradientSourceImageGradientStateKernelSize(
@@ -185,6 +203,8 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
      * [@property] alpha
      * 
      * The value of alpha. Default is 1.0. Must be non-negative.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setAlpha:")
@@ -194,6 +214,8 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
      * [@property] beta
      * 
      * The value of beta. Default is 5.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setBeta:")
@@ -203,15 +225,23 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
      * [@property] delta
      * 
      * The value of delta. Default is 1.0
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setKernelHeight:")
     public native void setKernelHeight(@NUInt long value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setKernelWidth:")
     public native void setKernelWidth(@NUInt long value);

@@ -35,6 +35,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Implemented on an element that represents content meant to be read, like a book or periodical.
  * Use in conjunction with UIAccessibilityTraitCausesPageTurn to provide a continuous reading experience with VoiceOver.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("UIKit")

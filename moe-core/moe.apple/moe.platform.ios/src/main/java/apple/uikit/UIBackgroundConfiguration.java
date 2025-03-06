@@ -72,6 +72,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color
      * (transparent).
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -81,6 +83,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor`
      * is used as-is.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -99,6 +103,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Insets (or outsets, if negative) for the background and stroke, relative to the edges of the containing view.
      * These also apply to the custom view. Default is NSDirectionalEdgeInsetsZero.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("backgroundInsets")
@@ -128,6 +134,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * Returns a clear configuration, with no default styling.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -145,6 +153,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * The preferred corner radius (using a continuous corner curve) for the background and stroke. This is also applied
      * to the custom view. Default is 0.
      * If the view is too small to fit the requested radius, the corner curve and radius will be adjusted to fit.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("cornerRadius")
@@ -154,6 +164,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * A custom view for the background. The custom view must have translatesAutoresizingMaskIntoConstraints
      * enabled, but may use auto layout constraints internally for layout of subviews.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -172,6 +184,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * The edges on which the containing view's layout margins are added to the `backgroundInsets`, effectively making
      * the `backgroundInsets` values relative
      * to the containing view's layout margins for these edges. Default is NSDirectionalRectEdgeNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("edgesAddingLayoutMarginsToBackgroundInsets")
@@ -227,7 +241,11 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * Returns the default configuration for a grouped list cell.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("listGroupedCellConfiguration")
@@ -235,7 +253,12 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * Returns the default configuration for a grouped list header or footer.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use +listHeaderConfiguration or +listFooterConfiguration
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("listGroupedHeaderFooterConfiguration")
@@ -243,7 +266,11 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * Returns the default configuration for a plain list cell.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("listPlainCellConfiguration")
@@ -251,7 +278,12 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * Returns the default configuration for a plain list header or footer.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use +listHeaderConfiguration or +listFooterConfiguration
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("listPlainHeaderFooterConfiguration")
@@ -259,7 +291,11 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * Returns the default configuration for a sidebar list cell.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("listSidebarCellConfiguration")
@@ -267,7 +303,12 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * Returns the default configuration for a sidebar list header.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use +listHeaderConfiguration or +listFooterConfiguration
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("listSidebarHeaderConfiguration")
@@ -289,6 +330,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the resolved background color for the specified tint color, based on the `backgroundColor` and
      * `backgroundColorTransformer`.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -298,6 +341,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the resolved stroke color for the specified tint color, based on the `strokeColor` and
      * `strokeColorTransformer`.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -307,6 +352,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color
      * (transparent).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -315,6 +362,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor`
      * is used as-is.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundColorTransformer:")
@@ -332,6 +381,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Insets (or outsets, if negative) for the background and stroke, relative to the edges of the containing view.
      * These also apply to the custom view. Default is NSDirectionalEdgeInsetsZero.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundInsets:")
@@ -341,6 +392,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * The preferred corner radius (using a continuous corner curve) for the background and stroke. This is also applied
      * to the custom view. Default is 0.
      * If the view is too small to fit the requested radius, the corner curve and radius will be adjusted to fit.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCornerRadius:")
@@ -349,6 +402,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * A custom view for the background. The custom view must have translatesAutoresizingMaskIntoConstraints
      * enabled, but may use auto layout constraints internally for layout of subviews.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCustomView:")
@@ -358,6 +413,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * The edges on which the containing view's layout margins are added to the `backgroundInsets`, effectively making
      * the `backgroundInsets` values relative
      * to the containing view's layout margins for these edges. Default is NSDirectionalRectEdgeNone.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEdgesAddingLayoutMarginsToBackgroundInsets:")
@@ -366,6 +423,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color
      * (transparent).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrokeColor:")
@@ -374,6 +433,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
      * as-is.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrokeColorTransformer:")
@@ -392,6 +453,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * Outset (or inset, if negative) for the stroke, relative to the background (including any backgroundInsets).
      * Default is 0.
      * The corner radius of the stroke is adjusted for any outset to remain concentric with the background.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrokeOutset:")
@@ -399,6 +462,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The width of the stroke. Default is 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrokeWidth:")
@@ -410,6 +475,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The visual effect to apply to the background. Default is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setVisualEffect:")
@@ -418,6 +485,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color
      * (transparent).
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -427,6 +496,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
      * as-is.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -446,6 +517,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * Outset (or inset, if negative) for the stroke, relative to the background (including any backgroundInsets).
      * Default is 0.
      * The corner radius of the stroke is adjusted for any outset to remain concentric with the background.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strokeOutset")
@@ -454,6 +527,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The width of the stroke. Default is 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strokeWidth")
@@ -477,6 +552,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns a copy of the configuration updated for the specified state, by applying the configuration's default
      * values for that state to any properties that have not been customized.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -491,6 +568,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The visual effect to apply to the background. Default is nil.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -539,4 +618,54 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Represents a generic cell background configuration that automatically adopts the style of a containing list when
+     * updated for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to the background configuration for a cell in a plain-style list.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("listCellConfiguration")
+    @NotNull
+    public static native UIBackgroundConfiguration listCellConfiguration();
+
+    /**
+     * Represents a generic footer background configuration that automatically adopts the style of a containing list
+     * when updated for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to the background configuration for a footer in a plain-style list.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("listFooterConfiguration")
+    @NotNull
+    public static native UIBackgroundConfiguration listFooterConfiguration();
+
+    /**
+     * Represents a generic header background configuration that automatically adopts the style of a containing list
+     * when updated for a
+     * new configuration state, by reading the `listEnvironment` trait from the state's trait collection.
+     * Defaults to the background configuration for a header in a plain-style list.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("listHeaderConfiguration")
+    @NotNull
+    public static native UIBackgroundConfiguration listHeaderConfiguration();
+
+    /**
+     * Describes a shadow applied by the background.
+     * Defaults to no shadow (i.e. a shadow with an opacity of 0.0).
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("shadowProperties")
+    @NotNull
+    public native UIShadowProperties shadowProperties();
 }

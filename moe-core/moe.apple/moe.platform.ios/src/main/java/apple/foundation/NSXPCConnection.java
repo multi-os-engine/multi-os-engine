@@ -62,6 +62,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     /**
      * These attributes describe the security attributes of the connection. They may be used by the listener delegate to
      * accept or reject connections.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("auditSessionIdentifier")
@@ -100,14 +102,23 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("effectiveGroupIdentifier")
     public native int effectiveGroupIdentifier();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("effectiveUserIdentifier")
     public native int effectiveUserIdentifier();
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("endpoint")
@@ -116,6 +127,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     /**
      * The interface that describes messages that are allowed to be received by the exported object on this connection.
      * This value is required if a exported object is set.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -127,6 +140,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * connection will be dispatched to this object. Messages delivered to exported objects are serialized and sent on a
      * non-main queue. The receiver is responsible for handling the messages on a different queue or thread if it is
      * required.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -145,6 +160,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
 
     /**
      * Initialize an NSXPCConnection that will connect to an NSXPCListener (identified by its NSXPCListenerEndpoint).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("initWithListenerEndpoint:")
@@ -169,6 +186,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
      * The interruptionHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
      * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -187,6 +206,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * Invalidate the connection. All outstanding error handling blocks and invalidation blocks will be called on the
      * message handling queue. The connection must be invalidated before it is deallocated. After a connection is
      * invalidated, no more messages may be sent or received.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("invalidate")
@@ -201,6 +222,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * You may not send messages over the connection from within an invalidation handler block.
      * The invalidationHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
      * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -229,6 +252,9 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("new")
     public static native NSXPCConnection new_objc();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("processIdentifier")
     public native int processIdentifier();
@@ -236,6 +262,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     /**
      * The interface that describes messages that are allowed to be received by object that has been "imported" to this
      * connection (exported from the other side). This value is required if messages are sent over this connection.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -270,11 +298,16 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * creating the connection is determined to be invalid, your invalidation handler will be called immediately (and
      * asynchronously) after calling resume.
      * For new code, calling `-activate` is preferred for the initial activation of the connection.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("resume")
     public native void resume();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("serviceName")
@@ -283,6 +316,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     /**
      * The interface that describes messages that are allowed to be received by the exported object on this connection.
      * This value is required if a exported object is set.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setExportedInterface:")
@@ -293,6 +328,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * connection will be dispatched to this object. Messages delivered to exported objects are serialized and sent on a
      * non-main queue. The receiver is responsible for handling the messages on a different queue or thread if it is
      * required.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setExportedObject:")
@@ -304,6 +341,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
      * The interruptionHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
      * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setInterruptionHandler:")
@@ -326,6 +365,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * You may not send messages over the connection from within an invalidation handler block.
      * The invalidationHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
      * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setInvalidationHandler:")
@@ -342,6 +383,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     /**
      * The interface that describes messages that are allowed to be received by object that has been "imported" to this
      * connection (exported from the other side). This value is required if messages are sent over this connection.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setRemoteObjectInterface:")
@@ -357,6 +400,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
 
     /**
      * Suspend the connection. Suspends must be balanced with resumes before the connection may be invalidated.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("suspend")

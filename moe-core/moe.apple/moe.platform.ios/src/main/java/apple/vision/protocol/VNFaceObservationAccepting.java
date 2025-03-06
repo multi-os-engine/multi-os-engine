@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 public interface VNFaceObservationAccepting {
     /**
      * The VNFaceObservation objects to be processed as part of the request.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -31,6 +33,8 @@ public interface VNFaceObservationAccepting {
 
     /**
      * The VNFaceObservation objects to be processed as part of the request.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputFaceObservations:")

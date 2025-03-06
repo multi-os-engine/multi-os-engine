@@ -23,6 +23,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     /**
      * A list of credentials to allow for this request. If this list is nonempty, only credentials matching the provided
      * descriptors can be used to sign in.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -31,6 +33,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
 
     /**
      * The challenge to use when signing the request.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -39,6 +43,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
 
     /**
      * The Relying Party identifier used to scope this request.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -48,6 +54,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     /**
      * A list of credentials to allow for this request. If this list is nonempty, only credentials matching the provided
      * descriptors can be used to sign in.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowedCredentials:")
@@ -55,6 +63,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
 
     /**
      * The challenge to use when signing the request.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setChallenge:")
@@ -62,6 +72,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
 
     /**
      * The Relying Party identifier used to scope this request.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRelyingPartyIdentifier:")
@@ -70,6 +82,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
      * through a PIN or biometrics.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUserVerificationPreference:")
@@ -78,6 +92,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
      * through a PIN or biometrics.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

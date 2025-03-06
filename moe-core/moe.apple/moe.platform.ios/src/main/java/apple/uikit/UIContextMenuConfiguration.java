@@ -90,6 +90,8 @@ public class UIContextMenuConfiguration extends NSObject {
      * @param previewProvider Optional preview view controller provider block, called when the menu is about to be
      *                        presented.
      * @param actionProvider  Optional action provider block, called when the menu is about to be presented.
+     * 
+     *                        API-Since: 13.0
      */
     @Generated
     @Selector("configurationWithIdentifier:previewProvider:actionProvider:")
@@ -131,6 +133,8 @@ public class UIContextMenuConfiguration extends NSObject {
     /**
      * This configuration's identifier. When representing multiple items in your app, this identifier
      * corresponds to the primary item (i.e. the one with which the user interacted when invoking the menu).
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

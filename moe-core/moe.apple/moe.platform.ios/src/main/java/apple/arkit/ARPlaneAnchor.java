@@ -53,6 +53,8 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * The alignment of the plane.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alignment")

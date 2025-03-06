@@ -178,6 +178,8 @@ public class HMEvent extends NSObject {
 
     /**
      * A unique identifier for the event.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

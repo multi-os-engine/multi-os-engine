@@ -79,6 +79,8 @@ public class AVAudioSequencer extends NSObject {
      * player is not playing or if the starting time of the player was after the specified host
      * time. The method uses the sequence's tempo map to retrieve a beat time from the starting
      * and specified host time.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("beatsForHostTime:error:")
@@ -89,6 +91,8 @@ public class AVAudioSequencer extends NSObject {
      * beatsForSeconds:
      * 
      * Get the beat position (timestamp) for the given time in the AVMusicTrack
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("beatsForSeconds:")
@@ -122,6 +126,8 @@ public class AVAudioSequencer extends NSObject {
      * 
      * Setting this positions the sequencer's player to the specified beat. This can be set while
      * the player is playing, in which case playback will resume at the new position.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("currentPositionInBeats")
@@ -134,6 +140,8 @@ public class AVAudioSequencer extends NSObject {
      * 
      * Setting this positions the sequencer's player to the specified time. This can be set while
      * the player is playing, in which case playback will resume at the new position.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("currentPositionInSeconds")
@@ -146,6 +154,8 @@ public class AVAudioSequencer extends NSObject {
      * 
      * All details regarding the SMPTE resolution apply here as well.
      * The returned NSData lifetime is controlled by the client.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -175,6 +185,8 @@ public class AVAudioSequencer extends NSObject {
      * player is not playing or if the starting position of the player (its "starting beat") was
      * after the specified beat. The method uses the sequence's tempo map to translate a beat
      * time from the starting time and beat of the player.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hostTimeForBeats:error:")
@@ -196,6 +208,8 @@ public class AVAudioSequencer extends NSObject {
      * initWithAudioEngine:
      * 
      * Initialize a new sequencer, handing it the audio engine.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithAudioEngine:")
@@ -222,6 +236,8 @@ public class AVAudioSequencer extends NSObject {
      * Returns TRUE if the sequencer's player has been started and not stopped. It may have
      * "played" past the end of the events in the sequence, but it is still considered to be
      * playing (and its time value increasing) until it is explicitly stopped.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPlaying")
@@ -247,6 +263,8 @@ public class AVAudioSequencer extends NSObject {
      *                 determines how the contents are mapped to tracks inside the sequence
      * @param outError
      *                 on exit, if an error occurs, a description of the error
+     * 
+     *                 API-Since: 9.0
      */
     @Generated
     @Selector("loadFromData:options:error:")
@@ -264,6 +282,8 @@ public class AVAudioSequencer extends NSObject {
      *                 determines how the file's contents are mapped to tracks inside the sequence
      * @param outError
      *                 on exit, if an error occurs, a description of the error
+     * 
+     *                 API-Since: 9.0
      */
     @Generated
     @Selector("loadFromURL:options:error:")
@@ -282,6 +302,8 @@ public class AVAudioSequencer extends NSObject {
      * 
      * Happens automatically on play if it has not already been called, but may produce a delay in
      * startup.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("prepareToPlay")
@@ -293,6 +315,8 @@ public class AVAudioSequencer extends NSObject {
      * The playback rate of the sequencer's player
      * 
      * 1.0 is normal playback rate. Rate must be > 0.0.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("rate")
@@ -310,6 +334,8 @@ public class AVAudioSequencer extends NSObject {
      * secondsForBeats:
      * 
      * Get the time in seconds for the given beat position (timestamp) in the AVMusicTrack
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("secondsForBeats:")
@@ -322,6 +348,8 @@ public class AVAudioSequencer extends NSObject {
      * 
      * Setting this positions the sequencer's player to the specified beat. This can be set while
      * the player is playing, in which case playback will resume at the new position.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCurrentPositionInBeats:")
@@ -334,6 +362,8 @@ public class AVAudioSequencer extends NSObject {
      * 
      * Setting this positions the sequencer's player to the specified time. This can be set while
      * the player is playing, in which case playback will resume at the new position.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCurrentPositionInSeconds:")
@@ -345,6 +375,8 @@ public class AVAudioSequencer extends NSObject {
      * The playback rate of the sequencer's player
      * 
      * 1.0 is normal playback rate. Rate must be > 0.0.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRate:")
@@ -362,6 +394,8 @@ public class AVAudioSequencer extends NSObject {
      * If the AVAudioSequencer has not been prerolled, it will pre-roll itself and then start.
      * When the sequencer is associated with an audio engine, the sequencer's player will only
      * play if the audio engine is running.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("startAndReturnError:")
@@ -375,6 +409,8 @@ public class AVAudioSequencer extends NSObject {
      * Stopping the player leaves it in an un-prerolled state, but stores the playback position so
      * that a subsequent call to startAndReturnError will resume where it left off. This action
      * will not stop an associated audio engine.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("stop")
@@ -397,6 +433,8 @@ public class AVAudioSequencer extends NSObject {
      * The tempo track can be edited and iterated upon as any other track.
      * 
      * Non-tempo-related events will generate exceptions if added.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -409,6 +447,8 @@ public class AVAudioSequencer extends NSObject {
      * An NSArray containing all the AVMusicTracks in the sequence
      * 
      * This list will not include the tempo track.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -421,6 +461,8 @@ public class AVAudioSequencer extends NSObject {
      * A dictionary containing meta-data derived from a sequence
      * 
      * The dictionary can contain one or more of the values accessible via the AVAudioSequencerInfoDictionaryKeys.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -445,6 +487,8 @@ public class AVAudioSequencer extends NSObject {
      * representation.
      * The relationship between "tick" and quarter note for saving to Standard MIDI File
      * - pass in zero to use default - this will be the value that is currently set on the tempo track
+     * 
+     * API-Since: 9.0
      * 
      * @param fileURL
      *                   the path for the file to be created

@@ -111,6 +111,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsMean extends MPSNNReduceBinary 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -122,6 +124,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsMean extends MPSNNReduceBinary 
      * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceFeatureChannelsAndWeightsMean object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

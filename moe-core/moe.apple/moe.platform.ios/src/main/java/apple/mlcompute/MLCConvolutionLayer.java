@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * A convolution layer
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -70,7 +69,11 @@ public class MLCConvolutionLayer extends MLCLayer {
      * [@property] biases
      * 
      * The bias tensor used by the convolution layer
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biases")
@@ -80,7 +83,11 @@ public class MLCConvolutionLayer extends MLCLayer {
      * [@property] biasesParameter
      * 
      * The bias tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biasesParameter")
@@ -119,7 +126,11 @@ public class MLCConvolutionLayer extends MLCLayer {
      * [@property] descriptor
      * 
      * The convolution descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -163,7 +174,11 @@ public class MLCConvolutionLayer extends MLCLayer {
      * @param biases     The bias tensor
      * @param descriptor The convolution descriptor
      * @return A new convolution layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithWeights:biases:descriptor:")
     public static native MLCConvolutionLayer layerWithWeightsBiasesDescriptor(@NotNull MLCTensor weights,
@@ -190,6 +205,7 @@ public class MLCConvolutionLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -203,7 +219,11 @@ public class MLCConvolutionLayer extends MLCLayer {
      * [@property] weights
      * 
      * The weights tensor used by the convolution layer
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weights")
@@ -213,7 +233,11 @@ public class MLCConvolutionLayer extends MLCLayer {
      * [@property] weightsParameter
      * 
      * The weights tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weightsParameter")

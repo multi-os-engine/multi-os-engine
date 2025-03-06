@@ -140,6 +140,8 @@ public class UIAction extends UIMenuElement implements UIMenuLeaf {
 
     /**
      * This action's identifier.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

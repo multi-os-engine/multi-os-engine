@@ -95,6 +95,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * If an operation associated with this operation group has its own configuration, then any explicitly-set
      * properties in that operation's configuration will override these default configuration values. See the example in
      * CKOperation.h
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("defaultConfiguration")
@@ -122,6 +124,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * You may update after the @c CKOperationGroup is created. If it is increased, then subsequent @c CKOperation s
      * associated with this operation group may be delayed until network conditions are good.
      * Defaults to @c CKOperationGroupTransferSizeUnknown
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("expectedReceiveSize")
@@ -142,6 +146,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * You may update after the @c CKOperationGroup is created. If it is increased, then subsequent @c CKOperation s
      * associated with this operation group may be delayed until network conditions are good.
      * Defaults to @c CKOperationGroupTransferSizeUnknown
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("expectedSendSize")
@@ -153,6 +159,9 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("init")
     public native CKOperationGroup init();
@@ -192,6 +201,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * "Saving User-Entered Record"
      * This string will be sent to Apple servers to provide aggregate reporting for @c CKOperationGroup s and therefore
      * must not include personally identifying data.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -209,6 +220,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * This value is chosen by the system, and will be unique to this instance of a @c CKOperationGroup. This identifier
      * will be sent to Apple's servers, and can be used to identify any server-side logging associated with this
      * operation group.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -223,6 +236,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * events the user had created, the app might want to set this to "3". This value is not shown to your users, it's
      * meant to aid your development and debugging. This value will be reported in the CloudKit Dashboard's log entries
      * for all operations associated with this operation group.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("quantity")
@@ -243,6 +258,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * If an operation associated with this operation group has its own configuration, then any explicitly-set
      * properties in that operation's configuration will override these default configuration values. See the example in
      * CKOperation.h
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDefaultConfiguration:")
@@ -262,6 +279,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * You may update after the @c CKOperationGroup is created. If it is increased, then subsequent @c CKOperation s
      * associated with this operation group may be delayed until network conditions are good.
      * Defaults to @c CKOperationGroupTransferSizeUnknown
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setExpectedReceiveSize:")
@@ -281,6 +300,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * You may update after the @c CKOperationGroup is created. If it is increased, then subsequent @c CKOperation s
      * associated with this operation group may be delayed until network conditions are good.
      * Defaults to @c CKOperationGroupTransferSizeUnknown
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setExpectedSendSize:")
@@ -295,6 +316,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * "Saving User-Entered Record"
      * This string will be sent to Apple servers to provide aggregate reporting for @c CKOperationGroup s and therefore
      * must not include personally identifying data.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setName:")
@@ -308,6 +331,8 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * events the user had created, the app might want to set this to "3". This value is not shown to your users, it's
      * meant to aid your development and debugging. This value will be reported in the CloudKit Dashboard's log entries
      * for all operations associated with this operation group.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setQuantity:")

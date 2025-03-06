@@ -99,6 +99,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * returns array of available media types (i.e. kUTTypeImage)
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -176,6 +178,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * returns YES if source is available (i.e. camera present)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isSourceTypeAvailable:")
@@ -284,6 +288,9 @@ public class UIImagePickerController extends UINavigationController implements N
     @ByValue
     public native CGAffineTransform cameraViewTransform();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -316,6 +323,9 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("initWithRootViewController:")
     public native UIImagePickerController initWithRootViewController(@NotNull UIViewController rootViewController);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("mediaTypes")
@@ -384,10 +394,16 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("setCameraViewTransform:")
     public native void setCameraViewTransform(@ByValue CGAffineTransform value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -400,6 +416,9 @@ public class UIImagePickerController extends UINavigationController implements N
         }
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setMediaTypes:")
     public native void setMediaTypes(@NotNull NSArray<String> value);
@@ -415,6 +434,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default value is UIImagePickerControllerSourceTypePhotoLibrary.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSourceType:")
@@ -450,6 +471,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default value is UIImagePickerControllerSourceTypePhotoLibrary.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sourceType")

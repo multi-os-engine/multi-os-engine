@@ -44,6 +44,8 @@ public interface MDLMeshBufferZone {
      * [@property] allocator
      * 
      * Allocator used to create the zone
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -55,6 +57,8 @@ public interface MDLMeshBufferZone {
      * [@property] capacity
      * 
      * Total size of memory in the zone
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("capacity")

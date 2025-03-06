@@ -125,6 +125,8 @@ public class ENExposureSummaryItem extends NSObject {
 
     /**
      * Highest score of all exposures for this item.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("maximumScore")
@@ -145,6 +147,8 @@ public class ENExposureSummaryItem extends NSObject {
 
     /**
      * Sum of scores for all exposure for this item.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("scoreSum")
@@ -170,6 +174,8 @@ public class ENExposureSummaryItem extends NSObject {
      * ( nearDuration * nearDurationWeight ) +
      * ( mediumDuration * mediumDurationWeight ) +
      * ( otherDuration * otherDurationWeight ).
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("weightedDurationSum")

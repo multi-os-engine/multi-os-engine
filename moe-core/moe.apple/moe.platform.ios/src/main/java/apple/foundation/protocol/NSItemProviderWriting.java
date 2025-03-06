@@ -27,6 +27,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSItemProviderWriting")
 public interface NSItemProviderWriting {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
@@ -38,6 +41,8 @@ public interface NSItemProviderWriting {
 
     /**
      * One of writableTypeIdentifiersForItemProvider
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -53,6 +58,9 @@ public interface NSItemProviderWriting {
                 @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")

@@ -207,6 +207,9 @@ public class PKIdentityButton extends UIControl {
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("buttonWithLabel:style:")
     public static native PKIdentityButton buttonWithLabelStyle(@NInt long label, @NInt long style);
@@ -241,6 +244,9 @@ public class PKIdentityButton extends UIControl {
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("cornerRadius")
     @NFloat
@@ -279,6 +285,9 @@ public class PKIdentityButton extends UIControl {
     @Selector("initWithFrame:primaryAction:")
     public native PKIdentityButton initWithFramePrimaryAction(@ByValue CGRect frame, @Nullable UIAction primaryAction);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithLabel:style:")
     public native PKIdentityButton initWithLabelStyle(@NInt long label, @NInt long style);
@@ -405,6 +414,9 @@ public class PKIdentityButton extends UIControl {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double value);

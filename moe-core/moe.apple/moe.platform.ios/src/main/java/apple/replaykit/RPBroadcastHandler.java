@@ -179,6 +179,8 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
      * 
      * @param serviceInfo Dictionary that can be passed back to the broadcasting app that may contain information about
      *                    the ongoing broadcast.
+     * 
+     *                    API-Since: 10.0
      */
     @Generated
     @Selector("updateServiceInfo:")

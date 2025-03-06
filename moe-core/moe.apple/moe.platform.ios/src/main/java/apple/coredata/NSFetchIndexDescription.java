@@ -95,6 +95,8 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
 
     /**
      * Will throw if the new value is invalid (ie includes both rtree and non-rtree elements).
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -105,6 +107,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("entity")
@@ -123,6 +128,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @Selector("initWithCoder:")
     public native NSFetchIndexDescription initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithName:elements:")
     public native NSFetchIndexDescription initWithNameElements(@NotNull String name,
@@ -150,6 +158,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("name")
@@ -162,6 +173,8 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
 
     /**
      * If the index should be a partial index, specifies the predicate selecting rows for indexing
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -178,17 +191,24 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
 
     /**
      * Will throw if the new value is invalid (ie includes both rtree and non-rtree elements).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setElements:")
     public native void setElements(@NotNull NSArray<? extends NSFetchIndexElementDescription> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(@NotNull String value);
 
     /**
      * If the index should be a partial index, specifies the predicate selecting rows for indexing
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPartialIndexPredicate:")

@@ -30,8 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * An instance normalization layer. For more information refer to https://pytorch.org/docs/stable/nn.html#instancenorm2d
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -70,7 +69,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * [@property] beta
      * 
      * The beta tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("beta")
@@ -80,7 +83,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * [@property] betaParameter
      * 
      * The beta tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("betaParameter")
@@ -119,7 +126,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * [@property] featureChannelCount
      * 
      * The number of feature channels
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("featureChannelCount")
     @NUInt
@@ -129,7 +140,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * [@property] gamma
      * 
      * The gamma tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gamma")
@@ -139,7 +154,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * [@property] gammaParameter
      * 
      * The gamma tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gammaParameter")
@@ -184,7 +203,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * @param gamma               The gamma tensor
      * @param varianceEpsilon     The epslion value
      * @return A new instance normalization layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithFeatureChannelCount:beta:gamma:varianceEpsilon:")
     public static native MLCInstanceNormalizationLayer layerWithFeatureChannelCountBetaGammaVarianceEpsilon(
@@ -200,7 +223,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * @param varianceEpsilon     The epslion value
      * @param momentum            The momentum value for the running mean and variance computation
      * @return A new instance normalization layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithFeatureChannelCount:beta:gamma:varianceEpsilon:momentum:")
     public static native MLCInstanceNormalizationLayer layerWithFeatureChannelCountBetaGammaVarianceEpsilonMomentum(
@@ -245,7 +272,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * The value used for the running mean and variance computation
      * 
      * The default is 0.99f.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("momentum")
     public native float momentum();
@@ -271,6 +302,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -291,7 +323,11 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * [@property] varianceEpsilon
      * 
      * A value used for numerical stability
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("varianceEpsilon")
     public native float varianceEpsilon();

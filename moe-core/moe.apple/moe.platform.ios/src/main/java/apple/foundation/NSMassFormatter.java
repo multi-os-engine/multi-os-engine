@@ -160,6 +160,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * No parsing is supported. This method will return NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
@@ -178,6 +180,8 @@ public class NSMassFormatter extends NSFormatter {
     /**
      * default is NO; if it is set to YES, the number argument for -stringFromKilograms: and -unitStringFromKilograms:
      * is considered as a person’s mass
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isForPersonMassUse")
@@ -186,6 +190,8 @@ public class NSMassFormatter extends NSFormatter {
     /**
      * default is NO; if it is set to YES, the number argument for -stringFromKilograms: and -unitStringFromKilograms:
      * is considered as a person’s mass
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setForPersonMassUse:")
@@ -193,6 +199,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("numberFormatter")
@@ -200,6 +208,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNumberFormatter:")
@@ -207,6 +217,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingUnitStyleMedium
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUnitStyle:")
@@ -215,6 +227,8 @@ public class NSMassFormatter extends NSFormatter {
     /**
      * Format a number in kilograms to a localized string with the locale-appropriate unit and an appropriate scale
      * (e.g. 1.2kg = 2.64lb in the US locale).
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -223,6 +237,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * Format a combination of a number and an unit to a localized string.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -231,6 +247,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * Return the locale-appropriate unit, the same unit used by -stringFromKilograms:.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -239,6 +257,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * Return a localized string of the given unit, and if the unit is singular or plural is based on the given number.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -247,6 +267,8 @@ public class NSMassFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingUnitStyleMedium
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("unitStyle")

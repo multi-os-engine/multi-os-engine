@@ -91,6 +91,8 @@ public class PHASEDistanceModelFadeOutParameters extends NSObject {
      * [@note]
      * Values are clamped the range [1, DBL_MAX].
      * This value is scaled by unitsPerMeter internally, so can be provided at the client's native spatial scale.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("cullDistance")
@@ -125,6 +127,8 @@ public class PHASEDistanceModelFadeOutParameters extends NSObject {
      *                     The distance beyond which the sound will be culled. Values must be >= 1.
      * @return
      *         An instance, or nil if initialization fails.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithCullDistance:")

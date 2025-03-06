@@ -136,6 +136,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * @return YES is returned if MDLAsset is able is able to export assets to
      *         resources with the given extension
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("canExportFileExtension:")
@@ -149,6 +151,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * @return YES is returned if MDLAsset is able to load and represent assets with
      *         the given extension
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("canImportFileExtension:")
@@ -215,6 +219,9 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Selector("new")
     public static native MDLAsset new_objc();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("placeLightProbesWithDensity:heuristic:usingIrradianceDataSource:")
@@ -249,6 +256,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * URL used to create the asset
      * 
      * If the asset was not created with a URL, nil will be returned.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -261,6 +270,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * Add a top level object to an asset.
      * 
      * If the object was already in the asset, this has no effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addObject:")
@@ -270,6 +281,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * [@property] bufferAllocator
      * 
      * Allocator used to create vertex and index buffers
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -285,6 +298,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * This can be used to get references to all MDLMesh objects, MDLLights,
      * etc. if objectClass is not a subclass of MDLObject, an exception will be
      * raised.
+     * 
+     * API-Since: 9.0
      * 
      * @return returns an NSArray of all objects in the asset matching the requested class
      */
@@ -304,6 +319,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * [@property] count
      * 
      * The number of top level objects
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("count")
@@ -325,6 +342,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * of specifying animation data, this value defaults to 0. If the
      * endTime was set explicitly, then the value of endTime will be the
      * greater of the set value and the animated values.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("endTime")
@@ -347,6 +366,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * Export an asset to the specified URL.
      * 
      * @return YES is returned if exporting proceeded successfully,
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("exportAssetToURL:error:")
@@ -360,6 +381,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * If no framerate was specified by resource or resource uncapable of
      * specifying framerate, this value defaults to 0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("frameInterval")
@@ -374,6 +397,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * Initialize an empty MDLAsset with a buffer allocator to be used during
      * other operations.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithBufferAllocator:")
@@ -391,6 +416,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * using a default NSData based allocator
      * 
      * Submeshes will be converted to triangle topology.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -413,6 +440,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * using a default NSData based allocator.
      * 
      * Submeshes will be converted to triangle topology.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:vertexDescriptor:bufferAllocator:")
@@ -434,6 +463,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * of vertices, then the the submesh type will be
      * MDLGeometryTypeVariableTopology, and a faceTopologyBuffer will be
      * created.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:")
@@ -457,6 +488,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * objectAtIndex:
      * 
      * return the indexed top level object
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -467,6 +500,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * objectAtIndexedSubscript:
      * 
      * return the indexed top level object
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -479,6 +514,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * Remove a top level object from an asset.
      * 
      * If the object not in the asset, this has no effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("removeObject:")
@@ -493,6 +530,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * of specifying animation data, this value defaults to 0. If the
      * endTime was set explicitly, then the value of endTime will be the
      * greater of the set value and the animated values.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEndTime:")
@@ -505,6 +544,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * If no framerate was specified by resource or resource uncapable of
      * specifying framerate, this value defaults to 0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFrameInterval:")
@@ -528,6 +569,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * of specifying animation data, this value defaults to 0. If startTime
      * was set explicitly, then the value of startTime will be the lesser
      * of the set value and the animated values.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStartTime:")
@@ -542,6 +585,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * of specifying animation data, this value defaults to 0. If startTime
      * was set explicitly, then the value of startTime will be the lesser
      * of the set value and the animated values.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("startTime")
@@ -553,6 +598,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * Vertex descriptor set upon asset initialization
      * 
      * Will be nil if there was no descriptor set
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

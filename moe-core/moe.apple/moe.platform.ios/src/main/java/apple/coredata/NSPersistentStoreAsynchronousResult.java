@@ -159,6 +159,9 @@ public class NSPersistentStoreAsynchronousResult extends NSPersistentStoreResult
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -167,16 +170,25 @@ public class NSPersistentStoreAsynchronousResult extends NSPersistentStoreResult
     @Selector("init")
     public native NSPersistentStoreAsynchronousResult init();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("operationError")
     public native NSError operationError();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("progress")

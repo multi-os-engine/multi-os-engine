@@ -58,6 +58,9 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("allocWithZone:")
     public static native INStartCallIntent allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("audioRoute")
     @NInt
@@ -67,6 +70,9 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("callCapability")
     @NInt
@@ -93,6 +99,9 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("contacts")
@@ -106,6 +115,9 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("destinationType")
     @NInt

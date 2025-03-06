@@ -99,6 +99,9 @@ public class MPSCNNSoftMaxGradientNode extends MPSNNGradientFilterNode {
     @Selector("init")
     public native MPSCNNSoftMaxGradientNode init();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
     public native MPSCNNSoftMaxGradientNode initWithSourceGradientSourceImageGradientState(
@@ -132,6 +135,9 @@ public class MPSCNNSoftMaxGradientNode extends MPSNNGradientFilterNode {
     @Selector("new")
     public static native MPSCNNSoftMaxGradientNode new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")
     public static native MPSCNNSoftMaxGradientNode nodeWithSourceGradientSourceImageGradientState(

@@ -56,6 +56,8 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
 
     /**
      * Action to take on choosing this command alternate.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -79,6 +81,8 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
      * @param action        Action to take on choosing this command alternate.
      * @param modifierFlags Bitmask of modifier flags to choose this command alternate.
      * @return A new command alternate.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("alternateWithTitle:action:modifierFlags:")
@@ -166,6 +170,8 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
 
     /**
      * Bitmask of modifier flags to choose this command alternate.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("modifierFlags")
@@ -205,6 +211,8 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
 
     /**
      * Short display title.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

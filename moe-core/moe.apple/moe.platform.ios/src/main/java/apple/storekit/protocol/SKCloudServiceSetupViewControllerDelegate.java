@@ -26,6 +26,13 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.1
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use the musicSubscriptionOffer(isPresented:options:onLoadCompletion:) SwiftUI View Modifier from
+ * MusicKit
+ */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -35,7 +42,11 @@ public interface SKCloudServiceSetupViewControllerDelegate {
      * Sent when the view controller was dismissed.
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the musicSubscriptionOffer(isPresented:options:onLoadCompletion:) SwiftUI View Modifier
+     * from MusicKit
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("cloudServiceSetupViewControllerDidDismiss:")

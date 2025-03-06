@@ -89,6 +89,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * Creates a new animation object.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("animation")
@@ -126,6 +128,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     /**
      * Animations implement the same property model as defined by CALayer.
      * See CALayer.h for more details.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -219,6 +223,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * The delegate of the animation. This object is retained for the
      * lifetime of the animation object. Defaults to nil. See below for the
      * supported delegate methods.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -276,6 +282,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     /**
      * When true, the animation is removed from the render tree once its
      * active duration has passed. Defaults to YES.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isRemovedOnCompletion")
@@ -284,6 +292,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     /**
      * When true, the animation is removed from the render tree once its
      * active duration has passed. Defaults to YES.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setRemovedOnCompletion:")
@@ -323,6 +333,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * The delegate of the animation. This object is retained for the
      * lifetime of the animation object. Defaults to nil. See below for the
      * supported delegate methods.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -379,6 +391,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     /**
      * A timing function defining the pacing of the animation. Defaults to
      * nil indicating linear pacing.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTimingFunction:")
@@ -390,11 +404,16 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
      * 
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setUsesSceneTimeBase:")
     public native void setUsesSceneTimeBase(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("shouldArchiveValueForKey:")
     public native boolean shouldArchiveValueForKey(@NotNull String key);
@@ -410,6 +429,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     /**
      * A timing function defining the pacing of the animation. Defaults to
      * nil indicating linear pacing.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -422,6 +443,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
      * 
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("usesSceneTimeBase")

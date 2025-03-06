@@ -92,6 +92,8 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
 
     /**
      * The interaction's delegate.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -116,6 +118,9 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     @Selector("init")
     public native UIContextMenuInteraction init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDelegate:")
     public native UIContextMenuInteraction initWithDelegate(
@@ -147,6 +152,8 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
      * Returns the interaction's location within the given view.
      * 
      * @param view The view in which to locate the interaction.
+     * 
+     *             API-Since: 13.0
      */
     @Generated
     @Selector("locationInView:")
@@ -190,6 +197,8 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
 
     /**
      * Dismisses the currently presented menu (if there is one).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("dismissMenu")

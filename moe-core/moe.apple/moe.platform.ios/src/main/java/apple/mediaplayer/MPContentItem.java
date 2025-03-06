@@ -165,6 +165,8 @@ public class MPContentItem extends NSObject {
     /**
      * Artwork for this item. Examples of artwork for a content item are the album
      * cover for a song, or a movie poster for a movie.
+     * 
+     * API-Since: 7.1
      */
     @Nullable
     @Generated
@@ -173,6 +175,8 @@ public class MPContentItem extends NSObject {
 
     /**
      * A unique identifier for this content item. (Required)
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
@@ -186,6 +190,8 @@ public class MPContentItem extends NSObject {
     /**
      * Designated initializer. A unique identifier is required to identify the item
      * for later use.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -194,6 +200,8 @@ public class MPContentItem extends NSObject {
     /**
      * Represents whether the content item is a container that may contain other
      * content items, e.g. an album or a playlist.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("isContainer")
@@ -202,6 +210,8 @@ public class MPContentItem extends NSObject {
     /**
      * Represents whether the content item is a container that may contain other
      * content items, e.g. an album or a playlist.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setContainer:")
@@ -231,6 +241,8 @@ public class MPContentItem extends NSObject {
      * for playback means the app should play each song in the album in order. An
      * example of a content item that may not be playable is a genre, since an app
      * experience typically doesn't involve selecting an entire genre for playback.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("isPlayable")
@@ -242,6 +254,8 @@ public class MPContentItem extends NSObject {
      * for playback means the app should play each song in the album in order. An
      * example of a content item that may not be playable is a genre, since an app
      * experience typically doesn't involve selecting an entire genre for playback.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setPlayable:")
@@ -271,6 +285,8 @@ public class MPContentItem extends NSObject {
      * Represents the current playback progress of the item.
      * 0.0 = not watched/listened/viewed, 1.0 = fully watched/listened/viewed
      * Default is -1.0 (no progress indicator shown)
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("playbackProgress")
@@ -279,6 +295,8 @@ public class MPContentItem extends NSObject {
     /**
      * Artwork for this item. Examples of artwork for a content item are the album
      * cover for a song, or a movie poster for a movie.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setArtwork:")
@@ -288,6 +306,8 @@ public class MPContentItem extends NSObject {
      * Represents the current playback progress of the item.
      * 0.0 = not watched/listened/viewed, 1.0 = fully watched/listened/viewed
      * Default is -1.0 (no progress indicator shown)
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setPlaybackProgress:")
@@ -296,6 +316,8 @@ public class MPContentItem extends NSObject {
     /**
      * A subtitle for this item. If this were representing a song, this would
      * usually be the artist or composer.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setSubtitle:")
@@ -304,6 +326,8 @@ public class MPContentItem extends NSObject {
     /**
      * A title for this item. Usually this would be the track name, if representing
      * a song, the episode name of a podcast, etc.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("setTitle:")
@@ -312,6 +336,8 @@ public class MPContentItem extends NSObject {
     /**
      * A subtitle for this item. If this were representing a song, this would
      * usually be the artist or composer.
+     * 
+     * API-Since: 7.1
      */
     @Nullable
     @Generated
@@ -321,6 +347,8 @@ public class MPContentItem extends NSObject {
     /**
      * A title for this item. Usually this would be the track name, if representing
      * a song, the episode name of a podcast, etc.
+     * 
+     * API-Since: 7.1
      */
     @Nullable
     @Generated

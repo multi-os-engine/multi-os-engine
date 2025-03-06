@@ -163,6 +163,8 @@ public class NSUnitConverter extends NSObject {
      * 
      * @param value Value in terms of the unit class
      * @return Value in terms of the base unit
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("baseUnitValueFromValue:")
@@ -178,6 +180,8 @@ public class NSUnitConverter extends NSObject {
      * 
      * @param baseUnitValue Value in terms of the base unit
      * @return Value in terms of the unit class
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("valueFromBaseUnitValue:")

@@ -116,6 +116,8 @@ public class CHHapticParameterCurveControlPoint extends NSObject {
      * @param time
      *              The time at which the associated parameter will reach this value, relative to the start time of the
      *              parameter curve.
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("initWithRelativeTime:value:")
@@ -148,6 +150,9 @@ public class CHHapticParameterCurveControlPoint extends NSObject {
     @Selector("new")
     public static native CHHapticParameterCurveControlPoint new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("relativeTime")
     public native double relativeTime();
@@ -160,10 +165,16 @@ public class CHHapticParameterCurveControlPoint extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setRelativeTime:")
     public native void setRelativeTime(double value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(float value);
@@ -176,6 +187,9 @@ public class CHHapticParameterCurveControlPoint extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("value")
     public native float value();

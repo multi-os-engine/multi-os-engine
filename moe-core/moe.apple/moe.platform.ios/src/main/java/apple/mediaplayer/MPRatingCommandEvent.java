@@ -164,6 +164,8 @@ public class MPRatingCommandEvent extends MPRemoteCommandEvent {
     /**
      * The chosen rating for this command event. This value will be within the
      * minimumRating and maximumRating values set for the MPRatingCommand object.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("rating")

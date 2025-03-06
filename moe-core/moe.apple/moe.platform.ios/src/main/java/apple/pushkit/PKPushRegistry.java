@@ -220,6 +220,9 @@ public class PKPushRegistry extends NSObject {
      * 
      * For more information about the methods of the `PKPushRegistryDelegate`
      * protocol, see ``PushKit/PKPushRegistryDelegate``.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -237,6 +240,9 @@ public class PKPushRegistry extends NSObject {
      * push requests from your server.
      * 
      * For a list of push types that you may include in the set, see ``PushKit/PKPushType``.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -257,6 +263,9 @@ public class PKPushRegistry extends NSObject {
      * 
      * - Returns: A `PKPushRegistry` object that you can use to register for push tokens and use to
      * receive notifications.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithQueue:")
@@ -275,6 +284,9 @@ public class PKPushRegistry extends NSObject {
      * 
      * - Returns: The push token used to send pushes to the device or `nil` if no token is available
      * for the specified type.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -290,6 +302,9 @@ public class PKPushRegistry extends NSObject {
      * 
      * For more information about the methods of the `PKPushRegistryDelegate`
      * protocol, see ``PushKit/PKPushRegistryDelegate``.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -304,6 +319,9 @@ public class PKPushRegistry extends NSObject {
      * 
      * For more information about the methods of the `PKPushRegistryDelegate`
      * protocol, see ``PushKit/PKPushRegistryDelegate``.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value) {
@@ -327,6 +345,9 @@ public class PKPushRegistry extends NSObject {
      * push requests from your server.
      * 
      * For a list of push types that you may include in the set, see ``PushKit/PKPushType``.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDesiredPushTypes:")

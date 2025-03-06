@@ -176,6 +176,8 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
      * 
      * The delegate is held using a zeroing-weak reference, so this property will have a value of nil after a delegate
      * that was previously set has been deallocated. This property is not key-value observable.
+     * 
+     * API-Since: 9.3
      */
     @Nullable
     @Generated
@@ -189,6 +191,8 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
      * The dispatch queue on which messages are sent to the delegate.
      * 
      * This property is not key-value observable.
+     * 
+     * API-Since: 9.3
      */
     @Nullable
     @Generated
@@ -208,6 +212,8 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
      * Some metadata available in some formats - such as timed metadata embedded in HLS segments - is not available for
      * collector output.
      * The default init method can be used as an alternative to setting both identifiers and classifyingLabels to nil.
+     * 
+     * API-Since: 9.3
      * 
      * @param identifiers
      *                          A array of metadata identifiers indicating the metadata items that the output should
@@ -234,6 +240,8 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
      *                      An object conforming to AVPlayerItemMetadataCollectorPushDelegate protocol.
      * @param delegateQueue
      *                      A dispatch queue on which all delegate methods will be called.
+     * 
+     *                      API-Since: 9.3
      */
     @Generated
     @Selector("setDelegate:queue:")

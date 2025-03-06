@@ -64,11 +64,17 @@ public class INCallRecordFilter extends NSObject implements NSCopying, NSSecureC
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("callCapability")
     @NInt
     public native long callCapability();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("callTypes")
     @NUInt
@@ -127,6 +133,9 @@ public class INCallRecordFilter extends NSObject implements NSCopying, NSSecureC
     @Selector("initWithCoder:")
     public native INCallRecordFilter initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithParticipants:callTypes:callCapability:")
     public native INCallRecordFilter initWithParticipantsCallTypesCallCapability(
@@ -159,6 +168,9 @@ public class INCallRecordFilter extends NSObject implements NSCopying, NSSecureC
     @Selector("new")
     public static native INCallRecordFilter new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("participants")

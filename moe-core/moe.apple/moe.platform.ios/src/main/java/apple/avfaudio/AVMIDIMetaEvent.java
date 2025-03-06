@@ -118,6 +118,8 @@ public class AVMIDIMetaEvent extends AVMusicEvent {
      *             A AVMIDIMetaEventType indicating which type of Meta-Event.
      * @param data
      *             An NSData object containing the raw contents of the Meta-Event.
+     * 
+     *             API-Since: 16.0
      */
     @Generated
     @Selector("initWithType:data:")
@@ -169,6 +171,8 @@ public class AVMIDIMetaEvent extends AVMusicEvent {
     /**
      * [@property] type
      * The type of Meta-Event, specified as an AVMIDIMetaEventType.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("type")

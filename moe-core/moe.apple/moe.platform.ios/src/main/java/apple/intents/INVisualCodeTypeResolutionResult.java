@@ -85,7 +85,12 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INVisualCodeTypeResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithVisualCodeTypeToConfirm:")
@@ -163,7 +168,12 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
      * INVisualCodeType. The resolvedValue can be different than the original INVisualCodeType. This allows app
      * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INVisualCodeTypeResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("successWithResolvedVisualCodeType:")

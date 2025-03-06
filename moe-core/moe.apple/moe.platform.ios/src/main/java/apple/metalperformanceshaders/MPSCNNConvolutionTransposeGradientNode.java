@@ -117,6 +117,8 @@ public class MPSCNNConvolutionTransposeGradientNode extends MPSCNNConvolutionGra
      *                       broken out into a separate node. Pass nil to use the weights
      *                       from the forward convolution transpose pass.
      * @return A MPSCNNConvolutionTransposeGradientNode
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:convolutionTransposeGradientState:weights:")
@@ -171,6 +173,8 @@ public class MPSCNNConvolutionTransposeGradientNode extends MPSCNNConvolutionGra
      *                       broken out into a separate node. Pass nil to use the weights
      *                       from the forward convolution transpose pass.
      * @return A MPSCNNConvolutionTransposeGradientNode
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:convolutionTransposeGradientState:weights:")

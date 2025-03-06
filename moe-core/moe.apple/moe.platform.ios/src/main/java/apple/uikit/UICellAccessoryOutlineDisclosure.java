@@ -55,6 +55,8 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
      * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when
      * using
      * a NSDiffableDataSourceSectionSnapshot is to toggle the expand/collapse state of the item in the section snapshot.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -164,6 +166,8 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
      * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when
      * using
      * a NSDiffableDataSourceSectionSnapshot is to toggle the expand/collapse state of the item in the section snapshot.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActionHandler:")
@@ -179,6 +183,8 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
 
     /**
      * The style of the outline disclosure accessory. Default is automatic.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStyle:")
@@ -190,6 +196,8 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
 
     /**
      * The style of the outline disclosure accessory. Default is automatic.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("style")

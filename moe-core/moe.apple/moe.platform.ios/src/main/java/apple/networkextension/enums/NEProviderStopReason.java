@@ -135,4 +135,10 @@ public final class NEProviderStopReason {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long AppUpdate = 0x0000000000000010L;
+    /**
+     * [@const] NEProviderStopReasonInternalError
+     * 
+     * API-Since: 18.1
+     */
+    @Generated @NInt public static final long InternalError = 0x0000000000000011L;
 }

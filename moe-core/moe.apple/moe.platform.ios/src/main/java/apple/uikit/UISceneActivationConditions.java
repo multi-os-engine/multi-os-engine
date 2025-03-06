@@ -65,6 +65,8 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
 
     /**
      * default is [NSPredicate predicateWithValue:YES]
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -109,6 +111,9 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("init")
     public native UISceneActivationConditions init();
@@ -146,6 +151,8 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
 
     /**
      * default is [NSPredicate predicateWithValue:NO];
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -162,6 +169,8 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
 
     /**
      * default is [NSPredicate predicateWithValue:YES]
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCanActivateForTargetContentIdentifierPredicate:")
@@ -169,6 +178,8 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
 
     /**
      * default is [NSPredicate predicateWithValue:NO];
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPrefersToActivateForTargetContentIdentifierPredicate:")

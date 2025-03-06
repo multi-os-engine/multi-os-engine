@@ -172,6 +172,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * options are typically associated with forced-only subtitle options with the same locale. See
      * AVMediaCharacteristicContainsOnlyForcedSubtitles in AVMediaFormat.h for a discussion of forced-only subtitles.
      * 
+     * API-Since: 5.0
+     * 
      * @param mediaSelectionGroup
      *                            A media selection group in which an associated option is to be sought.
      * @return An instance of AVMediaSelectionOption.
@@ -189,6 +191,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * option (e.g. ID3, iTunes metadata, etc.).
      * 
      * Metadata formats are defined in AVMetadataFormat.h.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -225,6 +229,9 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * title = [[titles objectAtIndex:0] stringValue];
      * }
      * }
+     * 
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -296,6 +303,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      *                            The media characteristic of interest, e.g. AVMediaCharacteristicVisual,
      *                            AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, etc.
      * @return YES if the media selection option includes media with the specified characteristic, otherwise NO.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @Selector("hasMediaCharacteristic:")
@@ -311,6 +320,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * Indicates whether a media selection option is playable.
      * 
      * If the media data associated with the option cannot be decoded or otherwise rendered, playable is NO.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isPlayable")
@@ -323,6 +334,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * 
      * Use -[NSLocale objectForKey:NSLocaleLanguageCode] to obtain the language code of the locale. See NSLocale.h for
      * additional information.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -332,6 +345,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     /**
      * Will create a language option from the AVMediaSelectionOption
      * Returns nil if the AVMediaSelectionOption does not represent an Audible or Legible selection option.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -350,6 +365,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * Note that if no information is available about the encoding of the media presented when a media option is
      * selected, the value of mediaSubTypes will be an empty array. This can occur, for example, with streaming media.
      * In these cases the value of mediaSubTypes should simply not be used as a criteria for selection.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -360,6 +377,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * [@property] mediaType
      * 
      * The media type of the media data, e.g. AVMediaTypeAudio, AVMediaTypeSubtitle, etc.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -374,6 +393,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * @param format
      *               The metadata format for which items are requested.
      * @return An NSArray containing AVMetadataItems.
+     * 
+     *         API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -388,6 +409,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * 
      * @return A serializable property list that's sufficient to identify the option within its group. For serialization
      *         utilities, see NSPropertyList.h.
+     * 
+     *         API-Since: 5.0
      */
     @NotNull
     @Generated

@@ -19,22 +19,22 @@ public final class nw_listener_state_t {
      * will never be delivered in the listener's state update handler, and can be treated as
      * an unexpected value.
      */
-    @Generated public static final int nw_listener_state_invalid = 0x00000000;
+    @Generated public static final int _invalid = 0x00000000;
     /**
      * [@const] nw_listener_state_waiting The listener is waiting for a usable network before being able to receive
      * connections
      */
-    @Generated public static final int nw_listener_state_waiting = 0x00000001;
+    @Generated public static final int _waiting = 0x00000001;
     /**
      * [@const] nw_listener_state_ready The listener is ready and able to accept incoming connections
      */
-    @Generated public static final int nw_listener_state_ready = 0x00000002;
+    @Generated public static final int _ready = 0x00000002;
     /**
      * [@const] nw_listener_state_failed The listener has irrecoverably closed or failed
      */
-    @Generated public static final int nw_listener_state_failed = 0x00000003;
+    @Generated public static final int _failed = 0x00000003;
     /**
      * [@const] nw_listener_state_cancelled The listener has been cancelled by the caller
      */
-    @Generated public static final int nw_listener_state_cancelled = 0x00000004;
+    @Generated public static final int _cancelled = 0x00000004;
 }

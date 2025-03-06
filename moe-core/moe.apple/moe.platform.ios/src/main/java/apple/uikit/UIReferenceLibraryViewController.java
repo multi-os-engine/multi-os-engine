@@ -117,6 +117,8 @@ public class UIReferenceLibraryViewController extends UIViewController {
 
     /**
      * Returns YES if any installed dictionary has a definition for the provided term.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("dictionaryHasDefinitionForTerm:")
@@ -181,6 +183,8 @@ public class UIReferenceLibraryViewController extends UIViewController {
 
     /**
      * Declared solely for the sake of potential subclassers.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithCoder:")
@@ -193,6 +197,8 @@ public class UIReferenceLibraryViewController extends UIViewController {
 
     /**
      * Initializes an instance of a UIReferenceLibraryViewController with the term provided.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithTerm:")

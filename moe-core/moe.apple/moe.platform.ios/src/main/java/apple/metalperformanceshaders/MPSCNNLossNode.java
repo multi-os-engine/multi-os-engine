@@ -108,6 +108,9 @@ public class MPSCNNLossNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSCNNLossNode init();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSource:lossDescriptor:")
     public native MPSCNNLossNode initWithSourceLossDescriptor(@NotNull MPSNNImageNode source,
@@ -115,6 +118,8 @@ public class MPSCNNLossNode extends MPSNNFilterNode {
 
     /**
      * Get the input node for labes and weights, for example to set the handle
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -148,6 +153,9 @@ public class MPSCNNLossNode extends MPSNNFilterNode {
     @Selector("new")
     public static native MPSCNNLossNode new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSource:lossDescriptor:")
     public static native MPSCNNLossNode nodeWithSourceLossDescriptor(@NotNull MPSNNImageNode source,

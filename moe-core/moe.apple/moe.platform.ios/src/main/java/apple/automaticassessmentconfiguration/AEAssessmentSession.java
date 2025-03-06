@@ -61,6 +61,9 @@ public class AEAssessmentSession extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("begin")
     public native void begin();
@@ -98,6 +101,9 @@ public class AEAssessmentSession extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.4
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -108,6 +114,9 @@ public class AEAssessmentSession extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("end")
     public native void end();
@@ -121,6 +130,9 @@ public class AEAssessmentSession extends NSObject {
     @Selector("init")
     public native AEAssessmentSession init();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native AEAssessmentSession initWithConfiguration(@NotNull AEAssessmentConfiguration configuration);
@@ -138,6 +150,9 @@ public class AEAssessmentSession extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
@@ -164,10 +179,16 @@ public class AEAssessmentSession extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) AEAssessmentSessionDelegate value);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AEAssessmentSessionDelegate value) {
         Object __old = delegate();
@@ -197,4 +218,25 @@ public class AEAssessmentSession extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("supportsConfigurationUpdates")
+    public static native boolean supportsConfigurationUpdates();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("supportsMultipleParticipants")
+    public static native boolean supportsMultipleParticipants();
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("updateToConfiguration:")
+    public native void updateToConfiguration(@NotNull AEAssessmentConfiguration configuration);
 }

@@ -146,6 +146,8 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
 
     /**
      * The maximum diameter in pixels of the filter window supported by the median filter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maxKernelDiameter")
@@ -154,6 +156,8 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
 
     /**
      * The minimum diameter in pixels of the filter window supported by the median filter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("minKernelDiameter")
@@ -200,6 +204,8 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
      * @param device         The device the filter will run on
      * @param kernelDiameter Diameter of the median filter. Must be an odd number.
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:kernelDiameter:")
@@ -214,6 +220,8 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
      * The median filter is applied to a kernelDiameter x kernelDiameter window
      * of pixels centered on the corresponding source pixel for each destination
      * pixel. The kernel diameter must be an odd number.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelDiameter")

@@ -35,7 +35,10 @@ import org.jetbrains.annotations.Nullable;
  * associated MIDI source that responds to capability inquiries.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported for CoreMIDI
  */
+@Deprecated
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -97,10 +100,22 @@ public class MIDICIDiscoveredNode extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @Generated
     @Selector("destination")
     public native int destination();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("deviceInfo")
@@ -137,6 +152,12 @@ public class MIDICIDiscoveredNode extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("maximumSysExSize")
@@ -163,10 +184,22 @@ public class MIDICIDiscoveredNode extends NSObject implements NSSecureCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @Generated
     @Selector("supportsProfiles")
     public native boolean supportsProfiles();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @Generated
     @Selector("supportsProperties")
     public native boolean supportsProperties();

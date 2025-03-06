@@ -94,6 +94,9 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -107,11 +110,17 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("imageSet")
@@ -125,6 +134,9 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPNavigationAlert initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithTitleVariants:subtitleVariants:image:primaryAction:secondaryAction:duration:")
     public native CPNavigationAlert initWithTitleVariantsSubtitleVariantsImagePrimaryActionSecondaryActionDuration(
@@ -192,6 +204,9 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native CPNavigationAlert new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("primaryAction")
@@ -205,6 +220,9 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("secondaryAction")
@@ -214,6 +232,9 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("subtitleVariants")
@@ -233,6 +254,9 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("titleVariants")
@@ -246,6 +270,8 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
      * 
      * @param newTitleVariants    an updated array of title variants
      * @param newSubtitleVariants an updated array of subtitle variants
+     * 
+     *                            API-Since: 12.0
      */
     @Generated
     @Selector("updateTitleVariants:subtitleVariants:")

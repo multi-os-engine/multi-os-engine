@@ -58,6 +58,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      * The system will select the first variant that fits the available space. The variant strings should be provided as
      * localized, displayable content.
      * Examples: "Fastest Route", "Avoids Tolls"
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -135,6 +137,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      * Initialize a @c CPRouteChoice with summary variants, additional information variants, and selection summary
      * variants.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithSummaryVariants:additionalInformationVariants:selectionSummaryVariants:")
@@ -181,6 +185,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      * selectionSummaryVariants is an array of summary variants for this route choice, arranged from most to least
      * preferred. You must provide at least one variant.
      * The system will select the first variant that fits the available space.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -189,6 +195,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Any custom user info related to this route choice.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -204,6 +212,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      * The system will select the first variant that fits the available space. The variant strings should be provided as
      * localized, displayable content.
      * Example: "Via I-280 S"
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -226,6 +236,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Any custom user info related to this route choice.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

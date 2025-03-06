@@ -107,6 +107,9 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("fetchCurrentUserRecordOperation")
@@ -171,6 +174,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -188,6 +193,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -195,10 +202,16 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_fetchRecordsCompletionBlock_ret")
     public native Block_fetchRecordsCompletionBlock_ret fetchRecordsCompletionBlock();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native CKFetchRecordsOperation init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithRecordIDs:")
     public native CKFetchRecordsOperation initWithRecordIDs(@NotNull NSArray<? extends CKRecordID> recordIDs);
@@ -209,6 +222,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -225,6 +240,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -232,6 +249,9 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_perRecordProgressBlock_ret")
     public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordIDs")
@@ -243,6 +263,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDesiredKeys:")
@@ -259,6 +281,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFetchRecordsCompletionBlock:")
@@ -271,6 +295,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPerRecordCompletionBlock:")
@@ -286,12 +312,17 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPerRecordProgressBlock:")
     public native void setPerRecordProgressBlock(
             @Nullable @ObjCBlock(name = "call_setPerRecordProgressBlock") Block_setPerRecordProgressBlock value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRecordIDs:")
     public native void setRecordIDs(@Nullable NSArray<? extends CKRecordID> value);

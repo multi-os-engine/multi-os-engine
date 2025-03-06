@@ -100,6 +100,8 @@ public class INDoubleResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the double value with which the user wants to
      * continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -174,6 +176,8 @@ public class INDoubleResolutionResult extends INIntentResolutionResult {
      * resolvedValue can be different than the original number. This allows app extensions to apply business logic
      * constraints. For example, the extension could precisely control rounding the value.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

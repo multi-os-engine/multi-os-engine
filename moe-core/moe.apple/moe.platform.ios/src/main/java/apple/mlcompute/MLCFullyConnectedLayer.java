@@ -34,8 +34,7 @@ import org.jetbrains.annotations.Nullable;
  * There is an exception for the case of (N,C,1,1) which gets mapped to (N,C',1,1).
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -74,7 +73,11 @@ public class MLCFullyConnectedLayer extends MLCLayer {
      * [@property] biases
      * 
      * The bias tensor used by the convolution layer
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biases")
@@ -84,7 +87,11 @@ public class MLCFullyConnectedLayer extends MLCLayer {
      * [@property] biasesParameter
      * 
      * The bias tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("biasesParameter")
@@ -123,7 +130,11 @@ public class MLCFullyConnectedLayer extends MLCLayer {
      * [@property] descriptor
      * 
      * The convolution descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -167,7 +178,11 @@ public class MLCFullyConnectedLayer extends MLCLayer {
      * @param biases     The bias tensor
      * @param descriptor The convolution descriptor
      * @return A new fully connected layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithWeights:biases:descriptor:")
     public static native MLCFullyConnectedLayer layerWithWeightsBiasesDescriptor(@NotNull MLCTensor weights,
@@ -194,6 +209,7 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -207,7 +223,11 @@ public class MLCFullyConnectedLayer extends MLCLayer {
      * [@property] weights
      * 
      * The weights tensor used by the convolution layer
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weights")
@@ -217,7 +237,11 @@ public class MLCFullyConnectedLayer extends MLCLayer {
      * [@property] weightsParameter
      * 
      * The weights tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("weightsParameter")

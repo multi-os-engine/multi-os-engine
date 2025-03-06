@@ -56,6 +56,9 @@ public class PKIssuerProvisioningExtensionPassEntry extends NSObject {
     @Selector("allocWithZone:")
     public static native PKIssuerProvisioningExtensionPassEntry allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("art")
@@ -99,6 +102,9 @@ public class PKIssuerProvisioningExtensionPassEntry extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("identifier")
@@ -151,6 +157,9 @@ public class PKIssuerProvisioningExtensionPassEntry extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("title")

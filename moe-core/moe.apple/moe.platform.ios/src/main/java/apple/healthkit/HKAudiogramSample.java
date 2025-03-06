@@ -64,7 +64,7 @@ public class HKAudiogramSample extends HKSample {
     public static native HKAudiogramSample allocWithZone(VoidPtr zone);
 
     /**
-     * audiogramSampleWithsensitivityPoints:startDate:endDate:metadata:
+     * audiogramSampleWithSensitivityPoints:startDate:endDate:metadata:
      * 
      * Creates a new audiogram sample with the specified attributes.
      * 
@@ -74,7 +74,11 @@ public class HKAudiogramSample extends HKSample {
      * @param endDate           The end date for the hearing test.
      * @param metadata          Optional meta data associated with the sample.
      * @return A new instance of an audiogram sample.
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 18.1
      */
+    @Deprecated
     @Generated
     @Selector("audiogramSampleWithSensitivityPoints:startDate:endDate:metadata:")
     public static native HKAudiogramSample audiogramSampleWithSensitivityPointsStartDateEndDateMetadata(
@@ -166,6 +170,8 @@ public class HKAudiogramSample extends HKSample {
      * [@property] sensitivityPoints
      * 
      * The hearing sensitivity readings associated with a hearing test.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -199,4 +205,25 @@ public class HKAudiogramSample extends HKSample {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * audiogramSampleWithSensitivityPoints:startDate:endDate:device:metadata:
+     * 
+     * Creates a new audiogram sample with the specified attributes.
+     * 
+     * @param sensitivityPoints Sensitivity data associated with the sample, with a maximum limit of 30 points.
+     *                          Frequencies must be unique, and ordered ascending.
+     * @param startDate         The start date of the hearing test.
+     * @param endDate           The end date of the hearing test.
+     * @param device            The device that generated the sample data.
+     * @param metadata          Optional metadata associated with the sample.
+     * @return A new instance of an audiogram sample.
+     * 
+     *         API-Since: 18.1
+     */
+    @Generated
+    @Selector("audiogramSampleWithSensitivityPoints:startDate:endDate:device:metadata:")
+    public static native HKAudiogramSample audiogramSampleWithSensitivityPointsStartDateEndDateDeviceMetadata(
+            @NotNull NSArray<? extends HKAudiogramSensitivityPoint> sensitivityPoints, @NotNull NSDate startDate,
+            @NotNull NSDate endDate, @Nullable HKDevice device, @Nullable NSDictionary<String, ?> metadata);
 }

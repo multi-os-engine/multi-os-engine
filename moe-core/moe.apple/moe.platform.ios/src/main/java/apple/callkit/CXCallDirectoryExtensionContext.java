@@ -161,20 +161,32 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("addBlockingEntryWithNextSequentialPhoneNumber:")
     public native void addBlockingEntryWithNextSequentialPhoneNumber(long phoneNumber);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("addIdentificationEntryWithNextSequentialPhoneNumber:label:")
     public native void addIdentificationEntryWithNextSequentialPhoneNumberLabel(long phoneNumber,
             @NotNull String label);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("completeRequestWithCompletionHandler:")
     public native void completeRequestWithCompletionHandler(
             @Nullable @ObjCBlock(name = "call_completeRequestWithCompletionHandler") Block_completeRequestWithCompletionHandler completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -185,11 +197,17 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @Selector("init")
     public native CXCallDirectoryExtensionContext init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) CXCallDirectoryExtensionContextDelegate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CXCallDirectoryExtensionContextDelegate value) {
         Object __old = delegate();

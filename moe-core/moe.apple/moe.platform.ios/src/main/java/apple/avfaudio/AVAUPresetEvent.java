@@ -99,6 +99,8 @@ public class AVAUPresetEvent extends AVMusicEvent {
     /**
      * [@property] element
      * The element index within the scope (see AudioUnitElement). This should usually be set to 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("element")
@@ -120,6 +122,9 @@ public class AVAUPresetEvent extends AVMusicEvent {
      * 
      * The dictionary passed to this initializer will be copied and is not editable once the event is
      * created.
+     * 
+     * 
+     * API-Since: 16.0
      * 
      * @param scope
      *                         The audio unit scope for the parameter (see AudioUnitScope). This should always be set to
@@ -166,6 +171,8 @@ public class AVAUPresetEvent extends AVMusicEvent {
     /**
      * [@property] presetDictionary
      * An NSDictionary containing the preset.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -183,6 +190,8 @@ public class AVAUPresetEvent extends AVMusicEvent {
     /**
      * [@property] scope
      * The audio unit scope for the parameter (see AudioUnitScope). This should always be set to Global.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("scope")
@@ -191,6 +200,8 @@ public class AVAUPresetEvent extends AVMusicEvent {
     /**
      * [@property] element
      * The element index within the scope (see AudioUnitElement). This should usually be set to 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setElement:")
@@ -199,6 +210,8 @@ public class AVAUPresetEvent extends AVMusicEvent {
     /**
      * [@property] scope
      * The audio unit scope for the parameter (see AudioUnitScope). This should always be set to Global.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setScope:")

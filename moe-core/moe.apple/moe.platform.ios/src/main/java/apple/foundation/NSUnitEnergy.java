@@ -79,6 +79,9 @@ public class NSUnitEnergy extends NSDimension implements NSSecureCoding {
     @Selector("baseUnit")
     public static native NSUnitEnergy baseUnit();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("calories")
@@ -135,6 +138,9 @@ public class NSUnitEnergy extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("joules")
@@ -145,6 +151,9 @@ public class NSUnitEnergy extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilocalories")
@@ -152,12 +161,17 @@ public class NSUnitEnergy extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - joules
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("kilojoules")
     public static native NSUnitEnergy kilojoules();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilowattHours")

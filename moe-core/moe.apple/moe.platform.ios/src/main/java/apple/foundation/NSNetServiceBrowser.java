@@ -161,7 +161,12 @@ public class NSNetServiceBrowser extends NSObject {
 
     /**
      * Set a delegate to receive discovery events.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -178,10 +183,22 @@ public class NSNetServiceBrowser extends NSObject {
     @Selector("includesPeerToPeer")
     public native boolean includesPeerToPeer();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSNetServiceBrowser init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
+     */
+    @Deprecated
     @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
@@ -190,7 +207,12 @@ public class NSNetServiceBrowser extends NSObject {
      * NSNetServiceBrowser instances may be scheduled on NSRunLoops to operate in different modes, or in other threads.
      * It is generally not necessary to schedule NSNetServiceBrowsers in other threads. NSNetServiceBrowsers are
      * scheduled in the current thread's NSRunLoop in the NSDefaultRunLoopMode when they are created.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
@@ -199,7 +221,12 @@ public class NSNetServiceBrowser extends NSObject {
      * Starts a search for domains that are browsable via Bonjour and the computer's network configuration. Discovered
      * domains are reported to the delegate's -netServiceBrowser:didFindDomain:moreComing: method. There may be more
      * than one browsable domain.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("searchForBrowsableDomains")
     public native void searchForBrowsableDomains();
@@ -210,7 +237,12 @@ public class NSNetServiceBrowser extends NSObject {
      * with the empty string (see -[NSNetService initWithDomain:type:name:port:]). Discovered domains are reported to
      * the delegate's -netServiceBrowser:didFindDomain:moreComing: method. There may be more than one registration
      * domain.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("searchForRegistrationDomains")
     public native void searchForRegistrationDomains();
@@ -219,21 +251,36 @@ public class NSNetServiceBrowser extends NSObject {
      * Starts a search for services of the specified type in the domain indicated by domainString. For each service
      * discovered, a -netServiceBrowser:foundService:moreComing: message is sent to the NSNetServiceBrowser instance's
      * delegate.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("searchForServicesOfType:inDomain:")
     public native void searchForServicesOfTypeInDomain(@NotNull String type, @NotNull String domainString);
 
     /**
      * Set a delegate to receive discovery events.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value);
 
     /**
      * Set a delegate to receive discovery events.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value) {
         Object __old = delegate();
@@ -258,7 +305,12 @@ public class NSNetServiceBrowser extends NSObject {
 
     /**
      * Stops the currently running search.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("stop")
     public native void stop();

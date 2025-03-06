@@ -177,6 +177,8 @@ public class CAAnimationGroup extends CAAnimation {
      * An array of CAAnimation objects. Each member of the array will run
      * concurrently in the time space of the parent animation using the
      * normal rules.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -195,6 +197,8 @@ public class CAAnimationGroup extends CAAnimation {
      * An array of CAAnimation objects. Each member of the array will run
      * concurrently in the time space of the parent animation using the
      * normal rules.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAnimations:")

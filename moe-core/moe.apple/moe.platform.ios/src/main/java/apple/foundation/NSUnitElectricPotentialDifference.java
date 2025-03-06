@@ -135,6 +135,9 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilovolts")
@@ -142,17 +145,25 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
 
     /**
      * Base unit - volts
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("megavolts")
     public static native NSUnitElectricPotentialDifference megavolts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("microvolts")
     public static native NSUnitElectricPotentialDifference microvolts();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("millivolts")
@@ -188,6 +199,9 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("volts")

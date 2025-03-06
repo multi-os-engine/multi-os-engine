@@ -22,6 +22,8 @@ public interface UIPageControlTimerProgressDelegate extends UIPageControlProgres
     /**
      * Determines if the time interval progress should advance to the next page upon progress completion of
      * the current page's duration. Default is YES.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @IsOptional
@@ -33,6 +35,8 @@ public interface UIPageControlTimerProgressDelegate extends UIPageControlProgres
 
     /**
      * Called when the progress has changed from the time interval progress.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @IsOptional

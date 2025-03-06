@@ -93,6 +93,8 @@ public class VNFaceLandmarks extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * a confidence estimate for the returned landmarks.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("confidence")

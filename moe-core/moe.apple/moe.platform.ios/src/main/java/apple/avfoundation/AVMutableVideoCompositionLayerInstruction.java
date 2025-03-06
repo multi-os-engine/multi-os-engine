@@ -173,6 +173,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * 
      * Returns a new instance of AVMutableVideoCompositionLayerInstruction with no transform or opacity ramps and a
      * trackID initialized to kCMPersistentTrackID_Invalid.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("videoCompositionLayerInstruction")
@@ -186,6 +188,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * 
      * @param track
      *              A reference to an AVAssetTrack.
+     * 
+     *              API-Since: 4.0
      */
     @Generated
     @Selector("videoCompositionLayerInstructionWithAssetTrack:")
@@ -280,6 +284,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * time, the opacity is held constant at the last value.
      * This method throws an exception if time is not numeric.
      * 
+     * API-Since: 4.0
+     * 
      * @param opacity
      *                The opacity to be applied at the specified time. The value must be between 0.0 and 1.0.
      * @param time
@@ -299,6 +305,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * time, the opacity is held constant at the last value
      * This method throws an exception if the time range of a does not have a numeric start time and duration.
      * 
+     * API-Since: 4.0
+     * 
      * @param startOpacity
      *                     The opacity to be applied at the starting time of the timeRange. The value must be between
      *                     0.0 and 1.0.
@@ -316,6 +324,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * Indicates the trackID of the source track to which the compositor will apply the instruction.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTrackID:")
@@ -340,6 +350,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * after the last time for which a transform is set, the affine transform is held constant at that last value;
      * 
      * This method throws an exception if time is not numeric.
+     * 
+     * API-Since: 4.0
      * 
      * @param transform
      *                  The transform to be applied at the specified time. See the discussion below of how transforms
@@ -372,6 +384,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * This method throws an exception if the time range overlaps the time range of an existing transform ramp or if the
      * time range of a does not have a numeric start time and duration.
      * 
+     * API-Since: 4.0
+     * 
      * @param startTransform
      *                       The transform to be applied at the starting time of the timeRange. See the discussion below
      *                       of how transforms are applied to video frames.
@@ -395,6 +409,8 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * Indicates the trackID of the source track to which the compositor will apply the instruction.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("trackID")

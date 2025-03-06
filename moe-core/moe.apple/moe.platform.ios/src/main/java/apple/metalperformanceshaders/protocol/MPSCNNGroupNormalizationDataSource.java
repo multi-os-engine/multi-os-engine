@@ -38,6 +38,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * Return a pointer to an array containing the beta terms.
      * 
      * Must have numberOfFeatureChannels values since scaling is done per feature channel.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -51,6 +53,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * @param device The device where the kernel which uses this data source will be used.
      * 
      * @return A pointer to a copy of this data source.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -64,6 +68,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * Optional NSSecureCoding compatibility.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -77,6 +83,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * 
      * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
      * Defalt value if method unavailable: FLT_MIN
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -89,6 +97,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * Return a pointer to an array containing the gamma terms.
      * 
      * Must have numberOfFeatureChannels values since scaling is done per feature channel.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -97,6 +107,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * NS_DESIGNATED_INITIALIZER
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -110,6 +122,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * A label that is transferred to the group normalization filter at init time
      * 
      * Overridden by a MPSCNNGroupNormalizationNode.label if it is non-nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -118,6 +132,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * [@property] The number of feature channels that are normalized.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("numberOfFeatureChannels")
@@ -128,6 +144,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * [@property] The number of groups used.
      * 
      * numberOfFeatureChannels/numberOfGroups channels are normalized together.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("numberOfGroups")
@@ -138,11 +156,16 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * [@property] The number of groups used.
      * 
      * numberOfFeatureChannels/numberOfGroups channels are normalized together.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNumberOfGroups:")
     void setNumberOfGroups(@NUInt long value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("supportsSecureCoding")

@@ -89,6 +89,8 @@ public class INMediaDestinationResolutionResult extends INIntentResolutionResult
     /**
      * This resolution result is to ask Siri to confirm if this is the mediaDestination with which the user wants to
      * continue.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -106,6 +108,8 @@ public class INMediaDestinationResolutionResult extends INIntentResolutionResult
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INMediaDestination.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -176,6 +180,8 @@ public class INMediaDestinationResolutionResult extends INIntentResolutionResult
      * INMediaDestination. The resolvedMediaDestination can be different than the original INMediaDestination. This
      * allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

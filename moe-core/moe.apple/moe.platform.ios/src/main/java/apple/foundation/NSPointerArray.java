@@ -152,11 +152,17 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("new")
     public static native NSPointerArray new_objc();
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("pointerArrayWithOptions:")
     public static native NSPointerArray pointerArrayWithOptions(@NUInt long options);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("pointerArrayWithPointerFunctions:")
@@ -201,11 +207,16 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     /**
      * add pointer at index 'count'
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("addPointer:")
     public native void addPointer(@Nullable VoidPtr pointer);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("allObjects")
@@ -213,6 +224,8 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     /**
      * eliminate NULLs
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("compact")
@@ -228,6 +241,8 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     /**
      * Getter: the number of elements in the array, including NULLs
      * Setter: sets desired number of elements, adding NULLs or removing items as necessary.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("count")
@@ -254,22 +269,32 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     /**
      * construction
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("initWithOptions:")
     public native NSPointerArray initWithOptions(@NUInt long options);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithPointerFunctions:")
     public native NSPointerArray initWithPointerFunctions(@NotNull NSPointerFunctions functions);
 
     /**
      * everything at & above index, including holes, slide higher
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("insertPointer:atIndex:")
     public native void insertPointerAtIndex(@Nullable VoidPtr item, @NUInt long index);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("pointerAtIndex:")
@@ -278,6 +303,8 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     /**
      * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
      * be subsequently modified and/or used directly in the creation of other pointer "collections".
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -286,6 +313,8 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     /**
      * everything above index, including holes, slide lower
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("removePointerAtIndex:")
@@ -293,6 +322,8 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     /**
      * O(1); NULL item is okay; index must be < count
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("replacePointerAtIndex:withPointer:")
@@ -301,6 +332,8 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     /**
      * Getter: the number of elements in the array, including NULLs
      * Setter: sets desired number of elements, adding NULLs or removing items as necessary.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setCount:")

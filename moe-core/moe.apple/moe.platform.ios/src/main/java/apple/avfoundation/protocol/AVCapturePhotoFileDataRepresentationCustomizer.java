@@ -47,6 +47,8 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      * This callback is optional. If your delegate does not implement this callback, the existing depth data in the
      * in-memory AVCapturePhoto container will be written to the file data representation.
      * 
+     * API-Since: 12.0
+     * 
      * @param photo
      *              The calling instance of AVCapturePhoto.
      * @return
@@ -69,6 +71,8 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      * 
      * This callback is optional. If your delegate does not implement this callback, the existing embedded thumbnail
      * photo in the in-memory AVCapturePhoto container will be written to the file data representation.
+     * 
+     * API-Since: 12.0
      * 
      * @param replacementEmbeddedThumbnailPhotoFormatOut
      *                                                   On output, a pointer to a dictionary of keys and values from
@@ -112,6 +116,8 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      * This callback is optional. If your delegate does not implement this callback, the existing metadata in the
      * in-memory AVCapturePhoto container will be written to the file data representation.
      * 
+     * API-Since: 12.0
+     * 
      * @param photo
      *              The calling instance of AVCapturePhoto.
      * @return
@@ -135,6 +141,8 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      * 
      * This callback is optional. If your delegate does not implement this callback, the existing portrait effects matte
      * in the in-memory AVCapturePhoto container will be written to the file data representation.
+     * 
+     * API-Since: 12.0
      * 
      * @param photo
      *              The calling instance of AVCapturePhoto.

@@ -46,6 +46,8 @@ public interface INPlayMediaIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INPlayMediaIntentResponse
+     * 
+     *      API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -72,6 +74,8 @@ public interface INPlayMediaIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INPlayMediaIntentResponse
+     * 
+     *      API-Since: 12.0
      */
     @Generated
     @Selector("handlePlayMedia:completion:")

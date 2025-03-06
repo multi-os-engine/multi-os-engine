@@ -125,6 +125,8 @@ public class VNDocumentCameraViewController extends UIViewController {
      * 
      * Your app is responsible for dismissing the document camera in all delegate
      * callback methods.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -175,6 +177,8 @@ public class VNDocumentCameraViewController extends UIViewController {
      * A Boolean variable that indicates whether or not the current device supports document scanning.
      * 
      * This class method returns `false` for unsupported hardware.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isSupported")
@@ -214,6 +218,8 @@ public class VNDocumentCameraViewController extends UIViewController {
      * 
      * Your app is responsible for dismissing the document camera in all delegate
      * callback methods.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -236,6 +242,8 @@ public class VNDocumentCameraViewController extends UIViewController {
      * 
      * Your app is responsible for dismissing the document camera in all delegate
      * callback methods.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) VNDocumentCameraViewControllerDelegate value) {

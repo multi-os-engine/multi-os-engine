@@ -166,6 +166,8 @@ public class NSBatchDeleteResult extends NSPersistentStoreResult {
 
     /**
      * Return the result. See NSBatchDeleteRequestResultType for options
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -173,6 +175,9 @@ public class NSBatchDeleteResult extends NSPersistentStoreResult {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object result();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("resultType")
     @NUInt

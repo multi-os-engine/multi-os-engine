@@ -165,6 +165,8 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
      * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to the number of bytes contained by the requested resource.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("contentLength")
@@ -177,6 +179,8 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
      * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to a UTI indicating the type of data contained by the requested resource.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -197,6 +201,8 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
      * should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the
      * resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the
      * resource may fail. Such resources include anything that contains media data.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isByteRangeAccessSupported")
@@ -212,6 +218,8 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
      * should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the
      * resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the
      * resource may fail. Such resources include anything that contains media data.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setByteRangeAccessSupported:")
@@ -243,6 +251,8 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
      * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to the number of bytes contained by the requested resource.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setContentLength:")
@@ -255,6 +265,8 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
      * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to a UTI indicating the type of data contained by the requested resource.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setContentType:")
@@ -283,8 +295,9 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
      * 
      * An array showing the types of data which will be accepted as a valid response for the requested resource.
      * 
-     * If allowedContentTypes is nonnil and the contentType property is not in allowedContentTypes, an exception will be
-     * raised.
+     * If an AVAssetResourceLoadingRequest's contentInformationRequest is not nil, ensure that the value assigned to the
+     * contentType property is in this array. Otherwise, calling -finishLoading on the associated request will result in
+     * an exception.
      * 
      * API-Since: 11.2
      */

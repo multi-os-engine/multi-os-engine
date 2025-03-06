@@ -36,6 +36,8 @@ public interface CKSyncEngineDelegate {
      * 
      * Events will be given to your delegate serially.
      * You will not receive the next event until you have returned from this function for the previous event.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("syncEngine:handleEvent:")
@@ -88,6 +90,8 @@ public interface CKSyncEngineDelegate {
      * return options
      * }
      * ```
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @IsOptional
@@ -137,6 +141,8 @@ public interface CKSyncEngineDelegate {
      * return batch;
      * }
      * ```
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("syncEngine:nextRecordZoneChangeBatchForContext:")

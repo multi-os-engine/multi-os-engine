@@ -50,6 +50,7 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 @SuppressWarnings({ "rawtypes", "unchecked"
 })
@@ -152,8 +153,8 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsForKeysCount(
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -283,8 +284,8 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Generated
     @Selector("initWithObjects:forKeys:count:")
     public native NSMutableDictionary<?, ?> initWithObjectsForKeysCount(
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()

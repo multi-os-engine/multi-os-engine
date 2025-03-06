@@ -23,7 +23,7 @@ public final class MTRPumpConfigurationAndControlPumpStatus {
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.5
-     * Deprecated-Message: Please use MTRPumpConfigurationAndControlPumpStatusBitmapSupplyfault
+     * Deprecated-Message: Please use MTRPumpConfigurationAndControlPumpStatusBitmapSupplyFault
      */
     @Generated @Deprecated public static final char Supplyfault = 0x0002;
     /**

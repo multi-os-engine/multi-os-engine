@@ -17,6 +17,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIEditMenuInteractionAnimating")
 public interface UIEditMenuInteractionAnimating {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("addAnimations:")
     void addAnimations(@NotNull @ObjCBlock(name = "call_addAnimations") Block_addAnimations animations);
@@ -28,6 +31,9 @@ public interface UIEditMenuInteractionAnimating {
         void call_addAnimations();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("addCompletion:")
     void addCompletion(@NotNull @ObjCBlock(name = "call_addCompletion") Block_addCompletion completion);

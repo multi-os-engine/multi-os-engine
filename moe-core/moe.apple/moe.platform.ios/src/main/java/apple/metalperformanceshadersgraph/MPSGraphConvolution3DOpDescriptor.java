@@ -27,9 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * This is a class that describes the properties of a 3d-convolution operator.
+ * A class that describes the properties of a 3D-convolution operator.
  * 
- * Use an instance of this class is to add a 3d-convolution operator with desired properties to the graph.
+ * Use an instance of this class is to add a 3D-convolution operator with desired properties to the graph.
  * 
  * API-Since: 16.3
  */
@@ -94,13 +94,15 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * The named layout of data in source tensor.
+     * The named layout of data in the source tensor.
      * 
      * It defines the order of named dimensions (Batch, Channel, Depth, Height, Width). The convolution operation uses
      * this to interpret data in the source tensor.
      * For example, if `dataLayout` is `MPSGraphTensorNamedDataLayoutNCDHW`, frameork interprets data in source tensor
      * as `batch x channels x depth x height x width`
      * with `width` as fastest moving dimension.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("dataLayout")
@@ -116,7 +118,7 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public static native String description_static();
 
     /**
-     * Creates convolution descriptor with given values for parameters.
+     * Creates a convolution descriptor with given values for parameters.
      * - Parameters:
      * - strideInX: See ``strideInX`` property.
      * - strideInY: See ``strideInY`` property.
@@ -135,6 +137,8 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
      * - dataLayout: See ``dataLayout`` property.
      * - weightsLayout: See ``weightsLayout`` property.
      * - Returns: The `MPSGraphConvolution3DOpDescriptor` on autoreleasepool.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("descriptorWithStrideInX:strideInY:strideInZ:dilationRateInX:dilationRateInY:dilationRateInZ:groups:paddingLeft:paddingRight:paddingTop:paddingBottom:paddingFront:paddingBack:paddingStyle:dataLayout:weightsLayout:")
@@ -145,7 +149,7 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
             @NUInt long paddingBack, @NUInt long paddingStyle, @NUInt long dataLayout, @NUInt long weightsLayout);
 
     /**
-     * Creates convolution descriptor with given values for parameters.
+     * Creates a convolution descriptor with given values for parameters.
      * - Parameters:
      * - strideInX: See ``strideInX`` property.
      * - strideInY: See ``strideInY`` property.
@@ -158,6 +162,8 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
      * - dataLayout: See ``dataLayout`` property.
      * - weightsLayout: See ``weightsLayout`` property.
      * - Returns: The `MPSGraphConvolution3DOpDescriptor` on autoreleasepool.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("descriptorWithStrideInX:strideInY:strideInZ:dilationRateInX:dilationRateInY:dilationRateInZ:groups:paddingStyle:dataLayout:weightsLayout:")
@@ -167,11 +173,13 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
             @NUInt long dataLayout, @NUInt long weightsLayout);
 
     /**
-     * The amount by which weights tensor is expanded in `x`-direction.
+     * The amount by which weights tensor expands in the `x`-direction.
      * 
      * The weights tensor is dilated by inserting `dilationRateInX-1` zeros between consecutive values in `x`-dimension.
      * Dilated weights tensor width is `(dilationRateInX-1)*kernelWidth+1`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("dilationRateInX")
@@ -179,11 +187,13 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long dilationRateInX();
 
     /**
-     * The amount by which weights tensor is expanded in `y`-direction.
+     * The amount by which weights tensor expands in the `y`-direction.
      * 
      * The weights tensor is dilated by inserting `dilationRateInY-1` zeros between consecutive values in `y`-dimension.
      * Dilated weights tensor width is `(dilationRateInY-1)*kernelHeight+1`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("dilationRateInY")
@@ -191,11 +201,13 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long dilationRateInY();
 
     /**
-     * The amount by which weights tensor is expanded in `z`-direction.
+     * The amount by which weights tensor expands in the `z`-direction.
      * 
      * The weights tensor is dilated by inserting `dilationRateInZ-1` zeros between consecutive values in `z`-dimension.
      * Dilated weights tensor depth is `(dilationRateInZ-1)*kernelDepth+1`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("dilationRateInZ")
@@ -203,12 +215,14 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long dilationRateInZ();
 
     /**
-     * The number of paritions of input and output channels.
+     * The number of partitions of the input and output channels.
      * 
      * The convolution operation divides input and output channels in `groups` partitions.
      * input channels in a group or partition are only connected to output channels in corresponding group.
      * Number of weights the convolution needs is `outputFeatureChannels x inputFeatureChannels/groups x kernelDepth x
      * kernelWidth x kernelHeight`
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("groups")
@@ -252,7 +266,9 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public static native MPSGraphConvolution3DOpDescriptor new_objc();
 
     /**
-     * The number of zeros that are added at the back of the source tensor.
+     * The number of zeros added at the back of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("paddingBack")
@@ -260,7 +276,9 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long paddingBack();
 
     /**
-     * The number of zeros that are added at the bottom of the source tensor.
+     * The number of zeros added at the bottom of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("paddingBottom")
@@ -268,7 +286,9 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long paddingBottom();
 
     /**
-     * The number of zeros that are added at the front of the source tensor.
+     * The number of zeros added at the front of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("paddingFront")
@@ -276,7 +296,9 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long paddingFront();
 
     /**
-     * The number of zeros that are added on the left side of the source tensor.
+     * The number of zeros added on the left side of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("paddingLeft")
@@ -284,7 +306,9 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long paddingLeft();
 
     /**
-     * The number of zeros that are added on the right side of the source tensor.
+     * The number of zeros added on the right side of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("paddingRight")
@@ -297,6 +321,8 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
      * If paddingStyle is `MPSGraphPaddingStyleExplicit`, `paddingLeft`, `laddingRight`, `paddingTop`,
      * `paddingBottom`, `paddingFront` and `paddingBack` must to be specified. For all other padding styles, framework
      * compute these values so you dont need to provide these values.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("paddingStyle")
@@ -304,7 +330,9 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public native long paddingStyle();
 
     /**
-     * The number of zeros that are added at the top of the source tensor.
+     * The number of zeros added at the top of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("paddingTop")
@@ -320,53 +348,61 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The named layout of data in source tensor.
+     * The named layout of data in the source tensor.
      * 
      * It defines the order of named dimensions (Batch, Channel, Depth, Height, Width). The convolution operation uses
      * this to interpret data in the source tensor.
      * For example, if `dataLayout` is `MPSGraphTensorNamedDataLayoutNCDHW`, frameork interprets data in source tensor
      * as `batch x channels x depth x height x width`
      * with `width` as fastest moving dimension.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setDataLayout:")
     public native void setDataLayout(@NUInt long value);
 
     /**
-     * The amount by which weights tensor is expanded in `x`-direction.
+     * The amount by which weights tensor expands in the `x`-direction.
      * 
      * The weights tensor is dilated by inserting `dilationRateInX-1` zeros between consecutive values in `x`-dimension.
      * Dilated weights tensor width is `(dilationRateInX-1)*kernelWidth+1`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setDilationRateInX:")
     public native void setDilationRateInX(@NUInt long value);
 
     /**
-     * The amount by which weights tensor is expanded in `y`-direction.
+     * The amount by which weights tensor expands in the `y`-direction.
      * 
      * The weights tensor is dilated by inserting `dilationRateInY-1` zeros between consecutive values in `y`-dimension.
      * Dilated weights tensor width is `(dilationRateInY-1)*kernelHeight+1`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setDilationRateInY:")
     public native void setDilationRateInY(@NUInt long value);
 
     /**
-     * The amount by which weights tensor is expanded in `z`-direction.
+     * The amount by which weights tensor expands in the `z`-direction.
      * 
      * The weights tensor is dilated by inserting `dilationRateInZ-1` zeros between consecutive values in `z`-dimension.
      * Dilated weights tensor depth is `(dilationRateInZ-1)*kernelDepth+1`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setDilationRateInZ:")
     public native void setDilationRateInZ(@NUInt long value);
 
     /**
-     * Sets the left, right, top, bottom, front and back padding values.
+     * Sets the left, right, top, bottom, front, and back padding values.
      * - Parameters:
      * - paddingLeft: See ``paddingLeft`` property.
      * - paddingRight: See ``paddingRight`` property.
@@ -374,6 +410,8 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
      * - paddingBottom: See ``paddingBottom`` property.
      * - paddingFront: See ``paddingFront`` property.
      * - paddingBottom: See ``paddingBottom`` property.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setExplicitPaddingWithPaddingLeft:paddingRight:paddingTop:paddingBottom:paddingFront:paddingBack:")
@@ -382,47 +420,59 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
             @NUInt long paddingFront, @NUInt long paddingBack);
 
     /**
-     * The number of paritions of input and output channels.
+     * The number of partitions of the input and output channels.
      * 
      * The convolution operation divides input and output channels in `groups` partitions.
      * input channels in a group or partition are only connected to output channels in corresponding group.
      * Number of weights the convolution needs is `outputFeatureChannels x inputFeatureChannels/groups x kernelDepth x
      * kernelWidth x kernelHeight`
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setGroups:")
     public native void setGroups(@NUInt long value);
 
     /**
-     * The number of zeros that are added at the back of the source tensor.
+     * The number of zeros added at the back of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setPaddingBack:")
     public native void setPaddingBack(@NUInt long value);
 
     /**
-     * The number of zeros that are added at the bottom of the source tensor.
+     * The number of zeros added at the bottom of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setPaddingBottom:")
     public native void setPaddingBottom(@NUInt long value);
 
     /**
-     * The number of zeros that are added at the front of the source tensor.
+     * The number of zeros added at the front of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setPaddingFront:")
     public native void setPaddingFront(@NUInt long value);
 
     /**
-     * The number of zeros that are added on the left side of the source tensor.
+     * The number of zeros added on the left side of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setPaddingLeft:")
     public native void setPaddingLeft(@NUInt long value);
 
     /**
-     * The number of zeros that are added on the right side of the source tensor.
+     * The number of zeros added on the right side of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setPaddingRight:")
@@ -434,13 +484,17 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
      * If paddingStyle is `MPSGraphPaddingStyleExplicit`, `paddingLeft`, `laddingRight`, `paddingTop`,
      * `paddingBottom`, `paddingFront` and `paddingBack` must to be specified. For all other padding styles, framework
      * compute these values so you dont need to provide these values.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setPaddingStyle:")
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * The number of zeros that are added at the top of the source tensor.
+     * The number of zeros added at the top of the source tensor.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setPaddingTop:")
@@ -449,8 +503,10 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     /**
      * The scale that maps`x`-coordinate of destination to `x`-coordinate of source.
      * 
-     * Source `x`-coordiante, `sx` is computed from destination `x`-coordinate, `dx` as `sx = strideInX*dx`.
+     * Source `x`-coordinate, `sx` is computed from destination `x`-coordinate, `dx` as `sx = strideInX*dx`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setStrideInX:")
@@ -459,8 +515,10 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     /**
      * The scale that maps`y`-coordinate of destination to `y`-coordinate of source.
      * 
-     * Source `y`-coordiante, `sy` is computed from destination `y`-coordinate, `dy` as `sy = strideInY*dy`.
+     * Source `y`-coordinate, `sy` is computed from destination `y`-coordinate, `dy` as `sy = strideInY*dy`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setStrideInY:")
@@ -469,8 +527,10 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     /**
      * The scale that maps`z`-coordinate of destination to `z`-coordinate of source.
      * 
-     * Source `z`-coordiante, `sz` is computed from destination `z`-coordinate, `dz` as `sz = strideInZ*dz`.
+     * Source `z`-coordinate, `sz` is computed from destination `z`-coordinate, `dz` as `sz = strideInZ*dz`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setStrideInZ:")
@@ -481,13 +541,15 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The named layout of data in weights tensor.
+     * The named layout of data in the weights tensor.
      * 
      * It defines the order of named dimensions (Output channels, Input channels, Kernel depth, Kernel height, Kernel
      * width). The convolution operation uses this to interpret data in the weights tensor.
      * For example, if `weightsLayout` is `MPSGraphTensorNamedDataLayoutOIDHW`, frameork interprets data in weights
      * tensor as `outputChannels x inputChannels x kernelDepth x kernelHeight x kernelWidth`
      * with `kernelWidth` as fastest moving dimension.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("setWeightsLayout:")
@@ -496,8 +558,10 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     /**
      * The scale that maps`x`-coordinate of destination to `x`-coordinate of source.
      * 
-     * Source `x`-coordiante, `sx` is computed from destination `x`-coordinate, `dx` as `sx = strideInX*dx`.
+     * Source `x`-coordinate, `sx` is computed from destination `x`-coordinate, `dx` as `sx = strideInX*dx`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("strideInX")
@@ -507,8 +571,10 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     /**
      * The scale that maps`y`-coordinate of destination to `y`-coordinate of source.
      * 
-     * Source `y`-coordiante, `sy` is computed from destination `y`-coordinate, `dy` as `sy = strideInY*dy`.
+     * Source `y`-coordinate, `sy` is computed from destination `y`-coordinate, `dy` as `sy = strideInY*dy`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("strideInY")
@@ -518,8 +584,10 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     /**
      * The scale that maps`z`-coordinate of destination to `z`-coordinate of source.
      * 
-     * Source `z`-coordiante, `sz` is computed from destination `z`-coordinate, `dz` as `sz = strideInZ*dz`.
+     * Source `z`-coordinate, `sz` is computed from destination `z`-coordinate, `dz` as `sz = strideInZ*dz`.
      * Default value is 1.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("strideInZ")
@@ -541,13 +609,15 @@ public class MPSGraphConvolution3DOpDescriptor extends MPSGraphObject implements
     public static native long version_static();
 
     /**
-     * The named layout of data in weights tensor.
+     * The named layout of data in the weights tensor.
      * 
      * It defines the order of named dimensions (Output channels, Input channels, Kernel depth, Kernel height, Kernel
      * width). The convolution operation uses this to interpret data in the weights tensor.
      * For example, if `weightsLayout` is `MPSGraphTensorNamedDataLayoutOIDHW`, frameork interprets data in weights
      * tensor as `outputChannels x inputChannels x kernelDepth x kernelHeight x kernelWidth`
      * with `kernelWidth` as fastest moving dimension.
+     * 
+     * API-Since: 16.3
      */
     @Generated
     @Selector("weightsLayout")

@@ -44,6 +44,8 @@ public interface SFSafariViewControllerDelegate {
      * @param URL   the URL of the web page.
      * @param title the title of the web page.
      * @return Returns an array of UIActivity instances that will be appended to UIActivityViewController.
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -60,6 +62,8 @@ public interface SFSafariViewControllerDelegate {
      * This method is invoked when SFSafariViewController completes the loading of the URL that you pass
      * to its initializer. It is not invoked for any subsequent page loads in the same SFSafariViewController instance.
      * 
+     * API-Since: 9.0
+     * 
      * @param didLoadSuccessfully YES if loading completed successfully, NO if loading failed.
      */
     @Generated
@@ -73,6 +77,8 @@ public interface SFSafariViewControllerDelegate {
     /**
      * Delegate callback called when the user taps the Done button. Upon this call, the view controller is dismissed
      * modally.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional

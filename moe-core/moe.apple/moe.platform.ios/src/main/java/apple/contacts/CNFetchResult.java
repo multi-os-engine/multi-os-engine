@@ -82,6 +82,9 @@ public class CNFetchResult<_ValueType> extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("currentHistoryToken")
@@ -147,6 +150,9 @@ public class CNFetchResult<_ValueType> extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("value")

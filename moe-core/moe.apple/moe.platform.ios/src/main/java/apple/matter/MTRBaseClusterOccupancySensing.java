@@ -31,7 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Cluster Occupancy Sensing
  * 
- * Attributes and commands for configuring occupancy sensing, and reporting occupancy status.
+ * The server cluster provides an interface to occupancy sensing functionality based on one or more sensing modalities,
+ * including configuration and provision of notifications of occupancy status.
  * 
  * API-Since: 16.1
  */
@@ -39,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterOccupancySensing extends MTRCluster {
+public class MTRBaseClusterOccupancySensing extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }

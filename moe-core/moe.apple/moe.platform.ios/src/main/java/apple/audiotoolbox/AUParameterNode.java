@@ -172,6 +172,8 @@ public class AUParameterNode extends NSObject {
      * [@property] displayName
      * 
      * A localized name to display for the parameter.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -184,6 +186,8 @@ public class AUParameterNode extends NSObject {
      * A version of displayName possibly abbreviated to the given desired length, in characters.
      * 
      * The default implementation simply returns displayName.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -198,6 +202,8 @@ public class AUParameterNode extends NSObject {
      * The identifier must be unique for all child nodes under any given parent. From release to
      * release, an audio unit must not change its parameters' identifiers; this will invalidate any
      * hosts' documents that refer to the parameters.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -206,6 +212,8 @@ public class AUParameterNode extends NSObject {
 
     /**
      * Called to obtain an abbreviated version of a parameter or group name.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -216,6 +224,8 @@ public class AUParameterNode extends NSObject {
     /**
      * Called to provide string representations of parameter values.
      * If value is nil, the callback uses the current value of the parameter.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -225,6 +235,8 @@ public class AUParameterNode extends NSObject {
 
     /**
      * Called to convert string to numeric representations of parameter values.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -238,6 +250,8 @@ public class AUParameterNode extends NSObject {
      * This block, used only in an audio unit implementation, receives all externally-generated
      * changes to parameter values. It should store the new value in its audio signal processing
      * state (assuming that that state is separate from the AUParameter object).
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -251,6 +265,8 @@ public class AUParameterNode extends NSObject {
      * 
      * The audio unit should return the current value for this parameter; the AUParameterNode will
      * store the value.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -273,6 +289,8 @@ public class AUParameterNode extends NSObject {
      * The individual node identifiers in a key path are separated by periods. (".")
      * 
      * Passing a node's keyPath to -[tree valueForKeyPath:] should return the same node.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -287,6 +305,8 @@ public class AUParameterNode extends NSObject {
      * 
      * This call will remove the callback corresponding to the supplied token. Note that this
      * will block until any callbacks currently in flight have completed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("removeParameterObserver:")
@@ -294,6 +314,8 @@ public class AUParameterNode extends NSObject {
 
     /**
      * Called to obtain an abbreviated version of a parameter or group name.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setImplementorDisplayNameWithLengthCallback:")
@@ -303,6 +325,8 @@ public class AUParameterNode extends NSObject {
     /**
      * Called to provide string representations of parameter values.
      * If value is nil, the callback uses the current value of the parameter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setImplementorStringFromValueCallback:")
@@ -311,6 +335,8 @@ public class AUParameterNode extends NSObject {
 
     /**
      * Called to convert string to numeric representations of parameter values.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setImplementorValueFromStringCallback:")
@@ -323,6 +349,8 @@ public class AUParameterNode extends NSObject {
      * This block, used only in an audio unit implementation, receives all externally-generated
      * changes to parameter values. It should store the new value in its audio signal processing
      * state (assuming that that state is separate from the AUParameter object).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setImplementorValueObserver:")
@@ -335,6 +363,8 @@ public class AUParameterNode extends NSObject {
      * 
      * The audio unit should return the current value for this parameter; the AUParameterNode will
      * store the value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setImplementorValueProvider:")
@@ -400,6 +430,8 @@ public class AUParameterNode extends NSObject {
      *                 A block to call after the value of a parameter has changed.
      * @return
      *         A token which can be passed to removeParameterObserver: or to -[AUParameter setValue:originator:]
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -417,6 +449,8 @@ public class AUParameterNode extends NSObject {
      * 
      * This will be deprecated in favor of tokenByAddingParameterAutomationObserver in a future
      * release.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

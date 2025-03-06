@@ -375,7 +375,13 @@ public class UIAlertView extends UIView {
 
     /**
      * returns index of button. 0 based.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("addButtonWithTitle:")
     @NInt
@@ -438,6 +444,13 @@ public class UIAlertView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("buttonTitleAtIndex:")
@@ -445,7 +458,13 @@ public class UIAlertView extends UIView {
 
     /**
      * if the delegate does not implement -alertViewCancel:, we pretend this button was clicked on. default is -1
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("cancelButtonIndex")
     @NInt
@@ -453,7 +472,13 @@ public class UIAlertView extends UIView {
 
     /**
      * <UIAlertViewDelegate>
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -463,14 +488,26 @@ public class UIAlertView extends UIView {
     /**
      * hides alert sheet or popup. use this method when you need to explicitly dismiss the alert.
      * it does not need to be called if the user presses on a button
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("dismissWithClickedButtonIndex:animated:")
     public native void dismissWithClickedButtonIndexAnimated(@NInt long buttonIndex, boolean animated);
 
     /**
      * -1 if no otherButtonTitles or initWithTitle:... not used
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("firstOtherButtonIndex")
     @NInt
@@ -480,17 +517,37 @@ public class UIAlertView extends UIView {
     @Selector("init")
     public native UIAlertView init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithCoder:")
     public native UIAlertView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithFrame:")
     public native UIAlertView initWithFrame(@ByValue CGRect frame);
 
     /**
      * <UIAlertViewDelegate>
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Variadic()
     @Selector("initWithTitle:message:delegate:cancelButtonTitle:otherButtonTitles:")
@@ -498,18 +555,38 @@ public class UIAlertView extends UIView {
             @Nullable String message, @Nullable @Mapped(ObjCObjectMapper.class) Object delegate,
             @Nullable String cancelButtonTitle, @Nullable String otherButtonTitles, Object... varargs);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
+     */
+    @Deprecated
     @Generated
     @Selector("isVisible")
     public native boolean isVisible();
 
     /**
      * secondary explanation text
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("message")
     public native String message();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
+     */
+    @Deprecated
     @Generated
     @Selector("numberOfButtons")
     @NInt
@@ -526,21 +603,39 @@ public class UIAlertView extends UIView {
 
     /**
      * if the delegate does not implement -alertViewCancel:, we pretend this button was clicked on. default is -1
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("setCancelButtonIndex:")
     public native void setCancelButtonIndex(@NInt long value);
 
     /**
      * <UIAlertViewDelegate>
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * <UIAlertViewDelegate>
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -555,18 +650,37 @@ public class UIAlertView extends UIView {
 
     /**
      * secondary explanation text
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("setMessage:")
     public native void setMessage(@Nullable String value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
+     */
+    @Deprecated
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@NotNull String value);
 
     /**
      * shows popup alert animated.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
      */
+    @Deprecated
     @Generated
     @Selector("show")
     public native void show();
@@ -583,6 +697,13 @@ public class UIAlertView extends UIView {
     @Selector("textFieldAtIndex:")
     public native UITextField textFieldAtIndex(@NInt long textFieldIndex);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: UIAlertView is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleAlert instead
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("title")

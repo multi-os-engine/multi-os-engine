@@ -162,6 +162,9 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Selector("init")
     public native GCControllerAxisInput init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
@@ -177,11 +180,16 @@ public class GCControllerAxisInput extends GCControllerElement {
      * As an axis is often used in a digital sense, you can rely on a value of 0 meaning the axis is inside the
      * deadzone.
      * Any value greater than or less than zero is not in the deadzone.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("value")
     public native float value();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("valueChangedHandler")

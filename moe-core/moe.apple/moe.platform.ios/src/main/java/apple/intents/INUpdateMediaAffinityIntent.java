@@ -47,6 +47,9 @@ public class INUpdateMediaAffinityIntent extends INIntent {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("affinityType")
     @NInt
@@ -108,6 +111,9 @@ public class INUpdateMediaAffinityIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INUpdateMediaAffinityIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMediaItems:mediaSearch:affinityType:")
     public native INUpdateMediaAffinityIntent initWithMediaItemsMediaSearchAffinityType(
@@ -136,11 +142,17 @@ public class INUpdateMediaAffinityIntent extends INIntent {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaItems")
     public native NSArray<? extends INMediaItem> mediaItems();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaSearch")

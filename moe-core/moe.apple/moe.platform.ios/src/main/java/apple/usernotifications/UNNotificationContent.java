@@ -183,6 +183,8 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     /**
      * The application badge number.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

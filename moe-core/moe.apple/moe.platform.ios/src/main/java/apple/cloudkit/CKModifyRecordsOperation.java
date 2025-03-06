@@ -168,6 +168,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities. (For example, if a
      * record is malformed, and cannot be sent to the server, the client will forcibly fail all other
      * records-to-be-modified in that zone)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("atomic")
@@ -176,16 +178,24 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     /**
      * This property is kept by the server to identify the last known request from this client.
      * Multiple requests from the client with the same change token will be ignored by the server.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
     @Selector("clientChangeTokenData")
     public native NSData clientChangeTokenData();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native CKModifyRecordsOperation init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithRecordsToSave:recordIDsToDelete:")
     public native CKModifyRecordsOperation initWithRecordsToSaveRecordIDsToDelete(
@@ -204,6 +214,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -238,6 +250,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -245,11 +259,17 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_perRecordProgressBlock_ret")
     public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordIDsToDelete")
     public native NSArray<? extends CKRecordID> recordIDsToDelete();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("recordsToSave")
@@ -262,6 +282,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * The default value is @c CKRecordSaveIfServerRecordUnchanged, which is the recommended value for regular use.
      * A @c CKShare record is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy
      * specified.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("savePolicy")
@@ -276,6 +298,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities. (For example, if a
      * record is malformed, and cannot be sent to the server, the client will forcibly fail all other
      * records-to-be-modified in that zone)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAtomic:")
@@ -284,6 +308,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     /**
      * This property is kept by the server to identify the last known request from this client.
      * Multiple requests from the client with the same change token will be ignored by the server.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setClientChangeTokenData:")
@@ -302,6 +328,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setModifyRecordsCompletionBlock:")
@@ -334,16 +362,24 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPerRecordProgressBlock:")
     public native void setPerRecordProgressBlock(
             @Nullable @ObjCBlock(name = "call_setPerRecordProgressBlock") Block_setPerRecordProgressBlock value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRecordIDsToDelete:")
     public native void setRecordIDsToDelete(@Nullable NSArray<? extends CKRecordID> value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRecordsToSave:")
     public native void setRecordsToSave(@Nullable NSArray<? extends CKRecord> value);
@@ -355,6 +391,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * The default value is @c CKRecordSaveIfServerRecordUnchanged, which is the recommended value for regular use.
      * A @c CKShare record is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy
      * specified.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSavePolicy:")

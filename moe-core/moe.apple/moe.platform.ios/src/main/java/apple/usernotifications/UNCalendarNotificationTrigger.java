@@ -166,6 +166,8 @@ public class UNCalendarNotificationTrigger extends UNNotificationTrigger {
 
     /**
      * The next date is calculated using matching date components.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("triggerWithDateMatchingComponents:repeats:")
@@ -177,6 +179,9 @@ public class UNCalendarNotificationTrigger extends UNNotificationTrigger {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("dateComponents")
@@ -190,6 +195,9 @@ public class UNCalendarNotificationTrigger extends UNNotificationTrigger {
     @Selector("initWithCoder:")
     public native UNCalendarNotificationTrigger initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("nextTriggerDate")

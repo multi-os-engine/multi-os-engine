@@ -4,7 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * API-Since: 16.4
+ * Deprecated-Since: 17.4
+ * Deprecated-Message: Please use MTRLevelControlOptionsBitmap
  */
+@Deprecated
 @Generated
 public final class MTRLevelControlOptions {
     @Generated
@@ -13,10 +16,14 @@ public final class MTRLevelControlOptions {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRLevelControlOptionsBitmapExecuteIfOff
      */
-    @Generated public static final byte ExecuteIfOff = 1;
+    @Deprecated @Generated public static final byte ExecuteIfOff = 1;
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRLevelControlOptionsBitmapCoupleColorTempToLevel
      */
-    @Generated public static final byte CoupleColorTempToLevel = 2;
+    @Deprecated @Generated public static final byte CoupleColorTempToLevel = 2;
 }

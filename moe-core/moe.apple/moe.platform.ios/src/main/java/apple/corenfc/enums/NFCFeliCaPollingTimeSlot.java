@@ -6,7 +6,7 @@ import org.moe.natj.general.ann.NInt;
 /**
  * Time slot parameter for the polling command
  * 
- * API-Since: 14.0
+ * API-Since: 13.0
  */
 @Generated
 public final class NFCFeliCaPollingTimeSlot {

@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterKeypadInput extends MTRCluster {
+public class MTRClusterKeypadInput extends MTRGenericCluster {
     static {
         NatJ.register();
     }

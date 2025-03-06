@@ -102,6 +102,9 @@ public class NSLightweightMigrationStage extends NSMigrationStage {
     @Selector("init")
     public native NSLightweightMigrationStage init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithVersionChecksums:")
     public native NSLightweightMigrationStage initWithVersionChecksums(@NotNull NSArray<String> versionChecksums);
@@ -159,6 +162,9 @@ public class NSLightweightMigrationStage extends NSMigrationStage {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("versionChecksums")
     @NotNull

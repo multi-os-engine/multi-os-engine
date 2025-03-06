@@ -115,6 +115,9 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
     @Selector("init")
     public native INAddMediaMediaDestinationResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMediaDestinationResolutionResult:")
     public native INAddMediaMediaDestinationResolutionResult initWithMediaDestinationResolutionResult(
@@ -184,6 +187,9 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
     @Selector("unsupported")
     public static native INAddMediaMediaDestinationResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

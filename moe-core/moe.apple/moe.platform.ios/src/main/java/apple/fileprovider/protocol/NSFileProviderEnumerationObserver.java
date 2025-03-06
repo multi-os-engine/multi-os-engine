@@ -22,6 +22,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSFileProviderEnumerationObserver")
 public interface NSFileProviderEnumerationObserver {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("didEnumerateItems:")
     void didEnumerateItems(@NotNull NSArray<?> updatedItems);
@@ -35,11 +38,16 @@ public interface NSFileProviderEnumerationObserver {
      * 
      * Page data is limited to 500 bytes. Setting a larger nextPage interrupts the
      * enumeration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("finishEnumeratingUpToPage:")
     void finishEnumeratingUpToPage(@Nullable NSData nextPage);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("finishEnumeratingWithError:")
     void finishEnumeratingWithError(@NotNull NSError error);

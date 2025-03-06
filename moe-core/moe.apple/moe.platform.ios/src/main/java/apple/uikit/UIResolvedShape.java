@@ -69,6 +69,8 @@ public class UIResolvedShape extends NSObject implements NSCopying {
 
     /**
      * The bounding rect in which the shape is framed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("boundingRect")
@@ -149,6 +151,8 @@ public class UIResolvedShape extends NSObject implements NSCopying {
 
     /**
      * The bezier path representing this shape.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("path")
@@ -169,6 +173,8 @@ public class UIResolvedShape extends NSObject implements NSCopying {
 
     /**
      * The abstract shape that produced this resolved shape.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shape")
@@ -184,6 +190,8 @@ public class UIResolvedShape extends NSObject implements NSCopying {
      * effect. For some shapes like rounded rectangles, this can also modify
      * the corner radii of the shape to ensure the resulting corners are
      * concentric.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shapeByApplyingInset:")
@@ -199,6 +207,8 @@ public class UIResolvedShape extends NSObject implements NSCopying {
      * effect. For some shapes like rounded rectangles, this can also modify
      * the corner radii of the shape to ensure the resulting corners are
      * concentric.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("shapeByApplyingInsets:")

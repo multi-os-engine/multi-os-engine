@@ -100,6 +100,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * Subtitle to be used when POI detail card is visible.
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c subtitle.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -110,6 +112,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * Summary text to be used when POI detail card is visible.
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c summary.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -120,6 +124,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * Title to be used when POI detail card is visible.
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c title.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -157,6 +163,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * 
      * To properly size your pin images, your app should size them to the display scale of the car screen. See
      * -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      * 
      * @param location       Location indicator use by map annotations.
      * @param title          Primary title for this point of interest.
@@ -198,6 +206,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Location associated with this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -214,6 +224,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * 
      * To properly size your pin image, your app should size them to the display scale of the car screen. See
      * -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -222,6 +234,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Point of Interest detail card buttons.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -236,6 +250,9 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("secondaryButton")
@@ -245,6 +262,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * Subtitle to be used when POI detail card is visible.
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c subtitle.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDetailSubtitle:")
@@ -254,6 +273,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * Summary text to be used when POI detail card is visible.
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c summary.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDetailSummary:")
@@ -263,6 +284,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * Title to be used when POI detail card is visible.
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c title.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDetailTitle:")
@@ -270,6 +293,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Location associated with this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLocation:")
@@ -280,6 +305,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * 
      * To properly size your pin image, your app should size them to the display scale of the car screen. See
      * -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPinImage:")
@@ -287,17 +314,24 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Point of Interest detail card buttons.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPrimaryButton:")
     public native void setPrimaryButton(@Nullable CPTextButton value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSecondaryButton:")
     public native void setSecondaryButton(@Nullable CPTextButton value);
 
     /**
      * Subtitle for this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSubtitle:")
@@ -305,6 +339,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Summary text for this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSummary:")
@@ -312,6 +348,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Primary title for this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTitle:")
@@ -319,6 +357,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Any custom data or an object associated with this Point of Interest.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -330,6 +370,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Subtitle for this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -338,6 +380,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Summary text for this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -360,6 +404,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Primary title for this point of interest.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -368,6 +414,8 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Any custom data or an object associated with this Point of Interest.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

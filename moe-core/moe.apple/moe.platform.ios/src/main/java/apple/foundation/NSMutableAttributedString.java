@@ -46,6 +46,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.NSAdaptiveImageGlyph;
 
 /**
  * API-Since: 3.2
@@ -173,27 +174,45 @@ public class NSMutableAttributedString extends NSAttributedString {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("addAttribute:value:range:")
     public native void addAttributeValueRange(@NotNull String name,
             @NotNull @Mapped(ObjCObjectMapper.class) Object value, @ByValue NSRange range);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("addAttributes:range:")
     public native void addAttributesRange(@NotNull NSDictionary<String, ?> attrs, @ByValue NSRange range);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("appendAttributedString:")
     public native void appendAttributedString(@NotNull NSAttributedString attrString);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("beginEditing")
     public native void beginEditing();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("deleteCharactersInRange:")
     public native void deleteCharactersInRange(@ByValue NSRange range);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("endEditing")
     public native void endEditing();
@@ -253,10 +272,16 @@ public class NSMutableAttributedString extends NSAttributedString {
             @Nullable @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("insertAttributedString:atIndex:")
     public native void insertAttributedStringAtIndex(@NotNull NSAttributedString attrString, @NUInt long loc);
 
+    /**
+     * API-Since: 3.2
+     */
     @NotNull
     @Generated
     @Selector("mutableString")
@@ -300,10 +325,16 @@ public class NSMutableAttributedString extends NSAttributedString {
             @Nullable @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("removeAttribute:range:")
     public native void removeAttributeRange(@NotNull String name, @ByValue NSRange range);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("replaceCharactersInRange:withAttributedString:")
     public native void replaceCharactersInRangeWithAttributedString(@ByValue NSRange range,
@@ -312,15 +343,23 @@ public class NSMutableAttributedString extends NSAttributedString {
     /**
      * Override these two APIs (in addition to the two for NSAttributedString) when subclassing
      * NSMutableAttributedString
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("replaceCharactersInRange:withString:")
     public native void replaceCharactersInRangeWithString(@ByValue NSRange range, @NotNull String str);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setAttributedString:")
     public native void setAttributedString(@NotNull NSAttributedString attrString);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setAttributes:range:")
     public native void setAttributesRange(@Nullable NSDictionary<String, ?> attrs, @ByValue NSRange range);
@@ -494,4 +533,14 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("attributedStringWithAdaptiveImageGlyph:attributes:")
+    public static native NSMutableAttributedString attributedStringWithAdaptiveImageGlyphAttributes(
+            @NotNull NSAdaptiveImageGlyph adaptiveImageGlyph, @NotNull NSDictionary<String, ?> attributes);
+
+    @Generated
+    @Selector("attributedStringWithAttachment:attributes:")
+    public static native NSMutableAttributedString attributedStringWithAttachmentAttributes(
+            @NotNull NSTextAttachment attachment, @NotNull NSDictionary<String, ?> attributes);
 }

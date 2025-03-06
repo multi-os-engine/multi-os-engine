@@ -115,6 +115,8 @@ public class UIWindowSceneActivationInteraction extends NSObject implements UIIn
      *                              UIWindowSceneActivationConfiguration whose user activity will be used to request
      *                              scene activation.
      * @param errorHandler          Called when the activation request fails.
+     * 
+     *                              API-Since: 15.0
      */
     @Generated
     @Selector("initWithConfigurationProvider:errorHandler:")

@@ -83,6 +83,9 @@ public class UIImageReader extends NSObject {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("configuration")
     @NotNull
@@ -94,6 +97,8 @@ public class UIImageReader extends NSObject {
 
     /**
      * Returns a reader that uses the default configuration options. This method is thread safe.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("defaultReader")
@@ -111,6 +116,8 @@ public class UIImageReader extends NSObject {
 
     /**
      * Synchronously generate an image from the given file URL. If an image could not be generated, returns nil.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("imageWithContentsOfFileURL:")
@@ -120,6 +127,8 @@ public class UIImageReader extends NSObject {
     /**
      * Asynchronously generate an image from the given file URL. If an image could not be generated, the completion will
      * be called with nil.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("imageWithContentsOfFileURL:completion:")
@@ -135,6 +144,8 @@ public class UIImageReader extends NSObject {
 
     /**
      * Synchronously generate an image from the given data. If an image could not be generated, returns nil.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("imageWithData:")
@@ -144,6 +155,8 @@ public class UIImageReader extends NSObject {
     /**
      * Asynchronously generate an image from the given data. If an image could not be generated, the completion will be
      * called with nil.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("imageWithData:completion:")
@@ -190,6 +203,8 @@ public class UIImageReader extends NSObject {
 
     /**
      * Returns a loader of the given configuration. Loaders are thread safe and sharable.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("readerWithConfiguration:")

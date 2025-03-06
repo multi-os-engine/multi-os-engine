@@ -29,22 +29,26 @@ import org.moe.natj.general.ann.Generated;
  * [@constant] kJSTypeString A primitive string value.
  * [@constant] kJSTypeObject An object value (meaning that this JSValueRef is a JSObjectRef).
  * [@constant] kJSTypeSymbol A primitive symbol value.
+ * [@constant] kJSTypeBigInt A primitive BigInt value.
  */
 @Generated
 public final class JSType {
-    @Generated public static final int kJSTypeUndefined = 0x00000000;
-    @Generated public static final int kJSTypeNull = 0x00000001;
-    @Generated public static final int kJSTypeBoolean = 0x00000002;
-    @Generated public static final int kJSTypeNumber = 0x00000003;
-    @Generated public static final int kJSTypeString = 0x00000004;
-    @Generated public static final int kJSTypeObject = 0x00000005;
-
     @Generated
     private JSType() {
     }
 
+    @Generated public static final int Undefined = 0x00000000;
+    @Generated public static final int Null = 0x00000001;
+    @Generated public static final int Boolean = 0x00000002;
+    @Generated public static final int Number = 0x00000003;
+    @Generated public static final int String = 0x00000004;
+    @Generated public static final int Object = 0x00000005;
     /**
      * API-Since: 13.0
      */
-    @Generated public static final int kJSTypeSymbol = 0x00000006;
+    @Generated public static final int Symbol = 0x00000006;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int BigInt = 0x00000007;
 }

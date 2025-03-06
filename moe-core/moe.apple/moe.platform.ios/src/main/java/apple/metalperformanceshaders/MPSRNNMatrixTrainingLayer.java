@@ -90,6 +90,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * If yes then the computed weight gradients are accumulated on top of existing values in
      * calls to the gradient computation functions: encodeGradientSequenceToCommandBuffer.
      * Defaults to NO.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("accumulateWeightGradients")
@@ -139,6 +141,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -219,6 +223,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * @param copyFromWeightsToMatrix If YES then the copy direction is from the set of trainable 'weights' to 'matrix',
      *                                otherwise the copy is done from 'matrix' to 'weights'.
      * @param matrixOffset            A (valid) offset into matrix to be applied to the copy operation.
+     * 
+     *                                API-Since: 12.0
      */
     @Generated
     @Selector("encodeCopyWeightsToCommandBuffer:weights:matrixId:matrix:copyFromWeightsToMatrix:matrixOffset:")
@@ -238,6 +244,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      *                            encode function.
      * @param weights             An array of valid MPSMatrix objects containing the weights, should be the array
      *                            that was produced either by @see initWithDevice or @see createWeightMatrices.
+     * 
+     *                            API-Since: 12.0
      */
     @Generated
     @Selector("encodeForwardSequenceToCommandBuffer:sourceMatrices:destinationMatrices:trainingStates:weights:")
@@ -269,6 +277,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      *                              will be temporary. @see MPSState:isTemporary.
      * @param weights               An array of valid MPSMatrix objects containing the weights, should be the array
      *                              that was produced either by @see initWithDevice or @see createWeightMatrices.
+     * 
+     *                              API-Since: 12.0
      */
     @Generated
     @Selector("encodeForwardSequenceToCommandBuffer:sourceMatrices:sourceOffsets:destinationMatrices:destinationOffsets:trainingStates:recurrentInputState:recurrentOutputStates:weights:")
@@ -317,6 +327,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      *                              will be temporary. @see MPSState:isTemporary.
      * @param weights               An array of valid MPSMatrix objects containing the weights, should be the array
      *                              that was produced either by @see initWithDevice or @see createWeightMatrices.
+     * 
+     *                              API-Since: 12.0
      */
     @Generated
     @Selector("encodeGradientSequenceToCommandBuffer:forwardSources:forwardSourceOffsets:sourceGradients:sourceGradientOffsets:destinationGradients:destinationOffsets:weightGradients:trainingStates:recurrentInputState:recurrentOutputStates:weights:")
@@ -356,6 +368,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      *                             the states corresponding to the input gradients is sourceGradients.
      * @param weights              An array of valid MPSMatrix objects containing the weights, should be the array
      *                             that was produced either by @see initWithDevice or @see createWeightMatrices.
+     * 
+     *                             API-Since: 12.0
      */
     @Generated
     @Selector("encodeGradientSequenceToCommandBuffer:forwardSources:sourceGradients:destinationGradients:weightGradients:trainingStates:weights:")
@@ -428,6 +442,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels input vector/matrix.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -465,6 +481,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels in the output vector/matrix.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -477,6 +495,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * How recurrent output states from @ref encodeForwardSequenceToCommandBuffer
      * and encodeGradientSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("recurrentOutputIsTemporary")
@@ -496,6 +516,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * If yes then the computed weight gradients are accumulated on top of existing values in
      * calls to the gradient computation functions: encodeGradientSequenceToCommandBuffer.
      * Defaults to NO.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAccumulateWeightGradients:")
@@ -507,6 +529,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * How recurrent output states from @ref encodeForwardSequenceToCommandBuffer
      * and encodeGradientSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setRecurrentOutputIsTemporary:")
@@ -519,6 +543,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * [@ref] encodeGradientSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setStoreAllIntermediateStates:")
@@ -529,6 +555,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * 
      * How training output states from @ref encodeForwardSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setTrainingStateIsTemporary:")
@@ -545,6 +573,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * [@ref] encodeGradientSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("storeAllIntermediateStates")
@@ -569,6 +599,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * 
      * How training output states from @ref encodeForwardSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("trainingStateIsTemporary")

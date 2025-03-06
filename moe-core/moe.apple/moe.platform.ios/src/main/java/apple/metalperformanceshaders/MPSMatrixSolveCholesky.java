@@ -122,6 +122,8 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
      * 
      * sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
      * 
+     * API-Since: 11.0
+     * 
      * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
      * 
      * @param sourceMatrix        A valid MPSMatrix containing the source matrix in factored
@@ -176,6 +178,8 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
      *                               matrices.
      * 
      * @return A valid MPSMatrixSolveCholesky object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:upper:order:numberOfRightHandSides:")

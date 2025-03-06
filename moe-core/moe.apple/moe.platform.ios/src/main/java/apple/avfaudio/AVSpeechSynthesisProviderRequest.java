@@ -121,6 +121,9 @@ public class AVSpeechSynthesisProviderRequest extends NSObject implements NSSecu
     @Selector("initWithCoder:")
     public native AVSpeechSynthesisProviderRequest initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithSSMLRepresentation:voice:")
     public native AVSpeechSynthesisProviderRequest initWithSSMLRepresentationVoice(@NotNull String text,
@@ -170,6 +173,8 @@ public class AVSpeechSynthesisProviderRequest extends NSObject implements NSSecu
      * customization of pitch, rate, intonation, and more.
      * 
      * @see https://www.w3.org/TR/speech-synthesis11/
+     * 
+     *      API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -197,6 +202,8 @@ public class AVSpeechSynthesisProviderRequest extends NSObject implements NSSecu
 
     /**
      * The voice to be used in this speech request
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

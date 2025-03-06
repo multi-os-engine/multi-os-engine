@@ -79,6 +79,8 @@ public class AVSampleBufferGeneratorBatch extends NSObject {
      * 
      * Attempt to cancel any I/O for this batch. The associated sample buffers will have their data ready handler
      * invoked with an error.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("cancel")
@@ -153,6 +155,8 @@ public class AVSampleBufferGeneratorBatch extends NSObject {
      * @param completionHandler
      *                          The completionHandler is called once, when all CMSampleBuffers in the batch are
      *                          data-ready, or as soon as an error has occurred.
+     * 
+     *                          API-Since: 16.0
      */
     @Generated
     @Selector("makeDataReadyWithCompletionHandler:")

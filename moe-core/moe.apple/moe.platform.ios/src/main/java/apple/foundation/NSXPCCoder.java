@@ -21,6 +21,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.xpc_type_t;
 
 /**
  * An NSXPCCoder is used to encode or decode objects sent over an NSXPCConnection. If you want to encode or decode
@@ -144,6 +145,9 @@ public class NSXPCCoder extends NSCoder {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject value);
@@ -156,6 +160,9 @@ public class NSXPCCoder extends NSCoder {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("userInfo")
@@ -171,4 +178,23 @@ public class NSXPCCoder extends NSCoder {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * This validates the type of the decoded object matches the type passed in. If they do not match, an exception is
+     * thrown (just like the rest of Secure Coding behaves). Note: This can return NULL, but calling an xpc function
+     * with NULL will crash. So make sure to do the right thing if you get back a NULL result.
+     * 
+     * API-Since: 7.0
+     */
+    @Generated
+    @Selector("decodeXPCObjectOfType:forKey:")
+    @Nullable
+    public native VoidPtr decodeXPCObjectOfTypeForKey(@NotNull xpc_type_t type, @NotNull String key);
+
+    /**
+     * API-Since: 6.0
+     */
+    @Generated
+    @Selector("encodeXPCObject:forKey:")
+    public native void encodeXPCObjectForKey(@NotNull VoidPtr xpcObject, @NotNull String key);
 }

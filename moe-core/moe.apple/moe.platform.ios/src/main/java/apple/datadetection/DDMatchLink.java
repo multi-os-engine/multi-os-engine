@@ -50,6 +50,8 @@ public class DDMatchLink extends DDMatch {
 
     /**
      * An address for a web resource, such as a webpage or image.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

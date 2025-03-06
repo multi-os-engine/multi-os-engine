@@ -176,6 +176,8 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
      * instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for
      * those without associated AVAudioMixInputParameters will be included in the mix, processed according to default
      * behavior.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated

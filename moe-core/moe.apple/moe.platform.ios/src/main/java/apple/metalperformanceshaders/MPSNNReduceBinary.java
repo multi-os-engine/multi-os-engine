@@ -158,6 +158,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
      * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primarySourceClipRect")
@@ -184,6 +187,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
      * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondarySourceClipRect")
@@ -200,6 +206,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
      * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setPrimarySourceClipRect:")
@@ -217,6 +226,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
      * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSecondarySourceClipRect:")

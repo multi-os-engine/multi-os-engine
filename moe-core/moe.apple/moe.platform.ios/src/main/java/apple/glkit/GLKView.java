@@ -428,16 +428,33 @@ public class GLKView extends UIView implements NSCoding {
     /**
      * Binds the context and drawable. This needs to be called when the currently bound framebuffer
      * has been changed during the draw method.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("bindDrawable")
     public native void bindDrawable();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("context")
     public native EAGLContext context();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -447,7 +464,12 @@ public class GLKView extends UIView implements NSCoding {
     /**
      * deleteDrawable is normally invoked by the GLKViewController when an application is backgrounded, etc.
      * It is the responsibility of the developer to call deleteDrawable when a GLKViewController isn't being used.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("deleteDrawable")
     public native void deleteDrawable();
@@ -457,32 +479,73 @@ public class GLKView extends UIView implements NSCoding {
      * the GLKViewController to invoke the draw method. It can also be used when not using a GLKViewController and
      * custom
      * control of the display loop is needed.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("display")
     public native void display();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("drawableColorFormat")
     public native int drawableColorFormat();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("drawableDepthFormat")
     public native int drawableDepthFormat();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("drawableHeight")
     @NInt
     public native long drawableHeight();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("drawableMultisample")
     public native int drawableMultisample();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("drawableStencilFormat")
     public native int drawableStencilFormat();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("drawableWidth")
     @NInt
@@ -494,7 +557,12 @@ public class GLKView extends UIView implements NSCoding {
      * the view's draw method will never be called during the next drawing cycle. It is expected that -display will be
      * called directly in this case. enableSetNeedsDisplay is automatically set to false when used in conjunction with
      * the GLKViewController. This value is true by default.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("enableSetNeedsDisplay")
     public native boolean enableSetNeedsDisplay();
@@ -515,18 +583,42 @@ public class GLKView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native GLKView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("initWithFrame:context:")
     public native GLKView initWithFrameContext(@ByValue CGRect frame, @NotNull EAGLContext context);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setContext:")
     public native void setContext(@NotNull EAGLContext value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) GLKViewDelegate value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) GLKViewDelegate value) {
         Object __old = delegate();
@@ -539,18 +631,42 @@ public class GLKView extends UIView implements NSCoding {
         }
     }
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setDrawableColorFormat:")
     public native void setDrawableColorFormat(int value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setDrawableDepthFormat:")
     public native void setDrawableDepthFormat(int value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setDrawableMultisample:")
     public native void setDrawableMultisample(int value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setDrawableStencilFormat:")
     public native void setDrawableStencilFormat(int value);
@@ -561,14 +677,24 @@ public class GLKView extends UIView implements NSCoding {
      * the view's draw method will never be called during the next drawing cycle. It is expected that -display will be
      * called directly in this case. enableSetNeedsDisplay is automatically set to false when used in conjunction with
      * the GLKViewController. This value is true by default.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setEnableSetNeedsDisplay:")
     public native void setEnableSetNeedsDisplay(boolean value);
 
     /**
      * Returns a UIImage of the resulting draw. Snapshot should never be called from within the draw method.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("snapshot")

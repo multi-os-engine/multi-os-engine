@@ -85,7 +85,12 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillTypeResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithBillTypeToConfirm:")
@@ -173,7 +178,12 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
      * resolvedValue can be different than the original INBillType. This allows app extensions to apply business logic
      * constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillTypeResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("successWithResolvedBillType:")

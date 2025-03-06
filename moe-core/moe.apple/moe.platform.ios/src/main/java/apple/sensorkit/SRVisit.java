@@ -59,6 +59,8 @@ public class SRVisit extends NSObject {
 
     /**
      * The range of time the arrival to a location of interest occurred
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -96,6 +98,8 @@ public class SRVisit extends NSObject {
 
     /**
      * The range of time the departure from a location of interest occurred
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -108,6 +112,8 @@ public class SRVisit extends NSObject {
 
     /**
      * The distance between the location of interest to home
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("distanceFromHome")
@@ -121,6 +127,8 @@ public class SRVisit extends NSObject {
     /**
      * An identifier for the location of interest.
      * This can be used to identify the same location regardless of type
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -153,6 +161,9 @@ public class SRVisit extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("locationCategory")
     @NInt

@@ -97,6 +97,8 @@ public class PTChannelDescriptor extends NSObject {
     /**
      * The channel's "group photo" presented in the system user interface. This image is shown while nobody else is
      * speaking.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -107,6 +109,9 @@ public class PTChannelDescriptor extends NSObject {
     @Selector("init")
     public native PTChannelDescriptor init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithName:image:")
     public native PTChannelDescriptor initWithNameImage(@NotNull String name, @Nullable UIImage image);
@@ -135,6 +140,8 @@ public class PTChannelDescriptor extends NSObject {
 
     /**
      * The channel's "group name" shown in system user interface. (This is shown while nobody else is speaking.)
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

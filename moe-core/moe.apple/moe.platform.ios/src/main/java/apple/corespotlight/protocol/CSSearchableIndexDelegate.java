@@ -55,6 +55,8 @@ public interface CSSearchableIndexDelegate {
      * that way, in case of a crash, the indexer can call this again.
      * If the app passes clientState information in a batch, the acknowledgement can be called right away.
      * The passed in index shouldn't be used in an extension if a custom protection class is needed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
@@ -69,6 +71,8 @@ public interface CSSearchableIndexDelegate {
      * that way, in case of a crash, the indexer can call this again.
      * If the app passes clientState information in a batch, the acknowledgement can be called right away.
      * The passed in index shouldn't be used in an extension if a custom protection class is needed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
@@ -76,6 +80,9 @@ public interface CSSearchableIndexDelegate {
             @NotNull CSSearchableIndex searchableIndex, @NotNull NSArray<String> identifiers,
             @NotNull @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("searchableIndexDidFinishThrottle:")
@@ -87,6 +94,8 @@ public interface CSSearchableIndexDelegate {
      * When on battery power, it is possible for indexing to slowed down to prevent battery drain.
      * The developer may want to optionally implement these methods to receive notice that indexing is being throttled
      * and react accordingly (e.g. by priortizing indexing of more important content).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -110,7 +119,7 @@ public interface CSSearchableIndexDelegate {
     }
 
     /**
-     * The developer may provided a NSData representation if type was specified in providerDataTypeIdentifiers property.
+     * The developer may provide a NSData representation if type was specified in providerDataTypeIdentifiers property.
      * 
      * API-Since: 11.0
      */
@@ -125,7 +134,7 @@ public interface CSSearchableIndexDelegate {
     }
 
     /**
-     * The developer may provided a NSURL to file representation representation if type was specified from
+     * The developer may provide a NSURL to file representation representation if type was specified from
      * providerDataTypeIdentifiers or providerInPlaceFileTypeIdentifiers property.
      * 
      * API-Since: 11.0

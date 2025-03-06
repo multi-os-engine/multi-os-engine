@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Optimized representation of a compute graph of MPSGraphOperations and MPSGraphTensors.
+ * The optimized representation of a compute graph of operations and tensors.
  * 
  * An MPSGraph is a symbolic representation of operations to be utilized to execute compute graphs on a device.
  * 
@@ -70,7 +70,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 4d L2-Norm pooling operation and returns the result tensor.
+     * Creates a 4D L2-norm pooling operation and returns the result tensor.
      * 
      * - Parameters:
      * - source: A source tensor.
@@ -94,6 +94,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -111,6 +113,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -124,6 +128,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -133,7 +139,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Adds two input tensors.
      * 
-     * This operation creates an add op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates an add operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor + secondaryTensor
      * ```
@@ -143,6 +149,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -161,7 +169,7 @@ public class MPSGraph extends MPSGraphObject {
     public static native MPSGraph allocWithZone(VoidPtr zone);
 
     /**
-     * The StochasticGradientDescent performs a gradient descent
+     * The Stochastic gradient descent performs a gradient descent
      * `variable = variable - (learningRate * g)`
      * where,
      * `g` is gradient of error wrt variable
@@ -173,6 +181,8 @@ public class MPSGraph extends MPSGraphObject {
      * - gradientTensor: partial gradient of the trainable parameters with respect to loss
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -188,6 +198,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -201,6 +213,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -208,13 +222,15 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor asinhWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Creates an assign op which writes at this point of execution of the graph.
+     * Creates an assign operation which writes at this point of execution of the graph.
      * 
      * - Parameters:
      * - variable: The variable resource tensor to assign to.
      * - tensor: The tensor to assign to the variable.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -223,9 +239,9 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Returns the elementwise 2-argument arctangent of the input tensors.
+     * Returns the elementwise two-argument arctangent of the input tensors.
      * 
-     * This operation creates a `atan2` op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a `atan2` operation and returns the result tensor. It supports broadcasting as well.
      * Graph computes arc tangent of primaryTensor over secondaryTensor.
      * ```md
      * resultTensor = atan2(primaryTensor, secondaryTensor)
@@ -236,6 +252,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -250,6 +268,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -263,6 +283,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -274,15 +296,17 @@ public class MPSGraph extends MPSGraphObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * Creates a 2d average pooling gradient operation and returns the result tensor.
+     * Creates a 2D average pooling gradient operation and returns the result tensor.
      * 
      * - Parameters:
-     * - gradient: A 2d input gradient tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
+     * - gradient: A 2D input gradient tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
      * - source: The input tensor for the forward pass.
      * - descriptor: A pooling operation descriptor that specifies pooling window sizes, strides, dilation rates,
      * paddings and layouts.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -292,14 +316,16 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 2d average-pooling operation and returns the result tensor.
+     * Creates a 2D average-pooling operation and returns the result tensor.
      * 
      * - Parameters:
-     * - source: A 2d Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
+     * - source: A 2D Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
      * - descriptor: A pooling operation descriptor that specifies pooling window sizes, strides, dilation rates,
      * paddings and layouts.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -328,7 +354,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 4d average pooling operation and returns the result tensor.
+     * Creates a 4D average pooling operation and returns the result tensor.
      * 
      * - Parameters:
      * - source: A source tensor.
@@ -402,6 +428,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -409,9 +437,9 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor ceilWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Clamps the values in the first tensor between the corresponding values in the min and max value tensor.
+     * Clamps the values in the first tensor between the corresponding values in the minimum and maximum value tensor.
      * 
-     * This operation creates a clamp op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a clamp operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = clamp(tensor, minValueTensor, maxValueTensor)
      * ```
@@ -422,6 +450,8 @@ public class MPSGraph extends MPSGraphObject {
      * - minValueTensor: The tensor with max values to clamp to.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -451,6 +481,8 @@ public class MPSGraph extends MPSGraphObject {
      * - dimensionIndex: The dimension to concatenate across, must be in range: `-rank <= dimension < rank`.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -478,6 +510,8 @@ public class MPSGraph extends MPSGraphObject {
      * - interleave: A boolean value that specifies whether the operation interleaves input tensors.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -497,6 +531,8 @@ public class MPSGraph extends MPSGraphObject {
      * - dimensionIndex: The dimension to concatenate across, must be in range: `-rank <= dimension < rank`.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -505,12 +541,14 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long dimensionIndex, @Nullable String name);
 
     /**
-     * Creates a constant op and returns the result tensor.
+     * Creates a constant operation and returns the result tensor.
      * 
      * - Parameters:
      * - scalar: The scalar value to fill the entire tensor values with.
      * - dataType: The dataType of the constant tensor.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -518,14 +556,18 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor constantWithScalarDataType(double scalar, int dataType);
 
     /**
-     * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed. This
-     * call blocks till execution has completed.
+     * Runs the graph for the given feeds and returns the target tensor values, ensuring all target operations also
+     * executed.
+     * 
+     * This call blocks until execution has completed.
      * 
      * - Parameters:
      * - operations: Operations maked as control dependency for all ops created inside the dependent block
      * - dependentBlock: MPSGraphControlFlowDependencyBlock which is provided by caller to create dependent ops
      * - name: name of scope
      * - Returns: A valid MPSGraphTensor array with results returned from dependentBlock forwarded
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -544,9 +586,9 @@ public class MPSGraph extends MPSGraphObject {
     }
 
     /**
-     * Creates a 2d convolution gradient operation with respect to the source tensor of the forward convolution.
+     * Creates a 2D convolution gradient operation with respect to the source tensor of the forward convolution.
      * 
-     * If `S` is source tensor to forward convoluiton, `R` is the result/returned tensor of forward convolution,
+     * If `S` is source tensor to forward convolution, `R` is the result/returned tensor of forward convolution,
      * and `L` is the loss function, convolution2DDataGradientWithIncomingGradientTensor returns tensor `dL/dS = dL/dR *
      * dR/dS`,
      * where `dL/dR` is the incomingGradient parameter.
@@ -555,8 +597,8 @@ public class MPSGraph extends MPSGraphObject {
      * - incomingGradient: Incoming loss gradient tensor
      * - weights: Forward pass weights tensor
      * - outputShapeTensor: 4D Int32 or Int64 tensor. Shape of the forward pass source tensor
-     * - forwardConvolutionDescriptor: Forward convolution 2d op ``descriptor``
-     * - name: The name for the operation
+     * - forwardConvolutionDescriptor: Forward convolution 2D op ``descriptor``
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.0
@@ -570,9 +612,9 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
-     * Creates a 2d convolution gradient operation with respect to weights tensor of forward convolution.
+     * Creates a 2D convolution gradient operation with respect to weights tensor of forward convolution.
      * 
-     * If `W` is weights tensor to forward convoluiton, `R` is the result/returned tensor of forward convolution,
+     * If `W` is weights tensor to forward convolution, `R` is the result/returned tensor of forward convolution,
      * and `L` is the loss function, convolution2DWeightsGradientWithIncomingGradientTensor returns tensor `dL/dW =
      * dL/dR * dR/dW`,
      * where `dL/dR` is the incomingGradient parameter.
@@ -581,8 +623,8 @@ public class MPSGraph extends MPSGraphObject {
      * - incomingGradient: Incoming loss gradient tensor
      * - weights: Forward pass weights tensor
      * - outputShapeTensor: 4D int32 or Int64 Tensor. Shape of the forward pass source tensor
-     * - forwardConvolutionDescriptor: Forward convolution 2d op ``descriptor``
-     * - name: The name for the operation
+     * - forwardConvolutionDescriptor: Forward convolution 2D op ``descriptor``
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.0
@@ -595,7 +637,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
-     * Creates a 2d (forward) convolution operation and returns the result tensor.
+     * Creates a 2D (forward) convolution operation and returns the result tensor.
      * 
      * - Parameters:
      * - source: source tensor - must be a rank 4 tensor. The layout is defined by ``descriptor.dataLayout``.
@@ -603,6 +645,8 @@ public class MPSGraph extends MPSGraphObject {
      * - descriptor: Specifies strides, dilation rates, paddings and layouts.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -612,7 +656,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphConvolution2DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a convolution transpose gradient operation with respect of source tensor of convolution transpose
+     * Creates a convolution transpose gradient operation with respect to the source tensor of convolution transpose
      * operation and returns the result tensor.
      * 
      * Inserts an operation in graph to compute gradient of convolution transpose with respect to source tensor of the
@@ -624,7 +668,7 @@ public class MPSGraph extends MPSGraphObject {
      * - weights: Forward pass weights tensor
      * - outputShape: 1D Int32 or Int64 Tensor. Shape of the forward pass source tensor
      * - forwardConvolutionDescriptor: Forward pass op descriptor
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.0
@@ -638,8 +682,8 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
-     * Creates a convolution transpose gradient operation with respect of the weights tensor of convolution transpose
-     * operation and returns the result tensor.
+     * Creates a convolution transpose gradient operation with respect to the weights tensor of the convolution
+     * transpose operation and returns the result tensor.
      * 
      * Inserts an operation in graph to compute gradient of convolution transpose with respect to the weights tensor of
      * the corresponding
@@ -650,7 +694,7 @@ public class MPSGraph extends MPSGraphObject {
      * - source: Forward pass source tensor
      * - outputShape: 1D Int32 or Int64 Tensor. Shape of the forward pass source weights tensor
      * - forwardConvolutionDescriptor: Forward pass op descriptor
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.0
@@ -664,13 +708,13 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
-     * Creates a convolution transpose operation and return the result tensor.
+     * Creates a convolution transpose operation and returns the result tensor.
      * 
      * - Parameters:
      * - source: input tensor
      * - weights: weights tensor
-     * - outputShape: 1D Int32 or Int64 tensor. shape of the result tensor
-     * - descriptor: descriptor for the corresponding forward Conv2d operation
+     * - outputShape: 1D Int32 or Int64 tensor. shape of the result tensor.
+     * - descriptor: descriptor for the corresponding forward Conv2D operation
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
      * 
@@ -690,6 +734,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -703,6 +749,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -714,7 +762,7 @@ public class MPSGraph extends MPSGraphObject {
     public static native String debugDescription_static();
 
     /**
-     * Creates a depth-to-space2d operation and returns the result tensor.
+     * Creates a depth-to-space2D operation and returns the result tensor.
      * 
      * This operation outputs a copy of the input tensor, where values from the
      * `depthAxis` dimension are moved in spatial blocks of size `blockSize` to the
@@ -746,7 +794,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long blockSize, boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
-     * Creates a depth-to-space2d operation and returns the result tensor.
+     * Creates a depth-to-space2D operation and returns the result tensor.
      * 
      * This operation outputs a copy of the input tensor, where values from the
      * `depthAxisTensor` dimension are moved in spatial blocks of size `blockSize` to the
@@ -782,14 +830,16 @@ public class MPSGraph extends MPSGraphObject {
             boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
-     * Creates a 2d depthwise convolution operation and returns the result tensor.
+     * Creates a 2D-depthwise convolution operation and returns the result tensor.
      * 
      * - Parameters:
-     * - source: A 2d Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
+     * - source: A 2D Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
      * - weights: The weights tensor, must be rank=4. The layout is defined by `descriptor.weightsLayout`.
      * - descriptor: The descriptor object that specifies strides, dilation rates, paddings and layouts.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -799,14 +849,14 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphDepthwiseConvolution2DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 3d depthwise convolution operation and returns the result tensor.
+     * Creates a 3D depthwise convolution operation and returns the result tensor.
      * 
-     * Works exactly like depthwise convolution2d, but in three dimensions. Supports different layouts with
+     * Works exactly like depthwise convolution2D, but in three dimensions. Supports different layouts with
      * the ``MPSGraphDepthwiseConvolution3DOpDescriptor/channelDimensionIndex`` property.
      * If your weights need a different layout add a permute operation on them before this operation.
      * 
      * - Parameters:
-     * - source: A 3d Image source as tensor - must be at least rank=4 (CDHW when channelDimensionIndex = -4).
+     * - source: A 3D Image source as tensor - must be at least rank=4 (CDHW when channelDimensionIndex = -4).
      * - weights: The weights tensor, must be rank=4 - axes are interpreted as CDHW when channelDimensionIndex = -4 .
      * - descriptor: The descriptor object that specifies strides, dilation rates and paddings.
      * - name: The name for the operation.
@@ -837,6 +887,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -847,7 +899,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Divides the first input tensor by the second.
      * 
-     * This operation creates a divide op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a divide operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor / secondaryTensor
      * ```
@@ -857,6 +909,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -865,15 +919,17 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
-     * Creates a dropout op and return the result
+     * Creates a dropout operation and returns the result
      * 
      * Removes values in the `tensor` with a percentage chance equal to `rate`. Removed values are set to 0
      * 
      * - Parameters:
      * - tensor: Input tensor
      * - rate: The rate of values to be set to 0
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -882,15 +938,17 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Creates a dropout op and return the result
+     * Creates a dropout operation and returns the result
      * 
      * Removes values in the `tensor` with a percentage chance equal to `rate`. Removed values are set to 0
      * 
      * - Parameters:
      * - tensor: Input tensor
      * - rate: The rate of values to be set to 0
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -901,7 +959,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise equality check of the input tensors.
      * 
-     * This operation creates a equal op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a equal operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor == secondaryTensor
      * ```
@@ -911,6 +969,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -925,6 +985,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -932,12 +994,14 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor erfWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Applies an exponent with base ten to the input tensor elements.
+     * Applies an exponent with base 10 to the input tensor elements.
      * 
      * - Parameters:
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -945,12 +1009,14 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor exponentBase10WithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Applies an exponent with base two to the input tensor elements.
+     * Applies an exponent with base 2 to the input tensor elements.
      * 
      * - Parameters:
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -964,6 +1030,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -971,7 +1039,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor exponentWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Creates a flatten2d operation and returns the result tensor.
+     * Creates a flatten2D operation and returns the result tensor.
      * 
      * Flattens dimensions before `axis` to `result[0]` and dimensions starting
      * from `axis` to `result[1]` and returns a rank-2 tensor as result.
@@ -991,7 +1059,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Creates a flatten2d operation and returns the result tensor.
+     * Creates a flatten2D operation and returns the result tensor.
      * 
      * Flattens dimensions before `axis` to `result[0]` and dimensions starting
      * from `axis` to `result[1]` and returns a rank-2 tensor as result.
@@ -1012,7 +1080,9 @@ public class MPSGraph extends MPSGraphObject {
 
     /**
      * Returns the remainder of floor divison between the primary and secondary tensor.
-     * Create floorModulo op and return the result tensor, it supports broadcasting as well, returns 0 if divisor is 0
+     * 
+     * Creates a floorModulo operation and returns the result tensor, it supports broadcasting as well, returns 0 if
+     * divisor is 0.
      * ```md
      * resultTensor = primaryTensor - (floor(primaryTensor / secondaryTensor) * secondaryTensor)
      * ```
@@ -1022,6 +1092,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1036,6 +1108,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1043,18 +1117,20 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor floorWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Adds a forLoop operation, The lower and upper bounds specify a half-open range: the range includes the lower
+     * Adds a for loop operation, The lower and upper bounds specify a half-open range: the range includes the lower
      * bound but does not include the upper bound.
      * 
      * - Parameters:
-     * - lowerBound: lowerBound value of the loop, this is a scalar tensor, this is the index the loop will start with
-     * - upperBound: upperBound value of the loop, this is a scalar tensor
-     * - step: step value of the loop, this is a scalar tensor and must be positive
-     * - initialBodyArguments: initial set of iteration arguments passed to the bodyBlock of the for loop
-     * - body: bodyBlock, this will execute the body of the forLoop
-     * - name: name of operation
-     * - Returns: A valid MPSGraphTensor array with same count and corresponding elementTypes as
-     * initialIterationArguments and return types of the forLoop
+     * - lowerBound: Lower bound value of the loop, this is a scalar tensor, this is the index the loop will start with.
+     * - upperBound: Upper bound value of the loop, this is a scalar tensor.
+     * - step: Step value of the loop, this is a scalar tensor and must be positive.
+     * - initialBodyArguments: initial set of iteration arguments passed to the bodyBlock of the for loop.
+     * - body: This block will execute the body of the for loop.
+     * - name: name of operation.
+     * - Returns: A valid `MPSGraphTensor` array with same count and corresponding element types as
+     * `initialIterationArguments` and return types of the for loop.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -1075,15 +1151,17 @@ public class MPSGraph extends MPSGraphObject {
     }
 
     /**
-     * Adds a forLoop operation, with a specific number of iterations
+     * Adds a for loop operation, with a specific number of iterations.
      * 
      * - Parameters:
      * - numberOfIterations: tensor with number of iterations the loop will execute
      * - initialBodyArguments: initial set of iteration arguments passed to the bodyBlock of the for loop
-     * - body: bodyBlock, this will execute the body of the forLoop, index will go from 0 to numberOfIterations-1
+     * - body: bodyBlock, this will execute the body of the for loop, index will go from 0 to numberOfIterations-1
      * - name: name of operation
      * - Returns: A valid MPSGraphTensor array with same count and corresponding elementTypes as
-     * initialIterationArguments and return types of the forLoop
+     * initialIterationArguments and return types of the for loop
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -1103,7 +1181,7 @@ public class MPSGraph extends MPSGraphObject {
     }
 
     /**
-     * Create GatherND op and return the result tensor
+     * Creates a GatherND operation and returns the result tensor.
      * 
      * Gathers the slices in updatesTensor to the result tensor along the indices in indicesTensor.
      * The gather is defined as
@@ -1126,11 +1204,14 @@ public class MPSGraph extends MPSGraphObject {
      * ```
      * 
      * - Parameters:
-     * - updatesTensor: Tensor containing slices to be inserted into the result tensor
+     * - updatesTensor: Tensor containing slices to be inserted into the result tensor.
      * - indicesTensor: Tensor containg the updates indices to read slices from
      * - batchDimensions: The number of batch dimensions
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1140,7 +1221,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create Gather op and return the result tensor
+     * Creates a Gather operation and returns the result tensor.
      * 
      * Gathers the values in updatesTensor to the result tensor along the indices in indicesTensor.
      * The gather is defined as
@@ -1162,12 +1243,15 @@ public class MPSGraph extends MPSGraphObject {
      * ```
      * 
      * - Parameters:
-     * - updatesTensor: Tensor containing slices to be inserted into the result tensor
+     * - updatesTensor: Tensor containing slices to be inserted into the result tensor.
      * - indicesTensor: Tensor containg the updates indices to read slices from
      * - axis: The dimension on which to perform the gather
      * - batchDimensions: The number of batch dimensions
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1177,7 +1261,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long batchDimensions, @Nullable String name);
 
     /**
-     * Calculates partial derivative of primaryTensor with respect to the tensors.
+     * Calculates a partial derivative of primaryTensor with respect to the tensors.
      * 
      * - Parameters:
      * - primaryTensor: Tensor to be differentiated (numerator).
@@ -1185,6 +1269,8 @@ public class MPSGraph extends MPSGraphObject {
      * - name: Name for the gradient operation.
      * - Returns: A valid MPSGraphTensor dictionary object containing partial derivative
      * d(primaryTensor)/d(secondaryTensor) for each tensor as key.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1196,7 +1282,8 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Checks in an elementwise manner if the first input tensor is greater than or equal to the second.
      * 
-     * This operation creates a `greaterThanOrEqual` op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a `greaterThanOrEqual` operation and returns the result tensor. It supports broadcasting
+     * as well.
      * ```md
      * resultTensor = primaryTensor < secondaryTensor
      * ```
@@ -1206,6 +1293,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1216,7 +1305,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Checks in an elementwise manner if the first input tensor is greater than the second.
      * 
-     * This operation creates a `greaterThan` op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a `greaterThan` operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor > secondaryTensor
      * ```
@@ -1226,6 +1315,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1245,6 +1336,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object which is a copy of the input.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1252,7 +1345,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor identityWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Add an if/then/else op to the graph
+     * Adds an if-then-else operation to the graph.
      * 
      * - Parameters:
      * - predicateTensor: Tensor must have a single scalar value, used to decide between then/else branches
@@ -1262,6 +1355,8 @@ public class MPSGraph extends MPSGraphObject {
      * - Returns: results If no error, the tensors returned by user. If not empty, user must define both then/else
      * block,
      * both should have same number of arguments and each corresponding argument should have same elementTypes.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -1290,6 +1385,8 @@ public class MPSGraph extends MPSGraphObject {
 
     /**
      * Initialize an MPSGraph to insert nodes in.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("init")
@@ -1317,6 +1414,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1332,6 +1431,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1347,6 +1448,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1363,7 +1466,7 @@ public class MPSGraph extends MPSGraphObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * Computes the gradient of the leaky ReLU (rectified linear unit activation).
+     * Computes the gradient of the leaky rectified linear unit (ReLU) activation.
      * 
      * This operation supports broadcasting with the alpha tensor.
      * 
@@ -1384,7 +1487,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Computes the leaky ReLU (rectified linear unit activation) function on the input tensor.
+     * Computes the leaky rectified linear unit (ReLU) activation function on the input tensor.
      * 
      * The operation is: f(x) = max(x, alpha).
      * 
@@ -1403,7 +1506,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Computes the leaky ReLU (rectified linear unit activation) function on the input tensor.
+     * Computes the leaky rectified linear unit (ReLU) activation function on the input tensor.
      * 
      * The operation is: f(x) = max(x, alpha).
      * This operation supports broadcasting with the alpha tensor.
@@ -1425,7 +1528,8 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Checks in an elementwise manner if the first input tensor is less than or equal to the second.
      * 
-     * This operation creates a `lessThanOrEqualTo` op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a `lessThanOrEqualTo` operation and returns the result tensor. It supports broadcasting as
+     * well.
      * ```md
      * resultTensor = primaryTensor <= secondaryTensor
      * ```
@@ -1435,6 +1539,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1445,7 +1551,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Checks in an elementwise manner if the first input tensor is less than the second.
      * 
-     * This operation creates a `lessThan` op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a `lessThan` operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor < secondaryTensor
      * ```
@@ -1455,6 +1561,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1463,12 +1571,14 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
-     * Computes the logarithm with base ten to the input tensor elements.
+     * Computes the logarithm with base 10 to the input tensor elements.
      * 
      * - Parameters:
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1476,12 +1586,14 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor logarithmBase10WithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Computes the logarithm with base two to the input tensor elements.
+     * Computes the logarithm with base 2 to the input tensor elements.
      * 
      * - Parameters:
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1495,6 +1607,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1504,7 +1618,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise logical AND of the input tensors.
      * 
-     * This operation creates a logical AND op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a logical AND operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor && secondaryTensor
      * ```
@@ -1514,6 +1628,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1524,7 +1640,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise logical NAND of the input tensors.
      * 
-     * This operation creates a logical NAND op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a logical NAND operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = !(primaryTensor && secondaryTensor)
      * ```
@@ -1534,6 +1650,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1544,7 +1662,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise logical NOR of the input tensors.
      * 
-     * This operation creates a logical NOR op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a logical NOR operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = !(primaryTensor || secondaryTensor)
      * ```
@@ -1554,6 +1672,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1564,7 +1684,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise logical OR of the input tensors.
      * 
-     * This operation creates a logical OR op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a logical OR operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor || secondaryTensor
      * ```
@@ -1574,6 +1694,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1584,7 +1706,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise logical XNOR of the input tensors.
      * 
-     * This operation creates a logical XNOR op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a logical XNOR operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = XNOR(primaryTensor, secondaryTensor)
      * ```
@@ -1594,6 +1716,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1604,7 +1728,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise logical XOR of the input tensors.
      * 
-     * This operation creates a logical XOR op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a logical XOR operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = XOR(primaryTensor, secondaryTensor)
      * ```
@@ -1614,6 +1738,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1629,6 +1755,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The right-hand side tensor.
      * - name: The name for the operation.
      * - Returns: A valid tensor containing the product of the input matrices.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1637,15 +1765,17 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
-     * Creates a max pooling gradient operation and returns the result tensor.
+     * Creates a max-pooling gradient operation and returns the result tensor.
      * 
      * - Parameters:
-     * - gradient: A 2d input gradient tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
+     * - gradient: A 2D input gradient tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
      * - source: The input tensor for the forward pass.
      * - descriptor: A pooling operation descriptor that specifies pooling window sizes, strides, dilation rates,
      * paddings and layouts.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1655,14 +1785,16 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 2d max-pooling operation and returns the result tensor.
+     * Creates a 2D max-pooling operation and returns the result tensor.
      * 
      * - Parameters:
-     * - source: A 2d Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
+     * - source: A 2D Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
      * - descriptor: A pooling operation descriptor that specifies pooling window sizes, strides, dilation rates,
      * paddings and layouts.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1671,7 +1803,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a max pooling gradient operation and returns the result tensor.
+     * Creates a max-pooling gradient operation and returns the result tensor.
      * 
      * - Parameters:
      * - gradient: An input gradient tensor.
@@ -1691,7 +1823,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 4d max-pooling operation and returns the result tensor.
+     * Creates a 4D max-pooling operation and returns the result tensor.
      * 
      * - Parameters:
      * - source: A source tensor.
@@ -1711,7 +1843,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise maximum of the input tensors, while propagating `NaN` values.
      * 
-     * This operation creates a maximum with `NaN` propagation op and returns the result tensor. This means that
+     * This operation creates a maximum with `NaN` propagation operation and returns the result tensor. This means that
      * if any of the elementwise operands is `NaN`, the result is `NaN`.
      * It supports broadcasting as well.
      * ```md
@@ -1735,7 +1867,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise maximum of the input tensors.
      * 
-     * This operation creates a maximum op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a maximum operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = max(primaryTensor, secondaryTensor)
      * ```
@@ -1745,6 +1877,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1760,6 +1894,8 @@ public class MPSGraph extends MPSGraphObject {
      * at axis=0 to the fastest moving dimension.
      * - name: An optional name for the operation.
      * - Returns: A valid `MPSGraphTensor` object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1770,7 +1906,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise minimum of the input tensors, while propagating `NaN` values.
      * 
-     * This operation creates a minimum with `NaN` propagation op and returns the result tensor. This means that
+     * This operation creates a minimum with `NaN` propagation operation and returns the result tensor. This means that
      * if any of the elementwise operands is `NaN`, the result is `NaN`.
      * It supports broadcasting as well.
      * ```md
@@ -1794,7 +1930,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise minimum of the input tensors.
      * 
-     * This operation creates a minimum op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a minimum operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = min(primaryTensor, secondaryTensor)
      * ```
@@ -1804,6 +1940,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1814,7 +1952,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the remainder obtained by dividing the first input tensor by the second.
      * 
-     * This operation creates a modulo op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a modulo operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor % secondaryTensor
      * ```
@@ -1824,6 +1962,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1834,7 +1974,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Multiplies two input tensors.
      * 
-     * This operation creates a multiply op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a multiply operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor * secondaryTensor
      * ```
@@ -1844,6 +1984,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1858,6 +2000,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1865,7 +2009,9 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor negativeWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Create a new MPSGraph to insert nodes in.
+     * Creates a new graph to insert nodes in.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Owned
@@ -1873,7 +2019,7 @@ public class MPSGraph extends MPSGraphObject {
     public static native MPSGraph new_objc();
 
     /**
-     * Create a normalization beta gradient op and return the result tensor.
+     * Creates a normalization beta-gradient operation and returns the result tensor.
      * 
      * The mean and variance tensors should be outputs of ``meanWithTensor:axes:name`` and
      * ``varianceWithTensor:meanTensor:axes:name``.
@@ -1888,6 +2034,9 @@ public class MPSGraph extends MPSGraphObject {
      * - axes: The axes of normalization.
      * - name: An optional name for the operation.
      * - Returns: A valid `MPSGraphTensor` object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1897,7 +2046,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create a normalization gamma gradient op and return the result tensor.
+     * Creates a normalization gamma-gradient operation and returns the result tensor.
      * 
      * The mean and variance tensors should be outputs of ``meanWithTensor:axes:name`` and
      * ``varianceWithTensor:meanTensor:axes:name``.
@@ -1915,6 +2064,9 @@ public class MPSGraph extends MPSGraphObject {
      * - epsilon: A small value to add to the variance when normalizing the inputs.
      * - name: An optional name for the operation.
      * - Returns: A valid `MPSGraphTensor` object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1925,7 +2077,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull NSArray<? extends NSNumber> axes, float epsilon, @Nullable String name);
 
     /**
-     * Create a normalization input gradient op and return the result tensor.
+     * Creates a normalization input gradient operation and returns the result tensor.
      * 
      * The mean and variance tensors should be outputs of ``meanWithTensor:axes:name`` and
      * ``varianceWithTensor:meanTensor:axes:name``.
@@ -1945,6 +2097,9 @@ public class MPSGraph extends MPSGraphObject {
      * - axes: The axes of normalization.
      * - epsilon: A small value to add to the variance when normalizing the inputs.
      * - name: An optional name for the operation.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1956,7 +2111,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull NSArray<? extends NSNumber> axes, float epsilon, @Nullable String name);
 
     /**
-     * Create a batch normalization op and return the result tensor.
+     * Creates a batch normalization operation and returns the result tensor.
      * 
      * The mean and variance tensors should be outputs of `meanWithTensor:axes:name` and
      * `varianceWithTensor:meanTensor:axes:name`.
@@ -1977,6 +2132,9 @@ public class MPSGraph extends MPSGraphObject {
      * - epsilon: A small value to add to the variance when normalizing the inputs.
      * - name: An optional name for the operation.
      * - Returns: A valid `MPSGraphTensor` object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -1988,7 +2146,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise inequality check of the input tensors.
      * 
-     * This operation creates a not equal op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a not equal operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor != secondaryTensor
      * ```
@@ -1998,6 +2156,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2006,12 +2166,14 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
-     * Applies the logical not operation to the input tensor elements.
+     * Applies the logical NOT operation to the input tensor elements.
      * 
      * - Parameters:
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2019,7 +2181,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor notWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Create oneHot op and return the result tensor
+     * Creates a oneHot operation and returns the result tensor.
      * 
      * Creates a tensor of rank equal to the rank of `indicesTensor` + 1.
      * Inserts a new axis at the axis specified, or the minor axis if `axis` is -1.
@@ -2030,9 +2192,12 @@ public class MPSGraph extends MPSGraphObject {
      * - indicesTensor: Tensor of indices for on values
      * - depth: Depth of the oneHot vector along the axis
      * - axis: The axis to insert the new oneHot vector at
-     * - dataType: MPSDataType of the result tensor
+     * - dataType: MPSDataType of the result tensor.
      * - name: Name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2041,7 +2206,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long depth, @NUInt long axis, int dataType, @Nullable String name);
 
     /**
-     * Create oneHot op and return the result tensor
+     * Creates a oneHot operation and returns the result tensor.
      * 
      * Creates a tensor of rank equal to the indicesTensor rank + 1.
      * Inserts a new axis at the axis specified, or the minor axis if axis is -1.
@@ -2059,6 +2224,9 @@ public class MPSGraph extends MPSGraphObject {
      * type. Defaults to 0.0f
      * - name: Name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2068,7 +2236,7 @@ public class MPSGraph extends MPSGraphObject {
             double offValue, @Nullable String name);
 
     /**
-     * Create oneHot op and return the result tensor
+     * Creates a oneHot operation and returns the result tensor.
      * 
      * Creates a tensor of rank equal to the rank of `indicesTensor` + 1, of type MPSDataTypeFloat32.
      * Inserts a new axis at the axis specified, or the minor axis if `axis` is -1.
@@ -2081,6 +2249,9 @@ public class MPSGraph extends MPSGraphObject {
      * - axis: The axis to insert the new oneHot vector at
      * - name: Name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2089,7 +2260,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long depth, @NUInt long axis, @Nullable String name);
 
     /**
-     * Create oneHot op and return the result tensor
+     * Creates a oneHot operation and returns the result tensor.
      * 
      * Creates a tensor of rank equal to the rank of `indicesTensor` + 1.
      * Inserts a new axis at the minor dimension.
@@ -2099,9 +2270,12 @@ public class MPSGraph extends MPSGraphObject {
      * - Parameters:
      * - indicesTensor: Tensor of indices for on values
      * - depth: Depth of the oneHot vector along the axis
-     * - dataType: MPSDataType of the result tensor
+     * - dataType: MPSDataType of the result tensor.
      * - name: Name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2110,7 +2284,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long depth, int dataType, @Nullable String name);
 
     /**
-     * Create oneHot op and return the result tensor
+     * Creates a oneHot operation and returns the result tensor.
      * 
      * Creates a tensor of rank equal to the rank of `indicesTensor` + 1.
      * Inserts a new axis at the minor dimension.
@@ -2120,12 +2294,15 @@ public class MPSGraph extends MPSGraphObject {
      * - Parameters:
      * - indicesTensor: Tensor of indices for on values
      * - depth: Depth of the oneHot vector along the axis
-     * - dataType: MPSDataType of the result tensor
+     * - dataType: MPSDataType of the result tensor.
      * - onValue: The value for indices designated by the indicesTensor. This value must match the specified data type.
      * - offValue: The value for indices not designated by the indicesTensor. This value must match the specified data
      * type.
      * - name: Name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2135,7 +2312,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create oneHot op and return the result tensor
+     * Creates a oneHot operation and returns the result tensor.
      * 
      * Creates a tensor of rank equal to the rank of `indicesTensor` + 1, of type MPSDataTypeFloat32.
      * Inserts a new axis at the minor dimension.
@@ -2147,6 +2324,9 @@ public class MPSGraph extends MPSGraphObject {
      * - depth: Depth of the oneHot vector along the axis
      * - name: Name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2155,7 +2335,11 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long depth, @Nullable String name);
 
     /**
-     * Options for the graph, the default value is MPSGraphOptionsDefault.
+     * Options for the graph.
+     * 
+     * The default value is `MPSGraphOptionsDefault`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("options")
@@ -2163,6 +2347,8 @@ public class MPSGraph extends MPSGraphObject {
 
     /**
      * Array of all the placeholder tensors.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2172,7 +2358,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Returns the elementwise result of raising the first tensor to the power of the second tensor.
      * 
-     * This operation creates a power op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a power operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = pow(primaryTensor, secondaryTensor)
      * ```
@@ -2182,6 +2368,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2197,6 +2385,8 @@ public class MPSGraph extends MPSGraphObject {
      * - source: The input tensor from forward pass.
      * - name: The name for the operation.
      * - Returns: A valid ``MPSGraphTensor`` object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2213,6 +2403,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: The name for the operation.
      * - Returns: A valid ``MPSGraphTensor`` object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2226,6 +2418,8 @@ public class MPSGraph extends MPSGraphObject {
      * - variable: The variable resource tensor to read from.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2239,6 +2433,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2246,7 +2442,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor reciprocalWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Create reduction argMax op and return the result tensor.
+     * Creates a reduction argMax operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
@@ -2263,7 +2459,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create reduction argMin op and return the result tensor.
+     * Creates a reduction argMin operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
@@ -2280,13 +2476,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create reduction max op and return the result tensor.
+     * Creates a reduction max operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axes: axes of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2295,13 +2493,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction max op and return the result tensor.
+     * Creates a reduction max operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axis: axis of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2310,13 +2510,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create reduction min op and return the result tensor.
+     * Creates a reduction min operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axes: axes of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2325,13 +2527,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction minimum op and return the result tensor.
+     * Creates a reduction minimum operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axis: axis of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2340,13 +2544,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create reduction product op and return the result tensor.
+     * Creates a reduction product operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axes: axes of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2355,13 +2561,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction product op and return the result tensor.
+     * Creates a reduction product operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axis: axis of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2370,13 +2578,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create reduction sum op and return the result tensor.
+     * Creates a reduction sum operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axes: axes of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2385,13 +2595,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction sum op and return the result tensor.
+     * Creates a reduction sum operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axis: axis of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2424,7 +2636,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor shapeTensor, @Nullable String name);
 
     /**
-     * Create Resize op and return the result tensor
+     * Creates a Resize operation and returns the result tensor.
      * 
      * Resamples input images to given size. Result images will be distorted if size is of different aspect ratio.
      * Resize supports the following modes:
@@ -2455,7 +2667,7 @@ public class MPSGraph extends MPSGraphObject {
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.0
@@ -2468,7 +2680,7 @@ public class MPSGraph extends MPSGraphObject {
             boolean alignCorners, @NUInt long layout, @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -2482,8 +2694,10 @@ public class MPSGraph extends MPSGraphObject {
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2509,7 +2723,11 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("reverseSquareRootWithTensor:name:")
@@ -2574,12 +2792,14 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor reverseTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Rounds the input tensor elements using "round to nearest even" rounding mode.
+     * Rounds the input tensor elements by rounding to nearest even.
      * 
      * - Parameters:
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2593,6 +2813,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2600,7 +2822,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor roundWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Create ScatterND op and return the result tensor
+     * Creates a ScatterND operation and returns the result tensor.
      * 
      * Scatters the slices in updatesTensor to the result tensor along the indices in indicesTensor, on top of
      * dataTensor.
@@ -2628,11 +2850,11 @@ public class MPSGraph extends MPSGraphObject {
      * 
      * - Parameters:
      * - dataTensor: Tensor containing inital values of same shape as result tensor
-     * - updatesTensor: Tensor containing slices to be inserted into the result tensor
+     * - updatesTensor: Tensor containing slices to be inserted into the result tensor.
      * - indicesTensor: Tensor containg the result indices to insert slices at
      * - batchDimensions: The number of batch dimensions
      * - mode: The type of update to use on the destination
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.0
@@ -2645,7 +2867,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor indicesTensor, @NUInt long batchDimensions, @NInt long mode, @Nullable String name);
 
     /**
-     * Create Scatter op and return the result tensor
+     * Creates a Scatter operation and returns the result tensor.
      * 
      * Scatters the slices in updatesTensor to the result tensor along the indices in indicesTensor, on top of
      * dataTensor.
@@ -2669,11 +2891,11 @@ public class MPSGraph extends MPSGraphObject {
      * 
      * - Parameters:
      * - dataTensor: Tensor containing inital values of same shape as result tensor
-     * - updatesTensor: Tensor containing values to be inserted into the result tensor
+     * - updatesTensor: Tensor containing values to be inserted into the result tensor.
      * - indicesTensor: Tensor containg the result indices to insert values at
      * - axis: The axis of the result tensor to scatter values along
      * - mode: The type of update to use on the destination
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.0
@@ -2688,7 +2910,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Selects values from either the true or false predicate tensor, depending on the values in the first input.
      * 
-     * This operation creates a select op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a select operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = select(predicateTensor, truePredicateTensor, falseSelectTensor)
      * ```
@@ -2699,6 +2921,8 @@ public class MPSGraph extends MPSGraphObject {
      * - falseSelectTensor: The tensor to select values from if predicate is false.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2708,7 +2932,11 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor falseSelectTensor, @Nullable String name);
 
     /**
-     * Options for the graph, the default value is MPSGraphOptionsDefault.
+     * Options for the graph.
+     * 
+     * The default value is `MPSGraphOptionsDefault`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOptions:")
@@ -2743,6 +2971,8 @@ public class MPSGraph extends MPSGraphObject {
      * - source: The input tensor.
      * - name: The name for the operation.
      * - Returns: A valid ``MPSGraphTensor`` object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2757,6 +2987,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: The name for the operation.
      * - Returns: A valid ``MPSGraphTensor`` object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2774,6 +3006,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2790,6 +3024,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2803,6 +3039,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2816,6 +3054,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2823,7 +3063,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor sinhWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Creates a strided slice gradient operation and returns the result tensor.
+     * Creates a strided-slice gradient operation and returns the result tensor.
      * 
      * - Parameters:
      * - inputGradientTensor: The input gradient.
@@ -2833,6 +3073,8 @@ public class MPSGraph extends MPSGraphObject {
      * - strides: An array of numbers that specify the strides for each dimension.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2843,7 +3085,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull NSArray<? extends NSNumber> strides, @Nullable String name);
 
     /**
-     * Creates a strided slice gradient operation and returns the result tensor.
+     * Creates a strided-slice gradient operation and returns the result tensor.
      * 
      * - Parameters:
      * - inputGradientTensor: The input gradient.
@@ -2854,8 +3096,10 @@ public class MPSGraph extends MPSGraphObject {
      * - startMask: A bitmask that indicates dimensions whose `starts` values the operation should ignore.
      * - endMask: A bitmask that indicates dimensions whose `ends` values the operation should ignore.
      * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2876,6 +3120,8 @@ public class MPSGraph extends MPSGraphObject {
      * - length: The length of the slice.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2884,7 +3130,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long dimensionIndex, @NInt long start, @NInt long length, @Nullable String name);
 
     /**
-     * Creates a strided slice operation and returns the result tensor.
+     * Creates a strided-slice operation and returns the result tensor.
      * 
      * Slices a tensor starting from `starts`, stopping short before `ends` stepping
      * `strides` paces between each value. Semantics based on
@@ -2897,6 +3143,8 @@ public class MPSGraph extends MPSGraphObject {
      * - strides: An array of numbers that specify the strides for each dimension.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2906,7 +3154,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull NSArray<? extends NSNumber> strides, @Nullable String name);
 
     /**
-     * Creates a strided slice operation and returns the result tensor.
+     * Creates a strided-slice operation and returns the result tensor.
      * 
      * Slices a tensor starting from `starts`, stopping short before `ends` stepping
      * `strides` paces between each value. Semantics based on
@@ -2922,6 +3170,8 @@ public class MPSGraph extends MPSGraphObject {
      * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2932,7 +3182,7 @@ public class MPSGraph extends MPSGraphObject {
             int endMask, int squeezeMask, @Nullable String name);
 
     /**
-     * Creates the gradient of a softmax cross entropy loss operation and returns the result tensor.
+     * Creates the gradient of a softmax cross-entropy loss operation and returns the result tensor.
      * 
      * - Parameters:
      * - gradientTensor: The input gradientTensor. Note: in most cases this is the initial gradient tensor, which is a
@@ -2942,8 +3192,10 @@ public class MPSGraph extends MPSGraphObject {
      * - axis: The axis over which the operation computes the softmax reduction.
      * - reductionType: The type of reduction MPSGraph uses to reduce across all other axes than `axis`. See:
      * ``MPSGraphLossReductionType``.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2953,9 +3205,9 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor labelsTensor, @NInt long axis, long reductionType, @Nullable String name);
 
     /**
-     * Creates a softmax cross entropy loss operation and returns the result tensor.
+     * Creates a softmax cross-entropy loss operation and returns the result tensor.
      * 
-     * The softmax cross entropy operation computes:
+     * The softmax cross-entropy operation computes:
      * ```md
      * loss = reduction( - labels*ln( softmax(source) )), where
      * sotfmax(source) = exp(source) / sum( exp(source) ), and
@@ -2968,8 +3220,10 @@ public class MPSGraph extends MPSGraphObject {
      * - axis: The axis over which the operation computes the softmax reduction.
      * - reductionType: The type of reduction MPSGraph uses to reduce across all other axes than `axis`. See:
      * ``MPSGraphLossReductionType``.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -2985,8 +3239,10 @@ public class MPSGraph extends MPSGraphObject {
      * - gradient: The incoming gradient tensor.
      * - source: The input tensor.
      * - axis: The axis along which softmax is computed.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid ``MPSGraphTensor`` object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3002,6 +3258,8 @@ public class MPSGraph extends MPSGraphObject {
      * - axis: The axis along which softmax is computed.
      * - name: The name for the operation.
      * - Returns: A valid ``MPSGraphTensor`` object
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3010,7 +3268,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Creates a space-to-depth2d operation and returns the result tensor.
+     * Creates a space-to-depth2D operation and returns the result tensor.
      * 
      * This operation outputs a copy of the `input` tensor, where values from the
      * `widthAxis` and `heightAxis` dimensions are moved in spatial blocks of size
@@ -3041,7 +3299,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long blockSize, boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
-     * Creates a space-to-depth2d operation and returns the result tensor.
+     * Creates a space-to-depth2D operation and returns the result tensor.
      * 
      * This operation outputs a copy of the `input` tensor, where values from the
      * `widthAxisTensor` and `heightAxisTensor` dimensions are moved in spatial blocks of size
@@ -3083,6 +3341,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3096,6 +3356,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3118,6 +3380,8 @@ public class MPSGraph extends MPSGraphObject {
      * - descriptor: The descriptor object that specifies the parameters for the stencil operation.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -3126,7 +3390,8 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor weights, @NotNull MPSGraphStencilOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * The StochasticGradientDescent performs a gradient descent
+     * The Stochastic gradient descent performs a gradient descent.
+     * 
      * `variable = variable - (learningRate * g)`
      * where,
      * `g` is gradient of error wrt variable
@@ -3137,6 +3402,8 @@ public class MPSGraph extends MPSGraphObject {
      * - gradientTensor: partial gradient of the trainable parameters with respect to loss
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3148,7 +3415,7 @@ public class MPSGraph extends MPSGraphObject {
     /**
      * Subtracts the second input tensor from the first.
      * 
-     * This operation creates a subtract op and returns the result tensor. It supports broadcasting as well.
+     * This operation creates a subtract operation and returns the result tensor. It supports broadcasting as well.
      * ```md
      * resultTensor = primaryTensor - secondaryTensor
      * ```
@@ -3158,6 +3425,8 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The RHS tensor of the binary Op.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3176,6 +3445,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3189,6 +3460,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation.
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3196,7 +3469,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor tanhWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Create TopKGradient op and return the result tensor.
+     * Creates a TopKGradient operation and returns the result tensor.
      * 
      * Finds the K largest values along the minor dimension of the input. The input must have
      * at least K elements along its minor dimension.
@@ -3207,6 +3480,8 @@ public class MPSGraph extends MPSGraphObject {
      * - k: The number of largest values to return.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3215,7 +3490,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor source, @NUInt long k, @Nullable String name);
 
     /**
-     * Create TopKGradient op and return the result tensor.
+     * Creates a TopKGradient operation and returns the result tensor.
      * 
      * Finds the K largest values along the minor dimension of the input. The input must have
      * at least K elements along its minor dimension.
@@ -3226,6 +3501,8 @@ public class MPSGraph extends MPSGraphObject {
      * - kTensor: Tensor of the number of largest values to return.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3234,7 +3511,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor kTensor, @Nullable String name);
 
     /**
-     * Creates TopK op and return the value and indices tensors
+     * Creates a TopK operation and returns the value and indices tensors
      * 
      * Finds the k largest values along the minor dimension of the input. The source must have
      * at least k elements along its minor dimension.
@@ -3244,8 +3521,10 @@ public class MPSGraph extends MPSGraphObject {
      * - Parameters:
      * - source: Tensor containing source data
      * - k: The number of largest values to return
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of size 2
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -3254,7 +3533,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long k, @Nullable String name);
 
     /**
-     * Creates TopK op and return the result tensor.
+     * Creates a TopK operation and returns the result tensor.
      * 
      * Finds the k largest values along the minor dimension of the input. The source must have
      * at least k elements along its minor dimension.
@@ -3266,6 +3545,8 @@ public class MPSGraph extends MPSGraphObject {
      * - kTensor: Tensor of the number of largest values to return.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of size 2.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -3284,6 +3565,8 @@ public class MPSGraph extends MPSGraphObject {
      * - dimensionIndex2: The second dimension index to be transposed.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3299,6 +3582,8 @@ public class MPSGraph extends MPSGraphObject {
      * at axis=0 to the fastest moving dimension.
      * - name: An optional name for the operation.
      * - Returns: A valid `MPSGraphTensor` object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3314,6 +3599,8 @@ public class MPSGraph extends MPSGraphObject {
      * slowest moving at axis=0 to the fastest moving dimension.
      * - name: An optional name for the operation.
      * - Returns: A valid `MPSGraphTensor` object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3327,17 +3614,19 @@ public class MPSGraph extends MPSGraphObject {
     public static native long version_static();
 
     /**
-     * Adds a whileLoop operation
+     * Adds a while loop operation.
      * 
      * - Parameters:
-     * - initialInputs: inputTensors to the whileBeforeBlock, for the 1st iteration will be same as initialInputs passed
-     * to the whileLoop
-     * - before: beforeBlock, this will be run first and then call the afterBlock with results or return results from
-     * the loop
-     * - after: afterBlock, this will execute after the condition evaluation
-     * - name: name of operation
-     * - Returns: A valid MPSGraphTensor array with results returned from the conditionBlock depending on the
-     * predicateTensor
+     * - initialInputs: inputTensors to the `beforeBlock`, for the 1st iteration will be same as initialInputs passed to
+     * the while loop.
+     * - before: `beforeBlock`, this will be run first and then call the `afterBlock` with results or return results
+     * from the loop.
+     * - after: `afterBlock`, this will execute after the condition evaluation.
+     * - name: name of operation.
+     * - Returns: A valid MPSGraphTensor array with results returned from the conditionBlock depending on the predicate
+     * tensor.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -3368,7 +3657,7 @@ public class MPSGraph extends MPSGraphObject {
     }
 
     /**
-     * Creates an MPSGraphTensor representing state using the Philox algorithm with given counter and key values.
+     * Creates a tensor representing state using the Philox algorithm with given counter and key values.
      * 
      * See randomPhiloxStateTensorWithSeed.
      * 
@@ -3378,6 +3667,8 @@ public class MPSGraph extends MPSGraphObject {
      * - key: The value to initialize the key to in Philox algorithm.
      * - name: Name for the operation
      * - Returns: An MPSGraphTensor representing a random state, to be passed as an input to a random op.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3386,7 +3677,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long counterHigh, @NUInt long key, @Nullable String name);
 
     /**
-     * Creates an MPSGraphTensor representing state using the Philox algorithm with given counter and key values.
+     * Creates a tensor representing state using the Philox algorithm with given counter and key values.
      * 
      * Generates random numbers using the Philox counter-based algorithm, for further details see:
      * John K. Salmon, Mark A. Moraes, Ron O. Dror, and David E. Shaw. Parallel Random Numbers: As Easy as 1, 2, 3.
@@ -3409,6 +3700,8 @@ public class MPSGraph extends MPSGraphObject {
      * - seed: Initial counter and key values will be generated using seed.
      * - name: Name for the operation
      * - Returns: An MPSGraphTensor representing a random state, to be passed as an input to a random op.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3416,7 +3709,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor randomPhiloxStateTensorWithSeedName(@NUInt long seed, @Nullable String name);
 
     /**
-     * Create Random op of type matching distribution in descriptor and return random values
+     * Creates a Random op of type matching distribution in descriptor and returns random values.
      * 
      * Returns a tensor of provided shape of random values in the distribution specified. Uses a random seed value
      * to initalize state. No state is preserved, and subsequent calls are not guaranteed to result in a unique stream
@@ -3426,8 +3719,10 @@ public class MPSGraph extends MPSGraphObject {
      * - Parameters:
      * - shapeTensor: 1D Int32 or Int64 tensor. The shape of the tensor generated
      * - descriptor: The descriptor of the distribution. See MPSGraphRandomOpDescriptor.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: An MPSGraphTensor of shape containing random values in the defined range.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3436,7 +3731,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphRandomOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Create Random op of type matching distribution in descriptor and return random values
+     * Creates a Random op of type matching distribution in descriptor and returns random values.
      * 
      * Returns a tensor of provided shape of random values in the distribution specified. Uses the provided seed value
      * to initalize state. No state is preserved, and all calls with equal seed yield an identical stream of random
@@ -3447,8 +3742,10 @@ public class MPSGraph extends MPSGraphObject {
      * - descriptor: The descriptor of the distribution. See MPSGraphRandomOpDescriptor.
      * - seed: The seed to use to initialize state. All calls with equal seed yield an identical stream of random
      * values.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: An MPSGraphTensor of shape containing random values in the defined range.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3457,7 +3754,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphRandomOpDescriptor descriptor, @NUInt long seed, @Nullable String name);
 
     /**
-     * Create Random op of type matching distribution in descriptor, and return random values and updated state
+     * Creates a Random op of type matching distribution in descriptor, and returns random values and updated state.
      * 
      * Returns an array of 2 tensors, where the first is of provided shape of random values in the distribution
      * specified,
@@ -3470,14 +3767,16 @@ public class MPSGraph extends MPSGraphObject {
      * random calls to continue sampling from the stream.
      * 
      * - Parameters:
-     * - shapeTensor: 1D Int32 or Int64 tensor. The shape of the tensor generated
+     * - shapeTensor: 1D Int32 or Int64 tensor. The shape of the tensor generated.
      * - descriptor: The descriptor of the distribution. See MPSGraphRandomOpDescriptor.
      * - state: The state to define a stream of random values. All calls with equal state yield an identical stream of
      * random values.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: An array of MPSGraphTensor of size 2. The first MPSGraphTensor is of shape containing random values in
      * the defined range.
      * The second MPSGraphTensor is the updated state tensor.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3487,7 +3786,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor state, @Nullable String name);
 
     /**
-     * Create RandomUniform op and return random uniform values
+     * Creates a RandomUniform operation and returns random uniform values
      * 
      * Returns a tensor of provided shape of random uniform values in the range [0.0, 1.0). Uses a random seed value
      * to initalize state. No state is preserved, and subsequent calls are not guaranteed to result in a unique stream
@@ -3496,8 +3795,10 @@ public class MPSGraph extends MPSGraphObject {
      * 
      * - Parameters:
      * - shapeTensor: 1D Int32 or Int64 tensor. The shape of the tensor generated
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: An MPSGraphTensor of shape containing random values in the defined range.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3506,7 +3807,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create RandomUniform op and return random uniform values
+     * Creates a RandomUniform operation and returns random uniform values
      * 
      * Returns a tensor of provided shape of random uniform values in the range [0.0, 1.0). Uses the provided seed value
      * to initalize state. No state is preserved, and all calls with equal seed yield an identical stream of random
@@ -3516,8 +3817,10 @@ public class MPSGraph extends MPSGraphObject {
      * - shapeTensor: 1D Int32 or Int64 tensor. The shape of the tensor generated
      * - seed: The seed to use to initialize state. All calls with equal seed yield an identical stream of random
      * values.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: An MPSGraphTensor of shape containing random values in the defined range.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3526,7 +3829,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long seed, @Nullable String name);
 
     /**
-     * Create RandomUniform op and return random uniform values and updated state
+     * Creates a RandomUniform operation and returns random uniform values and updated state
      * 
      * Returns an array of 2 tensors, where the first is a tensor of provided shape of random uniform values in the
      * range
@@ -3542,10 +3845,12 @@ public class MPSGraph extends MPSGraphObject {
      * - shapeTensor: 1D Int32 or Int64 tensor. The shape of the tensor generated
      * - state: The state to define a stream of random values. All calls with equal state yield an identical stream of
      * random values.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: An array of MPSGraphTensor of size 2. The first MPSGraphTensor is of shape containing random values in
      * the defined range.
      * The second MPSGraphTensor is the updated state tensor.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3554,13 +3859,15 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor shapeTensor, @NotNull MPSGraphTensor state, @Nullable String name);
 
     /**
-     * Create reduction max propagate NaN op and return the result tensor.
+     * Creates a reduction max propagate NaN operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axes: axes of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3569,13 +3876,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction max propagate NaN op and return the result tensor.
+     * Creates a reduction max propagate NaN operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axis: axis of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3584,13 +3893,15 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long axis, @Nullable String name);
 
     /**
-     * Create reduction min propagate NaN op and return the result tensor.
+     * Creates a reduction min propagate NaN operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axes: axes of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3599,13 +3910,15 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction min propagate NaN op and return the result tensor.
+     * Creates a reduction min propagate NaN operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
      * - axis: axis of reduction
      * - name: name for the operation
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -3919,7 +4232,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphGRUDescriptor descriptor, @Nullable String name);
 
     /**
-     * Computes the hamming distance of 2 input tensors with support for broadcasting.
+     * Computes the hamming distance of two input tensors with support for broadcasting.
      * 
      * The hamming distance is computed between 2 sets of vectors and the last dimension(s) of each
      * input tensor is considered a vector.
@@ -3929,7 +4242,7 @@ public class MPSGraph extends MPSGraphObject {
      * - secondaryTensor: The second input tensor.
      * - resultDataType: The datatype of the return MPSGraphTensor. Must be either ``MPSDataTypeUInt32`` or
      * ``MPSDataTypeUInt16``.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid tensor containing the hamming distance between the input tensors.
      * 
      * API-Since: 16.0
@@ -4133,8 +4446,8 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable MPSGraphTensor peephole, @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates an LSTM operation and returns the value tensor and optionally the cell state tensor and optionally the
-     * training state tensor.
+     * Creates an LSTM operation and returns the value tensor and optionally the cell state tensor and the training
+     * state tensor.
      * 
      * This operation returns tensors `h` and optionally `c` and optionally `z` that are defined recursively as follows:
      * ```md
@@ -4177,8 +4490,8 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable MPSGraphTensor initCell, @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates an LSTM operation and returns the value tensor and optionally the cell state tensor and optionally the
-     * training state tensor.
+     * Creates an LSTM operation and returns the value tensor and optionally the cell state tensor and the training
+     * state tensor.
      * 
      * This operation returns tensors `h` and optionally `c` and optionally `z` that are defined recursively as follows:
      * ```md
@@ -4226,8 +4539,8 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable MPSGraphTensor initCell, @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates an LSTM operation and returns the value tensor and optionally the cell state tensor and optionally the
-     * training state tensor.
+     * Creates an LSTM operation and returns the value tensor and optionally the cell state tensor and the training
+     * state tensor.
      * 
      * This operation returns tensors `h` and optionally `c` and optionally `z` that are defined recursively as follows:
      * ```md
@@ -4279,7 +4592,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
-     * Adam
+     * Creates operations to apply Adam optimization.
      * 
      * The adam update ops are added
      * ```md
@@ -4301,6 +4614,8 @@ public class MPSGraph extends MPSGraphObject {
      * - name: name for the operation
      * - Returns: if maximumVelocity is nil array of 3 tensors (update, newMomentum, newVelocity) else array of 4
      * tensors (update, newMomentum, newVelocity, newMaximumVelocity)
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -4313,7 +4628,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor gradientTensor, @Nullable String name);
 
     /**
-     * Adam
+     * Creates operations to apply Adam optimization.
      * 
      * The adam update ops are added
      * current learning rate:
@@ -4338,6 +4653,8 @@ public class MPSGraph extends MPSGraphObject {
      * - name: name for the operation
      * - Returns: if maximumVelocity is nil array of 3 tensors (update, newMomentum, newVelocity) else array of 4
      * tensors (update, newMomentum, newVelocity, newMaximumVelocity)
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -4351,13 +4668,13 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor gradientTensor, @Nullable String name);
 
     /**
-     * Compute the indices that sort the elements of the input tensor along the specified axis.
+     * Computes the indices that sort the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension over which you sort the tensor
      * - descending: If true, reverse the sort direction
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object with 32-bit integer data type
      * 
      * API-Since: 16.1
@@ -4369,12 +4686,12 @@ public class MPSGraph extends MPSGraphObject {
             boolean descending, @Nullable String name);
 
     /**
-     * Compute the indices that sort the elements of the input tensor along the specified axis.
+     * Computes the indices that sort the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension over which you sort the tensor
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object with 32-bit integer data type
      * 
      * API-Since: 16.1
@@ -4386,13 +4703,13 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the indices that sort the elements of the input tensor along the specified axis.
+     * Computes the indices that sort the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension over which you sort the tensor
      * - descending: If true, reverse the sort direction
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object with 32-bit integer data type
      * 
      * API-Since: 16.1
@@ -4404,12 +4721,12 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axisTensor, boolean descending, @Nullable String name);
 
     /**
-     * Compute the indices that sort the elements of the input tensor along the specified axis.
+     * Computes the indices that sort the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension over which you sort the tensor
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object with 32-bit integer data type
      * 
      * API-Since: 16.1
@@ -4437,6 +4754,8 @@ public class MPSGraph extends MPSGraphObject {
      * diagnols.
      * - name: name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 15.4
      */
     @NotNull
     @Generated
@@ -4445,7 +4764,7 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long numLower, @NInt long numUpper, @Nullable String name);
 
     /**
-     * Creates band part op and return the result.
+     * Creates the band part operation and returns the result.
      * 
      * See above discussion of bandPartWithTensor: numLower: numUpper: name:
      * 
@@ -4455,6 +4774,8 @@ public class MPSGraph extends MPSGraphObject {
      * - numUpperTensor: Scalar Int32 tensor. The number of diagonals in the upper triangle to keep. If -1, keep all.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 15.4
      */
     @NotNull
     @Generated
@@ -4550,7 +4871,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
-     * Returns the elementwise left shifted binary representations of the primary integer by the secondary tensor
+     * Returns the elementwise left-shifted binary representations of the primary integer by the secondary tensor
      * amount.
      * 
      * - Parameters:
@@ -4568,7 +4889,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
-     * Applies the bitwise not operation to the input tensor element.
+     * Applies the bitwise NOT operation to the input tensor element.
      * 
      * This operation only accepts integer tensors.
      * 
@@ -4620,7 +4941,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Returns the elementwise right shifted binary representations of the primary integer by the secondary tensor
+     * Returns the elementwise right-shifted binary representations of the primary integer by the secondary tensor
      * amount.
      * 
      * - Parameters:
@@ -4696,7 +5017,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor shapeTensor, @Nullable String name);
 
     /**
-     * Compute the cumulative maximum of the input tensor along the specified axis.
+     * Computes the cumulative maximum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
@@ -4704,7 +5025,7 @@ public class MPSGraph extends MPSGraphObject {
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to the
      * lowest value of the tensor data type
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4716,12 +5037,12 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
-     * Compute the cumulative maximum of the input tensor along the specified axis.
+     * Computes the cumulative maximum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension where you compute the cumulative operation
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4733,7 +5054,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the cumulative maximum of the input tensor along the specified axis.
+     * Computes the cumulative maximum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
@@ -4741,7 +5062,7 @@ public class MPSGraph extends MPSGraphObject {
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to the
      * lowest value of the tensor data type
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4754,12 +5075,12 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the cumulative maximum of the input tensor along the specified axis.
+     * Computes the cumulative maximum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension where you compute the cumulative operation
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4771,7 +5092,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
-     * Compute the cumulative minimum of the input tensor along the specified axis.
+     * Computes the cumulative minimum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
@@ -4779,7 +5100,7 @@ public class MPSGraph extends MPSGraphObject {
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to the
      * largest value of the tensor data type
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4791,12 +5112,12 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
-     * Compute the cumulative minimum of the input tensor along the specified axis.
+     * Computes the cumulative minimum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension where you compute the cumulative operation
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4808,7 +5129,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the cumulative minimum of the input tensor along the specified axis.
+     * Computes the cumulative minimum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
@@ -4816,7 +5137,7 @@ public class MPSGraph extends MPSGraphObject {
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to the
      * largest value of the tensor data type
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4829,7 +5150,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the cumulative minimum of the input tensor along the specified axis.
+     * Computes the cumulative minimum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
@@ -4837,7 +5158,7 @@ public class MPSGraph extends MPSGraphObject {
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to the
      * largest value of the tensor data type
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4849,14 +5170,14 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
-     * Compute the cumulative product of the input tensor along the specified axis.
+     * Computes the cumulative product of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension where you compute the cumulative operation
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to one
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4868,12 +5189,12 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
-     * Compute the cumulative product of the input tensor along the specified axis.
+     * Computes the cumulative product of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension where you compute the cumulative operation
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4885,14 +5206,14 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the cumulative product of the input tensor along the specified axis.
+     * Computes the cumulative product of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension where you compute the cumulative operation
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to one
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4905,14 +5226,14 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the cumulative product of the input tensor along the specified axis.
+     * Computes the cumulative product of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension where you compute the cumulative operation
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to one
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4924,14 +5245,14 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
-     * Compute the cumulative sum of the input tensor along the specified axis.
+     * Computes the cumulative sum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension where you compute the cumulative operation
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to zero
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4943,12 +5264,12 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
-     * Compute the cumulative sum of the input tensor along the specified axis.
+     * Computes the cumulative sum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension where you compute the cumulative operation
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4960,14 +5281,14 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Compute the cumulative sum of the input tensor along the specified axis.
+     * Computes the cumulative sum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension where you compute the cumulative operation
      * - exclusive: If true, perform the exclusive cumulative operation, and the first element will be equal to zero
      * - reverse: If true, reverse the direction of the cumulative operation along the specified axis
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4979,12 +5300,12 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axisTensor, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
-     * Compute the cumulative sum of the input tensor along the specified axis.
+     * Computes the cumulative sum of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension where you compute the cumulative operation
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -4996,7 +5317,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
-     * Create Dequantize op and return the result tensor
+     * Creates Dequantize operation and returns the result tensor.
      * 
      * Convert the i8 or u8 `tensor` to a float tensor by applying a scale + bias transform:
      * result = scale(tensor - zeroPoint)
@@ -5005,8 +5326,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: Input tensor to be dequantized
      * - scale: Scale scalar parameter
      * - zeroPoint: Bias scalar parameter (converted to dataType of tensor)
-     * - dataType: Float data type of the result tensor
-     * - name: The name for the operation
+     * - dataType: Float data type of the result tensor.
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of datatype dataType
      * 
      * API-Since: 16.2
@@ -5018,7 +5339,7 @@ public class MPSGraph extends MPSGraphObject {
             double scale, double zeroPoint, int dataType, @Nullable String name);
 
     /**
-     * Create Dequantize op and return the result tensor
+     * Creates Dequantize operation and returns the result tensor.
      * 
      * Convert the i8 or u8 `tensor` to a float tensor by applying a scale + bias transform:
      * result = scaleTensor(tensor - zeroPoint)
@@ -5027,9 +5348,9 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: Input tensor to be dequantized
      * - scaleTensor: Scale scalar or 1D Tensor parameter with size == tensor.shape[axis]
      * - zeroPoint: Bias scalar parameter (converted to dataType of tensor)
-     * - dataType: Float data type of the result tensor
+     * - dataType: Float data type of the result tensor.
      * - axis: Axis on which the scale 1D value is being broadcasted
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of datatype dataType
      * 
      * API-Since: 16.2
@@ -5042,7 +5363,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create Dequantize op and return the result tensor
+     * Creates a dequantize operation and returns the result tensor.
      * 
      * Convert the i8 or u8 `tensor` to a float tensor by applying a scale + bias transform:
      * result = scaleTensor(tensor - zeroPointTensor)
@@ -5051,9 +5372,9 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: Input tensor to be dequantized
      * - scaleTensor: Scale scalar or 1D Tensor parameter with size == tensor.shape[axis]
      * - zeroPointTensor: Bias scalar or 1D Tensor parameter with size == tensor.shape[axis]
-     * - dataType: Float data type of the result tensor
+     * - dataType: Float data type of the result tensor.
      * - axis: Axis on which the scale 1D value is being broadcasted
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of datatype dataType
      * 
      * API-Since: 16.2
@@ -5066,7 +5387,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor zeroPointTensor, int dataType, @NInt long axis, @Nullable String name);
 
     /**
-     * Creates an expand dimensions operation and returns the result tensor.
+     * Creates an expand-dimensions operation and returns the result tensor.
      * 
      * Expands the tensor, inserting dimensions with size 1 at specified axes.
      * 
@@ -5085,7 +5406,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Creates an expand dimensions operation and returns the result tensor.
+     * Creates an expand-dimensions operation and returns the result tensor.
      * 
      * Expands the tensor, inserting dimensions with size 1 at specified axes.
      * 
@@ -5104,7 +5425,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axesTensor, @Nullable String name);
 
     /**
-     * Creates an expand dimensions operation and returns the result tensor.
+     * Creates an expand-dimensions operation and returns the result tensor.
      * 
      * Expands the tensor, inserting a dimension with size 1 at the specified axis.
      * 
@@ -5123,7 +5444,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create GatherAlongAxis op and return the result tensor
+     * Creates a GatherAlongAxis operation and returns the result tensor.
      * 
      * Gather values from `updatesTensor` along the specified `axis` at indices in `indicesTensor`.
      * The shape of `updatesTensor` and `indicesTensor` must match except at `axis`.
@@ -5134,7 +5455,7 @@ public class MPSGraph extends MPSGraphObject {
      * - axis: The axis to gather from. Negative values wrap around
      * - updatesTensor: The input tensor to gather values from
      * - indicesTensor: Int32 or Int64 tensor used to index `updatesTensor`
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * 
@@ -5147,7 +5468,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor updatesTensor, @NotNull MPSGraphTensor indicesTensor, @Nullable String name);
 
     /**
-     * Create GatherAlongAxis op and return the result tensor
+     * Creates a GatherAlongAxis operation and returns the result tensor.
      * 
      * Gather values from `updatesTensor` along the specified `axis` at indices in `indicesTensor`.
      * The shape of `updatesTensor` and `indicesTensor` must match except at `axis`.
@@ -5158,7 +5479,7 @@ public class MPSGraph extends MPSGraphObject {
      * - axisTensor: Scalar Int32 tensor. The axis to gather from. Negative values wrap around
      * - updatesTensor: The input tensor to gather values from
      * - indicesTensor: Int32 or Int64 tensor used to index `updatesTensor`
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * 
@@ -5192,15 +5513,15 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor inverseOfTensorName(@NotNull MPSGraphTensor inputTensor, @Nullable String name);
 
     /**
-     * Creates a max pooling gradient operation and returns the result tensor.
+     * Creates a max-pooling gradient operation and returns the result tensor.
      * 
-     * With this API MPSGraph computes the max pooling gradient efficiently by reusing the indices from the forward API
+     * With this API MPSGraph computes the max-pooling gradient efficiently by reusing the indices from the forward API
      * instead of recomputing them.
      * The descriptor must set `returnIndicesMode` and `returnIndicesDataType` to the same value as that set by the
      * forward pass.
      * 
      * - Parameters:
-     * - gradient: A 2d input gradient tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
+     * - gradient: A 2D input gradient tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
      * - indices: The indices tensor returned from
      * ``MPSGraph/maxPooling2DReturnIndicesWithSourceTensor:descriptor:name:``.
      * - outputShape: A tensor containing the shape of the destination gradient.
@@ -5219,16 +5540,16 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 2d max-pooling operation and returns the result tensor and the corresponding indices tensor.
+     * Creates a 2D max-pooling operation and returns the result tensor and the corresponding indices tensor.
      * 
-     * In order to compute the indices, `returnIndicesMode` of the descriptor must be set. The datatype of indices
+     * In order to Computes the indices, `returnIndicesMode` of the descriptor must be set. The datatype of indices
      * tensor can be set
      * using `returnIndicesDataType`.
      * If `returnIndicesMode = MPSGraphPoolingReturnIndicesNone` then only the first result
      * MPSGraph returns will be valid and using the second result will assert.
      * 
      * - Parameters:
-     * - source: A 2d Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
+     * - source: A 2D Image source as tensor - must be of rank=4. The layout is defined by `descriptor.dataLayout`.
      * - descriptor: A pooling operation descriptor that specifies pooling window sizes, strides, dilation rates,
      * paddings and layouts.
      * - name: The name for the operation.
@@ -5244,9 +5565,9 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor source, @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a max pooling gradient operation and returns the result tensor.
+     * Creates a max-pooling gradient operation and returns the result tensor.
      * 
-     * With this API MPSGraph computes the max pooling gradient efficiently by reusing the indices from the forward API
+     * With this API MPSGraph computes the max-pooling gradient efficiently by reusing the indices from the forward API
      * instead of recomputing them.
      * The descriptor must set `returnIndicesMode` and `returnIndicesDataType` to the same value as that set by the
      * forward pass.
@@ -5271,9 +5592,9 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a 4d max-pooling operation and returns the result tensor and the corresponding indices tensor.
+     * Creates a 4D max-pooling operation and returns the result tensor and the corresponding indices tensor.
      * 
-     * In order to compute the indices, `returnIndicesMode` of the descriptor must be set. The datatype of indices
+     * In order to Computes the indices, `returnIndicesMode` of the descriptor must be set. The datatype of indices
      * tensor can be set
      * using `returnIndicesDataType`.
      * If `returnIndicesMode = MPSGraphPoolingReturnIndicesNone` then only the first result
@@ -5296,7 +5617,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor source, @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
-     * Create Quantize op and return the result tensor
+     * Creates a Quantize operation and returns the result tensor.
      * 
      * Convert the float `tensor` to an i8 or u8 tensor by applying a scale + bias transform:
      * result = (tensor / scale) + zeroPoint
@@ -5305,8 +5626,8 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: Input tensor to be quantized
      * - scale: Scale scalar parameter
      * - zeroPoint: Bias scalar parameter (converted to dataType of resultTensor)
-     * - dataType: Integer data type of the result tensor
-     * - name: The name for the operation
+     * - dataType: Integer data type of the result tensor.
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of datatype dataType
      * 
      * API-Since: 16.2
@@ -5318,7 +5639,7 @@ public class MPSGraph extends MPSGraphObject {
             double zeroPoint, int dataType, @Nullable String name);
 
     /**
-     * Create Quantize op and return the result tensor
+     * Creates a Quantize operation and returns the result tensor.
      * 
      * Convert the float `tensor` to an i8 or u8 tensor by applying a scale + bias transform:
      * result = (tensor / scaleTensor) + zeroPoint
@@ -5327,9 +5648,9 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: Input tensor to be quantized
      * - scaleTensor: Scale 1D Tensor parameter with size == tensor.shape[axis]
      * - zeroPoint: Bias scalar parameter (converted to dataType of resultTensor)
-     * - dataType: Integer data type of the result tensor
+     * - dataType: Integer data type of the result tensor.
      * - axis: Axis on which the scale 1D value is being broadcasted
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of datatype dataType
      * 
      * API-Since: 16.2
@@ -5342,7 +5663,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create Quantize op and return the result tensor
+     * Creates a Quantize operation and returns the result tensor.
      * 
      * Convert the float `tensor` to an i8 or u8 tensor by applying a scale + bias transform:
      * result = (tensor / scaleTensor) + zeroPointTensor
@@ -5351,9 +5672,9 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: Input tensor to be quantized
      * - scaleTensor: Scale scalar or 1D Tensor parameter with size == tensor.shape[axis]
      * - zeroPointTensor: Bias scalar or 1D Tensor parameter with size == tensor.shape[axis]
-     * - dataType: Integer data type of the result tensor
+     * - dataType: Integer data type of the result tensor.
      * - axis: Axis on which the scale 1D value is being broadcasted
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor array of datatype dataType
      * 
      * API-Since: 16.2
@@ -5366,7 +5687,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor zeroPointTensor, int dataType, @NInt long axis, @Nullable String name);
 
     /**
-     * Create reduction and op and return the result tensor.
+     * Creates a reduction and operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
@@ -5383,7 +5704,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction and op and return the result tensor.
+     * Creates a reduction and operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
@@ -5400,7 +5721,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create reduction or op and return the result tensor.
+     * Creates a reduction or operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
@@ -5417,7 +5738,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
-     * Create reduction or op and return the result tensor.
+     * Creates a reduction or operation and returns the result tensor.
      * 
      * - Parameters:
      * - tensor: input tensor
@@ -5434,7 +5755,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -5447,7 +5768,7 @@ public class MPSGraph extends MPSGraphObject {
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5460,7 +5781,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long layout, @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with bilinear sampling and identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -5471,7 +5792,7 @@ public class MPSGraph extends MPSGraphObject {
      * - scaleOffset: 1D float tensor. A 4-element shape as [scaleY, scaleX, offsetY, offsetX]
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5485,7 +5806,24 @@ public class MPSGraph extends MPSGraphObject {
 
     /**
      * Resamples input images to given size using bilinear sampling.
-     * See above discussion for more details.
+     * 
+     * Resamples input images to given size using nearest neighbor sampling. Result images will be distorted if
+     * size is of different aspect ratio.
+     * Destination indices are computed using direct index scaling by default, with no offset added.
+     * If the centerResult parameter is true, the destination indices will be scaled and shifted to be centered
+     * on the input image.
+     * If the alignCorners parameter is true, the corners of the result images will match the input images.
+     * Scaling will be modified to a factor of (size - 1) / (inputSize - 1). When alignCorners is true, the
+     * centerResult parameter does nothing.
+     * In order to achieve the same behavior as OpenCV's resize and TensorFlowV2's resize,
+     * ```md
+     * centerResult = YES;
+     * alginCorners = NO;
+     * ```
+     * To achieve the same behavior as TensorFlowV1 resize
+     * ```md
+     * centerResult = NO;
+     * ```
      * 
      * - Parameters:
      * - imagesTensor: Tensor containing input images.
@@ -5495,7 +5833,7 @@ public class MPSGraph extends MPSGraphObject {
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5518,7 +5856,7 @@ public class MPSGraph extends MPSGraphObject {
      * - nearestRoundingMode: The rounding mode to use when using nearest resampling.
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5531,7 +5869,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long layout, @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -5545,7 +5883,7 @@ public class MPSGraph extends MPSGraphObject {
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5558,7 +5896,7 @@ public class MPSGraph extends MPSGraphObject {
             boolean centerResult, boolean alignCorners, @NUInt long layout, @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -5570,7 +5908,7 @@ public class MPSGraph extends MPSGraphObject {
      * - nearestRoundingMode: The rounding mode to use when using nearest resampling.
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5583,9 +5921,28 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long nearestRoundingMode, @NUInt long layout, @Nullable String name);
 
     /**
-     * Resamples input images to given size using nearest neighbor sampling. This API allows for
-     * the rounding mode to be specified.
-     * See above discussion for more details.
+     * Resamples input images to given size using nearest neighbor sampling.
+     * 
+     * This API allows for the rounding mode to be specified.
+     * Resamples input images to given size. Result images will be distorted if size is of different aspect ratio.
+     * Resize supports the following modes:
+     * Nearest Neighbor - values are interpolated using the closest neighbor pixel
+     * Bilinear - values are computed using bilinear interpolation of 4 neighboring pixels
+     * Destination indices are computed using direct index scaling by default, with no offset added.
+     * If the centerResult parameter is true, the destination indices will be scaled and shifted to be centered
+     * on the input image.
+     * If the alignCorners parameter is true, the corners of the result images will match the input images.
+     * Scaling will be modified to a factor of (size - 1) / (inputSize - 1). When alignCorners is true, the
+     * centerResult parameter does nothing.
+     * In order to achieve the same behavior as OpenCV's resize and TensorFlowV2's resize,
+     * ```md
+     * centerResult = YES;
+     * alginCorners = NO;
+     * ```
+     * To achieve the same behavior as TensorFlowV1 resize
+     * ```md
+     * centerResult = NO;
+     * ```
      * 
      * - Parameters:
      * - imagesTensor: Tensor containing input images.
@@ -5596,7 +5953,7 @@ public class MPSGraph extends MPSGraphObject {
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5619,7 +5976,7 @@ public class MPSGraph extends MPSGraphObject {
      * - nearestRoundingMode: The rounding mode to use when using nearest resampling.
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5647,7 +6004,7 @@ public class MPSGraph extends MPSGraphObject {
      * - mode: The resampling mode to use. If nearest sampling is specifed, RoundPreferCeil mode will be used.
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5660,7 +6017,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long mode, @NUInt long layout, @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -5672,7 +6029,7 @@ public class MPSGraph extends MPSGraphObject {
      * - mode: The resampling mode to use. If nearest sampling is specifed, RoundPreferCeil mode will be used.
      * - layout: Specifies what layout the provided tensor is in. The returned tensor will follow the same layout. Valid
      * layouts are NHWC, NCHW, HWC, CHW, and HW.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -5710,7 +6067,7 @@ public class MPSGraph extends MPSGraphObject {
      * roundPreferCeil, roundPreferFloor, ceil, and floor.
      * - constantValue: If paddingMode is MPSGraphPaddingModeConstant, then this constant is used for samples outside
      * the input tensor.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.2
@@ -5749,7 +6106,7 @@ public class MPSGraph extends MPSGraphObject {
      * roundPreferCeil.
      * - constantValue: If paddingMode is MPSGraphPaddingModeConstant, then this constant is used for samples outside
      * the input tensor.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.2
@@ -5763,7 +6120,7 @@ public class MPSGraph extends MPSGraphObject {
             @NUInt long samplingMode, double constantValue, @Nullable String name);
 
     /**
-     * Create ScatterAlongAxis op and return the result tensor
+     * Creates a ScatterAlongAxis operation and returns the result tensor.
      * 
      * Scatter values from `updatesTensor` along the specified `axis` at indices in `indicesTensor` onto `dataTensor`.
      * Values in `dataTensor` are updated following `mode`. See MPSGraphScatterMode.
@@ -5792,9 +6149,9 @@ public class MPSGraph extends MPSGraphObject {
      * - axis: The axis to scatter to. Negative values wrap around
      * - dataTensor: The input tensor to scatter values onto
      * - updatesTensor: The input tensor to scatter values from
-     * - indicesTensor: Int32 or Int64 tensor used to index the result tensor
+     * - indicesTensor: Int32 or Int64 tensor used to index the result tensor.
      * - mode: The type of update to use
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.4
@@ -5807,7 +6164,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor indicesTensor, @NInt long mode, @Nullable String name);
 
     /**
-     * Create ScatterAlongAxis op and return the result tensor
+     * Creates a ScatterAlongAxis operation and returns the result tensor.
      * 
      * Scatter values from `updatesTensor` along the specified `axis` at indices in `indicesTensor` onto `dataTensor`.
      * Values in `dataTensor` are updated following `mode`. See MPSGraphScatterMode.
@@ -5836,9 +6193,9 @@ public class MPSGraph extends MPSGraphObject {
      * - axisTensor: Scalar Int32 tensor. The axis to scatter to. Negative values wrap around
      * - dataTensor: The input tensor to scatter values onto
      * - updatesTensor: The input tensor to scatter values from
-     * - indicesTensor: Int32 or Int64 tensor used to index the result tensor
+     * - indicesTensor: Int32 or Int64 tensor used to index the result tensor.
      * - mode: The type of update to use
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.4
@@ -6029,7 +6386,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a single-gate RNN operation and returns the value and optionally training state tensor.
+     * Creates a single-gate RNN operation and returns the value and optionally the training state tensor.
      * 
      * This operation returns tensors `h` and optionally `z` that are defined recursively as follows:
      * ```md
@@ -6064,7 +6421,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
-     * Creates a single-gate RNN operation and returns the value and optionally training state tensor.
+     * Creates a single-gate RNN operation and returns the value and optionally the training state tensor.
      * 
      * This operation returns tensors `h` and optionally `z` that are defined recursively as follows:
      * ```md
@@ -6148,13 +6505,13 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable MPSGraphTensor mask, @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
-     * Sort the elements of the input tensor along the specified axis.
+     * Sorts the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension over which you sort the tensor
      * - descending: If true, reverse the sort direction
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -6166,12 +6523,12 @@ public class MPSGraph extends MPSGraphObject {
             boolean descending, @Nullable String name);
 
     /**
-     * Sort the elements of the input tensor along the specified axis.
+     * Sorts the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axis: The tensor dimension over which you sort the tensor
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -6183,13 +6540,13 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Sort the elements of the input tensor along the specified axis.
+     * Sorts the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension over which you sort the tensor
      * - descending: If true, reverse the sort direction
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -6201,12 +6558,12 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor axisTensor, boolean descending, @Nullable String name);
 
     /**
-     * Sort the elements of the input tensor along the specified axis.
+     * Sorts the elements of the input tensor along the specified axis.
      * 
      * - Parameters:
      * - tensor: The input tensor
      * - axisTensor: The tensor dimension over which you sort the tensor
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.0
@@ -6339,7 +6696,7 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: The input tensor
      * - splitSizesTensor: The lengths of the result tensors along the split axis.
      * - axis: The dimension along which MPSGraph splits the input tensor.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 15.4
@@ -6485,7 +6842,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor truncateWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Creates a Hermitean-to-Real fast Fourier transform operation and returns the result tensor.
+     * Creates a Hermitean-to-real fast Fourier transform operation and returns the result tensor.
      * 
      * This operation computes the fast Fourier transform of a complex-valued input tensor according to the following
      * formulae.
@@ -6518,7 +6875,7 @@ public class MPSGraph extends MPSGraphObject {
      * `MPSDataTypeComplexFloat32` or `MPSDataTypeComplexFloat16`.
      * - axes: An array of numbers that specifies over which axes MPSGraph performs the Fourier transform - all axes
      * must be contained within last four dimensions of the input tensor.
-     * - descriptor: A descriptor that defines parameters of the Fourier transform operation - see
+     * - descriptor: A descriptor that defines the parameters of the Fourier transform operation - see
      * ``MPSGraphFFTDescriptor``.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor of type `MPSDataTypeFloat32` or `MPSDataTypeFloat16` (full size).
@@ -6533,7 +6890,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Creates a Hermitean-to-Real fast Fourier transform operation and returns the result tensor.
+     * Creates a Hermitean-to-real fast Fourier transform operation and returns the result tensor.
      * 
      * This operation computes the fast Fourier transform of a complex-valued input tensor according to the following
      * formulae.
@@ -6567,7 +6924,7 @@ public class MPSGraph extends MPSGraphObject {
      * `MPSDataTypeComplexFloat32` or `MPSDataTypeComplexFloat16`.
      * - axesTensor: A tensor of rank one containing the axes over which MPSGraph performs the transformation. See
      * ``MPSGraph/fastFourierTransformWithTensor:axes:descriptor:name:``.
-     * - descriptor: A descriptor that defines parameters of the Fourier transform operation - see
+     * - descriptor: A descriptor that defines the parameters of the Fourier transform operation - see
      * ``MPSGraphFFTDescriptor``.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor of type `MPSDataTypeFloat32` or `MPSDataTypeFloat16` (full size).
@@ -6584,7 +6941,7 @@ public class MPSGraph extends MPSGraphObject {
      * Returns the absolute square of the input tensor elements.
      * 
      * - Parameters:
-     * - tensor: The input tensor..
+     * - tensor: The input tensor.
      * - name: An optional string which serves as an identifier for the operation..
      * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
      * 
@@ -6596,7 +6953,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor absoluteSquareWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Create BottomKGradient op and return the result tensor.
+     * Creates a BottomKGradient operation and returns the result tensor.
      * 
      * Finds the K smallest values along the minor dimension of the input. The input must have
      * at least K elements along its minor dimension.
@@ -6618,7 +6975,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor source, @NInt long axis, @NUInt long k, @Nullable String name);
 
     /**
-     * Create BottomKGradient op and return the result tensor.
+     * Creates a BottomKGradient operation and returns the result tensor.
      * 
      * Finds the K smallest values along the minor dimension of the input. The input must have
      * at least K elements along its minor dimension.
@@ -6641,7 +6998,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create BottomK op and return the value and indices tensors.
+     * Creates a BottomK operation and returns the value and indices tensors.
      * 
      * Finds the k smallest values along the minor dimension of the input. The source must have
      * at least k elements along its minor dimension.
@@ -6664,7 +7021,7 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long axis, @NUInt long k, @Nullable String name);
 
     /**
-     * Create BottomK op and return the result tensor.
+     * Creates a BottomK operation and returns the result tensor.
      * 
      * Finds the k smallest values along the minor dimension of the input. The source must have
      * at least k elements along its minor dimension.
@@ -6736,7 +7093,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor constantWithRealPartImaginaryPart(double realPart, double imaginaryPart);
 
     /**
-     * Creates a complex constant op and returns the result tensor.
+     * Creates a complex constant operation and returns the result tensor.
      * 
      * - Parameters:
      * - realPart: The real part of the complex scalar to fill the entire tensor values with.
@@ -6753,9 +7110,9 @@ public class MPSGraph extends MPSGraphObject {
             int dataType);
 
     /**
-     * Creates a 3d convolution gradient operation with respect to the source tensor of the forward convolution.
+     * Creates a 3D convolution gradient operation with respect to the source tensor of the forward convolution.
      * 
-     * If `S` is source tensor to forward convoluiton, `R` is the result/returned tensor of forward convolution,
+     * If `S` is source tensor to forward convolution, `R` is the result/returned tensor of forward convolution,
      * and `L` is the loss function, convolution3DDataGradientWithIncomingGradientTensor returns tensor `dL/dS = dL/dR *
      * dR/dS`,
      * where `dL/dR` is the incomingGradient parameter.
@@ -6764,8 +7121,8 @@ public class MPSGraph extends MPSGraphObject {
      * - incomingGradient: Incoming loss gradient tensor
      * - weights: Forward pass weights tensor
      * - outputShapeTensor: 4D Int32 or Int64 tensor. Shape of the forward pass source tensor
-     * - forwardConvolutionDescriptor: Forward convolution 2d op ``descriptor``
-     * - name: The name for the operation
+     * - forwardConvolutionDescriptor: Forward convolution 2D op ``descriptor``
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.3
@@ -6779,9 +7136,9 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphConvolution3DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
-     * Creates a 3d convolution gradient operation with respect to the weights tensor of the forward convolution.
+     * Creates a 3D convolution gradient operation with respect to the weights tensor of the forward convolution.
      * 
-     * If `W` is weights tensor to forward convoluiton, `R` is the result/returned tensor of forward convolution,
+     * If `W` is weights tensor to forward convolution, `R` is the result/returned tensor of forward convolution,
      * and `L` is the loss function, convolution3DWeightsGradientWithIncomingGradientTensor returns tensor `dL/dW =
      * dL/dR * dR/dW`,
      * where `dL/dR` is the incomingGradient parameter.
@@ -6790,8 +7147,8 @@ public class MPSGraph extends MPSGraphObject {
      * - incomingGradient: Incoming loss gradient tensor
      * - weights: Forward pass weights tensor
      * - outputShapeTensor: 4D int32 or Int64 Tensor. Shape of the forward pass source tensor
-     * - forwardConvolutionDescriptor: Forward convolution 2d op ``descriptor``
-     * - name: The name for the operation
+     * - forwardConvolutionDescriptor: Forward convolution 2D op ``descriptor``
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 16.3
@@ -6804,7 +7161,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphConvolution3DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
-     * Creates a 3d forward convolution operation and returns the result tensor.
+     * Creates a 3D forward convolution operation and returns the result tensor.
      * 
      * - Parameters:
      * - source: source tensor - must be of rank 5. The layout is defined by ``descriptor.dataLayout``.
@@ -6845,14 +7202,13 @@ public class MPSGraph extends MPSGraphObject {
      * the result tensor back with the inverse of the input transpose.
      * 
      * - Parameters:
-     * - tensor: A complex-valued input tensor. Must have datatype `MPSDataTypeComplexFloat32` or
-     * `MPSDataTypeComplexFloat16`.
+     * - tensor: A complex or real-valued input tensor.
      * - axes: An array of numbers that specifies over which axes MPSGraph performs the Fourier transform - all axes
      * must be contained within last four dimensions of the input tensor.
-     * - descriptor: A descriptor that defines parameters of the Fourier transform operation - see
+     * - descriptor: A descriptor that defines the parameters of the Fourier transform operation - see
      * ``MPSGraphFFTDescriptor``.
      * - name: The name for the operation.
-     * - Returns: A valid MPSGraphTensor of the same type as `tensor`.
+     * - Returns: A valid complex-valued MPSGraphTensor of the same shape as `tensor`.
      * 
      * API-Since: 17.0
      */
@@ -6886,14 +7242,13 @@ public class MPSGraph extends MPSGraphObject {
      * the result tensor back with the inverse of the input transpose.
      * 
      * - Parameters:
-     * - tensor: A complex-valued input tensor. Must have datatype `MPSDataTypeComplexFloat32` or
-     * `MPSDataTypeComplexFloat16`.
+     * - tensor: A complex or real-valued input tensor.
      * - axesTensor: A tensor of rank one containing the axes over which MPSGraph performs the transformation. See
      * ``MPSGraph/fastFourierTransformWithTensor:axes:descriptor:name:``.
-     * - descriptor: A descriptor that defines parameters of the Fourier transform operation - see
+     * - descriptor: A descriptor that defines the parameters of the Fourier transform operation - see
      * ``MPSGraphFFTDescriptor``.
      * - name: The name for the operation.
-     * - Returns: A valid MPSGraphTensor of the same type as `tensor`.
+     * - Returns: A valid complex-valued MPSGraphTensor of the same shape as `tensor`.
      * 
      * API-Since: 17.0
      */
@@ -6912,6 +7267,8 @@ public class MPSGraph extends MPSGraphObject {
      * - descriptor: The descriptor object that specifies the parameters of the operation.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("imToColWithSourceTensor:descriptor:name:")
@@ -6935,7 +7292,7 @@ public class MPSGraph extends MPSGraphObject {
     public native MPSGraphTensor imaginaryPartOfTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
-     * Create a nonMaximumumSuppression op and return the result tensor
+     * Creates a nonMaximumumSuppression operation and returns the result tensor.
      * - Parameters:
      * - boxesTensor: A tensor containing the coordinates of the input boxes. Must be a rank 3 tensor of shape [N,B,4]
      * of type ``MPSDataTypeFloat32``
@@ -6947,6 +7304,8 @@ public class MPSGraph extends MPSGraphObject {
      * - perClassSuppression: When this is specified a box will only suppress another box if they have the same class.
      * - coordinateMode: The coordinate mode the box coordinates are provided in.
      * - name: The name for the operation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("nonMaximumSuppressionWithBoxesTensor:scoresTensor:IOUThreshold:scoreThreshold:perClassSuppression:coordinateMode:name:")
@@ -6956,7 +7315,7 @@ public class MPSGraph extends MPSGraphObject {
             float scoreThreshold, boolean perClassSuppression, @NUInt long coordinateMode, @Nullable String name);
 
     /**
-     * Create a nonMaximumumSuppression op and return the result tensor
+     * Creates a nonMaximumumSuppression operation and returns the result tensor.
      * - Parameters:
      * - boxesTensor: A tensor containing the coordinates of the input boxes. Must be a rank 3 tensor of shape [N,B,4]
      * of type ``MPSDataTypeFloat32``
@@ -6970,6 +7329,8 @@ public class MPSGraph extends MPSGraphObject {
      * - perClassSuppression: When this is specified a box will only suppress another box if they have the same class.
      * - coordinateMode: The coordinate mode the box coordinates are provided in.
      * - name: The name for the operation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("nonMaximumSuppressionWithBoxesTensor:scoresTensor:classIndicesTensor:IOUThreshold:scoreThreshold:perClassSuppression:coordinateMode:name:")
@@ -6980,10 +7341,10 @@ public class MPSGraph extends MPSGraphObject {
             boolean perClassSuppression, @NUInt long coordinateMode, @Nullable String name);
 
     /**
-     * Compute the indices of the non-zero elements of the input tensor. The indices are
-     * returned as a two-dimensional tensor of size `[number_of_nonzeros, input_rank]`.
-     * Each row in the result contains indices of a nonzero elements in input.
+     * Computes the indices of the non-zero elements of the input tensor.
      * 
+     * The indices are returned as a two-dimensional tensor of size `[number_of_nonzeros, input_rank]`.
+     * Each row in the result contains indices of a nonzero elements in input.
      * For example:
      * ```md
      * tensor = [[ 1, 0, 3],
@@ -7047,7 +7408,7 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: A Real-valued input tensor. Must have datatype `MPSDataTypeFloat32` or `MPSDatatypeFloat16`.
      * - axes: An array of numbers that specifies over which axes MPSGraph performs the Fourier transform - all axes
      * must be contained within last four dimensions of the input tensor.
-     * - descriptor: A descriptor that defines parameters of the Fourier transform operation - see
+     * - descriptor: A descriptor that defines the parameters of the Fourier transform operation - see
      * ``MPSGraphFFTDescriptor``.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor of type `MPSDataTypeComplexFloat32` or `MPSDataTypeComplexFloat16` with reduced
@@ -7090,7 +7451,7 @@ public class MPSGraph extends MPSGraphObject {
      * - tensor: A real-valued input tensor. Must have datatype `MPSDataTypeFloat32` or `MPSDatatypeFloat16`.
      * - axesTensor: A tensor of rank one containing the axes over which MPSGraph performs the transformation. See
      * ``MPSGraph/fastFourierTransformWithTensor:axes:descriptor:name:``.
-     * - descriptor: A descriptor that defines parameters of the Fourier transform operation - see
+     * - descriptor: A descriptor that defines the parameters of the Fourier transform operation - see
      * ``MPSGraphFFTDescriptor``.
      * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor of type `MPSDataTypeComplexFloat32` or `MPSDataTypeComplexFloat16` with reduced
@@ -7127,7 +7488,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with bilinear sampling and identical parameters.
      * 
@@ -7136,7 +7497,7 @@ public class MPSGraph extends MPSGraphObject {
      * - input: Forward pass input tensor
      * - scale: 1D float tensor of size equal to rank of input.
      * - offset: 1D float tensor of size equal to rank of input.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7149,7 +7510,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor offset, @Nullable String name);
 
     /**
-     * Create Resize op and return the result tensor
+     * Creates a Resize operation and returns the result tensor.
      * 
      * Resamples input images to given size using bilinear sampling. Result images will be distorted if
      * size is of different aspect ratio.
@@ -7175,7 +7536,7 @@ public class MPSGraph extends MPSGraphObject {
      * - centerResult: Controls if the result image is centered on the input image. When NO, the result will have the
      * top left corner aligned
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7188,7 +7549,7 @@ public class MPSGraph extends MPSGraphObject {
             boolean alignCorners, @Nullable String name);
 
     /**
-     * Create Resize op and return the result tensor
+     * Creates a Resize operation and returns the result tensor.
      * 
      * Resamples input images to given size using the provided scale and offset and bilinear sampling.
      * Destination indices are computed using
@@ -7203,7 +7564,7 @@ public class MPSGraph extends MPSGraphObject {
      * - size: The target size of the result tensor. 1D Int32 or Int64 tensor of size equal to rank of input.
      * - scale: 1D float tensor of size equal to rank of input.
      * - offset: 1D float tensor of size equal to rank of input.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7216,7 +7577,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor offset, @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with nearest neighbor sampling and identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -7227,7 +7588,7 @@ public class MPSGraph extends MPSGraphObject {
      * - scale: 1D float tensor of size equal to rank of input.
      * - offset: 1D float tensor of size equal to rank of input.
      * - nearestRoundingMode: The rounding mode to use when using nearest resampling. Default is roundPreferCeil.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7240,7 +7601,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor offset, @NUInt long nearestRoundingMode, @Nullable String name);
 
     /**
-     * Create Resize op and return the result tensor
+     * Creates a Resize operation and returns the result tensor.
      * 
      * Resamples input images to given size using nearest neighbor sampling. Result images will be distorted if
      * size is of different aspect ratio.
@@ -7267,7 +7628,7 @@ public class MPSGraph extends MPSGraphObject {
      * - centerResult: Controls if the result image is centered on the input image. When NO, the result will have the
      * top left corner aligned
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7280,7 +7641,7 @@ public class MPSGraph extends MPSGraphObject {
             boolean centerResult, boolean alignCorners, @Nullable String name);
 
     /**
-     * Create Resize op and return the result tensor
+     * Creates a Resize operation and returns the result tensor.
      * 
      * Resamples input images to given size using the provided scale and offset and nearest neighbor sampling.
      * Destination indices are computed using
@@ -7296,7 +7657,7 @@ public class MPSGraph extends MPSGraphObject {
      * - scale: 1D float tensor of size equal to rank of input.
      * - offset: 1D float tensor of size equal to rank of input.
      * - nearestRoundingMode: The rounding mode to use when using nearest resampling. Default is roundPreferCeil.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7309,7 +7670,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor offset, @NUInt long nearestRoundingMode, @Nullable String name);
 
     /**
-     * Create Resize op and return the result tensor
+     * Creates a Resize operation and returns the result tensor.
      * 
      * Resamples input images to given size. Result images will be distorted if size is of different aspect ratio.
      * Resize supports the following modes:
@@ -7338,7 +7699,7 @@ public class MPSGraph extends MPSGraphObject {
      * - centerResult: Controls if the result image is centered on the input image. When NO, the result will have the
      * top left corner aligned
      * - alignCorners: When YES, the result image will have the same value as the input image in the corners
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7351,7 +7712,7 @@ public class MPSGraph extends MPSGraphObject {
             boolean alignCorners, @Nullable String name);
 
     /**
-     * Create Resize op and return the result tensor
+     * Creates a Resize operation and returns the result tensor.
      * 
      * Resamples input images to given size using the provided scale and offset.
      * Destination indices are computed using
@@ -7367,7 +7728,7 @@ public class MPSGraph extends MPSGraphObject {
      * - scale: 1D float tensor of size equal to rank of input.
      * - offset: 1D float tensor of size equal to rank of input.
      * - mode: The resampling mode to use. If nearest sampling is specifed, RoundPreferCeil mode will be used.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7380,7 +7741,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor offset, @NUInt long mode, @Nullable String name);
 
     /**
-     * Create Resize gradient op and return the result tensor
+     * Creates a Resize gradient operation and returns the result tensor.
      * 
      * Computes the gradient for the forward pass Resize op with identical parameters.
      * See discussion of resizeTensor for more in depth description of resize paramters.
@@ -7391,7 +7752,7 @@ public class MPSGraph extends MPSGraphObject {
      * - scale: 1D float tensor of size equal to rank of input.
      * - offset: 1D float tensor of size equal to rank of input.
      * - mode: The resampling mode to use. If nearest sampling is specifed, RoundPreferCeil mode will be used.
-     * - name: The name for the operation
+     * - name: The name for the operation.
      * - Returns: A valid MPSGraphTensor object
      * 
      * API-Since: 17.0
@@ -7404,7 +7765,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor offset, @NUInt long mode, @Nullable String name);
 
     /**
-     * Create TopKGradient op and return the result tensor.
+     * Creates a TopKGradient operation and returns the result tensor.
      * 
      * Finds the K largest values along the minor dimension of the input. The input must have
      * at least K elements along its minor dimension.
@@ -7426,7 +7787,7 @@ public class MPSGraph extends MPSGraphObject {
             @NotNull MPSGraphTensor source, @NInt long axis, @NUInt long k, @Nullable String name);
 
     /**
-     * Create TopKGradient op and return the result tensor.
+     * Creates a TopKGradient operation and returns the result tensor.
      * 
      * Finds the K largest values along the minor dimension of the input. The input must have
      * at least K elements along its minor dimension.
@@ -7449,7 +7810,7 @@ public class MPSGraph extends MPSGraphObject {
             @Nullable String name);
 
     /**
-     * Creates TopK op and return the value and indices tensors.
+     * Creates a TopK operation and returns the value and indices tensors.
      * 
      * Finds the k largest values along the minor dimension of the input. The source must have
      * at least k elements along its minor dimension.
@@ -7472,7 +7833,7 @@ public class MPSGraph extends MPSGraphObject {
             @NInt long axis, @NUInt long k, @Nullable String name);
 
     /**
-     * Creates TopK op and return the result tensor..
+     * Creates a TopK operation and returns the result tensor.
      * 
      * Finds the k largest values along the minor dimension of the input. The source must have
      * at least k elements along its minor dimension.
@@ -7499,4 +7860,398 @@ public class MPSGraph extends MPSGraphObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Creates an operation which invokes another executable.
+     * 
+     * - Parameters:
+     * - symbolName: The unique identifier used to find the executable in the
+     * ``MPSGraphCompilationDescriptor.callables`` directory.
+     * - inputTensors: The tensors which are passed as inputs to the executable being invoked.
+     * - outputTypes: The expected return types of the executable being invoked.
+     * - name: name of operation.
+     * - Returns: An array of valid ``MPSGraphTensor`` objects representing the return tensors of the invoked
+     * executable.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("callSymbolName:inputTensors:outputTypes:name:")
+    @NotNull
+    public native NSArray<? extends MPSGraphTensor> callSymbolNameInputTensorsOutputTypesName(
+            @NotNull String symbolName, @NotNull NSArray<? extends MPSGraphTensor> inputTensors,
+            @NotNull NSArray<? extends MPSGraphType> outputTypes, @Nullable String name);
+
+    /**
+     * Creates a vector lookup-table based quantization operation and returns the result tensor.
+     * 
+     * Converts a u8 or u4 `tensor` to a float tensor by applying a lookup operation, where each
+     * input index defines a vector of values. The operation reads the vector values from the last dimension of the
+     * lookup table
+     * tensor and stores them into the dimension defined by `axis` on the result tensor.
+     * ```md
+     * result[i1, ... , i_axis, ..., in] = LUTTensor[i1', ..., in', tensor[i1, ..., in], i_axis]
+     * ```
+     * Note: The operation supports LUT groups up to the last 2 dimensions for `tensor`.
+     * 
+     * - Parameters:
+     * - tensor: Input tensor to be dequantized.
+     * - LUTTensor: The lookup table to use - for u4 the second to last dimension should have 16 elements, and for u8
+     * 256 elements.
+     * - axis: Axis on which the scale 1D value is being broadcasted.
+     * - name: The name for the operation.
+     * - Returns: A valid ``MPSGraphTensor`` object.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("dequantizeTensor:LUTTensor:axis:name:")
+    @NotNull
+    public native MPSGraphTensor dequantizeTensorLUTTensorAxisName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor LUTTensor, @NInt long axis, @Nullable String name);
+
+    /**
+     * Creates a lookup-table based quantization operation and returns the result tensor.
+     * 
+     * Converts a u8 or u4 `tensor` to a float tensor by applying a lookup operation:
+     * ```md
+     * result[i1,...,in] = LUTTensor[i1',...,in',tensor[i1,...,in]].
+     * ```
+     * Note: The operation supports LUT groups up to the last 3 dimensions for `tensor`.
+     * 
+     * - Parameters:
+     * - tensor: Input tensor to be dequantized.
+     * - LUTTensor: The lookup table to use - for u4 the last dimension should have 16 elements, and for u8 256
+     * elements.
+     * - name: The name for the operation.
+     * - Returns: A valid ``MPSGraphTensor`` object.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("dequantizeTensor:LUTTensor:name:")
+    @NotNull
+    public native MPSGraphTensor dequantizeTensorLUTTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor LUTTensor, @Nullable String name);
+
+    /**
+     * Creates a dequantize operation and returns the result tensor.
+     * 
+     * Converts the i8, u8, i4 or u4 `tensor` to a float tensor by applying a scale and bias transform:
+     * ```md
+     * result = scaleTensor * tensor.
+     * ```
+     * 
+     * - Parameters:
+     * - tensor: Input tensor to be dequantized.
+     * - scaleTensor: Scale Tensor parameter with groups support.
+     * - dataType: Float data type of the result tensor.
+     * - name: The name for the operation.
+     * - Returns: A valid ``MPSGraphTensor`` array of datatype `dataType`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("dequantizeTensor:scaleTensor:dataType:name:")
+    @NotNull
+    public native MPSGraphTensor dequantizeTensorScaleTensorDataTypeName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor scaleTensor, int dataType, @Nullable String name);
+
+    /**
+     * Creates a dequantize operation and returns the result tensor.
+     * 
+     * Convert the i8, u8, i4 or u4 `tensor` to a float tensor by applying a scale and bias transform:
+     * ```md
+     * result = scaleTensor(tensor - zeroPointTensor).
+     * ```
+     * 
+     * - Parameters:
+     * - tensor: Input tensor to be dequantized.
+     * - scaleTensor: The scale tensor with groups support.
+     * - zeroPointTensor: The bias tensor with groups support.
+     * - dataType: Float data type of the result tensor.
+     * - name: The name for the operation.
+     * - Returns: A valid ``MPSGraphTensor`` array of datatype `dataType`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("dequantizeTensor:scaleTensor:zeroPointTensor:dataType:name:")
+    @NotNull
+    public native MPSGraphTensor dequantizeTensorScaleTensorZeroPointTensorDataTypeName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor scaleTensor, @NotNull MPSGraphTensor zeroPointTensor, int dataType,
+            @Nullable String name);
+
+    /**
+     * Applies the reciprocal square root operation to the input tensor elements.
+     * 
+     * - Parameters:
+     * - tensor: The input tensor.
+     * - name: An optional string which serves as an identifier for the operation.
+     * - Returns: A valid `MPSGraphTensor` object containing the elementwise result of the applied operation.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("reciprocalSquareRootWithTensor:name:")
+    @NotNull
+    public native MPSGraphTensor reciprocalSquareRootWithTensorName(@NotNull MPSGraphTensor tensor,
+            @Nullable String name);
+
+    /**
+     * Creates a scaled dot product attention (SDPA) operation and returns the result tensor.
+     * 
+     * SDPA Op computes attention by computing softmax(scale * QK^T + M)V.
+     * queryTensor Q with shape [B, Hq, Nq, F] and keyTensor K with shape [B, Hq, Nkv, F],
+     * with Q's H dimension expandable to satisfy matmul QK^T. maskTensor M's shape
+     * should be broadcast compatible to satisfy (QK^T + M). valueTensor V with shape
+     * [B, Hv, Nkv, F] should satisfy the matmul (QK^T + M)V.
+     * 
+     * - Parameters:
+     * - queryTensor: A tensor that represents the query projection.
+     * - keyTensor: A tensor that represents the key projection.
+     * - valueTensor: A tensor that represents the value projection.
+     * - maskTensor: An optional tensor that contains a mask that is applied to the scaled, matrix
+     * multiplied query and value matrices. If mask tensor is nil, the QK^T is not element-wise masked.
+     * - scale: A scale that is applied to the result of query and value matrix multiply.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("scaledDotProductAttentionWithQueryTensor:keyTensor:valueTensor:maskTensor:scale:name:")
+    @NotNull
+    public native MPSGraphTensor scaledDotProductAttentionWithQueryTensorKeyTensorValueTensorMaskTensorScaleName(
+            @NotNull MPSGraphTensor queryTensor, @NotNull MPSGraphTensor keyTensor, @NotNull MPSGraphTensor valueTensor,
+            @Nullable MPSGraphTensor maskTensor, float scale, @Nullable String name);
+
+    /**
+     * Creates a scaled dot product attention (SDPA) operation (without a mask) and returns the result tensor.
+     * 
+     * - Parameters:
+     * - queryTensor: A tensor that represents the query projection.
+     * - keyTensor: A tensor that represents the key projection.
+     * - valueTensor: A tensor that represents the value projection.
+     * - scale: A scale that is applied on the result of query and value matrix multiply.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("scaledDotProductAttentionWithQueryTensor:keyTensor:valueTensor:scale:name:")
+    @NotNull
+    public native MPSGraphTensor scaledDotProductAttentionWithQueryTensorKeyTensorValueTensorScaleName(
+            @NotNull MPSGraphTensor queryTensor, @NotNull MPSGraphTensor keyTensor, @NotNull MPSGraphTensor valueTensor,
+            float scale, @Nullable String name);
+
+    /**
+     * Creates a strided-slice gradient operation and returns the result tensor.
+     * 
+     * - Parameters:
+     * - inputGradientTensor: The input gradient.
+     * - fwdInShapeTensor: The shape of the forward pass input, that is the shape of the gradient output.
+     * - startTensor: The tensor that specifies the starting points for each dimension.
+     * - endTensor: The tensor that specifies the ending points for each dimension.
+     * - strideTensor: The tensor that specifies the strides for each dimension.
+     * - startMask: A bitmask that indicates dimensions whose `starts` values the operation should ignore.
+     * - endMask: A bitmask that indicates dimensions whose `ends` values the operation should ignore.
+     * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("sliceGradientTensor:fwdInShapeTensor:startTensor:endTensor:strideTensor:startMask:endMask:squeezeMask:name:")
+    @NotNull
+    public native MPSGraphTensor sliceGradientTensorFwdInShapeTensorStartTensorEndTensorStrideTensorStartMaskEndMaskSqueezeMaskName(
+            @NotNull MPSGraphTensor inputGradientTensor, @NotNull MPSGraphTensor fwdInShapeTensor,
+            @NotNull MPSGraphTensor startTensor, @NotNull MPSGraphTensor endTensor,
+            @NotNull MPSGraphTensor strideTensor, int startMask, int endMask, int squeezeMask, @Nullable String name);
+
+    /**
+     * Creates a slice gradient operation and returns the result tensor.
+     * 
+     * - Parameters:
+     * - inputGradientTensor: The input gradient.
+     * - fwdInShapeTensor: The shape of the forward pass input, that is the shape of the gradient output.
+     * - startTensor: The tensor that specifies the starting points for each dimension.
+     * - sizeTensor: The tensor that specifies the size of the forward result for each dimension.
+     * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("sliceGradientTensor:fwdInShapeTensor:startTensor:sizeTensor:squeezeMask:name:")
+    @NotNull
+    public native MPSGraphTensor sliceGradientTensorFwdInShapeTensorStartTensorSizeTensorSqueezeMaskName(
+            @NotNull MPSGraphTensor inputGradientTensor, @NotNull MPSGraphTensor fwdInShapeTensor,
+            @NotNull MPSGraphTensor startTensor, @NotNull MPSGraphTensor sizeTensor, int squeezeMask,
+            @Nullable String name);
+
+    /**
+     * Creates a strided-slice operation and returns the result tensor.
+     * 
+     * Slices a tensor starting from `startTensor`, stopping short before `endTensor` stepping
+     * `strideTensor` paces between each value. Semantics based on
+     * [TensorFlow Strided Slice Op](https://www.tensorflow.org/api_docs/python/tf/strided_slice).
+     * 
+     * - Parameters:
+     * - tensor: The Tensor to be sliced.
+     * - startTensor: The tensor that specifies the starting points for each dimension.
+     * - endTensor: The tensor that specifies the ending points for each dimension.
+     * - strideTensor: The tensor that specifies the strides for each dimension.
+     * - startMask: A bitmask that indicates dimensions whose `starts` values the operation should ignore.
+     * - endMask: A bitmask that indicates dimensions whose `ends` values the operation should ignore.
+     * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("sliceTensor:startTensor:endTensor:strideTensor:startMask:endMask:squeezeMask:name:")
+    @NotNull
+    public native MPSGraphTensor sliceTensorStartTensorEndTensorStrideTensorStartMaskEndMaskSqueezeMaskName(
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor startTensor, @NotNull MPSGraphTensor endTensor,
+            @NotNull MPSGraphTensor strideTensor, int startMask, int endMask, int squeezeMask, @Nullable String name);
+
+    /**
+     * Creates a slice operation and returns the result tensor.
+     * 
+     * Slices a tensor starting from `startTensor`, stopping short before `startTensor + endTensor` stepping
+     * a single pace between each value. Semantics based on
+     * [TensorFlow Strided Slice Op](https://www.tensorflow.org/api_docs/python/tf/strided_slice).
+     * 
+     * - Parameters:
+     * - tensor: The Tensor to be sliced.
+     * - startTensor: The tensor that specifies the starting points for each dimension.
+     * - sizeTensor: The tensor that specifies the size of the result for each dimension.
+     * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("sliceTensor:startTensor:sizeTensor:squeezeMask:name:")
+    @NotNull
+    public native MPSGraphTensor sliceTensorStartTensorSizeTensorSqueezeMaskName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor startTensor, @NotNull MPSGraphTensor sizeTensor, int squeezeMask,
+            @Nullable String name);
+
+    /**
+     * Creates a strided-slice update operation with zero masks and returns the result tensor.
+     * 
+     * - Parameters:
+     * - dataTensor: The large tensor that will receive the update.
+     * - updateTensor: The tensor with the new values that will replace values in the dataTensor.
+     * - starts: An array of numbers that specify the starting points for each dimension.
+     * - ends: An array of numbers that specify the ending points for each dimension.
+     * - strides: An array of numbers that specify the strides for each dimension.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("sliceUpdateDataTensor:updateTensor:starts:ends:strides:name:")
+    @NotNull
+    public native MPSGraphTensor sliceUpdateDataTensorUpdateTensorStartsEndsStridesName(
+            @NotNull MPSGraphTensor dataTensor, @NotNull MPSGraphTensor updateTensor,
+            @NotNull NSArray<? extends NSNumber> starts, @NotNull NSArray<? extends NSNumber> ends,
+            @NotNull NSArray<? extends NSNumber> strides, @Nullable String name);
+
+    /**
+     * Creates a strided-slice update operation and returns the result tensor.
+     * 
+     * - Parameters:
+     * - dataTensor: The large tensor that will receive the update.
+     * - updateTensor: The tensor with the new values that will replace values in the dataTensor.
+     * - starts: An array of numbers that specify the starting points for each dimension.
+     * - ends: An array of numbers that specify the ending points for each dimension.
+     * - strides: An array of numbers that specify the strides for each dimension.
+     * - startMask: A bitmask that indicates dimensions whose `starts` values the operation should ignore.
+     * - endMask: A bitmask that indicates dimensions whose `ends` values the operation should ignore.
+     * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("sliceUpdateDataTensor:updateTensor:starts:ends:strides:startMask:endMask:squeezeMask:name:")
+    @NotNull
+    public native MPSGraphTensor sliceUpdateDataTensorUpdateTensorStartsEndsStridesStartMaskEndMaskSqueezeMaskName(
+            @NotNull MPSGraphTensor dataTensor, @NotNull MPSGraphTensor updateTensor,
+            @NotNull NSArray<? extends NSNumber> starts, @NotNull NSArray<? extends NSNumber> ends,
+            @NotNull NSArray<? extends NSNumber> strides, int startMask, int endMask, int squeezeMask,
+            @Nullable String name);
+
+    /**
+     * Creates a strided-slice update operation with zero masks and returns the result tensor.
+     * 
+     * - Parameters:
+     * - dataTensor: The large tensor that will receive the update.
+     * - updateTensor: The tensor with the new values that will replace values in the dataTensor.
+     * - startsTensor: A Tensor that contains an array of numbers that specify the starting points for each dimension.
+     * - endsTensor: A Tensor that contains an array of numbers that specify the ending points for each dimension.
+     * - stridesTensor: A Tensor that contains an array of numbers that specify the strides for each dimension.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("sliceUpdateDataTensor:updateTensor:startsTensor:endsTensor:stridesTensor:name:")
+    @NotNull
+    public native MPSGraphTensor sliceUpdateDataTensorUpdateTensorStartsTensorEndsTensorStridesTensorName(
+            @NotNull MPSGraphTensor dataTensor, @NotNull MPSGraphTensor updateTensor,
+            @NotNull MPSGraphTensor startsTensor, @NotNull MPSGraphTensor endsTensor,
+            @NotNull MPSGraphTensor stridesTensor, @Nullable String name);
+
+    /**
+     * Creates a strided-slice update operation and returns the result tensor.
+     * 
+     * - Parameters:
+     * - dataTensor: The large tensor that will receive the update.
+     * - updateTensor: The tensor with the new values that will replace values in the dataTensor.
+     * - startsTensor: A Tensor that contains an array of numbers that specify the starting points for each dimension.
+     * - endsTensor: A Tensor that contains an array of numbers that specify the ending points for each dimension.
+     * - stridesTensor: A Tensor that contains an array of numbers that specify the strides for each dimension.
+     * - startMask: A bitmask that indicates dimensions whose `starts` values the operation should ignore.
+     * - endMask: A bitmask that indicates dimensions whose `ends` values the operation should ignore.
+     * - squeezeMask: A bitmask that indicates dimensions the operation will squeeze out from the result.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("sliceUpdateDataTensor:updateTensor:startsTensor:endsTensor:stridesTensor:startMask:endMask:squeezeMask:name:")
+    @NotNull
+    public native MPSGraphTensor sliceUpdateDataTensorUpdateTensorStartsTensorEndsTensorStridesTensorStartMaskEndMaskSqueezeMaskName(
+            @NotNull MPSGraphTensor dataTensor, @NotNull MPSGraphTensor updateTensor,
+            @NotNull MPSGraphTensor startsTensor, @NotNull MPSGraphTensor endsTensor,
+            @NotNull MPSGraphTensor stridesTensor, int startMask, int endMask, int squeezeMask, @Nullable String name);
+
+    /**
+     * Creates a variable from an input tensor.
+     * 
+     * - Parameters:
+     * - tensor: The tensor from which to form the variable.
+     * - name: The name for the operation.
+     * - Returns: A valid MPSGraphTensor object.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("variableFromTensorWithTensor:name:")
+    @NotNull
+    public native MPSGraphTensor variableFromTensorWithTensorName(@NotNull MPSGraphTensor tensor,
+            @Nullable String name);
 }

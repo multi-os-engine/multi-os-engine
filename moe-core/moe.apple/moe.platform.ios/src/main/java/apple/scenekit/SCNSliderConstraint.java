@@ -93,6 +93,8 @@ public class SCNSliderConstraint extends SCNConstraint {
      * [@property] collisionCategoryBitMask
      * 
      * Defines the category of node to collide against. Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("collisionCategoryBitMask")
@@ -151,6 +153,8 @@ public class SCNSliderConstraint extends SCNConstraint {
      * [@property] offset
      * 
      * Defines the offset of the slider. Defaults to (0,0,0).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("offset")
@@ -161,6 +165,8 @@ public class SCNSliderConstraint extends SCNConstraint {
      * [@property] radius
      * 
      * Defines the radius of the slider. Defaults to 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("radius")
@@ -179,6 +185,8 @@ public class SCNSliderConstraint extends SCNConstraint {
      * [@property] collisionCategoryBitMask
      * 
      * Defines the category of node to collide against. Defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCollisionCategoryBitMask:")
@@ -188,6 +196,8 @@ public class SCNSliderConstraint extends SCNConstraint {
      * [@property] offset
      * 
      * Defines the offset of the slider. Defaults to (0,0,0).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOffset:")
@@ -197,6 +207,8 @@ public class SCNSliderConstraint extends SCNConstraint {
      * [@property] radius
      * 
      * Defines the radius of the slider. Defaults to 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRadius:")
@@ -210,6 +222,8 @@ public class SCNSliderConstraint extends SCNConstraint {
      * accelerationConstraint
      * 
      * Creates and returns a SCNSliderConstraint object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sliderConstraint")

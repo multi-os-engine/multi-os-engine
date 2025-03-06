@@ -125,6 +125,8 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * @param intent Unless user configurable, must have a title and have valid shortcut types.
      * @return Will return @c nil (and log an error) if the intent isn't valid.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithIntent:")
@@ -132,6 +134,8 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Creates a shortcut with the given user activity.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithUserActivity:")
@@ -154,6 +158,8 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
      * The intent that will be performed when this shortcut is invoked.
      * 
      * Is @c nil if the shortcut was created with a @c NSUserActivity.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -204,6 +210,8 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
      * The user activity that will be performed when this shortcut is invoked.
      * 
      * Is @c nil if the shortcut was created with an @c INIntent.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

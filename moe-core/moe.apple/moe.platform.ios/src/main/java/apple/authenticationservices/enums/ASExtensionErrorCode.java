@@ -28,4 +28,11 @@ public final class ASExtensionErrorCode {
      * API-Since: 12.0
      */
     @Generated @NInt public static final long CredentialIdentityNotFound = 0x0000000000000065L;
+    /**
+     * This error should only be used for a passkey registration request, if the @c excludedCredentials property matches
+     * a known passkey.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long MatchedExcludedCredential = 0x0000000000000066L;
 }

@@ -159,6 +159,9 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("icon")
@@ -179,6 +182,9 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
             @NotNull String type, @NotNull String localizedTitle, @Nullable String localizedSubtitle,
             @Nullable UIApplicationShortcutIcon icon, @Nullable NSDictionary<String, ?> userInfo);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("localizedSubtitle")
@@ -186,22 +192,32 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
 
     /**
      * Properties controlling how the item should be displayed on the home screen.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setIcon:")
     public native void setIcon(@Nullable UIApplicationShortcutIcon value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setLocalizedSubtitle:")
     public native void setLocalizedSubtitle(@Nullable String value);
 
     /**
      * Properties controlling how the item should be displayed on the home screen.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLocalizedTitle:")
@@ -209,6 +225,8 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
 
     /**
      * An application-specific string that identifies the type of action to perform.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setType:")
@@ -217,6 +235,8 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     /**
      * Application-specific information needed to perform the action.
      * Will throw an exception if the NSDictionary is not plist-encodable.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -224,6 +244,8 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
 
     /**
      * An application-specific string that identifies the type of action to perform.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -233,6 +255,8 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     /**
      * Application-specific information needed to perform the action.
      * Will throw an exception if the NSDictionary is not plist-encodable.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -241,6 +265,8 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
 
     /**
      * used with UISceneActivationConditions to customize what scene should be activated for a shortcut
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTargetContentIdentifier:")
@@ -248,6 +274,8 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
 
     /**
      * used with UISceneActivationConditions to customize what scene should be activated for a shortcut
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

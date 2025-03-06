@@ -212,6 +212,8 @@ public class NSLayoutConstraint extends NSObject {
      * Unlike the other properties, the constant may be modified after constraint creation. Setting the constant on an
      * existing constraint performs much better than removing the constraint and adding a new one that's just like the
      * old but for having a new constant.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("constant")
@@ -229,6 +231,9 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("firstAnchor")
     public native NSLayoutAnchor<?> firstAnchor();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("firstAttribute")
     @NInt
@@ -238,6 +243,8 @@ public class NSLayoutConstraint extends NSObject {
      * accessors
      * firstItem.firstAttribute {==,<=,>=} secondItem.secondAttribute * multiplier + constant
      * Access to these properties is not recommended. Use the `firstAnchor` and `secondAnchor` properties instead.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -283,15 +290,24 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("multiplier")
     @NFloat
     public native double multiplier();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("priority")
     public native float priority();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("relation")
     @NInt
@@ -305,11 +321,17 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("secondAnchor")
     public native NSLayoutAnchor<?> secondAnchor();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("secondAttribute")
     @NInt
     public native long secondAttribute();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("secondItem")
@@ -320,6 +342,8 @@ public class NSLayoutConstraint extends NSObject {
      * Unlike the other properties, the constant may be modified after constraint creation. Setting the constant on an
      * existing constraint performs much better than removing the constraint and adding a new one that's just like the
      * old but for having a new constant.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setConstant:")
@@ -336,6 +360,9 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("setIdentifier:")
     public native void setIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setPriority:")
     public native void setPriority(float value);
@@ -347,6 +374,8 @@ public class NSLayoutConstraint extends NSObject {
      * constraint - rather you archive the state that gives rise to the constraint. Since the majority of constraints
      * that should be archived are created in Interface Builder (which is smart enough to set this prop to YES), the
      * default value for this property is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShouldBeArchived:")
@@ -359,6 +388,8 @@ public class NSLayoutConstraint extends NSObject {
      * constraint - rather you archive the state that gives rise to the constraint. Since the majority of constraints
      * that should be archived are created in Interface Builder (which is smart enough to set this prop to YES), the
      * default value for this property is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("shouldBeArchived")

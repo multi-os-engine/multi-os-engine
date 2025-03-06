@@ -97,6 +97,8 @@ public class CHHapticEvent extends NSObject {
     /**
      * [@property] duration
      * The duration for this event. Units are seconds. If unset (0.0), Continuous event types will have no fixed end.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("duration")
@@ -105,6 +107,8 @@ public class CHHapticEvent extends NSObject {
     /**
      * [@property] eventParameters
      * NSArray of Event parameters. Can be empty.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -132,6 +136,8 @@ public class CHHapticEvent extends NSObject {
      *                    An NSArray of Event parameters. Can be empty.
      * @param time
      *                    The relative time for this event versus the other events in the CHHapticPattern.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @Selector("initWithAudioResourceID:parameters:relativeTime:")
@@ -145,6 +151,8 @@ public class CHHapticEvent extends NSObject {
      * 
      * If the specified duration is less than the duration of the audio resource, its playback will be truncated. If it
      * is greater, its playback will be padded with silence. If zero, it will be ignored.
+     * 
+     * API-Since: 13.0
      * 
      * @param resID
      *                    A previously-registered audio resource ID (see
@@ -173,6 +181,8 @@ public class CHHapticEvent extends NSObject {
      *                    An NSArray of Event parameters. Can be empty.
      * @param time
      *                    The relative time for this event versus the other events in the CHHapticPattern.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @Selector("initWithEventType:parameters:relativeTime:")
@@ -194,6 +204,8 @@ public class CHHapticEvent extends NSObject {
      *                    For Continuous event types, the length of time before the event playback begins its release.
      *                    For Transient event types, the logical length of the event (used to determine pattern end and
      *                    loop points).
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @Selector("initWithEventType:parameters:relativeTime:duration:")
@@ -230,6 +242,8 @@ public class CHHapticEvent extends NSObject {
     /**
      * [@property] relativeTime
      * The relative time for this event versus the start time of the pattern. Units are seconds.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("relativeTime")
@@ -246,6 +260,8 @@ public class CHHapticEvent extends NSObject {
     /**
      * [@property] duration
      * The duration for this event. Units are seconds. If unset (0.0), Continuous event types will have no fixed end.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDuration:")
@@ -254,6 +270,8 @@ public class CHHapticEvent extends NSObject {
     /**
      * [@property] relativeTime
      * The relative time for this event versus the start time of the pattern. Units are seconds.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRelativeTime:")
@@ -270,6 +288,8 @@ public class CHHapticEvent extends NSObject {
     /**
      * [@property] type
      * The type of event.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

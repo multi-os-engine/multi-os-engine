@@ -104,6 +104,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: 0 -> 2
      * Default: 1
      * Unit: Seconds
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("delayTime")
@@ -120,6 +122,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: -100 -> 100
      * Default: 50
      * Unit: Percent
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("feedback")
@@ -174,6 +178,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: 10 -> (samplerate/2)
      * Default: 15000
      * Unit: Hertz
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("lowPassCutoff")
@@ -199,6 +205,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: 0 -> 2
      * Default: 1
      * Unit: Seconds
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelayTime:")
@@ -211,6 +219,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: -100 -> 100
      * Default: 50
      * Unit: Percent
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFeedback:")
@@ -223,6 +233,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: 10 -> (samplerate/2)
      * Default: 15000
      * Unit: Hertz
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLowPassCutoff:")
@@ -239,6 +251,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: 0 (all dry) -> 100 (all wet)
      * Default: 100
      * Unit: Percent
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setWetDryMix:")
@@ -260,6 +274,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * Range: 0 (all dry) -> 100 (all wet)
      * Default: 100
      * Unit: Percent
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("wetDryMix")

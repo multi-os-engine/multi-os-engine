@@ -88,6 +88,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
      * Searches the scene hierarchy for an anchor associated with the provided node.
      * 
      * @param node A node in the view’s scene.
+     * 
+     *             API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -223,6 +225,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
      * 
      * When set, the view will automatically create and update lighting for
      * light estimates the session provides. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("automaticallyUpdatesLighting")
@@ -269,6 +273,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Specifies the renderer delegate.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -362,6 +368,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
      * Returns the node that has been mapped to a specific anchor.
      * 
      * @param anchor An anchor with an existing node mapping.
+     * 
+     *               API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -394,6 +402,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Specifies the scene of the view.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -470,6 +480,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
      * 
      * When set, the view will automatically create and update lighting for
      * light estimates the session provides. Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesLighting:")
@@ -477,6 +489,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Specifies the renderer delegate.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -484,6 +498,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Specifies the renderer delegate.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
@@ -499,6 +515,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Specifies the scene of the view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScene:")
@@ -506,6 +524,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * The session that the view uses to update the scene.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSession:")

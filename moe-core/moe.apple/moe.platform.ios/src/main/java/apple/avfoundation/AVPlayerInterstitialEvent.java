@@ -116,6 +116,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * suspended and the interstitial items played.
      * 
      * Will have a value of nil if the event was initialized with a time instead of a date.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -142,6 +144,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * 
      * If an event is set on an AVPlayerInterstitialEventController that already has an event with the same identifier,
      * the old event will be replaced by the new one.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -203,7 +207,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * @return An instance of AVPlayerInterstitialEvent.
      * 
      *         API-Since: 15.0
-     *         Deprecated-Since: 100000.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use interstitialEventWithPrimaryItem:date: instead
      */
     @Deprecated
     @Generated
@@ -252,7 +257,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * @return An instance of AVPlayerInterstitialEvent.
      * 
      *         API-Since: 15.0
-     *         Deprecated-Since: 100000.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use interstitialEventWithPrimaryItem:time: instead
      */
     @Deprecated
     @Generated
@@ -284,6 +290,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * 
      * Can be any positive numeric value, or invalid. The default value is kCMTimeInvalid, which means there is no
      * limit.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("playoutLimit")
@@ -296,6 +304,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * An AVPlayerItem representing the primary content during the playback of which the interstitial event should
      * occur. The primaryItem must have an AVAsset that provides an intrinsic mapping from its timeline to real-time
      * dates.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -314,6 +324,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * [@property] restrictions
      * 
      * Indicates restrictions on the use of end user playback controls that are imposed by the event.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("restrictions")
@@ -329,6 +341,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * Definite numeric values are supported. The value kCMTimeIndefinite can also be used, in order to specify that the
      * effective resumption time offset should accord with the wallclock time elapsed during interstitial playback; this
      * value is typically suitable for live broadcasts. The default value is kCMTimeZero.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("resumptionOffset")
@@ -357,6 +371,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * 
      * An NSInvalidArgumentException will be raised if any of the template items employs an AVAsset that lacks a URL,
      * such as an AVComposition.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -370,6 +386,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * suspended and the interstitial items played.
      * 
      * Will have a value equal to kCMTimeInvalid if the event was initialized with a date instead of a time.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("time")
@@ -382,6 +400,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * Attributes of the event defined by the content vendor or the client.
      * 
      * Dictionary keys are attribute names. Dictionary values are attribute values.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -624,4 +644,89 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] contentMayVary
+     * 
+     * Indicates this event's content is dynamic and server may respond with different interstitial assets for other
+     * particpants in coordinated playback.
+     * 
+     * Indicates this event's content is dynamic and server may respond with different interstitial assets for other
+     * particpants in coordinated playback. If this value is set to NO and the primary asset is particpating in
+     * coordinated playback, this event will participate in coordinated playback as well. The default value is YES.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("contentMayVary")
+    public native boolean contentMayVary();
+
+    /**
+     * [@property] plannedDuration
+     * 
+     * Indicates the event's planned duration. The default value is kCMTimeInvalid.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("plannedDuration")
+    @ByValue
+    public native CMTime plannedDuration();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setContentMayVary:")
+    public native void setContentMayVary(boolean value);
+
+    /**
+     * [@property] plannedDuration
+     * 
+     * Indicates the event's planned duration. The default value is kCMTimeInvalid.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setPlannedDuration:")
+    public native void setPlannedDuration(@ByValue CMTime value);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSupplementsPrimaryContent:")
+    public native void setSupplementsPrimaryContent(boolean value);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setTimelineOccupancy:")
+    public native void setTimelineOccupancy(@NInt long value);
+
+    /**
+     * [@property] supplementsPrimaryContent
+     * 
+     * Indicates this event will supplement the primary content and should be presented unified with the primary item.
+     * The default value is NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("supplementsPrimaryContent")
+    public native boolean supplementsPrimaryContent();
+
+    /**
+     * [@property] timelineOccupancy
+     * 
+     * Indicates this event's occupancy on AVPlayerItemIntegratedTimeline. The default value is
+     * AVPlayerInterstitialEventTimelineSinglePointOccupancy.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("timelineOccupancy")
+    @NInt
+    public native long timelineOccupancy();
 }

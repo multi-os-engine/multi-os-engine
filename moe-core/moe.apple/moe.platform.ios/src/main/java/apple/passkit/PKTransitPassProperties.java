@@ -131,6 +131,9 @@ public class PKTransitPassProperties extends PKStoredValuePassProperties {
     @Selector("isBlacklisted")
     public native boolean isBlacklisted();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("isInStation")
     public native boolean isInStation();

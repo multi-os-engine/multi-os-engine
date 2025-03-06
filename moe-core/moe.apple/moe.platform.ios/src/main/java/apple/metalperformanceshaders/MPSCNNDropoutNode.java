@@ -99,15 +99,24 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSCNNDropoutNode init();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNDropoutNode initWithSource(@NotNull MPSNNImageNode source);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSource:keepProbability:")
     public native MPSCNNDropoutNode initWithSourceKeepProbability(@NotNull MPSNNImageNode source,
             float keepProbability);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSource:keepProbability:seed:maskStrideInPixels:")
     public native MPSCNNDropoutNode initWithSourceKeepProbabilitySeedMaskStrideInPixels(@NotNull MPSNNImageNode source,
@@ -130,6 +139,9 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("keepProbability")
     public native float keepProbability();
@@ -139,6 +151,9 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("maskStrideInPixels")
     @ByValue
@@ -149,15 +164,24 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
     @Selector("new")
     public static native MPSCNNDropoutNode new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNDropoutNode nodeWithSource(@NotNull MPSNNImageNode source);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSource:keepProbability:")
     public static native MPSCNNDropoutNode nodeWithSourceKeepProbability(@NotNull MPSNNImageNode source,
             float keepProbability);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSource:keepProbability:seed:maskStrideInPixels:")
     public static native MPSCNNDropoutNode nodeWithSourceKeepProbabilitySeedMaskStrideInPixels(
@@ -172,6 +196,9 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("seed")
     @NUInt

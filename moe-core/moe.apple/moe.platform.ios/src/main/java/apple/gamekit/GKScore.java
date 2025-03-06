@@ -249,7 +249,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The date this score was recorded. A newly initialized, unsubmitted GKScore records the current date at init time.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("date")
@@ -261,7 +265,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The score formatted as a string, localized with a label
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("formattedValue")
@@ -286,7 +294,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * Initialize the score with the local player and current date.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithLeaderboardIdentifier:")
     public native GKScore initWithLeaderboardIdentifier(@NotNull String identifier);
@@ -357,7 +369,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The rank of the player within the leaderboard, only valid when returned from GKLeaderboard
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("rank")
     @NInt
@@ -414,7 +430,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The score value as a 64bit integer.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("setValue:")
     public native void setValue(long value);
@@ -438,7 +458,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The score value as a 64bit integer.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("value")
     public native long value();

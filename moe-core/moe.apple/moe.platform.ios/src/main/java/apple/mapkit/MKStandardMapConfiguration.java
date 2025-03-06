@@ -90,6 +90,9 @@ public class MKStandardMapConfiguration extends MKMapConfiguration {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("emphasisStyle")
     @NInt
@@ -100,6 +103,9 @@ public class MKStandardMapConfiguration extends MKMapConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("init")
     public native MKStandardMapConfiguration init();
@@ -108,15 +114,24 @@ public class MKStandardMapConfiguration extends MKMapConfiguration {
     @Selector("initWithCoder:")
     public native MKStandardMapConfiguration initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithElevationStyle:")
     public native MKStandardMapConfiguration initWithElevationStyle(@NInt long elevationStyle);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithElevationStyle:emphasisStyle:")
     public native MKStandardMapConfiguration initWithElevationStyleEmphasisStyle(@NInt long elevationStyle,
             @NInt long emphasisStyle);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithEmphasisStyle:")
     public native MKStandardMapConfiguration initWithEmphasisStyle(@NInt long emphasisStyle);
@@ -148,6 +163,9 @@ public class MKStandardMapConfiguration extends MKMapConfiguration {
     @Selector("new")
     public static native MKStandardMapConfiguration new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
@@ -161,14 +179,23 @@ public class MKStandardMapConfiguration extends MKMapConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setEmphasisStyle:")
     public native void setEmphasisStyle(@NInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setShowsTraffic:")
     public native void setShowsTraffic(boolean value);
@@ -177,6 +204,9 @@ public class MKStandardMapConfiguration extends MKMapConfiguration {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("showsTraffic")
     public native boolean showsTraffic();

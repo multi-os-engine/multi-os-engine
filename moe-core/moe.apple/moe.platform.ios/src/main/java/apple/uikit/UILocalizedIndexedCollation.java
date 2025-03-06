@@ -96,6 +96,9 @@ public class UILocalizedIndexedCollation extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("currentCollation")
@@ -169,6 +172,8 @@ public class UILocalizedIndexedCollation extends NSObject {
     /**
      * Returns the index of the section that will contain the object.
      * selector must not take any arguments and return an NSString.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("sectionForObject:collationStringSelector:")
@@ -180,6 +185,8 @@ public class UILocalizedIndexedCollation extends NSObject {
      * Specifies the section that should be scrolled to for the title at the given index.
      * This method allows you to map between a given item in the index
      * and a given section where there isn't a one-to-one mapping.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("sectionForSectionIndexTitleAtIndex:")
@@ -188,6 +195,8 @@ public class UILocalizedIndexedCollation extends NSObject {
 
     /**
      * Provides the list of index titles used to quickly jump to particular sections
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -196,6 +205,8 @@ public class UILocalizedIndexedCollation extends NSObject {
 
     /**
      * Provides the list of section titles used to group results (e.g. A-Z,# in US/English)
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -207,6 +218,8 @@ public class UILocalizedIndexedCollation extends NSObject {
      * selector must not take any arguments and return an NSString.
      * In the process of sorting the array, each object may receive
      * selector multiple times, so this method should be fast.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated

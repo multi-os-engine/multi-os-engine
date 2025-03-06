@@ -117,8 +117,16 @@ public class CLUpdate extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
+     * isStationary
+     * 
+     * Discussion:
+     * Deprecated. See -stationary.
+     * 
+     * 
      * API-Since: 17.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("isStationary")
     public native boolean isStationary();
@@ -170,4 +178,136 @@ public class CLUpdate extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * accuracyLimited
+     * 
+     * Discussion:
+     * True if further updates will be suspended for some time while the app is
+     * subject to accuracy limitation.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("accuracyLimited")
+    public native boolean accuracyLimited();
+
+    /**
+     * authorizationDenied
+     * 
+     * Discussion:
+     * True if updates will be suspended while the app has been denied
+     * location authorization.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationDenied")
+    public native boolean authorizationDenied();
+
+    /**
+     * authorizationDeniedGlobally
+     * 
+     * Discussion:
+     * True if updates will be suspended while the user has disabled Location
+     * Services system-wide.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationDeniedGlobally")
+    public native boolean authorizationDeniedGlobally();
+
+    /**
+     * authorizationRequestInProgress
+     * 
+     * Discussion:
+     * True if the system is requesting authorization from the user on behalf of the app, but no response has been
+     * received yet.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationRequestInProgress")
+    public native boolean authorizationRequestInProgress();
+
+    /**
+     * authorizationRestricted
+     * 
+     * Discussion:
+     * True if updates will be suspended while the app lacks authorization,
+     * and authorization changes are prevented by parental restrictions,
+     * MDM configuration, or other factors.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("authorizationRestricted")
+    public native boolean authorizationRestricted();
+
+    /**
+     * insufficientlyInUse
+     * 
+     * Discussion:
+     * True if updates will be suspended while the app is not sufficiently
+     * in-use.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("insufficientlyInUse")
+    public native boolean insufficientlyInUse();
+
+    /**
+     * locationUnavailable
+     * 
+     * Discussion:
+     * True if updates will be suspended while the device's location can no
+     * longer be determined.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("locationUnavailable")
+    public native boolean locationUnavailable();
+
+    /**
+     * serviceSessionRequired
+     * 
+     * Discussion:
+     * True if LocationServices are disabled because the app has adopted CLRequireExplicitServiceSession
+     * info.plist key but no CLServiceSession requiring authorization is outstanding yet.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("serviceSessionRequired")
+    public native boolean serviceSessionRequired();
+
+    /**
+     * stationary
+     * 
+     * Discussion:
+     * Updates may stop flowing temporarily for many reasons such as
+     * the app is no longer authorized for locations or if its
+     * location becomes unknown. If CoreLocation stops
+     * delivering updates because the device is stationary, then
+     * stationary will be set to YES. Otherwise it will be NO.
+     * 
+     * If stationary is YES, then updates may be suspended until
+     * the user next moves, or their location becomes unknown.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("stationary")
+    public native boolean stationary();
 }

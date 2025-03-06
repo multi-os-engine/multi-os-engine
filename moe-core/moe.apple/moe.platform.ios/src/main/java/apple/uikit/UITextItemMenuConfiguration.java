@@ -84,6 +84,8 @@ public class UITextItemMenuConfiguration extends NSObject {
      * Creates a menu configuration with the specified menu and a default preview.
      * 
      * @param menu The menu to be presented.
+     * 
+     *             API-Since: 17.0
      */
     @Generated
     @Selector("configurationWithMenu:")
@@ -94,6 +96,8 @@ public class UITextItemMenuConfiguration extends NSObject {
      * 
      * @param menu    The menu to be presented.
      * @param preview The preview associated with the menu. Specify @c nil for no preview.
+     * 
+     *                API-Since: 17.0
      */
     @Generated
     @Selector("configurationWithPreview:menu:")

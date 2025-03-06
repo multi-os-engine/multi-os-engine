@@ -93,6 +93,8 @@ public class MPSNNCompare extends MPSCNNArithmetic {
      * [@property] comparisonType
      * 
      * The comparison type to use
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("comparisonType")
@@ -130,6 +132,8 @@ public class MPSNNCompare extends MPSCNNArithmetic {
      * 
      * @param device The device the filter will run on.
      * @return A valid MPSNNCompare object or nil, if failure.
+     * 
+     *         API-Since: 12.1
      */
     @Generated
     @Selector("initWithDevice:")
@@ -174,6 +178,8 @@ public class MPSNNCompare extends MPSCNNArithmetic {
      * [@property] comparisonType
      * 
      * The comparison type to use
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setComparisonType:")
@@ -186,6 +192,8 @@ public class MPSNNCompare extends MPSCNNArithmetic {
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:
      * result = |b - a| <= threshold
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setThreshold:")
@@ -216,6 +224,8 @@ public class MPSNNCompare extends MPSCNNArithmetic {
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:
      * result = |b - a| <= threshold
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("threshold")

@@ -27,6 +27,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A class that describes the properties of a create sparse operation.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -90,7 +92,9 @@ public class MPSGraphCreateSparseOpDescriptor extends MPSGraphObject implements 
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * Defines datatype of sparse tensor.
+     * Defines the datatype of the sparse tensor.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("dataType")
@@ -109,8 +113,10 @@ public class MPSGraphCreateSparseOpDescriptor extends MPSGraphObject implements 
      * 
      * - Parameters:
      * - sparseStorageType: A sparseStorageType.
-     * - dataType: A dataType of sparse tensor.
+     * - dataType: A dataType of the sparse tensor.
      * - Returns: The descriptor.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("descriptorWithStorageType:dataType:")
@@ -162,14 +168,18 @@ public class MPSGraphCreateSparseOpDescriptor extends MPSGraphObject implements 
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Defines datatype of sparse tensor.
+     * Defines the datatype of the sparse tensor.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDataType:")
     public native void setDataType(int value);
 
     /**
-     * Defines storage format of sparse tensor.
+     * Defines the storage format of the sparse tensor.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSparseStorageType:")
@@ -180,7 +190,9 @@ public class MPSGraphCreateSparseOpDescriptor extends MPSGraphObject implements 
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Defines storage format of sparse tensor.
+     * Defines the storage format of the sparse tensor.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sparseStorageType")

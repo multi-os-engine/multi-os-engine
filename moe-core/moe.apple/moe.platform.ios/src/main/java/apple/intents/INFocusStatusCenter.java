@@ -56,6 +56,9 @@ public class INFocusStatusCenter extends NSObject {
     @Selector("allocWithZone:")
     public static native INFocusStatusCenter allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -90,6 +93,9 @@ public class INFocusStatusCenter extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("defaultCenter")
@@ -99,6 +105,9 @@ public class INFocusStatusCenter extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("focusStatus")
@@ -140,6 +149,9 @@ public class INFocusStatusCenter extends NSObject {
     @Selector("new")
     public static native INFocusStatusCenter new_objc();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("requestAuthorizationWithCompletionHandler:")
     public native void requestAuthorizationWithCompletionHandler(

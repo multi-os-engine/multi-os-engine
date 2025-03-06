@@ -87,6 +87,8 @@ public class ARDepthData extends NSObject {
      * A pixel buffer containing the confidence level for each depth value in the `depthMap`.
      * 
      * @see ARConfidenceLevel
+     * 
+     *      API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -99,6 +101,8 @@ public class ARDepthData extends NSObject {
 
     /**
      * A pixel buffer that contains per-pixel depth data (in meters).
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

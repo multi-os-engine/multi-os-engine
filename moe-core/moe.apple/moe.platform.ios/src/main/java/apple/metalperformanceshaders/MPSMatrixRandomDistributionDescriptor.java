@@ -102,6 +102,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * Make a descriptor for a default distribution.
      * 
      * @return A valid MPSMatrixRandomDistribution object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] distributionType
      * 
      * The type of distribution.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("distributionType")
@@ -157,6 +161,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] maximum
      * 
      * For distributions of values bounded above, this value describes the maximum.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximum")
@@ -166,6 +172,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] mean
      * 
      * The value to use for distributions described by their mean.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mean")
@@ -175,6 +183,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] minimum
      * 
      * For distributions of values bounded below, this value describes the minimum.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimum")
@@ -197,6 +207,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] distributionType
      * 
      * The type of distribution.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDistributionType:")
@@ -206,6 +218,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] maximum
      * 
      * For distributions of values bounded above, this value describes the maximum.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMaximum:")
@@ -215,6 +229,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] mean
      * 
      * The value to use for distributions described by their mean.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMean:")
@@ -224,6 +240,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] minimum
      * 
      * For distributions of values bounded below, this value describes the minimum.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMinimum:")
@@ -233,6 +251,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] standardDeviation
      * 
      * The value to use for distributions described by their standardDeviation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStandardDeviation:")
@@ -246,6 +266,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * [@property] standardDeviation
      * 
      * The value to use for distributions described by their standardDeviation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("standardDeviation")
@@ -262,6 +284,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
      * @param minimum The lower bound of the range.
      * @param maximum The upper bound of the range.
      * @return A valid MPSMatrixRandomDistribution object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated

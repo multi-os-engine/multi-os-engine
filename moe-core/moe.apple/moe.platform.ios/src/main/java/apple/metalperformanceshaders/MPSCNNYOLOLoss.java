@@ -60,6 +60,9 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("allocWithZone:")
     public static native MPSCNNYOLOLoss allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("anchorBoxes")
@@ -108,6 +111,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
      * @param sourceImage   The source image from the previous filter in the graph (in the inference direction).
      * @param labels        The object containing the target data (labels) and optionally, weights for the labels.
      * @return The MPSImage containing the gradient result.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -129,6 +134,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
      * @param sourceImage      The source image from the previous filter in the graph (in the inference direction).
      * @param labels           The object containing the target data (labels) and optionally, weights for the labels.
      * @param destinationImage The MPSImage into which to write the gradient result.
+     * 
+     *                         API-Since: 12.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:destinationImage:")
@@ -151,6 +158,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * <NSSecureCoding> support
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -167,6 +176,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
      * @param device         The device the filter will run on.
      * @param lossDescriptor The loss descriptor.
      * @return A valid MPSCNNLoss object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
@@ -199,6 +210,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
      * [@property] lossClasses
      * 
      * loss filter for prediction of bounding box predicted class of the detected object
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -209,6 +222,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
      * [@property] lossConfidence
      * 
      * loss filter for prediction of bounding box probability of presence of object
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -219,6 +234,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
      * [@property] lossWH
      * 
      * loss filter for prediction of bounding box size
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -229,16 +246,24 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
      * [@property] lossXY
      * 
      * loss filter for prediction of bounding box position
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
     @Selector("lossXY")
     public native MPSCNNLoss lossXY();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("maxIOUForObjectAbsence")
     public native float maxIOUForObjectAbsence();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("minIOUForObjectPresence")
     public native float minIOUForObjectPresence();
@@ -248,11 +273,17 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("new")
     public static native MPSCNNYOLOLoss new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("numberOfAnchorBoxes")
     @NUInt
     public native long numberOfAnchorBoxes();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -265,24 +296,38 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("scaleClass")
     public native float scaleClass();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("scaleNoObject")
     public native float scaleNoObject();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("scaleObject")
     public native float scaleObject();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("scaleWH")
     public native float scaleWH();
 
     /**
      * See MPSCNNYOLOLossDescriptor for information about the following properties.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("scaleXY")

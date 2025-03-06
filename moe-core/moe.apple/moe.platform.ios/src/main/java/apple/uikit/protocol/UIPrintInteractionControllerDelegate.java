@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -49,6 +52,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @IsOptional
@@ -71,6 +77,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerDidDismissPrinterOptions:")
@@ -79,6 +88,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerDidFinishJob:")
@@ -87,6 +99,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerDidPresentPrinterOptions:")
@@ -95,6 +110,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -104,6 +122,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerWillDismissPrinterOptions:")
@@ -112,6 +133,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerWillPresentPrinterOptions:")
@@ -120,6 +144,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerWillStartJob:")

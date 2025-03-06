@@ -175,25 +175,51 @@ public class ACAccountCredential extends NSObject {
     @Selector("init")
     public native ACAccountCredential init();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithOAuth2Token:refreshToken:expiryDate:")
     public native ACAccountCredential initWithOAuth2TokenRefreshTokenExpiryDate(String token, String refreshToken,
             NSDate expiryDate);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithOAuthToken:tokenSecret:")
     public native ACAccountCredential initWithOAuthTokenTokenSecret(String token, String secret);
 
     /**
      * This property is only valid for OAuth2 credentials
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("oauthToken")
     public native String oauthToken();
 
     /**
      * This property is only valid for OAuth2 credentials
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("setOauthToken:")
     public native void setOauthToken(String value);

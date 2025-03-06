@@ -232,10 +232,16 @@ public class MKCompassButton extends UIView {
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("compassButtonWithMapView:")
     public static native MKCompassButton compassButtonWithMapView(@Nullable MKMapView mapView);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("compassVisibility")
     @NInt
@@ -297,6 +303,9 @@ public class MKCompassButton extends UIView {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("mapView")
@@ -391,14 +400,23 @@ public class MKCompassButton extends UIView {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setCompassVisibility:")
     public native void setCompassVisibility(@NInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMapView:")
     public native void setMapView_unsafe(@Nullable MKMapView value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setMapView(@Nullable MKMapView value) {
         Object __old = mapView();

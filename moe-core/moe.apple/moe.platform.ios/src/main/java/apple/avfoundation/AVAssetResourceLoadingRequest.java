@@ -198,10 +198,12 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * Causes the receiver to treat the processing of the request as complete.
      * 
-     * If a dataRequest is present and the resource does not contain the full extent of the data that has been requested
-     * according to the values of the requestedOffset and requestedLength properties of the dataRequest, or if
-     * requestsAllDataToEndOfResource has a value of YES, you may invoke -finishLoading after you have provided as much
-     * of the requested data as the resource contains.
+     * If a dataRequest is present, and the resource does not contain the full extent of the data that has been
+     * requested according to the values of the requestedOffset and requestedLength properties of the dataRequest, or if
+     * requestsAllDataToEndOfResource has a value of YES, -finishLoading may be invoked after providing as much of the
+     * requested data as the resource contains. If the contentInformationRequest property is not nil and specifies a
+     * non-empty allowedContentTypes array, the contentInformationRequest's contentType property must be set to a value
+     * within allowedContentTypes. Otherwise, this method will throw an exception.
      * 
      * API-Since: 7.0
      */
@@ -216,6 +218,8 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * @param error
      *              An instance of NSError indicating the reason for failure.
+     * 
+     *              API-Since: 6.0
      */
     @Generated
     @Selector("finishLoadingWithError:")
@@ -279,6 +283,8 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * The value of this property becomes YES only in response to an invocation of either -finishLoading or
      * -finishLoadingWithError:.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isFinished")
@@ -295,7 +301,9 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * AVStreamingKeyDeliveryPersistentContentKeyType when responding with data created with this method.
      * 
      * API-Since: 9.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use -[AVPersistableContentKeyRequest
+     * persistableContentKeyFromKeyVendorResponse:options:error:] instead
      * 
      * @param keyVendorResponse
      *                          The response returned from the key vendor as a result of a request generated from
@@ -336,6 +344,8 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * [@property] request
      * 
      * An NSURLRequest for the requested resource.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -401,7 +411,9 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * @return The key request data that must be transmitted to the key vendor to obtain the content key.
      * 
      *         API-Since: 7.0
-     *         Deprecated-Since: 100000.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use -[AVContentKeyRequest
+     *         makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:] instead
      */
     @Nullable
     @Deprecated

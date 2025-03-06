@@ -51,6 +51,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      * sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the
      * authentication. It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for
      * secure PIN entry (provided that the reader has one).
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -60,6 +62,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     /**
      * PIN value which will be set when 'finishWithError:' gets triggered. Note that the PIN is not set in case that
      * APDUTemplate was set. In this case, PIN was already sent to the card using specified template.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -68,6 +72,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
 
     /**
      * Offset in bytes within APDU template to mark the location for filling in the PIN.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("PINByteOffset")
@@ -77,6 +83,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     /**
      * PIN formatting properties.
      * [@note] The property is initialized with a default instance of TKSmartCardPINFormat.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -183,6 +191,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      * sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the
      * authentication. It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for
      * secure PIN entry (provided that the reader has one).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAPDUTemplate:")
@@ -191,6 +201,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     /**
      * PIN value which will be set when 'finishWithError:' gets triggered. Note that the PIN is not set in case that
      * APDUTemplate was set. In this case, PIN was already sent to the card using specified template.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPIN:")
@@ -198,6 +210,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
 
     /**
      * Offset in bytes within APDU template to mark the location for filling in the PIN.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPINByteOffset:")
@@ -206,6 +220,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     /**
      * PIN formatting properties.
      * [@note] The property is initialized with a default instance of TKSmartCardPINFormat.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPINFormat:")
@@ -213,6 +229,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
 
     /**
      * TKSmartCard to which the formatted APDU gets sent in order to authenticate (used only if 'APDUTemplate' is set).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSmartCard:")
@@ -224,6 +242,8 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
 
     /**
      * TKSmartCard to which the formatted APDU gets sent in order to authenticate (used only if 'APDUTemplate' is set).
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

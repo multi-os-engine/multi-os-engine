@@ -114,6 +114,8 @@ public class INVoiceShortcut extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * The unique identifier for this voice shortcut
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -143,6 +145,8 @@ public class INVoiceShortcut extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * The phrase the user speaks to invoke this shortcut; set by the user when they add it to Siri.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -177,6 +181,8 @@ public class INVoiceShortcut extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * The shortcut that will be performed when this voice shortcut is invoked via Siri.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

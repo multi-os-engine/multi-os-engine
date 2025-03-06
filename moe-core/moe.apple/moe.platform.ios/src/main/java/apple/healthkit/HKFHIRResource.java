@@ -104,6 +104,8 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
      * The JSON representation of the FHIR resource.
      * 
      * Conforms to the HL7 Argonaut Project resource type definitions.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -133,6 +135,8 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
      * The identifier of the resource, corresponding to the 'id' field in the resource's JSON representation.
      * 
      * Unique within a given resource type and FHIR end-point, as represented by an HKSource.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -189,6 +193,8 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * May be one of 8 FHIR resource types supported within HealthKit: AllergyIntolerance, Condition,
      * Immunization, MedicationDispense, MedicationOrder, MedicationStatement, Observation, and Procedure.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -206,6 +212,8 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * This URL can be used to help determine the provenance of the resource. Direct access is protected by
      * OAuth: querying without suitable authorization will result in an authorization error.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

@@ -284,6 +284,8 @@ public class PKPassLibrary extends NSObject {
      * entitled to get
      * pass from the library, but it should avoid presenting UI for adding an email attachment pass that is already in
      * the library.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("containsPass:")
@@ -316,6 +318,9 @@ public class PKPassLibrary extends NSObject {
     @Selector("openPaymentSetup")
     public native void openPaymentSetup();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("passWithPassTypeIdentifier:serialNumber:")
@@ -324,6 +329,8 @@ public class PKPassLibrary extends NSObject {
 
     /**
      * These return only local passes the process is entitled to access.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -364,6 +371,9 @@ public class PKPassLibrary extends NSObject {
     @Selector("remotePaymentPasses")
     public native NSArray<? extends PKPaymentPass> remotePaymentPasses();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("removePass:")
     public native void removePass(@NotNull PKPass pass);
@@ -372,6 +382,8 @@ public class PKPassLibrary extends NSObject {
      * This will fail if a pass with matching identifier and serial number is not already present in the library, or if
      * the process
      * is not entitled to access the pass. To add a completely new pass, use PKAddPassesViewController.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("replacePassWithPass:")
@@ -508,4 +520,12 @@ public class PKPassLibrary extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 6.0
+     */
+    @Generated
+    @Selector("passesWithReaderIdentifier:")
+    @NotNull
+    public native NSSet<? extends PKSecureElementPass> passesWithReaderIdentifier(@NotNull String readerIdentifier);
 }

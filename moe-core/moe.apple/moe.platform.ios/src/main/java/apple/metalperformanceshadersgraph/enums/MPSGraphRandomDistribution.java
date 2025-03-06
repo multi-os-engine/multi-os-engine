@@ -3,7 +3,7 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * The distributions supported by MPSGraphRandom ops.
+ * The distributions supported by random operations.
  */
 @Generated
 public final class MPSGraphRandomDistribution {
@@ -19,13 +19,13 @@ public final class MPSGraphRandomDistribution {
      */
     @Generated public static final long Uniform = 0x0000000000000000L;
     /**
-     * The normal distribution defined by mean and standardDeviation.
+     * The normal distribution defined by mean and standard deviation.
      * 
      * API-Since: 15.4
      */
     @Generated public static final long Normal = 0x0000000000000001L;
     /**
-     * The normal distribution defined by mean and standardDeviation, truncated to the range [min, max)
+     * The normal distribution defined by mean and standard deviation, truncated to the range [min, max)
      * 
      * API-Since: 15.4
      */

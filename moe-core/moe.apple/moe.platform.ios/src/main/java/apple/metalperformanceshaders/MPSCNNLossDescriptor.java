@@ -96,6 +96,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * @param reductionType The type of a reduction operation to apply.
      *                      This argument is ignored in the MPSNNLossGradient filter.
      * @return A valid MPSCNNLossDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -124,6 +126,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * Given predictions and labels (ground truth), it is applied in the following way:
      * if (|predictions - labels| <= delta, loss = 0.5f * predictions^2
      * if (|predictions - labels| > delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("delta")
@@ -143,6 +147,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * Given predictions and labels (ground truth), it is applied in the following way:
      * -(labels * log(predictions + epsilon)) - ((1 - labels) * log(1 - predictions + epsilon))
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("epsilon")
@@ -192,6 +198,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * MPSCNNLossFunctionTypeSigmoidCrossEntropy: given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + 0.5 * labelSmoothing : labels
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("labelSmoothing")
@@ -203,6 +211,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("lossType")
@@ -223,6 +233,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * Given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + labelSmoothing / numberOfClasses : labels
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("numberOfClasses")
@@ -236,6 +248,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * This parameter specifies the type of a reduction operation
      * performed in the loss filter.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("reductionType")
@@ -260,6 +274,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * Given predictions and labels (ground truth), it is applied in the following way:
      * if (|predictions - labels| <= delta, loss = 0.5f * predictions^2
      * if (|predictions - labels| > delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setDelta:")
@@ -275,6 +291,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * Given predictions and labels (ground truth), it is applied in the following way:
      * -(labels * log(predictions + epsilon)) - ((1 - labels) * log(1 - predictions + epsilon))
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setEpsilon:")
@@ -293,6 +311,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * MPSCNNLossFunctionTypeSigmoidCrossEntropy: given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + 0.5 * labelSmoothing : labels
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setLabelSmoothing:")
@@ -304,6 +324,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * The type of a loss filter.
      * 
      * This parameter specifies the type of a loss filter.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setLossType:")
@@ -319,6 +341,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * Given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + labelSmoothing / numberOfClasses : labels
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setNumberOfClasses:")
@@ -331,6 +355,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * This parameter specifies the type of a reduction operation
      * performed in the loss filter.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setReductionType:")
@@ -347,6 +373,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * Each element of a result is multiplied by the weight value.
      * The default value is 1.0f.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setWeight:")
@@ -368,6 +396,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * 
      * Each element of a result is multiplied by the weight value.
      * The default value is 1.0f.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("weight")

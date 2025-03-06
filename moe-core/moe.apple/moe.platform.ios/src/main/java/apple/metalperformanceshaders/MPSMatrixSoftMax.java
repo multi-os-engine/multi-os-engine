@@ -109,6 +109,8 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -140,6 +142,8 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * 
      * The datatypes of the matrices inputMatrix and resultMatrix must match and be either
      * MPSDataTypeFloat32 or MPSDataTypeFloat16.
+     * 
+     * API-Since: 11.0
      * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -247,6 +251,8 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceColumns:")
@@ -268,6 +274,8 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceRows:")
@@ -293,6 +301,8 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceColumns")
@@ -315,6 +325,8 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
      * can be used to control the starting points in the source and destination
      * at kernel encode time (see encodeToCommandBuffer).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceRows")

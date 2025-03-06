@@ -202,7 +202,12 @@ public class INRelativeReferenceResolutionResult extends INIntentResolutionResul
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INRelativeReferenceResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithRelativeReferenceToConfirm:")
@@ -214,7 +219,12 @@ public class INRelativeReferenceResolutionResult extends INIntentResolutionResul
      * INRelativeReference. The resolvedValue can be different than the original INRelativeReference. This allows app
      * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INRelativeReferenceResolutionResult is deprecated. There is no replacement.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("successWithResolvedRelativeReference:")

@@ -90,6 +90,9 @@ public class CSUserQueryContext extends CSSearchQueryContext {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("enableRankedResults")
     public native boolean enableRankedResults();
@@ -132,6 +135,8 @@ public class CSUserQueryContext extends CSSearchQueryContext {
     /**
      * maxResultCount is maximum number of search results to retrieve. (defaults to 0)
      * If maxResultCount == 0, Spotlight will retrieve all results related to query. (committed search)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxResultCount")
@@ -140,6 +145,8 @@ public class CSUserQueryContext extends CSSearchQueryContext {
 
     /**
      * maxSuggestionCount is maximum number of suggestion results to retrieve. (defaults to 0)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxSuggestionCount")
@@ -159,6 +166,9 @@ public class CSUserQueryContext extends CSSearchQueryContext {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setEnableRankedResults:")
     public native void setEnableRankedResults(boolean value);
@@ -166,6 +176,8 @@ public class CSUserQueryContext extends CSSearchQueryContext {
     /**
      * maxResultCount is maximum number of search results to retrieve. (defaults to 0)
      * If maxResultCount == 0, Spotlight will retrieve all results related to query. (committed search)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxResultCount:")
@@ -173,6 +185,8 @@ public class CSUserQueryContext extends CSSearchQueryContext {
 
     /**
      * maxSuggestionCount is maximum number of suggestion results to retrieve. (defaults to 0)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxSuggestionCount:")
@@ -196,11 +210,17 @@ public class CSUserQueryContext extends CSSearchQueryContext {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("userQueryContext")
     public static native CSUserQueryContext userQueryContext();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("userQueryContextWithCurrentSuggestion:")
@@ -216,4 +236,39 @@ public class CSUserQueryContext extends CSSearchQueryContext {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("disableSemanticSearch")
+    public native boolean disableSemanticSearch();
+
+    /**
+     * maxRankedResultCount is maximum number of ranked search results to retrieve. (defaults to 100)
+     * If maxRankedResultCount > maxResultCount, Spotlight will rank maxResultCount results related to query.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("maxRankedResultCount")
+    @NInt
+    public native long maxRankedResultCount();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDisableSemanticSearch:")
+    public native void setDisableSemanticSearch(boolean value);
+
+    /**
+     * maxRankedResultCount is maximum number of ranked search results to retrieve. (defaults to 100)
+     * If maxRankedResultCount > maxResultCount, Spotlight will rank maxResultCount results related to query.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMaxRankedResultCount:")
+    public native void setMaxRankedResultCount(@NInt long value);
 }

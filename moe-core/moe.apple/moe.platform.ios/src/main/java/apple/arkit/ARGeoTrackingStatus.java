@@ -54,6 +54,8 @@ public class ARGeoTrackingStatus extends NSObject implements NSCopying, NSSecure
 
     /**
      * The accuracy of geo tracking.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("accuracy")
@@ -168,6 +170,8 @@ public class ARGeoTrackingStatus extends NSObject implements NSCopying, NSSecure
 
     /**
      * The state of geo tracking.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("state")
@@ -176,6 +180,8 @@ public class ARGeoTrackingStatus extends NSObject implements NSCopying, NSSecure
 
     /**
      * Reason for geo tracking state.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("stateReason")

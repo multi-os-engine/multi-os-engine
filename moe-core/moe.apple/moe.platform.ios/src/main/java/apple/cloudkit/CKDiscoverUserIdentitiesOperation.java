@@ -169,17 +169,34 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("discoverUserIdentitiesCompletionBlock")
     @ObjCBlock(name = "call_discoverUserIdentitiesCompletionBlock_ret")
     public native Block_discoverUserIdentitiesCompletionBlock_ret discoverUserIdentitiesCompletionBlock();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native CKDiscoverUserIdentitiesOperation init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithUserIdentityLookupInfos:")
     public native CKDiscoverUserIdentitiesOperation initWithUserIdentityLookupInfos(
@@ -192,7 +209,12 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("setDiscoverUserIdentitiesCompletionBlock:")
     public native void setDiscoverUserIdentitiesCompletionBlock(
@@ -204,12 +226,23 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("setUserIdentityDiscoveredBlock:")
     public native void setUserIdentityDiscoveredBlock(
             @Nullable @ObjCBlock(name = "call_setUserIdentityDiscoveredBlock") Block_setUserIdentityDiscoveredBlock value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
+     */
+    @Deprecated
     @Generated
     @Selector("setUserIdentityLookupInfos:")
     public native void setUserIdentityLookupInfos(@NotNull NSArray<? extends CKUserIdentityLookupInfo> value);
@@ -220,13 +253,24 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("userIdentityDiscoveredBlock")
     @ObjCBlock(name = "call_userIdentityDiscoveredBlock_ret")
     public native Block_userIdentityDiscoveredBlock_ret userIdentityDiscoveredBlock();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("userIdentityLookupInfos")

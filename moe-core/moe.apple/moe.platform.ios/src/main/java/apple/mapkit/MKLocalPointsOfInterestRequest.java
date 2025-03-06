@@ -85,6 +85,9 @@ public class MKLocalPointsOfInterestRequest extends NSObject implements NSCopyin
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("coordinate")
     @ByValue
@@ -114,11 +117,17 @@ public class MKLocalPointsOfInterestRequest extends NSObject implements NSCopyin
     @Selector("init")
     public native MKLocalPointsOfInterestRequest init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithCenterCoordinate:radius:")
     public native MKLocalPointsOfInterestRequest initWithCenterCoordinateRadius(
             @ByValue CLLocationCoordinate2D coordinate, double radius);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithCoordinateRegion:")
     public native MKLocalPointsOfInterestRequest initWithCoordinateRegion(@ByValue MKCoordinateRegion region);
@@ -150,15 +159,24 @@ public class MKLocalPointsOfInterestRequest extends NSObject implements NSCopyin
     @Selector("new")
     public static native MKLocalPointsOfInterestRequest new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
     public native MKPointOfInterestFilter pointOfInterestFilter();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("radius")
     public native double radius();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("region")
     @ByValue
@@ -172,6 +190,9 @@ public class MKLocalPointsOfInterestRequest extends NSObject implements NSCopyin
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);

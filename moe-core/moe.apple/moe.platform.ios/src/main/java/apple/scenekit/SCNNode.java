@@ -1682,4 +1682,10 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("focusItemDeferralMode")
+    @NInt
+    public native long focusItemDeferralMode();
 }

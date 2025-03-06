@@ -138,6 +138,8 @@ public class UITextSearchOptions extends NSObject {
 
     /**
      * Comparison options to use when searching for strings.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("stringCompareOptions")
@@ -155,6 +157,8 @@ public class UITextSearchOptions extends NSObject {
 
     /**
      * See UITextSearchMatchMethod above.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("wordMatchMethod")

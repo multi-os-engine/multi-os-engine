@@ -30,6 +30,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A class that consists of all the levers to synchronize and schedule executable execution.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -86,7 +88,11 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * CompletionHandler for the graph executable, default value is nil.
+     * A notification that appears when graph-executable execution is finished.
+     * 
+     * Default value is nil.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -98,7 +104,8 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
+        void call_completionHandler_ret(@NotNull NSArray<? extends MPSGraphTensorData> results,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -154,7 +161,11 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * ScheduledHandler for the graph executable, default value is nil.
+     * A notification that appears when graph-executable execution is scheduled.
+     * 
+     * Default value is nil.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -166,11 +177,15 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     @Generated
     public interface Block_scheduledHandler_ret {
         @Generated
-        void call_scheduledHandler_ret(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
+        void call_scheduledHandler_ret(@NotNull NSArray<? extends MPSGraphTensorData> results, @Nullable NSError error);
     }
 
     /**
-     * CompletionHandler for the graph executable, default value is nil.
+     * A notification that appears when graph-executable execution is finished.
+     * 
+     * Default value is nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCompletionHandler:")
@@ -181,11 +196,15 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
+        void call_setCompletionHandler(@NotNull NSArray<? extends MPSGraphTensorData> results, @Nullable NSError error);
     }
 
     /**
-     * ScheduledHandler for the graph executable, default value is nil.
+     * A notification that appears when graph-executable execution is scheduled.
+     * 
+     * Default value is nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setScheduledHandler:")
@@ -196,7 +215,7 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     @Generated
     public interface Block_setScheduledHandler {
         @Generated
-        void call_setScheduledHandler(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
+        void call_setScheduledHandler(@NotNull NSArray<? extends MPSGraphTensorData> results, @Nullable NSError error);
     }
 
     @Generated
@@ -204,7 +223,11 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Flag for the graph executable to wait till the execution has completed, default value is false.
+     * Flag for the graph executable to wait till the execution has completed.
+     * 
+     * Default value is false.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setWaitUntilCompleted:")
@@ -220,7 +243,11 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     public static native long version_static();
 
     /**
-     * Flag for the graph executable to wait till the execution has completed, default value is false.
+     * Flag for the graph executable to wait till the execution has completed.
+     * 
+     * Default value is false.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("waitUntilCompleted")
@@ -234,7 +261,7 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * Executable signals these shared events at execution stage and immediately proceeds.
+     * Signals these shared events at execution stage and immediately proceeds.
      * 
      * - Parameters:
      * - event: Shared event to signal.
@@ -249,8 +276,9 @@ public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implem
             long executionStage, long value);
 
     /**
-     * Executable waits on these shared events before scheduling execution on the HW, this does not include encoding
-     * which can still continue.
+     * Waits on these shared events before scheduling execution on the HW.
+     * 
+     * This does not include encoding which can still continue.
      * 
      * - Parameters:
      * - event: Shared event to wait on.

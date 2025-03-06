@@ -124,6 +124,8 @@ public class UISheetPresentationControllerDetent extends NSObject {
 
     /**
      * A system detent for a sheet at full height.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -133,6 +135,8 @@ public class UISheetPresentationControllerDetent extends NSObject {
     /**
      * A system detent for a sheet that is approximately half the height of the screen, and is inactive in compact
      * height.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

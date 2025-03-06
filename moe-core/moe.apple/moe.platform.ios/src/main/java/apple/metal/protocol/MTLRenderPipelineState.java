@@ -37,6 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NInt;
 
 /**
  * [@protocol] MTLRenderPipelineState
@@ -52,12 +53,18 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLRenderPipelineState")
 public interface MTLRenderPipelineState {
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     MTLDevice device();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("label")
@@ -255,4 +262,16 @@ public interface MTLRenderPipelineState {
     @Selector("objectThreadExecutionWidth")
     @NUInt
     long objectThreadExecutionWidth();
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Current state of Shader Validation for the pipeline.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("shaderValidation")
+    @NInt
+    long shaderValidation();
 }

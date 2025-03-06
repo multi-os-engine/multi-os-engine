@@ -64,6 +64,8 @@ public class MLTask extends NSObject {
 
     /**
      * When called, starts cancelling the task and changes the state to "Cancelling".
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancel")
@@ -100,6 +102,8 @@ public class MLTask extends NSObject {
 
     /**
      * Indicates error if the task failed for any reason.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -152,6 +156,8 @@ public class MLTask extends NSObject {
 
     /**
      * When called, resumes the task and changes state to "Running".
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resume")
@@ -163,6 +169,8 @@ public class MLTask extends NSObject {
 
     /**
      * Represents the current state of task.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("state")
@@ -175,6 +183,8 @@ public class MLTask extends NSObject {
 
     /**
      * Unique identifier for the task.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

@@ -164,6 +164,8 @@ public class MPChangeShuffleModeCommand extends MPRemoteCommand {
 
     /**
      * The app's current shuffle type.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("currentShuffleType")
@@ -176,6 +178,8 @@ public class MPChangeShuffleModeCommand extends MPRemoteCommand {
 
     /**
      * The app's current shuffle type.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCurrentShuffleType:")

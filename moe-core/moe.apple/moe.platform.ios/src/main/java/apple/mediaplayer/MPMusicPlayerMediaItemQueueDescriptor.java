@@ -161,37 +161,61 @@ public class MPMusicPlayerMediaItemQueueDescriptor extends MPMusicPlayerQueueDes
     @Selector("init")
     public native MPMusicPlayerMediaItemQueueDescriptor init();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("initWithItemCollection:")
     public native MPMusicPlayerMediaItemQueueDescriptor initWithItemCollection(
             @NotNull MPMediaItemCollection itemCollection);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("initWithQuery:")
     public native MPMusicPlayerMediaItemQueueDescriptor initWithQuery(@NotNull MPMediaQuery query);
 
+    /**
+     * API-Since: 10.1
+     */
     @NotNull
     @Generated
     @Selector("itemCollection")
     public native MPMediaItemCollection itemCollection();
 
+    /**
+     * API-Since: 10.1
+     */
     @NotNull
     @Generated
     @Selector("query")
     public native MPMediaQuery query();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setEndTime:forItem:")
     public native void setEndTimeForItem(double endTime, @NotNull MPMediaItem mediaItem);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setStartItem:")
     public native void setStartItem(@Nullable MPMediaItem value);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setStartTime:forItem:")
     public native void setStartTimeForItem(double startTime, @NotNull MPMediaItem mediaItem);
 
+    /**
+     * API-Since: 10.1
+     */
     @Nullable
     @Generated
     @Selector("startItem")

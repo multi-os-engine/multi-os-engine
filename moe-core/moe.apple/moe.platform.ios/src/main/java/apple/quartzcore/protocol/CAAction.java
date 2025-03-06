@@ -30,6 +30,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Action (event handler) protocol. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")
@@ -41,6 +43,8 @@ public interface CAAction {
      * (e.g. the layer) on which the event happened is 'anObject'. The
      * arguments dictionary may be nil, if non-nil it carries parameters
      * associated with the event.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("runActionForKey:object:arguments:")

@@ -56,6 +56,9 @@ public class PKPaymentOrderDetails extends NSObject {
     @Selector("allocWithZone:")
     public static native PKPaymentOrderDetails allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("authenticationToken")
@@ -103,6 +106,9 @@ public class PKPaymentOrderDetails extends NSObject {
     @Selector("init")
     public native PKPaymentOrderDetails init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithOrderTypeIdentifier:orderIdentifier:webServiceURL:authenticationToken:")
     public native PKPaymentOrderDetails initWithOrderTypeIdentifierOrderIdentifierWebServiceURLAuthenticationToken(
@@ -136,11 +142,17 @@ public class PKPaymentOrderDetails extends NSObject {
     @Selector("new")
     public static native PKPaymentOrderDetails new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("orderIdentifier")
     public native String orderIdentifier();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("orderTypeIdentifier")
@@ -154,14 +166,23 @@ public class PKPaymentOrderDetails extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setAuthenticationToken:")
     public native void setAuthenticationToken(@NotNull String value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOrderIdentifier:")
     public native void setOrderIdentifier(@NotNull String value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setOrderTypeIdentifier:")
     public native void setOrderTypeIdentifier(@NotNull String value);
@@ -170,6 +191,9 @@ public class PKPaymentOrderDetails extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setWebServiceURL:")
     public native void setWebServiceURL(@NotNull NSURL value);
@@ -183,6 +207,9 @@ public class PKPaymentOrderDetails extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("webServiceURL")

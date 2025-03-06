@@ -115,6 +115,8 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - seconds
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -143,6 +145,9 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("minutes")
@@ -161,6 +166,9 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("seconds")

@@ -22,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 public interface UITextDropRequest {
     /**
      * The text position that the drag is over.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -31,6 +33,8 @@ public interface UITextDropRequest {
     /**
      * The current drop session. Use this to get the location of the
      * session in the view, for example.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -41,6 +45,8 @@ public interface UITextDropRequest {
     /**
      * Returns whether the drop is a local drop
      * (that is, the drag and drop are in the same text control).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isSameView")
@@ -48,6 +54,8 @@ public interface UITextDropRequest {
 
     /**
      * The suggested proposal by the text control.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

@@ -133,6 +133,8 @@ public class CKSyncEngineFetchChangesContext extends NSObject {
 
     /**
      * The options being used for this attempt to fetch changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("options")
@@ -141,6 +143,8 @@ public class CKSyncEngineFetchChangesContext extends NSObject {
 
     /**
      * The reason why the sync engine is attempting to fetch changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("reason")

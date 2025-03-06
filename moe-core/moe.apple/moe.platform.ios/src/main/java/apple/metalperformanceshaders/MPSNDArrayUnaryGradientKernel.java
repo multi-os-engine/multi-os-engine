@@ -95,6 +95,8 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
     /**
      * Gradient encode methods
      * Inference encode calls.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -103,6 +105,9 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArray sourceArray,
             @NotNull MPSNDArray gradient, @NotNull MPSState state);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:sourceGradient:gradientState:destinationArray:")
     public native void encodeToCommandBufferSourceArraySourceGradientGradientStateDestinationArray(
@@ -124,6 +129,8 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
 
     /**
      * NSSecureCoding support
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -137,6 +144,8 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
      * There is currently no way to manually set this information for the gradient.
      * This may not be viewed as a problem as this information is automatically
      * set by the gradient state.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")

@@ -135,11 +135,17 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilometersPerHour")
     public static native NSUnitSpeed kilometersPerHour();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("knots")
@@ -147,12 +153,17 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - metersPerSecond
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("metersPerSecond")
     public static native NSUnitSpeed metersPerSecond();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milesPerHour")

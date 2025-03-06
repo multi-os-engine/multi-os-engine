@@ -28,6 +28,8 @@ public interface UITextSelectionHighlightView extends UICoordinateSpace {
      * A collection of @c UITextSelectionRects representing the geometry of the current selection. Rects are expected to
      * be in the
      * receiver's coordinate space.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("selectionRects")
@@ -38,6 +40,8 @@ public interface UITextSelectionHighlightView extends UICoordinateSpace {
      * A collection of @c UITextSelectionRects representing the geometry of the current selection. Rects are expected to
      * be in the
      * receiver's coordinate space.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSelectionRects:")

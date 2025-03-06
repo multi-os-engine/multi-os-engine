@@ -78,6 +78,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
      * the same queue.
      * (if you violate this restriction and mix calls between the main queue and some background queue, the framework
      * will log and/or assert to avoid deadlocks)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("applySnapshot:animatingDifferences:")
@@ -85,6 +87,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
             @NotNull NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot,
             boolean animatingDifferences);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("applySnapshot:animatingDifferences:completion:")
     public native void applySnapshotAnimatingDifferencesCompletion(
@@ -175,6 +180,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("indexPathForItemIdentifier:")
@@ -191,6 +199,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("init")
     public native UICollectionViewDiffableDataSource<?, ?> init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCollectionView:cellProvider:")
     public native UICollectionViewDiffableDataSource<?, ?> initWithCollectionViewCellProvider(
@@ -225,6 +236,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * convert item NSIndexPath <-> ItemIdentifierType
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -256,6 +269,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setSupplementaryViewProvider:")
     public native void setSupplementaryViewProvider(
@@ -277,6 +293,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     /**
      * Create a snapshot of the current UICollectionView data source state.
      * This snapshot can be mutated and later applied via -applySnapshot:animatingDifferences:
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -287,6 +305,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("supplementaryViewProvider")

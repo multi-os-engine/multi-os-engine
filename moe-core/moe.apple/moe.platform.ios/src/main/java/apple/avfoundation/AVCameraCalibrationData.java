@@ -129,6 +129,8 @@ public class AVCameraCalibrationData extends NSObject {
      * The reference frame dimensions used in calculating a camera's principal point.
      * 
      * A camera's intrinsic matrix expresses values in pixels with respect to a frame of this width and height.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("intrinsicMatrixReferenceDimensions")
@@ -147,6 +149,8 @@ public class AVCameraCalibrationData extends NSObject {
      * 
      * If the camera lacks the calibration data needed to accurately characterize lens distortions, this property's
      * value is nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -174,6 +178,8 @@ public class AVCameraCalibrationData extends NSObject {
      * 
      * If the camera lacks the calibration data needed to accurately characterize lens distortions, this property's
      * value is set to CGPointZero and should not be used.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("lensDistortionCenter")
@@ -196,6 +202,8 @@ public class AVCameraCalibrationData extends NSObject {
      * 
      * If the camera lacks the calibration data needed to accurately characterize lens distortions, this property's
      * value is nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -211,6 +219,8 @@ public class AVCameraCalibrationData extends NSObject {
      * [@property] pixelSize
      * 
      * The size of one pixel at intrinsicMatrixReferenceDimensions in millimeters.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pixelSize")

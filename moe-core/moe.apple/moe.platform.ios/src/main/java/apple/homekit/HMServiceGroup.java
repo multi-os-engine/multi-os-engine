@@ -188,6 +188,8 @@ public class HMServiceGroup extends NSObject {
 
     /**
      * Name of the service group.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -210,6 +212,8 @@ public class HMServiceGroup extends NSObject {
 
     /**
      * Array of HMService objects that correspond to the services contained in this group.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

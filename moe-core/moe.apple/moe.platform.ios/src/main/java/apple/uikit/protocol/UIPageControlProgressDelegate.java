@@ -22,6 +22,8 @@ public interface UIPageControlProgressDelegate {
     /**
      * Returns the initial progress (between 0...1) for the specified page. By default, `currentProgress` is set to 0
      * when the page changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @IsOptional
@@ -50,6 +52,8 @@ public interface UIPageControlProgressDelegate {
      * }
      * }
      * [@endcode]
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @IsOptional

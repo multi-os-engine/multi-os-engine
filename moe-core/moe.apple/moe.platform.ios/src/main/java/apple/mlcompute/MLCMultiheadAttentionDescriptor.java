@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCMultiheadAttentionDescriptor specifies a Multi-Head Attention descriptor
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -56,7 +55,11 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * if true, a row of zeroes is added to projected key and value. Default = false
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("addsZeroAttention")
     public native boolean addsZeroAttention();
@@ -117,7 +120,11 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
      * @param modelDimension total dimension of model space
      * @param headCount      number of parallel attention heads
      * @return A valid MultiheadAttention layer descriptor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithModelDimension:headCount:")
     public static native MLCMultiheadAttentionDescriptor descriptorWithModelDimensionHeadCount(
@@ -135,7 +142,11 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
      * @param hasAttentionBiases if true, an array of biases is added to key and value respectively. Default = NO
      * @param addsZeroAttention  if true, a row of zeroes is added to projected key and value. Default = NO
      * @return A new MultiheadAttention layer descriptor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithModelDimension:keyDimension:valueDimension:headCount:dropout:hasBiases:hasAttentionBiases:addsZeroAttention:")
     public static native MLCMultiheadAttentionDescriptor descriptorWithModelDimensionKeyDimensionValueDimensionHeadCountDropoutHasBiasesHasAttentionBiasesAddsZeroAttention(
@@ -144,21 +155,33 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * a droupout layer applied to the output projection weights. Default = 0.0
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dropout")
     public native float dropout();
 
     /**
      * if true, an array of biases is added to key and value respectively. Default = false
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("hasAttentionBiases")
     public native boolean hasAttentionBiases();
 
     /**
      * if true, bias is used for query/key/value/output projections. Default = true
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("hasBiases")
     public native boolean hasBiases();
@@ -170,7 +193,11 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * number of parallel attention heads
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("headCount")
     @NUInt
@@ -199,7 +226,11 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * total dimension of key space, Default = modelDimension
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("keyDimension")
     @NUInt
@@ -212,7 +243,11 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * model or embedding dimension
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("modelDimension")
     @NUInt
@@ -241,7 +276,11 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * total dimension of value space, Default = modelDimension
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("valueDimension")
     @NUInt

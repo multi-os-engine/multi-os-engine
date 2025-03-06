@@ -121,6 +121,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("imageNamed:")
     public static native INImage imageNamed(@NotNull String name);
@@ -142,6 +145,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("imageWithCGImage:")
     public static native INImage imageWithCGImage(@NotNull CGImageRef imageRef);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("imageWithImageData:")
     public static native INImage imageWithImageData(@NotNull NSData imageData);
@@ -153,6 +159,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("imageWithUIImage:")
     public static native INImage imageWithUIImage(@NotNull UIImage image);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("imageWithURL:")
     public static native INImage imageWithURL(@NotNull NSURL URL);

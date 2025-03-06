@@ -24,6 +24,8 @@ public interface GCPhysicalInputElement {
     /**
      * The set of aliases that can be used to access this element with keyed subscript
      * notation.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -39,6 +41,8 @@ public interface GCPhysicalInputElement {
      * "Press \(buttonA.localizedName) to jump!"
      * 
      * Do not cache this value - it can change when the user remaps controls.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -47,6 +51,8 @@ public interface GCPhysicalInputElement {
 
     /**
      * The SF Symbols name for the element.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

@@ -103,6 +103,9 @@ public class INGetReservationDetailsIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INGetReservationDetailsIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithReservationContainerReference:reservationItemReferences:")
     public native INGetReservationDetailsIntent initWithReservationContainerReferenceReservationItemReferences(
@@ -136,11 +139,17 @@ public class INGetReservationDetailsIntent extends INIntent {
     @Selector("new")
     public static native INGetReservationDetailsIntent new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservationContainerReference")
     public native INSpeakableString reservationContainerReference();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("reservationItemReferences")

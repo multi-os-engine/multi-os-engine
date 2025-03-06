@@ -118,6 +118,8 @@ public class PHASEChannelMixerDefinition extends PHASEMixerDefinition {
      *               The input channel layout. Any connected sampler must match this channel layout.
      * @return
      *         A new PHASEChannelMixerDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithChannelLayout:")
@@ -136,6 +138,8 @@ public class PHASEChannelMixerDefinition extends PHASEMixerDefinition {
      *                   An optional custom identifier to give to this object
      * @return
      *         A new PHASEChannelMixerDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithChannelLayout:identifier:")
@@ -146,6 +150,8 @@ public class PHASEChannelMixerDefinition extends PHASEMixerDefinition {
      * [@property] inputChannelLayout
      * 
      * A readonly value of the input channel layout this mixer was initialized with.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

@@ -37,7 +37,11 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
      * 
      * [@note] It is the responsibility of the delegate to maintain a reference to the interface controller beyond the
      * scope of this method.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("application:didConnectCarInterfaceController:toWindow:")
     void applicationDidConnectCarInterfaceControllerToWindow(@NotNull UIApplication application,
@@ -45,7 +49,11 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
 
     /**
      * The CarPlay screen has disconnected.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("application:didDisconnectCarInterfaceController:fromWindow:")
     void applicationDidDisconnectCarInterfaceControllerFromWindow(@NotNull UIApplication application,
@@ -55,7 +63,11 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
      * If your application posts a @c CPManeuver while backgrounded, a notification banner may be presented to the user.
      * If the user taps on that banner, your application will launch on the car screen and this method will be called
      * with the maneuver the user tapped.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didSelectManeuver:")
@@ -68,7 +80,11 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
      * the user.
      * If the user taps on that banner, your application will launch on the car screen and this method will be called
      * with the alert the user tapped.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didSelectNavigationAlert:")

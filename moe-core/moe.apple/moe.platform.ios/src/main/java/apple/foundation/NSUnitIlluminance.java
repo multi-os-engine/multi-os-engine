@@ -137,6 +137,8 @@ public class NSUnitIlluminance extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - lux
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

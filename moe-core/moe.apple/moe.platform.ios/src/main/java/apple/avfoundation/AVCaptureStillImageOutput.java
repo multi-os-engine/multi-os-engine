@@ -154,11 +154,16 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * metadata sample buffer attachments without recompressing the image. The returned NSData is suitable for writing
      * to disk.
      * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
+     * 
      * @param jpegSampleBuffer
      *                         The sample buffer carrying JPEG image data, optionally with Exif metadata sample buffer
      *                         attachments. This method throws an NSInvalidArgumentException if jpegSampleBuffer is NULL
      *                         or not in the JPEG format.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("jpegStillImageNSDataRepresentation:")
@@ -169,6 +174,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -219,7 +230,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * The value of this property is an NSArray of NSNumbers that can be used as values for the
      * kCVPixelBufferPixelFormatTypeKey in the receiver's outputSettings property. The first format in the returned list
      * is the most efficient output format.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("availableImageDataCVPixelFormatTypes")
@@ -232,7 +248,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * 
      * The value of this property is an NSArray of AVVideoCodecTypes that can be used as values for the AVVideoCodecKey
      * in the receiver's outputSettings property.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("availableImageDataCodecTypes")
@@ -261,6 +282,10 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * buffer's pts using CMSampleBufferGetPresentationTimestamp(). If the still image has an earlier timestamp, your
      * manual control command does not apply to it.
      * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
+     * 
      * @param connection
      *                   The AVCaptureConnection object from which to capture the still image.
      * @param handler
@@ -268,6 +293,7 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      *                   a CMSampleBuffer object containing the image data or an NSError object if an image could not be
      *                   captured.
      */
+    @Deprecated
     @Generated
     @Selector("captureStillImageAsynchronouslyFromConnection:completionHandler:")
     public native void captureStillImageAsynchronouslyFromConnectionCompletionHandler(
@@ -309,6 +335,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
             @NotNull NSArray<? extends AVCaptureBracketedStillImageSettings> settings,
             @NotNull @ObjCBlock(name = "call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler") Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler handler);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native AVCaptureStillImageOutput init();
@@ -501,7 +533,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * -availableImageDataCVPixelFormatTypes and -availableImageDataCodecTypes to determine what codec keys and pixel
      * formats are supported. AVVideoQualityKey is supported on iOS 6.0 and later and may only be used when
      * AVVideoCodecKey is set to AVVideoCodecTypeJPEG.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("outputSettings")
@@ -570,7 +607,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * -availableImageDataCVPixelFormatTypes and -availableImageDataCodecTypes to determine what codec keys and pixel
      * formats are supported. AVVideoQualityKey is supported on iOS 6.0 and later and may only be used when
      * AVVideoCodecKey is set to AVVideoCodecTypeJPEG.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use AVCapturePhotoOutput instead.
      */
+    @Deprecated
     @Generated
     @Selector("setOutputSettings:")
     public native void setOutputSettings(@NotNull NSDictionary<String, ?> value);

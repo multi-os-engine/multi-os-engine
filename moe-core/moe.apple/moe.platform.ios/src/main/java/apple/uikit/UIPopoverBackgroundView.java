@@ -457,6 +457,8 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     /**
      * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the
      * direction of the arrow while the popover is still visible on-screen.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("arrowDirection")
@@ -505,6 +507,8 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     /**
      * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the
      * direction of the arrow while the popover is still visible on-screen.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setArrowDirection:")

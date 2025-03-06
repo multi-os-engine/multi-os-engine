@@ -28,9 +28,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This class defines parameters for a 3d depthwise convolution operation.
+ * The class that defines the parameters for a 3D-depthwise convolution operation.
  * 
- * A `MPSGraphDepthwiseConvolution3DOpDescriptor` defines constant parameters for 3d depthwise convolutions.
+ * A `MPSGraphDepthwiseConvolution3DOpDescriptor` defines constant parameters for 3D depthwise convolutions.
  * Use this class with ``MPSGraph/depthwiseConvolution3DWithSourceTensor:weightsTensor:descriptor:name:``,
  * ``MPSGraph/depthwiseConvolution3DDataGradientWithIncomingGradientTensor:weightsTensor:outputShape:descriptor:name:``
  * and
@@ -84,13 +84,15 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
 
     /**
      * The axis that contains the channels in the input and the weights, within
-     * the 4d tile of the last dimensions.
+     * the 4D tile of the last dimensions.
      * 
      * For example the value of `-1` corresponds to `NDHWC`, `NHWC` layouts. This allows the placement
      * of the channel index anywhere within the last 4 dimensions of the tensor. In case your
      * weights are in a different layout you can bring them to the same layout
      * as inputs using transposes or permutations.
      * Default value: `-4`, corresponds to `NCDHW` and `CDHW` layouts.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("channelDimensionIndex")
@@ -123,11 +125,13 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
     public static native String description_static();
 
     /**
-     * Creates a 3d depthwise convolution descriptor with default values.
+     * Creates a 3D depthwise convolution descriptor with default values.
      * 
      * - Parameters:
      * - paddingStyle: See `paddingStyle` property.
      * - Returns: The descriptor on autoreleasepool.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("descriptorWithPaddingStyle:")
@@ -135,7 +139,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
             @NUInt long paddingStyle);
 
     /**
-     * Creates a 3d depthwise convolution descriptor with given values.
+     * Creates a 3D depthwise convolution descriptor with given values.
      * 
      * - Parameters:
      * - strides: See `strides` property.
@@ -143,6 +147,8 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
      * - paddingValues: See `paddingValues` property.
      * - paddingStyle: See `paddingStyle` property.
      * - Returns: The descriptor on autoreleasepool.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("descriptorWithStrides:dilationRates:paddingValues:paddingStyle:")
@@ -155,6 +161,8 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: `@[ @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -198,7 +206,11 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
     public static native MPSGraphDepthwiseConvolution3DOpDescriptor new_objc();
 
     /**
-     * The padding style for the operation. Default value: `MPSGraphPaddingStyleExplicit`.
+     * The padding style for the operation.
+     * 
+     * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("paddingStyle")
@@ -214,6 +226,8 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
      * Use only with `paddingStyle = MPSGraphPaddingStyleExplicit`.
      * Default value: `@[ @0, @0, @0, @0, @0, @0 ]`
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -230,13 +244,15 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
 
     /**
      * The axis that contains the channels in the input and the weights, within
-     * the 4d tile of the last dimensions.
+     * the 4D tile of the last dimensions.
      * 
      * For example the value of `-1` corresponds to `NDHWC`, `NHWC` layouts. This allows the placement
      * of the channel index anywhere within the last 4 dimensions of the tensor. In case your
      * weights are in a different layout you can bring them to the same layout
      * as inputs using transposes or permutations.
      * Default value: `-4`, corresponds to `NCDHW` and `CDHW` layouts.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setChannelDimensionIndex:")
@@ -247,13 +263,19 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: `@[ @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDilationRates:")
     public native void setDilationRates(@NotNull NSArray<? extends NSNumber> value);
 
     /**
-     * The padding style for the operation. Default value: `MPSGraphPaddingStyleExplicit`.
+     * The padding style for the operation.
+     * 
+     * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPaddingStyle:")
@@ -268,6 +290,8 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
      * Use only with `paddingStyle = MPSGraphPaddingStyleExplicit`.
      * Default value: `@[ @0, @0, @0, @0, @0, @0 ]`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPaddingValues:")
@@ -278,6 +302,8 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: `@[ @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setStrides:")
@@ -292,6 +318,8 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject i
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: `@[ @1, @1, @1 ]`
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

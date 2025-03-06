@@ -165,11 +165,17 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("cardDetails")
     public native NSArray<? extends PKLabeledValue> cardDetails();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("cardholderName")
     public native String cardholderName();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("encryptionScheme")
@@ -186,11 +192,16 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
      * ephemeralPublicKey
      * PKEncryptionSchemeRSA_V2:
      * wrappedKey
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithEncryptionScheme:")
     public native PKAddPaymentPassRequestConfiguration initWithEncryptionScheme(@NotNull String encryptionScheme);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("localizedDescription")
@@ -198,6 +209,8 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
 
     /**
      * Filters introduction page to a specific network - does not function as a restriction.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -207,12 +220,17 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     /**
      * Pass Library Filters:
      * If the filtered set is empty, then all filter will be ignored.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("primaryAccountIdentifier")
     public native String primaryAccountIdentifier();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("primaryAccountSuffix")
@@ -232,16 +250,24 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("setCardDetails:")
     public native void setCardDetails(@NotNull NSArray<? extends PKLabeledValue> value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setCardholderName:")
     public native void setCardholderName(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(@Nullable String value);
 
     /**
      * Filters introduction page to a specific network - does not function as a restriction.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPaymentNetwork:")
@@ -250,11 +276,16 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     /**
      * Pass Library Filters:
      * If the filtered set is empty, then all filter will be ignored.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPrimaryAccountIdentifier:")
     public native void setPrimaryAccountIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setPrimaryAccountSuffix:")
     public native void setPrimaryAccountSuffix(@Nullable String value);

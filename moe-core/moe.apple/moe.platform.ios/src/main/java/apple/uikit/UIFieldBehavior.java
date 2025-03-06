@@ -113,6 +113,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * Slows an object proportionally to the object’s velocity.
      * Use this to simulate effects such as friction from motion through the air.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -125,6 +127,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * differently
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the first part of the Lorentz equation, F = qE
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -140,6 +144,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @param mass      The mass to be taken into account during force evaluation
      * @param charge    The charge to be taken into account during force evaluation
      * @param deltaTime The current time step
+     * 
+     *                  API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -183,6 +189,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      *                  the field's strength property to get the final calculated force. All components of the direction
      *                  vector are used to calculate the length.
      * @see direction
+     * 
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -198,6 +206,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * make
      * objects behavior differently from one another when they enter a region, or to make an object's behavior different
      * than its mass based behavior. This field models the second part of the Lorentz equation, F = qvB
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -217,6 +227,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @param animationSpeed is the general field rate of change in Hz
      * @see smoothness
      * @see animationSpeed
+     * 
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -232,6 +244,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @param position the origin of the field
      * @see position
+     * 
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -254,6 +268,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * A Hooke’s law force - a force linearly proportional to distance from the center of the field. An object in this
      * field will oscillate with a period proportional to the inverse of the mass.
      * An example use is to keep objects confined to a particular region.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -271,6 +287,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @param animationSpeed is the general field rate of change in Hz
      * @see smoothness
      * @see animationSpeed
+     * 
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -284,6 +302,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @param direction The directed velocity that will be applied to the body.
      * @see direction
+     * 
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -300,12 +320,17 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * The force will be CCW to the direction. Make the strength negative to apply force in the CW direction.
      * Amount is proportional to distance from center and the object's mass. This can be used to create rotational
      * effects.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("vortexField")
     public static native UIFieldBehavior vortexField();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
@@ -315,6 +340,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("animationSpeed")
@@ -327,6 +354,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @see linearGravityFieldWithVector:direction
      * @see velocityFieldWithVector:direction
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("direction")
@@ -339,6 +368,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * The default exponent is zero, which results in a uniform field with no falloff.
      * 
      * @see minimumRadius
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("falloff")
@@ -349,6 +380,9 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIFieldBehavior init();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("items")
@@ -356,6 +390,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Minimum radius of effect. Default is very small.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("minimumRadius")
@@ -364,6 +400,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * The position (origin) of the field in the reference coordinate system
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("position")
@@ -373,12 +411,17 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * The region property is the domain of the field's effect. No force is applied to objects outside the region.
      * The default region is the infiniteRegion
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
     @Selector("region")
     public native UIRegion region();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
@@ -388,6 +431,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setAnimationSpeed:")
@@ -399,6 +444,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @see linearGravityFieldWithVector:direction
      * @see velocityFieldWithVector:direction
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setDirection:")
@@ -410,6 +457,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * The default exponent is zero, which results in a uniform field with no falloff.
      * 
      * @see minimumRadius
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setFalloff:")
@@ -417,6 +466,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Minimum radius of effect. Default is very small.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMinimumRadius:")
@@ -424,6 +475,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * The position (origin) of the field in the reference coordinate system
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPosition:")
@@ -432,6 +485,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * The region property is the domain of the field's effect. No force is applied to objects outside the region.
      * The default region is the infiniteRegion
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRegion:")
@@ -442,6 +497,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setSmoothness:")
@@ -449,6 +506,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Strength scaling value. default 1.0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStrength:")
@@ -459,6 +518,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("smoothness")
@@ -467,6 +528,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Strength scaling value. default 1.0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("strength")

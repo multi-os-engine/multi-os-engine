@@ -66,7 +66,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
      *                                returned when the tag
      *                                responded to the command with an error, and the error code value is defined in
      *                                ISO15693-3 specification.
-     *                                The custom reponse parameters are returned on success.
+     *                                The custom response parameters are returned on success.
      */
     @Generated
     @Selector("customCommandWithRequestFlag:customCommandCode:customRequestParameters:completionHandler:")
@@ -85,7 +85,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     /**
      * extendedLockBlockWithRequestFlags:blockNumber:completionHandler:
      * 
-     * Extende lock single block command (0x32 command code) as defined in ISO15693-3 specification. Address flag is
+     * Extended lock single block command (0x32 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.

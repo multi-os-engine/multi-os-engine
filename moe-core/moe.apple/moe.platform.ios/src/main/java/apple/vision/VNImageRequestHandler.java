@@ -125,6 +125,8 @@ public class VNImageRequestHandler extends NSObject {
      *                cannot be modified.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like
      *                VNImageOptionCameraIntrinsics
+     * 
+     *                API-Since: 11.0
      */
     @Generated
     @Selector("initWithCGImage:options:")
@@ -142,6 +144,9 @@ public class VNImageRequestHandler extends NSObject {
      *                    other orientation information.
      * @param options     A dictionary with options specifying auxiliary information for the buffer/image like
      *                    VNImageOptionCameraIntrinsics
+     * 
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("initWithCGImage:orientation:options:")
@@ -155,6 +160,8 @@ public class VNImageRequestHandler extends NSObject {
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator. The orientation of the original image should be applied for instance by using
      * imageByApplyingOrientation or use the initWithCIImage:options:orientation API.
+     * 
+     * API-Since: 11.0
      * 
      * @param image   A CIImage containing the image to be used for performing the requests. The content of the image
      *                cannot be modified.
@@ -172,6 +179,8 @@ public class VNImageRequestHandler extends NSObject {
      * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
+     * 
+     * API-Since: 11.0
      * 
      * @param image       A CIImage containing the image to be used for performing the requests. The content of the
      *                    image cannot be modified.
@@ -194,6 +203,8 @@ public class VNImageRequestHandler extends NSObject {
      *                    the buffer cannot be modified for the lifetime of the VNImageRequestHandler.
      * @param options     A dictionary with options specifying auxiliary information for the buffer/image like
      *                    VNImageOptionCameraIntrinsics
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("initWithCVPixelBuffer:options:")
@@ -211,6 +222,8 @@ public class VNImageRequestHandler extends NSObject {
      *                    other orientation information.
      * @param options     A dictionary with options specifying auxiliary information for the buffer/image like
      *                    VNImageOptionCameraIntrinsics
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("initWithCVPixelBuffer:orientation:options:")
@@ -223,6 +236,9 @@ public class VNImageRequestHandler extends NSObject {
      * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
+     * 
+     * 
+     * API-Since: 11.0
      * 
      * @param imageData An NSData object containing the content of the image to be used for performing the requests. See
      *                  CIImage imageWithData for supported format. The content of the image cannot be modified.
@@ -240,6 +256,9 @@ public class VNImageRequestHandler extends NSObject {
      * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
+     * 
+     * 
+     * API-Since: 11.0
      * 
      * @param imageData   An NSData object containing the content of the image to be used for performing the requests.
      *                    See CIImage imageWithData for supported format. The content of the image cannot be modified.
@@ -261,6 +280,8 @@ public class VNImageRequestHandler extends NSObject {
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
      * 
+     * API-Since: 11.0
+     * 
      * @param imageURL A URL pointing at an image to be used for performing the requests. The image has to be in a
      *                 format that is supported by ImageIO. The content of the image cannot be modified.
      * @param options  A dictionary with options specifying auxiliary information for the buffer/image like
@@ -277,6 +298,8 @@ public class VNImageRequestHandler extends NSObject {
      * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
+     * 
+     * API-Since: 11.0
      * 
      * @param imageURL    A URL pointing at an image to be used for performing the requests. The image has to be in a
      *                    format that is supported by ImageIO. The content of the image cannot be modified.
@@ -330,6 +353,9 @@ public class VNImageRequestHandler extends NSObject {
      *                 results and errors for their respective success and failures. This parameter is optional.
      * @return Returns true if all requests were scheduled and performed. Check individual requests results and errors
      *         for their respective success and failures.
+     * 
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("performRequests:error:")

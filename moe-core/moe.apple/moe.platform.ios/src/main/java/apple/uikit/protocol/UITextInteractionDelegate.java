@@ -20,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextInteractionDelegate")
 public interface UITextInteractionDelegate {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("interactionDidEnd:")
@@ -27,6 +30,9 @@ public interface UITextInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("interactionShouldBegin:atPoint:")
@@ -34,6 +40,9 @@ public interface UITextInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("interactionWillBegin:")

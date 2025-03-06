@@ -95,6 +95,8 @@ public class ARSkeletonDefinition extends NSObject {
      * Default skeleton definition for bodies defined in 2D.
      * 
      * @see ARBody2D
+     * 
+     *      API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -107,6 +109,8 @@ public class ARSkeletonDefinition extends NSObject {
      * defined to be 1.71 meters.
      * 
      * @see ARSkeleton3D
+     * 
+     *      API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -129,6 +133,8 @@ public class ARSkeletonDefinition extends NSObject {
      * 
      * @param jointName Name of a given joint.
      * @return Joint index.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("indexForJointName:")
@@ -158,6 +164,8 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * The number of joints.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("jointCount")
@@ -166,6 +174,8 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * The joint names.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -182,6 +192,8 @@ public class ARSkeletonDefinition extends NSObject {
      * 
      * The neutral skeleton pose assumes a standardized size of the skeleton in meters. The neutral pose is defined as
      * the skeleton's T-pose.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -201,6 +213,8 @@ public class ARSkeletonDefinition extends NSObject {
      * the result is a visualization of the underlying skeleton. The joint with no parent is denoted as the root joint.
      * The root joint's parent index has
      * a value of -1.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

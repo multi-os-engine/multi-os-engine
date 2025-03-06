@@ -126,6 +126,8 @@ public class MTLPipelineBufferDescriptorArray extends NSObject {
 
     /**
      * Individual buffer descriptor access
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -143,6 +145,8 @@ public class MTLPipelineBufferDescriptorArray extends NSObject {
     /**
      * This always uses 'copy' semantics. It is safe to set the buffer descriptor at any legal index to nil, which
      * resets that buffer descriptor to default values.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")

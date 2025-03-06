@@ -21,6 +21,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccessibilityContainerDataTable")
 public interface UIAccessibilityContainerDataTable {
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("accessibilityColumnCount")
     @NUInt
@@ -29,6 +32,8 @@ public interface UIAccessibilityContainerDataTable {
     /**
      * Return the cell element for a specific row/column, including elements that span rows/columns.
      * default == nil
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -37,6 +42,9 @@ public interface UIAccessibilityContainerDataTable {
     UIAccessibilityContainerDataTableCell accessibilityDataTableCellElementForRowColumn(@NUInt long row,
             @NUInt long column);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -48,6 +56,8 @@ public interface UIAccessibilityContainerDataTable {
     /**
      * Return header elements for a specific row or column.
      * default == nil
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -57,6 +67,9 @@ public interface UIAccessibilityContainerDataTable {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("accessibilityRowCount")
     @NUInt

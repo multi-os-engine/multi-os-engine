@@ -43,6 +43,8 @@ public interface MTLCommandEncoder {
      * [@property] device
      * 
      * The device this resource was created against.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -54,6 +56,8 @@ public interface MTLCommandEncoder {
      * endEncoding
      * 
      * Declare that all command generation from this encoder is complete, and detach from the MTLCommandBuffer.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("endEncoding")
@@ -64,6 +68,8 @@ public interface MTLCommandEncoder {
      * 
      * Inserts a debug string into the command buffer. This does not change any API behavior, but can be useful when
      * debugging.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("insertDebugSignpost:")
@@ -73,6 +79,8 @@ public interface MTLCommandEncoder {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -83,6 +91,8 @@ public interface MTLCommandEncoder {
      * popDebugGroup
      * 
      * Pop the latest named string off of the stack.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("popDebugGroup")
@@ -92,6 +102,8 @@ public interface MTLCommandEncoder {
      * pushDebugGroup:
      * 
      * Push a new named string onto a stack of string labels.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pushDebugGroup:")
@@ -101,6 +113,8 @@ public interface MTLCommandEncoder {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLabel:")

@@ -166,6 +166,8 @@ public class CXProvider extends NSObject {
 
     /**
      * The receiver's current configuration.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -178,6 +180,8 @@ public class CXProvider extends NSObject {
 
     /**
      * Initialize a new provider instance with the supplied configuration
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithConfiguration:")
@@ -186,6 +190,8 @@ public class CXProvider extends NSObject {
     /**
      * Invalidate the receiver. All existing calls will be marked as ended in failure. The provider must be invalidated
      * before it is deallocated.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("invalidate")
@@ -194,6 +200,8 @@ public class CXProvider extends NSObject {
     /**
      * Returns subset of call actions contained in any transaction in -pendingTransactions of the specified class and
      * with the specified call UUID.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -203,6 +211,8 @@ public class CXProvider extends NSObject {
 
     /**
      * List of all transactions that are incomplete.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -211,6 +221,8 @@ public class CXProvider extends NSObject {
 
     /**
      * Report that a call ended. A nil value for `dateEnded` results in the ended date being set to now.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("reportCallWithUUID:endedAtDate:reason:")
@@ -219,6 +231,8 @@ public class CXProvider extends NSObject {
 
     /**
      * Report an update to call information.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("reportCallWithUUID:updated:")
@@ -231,6 +245,8 @@ public class CXProvider extends NSObject {
      * be displayed, so the provider should not proceed with the call.
      * 
      * Completion block will be called on delegate queue, if specified, otherwise on a private serial queue.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("reportNewIncomingCallWithUUID:update:completion:")
@@ -240,6 +256,8 @@ public class CXProvider extends NSObject {
     /**
      * Report that an outgoing call connected. A nil value for `dateConnected` results in the connected date being set
      * to now.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("reportOutgoingCallWithUUID:connectedAtDate:")
@@ -248,6 +266,8 @@ public class CXProvider extends NSObject {
     /**
      * Report that an outgoing call started connecting. A nil value for `dateStartedConnecting` results in the started
      * connecting date being set to now.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("reportOutgoingCallWithUUID:startedConnectingAtDate:")
@@ -256,6 +276,8 @@ public class CXProvider extends NSObject {
 
     /**
      * The receiver's current configuration.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setConfiguration:")
@@ -264,6 +286,8 @@ public class CXProvider extends NSObject {
     /**
      * Set delegate and optional queue for delegate callbacks to be performed on.
      * A nil queue implies that delegate callbacks should happen on the main queue. The delegate is stored weakly
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:queue:")

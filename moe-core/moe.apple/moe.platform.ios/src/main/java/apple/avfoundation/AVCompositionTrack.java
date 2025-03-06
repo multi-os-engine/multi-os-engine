@@ -173,6 +173,8 @@ public class AVCompositionTrack extends AVAssetTrack {
      * AVCompositionTrackSegment's timeMapping.target).
      * Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments
      * conforms to this rule.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -187,6 +189,8 @@ public class AVCompositionTrack extends AVAssetTrack {
      * 
      * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the
      * segment closest in time to the specified trackTime is returned.
+     * 
+     * API-Since: 4.0
      * 
      * @param trackTime
      *                  The trackTime for which an AVCompositionTrackSegment is requested.
@@ -224,15 +228,24 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Selector("associatedTracksOfType:")
     public native NSArray<? extends AVAssetTrack> associatedTracksOfType(@NotNull String trackAssociationType);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("hasMediaCharacteristic:")
     public native boolean hasMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("metadataForFormat:")
     public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("samplePresentationTimeForTrackTime:")
     @ByValue

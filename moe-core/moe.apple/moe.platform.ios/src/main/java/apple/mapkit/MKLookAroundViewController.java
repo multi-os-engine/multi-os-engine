@@ -74,6 +74,8 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
 
     /**
      * Defaults to MKLookAroundBadgePositionTopLeading
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("badgePosition")
@@ -109,6 +111,9 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -136,11 +141,17 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
     @Selector("initWithCoder:")
     public native MKLookAroundViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithNibName:bundle:")
     public native MKLookAroundViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithScene:")
     public native MKLookAroundViewController initWithScene(@NotNull MKLookAroundScene scene);
@@ -160,6 +171,8 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isNavigationEnabled")
@@ -179,6 +192,9 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
     @Selector("new")
     public static native MKLookAroundViewController new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
@@ -192,6 +208,9 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("scene")
@@ -199,16 +218,24 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
 
     /**
      * Defaults to MKLookAroundBadgePositionTopLeading
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setBadgePosition:")
     public native void setBadgePosition(@NInt long value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) MKLookAroundViewControllerDelegate value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MKLookAroundViewControllerDelegate value) {
         Object __old = delegate();
@@ -223,21 +250,31 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setNavigationEnabled:")
     public native void setNavigationEnabled(boolean value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setScene:")
     public native void setScene(@Nullable MKLookAroundScene value);
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setShowsRoadLabels:")
@@ -249,6 +286,8 @@ public class MKLookAroundViewController extends UIViewController implements NSSe
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("showsRoadLabels")

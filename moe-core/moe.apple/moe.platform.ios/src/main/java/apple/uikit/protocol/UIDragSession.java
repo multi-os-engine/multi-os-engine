@@ -22,6 +22,8 @@ public interface UIDragSession extends UIDragDropSession {
     /**
      * Use `localContext` to attach additional information to this drag session,
      * visible only inside the app that started the drag.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -32,6 +34,8 @@ public interface UIDragSession extends UIDragDropSession {
     /**
      * Use `localContext` to attach additional information to this drag session,
      * visible only inside the app that started the drag.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLocalContext:")

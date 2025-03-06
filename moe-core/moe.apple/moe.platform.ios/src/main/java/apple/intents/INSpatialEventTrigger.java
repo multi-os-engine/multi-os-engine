@@ -94,6 +94,9 @@ public class INSpatialEventTrigger extends NSObject implements NSCopying, NSSecu
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("event")
     @NInt
@@ -108,6 +111,9 @@ public class INSpatialEventTrigger extends NSObject implements NSCopying, NSSecu
     @Selector("init")
     public native INSpatialEventTrigger init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithPlacemark:event:")
     public native INSpatialEventTrigger initWithPlacemarkEvent(@NotNull CLPlacemark placemark, @NInt long event);
@@ -139,6 +145,9 @@ public class INSpatialEventTrigger extends NSObject implements NSCopying, NSSecu
     @Selector("new")
     public static native INSpatialEventTrigger new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("placemark")

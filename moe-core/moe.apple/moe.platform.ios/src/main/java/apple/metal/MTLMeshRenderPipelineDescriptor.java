@@ -92,6 +92,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * [@property] colorAttachments
      * 
      * Describes the color attachments of the render pass in which this pipeline will be used.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * The pixel format of the depth attachment of the render pass in which this pipeline will be used.
      * 
      * The default value is MTLPixelFormatInvalid; indicating no depth attachment will be used.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("depthAttachmentPixelFormat")
@@ -131,6 +135,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Provide mutability information on the buffers used by fragmentFunction.
      * 
      * Specifying these values is optional; it may be used to optimize the shader code.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -144,6 +150,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * function.
      * The default value is nil. To create a pipeline, you must either set fragmentFunction to non-nil, or set
      * rasterizationEnabled to NO.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -180,6 +188,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * mask, which is subsequently AND-ed with the fragments' sample mask
      * 
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isAlphaToCoverageEnabled")
@@ -192,6 +202,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * evaluating alphaToCoverage).
      * 
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isAlphaToOneEnabled")
@@ -203,6 +215,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Whether rasterization is disabled, all primitives are dropped prior to rasterization.
      * 
      * The default value is YES.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isRasterizationEnabled")
@@ -222,6 +236,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * A name or description provided by the application that will be displayed in debugging tools.
      * The default value is nil.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -241,6 +257,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * threadgroups per mesh grid".
      * Specifying this value is optional; it may be used to improve scheduling of the workload. If neither this value
      * nor the shader attribute are used, the device's maximum supported value is used instead.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxTotalThreadgroupsPerMeshGrid")
@@ -259,6 +277,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * must match.
      * Any value specified cannot exceed the device limit as documented in the "Metal Feature Set Tables" for "Maximum
      * threads per threadgroup".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxTotalThreadsPerMeshThreadgroup")
@@ -277,6 +297,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * must match.
      * Any value specified cannot exceed the device limit as documented in the "Metal Feature Set Tables" for "Maximum
      * threads per threadgroup".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxTotalThreadsPerObjectThreadgroup")
@@ -290,6 +312,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * The default value is 1. The value must be supported by the device, which can be checked with
      * supportsVertexAmplificationCount.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maxVertexAmplificationCount")
@@ -302,6 +326,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Provide mutability information on the buffers used by meshFunction.
      * 
      * Specifying these values is optional; it may be used to optimize the shader code.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -313,6 +339,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * Shader function responsible for exporting a chunk of geometry per threadgroup for the rasterizer.
      * The default value is nil.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -327,6 +355,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * multiple of the meshThreadExecutionWidth of the returned pipeline state.
      * This information can be used by the optimizer to generate more efficient code.
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("meshThreadgroupSizeIsMultipleOfThreadExecutionWidth")
@@ -343,6 +373,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Provide mutability information on the buffers used by objectFunction.
      * 
      * Specifying these values is optional; it may be used to optimize the shader code.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -357,6 +389,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * If this is nil, no payload data is available to the mesh function, and the draw command determines how many
      * threadgroups of the mesh stage to run.
      * The default value is nil.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -371,6 +405,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * multiple of the objectThreadExecutionWidth of the returned pipeline state.
      * This information can be used by the optimizer to generate more efficient code.
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("objectThreadgroupSizeIsMultipleOfThreadExecutionWidth")
@@ -383,6 +419,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * If this value is 0, the size of the dereferenced type declared in the object shader for the buffer is used (space
      * for a single element is assumed for pointers).
      * The default value is 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("payloadMemoryLength")
@@ -393,6 +431,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * [@property] rasterSampleCount
      * 
      * The number of samples per fragment of the render pass in which this pipeline will be used.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("rasterSampleCount")
@@ -403,6 +443,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * reset
      * 
      * Restore all mesh pipeline descriptor properties to their default values.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("reset")
@@ -423,6 +465,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * mask, which is subsequently AND-ed with the fragments' sample mask
      * 
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAlphaToCoverageEnabled:")
@@ -435,6 +479,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * evaluating alphaToCoverage).
      * 
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAlphaToOneEnabled:")
@@ -446,6 +492,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * The pixel format of the depth attachment of the render pass in which this pipeline will be used.
      * 
      * The default value is MTLPixelFormatInvalid; indicating no depth attachment will be used.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDepthAttachmentPixelFormat:")
@@ -458,6 +506,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * function.
      * The default value is nil. To create a pipeline, you must either set fragmentFunction to non-nil, or set
      * rasterizationEnabled to NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setFragmentFunction:")
@@ -468,6 +518,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * A name or description provided by the application that will be displayed in debugging tools.
      * The default value is nil.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setLabel:")
@@ -486,6 +538,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * threadgroups per mesh grid".
      * Specifying this value is optional; it may be used to improve scheduling of the workload. If neither this value
      * nor the shader attribute are used, the device's maximum supported value is used instead.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxTotalThreadgroupsPerMeshGrid:")
@@ -503,6 +557,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * must match.
      * Any value specified cannot exceed the device limit as documented in the "Metal Feature Set Tables" for "Maximum
      * threads per threadgroup".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxTotalThreadsPerMeshThreadgroup:")
@@ -520,6 +576,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * must match.
      * Any value specified cannot exceed the device limit as documented in the "Metal Feature Set Tables" for "Maximum
      * threads per threadgroup".
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxTotalThreadsPerObjectThreadgroup:")
@@ -532,6 +590,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * The default value is 1. The value must be supported by the device, which can be checked with
      * supportsVertexAmplificationCount.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMaxVertexAmplificationCount:")
@@ -542,6 +602,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * Shader function responsible for exporting a chunk of geometry per threadgroup for the rasterizer.
      * The default value is nil.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMeshFunction:")
@@ -554,6 +616,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * multiple of the meshThreadExecutionWidth of the returned pipeline state.
      * This information can be used by the optimizer to generate more efficient code.
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMeshThreadgroupSizeIsMultipleOfThreadExecutionWidth:")
@@ -567,6 +631,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * If this is nil, no payload data is available to the mesh function, and the draw command determines how many
      * threadgroups of the mesh stage to run.
      * The default value is nil.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setObjectFunction:")
@@ -579,6 +645,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * multiple of the objectThreadExecutionWidth of the returned pipeline state.
      * This information can be used by the optimizer to generate more efficient code.
      * The default value is NO.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setObjectThreadgroupSizeIsMultipleOfThreadExecutionWidth:")
@@ -591,6 +659,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * If this value is 0, the size of the dereferenced type declared in the object shader for the buffer is used (space
      * for a single element is assumed for pointers).
      * The default value is 0.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPayloadMemoryLength:")
@@ -600,6 +670,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * [@property] rasterSampleCount
      * 
      * The number of samples per fragment of the render pass in which this pipeline will be used.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setRasterSampleCount:")
@@ -611,6 +683,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Whether rasterization is disabled, all primitives are dropped prior to rasterization.
      * 
      * The default value is YES.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setRasterizationEnabled:")
@@ -622,6 +696,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * The pixel format of the stencil attachment of the render pass in which this pipeline will be used.
      * 
      * The default value is MTLPixelFormatInvalid; indicating no stencil attachment will be used.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setStencilAttachmentPixelFormat:")
@@ -637,6 +713,8 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * The pixel format of the stencil attachment of the render pass in which this pipeline will be used.
      * 
      * The default value is MTLPixelFormatInvalid; indicating no stencil attachment will be used.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("stencilAttachmentPixelFormat")
@@ -760,4 +838,66 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
+     * happen on the fast path.
+     * 
+     * @see MTLBinaryArchive
+     * 
+     *      API-Since: 18.0
+     */
+    @Generated
+    @Selector("binaryArchives")
+    @Nullable
+    public native NSArray<?> binaryArchives();
+
+    /**
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
+     * happen on the fast path.
+     * 
+     * @see MTLBinaryArchive
+     * 
+     *      API-Since: 18.0
+     */
+    @Generated
+    @Selector("setBinaryArchives:")
+    public native void setBinaryArchives(@Nullable NSArray<?> value);
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setShaderValidation:")
+    public native void setShaderValidation(@NInt long value);
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("shaderValidation")
+    @NInt
+    public native long shaderValidation();
 }

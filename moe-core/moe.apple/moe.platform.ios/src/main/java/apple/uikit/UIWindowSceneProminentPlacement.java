@@ -128,6 +128,8 @@ public class UIWindowSceneProminentPlacement extends UIWindowScenePlacement {
 
     /**
      * Creates a prominent placement.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("prominentPlacement")

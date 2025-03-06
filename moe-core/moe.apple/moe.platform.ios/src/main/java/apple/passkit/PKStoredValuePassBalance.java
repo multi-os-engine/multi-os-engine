@@ -57,6 +57,9 @@ public class PKStoredValuePassBalance extends NSObject {
     @Selector("allocWithZone:")
     public static native PKStoredValuePassBalance allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("amount")
@@ -66,6 +69,9 @@ public class PKStoredValuePassBalance extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("balanceType")
@@ -92,6 +98,9 @@ public class PKStoredValuePassBalance extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("currencyCode")
@@ -105,6 +114,9 @@ public class PKStoredValuePassBalance extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("expiryDate")
@@ -132,6 +144,9 @@ public class PKStoredValuePassBalance extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("isEqualToBalance:")
     public native boolean isEqualToBalance(@NotNull PKStoredValuePassBalance balance);

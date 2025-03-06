@@ -175,6 +175,9 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("earliestBookingDateForResults")
@@ -188,6 +191,9 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
     @Selector("initWithCoder:")
     public native INGetAvailableRestaurantReservationBookingsIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("latestBookingDateForResults")
@@ -196,31 +202,48 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
     /**
      * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
      * to the extension
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("maximumNumberOfResults")
     public native NSNumber maximumNumberOfResults();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("partySize")
     @NUInt
     public native long partySize();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("preferredBookingDateComponents")
     public native NSDateComponents preferredBookingDateComponents();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setEarliestBookingDateForResults:")
     public native void setEarliestBookingDateForResults(@Nullable NSDate value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setLatestBookingDateForResults:")
     public native void setLatestBookingDateForResults(@Nullable NSDate value);
@@ -228,19 +251,30 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
     /**
      * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
      * to the extension
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMaximumNumberOfResults:")
     public native void setMaximumNumberOfResults(@Nullable NSNumber value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPartySize:")
     public native void setPartySize(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPreferredBookingDateComponents:")
     public native void setPreferredBookingDateComponents(@Nullable NSDateComponents value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRestaurant:")
     public native void setRestaurant(@NotNull INRestaurant value);

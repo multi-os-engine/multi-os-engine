@@ -108,6 +108,9 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
     @Selector("init")
     public native MDLSkeleton init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithName:jointPaths:")
     public native MDLSkeleton initWithNameJointPaths(@NotNull String name, @NotNull NSArray<String> jointPaths);
@@ -131,12 +134,17 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
 
     /**
      * world space bind transforms
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
     @Selector("jointBindTransforms")
     public native MDLMatrix4x4Array jointBindTransforms();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("jointPaths")
@@ -184,6 +192,8 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
 
     /**
      * local space default transforms, used for joints not animated in a MDLPackedJointAnimation
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

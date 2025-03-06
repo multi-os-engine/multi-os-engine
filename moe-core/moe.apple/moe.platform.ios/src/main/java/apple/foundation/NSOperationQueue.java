@@ -173,6 +173,9 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("addOperation:")
     public native void addOperation(@NotNull NSOperation op);
@@ -192,6 +195,9 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Selector("addOperations:waitUntilFinished:")
     public native void addOperationsWaitUntilFinished(@NotNull NSArray<? extends NSOperation> ops, boolean wait_);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("cancelAllOperations")
     public native void cancelAllOperations();
@@ -200,14 +206,23 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Selector("init")
     public native NSOperationQueue init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isSuspended")
     public native boolean isSuspended();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setSuspended:")
     public native void setSuspended(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("maxConcurrentOperationCount")
     @NInt
@@ -253,6 +268,9 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @NInt
     public native long qualityOfService();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setMaxConcurrentOperationCount:")
     public native void setMaxConcurrentOperationCount(@NInt long value);
@@ -290,6 +308,9 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Selector("underlyingQueue")
     public native dispatch_queue_t underlyingQueue();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("waitUntilAllOperationsAreFinished")
     public native void waitUntilAllOperationsAreFinished();

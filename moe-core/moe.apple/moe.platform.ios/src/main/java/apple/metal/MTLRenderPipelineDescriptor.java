@@ -160,6 +160,9 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("colorAttachments")
@@ -172,11 +175,17 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("depthAttachmentPixelFormat")
     @NUInt
     public native long depthAttachmentPixelFormat();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("fragmentFunction")
@@ -187,26 +196,44 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLRenderPipelineDescriptor init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isAlphaToCoverageEnabled")
     public native boolean isAlphaToCoverageEnabled();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setAlphaToCoverageEnabled:")
     public native void setAlphaToCoverageEnabled(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isAlphaToOneEnabled")
     public native boolean isAlphaToOneEnabled();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setAlphaToOneEnabled:")
     public native void setAlphaToOneEnabled(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isRasterizationEnabled")
     public native boolean isRasterizationEnabled();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRasterizationEnabled:")
     public native void setRasterizationEnabled(boolean value);
@@ -225,6 +252,9 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setTessellationFactorScaleEnabled:")
     public native void setTessellationFactorScaleEnabled(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("label")
@@ -242,6 +272,8 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
      * reset
      * 
      * Restore all pipeline descriptor properties to their default values.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("reset")
@@ -259,14 +291,23 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long sampleCount();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDepthAttachmentPixelFormat:")
     public native void setDepthAttachmentPixelFormat(@NUInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setFragmentFunction:")
     public native void setFragmentFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(@Nullable String value);
@@ -289,6 +330,9 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setStencilAttachmentPixelFormat:")
     public native void setStencilAttachmentPixelFormat(@NUInt long value);
@@ -328,14 +372,23 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setTessellationPartitionMode:")
     public native void setTessellationPartitionMode(@NUInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setVertexDescriptor:")
     public native void setVertexDescriptor(@Nullable MTLVertexDescriptor value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setVertexFunction:")
     public native void setVertexFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stencilAttachmentPixelFormat")
     @NUInt
@@ -381,11 +434,17 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long tessellationPartitionMode();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("vertexDescriptor")
     public native MTLVertexDescriptor vertexDescriptor();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("vertexFunction")
@@ -400,11 +459,17 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("fragmentBuffers")
     public native MTLPipelineBufferDescriptorArray fragmentBuffers();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("rasterSampleCount")
     @NUInt
     public native long rasterSampleCount();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setRasterSampleCount:")
     public native void setRasterSampleCount(@NUInt long value);
@@ -726,4 +791,33 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setShaderValidation:")
+    public native void setShaderValidation(@NInt long value);
+
+    /**
+     * [@property] shaderValidation
+     * 
+     * Toggle that determines whether Metal Shader Validation should be enabled or disabled for the pipeline.
+     * 
+     * The value can be overridden using `MTL_SHADER_VALIDATION_ENABLE_PIPELINES` or
+     * `MTL_SHADER_VALIDATION_DISABLE_PIPELINES` Environment Variables.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("shaderValidation")
+    @NInt
+    public native long shaderValidation();
 }

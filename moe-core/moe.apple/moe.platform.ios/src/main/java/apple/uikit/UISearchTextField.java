@@ -94,6 +94,8 @@ public class UISearchTextField extends UITextField {
      * To support copying tokens, this property must be true and the delegate must provide an item provider for the
      * tokens to be copied. UISearchTextField always enables the Copy command if any plain text is selected, even if the
      * selection also includes tokens and this property is false. Defaults to true.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowsCopyingTokens")
@@ -104,6 +106,8 @@ public class UISearchTextField extends UITextField {
      * 
      * The application can always remove tokens programmatically. If this property is true, the application must be
      * prepared not only for tokens to be removed, but also to be re-added through Undo. Defaults to true.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowsDeletingTokens")
@@ -298,6 +302,9 @@ public class UISearchTextField extends UITextField {
     @Selector("initWithFrame:")
     public native UISearchTextField initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("insertToken:atIndex:")
     public native void insertTokenAtIndex(@NotNull UISearchToken token, @NInt long tokenIndex);
@@ -355,12 +362,17 @@ public class UISearchTextField extends UITextField {
     /**
      * Returns the position of the provided token. To select a token, assign a UITextRange containing its position to
      * the selectedTextRange property.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
     @Selector("positionOfTokenAtIndex:")
     public native UITextPosition positionOfTokenAtIndex(@NInt long tokenIndex);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("removeTokenAtIndex:")
     public native void removeTokenAtIndex(@NInt long tokenIndex);
@@ -377,6 +389,8 @@ public class UISearchTextField extends UITextField {
      * Because this method does not remove any tokens in the provided range, the caller can pass the field’s
      * selectedTextRange to convert the selected portion of the text into a token without first having to trim the
      * range.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("replaceTextualPortionOfRange:withToken:atIndex:")
@@ -401,6 +415,8 @@ public class UISearchTextField extends UITextField {
      * To support copying tokens, this property must be true and the delegate must provide an item provider for the
      * tokens to be copied. UISearchTextField always enables the Copy command if any plain text is selected, even if the
      * selection also includes tokens and this property is false. Defaults to true.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowsCopyingTokens:")
@@ -411,6 +427,8 @@ public class UISearchTextField extends UITextField {
      * 
      * The application can always remove tokens programmatically. If this property is true, the application must be
      * prepared not only for tokens to be removed, but also to be re-added through Undo. Defaults to true.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowsDeletingTokens:")
@@ -478,6 +496,8 @@ public class UISearchTextField extends UITextField {
 
     /**
      * Set this to nil for tokens to use their default color.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTokenBackgroundColor:")
@@ -485,6 +505,8 @@ public class UISearchTextField extends UITextField {
 
     /**
      * Simple access to the collection of tokens.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTokens:")
@@ -502,6 +524,8 @@ public class UISearchTextField extends UITextField {
      * The range that corresponds to the field’s text, exclusive of any tokens.
      * 
      * @see -[<UITextInput> positionWithinRange:atCharacterOffset:]
+     * 
+     *      API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -510,6 +534,8 @@ public class UISearchTextField extends UITextField {
 
     /**
      * Set this to nil for tokens to use their default color.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("tokenBackgroundColor")
@@ -517,6 +543,8 @@ public class UISearchTextField extends UITextField {
 
     /**
      * Simple access to the collection of tokens.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -528,6 +556,8 @@ public class UISearchTextField extends UITextField {
      * 
      * You can use this method to determine which tokens are included in the user’s current selection. The range may
      * span more than one token or a mixture of tokens and text.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

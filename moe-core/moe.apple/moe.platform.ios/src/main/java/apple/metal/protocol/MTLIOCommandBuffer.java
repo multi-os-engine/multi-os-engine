@@ -36,6 +36,8 @@ public interface MTLIOCommandBuffer {
      * 
      * add a barrier that starts subsequent commands after all
      * the previously encoded commands have completed.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("addBarrier")
@@ -45,6 +47,8 @@ public interface MTLIOCommandBuffer {
      * addCompletedHandler:block:
      * 
      * Add a block to be called when this command buffer has completed execution.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("addCompletedHandler:")
@@ -61,6 +65,8 @@ public interface MTLIOCommandBuffer {
      * commit
      * 
      * Commit a command buffer so it can be executed as soon as possible.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("commit")
@@ -71,6 +77,8 @@ public interface MTLIOCommandBuffer {
      * 
      * Encodes a command that writes the status of this commandBuffer upon completion
      * to a buffer at a given offset
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("copyStatusToBuffer:offset:")
@@ -80,6 +88,8 @@ public interface MTLIOCommandBuffer {
      * enqueue
      * 
      * Append this command buffer to the end of its MTLCommandQueue.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("enqueue")
@@ -89,6 +99,8 @@ public interface MTLIOCommandBuffer {
      * [@property] error
      * 
      * If an error occurred during execution, the NSError may contain more details about the problem.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -99,6 +111,8 @@ public interface MTLIOCommandBuffer {
      * [@property] label
      * 
      * An optional label for this handle.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -110,6 +124,8 @@ public interface MTLIOCommandBuffer {
      * 
      * Encodes a command that loads from a handle
      * and offset into a buffer and an offset.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("loadBuffer:offset:size:sourceHandle:sourceHandleOffset:")
@@ -122,6 +138,8 @@ public interface MTLIOCommandBuffer {
      * 
      * Encodes a command that loads from a handle
      * and offset into a memory location.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("loadBytes:size:sourceHandle:sourceHandleOffset:")
@@ -133,6 +151,8 @@ public interface MTLIOCommandBuffer {
      * 
      * Encodes a command that loads a region from a handle
      * and offset into a texture at a given slice, level and origin.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("loadTexture:slice:level:size:sourceBytesPerRow:sourceBytesPerImage:destinationOrigin:sourceHandle:sourceHandleOffset:")
@@ -146,6 +166,8 @@ public interface MTLIOCommandBuffer {
      * popDebugGroup
      * 
      * Pop the latest named string off of the stack.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("popDebugGroup")
@@ -155,6 +177,8 @@ public interface MTLIOCommandBuffer {
      * pushDebugGroup:
      * 
      * Push a new named string onto a stack of string labels.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("pushDebugGroup:")
@@ -164,6 +188,8 @@ public interface MTLIOCommandBuffer {
      * [@property] label
      * 
      * An optional label for this handle.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setLabel:")
@@ -173,6 +199,8 @@ public interface MTLIOCommandBuffer {
      * signalEvent:value:
      * 
      * Encodes a command that signals an event with a given value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("signalEvent:value:")
@@ -182,6 +210,8 @@ public interface MTLIOCommandBuffer {
      * [@property] status
      * 
      * status reports the completion status of the MTLIOCommandBuffer, pending, cancelled, error or complete.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("status")
@@ -192,6 +222,8 @@ public interface MTLIOCommandBuffer {
      * tryCancel
      * 
      * request a cancellation of an in-flight command buffer.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("tryCancel")
@@ -201,6 +233,8 @@ public interface MTLIOCommandBuffer {
      * waitForEvent:value:
      * 
      * Encodes a command that pauses execution of this command buffer until the specified event reaches a given value.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("waitForEvent:value:")
@@ -210,6 +244,8 @@ public interface MTLIOCommandBuffer {
      * waitUntilCompleted
      * 
      * Synchronously wait for this command buffer to complete.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("waitUntilCompleted")

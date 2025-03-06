@@ -48,6 +48,9 @@ public class INAddTasksIntentResponse extends INIntentResponse {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("addedTasks")
@@ -88,6 +91,9 @@ public class INAddTasksIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -118,6 +124,8 @@ public class INAddTasksIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -150,6 +158,9 @@ public class INAddTasksIntentResponse extends INIntentResponse {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("modifiedTaskList")
@@ -168,10 +179,16 @@ public class INAddTasksIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAddedTasks:")
     public native void setAddedTasks(@Nullable NSArray<? extends INTask> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setModifiedTaskList:")
     public native void setModifiedTaskList(@Nullable INTaskList value);

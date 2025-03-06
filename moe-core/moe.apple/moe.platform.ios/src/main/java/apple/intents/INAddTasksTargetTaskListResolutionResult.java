@@ -92,6 +92,9 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     public static native INAddTasksTargetTaskListResolutionResult confirmationRequiredWithTaskListToConfirm(
             @Nullable INTaskList taskListToConfirm);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("confirmationRequiredWithTaskListToConfirm:forReason:")
@@ -121,6 +124,9 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     @Selector("init")
     public native INAddTasksTargetTaskListResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTaskListResolutionResult:")
     public native INAddTasksTargetTaskListResolutionResult initWithTaskListResolutionResult(

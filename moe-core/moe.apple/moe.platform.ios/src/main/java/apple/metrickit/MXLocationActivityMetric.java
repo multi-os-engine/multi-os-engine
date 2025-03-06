@@ -97,6 +97,8 @@ public class MXLocationActivityMetric extends MXMetric {
      * Cumulative time spent acquiring location at kCLLocationAccuracyBestForNavigation.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -109,6 +111,8 @@ public class MXLocationActivityMetric extends MXMetric {
      * Cumulative time spent acquiring location at kCLLocationAccuracyBest.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -121,6 +125,8 @@ public class MXLocationActivityMetric extends MXMetric {
      * Cumulative time spent acquiring location at kCLLocationAccuracyHundredMeters.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -133,6 +139,8 @@ public class MXLocationActivityMetric extends MXMetric {
      * Cumulative time spent acquiring location at kCLLocationAccuracyKilometer.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -145,6 +153,8 @@ public class MXLocationActivityMetric extends MXMetric {
      * Cumulative time spent acquiring location at kCLLocationAccuracyNearestTenMeters.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -157,6 +167,8 @@ public class MXLocationActivityMetric extends MXMetric {
      * Cumulative time spent acquiring location at kCLLocationAccuracyThreeKilometers.
      * 
      * Dimensioned as NSUnitDuration.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

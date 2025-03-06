@@ -114,6 +114,8 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
      * print.
      * 
      * The default value for this property is `VNImageCropAndScaleOptionScaleFill`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("imageCropAndScaleOption")
@@ -169,6 +171,8 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
      * print.
      * 
      * The default value for this property is `VNImageCropAndScaleOptionScaleFill`.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setImageCropAndScaleOption:")
@@ -194,6 +198,8 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
 
     /**
      * `VNFeaturePrintObservation` results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

@@ -109,6 +109,9 @@ public class INRequestPaymentPayerResolutionResult extends INPersonResolutionRes
     @Selector("init")
     public native INRequestPaymentPayerResolutionResult init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithPersonResolutionResult:")
     public native INRequestPaymentPayerResolutionResult initWithPersonResolutionResult(
@@ -178,6 +181,9 @@ public class INRequestPaymentPayerResolutionResult extends INPersonResolutionRes
     @Selector("unsupported")
     public static native INRequestPaymentPayerResolutionResult unsupported();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

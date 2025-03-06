@@ -58,6 +58,8 @@ public class SWHighlight extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * The surfaced content URL
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -129,6 +131,8 @@ public class SWHighlight extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * The unique identifier for this highlight
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

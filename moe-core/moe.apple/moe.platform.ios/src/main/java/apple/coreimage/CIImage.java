@@ -369,8 +369,13 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
             @Nullable NSDictionary<String, ?> options);
 
     /**
-     * Returns if possible the color space of the image it was defined in.
-     * This method will return nil, if the color space cannot be determined.
+     * Returns the color space of the image.
+     * If this returns nil, the image should be assumed to be in the Core Image working colorspace.
+     * 
+     * This method will return nil if image is the result of applying a CIFilter or CIKernel.
+     * There are exceptions to this. Applying CIWarpKernels or certain CIFilters (e.g. CIGaussianBlur,
+     * CILanczosScaleTransform, CIAreaAverage and some others) to an image will result in a CIImage with
+     * the same 'colorspace' property value.
      * 
      * API-Since: 9.0
      */
@@ -466,7 +471,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new image by color matching from the colorSpace to the context's working space.
-     * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB.
+     * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB or Monochrome.
      * 
      * API-Since: 10.0
      */
@@ -477,7 +482,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new image by color matching from the context's working space to the colorSpace.
-     * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB.
+     * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB or Monochrome.
      * 
      * API-Since: 10.0
      */
@@ -1103,4 +1108,84 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns the content headroom of the image.
+     * 
+     * If the image headroom is unknown, then the value 0.0 will be returned.
+     * 
+     * If the image headroom is known, then a value greater than or equal to 1.0 will be returned.
+     * A value of 1.0 will be returned if the image is SDR.
+     * A value greater than 1.0 will be returned if the image is EDR.
+     * 
+     * The image headroom may known when a CIImage is first initialized.
+     * If the a CIImage is initialized using:
+     * [CIImage imageWithContentsOfURL:..] or [CIImage imageWithData:..]
+     * headroom may be determined by associated metadata or deduced from pixel format or colorSpace information.
+     * 
+     * [CIImage imageWithCGImage:..]
+     * headroom may be determined by CGImageGetHeadroomInfo() or deduced from pixel format or colorSpace information.
+     * 
+     * [CIImage imageWithIOSurface:..] or [CIImage imageWithCVPixelBuffer:..]
+     * headroom may be determined by kIOSurfaceContentHeadroom or deduced from pixel format or colorSpace information.
+     * 
+     * [CIImage imageWithBitmapData:..]
+     * headroom may be deduced from pixel format or colorSpace information.
+     * 
+     * If the image is the result of applying a CIFilter or CIKernel, this method will return 0.0.
+     * There are exceptions to this. Applying CIWarpKernels or certain CIFilters (e.g. CIGaussianBlur,
+     * CILanczosScaleTransform, CIAreaAverage and some others) to an image will result in a CIImage with
+     * the same 'headroom' property value.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("contentHeadroom")
+    public native float contentHeadroom();
+
+    /**
+     * Returns a new image that applies a gain map image to the received image.
+     * The gain map image should be obtained by creating a image using either the
+     * kCIImageAuxiliaryHDRGainMap option set to @YES. If the gain map image doesn't
+     * have the needed metadata, the received image will be returned as-is.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("imageByApplyingGainMap:")
+    @NotNull
+    public native CIImage imageByApplyingGainMap(@NotNull CIImage gainmap);
+
+    /**
+     * Returns a new image that applies a gain map image to the received image
+     * and to specify how much headroom the resulting image should have.
+     * The headroom value will be limited to between 1.0 (i.e. SDR) and
+     * the full headroom allowed by the gain map.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("imageByApplyingGainMap:headroom:")
+    @NotNull
+    public native CIImage imageByApplyingGainMapHeadroom(@NotNull CIImage gainmap, float headroom);
+
+    /**
+     * Returns YES if the image is known to have alpha==1 over the entire image extent
+     */
+    @Generated
+    @Selector("isOpaque")
+    public native boolean isOpaque();
+
+    /**
+     * Returns a MTLTexture if the CIImage was created with [CIImage imageWithMTLTexture] and no options.
+     * Otherwise this property will be nil and calling [CIContext render:toMTLTexture:] is recommended.
+     * Modifying the contents of this texture will cause the CIImage to render with undefined results.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("metalTexture")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MTLTexture metalTexture();
 }

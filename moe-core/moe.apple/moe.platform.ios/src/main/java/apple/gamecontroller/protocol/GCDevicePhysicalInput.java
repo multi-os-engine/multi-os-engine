@@ -36,6 +36,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * further device input once it is taken.
      * 
      * @return An input state with the duplicated state vector of the current input.
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -45,6 +47,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
 
     /**
      * The device that this profile is mapping input from.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -60,6 +64,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * 
      * @param element
      *                The element that has been modified.
+     * 
+     *                API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -107,6 +113,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * }
      * }
      * };
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -130,6 +138,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * The default value is \c one (no buffering). Smaller values are ignored. A
      * value of \c 20 should be more than enough to ensure no input state changes
      * are missed.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("inputStateQueueDepth")
@@ -139,6 +149,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     /**
      * Pop the oldest pending input state from the queue. This method returns \c nil
      * when there are no more input states pending.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -154,6 +166,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * 
      * @param element
      *                The element that has been modified.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("setElementValueDidChangeHandler:")
@@ -200,6 +214,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * }
      * }
      * };
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInputStateAvailableHandler:")
@@ -222,6 +238,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * The default value is \c one (no buffering). Smaller values are ignored. A
      * value of \c 20 should be more than enough to ensure no input state changes
      * are missed.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInputStateQueueDepth:")

@@ -166,6 +166,8 @@ public class UIScreenMode extends NSObject {
 
     /**
      * The aspect ratio of a single pixel. The ratio is defined as X/Y.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("pixelAspectRatio")
@@ -174,6 +176,8 @@ public class UIScreenMode extends NSObject {
 
     /**
      * The width and height in pixels
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("size")

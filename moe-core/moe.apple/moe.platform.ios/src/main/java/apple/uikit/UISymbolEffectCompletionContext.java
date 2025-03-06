@@ -92,6 +92,8 @@ public class UISymbolEffectCompletionContext extends NSObject {
      * There is no guarantee that this content transition will be the same instance as the content transition originally
      * added.
      * This will be `nil` if a symbol effect was added instead.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("contentTransition")
@@ -110,6 +112,8 @@ public class UISymbolEffectCompletionContext extends NSObject {
      * The symbol effect that has completed.
      * There is no guarantee that this effect will be the same instance as the effect originally added.
      * This will be `nil` if a symbol content transition was added instead.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -141,6 +145,8 @@ public class UISymbolEffectCompletionContext extends NSObject {
     /**
      * Whether or not the symbol effect was completely finished.
      * This will be YES for effects that have successfully run to completion.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isFinished")
@@ -170,6 +176,8 @@ public class UISymbolEffectCompletionContext extends NSObject {
 
     /**
      * The object (such as an image view) that the symbol effect was added to.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("sender")

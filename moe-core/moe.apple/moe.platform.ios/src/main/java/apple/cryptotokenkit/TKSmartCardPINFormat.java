@@ -46,9 +46,8 @@ public class TKSmartCardPINFormat extends NSObject {
      * to PINJustification).
      * [@note] Default value: 0
      * 
-     * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is
-     * byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from
-     * bits to bytes.
+     * The offset, in bits, within the PIN block to mark a location for filling in the formatted PIN, which is justified
+     * with respect to the PINJustification property value.
      */
     @Generated
     @Selector("PINBitOffset")
@@ -77,9 +76,8 @@ public class TKSmartCardPINFormat extends NSObject {
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
      * [@note] Default value: 0
      * 
-     * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If
-     * PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of
-     * PINLengthBitOffset gets converted from bits to bytes.
+     * The offset, in bits, within the PIN block to mark a location for filling in the PIN length, which is always left
+     * justified.
      */
     @Generated
     @Selector("PINLengthBitOffset")
@@ -259,9 +257,8 @@ public class TKSmartCardPINFormat extends NSObject {
      * to PINJustification).
      * [@note] Default value: 0
      * 
-     * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is
-     * byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from
-     * bits to bytes.
+     * The offset, in bits, within the PIN block to mark a location for filling in the formatted PIN, which is justified
+     * with respect to the PINJustification property value.
      */
     @Generated
     @Selector("setPINBitOffset:")
@@ -287,9 +284,8 @@ public class TKSmartCardPINFormat extends NSObject {
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
      * [@note] Default value: 0
      * 
-     * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If
-     * PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of
-     * PINLengthBitOffset gets converted from bits to bytes.
+     * The offset, in bits, within the PIN block to mark a location for filling in the PIN length, which is always left
+     * justified.
      */
     @Generated
     @Selector("setPINLengthBitOffset:")

@@ -166,6 +166,8 @@ public class NSStringDrawingContext extends NSObject {
 
     /**
      * actual scale factor used by the last drawing call where minimum scale factor was specified
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("actualScaleFactor")
@@ -190,6 +192,8 @@ public class NSStringDrawingContext extends NSObject {
      * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this
      * property is set, the extended string drawing methods will attempt to draw the attributed string in the given
      * bounds by proportionally scaling the font(s) in the attributed string
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("minimumScaleFactor")
@@ -210,6 +214,8 @@ public class NSStringDrawingContext extends NSObject {
      * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this
      * property is set, the extended string drawing methods will attempt to draw the attributed string in the given
      * bounds by proportionally scaling the font(s) in the attributed string
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setMinimumScaleFactor:")
@@ -226,6 +232,8 @@ public class NSStringDrawingContext extends NSObject {
 
     /**
      * bounds of the string drawn by the previous invocation of drawWithRect:options:context:
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("totalBounds")

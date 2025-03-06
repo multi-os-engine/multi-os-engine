@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * A SceneKit geometry representing a face.
@@ -102,6 +103,8 @@ public class ARSCNFaceGeometry extends SCNGeometry {
      * 
      * @param device A Metal device.
      * @return A new face geometry.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("faceGeometryWithDevice:")
@@ -121,6 +124,8 @@ public class ARSCNFaceGeometry extends SCNGeometry {
      *                 gaps between the eye lids as well as into the gap between the lips.
      * 
      * @return A new face geometry.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("faceGeometryWithDevice:fillMesh:")
@@ -211,6 +216,8 @@ public class ARSCNFaceGeometry extends SCNGeometry {
      * Updates the geometry with the vertices of a face geometry.
      * 
      * @param faceGeometry A face geometry.
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("updateFromFaceGeometry:")
@@ -225,4 +232,11 @@ public class ARSCNFaceGeometry extends SCNGeometry {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("geometryWithSources:elements:sourceChannels:")
+    public static native ARSCNFaceGeometry geometryWithSourcesElementsSourceChannels(
+            @NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements,
+            @Nullable NSArray<? extends NSNumber> sourceChannels);
 }

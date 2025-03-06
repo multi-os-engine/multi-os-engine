@@ -49,37 +49,58 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addMatrixOp:inverse:")
     public native MDLTransformMatrixOp addMatrixOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addRotateOp:order:inverse:")
     public native MDLTransformRotateOp addRotateOpOrderInverse(@NotNull String animatedValueName, @NUInt long order,
             boolean inverse);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addRotateXOp:inverse:")
     public native MDLTransformRotateXOp addRotateXOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addRotateYOp:inverse:")
     public native MDLTransformRotateYOp addRotateYOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addRotateZOp:inverse:")
     public native MDLTransformRotateZOp addRotateZOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addScaleOp:inverse:")
     public native MDLTransformScaleOp addScaleOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addTranslateOp:inverse:")
@@ -95,6 +116,9 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("allocWithZone:")
     public static native MDLTransformStack allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("animatedValueWithName:")
@@ -132,6 +156,9 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -150,6 +177,9 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("init")
     public native MDLTransformStack init();
@@ -218,6 +248,9 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("transformOps")
@@ -228,6 +261,9 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("addOrientOp:inverse:")

@@ -104,6 +104,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      * 
      * @param left  the left operand
      * @param right the right operand
+     * 
+     *              API-Since: 11.0
      */
     @Generated
     @Selector("initWithLeftSource:rightSource:")
@@ -114,6 +116,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      * init an arithemtic node with an array of sources
      * 
      * @param sourceNodes A valid NSArray containing two sources
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("initWithSources:")
@@ -151,6 +155,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      * 
      * @param left  the left operand
      * @param right the right operand
+     * 
+     *              API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithLeftSource:rightSource:")
@@ -161,6 +167,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      * create an autoreleased arithemtic node with an array of sources
      * 
      * @param sourceNodes A valid NSArray containing two sources
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSources:")
@@ -188,10 +196,16 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bias")
     public native float bias();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("gradientClass")
@@ -211,92 +225,155 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSources(
             @NotNull NSArray<? extends MPSNNImageNode> gradientImages);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("maximumValue")
     public native float maximumValue();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("minimumValue")
     public native float minimumValue();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("primaryScale")
     public native float primaryScale();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("primaryStrideInFeatureChannels")
     @NUInt
     public native long primaryStrideInFeatureChannels();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("primaryStrideInPixelsX")
     @NUInt
     public native long primaryStrideInPixelsX();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("primaryStrideInPixelsY")
     @NUInt
     public native long primaryStrideInPixelsY();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("secondaryScale")
     public native float secondaryScale();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("secondaryStrideInFeatureChannels")
     @NUInt
     public native long secondaryStrideInFeatureChannels();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("secondaryStrideInPixelsX")
     @NUInt
     public native long secondaryStrideInPixelsX();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("secondaryStrideInPixelsY")
     @NUInt
     public native long secondaryStrideInPixelsY();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setBias:")
     public native void setBias(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMaximumValue:")
     public native void setMaximumValue(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMinimumValue:")
     public native void setMinimumValue(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPrimaryScale:")
     public native void setPrimaryScale(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPrimaryStrideInFeatureChannels:")
     public native void setPrimaryStrideInFeatureChannels(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPrimaryStrideInPixelsX:")
     public native void setPrimaryStrideInPixelsX(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPrimaryStrideInPixelsY:")
     public native void setPrimaryStrideInPixelsY(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSecondaryScale:")
     public native void setSecondaryScale(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSecondaryStrideInFeatureChannels:")
     public native void setSecondaryStrideInFeatureChannels(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSecondaryStrideInPixelsX:")
     public native void setSecondaryStrideInPixelsX(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSecondaryStrideInPixelsY:")
     public native void setSecondaryStrideInPixelsY(@NUInt long value);

@@ -99,6 +99,8 @@ public class PHASEEnvelope extends NSObject {
      * 
      * The first value in the pair is the minimum value of the domain.
      * The second value in the pair is the maximum value of the domain.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class PHASEEnvelope extends NSObject {
      *          The input along the x-axis.
      * @return
      *         The output along the y-axis.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("evaluateForValue:")
@@ -164,6 +168,8 @@ public class PHASEEnvelope extends NSObject {
      * 
      * The first value in the pair is the minimum value of the range.
      * The second value in the pair is the maximum value of the range.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -182,6 +188,8 @@ public class PHASEEnvelope extends NSObject {
      * [@property] segments
      * 
      * The segments of the envelope.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

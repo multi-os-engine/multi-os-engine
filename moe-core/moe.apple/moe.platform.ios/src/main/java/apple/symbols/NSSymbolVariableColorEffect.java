@@ -100,6 +100,8 @@ public class NSSymbolVariableColorEffect extends NSSymbolEffect {
 
     /**
      * The default variable color effect, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -108,6 +110,8 @@ public class NSSymbolVariableColorEffect extends NSSymbolEffect {
     /**
      * Returns a copy of the effect that activates each layer until all layers are active. This cancels the iterative
      * variant.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithCumulative")
@@ -117,6 +121,8 @@ public class NSSymbolVariableColorEffect extends NSSymbolEffect {
     /**
      * Returns a copy of the effect that draws layers with reduced (but non-zero)
      * opacity when they are inactive.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithDimInactiveLayers")
@@ -125,6 +131,8 @@ public class NSSymbolVariableColorEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that hides layers when they are inactive.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithHideInactiveLayers")
@@ -133,6 +141,8 @@ public class NSSymbolVariableColorEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that activates one layer at a time. This cancels the cumulative variant.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithIterative")
@@ -141,6 +151,8 @@ public class NSSymbolVariableColorEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that only animates forwards before restarting. This cancels the reversing variant.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithNonReversing")
@@ -150,6 +162,8 @@ public class NSSymbolVariableColorEffect extends NSSymbolEffect {
     /**
      * Returns a copy of the effect that animates in reverse after fully executing. This cancels the nonReversing
      * variant.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithReversing")

@@ -60,6 +60,8 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a new autoreleased NSUUID with RFC 4122 version 4 random bytes
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("UUID")
@@ -171,6 +173,8 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Return a string description of the UUID, such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F"
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -190,6 +194,8 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a new NSUUID with RFC 4122 version 4 random bytes
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("init")
@@ -201,6 +207,8 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create an NSUUID from a string such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F". Returns nil for invalid strings.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("initWithUUIDString:")

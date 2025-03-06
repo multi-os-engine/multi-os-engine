@@ -110,6 +110,8 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
 
     /**
      * Unique identifier of the anchor.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

@@ -192,6 +192,8 @@ public class AVAssetTrackGroup extends NSObject implements NSCopying {
      * The value of this property is an NSArray of NSNumbers interpreted as CMPersistentTrackIDs, one for each track in
      * the
      * group.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

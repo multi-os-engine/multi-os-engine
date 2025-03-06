@@ -124,6 +124,9 @@ public class CKSyncEngineFetchedZoneDeletion extends NSObject {
     @Selector("new")
     public static native CKSyncEngineFetchedZoneDeletion new_objc();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("reason")
     @NInt
@@ -155,6 +158,9 @@ public class CKSyncEngineFetchedZoneDeletion extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("zoneID")
     @NotNull

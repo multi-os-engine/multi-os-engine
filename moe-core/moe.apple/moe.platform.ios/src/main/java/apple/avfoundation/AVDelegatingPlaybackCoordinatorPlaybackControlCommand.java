@@ -103,6 +103,8 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
      * current item matches this identifier.
      * If it doesn't this command is obsolete and should be ignored. Note that any completion handler of the delegate
      * method issuing the command must still be invoked.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -155,6 +157,8 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
      * Similarly, re-application of older commands, e.g., in response to a call to [AVDelegatingPlaybackCoordinator
      * reapplyCurrentItemStateToPlaybackControlDelegate], will not contain an originator.
      * If the originator is non-nil, it may be appropriate to show UI indicating someone else's action.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

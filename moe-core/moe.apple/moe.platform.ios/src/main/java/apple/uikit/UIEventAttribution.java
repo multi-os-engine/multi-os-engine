@@ -102,6 +102,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * The destination URL of an attribution. For example, the link opened when an advertisement is tapped.
      * 
      * This field corresponds to `attributed_on_site` in the subsequent attribution report.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -130,6 +132,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * @return An instance of `UIEventAttribution` with the specified values for each field.
      * 
      *         The `sourceDescription` and `purchaser` fields may be truncated by the system if they are too long.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("initWithSourceIdentifier:destinationURL:sourceDescription:purchaser:")
@@ -169,6 +173,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * party that purchased the placement of an advertisement.
      * 
      * The system may truncate this field if it is too long.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -181,6 +187,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * as a string in your app's Info.plist under the `NSAdvertisingAttributionReportEndpoint` key.
      * 
      * This field corresponds to `source_site` in the subsequent attribution report.
+     * 
+     * API-Since: 14.5
      */
     @Nullable
     @Generated
@@ -204,6 +212,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * content of an advertisement a user taps on.
      * 
      * The system may truncate this field if it is too long.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -215,6 +225,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * campaign identifier to measure the effectiveness of different advertisement campaigns.
      * 
      * This field corresponds to `source_id` in the subsequent attribution report.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("sourceIdentifier")

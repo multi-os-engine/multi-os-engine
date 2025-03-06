@@ -18,29 +18,47 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLBinding")
 public interface MTLBinding {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("access")
     @NUInt
     long access();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("index")
     @NUInt
     long index();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isArgument")
     boolean isArgument();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isUsed")
     boolean isUsed();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("name")
     String name();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("type")
     @NInt

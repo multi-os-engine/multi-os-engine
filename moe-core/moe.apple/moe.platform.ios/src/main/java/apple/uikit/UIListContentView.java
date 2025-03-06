@@ -261,6 +261,8 @@ public class UIListContentView extends UIView implements UIContentView {
      * 
      * Returns nil if there is no image. If a new configuration is applied that does contain an image, then this layout
      * guide is removed from the view, and any constraints associated with it will be deactivated.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -275,10 +277,16 @@ public class UIListContentView extends UIView implements UIContentView {
     @Selector("init")
     public native UIListContentView init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIListContentView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native UIListContentView initWithConfiguration(@NotNull UIListContentConfiguration configuration);
@@ -356,6 +364,8 @@ public class UIListContentView extends UIView implements UIContentView {
      * Returns nil if there is no secondary text. If a new configuration is applied that does not contain secondary
      * text, then this layout
      * guide is removed from the view, and any constraints associated with it will be deactivated.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -437,6 +447,8 @@ public class UIListContentView extends UIView implements UIContentView {
      * Returns nil if there is no primary text. If a new configuration is applied that does not contain primary text,
      * then this layout
      * guide is removed from the view, and any constraints associated with it will be deactivated.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

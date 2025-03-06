@@ -100,6 +100,8 @@ public class MLNumericConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * If not nil, list of restricted set of values the parameter can take.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -143,6 +145,8 @@ public class MLNumericConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Maximum value of the parameter can take.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -151,6 +155,8 @@ public class MLNumericConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Minimum value of the parameter can take.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

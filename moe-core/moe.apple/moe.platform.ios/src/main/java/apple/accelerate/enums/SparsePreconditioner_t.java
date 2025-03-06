@@ -8,8 +8,8 @@ public final class SparsePreconditioner_t {
     private SparsePreconditioner_t() {
     }
 
-    @Generated public static final int SparsePreconditionerNone = 0x00000000;
-    @Generated public static final int SparsePreconditionerUser = 0x00000001;
-    @Generated public static final int SparsePreconditionerDiagonal = 0x00000002;
-    @Generated public static final int SparsePreconditionerDiagScaling = 0x00000003;
+    @Generated public static final int None = 0x00000000;
+    @Generated public static final int User = 0x00000001;
+    @Generated public static final int Diagonal = 0x00000002;
+    @Generated public static final int DiagScaling = 0x00000003;
 }

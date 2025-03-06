@@ -90,6 +90,9 @@ public class MKGeoJSONFeature extends NSObject implements MKGeoJSONObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("geometry")
@@ -102,6 +105,8 @@ public class MKGeoJSONFeature extends NSObject implements MKGeoJSONObject {
 
     /**
      * If set, will be either a string or a number, depending on the original source data
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -141,6 +146,8 @@ public class MKGeoJSONFeature extends NSObject implements MKGeoJSONObject {
 
     /**
      * Serialized JSON
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

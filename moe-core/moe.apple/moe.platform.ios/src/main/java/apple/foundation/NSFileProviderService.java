@@ -90,6 +90,9 @@ public class NSFileProviderService extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFileProviderConnectionWithCompletionHandler:")
     public native void getFileProviderConnectionWithCompletionHandler(
@@ -134,6 +137,9 @@ public class NSFileProviderService extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("name")

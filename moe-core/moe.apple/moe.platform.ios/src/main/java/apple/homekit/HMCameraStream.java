@@ -169,6 +169,13 @@ public class HMCameraStream extends HMCameraSource {
     @NUInt
     public native long audioStreamSetting();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: HMCameraStream objects are created by their parent container objects. Directly creating them
+     * is not supported.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMCameraStream init();

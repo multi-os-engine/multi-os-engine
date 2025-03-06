@@ -115,6 +115,9 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
     @Selector("init")
     public native INSnoozeTasksTaskResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTaskResolutionResult:")
     public native INSnoozeTasksTaskResolutionResult initWithTaskResolutionResult(
@@ -183,6 +186,9 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
     @Selector("unsupported")
     public static native INSnoozeTasksTaskResolutionResult unsupported();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("unsupportedForReason:")

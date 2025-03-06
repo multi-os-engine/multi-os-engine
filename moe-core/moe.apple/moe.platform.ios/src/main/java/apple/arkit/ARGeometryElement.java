@@ -68,6 +68,8 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * A Metal buffer containing index data that defines the geometry.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -77,6 +79,8 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * The number of bytes that represent an index value.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("bytesPerIndex")
@@ -106,6 +110,8 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * The number of primitives in the buffer.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("count")
@@ -133,6 +139,8 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
      * The number of indices for each primitive.
      * 
      * This is based on the primitiveType. For ARGeometryPrimitiveTypeTriangle the value is 3.
+     * 
+     * API-Since: 13.4
      * 
      * @see ARGeometryPrimitiveType
      */
@@ -178,6 +186,8 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * The type of the geometry element.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("primitiveType")

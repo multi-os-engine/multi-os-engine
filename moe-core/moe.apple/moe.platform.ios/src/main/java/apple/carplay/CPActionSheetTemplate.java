@@ -50,6 +50,9 @@ public class CPActionSheetTemplate extends CPTemplate {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("actions")
@@ -117,6 +120,8 @@ public class CPActionSheetTemplate extends CPTemplate {
      * @param title   The title of the action sheet.
      * @param message Descriptive message that provides more detail about the reason for the action sheet.
      * @param actions The actions for the action sheet.
+     * 
+     *                API-Since: 12.0
      */
     @Generated
     @Selector("initWithTitle:message:actions:")
@@ -145,6 +150,9 @@ public class CPActionSheetTemplate extends CPTemplate {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("message")
@@ -181,6 +189,9 @@ public class CPActionSheetTemplate extends CPTemplate {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("title")

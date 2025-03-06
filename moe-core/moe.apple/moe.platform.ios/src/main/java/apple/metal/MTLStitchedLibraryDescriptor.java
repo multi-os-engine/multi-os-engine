@@ -101,11 +101,17 @@ public class MTLStitchedLibraryDescriptor extends NSObject implements NSCopying 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("functionGraphs")
     public native NSArray<? extends MTLFunctionStitchingGraph> functionGraphs();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("functions")
@@ -155,10 +161,16 @@ public class MTLStitchedLibraryDescriptor extends NSObject implements NSCopying 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setFunctionGraphs:")
     public native void setFunctionGraphs(@NotNull NSArray<? extends MTLFunctionStitchingGraph> value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setFunctions:")
     public native void setFunctions(@NotNull NSArray<?> value);
@@ -180,4 +192,54 @@ public class MTLStitchedLibraryDescriptor extends NSObject implements NSCopying 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] binaryArchives
+     * 
+     * The array of archives to be searched.
+     * 
+     * Binary archives to be searched for precompiled stitched libraries during the compilation of this library.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("binaryArchives")
+    @NotNull
+    public native NSArray<?> binaryArchives();
+
+    /**
+     * [@property] options
+     * 
+     * The options to use for this new MTLLibrary.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("options")
+    @NUInt
+    public native long options();
+
+    /**
+     * [@property] binaryArchives
+     * 
+     * The array of archives to be searched.
+     * 
+     * Binary archives to be searched for precompiled stitched libraries during the compilation of this library.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setBinaryArchives:")
+    public native void setBinaryArchives(@NotNull NSArray<?> value);
+
+    /**
+     * [@property] options
+     * 
+     * The options to use for this new MTLLibrary.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setOptions:")
+    public native void setOptions(@NUInt long value);
 }

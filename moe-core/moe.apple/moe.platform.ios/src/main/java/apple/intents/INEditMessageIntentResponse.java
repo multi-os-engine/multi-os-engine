@@ -83,6 +83,9 @@ public class INEditMessageIntentResponse extends INIntentResponse {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -113,6 +116,8 @@ public class INEditMessageIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")

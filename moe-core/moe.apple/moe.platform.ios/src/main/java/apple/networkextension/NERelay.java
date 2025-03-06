@@ -60,6 +60,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] HTTP2RelayURL
      * 
      * The URL of the relay accessible over HTTP/2.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("HTTP2RelayURL")
@@ -70,6 +72,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] HTTP3RelayURL
      * 
      * The URL of the relay accessible over HTTP/3.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("HTTP3RelayURL")
@@ -84,6 +88,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] additionalHTTPHeaderFields
      * 
      * Additional HTTP header field names and values to be added to all relay requests.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("additionalHTTPHeaderFields")
@@ -144,6 +150,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] dnsOverHTTPSURL
      * 
      * The URL of a DNS-over-HTTPS (DoH) resolver accessible via the relay.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("dnsOverHTTPSURL")
@@ -163,6 +171,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] identityData
      * 
      * The PKCS12 data for the relay client authentication. The value is a NSData in PKCS12 format.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("identityData")
@@ -173,6 +183,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] identityDataPassword
      * 
      * The password to be used to decrypt the PKCS12 identity data.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("identityDataPassword")
@@ -218,6 +230,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] rawPublicKeys
      * 
      * TLS 1.3 raw public keys to use to authenticate the relay servers.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("rawPublicKeys")
@@ -236,6 +250,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] additionalHTTPHeaderFields
      * 
      * Additional HTTP header field names and values to be added to all relay requests.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAdditionalHTTPHeaderFields:")
@@ -245,6 +261,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] dnsOverHTTPSURL
      * 
      * The URL of a DNS-over-HTTPS (DoH) resolver accessible via the relay.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDnsOverHTTPSURL:")
@@ -254,6 +272,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] HTTP2RelayURL
      * 
      * The URL of the relay accessible over HTTP/2.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setHTTP2RelayURL:")
@@ -263,6 +283,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] HTTP3RelayURL
      * 
      * The URL of the relay accessible over HTTP/3.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setHTTP3RelayURL:")
@@ -272,6 +294,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] identityData
      * 
      * The PKCS12 data for the relay client authentication. The value is a NSData in PKCS12 format.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setIdentityData:")
@@ -281,6 +305,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] identityDataPassword
      * 
      * The password to be used to decrypt the PKCS12 identity data.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setIdentityDataPassword:")
@@ -290,6 +316,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] rawPublicKeys
      * 
      * TLS 1.3 raw public keys to use to authenticate the relay servers.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRawPublicKeys:")
@@ -300,6 +328,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * An IPv4 address prefix (such as "192.0.2.0/24") that will be used to synthesize
      * DNS answers for apps that use `getaddrinfo()` to resolve domains included in `matchDomains`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSyntheticDNSAnswerIPv4Prefix:")
@@ -310,6 +340,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * An IPv6 address prefix (such as "2001:DB8::/32") that will be used to synthesize
      * DNS answers for apps that use `getaddrinfo()` to resolve domains included in `matchDomains`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSyntheticDNSAnswerIPv6Prefix:")
@@ -338,6 +370,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * An IPv4 address prefix (such as "192.0.2.0/24") that will be used to synthesize
      * DNS answers for apps that use `getaddrinfo()` to resolve domains included in `matchDomains`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("syntheticDNSAnswerIPv4Prefix")
@@ -349,6 +383,8 @@ public class NERelay extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * An IPv6 address prefix (such as "2001:DB8::/32") that will be used to synthesize
      * DNS answers for apps that use `getaddrinfo()` to resolve domains included in `matchDomains`
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("syntheticDNSAnswerIPv6Prefix")

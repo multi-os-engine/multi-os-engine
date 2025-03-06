@@ -59,6 +59,8 @@ public interface MTLDynamicLibrary {
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -70,6 +72,8 @@ public interface MTLDynamicLibrary {
      * [@property] installName
      * 
      * The installName of this dynamic library. Can not be nil.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -80,6 +84,8 @@ public interface MTLDynamicLibrary {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -103,6 +109,8 @@ public interface MTLDynamicLibrary {
      *              be) an error from the MTLDynamicLibraryDomain domain. Other possible errors can be file access or
      *              I/O related.
      * @return Whether or not the writing the file succeeded.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("serializeToURL:error:")
@@ -112,6 +120,8 @@ public interface MTLDynamicLibrary {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLabel:")

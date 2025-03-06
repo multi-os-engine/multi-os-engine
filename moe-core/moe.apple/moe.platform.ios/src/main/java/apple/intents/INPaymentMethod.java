@@ -79,6 +79,8 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     /**
      * This payment method represents Apple Pay. Its .type will be INPaymentMethodTypeApplePay. The .name,
      * .identificationHint and .icon properties are not significant for this type of payment method.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -186,11 +188,17 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("icon")
     public native INImage icon();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("identificationHint")
@@ -204,11 +212,17 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     @Selector("initWithCoder:")
     public native INPaymentMethod initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithType:name:identificationHint:icon:")
     public native INPaymentMethod initWithTypeNameIdentificationHintIcon(@NInt long type, @Nullable String name,
             @Nullable String identificationHint, @Nullable INImage icon);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("name")
@@ -220,6 +234,9 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("type")
     @NInt

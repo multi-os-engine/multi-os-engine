@@ -73,6 +73,9 @@ public class INSetCarLockStatusIntent extends INIntent {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("carName")
@@ -109,6 +112,9 @@ public class INSetCarLockStatusIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetCarLockStatusIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("initWithLocked:carName:")
     public native INSetCarLockStatusIntent initWithLockedCarName(@Nullable NSNumber locked,
@@ -136,6 +142,9 @@ public class INSetCarLockStatusIntent extends INIntent {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("locked")

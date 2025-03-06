@@ -64,6 +64,9 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Selector("allocWithZone:")
     public static native MLArrayBatchProvider allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("array")
@@ -126,6 +129,8 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
      * Initialize with a dictionary which maps feature names to an array of values [String : [Any]]
      * Error is returned if all arrays do not have equal length or if array values
      * for a specific feature name do not have the same type or not expressible as MLFeatureValue
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithDictionary:error:")
@@ -135,6 +140,8 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
 
     /**
      * Initalize with an array of feature providers
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithFeatureProviderArray:")

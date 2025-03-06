@@ -20,157 +20,156 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class BNNSActivationFunction {
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSActivationFunctionIdentity = 0x00000000;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSActivationFunctionRectifiedLinear = 0x00000001;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSActivationFunctionLeakyRectifiedLinear = 0x00000002;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSActivationFunctionSigmoid = 0x00000003;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSActivationFunctionTanh = 0x00000004;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSActivationFunctionScaledTanh = 0x00000005;
-    /**
-     * API-Since: 10.0
-     */
-    @Generated public static final int BNNSActivationFunctionAbs = 0x00000006;
-
     @Generated
     private BNNSActivationFunction() {
     }
 
     /**
-     * API-Since: 11.0
+     * API-Since: 10.0
      */
-    @Generated public static final int BNNSActivationFunctionLinear = 0x00000007;
+    @Generated public static final int Identity = 0x00000000;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int RectifiedLinear = 0x00000001;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int LeakyRectifiedLinear = 0x00000002;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int Sigmoid = 0x00000003;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int Tanh = 0x00000004;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int ScaledTanh = 0x00000005;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated public static final int Abs = 0x00000006;
     /**
      * API-Since: 11.0
      */
-    @Generated public static final int BNNSActivationFunctionClamp = 0x00000008;
+    @Generated public static final int Linear = 0x00000007;
     /**
      * API-Since: 11.0
      */
-    @Generated public static final int BNNSActivationFunctionIntegerLinearSaturate = 0x00000009;
+    @Generated public static final int Clamp = 0x00000008;
     /**
      * API-Since: 11.0
      */
-    @Generated public static final int BNNSActivationFunctionIntegerLinearSaturatePerChannel = 0x0000000A;
+    @Generated public static final int IntegerLinearSaturate = 0x00000009;
     /**
      * API-Since: 11.0
      */
-    @Generated public static final int BNNSActivationFunctionSoftmax = 0x0000000B;
+    @Generated public static final int IntegerLinearSaturatePerChannel = 0x0000000A;
+    /**
+     * API-Since: 11.0
+     */
+    @Generated public static final int Softmax = 0x0000000B;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionGELUApproximation = 0x0000000C;
+    @Generated public static final int GELUApproximation = 0x0000000C;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionGumbel = 0x0000000D;
+    @Generated public static final int Gumbel = 0x0000000D;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionGumbelMax = 0x0000000E;
+    @Generated public static final int GumbelMax = 0x0000000E;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionHardSigmoid = 0x0000000F;
+    @Generated public static final int HardSigmoid = 0x0000000F;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionSoftplus = 0x00000010;
+    @Generated public static final int Softplus = 0x00000010;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionSoftsign = 0x00000011;
+    @Generated public static final int Softsign = 0x00000011;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionELU = 0x00000012;
+    @Generated public static final int ELU = 0x00000012;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionClampedLeakyRectifiedLinear = 0x00000013;
+    @Generated public static final int ClampedLeakyRectifiedLinear = 0x00000013;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionLinearWithBias = 0x00000014;
+    @Generated public static final int LinearWithBias = 0x00000014;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionLogSoftmax = 0x00000015;
+    @Generated public static final int LogSoftmax = 0x00000015;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionLogSigmoid = 0x00000016;
+    @Generated public static final int LogSigmoid = 0x00000016;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionSELU = 0x00000017;
+    @Generated public static final int SELU = 0x00000017;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionCELU = 0x00000018;
+    @Generated public static final int CELU = 0x00000018;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionHardShrink = 0x00000019;
+    @Generated public static final int HardShrink = 0x00000019;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionSoftShrink = 0x0000001A;
+    @Generated public static final int SoftShrink = 0x0000001A;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionTanhShrink = 0x0000001B;
+    @Generated public static final int TanhShrink = 0x0000001B;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionThreshold = 0x0000001C;
+    @Generated public static final int Threshold = 0x0000001C;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionPReLUPerChannel = 0x0000001D;
+    @Generated public static final int PReLUPerChannel = 0x0000001D;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSActivationFunctionGELUApproximation2 = 0x0000001E;
+    @Generated public static final int GELUApproximation2 = 0x0000001E;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSActivationFunctionHardSwish = 0x0000001E;
+    @Generated public static final int HardSwish = 0x0000001E;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSActivationFunctionSiLU = 0x0000001F;
+    @Generated public static final int SiLU = 0x0000001F;
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int BNNSActivationFunctionReLU6 = 0x00000020;
+    @Generated public static final int ReLU6 = 0x00000020;
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int BNNSActivationFunctionErf = 0x00000021;
+    @Generated public static final int Erf = 0x00000021;
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int BNNSActivationFunctionGELU = 0x00000022;
+    @Generated public static final int GELU = 0x00000022;
     /**
      * API-Since: 16.4
      */
-    @Generated public static final int BNNSActivationFunctionGELUApproximationSigmoid = 0x00000023;
+    @Generated public static final int GELUApproximationSigmoid = 0x00000023;
 }

@@ -129,6 +129,8 @@ public class ASPasswordCredentialRequest extends NSObject implements ASCredentia
      * Initializes an instance of ASPasswordCredentialRequest.
      * 
      * @param credentialIdentity the credential identity to use for this request.
+     * 
+     *                           API-Since: 17.0
      */
     @Generated
     @Selector("initWithCredentialIdentity:")
@@ -166,6 +168,8 @@ public class ASPasswordCredentialRequest extends NSObject implements ASCredentia
      * Creates and initializes an instance of ASPasswordCredentialRequest.
      * 
      * @param credentialIdentity the credential identity to use for this request.
+     * 
+     *                           API-Since: 17.0
      */
     @Generated
     @Selector("requestWithCredentialIdentity:")

@@ -148,6 +148,8 @@ public class NSByteCountFormatter extends NSFormatter {
     /**
      * Shortcut for converting a byte count into a string without creating an NSByteCountFormatter and an NSNumber. If
      * you need to specify options other than countStyle, create an instance of NSByteCountFormatter first.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -168,6 +170,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * settings; otherwise will only use the specified units. This is the default value. Note that ZB and YB cannot be
      * covered by the range of possible values, but you can still choose to use these units to get fractional display
      * ("0.0035 ZB" for instance).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowedUnits")
@@ -180,6 +184,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * generate "Zero bytes"). The result is appropriate for standalone output. Default value is YES. Special handling
      * of certain values such as zero is especially important in some languages, so it's highly recommended that this
      * property be left in its default state.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowsNonnumericFormatting")
@@ -188,6 +194,8 @@ public class NSByteCountFormatter extends NSFormatter {
     /**
      * Specify how the count is displayed by indicating the number of bytes to be used for kilobyte. The default setting
      * is NSByteCountFormatterFileCount, which is the system specific value for file and storage sizes.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("countStyle")
@@ -209,11 +217,16 @@ public class NSByteCountFormatter extends NSFormatter {
      * instance "723 KB (722,842 bytes)". This will happen only if needed, that is, the first part is already not
      * showing the exact byte count. If includesUnit or includesCount are NO, then this setting has no effect. Default
      * value is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("includesActualByteCount")
     public native boolean includesActualByteCount();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("includesCount")
     public native boolean includesCount();
@@ -223,6 +236,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * KB, returns "723" or "KB".) You can call the API twice to get both parts, separately. But note that putting them
      * together yourself via string concatenation may be wrong for some locales; so use this functionality with care.
      * Both of these values are YES by default. Setting both to NO will unsurprisingly result in an empty string.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("includesUnit")
@@ -241,6 +256,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * digits based on the magnitude (in 10.8: 0 fraction digits for bytes and KB; 1 fraction digits for MB; 2 for GB
      * and above). Otherwise the result always tries to show at least three significant digits, introducing fraction
      * digits as necessary. Default is YES.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isAdaptive")
@@ -251,6 +268,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * digits based on the magnitude (in 10.8: 0 fraction digits for bytes and KB; 1 fraction digits for MB; 2 for GB
      * and above). Otherwise the result always tries to show at least three significant digits, introducing fraction
      * digits as necessary. Default is YES.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAdaptive:")
@@ -261,6 +280,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * settings; otherwise will only use the specified units. This is the default value. Note that ZB and YB cannot be
      * covered by the range of possible values, but you can still choose to use these units to get fractional display
      * ("0.0035 ZB" for instance).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAllowedUnits:")
@@ -272,6 +293,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * generate "Zero bytes"). The result is appropriate for standalone output. Default value is YES. Special handling
      * of certain values such as zero is especially important in some languages, so it's highly recommended that this
      * property be left in its default state.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAllowsNonnumericFormatting:")
@@ -280,6 +303,8 @@ public class NSByteCountFormatter extends NSFormatter {
     /**
      * Specify how the count is displayed by indicating the number of bytes to be used for kilobyte. The default setting
      * is NSByteCountFormatterFileCount, which is the system specific value for file and storage sizes.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setCountStyle:")
@@ -299,11 +324,16 @@ public class NSByteCountFormatter extends NSFormatter {
      * instance "723 KB (722,842 bytes)". This will happen only if needed, that is, the first part is already not
      * showing the exact byte count. If includesUnit or includesCount are NO, then this setting has no effect. Default
      * value is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setIncludesActualByteCount:")
     public native void setIncludesActualByteCount(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setIncludesCount:")
     public native void setIncludesCount(boolean value);
@@ -313,6 +343,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * KB, returns "723" or "KB".) You can call the API twice to get both parts, separately. But note that putting them
      * together yourself via string concatenation may be wrong for some locales; so use this functionality with care.
      * Both of these values are YES by default. Setting both to NO will unsurprisingly result in an empty string.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setIncludesUnit:")
@@ -323,6 +355,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * updating displays to remain more stable. For instance, if the adaptive algorithm is used, this option formats
      * 1.19 and 1.2 GB as "1.19 GB" and "1.20 GB" respectively, while without the option the latter would be displayed
      * as "1.2 GB". Default value is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setZeroPadsFractionDigits:")
@@ -330,6 +364,8 @@ public class NSByteCountFormatter extends NSFormatter {
 
     /**
      * Convenience method on stringForObjectValue:. Convert a byte count into a string without creating an NSNumber.
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -341,6 +377,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * updating displays to remain more stable. For instance, if the adaptive algorithm is used, this option formats
      * 1.19 and 1.2 GB as "1.19 GB" and "1.20 GB" respectively, while without the option the latter would be displayed
      * as "1.2 GB". Default value is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("zeroPadsFractionDigits")
@@ -353,6 +391,8 @@ public class NSByteCountFormatter extends NSFormatter {
      * Returns `nil` if `obj` is not of the correct class (`NSNumber` or `NSMeasurement`).
      * Throws an exception if `obj` is an `NSMeasurement` whose unit does not belong to the `NSUnitInformationStorage`
      * dimension.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated

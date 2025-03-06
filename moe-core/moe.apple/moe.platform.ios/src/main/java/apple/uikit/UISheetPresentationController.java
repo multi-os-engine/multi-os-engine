@@ -62,6 +62,8 @@ public class UISheetPresentationController extends UIPresentationController {
      * To animate changing any of the above properties, set them inside a block passed to this method.
      * By the time this method returns, the receiver and all adjacent sheets in the sheet stack and their subviews will
      * have been laid out.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("animateChanges:")
@@ -106,6 +108,8 @@ public class UISheetPresentationController extends UIPresentationController {
     /**
      * The delegate inherited from UIPresentationController, redeclared with conformance to
      * UISheetPresentationControllerDelegate.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -193,6 +197,8 @@ public class UISheetPresentationController extends UIPresentationController {
      * Set to YES to cause the sheet to layout with an edge-attached appearance in compact height instead of full
      * screen.
      * Default: NO
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("prefersEdgeAttachedInCompactHeight")
@@ -238,6 +244,8 @@ public class UISheetPresentationController extends UIPresentationController {
     /**
      * The delegate inherited from UIPresentationController, redeclared with conformance to
      * UISheetPresentationControllerDelegate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -246,6 +254,8 @@ public class UISheetPresentationController extends UIPresentationController {
     /**
      * The delegate inherited from UIPresentationController, redeclared with conformance to
      * UISheetPresentationControllerDelegate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
@@ -291,6 +301,8 @@ public class UISheetPresentationController extends UIPresentationController {
      * Set to YES to cause the sheet to layout with an edge-attached appearance in compact height instead of full
      * screen.
      * Default: NO
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPrefersEdgeAttachedInCompactHeight:")
@@ -327,6 +339,8 @@ public class UISheetPresentationController extends UIPresentationController {
     /**
      * If specified, the sheet will attempt to visually center itself over this view.
      * Default: nil
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSourceView:")
@@ -341,6 +355,8 @@ public class UISheetPresentationController extends UIPresentationController {
      * When NO, the width of the sheet when edge-attached is always equal to the safe area width of the container.
      * The value of this property is not respected in compact width regular height.
      * Default: NO
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setWidthFollowsPreferredContentSizeWhenEdgeAttached:")
@@ -349,6 +365,8 @@ public class UISheetPresentationController extends UIPresentationController {
     /**
      * If specified, the sheet will attempt to visually center itself over this view.
      * Default: nil
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -369,6 +387,8 @@ public class UISheetPresentationController extends UIPresentationController {
      * When NO, the width of the sheet when edge-attached is always equal to the safe area width of the container.
      * The value of this property is not respected in compact width regular height.
      * Default: NO
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("widthFollowsPreferredContentSizeWhenEdgeAttached")
@@ -393,7 +413,7 @@ public class UISheetPresentationController extends UIPresentationController {
      * width.
      * When NO, this maps to the behavior of UIModalPresentationFormSheet, where the sheet size follows the presented
      * view controller's `preferredContentSize`.
-     * Default: YES
+     * Default: NO on iOS 18.0 and later, YES on earlier releases
      * 
      * API-Since: 17.0
      */
@@ -407,7 +427,7 @@ public class UISheetPresentationController extends UIPresentationController {
      * width.
      * When NO, this maps to the behavior of UIModalPresentationFormSheet, where the sheet size follows the presented
      * view controller's `preferredContentSize`.
-     * Default: YES
+     * Default: NO on iOS 18.0 and later, YES on earlier releases
      * 
      * API-Since: 17.0
      */

@@ -20,6 +20,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.xpc_type_t;
 
 /**
  * This object holds all information about the interface of an exported or imported object. This includes: what messages
@@ -81,6 +82,9 @@ public class NSXPCInterface extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("classesForSelector:argumentIndex:ofReply:")
@@ -117,6 +121,9 @@ public class NSXPCInterface extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("interfaceForSelector:argumentIndex:ofReply:")
@@ -155,6 +162,8 @@ public class NSXPCInterface extends NSObject {
      * If the expected classes are all property list types, calling this method is optional (property list types are
      * automatically allowed for collection objects). You may use this method to further restrict the set of allowed
      * classes.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setClasses:forSelector:argumentIndex:ofReply:")
@@ -166,6 +175,8 @@ public class NSXPCInterface extends NSObject {
      * interface must be configured with the interface of that new proxy object. If the proxy object is to be an
      * argument of the reply block, pass YES for ofReply. The first argument is index 0 for both the method and the
      * reply block.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setInterface:forSelector:argumentIndex:ofReply:")
@@ -189,4 +200,20 @@ public class NSXPCInterface extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 13.0
+     */
+    @Generated
+    @Selector("XPCTypeForSelector:argumentIndex:ofReply:")
+    @Nullable
+    public native xpc_type_t XPCTypeForSelectorArgumentIndexOfReply(@NotNull SEL sel, @NUInt long arg, boolean ofReply);
+
+    /**
+     * API-Since: 13.0
+     */
+    @Generated
+    @Selector("setXPCType:forSelector:argumentIndex:ofReply:")
+    public native void setXPCTypeForSelectorArgumentIndexOfReply(@NotNull xpc_type_t type, @NotNull SEL sel,
+            @NUInt long arg, boolean ofReply);
 }

@@ -176,6 +176,8 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
      * Unique identifier that identifies the batch for which the accelerometer sample
      * was recorded in. This identifier will be monotonically increased
      * for each new sensor batch recorded and can be used as an anchor for future queries.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("identifier")
@@ -194,6 +196,9 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
      * 
      * Discussion:
      * Time at which the acceleration measurement was observed.
+     * 
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

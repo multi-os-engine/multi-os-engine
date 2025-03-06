@@ -24,15 +24,23 @@ import org.jetbrains.annotations.Nullable;
 public interface UITextDroppable extends UITextInput, UITextPasteConfigurationSupporting {
     /**
      * Returns whether this control currently has at least one active drag session.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isTextDropActive")
     boolean isTextDropActive();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTextDropDelegate:")
     void setTextDropDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("textDropDelegate")
@@ -43,6 +51,8 @@ public interface UITextDroppable extends UITextInput, UITextPasteConfigurationSu
      * The text drop interaction that UIKit installs on the text control.
      * Use this to explicitly disable drop interactions on system text controls,
      * if desired.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

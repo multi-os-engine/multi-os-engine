@@ -47,6 +47,9 @@ public class SWCollaborationCoordinator extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("actionHandler")
@@ -140,11 +143,17 @@ public class SWCollaborationCoordinator extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setActionHandler:")
     public native void setActionHandler_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) SWCollaborationActionHandler value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     public void setActionHandler(@Nullable @Mapped(ObjCObjectMapper.class) SWCollaborationActionHandler value) {
         Object __old = actionHandler();
@@ -161,6 +170,9 @@ public class SWCollaborationCoordinator extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("sharedCoordinator")

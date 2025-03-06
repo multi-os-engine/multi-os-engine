@@ -130,6 +130,8 @@ public class MTLPipelineBufferDescriptor extends NSObject implements NSCopying {
 
     /**
      * Buffer mutability. Defaults to MTLMutabilityDefault: mutable for standard buffers, immutable for argument buffers
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("mutability")
@@ -151,6 +153,8 @@ public class MTLPipelineBufferDescriptor extends NSObject implements NSCopying {
 
     /**
      * Buffer mutability. Defaults to MTLMutabilityDefault: mutable for standard buffers, immutable for argument buffers
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMutability:")

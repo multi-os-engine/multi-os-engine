@@ -105,6 +105,8 @@ public class CPButton extends NSObject {
      * both styles.
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -129,6 +131,8 @@ public class CPButton extends NSObject {
      * both styles.
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * API-Since: 14.0
      * 
      * @param image   An image to be displayed in this button. The maximum image size is given by @c
      *                CPButtonMaximumImageSize.
@@ -164,6 +168,8 @@ public class CPButton extends NSObject {
      * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isEnabled")
@@ -196,6 +202,8 @@ public class CPButton extends NSObject {
      * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -203,6 +211,8 @@ public class CPButton extends NSObject {
 
     /**
      * A custom title to display for this button, displayed only in templates that allow for custom titles.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTitle:")
@@ -218,6 +228,8 @@ public class CPButton extends NSObject {
 
     /**
      * A custom title to display for this button, displayed only in templates that allow for custom titles.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

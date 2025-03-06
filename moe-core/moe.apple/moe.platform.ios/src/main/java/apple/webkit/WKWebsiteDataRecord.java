@@ -161,6 +161,8 @@ public class WKWebsiteDataRecord extends NSObject {
 
     /**
      * The various types of website data that exist for this data record.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -169,6 +171,8 @@ public class WKWebsiteDataRecord extends NSObject {
 
     /**
      * The display name for the data record. This is usually the domain name.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

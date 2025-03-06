@@ -26,6 +26,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * A class that describes the random operation.
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +91,7 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
 
     /**
      * The data type of the generated result values.
+     * 
      * When sampling from the uniform distribution, valid types are MPSDataTypeFloat16,
      * MPSDataTypeFloat32, and MPSDataTypeInt32.
      * When sampling from the normal or truncated normal distribution, valid types are
@@ -105,6 +109,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Class method to initialize a distribution descriptor.
+     */
     @Generated
     @Selector("descriptorWithDistribution:dataType:")
     public static native MPSGraphRandomOpDescriptor descriptorWithDistributionDataType(long distribution, int dataType);
@@ -148,8 +155,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * The upper range of the distribution. This value is used for Uniform distributions with float data types and
-     * Truncated Normal disributions.
+     * The upper range of the distribution.
+     * 
+     * This value is used for Uniform distributions with float data types and Truncated Normal disributions.
      * Defaults to 1 for uniform distributions and 2 for normal distributions.
      */
     @Generated
@@ -157,7 +165,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native float max();
 
     /**
-     * The upper range of the distribution. This value is used for Uniform with integer data types
+     * The upper range of the distribution.
+     * 
+     * This value is used for Uniform with integer data types
      * Defaults to INT32_MAX for uniform distributions and 0 for normal distributions.
      */
     @Generated
@@ -166,7 +176,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native long maxInteger();
 
     /**
-     * The mean of the distribution. This value is used for Normal and Truncated Normal disributions.
+     * The mean of the distribution.
+     * 
+     * This value is used for Normal and Truncated Normal disributions.
      * Defaults to 0.
      */
     @Generated
@@ -174,8 +186,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native float mean();
 
     /**
-     * The lower range of the distribution. This value is used for Uniform distributions with float data types and
-     * Truncated Normal disributions.
+     * The lower range of the distribution.
+     * 
+     * This value is used for Uniform distributions with float data types and Truncated Normal disributions.
      * Defaults to 0 for uniform distributions and -2 for normal distributions.
      */
     @Generated
@@ -183,7 +196,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native float min();
 
     /**
-     * The lower range of the distribution. This value is used for Uniform with integer data types
+     * The lower range of the distribution.
+     * 
+     * This value is used for Uniform with integer data types
      * Defaults to 0.
      */
     @Generated
@@ -205,8 +220,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The sampling method of the distribution. This value is used for Normal and Truncated Normal disributions. See
-     * MPSGraphRandomNormalSamplingMethod.
+     * The sampling method of the distribution.
+     * 
+     * This value is used for Normal and Truncated Normal disributions. See MPSGraphRandomNormalSamplingMethod.
      * Defaults to MPSGraphRandomNormalSamplingInvCDF.
      */
     @Generated
@@ -215,6 +231,7 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
 
     /**
      * The data type of the generated result values.
+     * 
      * When sampling from the uniform distribution, valid types are MPSDataTypeFloat16,
      * MPSDataTypeFloat32, and MPSDataTypeInt32.
      * When sampling from the normal or truncated normal distribution, valid types are
@@ -232,8 +249,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native void setDistribution(long value);
 
     /**
-     * The upper range of the distribution. This value is used for Uniform distributions with float data types and
-     * Truncated Normal disributions.
+     * The upper range of the distribution.
+     * 
+     * This value is used for Uniform distributions with float data types and Truncated Normal disributions.
      * Defaults to 1 for uniform distributions and 2 for normal distributions.
      */
     @Generated
@@ -241,7 +259,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native void setMax(float value);
 
     /**
-     * The upper range of the distribution. This value is used for Uniform with integer data types
+     * The upper range of the distribution.
+     * 
+     * This value is used for Uniform with integer data types
      * Defaults to INT32_MAX for uniform distributions and 0 for normal distributions.
      */
     @Generated
@@ -249,7 +269,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native void setMaxInteger(@NInt long value);
 
     /**
-     * The mean of the distribution. This value is used for Normal and Truncated Normal disributions.
+     * The mean of the distribution.
+     * 
+     * This value is used for Normal and Truncated Normal disributions.
      * Defaults to 0.
      */
     @Generated
@@ -257,8 +279,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native void setMean(float value);
 
     /**
-     * The lower range of the distribution. This value is used for Uniform distributions with float data types and
-     * Truncated Normal disributions.
+     * The lower range of the distribution.
+     * 
+     * This value is used for Uniform distributions with float data types and Truncated Normal disributions.
      * Defaults to 0 for uniform distributions and -2 for normal distributions.
      */
     @Generated
@@ -266,7 +289,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native void setMin(float value);
 
     /**
-     * The lower range of the distribution. This value is used for Uniform with integer data types
+     * The lower range of the distribution.
+     * 
+     * This value is used for Uniform with integer data types
      * Defaults to 0.
      */
     @Generated
@@ -274,8 +299,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native void setMinInteger(@NInt long value);
 
     /**
-     * The sampling method of the distribution. This value is used for Normal and Truncated Normal disributions. See
-     * MPSGraphRandomNormalSamplingMethod.
+     * The sampling method of the distribution.
+     * 
+     * This value is used for Normal and Truncated Normal disributions. See MPSGraphRandomNormalSamplingMethod.
      * Defaults to MPSGraphRandomNormalSamplingInvCDF.
      */
     @Generated
@@ -283,7 +309,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public native void setSamplingMethod(long value);
 
     /**
-     * The standardDeviation of the distribution. This value is used for Normal and Truncated Normal disributions.
+     * The standard deviation of the distribution.
+     * 
+     * This value is used for Normal and Truncated Normal disributions.
      * For Truncated Normal distribution this defines the standard deviation parameter of the underlying Normal
      * distribution, that is the width
      * of the Gaussian, not the true standard deviation of the truncated distribution which typically differs from the
@@ -300,7 +328,9 @@ public class MPSGraphRandomOpDescriptor extends MPSGraphObject implements NSCopy
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The standardDeviation of the distribution. This value is used for Normal and Truncated Normal disributions.
+     * The standard deviation of the distribution.
+     * 
+     * This value is used for Normal and Truncated Normal disributions.
      * For Truncated Normal distribution this defines the standard deviation parameter of the underlying Normal
      * distribution, that is the width
      * of the Gaussian, not the true standard deviation of the truncated distribution which typically differs from the

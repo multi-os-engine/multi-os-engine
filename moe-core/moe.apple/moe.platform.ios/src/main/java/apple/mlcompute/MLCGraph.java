@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * A graph of layers that can be used to build a training or inference graph
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -87,7 +86,11 @@ public class MLCGraph extends NSObject {
      * @param synchronous  Whether to execute the copy to the device synchronously. For performance, asynchronous
      *                     execution is recommended.
      * @return A Boolean value indicating whether the data is successfully associated with the tensor.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("bindAndWriteData:forInputs:toDevice:batchSize:synchronous:")
     public native boolean bindAndWriteDataForInputsToDeviceBatchSizeSynchronous(
@@ -111,7 +114,11 @@ public class MLCGraph extends NSObject {
      * @param synchronous  Whether to execute the copy to the device synchronously. For performance, asynchronous
      *                     execution is recommended.
      * @return A Boolean value indicating whether the data is successfully associated with the tensor.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("bindAndWriteData:forInputs:toDevice:synchronous:")
     public native boolean bindAndWriteDataForInputsToDeviceSynchronous(
@@ -146,7 +153,11 @@ public class MLCGraph extends NSObject {
      * @param sources   The source tensors to concatenate
      * @param dimension The concatenation dimension
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("concatenateWithSources:dimension:")
@@ -163,7 +174,11 @@ public class MLCGraph extends NSObject {
 
     /**
      * The device to be used when compiling and executing a graph
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("device")
@@ -189,7 +204,11 @@ public class MLCGraph extends NSObject {
      * Creates a new graph.
      * 
      * @return A new graph.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("graph")
     public static native MLCGraph graph();
@@ -227,7 +246,11 @@ public class MLCGraph extends NSObject {
 
     /**
      * Layers in the graph
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("layers")
@@ -244,7 +267,11 @@ public class MLCGraph extends NSObject {
      * @param layer  The layer
      * @param source The source tensor
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("nodeWithLayer:source:")
@@ -259,7 +286,11 @@ public class MLCGraph extends NSObject {
      * @param layer   The layer
      * @param sources A list of source tensors
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("nodeWithLayer:sources:")
@@ -276,7 +307,11 @@ public class MLCGraph extends NSObject {
      * @param sources       A list of source tensors
      * @param disableUpdate A flag to indicate if optimizer update should be disabled for this layer
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("nodeWithLayer:sources:disableUpdate:")
@@ -292,7 +327,11 @@ public class MLCGraph extends NSObject {
      * @param layer      The loss layer
      * @param lossLabels The loss labels tensor
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("nodeWithLayer:sources:lossLabels:")
@@ -305,7 +344,11 @@ public class MLCGraph extends NSObject {
      * @param shape  An array representing the shape of result tensor
      * @param source The source tensor
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("reshapeWithShape:source:")
@@ -325,7 +368,11 @@ public class MLCGraph extends NSObject {
      * 
      * @param layer A layer in the training graph
      * @return A list of tensors
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("resultTensorsForLayer:")
@@ -376,7 +423,11 @@ public class MLCGraph extends NSObject {
      * 
      * @param layer A layer in the training graph
      * @return A list of tensors
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sourceTensorsForLayer:")
@@ -389,7 +440,11 @@ public class MLCGraph extends NSObject {
      * @param splitCount The number of splits
      * @param dimension  The dimension to split the source tensor
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("splitWithSource:splitCount:dimension:")
@@ -403,7 +458,11 @@ public class MLCGraph extends NSObject {
      * @param splitSectionLengths The lengths of each split section
      * @param dimension           The dimension to split the source tensor
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("splitWithSource:splitSectionLengths:dimension:")
@@ -415,7 +474,11 @@ public class MLCGraph extends NSObject {
      * 
      * For more info on the DOT language, refer to https://en.wikipedia.org/wiki/DOT_(graph_description_language).
      * Edges that have a dashed lines are those that have stop gradients, while those with solid lines don't.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("summarizedDOTDescription")
@@ -433,7 +496,11 @@ public class MLCGraph extends NSObject {
      *                   K'th element in the dimensions array specifies the input axis source for the K'th axis in the
      *                   output. The batch dimension which is typically axis 0 cannot be transposed.
      * @return A result tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("transposeWithDimensions:source:")

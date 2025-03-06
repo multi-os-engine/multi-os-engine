@@ -166,7 +166,12 @@ public class GLKSubmesh extends NSObject {
      * Name of buffer object with index data
      * 
      * The buffer name to be used with DrawElements
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("elementBuffer")
@@ -178,7 +183,12 @@ public class GLKSubmesh extends NSObject {
      * Number of elements (aka indicies) in the elementBuffer (aka indexBuffer)
      * 
      * This value should be used for the count parameter in glDrawElements
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("elementCount")
     public native int elementCount();
@@ -193,7 +203,12 @@ public class GLKSubmesh extends NSObject {
      * Parent GLKit mesh containing vertex data of this object
      * 
      * Buffer of this parent mesh should be set in the encoder before a drawIndexedPrimitives call is made
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("mesh")
@@ -205,7 +220,12 @@ public class GLKSubmesh extends NSObject {
      * Primitive type mode value of data in the elementBuffer (aka indexBuffer)
      * 
      * This value should be used for the mode parameter in glDrawElements
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("mode")
     public native int mode();
@@ -217,7 +237,12 @@ public class GLKSubmesh extends NSObject {
      * 
      * Although not directly used by this object, the application may use this to identify the submesh in it
      * renderer/scene/world.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("name")
@@ -229,7 +254,12 @@ public class GLKSubmesh extends NSObject {
      * Type of data in the elementBuffer (aka indexBuffer)
      * 
      * This value should be used for the type parameter of glDrawElements
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("type")
     public native int type();

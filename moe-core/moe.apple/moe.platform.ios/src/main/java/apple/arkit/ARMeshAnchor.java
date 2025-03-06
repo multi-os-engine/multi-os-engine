@@ -94,6 +94,8 @@ public class ARMeshAnchor extends ARAnchor {
 
     /**
      * Geometry of the mesh in anchor's coordinate system.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated

@@ -19,13 +19,44 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 4.1
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported
+ */
+@Deprecated
 @Generated
 public final class GKVoiceChatPlayerState {
-    @Generated @NInt public static final long Connected = 0x0000000000000000L;
-    @Generated @NInt public static final long Disconnected = 0x0000000000000001L;
-    @Generated @NInt public static final long Speaking = 0x0000000000000002L;
-    @Generated @NInt public static final long Silent = 0x0000000000000003L;
-    @Generated @NInt public static final long Connecting = 0x0000000000000004L;
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated @Generated @NInt public static final long Connected = 0x0000000000000000L;
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated @Generated @NInt public static final long Disconnected = 0x0000000000000001L;
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated @Generated @NInt public static final long Speaking = 0x0000000000000002L;
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated @Generated @NInt public static final long Silent = 0x0000000000000003L;
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated @Generated @NInt public static final long Connecting = 0x0000000000000004L;
 
     @Generated
     private GKVoiceChatPlayerState() {

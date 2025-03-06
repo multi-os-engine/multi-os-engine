@@ -16,13 +16,13 @@ public final class nw_multipath_version_t {
     /**
      * [@const] nw_multipath_version_unspecified MPTCP unspecified version
      */
-    @Generated public static final int nw_multipath_version_unspecified = 0xFFFFFFFF;
+    @Generated public static final int _unspecified = 0xFFFFFFFF;
     /**
      * [@const] nw_multipath_version_0 MPTCP version 0
      */
-    @Generated public static final int nw_multipath_version_0 = 0x00000000;
+    @Generated public static final int _0 = 0x00000000;
     /**
      * [@const] nw_multipath_version_1 MPTCP version 1
      */
-    @Generated public static final int nw_multipath_version_1 = 0x00000001;
+    @Generated public static final int _1 = 0x00000001;
 }

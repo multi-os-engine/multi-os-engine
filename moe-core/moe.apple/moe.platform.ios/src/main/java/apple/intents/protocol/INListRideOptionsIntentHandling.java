@@ -57,6 +57,8 @@ public interface INListRideOptionsIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INListRideOptionsIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -76,12 +78,17 @@ public interface INListRideOptionsIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INListRideOptionsIntentResponse
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleListRideOptions:completion:")
     void handleListRideOptionsCompletion(@NotNull INListRideOptionsIntent intent,
             @NotNull @ObjCBlock(name = "call_handleListRideOptionsCompletion") Block_handleListRideOptionsCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveDropOffLocationForListRideOptions:withCompletion:")
@@ -100,6 +107,8 @@ public interface INListRideOptionsIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

@@ -100,6 +100,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * The data source that the object was initialized with
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -119,6 +121,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
      * [@property] epsilon
      * 
      * The epsilon value used to bias the variance when normalizing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("epsilon")
@@ -149,6 +153,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNGroupNormalization object, or nil if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -164,6 +170,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
      * 
      * @param dataSource An object conforming to the MPSCNNGroupNormalizationDataSource
      *                   protocol which
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:dataSource:")
@@ -200,6 +208,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * Reinitialize the filter using the data source provided at kernel initialization.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("reloadGammaAndBetaFromDataSource")
@@ -213,6 +223,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
      * 
      * @param gammaAndBetaState The state containing the updated weights which are to
      *                          be reloaded.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("reloadGammaAndBetaWithCommandBuffer:gammaAndBetaState:")
@@ -231,6 +243,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
     /**
      * Return a MPSCNNGroupNormalizationGradientState object for the provided
      * source image, source states, and destination image.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -243,6 +257,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
      * [@property] epsilon
      * 
      * The epsilon value used to bias the variance when normalizing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setEpsilon:")
@@ -269,6 +285,8 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
     /**
      * Return a temporary MPSCNNGroupNormalizationGradientState object which may be used with
      * a MPSCNNGroupNormalization filter.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

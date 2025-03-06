@@ -111,6 +111,8 @@ public class AVMIDISysexEvent extends AVMusicEvent {
      * 
      * @param data
      *             An NSData object containing the raw contents of the system exclusive event.
+     * 
+     *             API-Since: 16.0
      */
     @Generated
     @Selector("initWithData:")
@@ -158,6 +160,8 @@ public class AVMIDISysexEvent extends AVMusicEvent {
     /**
      * [@property] sizeInBytes
      * The size of the raw data associated with this system exclusive event.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("sizeInBytes")

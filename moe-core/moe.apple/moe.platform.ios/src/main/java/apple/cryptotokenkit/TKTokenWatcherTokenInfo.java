@@ -90,6 +90,8 @@ public class TKTokenWatcherTokenInfo extends NSObject {
 
     /**
      * Localized driver name (if available)
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -146,6 +148,8 @@ public class TKTokenWatcherTokenInfo extends NSObject {
 
     /**
      * The slot name (if available)
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -158,6 +162,8 @@ public class TKTokenWatcherTokenInfo extends NSObject {
 
     /**
      * TokenID
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

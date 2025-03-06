@@ -154,6 +154,9 @@ public class CKSyncEngineWillFetchRecordZoneChangesEvent extends CKSyncEngineEve
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("zoneID")
     @NotNull

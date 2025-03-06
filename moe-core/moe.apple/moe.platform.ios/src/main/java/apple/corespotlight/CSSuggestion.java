@@ -29,7 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import apple.foundation.NSNumber;
 
 /**
  * API-Since: 16.0
@@ -87,6 +86,9 @@ public class CSSuggestion extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("compare:")
     @NInt
@@ -94,6 +96,8 @@ public class CSSuggestion extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * For suggestions that have been ranked by the query
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("compareByRank:")
@@ -154,6 +158,9 @@ public class CSSuggestion extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("localizedAttributedSuggestion")
@@ -176,6 +183,9 @@ public class CSSuggestion extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("suggestionKind")
     @NInt
@@ -199,16 +209,6 @@ public class CSSuggestion extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("score")
-    @NotNull
-    public native NSNumber score();
-
-    @Generated
-    @Selector("suggestionDataSources")
-    @NotNull
-    public native NSArray<?> suggestionDataSources();
 
     @Generated
     @Deprecated

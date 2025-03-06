@@ -187,14 +187,23 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("attenuationEndDistance")
     public native float attenuationEndDistance();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("attenuationStartDistance")
     public native float attenuationStartDistance();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("color")
@@ -208,6 +217,8 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
      * 90 means down the light axis to perpendicular is spanned (lightType will be MDLLightSpot)
      * 180 means down the light axis to up the light axis is spanned (lightType will be MDLLightPoint)
      * default is 22.5 degrees
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("innerConeAngle")
@@ -215,23 +226,37 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     /**
      * default light intensity is 1000 lumens
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("lumens")
     public native float lumens();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("outerConeAngle")
     public native float outerConeAngle();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAttenuationEndDistance:")
     public native void setAttenuationEndDistance(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAttenuationStartDistance:")
     public native void setAttenuationStartDistance(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setColor:")
     public native void setColor(@Nullable CGColorRef value);
@@ -240,6 +265,8 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
      * Light color specified by color temperature, in degrees Kelvin
      * 
      * default color is 6500K, cool daylight.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setColorByTemperature:")
@@ -249,6 +276,8 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
      * 90 means down the light axis to perpendicular is spanned (lightType will be MDLLightSpot)
      * 180 means down the light axis to up the light axis is spanned (lightType will be MDLLightPoint)
      * default is 22.5 degrees
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInnerConeAngle:")
@@ -256,11 +285,16 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     /**
      * default light intensity is 1000 lumens
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLumens:")
     public native void setLumens(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setOuterConeAngle:")
     public native void setOuterConeAngle(float value);

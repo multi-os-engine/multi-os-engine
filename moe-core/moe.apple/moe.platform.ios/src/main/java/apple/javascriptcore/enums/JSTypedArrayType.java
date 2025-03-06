@@ -38,22 +38,21 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class JSTypedArrayType {
-    @Generated public static final int kJSTypedArrayTypeInt8Array = 0x00000000;
-    @Generated public static final int kJSTypedArrayTypeInt16Array = 0x00000001;
-    @Generated public static final int kJSTypedArrayTypeInt32Array = 0x00000002;
-    @Generated public static final int kJSTypedArrayTypeUint8Array = 0x00000003;
-    @Generated public static final int kJSTypedArrayTypeUint8ClampedArray = 0x00000004;
-    @Generated public static final int kJSTypedArrayTypeUint16Array = 0x00000005;
-    @Generated public static final int kJSTypedArrayTypeUint32Array = 0x00000006;
-    @Generated public static final int kJSTypedArrayTypeFloat32Array = 0x00000007;
-    @Generated public static final int kJSTypedArrayTypeFloat64Array = 0x00000008;
-    @Generated public static final int kJSTypedArrayTypeArrayBuffer = 0x00000009;
-    @Generated public static final int kJSTypedArrayTypeNone = 0x0000000A;
-
     @Generated
     private JSTypedArrayType() {
     }
 
-    @Generated public static final int kJSTypedArrayTypeBigInt64Array = 0x0000000B;
-    @Generated public static final int kJSTypedArrayTypeBigUint64Array = 0x0000000C;
+    @Generated public static final int Int8Array = 0x00000000;
+    @Generated public static final int Int16Array = 0x00000001;
+    @Generated public static final int Int32Array = 0x00000002;
+    @Generated public static final int Uint8Array = 0x00000003;
+    @Generated public static final int Uint8ClampedArray = 0x00000004;
+    @Generated public static final int Uint16Array = 0x00000005;
+    @Generated public static final int Uint32Array = 0x00000006;
+    @Generated public static final int Float32Array = 0x00000007;
+    @Generated public static final int Float64Array = 0x00000008;
+    @Generated public static final int ArrayBuffer = 0x00000009;
+    @Generated public static final int None = 0x0000000A;
+    @Generated public static final int BigInt64Array = 0x0000000B;
+    @Generated public static final int BigUint64Array = 0x0000000C;
 }

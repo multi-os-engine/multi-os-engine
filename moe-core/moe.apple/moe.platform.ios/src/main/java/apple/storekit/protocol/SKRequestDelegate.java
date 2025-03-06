@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported
+ */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -34,7 +40,10 @@ import org.jetbrains.annotations.NotNull;
 public interface SKRequestDelegate {
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
@@ -44,7 +53,10 @@ public interface SKRequestDelegate {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("requestDidFinish:")

@@ -28,52 +28,82 @@ public interface UIMutableTraits {
     @NInt
     long accessibilityContrast();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("activeAppearance")
     @NInt
     long activeAppearance();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("displayGamut")
     @NInt
     long displayGamut();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("displayScale")
     @NFloat
     double displayScale();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("forceTouchCapability")
     @NInt
     long forceTouchCapability();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("horizontalSizeClass")
     @NInt
     long horizontalSizeClass();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("imageDynamicRange")
     @NInt
     long imageDynamicRange();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("layoutDirection")
     @NInt
     long layoutDirection();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("legibilityWeight")
     @NInt
     long legibilityWeight();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("objectForTrait:")
     @MappedReturn(ObjCObjectMapper.class)
     @Nullable
     NSObject objectForTrait(@Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("preferredContentSizeCategory")
     @NotNull
@@ -91,53 +121,89 @@ public interface UIMutableTraits {
     @Selector("setAccessibilityContrast:")
     void setAccessibilityContrast(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setActiveAppearance:")
     void setActiveAppearance(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setCGFloatValue:forTrait:")
     void setCGFloatValueForTrait(@NFloat double value,
             @Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setDisplayGamut:")
     void setDisplayGamut(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setDisplayScale:")
     void setDisplayScale(@NFloat double value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setForceTouchCapability:")
     void setForceTouchCapability(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setHorizontalSizeClass:")
     void setHorizontalSizeClass(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setImageDynamicRange:")
     void setImageDynamicRange(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setLayoutDirection:")
     void setLayoutDirection(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setLegibilityWeight:")
     void setLegibilityWeight(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setNSIntegerValue:forTrait:")
     void setNSIntegerValueForTrait(@NInt long value,
             @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setObject:forTrait:")
     void setObjectForTrait(@Mapped(ObjCObjectMapper.class) @Nullable NSObject object,
             @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setPreferredContentSizeCategory:")
     void setPreferredContentSizeCategory(@NotNull String value);
@@ -153,10 +219,16 @@ public interface UIMutableTraits {
     @Selector("setToolbarItemPresentationSize:")
     void setToolbarItemPresentationSize(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setTypesettingLanguage:")
     void setTypesettingLanguage(@NotNull String value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setUserInterfaceIdiom:")
     void setUserInterfaceIdiom(@NInt long value);
@@ -165,10 +237,16 @@ public interface UIMutableTraits {
     @Selector("setUserInterfaceLevel:")
     void setUserInterfaceLevel(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setUserInterfaceStyle:")
     void setUserInterfaceStyle(@NInt long value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setVerticalSizeClass:")
     void setVerticalSizeClass(@NInt long value);
@@ -178,11 +256,17 @@ public interface UIMutableTraits {
     @NInt
     long toolbarItemPresentationSize();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("typesettingLanguage")
     @NotNull
     String typesettingLanguage();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("userInterfaceIdiom")
     @NInt
@@ -193,23 +277,50 @@ public interface UIMutableTraits {
     @NInt
     long userInterfaceLevel();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("userInterfaceStyle")
     @NInt
     long userInterfaceStyle();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("valueForCGFloatTrait:")
     @NFloat
     double valueForCGFloatTrait(@Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("valueForNSIntegerTrait:")
     @NInt
     long valueForNSIntegerTrait(@Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("verticalSizeClass")
     @NInt
     long verticalSizeClass();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("listEnvironment")
+    @NInt
+    long listEnvironment();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setListEnvironment:")
+    void setListEnvironment(@NInt long value);
 }

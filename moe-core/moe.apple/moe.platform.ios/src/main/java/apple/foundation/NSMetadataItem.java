@@ -155,6 +155,9 @@ public class NSMetadataItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("attributes")
@@ -164,12 +167,18 @@ public class NSMetadataItem extends NSObject {
     @Selector("init")
     public native NSMetadataItem init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("valueForAttribute:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForAttribute(@NotNull String key);
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("valuesForAttributes:")

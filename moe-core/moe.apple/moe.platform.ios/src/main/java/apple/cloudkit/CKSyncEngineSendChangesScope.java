@@ -86,6 +86,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
 
     /**
      * Returns true if this scope includes the given pending change.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("containsPendingRecordZoneChange:")
@@ -94,6 +96,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
 
     /**
      * Returns true if this scope includes the given record ID.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("containsRecordID:")
@@ -119,6 +123,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
      * If you know that you don't want to send changes for a particular set of zones, you can set those zones here.
      * 
      * Note that if `zoneIDs` is set, then `excludedZoneIDs` will always be empty.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("excludedZoneIDs")
@@ -136,6 +142,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
 
     /**
      * Creates a scope that contains all zones except for the given zone IDs.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithExcludedZoneIDs:")
@@ -145,6 +153,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
     /**
      * Creates a scope that includes only the given record IDs.
      * If `recordIDs` is nil, this scope contains all records.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithRecordIDs:")
@@ -153,6 +163,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
     /**
      * Creates a scope that contains only the given zone IDs.
      * If `zoneIDs` is nil, then this scope contains all zones.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithZoneIDs:")
@@ -193,6 +205,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
      * When creating the next batch of changes to send to the server, consult this property and only send changes for
      * these record IDs.
      * If this and `zoneIDs` are `nil`, then you should send all changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("recordIDs")
@@ -233,6 +247,8 @@ public class CKSyncEngineSendChangesScope extends NSObject implements NSCopying 
      * When creating the next batch of changes to send to the server, consult this and only send changes within these
      * zones.
      * If this and `recordIDs` are `nil`, then you should send all changes.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("zoneIDs")

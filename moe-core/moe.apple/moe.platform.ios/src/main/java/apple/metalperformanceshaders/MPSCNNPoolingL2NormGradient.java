@@ -136,6 +136,8 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingL2NormGradient
      * @param device   The MTLDevice on which to make the MPSCNNPoolingL2NormGradient
      * @return A new MPSCNNPoolingL2NormGradient object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -161,6 +163,9 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
      * @param strideInPixelsX The input stride (upsampling factor) in the x dimension.
      * @param strideInPixelsY The input stride (upsampling factor) in the y dimension.
      * @return A valid MPSCNNPoolingL2NormGradient object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")

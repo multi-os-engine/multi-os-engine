@@ -161,6 +161,9 @@ public class UIPrintPageRenderer extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("addPrintFormatter:startingAtPageAtIndex:")
     public native void addPrintFormatterStartingAtPageAtIndex(@NotNull UIPrintFormatter formatter,
@@ -168,6 +171,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * override point. default does nothing
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("drawContentForPageAtIndex:inRect:")
@@ -175,6 +180,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * override point. default does nothing
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("drawFooterForPageAtIndex:inRect:")
@@ -182,6 +189,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * override point. default does nothing
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("drawHeaderForPageAtIndex:inRect:")
@@ -189,6 +198,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * override point. may be called from non-main thread. calls the various draw methods below.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("drawPageAtIndex:inRect:")
@@ -196,6 +207,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * override point. calls each formatter to draw for that page. subclassers must call super.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("drawPrintFormatter:forPageAtIndex:")
@@ -203,6 +216,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * bottom of contentRect from printableRect
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("footerHeight")
@@ -211,6 +226,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * top of contentRect from printableRect
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("headerHeight")
@@ -223,6 +240,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * override point. page count. default is maximum page count needed for all formatters or 0
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("numberOfPages")
@@ -231,6 +250,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * complete paper rect. origin is (0,0)
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("paperRect")
@@ -239,16 +260,24 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * override point. default does nothing. called before requesting a set of pages to draw
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("prepareForDrawingPages:")
     public native void prepareForDrawingPages(@ByValue NSRange range);
 
+    /**
+     * API-Since: 4.2
+     */
     @Nullable
     @Generated
     @Selector("printFormatters")
     public native NSArray<? extends UIPrintFormatter> printFormatters();
 
+    /**
+     * API-Since: 4.2
+     */
     @Nullable
     @Generated
     @Selector("printFormattersForPageAtIndex:")
@@ -256,6 +285,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * imageable area inside paper rect
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("printableRect")
@@ -264,6 +295,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * bottom of contentRect from printableRect
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setFooterHeight:")
@@ -271,11 +304,16 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * top of contentRect from printableRect
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setHeaderHeight:")
     public native void setHeaderHeight(@NFloat double value);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("setPrintFormatters:")
     public native void setPrintFormatters(@Nullable NSArray<? extends UIPrintFormatter> value);

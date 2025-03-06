@@ -138,10 +138,16 @@ public class MPSImageLaplacianPyramid extends MPSImagePyramid {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("getLaplacianBias")
     public native float getLaplacianBias();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("getLaplacianScale")
     public native float getLaplacianScale();
@@ -214,10 +220,16 @@ public class MPSImageLaplacianPyramid extends MPSImagePyramid {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setLaplacianBias:")
     public native void setLaplacianBias(float value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setLaplacianScale:")
     public native void setLaplacianScale(float value);

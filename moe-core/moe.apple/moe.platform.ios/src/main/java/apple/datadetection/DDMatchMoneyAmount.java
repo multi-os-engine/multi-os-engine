@@ -64,6 +64,8 @@ public class DDMatchMoneyAmount extends DDMatch {
 
     /**
      * A number that represents an amount of money.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("amount")
@@ -97,6 +99,8 @@ public class DDMatchMoneyAmount extends DDMatch {
     /**
      * A string that contains an ISO currency code, which the data detection system
      * identifies from the matched string and user preferences.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

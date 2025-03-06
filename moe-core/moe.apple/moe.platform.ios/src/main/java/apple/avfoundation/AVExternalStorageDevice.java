@@ -80,6 +80,8 @@ public class AVExternalStorageDevice extends NSObject {
      * This method returns the AVAuthorizationStatus of the client for capturing onto an external storage device
      * connected to this device. If the status is AVAuthorizationStatusNotDetermined, you may use the
      * +requestAccessWithCompletionHandler: method to request access by prompting the user.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("authorizationStatus")
@@ -126,6 +128,8 @@ public class AVExternalStorageDevice extends NSObject {
      * 
      * This property can be used for displaying the name of an external storage device in a user interface. Will return
      * nil if we fail to extract information from external storage device.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("displayName")
@@ -139,6 +143,9 @@ public class AVExternalStorageDevice extends NSObject {
      * 
      * This property represents the free size available on the external storage device. Will return -1 if we fail to
      * extract information from external storage device.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("freeSize")
@@ -173,6 +180,9 @@ public class AVExternalStorageDevice extends NSObject {
      * Indicates whether the external storage device is connected and available to the system.
      * 
      * The property gives the current connection status of the external storage device.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isConnected")
@@ -184,6 +194,8 @@ public class AVExternalStorageDevice extends NSObject {
      * Indicates whether the external storage device is not recommended for capture use.
      * 
      * This property is used to let the client know if the external storage device is not suitable for camera capture.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isNotRecommendedForCaptureUse")
@@ -222,6 +234,8 @@ public class AVExternalStorageDevice extends NSObject {
      * Use the +requestAccessWithCompletionHandler: method to request access to external storage device before getting
      * the next available URL array else an error will be thrown.
      * 
+     * API-Since: 17.0
+     * 
      * @param extensionArray
      *                       An array of path extensions for the next available URL requested.
      * @param outError
@@ -252,6 +266,8 @@ public class AVExternalStorageDevice extends NSObject {
      * 
      * The completion handler is called on an arbitrary dispatch queue. It is the client's responsibility to ensure that
      * any UIKit-related updates are called on the main queue or main thread as a result.
+     * 
+     * API-Since: 17.0
      * 
      * @param handler
      *                A completion handler block called with the result of requesting access to capture onto an external
@@ -292,6 +308,9 @@ public class AVExternalStorageDevice extends NSObject {
      * 
      * This property represents the total storage size available on the external storage device. Will return -1 if we
      * fail to extract information from external storage device.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("totalSize")
@@ -311,6 +330,8 @@ public class AVExternalStorageDevice extends NSObject {
      * This property can be used to select a specific external storage device with ImageCapture framework APIs to read
      * media assets. Will return nil if we fail to extract information from external storage device.
      * For example the string value of this property will match the value from [ICDevice UUIDString].
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("uuid")

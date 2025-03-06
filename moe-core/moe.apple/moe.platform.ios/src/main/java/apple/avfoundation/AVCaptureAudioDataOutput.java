@@ -144,6 +144,9 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -170,6 +173,9 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("init")
     public native AVCaptureAudioDataOutput init();
@@ -215,6 +221,8 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
      * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setSampleBufferDelegate:queue:
      * method.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -229,6 +237,8 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
      * The value of this property is an object conforming to the AVCaptureAudioDataOutputSampleBufferDelegate protocol
      * that will receive sample buffers after they are captured. The delegate is set using the
      * setSampleBufferDelegate:queue: method.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -255,7 +265,10 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
      * bound from samples that have not been processed.
      * 
      * A serial dispatch queue must be used to guarantee that audio samples will be delivered in order. The
-     * sampleBufferCallbackQueue parameter may not be NULL, except when setting sampleBufferDelegate to nil.
+     * sampleBufferCallbackQueue parameter may not be NULL, except when setting sampleBufferDelegate to nil otherwise
+     * -setSampleBufferDelegate:queue: throws an NSInvalidArgumentException.
+     * 
+     * API-Since: 4.0
      * 
      * @param sampleBufferDelegate
      *                                  An object conforming to the AVCaptureAudioDataOutputSampleBufferDelegate

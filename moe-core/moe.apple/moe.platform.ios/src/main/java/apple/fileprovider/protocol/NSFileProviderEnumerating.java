@@ -106,6 +106,8 @@ public interface NSFileProviderEnumerating {
      * should construct an NSError with domain NSCocoaErrorDomain and code NSXPCConnectionReplyInvalid.
      * The extension should set the NSUnderlyingErrorKey in the NSError's userInfo to the error which could not
      * be represented.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

@@ -169,6 +169,8 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * 
      * Use this initializer for a content source with a player layer.
      * 
+     * API-Since: 15.0
+     * 
      * @param playerLayer
      *                    The player layer to be shown in Picture in Picture.
      */
@@ -180,6 +182,8 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * initWithSampleBufferDisplayLayer:
      * 
      * Use this initializer for a content source with a sample buffer display layer and playback delegate.
+     * 
+     * API-Since: 15.0
      * 
      * @param sampleBufferDisplayLayer
      *                                 The sample buffer display layer to be shown in Picture in Picture.
@@ -224,6 +228,8 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * [@property] playerLayer
      * 
      * The receiver's player layer.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -242,6 +248,8 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * [@property] sampleBufferDisplayLayer
      * 
      * The receiver's sample buffer display layer.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -252,6 +260,8 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * [@property] sampleBufferPlaybackDelegate
      * 
      * The receiver's sample buffer playback delegate.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

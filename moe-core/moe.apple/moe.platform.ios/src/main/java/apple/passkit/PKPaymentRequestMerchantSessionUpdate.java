@@ -97,6 +97,9 @@ public class PKPaymentRequestMerchantSessionUpdate extends NSObject {
     @Selector("init")
     public native PKPaymentRequestMerchantSessionUpdate init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithStatus:merchantSession:")
     public native PKPaymentRequestMerchantSessionUpdate initWithStatusMerchantSession(@NInt long status,
@@ -137,15 +140,24 @@ public class PKPaymentRequestMerchantSessionUpdate extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("session")
     public native PKPaymentMerchantSession session();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSession:")
     public native void setSession(@Nullable PKPaymentMerchantSession value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setStatus:")
     public native void setStatus(@NInt long value);
@@ -154,6 +166,9 @@ public class PKPaymentRequestMerchantSessionUpdate extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("status")
     @NInt

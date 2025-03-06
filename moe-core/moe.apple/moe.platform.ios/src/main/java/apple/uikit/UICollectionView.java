@@ -382,6 +382,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * default is NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowsMultipleSelection")
@@ -389,6 +391,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowsSelection")
@@ -444,6 +448,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * will be automatically resized to track the size of the collection view and placed behind all cells and
      * supplementary views.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -476,49 +482,75 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index
      * path is out of range.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
     @Selector("cellForItemAtIndexPath:")
     public native UICollectionViewCell cellForItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("collectionViewLayout")
     public native UICollectionViewLayout collectionViewLayout();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollectionViewDataSource dataSource();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("deleteItemsAtIndexPaths:")
     public native void deleteItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("deleteSections:")
     public native void deleteSections(@NotNull NSIndexSet sections);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("dequeueReusableCellWithReuseIdentifier:forIndexPath:")
     public native UICollectionViewCell dequeueReusableCellWithReuseIdentifierForIndexPath(@NotNull String identifier,
             @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:")
     public native UICollectionReusableView dequeueReusableSupplementaryViewOfKindWithReuseIdentifierForIndexPath(
             @NotNull String elementKind, @NotNull String identifier, @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("deselectItemAtIndexPath:animated:")
     public native void deselectItemAtIndexPathAnimated(@NotNull NSIndexPath indexPath, boolean animated);
@@ -537,11 +569,17 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("finishInteractiveTransition")
     public native void finishInteractiveTransition();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("indexPathForCell:")
     public native NSIndexPath indexPathForCell(@NotNull UICollectionViewCell cell);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("indexPathForItemAtPoint:")
@@ -549,12 +587,17 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * returns nil or an array of selected index paths
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
     @Selector("indexPathsForSelectedItems")
     public native NSArray<? extends NSIndexPath> indexPathsForSelectedItems();
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("indexPathsForVisibleItems")
@@ -573,6 +616,9 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("init")
     public native UICollectionView init();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UICollectionView initWithCoder(@NotNull NSCoder coder);
@@ -581,17 +627,25 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("initWithFrame:")
     public native UICollectionView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithFrame:collectionViewLayout:")
     public native UICollectionView initWithFrameCollectionViewLayout(@ByValue CGRect frame,
             @NotNull UICollectionViewLayout layout);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("insertItemsAtIndexPaths:")
     public native void insertItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     /**
      * These methods allow dynamic modification of the current set of items in the collection view
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("insertSections:")
@@ -611,26 +665,41 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("setPrefetchingEnabled:")
     public native void setPrefetchingEnabled(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("layoutAttributesForItemAtIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("layoutAttributesForSupplementaryElementOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryElementOfKindAtIndexPath(
             @NotNull String kind, @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("moveItemAtIndexPath:toIndexPath:")
     public native void moveItemAtIndexPathToIndexPath(@NotNull NSIndexPath indexPath,
             @NotNull NSIndexPath newIndexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("moveSection:toSection:")
     public native void moveSectionToSection(@NInt long section, @NInt long newSection);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("numberOfItemsInSection:")
     @NInt
@@ -638,6 +707,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * Information about the current state of the collection view.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("numberOfSections")
@@ -646,6 +717,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * allows multiple insert/delete/reload/move calls to be animated simultaneously. Nestable.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("performBatchUpdates:completion:")
@@ -667,11 +740,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * instantiate a cell.
      * If a nib is registered, it must contain exactly 1 top level object which is a UICollectionViewCell.
      * If a class is registered, it will be instantiated via alloc/initWithFrame:
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("registerClass:forCellWithReuseIdentifier:")
     public native void registerClassForCellWithReuseIdentifier(@Nullable Class cellClass, @NotNull String identifier);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("registerClass:forSupplementaryViewOfKind:withReuseIdentifier:")
     public native void registerClassForSupplementaryViewOfKindWithReuseIdentifier(@Nullable Class viewClass,
@@ -688,15 +766,23 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * discard the dataSource and delegate data and requery as necessary
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("reloadItemsAtIndexPaths:")
     public native void reloadItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("reloadSections:")
     public native void reloadSections(@NotNull NSIndexSet sections);
@@ -713,12 +799,17 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * Interacting with the collection view.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("scrollToItemAtIndexPath:atScrollPosition:animated:")
     public native void scrollToItemAtIndexPathAtScrollPositionAnimated(@NotNull NSIndexPath indexPath,
             @NUInt long scrollPosition, boolean animated);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("selectItemAtIndexPath:animated:scrollPosition:")
     public native void selectItemAtIndexPathAnimatedScrollPosition(@Nullable NSIndexPath indexPath, boolean animated,
@@ -726,6 +817,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * default is NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAllowsMultipleSelection:")
@@ -733,6 +826,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAllowsSelection:")
@@ -741,17 +836,24 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * will be automatically resized to track the size of the collection view and placed behind all cells and
      * supplementary views.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(@Nullable UIView value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setCollectionViewLayout:")
     public native void setCollectionViewLayout(@NotNull UICollectionViewLayout value);
 
     /**
      * transition from one layout to another
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setCollectionViewLayout:animated:")
@@ -766,10 +868,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
             boolean animated,
             @Nullable @ObjCBlock(name = "call_setCollectionViewLayoutAnimatedCompletion") Block_setCollectionViewLayoutAnimatedCompletion completion);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value) {
         Object __old = dataSource();
@@ -782,10 +890,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
         }
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -858,6 +972,9 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("updateInteractiveMovementTargetPosition:")
     public native void updateInteractiveMovementTargetPosition(@ByValue CGPoint targetPosition);
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("visibleCells")
@@ -1259,4 +1376,17 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Gets the index path of the specified supplementary view.
+     * 
+     * @param supplementaryView The supplementary or decoration view whose index path you want.
+     * @return The index path of the specified view if it is in the collection view, else `nil`.
+     * 
+     *         API-Since: 6.0
+     */
+    @Generated
+    @Selector("indexPathForSupplementaryView:")
+    @Nullable
+    public native NSIndexPath indexPathForSupplementaryView(@NotNull UICollectionReusableView supplementaryView);
 }

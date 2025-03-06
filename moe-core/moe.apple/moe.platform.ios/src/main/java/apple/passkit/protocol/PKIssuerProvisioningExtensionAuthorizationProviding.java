@@ -18,6 +18,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKIssuerProvisioningExtensionAuthorizationProviding")
 public interface PKIssuerProvisioningExtensionAuthorizationProviding {
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("completionHandler")
@@ -31,6 +34,9 @@ public interface PKIssuerProvisioningExtensionAuthorizationProviding {
         void call_completionHandler_ret(@NInt long arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setCompletionHandler:")
     void setCompletionHandler(

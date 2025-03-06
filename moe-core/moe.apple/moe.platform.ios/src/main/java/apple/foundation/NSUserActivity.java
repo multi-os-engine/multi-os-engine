@@ -175,6 +175,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * The activityType the user activity was created with.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -184,6 +186,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * Adds to the userInfo dictionary the entries from otherDictionary. The keys and values must be of the types
      * allowed in the userInfo
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("addUserInfoEntriesFromDictionary:")
@@ -193,11 +197,16 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * Marks the receiver as the activity currently in use by the user, for example, the activity associated with the
      * active window. A newly created activity is eligible for continuation on another device after the first time it
      * becomes current.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("becomeCurrent")
     public native void becomeCurrent();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("contentAttributeSet")
@@ -206,6 +215,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * The user activity delegate is informed when the activity is being saved or continued (see NSUserActivityDelegate,
      * below)
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -229,6 +240,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * continuation event. This functionality is optional and is not expected to be needed in most continuation cases.
      * The streams returned in the completion handler will be in an unopened state. The streams should be opened
      * immediately to start requesting information from the other side.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getContinuationStreamsWithCompletionHandler:")
@@ -255,6 +268,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * the NSUserActivityTypes key. When receiving a user activity for continuation, the system locates the appropriate
      * application to launch by finding applications with the target Team ID, then filtering on the incoming activity's
      * type identifier.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithActivityType:")
@@ -271,6 +286,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * Invalidate an activity when it's no longer eligible for continuation, for example, when the window associated
      * with an activity is closed. An invalid activity cannot become current.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("invalidate")
@@ -355,6 +372,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * If set to YES, then the delegate for this user activity will receive a userActivityWillSave: callback before
      * being sent for continuation on another device.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("needsSave")
@@ -380,6 +399,9 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     @Selector("resignCurrent")
     public native void resignCurrent();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setContentAttributeSet:")
     public native void setContentAttributeSet(@Nullable CSSearchableItemAttributeSet value);
@@ -387,6 +409,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * The user activity delegate is informed when the activity is being saved or continued (see NSUserActivityDelegate,
      * below)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -395,6 +419,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * The user activity delegate is informed when the activity is being saved or continued (see NSUserActivityDelegate,
      * below)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSUserActivityDelegate value) {
@@ -437,6 +463,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * If set to YES, then the delegate for this user activity will receive a userActivityWillSave: callback before
      * being sent for continuation on another device.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNeedsSave:")
@@ -456,6 +484,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * When used for continuation, the user activity can allow the continuing side to connect back for more information
      * using streams. This value is set to NO by default. It can be dynamically set to YES to selectively support
      * continuation streams based on the state of the user activity.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSupportsContinuationStreams:")
@@ -463,6 +493,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * An optional, user-visible title for this activity, such as a document name or web page title.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setTitle:")
@@ -473,6 +505,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * Each key and value must be of the following types: NSArray, NSData, NSDate, NSDictionary, NSNull, NSNumber,
      * NSSet, NSString, NSURL, or NSUUID. File scheme URLs which refer to iCloud documents may be translated to valid
      * file URLs on a receiving device.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -481,6 +515,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * When no suitable application is installed on a resuming device and the webpageURL is set, the user activity will
      * instead be continued in a web browser by loading this resource.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setWebpageURL:")
@@ -490,6 +526,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * When used for continuation, the user activity can allow the continuing side to connect back for more information
      * using streams. This value is set to NO by default. It can be dynamically set to YES to selectively support
      * continuation streams based on the state of the user activity.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("supportsContinuationStreams")
@@ -497,6 +535,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * An optional, user-visible title for this activity, such as a document name or web page title.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -508,6 +548,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * Each key and value must be of the following types: NSArray, NSData, NSDate, NSDictionary, NSNull, NSNumber,
      * NSSet, NSString, NSURL, or NSUUID. File scheme URLs which refer to iCloud documents may be translated to valid
      * file URLs on a receiving device.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -517,6 +559,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * When no suitable application is installed on a resuming device and the webpageURL is set, the user activity will
      * instead be continued in a web browser by loading this resource.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -777,7 +821,7 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * [@property] ndefMessagePayload
      * 
-     * The NFC NDEF message with an Universial Link object that triggers the application launch.
+     * The NFC NDEF message with an Universal Link object that triggers the application launch.
      * 
      * API-Since: 12.0
      */

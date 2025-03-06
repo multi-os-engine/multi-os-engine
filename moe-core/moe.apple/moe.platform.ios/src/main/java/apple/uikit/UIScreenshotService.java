@@ -91,6 +91,8 @@ public class UIScreenshotService extends NSObject {
 
     /**
      * Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -148,6 +150,8 @@ public class UIScreenshotService extends NSObject {
 
     /**
      * Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -155,6 +159,8 @@ public class UIScreenshotService extends NSObject {
 
     /**
      * Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIScreenshotServiceDelegate value) {
@@ -183,6 +189,8 @@ public class UIScreenshotService extends NSObject {
 
     /**
      * The window scene associated with the screenshot service
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

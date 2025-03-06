@@ -119,6 +119,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     /**
      * A shared infinite region
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -175,6 +177,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Test for containment
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("containsPoint:")
@@ -201,6 +205,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Create a circular region with radius
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithRadius:")
@@ -208,6 +214,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Create a rectangular region of size.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithSize:")
@@ -217,6 +225,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
      * Create a new region that is the inverse of the current region.
      * The inverse of the infiniteRegion is an empty region.
      * Subclasses of UIRegion need to provide an implementation of inverseRegion.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -225,6 +235,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Create a new region that is the original region minus the supplied region
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -233,6 +245,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Create a new region that is the region covered by the original region and the supplied region
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -241,6 +255,8 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Create a new region that is the original region plus the supplied region
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

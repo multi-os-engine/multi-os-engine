@@ -166,6 +166,9 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("bookingDateComponents")
@@ -173,6 +176,8 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     /**
      * unique identifier supplied by vendor to this booking
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -188,6 +193,8 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     /**
      * model object containing contact information
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -196,6 +203,8 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     /**
      * text captured in UI from user for special requests
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -210,11 +219,17 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @Selector("initWithCoder:")
     public native INBookRestaurantReservationIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("partySize")
     @NUInt
     public native long partySize();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("restaurant")
@@ -222,18 +237,25 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     /**
      * offer selected by user, if one exists
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("selectedOffer")
     public native INRestaurantOffer selectedOffer();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setBookingDateComponents:")
     public native void setBookingDateComponents(@NotNull NSDateComponents value);
 
     /**
      * unique identifier supplied by vendor to this booking
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBookingIdentifier:")
@@ -241,6 +263,8 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     /**
      * model object containing contact information
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setGuest:")
@@ -248,21 +272,31 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     /**
      * text captured in UI from user for special requests
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setGuestProvidedSpecialRequestText:")
     public native void setGuestProvidedSpecialRequestText(@Nullable String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPartySize:")
     public native void setPartySize(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRestaurant:")
     public native void setRestaurant(@NotNull INRestaurant value);
 
     /**
      * offer selected by user, if one exists
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSelectedOffer:")

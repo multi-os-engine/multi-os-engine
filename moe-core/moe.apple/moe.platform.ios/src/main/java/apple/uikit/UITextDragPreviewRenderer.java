@@ -50,6 +50,9 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("adjustFirstLineRect:bodyRect:lastLineRect:textOrigin:")
     public native void adjustFirstLineRectBodyRectLastLineRectTextOrigin(
@@ -72,6 +75,9 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bodyRect")
     @ByValue
@@ -106,6 +112,9 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("firstLineRect")
     @ByValue
@@ -116,6 +125,9 @@ public class UITextDragPreviewRenderer extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("image")
@@ -125,11 +137,17 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Selector("init")
     public native UITextDragPreviewRenderer init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithLayoutManager:range:")
     public native UITextDragPreviewRenderer initWithLayoutManagerRange(@NotNull NSLayoutManager layoutManager,
             @ByValue NSRange range);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithLayoutManager:range:unifyRects:")
     public native UITextDragPreviewRenderer initWithLayoutManagerRangeUnifyRects(@NotNull NSLayoutManager layoutManager,
@@ -157,11 +175,17 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("lastLineRect")
     @ByValue
     public native CGRect lastLineRect();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("layoutManager")

@@ -31,6 +31,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * A class that holds various parameters related to a passkey credential request.
+ * This class is provided by the system to the credential provider extension when there is an active passkey request as
+ * part of
+ * -[ASCredentialProviderViewController prepareCredentialListForServiceIdentifiers:requestParameters:] and should be
+ * used
+ * to construct a passkey credential response using the item selected by the user from the extension's UI.
+ * 
  * API-Since: 17.0
  */
 @Generated
@@ -63,6 +70,8 @@ public class ASPasskeyCredentialRequestParameters extends NSObject implements NS
 
     /**
      * A list of allowed credential IDs for this request. An empty list means all credentials are allowed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("allowedCredentials")
@@ -96,6 +105,8 @@ public class ASPasskeyCredentialRequestParameters extends NSObject implements NS
 
     /**
      * Hash of client data for credential provider to sign as part of the operation.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("clientDataHash")
@@ -163,6 +174,8 @@ public class ASPasskeyCredentialRequestParameters extends NSObject implements NS
 
     /**
      * The relying party identifier for this request.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("relyingPartyIdentifier")
@@ -203,6 +216,8 @@ public class ASPasskeyCredentialRequestParameters extends NSObject implements NS
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
      * through a PIN or biometrics.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userVerificationPreference")
@@ -213,4 +228,14 @@ public class ASPasskeyCredentialRequestParameters extends NSObject implements NS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Inputs for WebAuthn extensions used for passkey assertion.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("extensionInput")
+    @Nullable
+    public native ASPasskeyAssertionCredentialExtensionInput extensionInput();
 }

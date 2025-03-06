@@ -46,6 +46,9 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
         super(peer);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("URL")
@@ -119,6 +122,8 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
      *              you should have a title for each URL so that users can better understand
      *              what each URL represents.
      * @param URL   A URL that, when opened, will join the virtual conference.
+     * 
+     *              API-Since: 15.0
      */
     @Generated
     @Selector("initWithTitle:URL:")
@@ -167,6 +172,9 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("title")

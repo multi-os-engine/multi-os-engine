@@ -144,6 +144,9 @@ public class SKMutableTexture extends SKTexture {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("mutableTextureWithSize:")
     public static native SKMutableTexture mutableTextureWithSize(@ByValue CGSize size);
@@ -235,6 +238,8 @@ public class SKMutableTexture extends SKTexture {
      * Create a mutable texture with a specfic size.
      * 
      * @param size the dimension to use when creating the given texture.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @Selector("initWithSize:")
@@ -246,6 +251,8 @@ public class SKMutableTexture extends SKTexture {
      * @param size   the dimension to use when creating the given texture.
      * @param format the CoreVideo format type. supported types include 'RGBA', 'RGhA', and 'RGfA' for byte, half-float,
      *               and float components.
+     * 
+     *               API-Since: 8.0
      */
     @Generated
     @Selector("initWithSize:pixelFormat:")
@@ -253,6 +260,8 @@ public class SKMutableTexture extends SKTexture {
 
     /**
      * Modify the created mutable texture.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("modifyPixelDataWithBlock:")

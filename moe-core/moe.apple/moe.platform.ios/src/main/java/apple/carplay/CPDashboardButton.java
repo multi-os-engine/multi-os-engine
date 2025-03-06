@@ -106,6 +106,8 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
      * The image displayed on the button. Maximum supported size is 30x30 points.
      * 
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -131,6 +133,8 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
      *                         takes the selected button as its only parameter.
      *                         The image must be non-nil and the title must be a non-zero length string for the button
      *                         to be displayed.
+     * 
+     *                         API-Since: 13.4
      */
     @Generated
     @Selector("initWithTitleVariants:subtitleVariants:image:handler:")
@@ -188,6 +192,8 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
      * An array of subtitle variants for this button, arranged from most to least preferred.
      * The system will select a title from your list of provided variants that fits the available space.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -212,6 +218,8 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
      * An array of title variants for this button, arranged from most to least preferred.
      * The system will select a title from your list of provided variants that fits the available space.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated

@@ -105,6 +105,8 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      * 
+     * API-Since: 14.0
+     * 
      * @param leadingItem  An optional glyph displayed on the leading side of the cell.
      * @param leadingImage An optional image displayed on the leading side of the cell.
      * @param unread       Whether this conversation is unread. If unread, the list item
@@ -144,6 +146,9 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isUnread")
     public native boolean isUnread();
@@ -153,11 +158,17 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("leadingImage")
     public native UIImage leadingImage();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("leadingItem")
     @NInt

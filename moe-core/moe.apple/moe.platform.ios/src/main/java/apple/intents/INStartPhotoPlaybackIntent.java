@@ -169,7 +169,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * Include photos contained in albums matching this name.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("albumName")
@@ -177,7 +182,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * Include photos created in the specified date interval.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("dateCreated")
@@ -185,7 +195,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * When specified, do not match photos of the given types.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("excludedAttributes")
     @NUInt
@@ -193,7 +208,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * When specified, only match photos of the given types.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("includedAttributes")
     @NUInt
@@ -207,6 +227,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INStartPhotoPlaybackIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithDateCreated:locationCreated:albumName:searchTerms:includedAttributes:excludedAttributes:peopleInPhoto:")
     public native INStartPhotoPlaybackIntent initWithDateCreatedLocationCreatedAlbumNameSearchTermsIncludedAttributesExcludedAttributesPeopleInPhoto(
@@ -216,7 +242,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * Include photos taken at the specified location.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("locationCreated")
@@ -224,7 +255,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * INPerson objects that should be present in the included photos, dependent on the peopleInPhotoOperator.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("peopleInPhoto")
@@ -232,7 +268,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * Describes how to combine the contents of the peopleInPhoto array.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("peopleInPhotoOperator")
     @NInt
@@ -240,7 +281,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * Include photos with keywords, names, descriptions, etc. that match these search terms.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("searchTerms")
@@ -248,7 +294,12 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     /**
      * Describes how to combine the contents of the searchTerm array.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INStartPhotoPlaybackIntent is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("searchTermsOperator")
     @NInt

@@ -85,6 +85,9 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("configuration")
@@ -142,6 +145,9 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native UISceneSession new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("persistentIdentifier")
@@ -155,6 +161,9 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("role")
@@ -162,6 +171,8 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
 
     /**
      * If already instantiated, the UIScene instance that is represented by this definition.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -171,6 +182,8 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     /**
      * The initial value of stateRestorationActivity may not be immediately available when the scene
      * is connected, depending on the app's default protection class and the lock state of the device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStateRestorationActivity:")
@@ -178,6 +191,8 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
 
     /**
      * objects must be plist types
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUserInfo:")
@@ -190,6 +205,8 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     /**
      * The initial value of stateRestorationActivity may not be immediately available when the scene
      * is connected, depending on the app's default protection class and the lock state of the device.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -212,6 +229,8 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
 
     /**
      * objects must be plist types
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

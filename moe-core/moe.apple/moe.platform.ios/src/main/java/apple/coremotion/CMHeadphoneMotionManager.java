@@ -65,6 +65,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * Returns the current authorization status for headphone motion.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("authorizationStatus")
@@ -105,6 +107,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * The delegate object to receive motion manager events.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -121,6 +125,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * Returns the latest sample of device motion data, or nil if none is available.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -155,6 +161,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * Discussion:
      * Determines whether the CMHeadphoneMotionManager is currently providing device
      * motion updates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isDeviceMotionActive")
@@ -165,6 +173,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * Determines whether device motion is available.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isDeviceMotionAvailable")
@@ -197,6 +207,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * The delegate object to receive motion manager events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -208,6 +220,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * The delegate object to receive motion manager events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value) {
@@ -231,6 +245,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * Discussion:
      * Starts device motion updates with no handler. To receive the latest device motion data
      * when desired, examine the deviceMotion property.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startDeviceMotionUpdates")
@@ -241,6 +257,9 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * Starts device motion updates, providing data to the given handler through the given queue.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
@@ -259,6 +278,8 @@ public class CMHeadphoneMotionManager extends NSObject {
      * 
      * Discussion:
      * Stops device motion updates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("stopDeviceMotionUpdates")
@@ -277,4 +298,43 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * connectionStatusActive
+     * 
+     * Discussion:
+     * Determines whether the CMHeadphoneMotionManager is currently providing connection updates to the delegate.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("isConnectionStatusActive")
+    public native boolean isConnectionStatusActive();
+
+    /**
+     * startConnectionStatusUpdates
+     * 
+     * Discussion:
+     * Starts event updates to the delegate object. This can be used to register for delegate updates before requesting
+     * device motion data.
+     * 
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("startConnectionStatusUpdates")
+    public native void startConnectionStatusUpdates();
+
+    /**
+     * stopConnectionStatusUpdates
+     * 
+     * Discussion:
+     * Stops connection status updates to the delegate object. This only applies if startConnectionStatusUpdates was
+     * called.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("stopConnectionStatusUpdates")
+    public native void stopConnectionStatusUpdates();
 }

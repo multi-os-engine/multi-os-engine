@@ -29,4 +29,10 @@ public final class MPSGraphDeploymentPlatform {
      * API-Since: 17.0
      */
     @Generated public static final long TvOS = 0x0000000000000002L;
+    /**
+     * Deployment target for visionOS.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final long VisionOS = 0x0000000000000003L;
 }

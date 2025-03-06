@@ -182,11 +182,16 @@ public class UICollectionViewController extends UIViewController implements UICo
     /**
      * Defaults to YES, and if YES, any selection is cleared in viewWillAppear:
      * This property has no effect if the useLayoutToLayoutNavigationTransitions property is set to YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
     public native boolean clearsSelectionOnViewWillAppear();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("collectionView")
     public native UICollectionView collectionView();
@@ -377,14 +382,23 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Selector("init")
     public native UICollectionViewController init();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UICollectionViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithCollectionViewLayout:")
     public native UICollectionViewController initWithCollectionViewLayout(@NotNull UICollectionViewLayout layout);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithNibName:bundle:")
     public native UICollectionViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
@@ -470,11 +484,16 @@ public class UICollectionViewController extends UIViewController implements UICo
     /**
      * Defaults to YES, and if YES, any selection is cleared in viewWillAppear:
      * This property has no effect if the useLayoutToLayoutNavigationTransitions property is set to YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setClearsSelectionOnViewWillAppear:")
     public native void setClearsSelectionOnViewWillAppear(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setCollectionView:")
     public native void setCollectionView(UICollectionView value);

@@ -11,49 +11,49 @@ public final class BNNSOptimizerFunction {
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSOptimizerFunctionSGDMomentum = 0x00000001;
+    @Generated public static final int SGDMomentum = 0x00000001;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdam = 0x00000002;
+    @Generated public static final int Adam = 0x00000002;
     /**
      * API-Since: 14.0
      */
-    @Generated public static final int BNNSOptimizerFunctionRMSProp = 0x00000003;
+    @Generated public static final int RMSProp = 0x00000003;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdamW = 0x00000004;
+    @Generated public static final int AdamW = 0x00000004;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdamAMSGrad = 0x00000005;
+    @Generated public static final int AdamAMSGrad = 0x00000005;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdamWAMSGrad = 0x00000006;
+    @Generated public static final int AdamWAMSGrad = 0x00000006;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionSGDMomentumWithClipping = 0x00000007;
+    @Generated public static final int SGDMomentumWithClipping = 0x00000007;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdamWithClipping = 0x00000008;
+    @Generated public static final int AdamWithClipping = 0x00000008;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionRMSPropWithClipping = 0x00000009;
+    @Generated public static final int RMSPropWithClipping = 0x00000009;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdamWWithClipping = 0x0000000A;
+    @Generated public static final int AdamWWithClipping = 0x0000000A;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdamAMSGradWithClipping = 0x0000000B;
+    @Generated public static final int AdamAMSGradWithClipping = 0x0000000B;
     /**
      * API-Since: 15.0
      */
-    @Generated public static final int BNNSOptimizerFunctionAdamWAMSGradWithClipping = 0x0000000C;
+    @Generated public static final int AdamWAMSGradWithClipping = 0x0000000C;
 }

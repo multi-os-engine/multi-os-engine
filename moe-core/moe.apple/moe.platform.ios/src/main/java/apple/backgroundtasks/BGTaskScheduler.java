@@ -72,6 +72,8 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Cancel all scheduled task requests.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancelAllTaskRequests")
@@ -93,6 +95,8 @@ public class BGTaskScheduler extends NSObject {
      * 
      * - Parameters:
      * - identifier: The string identifier of the task request to cancel.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancelTaskRequestWithIdentifier:")
@@ -129,6 +133,8 @@ public class BGTaskScheduler extends NSObject {
      * The objects passed in the array are copies of the existing requests. Changing the
      * attributes of a request has no effect. To change the attributes submit a new
      * task request using ``BGTaskScheduler/submitTaskRequest:error:``.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("getPendingTaskRequestsWithCompletionHandler:")
@@ -237,6 +243,8 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * The shared background task scheduler instance.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -258,6 +266,8 @@ public class BGTaskScheduler extends NSObject {
      * - error: On input, a pointer to an error object. If an error occurs, this pointer is set to an error object
      * containing the error information. Specify `nil` for this parameter to ignore the error information.
      * identifier and optional configuration information.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("submitTaskRequest:error:")

@@ -129,6 +129,8 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -186,6 +188,8 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      * @param flags            See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
      * 
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:convolutionData:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
@@ -222,6 +226,8 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      * @param flags           See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
      * 
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:convolutionData:scaleValue:type:flags:")

@@ -48,7 +48,10 @@ public final class StoreKit {
 
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Storefront.updates
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -57,7 +60,10 @@ public final class StoreKit {
 
     /**
      * API-Since: 9.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscription.subscriptionUpdates from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -68,7 +74,10 @@ public final class StoreKit {
      * Action for setup entry point (of type SKCloudServiceSetupAction).
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the action property of MusicSubscriptionOffer.Options from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -79,7 +88,10 @@ public final class StoreKit {
      * Identifier of the iTunes Store item the user is trying to access which requires cloud service setup (NSNumber).
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the itemID property of MusicSubscriptionOffer.Options from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -90,7 +102,10 @@ public final class StoreKit {
      * Supported actions for setup entry point.
      * 
      * API-Since: 10.1
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscriptionOffer.Action.subscribe from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -120,7 +135,10 @@ public final class StoreKit {
      * NSNumber BOOL, defaults to NO
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -131,7 +149,10 @@ public final class StoreKit {
      * NSNumber BOOL, defaults to NO
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -142,7 +163,10 @@ public final class StoreKit {
      * NSNumber BOOL, defaults to NO
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -206,7 +230,10 @@ public final class StoreKit {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Storefront.updates
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -217,7 +244,10 @@ public final class StoreKit {
      * iTunes Store affiliate token (NSString).
      * 
      * API-Since: 10.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the affiliateToken property of MusicSubscriptionOffer.Options from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -228,7 +258,10 @@ public final class StoreKit {
      * iTunes Store affiliate campaign token (NSString).
      * 
      * API-Since: 10.3
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the campaignToken property of MusicSubscriptionOffer.Options from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -242,7 +275,10 @@ public final class StoreKit {
      * SKCloudServiceSetupMessageIdentifierJoin.
      * 
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use the messageIdentifier property of MusicSubscriptionOffer.Options from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -253,7 +289,10 @@ public final class StoreKit {
      * Supported message identifiers.
      * 
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscriptionOffer.MessageIdentifier.join from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -262,7 +301,10 @@ public final class StoreKit {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -271,7 +313,10 @@ public final class StoreKit {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscriptionOffer.MessageIdentifier.addMusic from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -280,7 +325,10 @@ public final class StoreKit {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use MusicSubscriptionOffer.MessageIdentifier.playMusic from MusicKit
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()

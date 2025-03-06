@@ -142,6 +142,8 @@ public class PHASESpatialPipelineEntry extends NSObject {
      * Send level.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sendLevel")
@@ -151,6 +153,8 @@ public class PHASESpatialPipelineEntry extends NSObject {
      * [@property] sendLevelMetaParameterDefinition
      * 
      * An optional metaparameter used to drive the send level during playback.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -163,6 +167,8 @@ public class PHASESpatialPipelineEntry extends NSObject {
      * Send level.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSendLevel:")
@@ -172,6 +178,8 @@ public class PHASESpatialPipelineEntry extends NSObject {
      * [@property] sendLevelMetaParameterDefinition
      * 
      * An optional metaparameter used to drive the send level during playback.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSendLevelMetaParameterDefinition:")

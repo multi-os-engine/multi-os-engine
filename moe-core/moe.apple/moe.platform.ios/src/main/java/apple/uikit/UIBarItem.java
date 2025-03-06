@@ -262,6 +262,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -270,12 +272,17 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is UIEdgeInsetsZero
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("imageInsets")
     @ByValue
     public native UIEdgeInsets imageInsets();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("init")
     public native UIBarItem init();
@@ -286,6 +293,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isEnabled")
@@ -293,6 +302,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -324,6 +335,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setImage:")
@@ -331,6 +344,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is UIEdgeInsetsZero
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setImageInsets:")
@@ -356,6 +371,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTag:")
@@ -363,6 +380,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTitle:")
@@ -380,6 +399,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tag")
@@ -388,6 +409,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

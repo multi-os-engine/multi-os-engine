@@ -105,10 +105,16 @@ public class SWAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("fail")
     public native void fail();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("fulfill")
     public native void fulfill();
@@ -139,6 +145,9 @@ public class SWAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isComplete")
     public native boolean isComplete();
@@ -183,6 +192,9 @@ public class SWAction extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("uuid")

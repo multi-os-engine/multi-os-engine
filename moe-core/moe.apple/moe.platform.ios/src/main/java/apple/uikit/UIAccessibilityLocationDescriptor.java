@@ -67,6 +67,8 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     /**
      * Assistive technologies will use the attributedName of the descriptor when describing it to the
      * user (for instance, VoiceOver will speak it).
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,9 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     @Selector("init")
     public native UIAccessibilityLocationDescriptor init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAttributedName:point:inView:")
     public native UIAccessibilityLocationDescriptor initWithAttributedNamePointInView(
@@ -123,6 +128,8 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     /**
      * Provide the view, the point in that view's coordinate space that is of interest, and a name to
      * use to describe it to the user.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithName:point:inView:")
@@ -134,6 +141,8 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
      * converted to the coordinate space of the view).
      * 
      * Note that by default, the accessibilityActivationPoint of a view is its center.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithName:view:")
@@ -164,6 +173,8 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     /**
      * The "name" property and initializer are conveniences for referring to the "attributedName"
      * property, which is the real underlying property.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -177,6 +188,8 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
 
     /**
      * The point in the view that is being described. The point is in the view's coordinate space.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("point")
@@ -210,6 +223,8 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
      * This property is weak to make it simple to avoid reference cycles. Descriptors whose views have
      * been deallocated (or are no longer in a visible window, or are obscured) will be silently
      * ignored. That said, you should still clean up after yourself.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

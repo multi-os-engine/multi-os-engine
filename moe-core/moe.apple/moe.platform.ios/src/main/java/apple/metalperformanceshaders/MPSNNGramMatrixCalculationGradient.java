@@ -68,6 +68,8 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
      * 
      * Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
      * the @ref MPSNNGradientState when it is provided in the encode call.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("alpha")
@@ -131,6 +133,8 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -142,6 +146,8 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
      * 
      * @param device The MTLDevice on which this MPSNNGramMatrixCalculationGradient filter will be used.
      * @return A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -155,6 +161,8 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
      * @param alpha  Scaling factor for the output. NOTE: the value for alpha is automatically adjusted by
      *               the @ref MPSNNGradientState when it is provided in the encode call.
      * @return A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:alpha:")
@@ -201,6 +209,8 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
      * 
      * Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
      * the @ref MPSNNGradientState when it is provided in the encode call.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAlpha:")

@@ -71,6 +71,8 @@ public class CMWaterSubmersionManager extends NSObject {
      * Discussion:
      * Checks to see if the client is authorized to use this API via TCC
      * under Motion & Fitness.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("authorizationStatus")
@@ -115,6 +117,8 @@ public class CMWaterSubmersionManager extends NSObject {
      * to client being authorized. By setting the delegate to a non-nil value,
      * start event and measurement updates. Setting the delegate to nil will
      * stop all updates.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -179,6 +183,8 @@ public class CMWaterSubmersionManager extends NSObject {
      * to client being authorized. By setting the delegate to a non-nil value,
      * start event and measurement updates. Setting the delegate to nil will
      * stop all updates.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -194,6 +200,8 @@ public class CMWaterSubmersionManager extends NSObject {
      * to client being authorized. By setting the delegate to a non-nil value,
      * start event and measurement updates. Setting the delegate to nil will
      * stop all updates.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CMWaterSubmersionManagerDelegate value) {
@@ -225,6 +233,8 @@ public class CMWaterSubmersionManager extends NSObject {
      * 
      * Discussion:
      * Determines whether this feature is available on the current platform.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("waterSubmersionAvailable")
@@ -241,6 +251,8 @@ public class CMWaterSubmersionManager extends NSObject {
      * above this threshold.
      * 
      * Returns nil if client is not authorized for submersion data.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("maximumDepth")

@@ -125,6 +125,9 @@ public class MPSImageFindKeypoints extends MPSKernel {
      *                                  MPSImageKeypointRangeInfo.maximumKeyPoints * rectangle index
      * @param keypointDataBufferOffset  Byte offset into keypointData buffer at which to write the keypoint results.
      *                                  Must be a multiple of 32 bytes.
+     * 
+     * 
+     *                                  API-Since: 11.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:regions:numberOfRegions:keypointCountBuffer:keypointCountBufferOffset:keypointDataBuffer:keypointDataBufferOffset:")
@@ -162,6 +165,8 @@ public class MPSImageFindKeypoints extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -178,6 +183,8 @@ public class MPSImageFindKeypoints extends MPSKernel {
      * @param device The device the filter will run on
      * @param info   Pointer to the MPSImageKeypointRangeInfo struct
      * @return A valid MPSImageFindKeypoints object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:info:")
@@ -212,6 +219,8 @@ public class MPSImageFindKeypoints extends MPSKernel {
      * Return a structure describing the keypoint range info
      * 
      * Returns a MPSImageKeypointRangeInfo structure
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("keypointRangeInfo")

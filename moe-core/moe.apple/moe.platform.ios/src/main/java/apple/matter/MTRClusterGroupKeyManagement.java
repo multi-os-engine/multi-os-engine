@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterGroupKeyManagement extends MTRCluster {
+public class MTRClusterGroupKeyManagement extends MTRGenericCluster {
     static {
         NatJ.register();
     }

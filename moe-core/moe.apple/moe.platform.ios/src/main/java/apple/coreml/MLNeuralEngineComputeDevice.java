@@ -146,6 +146,8 @@ public class MLNeuralEngineComputeDevice extends NSObject implements MLComputeDe
 
     /**
      * The total number of cores in the NeuralEngine.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("totalCoreCount")

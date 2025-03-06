@@ -83,6 +83,8 @@ public class AVAudioTime extends NSObject {
      * The time expressed as an AudioTimeStamp structure.
      * 
      * This may be useful for compatibility with lower-level CoreAudio and AudioToolbox API's.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("audioTimeStamp")
@@ -144,6 +146,8 @@ public class AVAudioTime extends NSObject {
      * AVAudioTime *fullTime0 = [time0 extrapolateTimeFromAnchor: anchor];
      * </pre>
      * 
+     * API-Since: 8.0
+     * 
      * @param anchorTime
      *                   An AVAudioTime with a more complete AudioTimeStamp than that of the receiver (self).
      * @return
@@ -163,6 +167,8 @@ public class AVAudioTime extends NSObject {
      * [@property] hostTime
      * 
      * The host time.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hostTime")
@@ -172,6 +178,8 @@ public class AVAudioTime extends NSObject {
      * hostTimeForSeconds:
      * 
      * Convert seconds to host time.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hostTimeForSeconds:")
@@ -183,6 +191,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * initWithAudioTimeStamp:sampleRate:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithAudioTimeStamp:sampleRate:")
@@ -190,6 +200,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * initWithHostTime:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithHostTime:")
@@ -197,6 +209,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * initWithHostTime:sampleTime:atRate:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithHostTime:sampleTime:atRate:")
@@ -204,6 +218,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * initWithSampleTime:atRate:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithSampleTime:atRate:")
@@ -226,6 +242,8 @@ public class AVAudioTime extends NSObject {
      * [@property] hostTimeValid
      * 
      * Whether the hostTime property is valid.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isHostTimeValid")
@@ -235,6 +253,8 @@ public class AVAudioTime extends NSObject {
      * [@property] sampleTimeValid
      * 
      * Whether the sampleTime and sampleRate properties are valid.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isSampleTimeValid")
@@ -266,6 +286,8 @@ public class AVAudioTime extends NSObject {
      * [@property] sampleRate
      * 
      * The sample rate at which sampleTime is being expressed.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sampleRate")
@@ -275,6 +297,8 @@ public class AVAudioTime extends NSObject {
      * [@property] sampleTime
      * 
      * The time as a number of audio samples, as tracked by the current audio device.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sampleTime")
@@ -284,6 +308,8 @@ public class AVAudioTime extends NSObject {
      * secondsForHostTime:
      * 
      * Convert host time to seconds.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("secondsForHostTime:")
@@ -299,6 +325,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * timeWithAudioTimeStamp:sampleRate:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("timeWithAudioTimeStamp:sampleRate:")
@@ -306,6 +334,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * timeWithHostTime:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("timeWithHostTime:")
@@ -313,6 +343,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * timeWithHostTime:sampleTime:atRate:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("timeWithHostTime:sampleTime:atRate:")
@@ -321,6 +353,8 @@ public class AVAudioTime extends NSObject {
 
     /**
      * timeWithSampleTime:atRate:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("timeWithSampleTime:atRate:")

@@ -62,6 +62,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("batchInsertRequestWithEntityName:objects:")
     public static native NSBatchInsertRequest batchInsertRequestWithEntityNameObjects(@NotNull String entityName,
@@ -96,11 +99,17 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("entityName")
@@ -120,11 +129,17 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     @Selector("init")
     public native NSBatchInsertRequest init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithEntity:objects:")
     public native NSBatchInsertRequest initWithEntityObjects(@NotNull NSEntityDescription entity,
             @NotNull NSArray<? extends NSDictionary<String, ?>> dictionaries);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithEntityName:objects:")
     public native NSBatchInsertRequest initWithEntityNameObjects(@NotNull String entityName,
@@ -157,6 +172,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     @Selector("new")
     public static native NSBatchInsertRequest new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("objectsToInsert")
@@ -173,12 +191,17 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     /**
      * The type of result that should be returned from this request. Defaults to
      * NSBatchInsertRequestResultTypeStatusOnly
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resultType")
     @NUInt
     public native long resultType();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setObjectsToInsert:")
     public native void setObjectsToInsert(@Nullable NSArray<? extends NSDictionary<String, ?>> value);
@@ -186,6 +209,8 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     /**
      * The type of result that should be returned from this request. Defaults to
      * NSBatchInsertRequestResultTypeStatusOnly
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setResultType:")

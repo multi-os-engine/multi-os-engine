@@ -74,6 +74,8 @@ public class VNDetectedObjectObservation extends VNObservation {
     /**
      * The bounding box of the detected object. The coordinates are normalized to the dimensions of the processed image,
      * with the origin at the image's lower-left corner.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("boundingBox")
@@ -151,6 +153,8 @@ public class VNDetectedObjectObservation extends VNObservation {
 
     /**
      * create a new VNDetectedObjectObservation with a normalized bounding box and a confidence of 1.0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("observationWithBoundingBox:")

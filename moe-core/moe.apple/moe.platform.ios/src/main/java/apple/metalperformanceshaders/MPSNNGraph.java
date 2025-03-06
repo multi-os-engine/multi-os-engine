@@ -145,6 +145,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * 
      * This property overrides the allocator for the final result image in
      * the graph. Default: MPSImage.defaultAllocator
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -178,6 +180,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *         graph.
      *         It will be automatically released when commandBuffer completes. It can be nil if resultImageIsNeeded ==
      *         NO
+     * 
+     *         API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -225,6 +229,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the
      *         graph.
      *         It will be automatically released when commandBuffer completes.
+     * 
+     *         API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -286,6 +292,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * 
      * @return A MPSImage to receive the result. The data in the image will not be valid until
      *         the completionHandler is called.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -326,6 +334,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -361,6 +371,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
 
     /**
      * Get a list of identifiers for intermediate images objects produced by the graph
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -385,6 +397,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Should MPSState objects produced by -encodeToCommandBuffer... be temporary objects.
      * 
      * See MPSState description. Default: NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("outputStateIsTemporary")
@@ -400,6 +414,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
 
     /**
      * Get a handle for the graph result image
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -411,6 +427,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Get a list of identifiers for result state objects produced by the graph
      * 
      * Not guaranteed to be in the same order as sourceStateHandles
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -422,6 +440,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * 
      * This property overrides the allocator for the final result image in
      * the graph. Default: MPSImage.defaultAllocator
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDestinationImageAllocator:")
@@ -431,6 +451,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Should MPSState objects produced by -encodeToCommandBuffer... be temporary objects.
      * 
      * See MPSState description. Default: NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputStateIsTemporary:")
@@ -442,6 +464,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
 
     /**
      * Get a list of identifiers for source images needed to calculate the result image
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -452,6 +476,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Get a list of identifiers for source state objects needed to calculate the result image
      * 
      * Not guaranteed to be in the same order as resultStateHandles
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -484,6 +510,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Nor does it affect the storage format for weights
      * such as convolution weights stored by individual filters.
      * Default: MPSImageFeatureChannelFormatFloat16
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("format")
@@ -500,6 +528,9 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     public static native MPSNNGraph graphWithDeviceResultImage(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNImageNode resultImage);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("graphWithDevice:resultImage:resultImageIsNeeded:")
     public static native MPSNNGraph graphWithDeviceResultImageResultImageIsNeeded(
@@ -533,6 +564,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *                       be returned from the left hand side of the -encode call instead,
      *                       and computation to produce the last image may be pruned away.
      * @return A new MPSNNGraph.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:resultImage:resultImageIsNeeded:")
@@ -630,6 +663,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * to ensure data coherency. Most nodes do not have a data source
      * and will not be modified. Nodes that are not used by the graph
      * will not be updated.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("reloadFromDataSources")
@@ -640,6 +675,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * 
      * If NO, nil will be returned from -encode calls and some computation
      * may be omitted.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("resultImageIsNeeded")
@@ -652,6 +689,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Nor does it affect the storage format for weights
      * such as convolution weights stored by individual filters.
      * Default: MPSImageFeatureChannelFormatFloat16
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFormat:")

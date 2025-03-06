@@ -73,12 +73,18 @@ public class PHPersistentChange extends NSObject {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("changeDetailsForObjectType:error:")
     public native PHPersistentObjectChangeDetails changeDetailsForObjectTypeError(@NInt long objectType,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("changeToken")

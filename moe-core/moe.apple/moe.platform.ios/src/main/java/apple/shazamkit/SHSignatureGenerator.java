@@ -77,6 +77,8 @@ public class SHSignatureGenerator extends NSObject {
      * @param time   Where in the stream the audio represents
      * @param buffer The audio data to be appended to the signature
      * @param error  An error if there was an issue appending the buffer
+     * 
+     *               API-Since: 15.0
      */
     @Generated
     @Selector("appendBuffer:atTime:error:")
@@ -169,6 +171,8 @@ public class SHSignatureGenerator extends NSObject {
      * 
      * Signature may be called as many times as needed, each time producing a @c SHSignature from
      * the audio data
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

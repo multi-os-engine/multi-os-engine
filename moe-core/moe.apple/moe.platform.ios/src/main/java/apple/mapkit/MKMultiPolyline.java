@@ -118,6 +118,9 @@ public class MKMultiPolyline extends MKShape implements MKOverlay, MKGeoJSONObje
     @Selector("init")
     public native MKMultiPolyline init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithPolylines:")
     public native MKMultiPolyline initWithPolylines(@NotNull NSArray<? extends MKPolyline> polylines);
@@ -154,6 +157,9 @@ public class MKMultiPolyline extends MKShape implements MKOverlay, MKGeoJSONObje
     @Selector("new")
     public static native MKMultiPolyline new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("polylines")

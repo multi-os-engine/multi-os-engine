@@ -104,6 +104,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Constraint when type == MLFeatureTypeDictionary, nil otherwise
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -117,6 +119,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Constraint when type == MLFeatureTypeImage, nil otherwise
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -142,6 +146,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Check if MLFeatureValue is valid based on this description
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isAllowedValue:")
@@ -149,6 +155,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Whether this feature can take an undefined value or not
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isOptional")
@@ -165,6 +173,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Constraint when type == MLFeatureTypeMultiArray, nil otherwise
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -173,6 +183,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Name of feature
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -202,6 +214,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Type of data
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("type")
@@ -245,4 +259,16 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The state feature value constraint.
+     * 
+     * The property has a value when `.type == MLFeatureTypeState`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("stateConstraint")
+    @Nullable
+    public native MLStateConstraint stateConstraint();
 }

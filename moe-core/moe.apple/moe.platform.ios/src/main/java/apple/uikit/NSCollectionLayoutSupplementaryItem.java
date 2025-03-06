@@ -82,6 +82,9 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("containerAnchor")
@@ -102,6 +105,9 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("elementKind")
@@ -133,6 +139,9 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("itemAnchor")
@@ -171,6 +180,9 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setZIndex:")
     public native void setZIndex(@NInt long value);
@@ -197,6 +209,8 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * +-------------------------------+
      * 
      * Container anchors are used to specify positioning of an item within the host geometry (e.g. item, group, section)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supplementaryItemWithLayoutSize:elementKind:containerAnchor:")
@@ -222,6 +236,8 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * 
      * Combine a container anchor with an item anchor for fine-grained positioning.
      * Optionally add an offset for additional refinement.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supplementaryItemWithLayoutSize:elementKind:containerAnchor:itemAnchor:")
@@ -234,6 +250,9 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("zIndex")
     @NInt

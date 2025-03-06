@@ -100,10 +100,16 @@ public final class _RuneLocale extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void set__sputrune(@FunctionPtr(name = "call___sputrune") Function___sputrune value);
 
+    /**
+     * Deprecated
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int __invalid_rune();
 
+    /**
+     * Deprecated
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void set__invalid_rune(int value);

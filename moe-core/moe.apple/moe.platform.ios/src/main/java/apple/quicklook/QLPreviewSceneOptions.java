@@ -99,6 +99,8 @@ public class QLPreviewSceneOptions extends NSObject {
 
     /**
      * The index of the item to preview initially .
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initialPreviewIndex")
@@ -142,6 +144,8 @@ public class QLPreviewSceneOptions extends NSObject {
 
     /**
      * The index of the item to preview initially .
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInitialPreviewIndex:")

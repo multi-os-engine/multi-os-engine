@@ -98,6 +98,9 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
     @Selector("init")
     public native UIWindowSceneActivationConfiguration init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithUserActivity:")
     public native UIWindowSceneActivationConfiguration initWithUserActivity(@NotNull NSUserActivity userActivity);
@@ -131,6 +134,8 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
 
     /**
      * Options for customizing the scene request. If omitted default options are used.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -139,6 +144,8 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
 
     /**
      * An optional preview used to define the visual "source" of the newly activated scene for use in system animations.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -155,6 +162,8 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
 
     /**
      * Options for customizing the scene request. If omitted default options are used.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setOptions:")
@@ -162,6 +171,8 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
 
     /**
      * An optional preview used to define the visual "source" of the newly activated scene for use in system animations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPreview:")
@@ -177,6 +188,8 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
 
     /**
      * The user activity that will be used to request a scene
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

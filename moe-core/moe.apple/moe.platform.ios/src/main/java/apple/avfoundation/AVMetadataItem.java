@@ -301,6 +301,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
      * metadataItemsFromArray:withKey:keySpace:
      * 
      * Instead, use metadataItemsFromArray:filteredByIdentifier:.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -313,6 +315,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
      * metadataItemsFromArray:withLocale:
      * 
      * Instead, use metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -348,6 +352,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * indicates the common key of the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -374,6 +380,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * provides the raw bytes of the value of the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -383,6 +391,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     /**
      * provides the value of the metadata item as an NSDate. If the metadata item's value can't be coerced to a
      * date, @"dateValue" will be nil.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -412,6 +422,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * provides a dictionary of the additional attributes
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -435,6 +447,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * indicates the key of the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -445,6 +459,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     /**
      * indicates the keyspace of the metadata item's key; this will typically
      * be the default keyspace for the metadata container in which the metadata item is stored
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -458,6 +474,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * indicates the locale of the metadata item; may be nil if no locale information is available for the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -474,6 +492,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     /**
      * provides the value of the metadata item as an NSNumber. If the metadata item's value can't be coerced to a
      * number, @"numberValue" will be nil.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -498,6 +518,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * provides the value of the metadata item as a string; will be nil if the value cannot be represented as a string
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -506,6 +528,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * indicates the timestamp of the metadata item.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("time")
@@ -514,6 +538,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     /**
      * provides the value of the metadata item
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated

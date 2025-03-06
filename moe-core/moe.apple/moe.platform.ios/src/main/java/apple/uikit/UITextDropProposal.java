@@ -99,6 +99,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
 
     /**
      * The proposed text drop action. The default value is UITextDropInsert.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dropAction")
@@ -113,6 +115,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * - provide a preview for the drop
      * 
      * The default is `UITextDropPerformerView`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dropPerformer")
@@ -121,6 +125,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
 
     /**
      * The progress mode to be used. The default value is UITextDropProgressModeSystem.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dropProgressMode")
@@ -177,6 +183,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
 
     /**
      * The proposed text drop action. The default value is UITextDropInsert.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDropAction:")
@@ -190,6 +198,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * - provide a preview for the drop
      * 
      * The default is `UITextDropPerformerView`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDropPerformer:")
@@ -197,6 +207,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
 
     /**
      * The progress mode to be used. The default value is UITextDropProgressModeSystem.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDropProgressMode:")
@@ -208,6 +220,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * items, but instead moves or copies text from the original positions
      * to the dropped position.
      * Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUseFastSameViewOperations:")
@@ -227,6 +241,8 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * items, but instead moves or copies text from the original positions
      * to the dropped position.
      * Defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("useFastSameViewOperations")

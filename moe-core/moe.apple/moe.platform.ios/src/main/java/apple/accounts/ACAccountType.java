@@ -167,21 +167,39 @@ public class ACAccountType extends NSObject {
 
     /**
      * A boolean indicating whether the user has granted access to accounts of this type for your application.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accessGranted")
     public native boolean accessGranted();
 
     /**
      * A human readable description of the account type.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("accountTypeDescription")
     public native String accountTypeDescription();
 
     /**
      * A unique identifier for the account type. Well known system account type identifiers are listed above.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference
+     * instead
      */
+    @Deprecated
     @Generated
     @Selector("identifier")
     public native String identifier();

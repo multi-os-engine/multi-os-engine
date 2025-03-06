@@ -163,6 +163,8 @@ public class NSEntityMigrationPolicy extends NSObject {
     /**
      * Invoked by the migration manager at the start of a given entity mapping. This is also the precursor to the
      * creation step.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("beginEntityMapping:manager:error:")
@@ -177,6 +179,8 @@ public class NSEntityMigrationPolicy extends NSObject {
      * must be careful to
      * associate the source and destination instances as required if super is not called. A return value of NO indicates
      * an error.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("createDestinationInstancesForSourceInstance:entityMapping:manager:error:")
@@ -188,6 +192,8 @@ public class NSEntityMigrationPolicy extends NSObject {
      * Constructs the relationships between the newly-created destination instances. The association lookup methods on
      * the NSMigrationManager can be used to determine the appropriate relationship targets. A return value of NO
      * indicates an error.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("createRelationshipsForDestinationInstance:entityMapping:manager:error:")
@@ -198,6 +204,8 @@ public class NSEntityMigrationPolicy extends NSObject {
     /**
      * Invoked by the migration manager at the end of a given entity mapping. This is also the end to the validation
      * step, which is the last step for migration.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("endEntityMapping:manager:error:")
@@ -207,6 +215,8 @@ public class NSEntityMigrationPolicy extends NSObject {
     /**
      * Indicates the end of the creation step for the specified entity mapping, and the precursor to the next migration
      * step. Developers can override this method to set up or clean up information for further migration steps.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("endInstanceCreationForEntityMapping:manager:error:")
@@ -217,6 +227,8 @@ public class NSEntityMigrationPolicy extends NSObject {
      * Indicates the end of the relationship creation step for the specified entity mapping. This method is invoked
      * after the createRelationshipsForDestinationInstance:entityMapping:manager:error: method, and can be used to clean
      * up state from the creation of relationships, or prepare state for the performance of custom validation.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("endRelationshipCreationForEntityMapping:manager:error:")
@@ -231,6 +243,8 @@ public class NSEntityMigrationPolicy extends NSObject {
      * Invoked during the validation step of the entity migration policy, providing the option of performing custom
      * validation on migrated objects. (Implementors must manually obtain the collection of objects they are interested
      * in validating.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("performCustomValidationForEntityMapping:manager:error:")

@@ -175,6 +175,8 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * Default is 1. The number of taps required to match
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("numberOfTapsRequired")
@@ -191,6 +193,8 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
 
     /**
      * Default is 1. The number of taps required to match
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setNumberOfTapsRequired:")

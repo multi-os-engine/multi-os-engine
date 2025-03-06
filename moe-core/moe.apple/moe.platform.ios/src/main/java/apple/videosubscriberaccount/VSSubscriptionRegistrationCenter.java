@@ -28,7 +28,9 @@ import org.jetbrains.annotations.Nullable;
  * VSSubscriptionRegistrationCenter stores subscription information.
  * 
  * API-Since: 11.0
+ * Deprecated-Since: 18.0
  */
+@Deprecated
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -89,7 +91,11 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
     /**
      * Use the default subscription registration center to tell the system about
      * the customer's ability to access content within your app.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("defaultSubscriptionRegistrationCenter")
@@ -158,7 +164,11 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
      * It is an error to provide a current subscription with an unknown access
      * level; you should not provide a subscription if the user only has access to
      * content that is offered for free without any account requirements.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("setCurrentSubscription:")
     public native void setCurrentSubscription(@Nullable VSSubscription currentSubscription);

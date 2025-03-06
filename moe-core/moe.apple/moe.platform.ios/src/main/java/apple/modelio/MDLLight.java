@@ -176,6 +176,9 @@ public class MDLLight extends MDLObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("colorSpace")
@@ -185,15 +188,24 @@ public class MDLLight extends MDLObject {
     @Selector("init")
     public native MDLLight init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("lightType")
     @NUInt
     public native long lightType();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setColorSpace:")
     public native void setColorSpace(@NotNull String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setLightType:")
     public native void setLightType(@NUInt long value);

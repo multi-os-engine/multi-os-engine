@@ -165,6 +165,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * If YES then the GRU-block output formula is changed to:
      * h1_i = ( 1 - z_i ^ p)^(1/p) h0_i + z_i h_i.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("flipOutputGates")
@@ -174,6 +176,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * [@property] gatePnormValue
      * 
      * The p-norm gating norm value as specified by the GRU formulae. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("gatePnormValue")
@@ -193,6 +197,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wz_ij', bias 'bz_i' and neuron 'gz' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -205,6 +211,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uz_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -244,6 +252,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Vh_ij' - can be used to implement the "Minimally Gated Unit".
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -256,6 +266,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wh_ij', bias 'bh_i' and neuron 'gh' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -268,6 +280,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uh_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -280,6 +294,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wr_ij', bias 'br_i' and neuron 'gr' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -292,6 +308,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Ur_ij' from the GRU formula.
      * If nil then assumed zero weights.Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -313,6 +331,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * If YES then the GRU-block output formula is changed to:
      * h1_i = ( 1 - z_i ^ p)^(1/p) h0_i + z_i h_i.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFlipOutputGates:")
@@ -322,6 +342,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * [@property] gatePnormValue
      * 
      * The p-norm gating norm value as specified by the GRU formulae. Defaults to 1.0f.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setGatePnormValue:")
@@ -332,6 +354,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wz_ij', bias 'bz_i' and neuron 'gz' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputGateInputWeights:")
@@ -343,6 +367,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uz_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputGateRecurrentWeights:")
@@ -354,6 +380,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Vh_ij' - can be used to implement the "Minimally Gated Unit".
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputGateInputGateWeights:")
@@ -365,6 +393,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wh_ij', bias 'bh_i' and neuron 'gh' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputGateInputWeights:")
@@ -376,6 +406,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Uh_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputGateRecurrentWeights:")
@@ -387,6 +419,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Wr_ij', bias 'br_i' and neuron 'gr' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecurrentGateInputWeights:")
@@ -398,6 +432,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      * Contains weights 'Ur_ij' from the GRU formula.
      * If nil then assumed zero weights.Defaults to nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecurrentGateRecurrentWeights:")

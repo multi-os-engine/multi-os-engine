@@ -177,6 +177,9 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("byValue")
@@ -207,6 +210,8 @@ public class CABasicAnimation extends CAPropertyAnimation {
      * 
      * - `byValue' non-nil. Interpolates between the layer's current value
      * of the property in the render tree and that plus `byValue'.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -222,6 +227,9 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @Selector("initWithCoder:")
     public native CABasicAnimation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setByValue:")
     public native void setByValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
@@ -250,15 +258,23 @@ public class CABasicAnimation extends CAPropertyAnimation {
      * 
      * - `byValue' non-nil. Interpolates between the layer's current value
      * of the property in the render tree and that plus `byValue'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFromValue:")
     public native void setFromValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setToValue:")
     public native void setToValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("toValue")

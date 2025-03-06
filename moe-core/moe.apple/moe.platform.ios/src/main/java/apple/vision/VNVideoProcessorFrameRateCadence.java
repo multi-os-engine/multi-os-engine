@@ -90,6 +90,9 @@ public class VNVideoProcessorFrameRateCadence extends VNVideoProcessorCadence {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("frameRate")
     @NInt
@@ -104,6 +107,9 @@ public class VNVideoProcessorFrameRateCadence extends VNVideoProcessorCadence {
     @Selector("init")
     public native VNVideoProcessorFrameRateCadence init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithFrameRate:")
     public native VNVideoProcessorFrameRateCadence initWithFrameRate(@NInt long frameRate);

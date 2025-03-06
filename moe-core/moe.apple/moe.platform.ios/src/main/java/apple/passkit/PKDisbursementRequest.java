@@ -84,6 +84,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * Currency code for this disbursement.
+     * 
+     * API-Since: 17.0
      */
     @NotNull
     @Generated
@@ -144,6 +146,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * Currency code for this disbursement.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setCurrencyCode:")
@@ -152,6 +156,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Array of PKPaymentSummaryItem objects which should be presented to the user.
      * The last item should be the total you wish to disburse, and should not be pending.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSummaryItems:")
@@ -164,6 +170,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Array of PKPaymentSummaryItem objects which should be presented to the user.
      * The last item should be the total you wish to disburse, and should not be pending.
+     * 
+     * API-Since: 17.0
      */
     @NotNull
     @Generated
@@ -182,6 +190,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Optional merchant-supplied information about the disbursement request.
      * It will be signed and included in the resulting PKPaymentToken.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("applicationData")
@@ -191,6 +201,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Convenience method to create an error indicating that the selected card does not support receiving
      * funds via disbursements.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("disbursementCardUnsupportedError")
@@ -201,6 +213,8 @@ public class PKDisbursementRequest extends NSObject {
      * Convenience method to create a receipient contact error with the supplied field
      * You may optionally provide a localized description to be displayed to the user.
      * Available display space for descriptions may be limited, so you should keep your messages concise
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("disbursementContactInvalidErrorWithContactField:localizedDescription:")
@@ -210,6 +224,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * Initialise a disbursement request with all required fields.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithMerchantIdentifier:currencyCode:regionCode:supportedNetworks:merchantCapabilities:summaryItems:")
@@ -220,6 +236,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The payment processing capabilities of the merchant.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("merchantCapabilities")
@@ -229,6 +247,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
      * identifiers in the application's entitlement.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("merchantIdentifier")
@@ -237,6 +257,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * If the merchant already has recipient contact information on file, set it here.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("recipientContact")
@@ -245,6 +267,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The merchant's ISO 3166 region code.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("regionCode")
@@ -254,6 +278,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Indicates which of the recipient's contact details the merchant requires in order to process a disbursement.
      * The order of the elements is ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("requiredRecipientContactFields")
@@ -263,6 +289,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Optional merchant-supplied information about the disbursement request.
      * It will be signed and included in the resulting PKPaymentToken.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setApplicationData:")
@@ -270,6 +298,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The payment processing capabilities of the merchant.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMerchantCapabilities:")
@@ -278,6 +308,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
      * identifiers in the application's entitlement.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMerchantIdentifier:")
@@ -285,6 +317,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * If the merchant already has recipient contact information on file, set it here.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRecipientContact:")
@@ -292,6 +326,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The merchant's ISO 3166 region code.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRegionCode:")
@@ -300,6 +336,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Indicates which of the recipient's contact details the merchant requires in order to process a disbursement.
      * The order of the elements is ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRequiredRecipientContactFields:")
@@ -308,6 +346,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * The payment networks supported by the merchant, for example `@[ PKPaymentNetworkVisa,
      * PKPaymentNetworkMasterCard ]`. This property constrains payment cards that may receive the funds.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSupportedNetworks:")
@@ -316,6 +356,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Set of two-letter ISO 3166 region codes. When provided, it will filter the selectable payment passes to those
      * issued in the supported regions. The order of the elements is ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSupportedRegions:")
@@ -324,6 +366,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * The payment networks supported by the merchant, for example `@[ PKPaymentNetworkVisa,
      * PKPaymentNetworkMasterCard ]`. This property constrains payment cards that may receive the funds.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("supportedNetworks")
@@ -333,6 +377,8 @@ public class PKDisbursementRequest extends NSObject {
     /**
      * Set of two-letter ISO 3166 region codes. When provided, it will filter the selectable payment passes to those
      * issued in the supported regions. The order of the elements is ignored.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("supportedRegions")

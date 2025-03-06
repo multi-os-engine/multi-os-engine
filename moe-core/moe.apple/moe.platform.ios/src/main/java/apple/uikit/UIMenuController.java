@@ -153,6 +153,12 @@ public class UIMenuController extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sharedMenuController")
@@ -183,7 +189,12 @@ public class UIMenuController extends NSObject {
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
      */
+    @Deprecated
     @Generated
     @Selector("isMenuVisible")
     public native boolean isMenuVisible();
@@ -198,6 +209,12 @@ public class UIMenuController extends NSObject {
     @Selector("setMenuVisible:")
     public native void setMenuVisible(boolean menuVisible);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @Selector("menuFrame")
     @ByValue
@@ -251,6 +268,12 @@ public class UIMenuController extends NSObject {
     @Selector("setTargetRect:inView:")
     public native void setTargetRectInView(@ByValue CGRect targetRect, @NotNull UIView targetView);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @Selector("update")
     public native void update();

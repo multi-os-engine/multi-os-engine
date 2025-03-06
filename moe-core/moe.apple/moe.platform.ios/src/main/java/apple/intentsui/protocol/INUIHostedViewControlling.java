@@ -54,6 +54,8 @@ public interface INUIHostedViewControlling {
      *                    property of the INUIHostedViewControlling protocol
      * 
      * @see INInteraction
+     * 
+     *      API-Since: 10.0
      */
     @IsOptional
     @Generated

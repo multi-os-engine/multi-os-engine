@@ -21,6 +21,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDropItem")
 public interface UICollectionViewDropItem {
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("dragItem")
@@ -30,6 +33,8 @@ public interface UICollectionViewDropItem {
      * May be useful for computing the UIDragPreviewTarget transform for UICollectionViewDropCoordinator
      * dropItem:toTarget:
      * Returns CGSizeZero if the dragItem does not have a visible drop preview.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("previewSize")
@@ -41,6 +46,8 @@ public interface UICollectionViewDropItem {
      * If the dragItem comes from some other source (e.g. another source inside or outside of the app), it will be nil.
      * This is useful for directly accessing the model objects in the data source instead of using the item provider
      * to retrieve the data.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

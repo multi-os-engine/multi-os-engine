@@ -174,6 +174,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * load from main bundle
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -189,6 +191,9 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public static native UIImage imageNamedInBundleCompatibleWithTraitCollection(@NotNull String name,
             @Nullable NSBundle bundle, @Nullable UITraitCollection traitCollection);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("imageWithCGImage:")
@@ -220,11 +225,17 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public static native UIImage imageWithCIImageScaleOrientation(@NotNull CIImage ciImage, @NFloat double scale,
             @NInt long orientation);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("imageWithContentsOfFile:")
     public static native UIImage imageWithContentsOfFile(@NotNull String path);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("imageWithData:")
@@ -290,6 +301,9 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("CGImage")
@@ -330,6 +344,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * draws the image as a CGPattern
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("drawAsPatternInRect:")
@@ -337,22 +353,32 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * mode = kCGBlendModeNormal, alpha = 1.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("drawAtPoint:")
     public native void drawAtPoint(@ByValue CGPoint point);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("drawAtPoint:blendMode:alpha:")
     public native void drawAtPointBlendModeAlpha(@ByValue CGPoint point, int blendMode, @NFloat double alpha);
 
     /**
      * mode = kCGBlendModeNormal, alpha = 1.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("drawInRect:")
     public native void drawInRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("drawInRect:blendMode:alpha:")
     public native void drawInRectBlendModeAlpha(@ByValue CGRect rect, int blendMode, @NFloat double alpha);
@@ -404,6 +430,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * this will affect how the image is composited
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("imageOrientation")
@@ -471,6 +499,9 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @Selector("init")
     public native UIImage init();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithCGImage:")
     public native UIImage initWithCGImage(@NotNull CGImageRef cgImage);
@@ -502,10 +533,16 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @Selector("initWithCoder:")
     public native UIImage initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithContentsOfFile:")
     public native UIImage initWithContentsOfFile(@NotNull String path);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithData:")
     public native UIImage initWithData(@NotNull NSData data);
@@ -579,6 +616,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in
      * pixels
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("size")
@@ -927,15 +966,16 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
             @Nullable UIImageConfiguration configuration);
 
     /**
-     * Synchronously prepares this image for displaying on the specified screen.
+     * Decodes an image synchronously and provides a new one for display in views and animations.
      * 
-     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its
+     * [@note] The prepared `UIImage` is not related to the original image. If the properties of the screen (such as its
      * resolution or color gamut) change, or if the image is displayed on a different screen that the one it was
      * prepared for, it may not render correctly.
      * 
      * API-Since: 15.0
      * 
-     * @return A UIImage object that contains the prepared image.
+     * @return A new version of the image object for display. If the system can’t decode the image, this method returns
+     *         `nil`.
      */
     @Nullable
     @Generated
@@ -951,19 +991,19 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native UIImage imageByPreparingThumbnailOfSize(@ByValue CGSize size);
 
     /**
-     * Asynchronously prepares this image for displaying on the specified screen.
+     * Decodes an image asynchronously and provides a new one for display in views and animations.
      * 
      * The completion handler will be invoked on a private queue. Be sure to return to the main queue before assigning
      * the prepared image to an image view.
      * 
-     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its
+     * [@note] The prepared `UIImage` is not related to the original image. If the properties of the screen (such as its
      * resolution or color gamut) change, or if the image is displayed on a different screen that the one it was
      * prepared for, it may not render correctly.
      * 
      * API-Since: 15.0
      * 
-     * @param completionHandler A block to invoke with the prepared image. If preparation failed (for example, beacuse
-     *                          the image data is corrupt), @c image will be nil.
+     * @param completionHandler A block to invoke with the prepared image. If preparation failed (for example, because
+     *                          the image data is corrupt), @c image will be `nil`.
      */
     @Generated
     @Selector("prepareForDisplayWithCompletionHandler:")

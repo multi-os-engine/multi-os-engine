@@ -90,6 +90,8 @@ public class INMassResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the mass with which the user wants to continue.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -107,6 +109,8 @@ public class INMassResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided mass.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -177,6 +181,8 @@ public class INMassResolutionResult extends INIntentResolutionResult {
      * resolvedMass can be different than the original mass. This allows app extensions to apply business logic
      * constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

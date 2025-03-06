@@ -103,6 +103,8 @@ public class ASPasskeyCredentialIdentity extends NSObject implements NSCopying, 
      * The credential ID of this passkey credential.
      * 
      * This field is used to identify the correct credential to use based on relying party request parameters.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("credentialID")
@@ -134,6 +136,8 @@ public class ASPasskeyCredentialIdentity extends NSObject implements NSCopying, 
      * @param credentialID           credential ID of this passkey credential.
      * @param userHandle             user handle data of this passkey credential.
      * @param recordIdentifier       identifier used by credential provider extension to identify this credential.
+     * 
+     *                               API-Since: 17.0
      */
     @Generated
     @Selector("identityWithRelyingPartyIdentifier:userName:credentialID:userHandle:recordIdentifier:")
@@ -157,6 +161,8 @@ public class ASPasskeyCredentialIdentity extends NSObject implements NSCopying, 
      * @param credentialID           credential ID of this passkey credential.
      * @param userHandle             user handle data of this passkey credential.
      * @param recordIdentifier       identifier used by credential provider extension to identify this credential.
+     * 
+     *                               API-Since: 17.0
      */
     @Generated
     @Selector("initWithRelyingPartyIdentifier:userName:credentialID:userHandle:recordIdentifier:")
@@ -205,6 +211,8 @@ public class ASPasskeyCredentialIdentity extends NSObject implements NSCopying, 
      * The relying party identifier of this passkey credential.
      * 
      * This field is reported as the serviceIdentifier property of ASCredentialIdentity.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("relyingPartyIdentifier")
@@ -260,6 +268,8 @@ public class ASPasskeyCredentialIdentity extends NSObject implements NSCopying, 
      * The user handle of this passkey credential.
      * 
      * This field is used to identify the correct credential to use based on relying party request parameters.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userHandle")
@@ -270,6 +280,8 @@ public class ASPasskeyCredentialIdentity extends NSObject implements NSCopying, 
      * The user name of this passkey credential.
      * 
      * This field is reported as the user property of ASCredentialIdentity.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userName")

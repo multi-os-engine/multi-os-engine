@@ -168,6 +168,11 @@ public class CKFetchRecordZoneChangesOptions extends NSObject implements NSSecur
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("desiredKeys")
@@ -185,24 +190,49 @@ public class CKFetchRecordZoneChangesOptions extends NSObject implements NSSecur
     @Selector("initWithCoder:")
     public native CKFetchRecordZoneChangesOptions initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("previousServerChangeToken")
     public native CKServerChangeToken previousServerChangeToken();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("resultsLimit")
     @NUInt
     public native long resultsLimit();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("setPreviousServerChangeToken:")
     public native void setPreviousServerChangeToken(@Nullable CKServerChangeToken value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);

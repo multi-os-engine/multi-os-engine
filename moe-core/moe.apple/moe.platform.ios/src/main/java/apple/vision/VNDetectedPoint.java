@@ -93,6 +93,8 @@ public class VNDetectedPoint extends VNPoint {
 
     /**
      * The confidence in the accuracy of the location, in the range of [0.0, 1.0].
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("confidence")

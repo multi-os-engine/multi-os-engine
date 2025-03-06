@@ -34,12 +34,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An interface for reading the value of a binary measurement and accessing various characteristics of that measurement.
  * 
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: BinaryInputBasic is deprecated and will be removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
+public class MTRBaseClusterBinaryInputBasic extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -121,7 +124,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
      * the completion will be called on the provided queue.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: BinaryInputBasic is deprecated and will be removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:endpointID:queue:")
     public native MTRBaseClusterBinaryInputBasic initWithDeviceEndpointIDQueue(@NotNull MTRBaseDevice device,
@@ -177,7 +183,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcceptedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -195,7 +204,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithCompletion:")
     public native void readAttributeAcceptedCommandListWithCompletion(
@@ -250,7 +262,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActiveTextWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeActiveTextWithClusterStateCacheEndpointQueueCompletion(
@@ -268,7 +283,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeActiveTextWithCompletion:")
     public native void readAttributeActiveTextWithCompletion(
@@ -322,7 +340,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApplicationTypeWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeApplicationTypeWithClusterStateCacheEndpointQueueCompletion(
@@ -340,7 +361,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeApplicationTypeWithCompletion:")
     public native void readAttributeApplicationTypeWithCompletion(
@@ -394,7 +418,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAttributeListWithClusterStateCacheEndpointQueueCompletion(
@@ -412,7 +439,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithCompletion:")
     public native void readAttributeAttributeListWithCompletion(
@@ -466,7 +496,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeClusterRevisionWithClusterStateCacheEndpointQueueCompletion(
@@ -484,7 +517,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithCompletion:")
     public native void readAttributeClusterRevisionWithCompletion(
@@ -538,7 +574,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDescriptionWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeDescriptionWithClusterStateCacheEndpointQueueCompletion(
@@ -556,7 +595,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeDescriptionWithCompletion:")
     public native void readAttributeDescriptionWithCompletion(
@@ -610,7 +652,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeFeatureMapWithClusterStateCacheEndpointQueueCompletion(
@@ -628,7 +673,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithCompletion:")
     public native void readAttributeFeatureMapWithCompletion(
@@ -682,7 +730,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeGeneratedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -700,7 +751,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithCompletion:")
     public native void readAttributeGeneratedCommandListWithCompletion(
@@ -755,7 +809,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInactiveTextWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeInactiveTextWithClusterStateCacheEndpointQueueCompletion(
@@ -773,7 +830,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeInactiveTextWithCompletion:")
     public native void readAttributeInactiveTextWithCompletion(
@@ -827,7 +887,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeOutOfServiceWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeOutOfServiceWithClusterStateCacheEndpointQueueCompletion(
@@ -845,7 +908,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeOutOfServiceWithCompletion:")
     public native void readAttributeOutOfServiceWithCompletion(
@@ -899,7 +965,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePolarityWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePolarityWithClusterStateCacheEndpointQueueCompletion(
@@ -917,7 +986,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePolarityWithCompletion:")
     public native void readAttributePolarityWithCompletion(
@@ -971,7 +1043,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePresentValueWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributePresentValueWithClusterStateCacheEndpointQueueCompletion(
@@ -989,7 +1064,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributePresentValueWithCompletion:")
     public native void readAttributePresentValueWithCompletion(
@@ -1043,7 +1121,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReliabilityWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeReliabilityWithClusterStateCacheEndpointQueueCompletion(
@@ -1061,7 +1142,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeReliabilityWithCompletion:")
     public native void readAttributeReliabilityWithCompletion(
@@ -1115,7 +1199,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeStatusFlagsWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeStatusFlagsWithClusterStateCacheEndpointQueueCompletion(
@@ -1133,7 +1220,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeStatusFlagsWithCompletion:")
     public native void readAttributeStatusFlagsWithCompletion(
@@ -1206,7 +1296,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcceptedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcceptedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -1259,7 +1352,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeActiveTextWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeActiveTextWithParamsSubscriptionEstablishedReportHandler(
@@ -1312,7 +1408,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeApplicationTypeWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeApplicationTypeWithParamsSubscriptionEstablishedReportHandler(
@@ -1365,7 +1464,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAttributeListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAttributeListWithParamsSubscriptionEstablishedReportHandler(
@@ -1418,7 +1520,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeClusterRevisionWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeClusterRevisionWithParamsSubscriptionEstablishedReportHandler(
@@ -1471,7 +1576,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeDescriptionWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeDescriptionWithParamsSubscriptionEstablishedReportHandler(
@@ -1524,7 +1632,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeFeatureMapWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeFeatureMapWithParamsSubscriptionEstablishedReportHandler(
@@ -1577,7 +1688,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeGeneratedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeGeneratedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -1630,7 +1744,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeInactiveTextWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeInactiveTextWithParamsSubscriptionEstablishedReportHandler(
@@ -1683,7 +1800,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeOutOfServiceWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeOutOfServiceWithParamsSubscriptionEstablishedReportHandler(
@@ -1736,7 +1856,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePolarityWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePolarityWithParamsSubscriptionEstablishedReportHandler(
@@ -1789,7 +1912,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributePresentValueWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributePresentValueWithParamsSubscriptionEstablishedReportHandler(
@@ -1842,7 +1968,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeReliabilityWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeReliabilityWithParamsSubscriptionEstablishedReportHandler(
@@ -1895,7 +2024,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeStatusFlagsWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeStatusFlagsWithParamsSubscriptionEstablishedReportHandler(
@@ -1934,7 +2066,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeActiveTextWithValue:completion:")
     public native void writeAttributeActiveTextWithValueCompletion(@NotNull String value,
@@ -1967,7 +2102,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeActiveTextWithValue:params:completion:")
     public native void writeAttributeActiveTextWithValueParamsCompletion(@NotNull String value,
@@ -2002,7 +2140,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeDescriptionWithValue:completion:")
     public native void writeAttributeDescriptionWithValueCompletion(@NotNull String value,
@@ -2035,7 +2176,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeDescriptionWithValue:params:completion:")
     public native void writeAttributeDescriptionWithValueParamsCompletion(@NotNull String value,
@@ -2070,7 +2214,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeInactiveTextWithValue:completion:")
     public native void writeAttributeInactiveTextWithValueCompletion(@NotNull String value,
@@ -2103,7 +2250,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeInactiveTextWithValue:params:completion:")
     public native void writeAttributeInactiveTextWithValueParamsCompletion(@NotNull String value,
@@ -2138,7 +2288,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeOutOfServiceWithValue:completion:")
     public native void writeAttributeOutOfServiceWithValueCompletion(@NotNull NSNumber value,
@@ -2171,7 +2324,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeOutOfServiceWithValue:params:completion:")
     public native void writeAttributeOutOfServiceWithValueParamsCompletion(@NotNull NSNumber value,
@@ -2206,7 +2362,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributePresentValueWithValue:completion:")
     public native void writeAttributePresentValueWithValueCompletion(@NotNull NSNumber value,
@@ -2239,7 +2398,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributePresentValueWithValue:params:completion:")
     public native void writeAttributePresentValueWithValueParamsCompletion(@NotNull NSNumber value,
@@ -2274,7 +2436,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeReliabilityWithValue:completion:")
     public native void writeAttributeReliabilityWithValueCompletion(@NotNull NSNumber value,
@@ -2307,7 +2472,10 @@ public class MTRBaseClusterBinaryInputBasic extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeReliabilityWithValue:params:completion:")
     public native void writeAttributeReliabilityWithValueParamsCompletion(@NotNull NSNumber value,

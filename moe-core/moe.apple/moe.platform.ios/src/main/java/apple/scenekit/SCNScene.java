@@ -363,8 +363,11 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * 
      * Specifies the receiver's environment for image-based lighting (IBL).
      * 
-     * The environment should be a cube map as described in SCNMaterialProperty.h.
-     * MDLSkyCubeTexture is supported starting in macOS 10.13 and iOS 11.
+     * The environment can be
+     * - a cube map (as described in SCNMaterialProperty.h)
+     * - an instance of `MDLSkyCubeTexture` (supported since macOS 10.13 and iOS 11)
+     * - an object returned by `+[SCNMaterialProperty precomputedLightingEnvironmentContentsWithURL:error:]` or
+     * `+[SCNMaterialProperty precomputedLightingEnvironmentContentsWithData:error:]`
      * 
      * API-Since: 10.0
      */

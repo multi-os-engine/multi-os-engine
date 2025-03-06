@@ -98,6 +98,9 @@ public class MPSCNNGroupNormalizationGradientNode extends MPSNNGradientFilterNod
     @Selector("init")
     public native MPSCNNGroupNormalizationGradientNode init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
     public native MPSCNNGroupNormalizationGradientNode initWithSourceGradientSourceImageGradientState(
@@ -131,6 +134,9 @@ public class MPSCNNGroupNormalizationGradientNode extends MPSNNGradientFilterNod
     @Selector("new")
     public static native MPSCNNGroupNormalizationGradientNode new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")
     public static native MPSCNNGroupNormalizationGradientNode nodeWithSourceGradientSourceImageGradientState(

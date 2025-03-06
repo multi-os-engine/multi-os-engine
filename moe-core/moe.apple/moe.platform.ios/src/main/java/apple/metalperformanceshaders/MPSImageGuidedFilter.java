@@ -130,6 +130,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      *                           are the coefficients learnt using encodeRegressionToCommandBuffer.
      * 
      *                           Final reconstructed value = value * reconstructScale + reconstructOffset
+     * 
+     *                           API-Since: 11.3
      */
     @Generated
     @Selector("encodeReconstructionToCommandBuffer:guidanceTexture:coefficientsTexture:destinationTexture:")
@@ -161,6 +163,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      *                                       this kernel to peform the
      *                                       computations using half-precision arithmetic. This can potentially improve
      *                                       performance and/or power usage.
+     * 
+     *                                       API-Since: 11.3
      */
     @Generated
     @Selector("encodeRegressionToCommandBuffer:sourceTexture:guidanceTexture:weightsTexture:destinationCoefficientsTexture:")
@@ -177,6 +181,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * The regularization parameter
      * 
      * The parameter used when computing the linear coefficients a and b.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("epsilon")
@@ -207,6 +213,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -223,6 +231,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * @param device         The device the filter will run on
      * @param kernelDiameter The local window size
      * @return A valid MPSImageGuidedFilterRegression object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelDiameter:")
@@ -252,6 +262,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * The local window size
      * 
      * The local window size.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("kernelDiameter")
@@ -275,6 +287,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * 
      * The offset parameter added to the result of the scaled reconstructed value.
      * The default value is 0.0f.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("reconstructOffset")
@@ -287,6 +301,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * 
      * The parameter used to scale the result of the reconstruction operation.
      * The default value is 1.0f.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("reconstructScale")
@@ -306,6 +322,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * The regularization parameter
      * 
      * The parameter used when computing the linear coefficients a and b.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setEpsilon:")
@@ -318,6 +336,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * 
      * The offset parameter added to the result of the scaled reconstructed value.
      * The default value is 0.0f.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setReconstructOffset:")
@@ -330,6 +350,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      * 
      * The parameter used to scale the result of the reconstruction operation.
      * The default value is 1.0f.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setReconstructScale:")

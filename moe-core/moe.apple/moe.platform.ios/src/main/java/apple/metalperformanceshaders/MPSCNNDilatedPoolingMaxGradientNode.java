@@ -89,11 +89,17 @@ public class MPSCNNDilatedPoolingMaxGradientNode extends MPSCNNPoolingGradientNo
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("dilationRateX")
     @NUInt
     public native long dilationRateX();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("dilationRateY")
     @NUInt
@@ -120,6 +126,8 @@ public class MPSCNNDilatedPoolingMaxGradientNode extends MPSCNNPoolingGradientNo
      * @param kernelHeight    The kernel height of the inference filter
      * @param strideInPixelsX The X stride from the inference filter
      * @param strideInPixelsY The Y stride from the inference filter
+     * 
+     *                        API-Since: 11.3
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:dilationRateX:dilationRateY:")
@@ -176,6 +184,8 @@ public class MPSCNNDilatedPoolingMaxGradientNode extends MPSCNNPoolingGradientNo
      * @param kernelHeight    The kernel height of the inference filter
      * @param strideInPixelsX The X stride from the inference filter
      * @param strideInPixelsY The Y stride from the inference filter
+     * 
+     *                        API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:dilationRateX:dilationRateY:")

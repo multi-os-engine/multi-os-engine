@@ -824,4 +824,136 @@ public final class MTREventIDType {
      * API-Since: 16.4
      */
     @Generated public static final int EventIDTypeClusterUnitTestingEventTestFabricScopedEventID = 0x00000002;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventSmokeAlarmID = 0x00000000;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventCOAlarmID = 0x00000001;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventLowBatteryID = 0x00000002;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventHardwareFaultID = 0x00000003;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventEndOfServiceID = 0x00000004;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventSelfTestCompleteID = 0x00000005;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventAlarmMutedID = 0x00000006;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventMuteEndedID = 0x00000007;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventInterconnectSmokeAlarmID = 0x00000008;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventInterconnectCOAlarmID = 0x00000009;
+    /**
+     * Cluster SmokeCOAlarm events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterSmokeCOAlarmEventAllClearID = 0x0000000A;
+    /**
+     * Cluster OperationalState events
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int EventIDTypeClusterOperationalStateEventOperationalErrorID = 0x00000000;
+    /**
+     * Cluster OperationalState events
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int EventIDTypeClusterOperationalStateEventOperationCompletionID = 0x00000001;
+    /**
+     * Cluster RVCOperationalState events
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int EventIDTypeClusterRVCOperationalStateEventOperationalErrorID = 0x00000000;
+    /**
+     * Cluster RVCOperationalState events
+     * 
+     * API-Since: 17.4
+     */
+    @Generated public static final int EventIDTypeClusterRVCOperationalStateEventOperationCompletionID = 0x00000001;
+    /**
+     * Cluster BooleanStateConfiguration events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterBooleanStateConfigurationEventAlarmsStateChangedID = 0x00000000;
+    /**
+     * Cluster BooleanStateConfiguration events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterBooleanStateConfigurationEventSensorFaultID = 0x00000001;
+    /**
+     * Cluster ValveConfigurationAndControl events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterValveConfigurationAndControlEventValveStateChangedID = 0x00000000;
+    /**
+     * Cluster ValveConfigurationAndControl events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterValveConfigurationAndControlEventValveFaultID = 0x00000001;
+    /**
+     * Cluster ElectricalPowerMeasurement events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterElectricalPowerMeasurementEventMeasurementPeriodRangesID = 0x00000000;
+    /**
+     * Cluster ElectricalEnergyMeasurement events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterElectricalEnergyMeasurementEventCumulativeEnergyMeasuredID = 0x00000000;
+    /**
+     * Cluster ElectricalEnergyMeasurement events
+     * 
+     * API-Since: 17.6
+     */
+    @Generated public static final int EventIDTypeClusterElectricalEnergyMeasurementEventPeriodicEnergyMeasuredID = 0x00000001;
 }

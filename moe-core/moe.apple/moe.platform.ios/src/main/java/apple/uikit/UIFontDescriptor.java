@@ -115,18 +115,26 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Instantiation
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("fontDescriptorWithFontAttributes:")
     public static native UIFontDescriptor fontDescriptorWithFontAttributes(@NotNull NSDictionary<String, ?> attributes);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("fontDescriptorWithName:matrix:")
     public static native UIFontDescriptor fontDescriptorWithNameMatrix(@NotNull String fontName,
             @ByValue CGAffineTransform matrix);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("fontDescriptorWithName:size:")
@@ -166,6 +174,8 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Returns a font descriptor containing the text style and containing the user's selected content size category.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -220,6 +230,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("fontAttributes")
@@ -227,17 +240,25 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * the new attributes take precedence over the existing ones in the receiver
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("fontDescriptorByAddingAttributes:")
     public native UIFontDescriptor fontDescriptorByAddingAttributes(@NotNull NSDictionary<String, ?> attributes);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("fontDescriptorWithFace:")
     public native UIFontDescriptor fontDescriptorWithFace(@NotNull String newFace);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("fontDescriptorWithFamily:")
@@ -248,6 +269,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("fontDescriptorWithMatrix:")
     public native UIFontDescriptor fontDescriptorWithMatrix(@ByValue CGAffineTransform matrix);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("fontDescriptorWithSize:")
@@ -256,12 +280,17 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     /**
      * Returns a new font descriptor reference in the same family with the given symbolic traits, or nil if none found
      * in the system.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
     @Selector("fontDescriptorWithSymbolicTraits:")
     public native UIFontDescriptor fontDescriptorWithSymbolicTraits(int symbolicTraits);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("init")
     public native UIFontDescriptor init();
@@ -270,6 +299,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("initWithCoder:")
     public native UIFontDescriptor initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithFontAttributes:")
     public native UIFontDescriptor initWithFontAttributes(@NotNull NSDictionary<String, ?> attributes);
@@ -278,6 +310,8 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
      * Instance conversion
      * Returns "normalized" font descriptors matching the receiver. mandatoryKeys is an NSSet instance containing keys
      * that are required to be identical in order to be matched. mandatoryKeys can be nil.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -290,12 +324,18 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @ByValue
     public native CGAffineTransform matrix();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectForKey(@NotNull String anAttribute);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("pointSize")
     @NFloat
@@ -303,6 +343,8 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Core attribute access
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -315,6 +357,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("symbolicTraits")
     public native int symbolicTraits();

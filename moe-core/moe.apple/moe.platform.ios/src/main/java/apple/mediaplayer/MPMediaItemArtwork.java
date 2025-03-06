@@ -164,6 +164,8 @@ public class MPMediaItemArtwork extends NSObject {
 
     /**
      * The bounds of the full size image (in points).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("bounds")
@@ -185,6 +187,8 @@ public class MPMediaItemArtwork extends NSObject {
 
     /**
      * Returns the artwork image for an item at a given size (in points).
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated

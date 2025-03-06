@@ -88,6 +88,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alpha")
@@ -127,6 +129,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -154,6 +158,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * 
      * The bias vector must contain at least
      * MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) elements.
+     * 
+     * API-Since: 11.0
      * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -191,12 +197,17 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixNeuron
      * @param device   The MTLDevice on which to make the MPSMatrixNeuron object.
      * @return A new MPSMatrixNeuron object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixNeuron initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSMatrixNeuron initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -225,6 +236,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterA")
@@ -232,6 +245,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterB")
@@ -239,6 +254,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronParameterC")
@@ -246,6 +263,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("neuronType")
@@ -271,6 +290,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -296,6 +317,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * @param A An array containing float values for neuron parameter A.
      *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y,
      *          sourceInputFeatureChannels)
+     * 
+     *          API-Since: 11.0
      */
     @Generated
     @Selector("setNeuronToPReLUWithParametersA:")
@@ -317,6 +340,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * @param parameterA parameterA of neuron activation that is shared across all output values.
      * @param parameterB parameterB of neuron activation that is shared across all output values.
      * @param parameterC parameterC of neuron activation that is shared across all output values.
+     * 
+     *                   API-Since: 11.0
      */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
@@ -336,6 +361,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * Defines also the number of output feature channels.
      * Note: The value used in the operation will be
      * MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
@@ -351,6 +378,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * time the larger of this property or the available number of inputs is
      * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -373,6 +402,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * Defines also the number of output feature channels.
      * Note: The value used in the operation will be
      * MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -389,6 +420,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * time the larger of this property or the available number of inputs is
      * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")

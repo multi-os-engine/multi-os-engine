@@ -110,6 +110,8 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
      *              The initial value of the metaparameter
      * @return
      *         The new PHASEStringMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithValue:")
@@ -126,6 +128,8 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
      *                   An optional custom identifier to give to this object
      * @return
      *         The new PHASEStringMetaParameterDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithValue:identifier:")

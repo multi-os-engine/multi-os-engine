@@ -809,4 +809,11 @@ public final class Enums {
      * in the future they will be delivered as usual.
      */
     @Generated public static final int kDNSServiceFlagsQueueRequest = 0x00000001;
+    @Generated public static final int kDNSServiceErr_StaleData = 0xFFFEFFDC;
+    @Generated public static final int XPC_ACTIVITY_STATE_CHECK_IN = 0x00000000;
+    @Generated public static final int XPC_ACTIVITY_STATE_WAIT = 0x00000001;
+    @Generated public static final int XPC_ACTIVITY_STATE_RUN = 0x00000002;
+    @Generated public static final int XPC_ACTIVITY_STATE_DEFER = 0x00000003;
+    @Generated public static final int XPC_ACTIVITY_STATE_CONTINUE = 0x00000004;
+    @Generated public static final int XPC_ACTIVITY_STATE_DONE = 0x00000005;
 }

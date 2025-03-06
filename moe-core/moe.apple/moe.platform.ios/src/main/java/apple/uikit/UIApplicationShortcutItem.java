@@ -168,6 +168,9 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("icon")
@@ -177,17 +180,26 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Selector("init")
     public native UIApplicationShortcutItem init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithType:localizedTitle:")
     public native UIApplicationShortcutItem initWithTypeLocalizedTitle(@NotNull String type,
             @NotNull String localizedTitle);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
     public native UIApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(
             @NotNull String type, @NotNull String localizedTitle, @Nullable String localizedSubtitle,
             @Nullable UIApplicationShortcutIcon icon, @Nullable NSDictionary<String, ?> userInfo);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("localizedSubtitle")
@@ -195,6 +207,8 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
 
     /**
      * Properties controlling how the item should be displayed on the home screen.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -210,6 +224,8 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
 
     /**
      * An application-specific string that identifies the type of action to perform.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -219,6 +235,8 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     /**
      * Application-specific information needed to perform the action.
      * Will throw an exception if the NSDictionary is not plist-encodable.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -227,6 +245,8 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
 
     /**
      * used with UISceneActivationConditions to customize what scene should be activated for a shortcut
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

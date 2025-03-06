@@ -45,7 +45,12 @@ public interface INCreateTaskListIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INCreateTaskListIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INCreateTaskListIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmCreateTaskList:completion:")
@@ -71,7 +76,12 @@ public interface INCreateTaskListIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INCreateTaskListIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INCreateTaskListIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleCreateTaskList:completion:")
     void handleCreateTaskListCompletion(@NotNull INCreateTaskListIntent intent,
@@ -84,6 +94,12 @@ public interface INCreateTaskListIntentHandling {
         void call_handleCreateTaskListCompletion(@NotNull INCreateTaskListIntentResponse response);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveGroupNameForCreateTaskList:withCompletion:")
@@ -100,6 +116,12 @@ public interface INCreateTaskListIntentHandling {
                 @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCreateTaskListIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTaskTitlesForCreateTaskList:withCompletion:")
@@ -126,7 +148,12 @@ public interface INCreateTaskListIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INCreateTaskListIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTitleForCreateTaskList:withCompletion:")

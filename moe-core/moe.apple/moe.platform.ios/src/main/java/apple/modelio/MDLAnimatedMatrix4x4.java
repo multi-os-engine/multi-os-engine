@@ -89,11 +89,17 @@ public class MDLAnimatedMatrix4x4 extends MDLAnimatedValue {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getDouble4x4Array:maxCount:")
     @NUInt
     public native long getDouble4x4ArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("getFloat4x4Array:maxCount:")
     @NUInt
@@ -135,11 +141,17 @@ public class MDLAnimatedMatrix4x4 extends MDLAnimatedValue {
     @Selector("new")
     public static native MDLAnimatedMatrix4x4 new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithDouble4x4Array:atTimes:count:")
     public native void resetWithDouble4x4ArrayAtTimesCount(@NotNull VoidPtr valuesArray,
             @NotNull ConstDoublePtr timesArray, @NUInt long count);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resetWithFloat4x4Array:atTimes:count:")
     public native void resetWithFloat4x4ArrayAtTimesCount(@NotNull VoidPtr valuesArray,

@@ -48,6 +48,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
      * 
      * Copy an image from a buffer into a texture.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
@@ -76,6 +78,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:
      * 
      * Basic memory copy between buffers.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:")
@@ -88,6 +92,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:
      * 
      * Copy an image from a texture into a buffer.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:")
@@ -116,6 +122,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
      * 
      * Copy a rectangle of pixels between textures.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
@@ -129,6 +137,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * fillBuffer:range:value:
      * 
      * Fill a buffer with a fixed value in each byte.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fillBuffer:range:value:")
@@ -139,6 +149,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * generateMipmapsForTexture:
      * 
      * Generate mipmaps for a texture from the base level up to the max level.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("generateMipmapsForTexture:")

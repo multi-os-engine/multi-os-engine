@@ -173,6 +173,8 @@ public class VNDetectFaceRectanglesRequest extends VNImageBasedRequest {
 
     /**
      * VNFaceObservation results.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

@@ -196,6 +196,8 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
      * This user activity will be used to launch the containing application when host application finds appropriate or
      * when users request so.
      * The containing application should implement the continuity app delegate method(s) to consume this user activity.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -206,6 +208,8 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
      * This user activity will be used to launch the containing application when host application finds appropriate or
      * when users request so.
      * The containing application should implement the continuity app delegate method(s) to consume this user activity.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUserActivity:")

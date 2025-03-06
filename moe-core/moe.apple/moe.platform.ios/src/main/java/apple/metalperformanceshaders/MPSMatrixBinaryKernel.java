@@ -76,6 +76,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed. If a single matrix should be
      * processed set this value to 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("batchSize")
@@ -89,6 +91,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
      * should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("batchStart")
@@ -181,6 +185,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primarySourceMatrixOrigin")
@@ -203,6 +209,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("resultMatrixOrigin")
@@ -217,6 +225,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("secondarySourceMatrixOrigin")
@@ -230,6 +240,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed. If a single matrix should be
      * processed set this value to 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBatchSize:")
@@ -242,6 +254,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
      * should be modified prior to encoding the kernel.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBatchStart:")
@@ -255,6 +269,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrimarySourceMatrixOrigin:")
@@ -268,6 +284,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setResultMatrixOrigin:")
@@ -281,6 +299,8 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
      * [0, 0] at initialization time. If a different origin is desired then
      * this should be modified prior to encoding the kernel. The z value
      * must be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSecondarySourceMatrixOrigin:")

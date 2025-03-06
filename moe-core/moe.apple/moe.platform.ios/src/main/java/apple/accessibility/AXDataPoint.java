@@ -54,6 +54,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
      * Any additional values for additional axes for this data point.
      * These should be provided in the same order as their corresponding
      * `AXDataAxisDescriptor` objects in `AXChartDescriptor.additionalAxes`.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -72,6 +74,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
 
     /**
      * An attributed version of the name or label for this data point.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -127,15 +131,24 @@ public class AXDataPoint extends NSObject implements NSCopying {
     @Selector("init")
     public native AXDataPoint init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithX:y:")
     public native AXDataPoint initWithXY(@NotNull AXDataPointValue xValue, @Nullable AXDataPointValue yValue);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithX:y:additionalValues:")
     public native AXDataPoint initWithXYAdditionalValues(@NotNull AXDataPointValue xValue,
             @Nullable AXDataPointValue yValue, @Nullable NSArray<? extends AXDataPointValue> additionalValues);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithX:y:additionalValues:label:")
     public native AXDataPoint initWithXYAdditionalValuesLabel(@NotNull AXDataPointValue xValue,
@@ -166,6 +179,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
 
     /**
      * A name or label for this data point.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -189,6 +204,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
      * Any additional values for additional axes for this data point.
      * These should be provided in the same order as their corresponding
      * `AXDataAxisDescriptor` objects in `AXChartDescriptor.additionalAxes`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAdditionalValues:")
@@ -196,6 +213,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
 
     /**
      * An attributed version of the name or label for this data point.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAttributedLabel:")
@@ -203,6 +222,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
 
     /**
      * A name or label for this data point.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLabel:")
@@ -215,6 +236,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
     /**
      * The x-axis value for this data point.
      * Should be a Double for a numeric x-axis or a String for a categorical x-axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setXValue:")
@@ -222,6 +245,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
 
     /**
      * The y-axis value for this data point.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setYValue:")
@@ -239,6 +264,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
     /**
      * The x-axis value for this data point.
      * Should be a Double for a numeric x-axis or a String for a categorical x-axis.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -247,6 +274,8 @@ public class AXDataPoint extends NSObject implements NSCopying {
 
     /**
      * The y-axis value for this data point.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

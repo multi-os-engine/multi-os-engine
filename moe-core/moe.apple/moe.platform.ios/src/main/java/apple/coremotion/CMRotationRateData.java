@@ -151,6 +151,9 @@ public class CMRotationRateData extends CMLogItem {
      * 
      * Discussion:
      * The rotation rate as measured by the gyro.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("rotationRate")

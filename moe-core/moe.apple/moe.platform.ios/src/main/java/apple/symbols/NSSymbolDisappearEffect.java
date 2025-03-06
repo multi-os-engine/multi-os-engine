@@ -98,6 +98,8 @@ public class NSSymbolDisappearEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer for a disappear effect that disappears scaling down.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("disappearDownEffect")
@@ -106,6 +108,8 @@ public class NSSymbolDisappearEffect extends NSSymbolEffect {
 
     /**
      * Convenience initializer for a disappear effect that disappears scaling up.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("disappearUpEffect")
@@ -114,6 +118,8 @@ public class NSSymbolDisappearEffect extends NSSymbolEffect {
 
     /**
      * The default disappear effect, determined by the system.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effect")
@@ -121,6 +127,8 @@ public class NSSymbolDisappearEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates incrementally, by layer.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithByLayer")
@@ -129,6 +137,8 @@ public class NSSymbolDisappearEffect extends NSSymbolEffect {
 
     /**
      * Returns a copy of the effect that animates all layers of the symbol simultaneously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("effectWithWholeSymbol")

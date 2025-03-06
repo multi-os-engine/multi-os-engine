@@ -58,6 +58,9 @@ public class PKBarcodeEventSignatureRequest extends NSObject {
     @Selector("allocWithZone:")
     public static native PKBarcodeEventSignatureRequest allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("amount")
@@ -67,6 +70,9 @@ public class PKBarcodeEventSignatureRequest extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("barcodeIdentifier")
@@ -93,6 +99,9 @@ public class PKBarcodeEventSignatureRequest extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("currencyCode")
@@ -106,6 +115,9 @@ public class PKBarcodeEventSignatureRequest extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("deviceAccountIdentifier")
@@ -142,6 +154,9 @@ public class PKBarcodeEventSignatureRequest extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("merchantName")
@@ -152,11 +167,17 @@ public class PKBarcodeEventSignatureRequest extends NSObject {
     @Selector("new")
     public static native PKBarcodeEventSignatureRequest new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("partialSignature")
     public native NSData partialSignature();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("rawMerchantName")
@@ -178,16 +199,25 @@ public class PKBarcodeEventSignatureRequest extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("transactionDate")
     public native NSDate transactionDate();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("transactionIdentifier")
     public native String transactionIdentifier();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("transactionStatus")

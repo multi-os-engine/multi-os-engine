@@ -31,12 +31,17 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPMediaPlayback")
 public interface MPMediaPlayback {
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("beginSeekingBackward")
     void beginSeekingBackward();
 
     /**
      * The seeking rate will increase the longer scanning is active.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("beginSeekingForward")
@@ -45,6 +50,8 @@ public interface MPMediaPlayback {
     /**
      * The current playback rate of the now playing item. Default is 1.0 (normal speed).
      * Pausing will set the rate to 0.0. Setting the rate to non-zero implies playing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("currentPlaybackRate")
@@ -52,17 +59,24 @@ public interface MPMediaPlayback {
 
     /**
      * The current playback time of the now playing item in seconds.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("currentPlaybackTime")
     double currentPlaybackTime();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("endSeeking")
     void endSeeking();
 
     /**
      * Returns YES if prepared for playback.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isPreparedToPlay")
@@ -70,6 +84,8 @@ public interface MPMediaPlayback {
 
     /**
      * Pauses playback if playing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("pause")
@@ -77,6 +93,8 @@ public interface MPMediaPlayback {
 
     /**
      * Plays items from the current queue, resuming paused playback if possible.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("play")
@@ -85,6 +103,8 @@ public interface MPMediaPlayback {
     /**
      * Prepares the current queue for playback, interrupting any active (non-mixible) audio sessions.
      * Automatically invoked when -play is called if the player is not already prepared.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("prepareToPlay")
@@ -93,6 +113,8 @@ public interface MPMediaPlayback {
     /**
      * The current playback rate of the now playing item. Default is 1.0 (normal speed).
      * Pausing will set the rate to 0.0. Setting the rate to non-zero implies playing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setCurrentPlaybackRate:")
@@ -100,6 +122,8 @@ public interface MPMediaPlayback {
 
     /**
      * The current playback time of the now playing item in seconds.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setCurrentPlaybackTime:")
@@ -107,6 +131,8 @@ public interface MPMediaPlayback {
 
     /**
      * Ends playback. Calling -play again will start from the beginnning of the queue.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("stop")

@@ -44,6 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.network.opaque.nw_endpoint_t;
 
 /**
  * [@interface] NEFilterSocketFlow
@@ -200,7 +201,9 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
      * protocol.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("localEndpoint")
@@ -214,7 +217,9 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
      * protocol.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("remoteEndpoint")
@@ -276,4 +281,32 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * * @property localFlowEndpoint
+     * * @discussion The flow's local endpoint. This endpoint object may be nil when [NEFilterDataProvider
+     * handleNewFlow:] is invoked and if so will be populated upon receiving network data.
+     * In such a case, filtering on the flow may still be performed based on its socket type, socket family or socket
+     * protocol.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("localFlowEndpoint")
+    @Nullable
+    public native nw_endpoint_t localFlowEndpoint();
+
+    /**
+     * * @property remoteFlowEndpoint
+     * * @discussion The flow's remote endpoint. This endpoint object may be nil when [NEFilterDataProvider
+     * handleNewFlow:] is invoked and if so will be populated upon receiving network data.
+     * In such a case, filtering on the flow may still be performed based on its socket type, socket family or socket
+     * protocol.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("remoteFlowEndpoint")
+    @Nullable
+    public native nw_endpoint_t remoteFlowEndpoint();
 }

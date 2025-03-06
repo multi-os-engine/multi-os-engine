@@ -72,6 +72,8 @@ public interface VSAccountManagerDelegate {
      * with all supported providers.
      * [@returns] Returning NO will cause the request will fail with an unsupported provider error.
      * 
+     * API-Since: 10.0
+     * 
      * @param accountManager            The account manager instance that received a metadata request.
      * @param accountProviderIdentifier Identifies the otherwise-supported account provider.
      */

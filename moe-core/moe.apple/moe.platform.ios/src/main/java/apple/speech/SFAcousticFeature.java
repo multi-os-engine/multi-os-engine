@@ -55,6 +55,8 @@ public class SFAcousticFeature extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Array of feature values per audio frame, corresponding to a segment of recorded audio
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -117,6 +119,8 @@ public class SFAcousticFeature extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Duration of an audio frame
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("frameDuration")

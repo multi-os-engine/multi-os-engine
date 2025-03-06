@@ -139,6 +139,8 @@ public class VNFaceLandmarkRegion extends NSObject implements NSCopying, NSSecur
     /**
      * pointCount returns the amount of points in a given region. This can be zero if no points for a region could be
      * found.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pointCount")

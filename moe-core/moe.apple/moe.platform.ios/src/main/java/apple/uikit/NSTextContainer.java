@@ -180,6 +180,9 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     @Selector("exclusionPaths")
     public native NSArray<? extends UIBezierPath> exclusionPaths();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("heightTracksTextView")
     public native boolean heightTracksTextView();
@@ -219,6 +222,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * Accessor for the NSLayoutManager object owning the receiver.
      * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
      * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -244,6 +249,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: 5.0 The layout padding at the beginning and end of the line fragment rects insetting the layout
      * width available for the contents. This value is utilized by NSLayoutManager for determining the layout width.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("lineFragmentPadding")
@@ -303,6 +310,9 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     @Selector("setExclusionPaths:")
     public native void setExclusionPaths(@NotNull NSArray<? extends UIBezierPath> value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setHeightTracksTextView:")
     public native void setHeightTracksTextView(boolean value);
@@ -311,6 +321,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * Accessor for the NSLayoutManager object owning the receiver.
      * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
      * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLayoutManager:")
@@ -320,6 +332,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * Accessor for the NSLayoutManager object owning the receiver.
      * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
      * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     public void setLayoutManager(@Nullable NSLayoutManager value) {
@@ -346,6 +360,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: 5.0 The layout padding at the beginning and end of the line fragment rects insetting the layout
      * width available for the contents. This value is utilized by NSLayoutManager for determining the layout width.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLineFragmentPadding:")
@@ -373,6 +389,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Default value: NO Define whether the text container view bounds changes can affect the text container size.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setWidthTracksTextView:")
@@ -391,6 +409,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Default value: NO Define whether the text container view bounds changes can affect the text container size.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("widthTracksTextView")

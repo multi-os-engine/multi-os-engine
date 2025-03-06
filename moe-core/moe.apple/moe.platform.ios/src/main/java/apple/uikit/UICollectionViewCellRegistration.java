@@ -74,11 +74,17 @@ public class UICollectionViewCellRegistration extends NSObject {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("cellClass")
     public native Class cellClass();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("cellNib")
@@ -94,6 +100,9 @@ public class UICollectionViewCellRegistration extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("configurationHandler")
@@ -152,6 +161,9 @@ public class UICollectionViewCellRegistration extends NSObject {
     @Selector("new")
     public static native UICollectionViewCellRegistration new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("registrationWithCellClass:configurationHandler:")
     public static native UICollectionViewCellRegistration registrationWithCellClassConfigurationHandler(

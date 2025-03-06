@@ -52,6 +52,8 @@ public class CNScriptChanges extends NSObject {
 
     /**
      * All detection tracks that have been added. Does not include those created at recording time.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("addedDetectionTracks")
@@ -97,6 +99,9 @@ public class CNScriptChanges extends NSObject {
      * Get persistent data representation of these changes for later restoration.
      * 
      * The changes can only be used with the original cinematic asset from which the CNScript was created.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("dataRepresentation")
@@ -113,6 +118,8 @@ public class CNScriptChanges extends NSObject {
 
     /**
      * The f/number to apply to the entire movie.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("fNumber")
@@ -129,6 +136,8 @@ public class CNScriptChanges extends NSObject {
 
     /**
      * Create from previously saved data representation
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithDataRepresentation:")
@@ -184,6 +193,8 @@ public class CNScriptChanges extends NSObject {
 
     /**
      * All active user decisions, including those made at recording time, unless they have been removed.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("userDecisions")

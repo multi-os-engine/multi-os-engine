@@ -126,6 +126,8 @@ public class UITextPlaceholder extends NSObject {
 
     /**
      * Return the rects of the placeholder
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

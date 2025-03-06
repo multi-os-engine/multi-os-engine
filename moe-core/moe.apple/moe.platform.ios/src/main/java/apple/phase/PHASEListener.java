@@ -98,6 +98,8 @@ public class PHASEListener extends PHASEObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gain")
@@ -116,6 +118,8 @@ public class PHASEListener extends PHASEObject {
      * initWithEngine:
      * 
      * Initialize a new listener.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithEngine:")
@@ -162,6 +166,8 @@ public class PHASEListener extends PHASEObject {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGain:")
@@ -184,4 +190,27 @@ public class PHASEListener extends PHASEObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] automaticHeadTrackingFlags
+     * 
+     * A combination of flags to express automatic headtracking behaviors for this listener.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("automaticHeadTrackingFlags")
+    @NUInt
+    public native long automaticHeadTrackingFlags();
+
+    /**
+     * [@property] automaticHeadTrackingFlags
+     * 
+     * A combination of flags to express automatic headtracking behaviors for this listener.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setAutomaticHeadTrackingFlags:")
+    public native void setAutomaticHeadTrackingFlags(@NUInt long value);
 }

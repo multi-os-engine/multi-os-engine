@@ -140,6 +140,8 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
      * 
      * If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
      * The initial value is the null rect.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("rect")
@@ -159,6 +161,8 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
      * 
      * If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
      * The initial value is the null rect.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setRect:")

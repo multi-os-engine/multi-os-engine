@@ -182,7 +182,11 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("desiredKeys")
@@ -203,17 +207,31 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("fetchRecordChangesCompletionBlock")
     @ObjCBlock(name = "call_fetchRecordChangesCompletionBlock_ret")
     public native Block_fetchRecordChangesCompletionBlock_ret fetchRecordChangesCompletionBlock();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native CKFetchRecordChangesOperation init();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecordZoneID:previousServerChangeToken:")
     public native CKFetchRecordChangesOperation initWithRecordZoneIDPreviousServerChangeToken(
@@ -225,11 +243,20 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * Will be set before fetchRecordChangesCompletionBlock is called.
      * Another CKFetchRecordChangesOperation operation should be run with the updated serverChangeToken token from this
      * operation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("moreComing")
     public native boolean moreComing();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("previousServerChangeToken")
@@ -239,7 +266,11 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("recordChangedBlock")
@@ -250,18 +281,32 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("recordWithIDWasDeletedBlock")
     @ObjCBlock(name = "call_recordWithIDWasDeletedBlock_ret")
     public native Block_recordWithIDWasDeletedBlock_ret recordWithIDWasDeletedBlock();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("recordZoneID")
     public native CKRecordZoneID recordZoneID();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("resultsLimit")
     @NUInt
@@ -273,7 +318,11 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(@Nullable NSArray<String> value);
@@ -293,12 +342,21 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setFetchRecordChangesCompletionBlock:")
     public native void setFetchRecordChangesCompletionBlock(
             @Nullable @ObjCBlock(name = "call_setFetchRecordChangesCompletionBlock") Block_setFetchRecordChangesCompletionBlock value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setPreviousServerChangeToken:")
     public native void setPreviousServerChangeToken(@Nullable CKServerChangeToken value);
@@ -307,7 +365,11 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setRecordChangedBlock:")
     public native void setRecordChangedBlock(
@@ -317,16 +379,30 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setRecordWithIDWasDeletedBlock:")
     public native void setRecordWithIDWasDeletedBlock(
             @Nullable @ObjCBlock(name = "call_setRecordWithIDWasDeletedBlock") Block_setRecordWithIDWasDeletedBlock value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setRecordZoneID:")
     public native void setRecordZoneID(@Nullable CKRecordZoneID value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);

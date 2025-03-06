@@ -168,6 +168,8 @@ public class AVSampleBufferGenerator extends NSObject {
      * 
      * If the specified asset is an HTTP Live Streaming asset, the generator cannot create sample buffers.
      * 
+     * API-Since: 16.0
+     * 
      * @param asset
      *                 The asset from which sample buffers will be created.
      * @param timebase
@@ -231,6 +233,8 @@ public class AVSampleBufferGenerator extends NSObject {
      * @param completionHandler
      *                          The completionHandler will be called, when the sample buffer data is ready, or as soon
      *                          as an error has occurred.
+     * 
+     *                          API-Since: 16.0
      */
     @Generated
     @Selector("notifyOfDataReadyForSampleBuffer:completionHandler:")
@@ -241,7 +245,7 @@ public class AVSampleBufferGenerator extends NSObject {
     @Generated
     public interface Block_notifyOfDataReadyForSampleBufferCompletionHandler {
         @Generated
-        void call_notifyOfDataReadyForSampleBufferCompletionHandler(boolean dataReady, @NotNull NSError error);
+        void call_notifyOfDataReadyForSampleBufferCompletionHandler(boolean dataReady, @Nullable NSError error);
     }
 
     @Generated

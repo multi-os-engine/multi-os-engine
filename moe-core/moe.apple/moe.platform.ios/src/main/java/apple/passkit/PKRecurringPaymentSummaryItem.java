@@ -92,6 +92,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * If set, the date at which the recurring payments will end. Default is nil.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -122,6 +124,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The number of intervals between payments. Default is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("intervalCount")
@@ -131,6 +135,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     /**
      * The interval at which payments will be taken (daily, weekly, monthly, yearly, etc.). The default value is
      * NSCalendarUnitMonth.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("intervalUnit")
@@ -161,6 +167,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * If set, the date at which the recurring payments will end. Default is nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setEndDate:")
@@ -168,6 +176,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The number of intervals between payments. Default is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIntervalCount:")
@@ -176,6 +186,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     /**
      * The interval at which payments will be taken (daily, weekly, monthly, yearly, etc.). The default value is
      * NSCalendarUnitMonth.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIntervalUnit:")
@@ -183,6 +195,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The timestamp at which the first payment will be taken; nil indicates immediately. The default value is nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setStartDate:")
@@ -194,6 +208,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
 
     /**
      * The timestamp at which the first payment will be taken; nil indicates immediately. The default value is nil.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

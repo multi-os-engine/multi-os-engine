@@ -175,6 +175,8 @@ public class UIPageViewController extends UIViewController {
 
     /**
      * If nil, user gesture-driven navigation will be disabled.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -182,6 +184,9 @@ public class UIPageViewController extends UIViewController {
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPageViewControllerDataSource dataSource();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -193,6 +198,8 @@ public class UIPageViewController extends UIViewController {
      * UIPageViewController's hierarchy, they can be placed on an arbitrary view to change the region in which the page
      * view controller will respond to user gestures.
      * Only populated if transition style is 'UIPageViewControllerTransitionStylePageCurl'.
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -203,6 +210,9 @@ public class UIPageViewController extends UIViewController {
     @Selector("init")
     public native UIPageViewController init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIPageViewController initWithCoder(@NotNull NSCoder coder);
@@ -212,6 +222,9 @@ public class UIPageViewController extends UIViewController {
     public native UIPageViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithTransitionStyle:navigationOrientation:options:")
     public native UIPageViewController initWithTransitionStyleNavigationOrientationOptions(@NInt long style,
@@ -219,6 +232,8 @@ public class UIPageViewController extends UIViewController {
 
     /**
      * Default is 'NO'.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isDoubleSided")
@@ -226,11 +241,16 @@ public class UIPageViewController extends UIViewController {
 
     /**
      * Default is 'NO'.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setDoubleSided:")
     public native void setDoubleSided(boolean value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("navigationOrientation")
     @NInt
@@ -238,6 +258,8 @@ public class UIPageViewController extends UIViewController {
 
     /**
      * If nil, user gesture-driven navigation will be disabled.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setDataSource:")
@@ -246,6 +268,8 @@ public class UIPageViewController extends UIViewController {
 
     /**
      * If nil, user gesture-driven navigation will be disabled.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UIPageViewControllerDataSource value) {
@@ -259,10 +283,16 @@ public class UIPageViewController extends UIViewController {
         }
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value) {
         Object __old = delegate();
@@ -281,6 +311,8 @@ public class UIPageViewController extends UIViewController {
      * For transition style 'UIPageViewControllerTransitionStylePageCurl', if 'doubleSided' is 'YES' and the spine
      * location is not 'UIPageViewControllerSpineLocationMid', two view controllers must be included, as the latter view
      * controller is used as the back.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setViewControllers:direction:animated:completion:")
@@ -291,17 +323,25 @@ public class UIPageViewController extends UIViewController {
     /**
      * If transition style is 'UIPageViewControllerTransitionStylePageCurl', default is
      * 'UIPageViewControllerSpineLocationMin', otherwise 'UIPageViewControllerSpineLocationNone'.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("spineLocation")
     @NInt
     public native long spineLocation();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("transitionStyle")
     @NInt
     public native long transitionStyle();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("viewControllers")

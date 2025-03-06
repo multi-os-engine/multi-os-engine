@@ -97,6 +97,9 @@ public class MPMusicPlayerControllerMutableQueue extends MPMusicPlayerController
     @Selector("init")
     public native MPMusicPlayerControllerMutableQueue init();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("insertQueueDescriptor:afterItem:")
     public native void insertQueueDescriptorAfterItem(@NotNull MPMusicPlayerQueueDescriptor queueDescriptor,
@@ -129,6 +132,9 @@ public class MPMusicPlayerControllerMutableQueue extends MPMusicPlayerController
     @Selector("new")
     public static native MPMusicPlayerControllerMutableQueue new_objc();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@NotNull MPMediaItem item);

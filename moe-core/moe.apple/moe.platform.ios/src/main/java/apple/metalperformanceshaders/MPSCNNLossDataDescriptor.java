@@ -77,6 +77,8 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * Slice bytes of loss data.
      * 
      * This parameter specifies the slice bytes of loss data.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("bytesPerImage")
@@ -89,6 +91,8 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * Row bytes of loss data.
      * 
      * This parameter specifies the row bytes of loss data.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("bytesPerRow")
@@ -126,6 +130,8 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * @param layout The data layout of loss data.
      * @param size   The size of loss data.
      * @return A valid MPSCNNLossDataDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -185,6 +191,8 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * Data layout of loss data. See MPSImage.h for more information.
      * 
      * This parameter specifies the layout of loss data.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("layout")
@@ -210,6 +218,8 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * Slice bytes of loss data.
      * 
      * This parameter specifies the slice bytes of loss data.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setBytesPerImage:")
@@ -221,6 +231,8 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * Row bytes of loss data.
      * 
      * This parameter specifies the row bytes of loss data.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setBytesPerRow:")
@@ -236,6 +248,8 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * Size of loss data: (width, height, feature channels}.
      * 
      * This parameter specifies the size of loss data.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("size")

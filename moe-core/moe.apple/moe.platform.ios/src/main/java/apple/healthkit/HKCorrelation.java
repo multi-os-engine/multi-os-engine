@@ -116,6 +116,8 @@ public class HKCorrelation extends HKSample {
      * Creates a new HKCorrelation with the given type, start date, end date, and objects.
      * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:")
@@ -151,6 +153,8 @@ public class HKCorrelation extends HKSample {
      * Creates a new HKCorrelation with the given type, start date, end date, objects, and metadata.
      * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:metadata:")
@@ -223,6 +227,9 @@ public class HKCorrelation extends HKSample {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("correlationType")
@@ -240,6 +247,8 @@ public class HKCorrelation extends HKSample {
      * [@property] objects
      * 
      * A set of HKSamples containing all of the objects that were saved with the receiver.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -250,6 +259,8 @@ public class HKCorrelation extends HKSample {
      * objectsForType:
      * 
      * Returns the set of correlated objects with the specified type.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

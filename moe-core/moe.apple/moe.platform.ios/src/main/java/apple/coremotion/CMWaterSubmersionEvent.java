@@ -98,6 +98,9 @@ public class CMWaterSubmersionEvent extends NSObject implements NSSecureCoding, 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("date")
@@ -167,6 +170,9 @@ public class CMWaterSubmersionEvent extends NSObject implements NSSecureCoding, 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("state")
     @NInt

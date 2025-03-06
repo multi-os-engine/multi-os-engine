@@ -132,6 +132,12 @@ public class MTRAttributeCacheContainer extends NSObject {
     @Selector("new")
     public static native MTRAttributeCacheContainer new_objc();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRClusterStateCacheContainer
+     */
+    @Deprecated
     @Generated
     @Selector("readAttributeWithEndpointId:clusterId:attributeId:clientQueue:completion:")
     public native void readAttributeWithEndpointIdClusterIdAttributeIdClientQueueCompletion(

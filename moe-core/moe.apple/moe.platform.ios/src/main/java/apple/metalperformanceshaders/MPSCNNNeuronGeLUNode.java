@@ -108,6 +108,8 @@ public class MPSCNNNeuronGeLUNode extends MPSCNNNeuronNode {
      * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for a MPSCNNNeuronLogarithm kernel.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithSource:")
@@ -142,6 +144,8 @@ public class MPSCNNNeuronGeLUNode extends MPSCNNNeuronNode {
 
     /**
      * Create an autoreleased node
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("nodeWithSource:")

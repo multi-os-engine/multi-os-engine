@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This is a class that consists of all the levers to synchronize and schedule graph execution.
+ * A class that consists of all the levers to synchronize and schedule graph execution.
  * 
  * API-Since: 14.0
  */
@@ -140,7 +140,11 @@ public class MPSGraphExecutionDescriptor extends MPSGraphObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Flag that makes the execution call blocking till the entire compilation is complete, defaults to NO.
+     * The flag that blocks the execution call until the entire execution is complete.
+     * 
+     * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setWaitUntilCompleted:")
@@ -156,14 +160,20 @@ public class MPSGraphExecutionDescriptor extends MPSGraphObject {
     public static native long version_static();
 
     /**
-     * Flag that makes the execution call blocking till the entire compilation is complete, defaults to NO.
+     * The flag that blocks the execution call until the entire execution is complete.
+     * 
+     * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("waitUntilCompleted")
     public native boolean waitUntilCompleted();
 
     /**
-     * compilationDescriptor for the graph, default value is nil.
+     * The compilation descriptor for the graph.
+     * 
+     * Default value is nil.
      * 
      * API-Since: 15.4
      */
@@ -173,7 +183,9 @@ public class MPSGraphExecutionDescriptor extends MPSGraphObject {
     public native MPSGraphCompilationDescriptor compilationDescriptor();
 
     /**
-     * compilationDescriptor for the graph, default value is nil.
+     * The compilation descriptor for the graph.
+     * 
+     * Default value is nil.
      * 
      * API-Since: 15.4
      */

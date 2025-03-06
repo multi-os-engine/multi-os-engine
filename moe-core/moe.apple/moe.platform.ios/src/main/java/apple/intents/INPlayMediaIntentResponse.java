@@ -84,6 +84,9 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -114,6 +117,8 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -153,6 +158,8 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
 
     /**
      * This dictionary should be populated using the keys from MPNowPlayingInfoCenter.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -169,6 +176,8 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
 
     /**
      * This dictionary should be populated using the keys from MPNowPlayingInfoCenter.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setNowPlayingInfo:")

@@ -33,6 +33,8 @@ public interface UITableViewDragDelegate {
     /**
      * Allows customization of the preview used for the row when it is lifted or if the drag cancels.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -46,6 +48,8 @@ public interface UITableViewDragDelegate {
     /**
      * Controls whether move operations are allowed for the drag session.
      * If not implemented, defaults to YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -57,6 +61,8 @@ public interface UITableViewDragDelegate {
 
     /**
      * Called to signal the end of the drag session.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -69,6 +75,8 @@ public interface UITableViewDragDelegate {
     /**
      * Controls whether the drag session is restricted to the source application.
      * If not implemented, defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -81,6 +89,8 @@ public interface UITableViewDragDelegate {
     /**
      * Called after the lift animation has completed to signal the start of a drag session.
      * This call will always be balanced with a corresponding call to -tableView:dragSessionDidEnd:
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -95,6 +105,8 @@ public interface UITableViewDragDelegate {
      * You can use the provided point (in the table view's coordinate space) to do additional hit testing if desired.
      * If not implemented, or if an empty array is returned, no items will be added to the drag and the gesture
      * will be handled normally.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -110,6 +122,8 @@ public interface UITableViewDragDelegate {
      * Provide items to begin a drag associated with a given index path.
      * You can use -[session locationInView:] to do additional hit testing if desired.
      * If an empty array is returned a drag session will not begin.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

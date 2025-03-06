@@ -103,6 +103,9 @@ public class INRentalCarReservation extends INReservation implements NSCopying, 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("dropOffLocation")
@@ -125,6 +128,9 @@ public class INRentalCarReservation extends INReservation implements NSCopying, 
     @Selector("initWithCoder:")
     public native INRentalCarReservation initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:rentalCar:rentalDuration:pickupLocation:dropOffLocation:")
     public native INRentalCarReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsRentalCarRentalDurationPickupLocationDropOffLocation(
@@ -161,16 +167,25 @@ public class INRentalCarReservation extends INReservation implements NSCopying, 
     @Selector("new")
     public static native INRentalCarReservation new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("pickupLocation")
     public native CLPlacemark pickupLocation();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("rentalCar")
     public native INRentalCar rentalCar();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("rentalDuration")

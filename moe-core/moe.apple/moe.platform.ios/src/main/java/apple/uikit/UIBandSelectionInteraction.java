@@ -110,6 +110,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
      * Creates a UIBandSelectionInteraction with the given selection handler.
      * 
      * @param selectionHandler Called when the interaction's state and/or selection rect change.
+     * 
+     *                         API-Since: 15.0
      */
     @Generated
     @Selector("initWithSelectionHandler:")
@@ -125,6 +127,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     /**
      * Modifier keys held at the beginning of the interaction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initialModifierFlags")
@@ -146,6 +150,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     /**
      * Indicates whether the interaction is enabled. Defaults to YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isEnabled")
@@ -175,6 +181,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     /**
      * The current selection rect. Returns CGRectNull when the interaction is inactive.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("selectionRect")
@@ -183,6 +191,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     /**
      * Indicates whether the interaction is enabled. Defaults to YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -191,6 +201,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     /**
      * Called when the interaction is about to begin.
      * Return a boolean indicating whether the interaction should begin at the given location.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setShouldBeginHandler:")
@@ -211,6 +223,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     /**
      * Called when the interaction is about to begin.
      * Return a boolean indicating whether the interaction should begin at the given location.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -227,6 +241,8 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     /**
      * The interaction's current state.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("state")

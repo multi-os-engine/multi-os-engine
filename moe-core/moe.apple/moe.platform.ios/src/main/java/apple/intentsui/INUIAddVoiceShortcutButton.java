@@ -261,6 +261,9 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -292,6 +295,9 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("initWithFrame:")
     public native INUIAddVoiceShortcutButton initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithStyle:")
     public native INUIAddVoiceShortcutButton initWithStyle(@NUInt long style);
@@ -430,11 +436,17 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutButtonDelegate value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutButtonDelegate value) {
         Object __old = delegate();
@@ -447,6 +459,9 @@ public class INUIAddVoiceShortcutButton extends UIButton {
         }
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setShortcut:")
     public native void setShortcut(@Nullable INShortcut value);
@@ -462,11 +477,17 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("shortcut")
     public native INShortcut shortcut();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("style")
     @NUInt

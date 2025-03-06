@@ -138,13 +138,15 @@ public class DCAppAttestService extends NSObject {
      * calling the
      * ``DeviceCheck/DCAppAttestService/generateKeyWithCompletionHandler:`` method.
      * - clientDataHash: A SHA256 hash of a unique, single-use data block that
-     * embeds a challenge from your server.
+     * embeds a challenge from your server. Should be at least 16 bytes in length.
      * - completionHandler: A closure that the method calls upon completion with
      * the following parameters:
      * - `attestationObject`: A statement from Apple about the validity of the key
      * associated with `keyId`. Send this to your server for processing.
      * - `error`: A ``DeviceCheck/DCError-swift.struct`` instance that indicates the reason for
      * failure, or `nil` on success.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("attestKey:clientDataHash:completionHandler:")
@@ -227,12 +229,14 @@ public class DCAppAttestService extends NSObject {
      * calling the
      * ``DeviceCheck/DCAppAttestService/generateKeyWithCompletionHandler:`` method.
      * - clientDataHash: A SHA256 hash of a unique, single-use data block that
-     * represents the client data to be signed with the attested private key.
+     * represents the client data to be signed with the attested private key. Should be at least 16 bytes in length.
      * - completionHandler: A closure that the method calls upon completion with
      * the following parameters:
      * - `assertionObject`: A data structure that you send to your server for processing.
      * - `error` : A ``DeviceCheck/DCError-swift.struct`` instance that indicates the reason for failure, or `nil` on
      * success.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("generateAssertion:clientDataHash:completionHandler:")
@@ -293,6 +297,8 @@ public class DCAppAttestService extends NSObject {
      * stores the key in the Secure Enclave.
      * - `error`: A ``DeviceCheck/DCError-swift.struct`` instance that indicates the
      * reason for failure, or `nil` on success.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("generateKeyWithCompletionHandler:")
@@ -357,6 +363,8 @@ public class DCAppAttestService extends NSObject {
      * watchOS 9 or later. For these extensions, you can use the results from
      * ``DeviceCheck/DCAppAttestService/supported`` to indicate whether your
      * WatchKit extension bypasses attestation.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isSupported")
@@ -389,6 +397,8 @@ public class DCAppAttestService extends NSObject {
      * 
      * Use the shared instance of the service to generate and to certify a
      * cryptographic key, and then to assert your app’s validity using that key.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

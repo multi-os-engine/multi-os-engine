@@ -53,6 +53,8 @@ public class MTROperationalCertificateChain extends NSObject {
      * adminSubject is passed to the device as part of the AddNOC command. A nil
      * adminSubject means the node id of the relevant MTRDeviceController will be
      * used.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("adminSubject")
@@ -111,6 +113,9 @@ public class MTROperationalCertificateChain extends NSObject {
     @Selector("init")
     public native MTROperationalCertificateChain init();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("initWithOperationalCertificate:intermediateCertificate:rootCertificate:adminSubject:")
     public native MTROperationalCertificateChain initWithOperationalCertificateIntermediateCertificateRootCertificateAdminSubject(
@@ -132,6 +137,8 @@ public class MTROperationalCertificateChain extends NSObject {
 
     /**
      * A nil intermediateCertificate means there is no intermediate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("intermediateCertificate")
@@ -152,6 +159,9 @@ public class MTROperationalCertificateChain extends NSObject {
     @Selector("new")
     public static native MTROperationalCertificateChain new_objc();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("operationalCertificate")
     @NotNull
@@ -165,6 +175,9 @@ public class MTROperationalCertificateChain extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("rootCertificate")
     @NotNull
@@ -174,6 +187,8 @@ public class MTROperationalCertificateChain extends NSObject {
      * adminSubject is passed to the device as part of the AddNOC command. A nil
      * adminSubject means the node id of the relevant MTRDeviceController will be
      * used.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setAdminSubject:")
@@ -181,15 +196,23 @@ public class MTROperationalCertificateChain extends NSObject {
 
     /**
      * A nil intermediateCertificate means there is no intermediate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("setIntermediateCertificate:")
     public native void setIntermediateCertificate(@Nullable NSData value);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("setOperationalCertificate:")
     public native void setOperationalCertificate(@NotNull NSData value);
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("setRootCertificate:")
     public native void setRootCertificate(@NotNull NSData value);

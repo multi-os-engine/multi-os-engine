@@ -139,6 +139,8 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     /**
      * Jitter measures vocal stability and is measured as an absolute difference between consecutive periods, divided by
      * the average period. It is expressed as a percentage
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -157,6 +159,8 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Pitch measures the highness and lowness of tone and is measured in logarithm of normalized pitch estimates
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -177,6 +181,8 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Shimmer measures vocal stability and is measured in decibels
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -204,6 +210,8 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Voicing measures the probability of whether a frame is voiced or not and is measured as a probability
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

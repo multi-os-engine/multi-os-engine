@@ -35,6 +35,8 @@ public interface NSFileProviderDomainState {
      * updated, the provider must notify the system by signaling the working set.
      * 
      * The system ignore any domain version that is smaller than the previously known version.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -53,6 +55,8 @@ public interface NSFileProviderDomainState {
      * 
      * The system expects the domainVersion to be updated when the value of the userInfo property
      * changes.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

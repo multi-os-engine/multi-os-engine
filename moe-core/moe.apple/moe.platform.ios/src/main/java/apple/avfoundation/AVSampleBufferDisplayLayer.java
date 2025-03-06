@@ -208,6 +208,8 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * 
      * Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer:
      * was called. As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -230,7 +232,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * property is nil.
      * 
      * API-Since: 8.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: Use sampleBufferRenderer's error instead
      */
     @Deprecated
@@ -255,7 +257,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * (also known as a key frame or sync sample).
      * 
      * API-Since: 8.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: Use sampleBufferRenderer's flushWithRemovalOfDisplayedImage:completionHandler: instead
      */
     @Deprecated
@@ -305,6 +307,8 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * 
      * Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer:
      * was called. As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setControlTimebase:")
@@ -317,6 +321,8 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * [@discusssion] Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
      * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      * See <AVFoundation/AVAnimation.h> for a description of these options.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVideoGravity:")
@@ -337,7 +343,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * This property is key value observable.
      * 
      * API-Since: 8.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: Use sampleBufferRenderer's status instead
      */
     @Deprecated
@@ -358,6 +364,8 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * [@discusssion] Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
      * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      * See <AVFoundation/AVAnimation.h> for a description of these options.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -459,7 +467,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * This property is not key value observable.
      * 
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
      * Deprecated-Message: Use sampleBufferRenderer's requiresFlushToResumeDecoding instead
      */
     @Deprecated
@@ -518,4 +526,25 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] readyForDisplay
+     * 
+     * Boolean indicating that the first video frame has been made ready for display.
+     * [@discusssion] Use this property as an indicator of when best to show or animate-in an AVSampleBufferDisplayLayer
+     * into view.
+     * An AVSampleBufferDisplayLayer may be displayed, or made visible, while this property is NO, however the layer
+     * will not have any user-visible content until the value becomes YES. Note that if an animation is added to an
+     * AVSampleBufferDisplayLayer before it becomes readyForDisplay the video image displayed inside might not animate
+     * with the receiver.
+     * readyForDisplay will change to NO when the layer can no longer display frames. readyForDisplay will be YES when
+     * the first video frame has been made ready for display.
+     * This property is not key-value observable. AVSampleBufferDisplayLayerReadyForDisplayDidChangeNotification is
+     * posted when this value changes.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("isReadyForDisplay")
+    public native boolean isReadyForDisplay();
 }

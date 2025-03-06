@@ -421,6 +421,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is [NSCalendar currentCalendar]. setting nil returns to default
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("calendar")
@@ -429,6 +431,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     /**
      * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value
      * being set is div 60 (drops remaining seconds).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("countDownDuration")
@@ -437,6 +441,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     /**
      * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at
      * 0:00
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -445,6 +451,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is UIDatePickerModeDateAndTime
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("datePickerMode")
@@ -469,6 +477,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is [NSLocale currentLocale]. setting nil returns to default
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -477,6 +487,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -486,6 +498,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     /**
      * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer
      * mode
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -494,6 +508,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * display minutes wheel with interval. interval must be evenly divided into 60. default is 1. min is 1, max is 30
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("minuteInterval")
@@ -502,6 +518,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is [NSCalendar currentCalendar]. setting nil returns to default
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCalendar:")
@@ -510,6 +528,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     /**
      * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value
      * being set is div 60 (drops remaining seconds).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setCountDownDuration:")
@@ -518,6 +538,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     /**
      * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at
      * 0:00
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDate:")
@@ -525,6 +547,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * if animated is YES, animate the wheels of time to display the new date
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDate:animated:")
@@ -532,6 +556,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is UIDatePickerModeDateAndTime
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDatePickerMode:")
@@ -539,6 +565,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is [NSLocale currentLocale]. setting nil returns to default
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLocale:")
@@ -546,6 +574,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMaximumDate:")
@@ -554,6 +584,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     /**
      * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer
      * mode
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMinimumDate:")
@@ -561,6 +593,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * display minutes wheel with interval. interval must be evenly divided into 60. default is 1. min is 1, max is 30
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMinuteInterval:")
@@ -568,6 +602,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is nil. use current time zone or time zone from calendar
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTimeZone:")
@@ -575,6 +611,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
 
     /**
      * default is nil. use current time zone or time zone from calendar
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated

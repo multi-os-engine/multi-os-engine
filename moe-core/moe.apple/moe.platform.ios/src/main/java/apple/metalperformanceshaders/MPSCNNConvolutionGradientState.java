@@ -156,6 +156,8 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
      * which was used to create MPSCNNConvolutionTransposeGradientState object. See
      * resultStateForSourceImage:sourceStates
      * method of MPSCNNConvolutionTranspose below.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -174,6 +176,8 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
      * [@property] gradientForBiases
      * 
      * A buffer that contains the loss function gradients with respect to biases.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -191,6 +195,8 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
      * gradientForWeights[outputFeatureChannels][kernelHeight][kernelWidth][inputFeatureChannels/groups]
      * For depthwise convolution it will be (since we only support channel multiplier of 1 currently)
      * gradientForWeights[outputFeatureChannels][kernelHeight][kernelWidth]
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated

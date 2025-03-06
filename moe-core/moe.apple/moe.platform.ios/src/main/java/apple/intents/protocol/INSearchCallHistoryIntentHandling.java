@@ -64,7 +64,12 @@ public interface INSearchCallHistoryIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSearchCallHistoryIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchCallHistoryIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSearchCallHistory:completion:")
@@ -83,7 +88,12 @@ public interface INSearchCallHistoryIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSearchCallHistoryIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchCallHistoryIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSearchCallHistory:completion:")
     void handleSearchCallHistoryCompletion(@NotNull INSearchCallHistoryIntent intent,
@@ -99,7 +109,12 @@ public interface INSearchCallHistoryIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchCallHistoryIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveCallTypeForSearchCallHistory:withCompletion:")
@@ -108,6 +123,12 @@ public interface INSearchCallHistoryIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchCallHistoryIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveDateCreatedForSearchCallHistory:withCompletion:")
@@ -116,6 +137,12 @@ public interface INSearchCallHistoryIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchCallHistoryIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveRecipientForSearchCallHistory:withCompletion:")

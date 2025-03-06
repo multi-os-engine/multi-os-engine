@@ -176,19 +176,47 @@ public class GCExtendedGamepadSnapshot extends GCExtendedGamepad {
     @Selector("init")
     public native GCExtendedGamepadSnapshot init();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     * controllerWithExtendedGamepad] instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithController:snapshotData:")
     public native GCExtendedGamepadSnapshot initWithControllerSnapshotData(@NotNull GCController controller,
             @NotNull NSData data);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     * controllerWithExtendedGamepad] instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithSnapshotData:")
     public native GCExtendedGamepadSnapshot initWithSnapshotData(@NotNull NSData data);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     * controllerWithExtendedGamepad] instead
+     */
+    @Deprecated
     @Generated
     @Selector("setSnapshotData:")
     public native void setSnapshotData(@NotNull NSData value);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     * controllerWithExtendedGamepad] instead
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("snapshotData")

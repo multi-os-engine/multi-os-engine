@@ -94,6 +94,8 @@ public class CLSProgressReportingCapability extends CLSObject {
 
     /**
      * Returns progress reporting details
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -120,6 +122,8 @@ public class CLSProgressReportingCapability extends CLSObject {
      * @param details An optional localized string describing the capability. For example: "Reports percentage of
      *                progress", "Reports overall score". Schoolwork will use an appropriate default string if one is
      *                not provided.
+     * 
+     *                API-Since: 14.0
      */
     @Generated
     @Selector("initWithKind:details:")
@@ -149,6 +153,8 @@ public class CLSProgressReportingCapability extends CLSObject {
 
     /**
      * Returns the kind of progress reporting capability
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("kind")

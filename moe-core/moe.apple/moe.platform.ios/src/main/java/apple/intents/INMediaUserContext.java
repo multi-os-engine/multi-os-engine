@@ -96,6 +96,9 @@ public class INMediaUserContext extends INUserContext {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("init")
     public native INMediaUserContext init();
@@ -134,6 +137,8 @@ public class INMediaUserContext extends INUserContext {
     /**
      * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) -
      * used as a signal of user affinity for the app
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -151,6 +156,8 @@ public class INMediaUserContext extends INUserContext {
     /**
      * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) -
      * used as a signal of user affinity for the app
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setNumberOfLibraryItems:")
@@ -158,6 +165,8 @@ public class INMediaUserContext extends INUserContext {
 
     /**
      * Used as a signal of user affinity for the app
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSubscriptionStatus:")
@@ -169,6 +178,8 @@ public class INMediaUserContext extends INUserContext {
 
     /**
      * Used as a signal of user affinity for the app
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("subscriptionStatus")

@@ -162,6 +162,9 @@ public class CLGeocoder extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("cancelGeocode")
     public native void cancelGeocode();
@@ -177,11 +180,17 @@ public class CLGeocoder extends NSObject {
     public native void geocodeAddressDictionaryCompletionHandler(@NotNull NSDictionary<?, ?> addressDictionary,
             @NotNull @ObjCBlock(name = "call_geocodeAddressDictionaryCompletionHandler") Block_geocodeAddressDictionaryCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("geocodeAddressString:completionHandler:")
     public native void geocodeAddressStringCompletionHandler(@NotNull String addressString,
             @NotNull @ObjCBlock(name = "call_geocodeAddressStringCompletionHandler") Block_geocodeAddressStringCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("geocodeAddressString:inRegion:completionHandler:")
     public native void geocodeAddressStringInRegionCompletionHandler(@NotNull String addressString,
@@ -192,12 +201,17 @@ public class CLGeocoder extends NSObject {
     @Selector("init")
     public native CLGeocoder init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isGeocoding")
     public native boolean isGeocoding();
 
     /**
      * reverse geocode requests
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("reverseGeocodeLocation:completionHandler:")

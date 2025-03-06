@@ -111,6 +111,8 @@ public class INImageNoteContent extends INNoteContent implements NSSecureCoding,
 
     /**
      * The image that comprises the note content
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -125,6 +127,9 @@ public class INImageNoteContent extends INNoteContent implements NSSecureCoding,
     @Selector("initWithCoder:")
     public native INImageNoteContent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithImage:")
     public native INImageNoteContent initWithImage(@NotNull INImage image);

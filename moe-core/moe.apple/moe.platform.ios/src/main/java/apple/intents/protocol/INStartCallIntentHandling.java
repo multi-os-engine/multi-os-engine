@@ -45,6 +45,8 @@ public interface INStartCallIntentHandling {
      *                   the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INStartCallIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -71,6 +73,8 @@ public interface INStartCallIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INStartCallIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("handleStartCall:completion:")
@@ -84,6 +88,9 @@ public interface INStartCallIntentHandling {
         void call_handleStartCallCompletion(@NotNull INStartCallIntentResponse response);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveCallCapabilityForStartCall:withCompletion:")
@@ -100,6 +107,9 @@ public interface INStartCallIntentHandling {
                 @NotNull INStartCallCallCapabilityResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveContactsForStartCall:withCompletion:")
@@ -116,6 +126,9 @@ public interface INStartCallIntentHandling {
                 @NotNull NSArray<? extends INStartCallContactResolutionResult> resolutionResults);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveDestinationTypeForStartCall:withCompletion:")

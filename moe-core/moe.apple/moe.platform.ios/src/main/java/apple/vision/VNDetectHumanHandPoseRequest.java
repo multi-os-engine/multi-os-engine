@@ -150,6 +150,8 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
      * The complexity in key points determination is scalable by the number of hands to be processed. All hands detected
      * in an image will be ordered by relative size, with only the N largest ones having key points determined. The
      * default value for this property is 2. The maximum value for VNDetectHumanHandPoseRequestRevision1 is 6.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumHandCount")
@@ -171,6 +173,8 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
 
     /**
      * VNHumanHandPoseObservation results.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -183,6 +187,8 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
      * The complexity in key points determination is scalable by the number of hands to be processed. All hands detected
      * in an image will be ordered by relative size, with only the N largest ones having key points determined. The
      * default value for this property is 2. The maximum value for VNDetectHumanHandPoseRequestRevision1 is 6.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumHandCount:")

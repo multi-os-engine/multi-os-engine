@@ -121,6 +121,8 @@ public class MPSPredicate extends NSObject {
      * @param buffer The buffer to use as a predicate.
      * @param offset Byteoffset to the predicate buffer where the predicate is stored.
      * @return A pointer to the newly initialized MPSPredicate object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithBuffer:offset:")
@@ -137,6 +139,8 @@ public class MPSPredicate extends NSObject {
      * 
      * @param device The device the predicate is used with
      * @return A pointer to the newly initialized MPSPredicate object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -173,6 +177,8 @@ public class MPSPredicate extends NSObject {
      * [@property] predicateBuffer
      * 
      * The buffer that is used as the predicate
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -190,6 +196,8 @@ public class MPSPredicate extends NSObject {
      * With this property a single MPSPredicate object can be used with multiple different predication
      * operations.
      * Default = 0;
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("predicateOffset")
@@ -202,6 +210,8 @@ public class MPSPredicate extends NSObject {
      * @param buffer The buffer to use as a predicate.
      * @param offset Byteoffset to the predicate buffer where the predicate is stored.
      * @return A pointer to the newly initialized MPSPredicate object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("predicateWithBuffer:offset:")

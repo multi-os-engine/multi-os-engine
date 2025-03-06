@@ -46,4 +46,9 @@ public final class UITouchProperties {
     @Generated
     private UITouchProperties() {
     }
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated @NInt public static final long Roll = 0x0000000000000010L;
 }

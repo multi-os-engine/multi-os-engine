@@ -89,6 +89,8 @@ public class NISession extends NSObject {
 
     /**
      * The nearby interaction configuration currently being used by the session.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -101,6 +103,8 @@ public class NISession extends NSObject {
 
     /**
      * A delegate for receiving NISession updates.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -112,6 +116,8 @@ public class NISession extends NSObject {
      * The dispatch queue on which the delegate calls are performed.
      * 
      * If not provided or nil, delegate calls will be performed on the main queue.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -127,6 +133,8 @@ public class NISession extends NSObject {
      * 
      * Copy this discoveryToken and share it with a peer device.
      * The discoveryToken is unique to this device and this session.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -162,6 +170,8 @@ public class NISession extends NSObject {
      * session will receive a callback to -didRemoveNearbyObject:withReason: some time after a call to invalidate (see
      * NINearbyObjectRemovalReason).
      * calling -runWithConfiguration: after invalidation will result in an error.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("invalidate")
@@ -196,6 +206,8 @@ public class NISession extends NSObject {
      * Pause an ongoing nearby interaction session.
      * 
      * Paused sessions may be restarted by calling -runWithConfiguration:. The same local discoveryToken will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("pause")
@@ -215,6 +227,8 @@ public class NISession extends NSObject {
      * @param configuration Nearby interaction configuration for this session.
      *                      Both devices must call -runWithConfiguration: with a valid configuration identifying the
      *                      other device in order to receive nearby object updates.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @Selector("runWithConfiguration:")
@@ -222,6 +236,8 @@ public class NISession extends NSObject {
 
     /**
      * A delegate for receiving NISession updates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -229,6 +245,8 @@ public class NISession extends NSObject {
 
     /**
      * A delegate for receiving NISession updates.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NISessionDelegate value) {
@@ -246,6 +264,8 @@ public class NISession extends NSObject {
      * The dispatch queue on which the delegate calls are performed.
      * 
      * If not provided or nil, delegate calls will be performed on the main queue.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegateQueue:")

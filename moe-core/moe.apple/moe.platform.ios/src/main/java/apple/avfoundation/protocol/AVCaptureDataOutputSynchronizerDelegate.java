@@ -26,6 +26,8 @@ public interface AVCaptureDataOutputSynchronizerDelegate {
      * The synchronized data collection only contains synchronized data for capture outputs with synchronized data
      * ready.
      * 
+     * API-Since: 11.0
+     * 
      * @param synchronizer
      *                                   The AVCaptureDataOutputSynchronizer instance delivering synchronized data.
      * @param synchronizedDataCollection

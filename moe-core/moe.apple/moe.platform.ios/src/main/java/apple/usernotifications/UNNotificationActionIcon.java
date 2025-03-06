@@ -109,10 +109,16 @@ public class UNNotificationActionIcon extends NSObject implements NSCopying, NSS
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("iconWithSystemImageName:")
     public static native UNNotificationActionIcon iconWithSystemImageName(@NotNull String systemImageName);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("iconWithTemplateImageName:")
     public static native UNNotificationActionIcon iconWithTemplateImageName(@NotNull String templateImageName);

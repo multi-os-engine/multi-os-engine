@@ -42,6 +42,8 @@ public interface NSFileProviderEnumerator {
      * NOTE that the change-based observation methods are marked optional for historical
      * reasons, but are really required. System performance will be severely degraded if
      * they are not implemented.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -87,6 +89,8 @@ public interface NSFileProviderEnumerator {
      * to either report an error (for instance NSFileProviderErrorServerUnreachable) or
      * return everything that is readily available and wait for the enumeration of the
      * next batch.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -122,12 +126,17 @@ public interface NSFileProviderEnumerator {
      * to either report an error (for instance NSFileProviderErrorServerUnreachable) or
      * return everything that is readily available and wait for the enumeration of the
      * next page.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("enumerateItemsForObserver:startingAtPage:")
     void enumerateItemsForObserverStartingAtPage(
             @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderEnumerationObserver observer, @NotNull NSData page);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("invalidate")
     void invalidate();

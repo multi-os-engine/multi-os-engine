@@ -22,6 +22,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ASAccountAuthenticationModificationControllerDelegate")
 public interface ASAccountAuthenticationModificationControllerDelegate {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("accountAuthenticationModificationController:didFailRequest:withError:")
@@ -31,6 +34,9 @@ public interface ASAccountAuthenticationModificationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("accountAuthenticationModificationController:didSuccessfullyCompleteRequest:withUserInfo:")

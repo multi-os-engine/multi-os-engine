@@ -98,6 +98,8 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
 
     /**
      * This resolution result is to confirm if this is the restaurant guest with which the user wants to continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
 
     /**
      * This resolution result is to disambiguate between the provided restaurant guests.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -181,6 +185,8 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
      * resolvedRestaurantGuest can be different than the original restaurant guest. This allows app extensions to apply
      * business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

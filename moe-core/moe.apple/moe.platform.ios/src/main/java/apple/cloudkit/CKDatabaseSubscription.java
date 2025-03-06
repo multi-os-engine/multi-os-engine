@@ -192,12 +192,17 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
     @Selector("initWithCoder:")
     public native CKDatabaseSubscription initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithSubscriptionID:")
     public native CKDatabaseSubscription initWithSubscriptionID(@NotNull String subscriptionID);
 
     /**
      * Optional property. If set, a database subscription is scoped to record changes for this record type
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -206,6 +211,8 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
 
     /**
      * Optional property. If set, a database subscription is scoped to record changes for this record type
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRecordType:")

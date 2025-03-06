@@ -441,6 +441,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("backIndicatorTransitionMaskImage")
     public native UIImage backIndicatorTransitionMaskImage();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("backItem")
@@ -482,6 +485,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("barTintColor")
     public native UIColor barTintColor();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -522,6 +528,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("setTranslucent:")
     public native void setTranslucent(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("items")
@@ -529,6 +538,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     /**
      * Returns the item that was popped.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -538,6 +549,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     /**
      * Pushing a navigation item displays the item's title in the center of the navigation bar.
      * The previous top navigation item (if it exists) is displayed as a "back" button on the left.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("pushNavigationItem:animated:")
@@ -599,10 +612,16 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("setBarTintColor:")
     public native void setBarTintColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UINavigationBarDelegate value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UINavigationBarDelegate value) {
         Object __old = delegate();
@@ -615,6 +634,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
         }
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setItems:")
     public native void setItems(@Nullable NSArray<? extends UINavigationItem> value);
@@ -622,6 +644,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     /**
      * If animated is YES, then simulate a push or pop depending on whether the new top item was previously in the
      * stack.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setItems:animated:")
@@ -642,6 +666,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
      * and behaves as described for the tintColor property added to UIView.
      * To tint the bar's background, please use -barTintColor.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -681,6 +707,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
      * and behaves as described for the tintColor property added to UIView.
      * To tint the bar's background, please use -barTintColor.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tintColor")
@@ -705,6 +733,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @NFloat
     public native double titleVerticalPositionAdjustmentForBarMetrics(@NInt long barMetrics);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("topItem")

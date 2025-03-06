@@ -160,6 +160,8 @@ public class UIDynamicBehavior extends NSObject {
 
     /**
      * When running, the dynamic animator calls the action block on every animation step.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -167,15 +169,24 @@ public class UIDynamicBehavior extends NSObject {
     @ObjCBlock(name = "call_action_ret")
     public native Block_action_ret action();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addChildBehavior:")
     public native void addChildBehavior(@NotNull UIDynamicBehavior behavior);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("childBehaviors")
     public native NSArray<? extends UIDynamicBehavior> childBehaviors();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("dynamicAnimator")
@@ -185,12 +196,17 @@ public class UIDynamicBehavior extends NSObject {
     @Selector("init")
     public native UIDynamicBehavior init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeChildBehavior:")
     public native void removeChildBehavior(@NotNull UIDynamicBehavior behavior);
 
     /**
      * When running, the dynamic animator calls the action block on every animation step.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAction:")
@@ -198,6 +214,8 @@ public class UIDynamicBehavior extends NSObject {
 
     /**
      * nil when being removed from an animator
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("willMoveToAnimator:")

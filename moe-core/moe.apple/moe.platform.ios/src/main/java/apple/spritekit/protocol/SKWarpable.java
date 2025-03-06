@@ -36,6 +36,8 @@ import org.jetbrains.annotations.Nullable;
 public interface SKWarpable {
     /**
      * maximum number of subdivision iterations used to generate the final vertices
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSubdivisionLevels:")
@@ -43,6 +45,8 @@ public interface SKWarpable {
 
     /**
      * Warp geometry used to define the distortion
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setWarpGeometry:")
@@ -50,6 +54,8 @@ public interface SKWarpable {
 
     /**
      * maximum number of subdivision iterations used to generate the final vertices
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("subdivisionLevels")
@@ -58,6 +64,8 @@ public interface SKWarpable {
 
     /**
      * Warp geometry used to define the distortion
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

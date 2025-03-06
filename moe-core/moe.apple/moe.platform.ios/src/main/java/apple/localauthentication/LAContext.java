@@ -340,7 +340,9 @@ public class LAContext extends NSObject {
      * the state of biometry has not changed.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("evaluatedPolicyDomainState")
@@ -540,9 +542,6 @@ public class LAContext extends NSObject {
     /**
      * Indicates the type of the biometry supported by the device.
      * 
-     * This property is set when canEvaluatePolicy has been called for a biometric policy.
-     * The default value is LABiometryTypeNone.
-     * 
      * API-Since: 11.0
      */
     @Generated
@@ -615,4 +614,14 @@ public class LAContext extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Contains authentication domain state.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("domainState")
+    @NotNull
+    public native LADomainState domainState();
 }

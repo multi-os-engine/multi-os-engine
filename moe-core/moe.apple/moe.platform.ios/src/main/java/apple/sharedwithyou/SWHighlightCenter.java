@@ -109,6 +109,9 @@ public class SWHighlightCenter extends NSObject {
     @Selector("clearNoticesForHighlight:")
     public native void clearNoticesForHighlight(@NotNull SWCollaborationHighlight highlight);
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("collaborationHighlightForIdentifier:error:")
@@ -121,6 +124,8 @@ public class SWHighlightCenter extends NSObject {
 
     /**
      * The highlight center's delegate
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -160,6 +165,8 @@ public class SWHighlightCenter extends NSObject {
      * @param URL               The URL used to find the SWHighlight
      * @param completionHandler an SWHighlight if it was fetched. The completion handler will always be invoked on the
      *                          main queue
+     * 
+     *                          API-Since: 16.0
      */
     @Generated
     @Selector("getHighlightForURL:completionHandler:")
@@ -206,12 +213,17 @@ public class SWHighlightCenter extends NSObject {
      * Localized title to display with a collection of highlights
      * 
      * Use this string as the title for a collection of shared highlight links displayed to the user.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
     @Selector("highlightCollectionTitle")
     public static native String highlightCollectionTitle();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("highlights")
@@ -243,6 +255,8 @@ public class SWHighlightCenter extends NSObject {
      * 
      * Use this property at runtime to conditionally enable Messages collaboration features in your app. This property
      * will be permantently set to YES on a software version with full support for these features.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isSystemCollaborationSupportAvailable")
@@ -279,6 +293,8 @@ public class SWHighlightCenter extends NSObject {
 
     /**
      * The highlight center's delegate
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -286,6 +302,8 @@ public class SWHighlightCenter extends NSObject {
 
     /**
      * The highlight center's delegate
+     * 
+     * API-Since: 16.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SWHighlightCenterDelegate value) {

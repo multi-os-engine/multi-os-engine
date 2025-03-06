@@ -88,6 +88,8 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the mediaItem with which the user wants to continue.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -105,6 +107,8 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INMediaItem.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -175,6 +179,8 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
      * resolvedMediaItem can be different than the original INMediaItem. This allows app extensions to apply business
      * logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -184,6 +190,8 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
 
     /**
      * Convenience method to return multiple success resolution results for an array of INMediaItems
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

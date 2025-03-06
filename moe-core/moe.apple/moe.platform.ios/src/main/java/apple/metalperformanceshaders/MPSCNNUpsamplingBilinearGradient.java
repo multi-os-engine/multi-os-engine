@@ -126,6 +126,8 @@ public class MPSCNNUpsamplingBilinearGradient extends MPSCNNUpsamplingGradient {
      * @param integerScaleFactorX The downsampling factor for the x dimension.
      * @param integerScaleFactorY The downsampling factor for the y dimension.
      * @return A valid MPSCNNUpsamplingBilinearGradient object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")

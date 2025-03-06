@@ -146,6 +146,8 @@ public class UIPrinter extends NSObject {
      * This method creates a new printer object from the printer's URL.
      * A UIPrinter object is returned even if the printer is not available
      * on the network.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -179,6 +181,8 @@ public class UIPrinter extends NSObject {
      * This method returns the full URL of the printer which can be
      * used in future calls to printerWithURL to access the same
      * printer.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -194,6 +198,8 @@ public class UIPrinter extends NSObject {
      * and sets the displayName, displayLocation, supportedJobTypes, makeAndModel,
      * supportsColor, and supportsDuplex for the printer.
      * The operation can take up to 30 seconds.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("contactPrinter:")
@@ -208,6 +214,8 @@ public class UIPrinter extends NSObject {
      * Returns nil if the printer doesn't have a location string.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -218,6 +226,8 @@ public class UIPrinter extends NSObject {
      * Return a human-readable printer name.
      * 
      * This method returns the printer name suitable for displaying in the UI.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -235,6 +245,8 @@ public class UIPrinter extends NSObject {
      * is usually the manufacturer, model, and model number.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -248,6 +260,8 @@ public class UIPrinter extends NSObject {
      * the printer supports.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("supportedJobTypes")
@@ -261,6 +275,9 @@ public class UIPrinter extends NSObject {
      * otherwise.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("supportsColor")
@@ -273,6 +290,8 @@ public class UIPrinter extends NSObject {
      * printing, NO otherwise.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("supportsDuplex")

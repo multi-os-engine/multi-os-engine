@@ -60,4 +60,10 @@ public final class MLFeatureType {
      * API-Since: 12.0
      */
     @Generated @NInt public static final long Sequence = 0x0000000000000007L;
+    /**
+     * MLState. Represents a model state that may be updated in each inference.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long State = 0x0000000000000008L;
 }

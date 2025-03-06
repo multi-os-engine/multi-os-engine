@@ -32,8 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCOptimizerDescriptor specifies an optimizer descriptor.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -70,7 +69,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * Whether gradient clipping should be applied or not.
      * 
      * The default is false
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("appliesGradientClipping")
     public native boolean appliesGradientClipping();
@@ -137,7 +140,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * @param regularizationType      The regularization type
      * @param regularizationScale     The regularization scale
      * @return A new MLCOptimizerDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithLearningRate:gradientRescale:appliesGradientClipping:gradientClipMax:gradientClipMin:regularizationType:regularizationScale:")
     public static native MLCOptimizerDescriptor descriptorWithLearningRateGradientRescaleAppliesGradientClippingGradientClipMaxGradientClipMinRegularizationTypeRegularizationScale(
@@ -176,7 +183,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * @param regularizationType  The regularization type
      * @param regularizationScale The regularization scale
      * @return A new MLCOptimizerDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithLearningRate:gradientRescale:regularizationType:regularizationScale:")
     public static native MLCOptimizerDescriptor descriptorWithLearningRateGradientRescaleRegularizationTypeRegularizationScale(
@@ -186,7 +197,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * [@property] gradientClipMax
      * 
      * The maximum gradient value if gradient clipping is enabled before gradient is rescaled.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("gradientClipMax")
     public native float gradientClipMax();
@@ -195,7 +210,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * [@property] gradientClipMin
      * 
      * The minimum gradient value if gradient clipping is enabled before gradient is rescaled.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("gradientClipMin")
     public native float gradientClipMin();
@@ -215,7 +234,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * [@property] gradientRescale
      * 
      * The rescale value applied to gradients during optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("gradientRescale")
     public native float gradientRescale();
@@ -255,7 +278,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * [@property] learningRate
      * 
      * The learning rate
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("learningRate")
     public native float learningRate();
@@ -280,7 +307,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * [@property] regularizationScale
      * 
      * The regularization scale.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("regularizationScale")
     public native float regularizationScale();
@@ -289,7 +320,11 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
      * [@property] regularizationType
      * 
      * The regularization type.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("regularizationType")
     public native int regularizationType();

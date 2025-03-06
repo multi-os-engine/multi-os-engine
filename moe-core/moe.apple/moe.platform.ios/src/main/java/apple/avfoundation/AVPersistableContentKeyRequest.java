@@ -30,6 +30,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVPersistableContentKeyRequest
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 10.3
  */
 @Generated
@@ -142,6 +146,8 @@ public class AVPersistableContentKeyRequest extends AVContentKeyRequest {
      * underlying protocol supports persistable content keys, in response your delegate will receive an
      * AVPersistableContentKeyRequest via -contentKeySession:didProvidePersistableContentKeyRequest:. You can set the
      * persistent key from storage on the AVPersistableContentKeyRequest using processContentKeyResponse:.
+     * 
+     * API-Since: 10.3
      * 
      * @param keyVendorResponse
      *                          The response returned from the key vendor as a result of a request generated from

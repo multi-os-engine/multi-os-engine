@@ -4,7 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 17.4
+ * Deprecated-Message: Please use MTRThermostatControlSequenceOfOperation
  */
+@Deprecated
 @Generated
 public final class MTRThermostatControlSequence {
     @Generated
@@ -13,26 +16,38 @@ public final class MTRThermostatControlSequence {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatControlSequenceOfOperationCoolingOnly
      */
-    @Generated public static final byte CoolingOnly = 0;
+    @Deprecated @Generated public static final byte CoolingOnly = 0;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatControlSequenceOfOperationCoolingWithReheat
      */
-    @Generated public static final byte CoolingWithReheat = 1;
+    @Deprecated @Generated public static final byte CoolingWithReheat = 1;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatControlSequenceOfOperationHeatingOnly
      */
-    @Generated public static final byte HeatingOnly = 2;
+    @Deprecated @Generated public static final byte HeatingOnly = 2;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatControlSequenceOfOperationHeatingWithReheat
      */
-    @Generated public static final byte HeatingWithReheat = 3;
+    @Deprecated @Generated public static final byte HeatingWithReheat = 3;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatControlSequenceOfOperationCoolingAndHeating
      */
-    @Generated public static final byte CoolingAndHeating = 4;
+    @Deprecated @Generated public static final byte CoolingAndHeating = 4;
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatControlSequenceOfOperationCoolingAndHeatingWithReheat
      */
-    @Generated public static final byte CoolingAndHeatingWithReheat = 5;
+    @Deprecated @Generated public static final byte CoolingAndHeatingWithReheat = 5;
 }

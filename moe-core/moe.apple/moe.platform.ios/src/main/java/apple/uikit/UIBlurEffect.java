@@ -109,6 +109,9 @@ public class UIBlurEffect extends UIVisualEffect {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("effectWithStyle:")

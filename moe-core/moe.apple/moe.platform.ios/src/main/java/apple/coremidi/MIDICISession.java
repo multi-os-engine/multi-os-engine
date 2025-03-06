@@ -41,7 +41,10 @@ import org.jetbrains.annotations.Nullable;
  * capability.
  * 
  * API-Since: 12.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported for CoreMIDI
  */
+@Deprecated
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -107,7 +110,12 @@ public class MIDICISession extends NSObject {
      * Given a MIDI channel number, asynchronously request that the supplied profile be disabled.
      * The result of this operation is sent to the MIDICIProfileChangedBlock.
      * Returnes YES if the request is valid.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("disableProfile:onChannel:error:")
     public native boolean disableProfileOnChannelError(@NotNull MIDICIProfile profile, byte channel,
@@ -117,7 +125,12 @@ public class MIDICISession extends NSObject {
      * Given a MIDI channel number, asynchronously request that the supplied profile be enabled.
      * The result of this operation is sent to the MIDICIProfileChangedBlock.
      * Returns YES if the request is valid.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("enableProfile:onChannel:error:")
     public native boolean enableProfileOnChannelError(@NotNull MIDICIProfile profile, byte channel,
@@ -161,7 +174,12 @@ public class MIDICISession extends NSObject {
 
     /**
      * An optional block called when a device signals that a profile has been enabled or disabled.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("profileChangedCallback")
@@ -179,7 +197,12 @@ public class MIDICISession extends NSObject {
     /**
      * Given a MIDI channel number, return the supported profiles. Note that the
      * arrays will be empty if this property is queried before data is ready.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("profileStateForChannel:")
@@ -195,7 +218,12 @@ public class MIDICISession extends NSObject {
 
     /**
      * An optional block called when a device signals that a profile has been enabled or disabled.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("setProfileChangedCallback:")
     public native void setProfileChangedCallback(
@@ -219,14 +247,24 @@ public class MIDICISession extends NSObject {
 
     /**
      * After CI session data is ready, indicates whether the entity supports the MIDI-CI profile capability.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("supportsProfileCapability")
     public native boolean supportsProfileCapability();
 
     /**
      * After CI session data is ready, indicates whether the entity supports the MIDI-CI property exchange capability.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("supportsPropertyCapability")
     public native boolean supportsPropertyCapability();
@@ -239,12 +277,23 @@ public class MIDICISession extends NSObject {
     /**
      * Obtain the device's basic identification. Nil before data is ready or if the device does not
      * support MIDI-CI.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("deviceInfo")
     public native MIDICIDeviceInfo deviceInfo();
 
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
+     */
+    @Deprecated
     @Generated
     @Selector("initWithDiscoveredNode:dataReadyHandler:disconnectHandler:")
     public native MIDICISession initWithDiscoveredNodeDataReadyHandlerDisconnectHandler(
@@ -269,7 +318,12 @@ public class MIDICISession extends NSObject {
 
     /**
      * int
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("maxPropertyRequests")
@@ -277,7 +331,12 @@ public class MIDICISession extends NSObject {
 
     /**
      * unsigned long
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("maxSysExSize")
@@ -285,14 +344,24 @@ public class MIDICISession extends NSObject {
 
     /**
      * The MIDI destination with which the session is communicating.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("midiDestination")
     public native int midiDestination();
 
     /**
      * An optional block called when a device sends profile-specific data to the session.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("profileSpecificDataHandler")
@@ -320,7 +389,12 @@ public class MIDICISession extends NSObject {
 
     /**
      * An optional block called when a device sends profile-specific data to the session.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported for CoreMIDI
      */
+    @Deprecated
     @Generated
     @Selector("setProfileSpecificDataHandler:")
     public native void setProfileSpecificDataHandler(

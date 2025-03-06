@@ -26,18 +26,23 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * MTRReadParams
  * This is used to control the behavior of attribute/event reads and subscribes.
  * If not provided (i.e. nil passed for the MTRReadParams argument), will be
  * treated as if a default-initialized object was passed in.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRReadParams extends NSObject implements NSCopying {
+public class MTRReadParams extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -240,4 +245,52 @@ public class MTRReadParams extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTRReadParams initWithCoder(@NotNull NSCoder coder);
+
+    /**
+     * Controls whether attributes without known schema (e.g. vendor-specific
+     * attributes) should be assumed to be reportable normally via subscriptions.
+     * The default is YES.
+     * 
+     * This setting is only relevant to some consumers of MTRReadParams. One of
+     * those consumers is readAttributeWithEndpointID:clusterID:attributeID:params:
+     * on MTRDevice.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("setAssumeUnknownAttributesReportable:")
+    public native void setAssumeUnknownAttributesReportable(boolean value);
+
+    /**
+     * Controls whether attributes without known schema (e.g. vendor-specific
+     * attributes) should be assumed to be reportable normally via subscriptions.
+     * The default is YES.
+     * 
+     * This setting is only relevant to some consumers of MTRReadParams. One of
+     * those consumers is readAttributeWithEndpointID:clusterID:attributeID:params:
+     * on MTRDevice.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("shouldAssumeUnknownAttributesReportable")
+    public native boolean shouldAssumeUnknownAttributesReportable();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

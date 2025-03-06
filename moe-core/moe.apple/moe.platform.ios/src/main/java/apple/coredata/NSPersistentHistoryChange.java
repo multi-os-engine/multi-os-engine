@@ -73,15 +73,24 @@ public class NSPersistentHistoryChange extends NSObject implements NSCopying {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("changeID")
     public native long changeID();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("changeType")
     @NInt
     public native long changeType();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("changedObjectID")
@@ -164,16 +173,25 @@ public class NSPersistentHistoryChange extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("tombstone")
     public native NSDictionary<?, ?> tombstone();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("transaction")
     public native NSPersistentHistoryTransaction transaction();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("updatedProperties")

@@ -110,6 +110,8 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      * the result and return it.
      * See encodeToCommandBuffer:sourceImage:sourceGradient:sourceImage:batchNormalizationState:destinationGradient
      * for further details.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -131,6 +133,8 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      *                                decremented.
      * @param destinationGradient     An MPSImage which contains the gradient of the loss function with respect to the
      *                                source image.
+     * 
+     *                                API-Since: 11.3
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:batchNormalizationState:destinationGradient:")
@@ -166,6 +170,8 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNBatchNormalizationGradient object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")

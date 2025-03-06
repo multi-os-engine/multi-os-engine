@@ -158,6 +158,9 @@ public class NSMergeConflict extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("cachedSnapshot")
@@ -184,6 +187,8 @@ public class NSMergeConflict extends NSObject {
      * store as needed.
      * 
      * A newVersion number of 0 means the object was deleted and the corresponding snapshot is nil.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithSource:newVersion:oldVersion:cachedSnapshot:persistedSnapshot:")
@@ -191,26 +196,41 @@ public class NSMergeConflict extends NSObject {
             @NotNull NSManagedObject srcObject, @NUInt long newvers, @NUInt long oldvers,
             @Nullable NSDictionary<String, ?> cachesnap, @Nullable NSDictionary<String, ?> persnap);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("newVersionNumber")
     @NUInt
     public native long newVersionNumber();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("objectSnapshot")
     public native NSDictionary<String, ?> objectSnapshot();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("oldVersionNumber")
     @NUInt
     public native long oldVersionNumber();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("persistedSnapshot")
     public native NSDictionary<String, ?> persistedSnapshot();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("sourceObject")

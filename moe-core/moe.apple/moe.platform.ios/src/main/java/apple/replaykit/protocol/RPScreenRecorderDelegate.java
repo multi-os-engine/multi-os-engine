@@ -64,6 +64,8 @@ public interface RPScreenRecorderDelegate {
      * in-progress Airplay/TVOut session or unsupported hardware.
      * 
      * @param screenRecorder The instance of the screen recorder.
+     * 
+     *                       API-Since: 9.0
      */
     @Generated
     @IsOptional

@@ -115,6 +115,8 @@ public class VNContoursObservation extends VNObservation {
      * @param contourIndex The index of the contour to request. Valid values are in the range [0..contourCount-1].
      * @param error        The error returned if the index path is out of range.
      * @return The detected VNContour at the specified index without regard to hierarchy.
+     * 
+     *         API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -130,6 +132,8 @@ public class VNContoursObservation extends VNObservation {
      * @param indexPath The index path is the heirarchical path to the contour.
      * @param error     The error returned if the index path is out of range.
      * @return The VNContour object at the specified index path.
+     * 
+     *         API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -139,6 +143,8 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * The total number of contours detected.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contourCount")
@@ -197,6 +203,8 @@ public class VNContoursObservation extends VNObservation {
      * Obtain all of the contours represented as a CGPath in normalized coordinates.
      * 
      * The path is owned by the observation and therefore will be alive as long as the the observation is alive.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -231,6 +239,8 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * The total number of top-level contours detected.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("topLevelContourCount")
@@ -244,6 +254,8 @@ public class VNContoursObservation extends VNObservation {
      * its children.
      * 
      * @see VNContour for more information.
+     * 
+     *      API-Since: 14.0
      */
     @NotNull
     @Generated

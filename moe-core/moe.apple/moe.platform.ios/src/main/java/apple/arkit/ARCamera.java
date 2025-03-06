@@ -108,6 +108,8 @@ public class ARCamera extends NSObject implements NSCopying {
 
     /**
      * The camera image resolution in pixels.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageResolution")
@@ -163,6 +165,8 @@ public class ARCamera extends NSObject implements NSCopying {
 
     /**
      * The tracking state of the camera.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("trackingState")
@@ -171,6 +175,8 @@ public class ARCamera extends NSObject implements NSCopying {
 
     /**
      * The reason for the camera’s current tracking state.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("trackingStateReason")

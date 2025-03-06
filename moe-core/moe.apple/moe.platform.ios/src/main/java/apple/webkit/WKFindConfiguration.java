@@ -66,6 +66,8 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
      * 
      * The search will respect the writing direction of the document.
      * The initial value is NO.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("backwards")
@@ -86,6 +88,8 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
      * Whether or not the search should be case sensitive
      * 
      * The initial value is NO.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("caseSensitive")
@@ -165,6 +169,8 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
      * 
      * The search will respect the writing direction of the document.
      * The initial value is NO.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setBackwards:")
@@ -174,6 +180,8 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
      * Whether or not the search should be case sensitive
      * 
      * The initial value is NO.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setCaseSensitive:")
@@ -187,6 +195,8 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
      * Whether the search should start at the beginning of the document once it reaches the end
      * 
      * The initial value is YES.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setWraps:")
@@ -205,6 +215,8 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
      * Whether the search should start at the beginning of the document once it reaches the end
      * 
      * The initial value is YES.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("wraps")

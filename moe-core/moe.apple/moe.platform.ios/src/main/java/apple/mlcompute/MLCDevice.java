@@ -39,8 +39,7 @@ import org.jetbrains.annotations.Nullable;
  * with linkWithGraphs.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -133,7 +132,11 @@ public class MLCDevice extends NSObject implements NSCopying {
      * Creates a device which uses the CPU.
      * 
      * @return A new device.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("cpuDevice")
@@ -154,7 +157,11 @@ public class MLCDevice extends NSObject implements NSCopying {
      * 
      * @param gpus List of Metal devices
      * @return A new device object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("deviceWithGPUDevices:")
     public static native MLCDevice deviceWithGPUDevices(@NotNull NSArray<?> gpus);
@@ -164,7 +171,11 @@ public class MLCDevice extends NSObject implements NSCopying {
      * 
      * @param type A device type
      * @return A new device object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("deviceWithType:")
     public static native MLCDevice deviceWithType(int type);
@@ -187,12 +198,21 @@ public class MLCDevice extends NSObject implements NSCopying {
      * Creates a device which uses a GPU, if any.
      * 
      * @return A new device, or `nil` if no GPU exists.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gpuDevice")
     public static native MLCDevice gpuDevice();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("gpuDevices")
@@ -259,7 +279,11 @@ public class MLCDevice extends NSObject implements NSCopying {
      * This will ensure that MLCompute will select the best device to execute the neural network.
      * If developers want to be able to control device selection, they can select CPU or GPU and
      * for the GPU, they can also select a specific Metal device.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("type")
     public native int type();

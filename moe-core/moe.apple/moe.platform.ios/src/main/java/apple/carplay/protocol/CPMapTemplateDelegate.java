@@ -29,6 +29,8 @@ import org.jetbrains.annotations.NotNull;
 public interface CPMapTemplateDelegate {
     /**
      * Called when the map interface has completed dismissal of a navigation alert.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -40,6 +42,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when a pan gesture ends. May not be called when connected to some CarPlay systems.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -53,6 +57,8 @@ public interface CPMapTemplateDelegate {
      * Called when the map interface has displayed a navigation alert.
      * 
      * To take action in response to button presses on the navigation alert, see -[CPAlertAction handler].
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -64,6 +70,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when a pan gesture changes. May not be called when connected to some CarPlay systems.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -77,6 +85,8 @@ public interface CPMapTemplateDelegate {
      * Changes the visual layout of the maneuver.
      * 
      * @return a CPManeuverDisplayStyle value representing the style to be used for displaying the maneuver
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -88,6 +98,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when a pan button is pressed/selected for an extended duration.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -98,6 +110,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when a pan button is released after an extended duration.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -108,6 +122,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when a pan button is pressed/selected momentarily.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -118,6 +134,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when the user has selected a route choice to preview.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -131,6 +149,8 @@ public interface CPMapTemplateDelegate {
      * Determines if the maneuver should be presented as a notification when the app is in the background.
      * 
      * @return YES if the maneuver should appear as a notification, otherwise NO
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -144,6 +164,8 @@ public interface CPMapTemplateDelegate {
      * Determines if the navigation alert should be presented as a notification when the app is in the background.
      * 
      * @return YES if the alert should appear as a notification, otherwise NO
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -158,6 +180,8 @@ public interface CPMapTemplateDelegate {
      * is in the background.
      * 
      * @return YES if the updated estimates should appear in the notification, otherwise NO
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -170,6 +194,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when the user has selected a route choice to navigate.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -181,6 +207,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when the map interface is preparing to dismiss a navigation alert.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -192,6 +220,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when the map interface is about to display a navigation alert.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -203,6 +233,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when a pan gesture begins. May not be called when connected to some CarPlay systems.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -218,6 +250,8 @@ public interface CPMapTemplateDelegate {
      * the iPhone
      * can be actively navigating. When navigation begins in the native system, all CarPlay supported navigation
      * apps that are actively navigating will need to end their navigation session.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -228,6 +262,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * This will be called when the pan interface disappears on the map interface.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -238,6 +274,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * This will be called when the pan interface appears on the map interface.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -248,11 +286,27 @@ public interface CPMapTemplateDelegate {
 
     /**
      * This will be called when the pan interface will disappear on the map interface.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
     @Selector("mapTemplateWillDismissPanningInterface:")
     default void mapTemplateWillDismissPanningInterface(@NotNull CPMapTemplate mapTemplate) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Determines if the template should provide navigation metadata.
+     * 
+     * @return YES if the template should provide navigation metadata, otherwise NO
+     * 
+     *         API-Since: 12.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplateShouldProvideNavigationMetadata:")
+    default boolean mapTemplateShouldProvideNavigationMetadata(@NotNull CPMapTemplate mapTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

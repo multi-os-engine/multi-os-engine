@@ -197,6 +197,8 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
      * @param device The device the filter will run on
      * 
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -210,6 +212,8 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
      *                     w = [ (1/4 - a/2), 1/4, a, 1/4, (1/4 - a/2) ]^T and 'a' is centerWeight.
      * 
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:centerWeight:")
@@ -227,6 +231,8 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
      *                      These are in row major order. See @ref MPSImageConvolution.
      * 
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
@@ -238,6 +244,8 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
      * [@property] kernelHeight
      * 
      * The height of the filter window. Must be an odd number.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -248,6 +256,8 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
      * [@property] kernelWidth
      * 
      * The width of the filter window. Must be an odd number.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("kernelWidth")

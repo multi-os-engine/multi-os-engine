@@ -168,6 +168,8 @@ public class NSConstraintConflict extends NSObject {
 
     /**
      * The objects in violation of the constraint. May contain one (in the case of a db level conflict) or more objects.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -177,6 +179,8 @@ public class NSConstraintConflict extends NSObject {
     /**
      * The original property values of objects in violation of the constraint. Will contain as many objects as there are
      * conflictingObjects. If an object was unchanged, its snapshot will instead be -[NSNull null].
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -185,6 +189,8 @@ public class NSConstraintConflict extends NSObject {
 
     /**
      * The constraint which has been violated.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -194,6 +200,8 @@ public class NSConstraintConflict extends NSObject {
     /**
      * The values which the conflictingObjects had when this conflict was created. May no longer match the values of any
      * conflicted object if something else resolved the conflict.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -202,6 +210,8 @@ public class NSConstraintConflict extends NSObject {
 
     /**
      * Object whose DB row is using constraint values. May be null if this is a context-level violation.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -210,6 +220,8 @@ public class NSConstraintConflict extends NSObject {
 
     /**
      * DB row already using constraint values. May be null if this is a context-level violation.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -234,6 +246,8 @@ public class NSConstraintConflict extends NSObject {
      * Snapshot dictionaries include values for all attributes and to-one relationships, but not to-many relationships.
      * Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent
      * store as needed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithConstraint:databaseObject:databaseSnapshot:conflictingObjects:conflictingSnapshots:")

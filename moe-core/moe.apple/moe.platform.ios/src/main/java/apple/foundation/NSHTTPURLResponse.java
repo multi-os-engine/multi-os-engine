@@ -144,6 +144,8 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * 
      * @param statusCode the status code to use to produce a localized string.
      * @return A localized string corresponding to the given status code.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -191,6 +193,8 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * 
      * @return A dictionary containing all the HTTP header fields of the
      *         receiver.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -235,6 +239,8 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * Returns the HTTP status code of the receiver.
      * 
      * @return The HTTP status code of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("statusCode")

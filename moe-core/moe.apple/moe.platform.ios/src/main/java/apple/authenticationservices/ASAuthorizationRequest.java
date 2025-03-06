@@ -147,6 +147,8 @@ public class ASAuthorizationRequest extends NSObject implements NSCopying, NSSec
 
     /**
      * The provider object that is being used to service this request
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

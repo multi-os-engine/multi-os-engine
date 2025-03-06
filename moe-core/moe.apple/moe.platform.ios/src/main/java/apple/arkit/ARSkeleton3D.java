@@ -118,6 +118,8 @@ public class ARSkeleton3D extends ARSkeleton {
 
     /**
      * The local space joint data for each joint.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -126,6 +128,8 @@ public class ARSkeleton3D extends ARSkeleton {
 
     /**
      * The model space transforms for each joint.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

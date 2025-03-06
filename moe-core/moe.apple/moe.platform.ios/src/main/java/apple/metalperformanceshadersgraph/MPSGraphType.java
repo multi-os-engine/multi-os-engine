@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Base type class for types on MPSGraph tensors.
+ * The base type class for types on tensors.
  * 
  * API-Since: 15.0
  */

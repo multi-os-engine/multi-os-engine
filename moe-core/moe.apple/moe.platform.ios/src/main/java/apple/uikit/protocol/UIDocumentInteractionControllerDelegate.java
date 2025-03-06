@@ -56,6 +56,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionController:didEndSendingToApplication:")
@@ -79,6 +82,8 @@ public interface UIDocumentInteractionControllerDelegate {
 
     /**
      * bundle ID
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
@@ -88,6 +93,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidDismissOpenInMenu:")
@@ -96,6 +104,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidDismissOptionsMenu:")
@@ -104,6 +115,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidEndPreview:")
@@ -118,6 +132,8 @@ public interface UIDocumentInteractionControllerDelegate {
      * If documentInteractionControllerRectForPreview is not implemented, the specified view's bounds will be used.
      * If documentInteractionControllerViewForPreview is not implemented, the preview controller will simply fade in
      * instead of scaling up.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
@@ -132,6 +148,8 @@ public interface UIDocumentInteractionControllerDelegate {
      * This method is required if preview is supported.
      * If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner
      * consistent with the rest of the platform.
+     * 
+     * API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -142,6 +160,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.2
+     */
     @Nullable
     @Generated
     @IsOptional
@@ -152,6 +173,8 @@ public interface UIDocumentInteractionControllerDelegate {
 
     /**
      * Preview presented/dismissed on document. Use to set up any HI underneath.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
@@ -162,6 +185,8 @@ public interface UIDocumentInteractionControllerDelegate {
 
     /**
      * Open in menu presented/dismissed on document. Use to set up any HI underneath.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
@@ -173,6 +198,8 @@ public interface UIDocumentInteractionControllerDelegate {
 
     /**
      * Options menu presented/dismissed on document. Use to set up any HI underneath.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional

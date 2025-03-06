@@ -77,6 +77,8 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
      * [@property] bypass
      * 
      * Bypass state of the audio unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("bypass")
@@ -131,6 +133,8 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
      * Create an AVAudioUnitGenerator object.
      * 
      * The componentType must be kAudioUnitType_Generator or kAudioUnitType_RemoteGenerator
+     * 
+     * API-Since: 8.0
      * 
      * @param audioComponentDescription
      *                                  AudioComponentDescription of the audio unit to be instantiated.
@@ -220,6 +224,8 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
      * [@property] bypass
      * 
      * Bypass state of the audio unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setBypass:")

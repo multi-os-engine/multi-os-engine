@@ -29,18 +29,27 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
- * A setup payload that can be created from a numeric code or QR code and
- * serialized to a numeric code or QR code, though serializing to QR code after
- * creating from numeric code will not work, because some required information
- * will be missing.
+ * A Matter Onboarding Payload.
+ * 
+ * It can be represented as a numeric Manual Pairing Code or as QR Code.
+ * The QR Code format contains more information though, so creating a
+ * QR Code from a payload that was initialized from a Manual Pairing Code
+ * will not work, because some required information will be missing.
+ * 
+ * This class can also be used to create an onboarding payload directly
+ * from the underlying values (passcode, discriminator, etc).
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRSetupPayload extends NSObject implements NSSecureCoding {
+public class MTRSetupPayload extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -89,6 +98,9 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("commissioningFlow")
     @NUInt
@@ -114,6 +126,9 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @NUInt
     public native long discoveryCapabilities();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("discriminator")
     @NotNull
@@ -125,6 +140,8 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
 
     /**
      * Generate a random Matter-valid setup PIN.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("generateRandomPIN")
@@ -141,6 +158,12 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @NotNull
     public static native NSNumber generateRandomSetupPasscode();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: Please use -vendorElements
+     */
+    @Deprecated
     @Generated
     @Selector("getAllOptionalVendorData:")
     @Nullable
@@ -151,7 +174,9 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
      * If hasShortDiscriminator is true, the discriminator value contains just the
      * high 4 bits of the full discriminator. For example, if
      * hasShortDiscriminator is true and discriminator is 0xA, then the full
-     * discriminator can be anything in the range 0xA00 t0 0xAFF.
+     * discriminator can be anything in the range 0xA00 to 0xAFF.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("hasShortDiscriminator")
@@ -165,7 +190,7 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use initWithSetupPasscode or setupPayloadWithOnboardingPayload
+     * Deprecated-Message: Please use -initWithSetupPasscode:discriminator: or -initWithPayload:
      */
     @Generated
     @Deprecated
@@ -210,7 +235,18 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * Get 11 digit manual entry code from the setup payload.
+     * Creates a Manual Pairing Code from this setup payload.
+     * Returns nil if this payload cannot be represented as a valid Manual Pairing Code.
+     * 
+     * The following properties must be populated for a valid Manual Pairing Code:
+     * - setupPasscode
+     * - discriminator (short or long)
+     * 
+     * In most cases the pairing code will be 11 digits long. If the payload indicates
+     * a `commissioningFlow` other than `MTRCommissioningFlowStandard`, a 21 digit code
+     * will be produced that includes the vendorID and productID values.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("manualEntryCode")
@@ -220,7 +256,7 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use initWithSetupPasscode or setupPayloadWithOnboardingPayload
+     * Deprecated-Message: Please use -initWithSetupPasscode:discriminator: or -initWithPayload:
      */
     @Generated
     @Owned
@@ -228,19 +264,20 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native MTRSetupPayload new_objc();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("productID")
     @NotNull
     public native NSNumber productID();
 
     /**
-     * Get a QR code from the setup payload.
-     * 
-     * Returns nil on failure (e.g. if the setup payload does not have all the
-     * information a QR code needs).
-     * 
      * API-Since: 16.2
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: Please use -qrCodeString
      */
+    @Deprecated
     @Generated
     @Selector("qrCodeString:")
     @Nullable
@@ -265,11 +302,19 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The value of the Serial Number extension element, if any.
+     * 
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("serialNumber")
     @Nullable
     public native String serialNumber();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("setCommissioningFlow:")
     public native void setCommissioningFlow(@NUInt long value);
@@ -285,6 +330,9 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @Selector("setDiscoveryCapabilities:")
     public native void setDiscoveryCapabilities(@NUInt long value);
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("setDiscriminator:")
     public native void setDiscriminator(@NotNull NSNumber value);
@@ -293,12 +341,17 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
      * If hasShortDiscriminator is true, the discriminator value contains just the
      * high 4 bits of the full discriminator. For example, if
      * hasShortDiscriminator is true and discriminator is 0xA, then the full
-     * discriminator can be anything in the range 0xA00 t0 0xAFF.
+     * discriminator can be anything in the range 0xA00 to 0xAFF.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setHasShortDiscriminator:")
     public native void setHasShortDiscriminator(boolean value);
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("setProductID:")
     public native void setProductID(@NotNull NSNumber value);
@@ -313,6 +366,11 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @Selector("setRendezvousInformation:")
     public native void setRendezvousInformation(@Nullable NSNumber value);
 
+    /**
+     * The value of the Serial Number extension element, if any.
+     * 
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("setSerialNumber:")
     public native void setSerialNumber(@Nullable String value);
@@ -345,10 +403,16 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @NotNull
     public native NSNumber setUpPINCode();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("setVendorID:")
     public native void setVendorID(@NotNull NSNumber value);
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("setVersion:")
     public native void setVersion(@NotNull NSNumber value);
@@ -362,12 +426,11 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     public native NSNumber setupPasscode();
 
     /**
-     * Create an MTRSetupPayload with the given onboarding payload.
-     * 
-     * Will return nil on errors (e.g. if the onboarding payload cannot be parsed).
-     * 
      * API-Since: 16.2
+     * Deprecated-Since: 17.6
+     * Deprecated-Message: Please use -initWithPayload:
      */
+    @Deprecated
     @Generated
     @Selector("setupPayloadWithOnboardingPayload:error:")
     @Nullable
@@ -393,13 +456,92 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding {
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("vendorID")
     @NotNull
     public native NSNumber vendorID();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("version")
     @NotNull
     public native NSNumber version();
+
+    /**
+     * Adds or replaces a Manufacturer-specific extension element.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("addOrReplaceVendorElement:")
+    public native void addOrReplaceVendorElement(@NotNull MTROptionalQRCodeInfo element);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    /**
+     * Initializes the payload object from the provide QR Code or Manual Pairing Code string.
+     * Returns nil if the payload is not valid.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("initWithPayload:")
+    public native MTRSetupPayload initWithPayload(@NotNull String payload);
+
+    /**
+     * Creates a QR Code payload from this setup payload.
+     * Returns nil if this payload cannot be represented as a valid QR Code.
+     * 
+     * The following properties must be populated for a valid QR Code:
+     * - setupPasscode
+     * - discriminator (must be long)
+     * - discoveryCapabilities (not MTRDiscoveryCapabilitiesUnknown)
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("qrCodeString")
+    @Nullable
+    public native String qrCodeString();
+
+    /**
+     * Removes the extension element with the specified tag, if any.
+     * The tag must be in the range 0x80 - 0xFF.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("removeVendorElementWithTag:")
+    public native void removeVendorElementWithTag(@NotNull NSNumber tag);
+
+    /**
+     * Returns the Manufacturer-specific extension element with the specified tag, if any.
+     * The tag must be in the range 0x80 - 0xFF.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("vendorElementWithTag:")
+    @Nullable
+    public native MTROptionalQRCodeInfo vendorElementWithTag(@NotNull NSNumber tag);
+
+    /**
+     * The list of Manufacturer-specific extension elements contained in the setup code. May be empty.
+     * 
+     * API-Since: 17.6
+     */
+    @Generated
+    @Selector("vendorElements")
+    @NotNull
+    public native NSArray<? extends MTROptionalQRCodeInfo> vendorElements();
 }

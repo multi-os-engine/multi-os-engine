@@ -46,6 +46,8 @@ public interface UIFocusEnvironment {
     /**
      * Called when the screen’s focused item has been updated to a new item. Use the animation coordinator to schedule
      * focus-related animations in response to the update.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
@@ -59,6 +61,8 @@ public interface UIFocusEnvironment {
      * the array until an eligible, focusable item is found.
      * Preferred focus environments can include focusable and non-focusable items, in addition to non-item environments.
      * Returning an empty array is equivalent to returning an array containing only 'self'.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -85,6 +89,8 @@ public interface UIFocusEnvironment {
      * also requesting focus, then this environment's request is rejected in favor of the parent's.
      * NOTE: If you provide your own implementation, it must call `[[UIFocusSystem focusSystemForEnvironment:self]
      * requestFocusUpdateToEnvironment:self]`;
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNeedsFocusUpdate")
@@ -92,6 +98,8 @@ public interface UIFocusEnvironment {
 
     /**
      * Asks whether the system should allow a focus update to occur.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shouldUpdateFocusInContext:")
@@ -103,6 +111,8 @@ public interface UIFocusEnvironment {
      * preferred focus environments.
      * NOTE: If you provide your own implementation, it must call `[[UIFocusSystem focusSystemForEnvironment:self]
      * updateFocusIfNeeded];`.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("updateFocusIfNeeded")

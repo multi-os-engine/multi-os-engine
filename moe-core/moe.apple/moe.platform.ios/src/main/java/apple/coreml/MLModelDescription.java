@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A description of a model containing input and output feature descriptions, optionally outputted features
+ * A description of a model containing input, output, and state feature descriptions, optionally outputted features
  * with special meaning and metadata.
  * 
  * API-Since: 11.0
@@ -106,6 +106,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Description of the inputs to the model
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -136,6 +138,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Optional metadata describing the model
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -149,6 +153,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Description of the outputs from the model
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -157,6 +163,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Name of the primary target / predicted output feature in the output descriptions
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -165,6 +173,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Key for all predicted probabilities stored as a MLFeatureTypeDictionary in the output descriptions
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -202,6 +212,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Indicates if the model has to been configured for updation using model update API.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isUpdatable")
@@ -209,6 +221,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Allows for access of each parameter as parameter description.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -227,6 +241,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Allows for access of each training input as a feature description.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -258,4 +274,14 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Description of the state features.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("stateDescriptionsByName")
+    @NotNull
+    public native NSDictionary<String, ? extends MLFeatureDescription> stateDescriptionsByName();
 }

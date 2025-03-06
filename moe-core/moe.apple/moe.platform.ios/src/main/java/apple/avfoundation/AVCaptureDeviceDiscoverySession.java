@@ -120,6 +120,8 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
      * The list of device types is mandatory. This is used to make sure that clients only get access to devices of types
      * they expect. This prevents new device types from automatically being included in the list of devices.
      * 
+     * API-Since: 10.0
+     * 
      * @param deviceTypes
      *                    An array specifying the device types to include in the list of discovered devices.
      * @param mediaType
@@ -202,6 +204,8 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
      * AVCaptureDevicePositionUnspecified is specified, the results are further ordered by position in the
      * AVCaptureDevicePosition enum. Starting in Mac Catalyst 14.0, clients can key value observe the value of this
      * property to be notified when the devices change.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

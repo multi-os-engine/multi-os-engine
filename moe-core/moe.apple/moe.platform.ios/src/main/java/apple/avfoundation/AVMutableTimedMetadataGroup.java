@@ -180,6 +180,8 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
 
     /**
      * an array of AVMetadataItems
+     * 
+     * API-Since: 4.3
      */
     @NotNull
     @Generated
@@ -188,6 +190,8 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
 
     /**
      * an array of AVMetadataItems
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("setItems:")
@@ -195,6 +199,8 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
 
     /**
      * indicates the time range of the timed metadata
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("setTimeRange:")
@@ -202,6 +208,8 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
 
     /**
      * indicates the time range of the timed metadata
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("timeRange")

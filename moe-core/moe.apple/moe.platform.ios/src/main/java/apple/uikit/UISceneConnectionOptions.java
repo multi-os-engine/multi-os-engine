@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.gamecontroller.GCGameControllerActivationContext;
 
 /**
  * This object is vended to your application by UIKit when a UIScene connects to a session
@@ -48,6 +49,8 @@ public class UISceneConnectionOptions extends NSObject {
 
     /**
      * A set of UIOpenURLContexts to handle on connection
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -95,6 +98,8 @@ public class UISceneConnectionOptions extends NSObject {
 
     /**
      * A CloudKit share metadata item to handle on connection
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -112,6 +117,8 @@ public class UISceneConnectionOptions extends NSObject {
     /**
      * The type of a handoff user activity if one is pending on connect.
      * The delegate callbacks will be invoked for this activity when it is available.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -185,6 +192,8 @@ public class UISceneConnectionOptions extends NSObject {
     /**
      * A NSString containing the bundle ID of the originating application.
      * non-nil if the originating application and this application share the same team identifier.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -200,6 +209,8 @@ public class UISceneConnectionOptions extends NSObject {
      * For handoff, the user activity is not immediately available and will not be in this set,
      * a handoff user activity will instead be indicated via the handoffUserActivityType property
      * above, and the application will receive a callback on their UISceneDelegate when the activity is fully loaded.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -215,4 +226,15 @@ public class UISceneConnectionOptions extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The activation context if the scene is being connected in response to a
+     * game controller.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("gameControllerActivationContext")
+    @Nullable
+    public native GCGameControllerActivationContext gameControllerActivationContext();
 }

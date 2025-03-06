@@ -150,6 +150,9 @@ public class CXCallDirectoryManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("sharedInstance")
@@ -164,6 +167,9 @@ public class CXCallDirectoryManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("getEnabledStatusForExtensionWithIdentifier:completionHandler:")
     public native void getEnabledStatusForExtensionWithIdentifierCompletionHandler(@NotNull String identifier,
@@ -173,6 +179,9 @@ public class CXCallDirectoryManager extends NSObject {
     @Selector("init")
     public native CXCallDirectoryManager init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("reloadExtensionWithIdentifier:completionHandler:")
     public native void reloadExtensionWithIdentifierCompletionHandler(@NotNull String identifier,

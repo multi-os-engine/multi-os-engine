@@ -10,7 +10,6 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstNUIntPtr;
-import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
@@ -19,6 +18,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 /**
  * [@protocol] MTLArgumentEncoder
@@ -36,6 +36,8 @@ public interface MTLArgumentEncoder {
      * [@property] alignment
      * 
      * The alignment in bytes required to store the encoded resource bindings.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alignment")
@@ -46,6 +48,8 @@ public interface MTLArgumentEncoder {
      * constantDataAtIndex:
      * 
      * Returns a pointer to the constant data at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -56,6 +60,8 @@ public interface MTLArgumentEncoder {
      * [@property] device
      * 
      * The device this argument encoder was created against.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -67,6 +73,8 @@ public interface MTLArgumentEncoder {
      * [@property] encodedLength
      * 
      * The number of bytes required to store the encoded resource bindings.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("encodedLength")
@@ -77,6 +85,8 @@ public interface MTLArgumentEncoder {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -87,6 +97,8 @@ public interface MTLArgumentEncoder {
      * setArgumentBuffer:offset:
      * 
      * Sets the destination buffer and offset at which the arguments will be encoded.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setArgumentBuffer:offset:")
@@ -98,6 +110,8 @@ public interface MTLArgumentEncoder {
      * * @brief Sets the destination buffer, starting offset and specific array element arguments will be encoded into.
      * arrayElement represents
      * the desired element of IAB array targetted by encoding
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setArgumentBuffer:startOffset:arrayElement:")
@@ -108,6 +122,8 @@ public interface MTLArgumentEncoder {
      * setBuffer:offset:atIndex:
      * 
      * Set a buffer at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBuffer:offset:atIndex:")
@@ -118,16 +134,20 @@ public interface MTLArgumentEncoder {
      * setBuffers:offsets:withRange:
      * 
      * Set an array of buffers at the given bind point index range.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBuffers:offsets:withRange:")
-    void setBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers,
             @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLabel:")
@@ -137,6 +157,8 @@ public interface MTLArgumentEncoder {
      * setSamplerState:atIndex:
      * 
      * Set a sampler at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSamplerState:atIndex:")
@@ -146,16 +168,20 @@ public interface MTLArgumentEncoder {
      * setSamplerStates:withRange:
      * 
      * Set an array of samplers at the given bind point index range.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSamplerStates:withRange:")
-    void setSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+    void setSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> samplers,
             @ByValue NSRange range);
 
     /**
      * setTexture:atIndex:
      * 
      * Set a texture at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTexture:atIndex:")
@@ -165,10 +191,12 @@ public interface MTLArgumentEncoder {
      * setTextures:withRange:
      * 
      * Set an array of textures at the given bind point index range.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTextures:withRange:")
-    void setTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+    void setTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> textures,
             @ByValue NSRange range);
 
     /**
@@ -207,8 +235,8 @@ public interface MTLArgumentEncoder {
      */
     @Generated
     @Selector("setComputePipelineStates:withRange:")
-    void setComputePipelineStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
-            @ByValue NSRange range);
+    void setComputePipelineStatesWithRange(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> pipelines, @ByValue NSRange range);
 
     /**
      * setIndirectCommandBuffer:atIndex
@@ -232,8 +260,8 @@ public interface MTLArgumentEncoder {
      */
     @Generated
     @Selector("setIndirectCommandBuffers:withRange:")
-    void setIndirectCommandBuffersWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
-            @ByValue NSRange range);
+    void setIndirectCommandBuffersWithRange(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> buffers, @ByValue NSRange range);
 
     /**
      * setRenderPipelineState:atIndex
@@ -256,8 +284,8 @@ public interface MTLArgumentEncoder {
      */
     @Generated
     @Selector("setRenderPipelineStates:withRange:")
-    void setRenderPipelineStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
-            @ByValue NSRange range);
+    void setRenderPipelineStatesWithRange(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> pipelines, @ByValue NSRange range);
 
     /**
      * API-Since: 14.0
@@ -291,7 +319,7 @@ public interface MTLArgumentEncoder {
     @Generated
     @Selector("setIntersectionFunctionTables:withRange:")
     void setIntersectionFunctionTablesWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> intersectionFunctionTables,
             @ByValue NSRange range);
 
     /**
@@ -316,6 +344,6 @@ public interface MTLArgumentEncoder {
     @Generated
     @Selector("setVisibleFunctionTables:withRange:")
     void setVisibleFunctionTablesWithRange(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> visibleFunctionTables,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> visibleFunctionTables,
             @ByValue NSRange range);
 }

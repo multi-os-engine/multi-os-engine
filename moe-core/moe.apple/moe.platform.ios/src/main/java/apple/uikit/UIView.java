@@ -218,6 +218,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native UIView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("areAnimationsEnabled")
     public static native boolean areAnimationsEnabled();
@@ -317,6 +320,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is [CALayer class]. Used when creating the underlying layer for the view.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -485,6 +490,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * ignore any attribute changes while set.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -611,6 +618,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("addMotionEffect:")
     public native void addMotionEffect(@NotNull UIMotionEffect effect);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("addSubview:")
     public native void addSubview(@NotNull UIView view);
@@ -645,6 +655,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * animatable. default is 1.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("alpha")
@@ -700,6 +712,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is YES. if set, subviews are adjusted according to their autoresizingMask if self.bounds changes
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("autoresizesSubviews")
@@ -707,6 +721,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * simple resize. default is UIViewAutoresizingNone
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("autoresizingMask")
@@ -715,6 +731,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is nil. Can be useful with the appearance proxy on custom UIView subclasses.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -734,6 +752,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @ByValue
     public native CGRect bounds();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("bringSubviewToFront:")
     public native void bringSubviewToFront(@NotNull UIView view);
@@ -766,6 +787,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is YES. ignored for opaque views. for non-opaque views causes the active CGContext in drawRect: to be
      * pre-filled with transparent pixels
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("clearsContextBeforeDrawing")
@@ -773,6 +796,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * When YES, content and subviews are clipped to the bounds of the view. Default is NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("clipsToBounds")
@@ -828,6 +853,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is UIViewContentModeScaleToFill
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("contentMode")
@@ -861,6 +888,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     public native CGPoint convertPointFromCoordinateSpace(@ByValue CGPoint point,
             @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("convertPoint:fromView:")
     @ByValue
@@ -872,6 +902,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     public native CGPoint convertPointToCoordinateSpace(@ByValue CGPoint point,
             @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("convertPoint:toView:")
     @ByValue
@@ -883,6 +916,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     public native CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect,
             @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("convertRect:fromView:")
     @ByValue
@@ -894,6 +930,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     public native CGRect convertRectToCoordinateSpace(@ByValue CGRect rect,
             @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("convertRect:toView:")
     @ByValue
@@ -906,14 +945,23 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("decodeRestorableStateWithCoder:")
     public native void decodeRestorableStateWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("didAddSubview:")
     public native void didAddSubview(@NotNull UIView subview);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("didMoveToSuperview")
     public native void didMoveToSuperview();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("didMoveToWindow")
     public native void didMoveToWindow();
@@ -933,6 +981,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("drawLayer:inContext:")
     public native void drawLayerInContext(@NotNull CALayer layer, @NotNull CGContextRef ctx);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("drawRect:")
     public native void drawRect(@ByValue CGRect rect);
@@ -980,11 +1031,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * use to make the view or any subview that is the first responder resign (optionally force)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("endEditing:")
     public native boolean endEditing(boolean force);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("exchangeSubviewAtIndex:withSubviewAtIndex:")
     public native void exchangeSubviewAtIndexWithSubviewAtIndex(@NInt long index1, @NInt long index2);
@@ -1066,6 +1122,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * recursively calls -pointInside:withEvent:. point is in the receiver's coordinate system
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1080,18 +1138,30 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("initWithCoder:")
     public native UIView initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UIView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("insertSubview:aboveSubview:")
     public native void insertSubviewAboveSubview(@NotNull UIView view, @NotNull UIView siblingSubview);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("insertSubview:atIndex:")
     public native void insertSubviewAtIndex(@NotNull UIView view, @NInt long index);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("insertSubview:belowSubview:")
     public native void insertSubviewBelowSubview(@NotNull UIView view, @NotNull UIView siblingSubview);
@@ -1116,6 +1186,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * returns YES for self.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isDescendantOfView:")
@@ -1144,6 +1216,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is NO. doesn't check superviews
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isHidden")
@@ -1151,6 +1225,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is NO. doesn't check superviews
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHidden:")
@@ -1173,6 +1249,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is YES. opaque views must fill their entire bounds or the results are undefined. the active CGContext in
      * drawRect: will not have been cleared and may have non-zeroed pixels
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isOpaque")
@@ -1181,6 +1259,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is YES. opaque views must fill their entire bounds or the results are undefined. the active CGContext in
      * drawRect: will not have been cleared and may have non-zeroed pixels
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setOpaque:")
@@ -1188,6 +1268,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is YES. if set to NO, user events (touch, keys) are ignored and removed from the event queue.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isUserInteractionEnabled")
@@ -1195,6 +1277,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is YES. if set to NO, user events (touch, keys) are ignored and removed from the event queue.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setUserInteractionEnabled:")
@@ -1210,6 +1294,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * returns view's layer. Will always return a non-nil value. view is layer's delegate
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -1231,6 +1317,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("layoutGuides")
     public native NSArray<? extends UILayoutGuide> layoutGuides();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("layoutIfNeeded")
     public native void layoutIfNeeded();
@@ -1284,6 +1373,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * override point. called by layoutIfNeeded automatically. As of iOS 6.0, when constraints-based layout is used the
      * base implementation applies the constraints-based layout, otherwise it does nothing.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("layoutSubviews")
@@ -1332,6 +1423,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default returns YES if point is in bounds
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("pointInside:withEvent:")
@@ -1391,6 +1484,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("removeConstraints:")
     public native void removeConstraints(@NotNull NSArray<? extends NSLayoutConstraint> constraints);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("removeFromSuperview")
     public native void removeFromSuperview();
@@ -1456,6 +1552,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @NInt
     public native long semanticContentAttribute();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("sendSubviewToBack:")
     public native void sendSubviewToBack(@NotNull UIView view);
@@ -1466,6 +1565,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * animatable. default is 1.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAlpha:")
@@ -1473,6 +1574,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is YES. if set, subviews are adjusted according to their autoresizingMask if self.bounds changes
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAutoresizesSubviews:")
@@ -1480,6 +1583,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * simple resize. default is UIViewAutoresizingNone
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAutoresizingMask:")
@@ -1487,6 +1592,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is nil. Can be useful with the appearance proxy on custom UIView subclasses.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -1494,6 +1601,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default bounds is zero origin, frame size. animatable
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBounds:")
@@ -1506,6 +1615,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is YES. ignored for opaque views. for non-opaque views causes the active CGContext in drawRect: to be
      * pre-filled with transparent pixels
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setClearsContextBeforeDrawing:")
@@ -1513,6 +1624,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * When YES, content and subviews are clipped to the bounds of the view. Default is NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setClipsToBounds:")
@@ -1534,6 +1647,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is UIViewContentModeScaleToFill
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setContentMode:")
@@ -1561,6 +1676,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * animatable. do not use frame if view is transformed since it will not correctly reflect the actual location of
      * the view. use bounds + center instead.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFrame:")
@@ -1610,10 +1727,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setMotionEffects:")
     public native void setMotionEffects(@NotNull NSArray<? extends UIMotionEffect> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setNeedsDisplay")
     public native void setNeedsDisplay();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setNeedsDisplayInRect:")
     public native void setNeedsDisplayInRect(@ByValue CGRect rect);
@@ -1624,6 +1747,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Allows you to perform layout before the drawing cycle happens. -layoutIfNeeded forces layout early
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setNeedsLayout")
@@ -1662,6 +1787,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTag:")
@@ -1716,6 +1843,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * return 'best' size to fit given size. does not actually resize view. Default is return existing view size
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sizeThatFits:")
@@ -1724,6 +1853,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * calls sizeThatFits: with current view bounds and changes bounds size.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("sizeToFit")
@@ -1756,11 +1887,17 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("snapshotViewAfterScreenUpdates:")
     public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
 
+    /**
+     * API-Since: 2.0
+     */
     @NotNull
     @Generated
     @Selector("subviews")
     public native NSArray<? extends UIView> subviews();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("superview")
@@ -1788,6 +1925,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("tag")
@@ -1952,6 +2091,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * recursive search. includes self
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1966,18 +2107,30 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("widthAnchor")
     public native NSLayoutDimension widthAnchor();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("willMoveToSuperview:")
     public native void willMoveToSuperview(@Nullable UIView newSuperview);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("willMoveToWindow:")
     public native void willMoveToWindow(@Nullable UIWindow newWindow);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("willRemoveSubview:")
     public native void willRemoveSubview(@NotNull UIView subview);
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("window")
@@ -2628,6 +2781,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setHoverStyle:")
     public native void setHoverStyle(@Nullable UIHoverStyle value);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("traitOverrides")
     @MappedReturn(ObjCObjectMapper.class)
@@ -2642,6 +2798,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Forces an immediate trait update for this view (and its view controller, if applicable) and any subviews,
      * including any view controllers or views in its subtree. Any trait change callbacks are sent synchronously.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("updateTraitsIfNeeded")
@@ -2651,4 +2809,10 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("focusItemDeferralMode")
+    @NInt
+    public native long focusItemDeferralMode();
 }

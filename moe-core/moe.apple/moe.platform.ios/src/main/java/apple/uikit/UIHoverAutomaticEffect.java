@@ -100,6 +100,9 @@ public class UIHoverAutomaticEffect extends NSObject implements UIHoverEffect {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("effect")
     public static native UIHoverAutomaticEffect effect();

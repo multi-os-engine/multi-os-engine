@@ -164,6 +164,9 @@ public class CXCallAction extends CXAction {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("callUUID")
@@ -173,10 +176,16 @@ public class CXCallAction extends CXAction {
     @Selector("init")
     public native CXCallAction init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCallUUID:")
     public native CXCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native CXCallAction initWithCoder(@NotNull NSCoder aDecoder);

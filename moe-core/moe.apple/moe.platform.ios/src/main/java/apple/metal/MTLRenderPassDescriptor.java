@@ -150,6 +150,8 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * renderPassDescriptor
      * 
      * Create an autoreleased default frame buffer descriptor
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -177,6 +179,9 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("colorAttachments")
@@ -189,6 +194,9 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("depthAttachment")
     public native MTLRenderPassDepthAttachmentDescriptor depthAttachment();
@@ -197,10 +205,16 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLRenderPassDescriptor init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDepthAttachment:")
     public native void setDepthAttachment(MTLRenderPassDepthAttachmentDescriptor value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setStencilAttachment:")
     public native void setStencilAttachment(MTLRenderPassStencilAttachmentDescriptor value);
@@ -209,11 +223,16 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * [@property] visibilityResultBuffer:
      * 
      * Buffer into which samples passing the depth and stencil tests are counted.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVisibilityResultBuffer:")
     public native void setVisibilityResultBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stencilAttachment")
     public native MTLRenderPassStencilAttachmentDescriptor stencilAttachment();
@@ -222,6 +241,8 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * [@property] visibilityResultBuffer:
      * 
      * Buffer into which samples passing the depth and stencil tests are counted.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated

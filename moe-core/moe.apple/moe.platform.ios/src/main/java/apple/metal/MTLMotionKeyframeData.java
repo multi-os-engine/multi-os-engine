@@ -65,6 +65,8 @@ public class MTLMotionKeyframeData extends NSObject {
 
     /**
      * Buffer containing the data of a single keyframe. Multiple keyframes can be interleaved in one MTLBuffer.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -93,6 +95,9 @@ public class MTLMotionKeyframeData extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("data")
     public static native MTLMotionKeyframeData data();
@@ -143,6 +148,8 @@ public class MTLMotionKeyframeData extends NSObject {
 
     /**
      * Buffer offset. Must be a multiple of 4 bytes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("offset")
@@ -159,6 +166,8 @@ public class MTLMotionKeyframeData extends NSObject {
 
     /**
      * Buffer containing the data of a single keyframe. Multiple keyframes can be interleaved in one MTLBuffer.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBuffer:")
@@ -166,6 +175,8 @@ public class MTLMotionKeyframeData extends NSObject {
 
     /**
      * Buffer offset. Must be a multiple of 4 bytes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setOffset:")

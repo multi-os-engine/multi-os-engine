@@ -162,11 +162,17 @@ public class MDLMaterialPropertyGraph extends MDLMaterialPropertyNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("connections")
     public native NSArray<? extends MDLMaterialPropertyConnection> connections();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("evaluate")
     public native void evaluate();
@@ -182,12 +188,18 @@ public class MDLMaterialPropertyGraph extends MDLMaterialPropertyNode {
             @NotNull NSArray<? extends MDLMaterialProperty> outputs,
             @NotNull @ObjCBlock(name = "call_initWithInputsOutputsEvaluationFunction") MDLMaterialPropertyNode.Block_initWithInputsOutputsEvaluationFunction function);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithNodes:connections:")
     public native MDLMaterialPropertyGraph initWithNodesConnections(
             @NotNull NSArray<? extends MDLMaterialPropertyNode> nodes,
             @NotNull NSArray<? extends MDLMaterialPropertyConnection> connections);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("nodes")

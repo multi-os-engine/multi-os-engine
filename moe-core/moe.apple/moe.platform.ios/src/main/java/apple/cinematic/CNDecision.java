@@ -106,6 +106,8 @@ public class CNDecision extends NSObject implements NSCopying {
 
     /**
      * The detectionGroupID of the detection to focus on if this is a group decision.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionGroupID")
@@ -113,6 +115,8 @@ public class CNDecision extends NSObject implements NSCopying {
 
     /**
      * The detectionID of the detection to focus on if this is not a group decision.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("detectionID")
@@ -130,6 +134,8 @@ public class CNDecision extends NSObject implements NSCopying {
     /**
      * Make a decision to focus on the best among those detections with the same detectionGroupID.
      * A strong decision keeps focus for as long as possible.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithTime:detectionGroupID:strong:")
@@ -139,6 +145,8 @@ public class CNDecision extends NSObject implements NSCopying {
     /**
      * Make a decision to focus on the detection with the given detectionID.
      * A strong decision keeps focus for as long as possible.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithTime:detectionID:strong:")
@@ -159,6 +167,8 @@ public class CNDecision extends NSObject implements NSCopying {
 
     /**
      * Whether this is a group decision or not.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isGroupDecision")
@@ -167,6 +177,8 @@ public class CNDecision extends NSObject implements NSCopying {
     /**
      * Whether this is a strong decision or not.
      * A strong decision keeps focus for as long as possible.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isStrongDecision")
@@ -178,6 +190,8 @@ public class CNDecision extends NSObject implements NSCopying {
 
     /**
      * Whether this is a user-created decision, or a base decision.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isUserDecision")
@@ -212,6 +226,8 @@ public class CNDecision extends NSObject implements NSCopying {
     /**
      * The first presentation time at which the subject should be in focus.
      * The rack focus transition to the subject occurs prior to this time.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("time")

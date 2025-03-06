@@ -103,6 +103,9 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
                 @Nullable PKAddShareablePassConfiguration shareableCredentialConfiguration, @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("credentialsMetadata")
@@ -152,6 +155,9 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @Selector("new")
     public static native PKAddShareablePassConfiguration new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("primaryAction")
     @NUInt

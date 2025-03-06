@@ -167,11 +167,23 @@ public class INSetRadioStationIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("channel")
     public native String channel();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("frequency")
@@ -185,22 +197,46 @@ public class INSetRadioStationIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetRadioStationIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRadioType:frequency:stationName:channel:presetNumber:")
     public native INSetRadioStationIntent initWithRadioTypeFrequencyStationNameChannelPresetNumber(@NInt long radioType,
             @Nullable NSNumber frequency, @Nullable String stationName, @Nullable String channel,
             @Nullable NSNumber presetNumber);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("presetNumber")
     public native NSNumber presetNumber();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("radioType")
     @NInt
     public native long radioType();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetRadioStationIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("stationName")

@@ -109,6 +109,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * [@property] device
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -123,6 +125,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      * Calling this method will delete all quantities that were previously inserted into
      * the series and invalidate the receiver. Calling other methods on the receiver
      * after calling -discard will result in an exception.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("discard")
@@ -158,6 +162,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      *                   error indicates the resulting samples could not be returned.
      *                   After calling this method, the receiver will be considered invalid
      *                   and calling any other method will result in an error.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("finishSeriesWithMetadata:completion:")
@@ -204,6 +210,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      *                   error indicates the resulting samples could not be returned.
      *                   After calling this method, the receiver will be considered invalid
      *                   and calling any other method will result in an error.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("finishSeriesWithMetadata:endDate:completion:")
@@ -241,6 +249,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      * @param startDate    The date from which the produced sample(s) start.
      * @param device       The optional device represents the HKDevice from which the data is
      *                     provided.
+     * 
+     *                     API-Since: 12.0
      */
     @Generated
     @Selector("initWithHealthStore:quantityType:startDate:device:")
@@ -262,6 +272,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      *                 start date as a previously-provided quantity, the new value will
      *                 replace the old value. An HKErrorInvalidArgument will be returned
      *                 if date is earlier than the receiver's startDate.
+     * 
+     *                 API-Since: 12.0
      */
     @Generated
     @Selector("insertQuantity:date:error:")
@@ -322,6 +334,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * [@property] quantityType
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -342,6 +356,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * [@property] startDate
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

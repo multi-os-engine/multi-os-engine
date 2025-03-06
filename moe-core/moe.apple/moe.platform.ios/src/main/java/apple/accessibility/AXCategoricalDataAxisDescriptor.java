@@ -85,6 +85,8 @@ public class AXCategoricalDataAxisDescriptor extends NSObject implements AXDataA
      * For example, if your categorical axis represented 'blood type', and the legend contained 'AB, A, B, O' in that
      * order,
      * you would provide an array containing "AB", "A", "B" and "O" in the same order.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -125,11 +127,17 @@ public class AXCategoricalDataAxisDescriptor extends NSObject implements AXDataA
     @Selector("init")
     public native AXCategoricalDataAxisDescriptor init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithAttributedTitle:categoryOrder:")
     public native AXCategoricalDataAxisDescriptor initWithAttributedTitleCategoryOrder(
             @NotNull NSAttributedString attributedTitle, @NotNull NSArray<String> categoryOrder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithTitle:categoryOrder:")
     public native AXCategoricalDataAxisDescriptor initWithTitleCategoryOrder(@NotNull String title,
@@ -181,6 +189,8 @@ public class AXCategoricalDataAxisDescriptor extends NSObject implements AXDataA
      * For example, if your categorical axis represented 'blood type', and the legend contained 'AB, A, B, O' in that
      * order,
      * you would provide an array containing "AB", "A", "B" and "O" in the same order.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCategoryOrder:")

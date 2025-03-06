@@ -89,6 +89,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
 
     /**
      * This delegate will be notified upon completion of the upgrade to report success or failure.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -139,6 +141,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     /**
      * Perform an upgrade request, one at a time. Any requests initiated with a request already in progress will fail
      * immediately.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("performRequest:")
@@ -146,6 +150,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
 
     /**
      * This will be used to provide a presentation context to display authorization UI.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -163,6 +169,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
 
     /**
      * This delegate will be notified upon completion of the upgrade to report success or failure.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -171,6 +179,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
 
     /**
      * This delegate will be notified upon completion of the upgrade to report success or failure.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setDelegate(
@@ -187,6 +197,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
 
     /**
      * This will be used to provide a presentation context to display authorization UI.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPresentationContextProvider:")
@@ -195,6 +207,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
 
     /**
      * This will be used to provide a presentation context to display authorization UI.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setPresentationContextProvider(

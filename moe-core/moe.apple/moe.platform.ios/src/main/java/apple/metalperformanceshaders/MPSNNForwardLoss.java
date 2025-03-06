@@ -97,6 +97,9 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("delta")
     public native float delta();
@@ -105,6 +108,9 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("epsilon")
     public native float epsilon();
@@ -124,6 +130,8 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
 
     /**
      * <NSSecureCoding> support
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -140,6 +148,8 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
      * @param device         The device the filter will run on.
      * @param lossDescriptor The loss descriptor.
      * @return A valid MPSNNForwardLoss object or nil, if failure.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
@@ -168,12 +178,17 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("labelSmoothing")
     public native float labelSmoothing();
 
     /**
      * See MPSCNNLossDescriptor for information about the following properties.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("lossType")
@@ -184,11 +199,17 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("new")
     public static native MPSNNForwardLoss new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("numberOfClasses")
     @NUInt
     public native long numberOfClasses();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("reductionType")
     public native int reductionType();
@@ -201,14 +222,23 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setEpsilon:")
     public native void setEpsilon(float value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setLabelSmoothing:")
     public native void setLabelSmoothing(float value);
@@ -219,6 +249,8 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
 
     /**
      * Dynamically adjustable parameters
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWeight:")
@@ -245,6 +277,8 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
 
     /**
      * Dynamically adjustable parameters
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("weight")

@@ -45,7 +45,10 @@ import org.jetbrains.annotations.Nullable;
  * Base class used to fetch data from the store. Should not be used directly.
  * 
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -164,14 +167,20 @@ public class SKRequest extends NSObject {
      * Cancel the request if it has started.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("cancel")
     public native void cancel();
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -184,14 +193,20 @@ public class SKRequest extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -208,7 +223,10 @@ public class SKRequest extends NSObject {
      * Start the request if it has not already been started.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("start")
     public native void start();

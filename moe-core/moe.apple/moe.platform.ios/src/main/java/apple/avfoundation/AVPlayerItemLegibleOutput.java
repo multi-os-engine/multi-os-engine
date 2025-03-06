@@ -176,6 +176,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples
      * earlier than the AVPlayerItemLegibleOutput is prepared to act on them, the delegate will be invoked as soon as
      * possible.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("advanceIntervalForDelegateInvocation")
@@ -188,6 +190,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * 
      * The delegate is held using a zeroing-weak reference, so this property will have a value of nil after a delegate
      * that was previously set has been deallocated. This property is not key-value observable.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -201,6 +205,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * The dispatch queue where the delegate is messaged.
      * 
      * This property is not key-value observable.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -230,6 +236,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * This method throws an exception if any media subtype is kCMClosedCaptionFormatType_CEA608 (native representation
      * is not available for media subtype).
      * 
+     * API-Since: 7.0
+     * 
      * @param subtypes
      *                 NSArray of NSNumber FourCC codes, e.g. @[ [NSNumber numberWithUnsignedInt:'tx3g'] ]
      * @return An instance of AVPlayerItemLegibleOutput.
@@ -248,6 +256,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples
      * earlier than the AVPlayerItemLegibleOutput is prepared to act on them, the delegate will be invoked as soon as
      * possible.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAdvanceIntervalForDelegateInvocation:")
@@ -260,6 +270,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * 
      * The delegate is held using a zeroing-weak reference, so it is safe to deallocate the delegate while the receiver
      * still has a reference to it.
+     * 
+     * API-Since: 7.0
      * 
      * @param delegate
      *                      An object conforming to AVPlayerItemLegibleOutputPushDelegate protocol.
@@ -283,6 +295,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * property is set to any other value. The default value is AVPlayerItemLegibleOutputTextStylingResolutionDefault,
      * which indicates that attributed strings vended by the receiver will include the same level of styling information
      * that would be used if AVFoundation were rendering the text via AVPlayerLayer.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTextStylingResolution:")
@@ -299,6 +313,8 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
      * property is set to any other value. The default value is AVPlayerItemLegibleOutputTextStylingResolutionDefault,
      * which indicates that attributed strings vended by the receiver will include the same level of styling information
      * that would be used if AVFoundation were rendering the text via AVPlayerLayer.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

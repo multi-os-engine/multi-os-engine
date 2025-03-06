@@ -316,6 +316,9 @@ public class CLLocationManager extends NSObject {
     @Selector("allowsBackgroundLocationUpdates")
     public native boolean allowsBackgroundLocationUpdates();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -332,6 +335,8 @@ public class CLLocationManager extends NSObject {
      * use a large accuracy value when only a coarse location is needed). Use kCLLocationAccuracyBest to
      * achieve the best possible accuracy. Use kCLLocationAccuracyBestForNavigation for navigation.
      * The default value varies by platform.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("desiredAccuracy")
@@ -361,6 +366,8 @@ public class CLLocationManager extends NSObject {
      * Specifies the minimum update distance in meters. Client will not be notified of movements of less
      * than the stated value, unless the accuracy has improved. Pass in kCLDistanceFilterNone to be
      * notified of all movements. By default, kCLDistanceFilterNone is used.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("distanceFilter")
@@ -406,6 +413,8 @@ public class CLLocationManager extends NSObject {
      * 
      * Discussion:
      * The last location received. Will be nil until a location has been received.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -575,10 +584,16 @@ public class CLLocationManager extends NSObject {
     @Selector("setAllowsBackgroundLocationUpdates:")
     public native void setAllowsBackgroundLocationUpdates(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CLLocationManagerDelegate value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CLLocationManagerDelegate value) {
         Object __old = delegate();
@@ -601,6 +616,8 @@ public class CLLocationManager extends NSObject {
      * use a large accuracy value when only a coarse location is needed). Use kCLLocationAccuracyBest to
      * achieve the best possible accuracy. Use kCLLocationAccuracyBestForNavigation for navigation.
      * The default value varies by platform.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDesiredAccuracy:")
@@ -613,6 +630,8 @@ public class CLLocationManager extends NSObject {
      * Specifies the minimum update distance in meters. Client will not be notified of movements of less
      * than the stated value, unless the accuracy has improved. Pass in kCLDistanceFilterNone to be
      * notified of all movements. By default, kCLDistanceFilterNone is used.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDistanceFilter:")
@@ -776,6 +795,8 @@ public class CLLocationManager extends NSObject {
      * 
      * Discussion:
      * Stop updating locations.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("stopUpdatingLocation")

@@ -178,6 +178,8 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
      * refs that are not supported will be ignored.
      * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
      * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -219,6 +221,8 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
      * in the array will be layered on top, with the track with the trackID of the second instruction immediately
      * underneath, etc.
      * If this key is nil, the output will be a fill of the background color.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated

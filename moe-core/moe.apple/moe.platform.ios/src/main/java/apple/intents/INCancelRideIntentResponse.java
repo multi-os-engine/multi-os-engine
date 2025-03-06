@@ -76,6 +76,8 @@ public class INCancelRideIntentResponse extends INIntentResponse {
 
     /**
      * Used during confirmation to warn the user about any cancellation fees
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -84,6 +86,8 @@ public class INCancelRideIntentResponse extends INIntentResponse {
 
     /**
      * The time after which canceling the ride will incur the cancellation fee
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -100,6 +104,9 @@ public class INCancelRideIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -130,6 +137,8 @@ public class INCancelRideIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -177,6 +186,8 @@ public class INCancelRideIntentResponse extends INIntentResponse {
 
     /**
      * Used during confirmation to warn the user about any cancellation fees
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCancellationFee:")
@@ -184,6 +195,8 @@ public class INCancelRideIntentResponse extends INIntentResponse {
 
     /**
      * The time after which canceling the ride will incur the cancellation fee
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCancellationFeeThreshold:")

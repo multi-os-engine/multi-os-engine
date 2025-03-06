@@ -34,4 +34,8 @@ public final class DDDeviceCategory {
      * Laptop computer.
      */
     @Generated @NInt public static final long DesktopComputer = 0x0000000000000005L;
+    /**
+     * Desktop computer.
+     */
+    @Generated @NInt public static final long AccessorySetup = 0x0000000000000006L;
 }

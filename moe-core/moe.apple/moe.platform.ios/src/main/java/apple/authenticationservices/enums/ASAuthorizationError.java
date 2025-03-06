@@ -36,4 +36,23 @@ public final class ASAuthorizationError {
      * API-Since: 15.0
      */
     @Generated @NInt public static final long NotInteractive = 0x00000000000003EDL;
+    /**
+     * This error should only be returned when specifying @c excludedCredentials on a public key credential registration
+     * request.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long MatchedExcludedCredential = 0x00000000000003EEL;
+    /**
+     * This error signals that the import request failed. Details will be available in the `userInfo` of the NSError.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated @NInt public static final long CredentialImport = 0x00000000000003EFL;
+    /**
+     * This error signals that the export request failed. Details will be available in the `userInfo` of the NSError.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated @NInt public static final long CredentialExport = 0x00000000000003F0L;
 }

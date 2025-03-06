@@ -64,7 +64,12 @@ public interface INSearchForPhotosIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSearchForPhotosIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchForPhotosIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSearchForPhotos:completion:")
@@ -83,12 +88,23 @@ public interface INSearchForPhotosIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSearchForPhotosIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchForPhotosIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSearchForPhotos:completion:")
     void handleSearchForPhotosCompletion(@NotNull INSearchForPhotosIntent intent,
             @NotNull @ObjCBlock(name = "call_handleSearchForPhotosCompletion") Block_handleSearchForPhotosCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForPhotosIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveAlbumNameForSearchForPhotos:withCompletion:")
@@ -107,7 +123,12 @@ public interface INSearchForPhotosIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSearchForPhotosIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveDateCreatedForSearchForPhotos:withCompletion:")
@@ -116,6 +137,12 @@ public interface INSearchForPhotosIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForPhotosIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveLocationCreatedForSearchForPhotos:withCompletion:")
@@ -124,6 +151,12 @@ public interface INSearchForPhotosIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSearchForPhotosIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolvePeopleInPhotoForSearchForPhotos:withCompletion:")

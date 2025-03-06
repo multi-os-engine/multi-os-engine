@@ -214,6 +214,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * Bounds of entire screen in points
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("bounds")

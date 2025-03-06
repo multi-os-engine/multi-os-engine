@@ -214,6 +214,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * [@property] groups
      * 
      * Number of groups input and output channels are divided into.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("groups")
@@ -235,6 +237,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
 
     /**
      * <NSSecureCoding> support
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -255,6 +259,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      *                for the CNN convolutionTranspose filter. Currently we support only Float32 weights.
      * 
      * @return A valid MPSCNNConvolutionTranspose object.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:weights:")
@@ -266,6 +272,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels per pixel in the input image.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -293,6 +301,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * [@property] kernelOffsetX
      * 
      * Offset in X from which the kernel starts sliding
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("kernelOffsetX")
@@ -303,6 +313,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * [@property] kernelOffsetY
      * 
      * Offset in Y from which the kernel starts sliding
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("kernelOffsetY")
@@ -323,6 +335,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the output image.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -341,6 +355,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * [@property] kernelOffsetX
      * 
      * Offset in X from which the kernel starts sliding
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setKernelOffsetX:")
@@ -350,6 +366,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * [@property] kernelOffsetY
      * 
      * Offset in Y from which the kernel starts sliding
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setKernelOffsetY:")

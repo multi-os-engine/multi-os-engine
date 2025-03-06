@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * A class that consists of all the levers to serialize an executable.
+ * 
  * API-Since: 17.0
  */
 @Generated
@@ -59,6 +61,8 @@ public class MPSGraphExecutableSerializationDescriptor extends MPSGraphObject {
      * Flag to append to an existing .mpsgraphpackage if found at provided url.
      * 
      * If false, the exisiting .mpsgraphpackage will be overwritten.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("append")
@@ -94,9 +98,11 @@ public class MPSGraphExecutableSerializationDescriptor extends MPSGraphObject {
     public static native String debugDescription_static();
 
     /**
-     * The deployment platform used to serialize the MPSGraphExecutable.
+     * The deployment platform used to serialize the executable.
      * 
      * Defaults to the current platform.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("deploymentPlatform")
@@ -138,9 +144,11 @@ public class MPSGraphExecutableSerializationDescriptor extends MPSGraphObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * The minimum deployment target to serialize the MPSGraphExecutable.
+     * The minimum deployment target to serialize the executable.
      * 
-     * Defaults to the current sdk.
+     * If not set, the package created will target the latest version of the `deploymentPlatform` set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("minimumDeploymentTarget")
@@ -164,24 +172,30 @@ public class MPSGraphExecutableSerializationDescriptor extends MPSGraphObject {
      * Flag to append to an existing .mpsgraphpackage if found at provided url.
      * 
      * If false, the exisiting .mpsgraphpackage will be overwritten.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setAppend:")
     public native void setAppend(boolean value);
 
     /**
-     * The deployment platform used to serialize the MPSGraphExecutable.
+     * The deployment platform used to serialize the executable.
      * 
      * Defaults to the current platform.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDeploymentPlatform:")
     public native void setDeploymentPlatform(long value);
 
     /**
-     * The minimum deployment target to serialize the MPSGraphExecutable.
+     * The minimum deployment target to serialize the executable.
      * 
-     * Defaults to the current sdk.
+     * If not set, the package created will target the latest version of the `deploymentPlatform` set.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMinimumDeploymentTarget:")

@@ -26,8 +26,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -48,7 +47,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create an absolute activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("absoluteLayer")
@@ -87,7 +90,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a CELU activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("celuLayer")
@@ -98,7 +105,11 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @param a The \p a value for the CELU formation
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("celuLayerWithA:")
@@ -110,7 +121,11 @@ public class MLCActivationLayer extends MLCLayer {
      * @param minValue The minimum range used by clamp
      * @param maxValue The maximum range used by clamp
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("clampLayerWithMinValue:maxValue:")
@@ -138,7 +153,11 @@ public class MLCActivationLayer extends MLCLayer {
      * [@property] descriptor
      * 
      * The activation descriptor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("descriptor")
@@ -148,7 +167,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create an ELU activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("eluLayer")
@@ -159,7 +182,11 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @param a The \p a value for the ELU formation
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("eluLayerWithA:")
@@ -169,7 +196,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a GELU activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("geluLayer")
@@ -179,7 +210,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a hard shrink activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hardShrinkLayer")
@@ -190,7 +225,11 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @param a The \p a value for the hard shrink formation
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hardShrinkLayerWithA:")
@@ -200,7 +239,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a hard sigmoid activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hardSigmoidLayer")
@@ -210,7 +253,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a hardswish activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hardSwishLayer")
@@ -252,7 +299,11 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @param descriptor The activation descriptor
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithDescriptor:")
     public static native MLCActivationLayer layerWithDescriptor(@NotNull MLCActivationDescriptor descriptor);
@@ -261,7 +312,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a leaky ReLU activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("leakyReLULayer")
@@ -272,7 +327,11 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @param negativeSlope Controls the angle of the negative slope
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("leakyReLULayerWithNegativeSlope:")
@@ -284,7 +343,11 @@ public class MLCActivationLayer extends MLCLayer {
      * @param scale The scale factor
      * @param bias  The bias value
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("linearLayerWithScale:bias:")
@@ -294,7 +357,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a log sigmoid activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("logSigmoidLayer")
@@ -309,7 +376,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a ReLU6 activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("relu6Layer")
@@ -319,7 +390,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a ReLU activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("reluLayer")
@@ -333,7 +408,11 @@ public class MLCActivationLayer extends MLCLayer {
      * @param a The \p a value
      * @param b The \p b value
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("relunLayerWithA:b:")
@@ -351,7 +430,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a SELU activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("seluLayer")
@@ -365,7 +448,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a sigmoid activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sigmoidLayer")
@@ -375,7 +462,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a soft plus activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softPlusLayer")
@@ -386,7 +477,11 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @param beta The beta value for the softplus formation
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softPlusLayerWithBeta:")
@@ -396,7 +491,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a soft shrink activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softShrinkLayer")
@@ -407,7 +506,11 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @param a The \p a value for the soft shrink formation
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softShrinkLayerWithA:")
@@ -417,7 +520,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a soft sign activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("softSignLayer")
@@ -427,6 +534,7 @@ public class MLCActivationLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -435,7 +543,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a tanh activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("tanhLayer")
@@ -445,7 +557,11 @@ public class MLCActivationLayer extends MLCLayer {
      * Create a TanhShrink activation layer
      * 
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("tanhShrinkLayer")
@@ -457,7 +573,11 @@ public class MLCActivationLayer extends MLCLayer {
      * @param threshold   The value to threshold at
      * @param replacement The value to replace with
      * @return A new activation layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("thresholdLayerWithThreshold:replacement:")

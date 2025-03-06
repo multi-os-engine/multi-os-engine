@@ -63,6 +63,8 @@ public class UIToolbarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for plain-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -100,6 +102,8 @@ public class UIToolbarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for done-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -164,6 +168,8 @@ public class UIToolbarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for plain-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setButtonAppearance:")
@@ -171,6 +177,8 @@ public class UIToolbarAppearance extends UIBarAppearance {
 
     /**
      * The appearance for done-style bar button items
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDoneButtonAppearance:")

@@ -42,6 +42,7 @@ import org.jetbrains.annotations.Nullable;
  * interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content
  * will resume, at an offset from the time at which it was suspended as specified by the event.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 15.0
  */
@@ -102,6 +103,8 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
      * [@property] currentEvent
      * 
      * The current interstitial event. Has a value of nil during playback of primary content by the primary player.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -131,6 +134,8 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
      * of this property changes only when a new schedule is set on the AVPlayerInterstitialEventController.
      * The events returned in this array are immutable. Attempting to mutate them will trigger an exception. To alter an
      * event, make a copy and mutate the copy.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -146,6 +151,9 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     @Selector("init")
     public native AVPlayerInterstitialEventMonitor init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithPrimaryPlayer:")
     public native AVPlayerInterstitialEventMonitor initWithPrimaryPlayer(@NotNull AVPlayer primaryPlayer);
@@ -171,6 +179,8 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
      * @param primaryPlayer
      *                      The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      * @return An instance of AVPlayerInterstitialEventMonitor.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("interstitialEventMonitorWithPrimaryPlayer:")
@@ -181,6 +191,8 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
      * [@property] interstitialPlayer
      * 
      * The AVQueuePlayer that will play interstitial items during suspension of playback of primary items.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -205,6 +217,8 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
      * [@property] primaryPlayer
      * 
      * The AVPlayer that will play the primaryItems of the receiver's interstitial events.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

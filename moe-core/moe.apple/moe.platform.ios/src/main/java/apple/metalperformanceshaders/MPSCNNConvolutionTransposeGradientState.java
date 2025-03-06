@@ -114,6 +114,8 @@ public class MPSCNNConvolutionTransposeGradientState extends MPSCNNConvolutionGr
      * [@property] convolutionTranspose
      * 
      * The convolutionTranspose filter that produced the state.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

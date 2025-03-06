@@ -34,6 +34,8 @@ public interface UIMenuBuilder {
      * 
      * @param identifier The identifier of the action to fetch.
      * @return The action with the given identifier, or `nil` if no such action.
+     * 
+     *         API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -46,6 +48,8 @@ public interface UIMenuBuilder {
      * @param action       The action of the command to fetch.
      * @param propertyList Property list object to distinguish commands, if needed.
      * @return The command with the given action and property list, or `nil` if no such command.
+     * 
+     *         API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -58,6 +62,8 @@ public interface UIMenuBuilder {
      * 
      * @param childGroup       The child menu to insert.
      * @param parentIdentifier The identifier of the parent menu to insert at the end of.
+     * 
+     *                         API-Since: 13.0
      */
     @Generated
     @Selector("insertChildMenu:atEndOfMenuForIdentifier:")
@@ -68,6 +74,8 @@ public interface UIMenuBuilder {
      * 
      * @param childGroup       The child menu to insert.
      * @param parentIdentifier The identifier of the parent menu to insert at the start of.
+     * 
+     *                         API-Since: 13.0
      */
     @Generated
     @Selector("insertChildMenu:atStartOfMenuForIdentifier:")
@@ -78,6 +86,8 @@ public interface UIMenuBuilder {
      * 
      * @param siblingGroup      The sibling menu to insert.
      * @param siblingIdentifier The identifier of the sibling menu to insert after.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("insertSiblingMenu:afterMenuForIdentifier:")
@@ -88,6 +98,8 @@ public interface UIMenuBuilder {
      * 
      * @param siblingGroup      The sibling menu to insert.
      * @param siblingIdentifier The identifier of the sibling menu to insert before.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("insertSiblingMenu:beforeMenuForIdentifier:")
@@ -98,6 +110,8 @@ public interface UIMenuBuilder {
      * 
      * @param identifier The identifier of the menu to fetch.
      * @return The menu with the given identifier, or `nil` if no such menu.
+     * 
+     *         API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -108,6 +122,8 @@ public interface UIMenuBuilder {
      * Remove an identified menu.
      * 
      * @param removedIdentifier The menu to remove.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("removeMenuForIdentifier:")
@@ -118,6 +134,8 @@ public interface UIMenuBuilder {
      * 
      * @param parentIdentifier The identifier of the parent menu.
      * @param childrenBlock    A block that returns the new children, given the old children.
+     * 
+     *                         API-Since: 13.0
      */
     @Generated
     @Selector("replaceChildrenOfMenuForIdentifier:fromChildrenBlock:")
@@ -138,6 +156,8 @@ public interface UIMenuBuilder {
      * 
      * @param replacedIdentifier The identifier of the menu to be replaced.
      * @param replacementGroup   The replacement menu.
+     * 
+     *                           API-Since: 13.0
      */
     @Generated
     @Selector("replaceMenuForIdentifier:withMenu:")
@@ -145,6 +165,8 @@ public interface UIMenuBuilder {
 
     /**
      * Which system we are building for.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

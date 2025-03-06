@@ -38,7 +38,10 @@ import org.jetbrains.annotations.Nullable;
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 11.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
  */
+@Deprecated
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -57,7 +60,12 @@ public class AVAggregateAssetDownloadTask extends NSURLSessionTask {
      * [@property] URLAsset
      * 
      * The asset supplied to the download task upon initialization.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("URLAsset")

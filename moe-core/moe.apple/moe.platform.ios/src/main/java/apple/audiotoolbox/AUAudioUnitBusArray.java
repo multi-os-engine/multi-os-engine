@@ -185,6 +185,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      * addObserverToAllBusses:forKeyPath:options:context:
      * 
      * Add a KVO observer for a property on all busses in the array.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addObserverToAllBusses:forKeyPath:options:context:")
@@ -193,6 +195,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * Which bus array this is (input or output).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("busType")
@@ -201,6 +205,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * [@property] count
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("count")
@@ -221,6 +227,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      * initWithAudioUnit:busType:
      * 
      * Initializes an empty bus array.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithAudioUnit:busType:")
@@ -230,6 +238,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      * initWithAudioUnit:busType:busses:
      * 
      * Initializes by making a copy of the supplied bus array.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithAudioUnit:busType:busses:")
@@ -242,6 +252,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      * Whether the array can have a variable number of busses.
      * 
      * The base implementation returns false.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isCountChangeable")
@@ -249,6 +261,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * objectAtIndexedSubscript:
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -257,6 +271,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * The audio unit that owns the bus.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -267,6 +283,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      * removeObserverFromAllBusses:forKeyPath:context:
      * 
      * Remove a KVO observer for a property on all busses in the array.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("removeObserverFromAllBusses:forKeyPath:context:")
@@ -275,6 +293,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * Sets the bus array to be a copy of the supplied array. The base class issues KVO notifications.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("replaceBusses:")
@@ -284,6 +304,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      * [@property] setBusCount:error:
      * 
      * Change the number of busses in the array.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBusCount:error:")

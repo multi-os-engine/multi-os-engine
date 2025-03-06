@@ -101,6 +101,9 @@ public class PHASEConeDirectivityModelParameters extends PHASEDirectivityModelPa
     @Selector("init")
     public native PHASEConeDirectivityModelParameters init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithSubbandParameters:")
     public native PHASEConeDirectivityModelParameters initWithSubbandParameters(
@@ -149,6 +152,8 @@ public class PHASEConeDirectivityModelParameters extends PHASEDirectivityModelPa
      * [@property] subbandParameters
      * 
      * An array of subband parameters.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

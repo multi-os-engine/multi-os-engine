@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
  * ASWebAuthenticationSession
@@ -150,7 +151,12 @@ public class ASWebAuthenticationSession extends NSObject {
      * @param callbackURLScheme the custom URL scheme that the app expects in the callback URL.
      * @param completionHandler the completion handler which is called when the session is completed successfully or
      *                          canceled by user.
+     * 
+     *                          API-Since: 12.0
+     *                          Deprecated-Since: 100000.0
+     *                          Deprecated-Message: Use initWithURL:callback:completionHandler: instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithURL:callbackURLScheme:completionHandler:")
     public native ASWebAuthenticationSession initWithURLCallbackURLSchemeCompletionHandler(@NotNull NSURL URL,
@@ -286,6 +292,8 @@ public class ASWebAuthenticationSession extends NSObject {
      * canceled session will fail.
      * 
      * @return Returns YES if the session starts successfully.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("start")
@@ -314,4 +322,41 @@ public class ASWebAuthenticationSession extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Any additional header fields to be set when loading the initial URL.
+     * All header field names must start with the "X-" prefix.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("additionalHeaderFields")
+    @Nullable
+    public native NSDictionary<String, String> additionalHeaderFields();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("initWithURL:callback:completionHandler:")
+    public native ASWebAuthenticationSession initWithURLCallbackCompletionHandler(@NotNull NSURL URL,
+            @NotNull ASWebAuthenticationSessionCallback callback,
+            @ObjCBlock(name = "call_initWithURLCallbackCompletionHandler") @NotNull Block_initWithURLCallbackCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithURLCallbackCompletionHandler {
+        @Generated
+        void call_initWithURLCallbackCompletionHandler(@Nullable NSURL callbackURL, @Nullable NSError error);
+    }
+
+    /**
+     * Any additional header fields to be set when loading the initial URL.
+     * All header field names must start with the "X-" prefix.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setAdditionalHeaderFields:")
+    public native void setAdditionalHeaderFields(@Nullable NSDictionary<String, String> value);
 }

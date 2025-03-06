@@ -162,14 +162,23 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("active")
     public native boolean active();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("angle")
     @NFloat
@@ -179,10 +188,16 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIPushBehavior init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithItems:mode:")
     public native UIPushBehavior initWithItemsMode(@NotNull NSArray<?> items, @NInt long mode);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("items")
@@ -191,34 +206,54 @@ public class UIPushBehavior extends UIDynamicBehavior {
     /**
      * A continuous force vector with a magnitude of 1.0, applied to a 100 point x 100 point view whose density value is
      * 1.0, results in view acceleration of 100 points per s^2
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("magnitude")
     @NFloat
     public native double magnitude();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("mode")
     @NInt
     public native long mode();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("pushDirection")
     @ByValue
     public native CGVector pushDirection();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setAngle:")
     public native void setAngle(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setAngle:magnitude:")
     public native void setAngleMagnitude(@NFloat double angle, @NFloat double magnitude);
@@ -226,20 +261,31 @@ public class UIPushBehavior extends UIDynamicBehavior {
     /**
      * A continuous force vector with a magnitude of 1.0, applied to a 100 point x 100 point view whose density value is
      * 1.0, results in view acceleration of 100 points per s^2
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setMagnitude:")
     public native void setMagnitude(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPushDirection:")
     public native void setPushDirection(@ByValue CGVector value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setTargetOffsetFromCenter:forItem:")
     public native void setTargetOffsetFromCenterForItem(@ByValue UIOffset o,
             @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("targetOffsetFromCenterForItem:")
     @ByValue

@@ -34,12 +34,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Attributes and commands for configuring On/Off switching devices.
  * 
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: OnOffSwitchConfiguration is deprecated and will be removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
+public class MTRBaseClusterOnOffSwitchConfiguration extends MTRGenericBaseCluster {
     static {
         NatJ.register();
     }
@@ -121,7 +124,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
      * the completion will be called on the provided queue.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: OnOffSwitchConfiguration is deprecated and will be removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:endpointID:queue:")
     public native MTRBaseClusterOnOffSwitchConfiguration initWithDeviceEndpointIDQueue(@NotNull MTRBaseDevice device,
@@ -177,7 +183,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAcceptedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -195,7 +204,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithCompletion:")
     public native void readAttributeAcceptedCommandListWithCompletion(
@@ -250,7 +262,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeAttributeListWithClusterStateCacheEndpointQueueCompletion(
@@ -268,7 +283,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithCompletion:")
     public native void readAttributeAttributeListWithCompletion(
@@ -322,7 +340,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeClusterRevisionWithClusterStateCacheEndpointQueueCompletion(
@@ -340,7 +361,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithCompletion:")
     public native void readAttributeClusterRevisionWithCompletion(
@@ -394,7 +418,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeFeatureMapWithClusterStateCacheEndpointQueueCompletion(
@@ -412,7 +439,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithCompletion:")
     public native void readAttributeFeatureMapWithCompletion(
@@ -466,7 +496,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeGeneratedCommandListWithClusterStateCacheEndpointQueueCompletion(
@@ -484,7 +517,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithCompletion:")
     public native void readAttributeGeneratedCommandListWithCompletion(
@@ -539,7 +575,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeSwitchActionsWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeSwitchActionsWithClusterStateCacheEndpointQueueCompletion(
@@ -557,7 +596,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeSwitchActionsWithCompletion:")
     public native void readAttributeSwitchActionsWithCompletion(
@@ -611,7 +653,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeSwitchTypeWithClusterStateCache:endpoint:queue:completion:")
     public static native void readAttributeSwitchTypeWithClusterStateCacheEndpointQueueCompletion(
@@ -629,7 +674,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeSwitchTypeWithCompletion:")
     public native void readAttributeSwitchTypeWithCompletion(
@@ -702,7 +750,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAcceptedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAcceptedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -755,7 +806,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeAttributeListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeAttributeListWithParamsSubscriptionEstablishedReportHandler(
@@ -808,7 +862,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeClusterRevisionWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeClusterRevisionWithParamsSubscriptionEstablishedReportHandler(
@@ -861,7 +918,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeFeatureMapWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeFeatureMapWithParamsSubscriptionEstablishedReportHandler(
@@ -914,7 +974,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeGeneratedCommandListWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeGeneratedCommandListWithParamsSubscriptionEstablishedReportHandler(
@@ -967,7 +1030,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeSwitchActionsWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeSwitchActionsWithParamsSubscriptionEstablishedReportHandler(
@@ -1020,7 +1086,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("subscribeAttributeSwitchTypeWithParams:subscriptionEstablished:reportHandler:")
     public native void subscribeAttributeSwitchTypeWithParamsSubscriptionEstablishedReportHandler(
@@ -1059,7 +1128,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeSwitchActionsWithValue:completion:")
     public native void writeAttributeSwitchActionsWithValueCompletion(@NotNull NSNumber value,
@@ -1092,7 +1164,10 @@ public class MTRBaseClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeSwitchActionsWithValue:params:completion:")
     public native void writeAttributeSwitchActionsWithValueParamsCompletion(@NotNull NSNumber value,

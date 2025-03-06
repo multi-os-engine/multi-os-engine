@@ -44,7 +44,12 @@ public interface INGetVisualCodeIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INGetVisualCodeIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INGetVisualCodeIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmGetVisualCode:completion:")
@@ -70,7 +75,12 @@ public interface INGetVisualCodeIntentHandling {
      *                   result of having executed the intent
      * 
      * @see INGetVisualCodeIntentResponse
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INGetVisualCodeIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleGetVisualCode:completion:")
     void handleGetVisualCodeCompletion(@NotNull INGetVisualCodeIntent intent,
@@ -93,7 +103,12 @@ public interface INGetVisualCodeIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INGetVisualCodeIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveVisualCodeTypeForGetVisualCode:withCompletion:")

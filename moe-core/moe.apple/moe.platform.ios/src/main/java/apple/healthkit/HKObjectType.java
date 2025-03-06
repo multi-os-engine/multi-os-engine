@@ -103,11 +103,17 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("categoryTypeForIdentifier:")
     public static native HKCategoryType categoryTypeForIdentifier(@NotNull String identifier);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("characteristicTypeForIdentifier:")
@@ -123,6 +129,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("correlationTypeForIdentifier:")
@@ -176,6 +185,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("new")
     public static native HKObjectType new_objc();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("quantityTypeForIdentifier:")
@@ -206,6 +218,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("workoutType")
@@ -228,6 +243,8 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
      * A unique string identifying a type of health object.
      * 
      * See HKTypeIdentifiers.h for possible values.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -303,4 +320,20 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("scoredAssessmentTypeForIdentifier:")
+    @Nullable
+    public static native HKScoredAssessmentType scoredAssessmentTypeForIdentifier(@NotNull String identifier);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("stateOfMindType")
+    @NotNull
+    public static native HKStateOfMindType stateOfMindType();
 }

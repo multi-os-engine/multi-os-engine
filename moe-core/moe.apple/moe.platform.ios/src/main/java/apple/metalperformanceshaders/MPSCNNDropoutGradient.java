@@ -118,6 +118,8 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * <NSSecureCoding> support
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -141,6 +143,8 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
      *                           broadcasting, set the values for each dimension to 1.
      *                           For broadcasting, set desired values to 0.
      * @return A valid MPSCNNDropoutGradient object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
@@ -170,6 +174,8 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
      * 
      * The probability that each element in the input is kept.
      * The valid range is (0.0f, 1.0f).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("keepProbability")
@@ -189,6 +195,8 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
      * The only valid values are 0 and 1 for each dimension.
      * For no broadcasting, set the values for each dimension
      * to 1. For broadcasting, set desired values to 0.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("maskStrideInPixels")
@@ -212,6 +220,8 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
      * [@property] seed
      * 
      * The seed used to generate random numbers.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("seed")

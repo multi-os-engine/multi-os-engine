@@ -100,6 +100,8 @@ public class UIDeferredMenuElement extends UIMenuElement {
      * @param elementProvider Called by the system to request the deferred menu items when the containing menu is
      *                        presented.
      *                        Call this block's completion handler when the menu items are available.
+     * 
+     *                        API-Since: 14.0
      */
     @Generated
     @Selector("elementWithProvider:")

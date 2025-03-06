@@ -48,6 +48,9 @@ public class INSnoozeTasksIntent extends INIntent {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("all")
@@ -109,6 +112,9 @@ public class INSnoozeTasksIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSnoozeTasksIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTasks:nextTriggerTime:all:")
     public native INSnoozeTasksIntent initWithTasksNextTriggerTimeAll(@Nullable NSArray<? extends INTask> tasks,
@@ -141,6 +147,9 @@ public class INSnoozeTasksIntent extends INIntent {
     @Selector("new")
     public static native INSnoozeTasksIntent new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("nextTriggerTime")
@@ -172,6 +181,9 @@ public class INSnoozeTasksIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("tasks")

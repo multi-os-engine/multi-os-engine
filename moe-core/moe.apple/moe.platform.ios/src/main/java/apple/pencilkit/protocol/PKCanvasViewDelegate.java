@@ -28,6 +28,8 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
      * This does not include moving the ruler.
      * 
      * @param canvasView The canvas view that the user started interacting with.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -40,6 +42,8 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
      * Called when the user stops using a tool, eg. selecting, drawing, or erasing.
      * 
      * @param canvasView The canvas view that the user ended interacting with.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -58,6 +62,8 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
      * including after setting the drawing, and after zooming or scrolling.
      * 
      * @param canvasView The canvas view that finished rendering.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -78,6 +84,8 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
      * It is also possible that this method is not called, if the drawing interaction is cancelled.
      * 
      * @param canvasView The canvas view that changed.
+     * 
+     *                   API-Since: 13.0
      */
     @Generated
     @IsOptional

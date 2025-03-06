@@ -117,14 +117,23 @@ public class MKMapCameraZoomRange extends NSObject implements NSSecureCoding, NS
     @Selector("initWithCoder:")
     public native MKMapCameraZoomRange initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMaxCenterCoordinateDistance:")
     public native MKMapCameraZoomRange initWithMaxCenterCoordinateDistance(double maxDistance);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMinCenterCoordinateDistance:")
     public native MKMapCameraZoomRange initWithMinCenterCoordinateDistance(double minDistance);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMinCenterCoordinateDistance:maxCenterCoordinateDistance:")
     public native MKMapCameraZoomRange initWithMinCenterCoordinateDistanceMaxCenterCoordinateDistance(
@@ -152,10 +161,16 @@ public class MKMapCameraZoomRange extends NSObject implements NSSecureCoding, NS
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("maxCenterCoordinateDistance")
     public native double maxCenterCoordinateDistance();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("minCenterCoordinateDistance")
     public native double minCenterCoordinateDistance();

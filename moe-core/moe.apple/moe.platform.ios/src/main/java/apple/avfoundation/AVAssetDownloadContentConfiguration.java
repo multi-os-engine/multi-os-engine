@@ -138,6 +138,8 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      * An array of media selections obtained from the AVAsset.
      * 
      * If a media selection is not provided, automatic media selection associated with the asset will be used.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -163,6 +165,8 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      * An array of media selections obtained from the AVAsset.
      * 
      * If a media selection is not provided, automatic media selection associated with the asset will be used.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMediaSelections:")
@@ -182,6 +186,8 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      * If a variant qualifier has not been provided, or if the variant qualifier when evaluated does not match any of
      * the variants which can be played according to the current device configuration, automatic variant selection will
      * be used.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVariantQualifiers:")
@@ -209,6 +215,8 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      * If a variant qualifier has not been provided, or if the variant qualifier when evaluated does not match any of
      * the variants which can be played according to the current device configuration, automatic variant selection will
      * be used.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

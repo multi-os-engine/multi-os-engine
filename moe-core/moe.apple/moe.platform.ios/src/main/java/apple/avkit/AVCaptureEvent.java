@@ -132,6 +132,8 @@ public class AVCaptureEvent extends NSObject {
      * [@property] phase
      * 
      * The current phase of this capture event.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("phase")

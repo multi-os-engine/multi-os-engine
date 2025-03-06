@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * Information about a model in a model collection.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
+ * Deprecated-Since: 17.4
  * Deprecated-Message: Use Background Assets or NSURLSession instead.
  */
 @Deprecated
@@ -119,7 +119,7 @@ public class MLModelCollectionEntry extends NSObject {
 
     /**
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 17.4
      * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated
@@ -138,7 +138,7 @@ public class MLModelCollectionEntry extends NSObject {
 
     /**
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 17.4
      * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated
@@ -149,7 +149,7 @@ public class MLModelCollectionEntry extends NSObject {
 
     /**
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 17.4
      * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated

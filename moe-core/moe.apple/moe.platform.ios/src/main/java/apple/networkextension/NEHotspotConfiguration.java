@@ -157,7 +157,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      * A designated initializer to instantiate a new NEHotspotConfiguration object.
      * This initializer is used to configure open Wi-Fi Networks.
      * 
-     * @param SSID The SSID of the Open Wi-Fi Network.
+     * @param SSID The SSID of the open Wi-Fi Network.
      *             Length of SSID must be between 1 and 32 characters.
      * 
      *             API-Since: 11.0
@@ -340,7 +340,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      * A designated initializer to instantiate a new NEHotspotConfiguration object.
      * This initializer is used to configure open Wi-Fi Networks.
      * 
-     * @param SSIDPrefix The prefix string of SSID of the Open Wi-Fi Network.
+     * @param SSIDPrefix The prefix string of SSID of the open Wi-Fi Network.
      *                   Length of SSIDPrefix must be between 3 and 32 characters.
      * 
      *                   API-Since: 13.0

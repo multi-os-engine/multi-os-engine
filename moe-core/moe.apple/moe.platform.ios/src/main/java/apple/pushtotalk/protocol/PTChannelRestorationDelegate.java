@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 public interface PTChannelRestorationDelegate {
     /**
      * If the system had been tracking a channel previously, this method will be called.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

@@ -35,6 +35,8 @@ import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.objc.map.ObjCStringMapper;
 
 @Generated
 @Library("MediaAccessibility")
@@ -158,8 +160,8 @@ public final class MediaAccessibility {
      * 
      * User preference for foreground/text color.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for foreground/text color.
      * 
      *         API-Since: 7.0
@@ -177,8 +179,8 @@ public final class MediaAccessibility {
      * 
      * The background color is the color behind each caption glyph.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for background color.
      * 
      *         API-Since: 7.0
@@ -196,8 +198,8 @@ public final class MediaAccessibility {
      * 
      * The window color is the color of a box behind all of the caption glyphs.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for window color.
      * 
      *         API-Since: 7.0
@@ -212,8 +214,8 @@ public final class MediaAccessibility {
      * 
      * User preference for foreground opacity.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for foreground opacity.
      * 
      *         API-Since: 7.0
@@ -228,8 +230,8 @@ public final class MediaAccessibility {
      * 
      * User preference for background opacity.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for background opacity.
      * 
      *         API-Since: 7.0
@@ -244,8 +246,8 @@ public final class MediaAccessibility {
      * 
      * User preference for window opacity.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for window opacity.
      * 
      *         API-Since: 7.0
@@ -260,8 +262,8 @@ public final class MediaAccessibility {
      * 
      * User preference for caption-window corner radius.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for caption-window corner radius.
      * 
      *         API-Since: 7.0
@@ -281,7 +283,7 @@ public final class MediaAccessibility {
      * User font preference for the specified style.
      * 
      * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param behavior  (see @link MACaptionAppearanceBehavior @/link)
      * @param fontStyle Font style, see @link MACaptionAppearanceFontStyle @/link.
      * @return User font preference for the specified style.
      * 
@@ -298,8 +300,8 @@ public final class MediaAccessibility {
      * 
      * User preference for font scaling.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User font scaling preference for the specified style.
      * 
      *         API-Since: 7.0
@@ -315,8 +317,8 @@ public final class MediaAccessibility {
      * 
      * User preference for text edge style.
      * 
-     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
-     * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
+     * @param domain   Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @param behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for text edge style.
      * 
      *         API-Since: 7.0
@@ -511,4 +513,28 @@ public final class MediaAccessibility {
     @CVariable()
     @NotNull
     public static native CFStringRef kMADimFlashingLightsChangedNotification();
+
+    /**
+     * [@function] MACaptionAppearanceIsCustomized
+     * 
+     * Provides a boolean indicating if the currently-active style has been customized by the user. This is useful for
+     * some clients who may need different fallback strategies for customized styles vs system-default styles.
+     * 
+     * @param domain Preference domain, see @link MACaptionAppearanceDomain @/link.
+     * @return A boolean indicating if the currently-active style has been customized by the user
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean MACaptionAppearanceIsCustomized(@NInt long domain);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MAMusicHapticsManagerActiveStatusDidChangeNotification();
 }

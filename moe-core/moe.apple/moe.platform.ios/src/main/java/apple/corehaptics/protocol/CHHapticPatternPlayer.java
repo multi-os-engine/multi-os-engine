@@ -34,6 +34,8 @@ public interface CHHapticPatternPlayer {
      * cancelAndReturnError:
      * 
      * Removes all pending commands and stops the player as soon as possible.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancelAndReturnError:")
@@ -43,6 +45,8 @@ public interface CHHapticPatternPlayer {
      * [@property] isMuted
      * 
      * When set to YES, the player's audio and haptic output will be silenced.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMuted")
@@ -57,6 +61,8 @@ public interface CHHapticPatternPlayer {
      * This method overrides the relativeTime property of the passed-in CHHapticParameterCurve,
      * setting it to this method's 'time' argument. All the curve's control point times will then be
      * calculated relative to that time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("scheduleParameterCurve:atTime:error:")
@@ -68,6 +74,8 @@ public interface CHHapticPatternPlayer {
      * 
      * Send an array of CHHapticDynamicParameters, starting at the specified time (see `CHHapticEngine(currentTime)`).
      * If 'time' is set to `CHHapticTimeImmediate`, the parameters are sent as soon as possible.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sendParameters:atTime:error:")
@@ -78,6 +86,8 @@ public interface CHHapticPatternPlayer {
      * [@property] isMuted
      * 
      * When set to YES, the player's audio and haptic output will be silenced.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setIsMuted:")
@@ -88,6 +98,8 @@ public interface CHHapticPatternPlayer {
      * 
      * Start playing the pattern at the specified time (see `CHHapticEngine(currentTime)`).
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern is started as soon as possible.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("startAtTime:error:")
@@ -98,6 +110,8 @@ public interface CHHapticPatternPlayer {
      * 
      * Stop playing the pattern at the specified time (see `CHHapticEngine(currentTime)`).
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern is stopped as soon as possible.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("stopAtTime:error:")

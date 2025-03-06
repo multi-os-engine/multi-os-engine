@@ -92,6 +92,8 @@ public class MLParameterDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Default value of the parameter
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -139,6 +141,8 @@ public class MLParameterDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Name and type of the parameter
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -157,6 +161,8 @@ public class MLParameterDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Any applicable constraint on the parameter value
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

@@ -31,8 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * Utility class to set MLCompute global properties
  * 
  * API-Since: 15.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -100,7 +99,11 @@ public class MLCPlatform extends NSObject {
      * getRNGseed
      * 
      * gets the RNG seed value. If the value is not set it would return nil
+     * 
+     * API-Since: 15.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("getRNGseed")
@@ -154,7 +157,11 @@ public class MLCPlatform extends NSObject {
      * setRNGSeedTo
      * 
      * sets the RNG seed. The seed should be of type long int.
+     * 
+     * API-Since: 15.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setRNGSeedTo:")
     public static native void setRNGSeedTo(@NotNull NSNumber seed);

@@ -113,11 +113,16 @@ public class UISceneWindowingBehaviors extends NSObject {
     /**
      * Used to set and get window behaviors which are represented by the "traffic light" window control buttons on the
      * NSWindow associated with this scene.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isClosable")
     public native boolean isClosable();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("isMiniaturizable")
     public native boolean isMiniaturizable();
@@ -147,11 +152,16 @@ public class UISceneWindowingBehaviors extends NSObject {
     /**
      * Used to set and get window behaviors which are represented by the "traffic light" window control buttons on the
      * NSWindow associated with this scene.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setClosable:")
     public native void setClosable(boolean value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setMiniaturizable:")
     public native void setMiniaturizable(boolean value);

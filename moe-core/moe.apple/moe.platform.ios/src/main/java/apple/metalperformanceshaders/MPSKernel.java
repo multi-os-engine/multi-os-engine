@@ -248,6 +248,8 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -260,6 +262,8 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] device
      * 
      * The device on which the kernel will be used
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -278,6 +282,8 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      * @return a pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -287,6 +293,8 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -298,6 +306,8 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * The set of options used to run the kernel.
      * [@ref] subsubsection_options
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("options")
@@ -308,6 +318,8 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setLabel:")
@@ -318,6 +330,8 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * The set of options used to run the kernel.
      * [@ref] subsubsection_options
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOptions:")

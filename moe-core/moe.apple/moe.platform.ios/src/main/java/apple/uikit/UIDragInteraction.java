@@ -4,7 +4,6 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.uikit.protocol.UIDragInteractionDelegate;
 import apple.uikit.protocol.UIInteraction;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -63,6 +62,8 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
      * If true, the interaction will be cancelled during the lift if another gesture recognizer recognizes.
      * If false (the default value), all competing gesture recognizers will be failed when the lift begins.
      * Note: UILongPressGestureRecognizers are always delayed and simultaneous during the lift.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsSimultaneousRecognitionDuringLift")
@@ -97,11 +98,14 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native UIDragInteractionDelegate delegate();
+    public native Object delegate();
 
     @Generated
     @Selector("description")
@@ -120,10 +124,12 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     @Selector("init")
     public native UIDragInteraction init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDelegate:")
-    public native UIDragInteraction initWithDelegate(
-            @NotNull @Mapped(ObjCObjectMapper.class) UIDragInteractionDelegate delegate);
+    public native UIDragInteraction initWithDelegate(@NotNull @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,6 +148,8 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
      * Whether this interaction is allowed to drag.
      * If true, the interaction will use touches to begin drags and/or add items to drags.
      * If false, it will ignore touches.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isEnabled")
@@ -150,6 +158,8 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     /**
      * The default value of `enabled` in newly created UIDragInteractions.
      * The value depends on the device.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isEnabledByDefault")
@@ -182,6 +192,8 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
      * If true, the interaction will be cancelled during the lift if another gesture recognizer recognizes.
      * If false (the default value), all competing gesture recognizers will be failed when the lift begins.
      * Note: UILongPressGestureRecognizers are always delayed and simultaneous during the lift.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAllowsSimultaneousRecognitionDuringLift:")
@@ -191,6 +203,8 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
      * Whether this interaction is allowed to drag.
      * If true, the interaction will use touches to begin drags and/or add items to drags.
      * If false, it will ignore touches.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setEnabled:")

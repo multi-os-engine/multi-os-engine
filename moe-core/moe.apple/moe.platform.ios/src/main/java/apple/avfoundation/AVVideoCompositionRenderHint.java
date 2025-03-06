@@ -92,6 +92,8 @@ public class AVVideoCompositionRenderHint extends NSObject {
 
     /**
      * The end time of the upcoming composition requests.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("endCompositionTime")
@@ -148,6 +150,8 @@ public class AVVideoCompositionRenderHint extends NSObject {
 
     /**
      * The start time of the upcoming composition requests.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("startCompositionTime")

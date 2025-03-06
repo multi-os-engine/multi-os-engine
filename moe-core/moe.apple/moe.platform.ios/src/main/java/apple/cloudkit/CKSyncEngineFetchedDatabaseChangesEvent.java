@@ -90,6 +90,9 @@ public class CKSyncEngineFetchedDatabaseChangesEvent extends CKSyncEngineEvent {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("deletions")
     @NotNull
@@ -130,6 +133,9 @@ public class CKSyncEngineFetchedDatabaseChangesEvent extends CKSyncEngineEvent {
     @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("modifications")
     @NotNull

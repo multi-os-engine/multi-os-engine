@@ -64,4 +64,10 @@ public final class PKIdentityError {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long InvalidElement = 0x0000000000000007L;
+    /**
+     * Returned if the document descriptor region is not supported.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long RegionNotSupported = 0x0000000000000008L;
 }

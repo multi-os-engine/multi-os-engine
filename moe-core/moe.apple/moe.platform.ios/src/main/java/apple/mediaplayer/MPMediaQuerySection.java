@@ -191,6 +191,8 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
 
     /**
      * The range in the query's corresponding collections or items array represented by this section.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("range")
@@ -205,6 +207,8 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
 
     /**
      * The localized title of the section grouping.
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated

@@ -62,6 +62,9 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingFunctionNode allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("arguments")
@@ -92,6 +95,9 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("controlDependencies")
@@ -121,6 +127,9 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("init")
     public native MTLFunctionStitchingFunctionNode init();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithName:arguments:controlDependencies:")
     public native MTLFunctionStitchingFunctionNode initWithNameArgumentsControlDependencies(@NotNull String name,
@@ -149,6 +158,9 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("name")
@@ -167,14 +179,23 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setArguments:")
     public native void setArguments(@NotNull NSArray<?> value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setControlDependencies:")
     public native void setControlDependencies(@NotNull NSArray<? extends MTLFunctionStitchingFunctionNode> value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(@NotNull String value);

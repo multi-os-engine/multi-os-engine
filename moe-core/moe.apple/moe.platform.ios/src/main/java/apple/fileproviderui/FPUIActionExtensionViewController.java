@@ -103,6 +103,8 @@ public class FPUIActionExtensionViewController extends UIViewController {
 
     /**
      * The extension context provided by the host app.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -166,6 +168,8 @@ public class FPUIActionExtensionViewController extends UIViewController {
      * - actionIdentifier: The identifier for the action performed by the user.
      * 
      * - itemIdentifiers: The identifiers of the items affected by the action.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("prepareForActionWithIdentifier:itemIdentifiers:")
@@ -188,6 +192,8 @@ public class FPUIActionExtensionViewController extends UIViewController {
      * extension can pass additional information in the error's
      * <doc://com.apple.documentation/documentation/foundation/nserror/1411580-userinfo>
      * property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("prepareForError:")

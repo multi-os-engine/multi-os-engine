@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.coremedia.struct.CMTime;
+import apple.corevideo.opaque.CVBufferRef;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * API-Since: 17.0
@@ -107,6 +110,8 @@ public class AVSampleBufferVideoRenderer extends NSObject implements AVQueuedSam
      * The value of this property is an NSError that describes what caused the video renderer to no longer be able to
      * enqueue sample buffers. If the status is not AVQueuedSampleBufferRenderingStatusFailed, the value of this
      * property is nil.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("error")
@@ -125,6 +130,8 @@ public class AVSampleBufferVideoRenderer extends NSObject implements AVQueuedSam
      * 
      * A flush resets decoder state. The next frame passed to enqueueSampleBuffer: should be an IDR frame (also known as
      * a key frame or sync sample).
+     * 
+     * API-Since: 17.0
      * 
      * @param removeDisplayedImage
      *                             Set YES to remove any currently displayed image, NO to preserve any current image.
@@ -205,6 +212,8 @@ public class AVSampleBufferVideoRenderer extends NSObject implements AVQueuedSam
      * Clients can track changes to this property via
      * AVSampleBufferVideoRendererRequiresFlushToResumeDecodingDidChangeNotification.
      * This property is not key value observable.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("requiresFlushToResumeDecoding")
@@ -234,6 +243,8 @@ public class AVSampleBufferVideoRenderer extends NSObject implements AVQueuedSam
      * the status to AVQueuedSampleBufferRenderingStatusUnknown. This can be achieved by invoking -flush on the video
      * renderer.
      * This property is key value observable.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("status")
@@ -262,4 +273,106 @@ public class AVSampleBufferVideoRenderer extends NSObject implements AVQueuedSam
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * copyDisplayedPixelBuffer
+     * 
+     * Returns a retained reference to the pixel buffer currently displayed in the AVSampleBufferVideoRenderer's target.
+     * This will return NULL if the displayed pixel buffer is protected, no image is currently being displayed, or if
+     * the image is unavailable.
+     * 
+     * This will return NULL if the rate is non-zero. Clients must release the pixel buffer after use.
+     * 
+     * Do not write to the returned CVPixelBuffer's attachments or pixel data.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("copyDisplayedPixelBuffer")
+    @Nullable
+    public native CVBufferRef copyDisplayedPixelBuffer();
+
+    /**
+     * expectMinimumUpcomingSampleBufferPresentationTime:
+     * 
+     * Promises, for the purpose of enabling power optimizations, that future sample buffers will have PTS values no
+     * less than a specified lower-bound PTS.
+     * 
+     * Only applicable for forward playback.
+     * Sending this message and later calling -enqueueSampleBuffer: with a buffer with a lower PTS has the potential to
+     * lead to dropping that later buffer.
+     * For best results, call -expectMinimumUpcomingSampleBufferPresentationTime: regularly, in between calls to
+     * -enqueueSampleBuffer:, to advance the lower-bound PTS.
+     * Messaging -flush resets such expectations.
+     * (For example, it's OK to make this expectation, then in response to a seek back, flush and then enqueue buffers
+     * with lower PTS values.)
+     * 
+     * @param minimumUpcomingPresentationTime
+     *                                        A lower bound on PTS values for buffers that will be passed to
+     *                                        -enqueueSampleBuffer: in the future.
+     * 
+     *                                        API-Since: 17.4
+     */
+    @Generated
+    @Selector("expectMinimumUpcomingSampleBufferPresentationTime:")
+    public native void expectMinimumUpcomingSampleBufferPresentationTime(
+            @ByValue CMTime minimumUpcomingPresentationTime);
+
+    /**
+     * expectMonotonicallyIncreasingUpcomingSampleBufferPresentationTimes
+     * 
+     * Promises, for the purpose of enabling power optimizations, that future sample buffers will have monotonically
+     * increasing PTS values.
+     * 
+     * Only applicable for forward playback.
+     * Sending this message and later calling -enqueueSampleBuffer: with a buffer with a lower PTS than any previously
+     * enqueued PTS has the potential to lead to dropped buffers.
+     * Messaging -flush resets such expectations.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("expectMonotonicallyIncreasingUpcomingSampleBufferPresentationTimes")
+    public native void expectMonotonicallyIncreasingUpcomingSampleBufferPresentationTimes();
+
+    /**
+     * loadVideoPerformanceMetricsWithCompletionHandler:
+     * 
+     * Gathers a snapshot of the video performance metrics and calls the completion handler with the results.
+     * 
+     * If there are no performance metrics available, the completion handler will be called with nil
+     * videoPerformanceMetrics.
+     * 
+     * API-Since: 17.4
+     * 
+     * @param completionHandler
+     *                          The handler to invoke with the video performance metrics.
+     */
+    @Generated
+    @Selector("loadVideoPerformanceMetricsWithCompletionHandler:")
+    public native void loadVideoPerformanceMetricsWithCompletionHandler(
+            @ObjCBlock(name = "call_loadVideoPerformanceMetricsWithCompletionHandler") @NotNull Block_loadVideoPerformanceMetricsWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadVideoPerformanceMetricsWithCompletionHandler {
+        @Generated
+        void call_loadVideoPerformanceMetricsWithCompletionHandler(
+                @Nullable AVVideoPerformanceMetrics videoPerformanceMetrics);
+    }
+
+    /**
+     * resetUpcomingSampleBufferPresentationTimeExpectations:
+     * 
+     * Resets previously-promised expectations about upcoming sample buffer PTSs.
+     * 
+     * This undoes the state set by messaging -expectMinimumUpcomingSampleBufferPresentationTime: or
+     * -expectMonotonicallyIncreasingUpcomingSampleBufferPresentationTimes.
+     * If you didn't use either of those, you don't have to use this.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("resetUpcomingSampleBufferPresentationTimeExpectations")
+    public native void resetUpcomingSampleBufferPresentationTimeExpectations();
 }

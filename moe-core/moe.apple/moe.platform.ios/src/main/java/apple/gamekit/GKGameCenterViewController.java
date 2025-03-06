@@ -337,4 +337,22 @@ public class GKGameCenterViewController extends UINavigationController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Use this to display the leaderboard sets for the specified leaderboardSetID.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithLeaderboardSetID:")
+    public native GKGameCenterViewController initWithLeaderboardSetID(@NotNull String leaderboardSetID);
+
+    /**
+     * Use this to display the profile page associated with the specified player.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithPlayer:")
+    public native GKGameCenterViewController initWithPlayer(@NotNull GKPlayer player);
 }

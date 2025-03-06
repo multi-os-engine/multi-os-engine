@@ -163,6 +163,8 @@ public class MPChangeRepeatModeCommandEvent extends MPRemoteCommandEvent {
 
     /**
      * Whether or not the selection should be preserved between playback sessions
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("preservesRepeatMode")
@@ -170,6 +172,8 @@ public class MPChangeRepeatModeCommandEvent extends MPRemoteCommandEvent {
 
     /**
      * The desired repeat type to use when fulfilling the request.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("repeatType")

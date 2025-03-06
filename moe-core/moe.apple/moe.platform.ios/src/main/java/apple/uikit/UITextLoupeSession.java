@@ -69,6 +69,8 @@ public class UITextLoupeSession extends NSObject {
      * @param at         The point in @c view's coordinate space where the loupe should begin.
      * @param widgetView Optionally, a system-provided selection view that the animation can start from.
      * @param view       The coordinate space that all subsequent movement updates are provided in.
+     * 
+     *                   API-Since: 17.0
      */
     @Generated
     @Selector("beginLoupeSessionAtPoint:fromSelectionWidgetView:inView:")
@@ -129,6 +131,8 @@ public class UITextLoupeSession extends NSObject {
 
     /**
      * Invalidates the loupe session. Hides the loupe and cleans up transient state.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("invalidate")
@@ -150,6 +154,8 @@ public class UITextLoupeSession extends NSObject {
      * @param caretRect     The current position of the caret/range handle. Pass in CGRectNull if there is no current
      *                      selection/no caret rect visible.
      * @param trackingCaret Provide YES if the loupe should track the caret instead of the touch.
+     * 
+     *                      API-Since: 17.0
      */
     @Generated
     @Selector("moveToPoint:withCaretRect:trackingCaret:")

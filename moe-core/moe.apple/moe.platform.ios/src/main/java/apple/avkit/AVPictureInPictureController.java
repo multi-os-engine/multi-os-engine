@@ -138,6 +138,8 @@ public class AVPictureInPictureController extends NSObject {
      * Whether or not Picture in Picture is supported on the current device.
      * 
      * When NO, all initializers will return nil.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPictureInPictureSupported")
@@ -162,6 +164,8 @@ public class AVPictureInPictureController extends NSObject {
      * 
      * System default Picture in Picture start template image for use in client's Picture in Picture button.
      * 
+     * API-Since: 9.0
+     * 
      * @param traitCollection
      *                        Traits that describe the image to retrieve, pass nil to use traits that describe the main
      *                        screen.
@@ -176,6 +180,8 @@ public class AVPictureInPictureController extends NSObject {
      * pictureInPictureButtonStopImageCompatibleWithTraitCollection:
      * 
      * System default Picture in Picture stop template image for use in client's Picture in Picture button.
+     * 
+     * API-Since: 9.0
      * 
      * @param traitCollection
      *                        Traits that describe the image to retrieve, pass nil to use traits that describe the main
@@ -212,6 +218,8 @@ public class AVPictureInPictureController extends NSObject {
      * [@property] delegate
      * 
      * The receiver's delegate.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -228,6 +236,8 @@ public class AVPictureInPictureController extends NSObject {
      * 
      * Initialize the picture in picture controller with a player layer.
      * 
+     * API-Since: 9.0
+     * 
      * @param playerLayer
      *                    The player layer from which to source the media content for the Picture in Picture controller.
      */
@@ -239,6 +249,8 @@ public class AVPictureInPictureController extends NSObject {
      * [@property] pictureInPictureActive
      * 
      * Whether or not Picture in Picture is currently active.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPictureInPictureActive")
@@ -248,6 +260,8 @@ public class AVPictureInPictureController extends NSObject {
      * [@property] pictureInPicturePossible
      * 
      * Whether or not Picture in Picture is currently possible.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPictureInPicturePossible")
@@ -257,6 +271,8 @@ public class AVPictureInPictureController extends NSObject {
      * [@property] pictureInPictureSuspended
      * 
      * Whether or not Picture in Picture is currently suspended.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPictureInPictureSuspended")
@@ -266,6 +282,8 @@ public class AVPictureInPictureController extends NSObject {
      * [@property] playerLayer
      * 
      * The receiver's player layer.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -276,6 +294,8 @@ public class AVPictureInPictureController extends NSObject {
      * [@property] delegate
      * 
      * The receiver's delegate.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -286,6 +306,8 @@ public class AVPictureInPictureController extends NSObject {
      * [@property] delegate
      * 
      * The receiver's delegate.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value) {
@@ -312,6 +334,8 @@ public class AVPictureInPictureController extends NSObject {
      * Picture in Picture controller at any time. In all these cases receiver calls
      * -pictureInPictureControllerWillStopPictureInPicture: on the delegate and
      * -pictureInPictureControllerDidStopPictureInPicture:after the stop animation completed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("startPictureInPicture")
@@ -324,6 +348,8 @@ public class AVPictureInPictureController extends NSObject {
      * for other applications.
      * 
      * See startPictureInPicture for details.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("stopPictureInPicture")

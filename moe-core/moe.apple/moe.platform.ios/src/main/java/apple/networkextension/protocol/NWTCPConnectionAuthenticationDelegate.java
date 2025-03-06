@@ -36,7 +36,11 @@ import org.jetbrains.annotations.NotNull;
  * Allows the caller to take custom actions on some connection events.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `sec_protocol_options_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWTCPConnection.h>
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -60,7 +64,11 @@ public interface NWTCPConnectionAuthenticationDelegate {
      *                             alive for the duration of the completion handler invocation.
      * 
      *                             API-Since: 9.0
+     *                             Deprecated-Since: 18.0
+     *                             Deprecated-Message: Use `sec_protocol_options_set_verify_block` in Network framework
+     *                             instead, see deprecation notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("evaluateTrustForConnection:peerCertificateChain:completionHandler:")
@@ -91,7 +99,11 @@ public interface NWTCPConnectionAuthenticationDelegate {
      *                   completion handler invocation.
      * 
      *                   API-Since: 9.0
+     *                   Deprecated-Since: 18.0
+     *                   Deprecated-Message: Use `sec_protocol_options_set_challenge_block` in Network framework
+     *                   instead, see deprecation notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("provideIdentityForConnection:completionHandler:")
@@ -113,7 +125,11 @@ public interface NWTCPConnectionAuthenticationDelegate {
      *         evaluateTrustForConnection:peerCertificateChain:completionHandler: will be called.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use `sec_protocol_options_set_verify_block` in Network framework instead, see
+     *         deprecation notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("shouldEvaluateTrustForConnection:")
@@ -134,7 +150,11 @@ public interface NWTCPConnectionAuthenticationDelegate {
      *         provideIdentityForConnection:completionHandler: will be called.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use `sec_protocol_options_set_challenge_block` in Network framework instead, see
+     *         deprecation notice in <NetworkExtension/NWTCPConnection.h>
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("shouldProvideIdentityForConnection:")

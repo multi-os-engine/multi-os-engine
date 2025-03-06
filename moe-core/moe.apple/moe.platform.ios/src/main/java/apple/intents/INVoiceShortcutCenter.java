@@ -99,6 +99,8 @@ public class INVoiceShortcutCenter extends NSObject {
      * Get all of the shortcuts associated with this app that have been added to Siri.
      * These could have either been added with `INUIAddVoiceShortcutViewController`, or separately by the user in the
      * Shortcuts app.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("getAllVoiceShortcutsWithCompletion:")
@@ -115,6 +117,8 @@ public class INVoiceShortcutCenter extends NSObject {
 
     /**
      * Get a single shortcut (associated with this app) that has been added to Siri, by its identifier.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("getVoiceShortcutWithIdentifier:completion:")
@@ -177,6 +181,8 @@ public class INVoiceShortcutCenter extends NSObject {
      * Set some shortcuts that should be suggested to the user to add to Siri.
      * 
      * These suggestions are shown to the user in the Shortcuts app.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setShortcutSuggestions:")
@@ -186,6 +192,9 @@ public class INVoiceShortcutCenter extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("sharedCenter")

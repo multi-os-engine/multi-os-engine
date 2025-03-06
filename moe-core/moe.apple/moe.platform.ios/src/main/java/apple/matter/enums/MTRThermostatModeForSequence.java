@@ -4,7 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * API-Since: 16.1
+ * Deprecated-Since: 17.4
+ * Deprecated-Message: Please use MTRThermostatScheduleModeBitmap
  */
+@Deprecated
 @Generated
 public final class MTRThermostatModeForSequence {
     @Generated
@@ -13,22 +16,26 @@ public final class MTRThermostatModeForSequence {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleModeBitmapHeatSetpointPresent
      */
-    @Generated public static final byte HeatSetpointPresent = 1;
+    @Deprecated @Generated public static final byte HeatSetpointPresent = 1;
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRThermostatModeForSequenceHeatSetpointPresent
+     * Deprecated-Message: Please use MTRThermostatScheduleModeBitmapHeatSetpointPresent
      */
     @Generated @Deprecated public static final byte HeatSetpointFieldPresent = 1;
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRThermostatScheduleModeBitmapCoolSetpointPresent
      */
-    @Generated public static final byte CoolSetpointPresent = 2;
+    @Deprecated @Generated public static final byte CoolSetpointPresent = 2;
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use MTRThermostatModeForSequenceCoolSetpointPresent
+     * Deprecated-Message: Please use MTRThermostatScheduleModeBitmapCoolSetpointPresent
      */
     @Generated @Deprecated public static final byte CoolSetpointFieldPresent = 2;
 }

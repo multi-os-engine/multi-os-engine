@@ -176,12 +176,17 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * Creates a coarse mesh from the voxel grid
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
     @Selector("coarseMesh")
     public native MDLMesh coarseMesh();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("coarseMeshUsingAllocator:")
@@ -194,6 +199,8 @@ public class MDLVoxelArray extends MDLObject {
      * outer layer of voxels with shell level values of positive one.
      * 
      * The volume model must be closed in order to generate a signed shell field.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("convertToSignedShellField")
@@ -201,6 +208,8 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * The number of voxels in the grid
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("count")
@@ -212,6 +221,8 @@ public class MDLVoxelArray extends MDLObject {
      * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel
      * grid.
      * Note that the shell level data will be cleared.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("differenceWithVoxels:")
@@ -226,6 +237,8 @@ public class MDLVoxelArray extends MDLObject {
      * model by applying "patches" of radius patchRadius to any holes found in the
      * orginal mesh. Choose a patch radius that will be large enough to fill in the largest
      * hole in the model.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithAsset:divisions:patchRadius:")
@@ -237,6 +250,8 @@ public class MDLVoxelArray extends MDLObject {
      * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel
      * grid.
      * Note that the shell level data will be cleared.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("intersectWithVoxels:")
@@ -249,6 +264,8 @@ public class MDLVoxelArray extends MDLObject {
      * methods that modify the voxel grid will cause this property to be set to NO. Setting
      * shellFieldInteriorThickness and shellFieldExteriorThickness will not affect the value
      * of this property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isValidSignedShellField")
@@ -256,6 +273,8 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * Creates a smooth mesh from the voxel grid
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -267,6 +286,8 @@ public class MDLVoxelArray extends MDLObject {
      * If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
      * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
      * value of this property is zero.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShellFieldExteriorThickness:")
@@ -276,6 +297,8 @@ public class MDLVoxelArray extends MDLObject {
      * If voxel grid is in a valid signed shell field form, sets the interior thickness to the desired width,
      * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
      * value of this property is zero.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShellFieldInteriorThickness:")
@@ -285,6 +308,8 @@ public class MDLVoxelArray extends MDLObject {
      * Set voxels corresponding to a mesh.
      * Routine will attempt to create a closed volume model by applying "patches" of
      * a given radius to any holes it may find in the mesh.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVoxelsForMesh:divisions:patchRadius:")
@@ -294,6 +319,8 @@ public class MDLVoxelArray extends MDLObject {
      * If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
      * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
      * value of this property is zero.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shellFieldExteriorThickness")
@@ -303,6 +330,8 @@ public class MDLVoxelArray extends MDLObject {
      * If voxel grid is in a valid signed shell field form, sets the interior thickness to the desired width,
      * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
      * value of this property is zero.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shellFieldInteriorThickness")
@@ -313,6 +342,8 @@ public class MDLVoxelArray extends MDLObject {
      * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel
      * grid.
      * Note that the shell level data will be cleared.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("unionWithVoxels:")
@@ -320,6 +351,8 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * Returns an NSData containing the indices of all voxels in the voxel grid
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

@@ -59,6 +59,8 @@ public class SRSpeechExpression extends NSObject implements NSCopying, NSSecureC
      * 
      * on a scale from -1 to 1, where negative scores indicate 'negative'
      * sentiment, and positive scores indicate 'positive' sentiment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("activation")
@@ -103,6 +105,8 @@ public class SRSpeechExpression extends NSObject implements NSCopying, NSSecureC
      * [@property] confidence
      * 
      * The level of confidence normalized to [0, 1], where 1 is most confident
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("confidence")
@@ -130,6 +134,8 @@ public class SRSpeechExpression extends NSObject implements NSCopying, NSSecureC
      * 
      * on a scale from -1 to 1, where negative scores indicate 'negative'
      * sentiment, and positive scores indicate 'positive' sentiment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("dominance")
@@ -181,6 +187,8 @@ public class SRSpeechExpression extends NSObject implements NSCopying, NSSecureC
      * 
      * on a scale from -1 to 1, where negative scores indicate 'negative'
      * sentiment, and positive scores indicate 'positive' sentiment.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("mood")
@@ -222,6 +230,8 @@ public class SRSpeechExpression extends NSObject implements NSCopying, NSSecureC
      * 
      * The time range in the client-provided audio stream to which this classification
      * result corresponds
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timeRange")
@@ -240,6 +250,9 @@ public class SRSpeechExpression extends NSObject implements NSCopying, NSSecureC
      * 
      * on a scale from -1 to 1, where negative scores indicate 'negative'
      * sentiment, and positive scores indicate 'positive' sentiment.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("valence")
@@ -249,6 +262,8 @@ public class SRSpeechExpression extends NSObject implements NSCopying, NSSecureC
      * [@property] version
      * 
      * Version of the algorithm used to generate \c SRSpeechExpression
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("version")

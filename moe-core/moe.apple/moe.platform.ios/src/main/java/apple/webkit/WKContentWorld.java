@@ -111,6 +111,8 @@ public class WKContentWorld extends NSObject {
      * DOM APIs but without conflicting with other aspects of the page content (e.g. JavaScript from the web page
      * content itself)
      * Repeated calls will retrieve the same WKContentWorld instance.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -157,6 +159,8 @@ public class WKContentWorld extends NSObject {
      * 
      * The pageWorld and defaultClientWorld instances will have a nil name.
      * All other instances will have the non-nil name they were accessed by.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -173,6 +177,8 @@ public class WKContentWorld extends NSObject {
      * 
      * When interacting with page content in a WKWebView using the page content world you can disrupt the operation of
      * page content (e.g. by conflicting with variable names in JavaScript set by the web page content itself).
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -212,6 +218,8 @@ public class WKContentWorld extends NSObject {
      * pageWorld.
      * The name can be used to keep distinct worlds identifiable anywhere a world might be surfaced in a user interface.
      * For example, the different worlds used in your application will be surfaced by name in the WebKit Web Inspector.
+     * 
+     * API-Since: 14.0
      * 
      * @param name The name of the WKContentWorld to retrieve.
      */

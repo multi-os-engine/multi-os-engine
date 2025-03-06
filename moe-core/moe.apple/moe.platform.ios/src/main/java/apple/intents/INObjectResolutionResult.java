@@ -88,6 +88,8 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to confirm if this is the object with which the user wants to continue.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -105,6 +107,8 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INObject.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -175,6 +179,8 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
      * resolvedObject can be different than the original INObject. This allows app extensions to apply business logic
      * constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

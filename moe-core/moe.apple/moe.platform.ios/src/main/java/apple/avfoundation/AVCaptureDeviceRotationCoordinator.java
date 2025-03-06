@@ -106,6 +106,8 @@ public class AVCaptureDeviceRotationCoordinator extends NSObject {
      * 
      * The value of this property is the AVCaptureDevice instance that was used to create the coordinator. The
      * coordinator holds a weak reference to the device.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("device")
@@ -129,6 +131,8 @@ public class AVCaptureDeviceRotationCoordinator extends NSObject {
      * 
      * An AVCaptureDeviceRotationCoordinator is only applicable to video devices. The given device and layer determine
      * the amount of rotation that should be applied for horizon-level preview and capture.
+     * 
+     * API-Since: 17.0
      * 
      * @param device
      *                     The device for which to monitor rotation.
@@ -180,6 +184,8 @@ public class AVCaptureDeviceRotationCoordinator extends NSObject {
      * holds a weak reference to the layer. The coordinator will return 0 degrees of rotation from
      * -videoRotationAngleForHorizonLevelPreview if a layer was not specified at initialization, the layer is not in a
      * view hierarchy, or the layer has been deallocated.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("previewLayer")
@@ -227,6 +233,8 @@ public class AVCaptureDeviceRotationCoordinator extends NSObject {
      * -videoRotationAngleForHorizonLevelPreview because in certain combinations of device and interface orientations,
      * the video rotation angle needed for horizon-level preview may not match the amount of rotation needed for
      * horizon-level capture. This property is key-value observable and delivers updates on the main queue.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("videoRotationAngleForHorizonLevelCapture")
@@ -245,6 +253,8 @@ public class AVCaptureDeviceRotationCoordinator extends NSObject {
      * built-in cameras may need to be rotated by 90 degrees while the video preview for an external camera should not
      * be rotated. External cameras return 0 degrees of rotation even if they physically rotate when their position in
      * physical space is unknown. This property is key-value observable and delivers updates on the main queue.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("videoRotationAngleForHorizonLevelPreview")

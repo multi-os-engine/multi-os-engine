@@ -175,6 +175,8 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
      *                The AVCaptureSession instance to be previewed.
      * @return
      *         A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("layerWithSession:")
@@ -308,6 +310,8 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
      *                The AVCaptureSession instance to be previewed.
      * @return
      *         A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("initWithSession:")
@@ -506,6 +510,8 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
      * The AVCaptureSession instance being previewed by the receiver.
      * 
      * The session is retained by the preview layer.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -555,6 +561,8 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
      * The AVCaptureSession instance being previewed by the receiver.
      * 
      * The session is retained by the preview layer.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setSession:")
@@ -582,6 +590,8 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
      * 
      * Options are AVLayerVideoGravityResize, AVLayerVideoGravityResizeAspect and AVLayerVideoGravityResizeAspectFill.
      * AVLayerVideoGravityResizeAspect is default. See <AVFoundation/AVAnimation.h> for a description of these options.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVideoGravity:")
@@ -618,6 +628,8 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
      * 
      * Options are AVLayerVideoGravityResize, AVLayerVideoGravityResizeAspect and AVLayerVideoGravityResizeAspectFill.
      * AVLayerVideoGravityResizeAspect is default. See <AVFoundation/AVAnimation.h> for a description of these options.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated

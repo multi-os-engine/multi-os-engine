@@ -21,6 +21,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPInterfaceControllerDelegate")
 public interface CPInterfaceControllerDelegate {
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("templateDidAppear:animated:")
@@ -28,6 +31,9 @@ public interface CPInterfaceControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("templateDidDisappear:animated:")
@@ -35,6 +41,9 @@ public interface CPInterfaceControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("templateWillAppear:animated:")
@@ -42,6 +51,9 @@ public interface CPInterfaceControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("templateWillDisappear:animated:")

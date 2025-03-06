@@ -165,6 +165,8 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
 
     /**
      * APIToken is expected to be set before you begin this operation.
+     * 
+     * API-Since: 9.2
      */
     @Nullable
     @Generated
@@ -178,6 +180,8 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 9.2
      */
     @Nullable
     @Generated
@@ -185,16 +189,24 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     @ObjCBlock(name = "call_fetchWebAuthTokenCompletionBlock_ret")
     public native Block_fetchWebAuthTokenCompletionBlock_ret fetchWebAuthTokenCompletionBlock();
 
+    /**
+     * API-Since: 9.2
+     */
     @Generated
     @Selector("init")
     public native CKFetchWebAuthTokenOperation init();
 
+    /**
+     * API-Since: 9.2
+     */
     @Generated
     @Selector("initWithAPIToken:")
     public native CKFetchWebAuthTokenOperation initWithAPIToken(@NotNull String APIToken);
 
     /**
      * APIToken is expected to be set before you begin this operation.
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("setAPIToken:")
@@ -207,6 +219,8 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("setFetchWebAuthTokenCompletionBlock:")

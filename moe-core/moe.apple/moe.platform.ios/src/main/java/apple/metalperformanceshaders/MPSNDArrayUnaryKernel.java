@@ -136,6 +136,8 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
      * @param sourceArray The source for the filter in an NSArray.
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -149,6 +151,8 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
      * @param cmdBuf      The command buffer into which to encode the kernel
      * @param sourceArray The source for the filter in an NSArray.
      * @param destination The NDArray to receive the result
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:destinationArray:")
@@ -164,6 +168,8 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
      * @param outGradientState The output gradient state to record the operation for later use by gradient
      * @param destination      A destination array to contain the result of the calculation
      *                         when the command buffer completes successfully.
+     * 
+     *                         API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:resultState:destinationArray:")
@@ -183,6 +189,8 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
      *                               buffers as needed
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -207,12 +215,17 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * NSSecureCoding support
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayUnaryKernel initWithCoderDevice(@NotNull NSCoder coder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNDArrayUnaryKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);

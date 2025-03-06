@@ -62,7 +62,12 @@ public interface INSetAudioSourceInCarIntentHandling {
      *                   handling.
      * 
      * @see INSetAudioSourceInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetAudioSourceInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSetAudioSourceInCar:completion:")
@@ -81,7 +86,12 @@ public interface INSetAudioSourceInCarIntentHandling {
      *                   of the result of having executed the intent
      * 
      * @see INSetAudioSourceInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetAudioSourceInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSetAudioSourceInCar:completion:")
     void handleSetAudioSourceInCarCompletion(@NotNull INSetAudioSourceInCarIntent intent,
@@ -97,7 +107,12 @@ public interface INSetAudioSourceInCarIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSetAudioSourceInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveAudioSourceForSetAudioSourceInCar:withCompletion:")
@@ -106,6 +121,12 @@ public interface INSetAudioSourceInCarIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INSetAudioSourceInCarIntentHandling is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveRelativeAudioSourceReferenceForSetAudioSourceInCar:withCompletion:")

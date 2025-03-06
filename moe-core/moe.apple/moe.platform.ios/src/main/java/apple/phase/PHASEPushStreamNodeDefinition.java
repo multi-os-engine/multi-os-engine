@@ -97,6 +97,8 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
      * [@property] format
      * 
      * The readonly property that returns the AVAudioFormat that this stream was initialized with
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -122,8 +124,11 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
      * @param format
      *                        The AVAudioFormat object that will define the attributes of the audio this node will
      *                        accept.
+     *                        Only Core Audio's standard deinterleaved 32-bit floating-point formats are supported.
      * @return
      *         A new PHASEPushStreamNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithMixerDefinition:format:")
@@ -140,10 +145,13 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
      * @param format
      *                        The AVAudioFormat object that will define the attributes of the audio this node will
      *                        accept.
+     *                        Only Core Audio's standard deinterleaved 32-bit floating-point formats are supported.
      * @param identifier
      *                        An optional custom identifier to give to this object
      * @return
      *         A new PHASEPushStreamNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithMixerDefinition:format:identifier:")
@@ -182,10 +190,12 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
      * 
      * Determines whether or not the engine should normalize the stream. The default value is NO.
      * 
-     * In general, client's are advised to normalize the input. Normalization is required to properly calibrate the
+     * In general, clients are advised to normalize the input. Normalization is required to properly calibrate the
      * output level.
      * If you set this value to NO, it's advised that you do custom normalization of the audio data prior to passing the
      * buffers to PHASE.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("normalize")
@@ -204,10 +214,12 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
      * 
      * Determines whether or not the engine should normalize the stream. The default value is NO.
      * 
-     * In general, client's are advised to normalize the input. Normalization is required to properly calibrate the
+     * In general, clients are advised to normalize the input. Normalization is required to properly calibrate the
      * output level.
      * If you set this value to NO, it's advised that you do custom normalization of the audio data prior to passing the
      * buffers to PHASE.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setNormalize:")

@@ -169,39 +169,63 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     @Selector("init")
     public native UIInterpolatingMotionEffect init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIInterpolatingMotionEffect initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithKeyPath:type:")
     public native UIInterpolatingMotionEffect initWithKeyPathType(@NotNull String keyPath, @NInt long type);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("keyPath")
     public native String keyPath();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("maximumRelativeValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object maximumRelativeValue();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("minimumRelativeValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object minimumRelativeValue();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setMaximumRelativeValue:")
     public native void setMaximumRelativeValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setMinimumRelativeValue:")
     public native void setMinimumRelativeValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("type")
     @NInt

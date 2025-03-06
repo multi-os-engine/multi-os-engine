@@ -101,6 +101,8 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
      *                 The new destination value to fade to
      * @param duration
      *                 The length of time it takes to arrive at the destination value
+     * 
+     *                 API-Since: 15.0
      */
     @Generated
     @Selector("fadeToValue:duration:")
@@ -141,6 +143,8 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
      * [@property] maximum
      * 
      * The maximum value this metaparameter can be set to
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("maximum")
@@ -150,6 +154,8 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
      * [@property] minimum
      * 
      * The minimum value this metaparameter can be set to
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("minimum")

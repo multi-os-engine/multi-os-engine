@@ -84,6 +84,9 @@ public class INGetCarLockStatusIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("code")
     @NInt
@@ -114,6 +117,8 @@ public class INGetCarLockStatusIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -146,6 +151,9 @@ public class INGetCarLockStatusIntentResponse extends INIntentResponse {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("locked")
@@ -164,6 +172,9 @@ public class INGetCarLockStatusIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("setLocked:")
     public native void setLocked(@Nullable NSNumber value);

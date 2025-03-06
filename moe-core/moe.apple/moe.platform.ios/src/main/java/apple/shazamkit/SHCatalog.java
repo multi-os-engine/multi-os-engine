@@ -129,6 +129,8 @@ public class SHCatalog extends NSObject {
      * 
      * A @c SHSignature over this duration will be rejected without matching. A well scoped @c SHSignature
      * is more likely to provide accurate matches.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("maximumQuerySignatureDuration")
@@ -139,6 +141,8 @@ public class SHCatalog extends NSObject {
      * 
      * A @c SHSignature that contains less than the minimum duration in seconds will be discarded without matching.
      * [@note] A @c SHSignature under this duration does not have enough entropy to provide accurate matches.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("minimumQuerySignatureDuration")

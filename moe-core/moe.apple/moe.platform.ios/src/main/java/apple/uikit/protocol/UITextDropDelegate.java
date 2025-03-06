@@ -26,6 +26,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UITextDropDelegate {
     /**
      * Called when the drag has ended.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -37,6 +39,8 @@ public interface UITextDropDelegate {
 
     /**
      * Called when a drag has entered the text view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -48,6 +52,8 @@ public interface UITextDropDelegate {
 
     /**
      * Called when the drag has left the view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -62,6 +68,8 @@ public interface UITextDropDelegate {
      * to -textDroppableView:proposalForDrop:.
      * 
      * Note: this is called *very* frequently, so try to do minimal work.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -87,6 +95,8 @@ public interface UITextDropDelegate {
      * location of the caret when the drop was being performed.
      * 
      * Return nil to use the default preview of the underlying drop interaction.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -106,6 +116,8 @@ public interface UITextDropDelegate {
      * - when the drag session changes (e.g. items were added)
      * 
      * Note: this is called frequently, so try to do minimal work.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -121,6 +133,8 @@ public interface UITextDropDelegate {
      * However, there might be scenarios where dropping into a non-editable text control
      * is desirable.
      * If not implemented, uses UITextDropEditabilityNo.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -135,6 +149,8 @@ public interface UITextDropDelegate {
      * Indicates that the drop is about to be performed.
      * To modify the result of the items to be dropped, provide a pasteHandler on
      * the text control, which will handle the conversion and pasting of the text.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

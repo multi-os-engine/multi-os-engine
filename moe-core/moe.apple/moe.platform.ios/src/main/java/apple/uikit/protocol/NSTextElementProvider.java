@@ -36,6 +36,8 @@ public interface NSTextElementProvider {
      * intersecting or following the current edited range, the method returns the range adjusted for the modification in
      * the editing session. Returns nil, when no adjustment necessary. forEditingTextSelection indicates if textRange is
      * for the text selection associated with the edit session.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -49,6 +51,8 @@ public interface NSTextElementProvider {
     /**
      * Declares the starting and ending locations for the document. The subclass could use its own implementation of a
      * location object conforming to NSTextRange.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -63,6 +67,8 @@ public interface NSTextElementProvider {
      * the range of the last element returned. It enumerates the elements in the sequence, but it can skip a range (it
      * can limit the maximum number of text elements enumerated for a single invocation or hide some elements from the
      * layout). Returning NO from block breaks out of the enumeration.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -82,6 +88,8 @@ public interface NSTextElementProvider {
     /**
      * Returns a new location from location with offset. The offset value could be positive or negative indicating the
      * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -96,6 +104,8 @@ public interface NSTextElementProvider {
     /**
      * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound
      * when the offset cannot be represented in an integer value (i.e. locations are not in the same document).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -110,6 +120,8 @@ public interface NSTextElementProvider {
      * Replaces the characters specified by range with textElements. If the edges of range is not at existing element
      * range boundaries, it either split the element if it allows the operation (i.e. NSTextParagraph) or adjust the
      * replacement range. This method is intended to be used only by NSTextLayoutManager.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("replaceContentsInRange:withTextElements:")
@@ -120,6 +132,8 @@ public interface NSTextElementProvider {
      * Synchronizes changes to the backing store. If completionHandler=nil, performs the operation synchronously.
      * completionHandler gets passed error if failed. It should block (or fail if synchronous) when there is an active
      * transaction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("synchronizeToBackingStore:")

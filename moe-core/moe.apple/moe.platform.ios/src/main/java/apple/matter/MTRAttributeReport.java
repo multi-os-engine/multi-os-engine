@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 16.1
+ */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
@@ -94,6 +97,8 @@ public class MTRAttributeReport extends NSObject {
      * If this specific path resulted in an error, the error (in the
      * MTRInteractionErrorDomain or MTRErrorDomain) that corresponds to this
      * path.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("error")
@@ -161,6 +166,9 @@ public class MTRAttributeReport extends NSObject {
     @Selector("new")
     public static native MTRAttributeReport new_objc();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("path")
     @NotNull
@@ -194,7 +202,7 @@ public class MTRAttributeReport extends NSObject {
      * * The attribute is nullable and the value of the attribute is null.
      * 
      * If value is not nil, the actual type of value will depend on the
-     * schema-defined (typically defiend in the Matter specification) type of the
+     * schema-defined (typically defined in the Matter specification) type of the
      * attribute as follows:
      * 
      * * list: NSArray of whatever type the list entries are.
@@ -206,6 +214,8 @@ public class MTRAttributeReport extends NSObject {
      * Derived types (in the Matter specification sense) are represented the same as
      * the base type, except for "string" (which is a derived type of "octet string"
      * in the specification).
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("value")

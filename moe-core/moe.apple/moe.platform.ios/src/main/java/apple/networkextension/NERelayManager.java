@@ -103,6 +103,8 @@ public class NERelayManager extends NSObject {
      * 
      * An array of strings containing domain names. If the destination host name of a connection shares a suffix with
      * one of these strings then the relay will not be used.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("excludedDomains")
@@ -135,6 +137,8 @@ public class NERelayManager extends NSObject {
      * [@property] enabled
      * 
      * Toggles the enabled status of the relay.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isEnabled")
@@ -158,6 +162,8 @@ public class NERelayManager extends NSObject {
      * @param completionHandler A block that takes an array NERelayManager objects. The array passed to the block may be
      *                          empty if no NERelay configurations were successfully read from the disk. The NSError
      *                          passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("loadAllManagersFromPreferencesWithCompletionHandler:")
@@ -179,6 +185,8 @@ public class NERelayManager extends NSObject {
      * 
      * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to
      *                          this block will be nil if the load operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
@@ -196,6 +204,8 @@ public class NERelayManager extends NSObject {
      * [@property] localizedDescription
      * 
      * A string containing a description of the relay.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("localizedDescription")
@@ -207,6 +217,8 @@ public class NERelayManager extends NSObject {
      * 
      * An array of strings containing domain names. If this property is non-nil, the relay will only be used to access
      * hosts within the specified domains. If the property is nil, the relay will be used for all domains.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("matchDomains")
@@ -223,6 +235,8 @@ public class NERelayManager extends NSObject {
      * 
      * An array of NEOnDemandRule objects. If nil, the associated relay will always apply. If non-nil, the array
      * describes the networks on which the relay should be used or not.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("onDemandRules")
@@ -233,6 +247,8 @@ public class NERelayManager extends NSObject {
      * [@property] relays
      * 
      * An array of relay configurations describing one or more relay hops.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("relays")
@@ -247,6 +263,8 @@ public class NERelayManager extends NSObject {
      * 
      * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed
      *                          to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
@@ -276,6 +294,8 @@ public class NERelayManager extends NSObject {
      * 
      * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to
      *                          this block will be nil if the save operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 17.0
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
@@ -293,6 +313,8 @@ public class NERelayManager extends NSObject {
      * [@property] enabled
      * 
      * Toggles the enabled status of the relay.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -303,6 +325,8 @@ public class NERelayManager extends NSObject {
      * 
      * An array of strings containing domain names. If the destination host name of a connection shares a suffix with
      * one of these strings then the relay will not be used.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setExcludedDomains:")
@@ -312,6 +336,8 @@ public class NERelayManager extends NSObject {
      * [@property] localizedDescription
      * 
      * A string containing a description of the relay.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setLocalizedDescription:")
@@ -322,6 +348,8 @@ public class NERelayManager extends NSObject {
      * 
      * An array of strings containing domain names. If this property is non-nil, the relay will only be used to access
      * hosts within the specified domains. If the property is nil, the relay will be used for all domains.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setMatchDomains:")
@@ -332,6 +360,8 @@ public class NERelayManager extends NSObject {
      * 
      * An array of NEOnDemandRule objects. If nil, the associated relay will always apply. If non-nil, the array
      * describes the networks on which the relay should be used or not.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setOnDemandRules:")
@@ -341,6 +371,8 @@ public class NERelayManager extends NSObject {
      * [@property] relays
      * 
      * An array of relay configurations describing one or more relay hops.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRelays:")
@@ -354,6 +386,8 @@ public class NERelayManager extends NSObject {
      * sharedManager
      * 
      * @return The singleton NERelayManager object for the calling process.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("sharedManager")
@@ -373,4 +407,36 @@ public class NERelayManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * getLastClientErrors
+     * 
+     * This function will get errors that the client detected while using this relay configuration within the specified
+     * time period. Errors will be from the NERelayClientErrorDomain and the NERelayManagerClientErrorNone value will be
+     * set for successful connections.
+     * 
+     * @param seconds           A NSTimeInterval that specifies how many seconds to report errors for. The maximum
+     *                          supported value is 24 hours and any larger values will be automatically reduced to 24
+     *                          hours.
+     * @param completionHandler A block that will be called when once the errors have been collected. The NSArray will
+     *                          contain a list of NERelayManagerClientError values detected within the last number of
+     *                          seconds as specified by the "seconds" parameter. The values will be ordered from the
+     *                          error most recently detected to the oldest. The error value of
+     *                          NERelayManagerClientErrorNone indicates the last successful use of the relay without
+     *                          error. The NSArray will be empty if there are no values detected within the specified
+     *                          time period or nil if there was a problem in retrieving the errors.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @Selector("getLastClientErrors:completionHandler:")
+    public native void getLastClientErrorsCompletionHandler(double seconds,
+            @ObjCBlock(name = "call_getLastClientErrorsCompletionHandler") @NotNull Block_getLastClientErrorsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getLastClientErrorsCompletionHandler {
+        @Generated
+        void call_getLastClientErrorsCompletionHandler(@Nullable NSArray<? extends NSError> errors);
+    }
 }

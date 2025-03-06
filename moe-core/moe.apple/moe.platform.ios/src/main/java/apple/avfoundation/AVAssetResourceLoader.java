@@ -168,6 +168,8 @@ public class AVAssetResourceLoader extends NSObject {
      * The value of this property is an object conforming to the AVAssetResourceLoaderDelegate protocol. The delegate is
      * set using the setDelegate:queue: method. The delegate is held using a zeroing-weak reference, so this property
      * will have a value of nil after a delegate that was previously set has been deallocated.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -181,6 +183,8 @@ public class AVAssetResourceLoader extends NSObject {
      * The dispatch queue on which all delegate methods will be invoked.
      * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setDelegate:queue: method.
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -223,6 +227,8 @@ public class AVAssetResourceLoader extends NSObject {
      * delegate to manage content keys for FairPlay Streaming, to provide dynamically-generated master playlists for
      * HTTP Live Streaming, or to respond to authentication challenges, but not to load media data for playback.
      * 
+     * API-Since: 6.0
+     * 
      * @param delegate
      *                      An object conforming to the AVAssetResourceLoaderDelegate protocol.
      * @param delegateQueue
@@ -252,4 +258,30 @@ public class AVAssetResourceLoader extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] sendsCommonMediaClientDataAsHTTPHeaders
+     * 
+     * Enables Common Media Client Data to be attached as HTTP request headers.
+     * 
+     * Defaults to NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("sendsCommonMediaClientDataAsHTTPHeaders")
+    public native boolean sendsCommonMediaClientDataAsHTTPHeaders();
+
+    /**
+     * [@property] sendsCommonMediaClientDataAsHTTPHeaders
+     * 
+     * Enables Common Media Client Data to be attached as HTTP request headers.
+     * 
+     * Defaults to NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setSendsCommonMediaClientDataAsHTTPHeaders:")
+    public native void setSendsCommonMediaClientDataAsHTTPHeaders(boolean value);
 }

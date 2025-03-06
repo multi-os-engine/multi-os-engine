@@ -111,6 +111,9 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("clipRectSource")
@@ -191,6 +194,9 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
+     * 
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setClipRectSource:")

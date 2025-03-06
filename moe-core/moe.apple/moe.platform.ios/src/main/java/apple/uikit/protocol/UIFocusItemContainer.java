@@ -33,6 +33,8 @@ public interface UIFocusItemContainer {
      * space to use.
      * You may also choose to implement your own object that conforms to UICoordinateSpace, if that is the most natural
      * solution for your architecture.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -46,6 +48,8 @@ public interface UIFocusItemContainer {
      * Note: starting in iOS & tvOS 16.0, UIView will return its subviews from this method. If you override this method
      * in a UIView subclass, it will be your responsibility to call super and merge your array of custom focus items
      * with UIView's default focus items.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

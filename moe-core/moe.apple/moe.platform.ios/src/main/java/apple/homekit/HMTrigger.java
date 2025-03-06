@@ -169,6 +169,8 @@ public class HMTrigger extends NSObject {
     /**
      * Array of HMActionSet objects that represent all the action sets associated
      * with this trigger.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -218,6 +220,8 @@ public class HMTrigger extends NSObject {
      * State of the trigger.
      * 
      * TRUE if the trigger is enable, FALSE otherwise.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isEnabled")
@@ -238,6 +242,8 @@ public class HMTrigger extends NSObject {
 
     /**
      * Name of the trigger.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

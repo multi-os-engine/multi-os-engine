@@ -31,6 +31,8 @@ public interface VNDocumentCameraViewControllerDelegate {
      * 
      * - Parameter controller: The document camera view controller that failed.
      * - Parameter error: The error containing the reason for failure.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -45,6 +47,8 @@ public interface VNDocumentCameraViewControllerDelegate {
      * 
      * - Parameter controller: The document camera view controller that captured the scan.
      * - Parameter scan: The scanned document that the camera detected.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -58,6 +62,8 @@ public interface VNDocumentCameraViewControllerDelegate {
      * Tells the delegate that the user canceled out of the document scanner camera.
      * 
      * - Parameter controller: The document camera view controller in which the user canceled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

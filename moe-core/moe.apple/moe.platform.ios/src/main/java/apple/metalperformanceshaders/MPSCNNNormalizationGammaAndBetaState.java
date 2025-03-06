@@ -74,6 +74,8 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      * [@property] beta
      * 
      * A MTLBuffer containing the beta terms.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -114,6 +116,8 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      * [@property] gamma
      * 
      * A MTLBuffer containing the gamma terms.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -152,6 +156,8 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      * @param gamma The MTLBuffer containing gamma terms.
      * 
      * @param beta  The MTLBuffer containing beta terms.
+     * 
+     *              API-Since: 11.3
      */
     @Generated
     @Selector("initWithGamma:beta:")
@@ -233,6 +239,8 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      * 
      * @param numberOfFeatureChannels The number of feature channels used to size the
      *                                state.
+     * 
+     *                                API-Since: 11.3
      */
     @NotNull
     @Generated

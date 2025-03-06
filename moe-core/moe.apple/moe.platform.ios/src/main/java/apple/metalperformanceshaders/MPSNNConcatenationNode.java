@@ -129,6 +129,8 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      * @return A new MPSNNFilter node that concatenates its inputs.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSources:")
@@ -191,6 +193,8 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      * @return A new MPSNNFilter node that concatenates its inputs.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSources:")

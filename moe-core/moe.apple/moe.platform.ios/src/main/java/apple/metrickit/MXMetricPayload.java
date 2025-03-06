@@ -88,6 +88,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * Convenience method to return a JSON representation of this payload.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -112,6 +114,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] applicationLaunchMetrics
      * 
      * An object containing launch metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -122,6 +126,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] applicationResponsivenessMetrics
      * 
      * An object containing hang metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -132,6 +138,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] applicationTimeMetrics
      * 
      * An object containing running mode metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -157,6 +165,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] cellularConditionMetrics
      * 
      * An object containing a cellular condition metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -177,6 +187,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] cpuMetrics
      * 
      * An object containing CPU metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -195,6 +207,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] diskIOMetrics
      * 
      * An object containing disk IO metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -205,6 +219,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] displayMetrics
      * 
      * An object containing display metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -219,6 +235,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] gpuMetrics
      * 
      * An object containing GPU metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -239,6 +257,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * 
      * A value of NO indicates that this payload only reflects data from the application version specified by
      * latestApplicationVersion.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("includesMultipleApplicationVersions")
@@ -281,6 +301,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * 
      * If the application version was changed during the aggregation of this data, this value will reflect the latest
      * application version at the time of retrieval.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -291,6 +313,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] locationActivityMetrics
      * 
      * An object containing location activity metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -301,6 +325,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] memoryMetrics
      * 
      * An object containing memory metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -311,6 +337,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] metaData
      * 
      * An object containing extra metadata for this payload.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -321,6 +349,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] networkTransferMetrics
      * 
      * An object containing network transfer metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -348,6 +378,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] signpostMetrics
      * 
      * An array containing signpost metrics for this application.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -372,6 +404,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] timeStampBegin
      * 
      * An NSDate object that indicates the time which the payload was generated.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -382,6 +416,8 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * [@property] timeStampEnd
      * 
      * An NSDate object that indicates the time which the payload was generated.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

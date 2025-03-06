@@ -49,6 +49,8 @@ public interface MTLLibrary {
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -60,6 +62,8 @@ public interface MTLLibrary {
      * [@property] functionNames
      * 
      * The array contains NSString objects, with the name of each function in library.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -70,6 +74,8 @@ public interface MTLLibrary {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -80,6 +86,8 @@ public interface MTLLibrary {
      * newFunctionWithName
      * 
      * Returns a pointer to a function object, return nil if the function is not found in the library.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -124,6 +132,8 @@ public interface MTLLibrary {
      * [@property] label
      * 
      * A string to help identify this object.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLabel:")

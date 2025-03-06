@@ -142,6 +142,8 @@ public class NSUnitDispersion extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - partsPerMillion
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

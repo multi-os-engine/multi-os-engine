@@ -169,6 +169,8 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Unique ID
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -177,6 +179,8 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The list of actions contained by the receiver
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -185,6 +189,8 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Add the provided action to the receiver's list of actions
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("addAction:")
@@ -205,10 +211,16 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
     @Selector("init")
     public native CXTransaction init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithAction:")
     public native CXTransaction initWithAction(@NotNull CXAction action);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithActions:")
     public native CXTransaction initWithActions(@NotNull NSArray<? extends CXAction> actions);
@@ -219,6 +231,8 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Whether all actions have been completed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isComplete")

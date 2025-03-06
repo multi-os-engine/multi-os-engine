@@ -73,6 +73,8 @@ public class MXMemoryMetric extends MXMetric {
      * Average memory of the application upon suspend.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -154,6 +156,8 @@ public class MXMemoryMetric extends MXMetric {
      * A single value representing the peak memory consumption of the application.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

@@ -170,6 +170,8 @@ public class INHangUpCallIntent extends INIntent {
 
     /**
      * The identifier of the call that the user wishes to hang up.
+     * 
+     * API-Since: 16.2
      */
     @Generated
     @Selector("callIdentifier")

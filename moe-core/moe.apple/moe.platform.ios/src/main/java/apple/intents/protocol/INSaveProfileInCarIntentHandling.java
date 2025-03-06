@@ -61,7 +61,12 @@ public interface INSaveProfileInCarIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSaveProfileInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSaveProfileInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("confirmSaveProfileInCar:completion:")
@@ -80,7 +85,12 @@ public interface INSaveProfileInCarIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSaveProfileInCarIntentResponse
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSaveProfileInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("handleSaveProfileInCar:completion:")
     void handleSaveProfileInCarCompletion(@NotNull INSaveProfileInCarIntent intent,
@@ -107,7 +117,12 @@ public interface INSaveProfileInCarIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 10.0
+     *      Deprecated-Since: 15.0
+     *      Deprecated-Message: INSaveProfileInCarIntentHandling is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveProfileNumberForSaveProfileInCar:withCompletion:")

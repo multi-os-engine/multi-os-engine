@@ -97,6 +97,8 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
      * 
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
      * 
+     * API-Since: 8.0
+     * 
      * @param track
      *              The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
      *              references.
@@ -205,6 +207,8 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
      * 
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
      * 
+     * API-Since: 8.0
+     * 
      * @param track
      *              The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
      *              references.
@@ -221,6 +225,8 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
      * The track from which the receiver extracts sample references.
      * 
      * The value of this property is an AVAssetTrack owned by the target AVAssetReader's asset.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

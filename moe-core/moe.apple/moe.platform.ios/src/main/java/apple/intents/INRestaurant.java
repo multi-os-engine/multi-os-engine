@@ -186,16 +186,25 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithCoder:")
     public native INRestaurant initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithLocation:name:vendorIdentifier:restaurantIdentifier:")
     public native INRestaurant initWithLocationNameVendorIdentifierRestaurantIdentifier(@NotNull CLLocation location,
             @NotNull String name, @NotNull String vendorIdentifier, @NotNull String restaurantIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("location")
     public native CLLocation location();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("name")
@@ -204,16 +213,24 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the
      * vendor.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("restaurantIdentifier")
     public native String restaurantIdentifier();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setLocation:")
     public native void setLocation(@NotNull CLLocation value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(@NotNull String value);
@@ -221,6 +238,8 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the
      * vendor.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRestaurantIdentifier:")
@@ -228,6 +247,8 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * provider's vendor identifier
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setVendorIdentifier:")
@@ -241,6 +262,8 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * provider's vendor identifier
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

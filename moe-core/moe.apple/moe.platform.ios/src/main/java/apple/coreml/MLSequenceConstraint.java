@@ -89,6 +89,8 @@ public class MLSequenceConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Restriction on the length of the sequence
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("countRange")
@@ -175,6 +177,8 @@ public class MLSequenceConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Description all sequence elements / values must match
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

@@ -82,6 +82,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * [@property] biases
      * 
      * A buffer that contains the biases. Each value is float and there are ouputFeatureChannels values.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -94,6 +96,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * 
      * Offset at which weights start in biases buffer
      * Default value is 0.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("biasesOffset")
@@ -147,6 +151,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application provided convolution descriptor
      * 
      * Create weights and biases buffers of appropriate size
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:cnnConvolutionDescriptor:")
@@ -181,6 +187,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * convolution
      * outputFeatureChannels*kernelWidth*kernelHeight*(inputChannels/groups)*sizeof(float) // for regular otherwise
      * and [biases length] = outputFeatureChannels*sizeof(float)
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithWeights:biases:")
@@ -266,6 +274,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * descriptor
      * 
      * Create weights and biases buffers of appropriate size from command buffer cache.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -314,6 +324,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * weights[outputFeatureChannels][kernelHeight][kernelWidth][inputFeatureChannels/groups]
      * for regular convolution. For depthwise convolution
      * weights[outputFeatureChannels][kernelHeight][kernelWidth] as we currently only support channel multiplier of 1.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -326,6 +338,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * 
      * Offset at which weights start in weights buffer
      * Default value is 0.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("weightsOffset")

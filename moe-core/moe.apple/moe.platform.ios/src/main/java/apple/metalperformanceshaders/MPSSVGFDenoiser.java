@@ -109,6 +109,8 @@ public class MPSSVGFDenoiser extends NSObject {
     /**
      * The number of bilateral filter iterations to run. More iterations will improve quality at
      * the cost of performance. Defaults to 5. Must be at least 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bilateralFilterIterations")
@@ -139,6 +141,8 @@ public class MPSSVGFDenoiser extends NSObject {
     /**
      * Clear the temporal history. Reprojection and temporal accumulation will restart on the
      * next call to encodeToCommandBuffer:
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("clearTemporalHistory")
@@ -180,6 +184,8 @@ public class MPSSVGFDenoiser extends NSObject {
      * details.
      * [@parameter] previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
      * object for more details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:sourceTexture2:destinationTexture2:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
@@ -217,6 +223,8 @@ public class MPSSVGFDenoiser extends NSObject {
      * details.
      * [@parameter] previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
      * object for more details.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -242,6 +250,8 @@ public class MPSSVGFDenoiser extends NSObject {
      * Initialize the MPSSVGFDenoiser object
      * 
      * [@parameter] device The Metal device to use for denoising
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:")
@@ -256,6 +266,8 @@ public class MPSSVGFDenoiser extends NSObject {
      * object will be used to allocate temporary intermediate and output
      * textures. This can be a custom object or an instance of the
      * MPSSVGFDefaultTextureAllocator class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithSVGF:textureAllocator:")
@@ -292,6 +304,8 @@ public class MPSSVGFDenoiser extends NSObject {
     /**
      * Return any temporary textures to the texture allocator. Also clears the temporal history.
      * This should be called before resizing the source texture(s).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("releaseTemporaryTextures")
@@ -308,6 +322,8 @@ public class MPSSVGFDenoiser extends NSObject {
     /**
      * The number of bilateral filter iterations to run. More iterations will improve quality at
      * the cost of performance. Defaults to 5. Must be at least 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBilateralFilterIterations:")
@@ -324,6 +340,8 @@ public class MPSSVGFDenoiser extends NSObject {
     /**
      * The underlying MPSSVGF kernels object which will be used for denoising. Use this object
      * to customize the denoising process.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -332,6 +350,8 @@ public class MPSSVGFDenoiser extends NSObject {
 
     /**
      * The object which will be used to allocate intermediate and output textures.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

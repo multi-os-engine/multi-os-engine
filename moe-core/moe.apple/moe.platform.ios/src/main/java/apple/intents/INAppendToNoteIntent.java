@@ -85,6 +85,12 @@ public class INAppendToNoteIntent extends INIntent {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("content")
@@ -111,6 +117,12 @@ public class INAppendToNoteIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INAppendToNoteIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTargetNote:content:")
     public native INAppendToNoteIntent initWithTargetNoteContent(@Nullable INNote targetNote,
@@ -169,6 +181,12 @@ public class INAppendToNoteIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntent is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("targetNote")

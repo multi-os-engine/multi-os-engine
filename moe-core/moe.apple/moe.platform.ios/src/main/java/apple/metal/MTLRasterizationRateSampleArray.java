@@ -136,6 +136,8 @@ public class MTLRasterizationRateSampleArray extends NSObject {
      * 
      * @return NSNumber instance describing the value of the sample at the specified index, or 0 if the index is out of
      *         range.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -156,6 +158,8 @@ public class MTLRasterizationRateSampleArray extends NSObject {
      * Stores a sample value at the specified index.
      * 
      * The value will be converted to a single precision floating point value.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")

@@ -178,6 +178,12 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -190,7 +196,12 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
 
     /**
      * The total number of frames displayed since drawing began.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("framesDisplayed")
     @NInt
@@ -202,7 +213,12 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
      * preferredFramesPerSecond as possible, without exceeding the screen's refresh rate. This value
      * does not account for dropped frames, so it is not a measurement of your statistical frames per
      * second. It is the static value for which updates will take place.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("framesPerSecond")
     @NInt
@@ -227,14 +243,24 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
 
     /**
      * Used to pause and resume the controller.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
     /**
      * Used to pause and resume the controller.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
@@ -244,7 +270,12 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
      * If false, the controller will not pause and it is expected that some other mechanism will pause
      * the controller when necessary.
      * The default is true.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("pauseOnWillResignActive")
     public native boolean pauseOnWillResignActive();
@@ -252,7 +283,12 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     /**
      * For setting the desired frames per second at which the update and drawing will take place.
      * The default is 30.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
@@ -263,15 +299,32 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
      * If false, the controller will not resume and it is expected that some other mechanism will resume
      * the controller when necessary.
      * The default is true.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("resumeOnDidBecomeActive")
     public native boolean resumeOnDidBecomeActive();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) GLKViewControllerDelegate value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) GLKViewControllerDelegate value) {
         Object __old = delegate();
@@ -289,7 +342,12 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
      * If false, the controller will not pause and it is expected that some other mechanism will pause
      * the controller when necessary.
      * The default is true.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setPauseOnWillResignActive:")
     public native void setPauseOnWillResignActive(boolean value);
@@ -297,7 +355,12 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     /**
      * For setting the desired frames per second at which the update and drawing will take place.
      * The default is 30.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
@@ -307,26 +370,54 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
      * If false, the controller will not resume and it is expected that some other mechanism will resume
      * the controller when necessary.
      * The default is true.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setResumeOnDidBecomeActive:")
     public native void setResumeOnDidBecomeActive(boolean value);
 
     /**
      * Time interval since properties.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("timeSinceFirstResume")
     public native double timeSinceFirstResume();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("timeSinceLastDraw")
     public native double timeSinceLastDraw();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("timeSinceLastResume")
     public native double timeSinceLastResume();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("timeSinceLastUpdate")
     public native double timeSinceLastUpdate();

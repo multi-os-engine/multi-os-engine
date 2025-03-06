@@ -153,6 +153,9 @@ public class CMRecordedRotationRateData extends CMRotationRateData {
      * 
      * Discussion:
      * Time at which the rotation rate was observed.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

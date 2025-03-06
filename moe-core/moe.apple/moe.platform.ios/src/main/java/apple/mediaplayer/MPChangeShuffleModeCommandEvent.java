@@ -163,6 +163,8 @@ public class MPChangeShuffleModeCommandEvent extends MPRemoteCommandEvent {
 
     /**
      * Whether or not the selection should be preserved between playback sessions
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("preservesShuffleMode")
@@ -170,6 +172,8 @@ public class MPChangeShuffleModeCommandEvent extends MPRemoteCommandEvent {
 
     /**
      * The desired shuffle type to use when fulfilling the request.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shuffleType")

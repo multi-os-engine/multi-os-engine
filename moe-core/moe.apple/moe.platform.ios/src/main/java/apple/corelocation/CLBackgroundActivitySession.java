@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.opaque.dispatch_queue_t;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * API-Since: 17.0
@@ -93,6 +95,10 @@ public class CLBackgroundActivitySession extends NSObject {
      * *
      * * Calling invalidate on the session will terminate it and render it
      * * immediately inactive.
+     * *
+     * * This session does not deliver diagnostic properties. Use
+     * * -backgroundActivitySessionWithQueue:handler: to get diagnostic updates.
+     * *
      * 
      * API-Since: 17.0
      */
@@ -204,4 +210,31 @@ public class CLBackgroundActivitySession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * backgroundActivitySessionWithQueue:handler:
+     * Discussion:
+     * Starts a background activity session while delivering diagnostic
+     * updates to the handler.
+     * 
+     * queue: Specifies the queue to which the handler is submitted with each
+     * available diagnostic.
+     * handler: Specifies the block that will be invoked with each update.
+     * 
+     * See -backgroundActivitySession for more details
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("backgroundActivitySessionWithQueue:handler:")
+    public static native CLBackgroundActivitySession backgroundActivitySessionWithQueueHandler(
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_backgroundActivitySessionWithQueueHandler") @NotNull Block_backgroundActivitySessionWithQueueHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_backgroundActivitySessionWithQueueHandler {
+        @Generated
+        void call_backgroundActivitySessionWithQueueHandler(@NotNull CLBackgroundActivitySessionDiagnostic diagnostic);
+    }
 }

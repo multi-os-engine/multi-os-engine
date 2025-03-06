@@ -81,6 +81,8 @@ public class PKIdentityAuthorizationController extends NSObject {
      * requestDocument:completion: completion handler. Cancellation is not guaranteed; even if
      * this method is called, it is possible that requestDocument:completion: will return a document
      * response if a response was already in flight.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("cancelRequest")
@@ -89,6 +91,8 @@ public class PKIdentityAuthorizationController extends NSObject {
     /**
      * Determines if a document can be requested, taking into account the entitlement of the
      * calling process as well as the state of this device.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("checkCanRequestDocument:completion:")
@@ -167,6 +171,8 @@ public class PKIdentityAuthorizationController extends NSObject {
      * will be returned.
      * Only one request can be in progress at a time, otherwise PKIdentityErrorRequestAlreadyInProgress
      * will be returned.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("requestDocument:completion:")

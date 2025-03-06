@@ -175,6 +175,8 @@ public class SKReferenceNode extends SKNode {
 
     /**
      * Create a reference node with a url
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("referenceNodeWithFileNamed:")
@@ -182,6 +184,8 @@ public class SKReferenceNode extends SKNode {
 
     /**
      * Create a reference node with a url
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("referenceNodeWithURL:")
@@ -210,6 +214,8 @@ public class SKReferenceNode extends SKNode {
 
     /**
      * called each time the url is loaded, after it has been added as a child
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("didLoadReferenceNode:")
@@ -221,6 +227,8 @@ public class SKReferenceNode extends SKNode {
 
     /**
      * Support coding and decoding via NSKeyedArchiver.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithCoder:")
@@ -228,6 +236,8 @@ public class SKReferenceNode extends SKNode {
 
     /**
      * Create a reference node with a url
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithFileNamed:")
@@ -235,6 +245,8 @@ public class SKReferenceNode extends SKNode {
 
     /**
      * Create a reference node with a url
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -245,6 +257,8 @@ public class SKReferenceNode extends SKNode {
      * as a child of this node. If the resolved node has not yet been loaded,
      * it will be automatically loaded when the resolved node is queryed or
      * the refenece node is rendered.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resolveReferenceNode")

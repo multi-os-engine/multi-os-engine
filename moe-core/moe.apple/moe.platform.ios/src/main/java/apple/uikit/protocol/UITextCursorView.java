@@ -8,7 +8,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @ protocol UITextCursorView
+ * [@protocol] UITextCursorView
  * 
  * A view that displays a flashing cursor (aka "caret") view.
  * 
@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UITextCursorView extends UICoordinateSpace {
     /**
      * Enables the blink animation. Disabled by default.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("isBlinking")
@@ -31,6 +33,8 @@ public interface UITextCursorView extends UICoordinateSpace {
     /**
      * Call this when the cursor is moving (i.e., during typing) to make sure the cursor doesn't blink while text is
      * being inserted.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("resetBlinkAnimation")
@@ -38,6 +42,8 @@ public interface UITextCursorView extends UICoordinateSpace {
 
     /**
      * Enables the blink animation. Disabled by default.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setBlinking:")

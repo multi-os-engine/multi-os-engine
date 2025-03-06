@@ -97,6 +97,9 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Selector("init")
     public native PKPaymentRequestUpdate init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithPaymentSummaryItems:")
     public native PKPaymentRequestUpdate initWithPaymentSummaryItems(
@@ -131,6 +134,8 @@ public class PKPaymentRequestUpdate extends NSObject {
 
     /**
      * The new payment summary items to update the payment request with
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -147,6 +152,8 @@ public class PKPaymentRequestUpdate extends NSObject {
 
     /**
      * The new payment summary items to update the payment request with
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPaymentSummaryItems:")
@@ -156,6 +163,8 @@ public class PKPaymentRequestUpdate extends NSObject {
      * The status of the payment request update. Set PKPaymentAuthorizationStatusSuccess for a successful update,
      * and PKPaymentAuthorizationStatusFailure if you were unable to process the required changes.
      * PKPaymentAuthorizationStatusSuccess by default
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStatus:")
@@ -169,6 +178,8 @@ public class PKPaymentRequestUpdate extends NSObject {
      * The status of the payment request update. Set PKPaymentAuthorizationStatusSuccess for a successful update,
      * and PKPaymentAuthorizationStatusFailure if you were unable to process the required changes.
      * PKPaymentAuthorizationStatusSuccess by default
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("status")

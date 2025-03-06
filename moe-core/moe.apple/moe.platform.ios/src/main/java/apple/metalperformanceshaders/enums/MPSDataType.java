@@ -147,4 +147,16 @@ public final class MPSDataType {
      * API-Since: 16.0
      */
     @Generated public static final int BFloat16 = 0x90000010;
+    /**
+     * signed integers
+     * 
+     * API-Since: 18.0
+     */
+    @Generated public static final int Int4 = 0x20000004;
+    /**
+     * unsigned integers. Range: [0, UTYPE_MAX]
+     * 
+     * API-Since: 18.0
+     */
+    @Generated public static final int UInt4 = 0x00000004;
 }

@@ -48,6 +48,9 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("additionalValueForKey:")
@@ -70,6 +73,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * A token representing an App Analytics campaign.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -118,6 +123,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
      * Creates a new app overlay configuration that will show an app clip's full app.
      * 
      * @param position the desired position of the overlay.
+     * 
+     *                 API-Since: 14.0
      */
     @Generated
     @Selector("initWithPosition:")
@@ -152,6 +159,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * The position an overlay will show at on screen.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("position")
@@ -160,6 +169,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * The provider token for the developer that created the app being presented.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -174,6 +185,9 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAdditionalValue:forKey:")
     public native void setAdditionalValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
@@ -181,6 +195,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * A token representing an App Analytics campaign.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCampaignToken:")
@@ -188,6 +204,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * The position an overlay will show at on screen.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPosition:")
@@ -195,6 +213,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * The provider token for the developer that created the app being presented.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setProviderToken:")

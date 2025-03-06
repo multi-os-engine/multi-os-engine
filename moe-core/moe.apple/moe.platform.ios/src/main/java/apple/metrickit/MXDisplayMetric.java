@@ -75,6 +75,8 @@ public class MXDisplayMetric extends MXMetric {
      * This value is null when the device does not support APL.
      * 
      * Dimensioned as MXUnitAveragePixelLuminance.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

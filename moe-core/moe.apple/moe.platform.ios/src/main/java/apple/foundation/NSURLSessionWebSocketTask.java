@@ -80,6 +80,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     /**
      * Sends a close frame with the given closeCode. An optional reason can be provided while sending the close frame.
      * Simply calling cancel on the task will result in a cancellation frame being sent without any reason.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancelWithCloseCode:reason:")
@@ -98,6 +100,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     /**
      * A task can be queried for it's close code at any point. When the task is not closed, it will be set to
      * NSURLSessionWebSocketCloseCodeInvalid
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("closeCode")
@@ -107,6 +111,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     /**
      * A task can be queried for it's close reason at any point. A nil value indicates no closeReason or that the task
      * is still running
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -155,6 +161,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     /**
      * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from
      * continuation frames. Receive calls will error out if this value is reached
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximumMessageSize")
@@ -170,6 +178,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
      * Reads a WebSocket message once all the frames of the message are available.
      * If the maximumMessage size is hit while buffering the frames, the receiveMessage call will error out
      * and all outstanding work will also fail resulting in the end of the task.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("receiveMessageWithCompletionHandler:")
@@ -197,6 +207,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
      * Note that invocation of the completion handler does not
      * guarantee that the remote side has received all the bytes, only
      * that they have been written to the kernel.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sendMessage:completionHandler:")
@@ -215,6 +227,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
      * receives a pong from the server endpoint. If a connection is lost or an error occurs before receiving
      * the pong from the endpoint, the pongReceiveHandler block will be invoked with an error.
      * Note - the pongReceiveHandler will always be called in the order in which the pings were sent.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sendPingWithPongReceiveHandler:")
@@ -231,6 +245,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     /**
      * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from
      * continuation frames. Receive calls will error out if this value is reached
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMaximumMessageSize:")

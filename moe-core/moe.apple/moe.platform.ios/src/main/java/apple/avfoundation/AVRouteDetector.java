@@ -126,6 +126,8 @@ public class AVRouteDetector extends NSObject {
      * Whether or not route detection is enabled. The default value is NO.
      * 
      * Route detection significantly increases power consumption and must be turned off when it's no longer needed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isRouteDetectionEnabled")
@@ -149,6 +151,8 @@ public class AVRouteDetector extends NSObject {
      * If multiple route have been detected, AVKit's AVRoutePickerView can be used to allow users to pick from the set
      * of available routes. When the values of this property changes
      * AVRouteDetectorMultipleRoutesDetectedDidChangeNotification is posted.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("multipleRoutesDetected")
@@ -173,6 +177,8 @@ public class AVRouteDetector extends NSObject {
      * Whether or not route detection is enabled. The default value is NO.
      * 
      * Route detection significantly increases power consumption and must be turned off when it's no longer needed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRouteDetectionEnabled:")

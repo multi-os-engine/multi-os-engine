@@ -149,6 +149,8 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      * 
      * @param commandBuffer  The command buffer on which the MPSTemporaryMatrix will be used
      * @param descriptorList A NSArray of MPSMatrixDescriptor, indicating matrices that will be created
+     * 
+     *                       API-Since: 11.0
      */
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:matrixDescriptorList:")
@@ -182,6 +184,8 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      * The Metal API Validation layer will assert if a MPSTemporaryMatrix is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("readCount")
@@ -222,6 +226,8 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      * The Metal API Validation layer will assert if a MPSTemporaryMatrix is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReadCount:")
@@ -244,6 +250,8 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      *         released when the command buffer is committed. The underlying buffer will become invalid before
      *         this time due to the action of the readCount property. Please read and understand the use of
      *         the readCount property before using this object.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("temporaryMatrixWithCommandBuffer:matrixDescriptor:")

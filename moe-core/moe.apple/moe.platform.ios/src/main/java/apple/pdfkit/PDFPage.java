@@ -333,7 +333,8 @@ public class PDFPage extends NSObject implements NSCopying {
 
     /**
      * Given a point in page-space, returns a selection representing a whole word at that point. May return NULL if no
-     * character (and by extension no word) under point. If data dectors are enabled (-[PDFView enableDataDetectors]),
+     * character (and by extension no word) under point. If data dectors are enabled (-[PDFDocument
+     * enableDataDetectors]),
      * this return the smart-selection for the content at the given point.
      */
     @Nullable

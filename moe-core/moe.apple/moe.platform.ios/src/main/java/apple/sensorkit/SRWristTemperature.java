@@ -92,6 +92,9 @@ public class SRWristTemperature extends NSObject implements NSCopying, NSSecureC
      * [@property] condition
      * 
      * Indicate system conditions that may impact the temperature sample.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("condition")
@@ -122,6 +125,8 @@ public class SRWristTemperature extends NSObject implements NSCopying, NSSecureC
      * 
      * Estimated temperature error per sample.
      * Error could be in either positive or negative direction.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("errorEstimate")
@@ -198,6 +203,9 @@ public class SRWristTemperature extends NSObject implements NSCopying, NSSecureC
      * [@property] timestamp
      * 
      * Timestamp of when temperature measurement was taken.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("timestamp")
@@ -213,6 +221,9 @@ public class SRWristTemperature extends NSObject implements NSCopying, NSSecureC
      * [@property] value
      * 
      * Temperature sensor value in celsius
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("value")

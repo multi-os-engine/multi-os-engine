@@ -113,6 +113,8 @@ public class NINearbyPeerConfiguration extends NIConfiguration {
      * Initializes a new configuration with the provided peer token.
      * 
      * @param peerToken A discovery token received from the peer for this session.
+     * 
+     *                  API-Since: 14.0
      */
     @Generated
     @Selector("initWithPeerToken:")
@@ -147,6 +149,8 @@ public class NINearbyPeerConfiguration extends NIConfiguration {
 
     /**
      * The discovery token identifying the peer device for this session configuration.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

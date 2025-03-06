@@ -80,6 +80,9 @@ public class GKLeaderboardScore extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("context")
     @NUInt
@@ -124,6 +127,9 @@ public class GKLeaderboardScore extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("leaderboardID")
@@ -134,6 +140,9 @@ public class GKLeaderboardScore extends NSObject {
     @Selector("new")
     public static native GKLeaderboardScore new_objc();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("player")
@@ -147,18 +156,30 @@ public class GKLeaderboardScore extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setContext:")
     public native void setContext(@NUInt long value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setLeaderboardID:")
     public native void setLeaderboardID(@NotNull String value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setPlayer:")
     public native void setPlayer(@NotNull GKPlayer value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(@NInt long value);
@@ -171,6 +192,9 @@ public class GKLeaderboardScore extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("value")
     @NInt

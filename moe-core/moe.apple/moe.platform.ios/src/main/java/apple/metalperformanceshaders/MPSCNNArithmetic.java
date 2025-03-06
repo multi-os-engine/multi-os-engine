@@ -105,6 +105,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("bias")
     public native float bias();
@@ -150,6 +153,8 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * @param destinationState MPSCNNArithmeticGradientState to be consumed by the gradient layer
      * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage
      *                         may not alias primarySourceImage or secondarySourceImage.
+     * 
+     *                         API-Since: 11.3
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationState:destinationImage:")
@@ -208,6 +213,8 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("maximumValue")
@@ -219,6 +226,8 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("minimumValue")
@@ -229,6 +238,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     @Selector("new")
     public static native MPSCNNArithmetic new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("primaryScale")
     public native float primaryScale();
@@ -238,6 +250,8 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * 
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primaryStrideInFeatureChannels")
@@ -252,6 +266,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("secondaryScale")
     public native float secondaryScale();
@@ -261,12 +278,17 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * 
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryStrideInFeatureChannels")
     @NUInt
     public native long secondaryStrideInFeatureChannels();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setBias:")
     public native void setBias(float value);
@@ -277,6 +299,8 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setMaximumValue:")
@@ -288,11 +312,16 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setMinimumValue:")
     public native void setMinimumValue(float value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setPrimaryScale:")
     public native void setPrimaryScale(float value);
@@ -302,11 +331,16 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * 
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setPrimaryStrideInFeatureChannels:")
     public native void setPrimaryStrideInFeatureChannels(@NUInt long value);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("setSecondaryScale:")
     public native void setSecondaryScale(float value);
@@ -316,6 +350,8 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
      * 
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSecondaryStrideInFeatureChannels:")

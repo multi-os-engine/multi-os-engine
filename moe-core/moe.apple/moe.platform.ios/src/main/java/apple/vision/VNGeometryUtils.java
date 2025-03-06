@@ -82,6 +82,8 @@ public class VNGeometryUtils extends NSObject {
      * 
      * @return the VNCircle object describing the bounding circle or nil, if the algorithm failed. The latter case is
      *         accompanied by populating an 'error' output parameter
+     * 
+     *         API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -89,6 +91,9 @@ public class VNGeometryUtils extends NSObject {
     public static native VNCircle boundingCircleForContourError(@NotNull VNContour contour,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("boundingCircleForPoints:error:")
@@ -115,6 +120,8 @@ public class VNGeometryUtils extends NSObject {
      * 
      * @return Area calculation status, YES indicates success, NO - failure. The failure case is accompanied by
      *         populating an 'error' output parameter
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("calculateArea:forContour:orientedArea:error:")
@@ -136,6 +143,8 @@ public class VNGeometryUtils extends NSObject {
      * 
      * @return Perimeter calculation status, YES indicates success, NO - failure. The failure case is accompanied by
      *         populating an 'error' output parameter
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("calculatePerimeter:forContour:error:")

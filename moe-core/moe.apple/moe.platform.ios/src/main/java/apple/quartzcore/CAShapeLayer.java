@@ -211,6 +211,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The color to fill the path, or nil for no fill. Defaults to opaque
      * black. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -220,6 +222,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The fill rule used when filling the path. Options are `non-zero' and
      * `even-odd'. Defaults to `non-zero'.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -241,6 +245,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The cap style used when stroking the path. Options are `butt', `round'
      * and `square'. Defaults to `butt'.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -250,6 +256,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The dash pattern (an array of NSNumbers) applied when creating the
      * stroked version of the path. Defaults to nil.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -259,6 +267,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The phase of the dashing pattern applied when creating the stroke.
      * Defaults to zero. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("lineDashPhase")
@@ -268,6 +278,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The join style used when stroking the path. Options are `miter', `round'
      * and `bevel'. Defaults to `miter'.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -277,6 +289,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The line width used when stroking the path. Defaults to one.
      * Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("lineWidth")
@@ -286,6 +300,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The miter limit used when stroking the path. Defaults to ten.
      * Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("miterLimit")
@@ -299,6 +315,8 @@ public class CAShapeLayer extends CALayer {
      * assignment the path is copied. Defaults to null. Animatable.
      * (Note that although the path property is animatable, no implicit
      * animation will be created when the property is changed.)
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -308,6 +326,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The color to fill the path, or nil for no fill. Defaults to opaque
      * black. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setFillColor:")
@@ -316,6 +336,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The fill rule used when filling the path. Options are `non-zero' and
      * `even-odd'. Defaults to `non-zero'.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setFillRule:")
@@ -324,6 +346,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The cap style used when stroking the path. Options are `butt', `round'
      * and `square'. Defaults to `butt'.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setLineCap:")
@@ -332,6 +356,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The dash pattern (an array of NSNumbers) applied when creating the
      * stroked version of the path. Defaults to nil.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setLineDashPattern:")
@@ -340,6 +366,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The phase of the dashing pattern applied when creating the stroke.
      * Defaults to zero. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setLineDashPhase:")
@@ -348,6 +376,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The join style used when stroking the path. Options are `miter', `round'
      * and `bevel'. Defaults to `miter'.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setLineJoin:")
@@ -356,6 +386,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The line width used when stroking the path. Defaults to one.
      * Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setLineWidth:")
@@ -364,6 +396,8 @@ public class CAShapeLayer extends CALayer {
     /**
      * The miter limit used when stroking the path. Defaults to ten.
      * Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setMiterLimit:")
@@ -376,6 +410,8 @@ public class CAShapeLayer extends CALayer {
      * assignment the path is copied. Defaults to null. Animatable.
      * (Note that although the path property is animatable, no implicit
      * animation will be created when the property is changed.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setPath:")
@@ -384,11 +420,16 @@ public class CAShapeLayer extends CALayer {
     /**
      * The color to fill the path's stroked outline, or nil for no stroking.
      * Defaults to nil. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setStrokeColor:")
     public native void setStrokeColor(@Nullable CGColorRef value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
@@ -400,6 +441,8 @@ public class CAShapeLayer extends CALayer {
      * between zero and one are interpolated linearly along the path
      * length. strokeStart defaults to zero and strokeEnd to one. Both are
      * animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setStrokeStart:")
@@ -408,12 +451,17 @@ public class CAShapeLayer extends CALayer {
     /**
      * The color to fill the path's stroked outline, or nil for no stroking.
      * Defaults to nil. Animatable.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
     @Selector("strokeColor")
     public native CGColorRef strokeColor();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("strokeEnd")
     @NFloat
@@ -426,6 +474,8 @@ public class CAShapeLayer extends CALayer {
      * between zero and one are interpolated linearly along the path
      * length. strokeStart defaults to zero and strokeEnd to one. Both are
      * animatable.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("strokeStart")

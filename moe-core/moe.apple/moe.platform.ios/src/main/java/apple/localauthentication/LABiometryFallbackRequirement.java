@@ -90,6 +90,8 @@ public class LABiometryFallbackRequirement extends NSObject {
      * Use default biometric fallback
      * 
      * @return @c LABiometryFallbackRequirement instance
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -104,6 +106,8 @@ public class LABiometryFallbackRequirement extends NSObject {
      * Requires authorization using the device passcode
      * 
      * @return @c LABiometryFallbackRequirement instance
+     * 
+     *         API-Since: 16.0
      */
     @NotNull
     @Generated

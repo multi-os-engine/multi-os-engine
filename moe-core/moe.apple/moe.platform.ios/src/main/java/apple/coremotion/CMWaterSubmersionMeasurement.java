@@ -104,6 +104,9 @@ public class CMWaterSubmersionMeasurement extends NSObject implements NSSecureCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("date")
@@ -113,6 +116,9 @@ public class CMWaterSubmersionMeasurement extends NSObject implements NSSecureCo
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("depth")
@@ -166,6 +172,9 @@ public class CMWaterSubmersionMeasurement extends NSObject implements NSSecureCo
     @Selector("new")
     public static native CMWaterSubmersionMeasurement new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("pressure")
@@ -183,6 +192,9 @@ public class CMWaterSubmersionMeasurement extends NSObject implements NSSecureCo
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("submersionState")
     @NInt
@@ -202,6 +214,9 @@ public class CMWaterSubmersionMeasurement extends NSObject implements NSSecureCo
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("surfacePressure")

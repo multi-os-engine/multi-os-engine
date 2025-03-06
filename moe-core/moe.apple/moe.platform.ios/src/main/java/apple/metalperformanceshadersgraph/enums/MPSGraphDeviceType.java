@@ -3,7 +3,7 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * Device type
+ * The device type.
  */
 @Generated
 public final class MPSGraphDeviceType {

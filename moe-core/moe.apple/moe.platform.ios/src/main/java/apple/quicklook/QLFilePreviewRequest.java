@@ -93,6 +93,8 @@ public class QLFilePreviewRequest extends NSObject {
 
     /**
      * The url of the file for which a preview is being requested.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

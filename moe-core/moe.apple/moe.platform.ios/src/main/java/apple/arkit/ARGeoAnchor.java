@@ -69,6 +69,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
      * The distance to mean sea level, in meters (negative values indicate it's below sea level).
      * 
      * Only valid when altitudeSource is not ARAltitudeSourceUnknown.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("altitude")
@@ -77,6 +79,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     /**
      * The source of altitude information. If the user did not provide the altitude, ARKit populates this property to
      * indicate the expected accuracy depending on the available altitude data.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("altitudeSource")
@@ -112,6 +116,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
      * The coordinate where this anchor will be placed.
      * 
      * The anchor's transform will be automatically updated by the session when ARGeoTrackingConfiguration is set.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("coordinate")
@@ -150,6 +156,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
      * becomes available.
      * 
      * @param coordinate Coordinates.
+     * 
+     *                   API-Since: 14.0
      */
     @Generated
     @Selector("initWithCoordinate:")
@@ -160,6 +168,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
      * 
      * @param coordinate Coordinates.
      * @param altitude   Altitude in meters.
+     * 
+     *                   API-Since: 14.0
      */
     @Generated
     @Selector("initWithCoordinate:altitude:")
@@ -173,6 +183,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
      * 
      * @param name       Name of the anchor.
      * @param coordinate Coordinates.
+     * 
+     *                   API-Since: 14.0
      */
     @Generated
     @Selector("initWithName:coordinate:")
@@ -184,6 +196,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
      * @param name       Name of the anchor.
      * @param coordinate Coordinates.
      * @param altitude   Altitude in meters.
+     * 
+     *                   API-Since: 14.0
      */
     @Generated
     @Selector("initWithName:coordinate:altitude:")

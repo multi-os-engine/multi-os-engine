@@ -43,6 +43,8 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSArray;
+import apple.metal.struct.MTLPackedFloatQuaternion;
 
 @Generated
 @Library("Metal")
@@ -481,4 +483,66 @@ public final class Metal {
     @Generated @NUInt public static final long MTLAttributeStrideStatic = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :
             0x00000000FFFFFFFFL;
+
+    /**
+     * Returns all Metal devices in the system.
+     * 
+     * On macOS and macCatalyst, this API will not cause the system to switch devices and leaves the decision about
+     * which GPU to use up to the application based on whatever criteria it deems appropriate.
+     * On iOS, tvOS and visionOS, this API returns an array containing the same device that MTLCreateSystemDefaultDevice
+     * would have returned, or an empty array if it would have failed.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native NSArray<?> MTLCopyAllDevices();
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLPackedFloatQuaternion MTLPackedFloatQuaternionMake(float x, float y, float z, float w);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long NSDeviceCertificationiPhonePerformanceGaming();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long NSProcessPerformanceProfileDefault();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long NSProcessPerformanceProfileSustained();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSProcessInfoPerformanceProfileDidChangeNotification();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTLLogStateErrorDomain();
 }

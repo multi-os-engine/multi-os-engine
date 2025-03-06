@@ -27,10 +27,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * This class defines parameters for an imToCol or colToIm operation.
+ * The class that defines the parameters for an image to column or column to image operation.
+ * 
  * Use this descriptor with the following ``MPSGraph`` methods:
- * - ``MPSGraph/imToColWithSourceTensor:descriptor:name:``.
- * - ``MPSGraph/colToImWithSourceTensor:outputShape:descriptor:name:``.
+ * - ``MPSGraph/imToColWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/colToImWithSourceTensor:outputShape:descriptor:name:``
  * 
  * API-Since: 17.0
  */
@@ -95,8 +96,10 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * The property defines the layout of source or output tensor.
+     * The property that defines the layout of source or output tensor.
      * e.g. `batch x channels x width x height` for `NCHW` layout
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("dataLayout")
@@ -112,7 +115,7 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public static native String description_static();
 
     /**
-     * Creates imToCol descriptor with given values for parameters.
+     * Creates column to image descriptor with given values for parameters.
      * - Parameters:
      * - kernelWidth: See `kernelWidth` property.
      * - kernelHeight: See `kernelHeight` property.
@@ -122,6 +125,8 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
      * - dilationRateInY: See `dilationRateInY` property.
      * - dataLayout: See `dataLayout` property.
      * - Returns: A valid MPSGraphImToColOpDescriptor on autoreleasepool.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("descriptorWithKernelWidth:kernelHeight:strideInX:strideInY:dilationRateInX:dilationRateInY:dataLayout:")
@@ -130,7 +135,7 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
             @NUInt long dilationRateInX, @NUInt long dilationRateInY, @NUInt long dataLayout);
 
     /**
-     * Creates an imToCol descriptor with given values for parameters.
+     * Creates an image to column descriptor with given values for parameters.
      * - Parameters:
      * - kernelWidth: See `kernelWidth` property.
      * - kernelHeight: See `kernelHeight` property.
@@ -144,6 +149,8 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
      * - paddingBottom: See `paddingBottom` property.
      * - dataLayout: See `dataLayout` property.
      * - Returns: A valid MPSGraphImToColOpDescriptor on autoreleasepool.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("descriptorWithKernelWidth:kernelHeight:strideInX:strideInY:dilationRateInX:dilationRateInY:paddingLeft:paddingRight:paddingTop:paddingBottom:dataLayout:")
@@ -153,7 +160,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
             @NUInt long paddingTop, @NUInt long paddingBottom, @NUInt long dataLayout);
 
     /**
-     * The property defines the dilation in `x` or width dimension.
+     * The property that defines the dilation in width dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("dilationRateInX")
@@ -161,7 +170,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public native long dilationRateInX();
 
     /**
-     * The property defines the dilation in `y` or height dimension.
+     * The property that defines the dilation in height dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("dilationRateInY")
@@ -195,7 +206,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * The property defines the kernel size in `y` or height dimension.
+     * The property that defines the kernel size in height dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -203,7 +216,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public native long kernelHeight();
 
     /**
-     * The property defines the kernel size in `x` or width dimension.
+     * The property that defines the kernel size in width dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("kernelWidth")
@@ -221,7 +236,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public static native MPSGraphImToColOpDescriptor new_objc();
 
     /**
-     * The property defines the padding in `y` or height dimension at bottom.
+     * The property that defines the padding in height dimension at the bottom.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("paddingBottom")
@@ -229,7 +246,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public native long paddingBottom();
 
     /**
-     * The property defines the padding in `x` or width dimension on left side.
+     * The property that defines the padding in width dimension on the left side.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("paddingLeft")
@@ -237,7 +256,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public native long paddingLeft();
 
     /**
-     * The property defines the padding in `x` or width dimension on right side.
+     * The property that defines the padding in width dimension on the right side.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("paddingRight")
@@ -245,7 +266,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public native long paddingRight();
 
     /**
-     * The property defines the padding in `y` or height dimension at top.
+     * The property that defines the padding in height dimension at the top.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("paddingTop")
@@ -261,22 +284,28 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The property defines the layout of source or output tensor.
+     * The property that defines the layout of source or output tensor.
      * e.g. `batch x channels x width x height` for `NCHW` layout
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDataLayout:")
     public native void setDataLayout(@NUInt long value);
 
     /**
-     * The property defines the dilation in `x` or width dimension.
+     * The property that defines the dilation in width dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDilationRateInX:")
     public native void setDilationRateInX(@NUInt long value);
 
     /**
-     * The property defines the dilation in `y` or height dimension.
+     * The property that defines the dilation in height dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setDilationRateInY:")
@@ -289,6 +318,8 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
      * - paddingRight: See `paddingRight` property.
      * - paddingTop: See `paddingTop` property.
      * - paddingBottom: See `paddingBottom` property.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setExplicitPaddingWithPaddingLeft:paddingRight:paddingTop:paddingBottom:")
@@ -296,56 +327,72 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
             @NUInt long paddingRight, @NUInt long paddingTop, @NUInt long paddingBottom);
 
     /**
-     * The property defines the kernel size in `y` or height dimension.
+     * The property that defines the kernel size in height dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setKernelHeight:")
     public native void setKernelHeight(@NUInt long value);
 
     /**
-     * The property defines the kernel size in `x` or width dimension.
+     * The property that defines the kernel size in width dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setKernelWidth:")
     public native void setKernelWidth(@NUInt long value);
 
     /**
-     * The property defines the padding in `y` or height dimension at bottom.
+     * The property that defines the padding in height dimension at the bottom.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPaddingBottom:")
     public native void setPaddingBottom(@NUInt long value);
 
     /**
-     * The property defines the padding in `x` or width dimension on left side.
+     * The property that defines the padding in width dimension on the left side.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPaddingLeft:")
     public native void setPaddingLeft(@NUInt long value);
 
     /**
-     * The property defines the padding in `x` or width dimension on right side.
+     * The property that defines the padding in width dimension on the right side.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPaddingRight:")
     public native void setPaddingRight(@NUInt long value);
 
     /**
-     * The property defines the padding in `y` or height dimension at top.
+     * The property that defines the padding in height dimension at the top.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPaddingTop:")
     public native void setPaddingTop(@NUInt long value);
 
     /**
-     * The property defines the stride in `x` or width dimension.
+     * The property that defines the stride in width dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setStrideInX:")
     public native void setStrideInX(@NUInt long value);
 
     /**
-     * The property defines the stride in `y` or height dimension.
+     * The property that defines the stride in height dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setStrideInY:")
@@ -356,7 +403,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The property defines the stride in `x` or width dimension.
+     * The property that defines the stride in width dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("strideInX")
@@ -364,7 +413,9 @@ public class MPSGraphImToColOpDescriptor extends MPSGraphObject implements NSCop
     public native long strideInX();
 
     /**
-     * The property defines the stride in `y` or height dimension.
+     * The property that defines the stride in height dimension.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("strideInY")

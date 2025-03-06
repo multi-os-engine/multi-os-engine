@@ -61,6 +61,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
      * bar
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -70,6 +72,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
      * bar
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -99,6 +103,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsDocumentCreation")
@@ -106,6 +112,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Defaults to NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsPickingMultipleItems")
@@ -156,6 +164,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the
      * document items.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -166,6 +176,9 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -187,6 +200,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Allow a document to be imported next to another document.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("importDocumentAtURL:nextToDocumentAtURL:mode:completionHandler:")
@@ -267,6 +282,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * Called to reveal a document at the URL.
      * Typically called from the application delegate method application:openURL:options:; to let the application
      * present the document.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("revealDocumentAtURL:importIfNeeded:completion:")
@@ -284,6 +301,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
      * bar
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAdditionalLeadingNavigationBarButtonItems:")
@@ -292,6 +311,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
      * bar
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAdditionalTrailingNavigationBarButtonItems:")
@@ -299,6 +320,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAllowsDocumentCreation:")
@@ -306,6 +329,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Defaults to NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAllowsPickingMultipleItems:")
@@ -321,16 +346,24 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the
      * document items.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCustomActions:")
     public native void setCustomActions(@NotNull NSArray<? extends UIDocumentBrowserAction> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) UIDocumentBrowserViewControllerDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentBrowserViewControllerDelegate value) {
         Object __old = delegate();
@@ -502,4 +535,14 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The active document creation intent.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("activeDocumentCreationIntent")
+    @Nullable
+    public native String activeDocumentCreationIntent();
 }

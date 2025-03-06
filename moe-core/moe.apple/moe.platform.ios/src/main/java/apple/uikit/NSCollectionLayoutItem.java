@@ -99,6 +99,8 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * useful for grid style layouts to apply even spacing around each the edges of each item.
      * 
      * Note: contentInsets are ignored for any axis with an .estimated dimension
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("contentInsets")
@@ -144,6 +146,8 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * Specifies additional space required surrounding and item when laying out.
      * Flexible spacing can be used to apportion remaining space after items are laid out to
      * evenly align items among available layout space.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -176,10 +180,16 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("itemWithLayoutSize:")
     public static native NSCollectionLayoutItem itemWithLayoutSize(@NotNull NSCollectionLayoutSize layoutSize);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("itemWithLayoutSize:supplementaryItems:")
     public static native NSCollectionLayoutItem itemWithLayoutSizeSupplementaryItems(
@@ -191,6 +201,9 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("layoutSize")
@@ -224,6 +237,8 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * useful for grid style layouts to apply even spacing around each the edges of each item.
      * 
      * Note: contentInsets are ignored for any axis with an .estimated dimension
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setContentInsets:")
@@ -253,6 +268,8 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * Specifies additional space required surrounding and item when laying out.
      * Flexible spacing can be used to apportion remaining space after items are laid out to
      * evenly align items among available layout space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setEdgeSpacing:")
@@ -266,6 +283,9 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("supplementaryItems")

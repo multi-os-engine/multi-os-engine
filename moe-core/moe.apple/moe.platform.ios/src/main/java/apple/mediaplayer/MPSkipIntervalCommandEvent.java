@@ -163,6 +163,8 @@ public class MPSkipIntervalCommandEvent extends MPRemoteCommandEvent {
 
     /**
      * The chosen interval for this skip command event.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("interval")

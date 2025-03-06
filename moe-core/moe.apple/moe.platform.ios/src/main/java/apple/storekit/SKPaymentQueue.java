@@ -47,7 +47,10 @@ import org.jetbrains.annotations.Nullable;
  * SKPaymentQueue interacts with the server-side payment queue
  * 
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: No longer supported
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -84,7 +87,10 @@ public class SKPaymentQueue extends NSObject {
      * NO if this device is not able or allowed to make payments
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use AppStore.canMakePayments
      */
+    @Deprecated
     @Generated
     @Selector("canMakePayments")
     public static native boolean canMakePayments();
@@ -116,7 +122,10 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("defaultQueue")
@@ -184,7 +193,10 @@ public class SKPaymentQueue extends NSObject {
      * transactions array. The same payment can be added multiple times to create multiple transactions.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("addPayment:")
     public native void addPayment(@NotNull SKPayment payment);
@@ -194,7 +206,10 @@ public class SKPaymentQueue extends NSObject {
      * observers. This may require that the user authenticate.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Transaction.updates or PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @Generated
     @Selector("addTransactionObserver:")
     public native void addTransactionObserver(
@@ -217,7 +232,10 @@ public class SKPaymentQueue extends NSObject {
      * purchasing transaction will throw an exception.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Transaction.finish()
      */
+    @Deprecated
     @Generated
     @Selector("finishTransaction:")
     public native void finishTransaction(@NotNull SKPaymentTransaction transaction);
@@ -240,7 +258,10 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("removeTransactionObserver:")
     public native void removeTransactionObserver(
@@ -254,14 +275,20 @@ public class SKPaymentQueue extends NSObject {
      * transactions may still be delivered.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use AppStore.sync()
      */
+    @Deprecated
     @Generated
     @Selector("restoreCompletedTransactions")
     public native void restoreCompletedTransactions();
 
     /**
      * API-Since: 7.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use AppStore.sync()
      */
+    @Deprecated
     @Generated
     @Selector("restoreCompletedTransactionsWithApplicationUsername:")
     public native void restoreCompletedTransactionsWithApplicationUsername(@Nullable String username);
@@ -292,7 +319,10 @@ public class SKPaymentQueue extends NSObject {
      * Array of unfinished SKPaymentTransactions. Only valid while the queue has observers. Updated asynchronously.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Transaction.unfinished
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("transactions")
@@ -300,7 +330,10 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -309,14 +342,20 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value);
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value) {
         Object __old = delegate();
@@ -331,7 +370,10 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Storefront.current
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("storefront")
@@ -343,7 +385,10 @@ public class SKPaymentQueue extends NSObject {
      * your app. If there is no pending price consent, this method will do nothing.
      * 
      * API-Since: 13.4
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Message.messages and Message.display(in:)
      */
+    @Deprecated
     @Generated
     @Selector("showPriceConsentIfNeeded")
     public native void showPriceConsentIfNeeded();
@@ -352,7 +397,10 @@ public class SKPaymentQueue extends NSObject {
      * Call this method to have StoreKit present a sheet enabling the user to redeem codes provided by your app.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use AppStore.presentOfferCodeRedeemSheet(in:)
      */
+    @Deprecated
     @Generated
     @Selector("presentCodeRedemptionSheet")
     public native void presentCodeRedemptionSheet();
@@ -361,7 +409,10 @@ public class SKPaymentQueue extends NSObject {
      * Array of transactionObservers that are available. Transaction observers are not retained.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Transaction.updates or PurchaseResult from Product.purchase(confirmIn:options:)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("transactionObservers")

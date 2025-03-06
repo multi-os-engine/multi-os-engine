@@ -81,11 +81,17 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("constraintsActiveWhenAwayFromEdge:")
     public native NSArray<? extends NSLayoutConstraint> constraintsActiveWhenAwayFromEdge(@NUInt long edge);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("constraintsActiveWhenNearEdge:")
@@ -141,6 +147,8 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
 
     /**
      * Manually remove all constraints from this guide's tracking.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("removeAllTrackedConstraints")
@@ -160,6 +168,8 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
      *                            from tracking.
      * @param edge                When the tracking layout guide is close to this edge, specified constraints will
      *                            change
+     * 
+     *                            API-Since: 15.0
      */
     @Generated
     @Selector("setConstraints:activeWhenAwayFromEdge:")
@@ -172,6 +182,8 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
      *                            associated with this edge and remove them from tracking.
      * @param edge                When the tracking layout guide is close to this edge, specified constraints will
      *                            change
+     * 
+     *                            API-Since: 15.0
      */
     @Generated
     @Selector("setConstraints:activeWhenNearEdge:")

@@ -57,6 +57,8 @@ public class CLSActivity extends CLSObject {
 
     /**
      * Add an activity item to this CLSActivity.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("addAdditionalActivityItem:")
@@ -69,6 +71,8 @@ public class CLSActivity extends CLSObject {
      * 
      * @param start Starting percentage.
      * @param end   Ending percentage.
+     * 
+     *              API-Since: 11.3
      */
     @Generated
     @Selector("addProgressRangeFromStart:toEnd:")
@@ -76,6 +80,8 @@ public class CLSActivity extends CLSObject {
 
     /**
      * Array of all additional activity items on this CLSActivity.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -129,6 +135,8 @@ public class CLSActivity extends CLSObject {
      * Returns the total time tracked in this activity (excluding any previous activities).
      * 
      * The time between calling @c -start and @c -stop.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("duration")
@@ -162,6 +170,8 @@ public class CLSActivity extends CLSObject {
 
     /**
      * Returns whether this Activity has been started or not.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isStarted")
@@ -185,6 +195,8 @@ public class CLSActivity extends CLSObject {
      * The primary activityItem to be reported on.
      * 
      * This can be nil indicating @c progress property is the primary data instead of any activityItems.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -195,6 +207,8 @@ public class CLSActivity extends CLSObject {
      * Current progress as a decimal representation of a percentage.
      * 
      * Should be [0.0, 1.0].
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("progress")
@@ -212,6 +226,8 @@ public class CLSActivity extends CLSObject {
      * The primary activityItem to be reported on.
      * 
      * This can be nil indicating @c progress property is the primary data instead of any activityItems.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setPrimaryActivityItem:")
@@ -221,6 +237,8 @@ public class CLSActivity extends CLSObject {
      * Current progress as a decimal representation of a percentage.
      * 
      * Should be [0.0, 1.0].
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setProgress:")
@@ -234,6 +252,8 @@ public class CLSActivity extends CLSObject {
      * Start Activity.
      * 
      * Starts the activity (or resumes if previously stopped).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("start")
@@ -243,6 +263,8 @@ public class CLSActivity extends CLSObject {
      * Stop Activity.
      * 
      * Stops or pauses the activity and ends the time being tracked on it.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("stop")

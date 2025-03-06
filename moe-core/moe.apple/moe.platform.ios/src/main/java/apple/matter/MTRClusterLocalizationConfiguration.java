@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterLocalizationConfiguration extends MTRCluster {
+public class MTRClusterLocalizationConfiguration extends MTRGenericCluster {
     static {
         NatJ.register();
     }

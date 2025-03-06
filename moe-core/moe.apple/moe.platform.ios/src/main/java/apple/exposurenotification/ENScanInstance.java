@@ -125,6 +125,8 @@ public class ENScanInstance extends NSObject {
 
     /**
      * Minimum attenuation of all of this TEK's beacons received during the scan.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("minimumAttenuation")
@@ -145,6 +147,8 @@ public class ENScanInstance extends NSObject {
 
     /**
      * Seconds elapsed since the the previous scan.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("secondsSinceLastScan")
@@ -161,6 +165,8 @@ public class ENScanInstance extends NSObject {
 
     /**
      * Aggregation of the attenuations of all of this TEK's beacons received during the scan.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("typicalAttenuation")

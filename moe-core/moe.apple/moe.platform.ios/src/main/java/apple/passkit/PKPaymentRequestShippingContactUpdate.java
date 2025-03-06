@@ -89,6 +89,9 @@ public class PKPaymentRequestShippingContactUpdate extends PKPaymentRequestUpdat
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("errors")
     public native NSArray<? extends NSError> errors();
@@ -105,6 +108,8 @@ public class PKPaymentRequestShippingContactUpdate extends PKPaymentRequestUpdat
     /**
      * You may optionally supply errors here.
      * See PKError for specific NSError keys to use.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithErrors:paymentSummaryItems:shippingMethods:")
@@ -153,10 +158,16 @@ public class PKPaymentRequestShippingContactUpdate extends PKPaymentRequestUpdat
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setErrors:")
     public native void setErrors(NSArray<? extends NSError> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setShippingMethods:")
     public native void setShippingMethods(@NotNull NSArray<? extends PKShippingMethod> value);
@@ -165,6 +176,9 @@ public class PKPaymentRequestShippingContactUpdate extends PKPaymentRequestUpdat
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("shippingMethods")

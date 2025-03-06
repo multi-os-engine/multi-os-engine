@@ -91,6 +91,8 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The delegate for this interface controller.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -216,6 +218,8 @@ public class CPInterfaceController extends NSObject {
      * 
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current presented
      * template.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -243,6 +247,8 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Returns the root template.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -251,6 +257,8 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The delegate for this interface controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -259,6 +267,8 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The delegate for this interface controller.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPInterfaceControllerDelegate value) {
@@ -311,6 +321,8 @@ public class CPInterfaceController extends NSObject {
      * 
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current stack of
      * templates.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -321,6 +333,8 @@ public class CPInterfaceController extends NSObject {
      * The top template in the navigation hierarchy.
      * 
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current top-most template.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

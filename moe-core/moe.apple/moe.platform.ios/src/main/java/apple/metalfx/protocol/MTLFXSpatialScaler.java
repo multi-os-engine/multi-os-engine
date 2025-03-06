@@ -27,6 +27,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFXSpatialScaler")
 public interface MTLFXSpatialScaler {
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("colorProcessingMode")
     @NInt
@@ -36,6 +39,8 @@ public interface MTLFXSpatialScaler {
      * These would be all of the "state" needed that is allowed to change on a frame by
      * frame basis. We don't care about the textures assigned except that they must
      * match the required MTLTextureUsage flags.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -45,6 +50,8 @@ public interface MTLFXSpatialScaler {
 
     /**
      * Read-only immutable properties of effect
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("colorTextureFormat")
@@ -53,6 +60,8 @@ public interface MTLFXSpatialScaler {
 
     /**
      * Properties return the minimum required MTLTextureUsage bits required
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("colorTextureUsage")
@@ -61,6 +70,8 @@ public interface MTLFXSpatialScaler {
 
     /**
      * Method to encode the effect to a command buffer
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:")
@@ -68,6 +79,8 @@ public interface MTLFXSpatialScaler {
 
     /**
      * Property for synchronization when using untracked resources
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -75,6 +88,9 @@ public interface MTLFXSpatialScaler {
     @MappedReturn(ObjCObjectMapper.class)
     MTLFence fence();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputContentHeight")
     @NUInt
@@ -82,22 +98,33 @@ public interface MTLFXSpatialScaler {
 
     /**
      * Dynamic resolution property
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("inputContentWidth")
     @NUInt
     long inputContentWidth();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputHeight")
     @NUInt
     long inputHeight();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("inputWidth")
     @NUInt
     long inputWidth();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputHeight")
     @NUInt
@@ -105,6 +132,8 @@ public interface MTLFXSpatialScaler {
 
     /**
      * outputTexture is required to have MTLStorageModePrivate for storageMode
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -112,16 +141,25 @@ public interface MTLFXSpatialScaler {
     @MappedReturn(ObjCObjectMapper.class)
     MTLTexture outputTexture();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputTextureFormat")
     @NUInt
     long outputTextureFormat();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputTextureUsage")
     @NUInt
     long outputTextureUsage();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("outputWidth")
     @NUInt
@@ -131,6 +169,8 @@ public interface MTLFXSpatialScaler {
      * These would be all of the "state" needed that is allowed to change on a frame by
      * frame basis. We don't care about the textures assigned except that they must
      * match the required MTLTextureUsage flags.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setColorTexture:")
@@ -138,17 +178,24 @@ public interface MTLFXSpatialScaler {
 
     /**
      * Property for synchronization when using untracked resources
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setFence:")
     void setFence(@Nullable @Mapped(ObjCObjectMapper.class) MTLFence value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setInputContentHeight:")
     void setInputContentHeight(@NUInt long value);
 
     /**
      * Dynamic resolution property
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInputContentWidth:")
@@ -156,6 +203,8 @@ public interface MTLFXSpatialScaler {
 
     /**
      * outputTexture is required to have MTLStorageModePrivate for storageMode
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setOutputTexture:")

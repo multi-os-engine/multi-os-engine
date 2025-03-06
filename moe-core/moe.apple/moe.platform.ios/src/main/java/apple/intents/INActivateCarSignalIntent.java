@@ -72,6 +72,9 @@ public class INActivateCarSignalIntent extends INIntent {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 10.3
+     */
     @Nullable
     @Generated
     @Selector("carName")
@@ -104,6 +107,9 @@ public class INActivateCarSignalIntent extends INIntent {
     @Selector("init")
     public native INActivateCarSignalIntent init();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("initWithCarName:signals:")
     public native INActivateCarSignalIntent initWithCarNameSignals(@Nullable INSpeakableString carName,
@@ -152,6 +158,9 @@ public class INActivateCarSignalIntent extends INIntent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("signals")
     @NUInt

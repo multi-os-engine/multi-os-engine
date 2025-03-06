@@ -137,6 +137,8 @@ public class NSPersistentHistoryResult extends NSPersistentStoreResult {
 
     /**
      * Return the result. See NSPersistentHistoryResultType for options
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -144,6 +146,9 @@ public class NSPersistentHistoryResult extends NSPersistentStoreResult {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object result();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("resultType")
     @NInt

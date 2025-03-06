@@ -185,6 +185,9 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
     @Selector("initWithCoder:")
     public native INPersonHandle initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithValue:type:")
     public native INPersonHandle initWithValueType(@Nullable String value, @NInt long type);
@@ -211,11 +214,17 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("value")

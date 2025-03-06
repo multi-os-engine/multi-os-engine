@@ -85,6 +85,9 @@ public class PKAddPassButton extends UIButton {
             double frameDuration,
             @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("addPassButtonWithStyle:")
     public static native PKAddPassButton addPassButtonWithStyle(@NInt long addPassButtonStyle);
@@ -386,6 +389,9 @@ public class PKAddPassButton extends UIButton {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("addPassButtonStyle")
     @NInt
@@ -442,6 +448,9 @@ public class PKAddPassButton extends UIButton {
     @Selector("init")
     public native PKAddPassButton init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithAddPassButtonStyle:")
     public native PKAddPassButton initWithAddPassButtonStyle(@NInt long style);
@@ -454,6 +463,9 @@ public class PKAddPassButton extends UIButton {
     @Selector("initWithFrame:")
     public native PKAddPassButton initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAddPassButtonStyle:")
     public native void setAddPassButtonStyle(@NInt long value);

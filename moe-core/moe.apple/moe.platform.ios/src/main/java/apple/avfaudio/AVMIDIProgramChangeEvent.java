@@ -111,6 +111,8 @@ public class AVMIDIProgramChangeEvent extends AVMIDIChannelEvent {
      * Per the General MIDI specification, the actual instrument that is chosen will depend on optional
      * AVMIDIControlChangeMessageTypeBankSelect events sent prior to this program change.
      * 
+     * API-Since: 16.0
+     * 
      * @param channel
      *                      The MIDI channel for the message. Range: 0-15.
      * @param programNumber
@@ -150,6 +152,8 @@ public class AVMIDIProgramChangeEvent extends AVMIDIChannelEvent {
     /**
      * [@property] programNumber
      * The MIDI program number. Range: 0-127.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("programNumber")
@@ -166,6 +170,8 @@ public class AVMIDIProgramChangeEvent extends AVMIDIChannelEvent {
     /**
      * [@property] programNumber
      * The MIDI program number. Range: 0-127.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setProgramNumber:")

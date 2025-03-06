@@ -95,6 +95,9 @@ public class MKHybridMapConfiguration extends MKMapConfiguration {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("init")
     public native MKHybridMapConfiguration init();
@@ -103,6 +106,9 @@ public class MKHybridMapConfiguration extends MKMapConfiguration {
     @Selector("initWithCoder:")
     public native MKHybridMapConfiguration initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithElevationStyle:")
     public native MKHybridMapConfiguration initWithElevationStyle(@NInt long elevationStyle);
@@ -134,6 +140,9 @@ public class MKHybridMapConfiguration extends MKMapConfiguration {
     @Selector("new")
     public static native MKHybridMapConfiguration new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
@@ -147,10 +156,16 @@ public class MKHybridMapConfiguration extends MKMapConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setShowsTraffic:")
     public native void setShowsTraffic(boolean value);
@@ -159,6 +174,9 @@ public class MKHybridMapConfiguration extends MKMapConfiguration {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("showsTraffic")
     public native boolean showsTraffic();

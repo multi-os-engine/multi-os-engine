@@ -200,6 +200,8 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
      * and positive to indicate floors above the ground floor.
      * It is not intended to match any numbering that might actually be used in the building.
      * It is erroneous to use as an estimate of altitude.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("level")

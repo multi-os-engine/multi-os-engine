@@ -47,6 +47,8 @@ import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("JavaScriptCore")
@@ -267,8 +269,8 @@ public final class JavaScriptCore {
      * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue whose Typed Array type to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
-     *                  to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
      * @return A value of type JSTypedArrayType that identifies value's Typed Array type, or kJSTypedArrayTypeNone if
      *         the value is not a Typed Array object.
      * 
@@ -286,8 +288,8 @@ public final class JavaScriptCore {
      * @param ctx       The execution context to use.
      * @param a         The first value to test.
      * @param b         The second value to test.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
-     *                  to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
      * @return true if the two values are equal, false if they are not equal or an exception is thrown.
      */
     @Generated
@@ -318,8 +320,9 @@ public final class JavaScriptCore {
      * @param ctx         The execution context to use.
      * @param value       The JSValue to test.
      * @param constructor The constructor to test against.
-     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
-     *                    to store an exception.
+     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. To reliable detect
+     *                    exception, initialize this to null before the call. Pass NULL if you do not care to store an
+     *                    exception.
      * @return true if value is an object constructed by constructor, as compared by the JS instanceof operator,
      *         otherwise false.
      */
@@ -416,8 +419,8 @@ public final class JavaScriptCore {
      * @param value     The value to serialize.
      * @param indent    The number of spaces to indent when nesting. If 0, the resulting JSON will not contains
      *                  newlines. The size of the indent is clamped to 10 spaces.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
-     *                  to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
      * @return A JSString with the result of serialization, or NULL if an exception is thrown.
      * 
      *         API-Since: 7.0
@@ -445,10 +448,12 @@ public final class JavaScriptCore {
      * 
      * Converts a JavaScript value to number and returns the resulting number.
      * 
+     * The result is equivalent to `Number(value)` in JavaScript.
+     * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
-     *                  to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
      * @return The numeric result of conversion, or NaN if an exception is thrown.
      */
     @Generated
@@ -462,8 +467,8 @@ public final class JavaScriptCore {
      * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
-     *                  to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
      * @return A JSString with the result of conversion, or NULL if an exception is thrown. Ownership follows the Create
      *         Rule.
      */
@@ -478,8 +483,8 @@ public final class JavaScriptCore {
      * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
-     *                  to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
      * @return The JSObject result of conversion, or NULL if an exception is thrown.
      */
     @Generated
@@ -1938,4 +1943,275 @@ public final class JavaScriptCore {
     @Generated
     @CFunction
     public static native void JSGlobalContextSetInspectable(JSGlobalContextRef ctx, boolean inspectable);
+
+    /**
+     * [@function]
+     * 
+     * Tests whether a JavaScript value's type is the BigInt type.
+     * 
+     * @param ctx   The execution context to use.
+     * @param value The JSValue to test.
+     * @return true if value's type is the BigInt type, otherwise false.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean JSValueIsBigInt(@NotNull JSContextRef ctx, @NotNull JSValueRef value);
+
+    /**
+     * [@function]
+     * 
+     * Compares two JSValues.
+     * 
+     * The result is computed by comparing the results of JavaScript's `==`, `<`, and `>` operators. If either `left` or
+     * `right` is (or would coerce to) `NaN` in JavaScript, then the result is kJSRelationConditionUndefined.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param left      The JSValue as the left operand.
+     * @param right     The JSValue as the right operand.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @CFunction
+    public static native int JSValueCompare(@NotNull JSContextRef ctx, @NotNull JSValueRef left,
+            @NotNull JSValueRef right, @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Compares a JSValue with a signed 64-bit integer.
+     * 
+     * `left` is converted to an integer according to the rules specified by the JavaScript language then compared with
+     * `right`.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param left      The JSValue as the left operand.
+     * @param right     The int64_t as the right operand.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @CFunction
+    public static native int JSValueCompareInt64(@NotNull JSContextRef ctx, @NotNull JSValueRef left, long right,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Compares a JSValue with an unsigned 64-bit integer.
+     * 
+     * `left` is converted to an integer according to the rules specified by the JavaScript language then compared with
+     * `right`.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param left      The JSValue as the left operand.
+     * @param right     The uint64_t as the right operand.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @CFunction
+    public static native int JSValueCompareUInt64(@NotNull JSContextRef ctx, @NotNull JSValueRef left, long right,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Compares a JSValue with a double.
+     * 
+     * `left` is converted to a double according to the rules specified by the JavaScript language then compared with
+     * `right`.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param left      The JSValue as the left operand.
+     * @param right     The double as the right operand.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A value of JSRelationCondition, a kJSRelationConditionUndefined is returned if an exception is thrown.
+     */
+    @Generated
+    @CFunction
+    public static native int JSValueCompareDouble(@NotNull JSContextRef ctx, @NotNull JSValueRef left, double right,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Creates a JavaScript BigInt with a double.
+     * 
+     * If the value is not an integer, an exception is thrown.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param value     The value to copy into the new BigInt JSValue.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A BigInt JSValue of the value, or NULL if an exception is thrown.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native JSValueRef JSBigIntCreateWithDouble(@NotNull JSContextRef ctx, double value,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Creates a JavaScript BigInt with a 64-bit signed integer.
+     * 
+     * @param ctx       The execution context to use.
+     * @param integer   The 64-bit signed integer to copy into the new BigInt JSValue.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A BigInt JSValue of the integer, or NULL if an exception is thrown.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native JSValueRef JSBigIntCreateWithInt64(@NotNull JSContextRef ctx, long integer,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Creates a JavaScript BigInt with a 64-bit unsigned integer.
+     * 
+     * @param ctx       The execution context to use.
+     * @param integer   The 64-bit unsigned integer to copy into the new BigInt JSValue.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A BigInt JSValue of the integer, or NULL if an exception is thrown.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native JSValueRef JSBigIntCreateWithUInt64(@NotNull JSContextRef ctx, long integer,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Creates a JavaScript BigInt with an integer represented in string.
+     * 
+     * This is equivalent to calling the `BigInt` constructor from JavaScript with a string argument.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param string    The JSStringRef representation of an integer.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A BigInt JSValue of the string, or NULL if an exception is thrown.
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native JSValueRef JSBigIntCreateWithString(@NotNull JSContextRef ctx, @NotNull JSStringRef string,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Converts a JSValue to a singed 32-bit integer and returns the resulting integer.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the value
+     * is a BigInt, then the JSValue is truncated to an int32_t.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param value     The JSValue to convert.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return An int32_t with the result of conversion, or 0 if an exception is thrown. Since 0 is valid value,
+     *         `exception` must be checked after the call.
+     */
+    @Generated
+    @CFunction
+    public static native int JSValueToInt32(@NotNull JSContextRef ctx, @NotNull JSValueRef value,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Converts a JSValue to an unsigned 32-bit integer and returns the resulting integer.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the value
+     * is a BigInt, then the JSValue is truncated to a uint32_t.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param value     The JSValue to convert.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A uint32_t with the result of conversion, or 0 if an exception is thrown. Since 0 is valid value,
+     *         `exception` must be checked after the call.
+     */
+    @Generated
+    @CFunction
+    public static native int JSValueToUInt32(@NotNull JSContextRef ctx, @NotNull JSValueRef value,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Converts a JSValue to a singed 64-bit integer and returns the resulting integer.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the value
+     * is a BigInt, then the JSValue is truncated to an int64_t.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param value     The JSValue to convert.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return An int64_t with the result of conversion, or 0 if an exception is thrown. Since 0 is valid value,
+     *         `exception` must be checked after the call.
+     */
+    @Generated
+    @CFunction
+    public static native long JSValueToInt64(@NotNull JSContextRef ctx, @NotNull JSValueRef value,
+            @Nullable Ptr<JSValueRef> exception);
+
+    /**
+     * [@function]
+     * 
+     * Converts a JSValue to an unsigned 64-bit integer and returns the resulting integer.
+     * 
+     * The JSValue is converted to an integer according to the rules specified by the JavaScript language. If the value
+     * is a BigInt, then the JSValue is truncated to a uint64_t.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param ctx       The execution context to use.
+     * @param value     The JSValue to convert.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. To reliable detect exception,
+     *                  initialize this to null before the call. Pass NULL if you do not care to store an exception.
+     * @return A uint64_t with the result of conversion, or 0 if an exception is thrown. Since 0 is valid value,
+     *         `exception` must be checked after the call.
+     */
+    @Generated
+    @CFunction
+    public static native long JSValueToUInt64(@NotNull JSContextRef ctx, @NotNull JSValueRef value,
+            @Nullable Ptr<JSValueRef> exception);
 }

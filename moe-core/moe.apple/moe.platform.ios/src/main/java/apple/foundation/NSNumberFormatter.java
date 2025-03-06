@@ -740,4 +740,25 @@ public class NSNumberFormatter extends NSFormatter {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * See `kCFNumberFormatterMinGroupingDigits` in `CFNumberFormatter` for an explanation on how minimum grouping
+     * digits is used.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("minimumGroupingDigits")
+    @NInt
+    public native long minimumGroupingDigits();
+
+    /**
+     * See `kCFNumberFormatterMinGroupingDigits` in `CFNumberFormatter` for an explanation on how minimum grouping
+     * digits is used.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMinimumGroupingDigits:")
+    public native void setMinimumGroupingDigits(@NInt long value);
 }

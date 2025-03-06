@@ -147,6 +147,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -184,6 +187,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * delegate method. When the value of this property is NO, delegates will be allowed more time to process old frames
      * before new frames are discarded, but application memory usage may increase significantly as a result. The default
      * value is YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("alwaysDiscardsLateVideoFrames")
@@ -221,6 +226,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Selector("availableVideoCodecTypes")
     public native NSArray<String> availableVideoCodecTypes();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("init")
     public native AVCaptureVideoDataOutput init();
@@ -288,6 +296,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setSampleBufferDelegate:queue:
      * method.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -302,6 +312,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * The value of this property is an object conforming to the AVCaptureVideoDataOutputSampleBufferDelegate protocol
      * that will receive sample buffers after they are captured. The delegate is set using the
      * setSampleBufferDelegate:queue: method.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -320,6 +332,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * delegate method. When the value of this property is NO, delegates will be allowed more time to process old frames
      * before new frames are discarded, but application memory usage may increase significantly as a result. The default
      * value is YES.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAlwaysDiscardsLateVideoFrames:")
@@ -367,7 +381,10 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * bound from frames that have not been processed.
      * 
      * A serial dispatch queue must be used to guarantee that video frames will be delivered in order. The
-     * sampleBufferCallbackQueue parameter may not be NULL, except when setting the sampleBufferDelegate to nil.
+     * sampleBufferCallbackQueue parameter may not be NULL, except when setting the sampleBufferDelegate to nil
+     * otherwise -setSampleBufferDelegate:queue: throws an NSInvalidArgumentException.
+     * 
+     * API-Since: 4.0
      * 
      * @param sampleBufferDelegate
      *                                  An object conforming to the AVCaptureVideoDataOutputSampleBufferDelegate
@@ -401,6 +418,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * thrown. If width or height exceeds the source's activeFormat's width or height, an NSInvalidArgumentException is
      * thrown. Changing width and height when deliversPreviewSizedOutputBuffers is set to YES is not supported and
      * throws an NSInvalidArgumentException.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setVideoSettings:")
@@ -426,6 +445,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * thrown. If width or height exceeds the source's activeFormat's width or height, an NSInvalidArgumentException is
      * thrown. Changing width and height when deliversPreviewSizedOutputBuffers is set to YES is not supported and
      * throws an NSInvalidArgumentException.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("videoSettings")

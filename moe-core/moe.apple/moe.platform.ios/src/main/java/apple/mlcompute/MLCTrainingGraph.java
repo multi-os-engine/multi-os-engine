@@ -35,8 +35,7 @@ import org.jetbrains.annotations.Nullable;
  * plus additional layers added directly to the training graph.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -63,7 +62,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param inputs     The inputs
      * @param lossLabels The loss label inputs
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("addInputs:lossLabels:")
     public native boolean addInputsLossLabels(@NotNull NSDictionary<String, ? extends MLCTensor> inputs,
@@ -81,7 +84,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param lossLabels       The loss label inputs
      * @param lossLabelWeights The loss label weights
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("addInputs:lossLabels:lossLabelWeights:")
     public native boolean addInputsLossLabelsLossLabelWeights(@NotNull NSDictionary<String, ? extends MLCTensor> inputs,
@@ -93,7 +100,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param outputs The outputs
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("addOutputs:")
     public native boolean addOutputs(@NotNull NSDictionary<String, ? extends MLCTensor> outputs);
@@ -115,7 +126,11 @@ public class MLCTrainingGraph extends MLCGraph {
      *               that is input to some user specified code and will need to
      *               provide a user gradient during the gradient pass.
      * @return A gradient tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("allocateUserGradientForTensor:")
@@ -139,7 +154,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param deviceData The optimizer device data to be associated with the tensor
      * @param tensor     The tensor
      * @return A Boolean value indicating whether the data is successfully associated with the tensor .
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("bindOptimizerData:deviceData:withTensor:")
     public native boolean bindOptimizerDataDeviceDataWithTensor(@NotNull NSArray<? extends MLCTensorData> data,
@@ -178,7 +197,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param optimizer The MLCOptimizer object
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("compileOptimizer:")
     public native boolean compileOptimizer(@NotNull MLCOptimizer optimizer);
@@ -189,7 +212,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param options The compiler options to use when compiling the training graph
      * @param device  The MLCDevice object
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("compileWithOptions:device:")
     public native boolean compileWithOptionsDevice(long options, @NotNull MLCDevice device);
@@ -232,7 +259,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * optimizer update is executed.
      * 
      * @return A NSUInteger value
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("deviceMemorySize")
     @NUInt
@@ -246,7 +277,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeForwardWithBatchSize:options:completionHandler:")
     public native boolean executeForwardWithBatchSizeOptionsCompletionHandler(@NUInt long batchSize, long options,
@@ -269,7 +304,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param outputsData       The data objects to use for outputs
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeForwardWithBatchSize:options:outputsData:completionHandler:")
     public native boolean executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler(@NUInt long batchSize,
@@ -292,7 +331,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeGradientWithBatchSize:options:completionHandler:")
     public native boolean executeGradientWithBatchSizeOptionsCompletionHandler(@NUInt long batchSize, long options,
@@ -315,7 +358,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param outputsData       The data objects to use for outputs
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeGradientWithBatchSize:options:outputsData:completionHandler:")
     public native boolean executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler(@NUInt long batchSize,
@@ -336,7 +383,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeOptimizerUpdateWithOptions:completionHandler:")
     public native boolean executeOptimizerUpdateWithOptionsCompletionHandler(long options,
@@ -369,7 +420,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler(
@@ -399,7 +454,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:outputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler(
@@ -435,7 +494,11 @@ public class MLCTrainingGraph extends MLCGraph {
      *                  - MLCMultiheadAttentionLayer
      * @return The gradient data. Will return nil if the layer is marked as not trainable or if
      *         training graph is not executed with separate calls to forward and gradient passes.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gradientDataForParameter:layer:")
@@ -446,12 +509,17 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param input The input tensor
      * @return The gradient tensor
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gradientTensorForInput:")
     public native MLCTensor gradientTensorForInput(@NotNull MLCTensor input);
 
+    @Deprecated
     @Generated
     @Selector("graph")
     public static native MLCTrainingGraph graph();
@@ -464,7 +532,11 @@ public class MLCTrainingGraph extends MLCGraph {
      *                     using nodeWithLayer:sources:lossLabels
      * @param optimizer    The optimizer to use
      * @return A new training graph object
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("graphWithGraphObjects:lossLayer:optimizer:")
     public static native MLCTrainingGraph graphWithGraphObjectsLossLayerOptimizer(
@@ -510,7 +582,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param graphs The list of training graphs to link
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("linkWithGraphs:")
     public native boolean linkWithGraphs(@NotNull NSArray<? extends MLCTrainingGraph> graphs);
@@ -524,7 +600,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * [@property] optimizer
      * 
      * The optimizer to be used with the training graph
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("optimizer")
@@ -543,7 +623,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param layer A layer in the training graph
      * @return A list of tensors
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("resultGradientTensorsForLayer:")
@@ -558,7 +642,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param parameters The list of input tensors to be updated by the optimizer
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("setTrainingTensorParameters:")
     public native boolean setTrainingTensorParameters(@NotNull NSArray<? extends MLCTensorParameter> parameters);
@@ -572,7 +660,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param layer A layer in the training graph
      * @return A list of tensors
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("sourceGradientTensorsForLayer:")
@@ -583,7 +675,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * @param tensors The list of tensors
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("stopGradientForTensors:")
     public native boolean stopGradientForTensors(@NotNull NSArray<? extends MLCTensor> tensors);
@@ -595,7 +691,11 @@ public class MLCTrainingGraph extends MLCGraph {
     /**
      * Synchronize updates (weights/biases from convolution, fully connected and LSTM layers, tensor parameters)
      * from device memory to host memory.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("synchronizeUpdates")
     public native void synchronizeUpdates();

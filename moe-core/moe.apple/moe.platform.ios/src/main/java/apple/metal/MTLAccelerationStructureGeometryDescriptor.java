@@ -64,6 +64,8 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     /**
      * Whether intersection functions may be invoked more than once per ray/primitive
      * intersection. Defaults to YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("allowDuplicateIntersectionFunctionInvocation")
@@ -131,6 +133,9 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("intersectionFunctionTableOffset")
     @NUInt
@@ -152,6 +157,8 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
 
     /**
      * Whether the geometry is opaque
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("opaque")
@@ -168,17 +175,24 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     /**
      * Whether intersection functions may be invoked more than once per ray/primitive
      * intersection. Defaults to YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAllowDuplicateIntersectionFunctionInvocation:")
     public native void setAllowDuplicateIntersectionFunctionInvocation(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setIntersectionFunctionTableOffset:")
     public native void setIntersectionFunctionTableOffset(@NUInt long value);
 
     /**
      * Whether the geometry is opaque
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setOpaque:")

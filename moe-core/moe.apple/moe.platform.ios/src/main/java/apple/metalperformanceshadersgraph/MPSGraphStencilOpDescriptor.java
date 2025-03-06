@@ -27,10 +27,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This class defines parameters for a stencil operation.
+ * The class that defines the parameters for a stencil operation.
  * 
- * Use this descriptor with the following ``MPSGraph`` methods:
- * - ``MPSGraph/stencilWithSourceTensor:weightsTensor:descriptor:name:``.
+ * Use this descriptor with the following ``MPSGraph`` method:
+ * - ``MPSGraph/stencilWithSourceTensor:weightsTensor:descriptor:name:``
  * 
  * API-Since: 15.0
  */
@@ -68,7 +68,10 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
 
     /**
      * The property that determines which values to use for padding the input tensor.
+     * 
      * Default value: `MPSGraphPaddingModeZero`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("boundaryMode")
@@ -117,6 +120,8 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
      * - Parameters:
      * - paddingStyle: See `paddingStyle` property.
      * - Returns: A valid MPSGraphStencilOpDescriptor object
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("descriptorWithPaddingStyle:")
@@ -160,7 +165,10 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
 
     /**
      * The padding value for `boundaryMode = MPSGraphPaddingModeConstant`.
+     * 
      * Default value: 0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("paddingConstant")
@@ -168,7 +176,10 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
 
     /**
      * The property that defines what kind of padding to apply to the stencil operation.
+     * 
      * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("paddingStyle")
@@ -176,7 +187,11 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
     public native long paddingStyle();
 
     /**
-     * The reduction mode to use within the stecil window. Default value: `MPSGraphReductionModeSum`.
+     * The reduction mode to use within the stencil window.
+     * 
+     * Default value: `MPSGraphReductionModeSum`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("reductionMode")
@@ -193,7 +208,10 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
 
     /**
      * The property that determines which values to use for padding the input tensor.
+     * 
      * Default value: `MPSGraphPaddingModeZero`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBoundaryMode:")
@@ -201,7 +219,10 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
 
     /**
      * The padding value for `boundaryMode = MPSGraphPaddingModeConstant`.
+     * 
      * Default value: 0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPaddingConstant:")
@@ -209,14 +230,21 @@ public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCop
 
     /**
      * The property that defines what kind of padding to apply to the stencil operation.
+     * 
      * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPaddingStyle:")
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * The reduction mode to use within the stecil window. Default value: `MPSGraphReductionModeSum`.
+     * The reduction mode to use within the stencil window.
+     * 
+     * Default value: `MPSGraphReductionModeSum`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setReductionMode:")

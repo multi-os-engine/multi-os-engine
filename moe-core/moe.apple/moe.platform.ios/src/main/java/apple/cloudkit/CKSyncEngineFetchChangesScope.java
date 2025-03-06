@@ -111,6 +111,8 @@ public class CKSyncEngineFetchChangesScope extends NSObject implements NSCopying
     /**
      * A specific set of zone IDs to exclude from this scope.
      * If you know that you don't want to fetch changes for a particular set of zones, you can set those zones here.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("excludedZoneIDs")
@@ -128,6 +130,8 @@ public class CKSyncEngineFetchChangesScope extends NSObject implements NSCopying
 
     /**
      * Creates a scope that includes all zones except the specified excluded zones.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithExcludedZoneIDs:")
@@ -136,6 +140,8 @@ public class CKSyncEngineFetchChangesScope extends NSObject implements NSCopying
 
     /**
      * Creates a scope that includes only the specified set of zones.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithZoneIDs:")
@@ -198,6 +204,8 @@ public class CKSyncEngineFetchChangesScope extends NSObject implements NSCopying
      * A specific set of zone IDs to include in the scope.
      * For example, if you want to fetch changes for a specific set of zones, you can specify them here.
      * If `nil`, this scope includes all zones except those in `excludedZoneIDs`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("zoneIDs")

@@ -25,6 +25,9 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISceneDelegate")
 public interface UISceneDelegate {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("scene:continueUserActivity:")
@@ -32,6 +35,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("scene:didFailToContinueUserActivityWithType:error:")
@@ -40,6 +46,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("scene:didUpdateUserActivity:")
@@ -47,6 +56,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("scene:openURLContexts:")
@@ -54,6 +66,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("scene:willConnectToSession:options:")
@@ -62,6 +77,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("scene:willContinueUserActivityWithType:")
@@ -69,6 +87,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("sceneDidBecomeActive:")
@@ -76,6 +97,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("sceneDidDisconnect:")
@@ -83,6 +107,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("sceneDidEnterBackground:")
@@ -90,6 +117,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("sceneWillEnterForeground:")
@@ -97,6 +127,9 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("sceneWillResignActive:")
@@ -114,6 +147,8 @@ public interface UISceneDelegate {
      * have the activity set as their userActivity property, the UIResponder updateUserActivityState
      * method is called to update the activity. This is done synchronously and ensures the activity
      * has all info filled in before it is saved.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -129,6 +164,8 @@ public interface UISceneDelegate {
      * set on the UISceneSession.stateRestorationActivity property.
      * Note that, if it's required earlier, this activity is also already available in the
      * UISceneSession.stateRestorationActivity at scene connection time.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

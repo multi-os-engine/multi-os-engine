@@ -174,6 +174,8 @@ public class VNGenerateAttentionBasedSaliencyImageRequest extends VNImageBasedRe
 
     /**
      * VNSaliencyImageObservation results.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

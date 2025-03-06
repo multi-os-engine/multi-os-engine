@@ -28,10 +28,16 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CNChangeHistoryEventVisitor")
 public interface CNChangeHistoryEventVisitor {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("visitAddContactEvent:")
     void visitAddContactEvent(@NotNull CNChangeHistoryAddContactEvent event);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("visitAddGroupEvent:")
@@ -39,6 +45,9 @@ public interface CNChangeHistoryEventVisitor {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("visitAddMemberToGroupEvent:")
@@ -46,6 +55,9 @@ public interface CNChangeHistoryEventVisitor {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("visitAddSubgroupToGroupEvent:")
@@ -53,10 +65,16 @@ public interface CNChangeHistoryEventVisitor {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("visitDeleteContactEvent:")
     void visitDeleteContactEvent(@NotNull CNChangeHistoryDeleteContactEvent event);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("visitDeleteGroupEvent:")
@@ -64,10 +82,16 @@ public interface CNChangeHistoryEventVisitor {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("visitDropEverythingEvent:")
     void visitDropEverythingEvent(@NotNull CNChangeHistoryDropEverythingEvent event);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("visitRemoveMemberFromGroupEvent:")
@@ -75,6 +99,9 @@ public interface CNChangeHistoryEventVisitor {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("visitRemoveSubgroupFromGroupEvent:")
@@ -82,10 +109,16 @@ public interface CNChangeHistoryEventVisitor {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("visitUpdateContactEvent:")
     void visitUpdateContactEvent(@NotNull CNChangeHistoryUpdateContactEvent event);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("visitUpdateGroupEvent:")

@@ -40,6 +40,8 @@ import org.jetbrains.annotations.NotNull;
 public interface SFSpeechRecognitionTaskDelegate {
     /**
      * Called when the task first detects speech in the source audio
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -50,6 +52,8 @@ public interface SFSpeechRecognitionTaskDelegate {
 
     /**
      * Called only for final recognitions of utterances. No more about the utterance will be reported
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -62,6 +66,8 @@ public interface SFSpeechRecognitionTaskDelegate {
     /**
      * Called when recognition of all requested utterances is finished.
      * If successfully is false, the error property of the task will contain error information
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -73,6 +79,8 @@ public interface SFSpeechRecognitionTaskDelegate {
 
     /**
      * Called for all recognitions, including non-final hypothesis
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -84,6 +92,8 @@ public interface SFSpeechRecognitionTaskDelegate {
 
     /**
      * Called when the task is no longer accepting new audio but may be finishing final processing
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -94,11 +104,25 @@ public interface SFSpeechRecognitionTaskDelegate {
 
     /**
      * Called when the task has been cancelled, either by client app, the user, or the system
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
     @Selector("speechRecognitionTaskWasCancelled:")
     default void speechRecognitionTaskWasCancelled(@NotNull SFSpeechRecognitionTask task) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Returns amount of audio processed by the task
+     * 
+     * API-Since: 10.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("speechRecognitionTask:didProcessAudioDuration:")
+    default void speechRecognitionTaskDidProcessAudioDuration(@NotNull SFSpeechRecognitionTask task, double duration) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

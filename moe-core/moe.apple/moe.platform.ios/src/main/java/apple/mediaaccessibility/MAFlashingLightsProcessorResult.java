@@ -112,6 +112,8 @@ public class MAFlashingLightsProcessorResult extends NSObject {
 
     /**
      * Indicates the measured intensity of sequences of flashing lights for the specific inSurface. Range is [0-100].
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("intensityLevel")
@@ -129,6 +131,8 @@ public class MAFlashingLightsProcessorResult extends NSObject {
     /**
      * Indicates the amount of dimming that will occur in the outSurface based on analysis of the intensity of the
      * flashing lights. Range is [0-100].
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("mitigationLevel")
@@ -157,6 +161,8 @@ public class MAFlashingLightsProcessorResult extends NSObject {
 
     /**
      * Indicates whether the outSurface was modified. If the surface cannot be processed, this will be false.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("surfaceProcessed")

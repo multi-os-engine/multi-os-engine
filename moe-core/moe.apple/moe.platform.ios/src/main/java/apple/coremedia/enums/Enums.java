@@ -1026,4 +1026,9 @@ public final class Enums {
      * API-Since: 17.0
      */
     @Generated public static final int kCMMuxedStreamType_EmbeddedDeviceScreenRecording = 0x69737220;
+    /**
+     * API-Since: 4.0
+     */
+    @Generated public static final int kCMVideoCodecType_JPEG_XL = 0x6A786C63;
+    @Generated public static final int kCMMediaType_AuxiliaryPicture = 0x61757876;
 }

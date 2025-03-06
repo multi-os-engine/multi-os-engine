@@ -124,6 +124,8 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * @param blendShapes A dictionary of blend shape coefficients.
      * @return Face geometry after applying the blend shapes.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithBlendShapes:")
@@ -174,6 +176,8 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * The number of texture coordinates of the face geometry.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("textureCoordinateCount")
@@ -182,6 +186,8 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * The number of triangles of the face geometry.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("triangleCount")
@@ -190,6 +196,8 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * The triangle indices of the geometry.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -203,6 +211,8 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * The number of mesh vertices of the geometry.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("vertexCount")

@@ -168,12 +168,18 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("accessibilityContainer")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object accessibilityContainer();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("accessibilityFrame")
     @ByValue
@@ -190,6 +196,9 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @ByValue
     public native CGRect accessibilityFrameInContainerSpace();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("accessibilityHint")
@@ -200,15 +209,24 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("accessibilityLabel")
     public native String accessibilityLabel();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("accessibilityTraits")
     public native long accessibilityTraits();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("accessibilityValue")
@@ -220,20 +238,31 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
 
     /**
      * initialize with the accessibility container that contains this element
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithAccessibilityContainer:")
     public native UIAccessibilityElement initWithAccessibilityContainer(
             @NotNull @Mapped(ObjCObjectMapper.class) Object container);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("isAccessibilityElement")
     public native boolean isAccessibilityElement();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAccessibilityContainer:")
     public native void setAccessibilityContainer_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     public void setAccessibilityContainer(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = accessibilityContainer();
@@ -246,6 +275,9 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
         }
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAccessibilityFrame:")
     public native void setAccessibilityFrame(@ByValue CGRect value);
@@ -260,6 +292,9 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Selector("setAccessibilityFrameInContainerSpace:")
     public native void setAccessibilityFrameInContainerSpace(@ByValue CGRect value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAccessibilityHint:")
     public native void setAccessibilityHint(@Nullable String value);
@@ -268,18 +303,30 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Selector("setAccessibilityIdentifier:")
     public native void setAccessibilityIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAccessibilityLabel:")
     public native void setAccessibilityLabel(@Nullable String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAccessibilityTraits:")
     public native void setAccessibilityTraits(long value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setAccessibilityValue:")
     public native void setAccessibilityValue(@Nullable String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setIsAccessibilityElement:")
     public native void setIsAccessibilityElement(boolean value);

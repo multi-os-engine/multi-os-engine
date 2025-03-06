@@ -96,6 +96,8 @@ public class MXNetworkTransferMetric extends MXMetric {
      * This data is radio access technology agnostic.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -110,6 +112,8 @@ public class MXNetworkTransferMetric extends MXMetric {
      * This data is radio access technology agnostic.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -122,6 +126,8 @@ public class MXNetworkTransferMetric extends MXMetric {
      * Cumulative amount of data downloaded over WiFi.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -134,6 +140,8 @@ public class MXNetworkTransferMetric extends MXMetric {
      * Cumulative amount of data uploaded over WiFi.
      * 
      * Dimensioned as NSUnitInformationStorage.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

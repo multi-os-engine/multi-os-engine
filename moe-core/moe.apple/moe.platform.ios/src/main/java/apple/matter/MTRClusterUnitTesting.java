@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterUnitTesting extends MTRCluster {
+public class MTRClusterUnitTesting extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -2764,4 +2764,40 @@ public class MTRClusterUnitTesting extends MTRCluster {
     public native void writeAttributeWriteOnlyInt8uWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("testNullableOptionalRequestWithExpectedValues:expectedValueInterval:completion:")
+    public native void testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_testNullableOptionalRequestWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRUnitTestingClusterTestNullableOptionalResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("testSimpleOptionalArgumentRequestWithExpectedValues:expectedValueInterval:completion:")
+    public native void testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_testSimpleOptionalArgumentRequestWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable NSError error);
+    }
 }

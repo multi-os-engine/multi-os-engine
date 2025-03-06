@@ -118,6 +118,8 @@ public class SKFieldNode extends SKNode {
     /**
      * Slows an object proportionally to the object’s velocity.
      * Use this to simulate effects such as friction from motion through the air.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -129,6 +131,8 @@ public class SKFieldNode extends SKNode {
      * added to SKPhysicsBodies to accomplish this. An example use of this field is to make objects behavior differently
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the first part of the Lorentz equation, F = qE
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -167,6 +171,8 @@ public class SKFieldNode extends SKNode {
      * added to SKPhysicsBodies to accomplish this. An example use of this field is to make objects behavior differently
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the second part of the Lorentz equation, F = qvB
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -196,6 +202,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see smoothness
      * @see animationSpeed
+     * 
+     *      API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -227,6 +235,8 @@ public class SKFieldNode extends SKNode {
      * The force is proportional to the distance from the field origin. Varies with the mass of the object according to
      * F = ma
      * The field node's rotation property can be used to orient the gravity in a particular direction.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -249,6 +259,8 @@ public class SKFieldNode extends SKNode {
      * A Hooke’s law force - a force linearly proportional to distance from the center of the field. An object in this
      * field will oscillate with a period proportional to the inverse of the mass.
      * An example use is to keep objects confined to a particular region.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -267,6 +279,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see smoothness
      * @see animationSpeed
+     * 
+     *      API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -285,6 +299,8 @@ public class SKFieldNode extends SKNode {
      *                        A, if present in the SKTexture, are ignored.
      * 
      * @see texture
+     * 
+     *      API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -301,6 +317,8 @@ public class SKFieldNode extends SKNode {
      * The force will be CCW to the direction. Make the strength negative to apply force in the CW direction.
      * Amount is proportional to distance from center and the object's mass.
      * Use this to create effects such as tornadoes.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -314,6 +332,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("animationSpeed")
@@ -326,6 +346,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see SKPhysicsBody.fieldBitMask
      * @see SKEmitterNode.fieldBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("categoryBitMask")
@@ -338,6 +360,8 @@ public class SKFieldNode extends SKNode {
      * The default exponent is zero, which results in a uniform field with no falloff.
      * 
      * @see minimumRadius
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("falloff")
@@ -355,6 +379,8 @@ public class SKFieldNode extends SKNode {
      * If enabled, a field has an effect.
      * 
      * default YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isEnabled")
@@ -364,6 +390,8 @@ public class SKFieldNode extends SKNode {
      * If enabled, a field has an effect.
      * 
      * default YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -374,6 +402,8 @@ public class SKFieldNode extends SKNode {
      * If two or more exclusive fields overlap, it is undefined which one of them will take effect
      * 
      * @see region
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("isExclusive")
@@ -384,6 +414,8 @@ public class SKFieldNode extends SKNode {
      * If two or more exclusive fields overlap, it is undefined which one of them will take effect
      * 
      * @see region
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setExclusive:")
@@ -391,6 +423,8 @@ public class SKFieldNode extends SKNode {
 
     /**
      * minimum radius of effect. Default is very small.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("minimumRadius")
@@ -398,6 +432,8 @@ public class SKFieldNode extends SKNode {
 
     /**
      * The region property is the domain of the field's effect. No force is applied to objects outside the region.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -411,6 +447,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setAnimationSpeed:")
@@ -423,6 +461,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see SKPhysicsBody.fieldBitMask
      * @see SKEmitterNode.fieldBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setCategoryBitMask:")
@@ -435,6 +475,8 @@ public class SKFieldNode extends SKNode {
      * The default exponent is zero, which results in a uniform field with no falloff.
      * 
      * @see minimumRadius
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setFalloff:")
@@ -442,6 +484,8 @@ public class SKFieldNode extends SKNode {
 
     /**
      * minimum radius of effect. Default is very small.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMinimumRadius:")
@@ -449,6 +493,8 @@ public class SKFieldNode extends SKNode {
 
     /**
      * The region property is the domain of the field's effect. No force is applied to objects outside the region.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRegion:")
@@ -459,6 +505,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setSmoothness:")
@@ -466,6 +514,8 @@ public class SKFieldNode extends SKNode {
 
     /**
      * strength scaling value. default 1.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setStrength:")
@@ -475,6 +525,8 @@ public class SKFieldNode extends SKNode {
      * fields constructed with a texture can be uppdated by assigning a new texture
      * 
      * @see velocityFieldWithTexture:velocityTexture
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setTexture:")
@@ -485,6 +537,8 @@ public class SKFieldNode extends SKNode {
      * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("smoothness")
@@ -492,6 +546,8 @@ public class SKFieldNode extends SKNode {
 
     /**
      * strength scaling value. default 1.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("strength")
@@ -501,6 +557,8 @@ public class SKFieldNode extends SKNode {
      * fields constructed with a texture can be uppdated by assigning a new texture
      * 
      * @see velocityFieldWithTexture:velocityTexture
+     * 
+     *      API-Since: 8.0
      */
     @Nullable
     @Generated

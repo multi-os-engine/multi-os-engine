@@ -66,6 +66,8 @@ public class CLSContext extends CLSObject {
      * 
      * A context can only have a single parent.
      * [@note] objectID of child context may change after it's been added.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("addChildContext:")
@@ -90,6 +92,8 @@ public class CLSContext extends CLSObject {
      * 
      * If a context is already active, it will remain active. If another context is active, the other will resign active
      * before this one becomes active.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("becomeActive")
@@ -120,6 +124,8 @@ public class CLSContext extends CLSObject {
      * Creates a new activity
      * 
      * Creates a new activity and sets it as the current activity.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -131,6 +137,8 @@ public class CLSContext extends CLSObject {
      * 
      * Activity associated with a context. If no activity was ever created this is nil. See: @c -[CLSContext
      * createNewActivity]; for more details.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -150,6 +158,8 @@ public class CLSContext extends CLSObject {
      * createContextForIdentifier:parentContext:parentIdentifierPath:] @endcode If the dataStore does not have a
      * delegate and there are missing contexts then an incomplete list of contexts will be passed to the completion
      * handler. Completion block is called on a background thread.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("descendantMatchingIdentifierPath:completion:")
@@ -172,6 +182,8 @@ public class CLSContext extends CLSObject {
      * 
      * Set the displayOrder if you want your contexts to be displayed in a particular order. The sort key is used as a
      * way to sort sibling contexts in a particular order.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("displayOrder")
@@ -189,6 +201,8 @@ public class CLSContext extends CLSObject {
      * 
      * The identifier could be used to embed information later used for deep linking. For example: @em hydrogen-element,
      * or @em chapter-1.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -209,6 +223,8 @@ public class CLSContext extends CLSObject {
      * @param identifier App-assigned identifier for this context. 256 characters max length.
      * @param type       The type of content this context represents.
      * @param title      Title for what this context represents. 256 characters max length.
+     * 
+     *                   API-Since: 11.3
      */
     @Generated
     @Selector("initWithType:identifier:title:")
@@ -230,6 +246,8 @@ public class CLSContext extends CLSObject {
 
     /**
      * Returns true if self is the active context.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isActive")
@@ -251,6 +269,8 @@ public class CLSContext extends CLSObject {
 
     /**
      * Returns the parent of this context.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -262,6 +282,8 @@ public class CLSContext extends CLSObject {
      * 
      * If you remove a context from its parent and do not add it as a child of another context, it will be deleted when
      * you call -save on the dataStore.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("removeFromParent")
@@ -271,6 +293,8 @@ public class CLSContext extends CLSObject {
      * Resign being active.
      * 
      * This method does nothing if the reciever of the message is not active.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("resignActive")
@@ -289,6 +313,8 @@ public class CLSContext extends CLSObject {
      * 
      * Set the displayOrder if you want your contexts to be displayed in a particular order. The sort key is used as a
      * way to sort sibling contexts in a particular order.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setDisplayOrder:")
@@ -298,6 +324,8 @@ public class CLSContext extends CLSObject {
      * Title of this context.
      * 
      * For example: @em Level 1 @em.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setTitle:")
@@ -307,6 +335,8 @@ public class CLSContext extends CLSObject {
      * Topic associated with this context.
      * 
      * See above for valid, predefined topics.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setTopic:")
@@ -345,6 +375,8 @@ public class CLSContext extends CLSObject {
      * Title of this context.
      * 
      * For example: @em Level 1 @em.
+     * 
+     * API-Since: 11.3
      */
     @NotNull
     @Generated
@@ -355,6 +387,8 @@ public class CLSContext extends CLSObject {
      * Topic associated with this context.
      * 
      * See above for valid, predefined topics.
+     * 
+     * API-Since: 11.3
      */
     @Nullable
     @Generated
@@ -365,6 +399,8 @@ public class CLSContext extends CLSObject {
      * Type of this context
      * 
      * The type that best describes this context.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("type")

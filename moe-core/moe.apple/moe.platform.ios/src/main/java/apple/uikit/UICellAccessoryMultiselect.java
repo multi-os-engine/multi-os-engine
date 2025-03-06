@@ -66,6 +66,8 @@ public class UICellAccessoryMultiselect extends UICellAccessory {
 
     /**
      * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -151,6 +153,8 @@ public class UICellAccessoryMultiselect extends UICellAccessory {
 
     /**
      * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundColor:")

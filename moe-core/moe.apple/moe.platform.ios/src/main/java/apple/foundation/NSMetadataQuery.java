@@ -158,6 +158,9 @@ public class NSMetadataQuery extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -166,11 +169,16 @@ public class NSMetadataQuery extends NSObject {
 
     /**
      * these nest
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("disableUpdates")
     public native void disableUpdates();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enableUpdates")
     public native void enableUpdates();
@@ -193,17 +201,25 @@ public class NSMetadataQuery extends NSObject {
 
     /**
      * array of NSMetadataQueryResultGroups, for first grouping attribute
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
     @Selector("groupedResults")
     public native NSArray<? extends NSMetadataQueryResultGroup> groupedResults();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("groupingAttributes")
     public native NSArray<String> groupingAttributes();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("indexOfResult:")
     @NUInt
@@ -213,18 +229,30 @@ public class NSMetadataQuery extends NSObject {
     @Selector("init")
     public native NSMetadataQuery init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isGathering")
     public native boolean isGathering();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isStarted")
     public native boolean isStarted();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isStopped")
     public native boolean isStopped();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("notificationBatchingInterval")
     public native double notificationBatchingInterval();
@@ -240,11 +268,17 @@ public class NSMetadataQuery extends NSObject {
     @Selector("operationQueue")
     public native NSOperationQueue operationQueue();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("resultAtIndex:")
@@ -253,6 +287,8 @@ public class NSMetadataQuery extends NSObject {
 
     /**
      * Results are NSMetadataItems, or whatever the delegate replaces that with
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("resultCount")
@@ -261,6 +297,8 @@ public class NSMetadataQuery extends NSObject {
 
     /**
      * this is for K-V Bindings, and causes side-effects on the query
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
@@ -280,15 +318,24 @@ public class NSMetadataQuery extends NSObject {
     @Selector("searchItems")
     public native NSArray<?> searchItems();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("searchScopes")
     public native NSArray<?> searchScopes();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSMetadataQueryDelegate value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSMetadataQueryDelegate value) {
         Object __old = delegate();
@@ -301,10 +348,16 @@ public class NSMetadataQuery extends NSObject {
         }
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setGroupingAttributes:")
     public native void setGroupingAttributes(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setNotificationBatchingInterval:")
     public native void setNotificationBatchingInterval(double value);
@@ -319,6 +372,9 @@ public class NSMetadataQuery extends NSObject {
     @Selector("setOperationQueue:")
     public native void setOperationQueue(@Nullable NSOperationQueue value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setPredicate:")
     public native void setPredicate(@Nullable NSPredicate value);
@@ -335,18 +391,30 @@ public class NSMetadataQuery extends NSObject {
     @Selector("setSearchItems:")
     public native void setSearchItems(@Nullable NSArray<?> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setSearchScopes:")
     public native void setSearchScopes(@NotNull NSArray<?> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setSortDescriptors:")
     public native void setSortDescriptors(@NotNull NSArray<? extends NSSortDescriptor> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setValueListAttributes:")
     public native void setValueListAttributes(@NotNull NSArray<String> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("sortDescriptors")
@@ -354,15 +422,23 @@ public class NSMetadataQuery extends NSObject {
 
     /**
      * optional operation queue for notifications and delegate method calls
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("startQuery")
     public native boolean startQuery();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("stopQuery")
     public native void stopQuery();
 
+    /**
+     * API-Since: 5.0
+     */
     @NotNull
     @Generated
     @Selector("valueListAttributes")
@@ -370,12 +446,17 @@ public class NSMetadataQuery extends NSObject {
 
     /**
      * values are arrays of NSMetadataQueryAttributeValueTuple
+     * 
+     * API-Since: 5.0
      */
     @NotNull
     @Generated
     @Selector("valueLists")
     public native NSDictionary<String, ? extends NSArray<? extends NSMetadataQueryAttributeValueTuple>> valueLists();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("valueOfAttribute:forResultAtIndex:")

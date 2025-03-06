@@ -180,6 +180,8 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * Discussion:
      * Returns the altitude of the location. Can be positive (above sea level) or negative (below sea level).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("altitude")
@@ -190,6 +192,8 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * Discussion:
      * Returns the coordinate of the current location.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("coordinate")
@@ -263,6 +267,8 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * Discussion:
      * Returns the horizontal accuracy of the location. Negative if the lateral location is invalid.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("horizontalAccuracy")
@@ -295,6 +301,8 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * Discussion:
      * Initialize with the specified parameters.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:timestamp:")
@@ -307,6 +315,8 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * Discussion:
      * Initialize with the specified latitude and longitude.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("initWithLatitude:longitude:")
@@ -335,6 +345,8 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * Discussion:
      * Returns the timestamp when this location was determined.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -346,6 +358,8 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * Discussion:
      * Returns the vertical accuracy of the location. Negative if the altitude is invalid.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("verticalAccuracy")

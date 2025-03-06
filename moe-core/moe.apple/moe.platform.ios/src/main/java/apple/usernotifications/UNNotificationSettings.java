@@ -176,6 +176,9 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
     @NInt
     public native long alertStyle();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt

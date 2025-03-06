@@ -70,6 +70,8 @@ public class HKWorkoutBuilder extends NSObject {
      *                   YES, the metadata has been added to the builder successfully. If success is NO, error will
      *                   be non-null and will contain the error encountered during the insertion operation. When an
      *                   error occurs, the builder's metadata property will remain unchanged.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("addMetadata:completion:")
@@ -97,6 +99,8 @@ public class HKWorkoutBuilder extends NSObject {
      * @param completion Block to be called when the insertion is complete. If success is YES, the samples were added
      *                   to the builder successfully. If success is NO, error will be non-nil and contain the error
      *                   encountered while adding the new samples.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("addSamples:completion:")
@@ -122,6 +126,8 @@ public class HKWorkoutBuilder extends NSObject {
      * @param completion    Block to be called when the addition of events to the builder is complete. If success is
      *                      YES, the events were added to the builder successfully. If success is NO, error will be
      *                      non-null and will contain the error encountered during the insertion operation.
+     * 
+     *                      API-Since: 12.0
      */
     @Generated
     @Selector("addWorkoutEvents:completion:")
@@ -158,6 +164,8 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * @param startDate  The start date of the workout.
      * @param completion Called once data collection has started or has failed to start.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("beginCollectionWithStartDate:completion:")
@@ -204,6 +212,8 @@ public class HKWorkoutBuilder extends NSObject {
      * [@property] device
      * 
      * The HKDevice to be associated with the workout.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -216,6 +226,8 @@ public class HKWorkoutBuilder extends NSObject {
      * Finishes building the workout and discards the result instead of saving it. Samples that were added to
      * the workout will not be deleted. Adding samples, events, and metadata to the receiver after
      * discardWorkout has been called is an error.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("discardWorkout")
@@ -226,6 +238,8 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * The elapsed duration of the workout evaluated at the specified date. The duration does not include
      * periods when the workout was paused, which are the intervals between pause and resume events.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("elapsedTimeAtDate:")
@@ -240,6 +254,8 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * @param endDate    The end date of the workout.
      * @param completion Called once data collection has stopped or has failed to stop.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("endCollectionWithEndDate:completion:")
@@ -257,6 +273,8 @@ public class HKWorkoutBuilder extends NSObject {
      * [@property] endDate
      * 
      * The end date for the workout, as provided by endCollectionWithEndDate:completion:
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -272,6 +290,8 @@ public class HKWorkoutBuilder extends NSObject {
      *                   workout is nil, an error may have occurred in which case error will be non-nil. If both
      *                   workout and error are nil then finishing the workout succeeded but the workout sample
      *                   is not available because the device is locked.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("finishWorkoutWithCompletion:")
@@ -305,6 +325,8 @@ public class HKWorkoutBuilder extends NSObject {
      *                      until the builder is finished and a workout has been saved or discarded.
      * @param configuration The workout configuration to be used.
      * @param device        The HKDevice to attach to the resulting HKWorkout.
+     * 
+     *                      API-Since: 12.0
      */
     @Generated
     @Selector("initWithHealthStore:configuration:device:")
@@ -337,6 +359,8 @@ public class HKWorkoutBuilder extends NSObject {
      * [@property] metadata
      * 
      * The metadata that will be used when the workout is finished.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -365,6 +389,8 @@ public class HKWorkoutBuilder extends NSObject {
      * series constructed with the returned builder will be associated with the workout when it is finished.
      * 
      * @param seriesType The series type for which the builder should be retrieved.
+     * 
+     *                   API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -379,6 +405,8 @@ public class HKWorkoutBuilder extends NSObject {
      * [@property] startDate
      * 
      * The start date for the workout, as provided by beginCollectionWithStartDate:completion:
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -392,6 +420,8 @@ public class HKWorkoutBuilder extends NSObject {
      * have been added to the receiver. If there are no samples of the given type then nil is returned.
      * 
      * @param quantityType The quantity type to gather statistics about.
+     * 
+     *                     API-Since: 12.0
      */
     @Nullable
     @Generated
@@ -411,6 +441,8 @@ public class HKWorkoutBuilder extends NSObject {
      * [@property] workoutConfiguration
      * 
      * The configuration for the workout being built.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -424,6 +456,8 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * New events that are added using addWorkoutEvents:completion: will be appended to this array once the
      * completion is called.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

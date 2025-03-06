@@ -173,6 +173,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * error value of { NSURLErrorDomain, NSURLErrorCancelled }. In some
      * cases, the task may signal other work before it acknowledges the
      * cancelation. -cancel may be sent to a task that has been suspended.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("cancel")
@@ -187,6 +189,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * number of byte bytes we expect to receive, usually derived from the Content-Length header of an HTTP response.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("countOfBytesExpectedToReceive")
@@ -194,6 +198,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * number of body bytes we expect to send, derived from the Content-Length of the HTTP request
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("countOfBytesExpectedToSend")
@@ -201,6 +207,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * number of body bytes already received
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("countOfBytesReceived")
@@ -208,6 +216,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * number of body bytes already sent
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("countOfBytesSent")
@@ -215,6 +225,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * may differ from originalRequest due to http server redirection
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -224,6 +236,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * The error, if any, delivered via -URLSession:task:didCompleteWithError:
      * This property will be nil in the event that no error occurred.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -242,6 +256,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * may be nil if this is a stream task
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -271,12 +287,17 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * may be nil if no response has been received
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
     @Selector("response")
     public native NSURLResponse response();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("resume")
     public native void resume();
@@ -305,6 +326,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * The taskDescription property is available for the developer to
      * provide a descriptive label for the task.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTaskDescription:")
@@ -312,6 +335,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * The current state of the task within the session.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("state")
@@ -326,6 +351,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * until -resume is sent. The timeout timer associated with the task
      * will be disabled while a task is suspended. -suspend and -resume are
      * nestable.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("suspend")
@@ -334,6 +361,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * The taskDescription property is available for the developer to
      * provide a descriptive label for the task.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -342,6 +371,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * an identifier for this task, assigned by and unique to the owning session
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("taskIdentifier")

@@ -229,4 +229,14 @@ public class HKAudiogramSampleType extends HKSampleType {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("scoredAssessmentTypeForIdentifier:")
+    @Nullable
+    public static native HKScoredAssessmentType scoredAssessmentTypeForIdentifier(@NotNull String identifier);
+
+    @Generated
+    @Selector("stateOfMindType")
+    @NotNull
+    public static native HKStateOfMindType stateOfMindType();
 }

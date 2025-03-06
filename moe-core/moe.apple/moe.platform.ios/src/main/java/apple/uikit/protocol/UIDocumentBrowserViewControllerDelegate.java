@@ -28,6 +28,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UIDocumentBrowserViewControllerDelegate {
     /**
      * Allows clients to add application specific UIActivity instances
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -38,6 +40,9 @@ public interface UIDocumentBrowserViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("documentBrowser:didImportDocumentAtURL:toDestinationURL:")
@@ -79,6 +84,8 @@ public interface UIDocumentBrowserViewControllerDelegate {
      * The app should wait for the delegate callbacks before presenting the imported document at the destination URL.
      * Usage of UIDocument is recommended.
      * If you do not implement this method, document creation will not be available.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -97,6 +104,9 @@ public interface UIDocumentBrowserViewControllerDelegate {
                 @NUInt long importMode);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("documentBrowser:failedToImportDocumentAtURL:error:")
@@ -107,6 +117,8 @@ public interface UIDocumentBrowserViewControllerDelegate {
 
     /**
      * Implement this to customize the UIActivityViewController before it's presented.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

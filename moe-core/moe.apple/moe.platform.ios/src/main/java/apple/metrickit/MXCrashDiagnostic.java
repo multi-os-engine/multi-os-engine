@@ -74,6 +74,8 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * The application call stack tree associated with this crash.
      * 
      * This call stack tree includes those stack frames present at the time of the crash.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * Processor specific information about the exception encoded into one or more 64-bit hexadecimal numbers
      * 
      * @see sys/exception_types.h
+     * 
+     *      API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -127,6 +131,8 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * The name of the Mach exception that terminated the app.
      * 
      * @see sys/exception_types.h
+     * 
+     *      API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -191,6 +197,8 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * The signal associated with this crash.
      * 
      * @see sys/signal.h
+     * 
+     *      API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -219,6 +227,8 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * Exit reason information specified when a process is terminated. Key system components, both inside and outside of
      * a process, will terminate the process upon encountering a fatal error (e.g. a bad code signature, a missing
      * dependent library, or accessing privacy sensitive information without the proper entitlement).
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -237,6 +247,8 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * address space.
      * 
      * This property is set when a bad memory access crash occurs.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated

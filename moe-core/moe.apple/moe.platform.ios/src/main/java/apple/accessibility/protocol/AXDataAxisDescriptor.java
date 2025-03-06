@@ -25,6 +25,8 @@ public interface AXDataAxisDescriptor extends NSCopying {
     /**
      * An attributed version of the title of this axis.
      * When set, this will be used instead of `title`.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -34,6 +36,8 @@ public interface AXDataAxisDescriptor extends NSCopying {
     /**
      * An attributed version of the title of this axis.
      * When set, this will be used instead of `title`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAttributedTitle:")
@@ -41,6 +45,8 @@ public interface AXDataAxisDescriptor extends NSCopying {
 
     /**
      * The name or title of this axis.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTitle:")
@@ -48,6 +54,8 @@ public interface AXDataAxisDescriptor extends NSCopying {
 
     /**
      * The name or title of this axis.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

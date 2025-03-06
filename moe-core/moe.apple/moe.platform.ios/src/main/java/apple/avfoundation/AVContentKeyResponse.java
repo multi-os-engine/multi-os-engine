@@ -121,6 +121,8 @@ public class AVContentKeyResponse extends NSObject {
      * using keySystem AVContentKeySystemFairPlayStreaming. It is passed to AVContentKeyRequest
      * -processContentKeyResponse: in order to supply the decryptor with key data
      * 
+     * API-Since: 10.3
+     * 
      * @param keyResponseData
      *                        The response from the FairPlayStreaming key server
      * @return A new AVContentKeyResponse holding data from a FairPlayStreaming key server that is used to decrypt the

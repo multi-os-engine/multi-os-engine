@@ -168,6 +168,9 @@ public class MDLMesh extends MDLObject {
     @Selector("new")
     public static native MDLMesh new_objc();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Owned
     @Selector("newIcosahedronWithRadius:inwardNormals:allocator:")
@@ -184,6 +187,9 @@ public class MDLMesh extends MDLObject {
             boolean inwardNormals, @NInt long geometryType,
             @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Owned
     @Selector("newSubdividedMesh:submeshIndex:subdivisionLevels:")
@@ -227,6 +233,8 @@ public class MDLMesh extends MDLObject {
      * 
      * The mesh's allocator will be used to create storage for the new
      * attribute.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addAttributeWithName:format:")
@@ -244,6 +252,8 @@ public class MDLMesh extends MDLObject {
      * @param data   Object containing the data to be used in the new vertex buffer
      * @param stride The increment in bytes from the start of one data entry to
      *               the next.
+     * 
+     *               API-Since: 9.0
      */
     @Generated
     @Selector("addAttributeWithName:format:type:data:stride:")
@@ -260,6 +270,8 @@ public class MDLMesh extends MDLObject {
      * result in attributes being created for each of those times.
      * Attributes corresponding to multiple times can be retrieved from
      * the vertex descriptor.
+     * 
+     * API-Since: 9.0
      * 
      * @param name   The name the attribute can be found by
      * @param format Format of the data, such as MDLVertexFormatFloat3
@@ -285,6 +297,8 @@ public class MDLMesh extends MDLObject {
      * be overwritten with vertex normal data. 'vertexDescriptor' will be
      * updated to reflect the new attribute.
      * 
+     * API-Since: 9.0
+     * 
      * @param attributeName   Name is the attribute name of vertex normal attribute. If nil, vertex normals
      *                        will be added with the MDLVertexAttributeNormal name string
      * @param creaseThreshold Threshold of the dot product between the 2 triangles after which
@@ -308,6 +322,8 @@ public class MDLMesh extends MDLObject {
      * Note that this method does NOT produce a T.w component which is used in B = (N x T) * T.w
      * Please use addOrthTanBasisForTextureCoordinateAttributeNamed.
      * 
+     * API-Since: 9.0
+     * 
      * @param textureCoordinateAttributeName texture coordinates to use in calculations
      * @param normalAttributeName            normals to use in calculations
      * @param tangentAttributeName           Name of a four component vertex tangent attribute.
@@ -329,6 +345,8 @@ public class MDLMesh extends MDLObject {
      * the new attributes if necessary. The basis may not be orthogonal; to gaurantee an orthogonal
      * tangent basis please use addOrthTanBasisForTextureCoordinateAttibuteNamed selector.
      * 
+     * API-Since: 9.0
+     * 
      * @param textureCoordinateAttributeName Name of texture coordinates to use in calculations
      * @param tangentAttributeName           Name of vertex tangent attribute.
      * @param bitangentAttributeName         Name of vertex bitangent attribute.
@@ -347,6 +365,8 @@ public class MDLMesh extends MDLObject {
      * Uses the attribute named MDLVertexAttributePosition and if available,
      * the attribute named MDLVertexAttributeNormal to calculate texture coordinates
      * 
+     * API-Since: 9.0
+     * 
      * @param textureCoordinateAttributeName texture coordinates to modify or create
      */
     @Generated
@@ -357,6 +377,8 @@ public class MDLMesh extends MDLObject {
      * [@property] allocator
      * 
      * allocator used to allocate contained mesh buffers
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -384,6 +406,8 @@ public class MDLMesh extends MDLObject {
      * @param materialPropertyName NSString of the MDLMaterialProperty that will store
      *                             the texture in the Mesh.
      * @return Success or failure of the baking process.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
@@ -391,18 +415,27 @@ public class MDLMesh extends MDLObject {
             float bakeQuality, float attenuationFactor, @NotNull NSArray<? extends MDLObject> objectsToConsider,
             @NotNull String vertexAttributeName, @NotNull String materialPropertyName);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
     public native boolean generateAmbientOcclusionVertexColorsWithQualityAttenuationFactorObjectsToConsiderVertexAttributeNamed(
             float bakeQuality, float attenuationFactor, @NotNull NSArray<? extends MDLObject> objectsToConsider,
             @NotNull String vertexAttributeName);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
     public native boolean generateAmbientOcclusionVertexColorsWithRaysPerSampleAttenuationFactorObjectsToConsiderVertexAttributeNamed(
             @NInt long raysPerSample, float attenuationFactor, @NotNull NSArray<? extends MDLObject> objectsToConsider,
             @NotNull String vertexAttributeName);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
     public native boolean generateLightMapTextureWithQualityLightsToConsiderObjectsToConsiderVertexAttributeNamedMaterialPropertyNamed(
@@ -410,6 +443,9 @@ public class MDLMesh extends MDLObject {
             @NotNull NSArray<? extends MDLObject> objectsToConsider, @NotNull String vertexAttributeName,
             @NotNull String materialPropertyName);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:")
     public native boolean generateLightMapVertexColorsWithLightsToConsiderObjectsToConsiderVertexAttributeNamed(
@@ -437,6 +473,8 @@ public class MDLMesh extends MDLObject {
      * @param subdivisionLevels The number of levels to subdivide mesh
      * @return Returns a mesh subdivided to index level, unless subdivision is
      *         impossible.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:")
@@ -450,6 +488,8 @@ public class MDLMesh extends MDLObject {
      * Initialize a mesh with an allocator
      * 
      * @return An empty mesh
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithBufferAllocator:")
@@ -468,6 +508,8 @@ public class MDLMesh extends MDLObject {
      * @param descriptor   VertexDescriptor specifying how to interpret vertex data
      * @param submeshes    Array of submeshes with index buffers referencing vertex data
      *                     and/or materials to be applied to mesh
+     * 
+     *                     API-Since: 9.0
      */
     @Generated
     @Selector("initWithVertexBuffer:vertexCount:descriptor:submeshes:")
@@ -483,6 +525,8 @@ public class MDLMesh extends MDLObject {
      * 
      * Allows initialization with the layout of the vertexBuffers in a
      * structure-of-arrays form, in other words, non-interleaved vertex attributes
+     * 
+     * API-Since: 9.0
      * 
      * @return Initialized mesh or nil if descriptor's layout array is incompatible
      *         with vertexBuffers array
@@ -520,6 +564,8 @@ public class MDLMesh extends MDLObject {
      * remove an attribute
      * 
      * if the named attribute does not exist, nothing happens.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("removeAttributeNamed:")
@@ -533,6 +579,8 @@ public class MDLMesh extends MDLObject {
      * 
      * If the specified attribute does not already exist, it will be
      * created.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("replaceAttributeNamed:withData:")
@@ -543,6 +591,8 @@ public class MDLMesh extends MDLObject {
      * 
      * Array of submeshes containing an indexbuffer referencing the vertex
      * data and material to be applied when the mesh is rendered
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSubmeshes:")
@@ -554,6 +604,8 @@ public class MDLMesh extends MDLObject {
      * Array of buffers containing vertex data
      * 
      * The vertex buffers in this array are indexed by the vertex descriptor.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVertexBuffers:")
@@ -567,6 +619,8 @@ public class MDLMesh extends MDLObject {
      * The size of vertex data in each buffer can be computed by multiplying
      * this value with the stride of the buffer in the vertexDescriptor's
      * layout
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVertexCount:")
@@ -588,6 +642,8 @@ public class MDLMesh extends MDLObject {
      * 
      * The allocator associated with each original meshbuffer is used to
      * reallocate the corresponding resultant meshbuffer.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVertexDescriptor:")
@@ -598,6 +654,8 @@ public class MDLMesh extends MDLObject {
      * 
      * Array of submeshes containing an indexbuffer referencing the vertex
      * data and material to be applied when the mesh is rendered
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -612,6 +670,8 @@ public class MDLMesh extends MDLObject {
      * 
      * If the specified attribute does not already exist, it will be
      * created with the same format as the newData.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("updateAttributeNamed:withData:")
@@ -624,6 +684,8 @@ public class MDLMesh extends MDLObject {
      * 
      * the vertex buffer will remain mapped until the MDLVertexAttributeData
      * is freed.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -642,6 +704,8 @@ public class MDLMesh extends MDLObject {
      * elements will be set to zero.
      * The vertex buffer will remain mapped until the MDLVertexAttributeData
      * is freed.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -655,6 +719,8 @@ public class MDLMesh extends MDLObject {
      * Array of buffers containing vertex data
      * 
      * The vertex buffers in this array are indexed by the vertex descriptor.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -669,6 +735,8 @@ public class MDLMesh extends MDLObject {
      * The size of vertex data in each buffer can be computed by multiplying
      * this value with the stride of the buffer in the vertexDescriptor's
      * layout
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("vertexCount")
@@ -691,6 +759,8 @@ public class MDLMesh extends MDLObject {
      * 
      * The allocator associated with each original meshbuffer is used to
      * reallocate the corresponding resultant meshbuffer.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

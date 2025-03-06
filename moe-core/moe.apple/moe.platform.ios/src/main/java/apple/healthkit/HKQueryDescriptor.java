@@ -125,6 +125,8 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
      * 
      * @param sampleType The type of sample to retrieve.
      * @param predicate  The predicate which samples should match.
+     * 
+     *                   API-Since: 15.0
      */
     @Generated
     @Selector("initWithSampleType:predicate:")
@@ -162,6 +164,8 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
      * [@property] predicate
      * 
      * The predicate which samples should match.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -180,6 +184,8 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
      * [@property] sampleType
      * 
      * The type of sample to retrieve in an HKQuery.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

@@ -206,6 +206,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     /**
      * Adds aLayoutManager to the receiver. Sends -[NSLayoutManager setTextStorage:] to aLayoutManager with the
      * receiver.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addLayoutManager:")
@@ -213,6 +215,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     /**
      * The length delta for the pending changes.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("changeInLength")
@@ -221,6 +225,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     /**
      * Delegate ***************************
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -232,6 +238,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
      * Notifies and records a recent change. If there are no outstanding -beginEditing calls, this method calls
      * -processEditing to trigger post-editing processes. This method has to be called by the primitives after changes
      * are made if subclassed and overridden. editedRange is the range in the original string (before the edit).
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("edited:range:changeInLength:")
@@ -240,6 +248,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     /**
      * The NSTextStorageEditActions mask indicating that there are pending changes for attributes, characters, or both.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("editedMask")
@@ -248,6 +258,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     /**
      * The range for pending changes. {NSNotFound, 0} when there is no pending changes.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("editedRange")
@@ -259,6 +271,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
      * call the following method before accessing any attributes. This gives the attribute fixing a chance to occur if
      * necessary. NSTextStorage subclasses that wish to support laziness must call it from all attribute accessors that
      * they implement. The default concrete subclass does call this from its accessors.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("ensureAttributesAreFixedInRange:")
@@ -267,6 +281,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     /**
      * Indicates if the receiver fixes invalidated attributes lazily. The concrete UIKit subclass fixes attributes
      * lazily by default. The abstract class (hence, all custom subclasses) is not lazy.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("fixesAttributesLazily")
@@ -317,6 +333,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     /**
      * Notes the range of attributes that requires validation. If the NSTextStorage is not lazy this just calls
      * fixAttributesInRange:. If it is lazy this instead just records the range needing fixing in order to do it later.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidateAttributesInRange:")
@@ -324,6 +342,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     /**
      * NSLayoutManager objects owned by the receiver.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -335,6 +355,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
      * notifies the layout managers of change with the
      * -processEditingForTextStorage:edited:range:changeInLength:invalidatedRange: method. Invoked from
      * -edited:range:changeInLength: or -endEditing.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("processEditing")
@@ -343,6 +365,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     /**
      * Removes aLayoutManager from the receiver if already owned by it. Sends -[NSLayoutManager setTextStorage:] to
      * aLayoutManager with nil.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("removeLayoutManager:")
@@ -350,6 +374,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     /**
      * Delegate ***************************
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -357,6 +383,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     /**
      * Delegate ***************************
+     * 
+     * API-Since: 7.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSTextStorageDelegate value) {
@@ -573,4 +601,14 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("attributedStringWithAdaptiveImageGlyph:attributes:")
+    public static native NSTextStorage attributedStringWithAdaptiveImageGlyphAttributes(
+            @NotNull NSAdaptiveImageGlyph adaptiveImageGlyph, @NotNull NSDictionary<String, ?> attributes);
+
+    @Generated
+    @Selector("attributedStringWithAttachment:attributes:")
+    public static native NSTextStorage attributedStringWithAttachmentAttributes(@NotNull NSTextAttachment attachment,
+            @NotNull NSDictionary<String, ?> attributes);
 }

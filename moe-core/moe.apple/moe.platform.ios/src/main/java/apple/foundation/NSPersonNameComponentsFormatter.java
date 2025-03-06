@@ -134,6 +134,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     /**
      * Shortcut for converting an NSPersonNameComponents object into a string without explicitly creating an instance.
      * Create an instance for greater customizability.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -171,6 +173,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
      * Returns attributed string with annotations for each component. For each range, attributes can be obtained by
      * querying
      * dictionary key NSPersonNameComponentKey , using NSPersonNameComponent constant values.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -178,6 +182,9 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     public native NSAttributedString annotatedStringFromPersonNameComponents(
             @NotNull NSPersonNameComponents components);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(
@@ -194,6 +201,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
 
     /**
      * Specify that the formatter should only format the components object's phoneticRepresentation
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPhonetic")
@@ -201,6 +210,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
 
     /**
      * Specify that the formatter should only format the components object's phoneticRepresentation
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPhonetic:")
@@ -220,6 +231,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     /**
      * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user
      * preferences and language-specific defaults
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStyle:")
@@ -228,6 +241,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     /**
      * Convenience method on stringForObjectValue:. Returns a string containing the formatted value of the provided
      * components object.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -237,6 +252,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     /**
      * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user
      * preferences and language-specific defaults
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("style")

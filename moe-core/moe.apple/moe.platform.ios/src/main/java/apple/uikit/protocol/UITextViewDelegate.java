@@ -39,6 +39,8 @@ import org.jetbrains.annotations.Nullable;
 import apple.uikit.UIAction;
 import apple.uikit.UITextItem;
 import apple.uikit.UITextItemMenuConfiguration;
+import apple.foundation.NSValue;
+import apple.uikit.UITextFormattingViewController;
 
 @Generated
 @Library("UIKit")
@@ -282,6 +284,115 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     default void textViewTextItemMenuWillEndForTextItemAnimator(@NotNull UITextView textView,
             @NotNull UITextItem textItem,
             @Mapped(ObjCObjectMapper.class) @NotNull UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that text formatting controller has been presented.
+     * 
+     * @param viewController The text formatting controller that is being presented.
+     * 
+     *                       API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:didBeginFormattingWithViewController:")
+    default void textViewDidBeginFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that text formatting controller has been dismissed.
+     * 
+     * @param viewController The text formatting controller that is being presented.
+     * 
+     *                       API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:didEndFormattingWithViewController:")
+    default void textViewDidEndFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that text formatting controller is about to be presented.
+     * 
+     * @param viewController The text formatting controller that is being presented.
+     * 
+     *                       API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:willBeginFormattingWithViewController:")
+    default void textViewWillBeginFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that text formatting controller is about to be dismissed.
+     * 
+     * @param viewController The text formatting controller that is being presented.
+     * 
+     *                       API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:willEndFormattingWithViewController:")
+    default void textViewWillEndFormattingWithViewController(@NotNull UITextView textView,
+            @NotNull UITextFormattingViewController viewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Allows the delegate to specify ranges of text to be ignored by Writing Tools
+     * 
+     * @param textView       The text view interacting with Writing Tools
+     * @param enclosingRange
+     * 
+     * @return Return an array of ranges in the attributed substring of the textView storage with the enclosing range
+     *         representing portions of text to be ignored by Writing Tools when evaluating the text for proofreading,
+     *         summarization, rewrites, and so forth.
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:writingToolsIgnoredRangesInEnclosingRange:")
+    @NotNull
+    default NSArray<? extends NSValue> textViewWritingToolsIgnoredRangesInEnclosingRange(@NotNull UITextView textView,
+            @ByValue NSRange enclosingRange) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that Writing Tools has finished manipulating the text view
+     * 
+     * @param textView The text view interacting with Writing Tools
+     * 
+     *                 API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textViewWritingToolsDidEnd:")
+    default void textViewWritingToolsDidEnd(@NotNull UITextView textView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that Writing Tools will begin manipulating the text view
+     * 
+     * @param textView The text view interacting with Writing Tools
+     * 
+     *                 API-Since: 18.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textViewWritingToolsWillBegin:")
+    default void textViewWritingToolsWillBegin(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

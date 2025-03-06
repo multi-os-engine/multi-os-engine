@@ -44,6 +44,8 @@ public interface RPBroadcastControllerDelegate {
      * 
      * @param broadcastController The controller instance.
      * @param error               Required error in the RPRecordingErrorCode domain.
+     * 
+     *                            API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -58,6 +60,8 @@ public interface RPBroadcastControllerDelegate {
      * 
      * @param broadcastController The controller instance.
      * @param serviceInfo         NSDictionary instance with keys and values defined by the broadcasting service.
+     * 
+     *                            API-Since: 10.0
      */
     @Generated
     @IsOptional

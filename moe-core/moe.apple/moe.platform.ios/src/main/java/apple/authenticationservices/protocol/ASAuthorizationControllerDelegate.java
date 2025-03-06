@@ -20,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ASAuthorizationControllerDelegate")
 public interface ASAuthorizationControllerDelegate {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("authorizationController:didCompleteWithAuthorization:")
@@ -28,6 +31,9 @@ public interface ASAuthorizationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("authorizationController:didCompleteWithError:")

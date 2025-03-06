@@ -69,6 +69,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * [@property] amount
      * 
      * The compensation in prism diopters to correct eye misalignment [polar coordinates]
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -79,6 +81,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * [@property] angle
      * 
      * The direction of the prism base [polar coordinates]
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -133,6 +137,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * [@property] eye
      * 
      * Which eye (left or right)
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("eye")
@@ -148,6 +154,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * [@property] horizontalAmount
      * 
      * The horizontal component of compensation in prism diopters [rectangular coordinates]
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -159,6 +167,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * 
      * The direction of the prism base relative to the horizontal axis of the lens;
      * base in (toward the nose) or base out (away from the nose). [rectangular coordinates]
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("horizontalBase")
@@ -175,6 +185,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * @param amount The compensation for amount eye misalignment
      * @param angle  The angle of the lens required to correct diplopia
      * @param eye    The eye associated with the prism values
+     * 
+     *               API-Since: 16.0
      */
     @Generated
     @Selector("initWithAmount:angle:eye:")
@@ -195,6 +207,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * @param horizontalBase   The direction of the prism base relative to the horizontal axis of the lens;
      *                         base in (toward the nose) or base out (away from the nose).
      * @param eye              The eye associated with the prism values
+     * 
+     *                         API-Since: 16.0
      */
     @Generated
     @Selector("initWithVerticalAmount:verticalBase:horizontalAmount:horizontalBase:eye:")
@@ -264,6 +278,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * [@property] verticalAmount
      * 
      * The vertical component of compensation in prism diopters [rectangular coordinates]
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -275,6 +291,8 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
      * 
      * The direction of the prism base relative to the vertical axis of the lens;
      * base up or base down. [rectangular coordinates]
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("verticalBase")

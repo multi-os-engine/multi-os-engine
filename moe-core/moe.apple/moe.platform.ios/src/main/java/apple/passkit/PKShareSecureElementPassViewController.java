@@ -98,6 +98,9 @@ public class PKShareSecureElementPassViewController extends UIViewController {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -126,6 +129,9 @@ public class PKShareSecureElementPassViewController extends UIViewController {
     public native PKShareSecureElementPassViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithSecureElementPass:delegate:")
     public native PKShareSecureElementPassViewController initWithSecureElementPassDelegate(
@@ -163,6 +169,8 @@ public class PKShareSecureElementPassViewController extends UIViewController {
      * This can be used to change the sharing flow a user will see.
      * This must be configured before the view controller is presented.
      * Defaults to YES
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("promptToShareURL")
@@ -176,11 +184,17 @@ public class PKShareSecureElementPassViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) PKShareSecureElementPassViewControllerDelegate value);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     public void setDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) PKShareSecureElementPassViewControllerDelegate value) {
@@ -198,6 +212,8 @@ public class PKShareSecureElementPassViewController extends UIViewController {
      * This can be used to change the sharing flow a user will see.
      * This must be configured before the view controller is presented.
      * Defaults to YES
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setPromptToShareURL:")

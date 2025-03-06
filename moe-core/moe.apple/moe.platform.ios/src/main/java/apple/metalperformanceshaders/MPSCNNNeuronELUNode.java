@@ -107,11 +107,16 @@ public class MPSCNNNeuronELUNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronELUNode initWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSource:a:")
     public native MPSCNNNeuronELUNode initWithSourceA(@NotNull MPSNNImageNode sourceNode, float a);
@@ -145,11 +150,16 @@ public class MPSCNNNeuronELUNode extends MPSCNNNeuronNode {
 
     /**
      * Create an autoreleased node with default values for parameters a & b
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronELUNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("nodeWithSource:a:")
     public static native MPSCNNNeuronELUNode nodeWithSourceA(@NotNull MPSNNImageNode sourceNode, float a);

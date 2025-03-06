@@ -7,6 +7,8 @@ import org.moe.natj.general.ann.NInt;
  * [@enum] ASCredentialRequestType
  * [@constant] ASCredentialRequestTypePassword Password credential type.
  * [@constant] ASCredentialRequestTypePasskeyAssertion Passkey assertion credential type.
+ * [@constant] ASCredentialRequestTypePasskeyRegistration Passkey registration credential type.
+ * [@constant] ASCredentialRequestTypeOneTimeCode One Time Code credential type.
  * 
  * API-Since: 17.0
  */
@@ -24,4 +26,12 @@ public final class ASCredentialRequestType {
      * API-Since: 17.0
      */
     @Generated @NInt public static final long PasskeyAssertion = 0x0000000000000001L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long PasskeyRegistration = 0x0000000000000002L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long OneTimeCode = 0x0000000000000003L;
 }

@@ -23,6 +23,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SWHighlightEvent")
 public interface SWHighlightEvent extends NSSecureCoding, NSCopying {
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("highlightURL")

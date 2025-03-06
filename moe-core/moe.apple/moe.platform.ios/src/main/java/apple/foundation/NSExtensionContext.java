@@ -167,6 +167,8 @@ public class NSExtensionContext extends NSObject {
      * Signals the host to cancel the app extension request, with the supplied error, which should be non-nil. The
      * userInfo of the NSError will contain a key NSExtensionItemsAndErrorsKey which will have as its value a dictionary
      * of NSExtensionItems and associated NSError instances.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("cancelRequestWithError:")
@@ -178,6 +180,8 @@ public class NSExtensionContext extends NSObject {
      * background-priority task. The `expired` parameter will be YES if the system decides to prematurely terminate a
      * previous non-expiration invocation of the completionHandler. Note: calling this method will eventually dismiss
      * the associated view controller.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("completeRequestReturningItems:completionHandler:")
@@ -219,6 +223,8 @@ public class NSExtensionContext extends NSObject {
     /**
      * The list of input NSExtensionItems associated with the context. If the context has no input items, this array
      * will be empty.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -229,6 +235,8 @@ public class NSExtensionContext extends NSObject {
      * Load information about the broadcasting app.
      * 
      * @param handler block which will be supplied a bundleID, displayName and an optional appIcon.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @Selector("loadBroadcastingApplicationInfoWithCompletion:")
@@ -254,6 +262,8 @@ public class NSExtensionContext extends NSObject {
 
     /**
      * Asks the host to open a URL on the extension's behalf
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("openURL:completionHandler:")

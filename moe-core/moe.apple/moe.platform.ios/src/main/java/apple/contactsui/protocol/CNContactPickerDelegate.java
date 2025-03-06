@@ -41,6 +41,8 @@ public interface CNContactPickerDelegate {
      * Singular delegate methods.
      * 
      * These delegate methods will be invoked when the user selects a single contact or property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -50,6 +52,9 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperties:")
@@ -58,6 +63,9 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperty:")
@@ -71,6 +79,8 @@ public interface CNContactPickerDelegate {
      * 
      * These delegate methods will be invoked when the user is done selecting multiple contacts or properties.
      * Implementing one of these methods will configure the picker for multi-selection.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -84,6 +94,8 @@ public interface CNContactPickerDelegate {
      * Invoked when the picker is closed.
      * 
      * The picker will be dismissed automatically after a contact or property is picked.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional

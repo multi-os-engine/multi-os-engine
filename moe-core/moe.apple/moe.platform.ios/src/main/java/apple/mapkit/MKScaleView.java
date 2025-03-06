@@ -35,6 +35,9 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -284,11 +287,17 @@ public class MKScaleView extends UIView {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("legendAlignment")
     @NInt
     public native long legendAlignment();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("mapView")
@@ -323,10 +332,16 @@ public class MKScaleView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("scaleViewWithMapView:")
     public static native MKScaleView scaleViewWithMapView(@Nullable MKMapView mapView);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("scaleVisibility")
     @NInt
@@ -392,14 +407,23 @@ public class MKScaleView extends UIView {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setLegendAlignment:")
     public native void setLegendAlignment(@NInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMapView:")
     public native void setMapView_unsafe(@Nullable MKMapView value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setMapView(@Nullable MKMapView value) {
         Object __old = mapView();
@@ -412,6 +436,9 @@ public class MKScaleView extends UIView {
         }
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setScaleVisibility:")
     public native void setScaleVisibility(@NInt long value);

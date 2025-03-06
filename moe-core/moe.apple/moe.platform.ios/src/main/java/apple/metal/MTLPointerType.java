@@ -41,6 +41,9 @@ public class MTLPointerType extends MTLType {
         super(peer);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("access")
     @NUInt
@@ -52,6 +55,8 @@ public class MTLPointerType extends MTLType {
 
     /**
      * min alignment for the element data
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("alignment")
@@ -95,6 +100,8 @@ public class MTLPointerType extends MTLType {
 
     /**
      * sizeof(T) for T *argName
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dataSize")
@@ -134,6 +141,8 @@ public class MTLPointerType extends MTLType {
 
     /**
      * MTLDataTypeFloat, MTLDataTypeFloat4, MTLDataTypeStruct, ...
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("elementType")

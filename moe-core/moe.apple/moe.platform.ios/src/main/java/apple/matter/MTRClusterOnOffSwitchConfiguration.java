@@ -32,12 +32,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Attributes and commands for configuring On/Off switching devices.
  * 
  * API-Since: 16.1
+ * Deprecated-Since: 18.2
+ * Deprecated-Message: OnOffSwitchConfiguration is deprecated and will be removed
  */
+@Deprecated
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
+public class MTRClusterOnOffSwitchConfiguration extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -119,7 +122,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
      * for command invocations if commands are added to this cluster.
      * 
      * API-Since: 16.4
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: OnOffSwitchConfiguration is deprecated and will be removed
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:endpointID:queue:")
     public native MTRClusterOnOffSwitchConfiguration initWithDeviceEndpointIDQueue(@NotNull MTRDevice device,
@@ -154,7 +160,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAcceptedCommandListWithParams:")
     @Nullable
@@ -162,7 +171,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeAttributeListWithParams:")
     @Nullable
@@ -170,7 +182,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeClusterRevisionWithParams:")
     @Nullable
@@ -178,7 +193,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeFeatureMapWithParams:")
     @Nullable
@@ -186,7 +204,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeGeneratedCommandListWithParams:")
     @Nullable
@@ -194,7 +215,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeSwitchActionsWithParams:")
     @Nullable
@@ -202,7 +226,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("readAttributeSwitchTypeWithParams:")
     @Nullable
@@ -236,7 +263,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeSwitchActionsWithValue:expectedValueInterval:")
     public native void writeAttributeSwitchActionsWithValueExpectedValueInterval(
@@ -244,7 +274,10 @@ public class MTRClusterOnOffSwitchConfiguration extends MTRCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 18.2
+     * Deprecated-Message: This attribute is deprecated
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeSwitchActionsWithValue:expectedValueInterval:params:")
     public native void writeAttributeSwitchActionsWithValueExpectedValueIntervalParams(

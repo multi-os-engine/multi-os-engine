@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Reduction Mode
+ * The reduction mode.
  */
 @Generated
 public final class MPSGraphReductionMode {

@@ -143,6 +143,8 @@ public class CMAmbientPressureData extends CMLogItem {
      * Discussion:
      * The pressure as measured by the pressure sensor.
      * Pressure is in kPa (kilopascals).
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -179,6 +181,8 @@ public class CMAmbientPressureData extends CMLogItem {
      * Discussion:
      * The temperature as measured by the pressure sensor.
      * Temperature is in C (degrees centrigrade).
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

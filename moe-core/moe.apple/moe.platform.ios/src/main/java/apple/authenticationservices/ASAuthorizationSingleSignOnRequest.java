@@ -61,6 +61,8 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     /**
      * Parameters required by the specific Authorization Server which should be used by the selected Authorization
      * Services extension for authorization.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -151,6 +153,8 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     /**
      * Parameters required by the specific Authorization Server which should be used by the selected Authorization
      * Services extension for authorization.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAuthorizationOptions:")

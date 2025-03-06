@@ -169,6 +169,8 @@ public class NSURLCache extends NSObject {
      * becoming unexpectedly unretrievable.
      * 
      * @return the shared NSURLCache instance.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("setSharedURLCache:")
@@ -205,6 +207,8 @@ public class NSURLCache extends NSObject {
      * becoming unexpectedly unretrievable.
      * 
      * @return the shared NSURLCache instance.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -233,6 +237,8 @@ public class NSURLCache extends NSObject {
      * @return The NSCachedURLResponse stored in the cache with the given
      *         request, or nil if there is no NSCachedURLResponse stored with the
      *         given request.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -247,6 +253,8 @@ public class NSURLCache extends NSObject {
      * usage of the on-disk cache.
      * 
      * @return the current usage of the on-disk cache of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("currentDiskUsage")
@@ -261,6 +269,8 @@ public class NSURLCache extends NSObject {
      * usage of the in-memory cache.
      * 
      * @return the current usage of the in-memory cache of the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("currentMemoryUsage")
@@ -272,6 +282,8 @@ public class NSURLCache extends NSObject {
      * 
      * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its
      * contents to the size given, if necessary.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("diskCapacity")
@@ -322,6 +334,8 @@ public class NSURLCache extends NSObject {
      * At the time this call is made, the in-memory cache will truncate its contents to the size given, if necessary.
      * 
      * @return The in-memory capacity, measured in bytes, for the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("memoryCapacity")
@@ -333,6 +347,8 @@ public class NSURLCache extends NSObject {
      * 
      * Clears the given cache, removing all NSCachedURLResponse
      * objects that it stores.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("removeAllCachedResponses")
@@ -355,6 +371,8 @@ public class NSURLCache extends NSObject {
      * stored with the given request.
      * 
      * @param request the NSURLRequest to use as a key for the lookup.
+     * 
+     *                API-Since: 2.0
      */
     @Generated
     @Selector("removeCachedResponseForRequest:")
@@ -376,6 +394,8 @@ public class NSURLCache extends NSObject {
      * 
      * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its
      * contents to the size given, if necessary.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDiskCapacity:")
@@ -387,6 +407,8 @@ public class NSURLCache extends NSObject {
      * At the time this call is made, the in-memory cache will truncate its contents to the size given, if necessary.
      * 
      * @return The in-memory capacity, measured in bytes, for the receiver.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("setMemoryCapacity:")
@@ -408,6 +430,8 @@ public class NSURLCache extends NSObject {
      * 
      * @param cachedResponse The cached response to store.
      * @param request        the NSURLRequest to use as a key for the storage.
+     * 
+     *                       API-Since: 2.0
      */
     @Generated
     @Selector("storeCachedResponse:forRequest:")

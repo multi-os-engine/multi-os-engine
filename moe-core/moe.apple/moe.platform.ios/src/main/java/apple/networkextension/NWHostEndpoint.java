@@ -49,7 +49,11 @@ import org.jetbrains.annotations.Nullable;
  * hostname and port. Note that a hostname string may be an IP or IPv6 address.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `nw_endpoint_t` in Network framework instead, see deprecation notice in
+ * <NetworkExtension/NWHostEndpoint.h>
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -119,7 +123,11 @@ public class NWHostEndpoint extends NWEndpoint {
      * @return An initialized NWHostEndpoint object.
      * 
      *         API-Since: 9.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use `nw_endpoint_create_host` in Network framework instead, see deprecation notice in
+     *         <NetworkExtension/NWHostEndpoint.h>
      */
+    @Deprecated
     @Generated
     @Selector("endpointWithHostname:port:")
     public static native NWHostEndpoint endpointWithHostnamePort(@NotNull String hostname, @NotNull String port);
@@ -187,7 +195,11 @@ public class NWHostEndpoint extends NWEndpoint {
      * The endpoint's hostname.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_endpoint_get_hostname` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWHostEndpoint.h>
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("hostname")
@@ -207,7 +219,11 @@ public class NWHostEndpoint extends NWEndpoint {
      * The endpoint's port.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `nw_endpoint_get_port` in Network framework instead, see deprecation notice in
+     * <NetworkExtension/NWHostEndpoint.h>
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("port")

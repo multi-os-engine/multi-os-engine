@@ -164,12 +164,18 @@ public class NSComparisonPredicate extends NSPredicate {
     @Selector("predicateWithFormat:arguments:")
     public static native NSPredicate predicateWithFormatArguments(@NotNull String predicateFormat, BytePtr argList);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("predicateWithLeftExpression:rightExpression:customSelector:")
     public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionCustomSelector(
             @NotNull NSExpression lhs, @NotNull NSExpression rhs, @NotNull SEL selector);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("predicateWithLeftExpression:rightExpression:modifier:type:options:")
@@ -207,11 +213,17 @@ public class NSComparisonPredicate extends NSPredicate {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("comparisonPredicateModifier")
     @NUInt
     public native long comparisonPredicateModifier();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("customSelector")
@@ -221,36 +233,57 @@ public class NSComparisonPredicate extends NSPredicate {
     @Selector("init")
     public native NSComparisonPredicate init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native NSComparisonPredicate initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithLeftExpression:rightExpression:customSelector:")
     public native NSComparisonPredicate initWithLeftExpressionRightExpressionCustomSelector(@NotNull NSExpression lhs,
             @NotNull NSExpression rhs, @NotNull SEL selector);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithLeftExpression:rightExpression:modifier:type:options:")
     public native NSComparisonPredicate initWithLeftExpressionRightExpressionModifierTypeOptions(
             @NotNull NSExpression lhs, @NotNull NSExpression rhs, @NUInt long modifier, @NUInt long type,
             @NUInt long options);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("leftExpression")
     public native NSExpression leftExpression();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("options")
     @NUInt
     public native long options();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("predicateOperatorType")
     @NUInt
     public native long predicateOperatorType();
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("rightExpression")

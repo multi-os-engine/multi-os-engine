@@ -74,6 +74,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Returns a set of all available website data types.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -121,6 +123,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Returns the default data store.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -168,6 +172,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
      * 
      * If a WKWebView is associated with a non-persistent data store, no data will
      * be written to the file system. This is useful for implementing "private browsing" in a web view.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -204,6 +210,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
      * 
      * @param dataTypes         The website data types to fetch records for.
      * @param completionHandler A block to invoke when the data records have been fetched.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("fetchDataRecordsOfTypes:completionHandler:")
@@ -220,6 +228,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Whether the data store is persistent or not.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPersistent")
@@ -231,6 +241,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
      * @param dataTypes         The website data types that should be removed.
      * @param dataRecords       The website data records to delete website data for.
      * @param completionHandler A block to invoke when the website data for the records has been removed.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("removeDataOfTypes:forDataRecords:completionHandler:")
@@ -244,6 +256,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
      * @param dataTypes         The website data types that should be removed.
      * @param date              A date. All website data modified after this date will be removed.
      * @param completionHandler A block to invoke when the website data has been removed.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("removeDataOfTypes:modifiedSince:completionHandler:")

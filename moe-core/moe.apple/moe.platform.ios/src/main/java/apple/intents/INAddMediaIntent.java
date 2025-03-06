@@ -103,6 +103,9 @@ public class INAddMediaIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INAddMediaIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMediaItems:mediaSearch:mediaDestination:")
     public native INAddMediaIntent initWithMediaItemsMediaSearchMediaDestination(
@@ -131,16 +134,25 @@ public class INAddMediaIntent extends INIntent {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaDestination")
     public native INMediaDestination mediaDestination();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaItems")
     public native NSArray<? extends INMediaItem> mediaItems();
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("mediaSearch")

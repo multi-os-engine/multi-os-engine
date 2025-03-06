@@ -42,6 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.network.opaque.nw_interface_t;
+import apple.network.opaque.nw_endpoint_t;
 
 /**
  * [@interface] NEAppProxyFlow
@@ -219,14 +220,16 @@ public class NEAppProxyFlow extends NSObject {
      * This function is used by an NEProvider implementation to indicate that it is ready to handle flow data.
      * 
      * @param localEndpoint     The address and port that should be used as the local endpoint of the socket associated
-     *                          with this flow. If the source application already specifed a local endpoint by binding
+     *                          with this flow. If the source application already specified a local endpoint by binding
      *                          the socket then this parameter is ignored.
      * @param completionHandler A block that is called when the process of opening flow is complete. A nil value passed
      *                          to this block indicates that the flow was opened successfully. A non-nil NSError value
      *                          indicates that the flow failed to open successfully.
      * 
      *                          API-Since: 9.0
+     *                          Deprecated-Since: 18.0
      */
+    @Deprecated
     @Generated
     @Selector("openWithLocalEndpoint:completionHandler:")
     public native void openWithLocalEndpointCompletionHandler(@Nullable NWHostEndpoint localEndpoint,
@@ -296,4 +299,30 @@ public class NEAppProxyFlow extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * openWithLocalFlowEndpoint:completionHandler:
+     * 
+     * This function is used by an NEProvider implementation to indicate that it is ready to handle flow data.
+     * 
+     * @param localEndpoint     The address and port that should be used as the local endpoint of the socket associated
+     *                          with this flow. If the source application already specified a local endpoint by binding
+     *                          the socket then this parameter is ignored.
+     * @param completionHandler A block that is called when the process of opening flow is complete. A nil value passed
+     *                          to this block indicates that the flow was opened successfully. A non-nil NSError value
+     *                          indicates that the flow failed to open successfully.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @Selector("openWithLocalFlowEndpoint:completionHandler:")
+    public native void openWithLocalFlowEndpointCompletionHandler(@Nullable nw_endpoint_t localEndpoint,
+            @ObjCBlock(name = "call_openWithLocalFlowEndpointCompletionHandler") @NotNull Block_openWithLocalFlowEndpointCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openWithLocalFlowEndpointCompletionHandler {
+        @Generated
+        void call_openWithLocalFlowEndpointCompletionHandler(@Nullable NSError error);
+    }
 }

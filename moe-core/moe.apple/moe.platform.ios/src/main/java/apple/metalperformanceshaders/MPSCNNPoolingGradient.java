@@ -156,6 +156,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingGradient
      * @param device   The MTLDevice on which to make the MPSCNNPoolingGradient
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -173,6 +175,9 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
      * @param kernelWidth  The width of the kernel. Can be an odd or even value.
      * @param kernelHeight The height of the kernel. Can be an odd or even value.
      * @return A valid MPSCNNPoolingGradient object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -189,6 +194,9 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
      * @param strideInPixelsX The input stride (upsampling factor) in the x dimension.
      * @param strideInPixelsY The input stride (upsampling factor) in the y dimension.
      * @return A valid MPSCNNPoolingGradient object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
@@ -242,6 +250,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
      * source area rectangle and primary source bounds is used.
      * Default: A size where every component is NSUIntegerMax indicating the entire rest of the image,
      * starting from an offset (see primaryOffset).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSourceSize:")
@@ -262,6 +272,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
      * source area rectangle and primary source bounds is used.
      * Default: A size where every component is NSUIntegerMax indicating the entire rest of the image,
      * starting from an offset (see primaryOffset).
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("sourceSize")

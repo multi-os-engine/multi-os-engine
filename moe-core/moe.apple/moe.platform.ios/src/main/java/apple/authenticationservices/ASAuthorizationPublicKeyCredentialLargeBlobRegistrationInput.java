@@ -97,6 +97,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobRegistrationInput extend
     @Selector("init")
     public native ASAuthorizationPublicKeyCredentialLargeBlobRegistrationInput init();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("initWithSupportRequirement:")
     public native ASAuthorizationPublicKeyCredentialLargeBlobRegistrationInput initWithSupportRequirement(
@@ -137,6 +140,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobRegistrationInput extend
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("setSupportRequirement:")
     public native void setSupportRequirement(@NInt long value);
@@ -149,6 +155,9 @@ public class ASAuthorizationPublicKeyCredentialLargeBlobRegistrationInput extend
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("supportRequirement")
     @NInt

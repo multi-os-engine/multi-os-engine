@@ -218,4 +218,12 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertion extends NSObjec
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("prf")
+    @Nullable
+    public native ASAuthorizationPublicKeyCredentialPRFAssertionOutput prf();
 }

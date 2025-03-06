@@ -601,4 +601,13 @@ public class PDFDocument extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("selectionFromPage:atPoint:toPage:atPoint:withGranularity:")
+    @Nullable
+    public native PDFSelection selectionFromPageAtPointToPageAtPointWithGranularity(@NotNull PDFPage startPage,
+            @ByValue CGPoint startPoint, @NotNull PDFPage endPage, @ByValue CGPoint endPoint, @NUInt long granularity);
 }

@@ -104,6 +104,8 @@ public class CPContactDirectionsButton extends CPButton {
      * handler.
      * 
      * @param handler A block that will be called when the user taps this button.
+     * 
+     *                API-Since: 14.0
      */
     @Generated
     @Selector("initWithHandler:")

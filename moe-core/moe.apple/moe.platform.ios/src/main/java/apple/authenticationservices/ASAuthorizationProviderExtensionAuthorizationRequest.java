@@ -63,6 +63,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Authorization options.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -75,6 +77,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Identification of the calling application.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -83,6 +87,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Call when authorization needs to be canceled from some reason (for example user pressed Cancel button).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancel")
@@ -111,6 +117,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Call when authorization succeeded without any output.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("complete")
@@ -118,6 +126,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Call when authorization failed with an error.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("completeWithError:")
@@ -125,6 +135,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Call when authorization succeeded with an authorization tokens stored in HTTP headers.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("completeWithHTTPAuthorizationHeaders:")
@@ -133,6 +145,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Call when authorization succeeded with a HTTP response.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("completeWithHTTPResponse:httpBody:")
@@ -149,6 +163,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Call when authorization was not handled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("doNotHandle")
@@ -156,6 +172,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Extension data from extension configuration provided by MDM stored as a property-list.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -169,6 +187,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Request body.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -177,6 +197,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Request HTTP headers.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -217,6 +239,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     /**
      * Asks authorization service to show extension view controller. If the controller cannot be shown an error is
      * returned.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("presentAuthorizationViewControllerWithCompletion:")
@@ -232,6 +256,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Realm.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -240,6 +266,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Operation to be executed by the extension.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -264,6 +292,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Request URL with all components.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

@@ -62,6 +62,8 @@ public class PKPaymentTokenContext extends NSObject {
      * The amount this particular payment token should be authorized for. It has the same currency as
      * the enclosing payment request. Must be less than or equal to the total amount of the enclosing
      * payment request.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -105,6 +107,8 @@ public class PKPaymentTokenContext extends NSObject {
      * An external identifier for the merchant, provided by the developer. If you request a payment
      * token for another merchant, try to always use the same external identifier for that merchant,
      * if possible.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -120,6 +124,9 @@ public class PKPaymentTokenContext extends NSObject {
     @Selector("init")
     public native PKPaymentTokenContext init();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithMerchantIdentifier:externalIdentifier:merchantName:merchantDomain:amount:")
     public native PKPaymentTokenContext initWithMerchantIdentifierExternalIdentifierMerchantNameMerchantDomainAmount(
@@ -150,6 +157,8 @@ public class PKPaymentTokenContext extends NSObject {
 
     /**
      * The main top-level domain of the merchant this payment token is intended for, optional.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -159,6 +168,8 @@ public class PKPaymentTokenContext extends NSObject {
     /**
      * An identifier for the merchant, as previously agreed with Apple. If you request a payment token
      * for another merchant, use their merchant identifier, if available. Otherwise, use your own.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -167,6 +178,8 @@ public class PKPaymentTokenContext extends NSObject {
 
     /**
      * The name of the merchant this payment token is intended for; will be displayed to the user.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -190,6 +203,8 @@ public class PKPaymentTokenContext extends NSObject {
      * The amount this particular payment token should be authorized for. It has the same currency as
      * the enclosing payment request. Must be less than or equal to the total amount of the enclosing
      * payment request.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAmount:")
@@ -199,6 +214,8 @@ public class PKPaymentTokenContext extends NSObject {
      * An external identifier for the merchant, provided by the developer. If you request a payment
      * token for another merchant, try to always use the same external identifier for that merchant,
      * if possible.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setExternalIdentifier:")
@@ -206,6 +223,8 @@ public class PKPaymentTokenContext extends NSObject {
 
     /**
      * The main top-level domain of the merchant this payment token is intended for, optional.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMerchantDomain:")
@@ -214,6 +233,8 @@ public class PKPaymentTokenContext extends NSObject {
     /**
      * An identifier for the merchant, as previously agreed with Apple. If you request a payment token
      * for another merchant, use their merchant identifier, if available. Otherwise, use your own.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMerchantIdentifier:")
@@ -221,6 +242,8 @@ public class PKPaymentTokenContext extends NSObject {
 
     /**
      * The name of the merchant this payment token is intended for; will be displayed to the user.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setMerchantName:")

@@ -187,6 +187,9 @@ public class GCMotion extends NSObject {
     @ByValue
     public native GCQuaternion attitude();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("controller")
@@ -199,6 +202,8 @@ public class GCMotion extends NSObject {
      * 
      * @see userAcceleration
      * @see acceleration
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("gravity")
@@ -225,6 +230,9 @@ public class GCMotion extends NSObject {
     @ByValue
     public native GCRotationRate rotationRate();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
@@ -237,12 +245,17 @@ public class GCMotion extends NSObject {
      * 
      * @see gravity
      * @see acceleration
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("userAcceleration")
     @ByValue
     public native GCAcceleration userAcceleration();
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("valueChangedHandler")

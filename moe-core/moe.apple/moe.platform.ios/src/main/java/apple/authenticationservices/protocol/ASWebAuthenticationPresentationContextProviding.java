@@ -26,6 +26,8 @@ public interface ASWebAuthenticationPresentationContextProviding {
      * 
      * @param session The session requesting a presentation anchor.
      * @return The ASPresentationAnchor most closely associated with the UI used to trigger authentication.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated

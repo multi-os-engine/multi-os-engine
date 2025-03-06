@@ -387,6 +387,8 @@ public class WKWebView extends UIView {
 
     /**
      * The web view's user interface delegate.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -401,6 +403,8 @@ public class WKWebView extends UIView {
      * interface.
      * [@link] WKWebView @/link is key-value observing (KVO) compliant for this
      * property.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -412,6 +416,8 @@ public class WKWebView extends UIView {
      * will trigger back-forward list navigations.
      * 
      * The default value is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("allowsBackForwardNavigationGestures")
@@ -478,6 +484,8 @@ public class WKWebView extends UIView {
 
     /**
      * The web view's back-forward list.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -492,6 +500,8 @@ public class WKWebView extends UIView {
      * for this property.
      * 
      * @see backForwardList.
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("canGoBack")
@@ -505,6 +515,8 @@ public class WKWebView extends UIView {
      * for this property.
      * 
      * @see backForwardList.
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("canGoForward")
@@ -523,6 +535,8 @@ public class WKWebView extends UIView {
     /**
      * A copy of the configuration with which the web view was
      * initialized.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -548,6 +562,8 @@ public class WKWebView extends UIView {
      * until a new navigation starts, at which point it is reset to 0.0.
      * [@link] WKWebView @/link is key-value observing (KVO) compliant for this
      * property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("estimatedProgress")
@@ -560,6 +576,8 @@ public class WKWebView extends UIView {
      * Calling this method is equivalent to calling `evaluateJavaScript:inFrame:inContentWorld:completionHandler:` with:
      * - A `frame` value of `nil` to represent the main frame
      * - A `contentWorld` value of `WKContentWorld.pageWorld`
+     * 
+     * API-Since: 8.0
      * 
      * @param javaScriptString  The JavaScript string to evaluate.
      * @param completionHandler A block to invoke when script evaluation completes or fails.
@@ -574,6 +592,8 @@ public class WKWebView extends UIView {
      * 
      * @return A new navigation to the requested item, or nil if there is no back
      *         item in the back-forward list.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -585,6 +605,8 @@ public class WKWebView extends UIView {
      * 
      * @return A new navigation to the requested item, or nil if there is no
      *         forward item in the back-forward list.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -600,6 +622,8 @@ public class WKWebView extends UIView {
      * @return A new navigation to the requested item, or nil if it is already
      *         the current item or is not part of the web view's back-forward list.
      * @see backForwardList
+     * 
+     *      API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -612,6 +636,8 @@ public class WKWebView extends UIView {
      * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hasOnlySecureContent")
@@ -621,6 +647,9 @@ public class WKWebView extends UIView {
     @Selector("init")
     public native WKWebView init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native WKWebView initWithCoder(@NotNull NSCoder coder);
@@ -639,6 +668,8 @@ public class WKWebView extends UIView {
      * mutating the configuration after invoking the initializer has no effect
      * on the web view.
      * 
+     * API-Since: 8.0
+     * 
      * @param frame         The frame for the new web view.
      * @param configuration The configuration for the new web view.
      * @return An initialized web view, or nil if the object could not be
@@ -655,6 +686,8 @@ public class WKWebView extends UIView {
      * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isLoading")
@@ -700,6 +733,8 @@ public class WKWebView extends UIView {
      * @param string  The string to use as the contents of the webpage.
      * @param baseURL A URL that is used to resolve relative URLs within the document.
      * @return A new navigation.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -711,6 +746,8 @@ public class WKWebView extends UIView {
      * 
      * @param request The request specifying the URL to which to navigate.
      * @return A new navigation for the given request.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -719,6 +756,8 @@ public class WKWebView extends UIView {
 
     /**
      * The web view's navigation delegate.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -730,6 +769,8 @@ public class WKWebView extends UIView {
      * Reloads the current page.
      * 
      * @return A new navigation representing the reload.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -741,6 +782,8 @@ public class WKWebView extends UIView {
      * using cache-validating conditionals if possible.
      * 
      * @return A new navigation representing the reload.
+     * 
+     *         API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -749,6 +792,8 @@ public class WKWebView extends UIView {
 
     /**
      * The scroll view associated with the web view.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -773,6 +818,8 @@ public class WKWebView extends UIView {
      * will trigger back-forward list navigations.
      * 
      * The default value is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAllowsBackForwardNavigationGestures:")
@@ -801,6 +848,8 @@ public class WKWebView extends UIView {
 
     /**
      * The web view's navigation delegate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNavigationDelegate:")
@@ -809,6 +858,8 @@ public class WKWebView extends UIView {
 
     /**
      * The web view's navigation delegate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setNavigationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WKNavigationDelegate value) {
@@ -824,6 +875,8 @@ public class WKWebView extends UIView {
 
     /**
      * The web view's user interface delegate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUIDelegate:")
@@ -831,6 +884,8 @@ public class WKWebView extends UIView {
 
     /**
      * The web view's user interface delegate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     public void setUIDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WKUIDelegate value) {
@@ -846,6 +901,8 @@ public class WKWebView extends UIView {
 
     /**
      * Stops loading all resources on the current page.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopLoading")
@@ -856,6 +913,8 @@ public class WKWebView extends UIView {
      * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -905,7 +964,99 @@ public class WKWebView extends UIView {
     }
 
     /**
-     * API-Since: 14.0
+     * Calls the given JavaScript string as an async JavaScript function, passing the given named arguments to that
+     * function.
+     * 
+     * The functionBody string is treated as an anonymous JavaScript function body that can be called with named
+     * arguments.
+     * Do not format your functionBody string as a function-like callable object as you would in pure JavaScript.
+     * Your functionBody string should contain only the function body you want executed.
+     * 
+     * For example do not pass in the string:
+     * 
+     * @textblock
+     *            function(x, y, z)
+     *            {
+     *            return x ? y : z;
+     *            }
+     * @/textblock
+     * 
+     *             Instead pass in the string:
+     * @textblock
+     *            return x ? y : z;
+     * @/textblock
+     * 
+     *             The arguments dictionary supplies the values for those arguments which are serialized into JavaScript
+     *             equivalents.
+     *             For example:
+     * @textblock
+     *            @{ @"x" : @YES, @"y" : @1, @"z" : @"hello world" };
+     * @/textblock
+     * 
+     *             Combining the above arguments dictionary with the above functionBody string, a function with the
+     *             arguments named "x", "y", and "z" is called with values true, 1, and "hello world" respectively.
+     * 
+     *             Allowed argument types are:
+     *             NSNumber, NSString, NSDate, NSArray, NSDictionary, and NSNull.
+     *             Any NSArray or NSDictionary containers can only contain objects of those types.
+     * 
+     *             Passing nil is equivalent to targeting the main frame.
+     *             If the frame argument no longer represents a valid frame by the time WebKit attempts to call the
+     *             JavaScript function your completion handler will be called with a WKErrorJavaScriptInvalidFrameTarget
+     *             error.
+     *             This might happen for a number of reasons, including but not limited to:
+     *             - The target frame has been removed from the DOM via JavaScript
+     *             - A parent frame has navigated, destroying all of its previous child frames
+     * 
+     *             No matter which WKContentWorld you use to call your JavaScript function, you can make changes to the
+     *             underlying web content. (e.g. the Document and its DOM structure)
+     *             Such changes will be visible to script executing in all WKContentWorlds.
+     *             Calling your JavaScript function can leave behind other changes to global state visibile to
+     *             JavaScript. (e.g. `window.myVariable = 1;`)
+     *             Those changes will only be visibile to scripts executed in the same WKContentWorld.
+     * 
+     *             Your completion handler will be called with the explicit return value of your JavaScript function.
+     *             If your JavaScript does not explicitly return any value, that undefined result manifests as nil being
+     *             passed to your completion handler.
+     *             If your JavaScript returns null, that result manifests as NSNull being passed to your completion
+     *             handler.
+     * 
+     *             JavaScript has the concept of a "thenable" object, which is any JavaScript object that has a callable
+     *             "then" property.
+     *             The most well known example of a "thenable" object is a JavaScript promise.
+     *             If your JavaScript returns a "thenable" object WebKit will call "then" on the resulting object and
+     *             wait for it to be resolved.
+     * 
+     *             If the object resolves successfully (e.g. Calls the "fulfill" function) your completion handler will
+     *             be called with the result.
+     *             If the object rejects (e.g. Calls the "reject" function) your completion handler will be called with
+     *             a WKErrorJavaScriptAsyncFunctionResultRejected error containing the reject reason in the userInfo
+     *             dictionary.
+     *             If the object is garbage collected before it is resolved, your completion handler will be called with
+     *             a WKErrorJavaScriptAsyncFunctionResultUnreachable error indicating that it will never be resolved.
+     * 
+     *             Since the function is a JavaScript "async" function you can use JavaScript "await" on thenable
+     *             objects inside your function body.
+     *             For example:
+     * @textblock
+     *            var p = new Promise(function (f) {
+     *            window.setTimeout("f(42)", 1000);
+     *            });
+     *            await p;
+     *            return p;
+     * @/textblock
+     * 
+     *             The above function text will create a promise that will fulfull with the value 42 after a one second
+     *             delay, wait for it to resolve, then return the fulfillment value of 42.
+     * 
+     *             API-Since: 14.0
+     * 
+     * @param functionBody      The JavaScript string to use as the function body.
+     * @param arguments         A dictionary representing the arguments to be passed to the function call.
+     * @param frame             A WKFrameInfo identifying the frame in which to call the JavaScript function.
+     * @param contentWorld      The WKContentWorld in which to call the JavaScript function.
+     * @param completionHandler A block to invoke with the return value of the function call, or with the asynchronous
+     *                          resolution of the function's return value.
      */
     @Generated
     @Selector("callAsyncJavaScript:arguments:inFrame:inContentWorld:completionHandler:")
@@ -919,7 +1070,7 @@ public class WKWebView extends UIView {
     public interface Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler {
         @Generated
         void call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object arg0, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) Object result, @Nullable NSError error);
     }
 
     /**
@@ -1613,4 +1764,15 @@ public class WKWebView extends UIView {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A Boolean value indicating whether Writing Tools is active for the view.
+     * 
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant for this property.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isWritingToolsActive")
+    public native boolean isWritingToolsActive();
 }

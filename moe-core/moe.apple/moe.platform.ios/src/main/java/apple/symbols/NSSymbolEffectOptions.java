@@ -148,6 +148,8 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
 
     /**
      * The default options.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("options")
@@ -155,6 +157,8 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
 
     /**
      * Convenience initializer that prefers not to repeat.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("optionsWithNonRepeating")
@@ -162,6 +166,8 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
 
     /**
      * Return a copy of the options that prefers not to repeat.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("optionsWithNonRepeating")
@@ -175,7 +181,11 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
      * effect. Very large or small values may be clamped.
      * 
      * - Returns: A new options object with the preferred repeat count.
+     * 
+     * API-Since: 17.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("optionsWithRepeatCount:")
     public static native NSSymbolEffectOptions optionsWithRepeatCount_static(@NInt long count);
@@ -187,7 +197,11 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
      * effect. Very large or small values may be clamped.
      * 
      * - Returns: A new options object with the preferred repeat count.
+     * 
+     * API-Since: 17.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("optionsWithRepeatCount:")
     @NotNull
@@ -195,14 +209,22 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
 
     /**
      * Convenience initializer that prefers to repeat indefinitely.
+     * 
+     * API-Since: 17.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("optionsWithRepeating")
     public static native NSSymbolEffectOptions optionsWithRepeating_static();
 
     /**
      * Return a copy of the options that prefers to repeat indefinitely.
+     * 
+     * API-Since: 17.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("optionsWithRepeating")
     @NotNull
@@ -216,6 +238,8 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
      * be clamped.
      * 
      * - Returns: A new instance with the preferred speed multiplier.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("optionsWithSpeed:")
@@ -229,6 +253,8 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
      * be clamped.
      * 
      * - Returns: A new instance with the preferred speed multiplier.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("optionsWithSpeed:")
@@ -270,4 +296,33 @@ public class NSSymbolEffectOptions extends NSObject implements NSCopying, NSSecu
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Convenience initializer setting a preferred repeat behavior.
+     * 
+     * - Parameter behavior: The preferred behavior when the effect is repeated.
+     * 
+     * - Returns: A new options object with the preferred repeat behavior.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("optionsWithRepeatBehavior:")
+    public static native NSSymbolEffectOptions optionsWithRepeatBehavior_static(
+            @NotNull NSSymbolEffectOptionsRepeatBehavior behavior);
+
+    /**
+     * Return a copy of the options setting a preferred repeat behavior.
+     * 
+     * - Parameter behavior: The preferred behavior when the effect is repeated.
+     * 
+     * - Returns: A new options object with the preferred repeat behavior.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("optionsWithRepeatBehavior:")
+    @NotNull
+    public native NSSymbolEffectOptions optionsWithRepeatBehavior(
+            @NotNull NSSymbolEffectOptionsRepeatBehavior behavior);
 }

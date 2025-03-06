@@ -46,6 +46,8 @@ public interface HMAccessoryDelegate {
      * @param accessory Sender of the message.
      * 
      * @param service   Service whose associated service type was modified.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -56,11 +58,13 @@ public interface HMAccessoryDelegate {
     }
 
     /**
-     * Informs the delegate when the name of a service is modfied.
+     * Informs the delegate when the name of a service is modified.
      * 
      * @param accessory Sender of the message.
      * 
      * @param service   Service whose name was modified.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -77,6 +81,8 @@ public interface HMAccessoryDelegate {
      * @param service        HMService that contains the characteristic whose value was modified.
      * 
      * @param characteristic The characteristic whose value was changed.
+     * 
+     *                       API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -90,6 +96,8 @@ public interface HMAccessoryDelegate {
      * Informs the delegate when the name of the accessory is modified.
      * 
      * @param accessory Sender of the message.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -102,6 +110,8 @@ public interface HMAccessoryDelegate {
      * Informs the delegate when the reachability of the accessory changes.
      * 
      * @param accessory Sender of the message.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -115,6 +125,8 @@ public interface HMAccessoryDelegate {
      * The services discovered are accessible via the 'services' property of the accessory.
      * 
      * @param accessory Sender of the message.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @IsOptional

@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRClusterDoorLock extends MTRCluster {
+public class MTRClusterDoorLock extends MTRGenericCluster {
     static {
         NatJ.register();
     }
@@ -1548,4 +1548,38 @@ public class MTRClusterDoorLock extends MTRCluster {
     public native void writeAttributeWrongCodeEntryLimitWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("lockDoorWithExpectedValues:expectedValueInterval:completion:")
+    public native void lockDoorWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_lockDoorWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_lockDoorWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_lockDoorWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_lockDoorWithExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("unlockDoorWithExpectedValues:expectedValueInterval:completion:")
+    public native void unlockDoorWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_unlockDoorWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_unlockDoorWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_unlockDoorWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_unlockDoorWithExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
 }

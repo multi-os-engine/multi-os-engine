@@ -117,6 +117,8 @@ public class SWPerson extends NSObject implements NSSecureCoding {
      * @param displayName        The name of this person.
      * @param thumbnailImageData Optional thumbnail image data for this person. If nil, this will be inferred by the
      *                           system.
+     * 
+     *                           API-Since: 16.0
      */
     @Generated
     @Selector("initWithHandle:identity:displayName:thumbnailImageData:")

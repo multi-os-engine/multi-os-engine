@@ -161,31 +161,52 @@ public class MPMusicPlayerStoreQueueDescriptor extends MPMusicPlayerQueueDescrip
     @Selector("init")
     public native MPMusicPlayerStoreQueueDescriptor init();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("initWithStoreIDs:")
     public native MPMusicPlayerStoreQueueDescriptor initWithStoreIDs(@NotNull NSArray<String> storeIDs);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setEndTime:forItemWithStoreID:")
     public native void setEndTimeForItemWithStoreID(double endTime, @NotNull String storeID);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setStartItemID:")
     public native void setStartItemID(@Nullable String value);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setStartTime:forItemWithStoreID:")
     public native void setStartTimeForItemWithStoreID(double startTime, @NotNull String storeID);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setStoreIDs:")
     public native void setStoreIDs(@Nullable NSArray<String> value);
 
+    /**
+     * API-Since: 10.1
+     */
     @Nullable
     @Generated
     @Selector("startItemID")
     public native String startItemID();
 
+    /**
+     * API-Since: 10.1
+     */
     @Nullable
     @Generated
     @Selector("storeIDs")

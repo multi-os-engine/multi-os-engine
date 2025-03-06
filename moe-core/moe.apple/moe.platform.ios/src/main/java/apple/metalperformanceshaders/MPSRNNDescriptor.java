@@ -107,6 +107,8 @@ public class MPSRNNDescriptor extends NSObject {
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels per pixel in the input image or number of rows in the input matrix.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -148,6 +150,8 @@ public class MPSRNNDescriptor extends NSObject {
      * (or the input image or matrix if this is the first layer in stack with this direction).
      * 
      * @see MPSRNNImageInferenceLayer and @see MPSRNNMatrixInferenceLayer.
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("layerSequenceDirection")
@@ -163,6 +167,8 @@ public class MPSRNNDescriptor extends NSObject {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -181,6 +187,8 @@ public class MPSRNNDescriptor extends NSObject {
      * [@property] inputFeatureChannels
      * 
      * The number of feature channels per pixel in the input image or number of rows in the input matrix.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInputFeatureChannels:")
@@ -199,6 +207,8 @@ public class MPSRNNDescriptor extends NSObject {
      * (or the input image or matrix if this is the first layer in stack with this direction).
      * 
      * @see MPSRNNImageInferenceLayer and @see MPSRNNMatrixInferenceLayer.
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("setLayerSequenceDirection:")
@@ -208,6 +218,8 @@ public class MPSRNNDescriptor extends NSObject {
      * [@property] outputFeatureChannels
      * 
      * The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutputFeatureChannels:")
@@ -221,6 +233,8 @@ public class MPSRNNDescriptor extends NSObject {
      * Currently @ref MPSRNNImageInferenceLayer ignores this property and the convolution operations always
      * convert FP32 weights into FP16 for better performance.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUseFloat32Weights:")
@@ -234,6 +248,8 @@ public class MPSRNNDescriptor extends NSObject {
      * even if said weights are specified as nil.
      * For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to
      * NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUseLayerInputUnitTransformMode:")
@@ -255,6 +271,8 @@ public class MPSRNNDescriptor extends NSObject {
      * Currently @ref MPSRNNImageInferenceLayer ignores this property and the convolution operations always
      * convert FP32 weights into FP16 for better performance.
      * Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("useFloat32Weights")
@@ -268,6 +286,8 @@ public class MPSRNNDescriptor extends NSObject {
      * even if said weights are specified as nil.
      * For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to
      * NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("useLayerInputUnitTransformMode")

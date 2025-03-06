@@ -17,6 +17,9 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INGetCarPowerLevelStatusIntentResponseObserver")
 public interface INGetCarPowerLevelStatusIntentResponseObserver {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("getCarPowerLevelStatusResponseDidUpdate:")
     void getCarPowerLevelStatusResponseDidUpdate(@NotNull INGetCarPowerLevelStatusIntentResponse response);

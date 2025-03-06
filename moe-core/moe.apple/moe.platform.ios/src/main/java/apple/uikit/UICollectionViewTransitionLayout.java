@@ -169,6 +169,9 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("currentLayout")
@@ -178,33 +181,54 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @Selector("init")
     public native UICollectionViewTransitionLayout init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UICollectionViewTransitionLayout initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithCurrentLayout:nextLayout:")
     public native UICollectionViewTransitionLayout initWithCurrentLayoutNextLayout(
             @NotNull UICollectionViewLayout currentLayout, @NotNull UICollectionViewLayout newLayout);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("nextLayout")
     public native UICollectionViewLayout nextLayout();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setTransitionProgress:")
     public native void setTransitionProgress(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("transitionProgress")
     @NFloat
     public native double transitionProgress();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("updateValue:forAnimatedKey:")
     public native void updateValueForAnimatedKey(@NFloat double value, @NotNull String key);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("valueForAnimatedKey:")
     @NFloat

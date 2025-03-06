@@ -8,13 +8,13 @@ public final class SparseSubfactor_t {
     private SparseSubfactor_t() {
     }
 
-    @Generated public static final byte SparseSubfactorInvalid = 0;
-    @Generated public static final byte SparseSubfactorP = 1;
-    @Generated public static final byte SparseSubfactorS = 2;
-    @Generated public static final byte SparseSubfactorL = 3;
-    @Generated public static final byte SparseSubfactorD = 4;
-    @Generated public static final byte SparseSubfactorPLPS = 5;
-    @Generated public static final byte SparseSubfactorQ = 6;
-    @Generated public static final byte SparseSubfactorR = 7;
-    @Generated public static final byte SparseSubfactorRP = 8;
+    @Generated public static final byte Invalid = 0;
+    @Generated public static final byte P = 1;
+    @Generated public static final byte S = 2;
+    @Generated public static final byte L = 3;
+    @Generated public static final byte D = 4;
+    @Generated public static final byte PLPS = 5;
+    @Generated public static final byte Q = 6;
+    @Generated public static final byte R = 7;
+    @Generated public static final byte RP = 8;
 }

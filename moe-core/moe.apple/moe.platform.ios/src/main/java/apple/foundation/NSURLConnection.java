@@ -172,6 +172,9 @@ public class NSURLConnection extends NSObject {
      * @return YES if it is likely that the given request can be used to
      *         initialize a connection and the associated I/O can be
      *         started, NO otherwise.
+     * 
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("canHandleRequest:")
@@ -360,6 +363,9 @@ public class NSURLConnection extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();

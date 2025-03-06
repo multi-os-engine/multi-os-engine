@@ -183,6 +183,8 @@ public class MPSImageBox extends MPSUnaryImageKernel {
      * @param kernelWidth  the width of the kernel. Must be an odd number.
      * @param kernelHeight the height of the kernel. Must be an odd number.
      * @return A valid object or nil, if failure.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -194,6 +196,8 @@ public class MPSImageBox extends MPSUnaryImageKernel {
      * [@property] kernelHeight
      * 
      * The height of the filter window.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -204,6 +208,8 @@ public class MPSImageBox extends MPSUnaryImageKernel {
      * [@property] kernelWidth
      * 
      * The width of the filter window.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("kernelWidth")

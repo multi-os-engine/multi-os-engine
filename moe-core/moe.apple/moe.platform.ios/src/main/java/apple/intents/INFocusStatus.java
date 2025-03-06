@@ -118,6 +118,9 @@ public class INFocusStatus extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native INFocusStatus initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithIsFocused:")
     public native INFocusStatus initWithIsFocused(@Nullable NSNumber isFocused);
@@ -135,6 +138,9 @@ public class INFocusStatus extends NSObject implements NSCopying, NSSecureCoding
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 15.0
+     */
     @Nullable
     @Generated
     @Selector("isFocused")

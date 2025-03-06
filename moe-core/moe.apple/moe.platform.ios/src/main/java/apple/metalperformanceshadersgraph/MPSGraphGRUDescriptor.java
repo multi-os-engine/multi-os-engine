@@ -27,19 +27,18 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This class defines parameters for a Gated Recurrent Unit (GRU) operation.
+ * The class that defines the parameters for a gated recurrent unit (GRU) operation.
  * 
  * Use this descriptor with the following ``MPSGraph`` methods:
- * - ``MPSGraph/GRUWithSourceTensor:recurrentWeight:inputWeight:bias:descriptor:name:``,
- * - ``MPSGraph/GRUWithSourceTensor:recurrentWeight:inputWeight:bias:initState:descriptor:name:``,
- * - ``MPSGraph/GRUWithSourceTensor:recurrentWeight:inputWeight:bias:initState:mask:secondaryBias:descriptor:name:``,
+ * - ``MPSGraph/GRUWithSourceTensor:recurrentWeight:inputWeight:bias:descriptor:name:``
+ * - ``MPSGraph/GRUWithSourceTensor:recurrentWeight:inputWeight:bias:initState:descriptor:name:``
+ * - ``MPSGraph/GRUWithSourceTensor:recurrentWeight:inputWeight:bias:initState:mask:secondaryBias:descriptor:name:``
  * -
- * ``MPSGraph/GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:inputWeight:bias:descriptor:name:``,
+ * ``MPSGraph/GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:inputWeight:bias:descriptor:name:``
  * -
  * ``MPSGraph/GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:inputWeight:bias:initState:descriptor:name:``
- * and
  * -
- * ``MPSGraph/GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:stateGradient:inputWeight:bias:initState:mask:secondaryBias:descriptor:name:``.
+ * ``MPSGraph/GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:stateGradient:inputWeight:bias:initState:mask:secondaryBias:descriptor:name:``
  * 
  * API-Since: 16.0
  */
@@ -81,6 +80,8 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("bidirectional")
@@ -124,6 +125,8 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
 
     /**
      * Creates an GRU descriptor with default values.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("descriptor")
@@ -135,6 +138,8 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * If set to `YES` then the layer will compute the final value as `h[t] = z[t] h[t-1] + (1-z[t]) o[t]`.
      * Otherwise it's computed as `h[t] = (1-z[t]) h[t-1] + z[t] o[t]`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("flipZ")
@@ -177,8 +182,11 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
     public static native MPSGraphGRUDescriptor new_objc();
 
     /**
-     * A parameter which defines the activation function to use with the o-gate of the GRU op.
+     * A parameter that defines the activation function to use with the output-gate of the GRU operation.
+     * 
      * Default value: `MPSGraphRNNActivationTanh`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("outputGateActivation")
@@ -191,14 +199,19 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * If set to `YES` then the layer will compute the intermediate value as `c[t] = ( b + (h[t-1] m ) R^T) r[t]`.
      * Otherwise it's computed as `c[t] = (h[t-1] r[t] m) R^T`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("resetAfter")
     public native boolean resetAfter();
 
     /**
-     * A parameter which defines the activation function to use with the r-gate of the GRU op.
+     * A parameter that defines the activation function to use with the reset-gate of the GRU operation.
+     * 
      * Default value: `MPSGraphRNNActivationSigmoid`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("resetGateActivation")
@@ -210,6 +223,8 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * 
      * If set to `YES` then the layer will use the gate-ordering `[ r, z, o ]` instead of default `[ z, r, o ]`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("resetGateFirst")
@@ -224,11 +239,13 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * A parameter that defines time direction of the input sequence.
+     * A parameter that defines the time direction of the input sequence.
      * 
      * If set to `YES` then the input sequence is passed in reverse time order to the layer.
      * Note: Ignored when `bidirectional = YES`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("reverse")
@@ -240,6 +257,8 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setBidirectional:")
@@ -251,14 +270,19 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * If set to `YES` then the layer will compute the final value as `h[t] = z[t] h[t-1] + (1-z[t]) o[t]`.
      * Otherwise it's computed as `h[t] = (1-z[t]) h[t-1] + z[t] o[t]`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setFlipZ:")
     public native void setFlipZ(boolean value);
 
     /**
-     * A parameter which defines the activation function to use with the o-gate of the GRU op.
+     * A parameter that defines the activation function to use with the output-gate of the GRU operation.
+     * 
      * Default value: `MPSGraphRNNActivationTanh`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setOutputGateActivation:")
@@ -270,14 +294,19 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * If set to `YES` then the layer will compute the intermediate value as `c[t] = ( b + (h[t-1] m ) R^T) r[t]`.
      * Otherwise it's computed as `c[t] = (h[t-1] r[t] m) R^T`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setResetAfter:")
     public native void setResetAfter(boolean value);
 
     /**
-     * A parameter which defines the activation function to use with the r-gate of the GRU op.
+     * A parameter that defines the activation function to use with the reset-gate of the GRU operation.
+     * 
      * Default value: `MPSGraphRNNActivationSigmoid`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setResetGateActivation:")
@@ -288,35 +317,44 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
      * 
      * If set to `YES` then the layer will use the gate-ordering `[ r, z, o ]` instead of default `[ z, r, o ]`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setResetGateFirst:")
     public native void setResetGateFirst(boolean value);
 
     /**
-     * A parameter that defines time direction of the input sequence.
+     * A parameter that defines the time direction of the input sequence.
      * 
      * If set to `YES` then the input sequence is passed in reverse time order to the layer.
      * Note: Ignored when `bidirectional = YES`.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setReverse:")
     public native void setReverse(boolean value);
 
     /**
-     * A parameter that makes the GRU layer support training.
+     * A parameter that enables the GRU layer to support training.
      * 
      * If set to `YES` then the layer will produce training state tensor as a secondary output.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTraining:")
     public native void setTraining(boolean value);
 
     /**
-     * A parameter which defines the activation function to use with the z-gate of the GRU op.
+     * A parameter that defines the activation function to use with the update-gate of the GRU operation.
+     * 
      * Default value: `MPSGraphRNNActivationSigmoid`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setUpdateGateActivation:")
@@ -331,18 +369,23 @@ public class MPSGraphGRUDescriptor extends MPSGraphObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * A parameter that makes the GRU layer support training.
+     * A parameter that enables the GRU layer to support training.
      * 
      * If set to `YES` then the layer will produce training state tensor as a secondary output.
      * Default value: `NO`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("training")
     public native boolean training();
 
     /**
-     * A parameter which defines the activation function to use with the z-gate of the GRU op.
+     * A parameter that defines the activation function to use with the update-gate of the GRU operation.
+     * 
      * Default value: `MPSGraphRNNActivationSigmoid`.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("updateGateActivation")

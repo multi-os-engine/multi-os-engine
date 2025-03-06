@@ -44,6 +44,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UIGuidedAccessRestrictionDelegate {
     /**
      * Returns a localized string that gives additional detail about the restriction associated with the identifier.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -57,6 +59,8 @@ public interface UIGuidedAccessRestrictionDelegate {
      * Returns a list of restriction identifiers in the order they will be presented to the user.
      * Each restriction identifier must be unique string.
      * For example: com.MyCompany.MyApp.SomeRestrictionIdentifier
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -65,6 +69,8 @@ public interface UIGuidedAccessRestrictionDelegate {
 
     /**
      * Called each time the restriction associated with the identifier changes state.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("guidedAccessRestrictionWithIdentifier:didChangeState:")
@@ -73,6 +79,8 @@ public interface UIGuidedAccessRestrictionDelegate {
 
     /**
      * Returns a localized string that describes the restriction associated with the identifier.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated

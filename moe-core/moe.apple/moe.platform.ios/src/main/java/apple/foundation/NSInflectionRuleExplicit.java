@@ -112,6 +112,9 @@ public class NSInflectionRuleExplicit extends NSInflectionRule {
     @Selector("initWithCoder:")
     public native NSInflectionRuleExplicit initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithMorphology:")
     public native NSInflectionRuleExplicit initWithMorphology(@NotNull NSMorphology morphology);
@@ -138,6 +141,9 @@ public class NSInflectionRuleExplicit extends NSInflectionRule {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @NotNull
     @Generated
     @Selector("morphology")

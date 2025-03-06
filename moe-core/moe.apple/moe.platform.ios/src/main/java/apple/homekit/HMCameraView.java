@@ -421,12 +421,17 @@ public class HMCameraView extends UIView {
 
     /**
      * Represents the camera source.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("cameraSource")
     public native HMCameraSource cameraSource();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native HMCameraView init();
@@ -441,6 +446,8 @@ public class HMCameraView extends UIView {
 
     /**
      * Represents the camera source.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setCameraSource:")

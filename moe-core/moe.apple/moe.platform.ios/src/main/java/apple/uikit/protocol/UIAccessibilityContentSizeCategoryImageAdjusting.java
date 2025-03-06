@@ -21,6 +21,8 @@ public interface UIAccessibilityContentSizeCategoryImageAdjusting {
     /**
      * When this is equal to YES, the receiver's intrinsic size will increase for users who prefer an accessibility
      * content size category.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("adjustsImageSizeForAccessibilityContentSizeCategory")
@@ -29,6 +31,8 @@ public interface UIAccessibilityContentSizeCategoryImageAdjusting {
     /**
      * When this is equal to YES, the receiver's intrinsic size will increase for users who prefer an accessibility
      * content size category.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAdjustsImageSizeForAccessibilityContentSizeCategory:")

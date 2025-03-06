@@ -98,6 +98,9 @@ public class MKMultiPolylineRenderer extends MKOverlayPathRenderer {
     @Selector("init")
     public native MKMultiPolylineRenderer init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMultiPolyline:")
     public native MKMultiPolylineRenderer initWithMultiPolyline(@NotNull MKMultiPolyline multiPolyline);
@@ -128,6 +131,9 @@ public class MKMultiPolylineRenderer extends MKOverlayPathRenderer {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("multiPolyline")

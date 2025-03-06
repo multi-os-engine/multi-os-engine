@@ -202,6 +202,9 @@ public class HKQuantityType extends HKSampleType {
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("aggregationStyle")
     @NInt
@@ -220,6 +223,8 @@ public class HKQuantityType extends HKSampleType {
      * 
      * Returns YES if the type of HKQuantitySample represented by the receiver can be created with quantities
      * of the given unit.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isCompatibleWithUnit:")
@@ -260,4 +265,14 @@ public class HKQuantityType extends HKSampleType {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("scoredAssessmentTypeForIdentifier:")
+    @Nullable
+    public static native HKScoredAssessmentType scoredAssessmentTypeForIdentifier(@NotNull String identifier);
+
+    @Generated
+    @Selector("stateOfMindType")
+    @NotNull
+    public static native HKStateOfMindType stateOfMindType();
 }

@@ -113,6 +113,12 @@ public class MTRControllerFactory extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerFactory
+     */
+    @Deprecated
     @Generated
     @Selector("isRunning")
     public native boolean isRunning();
@@ -143,27 +149,57 @@ public class MTRControllerFactory extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerFactory
+     */
+    @Deprecated
     @Generated
     @Selector("sharedInstance")
     @NotNull
     public static native MTRControllerFactory sharedInstance();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerFactory
+     */
+    @Deprecated
     @Generated
     @Selector("shutdown")
     public native void shutdown();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerFactory
+     */
+    @Deprecated
     @Generated
     @Selector("startControllerOnExistingFabric:")
     @Nullable
     public native MTRDeviceController startControllerOnExistingFabric(
             @NotNull MTRDeviceControllerStartupParams startupParams);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerFactory
+     */
+    @Deprecated
     @Generated
     @Selector("startControllerOnNewFabric:")
     @Nullable
     public native MTRDeviceController startControllerOnNewFabric(
             @NotNull MTRDeviceControllerStartupParams startupParams);
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use MTRDeviceControllerFactory
+     */
+    @Deprecated
     @Generated
     @Selector("startup:")
     public native boolean startup(@NotNull MTRControllerFactoryParams startupParams);

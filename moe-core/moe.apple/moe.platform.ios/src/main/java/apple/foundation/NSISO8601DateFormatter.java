@@ -147,6 +147,9 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("stringFromDate:timeZone:formatOptions:")
@@ -166,6 +169,9 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("dateFromString:")
@@ -175,6 +181,9 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("formatOptions")
     @NUInt
@@ -185,6 +194,8 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
      * format ("yyyy-MM-dd'T'HH:mm:ssXXXXX") using the following options:
      * NSISO8601DateFormatWithInternetDateTime | NSISO8601DateFormatWithDashSeparatorInDate |
      * NSISO8601DateFormatWithColonSeparatorInTime | NSISO8601DateFormatWithColonSeparatorInTimeZone
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("init")
@@ -194,17 +205,25 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @Selector("initWithCoder:")
     public native NSISO8601DateFormatter initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setFormatOptions:")
     public native void setFormatOptions(@NUInt long value);
 
     /**
      * The default time zone is GMT.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("stringFromDate:")
@@ -218,6 +237,8 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
 
     /**
      * The default time zone is GMT.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("timeZone")

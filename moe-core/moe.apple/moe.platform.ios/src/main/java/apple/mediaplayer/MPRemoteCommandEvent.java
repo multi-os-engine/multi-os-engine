@@ -159,6 +159,8 @@ public class MPRemoteCommandEvent extends NSObject {
 
     /**
      * The command that sent the event.
+     * 
+     * API-Since: 7.1
      */
     @NotNull
     @Generated
@@ -171,6 +173,8 @@ public class MPRemoteCommandEvent extends NSObject {
 
     /**
      * The time when the event occurred.
+     * 
+     * API-Since: 7.1
      */
     @Generated
     @Selector("timestamp")

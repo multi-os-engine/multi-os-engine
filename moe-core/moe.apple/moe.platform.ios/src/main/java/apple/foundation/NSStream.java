@@ -184,6 +184,9 @@ public class NSStream extends NSObject {
     @Selector("close")
     public native void close();
 
+    /**
+     * actually weak
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -216,10 +219,16 @@ public class NSStream extends NSObject {
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
+    /**
+     * actually weak
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSStreamDelegate value);
 
+    /**
+     * actually weak
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSStreamDelegate value) {
         Object __old = delegate();

@@ -31,8 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * The layer normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#layernorm.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -71,7 +70,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
      * [@property] beta
      * 
      * The beta tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("beta")
@@ -81,7 +84,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
      * [@property] betaParameter
      * 
      * The beta tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("betaParameter")
@@ -120,7 +127,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
      * [@property] gamma
      * 
      * The gamma tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gamma")
@@ -130,7 +141,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
      * [@property] gammaParameter
      * 
      * The gamma tensor parameter used for optimizer update
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("gammaParameter")
@@ -175,7 +190,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
      * @param gamma           Training parameter
      * @param varianceEpsilon A small numerical value added to variance for stability
      * @return A new layer normalization layer.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("layerWithNormalizedShape:beta:gamma:varianceEpsilon:")
@@ -192,7 +211,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
      * [@property] normalizedShape
      * 
      * The shape of the axes over which normalization occurs, (W), (H,W) or (C,H,W)
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("normalizedShape")
@@ -214,6 +237,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
@@ -222,7 +246,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
      * [@property] varianceEpsilon
      * 
      * A value used for numerical stability
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("varianceEpsilon")
     public native float varianceEpsilon();

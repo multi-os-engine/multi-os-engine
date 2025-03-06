@@ -3,7 +3,7 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * Optimization profile used as heuristic as graph compiler optimizes network.
+ * The optimization profile used as a heuristic as the graph compiler optimizes the network.
  */
 @Generated
 public final class MPSGraphOptimizationProfile {

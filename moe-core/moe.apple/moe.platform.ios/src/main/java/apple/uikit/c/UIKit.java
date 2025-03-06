@@ -3296,6 +3296,9 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardTypeAutomatic();
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @CVariable()
@@ -3776,7 +3779,7 @@ public final class UIKit {
     /**
      * NSString, default nil: no text effect
      * 
-     * API-Since: 7.0
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -3844,7 +3847,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 100000.0
-     * Deprecated-Message: This attribute is no longer supported with TextKit 2
+     * Deprecated-Message: This attribute is not supported with TextKit 2
      */
     @Deprecated
     @NotNull
@@ -3859,7 +3862,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 100000.0
-     * Deprecated-Message: This attribute is no longer supported with TextKit 2
+     * Deprecated-Message: This attribute is not supported with TextKit 2
      */
     @Deprecated
     @NotNull
@@ -3876,7 +3879,7 @@ public final class UIKit {
      * NSWritingDirectionLeftToRight|NSWritingDirectionOverride, RLO:
      * NSWritingDirectionRightToLeft|NSWritingDirectionOverride,
      * 
-     * API-Since: 7.0
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -3889,9 +3892,9 @@ public final class UIKit {
      * could follow higher-level vertical orientation settings. Currently on iOS, it's always horizontal. The behavior
      * for any other value is undefined.
      * 
-     * API-Since: 6.0
+     * API-Since: 7.0
      * Deprecated-Since: 100000.0
-     * Deprecated-Message: This attribute is no longer supported with TextKit 2
+     * Deprecated-Message: This attribute is not supported with TextKit 2
      */
     @Deprecated
     @NotNull
@@ -3950,7 +3953,7 @@ public final class UIKit {
     /**
      * NSNumber containing NSTextLayoutOrientation value. default: NSTextLayoutOrientationHorizontal
      * 
-     * API-Since: 7.0
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -3961,7 +3964,7 @@ public final class UIKit {
     /**
      * NSValue containing NSRange representing a character range. default: a range covering the whole document
      * 
-     * API-Since: 7.0
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -4002,7 +4005,7 @@ public final class UIKit {
      * This key in options can specify the default attributes applied to the entire document contents. The document
      * attributes can contain this key indicating the actual attributes used.
      * 
-     * API-Since: 7.0
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -4024,7 +4027,7 @@ public final class UIKit {
     /**
      * @"PaperMargin", NSValue containing UIEdgeInsets
      * 
-     * API-Since: 7.0
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -4117,7 +4120,7 @@ public final class UIKit {
      * attributes: NSTextLayoutSectionOrientation and NSTextLayoutSectionRange. When there is a gap between sections,
      * it's assumed to have NSTextLayoutOrientationHorizontal.
      * 
-     * API-Since: 7.0
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -4402,6 +4405,8 @@ public final class UIKit {
     /**
      * @"DocumentType", NSString indicating a document type to be forced when loading the document, specified as one of
      * the NSDocumentTypeDocumentAttribute constants listed above
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -4411,6 +4416,8 @@ public final class UIKit {
 
     /**
      * @"DefaultAttributes", for plain text only; NSDictionary containing attributes to be applied to plain files
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -4421,6 +4428,8 @@ public final class UIKit {
     /**
      * @"CharacterEncoding", for plain text and HTML; NSNumber containing integer specifying NSStringEncoding to be used
      * to interpret the file
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -5377,13 +5386,36 @@ public final class UIKit {
      * will be officially deprecated in a future release. Please use the NSUnderlineStyle* equivalents instead.
      * Underlines will be drawn with a solid pattern by default, so NSUnderlinePatternSolid does not need to be
      * specified.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated @NInt public static final long NSUnderlinePatternSolid = 0x0000000000000000L;
-    @Generated @NInt public static final long NSUnderlinePatternDot = 0x0000000000000100L;
-    @Generated @NInt public static final long NSUnderlinePatternDash = 0x0000000000000200L;
-    @Generated @NInt public static final long NSUnderlinePatternDashDot = 0x0000000000000300L;
-    @Generated @NInt public static final long NSUnderlinePatternDashDotDot = 0x0000000000000400L;
-    @Generated @NInt public static final long NSUnderlineByWord = 0x0000000000008000L;
+    @Deprecated @Generated @NInt public static final long NSUnderlinePatternSolid = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated @NInt public static final long NSUnderlinePatternDot = 0x0000000000000100L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated @NInt public static final long NSUnderlinePatternDash = 0x0000000000000200L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated @NInt public static final long NSUnderlinePatternDashDot = 0x0000000000000300L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated @NInt public static final long NSUnderlinePatternDashDotDot = 0x0000000000000400L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated @NInt public static final long NSUnderlineByWord = 0x0000000000008000L;
 
     /**
      * API-Since: 13.0
@@ -6449,7 +6481,6 @@ public final class UIKit {
 
     @Generated public static final double UIKIT_HAS_UIFOUNDATION_SYMBOLS = 1.0;
     @Generated public static final double __NSDATAASSET_SHARED_SECTION__ = 1.0;
-    @Generated public static final double __NSTEXT_SHARED_SECTION__ = 1.0;
     @Generated public static final double __NSPARAGRAPH_STYLE_SHARED_SECTION__ = 1.0;
     @Generated public static final double NSLAYOUTCONSTRAINT_H = 1.0;
     @Generated public static final double NSLAYOUTANCHOR_H = 1.0;
@@ -6740,4 +6771,717 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String UIActivityTypeAddToHomeScreen();
+
+    /**
+     * API-Since: 18.2
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIWritingToolsCoordinatorTextAnimationDebugDescription(@NInt long animationType);
+
+    /**
+     * NSTextHighlightStyle, default nil: no highlight
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightStyleAttributeName();
+
+    /**
+     * The default color scheme. The color is based on the tint/accent color for the rendering context. By default UIKit
+     * uses UIView.tintColor and AppKit uses NSColor.controlAccentColor.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightColorSchemeAttributeName();
+
+    /**
+     * NSAdaptiveImageGlyph, default nil
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSAdaptiveImageGlyphAttributeName();
+
+    /**
+     * NSNumber (Boolean) value. Default is false. The range of text with NSWritingToolsExclusionAttributeName=true is
+     * excluded from the WritingTools processing and preserved.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSWritingToolsExclusionAttributeName();
+
+    /**
+     * The system-defined default highlight type. Supported only with TextKit2
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightStyleDefault();
+
+    /**
+     * The system-defined default highlight type. Supported only with TextKit2
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightColorSchemeDefault();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightColorSchemePurple();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightColorSchemePink();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightColorSchemeOrange();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightColorSchemeMint();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextHighlightColorSchemeBlue();
+
+    /**
+     * NSNumber containing a boolean value. When true, the TextKit1-style text list including the marker format string
+     * will be produced.
+     * NSAttributedString uses two representations for the text list. With TextKit2, the paragraph representing a text
+     * list item only contains the content. For example, " - text list A" is represented as "test list A" with a .hyphen
+     * NSTextList. TextKit1 requires the entire resolved text list content including the marker format string.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSTextKit1ListMarkerFormatDocumentOption();
+
+    /**
+     * Open menu
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIMenuOpen();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIAccessibilityCustomActionCategoryEdit();
+
+    /**
+     * eSIM activation
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCellularEID();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCellularIMEI();
+
+    /**
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIApplicationCategoryDefaultErrorDomain();
+
+    /**
+     * Supplied in userInfo when the application is rate-limited: the last date on which data was
+     * retrieved.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIApplicationCategoryDefaultStatusLastProvidedDateErrorKey();
+
+    /**
+     * Supplied in userInfo when the application is rate-limited: the date after which the app will no
+     * longer be rate-limited
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIApplicationCategoryDefaultRetryAvailabilityDateErrorKey();
+
+    /**
+     * The URL string you use to deep link to settings for default app selection in the Settings app.
+     * 
+     * API-Since: 18.3
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIApplicationOpenDefaultApplicationsSettingsURLString();
+
+    /**
+     * The intent for creating a default document.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIDocumentCreationIntentDefault();
+
+    /**
+     * A notification posted when the system protection attributes of a scene change. The object of
+     * the notification is the scene whose protection attributes changed.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UISceneSystemProtectionDidChangeNotification();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentLeft();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentCenter();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentRight();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentJustified();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentNatural();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextListDisc();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextListHyphen();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextListDecimal();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextListOther();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightDefault();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightPurple();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightPink();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightOrange();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightMint();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightBlue();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerUndefinedChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerSetBoldChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerRemoveBoldChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerSetItalicChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerRemoveItalicChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerSetUnderlineChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerRemoveUnderlineChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerSetStrikethroughChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerRemoveStrikethroughChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFontChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFontSizeChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerIncreaseFontSizeChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerDecreaseFontSizeChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextColorChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerLineHeightPointSizeChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerIncreaseIndentationChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerDecreaseIndentationChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFormattingStyleChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextListChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightChangeType();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFormattingStylesComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFontAttributesComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFontPickerComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFontSizeComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerFontPointSizeComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextAlignmentAndJustificationComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextIndentationComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerLineHeightComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerListStylesComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerTextColorComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightComponentKey();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextFormattingViewControllerHighlightPickerComponentKey();
+
+    /**
+     * NSArray<UIActivityCollaborationModeRestriction *> *
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIActivityItemsConfigurationMetadataKeyCollaborationModeRestrictions();
+
+    /**
+     * A key for an array of INPerson objects representing recipients who will be filled in by default in the compose
+     * view if that sharing app supports it.
+     * 
+     * This might fail to pre-fill correctly if the sharing app chosen by the user can't recognize the provided person.
+     * Also, if a people suggestion is chosen, that suggestion will override this provided value.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityItemsConfigurationMetadataKeyShareRecipients();
+
+    @Generated public static final double __NSWRITING_DIRECTION_SHARED_SECTION__ = 1.0;
+    @Generated public static final double __NSTEXT_ALIGNMENT_SHARED_SECTION__ = 1.0;
 }

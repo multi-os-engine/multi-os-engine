@@ -83,6 +83,8 @@ public class MTRCommissionableBrowserResult extends NSObject {
 
     /**
      * A boolean indicating whether the device has a commissioning window open.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("commissioningMode")
@@ -98,6 +100,8 @@ public class MTRCommissionableBrowserResult extends NSObject {
 
     /**
      * A 12-bit value matching the field of the same name in MTRSetupPayload.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("discriminator")
@@ -128,6 +132,8 @@ public class MTRCommissionableBrowserResult extends NSObject {
      * expressed as a fixed-length sixteen-character hexadecimal string, encoded as ASCII text using capital letters.
      * 
      * For a node advertising over Bluetooth Low Energy, the instance name is always "BLE".
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("instanceName")
@@ -154,6 +160,8 @@ public class MTRCommissionableBrowserResult extends NSObject {
 
     /**
      * A 16-bit unsigned value identifying the product.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("productID")
@@ -183,6 +191,8 @@ public class MTRCommissionableBrowserResult extends NSObject {
 
     /**
      * A 16-bit unsigned value identifying the device manufacturer.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("vendorID")

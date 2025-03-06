@@ -45,6 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -194,6 +197,8 @@ public class UIActivityViewController extends UIViewController {
 
     /**
      * default is nil. activity types listed will not be displayed
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -204,6 +209,9 @@ public class UIActivityViewController extends UIViewController {
     @Selector("init")
     public native UIActivityViewController init();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithActivityItems:applicationActivities:")
     public native UIActivityViewController initWithActivityItemsApplicationActivities(@NotNull NSArray<?> activityItems,
@@ -242,6 +250,8 @@ public class UIActivityViewController extends UIViewController {
 
     /**
      * default is nil. activity types listed will not be displayed
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setExcludedActivityTypes:")
@@ -311,4 +321,23 @@ public class UIActivityViewController extends UIViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Hides some sections of the activity view controller. Default is none
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("excludedActivitySectionTypes")
+    @NUInt
+    public native long excludedActivitySectionTypes();
+
+    /**
+     * Hides some sections of the activity view controller. Default is none
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setExcludedActivitySectionTypes:")
+    public native void setExcludedActivitySectionTypes(@NUInt long value);
 }

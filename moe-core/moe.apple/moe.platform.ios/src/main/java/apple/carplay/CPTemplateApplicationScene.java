@@ -76,6 +76,8 @@ public class CPTemplateApplicationScene extends UIScene {
 
     /**
      * The CPWindow created for this CPTemplateApplicationScene
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -102,6 +104,8 @@ public class CPTemplateApplicationScene extends UIScene {
 
     /**
      * The delegate for a CPTemplateApplicationScene must conform to the CPTemplateApplicationSceneDelegate protocol.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -142,6 +146,8 @@ public class CPTemplateApplicationScene extends UIScene {
 
     /**
      * The interfaceController object for this scene.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -172,6 +178,8 @@ public class CPTemplateApplicationScene extends UIScene {
 
     /**
      * The delegate for a CPTemplateApplicationScene must conform to the CPTemplateApplicationSceneDelegate protocol.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")

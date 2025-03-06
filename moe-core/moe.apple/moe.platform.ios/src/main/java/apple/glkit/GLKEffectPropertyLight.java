@@ -197,7 +197,12 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     /**
      * { 0.0, 0.0, 0.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("ambientColor")
     @ByValue
@@ -205,14 +210,24 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     /**
      * 1.0, 0.0, 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("constantAttenuation")
     public native float constantAttenuation();
 
     /**
      * { 1.0, 1.0, 1.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("diffuseColor")
     @ByValue
@@ -220,7 +235,12 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     /**
      * GL_TRUE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("enabled")
     public native byte enabled();
@@ -231,14 +251,24 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     /**
      * 1.0, 0.0, 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("linearAttenuation")
     public native float linearAttenuation();
 
     /**
      * { 0.0, 0.0, 0.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("position")
     @ByValue
@@ -246,98 +276,168 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     /**
      * 1.0, 0.0, 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("quadraticAttenuation")
     public native float quadraticAttenuation();
 
     /**
      * { 0.0, 0.0, 0.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setAmbientColor:")
     public native void setAmbientColor(@ByValue GLKVector4 value);
 
     /**
      * 1.0, 0.0, 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setConstantAttenuation:")
     public native void setConstantAttenuation(float value);
 
     /**
      * { 1.0, 1.0, 1.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setDiffuseColor:")
     public native void setDiffuseColor(@ByValue GLKVector4 value);
 
     /**
      * GL_TRUE
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(byte value);
 
     /**
      * 1.0, 0.0, 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setLinearAttenuation:")
     public native void setLinearAttenuation(float value);
 
     /**
      * { 0.0, 0.0, 0.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setPosition:")
     public native void setPosition(@ByValue GLKVector4 value);
 
     /**
      * 1.0, 0.0, 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setQuadraticAttenuation:")
     public native void setQuadraticAttenuation(float value);
 
     /**
      * { 1.0, 1.0, 1.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setSpecularColor:")
     public native void setSpecularColor(@ByValue GLKVector4 value);
 
     /**
      * 180.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setSpotCutoff:")
     public native void setSpotCutoff(float value);
 
     /**
      * { 0.0, 0.0, -1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setSpotDirection:")
     public native void setSpotDirection(@ByValue GLKVector3 value);
 
     /**
      * 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setSpotExponent:")
     public native void setSpotExponent(float value);
 
     /**
      * All identity matrices
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setTransform:")
     public native void setTransform(@NotNull GLKEffectPropertyTransform value);
 
     /**
      * { 1.0, 1.0, 1.0, 1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("specularColor")
     @ByValue
@@ -345,14 +445,24 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     /**
      * 180.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("spotCutoff")
     public native float spotCutoff();
 
     /**
      * { 0.0, 0.0, -1.0 }
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("spotDirection")
     @ByValue
@@ -360,14 +470,24 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     /**
      * 0.0
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("spotExponent")
     public native float spotExponent();
 
     /**
      * All identity matrices
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("transform")

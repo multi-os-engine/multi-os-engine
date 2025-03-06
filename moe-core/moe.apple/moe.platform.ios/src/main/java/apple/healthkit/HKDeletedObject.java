@@ -174,6 +174,8 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
      * [@property] UUID
      * 
      * The unique identifier of the HKObject that was deleted from the HealthKit database.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

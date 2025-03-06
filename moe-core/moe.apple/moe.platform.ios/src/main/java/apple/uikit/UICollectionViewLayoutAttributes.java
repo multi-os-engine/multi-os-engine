@@ -143,16 +143,25 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("layoutAttributesForCellWithIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath(
             @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:withIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindWithIndexPath(
             @NotNull String decorationViewKind, @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:withIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindWithIndexPath(
@@ -184,6 +193,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("alpha")
     @NFloat
@@ -218,11 +230,17 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("frame")
     @ByValue
     public native CGRect frame();
 
+    /**
+     * API-Since: 6.0
+     */
     @NotNull
     @Generated
     @Selector("indexPath")
@@ -234,6 +252,8 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     /**
      * As an optimization, UICollectionView might not create a view for items whose hidden attribute is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isHidden")
@@ -241,11 +261,16 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     /**
      * As an optimization, UICollectionView might not create a view for items whose hidden attribute is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("representedElementCategory")
     @NUInt
@@ -253,12 +278,17 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     /**
      * nil when representedElementCategory is UICollectionElementCategoryCell
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
     @Selector("representedElementKind")
     public native String representedElementKind();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(@NFloat double value);
@@ -274,18 +304,30 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("setCenter:")
     public native void setCenter(@ByValue CGPoint value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setFrame:")
     public native void setFrame(@ByValue CGRect value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setIndexPath:")
     public native void setIndexPath(@NotNull NSIndexPath value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setTransform3D:")
     public native void setTransform3D(@ByValue CATransform3D value);
@@ -296,11 +338,16 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     /**
      * default is 0
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setZIndex:")
     public native void setZIndex(@NInt long value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("size")
     @ByValue
@@ -311,6 +358,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @ByValue
     public native CGAffineTransform transform();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("transform3D")
     @ByValue
@@ -318,6 +368,8 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     /**
      * default is 0
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("zIndex")

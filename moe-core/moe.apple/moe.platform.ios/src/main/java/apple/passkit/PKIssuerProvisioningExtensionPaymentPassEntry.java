@@ -46,6 +46,9 @@ public class PKIssuerProvisioningExtensionPaymentPassEntry extends PKIssuerProvi
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("addRequestConfiguration")
@@ -103,6 +106,9 @@ public class PKIssuerProvisioningExtensionPaymentPassEntry extends PKIssuerProvi
     @Selector("init")
     public native PKIssuerProvisioningExtensionPaymentPassEntry init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithIdentifier:title:art:addRequestConfiguration:")
     public native PKIssuerProvisioningExtensionPaymentPassEntry initWithIdentifierTitleArtAddRequestConfiguration(

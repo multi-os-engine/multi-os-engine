@@ -186,10 +186,16 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("generateCubemapFromLight:")
     public native void generateCubemapFromLight(@NUInt long textureSize);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("generateSphericalHarmonicsFromLight:")
     public native void generateSphericalHarmonicsFromLight(@NUInt long sphericalHarmonicsLevel);
@@ -200,21 +206,32 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
 
     /**
      * Init with an IES profile file, generate a light web of specified width and height
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithIESProfile:")
     public native MDLPhotometricLight initWithIESProfile(@NotNull NSURL URL);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("lightCubeMap")
     public native MDLTexture lightCubeMap();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("sphericalHarmonicsLevel")
     @NUInt

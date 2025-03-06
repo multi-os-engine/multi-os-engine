@@ -53,6 +53,9 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
      *                   user prior to handling.
      * 
      * @see INGetAvailableRestaurantReservationBookingsIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -74,6 +77,9 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
      * @param completion The response handling block to invoke with the response to handling the intent.
      * 
      * @see INGetAvailableRestaurantReservationBookingsIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @Selector("handleGetAvailableRestaurantReservationBookings:completion:")
@@ -81,6 +87,9 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
             @NotNull INGetAvailableRestaurantReservationBookingsIntent intent,
             @NotNull @ObjCBlock(name = "call_handleGetAvailableRestaurantReservationBookingsCompletion") Block_handleGetAvailableRestaurantReservationBookingsCompletion completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolvePartySizeForGetAvailableRestaurantReservationBookings:withCompletion:")
@@ -90,6 +99,9 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookings:withCompletion:")
@@ -109,6 +121,9 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INGetAvailableRestaurantReservationBookingsIntentResponse
+     * 
+     * 
+     *      API-Since: 10.0
      */
     @Generated
     @IsOptional

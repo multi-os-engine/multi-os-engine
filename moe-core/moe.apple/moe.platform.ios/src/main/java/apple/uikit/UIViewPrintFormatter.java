@@ -163,6 +163,9 @@ public class UIViewPrintFormatter extends UIPrintFormatter {
     @Selector("init")
     public native UIViewPrintFormatter init();
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @Selector("view")

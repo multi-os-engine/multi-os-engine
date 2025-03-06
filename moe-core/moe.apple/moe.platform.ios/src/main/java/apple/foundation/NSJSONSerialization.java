@@ -74,6 +74,8 @@ public class NSJSONSerialization extends NSObject {
      * The data must be in one of the 5 supported encodings listed in the JSON specification: UTF-8, UTF-16LE, UTF-16BE,
      * UTF-32LE, UTF-32BE. The data may or may not have a BOM. The most efficient encoding to use for parsing is UTF-8,
      * so if you have a choice in encoding the data passed to this method, use UTF-8.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -85,6 +87,8 @@ public class NSJSONSerialization extends NSObject {
     /**
      * Create a JSON object from JSON data stream. The stream should be opened and configured. All other behavior of
      * this method is the same as the JSONObjectWithData:options:error: method.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -138,6 +142,8 @@ public class NSJSONSerialization extends NSObject {
      * output more readable. If that option is not set, the most compact possible JSON will be generated. If an error
      * occurs, the error parameter will be set and the return value will be nil. The resulting data is a encoded in
      * UTF-8.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -184,6 +190,8 @@ public class NSJSONSerialization extends NSObject {
      * - NSNumbers are not NaN or infinity
      * Other rules may apply. Calling this method or attempting a conversion are the definitive ways to tell if a given
      * object can be converted to JSON data.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isValidJSONObject:")
@@ -224,6 +232,8 @@ public class NSJSONSerialization extends NSObject {
      * Write JSON data into a stream. The stream should be opened and configured. The return value is the number of
      * bytes written to the stream, or 0 on error. All other behavior of this method is the same as the
      * dataWithJSONObject:options:error: method.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("writeJSONObject:toStream:options:error:")

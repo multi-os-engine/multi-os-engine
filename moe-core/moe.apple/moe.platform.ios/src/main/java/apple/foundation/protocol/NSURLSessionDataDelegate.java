@@ -49,6 +49,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     /**
      * Notification that a data task has become a download task. No
      * future messages will be sent to the data task.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -88,6 +90,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
      * Sent when data is available for the delegate to consume. As the
      * data may be discontiguous, you should use
      * [NSData enumerateByteRangesUsingBlock:] to access it.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -105,6 +109,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
      * implement it, you can get the response as a property of the task.
      * 
      * This method will not be called for background upload tasks (which cannot be converted to download tasks).
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -121,6 +127,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
      * caching. Note that there is no guarantee that caching will be
      * attempted for a given resource, and you should not rely on this
      * message to receive the resource data.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

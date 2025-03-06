@@ -101,6 +101,9 @@ public class UICollectionViewDropProposal extends UIDropProposal {
     @Selector("initWithDropOperation:")
     public native UICollectionViewDropProposal initWithDropOperation(@NUInt long operation);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDropOperation:intent:")
     public native UICollectionViewDropProposal initWithDropOperationIntent(@NUInt long operation, @NInt long intent);
@@ -120,6 +123,8 @@ public class UICollectionViewDropProposal extends UIDropProposal {
 
     /**
      * The default is UICollectionViewDropIntentUnspecified.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("intent")

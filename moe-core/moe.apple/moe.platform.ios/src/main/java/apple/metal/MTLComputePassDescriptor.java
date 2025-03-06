@@ -91,6 +91,8 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
      * computePassDescriptor
      * 
      * Create an autoreleased default frame buffer descriptor
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -116,6 +118,8 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
      * [@property] dispatchType
      * 
      * The dispatch type of the compute command encoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dispatchType")
@@ -170,6 +174,8 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
      * [@property] sampleBufferAttachments
      * 
      * An array of sample buffers and associated sample indices.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -180,6 +186,8 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
      * [@property] dispatchType
      * 
      * The dispatch type of the compute command encoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDispatchType:")

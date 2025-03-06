@@ -106,6 +106,9 @@ public class UIDropProposal extends NSObject implements NSCopying {
     @Selector("init")
     public native UIDropProposal init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDropOperation:")
     public native UIDropProposal initWithDropOperation(@NUInt long operation);
@@ -127,6 +130,8 @@ public class UIDropProposal extends NSObject implements NSCopying {
      * Set `precise` to true to specify that this drop interaction wants to handle the drop
      * in a precise way, e.g. dropping into text. The drag system may move the drag point
      * away from the touch in order to make it easier to hit a small target.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isPrecise")
@@ -148,6 +153,8 @@ public class UIDropProposal extends NSObject implements NSCopying {
 
     /**
      * The operation that this interaction proposes to perform.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("operation")
@@ -160,6 +167,8 @@ public class UIDropProposal extends NSObject implements NSCopying {
      * For instance, you might set this to true if the items are being moved from some
      * other nearby view, and scaling them smaller would be distracting.
      * This only applies to drags that started in the same app.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("prefersFullSizePreview")
@@ -177,6 +186,8 @@ public class UIDropProposal extends NSObject implements NSCopying {
      * Set `precise` to true to specify that this drop interaction wants to handle the drop
      * in a precise way, e.g. dropping into text. The drag system may move the drag point
      * away from the touch in order to make it easier to hit a small target.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrecise:")
@@ -188,6 +199,8 @@ public class UIDropProposal extends NSObject implements NSCopying {
      * For instance, you might set this to true if the items are being moved from some
      * other nearby view, and scaling them smaller would be distracting.
      * This only applies to drags that started in the same app.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrefersFullSizePreview:")

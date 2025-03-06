@@ -27,21 +27,20 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This class defines parameters for a single gate (vanilla) RNN operation.
+ * The class that defines the parameters for a single gate RNN operation.
  * 
  * Use this descriptor with the following ``MPSGraph`` methods:
- * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:initState:descriptor:name:``,
- * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:descriptor:name:``,
- * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:mask:descriptor:name:``,
+ * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:initState:descriptor:name:``
+ * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:descriptor:name:``
+ * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:mask:descriptor:name:``
  * -
- * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:initState:descriptor:name:``,
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:initState:descriptor:name:``
  * -
- * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:descriptor:name:``,
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:descriptor:name:``
  * -
- * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:mask:descriptor:name:``,
- * and
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:mask:descriptor:name:``
  * -
- * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:stateGradient:inputWeight:bias:initState:mask:descriptor:name:``.
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:stateGradient:inputWeight:bias:initState:mask:descriptor:name:``
  * 
  * API-Since: 15.4
  */
@@ -64,8 +63,11 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * A parameter which defines the activation function to use with the RNN operation.
+     * A parameter that defines the activation function to use with the RNN operation.
+     * 
      * Default value: `MPSGraphRNNActivationRelu`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("activation")
@@ -92,6 +94,8 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
      * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("bidirectional")
@@ -135,6 +139,8 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
 
     /**
      * Creates a single gate RNN descriptor with default values.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("descriptor")
@@ -190,14 +196,19 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
      * If set to `YES` then the input sequence is passed in reverse time order to the layer.
      * Note: Ignored when `bidirectional = YES`.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("reverse")
     public native boolean reverse();
 
     /**
-     * A parameter which defines the activation function to use with the RNN operation.
+     * A parameter that defines the activation function to use with the RNN operation.
+     * 
      * Default value: `MPSGraphRNNActivationRelu`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("setActivation:")
@@ -209,6 +220,8 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
      * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("setBidirectional:")
@@ -220,6 +233,8 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
      * If set to `YES` then the input sequence is passed in reverse time order to the layer.
      * Note: Ignored when `bidirectional = YES`.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("setReverse:")
@@ -230,6 +245,8 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
      * 
      * If set to `YES` then the layer will produce training state tensor as a secondary output.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("setTraining:")
@@ -248,6 +265,8 @@ public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements N
      * 
      * If set to `YES` then the layer will produce training state tensor as a secondary output.
      * Default value: `NO`.
+     * 
+     * API-Since: 15.4
      */
     @Generated
     @Selector("training")

@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INUIHostedViewSiriProviding")
 public interface INUIHostedViewSiriProviding {
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("displaysMap")
@@ -39,6 +42,9 @@ public interface INUIHostedViewSiriProviding {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("displaysMessage")
@@ -46,6 +52,9 @@ public interface INUIHostedViewSiriProviding {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("displaysPaymentTransaction")

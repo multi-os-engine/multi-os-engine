@@ -16,17 +16,17 @@ public final class nw_quic_stream_type_t {
     /**
      * [@const] nw_quic_stream_type_unknown A QUIC stream whose direction can not be determined.
      */
-    @Generated public static final int nw_quic_stream_type_unknown = 0x00000000;
+    @Generated public static final int _unknown = 0x00000000;
     /**
      * [@const] nw_quic_stream_type_bidirectional A bidirectional QUIC stream.
      */
-    @Generated public static final int nw_quic_stream_type_bidirectional = 0x00000001;
+    @Generated public static final int _bidirectional = 0x00000001;
     /**
      * [@const] nw_quic_stream_type_unidirectional An unidirectional QUIC stream.
      */
-    @Generated public static final int nw_quic_stream_type_unidirectional = 0x00000002;
+    @Generated public static final int _unidirectional = 0x00000002;
     /**
      * [@const] nw_quic_stream_type_datagram A QUIC datagram stream.
      */
-    @Generated public static final int nw_quic_stream_type_datagram = 0x00000003;
+    @Generated public static final int _datagram = 0x00000003;
 }

@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface MTLObjectPayloadBinding extends MTLBinding {
     /**
      * min alignment of starting offset in the buffer
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("objectPayloadAlignment")
@@ -26,6 +28,8 @@ public interface MTLObjectPayloadBinding extends MTLBinding {
 
     /**
      * sizeof(T) for T *argName
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("objectPayloadDataSize")

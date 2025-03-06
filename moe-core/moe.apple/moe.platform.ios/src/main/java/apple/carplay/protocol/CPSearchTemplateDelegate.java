@@ -28,6 +28,8 @@ public interface CPSearchTemplateDelegate {
      * @param item              The item selected by the user
      * @param completionHandler You must call the completionHandler when you have handled the row selection in the
      *                          search result
+     * 
+     *                          API-Since: 12.0
      */
     @Generated
     @Selector("searchTemplate:selectedResult:completionHandler:")
@@ -48,6 +50,8 @@ public interface CPSearchTemplateDelegate {
      * @param searchTemplate    The search template in use by the user
      * @param searchText        The search text entered by the user
      * @param completionHandler You must call the completionHandler with updated search results
+     * 
+     *                          API-Since: 12.0
      */
     @Generated
     @Selector("searchTemplate:updatedSearchText:completionHandler:")
@@ -68,6 +72,8 @@ public interface CPSearchTemplateDelegate {
      * current search results.
      * 
      * @param searchTemplate The search template in use by the user
+     * 
+     *                       API-Since: 12.0
      */
     @Generated
     @IsOptional

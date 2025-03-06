@@ -167,6 +167,9 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("amount")
@@ -181,6 +184,8 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * The ISO 4217 currency code that applies to the monetary amount.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -195,6 +200,9 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
     @Selector("init")
     public native INCurrencyAmount init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithAmount:currencyCode:")
     public native INCurrencyAmount initWithAmountCurrencyCode(@NotNull NSDecimalNumber amount,

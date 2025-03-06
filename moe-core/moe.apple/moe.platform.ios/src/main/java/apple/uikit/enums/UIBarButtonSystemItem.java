@@ -64,4 +64,8 @@ public final class UIBarButtonSystemItem {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long Close = 0x0000000000000018L;
+    /**
+     * API-Since: 18.2
+     */
+    @Generated @NInt public static final long WritingTools = 0x0000000000000019L;
 }

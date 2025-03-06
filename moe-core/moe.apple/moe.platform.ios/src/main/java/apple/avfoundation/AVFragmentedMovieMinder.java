@@ -59,6 +59,8 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * 
      * @param movie
      *              The fragmented movie to add to the minder.
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("addFragmentedMovie:")
@@ -123,6 +125,8 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * @param mindingInterval
      *                        The initial minding interval of the AVFragmentedMovieMinder.
      * @return A new instance of AVFragmentedMovieMinder.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("fragmentedMovieMinderWithMovie:mindingInterval:")
@@ -153,6 +157,8 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * @param mindingInterval
      *                        The initial minding interval of the AVFragmentedMovieMinder.
      * @return A new instance of AVFragmentedMovieMinder.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithMovie:mindingInterval:")
@@ -186,6 +192,8 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * 
      * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default
      * interval is 10.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mindingInterval")
@@ -195,6 +203,8 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * [@property] movies
      * 
      * An NSArray of the AVFragmentedMovie objects being minded.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -213,6 +223,8 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * 
      * @param movie
      *              The fragmented movie to remove from the minder.
+     * 
+     *              API-Since: 13.0
      */
     @Generated
     @Selector("removeFragmentedMovie:")
@@ -231,6 +243,8 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * 
      * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default
      * interval is 10.0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMindingInterval:")

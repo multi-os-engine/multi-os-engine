@@ -74,6 +74,8 @@ public class SACrashDetectionManager extends NSObject {
      * authorizationStatus
      * 
      * Returns a value indicating whether the user has authorized the app to receive Crash Detection updates
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("authorizationStatus")
@@ -113,6 +115,8 @@ public class SACrashDetectionManager extends NSObject {
      * delegate
      * 
      * The delegate object to receive Crash Detection events.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("delegate")
@@ -150,6 +154,8 @@ public class SACrashDetectionManager extends NSObject {
      * available
      * 
      * Returns a value indicating whether the current device supports Crash Detection.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("isAvailable")
@@ -174,6 +180,8 @@ public class SACrashDetectionManager extends NSObject {
      * 
      * @param handler
      *                Completion handler invoked with the status of the authorization request.
+     * 
+     *                API-Since: 16.0
      */
     @Generated
     @Selector("requestAuthorizationWithCompletionHandler:")
@@ -199,6 +207,8 @@ public class SACrashDetectionManager extends NSObject {
      * delegate
      * 
      * The delegate object to receive Crash Detection events.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -208,6 +218,8 @@ public class SACrashDetectionManager extends NSObject {
      * delegate
      * 
      * The delegate object to receive Crash Detection events.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) @Nullable SACrashDetectionDelegate value) {

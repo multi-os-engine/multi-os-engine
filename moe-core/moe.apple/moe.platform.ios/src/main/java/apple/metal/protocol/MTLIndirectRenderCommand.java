@@ -34,6 +34,9 @@ public interface MTLIndirectRenderCommand {
             @NUInt long controlPointIndexBufferOffset, @NUInt long instanceCount, @NUInt long baseInstance,
             @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset, @NUInt long instanceStride);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:baseVertex:baseInstance:")
     void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffsetInstanceCountBaseVertexBaseInstance(
@@ -49,15 +52,24 @@ public interface MTLIndirectRenderCommand {
             @NUInt long instanceCount, @NUInt long baseInstance,
             @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset, @NUInt long instanceStride);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("drawPrimitives:vertexStart:vertexCount:instanceCount:baseInstance:")
     void drawPrimitivesVertexStartVertexCountInstanceCountBaseInstance(@NUInt long primitiveType,
             @NUInt long vertexStart, @NUInt long vertexCount, @NUInt long instanceCount, @NUInt long baseInstance);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("reset")
     void reset();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setFragmentBuffer:offset:atIndex:")
     void setFragmentBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
@@ -70,6 +82,9 @@ public interface MTLIndirectRenderCommand {
     @Selector("setRenderPipelineState:")
     void setRenderPipelineState(@NotNull @Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipelineState);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setVertexBuffer:offset:atIndex:")
     void setVertexBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,

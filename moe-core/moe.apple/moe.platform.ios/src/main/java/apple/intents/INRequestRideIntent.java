@@ -167,6 +167,8 @@ public class INRequestRideIntent extends INIntent {
 
     /**
      * Specifies where the ride should end.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -196,12 +198,17 @@ public class INRequestRideIntent extends INIntent {
 
     /**
      * Defines the number of people in the party requesting the ride.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("partySize")
     public native NSNumber partySize();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("paymentMethod")
@@ -209,12 +216,17 @@ public class INRequestRideIntent extends INIntent {
 
     /**
      * Specifies the location to to begin the ride.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("pickupLocation")
     public native CLPlacemark pickupLocation();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("rideOptionName")

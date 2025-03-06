@@ -33,8 +33,7 @@ import org.jetbrains.annotations.Nullable;
  * The MLCConvolutionDescriptor specifies a convolution descriptor
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -102,7 +101,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy             The padding policy
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
@@ -122,7 +125,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy             The padding policy
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:strides:paddingPolicy:paddingSizes:")
@@ -139,7 +146,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelWidth:kernelHeight:inputFeatureChannelCount:outputFeatureChannelCount:")
@@ -151,7 +162,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] convolutionType
      * 
      * The type of convolution.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("convolutionType")
     public native int convolutionType();
@@ -178,7 +193,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy            The padding policy
      * @param paddingSizes             The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelSizes:inputFeatureChannelCount:channelMultiplier:strides:dilationRates:paddingPolicy:paddingSizes:")
@@ -198,7 +217,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy            The padding policy
      * @param paddingSizes             The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelSizes:inputFeatureChannelCount:channelMultiplier:strides:paddingPolicy:paddingSizes:")
@@ -215,7 +238,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param inputFeatureChannelCount The number of feature channels in the input tensor
      * @param channelMultiplier        The channel multiplier
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannelCount:channelMultiplier:")
@@ -239,7 +266,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy             The padding policy
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
@@ -258,7 +289,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingPolicy             The padding policy
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:strides:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountStridesPaddingPolicyPaddingSizes(
@@ -274,7 +309,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
      * @return A new MLCConvolutionDescriptor object.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithKernelWidth:kernelHeight:inputFeatureChannelCount:outputFeatureChannelCount:")
     public static native MLCConvolutionDescriptor descriptorWithKernelWidthKernelHeightInputFeatureChannelCountOutputFeatureChannelCount(
@@ -297,7 +336,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes              The padding sizes in x and y if padding policy is \p
      *                                  MLCPaddingPolicyUsePaddingSize .
      * @return A new convolution descriptor.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("descriptorWithType:kernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithTypeKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
@@ -310,7 +353,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] dilationRateInX
      * 
      * The dilation rate i.e. stride of elements in the kernel in x.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dilationRateInX")
     @NUInt
@@ -320,7 +367,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] dilationRateInY
      * 
      * The dilation rate i.e. stride of elements in the kernel in y.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("dilationRateInY")
     @NUInt
@@ -330,7 +381,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] groupCount
      * 
      * Number of blocked connections from input channels to output channels
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("groupCount")
     @NUInt
@@ -349,7 +404,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] inputFeatureChannelCount
      * 
      * Number of channels in the input tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("inputFeatureChannelCount")
     @NUInt
@@ -372,7 +431,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] isConvolutionTranspose
      * 
      * A flag to indicate if this is a convolution transpose
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("isConvolutionTranspose")
     public native boolean isConvolutionTranspose();
@@ -385,7 +448,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] kernelHeight
      * 
      * The convolution kernel size in y.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("kernelHeight")
     @NUInt
@@ -395,7 +462,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] kernelWidth
      * 
      * The convolution kernel size in x.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("kernelWidth")
     @NUInt
@@ -415,7 +486,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] outputFeatureChannelCount
      * 
      * Number of channels in the output tensor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("outputFeatureChannelCount")
     @NUInt
@@ -425,7 +500,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] paddingPolicy
      * 
      * The padding policy to use.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingPolicy")
     public native int paddingPolicy();
@@ -434,7 +513,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] paddingSizeInX
      * 
      * The pooling size in x (left and right) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingSizeInX")
     @NUInt
@@ -444,7 +527,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] paddingSizeInY
      * 
      * The pooling size in y (top and bottom) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("paddingSizeInY")
     @NUInt
@@ -466,7 +553,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] strideInX
      * 
      * The stride of the kernel in x.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("strideInX")
     @NUInt
@@ -476,7 +567,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] strideInY
      * 
      * The stride of the kernel in y.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("strideInY")
     @NUInt
@@ -490,7 +585,11 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * [@property] usesDepthwiseConvolution
      * 
      * A flag to indicate depthwise convolution
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("usesDepthwiseConvolution")
     public native boolean usesDepthwiseConvolution();

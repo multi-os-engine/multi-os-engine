@@ -161,6 +161,8 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
 
     /**
      * Stores this request should be sent to.
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -180,6 +182,8 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
 
     /**
      * The type of the request.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("requestType")
@@ -188,6 +192,8 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
 
     /**
      * Stores this request should be sent to.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAffectedStores:")

@@ -88,6 +88,8 @@ public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Required dataType
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dataType")
@@ -152,6 +154,8 @@ public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Required or default shape of multiarray
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

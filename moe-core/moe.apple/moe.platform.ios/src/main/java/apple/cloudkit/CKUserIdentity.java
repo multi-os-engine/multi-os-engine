@@ -180,6 +180,9 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hasiCloudAccount")
     public native boolean hasiCloudAccount();
@@ -195,12 +198,17 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
     /**
      * This is the @c lookupInfo you passed in to @c CKDiscoverUserIdentitiesOperation or @c
      * CKFetchShareParticipantsOperation
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
     @Selector("lookupInfo")
     public native CKUserIdentityLookupInfo lookupInfo();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("nameComponents")
@@ -212,29 +220,20 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("userRecordID")
     public native CKRecordID userRecordID();
 
     /**
-     * Link to the Contacts database.
-     * 
-     * Identities discovered via @c CKDiscoverAllUserIdentitiesOperation correspond to entries in the local Contacts
-     * database. These identities will have @c contactIdentifiers filled out, which your app may use to get additional
-     * information about the contacts that were discovered. Multiple @c contactIdentifiers may exist for a single
-     * discovered user, as multiple contacts may contain the same email addresses or phone numbers.
-     * 
-     * To transform these identifiers into an array of unified contact identifiers, pass a @c
-     * CNContact.predicateForContacts(withIdentifiers:) predicate into @c
-     * CNContactStore.unifiedContacts(matching:keysToFetch:)
-     * 
-     * @return individual, non-unified contacts.
-     * 
-     * @see Contacts.framework and CNContact.identifier
-     * 
-     *      API-Since: 11.0
+     * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("contactIdentifiers")

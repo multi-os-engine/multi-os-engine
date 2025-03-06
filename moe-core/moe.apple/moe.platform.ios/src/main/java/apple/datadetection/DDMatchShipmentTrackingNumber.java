@@ -79,6 +79,8 @@ public class DDMatchShipmentTrackingNumber extends DDMatch {
 
     /**
      * The name of a parcel carrier.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -157,6 +159,8 @@ public class DDMatchShipmentTrackingNumber extends DDMatch {
 
     /**
      * A string that represents a carrier’s tracking identifier for a parcel.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

@@ -114,6 +114,9 @@ public class PKAddSecureElementPassConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 13.4
+     */
     @Nullable
     @Generated
     @Selector("issuerIdentifier")
@@ -124,6 +127,9 @@ public class PKAddSecureElementPassConfiguration extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.4
+     */
     @Nullable
     @Generated
     @Selector("localizedDescription")
@@ -142,10 +148,16 @@ public class PKAddSecureElementPassConfiguration extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setIssuerIdentifier:")
     public native void setIssuerIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(@Nullable String value);

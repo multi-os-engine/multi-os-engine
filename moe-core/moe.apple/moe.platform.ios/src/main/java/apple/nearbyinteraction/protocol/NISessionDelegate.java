@@ -58,6 +58,8 @@ public interface NISessionDelegate {
      * @param session The session that has become invalid. Your app should discard any references it has to this
      *                session.
      * @param error   The error indicating the reason for invalidation of the session (see NIError.h).
+     * 
+     *                API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -78,6 +80,8 @@ public interface NISessionDelegate {
      * @param reason        The reason the nearby object(s) were removed. All objects in nearbyObjects are removed for
      *                      the same reason. If multiple nearby objects are removed for different reasons,
      *                      -didRemoveNearbyObjects:reason: will be called multiple times.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -92,6 +96,8 @@ public interface NISessionDelegate {
      * 
      * @param session       The nearby interaction session being run.
      * @param nearbyObjects The nearby objects that have been updated.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -105,6 +111,8 @@ public interface NISessionDelegate {
      * This is called when a session may be resumed.
      * 
      * @param session The nearby interaction session that was suspended.
+     * 
+     *                API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -121,6 +129,8 @@ public interface NISessionDelegate {
      * issuing a new call to -runWithConfiguration:.
      * 
      * @param session The nearby interaction session that was suspended.
+     * 
+     *                API-Since: 14.0
      */
     @Generated
     @IsOptional

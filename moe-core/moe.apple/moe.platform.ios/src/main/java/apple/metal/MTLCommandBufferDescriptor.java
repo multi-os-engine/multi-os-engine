@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.protocol.MTLLogState;
 
 /**
  * MTLCommandBufferDescriptor
@@ -105,6 +106,8 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
      * [@property] errorOptions
      * 
      * A set of options to influence the error reporting of the created command buffer. See MTLCommandBufferErrorOption.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("errorOptions")
@@ -160,6 +163,8 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
      * 
      * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the
      * created command buffer does not hold strong references to objects needed for it to execute.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("retainedReferences")
@@ -169,6 +174,8 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
      * [@property] errorOptions
      * 
      * A set of options to influence the error reporting of the created command buffer. See MTLCommandBufferErrorOption.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setErrorOptions:")
@@ -179,6 +186,8 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
      * 
      * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the
      * created command buffer does not hold strong references to objects needed for it to execute.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setRetainedReferences:")
@@ -201,4 +210,28 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] logState
+     * 
+     * Contains information related to shader logging.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("logState")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MTLLogState logState();
+
+    /**
+     * [@property] logState
+     * 
+     * Contains information related to shader logging.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setLogState:")
+    public native void setLogState(@Mapped(ObjCObjectMapper.class) @Nullable MTLLogState value);
 }

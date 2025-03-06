@@ -93,6 +93,8 @@ public class PKEraserTool extends PKTool {
 
     /**
      * The eraser type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("eraserType")
@@ -108,6 +110,9 @@ public class PKEraserTool extends PKTool {
     @Selector("init")
     public native PKEraserTool init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithEraserType:")
     public native PKEraserTool initWithEraserType(@NInt long eraserType);

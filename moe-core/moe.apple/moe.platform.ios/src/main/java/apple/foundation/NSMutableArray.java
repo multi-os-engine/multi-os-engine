@@ -50,6 +50,7 @@ import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ptr.ConstPtr;
 
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -114,7 +115,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithObjectsCount(
-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -264,7 +265,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Selector("initWithObjects:count:")
     public native NSMutableArray<?> initWithObjectsCount(
-            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("insertObject:atIndex:")
@@ -725,6 +726,9 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public native NSArray<_ObjectType> initWithContentsOfURLError(@NotNull NSURL url,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("applyDifference:")
     public native void applyDifference(@NotNull NSOrderedCollectionDifference<_ObjectType> difference);

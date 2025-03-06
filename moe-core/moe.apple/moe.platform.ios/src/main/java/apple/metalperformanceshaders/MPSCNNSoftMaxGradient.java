@@ -132,6 +132,8 @@ public class MPSCNNSoftMaxGradient extends MPSCNNGradientKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -144,6 +146,8 @@ public class MPSCNNSoftMaxGradient extends MPSCNNGradientKernel {
      * @param device The MTLDevice on which this MPSCNNSoftMaxGradient filter will be used
      * 
      * @return A valid MPSCNNSoftMaxGradient object or nil, if failure.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithDevice:")

@@ -104,15 +104,24 @@ public class MKPointOfInterestFilter extends NSObject implements NSSecureCoding,
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("excludesCategory:")
     public native boolean excludesCategory(@NotNull String category);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("filterExcludingAllCategories")
     public static native MKPointOfInterestFilter filterExcludingAllCategories();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("filterIncludingAllCategories")
@@ -123,6 +132,9 @@ public class MKPointOfInterestFilter extends NSObject implements NSSecureCoding,
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("includesCategory:")
     public native boolean includesCategory(@NotNull String category);
@@ -131,10 +143,16 @@ public class MKPointOfInterestFilter extends NSObject implements NSSecureCoding,
     @Selector("init")
     public native MKPointOfInterestFilter init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initExcludingCategories:")
     public native MKPointOfInterestFilter initExcludingCategories(@NotNull NSArray<String> categories);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initIncludingCategories:")
     public native MKPointOfInterestFilter initIncludingCategories(@NotNull NSArray<String> categories);

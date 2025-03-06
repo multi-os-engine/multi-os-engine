@@ -28,7 +28,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.2
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.SubscriptionOffer
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -97,7 +100,10 @@ public class SKProductDiscount extends NSObject {
 
     /**
      * API-Since: 12.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.id
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("identifier")
@@ -136,7 +142,10 @@ public class SKProductDiscount extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.periodCount
      */
+    @Deprecated
     @Generated
     @Selector("numberOfPeriods")
     @NUInt
@@ -144,7 +153,10 @@ public class SKProductDiscount extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.paymentMode
      */
+    @Deprecated
     @Generated
     @Selector("paymentMode")
     @NUInt
@@ -152,7 +164,10 @@ public class SKProductDiscount extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.displayPrice
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("price")
@@ -160,7 +175,10 @@ public class SKProductDiscount extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.displayPrice
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("priceLocale")
@@ -180,7 +198,10 @@ public class SKProductDiscount extends NSObject {
 
     /**
      * API-Since: 11.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.period
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("subscriptionPeriod")
@@ -192,7 +213,10 @@ public class SKProductDiscount extends NSObject {
 
     /**
      * API-Since: 12.2
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.SubscriptionOffer.type
      */
+    @Deprecated
     @Generated
     @Selector("type")
     @NUInt

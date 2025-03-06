@@ -207,6 +207,8 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * [@property] naturalSize
      * 
      * Indicates the authored size of the visual portion of the composition.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("naturalSize")
@@ -219,6 +221,8 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * Provides an instance of AVCompositionTrack that represents the track of the specified trackID.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 4.0
      * 
      * @param trackID
      *                The trackID of the requested AVCompositionTrack.
@@ -233,6 +237,8 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * [@property] tracks
      * 
      * Provides the array of AVCompositionTracks contained by the composition.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -245,6 +251,8 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * Provides an array of AVCompositionTracks of the asset that present media with the specified characteristic.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 4.0
      * 
      * @param mediaCharacteristic
      *                            The media characteristic according to which the receiver filters its
@@ -264,6 +272,8 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * Provides an array of AVCompositionTracks of the asset that present media of the specified media type.
      * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * API-Since: 4.0
      * 
      * @param mediaType
      *                  The media type according to which the receiver filters its AVCompositionTracks. (Media types are
@@ -355,28 +365,43 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
                 @Nullable NSError arg1);
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("chapterMetadataGroupsBestMatchingPreferredLanguages:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsBestMatchingPreferredLanguages(
             @NotNull NSArray<String> preferredLanguages);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeys(
             @NotNull NSLocale locale, @Nullable NSArray<String> commonKeys);
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("mediaSelectionGroupForMediaCharacteristic:")
     public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("metadataForFormat:")
     public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("unusedTrackID")
     public native int unusedTrackID();

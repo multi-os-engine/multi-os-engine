@@ -73,6 +73,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * When encoding, an NSArray of NSNumber of bit rates that can be applied based on the current formats and settings.
      * Returns nil if not encoding.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -84,6 +86,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * When encoding, an NSArray of NSNumber of output sample rates that can be applied based on the current formats and
      * settings. Returns nil if not encoding.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -98,6 +102,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] availableEncodeBitRates
      * 
      * When encoding, an NSArray of NSNumber of all bit rates provided by the codec. Returns nil if not encoding.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -109,6 +115,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * When encoding, an NSArray of NSNumber of all output channel layout tags provided by the codec. Returns nil if not
      * encoding.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -120,6 +128,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * When encoding, an NSArray of NSNumber of all output sample rates provided by the codec. Returns nil if not
      * encoding.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -130,6 +140,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] bitRate
      * 
      * bitRate in bits per second. Only applies when encoding.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("bitRate")
@@ -141,6 +153,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not
      * encoding.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -168,6 +182,8 @@ public class AVAudioConverter extends NSObject {
      * means that the output channel will have no source and will be silent. Setting a channel map
      * overrides channel mapping due to any channel layouts in the input and output formats that
      * may have been supplied.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -191,6 +207,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * It attempts to fill the buffer to its capacity. On return, the buffer's length indicates the number of
      * sample frames successfully converted.
+     * 
+     * API-Since: 9.0
      * 
      * @param inputBlock
      *                     A block which will be called to get input data as needed. See description for
@@ -226,6 +244,8 @@ public class AVAudioConverter extends NSObject {
      * If the conversion involves a codec or sample rate conversion, you instead must use
      * convertToBuffer:error:withInputFromBlock:.
      * 
+     * API-Since: 9.0
+     * 
      * @param inputBuffer
      *                     The input buffer.
      * @param outputBuffer
@@ -254,6 +274,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * Setting YES will turn on dither, if dither makes sense in given the current formats
      * and settings. Default value is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("dither")
@@ -264,6 +286,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * If YES and channel remapping is necessary, then channels will be mixed as
      * appropriate instead of remapped. Default value is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("downmix")
@@ -285,6 +309,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * Returns nil if the format conversion is not possible.
      * 
+     * API-Since: 9.0
+     * 
      * @param fromFormat
      *                   The input format.
      * @param toFormat
@@ -299,6 +325,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] inputFormat
      * 
      * The format of the input audio stream. (NB. AVAudioFormat includes the channel layout)
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -332,6 +360,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * Decoders require some data in the form of a magicCookie in order to decode properly.
      * Encoders will produce a magicCookie.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -344,6 +374,8 @@ public class AVAudioConverter extends NSObject {
      * The maximum size of an output packet, in bytes.
      * 
      * When encoding it is useful to know how large a packet can be in order to allocate a buffer to receive the output.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumOutputPacketSize")
@@ -359,6 +391,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] outputFormat
      * 
      * The format of the output audio stream. (NB. AVAudioFormat includes the channel layout)
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -369,6 +403,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] primeInfo
      * 
      * Indicates the the number of priming frames.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("primeInfo")
@@ -379,6 +415,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] primeMethod
      * 
      * Indicates the priming method to be used by the sample rate converter or decoder.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("primeMethod")
@@ -389,6 +427,8 @@ public class AVAudioConverter extends NSObject {
      * reset
      * 
      * Resets the converter so that a new stream may be converted.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("reset")
@@ -406,6 +446,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] sampleRateConverterAlgorithm
      * 
      * An AVSampleRateConverterAlgorithmKey value as defined in AVAudioSettings.h.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -416,6 +458,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] sampleRateConverterQuality
      * 
      * An AVAudioQuality value as defined in AVAudioSettings.h.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("sampleRateConverterQuality")
@@ -426,6 +470,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] bitRate
      * 
      * bitRate in bits per second. Only applies when encoding.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBitRate:")
@@ -436,6 +482,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not
      * encoding.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBitRateStrategy:")
@@ -451,6 +499,8 @@ public class AVAudioConverter extends NSObject {
      * means that the output channel will have no source and will be silent. Setting a channel map
      * overrides channel mapping due to any channel layouts in the input and output formats that
      * may have been supplied.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setChannelMap:")
@@ -461,6 +511,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * Setting YES will turn on dither, if dither makes sense in given the current formats
      * and settings. Default value is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDither:")
@@ -471,6 +523,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * If YES and channel remapping is necessary, then channels will be mixed as
      * appropriate instead of remapped. Default value is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDownmix:")
@@ -481,6 +535,8 @@ public class AVAudioConverter extends NSObject {
      * 
      * Decoders require some data in the form of a magicCookie in order to decode properly.
      * Encoders will produce a magicCookie.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMagicCookie:")
@@ -490,6 +546,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] primeInfo
      * 
      * Indicates the the number of priming frames.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPrimeInfo:")
@@ -499,6 +557,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] primeMethod
      * 
      * Indicates the priming method to be used by the sample rate converter or decoder.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPrimeMethod:")
@@ -508,6 +568,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] sampleRateConverterAlgorithm
      * 
      * An AVSampleRateConverterAlgorithmKey value as defined in AVAudioSettings.h.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSampleRateConverterAlgorithm:")
@@ -517,6 +579,8 @@ public class AVAudioConverter extends NSObject {
      * [@property] sampleRateConverterQuality
      * 
      * An AVAudioQuality value as defined in AVAudioSettings.h.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSampleRateConverterQuality:")

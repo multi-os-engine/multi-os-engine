@@ -457,6 +457,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * weak reference. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -565,6 +567,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * get/set visible UITabBarItems. default is nil. changes not animated. shown in order
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -591,6 +595,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * will show feedback based on mode. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -636,6 +642,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * weak reference. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -643,6 +651,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * weak reference. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITabBarDelegate value) {
@@ -696,6 +706,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * get/set visible UITabBarItems. default is nil. changes not animated. shown in order
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setItems:")
@@ -703,6 +715,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * will fade in or out or reorder and adjust spacing
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setItems:animated:")
@@ -727,6 +741,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * will show feedback based on mode. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelectedItem:")
@@ -734,6 +750,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * will show feedback based on mode. default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setSelectedItem(@Nullable UITabBarItem value) {

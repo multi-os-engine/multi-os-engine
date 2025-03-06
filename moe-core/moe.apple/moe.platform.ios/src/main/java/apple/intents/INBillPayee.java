@@ -53,6 +53,12 @@ public class INBillPayee extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillPayee is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("accountNumber")
@@ -125,6 +131,12 @@ public class INBillPayee extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INBillPayee initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillPayee is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithNickname:number:organizationName:")
     public native INBillPayee initWithNicknameNumberOrganizationName(@NotNull INSpeakableString nickname,
@@ -157,11 +169,23 @@ public class INBillPayee extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native INBillPayee new_objc();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillPayee is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("nickname")
     public native INSpeakableString nickname();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INBillPayee is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("organizationName")

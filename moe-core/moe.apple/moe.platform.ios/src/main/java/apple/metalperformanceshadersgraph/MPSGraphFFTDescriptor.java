@@ -27,10 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * This class defines parameters for a fast Fourier transform (FFT) operation.
+ * The class that defines the parameters for a fast Fourier transform (FFT) operation.
  * 
  * Use this descriptor with ``MPSGraph/fastFourierTransformWithTensor:axes:descriptor:name:``,
- * ``MPSGraph/realToHermiteanFFTWithTensor:axesTensor:descriptor:name:`` and
+ * ``MPSGraph/realToHermiteanFFTWithTensor:axesTensor:descriptor:name:``, and
  * ``MPSGraph/HermiteanToRealFFTWithTensor:axesTensor:descriptor:name:`` methods.
  * 
  * API-Since: 17.0
@@ -105,6 +105,8 @@ public class MPSGraphFFTDescriptor extends MPSGraphObject implements NSCopying {
 
     /**
      * Creates a fast Fourier transform descriptor with default parameter values.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("descriptor")
@@ -133,12 +135,14 @@ public class MPSGraphFFTDescriptor extends MPSGraphObject implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * A boolean-valued parameter that defines the phase factor sign for Fourier transforms.
+     * A Boolean-valued parameter that defines the phase factor sign for Fourier transforms.
      * 
-     * When set to `YES` MPSGraph uses the positive phase factor: `exp(+i 2Pi mu nu / n)`, when computing the (inverse)
+     * When set to `YES` graph uses the positive phase factor: `exp(+i 2Pi mu nu / n)`, when computing the (inverse)
      * Fourier transform.
      * Otherwise MPSGraph uses the negative phase factor: `exp(-i 2Pi mu nu / n)`, when computing the Fourier transform.
      * Default value: `NO`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("inverse")
@@ -167,21 +171,25 @@ public class MPSGraphFFTDescriptor extends MPSGraphObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * A parameter which controls how MPSGraph rounds the output tensor size for a Hermitean-to-real Fourier transform.
+     * A parameter which controls how graph rounds the output tensor size for a Hermitean-to-real Fourier transform.
      * 
      * If set to `YES` then MPSGraph rounds the last output dimension of the result tensor in
      * ``MPSGraph/HermiteanToRealFFTWithTensor:axesTensor:descriptor:name:`` to an odd value.
      * Has no effect in the other Fourier transform operations.
      * Default value: `NO`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("roundToOddHermitean")
     public native boolean roundToOddHermitean();
 
     /**
-     * The scaling mode of the FFT operation.
+     * The scaling mode of the fast fourier transform (FFT) operation.
      * 
      * Note that the scaling mode is independent from the phase factor. Default value: `MPSGraphFFTScalingModeNone`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("scalingMode")
@@ -189,33 +197,39 @@ public class MPSGraphFFTDescriptor extends MPSGraphObject implements NSCopying {
     public native long scalingMode();
 
     /**
-     * A boolean-valued parameter that defines the phase factor sign for Fourier transforms.
+     * A Boolean-valued parameter that defines the phase factor sign for Fourier transforms.
      * 
-     * When set to `YES` MPSGraph uses the positive phase factor: `exp(+i 2Pi mu nu / n)`, when computing the (inverse)
+     * When set to `YES` graph uses the positive phase factor: `exp(+i 2Pi mu nu / n)`, when computing the (inverse)
      * Fourier transform.
      * Otherwise MPSGraph uses the negative phase factor: `exp(-i 2Pi mu nu / n)`, when computing the Fourier transform.
      * Default value: `NO`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setInverse:")
     public native void setInverse(boolean value);
 
     /**
-     * A parameter which controls how MPSGraph rounds the output tensor size for a Hermitean-to-real Fourier transform.
+     * A parameter which controls how graph rounds the output tensor size for a Hermitean-to-real Fourier transform.
      * 
      * If set to `YES` then MPSGraph rounds the last output dimension of the result tensor in
      * ``MPSGraph/HermiteanToRealFFTWithTensor:axesTensor:descriptor:name:`` to an odd value.
      * Has no effect in the other Fourier transform operations.
      * Default value: `NO`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setRoundToOddHermitean:")
     public native void setRoundToOddHermitean(boolean value);
 
     /**
-     * The scaling mode of the FFT operation.
+     * The scaling mode of the fast fourier transform (FFT) operation.
      * 
      * Note that the scaling mode is independent from the phase factor. Default value: `MPSGraphFFTScalingModeNone`.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setScalingMode:")

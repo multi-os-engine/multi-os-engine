@@ -100,6 +100,8 @@ public class PHASEMixerDefinition extends PHASEDefinition {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gain")
@@ -109,6 +111,8 @@ public class PHASEMixerDefinition extends PHASEDefinition {
      * [@property] gainMetaParameterDefinition
      * 
      * Optionally attach a metaparameter definition here to enable real-time control of the gain during playback.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -165,6 +169,8 @@ public class PHASEMixerDefinition extends PHASEDefinition {
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGain:")
@@ -174,6 +180,8 @@ public class PHASEMixerDefinition extends PHASEDefinition {
      * [@property] gainMetaParameterDefinition
      * 
      * Optionally attach a metaparameter definition here to enable real-time control of the gain during playback.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setGainMetaParameterDefinition:")

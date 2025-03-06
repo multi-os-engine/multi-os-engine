@@ -117,6 +117,8 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
      * @param mode               VAS operation mode
      * @param passTypeIdentifier Pass type identifier of the Wallet pass.
      * @param url                URL for VAR URL Only mode. Set to <i>nil</i> for VAS normal mode.
+     * 
+     *                           API-Since: 13.0
      */
     @Generated
     @Selector("initWithVASMode:passTypeIdentifier:url:")

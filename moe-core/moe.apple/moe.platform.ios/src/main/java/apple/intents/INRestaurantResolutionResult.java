@@ -98,6 +98,8 @@ public class INRestaurantResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to confirm if this is the restaurant with which the user wants to continue.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -115,6 +117,8 @@ public class INRestaurantResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to disambiguate between the provided restaurants.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -181,6 +185,8 @@ public class INRestaurantResolutionResult extends INIntentResolutionResult {
      * resolvedRestaurant can be different than the original restaurant. This allows app extensions to apply business
      * logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

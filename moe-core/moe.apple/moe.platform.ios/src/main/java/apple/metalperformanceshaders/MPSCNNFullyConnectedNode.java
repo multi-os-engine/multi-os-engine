@@ -108,6 +108,8 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
      *                   protocol. This object is provided by you to encapsulate storage for
      *                   convolution weights and biases.
      * @return A new MPSNNFilter node for a MPSCNNFullyConnected kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:weights:")
@@ -149,6 +151,8 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
      *                   protocol. This object is provided by you to encapsulate storage for
      *                   convolution weights and biases.
      * @return A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("nodeWithSource:weights:")

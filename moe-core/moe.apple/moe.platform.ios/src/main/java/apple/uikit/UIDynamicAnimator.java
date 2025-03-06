@@ -163,21 +163,33 @@ public class UIDynamicAnimator extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addBehavior:")
     public native void addBehavior(@NotNull UIDynamicBehavior behavior);
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("behaviors")
     public native NSArray<? extends UIDynamicBehavior> behaviors();
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIDynamicAnimatorDelegate delegate();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("elapsedTime")
     public native double elapsedTime();
@@ -190,6 +202,8 @@ public class UIDynamicAnimator extends NSObject {
      * When you initialize a dynamic animator with this method, you should only associate collection view layout
      * attributes with your behaviors.
      * The animator will employ the collection view layout’s content size coordinate system.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithCollectionViewLayout:")
@@ -199,17 +213,24 @@ public class UIDynamicAnimator extends NSObject {
      * When you initialize a dynamic animator with this method, you should only associates views with your behaviors.
      * the behaviors (and their dynamic items) that you add to the animator employ the reference view’s coordinate
      * system.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithReferenceView:")
     public native UIDynamicAnimator initWithReferenceView(@NotNull UIView view);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isRunning")
     public native boolean isRunning();
 
     /**
      * Returns the dynamic items associated with the animator’s behaviors that intersect a specified rectangle
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -219,41 +240,64 @@ public class UIDynamicAnimator extends NSObject {
     /**
      * The three convenience methods returning layout attributes (if associated to behaviors in the animator) if the
      * animator was configured with collection view layout
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
     @Selector("layoutAttributesForCellAtIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForCellAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindAtIndexPath(
             @NotNull String decorationViewKind, @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindAtIndexPath(
             @NotNull String kind, @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("referenceView")
     public native UIView referenceView();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeAllBehaviors")
     public native void removeAllBehaviors();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("removeBehavior:")
     public native void removeBehavior(@NotNull UIDynamicBehavior behavior);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value) {
         Object __old = delegate();
@@ -268,6 +312,8 @@ public class UIDynamicAnimator extends NSObject {
 
     /**
      * Update the item state in the animator if an external change was made to this item
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("updateItemUsingCurrentState:")

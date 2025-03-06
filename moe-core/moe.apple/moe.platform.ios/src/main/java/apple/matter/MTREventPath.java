@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * A path indicating a specific event that can be emitted on a device
  * (i.e. without any wildcards). There can be multiple instances of actual
  * events for a given event path.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
@@ -97,6 +101,9 @@ public class MTREventPath extends MTRClusterPath {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.1
+     */
     @Generated
     @Selector("event")
     @NotNull
@@ -183,4 +190,18 @@ public class MTREventPath extends MTRClusterPath {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTREventPath initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

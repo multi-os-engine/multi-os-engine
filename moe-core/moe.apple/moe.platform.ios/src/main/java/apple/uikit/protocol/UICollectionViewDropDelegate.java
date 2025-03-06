@@ -27,6 +27,8 @@ public interface UICollectionViewDropDelegate {
     /**
      * If NO is returned no further delegate methods will be called for this drop session.
      * If not implemented, a default value of YES is assumed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -43,6 +45,8 @@ public interface UICollectionViewDropDelegate {
      * This will be called as needed when animating drops via -[UICollectionViewDropCoordinator
      * dropItem:toItemAtIndexPath:]
      * (to customize placeholder drops, please see UICollectionViewDropPlaceholder.previewParametersProvider)
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -55,6 +59,8 @@ public interface UICollectionViewDropDelegate {
 
     /**
      * Called when the drop session completed, regardless of outcome. Useful for performing any cleanup.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -66,6 +72,8 @@ public interface UICollectionViewDropDelegate {
 
     /**
      * Called when the drop session begins tracking in the collection view's coordinate space.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -77,6 +85,8 @@ public interface UICollectionViewDropDelegate {
 
     /**
      * Called when the drop session is no longer being tracked inside the collection view's coordinate space.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -95,6 +105,8 @@ public interface UICollectionViewDropDelegate {
      * no cells).
      * Note that in some cases your proposal may not be allowed and the system will enforce a different proposal.
      * You may perform your own hit testing via -[UIDropSession locationInView]
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -112,6 +124,8 @@ public interface UICollectionViewDropDelegate {
      * well as update the collection view's data source with data retrieved from the dropped items.
      * If the supplied method does nothing, default drop animations will be supplied and the collection view will
      * revert back to its initial pre-drop session state.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("collectionView:performDropWithCoordinator:")

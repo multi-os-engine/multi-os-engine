@@ -87,6 +87,9 @@ public class UIPointerInteraction extends NSObject implements UIInteraction {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 13.4
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -110,6 +113,9 @@ public class UIPointerInteraction extends NSObject implements UIInteraction {
     @Selector("init")
     public native UIPointerInteraction init();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("initWithDelegate:")
     public native UIPointerInteraction initWithDelegate(
@@ -130,11 +136,16 @@ public class UIPointerInteraction extends NSObject implements UIInteraction {
 
     /**
      * Call this method to cause the interaction to update the pointer in response to some event.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
@@ -161,6 +172,9 @@ public class UIPointerInteraction extends NSObject implements UIInteraction {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);

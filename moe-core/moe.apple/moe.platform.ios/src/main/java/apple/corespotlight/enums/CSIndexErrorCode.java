@@ -68,4 +68,11 @@ public final class CSIndexErrorCode {
     @Generated
     private CSIndexErrorCode() {
     }
+
+    /**
+     * The expected client state did not match the indexed one.
+     * 
+     * API-Since: 9.0
+     */
+    @Generated @NInt public static final long MismatchedClientState = 0xFFFFFFFFFFFFFC12L;
 }

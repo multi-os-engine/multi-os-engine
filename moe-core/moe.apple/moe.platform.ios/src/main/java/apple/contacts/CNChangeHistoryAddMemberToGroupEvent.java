@@ -92,6 +92,9 @@ public class CNChangeHistoryAddMemberToGroupEvent extends CNChangeHistoryEvent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("group")
@@ -132,6 +135,9 @@ public class CNChangeHistoryAddMemberToGroupEvent extends CNChangeHistoryEvent {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("member")

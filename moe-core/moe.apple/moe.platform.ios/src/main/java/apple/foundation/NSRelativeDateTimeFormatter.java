@@ -63,6 +63,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Specifies the calendar to use for formatting values that do not have an inherent calendar of their own. Defaults
      * to autoupdatingCurrentCalendar. Also resets to autoupdatingCurrentCalendar on assignment of nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("calendar")
@@ -92,6 +94,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Specifies how to describe a relative date. For example, "yesterday" vs "1 day ago" in English. Default is
      * NSRelativeDateTimeFormatterStyleNumeric.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("dateTimeStyle")
@@ -108,6 +112,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     /**
      * Specifies the formatting context of the output. Default is NSFormattingContextUnknown.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("formattingContext")
@@ -151,6 +157,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     /**
      * Specifies the locale of the output string. Defaults to and resets on assignment of nil to the calendar's locale.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("locale")
@@ -158,6 +166,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     /**
      * Formats the date interval from the reference date to the given date using the formatter's calendar.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -171,6 +181,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
      * 
      * Note this method only supports the following components: year, month, week of month, day, hour, minute, and
      * second. The rest will be ignored.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -180,6 +192,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Convenience method for formatting a time interval using the formatter's calendar. Negative time interval is
      * evaluated as a date in the past.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -202,6 +216,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Specifies the calendar to use for formatting values that do not have an inherent calendar of their own. Defaults
      * to autoupdatingCurrentCalendar. Also resets to autoupdatingCurrentCalendar on assignment of nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCalendar:")
@@ -210,6 +226,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Specifies how to describe a relative date. For example, "yesterday" vs "1 day ago" in English. Default is
      * NSRelativeDateTimeFormatterStyleNumeric.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDateTimeStyle:")
@@ -217,6 +235,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     /**
      * Specifies the formatting context of the output. Default is NSFormattingContextUnknown.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setFormattingContext:")
@@ -224,6 +244,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     /**
      * Specifies the locale of the output string. Defaults to and resets on assignment of nil to the calendar's locale.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLocale:")
@@ -232,6 +254,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Specifies how to format the quantity or the name of the unit. For example, "1 day ago" vs "one day ago" in
      * English. Default is NSRelativeDateTimeFormatterUnitsStyleFull.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUnitsStyle:")
@@ -244,6 +268,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Inherited from NSFormatter. 'obj' must be an instance of NSDate. Returns nil otherwise. When formatting a
      * relative date using this method, the class uses -[NSDate date] as the reference date.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -257,6 +283,8 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Specifies how to format the quantity or the name of the unit. For example, "1 day ago" vs "one day ago" in
      * English. Default is NSRelativeDateTimeFormatterUnitsStyleFull.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("unitsStyle")

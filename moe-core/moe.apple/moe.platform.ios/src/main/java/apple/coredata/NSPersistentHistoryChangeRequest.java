@@ -85,17 +85,26 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("deleteHistoryBeforeDate:")
     public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeDate(@NotNull NSDate date);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("deleteHistoryBeforeToken:")
     public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeToken(
             @Nullable NSPersistentHistoryToken token);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("deleteHistoryBeforeTransaction:")
@@ -106,17 +115,26 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("fetchHistoryAfterDate:")
     public static native NSPersistentHistoryChangeRequest fetchHistoryAfterDate(@NotNull NSDate date);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("fetchHistoryAfterToken:")
     public static native NSPersistentHistoryChangeRequest fetchHistoryAfterToken(
             @Nullable NSPersistentHistoryToken token);
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("fetchHistoryAfterTransaction:")
@@ -170,6 +188,8 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     /**
      * The type of result that should be returned from this request. Defaults to
      * NSPersistentHistoryResultTypeTransactionsAndChanges
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("resultType")
@@ -179,6 +199,8 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     /**
      * The type of result that should be returned from this request. Defaults to
      * NSPersistentHistoryResultTypeTransactionsAndChanges
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setResultType:")
@@ -192,6 +214,9 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("token")

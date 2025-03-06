@@ -22,6 +22,7 @@ limitations under the License.
 #import <dispatch/dispatch.h>
 #import <libkern/OSByteOrder.h>
 #import <math.h>
+#import <mach/mig_errors.h>
 #import <os/log.h>
 #import <os/trace.h>
 #import <signal.h>
@@ -945,52 +946,8 @@ EXPORT int16_t __natj_inline_vuqaddh_s16(int16_t __p0, uint16_t __p1) {
 
 #endif
 
-EXPORT float __natj_inline_simd_muladd(float x, float y, float z) {
-	return simd_muladd(x, y, z);
-}
-
-EXPORT float __natj_inline_simd_sign(float x) {
-	return simd_sign(x);
-}
-
-EXPORT float __natj_inline_simd_mix(float x, float y, float t) {
-	return simd_mix(x, y, t);
-}
-
-EXPORT float __natj_inline_simd_precise_recip(float x) {
-	return simd_precise_recip(x);
-}
-
-EXPORT float __natj_inline_simd_fast_recip(float x) {
-	return simd_fast_recip(x);
-}
-
-EXPORT float __natj_inline_simd_recip(float x) {
-	return simd_recip(x);
-}
-
-EXPORT float __natj_inline_simd_precise_rsqrt(float x) {
-	return simd_precise_rsqrt(x);
-}
-
-EXPORT float __natj_inline_simd_fast_rsqrt(float x) {
-	return simd_fast_rsqrt(x);
-}
-
-EXPORT float __natj_inline_simd_rsqrt(float x) {
-	return simd_rsqrt(x);
-}
-
-EXPORT float __natj_inline_simd_fract(float x) {
-	return simd_fract(x);
-}
-
-EXPORT float __natj_inline_simd_step(float edge, float x) {
-	return simd_step(edge, x);
-}
-
-EXPORT float __natj_inline_simd_smoothstep(float edge0, float edge1, float x) {
-	return simd_smoothstep(edge0, edge1, x);
+EXPORT void __natj_inline___NDR_convert__mig_reply_error_t(mig_reply_error_t * x) {
+	__NDR_convert__mig_reply_error_t(x);
 }
 
 EXPORT unsigned short __natj_inline_NXSwapShort(unsigned short inv) {

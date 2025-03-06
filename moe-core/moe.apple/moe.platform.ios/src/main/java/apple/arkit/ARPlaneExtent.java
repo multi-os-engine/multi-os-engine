@@ -104,6 +104,8 @@ public class ARPlaneExtent extends NSObject implements NSSecureCoding {
 
     /**
      * The height the plane. Corresponds to the length of the plane along the z-axis prior to applying .rotationOnYAxis.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("height")
@@ -154,6 +156,8 @@ public class ARPlaneExtent extends NSObject implements NSSecureCoding {
 
     /**
      * The rotation angle in radians of the extents around the y-axis in the anchor’s coordinate space.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("rotationOnYAxis")
@@ -185,6 +189,8 @@ public class ARPlaneExtent extends NSObject implements NSSecureCoding {
     /**
      * The width of the plane. Corresponds to the length of the plane along the x-axis prior to applying
      * .rotationOnYAxis.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("width")

@@ -109,6 +109,8 @@ public class MIDINetworkSession extends NSObject {
 
     /**
      * returns the singleton.
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -172,22 +174,33 @@ public class MIDINetworkSession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("addConnection:")
     public native boolean addConnection(@NotNull MIDINetworkConnection connection);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("addContact:")
     public native boolean addContact(@NotNull MIDINetworkHost contact);
 
     /**
      * who can connect to this session? see constants above.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("connectionPolicy")
     @NUInt
     public native long connectionPolicy();
 
+    /**
+     * API-Since: 4.2
+     */
     @NotNull
     @Generated
     @Selector("connections")
@@ -196,12 +209,17 @@ public class MIDINetworkSession extends NSObject {
     /**
      * The driver maintains a directory of MIDINetworkHosts, "contacts," for user convenience in initiating
      * connections, and for controlling incoming connection requests.
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
     @Selector("contacts")
     public native NSSet<? extends MIDINetworkHost> contacts();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("destinationEndpoint")
     public native int destinationEndpoint();
@@ -213,6 +231,8 @@ public class MIDINetworkSession extends NSObject {
     /**
      * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO
      * (disabled).
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("isEnabled")
@@ -221,6 +241,8 @@ public class MIDINetworkSession extends NSObject {
     /**
      * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO
      * (disabled).
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setEnabled:")
@@ -228,6 +250,8 @@ public class MIDINetworkSession extends NSObject {
 
     /**
      * name of this session's CoreMIDI entity (inherited by its endpoints)
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -236,6 +260,8 @@ public class MIDINetworkSession extends NSObject {
 
     /**
      * name by which this session is advertised via Bonjour
+     * 
+     * API-Since: 4.2
      */
     @NotNull
     @Generated
@@ -244,27 +270,40 @@ public class MIDINetworkSession extends NSObject {
 
     /**
      * UDP port
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("networkPort")
     @NUInt
     public native long networkPort();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("removeConnection:")
     public native boolean removeConnection(@NotNull MIDINetworkConnection connection);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("removeContact:")
     public native boolean removeContact(@NotNull MIDINetworkHost contact);
 
     /**
      * who can connect to this session? see constants above.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setConnectionPolicy:")
     public native void setConnectionPolicy(@NUInt long value);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("sourceEndpoint")
     public native int sourceEndpoint();

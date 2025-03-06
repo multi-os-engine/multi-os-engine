@@ -24,18 +24,25 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * MTRSubscribeParams
  * This is used to control the behavior of attribute/event subscribes. If not
  * provided (i.e. nil passed for the MTRSubscribeParams argument), will be
  * treated as if a default-initialized object was passed in.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRSubscribeParams extends MTRReadParams {
+public class MTRSubscribeParams extends MTRReadParams implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -126,6 +133,8 @@ public class MTRSubscribeParams extends MTRReadParams {
     /**
      * Initialize an MTRSubscribeParams. Must provide a minInterval and
      * maxInterval; there are no default values for those.
+     * 
+     * API-Since: 16.1
      */
     @Generated
     @Selector("initWithMinInterval:maxInterval:")
@@ -361,4 +370,29 @@ public class MTRSubscribeParams extends MTRReadParams {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTRSubscribeParams initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

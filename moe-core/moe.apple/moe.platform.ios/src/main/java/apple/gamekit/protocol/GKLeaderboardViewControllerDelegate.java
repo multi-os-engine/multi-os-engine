@@ -36,7 +36,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKLeaderboardViewControllerDelegate {
     /**
      * The leaderboard view has finished
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @Selector("leaderboardViewControllerDidFinish:")
     void leaderboardViewControllerDidFinish(GKLeaderboardViewController viewController);

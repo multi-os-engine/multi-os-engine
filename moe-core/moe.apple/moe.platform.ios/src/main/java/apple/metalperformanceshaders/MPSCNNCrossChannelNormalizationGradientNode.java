@@ -97,6 +97,9 @@ public class MPSCNNCrossChannelNormalizationGradientNode extends MPSNNGradientFi
     @Selector("init")
     public native MPSCNNCrossChannelNormalizationGradientNode init();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelSize:")
     public native MPSCNNCrossChannelNormalizationGradientNode initWithSourceGradientSourceImageGradientStateKernelSize(
@@ -120,6 +123,9 @@ public class MPSCNNCrossChannelNormalizationGradientNode extends MPSNNGradientFi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("kernelSize")
     @NUInt
@@ -135,6 +141,9 @@ public class MPSCNNCrossChannelNormalizationGradientNode extends MPSNNGradientFi
     @Selector("new")
     public static native MPSCNNCrossChannelNormalizationGradientNode new_objc();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelSize:")
     public static native MPSCNNCrossChannelNormalizationGradientNode nodeWithSourceGradientSourceImageGradientStateKernelSize(

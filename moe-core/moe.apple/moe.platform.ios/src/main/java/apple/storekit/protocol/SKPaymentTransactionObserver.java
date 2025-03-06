@@ -32,6 +32,12 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use StoreKit 2 Transaction APIs
+ */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -41,7 +47,10 @@ public interface SKPaymentTransactionObserver {
      * Sent when transactions are removed from the queue (via finishTransaction:).
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use StoreKit 2 Transaction APIs
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueue:removedTransactions:")
@@ -54,7 +63,10 @@ public interface SKPaymentTransactionObserver {
      * Sent when an error is encountered while adding transactions from the user's purchase history back to the queue.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use AppStore.sync()
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueue:restoreCompletedTransactionsFailedWithError:")
@@ -84,7 +96,10 @@ public interface SKPaymentTransactionObserver {
      * transactions and finish as appropriate.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use StoreKit 2 Transaction APIs
      */
+    @Deprecated
     @Generated
     @Selector("paymentQueue:updatedTransactions:")
     void paymentQueueUpdatedTransactions(@NotNull SKPaymentQueue queue,
@@ -94,7 +109,10 @@ public interface SKPaymentTransactionObserver {
      * Sent when all transactions from the user's purchase history have successfully been added back to the queue.
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use AppStore.sync()
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueueRestoreCompletedTransactionsFinished:")
@@ -106,7 +124,10 @@ public interface SKPaymentTransactionObserver {
      * Sent when a user initiates an IAP buy from the App Store
      * 
      * API-Since: 11.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use PurchaseIntent.intents
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueue:shouldAddStorePayment:forProduct:")
@@ -117,7 +138,10 @@ public interface SKPaymentTransactionObserver {
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Storefront.updates
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueueDidChangeStorefront:")
@@ -129,7 +153,10 @@ public interface SKPaymentTransactionObserver {
      * Sent when entitlements for a user have changed and access to the specified IAPs has been revoked.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Transaction.updates
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueue:didRevokeEntitlementsForProductIdentifiers:")

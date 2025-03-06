@@ -71,6 +71,8 @@ public class NSValueTransformer extends NSObject {
 
     /**
      * flag indicating whether transformation is read-only or not
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("allowsReverseTransformation")
@@ -157,6 +159,8 @@ public class NSValueTransformer extends NSObject {
      * if valueTransformerForName: does not find a registered transformer instance, it will fall back to looking up a
      * class with the specified name - if one is found, it will instantiate a transformer with the default -init method
      * and automatically register it
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setValueTransformer:forName:")
@@ -173,17 +177,25 @@ public class NSValueTransformer extends NSObject {
 
     /**
      * class of the "output" objects, as returned by transformedValue:
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
     @Selector("transformedValueClass")
     public static native Class transformedValueClass();
 
+    /**
+     * API-Since: 3.0
+     */
     @Nullable
     @Generated
     @Selector("valueTransformerForName:")
     public static native NSValueTransformer valueTransformerForName(@NotNull String name);
 
+    /**
+     * API-Since: 3.0
+     */
     @NotNull
     @Generated
     @Selector("valueTransformerNames")
@@ -200,6 +212,8 @@ public class NSValueTransformer extends NSObject {
 
     /**
      * by default raises an exception if +allowsReverseTransformation returns NO and otherwise invokes transformedValue:
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -209,6 +223,8 @@ public class NSValueTransformer extends NSObject {
 
     /**
      * by default returns value
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated

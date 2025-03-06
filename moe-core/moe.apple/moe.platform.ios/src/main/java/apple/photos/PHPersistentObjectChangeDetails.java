@@ -84,6 +84,9 @@ public class PHPersistentObjectChangeDetails extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("deletedLocalIdentifiers")
@@ -102,6 +105,9 @@ public class PHPersistentObjectChangeDetails extends NSObject {
     @Selector("init")
     public native PHPersistentObjectChangeDetails init();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("insertedLocalIdentifiers")
@@ -134,6 +140,9 @@ public class PHPersistentObjectChangeDetails extends NSObject {
     @Selector("new")
     public static native PHPersistentObjectChangeDetails new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("objectType")
     @NInt
@@ -155,6 +164,9 @@ public class PHPersistentObjectChangeDetails extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("updatedLocalIdentifiers")

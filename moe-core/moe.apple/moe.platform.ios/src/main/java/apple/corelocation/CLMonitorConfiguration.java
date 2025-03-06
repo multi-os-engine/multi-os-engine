@@ -94,6 +94,9 @@ public class CLMonitorConfiguration extends NSObject {
      * Accessing `CLMonitor` outside of the queue will result in undefined behavior.
      * handler : The callback handler to be submitted to `queue`
      * for each event.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("configWithMonitorName:queue:eventHandler:")
@@ -122,6 +125,9 @@ public class CLMonitorConfiguration extends NSObject {
      * 
      * Discussion:
      * Handler block which will be used as the event handler for the `CLMonitor` instance.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("eventHandler")
@@ -172,6 +178,9 @@ public class CLMonitorConfiguration extends NSObject {
      * 
      * Discussion:
      * Name of the Monitor instance to create or open.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("name")
@@ -188,6 +197,9 @@ public class CLMonitorConfiguration extends NSObject {
      * 
      * Discussion:
      * Dispatch queue to which the instance of `CLMonitor` will be bound.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("queue")

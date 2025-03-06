@@ -131,6 +131,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Creates an key command that will _not_ be discoverable in the UI.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:")
@@ -194,19 +196,31 @@ public class UIKeyCommand extends UICommand {
     @Selector("discoverabilityTitle")
     public native String discoverabilityTitle();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("init")
     public native UIKeyCommand init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIKeyCommand initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Nullable
     @Generated
     @Selector("input")
     public native String input();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("modifierFlags")
     @NInt
@@ -229,6 +243,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Action to take on choosing this command.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated

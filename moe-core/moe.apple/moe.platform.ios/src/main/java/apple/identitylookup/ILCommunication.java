@@ -86,6 +86,9 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.0
+     */
     @NotNull
     @Generated
     @Selector("dateReceived")
@@ -157,6 +160,8 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
 
     /**
      * The phone number or e-mail address of the sender. The value will be nil if the sender is unknown.
+     * 
+     * API-Since: 12.0
      */
     @Nullable
     @Generated

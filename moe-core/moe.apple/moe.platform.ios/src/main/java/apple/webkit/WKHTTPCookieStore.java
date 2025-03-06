@@ -56,6 +56,8 @@ public class WKHTTPCookieStore extends NSObject {
      * The observer is not retained by the receiver. It is your responsibility
      * to unregister the observer before it becomes invalid.
      * 
+     * API-Since: 11.0
+     * 
      * @param observer The observer object to add.
      */
     @Generated
@@ -105,6 +107,8 @@ public class WKHTTPCookieStore extends NSObject {
      * Delete the specified cookie.
      * 
      * @param completionHandler A block to invoke once the cookie has been deleted.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("deleteCookie:completionHandler:")
@@ -126,6 +130,8 @@ public class WKHTTPCookieStore extends NSObject {
      * Fetches all stored cookies.
      * 
      * @param completionHandler A block to invoke with the fetched cookies.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("getAllCookies:")
@@ -179,6 +185,8 @@ public class WKHTTPCookieStore extends NSObject {
      * Removes a WKHTTPCookieStoreObserver object from the cookie store.
      * 
      * @param observer The observer to remove.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @Selector("removeObserver:")
@@ -197,6 +205,8 @@ public class WKHTTPCookieStore extends NSObject {
      * 
      * @param cookie            The cookie to set.
      * @param completionHandler A block to invoke once the cookie has been stored.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("setCookie:completionHandler:")

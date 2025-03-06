@@ -115,6 +115,8 @@ public class SRFaceMetricsExpression extends NSObject implements NSCopying, NSSe
      * An opaque identifier for the face expression
      * 
      * More information about what this face expression represents can be found in Apple's developer documentation
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("identifier")
@@ -191,6 +193,8 @@ public class SRFaceMetricsExpression extends NSObject implements NSCopying, NSSe
      * [@property] value
      * 
      * double value indicating the current position of the expression
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("value")

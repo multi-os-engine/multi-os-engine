@@ -46,6 +46,7 @@ import org.jetbrains.annotations.Nullable;
  * interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content
  * will resume, at an offset from the time at which it was suspended as specified by the event.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 15.0
  */
@@ -91,6 +92,8 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
      * When you cancel interstitial events via the use of this method, the value of resumptionOffset that you pass
      * overrides the events' resumptionOffset.
      * Has no effect while currentEvent is nil.
+     * 
+     * API-Since: 15.0
      * 
      * @param resumptionOffset
      *                         Specifies the offset in time at which playback of the primary player's current item
@@ -160,6 +163,8 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
      * 
      * An NSInvalidArgumentException will be raised if an under-specified AVPlayerInterstitialEvent is set, such as one
      * with a nil primaryItem, or with neither a time nor a date.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("events")
@@ -178,6 +183,8 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
      * initWithPrimaryPlayer:
      * 
      * This method throws an exception if the primary player is an interstitial player.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithPrimaryPlayer:")
@@ -202,6 +209,8 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
      * Returns an instance of AVPlayerInterstitialEvent for use in observing and scheduling interstitial playback.
      * 
      * This method throws an exception if the primary player is an interstitial player.
+     * 
+     * API-Since: 15.0
      * 
      * @param primaryPlayer
      *                      The AVPlayer that will play the primaryItems of the receiver's interstitial events.
@@ -268,6 +277,8 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
      * 
      * An NSInvalidArgumentException will be raised if an under-specified AVPlayerInterstitialEvent is set, such as one
      * with a nil primaryItem, or with neither a time nor a date.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setEvents:")

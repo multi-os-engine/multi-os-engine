@@ -99,6 +99,8 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
 
     /**
      * The delegate for the interaction, to supply and customize writable elements in the interaction's view.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -123,6 +125,9 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
     @Selector("init")
     public native UIIndirectScribbleInteraction init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithDelegate:")
     public native UIIndirectScribbleInteraction initWithDelegate(
@@ -145,6 +150,8 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
      * Indicates if the user is actively writing. It will be set to YES in between calls to
      * -indirectScribbleInteraction:willBeginWritingInElement: and
      * -indirectScribbleInteraction:didFinishWritingInElement: calls.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isHandlingWriting")

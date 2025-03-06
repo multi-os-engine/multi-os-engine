@@ -177,6 +177,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Optional merchant-supplied information about the payment request. Examples of this are an order
      * or cart identifier. It will be signed and included in the resulting PKPaymentToken.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -207,6 +209,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * The merchant's ISO country code.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -215,6 +219,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Currency code for this payment.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -227,6 +233,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * The payment processing capabilities of the merchant.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("merchantCapabilities")
@@ -236,6 +244,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
      * identifiers in the application's entitlement.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -245,6 +255,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Array of PKPaymentSummaryItem objects which should be presented to the user.
      * The last item should be the total you wish to charge, and should not be pending
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -280,6 +292,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Optional merchant-supplied information about the payment request. Examples of this are an order
      * or cart identifier. It will be signed and included in the resulting PKPaymentToken.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setApplicationData:")
@@ -307,6 +321,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * The merchant's ISO country code.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCountryCode:")
@@ -314,6 +330,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Currency code for this payment.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCurrencyCode:")
@@ -321,6 +339,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * The payment processing capabilities of the merchant.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMerchantCapabilities:")
@@ -329,6 +349,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
      * identifiers in the application's entitlement.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMerchantIdentifier:")
@@ -337,6 +359,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Array of PKPaymentSummaryItem objects which should be presented to the user.
      * The last item should be the total you wish to charge, and should not be pending
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPaymentSummaryItems:")
@@ -390,6 +414,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Shipping methods supported by the merchant.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setShippingMethods:")
@@ -408,6 +434,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * The payment networks supported by the merchant, for example @[ PKPaymentNetworkVisa,
      * PKPaymentNetworkMasterCard ]. This property constrains payment cards that may fund the payment.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSupportedNetworks:")
@@ -439,6 +467,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Shipping methods supported by the merchant.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -459,6 +489,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * The payment networks supported by the merchant, for example @[ PKPaymentNetworkVisa,
      * PKPaymentNetworkMasterCard ]. This property constrains payment cards that may fund the payment.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -816,4 +848,26 @@ public class PKPaymentRequest extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The ISO 18245 Merchant Category Code for the payment.
+     * Some payment methods may not support specific merchant category codes.
+     * By setting the merchant category code, these payment methods can be excluded.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("merchantCategoryCode")
+    public native short merchantCategoryCode();
+
+    /**
+     * The ISO 18245 Merchant Category Code for the payment.
+     * Some payment methods may not support specific merchant category codes.
+     * By setting the merchant category code, these payment methods can be excluded.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setMerchantCategoryCode:")
+    public native void setMerchantCategoryCode(short value);
 }

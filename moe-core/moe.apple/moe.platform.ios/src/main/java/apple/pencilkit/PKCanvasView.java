@@ -254,6 +254,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * The delegate for drawing operations.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -267,6 +269,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * The drawing shown on this view.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -275,6 +279,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * The gesture recognizer used to draw in the canvas.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -317,6 +323,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * Is the ruler shown on the canvas.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isRulerActive")
@@ -443,6 +451,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * The delegate for drawing operations.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -450,6 +460,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * The delegate for drawing operations.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
@@ -465,6 +477,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * The drawing shown on this view.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDrawing:")
@@ -472,6 +486,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
 
     /**
      * Is the ruler shown on the canvas.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRulerActive:")
@@ -480,6 +496,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     /**
      * The tool used to interact with the canvas.
      * Default is `[[PKInkingTool alloc] initWithType:PKInkTypePen color:UIColor.blackColor]`
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTool:")
@@ -496,6 +514,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     /**
      * The tool used to interact with the canvas.
      * Default is `[[PKInkingTool alloc] initWithType:PKInkTypePen color:UIColor.blackColor]`
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -512,6 +532,7 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("toolPickerIsRulerActiveDidChange:")
     public native void toolPickerIsRulerActiveDidChange(@NotNull PKToolPicker toolPicker);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("toolPickerSelectedToolDidChange:")
@@ -612,4 +633,35 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Controls if drawing input is enabled on this canvas view. Defaults to true.
+     * 
+     * Note `toolPickerSelectedToolItemDidChange` may set this value
+     * as some `PKToolPickerItem`s do not have a `PKTool`.
+     * This will happen when the canvas is an observer of a `PKToolPicker`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isDrawingEnabled")
+    public native boolean isDrawingEnabled();
+
+    /**
+     * Controls if drawing input is enabled on this canvas view. Defaults to true.
+     * 
+     * Note `toolPickerSelectedToolItemDidChange` may set this value
+     * as some `PKToolPickerItem`s do not have a `PKTool`.
+     * This will happen when the canvas is an observer of a `PKToolPicker`.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("setDrawingEnabled:")
+    public native void setDrawingEnabled(boolean value);
+
+    @Generated
+    @IsOptional
+    @Selector("toolPickerSelectedToolItemDidChange:")
+    public native void toolPickerSelectedToolItemDidChange(@NotNull PKToolPicker toolPicker);
 }

@@ -45,7 +45,10 @@ import org.jetbrains.annotations.Nullable;
  * request information about products for your application
  * 
  * API-Since: 3.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use Product.products(for:)
  */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -162,7 +165,10 @@ public class SKProductsRequest extends SKRequest {
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.products(for:)
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("delegate")
@@ -177,21 +183,30 @@ public class SKProductsRequest extends SKRequest {
      * Set of string product identifiers
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.products(for:)
      */
+    @Deprecated
     @Generated
     @Selector("initWithProductIdentifiers:")
     public native SKProductsRequest initWithProductIdentifiers(@NotNull NSSet<String> productIdentifiers);
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.products(for:)
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * API-Since: 3.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use Product.products(for:)
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();

@@ -130,6 +130,8 @@ public class ARDirectionalLightEstimate extends ARLightEstimate {
 
     /**
      * The intensity of light in the primary direction.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primaryLightIntensity")
@@ -153,6 +155,8 @@ public class ARDirectionalLightEstimate extends ARLightEstimate {
      * 
      * The data is an array of 27 32-bit floating-point values, containing three non-interleaved data sets
      * corresponding to the red, green, and blue sets of coefficients.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

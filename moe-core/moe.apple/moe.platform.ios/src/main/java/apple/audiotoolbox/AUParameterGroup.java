@@ -173,6 +173,8 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
 
     /**
      * Returns a flat array of all parameters in the group, including those in child groups.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -181,6 +183,8 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
 
     /**
      * The group's child nodes (AUParameterGroupNode).
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

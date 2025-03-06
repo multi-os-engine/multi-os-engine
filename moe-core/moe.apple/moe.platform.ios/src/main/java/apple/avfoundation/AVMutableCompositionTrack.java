@@ -172,6 +172,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * Indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -193,6 +195,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * timeRange in a sound track presents silence.
      * Note that you cannot add empty time ranges to the end of a composition track.
      * 
+     * API-Since: 4.0
+     * 
      * @param timeRange
      *                  Specifies the empty timeRange to be inserted.
      */
@@ -210,6 +214,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * 
      * Note that the inserted track timeRange will be presented at its natural duration and rate. It can be scaled to a
      * different duration (and presented at a different rate) via -scaleTimeRange:toDuration:.
+     * 
+     * API-Since: 4.0
      * 
      * @param timeRange
      *                  Specifies the timeRange of the track to be inserted.
@@ -270,6 +276,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * Indicates the language associated with the track, as an ISO 639-2/T language code.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -285,6 +293,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * If not set, the value is the naturalTimeScale of the first non-empty edit, or 600 if there are no non-empty
      * edits.
      * Set to 0 to revert to default behavior.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("naturalTimeScale")
@@ -296,6 +306,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * The preferred transformation of the visual media data for display purposes.
      * 
      * The default value is CGAffineTransformIdentity.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("preferredTransform")
@@ -308,6 +320,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * The preferred volume of the audible media data.
      * 
      * The default value is 1.0.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("preferredVolume")
@@ -320,6 +334,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * 
      * Removal of a timeRange does not cause the track to be removed from the composition. Instead it removes or
      * truncates track segments that intersect with the timeRange.
+     * 
+     * API-Since: 4.0
      * 
      * @param timeRange
      *                  Specifies the timeRange to be removed.
@@ -335,6 +351,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * 
      * Each trackSegment affected by the scaling operation will be presented at a rate equal to source.duration /
      * target.duration of its resulting timeMapping.
+     * 
+     * API-Since: 4.0
      * 
      * @param timeRange
      *                  Specifies the timeRange of the track to be scaled.
@@ -355,6 +373,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * AVCompositionTrackSegment's timeMapping.target).
      * Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments
      * conforms to this rule.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("segments")
@@ -366,6 +386,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * Indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
@@ -377,6 +399,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * Indicates the language associated with the track, as an ISO 639-2/T language code.
      * 
      * The default value is nil.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setLanguageCode:")
@@ -391,6 +415,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * If not set, the value is the naturalTimeScale of the first non-empty edit, or 600 if there are no non-empty
      * edits.
      * Set to 0 to revert to default behavior.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setNaturalTimeScale:")
@@ -402,6 +428,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * The preferred transformation of the visual media data for display purposes.
      * 
      * The default value is CGAffineTransformIdentity.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setPreferredTransform:")
@@ -413,6 +441,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * The preferred volume of the audible media data.
      * 
      * The default value is 1.0.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setPreferredVolume:")
@@ -428,6 +458,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * AVCompositionTrackSegment's timeMapping.target).
      * Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments
      * conforms to this rule.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setSegments:")
@@ -442,6 +474,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * The array is tested for suitability for setting as the value of the trackSegments property. If a portion of an
      * existing trackSegments array is to be modified, the modification can be made via an instance of NSMutableArray,
      * and the resulting array can be tested via -validateTrackSegments:error:.
+     * 
+     * API-Since: 4.0
      * 
      * @param trackSegments
      *                      The array of AVCompositionTrackSegments to be validated.

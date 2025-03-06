@@ -165,6 +165,8 @@ public class HMRoom extends NSObject {
     /**
      * Array of HMAccessory objects that correspond to the accessories
      * associated with this room.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -177,6 +179,8 @@ public class HMRoom extends NSObject {
 
     /**
      * Name of the room.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

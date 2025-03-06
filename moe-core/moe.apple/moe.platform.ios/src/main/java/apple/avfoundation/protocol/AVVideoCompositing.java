@@ -69,6 +69,8 @@ public interface AVVideoCompositing {
      * and called the finishCancelledRequest callback for each of them, or, if cancellation is not possible, finished
      * processing of all the frames
      * and called the finishWithComposedVideoFrame: callback for each of them.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -86,6 +88,8 @@ public interface AVVideoCompositing {
      * the AVVideoCompositionRenderContext instance handing a video composition changes. AVVideoCompositionRenderContext
      * instances
      * being immutable, such a change will occur every time there is a change in the video composition parameters.
+     * 
+     * API-Since: 7.0
      * 
      * @param newRenderContext
      *                         The render context that will be handling the video composition from this point
@@ -105,6 +109,8 @@ public interface AVVideoCompositing {
      * supplied by the composition engine will be used in the creation of subsequent render context's pixelBuffers.
      * This property is queried once before any composition request is sent to the compositor. Changing
      * required buffer attributes afterwards is not supported.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -123,6 +129,8 @@ public interface AVVideoCompositing {
      * Missing attributes will be set by the composition engine to values allowing the best performance.
      * This property is queried once before any composition request is sent to the compositor. Changing
      * source buffer attributes afterwards is not supported.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -149,6 +157,8 @@ public interface AVVideoCompositing {
      * If the rendered frame is exactly the same as one of the source frames, with no letterboxing, pillboxing or
      * cropping needed,
      * then the appropriate source pixel buffer may be returned (after CFRetain has been called on it).
+     * 
+     * API-Since: 7.0
      * 
      * @param asyncVideoCompositionRequest
      *                                     An instance of AVAsynchronousVideoCompositionRequest that provides context

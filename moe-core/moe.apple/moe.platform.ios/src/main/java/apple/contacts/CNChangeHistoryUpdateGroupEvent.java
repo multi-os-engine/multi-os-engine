@@ -92,6 +92,9 @@ public class CNChangeHistoryUpdateGroupEvent extends CNChangeHistoryEvent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("group")

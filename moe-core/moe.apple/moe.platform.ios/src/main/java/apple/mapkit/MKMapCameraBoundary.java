@@ -120,10 +120,16 @@ public class MKMapCameraBoundary extends NSObject implements NSSecureCoding, NSC
     @Selector("initWithCoder:")
     public native MKMapCameraBoundary initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoordinateRegion:")
     public native MKMapCameraBoundary initWithCoordinateRegion(@ByValue MKCoordinateRegion region);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMapRect:")
     public native MKMapCameraBoundary initWithMapRect(@ByValue MKMapRect mapRect);
@@ -150,6 +156,9 @@ public class MKMapCameraBoundary extends NSObject implements NSSecureCoding, NSC
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("mapRect")
     @ByValue
@@ -160,6 +169,9 @@ public class MKMapCameraBoundary extends NSObject implements NSSecureCoding, NSC
     @Selector("new")
     public static native MKMapCameraBoundary new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("region")
     @ByValue

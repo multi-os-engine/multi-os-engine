@@ -125,6 +125,8 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
      * @return A valid MPSCNNUpsamplingBilinear object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")
@@ -200,6 +202,8 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
      *                            are aligned,
      *                            preserving the values at the corner pixels.
      * @return A valid MPSCNNUpsamplingBilinear object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:alignCorners:")

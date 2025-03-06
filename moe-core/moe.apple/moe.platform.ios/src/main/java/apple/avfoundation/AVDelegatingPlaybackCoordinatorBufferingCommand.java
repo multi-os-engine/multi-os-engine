@@ -74,6 +74,8 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
      * 
      * The command should only be considered complete once the player is ready to receive an
      * AVDelegatingPlaybackCoordinatorPlayCommand with the indicated rate.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("anticipatedPlaybackRate")
@@ -117,6 +119,8 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
      * situation to the other participants.
      * Completing the command after this date means that the coordinator will likely send a play command for a later
      * time than the receiver buffered for.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

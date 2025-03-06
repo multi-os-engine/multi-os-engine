@@ -32,6 +32,8 @@ public interface NSTextSelectionDataSource {
     /**
      * Returns the base writing direction at location. It is recommended to return the resolved base direction either
      * NSTextSelectionNavigationWritingDirectionLeftToRight or NSTextSelectionNavigationWritingDirectionRightToLeft.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("baseWritingDirectionAtLocation:")
@@ -40,6 +42,8 @@ public interface NSTextSelectionDataSource {
 
     /**
      * Declares the starting and ending locations for the document.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -51,6 +55,8 @@ public interface NSTextSelectionDataSource {
      * Enumerates all the caret offset from left to right in visual order. caretOffset should be in the coordinate
      * system for the text container. When leadingEdge=YES, it indicates caretOffset is at the edge logically preceding
      * the character. For LTR characters, it is on the left, and on the right for RTL characters.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("enumerateCaretOffsetsInLineFragmentAtLocation:usingBlock:")
@@ -69,6 +75,8 @@ public interface NSTextSelectionDataSource {
     /**
      * This optional method should be implemented enumerating the text container/page boundary when the text selection
      * data provider supports such a layout functionality.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -93,6 +101,8 @@ public interface NSTextSelectionDataSource {
      * segmentation behavior for specialized document contents (i.e. text editors with structured document contents such
      * as a programming language). NSStringEnumerationByLines should be aware of the visual line boundaries based on
      * soft line wrapping.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("enumerateSubstringsFromLocation:options:usingBlock:")
@@ -110,6 +120,8 @@ public interface NSTextSelectionDataSource {
 
     /**
      * Returns the range of the line fragment containing point inside the coordinate system containing location.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -120,6 +132,8 @@ public interface NSTextSelectionDataSource {
     /**
      * Returns a new location from location with offset. The offset value could be positive or negative indicating the
      * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -131,6 +145,8 @@ public interface NSTextSelectionDataSource {
     /**
      * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound
      * when the offset cannot be represented in an integer value (i.e. locations are not in the same document).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("offsetFromLocation:toLocation:")
@@ -141,6 +157,8 @@ public interface NSTextSelectionDataSource {
     /**
      * Returns the text layout orientation at location. If not implemented, NSTextSelectionNavigation assumes it is
      * NSTextSelectionNavigationLayoutOrientationHorizontal.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -153,6 +171,8 @@ public interface NSTextSelectionDataSource {
     /**
      * Returns a text range corresponding to selectionGranularity enclosing location. Returns nil when
      * documentRange.isEmpty=YES.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

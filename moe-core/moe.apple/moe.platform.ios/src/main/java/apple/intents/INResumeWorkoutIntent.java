@@ -173,6 +173,8 @@ public class INResumeWorkoutIntent extends INIntent {
 
     /**
      * Designated initializer. The `workoutName` can use `INWorkoutNameIdentifier` as its `identifier` parameter.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithWorkoutName:")
@@ -184,6 +186,9 @@ public class INResumeWorkoutIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("workoutName")

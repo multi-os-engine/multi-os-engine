@@ -72,6 +72,8 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
      * [@property] bucketEnumerator
      * 
      * An NSEnumerator that can be used to enumerate the buckets of this histogram.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -183,6 +185,8 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
      * The number of buckets contained within this histogram.
      * 
      * This value can never be negative.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("totalBucketCount")

@@ -66,6 +66,8 @@ public class ENExposureWindow extends NSObject {
 
     /**
      * Transmitting device's calibration confidence.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("calibrationConfidence")
@@ -94,6 +96,8 @@ public class ENExposureWindow extends NSObject {
 
     /**
      * Day the exposure occurred.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated
@@ -110,6 +114,8 @@ public class ENExposureWindow extends NSObject {
 
     /**
      * How positive diagnosis was reported for this the TEK observed for this window.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("diagnosisReportType")
@@ -122,6 +128,8 @@ public class ENExposureWindow extends NSObject {
 
     /**
      * How infectious based on days since onset of symptoms.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("infectiousness")
@@ -169,6 +177,8 @@ public class ENExposureWindow extends NSObject {
     /**
      * Each scan instance corresponds to a scan (of a few seconds) when a beacon with a TEK causing this exposure was
      * observed.
+     * 
+     * API-Since: 12.5
      */
     @NotNull
     @Generated

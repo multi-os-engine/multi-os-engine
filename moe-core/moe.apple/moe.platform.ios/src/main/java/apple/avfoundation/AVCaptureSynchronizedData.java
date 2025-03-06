@@ -158,6 +158,8 @@ public class AVCaptureSynchronizedData extends NSObject {
      * 
      * Synchronized data is always clocked to the synchronizationClock of the AVCaptureSession to which the data output
      * is connected.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("timestamp")

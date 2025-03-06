@@ -99,6 +99,9 @@ public class UIHoverLiftEffect extends NSObject implements UIHoverEffect {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("effect")
     public static native UIHoverLiftEffect effect();

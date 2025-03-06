@@ -53,6 +53,8 @@ public class AVFragmentedAssetMinder extends NSObject {
      * This method throws an exception if the asset is not a supported type (AVFragmentedAsset, AVFragmentedMovie), or
      * if the asset is already being minded by another fragment minder.
      * 
+     * API-Since: 12.0
+     * 
      * @param asset
      *              The fragmented asset to add to the minder.
      */
@@ -74,6 +76,8 @@ public class AVFragmentedAssetMinder extends NSObject {
      * [@property] assets
      * 
      * An NSArray of the AVFragmentedAsset objects being minded.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -124,6 +128,8 @@ public class AVFragmentedAssetMinder extends NSObject {
      * @param mindingInterval
      *                        The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("fragmentedAssetMinderWithAsset:mindingInterval:")
@@ -150,6 +156,8 @@ public class AVFragmentedAssetMinder extends NSObject {
      * @param mindingInterval
      *                        The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithAsset:mindingInterval:")
@@ -184,6 +192,8 @@ public class AVFragmentedAssetMinder extends NSObject {
      * is 10.0.
      * 
      * This property throws an excepion if a value is set less than one millisecond (0.001) in duration.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("mindingInterval")
@@ -200,6 +210,8 @@ public class AVFragmentedAssetMinder extends NSObject {
      * Removes a fragmented asset from the array of assets being minded.
      * 
      * This method throws an exception if the asset is not a supported type (AVFragmentedAsset, AVFragmentedMovie).
+     * 
+     * API-Since: 12.0
      * 
      * @param asset
      *              The fragmented asset to remove from the minder.
@@ -223,6 +235,8 @@ public class AVFragmentedAssetMinder extends NSObject {
      * is 10.0.
      * 
      * This property throws an excepion if a value is set less than one millisecond (0.001) in duration.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMindingInterval:")

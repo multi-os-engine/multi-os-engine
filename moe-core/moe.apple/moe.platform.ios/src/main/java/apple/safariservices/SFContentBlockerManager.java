@@ -146,6 +146,9 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("new")
     public static native SFContentBlockerManager new_objc();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("reloadContentBlockerWithIdentifier:completionHandler:")
     public static native void reloadContentBlockerWithIdentifierCompletionHandler(@NotNull String identifier,

@@ -35,6 +35,9 @@ import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.gamecontroller.struct.GCPoint2;
+import org.moe.natj.c.ann.Inline;
+import org.moe.natj.general.ann.ByValue;
 
 @Generated
 @Library("GameController")
@@ -361,6 +364,8 @@ public final class GameController {
     public static native String GCInputRightThumbstick();
 
     /**
+     * Shoulder Buttons
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -3838,4 +3843,71 @@ public final class GameController {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCProductCategoryArcadeStick();
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native GCPoint2 GCPoint2Make(float x, float y);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native boolean GCPoint2Equal(@ByValue GCPoint2 point1, @ByValue GCPoint2 point2);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSStringFromGCPoint2(@ByValue GCPoint2 point);
+
+    /**
+     * Note: The `position` argument begins at index 0.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputBackLeftButton(@NInt long position);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputBackRightButton(@NInt long position);
+
+    /**
+     * The "zero" point -- equivalent to GCPoint2Make(0, 0).
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native GCPoint2 GCPoint2Zero();
+
+    /**
+     * Identifies the button element located at the top-left/right of a gamepad,
+     * between the left/right shoulder button and the gamepad's horizontal center.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputLeftBumper();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputRightBumper();
 }

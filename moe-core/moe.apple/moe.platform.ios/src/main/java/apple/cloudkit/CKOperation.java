@@ -180,6 +180,9 @@ public class CKOperation extends NSOperation {
     @Selector("container")
     public native CKContainer container();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native CKOperation init();

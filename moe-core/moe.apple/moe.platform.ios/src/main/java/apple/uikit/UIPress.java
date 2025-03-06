@@ -160,12 +160,17 @@ public class UIPress extends NSObject {
 
     /**
      * For analog buttons, returns a value between 0 and 1. Digital buttons return 0 or 1.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("force")
     @NFloat
     public native double force();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("gestureRecognizers")
@@ -175,25 +180,40 @@ public class UIPress extends NSObject {
     @Selector("init")
     public native UIPress init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("phase")
     @NInt
     public native long phase();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("responder")
     public native UIResponder responder();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("window")
@@ -202,6 +222,8 @@ public class UIPress extends NSObject {
     /**
      * For presses that originate from a hardware keyboard, contains a UIKey object describing the key being acted upon.
      * This property is nil if the press did not originate from a hardware keyboard.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

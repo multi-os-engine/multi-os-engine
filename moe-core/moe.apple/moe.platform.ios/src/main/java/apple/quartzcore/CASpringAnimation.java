@@ -181,6 +181,8 @@ public class CASpringAnimation extends CABasicAnimation {
     /**
      * The damping coefficient. Must be greater than or equal to 0.
      * Defaults to 10.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("damping")
@@ -201,6 +203,8 @@ public class CASpringAnimation extends CABasicAnimation {
      * represent the object moving away from the spring attachment point,
      * positive values represent the object moving towards the spring
      * attachment point.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initialVelocity")
@@ -210,6 +214,8 @@ public class CASpringAnimation extends CABasicAnimation {
     /**
      * The mass of the object attached to the end of the spring. Must be greater
      * than 0. Defaults to one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("mass")
@@ -219,6 +225,8 @@ public class CASpringAnimation extends CABasicAnimation {
     /**
      * The damping coefficient. Must be greater than or equal to 0.
      * Defaults to 10.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDamping:")
@@ -230,6 +238,8 @@ public class CASpringAnimation extends CABasicAnimation {
      * represent the object moving away from the spring attachment point,
      * positive values represent the object moving towards the spring
      * attachment point.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInitialVelocity:")
@@ -238,6 +248,8 @@ public class CASpringAnimation extends CABasicAnimation {
     /**
      * The mass of the object attached to the end of the spring. Must be greater
      * than 0. Defaults to one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMass:")
@@ -246,6 +258,8 @@ public class CASpringAnimation extends CABasicAnimation {
     /**
      * The spring stiffness coefficient. Must be greater than 0.
      * Defaults to 100.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStiffness:")
@@ -255,6 +269,8 @@ public class CASpringAnimation extends CABasicAnimation {
      * Returns the estimated duration required for the spring system to be
      * considered at rest. The duration is evaluated for the current animation
      * parameters.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("settlingDuration")
@@ -263,6 +279,8 @@ public class CASpringAnimation extends CABasicAnimation {
     /**
      * The spring stiffness coefficient. Must be greater than 0.
      * Defaults to 100.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("stiffness")

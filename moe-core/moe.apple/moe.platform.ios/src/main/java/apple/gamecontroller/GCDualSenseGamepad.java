@@ -131,6 +131,8 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
      * The DualSense has adaptive triggers, allowing you to specify a dynamic resistance force that is applied when
      * pulling the trigger. This can,
      * for example, be used to emulate the feeling of pulling back a bow string, firing a weapon, or pulling a lever.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
@@ -150,6 +152,9 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.5
+     */
     @NotNull
     @Generated
     @Selector("rightTrigger")
@@ -165,17 +170,25 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
 
     /**
      * DualSense controllers have a touchpad with a button and two-finger tracking.
+     * 
+     * API-Since: 14.5
      */
     @NotNull
     @Generated
     @Selector("touchpadButton")
     public native GCControllerButtonInput touchpadButton();
 
+    /**
+     * API-Since: 14.5
+     */
     @NotNull
     @Generated
     @Selector("touchpadPrimary")
     public native GCControllerDirectionPad touchpadPrimary();
 
+    /**
+     * API-Since: 14.5
+     */
     @NotNull
     @Generated
     @Selector("touchpadSecondary")

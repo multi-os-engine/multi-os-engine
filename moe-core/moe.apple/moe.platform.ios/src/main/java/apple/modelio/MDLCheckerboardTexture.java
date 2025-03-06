@@ -184,16 +184,25 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("color1")
     public native CGColorRef color1();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("color2")
     public native CGColorRef color2();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("divisions")
     public native float divisions();
@@ -202,14 +211,23 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @Selector("init")
     public native MDLCheckerboardTexture init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setColor1:")
     public native void setColor1(@Nullable CGColorRef value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setColor2:")
     public native void setColor2(@Nullable CGColorRef value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDivisions:")
     public native void setDivisions(float value);

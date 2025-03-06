@@ -68,6 +68,8 @@ public class ARWorldMap extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A list of anchors in the map.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -160,6 +162,8 @@ public class ARWorldMap extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The feature points in the map.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -176,6 +180,8 @@ public class ARWorldMap extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A list of anchors in the map.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAnchors:")

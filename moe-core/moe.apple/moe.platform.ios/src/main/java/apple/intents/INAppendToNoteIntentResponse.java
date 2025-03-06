@@ -86,6 +86,12 @@ public class INAppendToNoteIntentResponse extends INIntentResponse {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("code")
     @NInt
@@ -116,7 +122,12 @@ public class INAppendToNoteIntentResponse extends INIntentResponse {
      * handling state.
      * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
      * intent object will also be available in the NSUserActivity.interaction property.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntentResponse is deprecated. There is no replacement.
      */
+    @Deprecated
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INAppendToNoteIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -153,6 +164,12 @@ public class INAppendToNoteIntentResponse extends INIntentResponse {
     @Selector("new")
     public static native INAppendToNoteIntentResponse new_objc();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("note")
@@ -166,6 +183,12 @@ public class INAppendToNoteIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INAppendToNoteIntentResponse is deprecated. There is no replacement.
+     */
+    @Deprecated
     @Generated
     @Selector("setNote:")
     public native void setNote(@Nullable INNote value);

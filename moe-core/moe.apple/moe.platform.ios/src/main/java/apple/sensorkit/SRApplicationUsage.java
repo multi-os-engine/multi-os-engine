@@ -61,6 +61,8 @@ public class SRApplicationUsage extends NSObject {
 
     /**
      * The bundle identifier of the app in use. Only populated for Apple apps.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -182,6 +184,8 @@ public class SRApplicationUsage extends NSObject {
 
     /**
      * The amount of time the app is used
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("usageTime")

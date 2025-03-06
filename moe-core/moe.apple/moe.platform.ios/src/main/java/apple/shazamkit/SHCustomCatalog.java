@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSData;
 
 /**
  * Configure a custom catalog of @c SHSignature objects to match against
@@ -62,6 +63,8 @@ public class SHCustomCatalog extends SHCatalog {
      * @param customCatalogURL The path to the `shazamcatalog` file.
      * @param error            An error if the catalog could not be loaded
      * @return YES if the data was successfully added, NO on failure with a populated error parameter
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("addCustomCatalogFromURL:error:")
@@ -76,6 +79,8 @@ public class SHCustomCatalog extends SHCatalog {
      * @param signature  The reference to match against
      * @param mediaItems The metadata associated with the @c SHSignature
      * @return YES if the data was successfully added, NO on failure with a populated error parameter
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("addReferenceSignature:representingMediaItems:error:")
@@ -198,7 +203,12 @@ public class SHCustomCatalog extends SHCatalog {
      * @param destinationURL The location to write to
      * @param error          populated on error, otherwise nil
      * @return YES on success, NO on failure with a populated error parameter
+     * 
+     *         API-Since: 15.0
+     *         Deprecated-Since: 18.0
+     *         Deprecated-Message: Use dataRepresentation
      */
+    @Deprecated
     @Generated
     @Selector("writeToURL:error:")
     public native boolean writeToURLError(@NotNull NSURL destinationURL,
@@ -208,4 +218,27 @@ public class SHCustomCatalog extends SHCatalog {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The data representation of this file, it can be written to disk
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("dataRepresentation")
+    @NotNull
+    public native NSData dataRepresentation();
+
+    /**
+     * Load a @c SHCustomCatalog from data
+     * 
+     * @param dataRepresentation The data representation of the @c SHCustomCatalog
+     * @param error              Error populated if not a valid data representation
+     * 
+     *                           API-Since: 18.0
+     */
+    @Generated
+    @Selector("initWithDataRepresentation:error:")
+    public native SHCustomCatalog initWithDataRepresentationError(@NotNull NSData dataRepresentation,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

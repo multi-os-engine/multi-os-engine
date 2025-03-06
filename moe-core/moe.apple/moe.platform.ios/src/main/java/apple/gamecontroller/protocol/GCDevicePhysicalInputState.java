@@ -25,11 +25,17 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GCDevicePhysicalInputState")
 public interface GCDevicePhysicalInputState {
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("axes")
     GCPhysicalInputElementCollection<String, ?> axes();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("buttons")
@@ -37,6 +43,8 @@ public interface GCDevicePhysicalInputState {
 
     /**
      * The device that this profile is mapping input from.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -44,6 +52,9 @@ public interface GCDevicePhysicalInputState {
     @MappedReturn(ObjCObjectMapper.class)
     GCDevice device();
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("dpads")
@@ -56,6 +67,8 @@ public interface GCDevicePhysicalInputState {
      * [@example] input.elements[GCInputButtonA]
      * [@example] input.dpads[GCInputLeftThumbstick]
      * [@example] input.dpads[GCInputButtonB] // fails, "Button B" is not a DirectionPad
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -73,6 +86,8 @@ public interface GCDevicePhysicalInputState {
      * [@note]
      * If the system has gone to sleep between when the event occurred and when this
      * property is read, the returned value may not reflect the true latency.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastEventLatency")
@@ -86,6 +101,8 @@ public interface GCDevicePhysicalInputState {
      * determine the time (in seconds) between events. The \c lastEventTimestamp of
      * the inputs from two different devices can be compared to determine which event
      * occurred first.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("lastEventTimestamp")
@@ -97,6 +114,8 @@ public interface GCDevicePhysicalInputState {
      * [@example] physicalInput[GCInputButtonA]
      * [@example] physicalInput[GCInputButtonX]
      * [@note] Equivalent to -elements
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -104,6 +123,9 @@ public interface GCDevicePhysicalInputState {
     @MappedReturn(ObjCObjectMapper.class)
     GCPhysicalInputElement objectForKeyedSubscript(@NotNull String key);
 
+    /**
+     * API-Since: 16.0
+     */
     @NotNull
     @Generated
     @Selector("switches")

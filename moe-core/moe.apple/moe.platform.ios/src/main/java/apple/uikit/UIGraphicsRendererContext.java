@@ -164,23 +164,38 @@ public class UIGraphicsRendererContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("CGContext")
     public native CGContextRef CGContext();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("clipToRect:")
     public native void clipToRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("fillRect:")
     public native void fillRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("fillRect:blendMode:")
     public native void fillRectBlendMode(@ByValue CGRect rect, int blendMode);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("format")
@@ -190,10 +205,16 @@ public class UIGraphicsRendererContext extends NSObject {
     @Selector("init")
     public native UIGraphicsRendererContext init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("strokeRect:")
     public native void strokeRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("strokeRect:blendMode:")
     public native void strokeRectBlendMode(@ByValue CGRect rect, int blendMode);

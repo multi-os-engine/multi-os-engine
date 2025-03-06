@@ -165,6 +165,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Attributes of the message to be found.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("attributes")
@@ -173,6 +175,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Time range in which to search for the message.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -203,6 +207,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * If available, the identifier of a particular message to be found.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -211,6 +217,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Describes how to combine the contents of the identifier array.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("identifiersOperator")
@@ -239,6 +247,9 @@ public class INSearchForMessagesIntent extends INIntent {
             @Nullable INDateComponentsRange dateTimeRange, @Nullable NSArray<String> identifiers,
             @Nullable NSArray<String> notificationIdentifiers, @Nullable NSArray<String> groupNames);
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("notificationIdentifiers")
@@ -246,6 +257,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Describes how to combine the contents of the notificationIdentifier array.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("notificationIdentifiersOperator")
@@ -254,6 +267,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Contact that received the messages to be found.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -262,12 +277,17 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Describes how to combine the contents of the recipient array.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("recipientsOperator")
     @NInt
     public native long recipientsOperator();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("searchTerms")
@@ -275,6 +295,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Describes how to combine the contents of the searchTerm array.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("searchTermsOperator")
@@ -283,6 +305,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Sender of the messages to be found.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -291,6 +315,8 @@ public class INSearchForMessagesIntent extends INIntent {
 
     /**
      * Describes how to combine the contents of the sender array.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("sendersOperator")

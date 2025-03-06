@@ -76,6 +76,9 @@ public class INTicketedEvent extends NSObject implements NSCopying, NSSecureCodi
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("category")
     @NInt
@@ -110,6 +113,9 @@ public class INTicketedEvent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("eventDuration")
@@ -124,6 +130,9 @@ public class INTicketedEvent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("init")
     public native INTicketedEvent init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCategory:name:eventDuration:location:")
     public native INTicketedEvent initWithCategoryNameEventDurationLocation(@NInt long category, @NotNull String name,
@@ -155,11 +164,17 @@ public class INTicketedEvent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Nullable
     @Generated
     @Selector("location")
     public native CLPlacemark location();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("name")

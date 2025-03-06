@@ -161,15 +161,12 @@ public class CTSubscriber extends NSObject {
      * carrierToken
      * 
      * Description:
+     * This method is only available to carrier apps with suitable entitlements.
      * A data blob containing authorization information about the subscriber.
-     * This API is deprecated without replacement. Starting in iOS 11.3, this API returns nil.
      * 
      * API-Since: 7.0
-     * Deprecated-Since: 11.0
-     * Deprecated-Message: Deprecated; returns nil starting in iOS 11.3.
      */
     @Nullable
-    @Deprecated
     @Generated
     @Selector("carrierToken")
     public native NSData carrierToken();
@@ -229,4 +226,37 @@ public class CTSubscriber extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * SIMInserted
+     * 
+     * Description
+     * Returns whether or not the SIM matching the Info.plist carrier information (MCC / MNC / GIDs) is currently
+     * inserted in the associated descriptor
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("isSIMInserted")
+    public native boolean isSIMInserted();
+
+    /**
+     * refreshCarrierToken
+     * 
+     * Description:
+     * This method is only available to carrier apps with suitable entitlements.
+     * If the carrier token does exist but is declined by the server, then the token
+     * may be updated using this method. As a general rule, retrieve the carrierToken first.
+     * A refresh should only be done when that information is known to be incorrect.
+     * 
+     * If the refresh will be performed, this function will return YES and the
+     * subscriberTokenRefreshed(_:) delegate method will be called.
+     * If the request to refresh fails due to invalid argument (bad carrier descriptors or invalid service descriptor)
+     * or subscriber does not support the authentication action, this function will return NO.
+     * 
+     * API-Since: 6.0
+     */
+    @Generated
+    @Selector("refreshCarrierToken")
+    public native boolean refreshCarrierToken();
 }

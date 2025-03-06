@@ -17,8 +17,10 @@ public final class MTRPumpConfigurationAndControlPumpStatusBitmap {
     @Generated public static final char DeviceFault = 0x0001;
     /**
      * API-Since: 16.5
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use MTRPumpConfigurationAndControlPumpStatusBitmapSupplyFault
      */
-    @Generated public static final char Supplyfault = 0x0002;
+    @Deprecated @Generated public static final char Supplyfault = 0x0002;
     /**
      * API-Since: 16.5
      */
@@ -47,4 +49,8 @@ public final class MTRPumpConfigurationAndControlPumpStatusBitmap {
      * API-Since: 16.5
      */
     @Generated public static final char RemoteTemperature = 0x0100;
+    /**
+     * API-Since: 17.4
+     */
+    @Generated public static final char SupplyFault = 0x0002;
 }

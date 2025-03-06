@@ -189,6 +189,9 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")

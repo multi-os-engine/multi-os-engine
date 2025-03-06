@@ -135,6 +135,8 @@ public class MTLTileRenderPipelineColorAttachmentDescriptor extends NSObject imp
 
     /**
      * Pixel format. Defaults to MTLPixelFormatInvalid
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pixelFormat")
@@ -151,6 +153,8 @@ public class MTLTileRenderPipelineColorAttachmentDescriptor extends NSObject imp
 
     /**
      * Pixel format. Defaults to MTLPixelFormatInvalid
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPixelFormat:")

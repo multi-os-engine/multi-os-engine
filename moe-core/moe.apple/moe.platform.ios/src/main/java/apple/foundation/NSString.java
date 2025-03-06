@@ -1727,6 +1727,8 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     /**
      * Reads the string from the Localizable.strings file in the main app's bundle
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -1736,6 +1738,8 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     /**
      * Reads the string from the provided table file in the main app's bundle
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -1746,6 +1750,8 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     /**
      * Reads the string from the provided table file in the main app's bundle
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -1863,6 +1869,8 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * state with their parent sensor.
      * 
      * @return May return nil if there is no deletion record available for this sensor
+     * 
+     *         API-Since: 14.0
      */
     @Nullable
     @Generated

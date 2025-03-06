@@ -100,6 +100,8 @@ public class PHASESpatialPipeline extends NSObject {
      * 
      * Upon initialization, an entry will be created for every flag in the PHASESpatialPipelineFlags passed to
      * PHASESpatialPipeline:initWithFlags.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -110,6 +112,8 @@ public class PHASESpatialPipeline extends NSObject {
      * [@property] flags
      * 
      * Spatial Pipeline Flags.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("flags")
@@ -134,6 +138,8 @@ public class PHASESpatialPipeline extends NSObject {
      * 
      * @param flags
      *              Options for direct path transmission, early reflections, late reverb, etc.
+     * 
+     *              API-Since: 15.0
      */
     @Generated
     @Selector("initWithFlags:")

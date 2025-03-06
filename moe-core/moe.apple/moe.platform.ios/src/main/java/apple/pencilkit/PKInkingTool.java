@@ -84,6 +84,9 @@ public class PKInkingTool extends PKTool {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("color")
@@ -99,6 +102,8 @@ public class PKInkingTool extends PKTool {
      * @param color                  The color to convert
      * @param fromUserInterfaceStyle The user interface style to convert the color from.
      * @param toUserInterfaceStyle   The user interface style to convert the color to.
+     * 
+     *                               API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -112,6 +117,8 @@ public class PKInkingTool extends PKTool {
 
     /**
      * The default width for an ink of a type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("defaultWidthForInkType:")
@@ -131,10 +138,16 @@ public class PKInkingTool extends PKTool {
     @Selector("init")
     public native PKInkingTool init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithInkType:color:")
     public native PKInkingTool initWithInkTypeColor(@NotNull String type, @NotNull UIColor color);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithInkType:color:width:")
     public native PKInkingTool initWithInkTypeColorWidth(@NotNull String type, @NotNull UIColor color,
@@ -142,6 +155,8 @@ public class PKInkingTool extends PKTool {
 
     /**
      * The type of ink, eg. pen, pencil...
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -172,6 +187,8 @@ public class PKInkingTool extends PKTool {
 
     /**
      * The maximum width for an ink of a type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximumWidthForInkType:")
@@ -180,6 +197,8 @@ public class PKInkingTool extends PKTool {
 
     /**
      * The minimum width for an ink of a type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimumWidthForInkType:")
@@ -214,6 +233,8 @@ public class PKInkingTool extends PKTool {
 
     /**
      * The base width of the ink.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("width")

@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 public interface NSFileProviderTestingLookup extends NSFileProviderTestingOperation {
     /**
      * Identifier of the affected item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -29,6 +31,8 @@ public interface NSFileProviderTestingLookup extends NSFileProviderTestingOperat
 
     /**
      * Side of the event.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("side")

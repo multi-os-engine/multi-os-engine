@@ -185,29 +185,47 @@ public class INRestaurantOffer extends NSObject implements NSSecureCoding, NSCop
     @Selector("initWithCoder:")
     public native INRestaurantOffer initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("offerDetailText")
     public native String offerDetailText();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("offerIdentifier")
     public native String offerIdentifier();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("offerTitleText")
     public native String offerTitleText();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setOfferDetailText:")
     public native void setOfferDetailText(@NotNull String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setOfferIdentifier:")
     public native void setOfferIdentifier(@NotNull String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setOfferTitleText:")
     public native void setOfferTitleText(@NotNull String value);

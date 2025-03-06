@@ -157,6 +157,8 @@ public class ATTrackingManager extends NSObject {
      * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/NSUserTrackingUsageDescription>
      * key must be in the
      * <doc://com.apple.documentation/documentation/bundleresources/information_property_list>.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("requestTrackingAuthorizationWithCompletionHandler:")
@@ -204,6 +206,8 @@ public class ATTrackingManager extends NSObject {
      * a per-app basis. Application developers must call
      * `requestTrackingAuthorizationWithCompletionHandler:` for the ability to
      * track users.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("trackingAuthorizationStatus")

@@ -66,6 +66,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * authorization code is bound to the specific transaction using the state attribute passed in the authorization
      * request. The server component of the app can validate the code using Apple’s identity service endpoint provided
      * for this purpose.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -76,6 +78,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * This value will contain a list of scopes for which the user provided authorization. These may contain a subset of
      * the requested scopes on @see ASAuthorizationAppleIDRequest. The application should query this value to identify
      * which scopes were returned as it maybe different from ones requested.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -124,6 +128,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
 
     /**
      * An optional email shared by the user. This field is populated with a value that the user authorized.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -136,6 +142,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
 
     /**
      * An optional full name shared by the user. This field is populated with a value that the user authorized.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -151,6 +159,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * A JSON Web Token (JWT) used to communicate information about the identity of the user in a secure way to the app.
      * The ID token will contain the following information: Issuer Identifier, Subject Identifier, Audience, Expiry Time
      * and Issuance Time signed by Apple's identity service.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -195,6 +205,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
     /**
      * Check this property for a hint as to whether the current user is a "real user". @see ASUserDetectionStatus for
      * guidelines on handling each status
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("realUserStatus")
@@ -215,6 +227,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
 
     /**
      * A copy of the state value that was passed to ASAuthorizationRequest.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -242,6 +256,8 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * 
      * The identifier will remain stable as long as the user is connected with the requesting client. The value may
      * change upon user disconnecting from the identity provider.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -257,4 +273,15 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Check this property to determine whether the current user is a child. @see ASUserAgeRange for guidelines on
+     * handling each status.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("userAgeRange")
+    @NInt
+    public native long userAgeRange();
 }

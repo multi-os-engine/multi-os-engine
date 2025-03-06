@@ -51,6 +51,8 @@ public class TKSmartCardToken extends TKToken {
      * the attribute specifies array of multiple AIDs, this parameter represents AID which was found on the card and is
      * already preselected. If @c com.apple.ctk.aid is not present, no application is automatically preselected and
      * value of this property is nil.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -121,6 +123,8 @@ public class TKSmartCardToken extends TKToken {
      * @param instanceID  Unique, persistent identifier of this token. This is typically implemented by some kind of
      *                    SmartCard serial number.
      * @param tokenDriver associated driver which initiated creation of this token.
+     * 
+     *                    API-Since: 10.0
      */
     @Generated
     @Selector("initWithSmartCard:AID:instanceID:tokenDriver:")

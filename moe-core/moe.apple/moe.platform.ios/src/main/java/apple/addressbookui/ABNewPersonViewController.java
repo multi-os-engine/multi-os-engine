@@ -178,7 +178,12 @@ public class ABNewPersonViewController extends UIViewController {
     /**
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("addressBook")
@@ -188,7 +193,12 @@ public class ABNewPersonViewController extends UIViewController {
      * Specify a displayedPerson to prefill some fields in the card. This is optional.
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("displayedPerson")
@@ -207,6 +217,12 @@ public class ABNewPersonViewController extends UIViewController {
     public native ABNewPersonViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("newPersonViewDelegate")
@@ -215,7 +231,12 @@ public class ABNewPersonViewController extends UIViewController {
 
     /**
      * Specify a parentGroup the person should be added to when saved. This is optional.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("parentGroup")
@@ -224,7 +245,12 @@ public class ABNewPersonViewController extends UIViewController {
     /**
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(@Nullable ConstVoidPtr value);
@@ -233,14 +259,24 @@ public class ABNewPersonViewController extends UIViewController {
      * Specify a displayedPerson to prefill some fields in the card. This is optional.
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(@Nullable ConstVoidPtr value);
 
     /**
      * ABNewPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setNewPersonViewDelegate:")
     public native void setNewPersonViewDelegate_unsafe(
@@ -248,7 +284,12 @@ public class ABNewPersonViewController extends UIViewController {
 
     /**
      * ABNewPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     public void setNewPersonViewDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value) {
@@ -264,7 +305,12 @@ public class ABNewPersonViewController extends UIViewController {
 
     /**
      * Specify a parentGroup the person should be added to when saved. This is optional.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
      */
+    @Deprecated
     @Generated
     @Selector("setParentGroup:")
     public native void setParentGroup(@Nullable ConstVoidPtr value);

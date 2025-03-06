@@ -116,6 +116,8 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
      * Create a new request with detected object observation.
      * 
      * @param observation Detected object observation with bounding box info.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("initWithDetectedObjectObservation:")
@@ -127,6 +129,8 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
      * 
      * @param observation       Detected object observation with bounding box info.
      * @param completionHandler The block that is invoked when the request has been performed.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithDetectedObjectObservation:completionHandler:")

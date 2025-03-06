@@ -25,6 +25,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
 
 /**
  * AVPlayerVideoOutputConfiguration
@@ -56,6 +57,8 @@ public class AVPlayerVideoOutputConfiguration extends NSObject {
      * [@property] activationTime
      * 
      * Host time when this configuration became active on the player the vending output is attached to.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("activationTime")
@@ -103,6 +106,8 @@ public class AVPlayerVideoOutputConfiguration extends NSObject {
      * List of data channels, represented as CMTagCollections, selected for this configuration.
      * 
      * Returns an Array of CMTagCollections
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("dataChannelDescriptions")
@@ -171,6 +176,8 @@ public class AVPlayerVideoOutputConfiguration extends NSObject {
      * The AVPlayerItem which is the source of this configuration.
      * 
      * This AVPlayerItem can be seen as the source of all samples this configuration vended alongside.
+     * 
+     * API-Since: 17.2
      */
     @Generated
     @Selector("sourcePlayerItem")
@@ -190,4 +197,19 @@ public class AVPlayerVideoOutputConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] preferredTransform
+     * 
+     * The preferred transformation of the visual media data vended with this configuration. This transformation is
+     * acquired from the AVAssetTrack that was used to source the media data accompanying this configuration.
+     * 
+     * If no transform was specified by the source track a default value of CGAffineTransformIdentity is returned.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("preferredTransform")
+    @ByValue
+    public native CGAffineTransform preferredTransform();
 }

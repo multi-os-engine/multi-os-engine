@@ -177,11 +177,16 @@ public class NSItemProvider extends NSObject implements NSCopying {
 
     /**
      * Returns YES if the item provider has at least one item that conforms to the supplied type identifier.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hasItemConformingToTypeIdentifier:")
     public native boolean hasItemConformingToTypeIdentifier(@NotNull String typeIdentifier);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native NSItemProvider init();
@@ -189,6 +194,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     /**
      * Initialize an NSItemProvider with load handlers for the given file URL, and the file content. A type identifier
      * is inferred from the file extension.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithContentsOfURL:")
@@ -196,6 +203,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
 
     /**
      * Initialize an NSItemProvider with an object assigned to a single UTI. `item` is retained.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithItem:typeIdentifier:")
@@ -206,6 +215,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * Loads the best matching item for a type identifier. The returned object depends on the class specified for the
      * completion handler's `item` parameter.
      * See the table above for coercion rules.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("loadItemForTypeIdentifier:options:completionHandler:")
@@ -228,6 +239,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
 
     /**
      * Returns the list of registered type identifiers, in the order they were registered.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -530,6 +543,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
 
     /**
      * Registers a load handler that returns an object, assigned to a single UTI.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("registerItemForTypeIdentifier:loadHandler:")

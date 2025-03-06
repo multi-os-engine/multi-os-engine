@@ -118,6 +118,8 @@ public class CAMediaTimingFunction extends NSObject implements NSSecureCoding {
      * points of the curve are at (0,0) and (1,1), the two points 'c1' and
      * 'c2' defined by the class instance are the control points. Thus the
      * points defining the Bezier curve are: '[(0,0), c1, c2, (1,1)]'
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("functionWithControlPoints::::")
@@ -128,6 +130,8 @@ public class CAMediaTimingFunction extends NSObject implements NSSecureCoding {
      * currently supported names are `linear', `easeIn', `easeOut' and
      * `easeInEaseOut' and `default' (the curve used by implicit animations
      * created by Core Animation).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("functionWithName:")
@@ -198,6 +202,9 @@ public class CAMediaTimingFunction extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CAMediaTimingFunction initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithControlPoints::::")
     public native CAMediaTimingFunction initWithControlPoints(float c1x, float c1y, float c2x, float c2y);

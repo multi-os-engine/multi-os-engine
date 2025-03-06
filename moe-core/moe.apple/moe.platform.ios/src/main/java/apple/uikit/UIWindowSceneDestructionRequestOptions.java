@@ -136,6 +136,9 @@ public class UIWindowSceneDestructionRequestOptions extends UISceneDestructionRe
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setWindowDismissalAnimation:")
     public native void setWindowDismissalAnimation(@NInt long value);
@@ -149,6 +152,9 @@ public class UIWindowSceneDestructionRequestOptions extends UISceneDestructionRe
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("windowDismissalAnimation")
     @NInt

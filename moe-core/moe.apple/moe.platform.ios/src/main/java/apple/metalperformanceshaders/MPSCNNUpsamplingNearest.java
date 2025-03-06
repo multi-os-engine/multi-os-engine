@@ -125,6 +125,8 @@ public class MPSCNNUpsamplingNearest extends MPSCNNUpsampling {
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
      * @return A valid MPSCNNUpsamplingNearest object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")

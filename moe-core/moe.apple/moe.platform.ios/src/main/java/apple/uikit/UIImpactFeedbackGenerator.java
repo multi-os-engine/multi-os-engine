@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGPoint;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * UIImpactFeedbackGenerator is used to give user feedback when an impact between UI elements occurs
@@ -162,6 +164,8 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
 
     /**
      * call when your UI element impacts something else
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("impactOccurred")
@@ -171,6 +175,11 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
     @Selector("init")
     public native UIImpactFeedbackGenerator init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithStyle:")
     public native UIImpactFeedbackGenerator initWithStyle(@NInt long style);
@@ -188,4 +197,32 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("feedbackGeneratorForView:")
+    public static native UIImpactFeedbackGenerator feedbackGeneratorForView(@NotNull UIView view);
+
+    /**
+     * set a style on the feedback generator and attach it to the provided view as an interaction.
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("feedbackGeneratorWithStyle:forView:")
+    public static native UIImpactFeedbackGenerator feedbackGeneratorWithStyleForView(@NInt long style,
+            @NotNull UIView view);
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("impactOccurredAtLocation:")
+    public native void impactOccurredAtLocation(@ByValue CGPoint location);
+
+    /**
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("impactOccurredWithIntensity:atLocation:")
+    public native void impactOccurredWithIntensityAtLocation(@NFloat double intensity, @ByValue CGPoint location);
 }

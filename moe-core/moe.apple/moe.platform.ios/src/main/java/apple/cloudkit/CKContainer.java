@@ -107,6 +107,8 @@ public class CKContainer extends NSObject {
      * If the application is in production mode (aka, @c com.apple.developer.icloud-container-environment is set to
      * Production in your entitlements plist, and you have no override in @c
      * com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -124,6 +126,8 @@ public class CKContainer extends NSObject {
      * application-identifier is the calling process' @c com.apple.application-identifier entitlement on macOS.
      * On all OSes, if an @c com.apple.developer.associated-application-identifier entitlement is present, its value
      * will be preferred over the @c application-identifier variants.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -195,15 +199,24 @@ public class CKContainer extends NSObject {
     public native void acceptShareMetadataCompletionHandler(@NotNull CKShareMetadata metadata,
             @NotNull @ObjCBlock(name = "call_acceptShareMetadataCompletionHandler") Block_acceptShareMetadataCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("accountStatusWithCompletionHandler:")
     public native void accountStatusWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_accountStatusWithCompletionHandler") Block_accountStatusWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("addOperation:")
     public native void addOperation(@NotNull CKOperation operation);
 
+    /**
+     * API-Since: 8.0
+     */
     @Nullable
     @Generated
     @Selector("containerIdentifier")
@@ -354,6 +367,8 @@ public class CKContainer extends NSObject {
      * returned.
      * 
      * This work is treated as having @c NSQualityOfServiceUserInitiated quality of service.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchUserRecordIDWithCompletionHandler:")
@@ -364,11 +379,17 @@ public class CKContainer extends NSObject {
     @Selector("init")
     public native CKContainer init();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("privateCloudDatabase")
     public native CKDatabase privateCloudDatabase();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("publicCloudDatabase")

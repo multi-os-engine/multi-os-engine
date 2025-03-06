@@ -107,6 +107,8 @@ public class HMAccessoryOwnershipToken extends NSObject {
      * @param data Data to be sent to prove ownership of this accessory.
      * 
      * @return Returns an ownership token object.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithData:")

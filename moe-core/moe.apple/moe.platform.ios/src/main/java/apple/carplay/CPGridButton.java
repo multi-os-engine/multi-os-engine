@@ -108,6 +108,8 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -127,6 +129,8 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 12.0
      * 
      * @param titleVariants An array of title variants for this button, arranged from most to least preferred. You must
      *                      provide at least one title.
@@ -168,6 +172,8 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("isEnabled")
@@ -200,6 +206,8 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -227,6 +235,8 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      * An array of title variants for this button, arranged from most to least preferred.
      * The system will select a title from your list of provided variants that fits the available space.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 12.0
      */
     @NotNull
     @Generated

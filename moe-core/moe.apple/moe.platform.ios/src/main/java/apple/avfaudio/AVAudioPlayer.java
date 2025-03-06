@@ -69,6 +69,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * returns average power in decibels for a given channel
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("averagePowerForChannel:")
@@ -108,6 +110,8 @@ public class AVAudioPlayer extends NSObject {
     /**
      * If the sound is playing, currentTime is the offset into the sound of the current playback position.
      * If the sound is not playing, currentTime is the offset into the sound where playing would start.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("currentTime")
@@ -115,6 +119,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * returns nil if object was not created with a data object
+     * 
+     * API-Since: 2.2
      */
     @Nullable
     @Generated
@@ -127,6 +133,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
+     * 
+     * API-Since: 2.2
      */
     @Nullable
     @Generated
@@ -149,6 +157,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * the duration of the sound.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("duration")
@@ -185,6 +195,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * all data must be in the form of an audio file understood by CoreAudio
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("initWithContentsOfURL:error:")
@@ -205,6 +217,9 @@ public class AVAudioPlayer extends NSObject {
     public native AVAudioPlayer initWithContentsOfURLFileTypeHintError(@NotNull NSURL url, @Nullable String utiString,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * API-Since: 2.2
+     */
     @Generated
     @Selector("initWithData:error:")
     public native AVAudioPlayer initWithDataError(@NotNull NSData data,
@@ -233,6 +248,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * turns level metering on or off. default is off.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("isMeteringEnabled")
@@ -240,6 +257,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * is it playing or not?
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("isPlaying")
@@ -259,6 +278,9 @@ public class AVAudioPlayer extends NSObject {
     @Selector("new")
     public static native AVAudioPlayer new_objc();
 
+    /**
+     * API-Since: 2.2
+     */
     @Generated
     @Selector("numberOfChannels")
     @NUInt
@@ -269,6 +291,8 @@ public class AVAudioPlayer extends NSObject {
      * A value of zero means to play the sound just once.
      * A value of one will result in playing the sound twice, and so on..
      * Any negative number will loop indefinitely until stopped.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("numberOfLoops")
@@ -286,6 +310,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * Pauses playback, but remains ready to play.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("pause")
@@ -293,6 +319,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * returns peak power in decibels for a given channel
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("peakPowerForChannel:")
@@ -301,6 +329,8 @@ public class AVAudioPlayer extends NSObject {
     /**
      * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback
      * which is streamed asynchronously.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("play")
@@ -321,6 +351,8 @@ public class AVAudioPlayer extends NSObject {
      * Transport control
      * Methods that return BOOL return YES on success and NO on failure.
      * Get ready to play the sound. This happens automatically on play.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("prepareToPlay")
@@ -355,6 +387,8 @@ public class AVAudioPlayer extends NSObject {
     /**
      * If the sound is playing, currentTime is the offset into the sound of the current playback position.
      * If the sound is not playing, currentTime is the offset into the sound where playing would start.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("setCurrentTime:")
@@ -362,6 +396,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("setDelegate:")
@@ -369,6 +405,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
+     * 
+     * API-Since: 2.2
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value) {
@@ -394,6 +432,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * turns level metering on or off. default is off.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("setMeteringEnabled:")
@@ -404,6 +444,8 @@ public class AVAudioPlayer extends NSObject {
      * A value of zero means to play the sound just once.
      * A value of one will result in playing the sound twice, and so on..
      * Any negative number will loop indefinitely until stopped.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("setNumberOfLoops:")
@@ -433,6 +475,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * The volume for the sound. The nominal range is from 0.0 to 1.0.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("setVolume:")
@@ -461,6 +505,8 @@ public class AVAudioPlayer extends NSObject {
      * Synchronously stops playback, no longer ready to play.
      * NOTE: - This will block while releasing the audio hardware that was acquired upon calling play() or
      * prepareToPlay()
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("stop")
@@ -472,6 +518,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * call to refresh meter values
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("updateMeters")
@@ -479,6 +527,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * returns nil if object was not created with a URL
+     * 
+     * API-Since: 2.2
      */
     @Nullable
     @Generated
@@ -492,6 +542,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * The volume for the sound. The nominal range is from 0.0 to 1.0.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("volume")

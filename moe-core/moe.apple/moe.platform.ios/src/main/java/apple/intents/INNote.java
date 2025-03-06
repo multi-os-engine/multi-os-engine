@@ -86,6 +86,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("contents")
@@ -98,6 +101,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("createdDateComponents")
@@ -115,6 +121,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("groupName")
@@ -125,6 +134,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("identifier")
@@ -138,6 +150,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INNote initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithTitle:contents:groupName:createdDateComponents:modifiedDateComponents:identifier:")
     public native INNote initWithTitleContentsGroupNameCreatedDateComponentsModifiedDateComponentsIdentifier(
@@ -167,6 +182,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Nullable
     @Generated
     @Selector("modifiedDateComponents")
@@ -203,6 +221,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @NotNull
     @Generated
     @Selector("title")

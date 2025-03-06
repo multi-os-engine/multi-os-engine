@@ -300,6 +300,9 @@ public class HKCorrelationQuery extends HKQuery {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("correlationType")
@@ -321,6 +324,8 @@ public class HKCorrelationQuery extends HKQuery {
      * @param samplePredicates A dictionary mapping HKSampleTypes to NSPredicates. If no predicate for a particular type
      *                         is provided, it is assumed to be a nil predicate and objects of that type will not be
      *                         filtered.
+     * 
+     *                         API-Since: 8.0
      */
     @Generated
     @Selector("initWithType:predicate:samplePredicates:completion:")
@@ -336,6 +341,9 @@ public class HKCorrelationQuery extends HKQuery {
      * 
      * samplePredicates maps HKSampleTypes to NSPredicates. The predicate value will apply
      * to objects of the key type.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -471,4 +479,31 @@ public class HKCorrelationQuery extends HKQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

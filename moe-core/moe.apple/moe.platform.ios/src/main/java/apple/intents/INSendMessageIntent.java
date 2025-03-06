@@ -166,6 +166,8 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
 
     /**
      * Body text of the message.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -205,6 +207,8 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
 
     /**
      * Contacts to whom the message should be sent.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -213,6 +217,8 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
 
     /**
      * The person, or account, sending the message.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -221,6 +227,8 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
 
     /**
      * Specified service for the message.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

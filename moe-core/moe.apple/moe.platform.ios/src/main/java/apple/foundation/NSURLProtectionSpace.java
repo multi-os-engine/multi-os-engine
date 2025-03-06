@@ -171,6 +171,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * Get the authentication method to be used for this protection space
      * 
      * @return The authentication method
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -206,6 +208,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * Get the proxy host if this is a proxy authentication, or the host from the URL.
      * 
      * @return The host for this protection space.
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -235,6 +239,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * @param authenticationMethod The authentication method to use to access this protection space -
      *                             valid values include nil (default method), @"digest" and @"form".
      * @return The initialized object.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithHost:port:protocol:realm:authenticationMethod:")
@@ -256,6 +262,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * @param authenticationMethod The authentication method to use to access this protection space -
      *                             valid values include nil (default method) and @"digest"
      * @return The initialized object.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithProxyHost:port:type:realm:authenticationMethod:")
@@ -266,6 +274,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * Determine if this authenticating protection space is a proxy server
      * 
      * @return YES if a proxy, NO otherwise
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("isProxy")
@@ -275,6 +285,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * Get the proxy port if this is a proxy authentication, or the port from the URL.
      * 
      * @return The port for this protection space, or 0 if not set.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("port")
@@ -285,6 +297,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * Get the protocol of this protection space, if not a proxy
      * 
      * @return The type string, or nil if a proxy.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -295,6 +309,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * Get the type of this protection space, if a proxy
      * 
      * @return The type string, or nil if not a proxy.
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -309,6 +325,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * authentication, and may be nil otherwise.
      * 
      * @return The realm string
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -319,6 +337,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * Determine if the password for this protection space can be sent securely
      * 
      * @return YES if a secure authentication method or protocol will be used, NO otherwise
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("receivesCredentialSecurely")

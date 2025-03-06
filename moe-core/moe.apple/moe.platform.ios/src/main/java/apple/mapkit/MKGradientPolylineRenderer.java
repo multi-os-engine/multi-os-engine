@@ -83,6 +83,9 @@ public class MKGradientPolylineRenderer extends MKPolylineRenderer {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("colors")
@@ -136,6 +139,9 @@ public class MKGradientPolylineRenderer extends MKPolylineRenderer {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("locations")
@@ -154,6 +160,9 @@ public class MKGradientPolylineRenderer extends MKPolylineRenderer {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setColors:atLocations:")
     public native void setColorsAtLocations(@NotNull NSArray<? extends UIColor> colors,

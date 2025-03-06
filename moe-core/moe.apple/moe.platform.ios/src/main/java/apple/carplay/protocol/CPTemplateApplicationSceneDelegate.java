@@ -35,6 +35,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * 
      * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide
      * a window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -50,6 +52,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * 
      * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide
      * a window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -64,6 +68,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * If your application posts a @c CPManeuver while backgrounded, a notification banner may be presented to the user.
      * If the user taps on that banner, your application will launch on the car screen and this method will be called
      * with the maneuver the user tapped.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -78,6 +84,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * the user.
      * If the user taps on that banner, your application will launch on the car screen and this method will be called
      * with the alert the user tapped.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

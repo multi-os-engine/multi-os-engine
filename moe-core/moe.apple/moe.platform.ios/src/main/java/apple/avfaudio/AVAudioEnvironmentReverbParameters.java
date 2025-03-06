@@ -110,6 +110,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * Turns on/off the reverb
      * 
      * Default: NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("enable")
@@ -119,6 +121,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * [@property] filterParameters
      * 
      * filter that applies to the output of the reverb
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -163,6 +167,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * 
      * Range: -40 to 40 dB
      * Default: 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("level")
@@ -175,6 +181,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * 
      * Loading a factory reverb preset changes the sound of the reverb. This works independently
      * of the filter which follows the reverb in the signal chain.
+     * 
+     * API-Since: 8.0
      * 
      * @param preset
      *               Reverb preset to be set.
@@ -202,6 +210,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * Turns on/off the reverb
      * 
      * Default: NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setEnable:")
@@ -214,6 +224,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * 
      * Range: -40 to 40 dB
      * Default: 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLevel:")

@@ -113,6 +113,8 @@ public class HKVerifiableClinicalRecordQuery extends HKQuery {
      * @param recordTypes    The record types that need to be present on a verifiable clinical record.
      * @param predicate      The predicate which records should match.
      * @param resultsHandler The block to invoke with the verifiable clinical records from the query.
+     * 
+     *                       API-Since: 15.0
      */
     @Generated
     @Selector("initWithRecordTypes:predicate:resultsHandler:")
@@ -325,6 +327,8 @@ public class HKVerifiableClinicalRecordQuery extends HKQuery {
      * [@property] recordTypes
      * 
      * The record types that need to be present on desired records.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -471,4 +475,31 @@ public class HKVerifiableClinicalRecordQuery extends HKQuery {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithAssociation:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithAssociation(@NInt long association);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithKind:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithKind(@NInt long kind);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithLabel:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithLabel(@NInt long label);
+
+    @Generated
+    @Selector("predicateForStatesOfMindWithValence:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForStatesOfMindWithValenceOperatorType(double valence,
+            @NUInt long operatorType);
+
+    @Generated
+    @Selector("predicateForWorkoutEffortSamplesRelatedToWorkout:activity:")
+    @NotNull
+    public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
+            @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
 }

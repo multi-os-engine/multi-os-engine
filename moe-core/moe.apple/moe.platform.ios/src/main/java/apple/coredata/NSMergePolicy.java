@@ -211,11 +211,16 @@ public class NSMergePolicy extends NSObject {
      * the results. You are strongly encouraged to do so.
      * Due to the complexity of merging to-many relationships, this class is designed with the expectation that you call
      * super as the base implemenation.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithMergeType:")
     public native NSMergePolicy initWithMergeType(@NUInt long ty);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("mergeType")
     @NUInt
@@ -227,6 +232,8 @@ public class NSMergePolicy extends NSObject {
      * Correctly merging to-many relationships is very challenging and any mistakes will cause permanent data corruption
      * in the form of dangling foreign keys.
      * Calls -resolveOptimisticLockingVersionConflicts:error: and then -resolveConstraintConflicts:error:
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("resolveConflicts:error:")

@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Sound event nodes are a hierarchical collection of objects that either generate or control playback of audio content
  * in PHASE.
- * Generator nodes produce audio. They are always leaf nodes in a node hierarchy. These include samplers and push stream
+ * Generator nodes produce audio. They are always leaf nodes in a node hierarchy. These include samplers and stream
  * nodes.
  * Control nodes set the logic for how generator nodes are selected, mixed and parameterized before downstream mixer
  * processing.
@@ -86,6 +86,8 @@ public class PHASESoundEventNodeDefinition extends PHASEDefinition {
      * [@property] children
      * 
      * The children of this node definition.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

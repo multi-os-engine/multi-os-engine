@@ -63,6 +63,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Represents private tag data. The property is an equivalent to kSecAttrApplicationTag in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -76,6 +78,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Indicates whether this key can be used to decrypt data. The property is an equivalent to kSecAttrCanDecrypt in
      * SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canDecrypt")
@@ -83,6 +87,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Indicates whether this key can be used to perform Diffie-Hellman style cryptographic key exchange.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canPerformKeyExchange")
@@ -91,6 +97,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Indicates whether this key can be used to create a digital signature. The property is an equivalent to
      * kSecAttrCanSign in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("canSign")
@@ -138,6 +146,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
      * Initialize TKTokenKeychainKey with informations from SecCertificateRef associated with the key. Use
      * SecCertificateCreateWithData to obtain SecCertificateRef. If NULL is passed instead of certificate, all
      * properties of created instance must be initialized manually.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithCertificate:objectID:")
@@ -167,6 +177,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Indicates whether this key can be used for login in to the system.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isSuitableForLogin")
@@ -179,6 +191,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Indicates the number of bits in this key. The property is an equivalent to kSecAttrKeySizeInBits in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("keySizeInBits")
@@ -188,6 +202,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Type of the key, currently kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom is supported). The property is
      * an equivalent to kSecAttrKeyType in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -201,6 +217,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Contains raw public key data for this private key.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -209,6 +227,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * SHA1 hash of the raw public key. The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -225,6 +245,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Represents private tag data. The property is an equivalent to kSecAttrApplicationTag in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setApplicationTag:")
@@ -233,6 +255,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Indicates whether this key can be used to decrypt data. The property is an equivalent to kSecAttrCanDecrypt in
      * SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setCanDecrypt:")
@@ -240,6 +264,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Indicates whether this key can be used to perform Diffie-Hellman style cryptographic key exchange.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setCanPerformKeyExchange:")
@@ -248,6 +274,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Indicates whether this key can be used to create a digital signature. The property is an equivalent to
      * kSecAttrCanSign in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setCanSign:")
@@ -255,6 +283,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Indicates the number of bits in this key. The property is an equivalent to kSecAttrKeySizeInBits in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setKeySizeInBits:")
@@ -263,6 +293,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Type of the key, currently kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom is supported). The property is
      * an equivalent to kSecAttrKeyType in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setKeyType:")
@@ -270,6 +302,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Contains raw public key data for this private key.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPublicKeyData:")
@@ -277,6 +311,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * SHA1 hash of the raw public key. The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPublicKeyHash:")
@@ -284,6 +320,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     /**
      * Indicates whether this key can be used for login in to the system.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSuitableForLogin:")

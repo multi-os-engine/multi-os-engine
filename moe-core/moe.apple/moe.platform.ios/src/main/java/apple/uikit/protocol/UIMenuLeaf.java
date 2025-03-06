@@ -25,6 +25,8 @@ import org.jetbrains.annotations.Nullable;
 public interface UIMenuLeaf {
     /**
      * The element's attributes.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("attributes")
@@ -33,6 +35,8 @@ public interface UIMenuLeaf {
 
     /**
      * Elaborated title used in keyboard shortcut overlay.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -41,6 +45,8 @@ public interface UIMenuLeaf {
 
     /**
      * Image that can appear next to this element.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -49,6 +55,8 @@ public interface UIMenuLeaf {
 
     /**
      * Performs the element’s primary action (i.e. it's handler or selector).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("performWithSender:target:")
@@ -73,6 +81,8 @@ public interface UIMenuLeaf {
      * The object on behalf of which the element's primary action is being performed.
      * This property is only populated during the execution of the element's
      * primary action (i.e. its handler or selector) if available.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -82,6 +92,8 @@ public interface UIMenuLeaf {
 
     /**
      * The element's attributes.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setAttributes:")
@@ -89,6 +101,8 @@ public interface UIMenuLeaf {
 
     /**
      * Elaborated title used in keyboard shortcut overlay.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDiscoverabilityTitle:")
@@ -96,6 +110,8 @@ public interface UIMenuLeaf {
 
     /**
      * Image that can appear next to this element.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setImage:")
@@ -103,6 +119,8 @@ public interface UIMenuLeaf {
 
     /**
      * The element's selection state.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setState:")
@@ -110,6 +128,8 @@ public interface UIMenuLeaf {
 
     /**
      * Short display title.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTitle:")
@@ -117,6 +137,8 @@ public interface UIMenuLeaf {
 
     /**
      * The element's selection state.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("state")
@@ -125,6 +147,8 @@ public interface UIMenuLeaf {
 
     /**
      * Short display title.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

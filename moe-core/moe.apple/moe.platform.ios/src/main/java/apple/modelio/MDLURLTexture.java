@@ -184,6 +184,9 @@ public class MDLURLTexture extends MDLTexture {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("URL")
@@ -193,10 +196,16 @@ public class MDLURLTexture extends MDLTexture {
     @Selector("init")
     public native MDLURLTexture init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithURL:name:")
     public native MDLURLTexture initWithURLName(@NotNull NSURL URL, @Nullable String name);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(@NotNull NSURL value);

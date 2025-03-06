@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * API-Since: 16.1
  * Deprecated-Since: 16.4
- * Deprecated-Message: Please use [MTRSetupPayload setupPayloadWithOnboardingPayload:error:]
+ * Deprecated-Message: Please use -[MTRSetupPayload initWithPayload:]
  */
 @Generated
 @Deprecated
@@ -103,6 +103,12 @@ public class MTRManualSetupPayloadParser extends NSObject {
     @Selector("init")
     public native MTRManualSetupPayloadParser init();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use -[MTRSetupPayload initWithPayload:]
+     */
+    @Deprecated
     @Generated
     @Selector("initWithDecimalStringRepresentation:")
     public native MTRManualSetupPayloadParser initWithDecimalStringRepresentation(
@@ -135,6 +141,12 @@ public class MTRManualSetupPayloadParser extends NSObject {
     @Selector("new")
     public static native MTRManualSetupPayloadParser new_objc();
 
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use -[MTRSetupPayload initWithPayload:]
+     */
+    @Deprecated
     @Generated
     @Selector("populatePayload:")
     @Nullable

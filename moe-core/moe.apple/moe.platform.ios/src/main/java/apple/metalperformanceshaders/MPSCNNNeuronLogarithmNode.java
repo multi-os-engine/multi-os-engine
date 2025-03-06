@@ -106,6 +106,8 @@ public class MPSCNNNeuronLogarithmNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node with default values for parameters a, b, and c
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("initWithSource:")
@@ -124,6 +126,8 @@ public class MPSCNNNeuronLogarithmNode extends MPSCNNNeuronNode {
      * @param b          See discussion above.
      * @param c          See discussion above.
      * @return A new MPSNNFilter node for a MPSCNNNeuronLogarithm kernel.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithSource:a:b:c:")
@@ -159,11 +163,16 @@ public class MPSCNNNeuronLogarithmNode extends MPSCNNNeuronNode {
 
     /**
      * Create an autoreleased node with default values for parameters a, b, and c
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronLogarithmNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("nodeWithSource:a:b:c:")
     public static native MPSCNNNeuronLogarithmNode nodeWithSourceABC(@NotNull MPSNNImageNode sourceNode, float a,

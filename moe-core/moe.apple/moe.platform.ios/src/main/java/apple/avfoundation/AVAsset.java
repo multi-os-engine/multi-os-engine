@@ -91,6 +91,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * Returns a newly allocated instance of a subclass of AVAsset initialized with the specified URL.
      * 
+     * API-Since: 4.0
+     * 
      * @param URL
      *            An instance of NSURL that references a media resource.
      * @return An instance of AVAsset.
@@ -209,6 +211,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     /**
      * Provides an NSArray of NSStrings, each representing a metadata format that's available to the asset (e.g. ID3,
      * iTunes metadata, etc.). Metadata formats are defined in AVMetadataFormat.h.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -236,6 +240,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * Deallocation or finalization of an instance of AVAsset will implicitly cancel loading if any loading requests are
      * still outstanding.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("cancelLoading")
@@ -266,7 +272,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * .
      * 
      * API-Since: 6.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadChapterMetadataGroupsBestMatchingPreferredLanguages:completionHandler: instead
      * 
      * @param preferredLanguages
      *                           An array of language identifiers in order of preference, each of which is an IETF BCP
@@ -300,7 +307,9 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * metadataItemsFromArray:withLocale:].
      * 
      * API-Since: 4.3
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadChapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:completionHandler:
+     * instead
      * 
      * @param locale
      *                   Locale of the metadata items carrying chapter titles to be returned (supports the IETF BCP 47
@@ -322,6 +331,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * can be filtered according to language via +[AVMetadataItem
      * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:] and according to identifier via
      * +[AVMetadataItem metadataItemsFromArray:filteredByIdentifier:].
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -367,6 +378,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * the duration is returned. The degree of precision preferred for timing-related properties can be set at
      * initialization time for assets initialized with URLs. See AVURLAssetPreferPreciseDurationAndTimingKey for
      * AVURLAsset below.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("duration")
@@ -462,6 +475,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * Provides access to the lyrics of the asset suitable for the current locale.
+     * 
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -485,7 +500,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * AVMediaSelectionGroup.
      * 
      * API-Since: 5.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadMediaSelectionGroupForMediaCharacteristic:completionHandler: instead
      * 
      * @param mediaCharacteristic
      *                            A media characteristic for which you wish to obtain the available media selection
@@ -531,7 +547,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * Becomes callable without blocking when the key @"availableMetadataFormats" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadMetadataForFormat:completionHandler: instead
      * 
      * @param format
      *               The metadata format for which items are requested.
@@ -590,6 +607,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * indicates the natural rate at which the asset is to be played; often but not always 1.0
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("preferredRate")
@@ -598,6 +617,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     /**
      * indicates the preferred transform to apply to the visual content of the asset for presentation or processing; the
      * value is often but not always the identity transform
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("preferredTransform")
@@ -606,6 +627,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * indicates the preferred volume at which the audible media of an asset is to be played; often but not always 1.0
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("preferredVolume")
@@ -614,6 +637,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     /**
      * Indicates that the asset provides precise timing. See @"duration" above and
      * AVURLAssetPreferPreciseDurationAndTimingKey below.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("providesPreciseDurationAndTiming")
@@ -664,7 +689,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTrackWithTrackID:completionHandler: instead
      * 
      * @param trackID
      *                The trackID of the requested AVAssetTrack.
@@ -680,6 +706,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * [@property] tracks
      * 
      * Provides the array of AVAssetTracks contained by the asset
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -694,7 +722,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTracksWithMediaCharacteristic:completionHandler: instead
      * 
      * @param mediaCharacteristic
      *                            The media characteristic according to which AVAsset filters its AVAssetTracks. (Media
@@ -715,7 +744,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * Becomes callable without blocking when the key @"tracks" has been loaded
      * 
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadTracksWithMediaType:completionHandler: instead
      * 
      * @param mediaType
      *                  The media type according to which AVAsset filters its AVAssetTracks. (Media types are defined in
@@ -730,7 +760,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * API-Since: 4.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use findUnusedTrackIDWithCompletionHandler: instead
      */
     @Deprecated
     @Generated

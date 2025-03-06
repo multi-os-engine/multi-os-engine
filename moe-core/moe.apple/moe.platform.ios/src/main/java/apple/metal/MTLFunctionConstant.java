@@ -161,6 +161,9 @@ public class MTLFunctionConstant extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("index")
     @NUInt
@@ -170,15 +173,24 @@ public class MTLFunctionConstant extends NSObject {
     @Selector("init")
     public native MTLFunctionConstant init();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("required")
     public native boolean required();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("type")
     @NUInt

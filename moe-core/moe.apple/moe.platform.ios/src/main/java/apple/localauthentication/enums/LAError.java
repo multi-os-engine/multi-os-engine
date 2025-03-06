@@ -125,4 +125,10 @@ public final class LAError {
      * API-Since: 8.0
      */
     @Generated @NInt public static final long NotInteractive = 0xFFFFFFFFFFFFFC14L;
+    /**
+     * Authentication could not start because there was no paired companion device nearby.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long CompanionNotAvailable = 0xFFFFFFFFFFFFFFF5L;
 }

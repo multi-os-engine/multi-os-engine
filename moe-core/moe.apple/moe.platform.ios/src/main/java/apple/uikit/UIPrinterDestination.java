@@ -46,6 +46,9 @@ public class UIPrinterDestination extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
+    /**
+     * API-Since: 14.5
+     */
     @NotNull
     @Generated
     @Selector("URL")
@@ -98,6 +101,9 @@ public class UIPrinterDestination extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.5
+     */
     @Nullable
     @Generated
     @Selector("displayName")
@@ -120,6 +126,9 @@ public class UIPrinterDestination extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native UIPrinterDestination initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("initWithURL:")
     public native UIPrinterDestination initWithURL(@NotNull NSURL url);
@@ -159,14 +168,23 @@ public class UIPrinterDestination extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("setDisplayName:")
     public native void setDisplayName(@Nullable String value);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("setTxtRecord:")
     public native void setTxtRecord(@Nullable NSData value);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(@NotNull NSURL value);
@@ -189,6 +207,9 @@ public class UIPrinterDestination extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.5
+     */
     @Nullable
     @Generated
     @Selector("txtRecord")

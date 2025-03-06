@@ -59,6 +59,8 @@ public interface HKWorkoutSessionDelegate {
      * The date is provided to indicate when the state change actually happened. If your application is
      * suspended then the delegate will receive this call once the application resumes, which may be much later
      * than when the original state change ocurred.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("workoutSession:didChangeToState:fromState:date:")
@@ -108,6 +110,8 @@ public interface HKWorkoutSessionDelegate {
      * 
      * When the state of the workout session changes due to an error occurring, this method is always called
      * before workoutSession:didChangeToState:fromState:date:.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("workoutSession:didFailWithError:")

@@ -83,6 +83,8 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the paymentAccount with which the user wants to
      * continue.
+     * 
+     * API-Since: 10.3
      */
     @NotNull
     @Generated
@@ -100,6 +102,8 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
 
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INPaymentAccount.
+     * 
+     * API-Since: 10.3
      */
     @NotNull
     @Generated
@@ -170,6 +174,8 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
      * INPaymentAccount. The resolvedPaymentAccount can be different than the original INPaymentAccount. This allows app
      * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
+     * 
+     * API-Since: 10.3
      */
     @NotNull
     @Generated

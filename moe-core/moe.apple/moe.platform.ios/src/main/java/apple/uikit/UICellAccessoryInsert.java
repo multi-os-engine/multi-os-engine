@@ -52,6 +52,8 @@ public class UICellAccessoryInsert extends UICellAccessory {
 
     /**
      * An optional handler to call when the insert accessory is tapped. If nil, taps on the accessory are ignored.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -82,6 +84,8 @@ public class UICellAccessoryInsert extends UICellAccessory {
 
     /**
      * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -167,6 +171,8 @@ public class UICellAccessoryInsert extends UICellAccessory {
 
     /**
      * An optional handler to call when the insert accessory is tapped. If nil, taps on the accessory are ignored.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActionHandler:")
@@ -182,6 +188,8 @@ public class UICellAccessoryInsert extends UICellAccessory {
 
     /**
      * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundColor:")

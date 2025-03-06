@@ -94,6 +94,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * @param suspensionReason
      *                         Indicates the reason for the suspension that is shared with other participants. Can be a
      *                         system-defined reason (see AVCoordinatedPlaybackSuspensionReason*) or a custom string.
+     * 
+     *                         API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -137,6 +139,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * 
      * This method is useful to decide if it is appropriate to end a suspension, e.g. a suspension with
      * AVCoordinatedPlaybackSuspensionReasonStallRecovery, while other participants are continuing playback.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("expectedItemTimeAtHostTime:")
@@ -187,6 +191,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * Use this property to create UI informing the local user about the state of other participants in the group.
      * [@note] The coordinator posts AVPlaybackCoordinatorOtherParticipantsDidChangeNotification when the contents of
      * the array changes.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -198,6 +204,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * 
      * Returns the maximum number of participants that can be in a group before the coordinator stops waiting out this
      * particular suspensions reason. Default value is NSIntegerMax.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("participantLimitForWaitingOutSuspensionsWithReason:")
@@ -213,6 +221,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * counteract any network delay incurred by communicating the originator's pause to the other participants.
      * If NO, it's acceptable for participants to stop at slightly different offsets and a pause will not cause other
      * participants' time to jump back.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("pauseSnapsToMediaTimeOfOriginator")
@@ -235,6 +245,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * This allows additional configuration for suspension reasons in the suspensionReasonsThatTriggerWaiting array.
      * When the coordinator decides whether one participant's suspensions should cause others to wait, it will also
      * consider this limit of participants currently in the group.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setParticipantLimit:forWaitingOutSuspensionsWithReason:")
@@ -250,6 +262,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * counteract any network delay incurred by communicating the originator's pause to the other participants.
      * If NO, it's acceptable for participants to stop at slightly different offsets and a pause will not cause other
      * participants' time to jump back.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPauseSnapsToMediaTimeOfOriginator:")
@@ -259,6 +273,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * [@property] suspensionReasonsThatTriggerWaiting
      * 
      * If the coordinator decides to delay playback to wait for others, it will wait out these reasons, but not others.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSuspensionReasonsThatTriggerWaiting:")
@@ -278,6 +294,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * Describes why the coordinator is currently not able to participate in group playback.
      * 
      * If the list of reasons is non-empty, the coordinator will not react to any changes of group playback state.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -288,6 +306,8 @@ public class AVPlaybackCoordinator extends NSObject {
      * [@property] suspensionReasonsThatTriggerWaiting
      * 
      * If the coordinator decides to delay playback to wait for others, it will wait out these reasons, but not others.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

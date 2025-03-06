@@ -100,6 +100,8 @@ public class PHASEEnvelopeDistanceModelParameters extends PHASEDistanceModelPara
      * A PHASEEnvelope object
      * [@note]
      * The x values are interpreted as distance and the y values are interpreted as gain.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -125,6 +127,8 @@ public class PHASEEnvelopeDistanceModelParameters extends PHASEDistanceModelPara
      *                 gain.
      * @return
      *         An instance, or nil if initialization failed.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithEnvelope:")

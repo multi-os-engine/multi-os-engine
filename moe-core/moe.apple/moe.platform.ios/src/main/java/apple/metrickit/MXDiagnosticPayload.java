@@ -72,6 +72,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * Convenience method to return a JSON representation of this diagnostic payload.
      * 
      * @return An NSData object containing the JSON representation
+     * 
+     *         API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -121,6 +123,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * [@property] cpuExceptionDiagnostics
      * 
      * An array containing CPU exception diagnostics for this application.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -131,6 +135,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * [@property] crashDiagnostics
      * 
      * An array containing crash diagnostics for this application.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -151,6 +157,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * Convenience method to return a NSDictionary representation of this diagnostic payload.
      * 
      * @return An NSDictionary object containing the dictionary representation
+     * 
+     *         API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -161,6 +169,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * [@property] diskWriteExceptionDiagnostics
      * 
      * An array containing disk write exception diagnostics for this application.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -175,6 +185,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * [@property] hangDiagnostics
      * 
      * An array containing hang diagnostics for this application.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -251,6 +263,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * [@property] timeStampBegin
      * 
      * An NSDate object that indicates the start time for which the payload was generated.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -261,6 +275,8 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * [@property] timeStampEnd
      * 
      * An NSDate object that indicates the end time for which the payload was generated.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

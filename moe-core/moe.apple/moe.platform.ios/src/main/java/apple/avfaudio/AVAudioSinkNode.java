@@ -134,6 +134,8 @@ public class AVAudioSinkNode extends AVAudioNode {
      * 
      * The audio format for the data received by the block will be set to the node's input format.
      * 
+     * API-Since: 13.0
+     * 
      * @param block
      *              The block that receives audio data from the input.
      */

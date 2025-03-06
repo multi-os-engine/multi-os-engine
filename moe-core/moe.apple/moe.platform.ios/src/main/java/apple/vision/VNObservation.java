@@ -101,6 +101,8 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
      * VNCoreMLRequest, where confidence values are forwarded as is from relevant CoreML models
      * 
      * Confidence can always be returned as 1.0 if confidence is not supported or has no meaning
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("confidence")
@@ -193,6 +195,8 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The unique identifier assigned to an observation.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated

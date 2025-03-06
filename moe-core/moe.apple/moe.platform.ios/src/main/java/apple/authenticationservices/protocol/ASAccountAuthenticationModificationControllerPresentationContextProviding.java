@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 public interface ASAccountAuthenticationModificationControllerPresentationContextProviding {
     /**
      * Return a view anchor that is most appropriate for authorization UI to be presented over.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

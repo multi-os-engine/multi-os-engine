@@ -94,6 +94,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * The beta1 at which we update values
      * 
      * Default value is 0.9
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("beta1")
@@ -105,6 +108,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * The beta2 at which we update values
      * 
      * Default value is 0.999
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("beta2")
@@ -203,6 +209,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      * 
+     * 
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
      *                                        state with gradients for this update.
@@ -288,6 +298,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
+     * 
+     * 
+     * 
+     * API-Since: 12.0
      * 
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with
@@ -375,6 +389,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
+     * 
+     * 
+     * 
+     * API-Since: 12.0
      * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
@@ -478,6 +496,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      * 
+     * 
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputGradientVector A valid MPSVector object which specifies the input vector of gradients for this
      *                            update.
@@ -503,6 +525,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * The epsilon at which we update values
      * 
      * This value is usually used to ensure to avoid divide by 0, default value is 1e-8
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("epsilon")
@@ -542,6 +567,8 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * 
      * 
      * @return A valid MPSNNOptimizerAdam object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:beta1:beta2:epsilon:timeStep:optimizerDescriptor:")
@@ -556,6 +583,8 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * @param learningRate The learningRate at which we will update values
      * 
      * @return A valid MPSNNOptimizerAdam object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:learningRate:")
@@ -601,6 +630,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * [@property] timeStep
      * 
      * Current timeStep for the update, number of times update has occurred
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setTimeStep:")
@@ -628,6 +660,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * [@property] timeStep
      * 
      * Current timeStep for the update, number of times update has occurred
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("timeStep")

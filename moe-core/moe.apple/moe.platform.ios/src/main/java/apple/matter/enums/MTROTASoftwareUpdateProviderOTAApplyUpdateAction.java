@@ -16,10 +16,6 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Deprecated
 public final class MTROTASoftwareUpdateProviderOTAApplyUpdateAction {
-    @Generated
-    private MTROTASoftwareUpdateProviderOTAApplyUpdateAction() {
-    }
-
     /**
      * API-Since: 16.4
      * Deprecated-Since: 17.2
@@ -38,4 +34,8 @@ public final class MTROTASoftwareUpdateProviderOTAApplyUpdateAction {
      * Deprecated-Message: Please use MTROTASoftwareUpdateProviderApplyUpdateActionDiscontinue
      */
     @Generated @Deprecated public static final byte Discontinue = 2;
+
+    @Generated
+    private MTROTASoftwareUpdateProviderOTAApplyUpdateAction() {
+    }
 }

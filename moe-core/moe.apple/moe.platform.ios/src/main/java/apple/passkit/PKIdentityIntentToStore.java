@@ -134,6 +134,8 @@ public class PKIdentityIntentToStore extends NSObject implements NSCopying {
 
     /**
      * Indicates the data element may be stored for an indefinite length of time.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -142,6 +144,8 @@ public class PKIdentityIntentToStore extends NSObject implements NSCopying {
 
     /**
      * Indicates the data element may be stored for no longer than than the provided number of days.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -177,6 +181,8 @@ public class PKIdentityIntentToStore extends NSObject implements NSCopying {
     /**
      * Indicates the data element returned in the response will not be stored for
      * a period longer than necessary to process the result in realtime.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated

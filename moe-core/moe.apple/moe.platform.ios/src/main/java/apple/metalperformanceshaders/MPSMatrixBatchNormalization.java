@@ -110,6 +110,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * If YES the batch statistics will be computed prior to performing the normalization.
      * Otherwise the provided statistics will be used. Defaults to NO at initialization
      * time.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("computeStatistics")
@@ -124,6 +126,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     * 
+     *         API-Since: 12.0
      */
     @NotNull
     @Generated
@@ -152,6 +156,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * Let numChannels = MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
      * 
      * The gamma, beta, mean, and variance vectors must contain at least numChannels elements.
+     * 
+     * API-Since: 12.0
      * 
      * @param commandBuffer  A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -187,6 +193,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * 
      * A small value to add to the variance when normalizing the inputs. Defaults
      * to FLT_MIN upon initialization.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("epsilon")
@@ -213,12 +221,17 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixBatchNormalization object.
      * @param device   The MTLDevice on which to make the MPSMatrixBatchNormalization object.
      * @return A new MPSMatrixBatchNormalization object, or nil if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixBatchNormalization initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSMatrixBatchNormalization initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
@@ -247,6 +260,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronParameterA")
@@ -254,6 +269,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronParameterB")
@@ -261,6 +278,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronParameterC")
@@ -268,6 +287,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("neuronType")
@@ -292,6 +313,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * If YES the batch statistics will be computed prior to performing the normalization.
      * Otherwise the provided statistics will be used. Defaults to NO at initialization
      * time.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setComputeStatistics:")
@@ -302,6 +325,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * 
      * A small value to add to the variance when normalizing the inputs. Defaults
      * to FLT_MIN upon initialization.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setEpsilon:")
@@ -322,6 +347,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * @param parameterA parameterA of neuron activation that is shared across all output values.
      * @param parameterB parameterB of neuron activation that is shared across all output values.
      * @param parameterC parameterC of neuron activation that is shared across all output values.
+     * 
+     *                   API-Since: 12.0
      */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
@@ -341,6 +368,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * Defines also the number of output feature channels.
      * Note: The value used in the operation will be
      * MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
@@ -356,6 +385,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * time the larger of this property or the available number of inputs is
      * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -378,6 +409,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * Defines also the number of output feature channels.
      * Note: The value used in the operation will be
      * MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -394,6 +427,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * time the larger of this property or the available number of inputs is
      * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")

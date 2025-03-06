@@ -178,6 +178,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Aperture blade count, where zero indicates a circle.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("apertureBladeCount")
@@ -186,6 +188,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Radial distortion of the lens, second order term
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("barrelDistortion")
@@ -193,6 +197,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Amount of chromatic abberation, from zero to one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("chromaticAberration")
@@ -200,11 +206,16 @@ public class MDLCamera extends MDLObject {
 
     /**
      * f-stop, default is 5.6
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("fStop")
     public native float fStop();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("farVisibilityDistance")
     public native float farVisibilityDistance();
@@ -213,6 +224,8 @@ public class MDLCamera extends MDLObject {
      * The field of view, in degrees.
      * 
      * @see focalLength
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("fieldOfView")
@@ -220,6 +233,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Radial distortion of the lens, fourth order term
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("fisheyeDistortion")
@@ -229,6 +244,8 @@ public class MDLCamera extends MDLObject {
      * Lens focal length in mm.
      * 
      * @see fieldOfView
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("focalLength")
@@ -236,6 +253,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Focus distance
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("focusDistance")
@@ -247,6 +266,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Maximum circle of confusion size in mm on the image plane
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumCircleOfConfusion")
@@ -254,6 +275,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Bounding distance for visible objects
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("nearVisibilityDistance")
@@ -261,12 +284,15 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Amount of optical vignetting, rom zero to one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("opticalVignetting")
     public native float opticalVignetting();
 
     /**
+     * API-Since: 9.0
      */
     @Generated
     @Selector("projection")
@@ -277,6 +303,8 @@ public class MDLCamera extends MDLObject {
      * Sensor or film gate aperture aspect ratio, default is 1.5
      * 
      * @see sensorVerticalAperture
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("sensorAspect")
@@ -286,6 +314,8 @@ public class MDLCamera extends MDLObject {
      * vertical aperture of the sensor or film gate, default is 24mm
      * 
      * @see sensorAspect
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("sensorVerticalAperture")
@@ -293,6 +323,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Aperture blade count, where zero indicates a circle.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setApertureBladeCount:")
@@ -300,6 +332,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Radial distortion of the lens, second order term
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBarrelDistortion:")
@@ -307,6 +341,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Amount of chromatic abberation, from zero to one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setChromaticAberration:")
@@ -314,11 +350,16 @@ public class MDLCamera extends MDLObject {
 
     /**
      * f-stop, default is 5.6
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFStop:")
     public native void setFStop(float value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setFarVisibilityDistance:")
     public native void setFarVisibilityDistance(float value);
@@ -327,6 +368,8 @@ public class MDLCamera extends MDLObject {
      * The field of view, in degrees.
      * 
      * @see focalLength
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setFieldOfView:")
@@ -334,6 +377,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Radial distortion of the lens, fourth order term
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFisheyeDistortion:")
@@ -343,6 +388,8 @@ public class MDLCamera extends MDLObject {
      * Lens focal length in mm.
      * 
      * @see fieldOfView
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setFocalLength:")
@@ -350,6 +397,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Focus distance
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFocusDistance:")
@@ -357,6 +406,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Maximum circle of confusion size in mm on the image plane
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaximumCircleOfConfusion:")
@@ -364,6 +415,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Bounding distance for visible objects
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNearVisibilityDistance:")
@@ -371,12 +424,15 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Amount of optical vignetting, rom zero to one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOpticalVignetting:")
     public native void setOpticalVignetting(float value);
 
     /**
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProjection:")
@@ -386,6 +442,8 @@ public class MDLCamera extends MDLObject {
      * Sensor or film gate aperture aspect ratio, default is 1.5
      * 
      * @see sensorVerticalAperture
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setSensorAspect:")
@@ -395,6 +453,8 @@ public class MDLCamera extends MDLObject {
      * vertical aperture of the sensor or film gate, default is 24mm
      * 
      * @see sensorAspect
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setSensorVerticalAperture:")
@@ -402,6 +462,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Shutter open interval, in seconds
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShutterOpenInterval:")
@@ -409,6 +471,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * World to meters conversion scale. Required for certain calculations.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setWorldToMetersConversionScale:")
@@ -416,6 +480,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Shutter open interval, in seconds
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shutterOpenInterval")
@@ -423,6 +489,8 @@ public class MDLCamera extends MDLObject {
 
     /**
      * World to meters conversion scale. Required for certain calculations.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("worldToMetersConversionScale")

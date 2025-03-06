@@ -92,6 +92,9 @@ public class SRDevice extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("currentDevice")
@@ -146,6 +149,8 @@ public class SRDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * e.g. @"iPhone"
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -154,6 +159,8 @@ public class SRDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * e.g. "My iPhone"
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -193,6 +200,8 @@ public class SRDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * e.g. @"iOS"
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -201,6 +210,8 @@ public class SRDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * e.g. @"4.0"
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

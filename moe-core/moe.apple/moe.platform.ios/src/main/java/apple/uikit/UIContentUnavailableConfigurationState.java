@@ -170,6 +170,8 @@ public class UIContentUnavailableConfigurationState extends NSObject implements 
 
     /**
      * The search text. Default is the search bar text of the view controller's search controller.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("searchText")
@@ -188,6 +190,8 @@ public class UIContentUnavailableConfigurationState extends NSObject implements 
 
     /**
      * The search text. Default is the search bar text of the view controller's search controller.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setSearchText:")

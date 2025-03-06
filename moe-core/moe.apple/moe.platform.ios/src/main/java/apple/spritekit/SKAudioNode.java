@@ -215,6 +215,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * Defaults to YES.
      * 
      * @see SKView.paused
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("autoplayLooped")
@@ -222,6 +224,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Sets or gets the current AVAudioNode used by this instance.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -240,6 +244,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * Creates a SpriteKit scene graph audio node from the given AVAudioNode.
      * 
      * @see AVAudioNode
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("initWithAVAudioNode:")
@@ -253,6 +259,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * Convenience initializer that creates an AVAudioNode from the named audio asset in the main bundle.
      * 
      * @see initWithAVAudioNode
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("initWithFileNamed:")
@@ -262,6 +270,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * Convenience initializer that creates an AVAudioNode from the URL that contain a audio asset.
      * 
      * @see initWithAVAudioNode
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -273,6 +283,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * 
      * @see AVAudio3DMixing
      * @see SKScene.listener
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("isPositional")
@@ -284,6 +296,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * 
      * @see AVAudio3DMixing
      * @see SKScene.listener
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setPositional:")
@@ -299,6 +313,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * Defaults to YES.
      * 
      * @see SKView.paused
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setAutoplayLooped:")
@@ -306,6 +322,8 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Sets or gets the current AVAudioNode used by this instance.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAvAudioNode:")

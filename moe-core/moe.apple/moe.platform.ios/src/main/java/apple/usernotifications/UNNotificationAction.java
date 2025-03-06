@@ -69,6 +69,8 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     /**
      * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at
      * the time that the notification is presented.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("actionWithIdentifier:title:options:")
@@ -188,6 +190,8 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
 
     /**
      * The unique identifier for this action.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -204,6 +208,8 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
 
     /**
      * The options configured for this action.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("options")
@@ -218,6 +224,8 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
 
     /**
      * The title to display for this action.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

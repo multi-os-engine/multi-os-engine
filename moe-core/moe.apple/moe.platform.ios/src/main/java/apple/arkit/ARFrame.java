@@ -71,6 +71,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * A list of anchors in the scene.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -85,6 +87,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * The camera used to capture the frame’s image.
      * 
      * The camera provides the device’s position and orientation as well as camera parameters.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -106,6 +110,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * The frame’s captured depth data.
      * 
      * Depth data is only provided with face tracking on frames where depth data was captured.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -114,6 +120,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * A timestamp identifying the depth data.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("capturedDepthDataTimestamp")
@@ -121,6 +129,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * The frame’s captured image.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -162,6 +172,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      * @param orientation  The orientation of the viewport.
      * @param viewportSize The size of the viewport.
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("displayTransformForOrientation:viewportSize:")
@@ -226,6 +238,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * A light estimate representing the light in the scene.
      * 
      * Returns nil if there is no light estimation.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -241,6 +255,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * Feature points in the scene with respect to the frame’s origin.
      * 
      * The feature points are only provided for configurations using world tracking.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -265,6 +281,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * A timestamp identifying the frame.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("timestamp")

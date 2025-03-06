@@ -26,6 +26,8 @@ import org.jetbrains.annotations.Nullable;
 public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOperation {
     /**
      * The domain version at the time the change was discovered on the source side.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -34,6 +36,8 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
 
     /**
      * The identifier of the source item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -42,6 +46,8 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
 
     /**
      * The version of the target item on top of which the deletion is applied
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -50,6 +56,8 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
 
     /**
      * The identifier of the target item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -58,6 +66,8 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
 
     /**
      * The target side of the operation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("targetSide")

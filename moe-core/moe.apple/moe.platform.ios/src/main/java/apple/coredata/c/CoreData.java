@@ -1093,4 +1093,17 @@ public final class CoreData {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String NSPersistentStoreDeferredLightweightMigrationOptionKey();
+
+    /**
+     * Key to represent the version checksum for the model.
+     * This key is in the metadata for a persistent store and can be used to quickly
+     * determine if a store and a model are compatible.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSPersistentStoreModelVersionChecksumKey();
 }

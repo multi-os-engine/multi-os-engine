@@ -88,6 +88,9 @@ public class CPSearchTemplate extends CPTemplate {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -146,10 +149,16 @@ public class CPSearchTemplate extends CPTemplate {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CPSearchTemplateDelegate value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPSearchTemplateDelegate value) {
         Object __old = delegate();

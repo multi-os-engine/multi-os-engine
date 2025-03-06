@@ -23,32 +23,50 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CKRecordKeyValueSetting")
 public interface CKRecordKeyValueSetting {
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("allKeys")
     NSArray<String> allKeys();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("changedKeys")
     NSArray<String> changedKeys();
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     CKRecordValue objectForKey(@NotNull String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
     CKRecordValue objectForKeyedSubscript(@NotNull String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setObject:forKey:")
     void setObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) CKRecordValue object, @NotNull String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) CKRecordValue object,

@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * You can add new @c SHMediaItem instances to the user's library.
  * 
  * API-Since: 15.0
- * Deprecated-Since: 100000.0
+ * Deprecated-Since: 18.0
  * Deprecated-Message: Use SHLibrary instead
  */
 @Deprecated
@@ -67,7 +67,12 @@ public class SHMediaLibrary extends NSObject {
      * @param mediaItems        An array containing the @c SHMediaItem objects to be added to the library.
      * @param completionHandler A block called after all valid @c SHMediaItem objects have been added to the library. If
      *                          an error occurred, the error parameter will be populated.
+     * 
+     *                          API-Since: 15.0
+     *                          Deprecated-Since: 18.0
+     *                          Deprecated-Message: Use SHLibrary instead
      */
+    @Deprecated
     @Generated
     @Selector("addMediaItems:completionHandler:")
     public native void addMediaItemsCompletionHandler(@NotNull NSArray<? extends SHMediaItem> mediaItems,
@@ -121,7 +126,12 @@ public class SHMediaLibrary extends NSObject {
 
     /**
      * Returns an instance of the default Shazam library.
+     * 
+     * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use SHLibrary instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("defaultLibrary")

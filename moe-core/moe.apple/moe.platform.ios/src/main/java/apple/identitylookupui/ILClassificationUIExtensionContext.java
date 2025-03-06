@@ -113,6 +113,9 @@ public class ILClassificationUIExtensionContext extends NSExtensionContext {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("isReadyForClassificationResponse")
     public native boolean isReadyForClassificationResponse();
@@ -139,6 +142,9 @@ public class ILClassificationUIExtensionContext extends NSExtensionContext {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setReadyForClassificationResponse:")
     public native void setReadyForClassificationResponse(boolean value);

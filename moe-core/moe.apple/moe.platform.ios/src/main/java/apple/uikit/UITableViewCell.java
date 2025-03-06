@@ -389,6 +389,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UITableViewCellAccessoryNone. use to set standard type
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("accessoryType")
@@ -397,6 +399,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * if set, use custom view. ignore accessoryType. tracks if enabled can calls accessory action
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -453,6 +457,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Always nil when a non-nil `backgroundConfiguration` is set. The 'backgroundView' will be added as a subview
      * behind all other views.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -461,6 +467,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * Custom subviews should be added to the content view.
+     * 
+     * API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -501,6 +509,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UITableViewCellAccessoryNone. use to set standard type
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("editingAccessoryType")
@@ -509,6 +519,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * if set, use custom view. ignore editingAccessoryType. tracks if enabled can calls accessory action
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -518,6 +530,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * default is UITableViewCellEditingStyleNone. This is set by UITableView using the delegate's value for cells who
      * customize their appearance accordingly.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("editingStyle")
@@ -621,6 +635,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * adjust content indent. default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("indentationLevel")
@@ -629,6 +645,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * width for each level. default is 10.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("indentationWidth")
@@ -671,6 +689,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * show appropriate edit controls (+/- & reorder). By default -setEditing: calls setEditing:animated: with NO for
      * animated.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isEditing")
@@ -679,6 +699,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * show appropriate edit controls (+/- & reorder). By default -setEditing: calls setEditing:animated: with NO for
      * animated.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEditing:")
@@ -686,6 +708,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * set highlighted state (title, image, background). default is NO. animated is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isHighlighted")
@@ -693,6 +717,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * set highlighted state (title, image, background). default is NO. animated is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHighlighted:")
@@ -700,6 +726,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * set selected state (title, image, background). default is NO. animated is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isSelected")
@@ -707,6 +735,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * set selected state (title, image, background). default is NO. animated is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelected:")
@@ -738,11 +768,16 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * if the cell is reusable (has a reuse identifier), this is called just before the cell is returned from the table
      * view method dequeueReusableCellWithIdentifier:. If you override, you MUST call super.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
+    /**
+     * API-Since: 2.0
+     */
     @Nullable
     @Generated
     @Selector("reuseIdentifier")
@@ -753,6 +788,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * subview directly above the backgroundView if not nil, or behind all other views. It is added as a subview only
      * when the cell is selected. Calling -setSelected:animated: will cause the 'selectedBackgroundView' to animate in
      * and out with an alpha fade.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -785,6 +822,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UITableViewCellSelectionStyleDefault.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("selectionStyle")
@@ -814,6 +853,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UITableViewCellAccessoryNone. use to set standard type
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAccessoryType:")
@@ -821,6 +862,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * if set, use custom view. ignore accessoryType. tracks if enabled can calls accessory action
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAccessoryView:")
@@ -829,6 +872,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Always nil when a non-nil `backgroundConfiguration` is set. The 'backgroundView' will be added as a subview
      * behind all other views.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBackgroundView:")
@@ -845,12 +890,17 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("setEditAction:")
     public native void setEditAction(@Nullable SEL value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setEditing:animated:")
     public native void setEditingAnimated(boolean editing, boolean animated);
 
     /**
      * default is UITableViewCellAccessoryNone. use to set standard type
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEditingAccessoryType:")
@@ -858,6 +908,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * if set, use custom view. ignore editingAccessoryType. tracks if enabled can calls accessory action
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setEditingAccessoryView:")
@@ -894,6 +946,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * animate between regular and highlighted state
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setHighlighted:animated:")
@@ -912,6 +966,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * adjust content indent. default is 0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setIndentationLevel:")
@@ -919,6 +975,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * width for each level. default is 10.0
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setIndentationWidth:")
@@ -947,6 +1005,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * animate between regular and selected state
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelected:animated:")
@@ -957,6 +1017,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * subview directly above the backgroundView if not nil, or behind all other views. It is added as a subview only
      * when the cell is selected. Calling -setSelected:animated: will cause the 'selectedBackgroundView' to animate in
      * and out with an alpha fade.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelectedBackgroundView:")
@@ -986,6 +1048,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UITableViewCellSelectionStyleDefault.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setSelectionStyle:")
@@ -1002,6 +1066,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is YES. This is unrelated to the indentation level below.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setShouldIndentWhileEditing:")
@@ -1009,6 +1075,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setShowsReorderControl:")
@@ -1079,6 +1147,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is YES. This is unrelated to the indentation level below.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("shouldIndentWhileEditing")
@@ -1086,6 +1156,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * currently showing "Delete" button
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("showingDeleteConfirmation")
@@ -1093,6 +1165,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is NO
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("showsReorderControl")

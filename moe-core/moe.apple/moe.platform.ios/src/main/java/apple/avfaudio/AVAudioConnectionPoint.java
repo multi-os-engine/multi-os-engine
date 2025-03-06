@@ -72,6 +72,8 @@ public class AVAudioConnectionPoint extends NSObject {
      * [@property] bus
      * 
      * Returns the bus on the node in the connection point.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("bus")
@@ -123,6 +125,8 @@ public class AVAudioConnectionPoint extends NSObject {
      * 
      * If the node is nil, this method fails (returns nil).
      * 
+     * API-Since: 9.0
+     * 
      * @param node the source or destination node
      * @param bus  the output or input bus on the node
      */
@@ -161,6 +165,8 @@ public class AVAudioConnectionPoint extends NSObject {
      * [@property] node
      * 
      * Returns the node in the connection point.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

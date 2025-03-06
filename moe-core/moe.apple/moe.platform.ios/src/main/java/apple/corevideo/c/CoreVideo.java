@@ -51,6 +51,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corevideo.opaque.CVMetalBufferCacheRef;
 
 @Generated
 @Library("CoreVideo")
@@ -131,9 +132,9 @@ public final class CoreVideo {
      * You can attach any CF object to a CVBuffer object to store additional information. CVBufferGetAttachment
      * retrieves an attachement identified by a key.
      * 
-     * @param buffer          Target CVBuffer object.
-     * @param key             Key in form of a CFString identifying the desired attachment.
-     * @param attachmentMode. Returns the mode of the attachment, if desired. May be NULL.
+     * @param buffer         Target CVBuffer object.
+     * @param key            Key in form of a CFString identifying the desired attachment.
+     * @param attachmentMode Returns the mode of the attachment, if desired. May be NULL.
      * @return If found the attachment object
      * 
      *         API-Since: 4.0
@@ -295,7 +296,7 @@ public final class CoreVideo {
      * 
      * Returns whether the image is flipped vertically or not.
      * 
-     * @param CVImageBuffer target
+     * @param imageBuffer target
      * @return True if 0,0 in the texture is upper left, false if 0,0 is lower left.
      * 
      *         API-Since: 4.0
@@ -319,7 +320,7 @@ public final class CoreVideo {
      * 
      * Equivalent to CFRetain, but NULL safe
      * 
-     * @param buffer A CVPixelBuffer object that you want to retain.
+     * @param texture A CVPixelBuffer object that you want to retain.
      * @return A CVPixelBuffer object that is the same as the passed in buffer.
      * 
      *         API-Since: 4.0
@@ -336,9 +337,9 @@ public final class CoreVideo {
      * 
      * Equivalent to CFRelease, but NULL safe
      * 
-     * @param buffer A CVPixelBuffer object that you want to release.
+     * @param texture A CVPixelBuffer object that you want to release.
      * 
-     *               API-Since: 4.0
+     *                API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -2881,9 +2882,9 @@ public final class CoreVideo {
      * You can attach any CF object to a CVBuffer object to store additional information. CVBufferCopyAttachment
      * retrieves a retained attachment identified by a key.
      * 
-     * @param buffer          Target CVBuffer object.
-     * @param key             Key in form of a CFString identifying the desired attachment.
-     * @param attachmentMode. Returns the mode of the attachment, if desired. May be NULL.
+     * @param buffer         Target CVBuffer object.
+     * @param key            Key in form of a CFString identifying the desired attachment.
+     * @param attachmentMode Returns the mode of the attachment, if desired. May be NULL.
      * @return If found the attachment object, return the value; otherwize, return NULL.
      * 
      *         API-Since: 15.0
@@ -2952,11 +2953,10 @@ public final class CoreVideo {
     /**
      * [@constant] kCVImageBufferRegionOfInterestKey
      * 
-     * Specifies region of interest that image statistics cover. This value should be a CGRect dictionary created by
-     * CGRectCreateDictionaryRepresentation(). The origin in the CGRect represents the x,y coordinate within the
-     * CVPixelBuffer where region of interest is located.
+     * Specifies region of interest that image statistics cover.
      * 
-     * 
+     * This value should be a CGRect dictionary created by CGRectCreateDictionaryRepresentation(). The origin in the
+     * CGRect represents the x,y coordinate within the CVPixelBuffer where region of interest is located.
      * 
      * API-Since: 15.0
      */
@@ -3032,4 +3032,132 @@ public final class CoreVideo {
     @CVariable()
     @NotNull
     public static native CFStringRef kCVImageBufferLogTransferFunction_AppleLog();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CVMetalBufferGetTypeID();
+
+    /**
+     * [@function] CVMetalBufferGetBuffer
+     * 
+     * Returns the Metal MTLBuffer object of the CVMetalBufferRef
+     * 
+     * @param buffer Target CVMetalBuffer
+     * @return Metal buffer
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public static native Object CVMetalBufferGetBuffer(@NotNull CVBufferRef buffer);
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CVMetalBufferCacheGetTypeID();
+
+    /**
+     * [@function] CVMetalBufferCacheCreate
+     * 
+     * Creates a new Buffer Cache.
+     * 
+     * @param allocator       The CFAllocatorRef to use for allocating the cache. May be NULL.
+     * @param cacheAttributes A CFDictionaryRef containing the attributes of the cache itself. May be NULL.
+     * @param metalDevice     The Metal device for which the buffer objects will be created.
+     * @param cacheOut        The newly created buffer cache will be placed here
+     * @return Returns kCVReturnSuccess on success
+     * 
+     *         API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int CVMetalBufferCacheCreate(@Nullable CFAllocatorRef allocator,
+            @Nullable CFDictionaryRef cacheAttributes, @Mapped(ObjCObjectMapper.class) @NotNull Object metalDevice,
+            @NotNull Ptr<CVMetalBufferCacheRef> cacheOut);
+
+    /**
+     * [@function] CVMetalBufferCacheCreateBuffer
+     * 
+     * Creates a CVMetalBuffer object from an existing CVImageBuffer
+     * 
+     * Creates or returns a cached CVMetalBuffer object mapped to the CVImageBuffer.
+     * This creates a live binding between the CVImageBuffer and underlying CVMetalBuffer buffer object.
+     * 
+     * IMPORTANT NOTE: Clients should retain CVMetalBuffer objects until they are done using the images in them.
+     * Retaining a CVMetalBuffer is your way to indicate that you're still using the image in the buffer, and that it
+     * should not be recycled yet.
+     * 
+     * API-Since: 18.0
+     * 
+     * @param allocator   The CFAllocatorRef to use for allocating the CVMetalBuffer object. May be NULL.
+     * @param bufferCache The buffer cache object that will manage the buffer.
+     * @param buffer      The CVImageBuffer that you want to create a CVMetalBuffer from.
+     * @param bufferOut   The newly created buffer object will be placed here.
+     * @return Returns kCVReturnSuccess on success
+     */
+    @Generated
+    @CFunction
+    public static native int CVMetalBufferCacheCreateBufferFromImage(@Nullable CFAllocatorRef allocator,
+            @NotNull CVMetalBufferCacheRef bufferCache, @NotNull CVBufferRef imageBuffer,
+            @NotNull Ptr<CVBufferRef> bufferOut);
+
+    /**
+     * [@function] CVMetalBufferCacheFlush
+     * 
+     * Performs internal housekeeping/recycling operations
+     * 
+     * This call must be made periodically to give the buffer cache a chance to do internal housekeeping operations.
+     * 
+     * @param bufferCache The buffer cache object to flush
+     * @param options     Currently unused, set to 0.
+     * 
+     *                    API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void CVMetalBufferCacheFlush(@NotNull CVMetalBufferCacheRef bufferCache, long options);
+
+    /**
+     * CFNumberRef integer value in millilux
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferSceneIlluminationKey();
+
+    /**
+     * Indicates, if available, the logical bit depth of each component of the plane.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVPixelFormatBitsPerComponent();
+
+    /**
+     * By default, buffers will age out after one second.
+     * Setting a maximum buffer age of zero will disable the age-out mechanism completely.
+     * CVMetalBufferCacheFlush() can be used to force eviction in either case.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVMetalBufferCacheMaximumBufferAgeKey();
+
+    @Generated public static final double __COREVIDEO_CVMETALBUFFER_H__ = 1.0;
+    @Generated public static final double __COREVIDEO__CVMETALBUFFERCACHE_H__ = 1.0;
 }

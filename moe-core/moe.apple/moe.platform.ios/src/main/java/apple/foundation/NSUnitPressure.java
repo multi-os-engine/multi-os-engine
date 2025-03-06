@@ -74,6 +74,9 @@ public class NSUnitPressure extends NSDimension implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("bars")
@@ -113,6 +116,9 @@ public class NSUnitPressure extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("gigapascals")
@@ -123,11 +129,17 @@ public class NSUnitPressure extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("hectopascals")
     public static native NSUnitPressure hectopascals();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("inchesOfMercury")
@@ -155,21 +167,33 @@ public class NSUnitPressure extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("kilopascals")
     public static native NSUnitPressure kilopascals();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("megapascals")
     public static native NSUnitPressure megapascals();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("millibars")
     public static native NSUnitPressure millibars();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("millimetersOfMercury")
@@ -182,12 +206,17 @@ public class NSUnitPressure extends NSDimension implements NSSecureCoding {
 
     /**
      * Base unit - newtonsPerMetersSquared (equivalent to 1 pascal)
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
     @Selector("newtonsPerMetersSquared")
     public static native NSUnitPressure newtonsPerMetersSquared();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("poundsForcePerSquareInch")

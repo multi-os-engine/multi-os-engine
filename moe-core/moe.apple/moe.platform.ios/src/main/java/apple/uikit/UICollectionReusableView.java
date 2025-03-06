@@ -426,11 +426,16 @@ public class UICollectionReusableView extends UIView {
      * -applyLayoutAttributes: is then called after the view is added to the collection view and just before the view is
      * returned from the reuse queue.
      * Note that -applyLayoutAttributes: is only called when attributes change, as defined by -isEqual:.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("applyLayoutAttributes:")
     public native void applyLayoutAttributes(@NotNull UICollectionViewLayoutAttributes layoutAttributes);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("didTransitionFromLayout:toLayout:")
     public native void didTransitionFromLayoutToLayout(@NotNull UICollectionViewLayout oldLayout,
@@ -461,11 +466,16 @@ public class UICollectionReusableView extends UIView {
      * Override point.
      * Called by the collection view before the instance is returned from the reuse queue.
      * Subclassers must call super.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
+    /**
+     * API-Since: 6.0
+     */
     @Nullable
     @Generated
     @Selector("reuseIdentifier")
@@ -473,6 +483,8 @@ public class UICollectionReusableView extends UIView {
 
     /**
      * Override these methods to provide custom UI for specific layouts.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("willTransitionFromLayout:toLayout:")

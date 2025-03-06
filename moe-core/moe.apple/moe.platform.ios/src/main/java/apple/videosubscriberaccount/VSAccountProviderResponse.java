@@ -161,6 +161,8 @@ public class VSAccountProviderResponse extends NSObject {
 
     /**
      * Identifies the protocol used in constructing this response.
+     * 
+     * API-Since: 10.2
      */
     @NotNull
     @Generated
@@ -170,6 +172,8 @@ public class VSAccountProviderResponse extends NSObject {
     /**
      * The raw response from the provider.
      * May be nil if the response contained security-sensitive information.
+     * 
+     * API-Since: 10.2
      */
     @Nullable
     @Generated
@@ -183,6 +187,8 @@ public class VSAccountProviderResponse extends NSObject {
     /**
      * The status code for this response.
      * May be nil if there is no meaningful value for this type of response.
+     * 
+     * API-Since: 10.2
      */
     @Nullable
     @Generated

@@ -104,11 +104,17 @@ public class INCallGroup extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.5
+     */
     @Nullable
     @Generated
     @Selector("groupId")
     public native String groupId();
 
+    /**
+     * API-Since: 14.5
+     */
     @Nullable
     @Generated
     @Selector("groupName")
@@ -127,6 +133,9 @@ public class INCallGroup extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native INCallGroup initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("initWithGroupName:groupId:")
     public native INCallGroup initWithGroupNameGroupId(@Nullable String groupName, @Nullable String groupId);

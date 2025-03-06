@@ -67,6 +67,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Altitude used to create this point in radians, 0.0-π/2 radians
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("altitude")
@@ -79,6 +81,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Azimuth of the point in radians, 0.0-2π radians
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("azimuth")
@@ -123,6 +127,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Force used to create this point.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("force")
@@ -140,6 +146,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Create a new point with the provided properties.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithLocation:timeOffset:size:opacity:force:azimuth:altitude:")
@@ -171,6 +179,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Location of the point.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("location")
@@ -184,6 +194,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Opacity of the point 0-2.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("opacity")
@@ -204,6 +216,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Size of the point.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("size")
@@ -216,6 +230,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Time offset since the start of the stroke path in seconds.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("timeOffset")
@@ -228,6 +244,8 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     /**
      * Create a new point with the provided properties.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithLocation:timeOffset:size:opacity:force:azimuth:altitude:secondaryScale:")

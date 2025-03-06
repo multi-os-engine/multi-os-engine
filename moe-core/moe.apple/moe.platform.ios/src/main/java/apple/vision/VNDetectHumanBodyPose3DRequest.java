@@ -119,6 +119,8 @@ public class VNDetectHumanBodyPose3DRequest extends VNStatefulRequest {
 
     /**
      * Creates a new VNDetectHumanBodyPose3DRequest with no completion handler.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("init")
@@ -126,6 +128,8 @@ public class VNDetectHumanBodyPose3DRequest extends VNStatefulRequest {
 
     /**
      * Creates a new VNDetectHumanBodyPose3DRequest with completion handler.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithCompletionHandler:")
@@ -182,6 +186,8 @@ public class VNDetectHumanBodyPose3DRequest extends VNStatefulRequest {
 
     /**
      * VNHumanBodyPose3DObservation results.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("results")
@@ -203,6 +209,8 @@ public class VNDetectHumanBodyPose3DRequest extends VNStatefulRequest {
      *              need this information, NULL can be passed.
      * @return An array of VNHumanBodyPose3DObservationJointName symbols that are supported by the request revision, or
      *         nil if a failure occurs.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("supportedJointNamesAndReturnError:")
@@ -218,6 +226,8 @@ public class VNDetectHumanBodyPose3DRequest extends VNStatefulRequest {
      *              need this information, NULL can be passed.
      * @return An array of VNHumanBody3DPoseObservationJointsGroupName symbols that are supported by the request, or nil
      *         if a failure occurs.
+     * 
+     *         API-Since: 17.0
      */
     @Generated
     @Selector("supportedJointsGroupNamesAndReturnError:")

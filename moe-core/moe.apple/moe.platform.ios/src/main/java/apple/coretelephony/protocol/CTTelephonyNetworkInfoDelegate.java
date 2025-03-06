@@ -30,6 +30,8 @@ public interface CTTelephonyNetworkInfoDelegate {
      * Selector to be invoked whenever the data service identifier changes.
      * This identifier is meant to be used as a key in associated dictionaries,
      * e.g. serviceSubscriberCellularProviders.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

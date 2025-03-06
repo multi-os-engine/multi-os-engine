@@ -98,6 +98,9 @@ public class PKBarcodeEventSignatureResponse extends NSObject {
     @Selector("init")
     public native PKBarcodeEventSignatureResponse init();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithSignedData:")
     public native PKBarcodeEventSignatureResponse initWithSignedData(@NotNull NSData signedData);
@@ -137,6 +140,9 @@ public class PKBarcodeEventSignatureResponse extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSignedData:")
     public native void setSignedData(@NotNull NSData value);
@@ -145,6 +151,9 @@ public class PKBarcodeEventSignatureResponse extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("signedData")

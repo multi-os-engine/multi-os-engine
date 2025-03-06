@@ -43,8 +43,7 @@ import org.jetbrains.annotations.Nullable;
  * The operation is performed independently for each tensor in a batch.
  * 
  * API-Since: 14.0
- * Deprecated-Since: 100000.0
- * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
+ * Deprecated-Since: 17.4
  */
 @Deprecated
 @Generated
@@ -144,7 +143,11 @@ public class MLCGramMatrixLayer extends MLCLayer {
      * 
      * @param scale The scaling factor for the output.
      * @return A new GramMatrix layer
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("layerWithScale:")
     public static native MLCGramMatrixLayer layerWithScale(float scale);
@@ -166,7 +169,11 @@ public class MLCGramMatrixLayer extends MLCLayer {
      * [@property] scale
      * 
      * The scale factor
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 17.4
      */
+    @Deprecated
     @Generated
     @Selector("scale")
     public native float scale();
@@ -179,6 +186,7 @@ public class MLCGramMatrixLayer extends MLCLayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("supportsDataType:onDevice:")
     public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);

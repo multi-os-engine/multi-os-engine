@@ -27,16 +27,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This class defines parameters for a 2d pooling operation.
+ * The class that defines the parameters for a 2D pooling operation.
  * 
  * Use this descriptor with the following methods:
- * ``MPSGraph/maxPooling2DWithSourceTensor:descriptor:name:``,
- * ``MPSGraph/maxPooling2DReturnIndicesWithSourceTensor:descriptor:name:``,
- * ``MPSGraph/maxPooling2DGradientWithGradientTensor:sourceTensor:descriptor:name:``,
- * ``MPSGraph/maxPooling2DGradientWithGradientTensor:indicesTensor:outputShape:descriptor:name:``,
- * ``MPSGraph/maxPooling2DGradientWithGradientTensor:indicesTensor:outputShapeTensor:descriptor:name:``,
- * ``MPSGraph/avgPooling2DWithSourceTensor:descriptor:name:`` and
- * ``MPSGraph/avgPooling2DGradientWithGradientTensor:sourceTensor:descriptor:name:``.
+ * - ``MPSGraph/maxPooling2DWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/maxPooling2DReturnIndicesWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/maxPooling2DGradientWithGradientTensor:sourceTensor:descriptor:name:``
+ * - ``MPSGraph/maxPooling2DGradientWithGradientTensor:indicesTensor:outputShape:descriptor:name:``
+ * - ``MPSGraph/maxPooling2DGradientWithGradientTensor:indicesTensor:outputShapeTensor:descriptor:name:``
+ * - ``MPSGraph/avgPooling2DWithSourceTensor:descriptor:name:``
+ * - ``MPSGraph/avgPooling2DGradientWithGradientTensor:sourceTensor:descriptor:name:``
  * 
  * API-Since: 14.0
  */
@@ -84,8 +84,9 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * Affects how MPSGraph computes the output size: if set to `YES` then output size is
-     * computed by rounding up instead of down when dividing input size by stride.
+     * Affects how the graph computes the output size.
+     * 
+     * if set to `YES` then output size is computed by rounding up instead of down when dividing input size by stride.
      * Default value: `NO`.
      * 
      * API-Since: 15.0
@@ -112,7 +113,9 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * Defines the data layout of the input data (in forward pass). See: ``MPSGraphTensorNamedDataLayout``.
+     * Defines the data layout of the input data in the forward pass. See: ``MPSGraphTensorNamedDataLayout``.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dataLayout")
@@ -128,7 +131,7 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public static native String description_static();
 
     /**
-     * Creates a 2d pooling descriptor with given values.
+     * Creates a 2D pooling descriptor with given values.
      * 
      * - Parameters:
      * - kernelWidth: See `kernelWidth` property.
@@ -144,6 +147,8 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
      * - paddingStyle: See `paddingStyle` property.
      * - dataLayout: See `dataLayout` property.
      * - Returns: The descriptor on autoreleasepool.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("descriptorWithKernelWidth:kernelHeight:strideInX:strideInY:dilationRateInX:dilationRateInY:paddingLeft:paddingRight:paddingTop:paddingBottom:paddingStyle:dataLayout:")
@@ -153,7 +158,7 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
             @NUInt long paddingTop, @NUInt long paddingBottom, @NUInt long paddingStyle, @NUInt long dataLayout);
 
     /**
-     * Creates a 2d pooling descriptor with given values.
+     * Creates a 2D pooling descriptor with given values.
      * 
      * - Parameters:
      * - kernelWidth: See `kernelWidth` property.
@@ -163,6 +168,8 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
      * - paddingStyle: See `paddingStyle` property.
      * - dataLayout: See `dataLayout` property.
      * - Returns: The descriptor on autoreleasepool.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("descriptorWithKernelWidth:kernelHeight:strideInX:strideInY:paddingStyle:dataLayout:")
@@ -171,7 +178,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
             @NUInt long paddingStyle, @NUInt long dataLayout);
 
     /**
-     * Defines the dilation rate for the X (Width) dimension. Default value: 1.
+     * Defines the dilation rate for the width dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dilationRateInX")
@@ -179,7 +190,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native long dilationRateInX();
 
     /**
-     * Defines the dilation rate for the Y (Height) dimension. Default value: 1.
+     * Defines the dilation rate for the height dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dilationRateInY")
@@ -192,9 +207,10 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public static native long hash_static();
 
     /**
-     * Defines for average pooling a mode where samples outside the input tensor count as
-     * zeroes in the average computation. Otherwise the result is sum over samples divided by
-     * number of samples that didn't come from padding.
+     * Defines a mode for average pooling, where samples outside the input tensor count as zeroes in the average
+     * computation.
+     * 
+     * Otherwise the result is sum over samples divided by number of samples that didn't come from padding.
      * Default value: `NO`.
      * 
      * API-Since: 15.0
@@ -225,7 +241,9 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * Defines the pooling window size for the Y (Height) dimension.
+     * Defines the pooling window size for the height dimension.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("kernelHeight")
@@ -233,7 +251,9 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native long kernelHeight();
 
     /**
-     * Defines the pooling window size for the X (Width) dimension.
+     * Defines the pooling window size for the width dimension.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("kernelWidth")
@@ -251,7 +271,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public static native MPSGraphPooling2DOpDescriptor new_objc();
 
     /**
-     * Defines the explicit padding value for the Y (Height) dimension to add after the data. Default value: 0.
+     * Defines the explicit padding value for the height dimension to add after the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("paddingBottom")
@@ -259,7 +283,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native long paddingBottom();
 
     /**
-     * Defines the explicit padding value for the X (Width) dimension to add before the data. Default value: 0.
+     * Defines the explicit padding value for the width dimension to add before the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("paddingLeft")
@@ -267,7 +295,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native long paddingLeft();
 
     /**
-     * Defines the explicit padding value for theX (Width) dimension to add after the data. Default value: 0.
+     * Defines the explicit padding value for the width dimension to add after the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("paddingRight")
@@ -275,8 +307,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native long paddingRight();
 
     /**
-     * Defines what kind of padding MPSGraph applies to the operation.
+     * Defines what kind of padding graph applies to the operation.
+     * 
      * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("paddingStyle")
@@ -284,7 +319,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native long paddingStyle();
 
     /**
-     * Defines the explicit padding value for the Y (Height) dimension to add before the data. Default value: 0.
+     * Defines the explicit padding value for the height dimension to add before the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("paddingTop")
@@ -300,8 +339,9 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Affects how MPSGraph computes the output size: if set to `YES` then output size is
-     * computed by rounding up instead of down when dividing input size by stride.
+     * Affects how the graph computes the output size.
+     * 
+     * if set to `YES` then output size is computed by rounding up instead of down when dividing input size by stride.
      * Default value: `NO`.
      * 
      * API-Since: 15.0
@@ -311,34 +351,46 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native void setCeilMode(boolean value);
 
     /**
-     * Defines the data layout of the input data (in forward pass). See: ``MPSGraphTensorNamedDataLayout``.
+     * Defines the data layout of the input data in the forward pass. See: ``MPSGraphTensorNamedDataLayout``.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDataLayout:")
     public native void setDataLayout(@NUInt long value);
 
     /**
-     * Defines the dilation rate for the X (Width) dimension. Default value: 1.
+     * Defines the dilation rate for the width dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDilationRateInX:")
     public native void setDilationRateInX(@NUInt long value);
 
     /**
-     * Defines the dilation rate for the Y (Height) dimension. Default value: 1.
+     * Defines the dilation rate for the height dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDilationRateInY:")
     public native void setDilationRateInY(@NUInt long value);
 
     /**
-     * Sets the explicit padding values and sets `paddingStyle` to `MPSGraphPaddingStyleExplicit`.
+     * Sets the explicit padding values and sets padding style to explicit.
      * 
      * - Parameters:
      * - paddingLeft: See `paddingLeft` property.
      * - paddingRight: See `paddingRight` property.
      * - paddingTop: See `paddingTop` property.
      * - paddingBottom: See `paddingBottom` property.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setExplicitPaddingWithPaddingLeft:paddingRight:paddingTop:paddingBottom:")
@@ -346,9 +398,10 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
             @NUInt long paddingRight, @NUInt long paddingTop, @NUInt long paddingBottom);
 
     /**
-     * Defines for average pooling a mode where samples outside the input tensor count as
-     * zeroes in the average computation. Otherwise the result is sum over samples divided by
-     * number of samples that didn't come from padding.
+     * Defines a mode for average pooling, where samples outside the input tensor count as zeroes in the average
+     * computation.
+     * 
+     * Otherwise the result is sum over samples divided by number of samples that didn't come from padding.
      * Default value: `NO`.
      * 
      * API-Since: 15.0
@@ -358,64 +411,95 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native void setIncludeZeroPadToAverage(boolean value);
 
     /**
-     * Defines the pooling window size for the Y (Height) dimension.
+     * Defines the pooling window size for the height dimension.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setKernelHeight:")
     public native void setKernelHeight(@NUInt long value);
 
     /**
-     * Defines the pooling window size for the X (Width) dimension.
+     * Defines the pooling window size for the width dimension.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setKernelWidth:")
     public native void setKernelWidth(@NUInt long value);
 
     /**
-     * Defines the explicit padding value for the Y (Height) dimension to add after the data. Default value: 0.
+     * Defines the explicit padding value for the height dimension to add after the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPaddingBottom:")
     public native void setPaddingBottom(@NUInt long value);
 
     /**
-     * Defines the explicit padding value for the X (Width) dimension to add before the data. Default value: 0.
+     * Defines the explicit padding value for the width dimension to add before the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPaddingLeft:")
     public native void setPaddingLeft(@NUInt long value);
 
     /**
-     * Defines the explicit padding value for theX (Width) dimension to add after the data. Default value: 0.
+     * Defines the explicit padding value for the width dimension to add after the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPaddingRight:")
     public native void setPaddingRight(@NUInt long value);
 
     /**
-     * Defines what kind of padding MPSGraph applies to the operation.
+     * Defines what kind of padding graph applies to the operation.
+     * 
      * Default value: `MPSGraphPaddingStyleExplicit`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPaddingStyle:")
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * Defines the explicit padding value for the Y (Height) dimension to add before the data. Default value: 0.
+     * Defines the explicit padding value for the height dimension to add before the data.
+     * 
+     * Default value: 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPaddingTop:")
     public native void setPaddingTop(@NUInt long value);
 
     /**
-     * Defines the stride for the X (Width) dimension. Default value: 1.
+     * Defines the stride for the width dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrideInX:")
     public native void setStrideInX(@NUInt long value);
 
     /**
-     * Defines the stride for the Y (Height) dimension. Default value: 1.
+     * Defines the stride for the height dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrideInY:")
@@ -426,7 +510,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Defines the stride for the X (Width) dimension. Default value: 1.
+     * Defines the stride for the width dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strideInX")
@@ -434,7 +522,11 @@ public class MPSGraphPooling2DOpDescriptor extends MPSGraphObject implements NSC
     public native long strideInX();
 
     /**
-     * Defines the stride for the Y (Height) dimension. Default value: 1.
+     * Defines the stride for the height dimension.
+     * 
+     * Default value: 1.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strideInY")

@@ -165,6 +165,8 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
 
     /**
      * The characteristic associated with the action.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -191,6 +193,8 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
 
     /**
      * The target value for the action.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

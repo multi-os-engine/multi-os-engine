@@ -145,6 +145,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * @param password    the password
      * @param persistence enum that says to store per session, permanently or not at all
      * @return The new autoreleased NSURLCredential
+     * 
+     *         API-Since: 2.0
      */
     @NotNull
     @Generated
@@ -249,6 +251,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * method returns YES, since getting the password may fail, or the
      * user may refuse access.
      * 
+     * API-Since: 2.0
+     * 
      * @return YES if this credential has a password, otherwise NO
      */
     @Generated
@@ -259,6 +263,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * Returns the SecIdentityRef of this credential, if it was created with a certificate and identity
      * 
      * @return A SecIdentityRef or NULL if this is a username/password credential
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -312,6 +318,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * @param password    the password
      * @param persistence enum that says to store per session, permanently or not at all
      * @return The initialized NSURLCredential
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("initWithUser:password:persistence:")
@@ -325,6 +333,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * password from an external store, possible resulting in prompting,
      * so do not call it unless needed.
      * 
+     * API-Since: 2.0
+     * 
      * @return The password string
      */
     @Nullable
@@ -336,6 +346,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * Determine whether this credential is or should be stored persistently
      * 
      * @return A value indicating whether this credential is stored permanently, per session or not at all.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @Selector("persistence")
@@ -352,6 +364,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * Get the username
      * 
      * @return The user string
+     * 
+     *         API-Since: 2.0
      */
     @Nullable
     @Generated

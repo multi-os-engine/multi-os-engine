@@ -97,6 +97,9 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("featureType")
     @NInt
@@ -107,6 +110,9 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("iconStyle")
@@ -143,6 +149,9 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
     @Selector("new")
     public static native MKMapFeatureAnnotation new_objc();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("pointOfInterestCategory")

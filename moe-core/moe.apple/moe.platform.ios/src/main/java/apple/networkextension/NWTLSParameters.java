@@ -42,6 +42,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * DEPRECATION NOTICE
+ * 
+ * NW object wrappers are hidden in Swift 6. To continue accessing them, you
+ * can prepend double underscores to the symbol name.
+ * 
+ * API-Since: 9.0
+ * Deprecated-Since: 18.0
+ * Deprecated-Message: Use `sec_protocol_options_t` in Security framework instead, see deprecation notice in
+ * <NetworkExtension/NWTLSParameters.h>
+ */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -163,7 +175,11 @@ public class NWTLSParameters extends NSObject {
      * If set to nil, the default cipher suites will be used.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_append_tls_ciphersuite` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("SSLCipherSuites")
@@ -176,7 +192,11 @@ public class NWTLSParameters extends NSObject {
      * This property is optional when using TLS.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_set_tls_resumption_enabled` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("TLSSessionID")
@@ -195,7 +215,11 @@ public class NWTLSParameters extends NSObject {
      * SSL protocols.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_set_max_tls_protocol_version` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Generated
     @Selector("maximumSSLProtocolVersion")
     @NUInt
@@ -208,7 +232,11 @@ public class NWTLSParameters extends NSObject {
      * If set, the SSL handshake will not accept any protocol version older than the minimum.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_set_min_tls_protocol_version` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Generated
     @Selector("minimumSSLProtocolVersion")
     @NUInt
@@ -223,7 +251,11 @@ public class NWTLSParameters extends NSObject {
      * SSL protocols.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_set_max_tls_protocol_version` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Generated
     @Selector("setMaximumSSLProtocolVersion:")
     public native void setMaximumSSLProtocolVersion(@NUInt long value);
@@ -235,7 +267,11 @@ public class NWTLSParameters extends NSObject {
      * If set, the SSL handshake will not accept any protocol version older than the minimum.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_set_min_tls_protocol_version` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Generated
     @Selector("setMinimumSSLProtocolVersion:")
     public native void setMinimumSSLProtocolVersion(@NUInt long value);
@@ -247,7 +283,11 @@ public class NWTLSParameters extends NSObject {
      * If set to nil, the default cipher suites will be used.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_append_tls_ciphersuite` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Generated
     @Selector("setSSLCipherSuites:")
     public native void setSSLCipherSuites(@Nullable NSSet<? extends NSNumber> value);
@@ -259,7 +299,11 @@ public class NWTLSParameters extends NSObject {
      * This property is optional when using TLS.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use `sec_protocol_options_set_tls_resumption_enabled` in Security framework instead, see
+     * deprecation notice in <NetworkExtension/NWTLSParameters.h>
      */
+    @Deprecated
     @Generated
     @Selector("setTLSSessionID:")
     public native void setTLSSessionID(@Nullable NSData value);

@@ -176,13 +176,24 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("discoverAllUserIdentitiesCompletionBlock")
     @ObjCBlock(name = "call_discoverAllUserIdentitiesCompletionBlock_ret")
     public native Block_discoverAllUserIdentitiesCompletionBlock_ret discoverAllUserIdentitiesCompletionBlock();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native CKDiscoverAllUserIdentitiesOperation init();
@@ -194,7 +205,12 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("setDiscoverAllUserIdentitiesCompletionBlock:")
     public native void setDiscoverAllUserIdentitiesCompletionBlock(
@@ -206,7 +222,12 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("setUserIdentityDiscoveredBlock:")
     public native void setUserIdentityDiscoveredBlock(
@@ -218,7 +239,12 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("userIdentityDiscoveredBlock")

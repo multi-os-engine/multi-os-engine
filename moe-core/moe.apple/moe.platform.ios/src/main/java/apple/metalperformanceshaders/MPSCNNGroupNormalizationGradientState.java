@@ -76,6 +76,8 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object with the state's current beta values..
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -114,6 +116,8 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object with the state's current gamma values.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -123,6 +127,8 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
 
     /**
      * [@property] The MTLBuffer containing the gradient values for beta.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -132,6 +138,8 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
 
     /**
      * [@property] The MTLBuffer containing the gradient values for gamma.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -141,6 +149,8 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
 
     /**
      * The MPSCNNGroupNormalization object that created this state object.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

@@ -39,16 +39,9 @@ public final class iAd {
     }
 
     /**
-     * [@const] ADClientErrorDomain
-     * 
-     * Error domain for NSErrors passed to the completionHandler as a
-     * result of calling:
-     * 
-     * • -[[ADClient SharedClient] requestAttributionDetailsWithBlock]
-     * 
-     * 
      * API-Since: 7.1
      * Deprecated-Since: 15.0
+     * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
      */
     @NotNull
     @Deprecated

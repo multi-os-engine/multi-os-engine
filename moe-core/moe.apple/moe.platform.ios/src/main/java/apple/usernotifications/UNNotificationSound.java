@@ -107,6 +107,8 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     /**
      * The default sound used for notifications.
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated

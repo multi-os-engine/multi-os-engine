@@ -187,6 +187,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * 
      * Type of primitive that vertices referenced by the indexBuffer are
      * assembled into
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("geometryType")
@@ -197,6 +199,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * [@property] indexBuffer
      * 
      * Index data referencing vertex data in parent mesh
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -204,6 +208,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer indexBuffer();
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("indexBufferAsIndexType:")
@@ -214,6 +221,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * [@property] indexCount
      * 
      * Number of indices in the indexBuffer
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("indexCount")
@@ -226,6 +235,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * Data type of indices in indexBuffer
      * 
      * Support 8, 16, and 32 bit unsigned integer values
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("indexType")
@@ -240,6 +251,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * initWithIndexBuffer:indexCount:indexType:geometryType:material:
      * 
      * Initialize submesh with all data necessary to make properties valid
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithIndexBuffer:indexCount:indexType:geometryType:material:")
@@ -256,6 +269,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * If a conversion from the source submesh's geometry type to the requested
      * geometry type is possible, conversion will be performed. Otherwise nil will
      * be returned.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithMDLSubmesh:indexType:geometryType:")
@@ -266,6 +281,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * initWithName:indexBuffer:indexCount:indexType:geometryType:material:
      * 
      * Initialize submesh with all data necessary to make properties valid
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithName:indexBuffer:indexCount:indexType:geometryType:material:")
@@ -281,6 +298,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * The geometry type will typically be MDLGeometryTypeVariableTopology,
      * if other types are used the faceTopologyBuffer contents should
      * reflect that.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithName:indexBuffer:indexCount:indexType:geometryType:material:topology:")
@@ -293,6 +312,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * [@property] material
      * 
      * Material to apply when rendering this object
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -308,6 +329,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * [@property] material
      * 
      * Material to apply when rendering this object
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaterial:")
@@ -325,6 +348,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * ignored for geometry types other than MDLGeometryTypeVariableTopology.
      * A submesh of type MDLGeometryTypeVariableTopology with no topology
      * data is an empty submesh.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTopology:")
@@ -338,6 +363,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * ignored for geometry types other than MDLGeometryTypeVariableTopology.
      * A submesh of type MDLGeometryTypeVariableTopology with no topology
      * data is an empty submesh.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated

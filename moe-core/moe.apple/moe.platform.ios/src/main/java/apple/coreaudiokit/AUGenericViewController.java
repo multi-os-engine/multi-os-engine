@@ -64,6 +64,9 @@ public class AUGenericViewController extends UIViewController {
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
+    /**
+     * API-Since: 16.0
+     */
     @Nullable
     @Generated
     @Selector("auAudioUnit")
@@ -159,6 +162,9 @@ public class AUGenericViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("setAuAudioUnit:")
     public native void setAuAudioUnit(@Nullable AUAudioUnit value);

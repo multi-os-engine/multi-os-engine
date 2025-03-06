@@ -58,6 +58,8 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
      * this value referring to the index of the other change that completes it.
      * For differences produced by identity comparison (instead of equality), each
      * change representing a move operation may store different objects.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("associatedIndex")
@@ -81,18 +83,26 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
 
     /**
      * The change type: insert or remove
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("changeType")
     @NInt
     public native long changeType();
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("changeWithObject:type:index:")
     public static native <_ObjectType> NSOrderedCollectionChange<_ObjectType> changeWithObjectTypeIndex(
             @Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index);
 
+    /**
+     * API-Since: 13.0
+     */
     @NotNull
     @Generated
     @Selector("changeWithObject:type:index:associatedIndex:")
@@ -126,6 +136,8 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     /**
      * For removes, the index of the object in the original state.
      * For inserts, the index of the object in the final state.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("index")
@@ -136,11 +148,17 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @Selector("init")
     public native NSOrderedCollectionChange<?> init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithObject:type:index:")
     public native NSOrderedCollectionChange<?> initWithObjectTypeIndex(
             @Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithObject:type:index:associatedIndex:")
     public native NSOrderedCollectionChange<?> initWithObjectTypeIndexAssociatedIndex(
@@ -176,6 +194,8 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
 
     /**
      * The object that was inserted or removed, if recorded
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

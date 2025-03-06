@@ -110,6 +110,8 @@ public class NSUnitConcentrationMass extends NSDimension implements NSSecureCodi
 
     /**
      * Base unit - gramsPerLiter
+     * 
+     * API-Since: 10.0
      */
     @NotNull
     @Generated
@@ -143,11 +145,17 @@ public class NSUnitConcentrationMass extends NSDimension implements NSSecureCodi
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("milligramsPerDeciliter")
     public static native NSUnitConcentrationMass milligramsPerDeciliter();
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("millimolesPerLiterWithGramsPerMole:")

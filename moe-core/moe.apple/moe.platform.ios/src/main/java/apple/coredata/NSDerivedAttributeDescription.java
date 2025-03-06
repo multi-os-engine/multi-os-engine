@@ -110,6 +110,8 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
      * the derived attribute is specified.
      * If a store is added to a coordinator whose model contains derived attributes of
      * a type not supported by the store, the add will fail and an NSError will be returned.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -178,6 +180,8 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
      * the derived attribute is specified.
      * If a store is added to a coordinator whose model contains derived attributes of
      * a type not supported by the store, the add will fail and an NSError will be returned.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDerivationExpression:")

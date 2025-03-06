@@ -110,7 +110,7 @@ public final class CoreML {
      * Notification posted when the model collection has changed.
      * 
      * API-Since: 14.0
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 17.4
      * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
     @Deprecated

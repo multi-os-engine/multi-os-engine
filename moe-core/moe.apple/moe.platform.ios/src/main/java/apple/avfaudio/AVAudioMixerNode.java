@@ -111,6 +111,9 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("init")
     public native AVAudioMixerNode init();
@@ -148,6 +151,8 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
      * Find an unused input bus.
      * 
      * This will find and return the first input bus to which no other node is connected.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("nextAvailableInputBus")
@@ -168,6 +173,8 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
      * The mixer's output volume.
      * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("outputVolume")
@@ -222,6 +229,8 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
      * The mixer's output volume.
      * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setOutputVolume:")

@@ -165,6 +165,8 @@ public class NSAtomicStoreCacheNode extends NSObject {
 
     /**
      * The designated initializer for the cache node.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithObjectID:")
@@ -172,6 +174,8 @@ public class NSAtomicStoreCacheNode extends NSObject {
 
     /**
      * Returns the managed object ID for the cache node.
+     * 
+     * API-Since: 3.0
      */
     @NotNull
     @Generated
@@ -183,6 +187,8 @@ public class NSAtomicStoreCacheNode extends NSObject {
      * -setValue:forKey: for property values. The default implementation will return nil unless the companion
      * -setPropertyCache: method is invoked, or -setValue:forKey: is invoked on the cache node with non-nil property
      * values.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated
@@ -194,6 +200,8 @@ public class NSAtomicStoreCacheNode extends NSObject {
      * -setValue:forKey: for property values. The default implementation will return nil unless the companion
      * -setPropertyCache: method is invoked, or -setValue:forKey: is invoked on the cache node with non-nil property
      * values.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setPropertyCache:")
@@ -203,6 +211,8 @@ public class NSAtomicStoreCacheNode extends NSObject {
      * Sets the value for the specified key. The default implementation forwards the request to the -propertyCache
      * dictionary if the key matches a property name of the entity for this cache node. If the key does not represent a
      * property, the standard -setValue:forKey: implementation will be used.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setValue:forKey:")
@@ -217,6 +227,8 @@ public class NSAtomicStoreCacheNode extends NSObject {
      * The default implementation forwards the request to the -propertyCache dictionary if the key matches a property
      * name of the entity for the cache node. If the key does not represent a property, the standard -valueForKey:
      * implementation will be used.
+     * 
+     * API-Since: 3.0
      */
     @Nullable
     @Generated

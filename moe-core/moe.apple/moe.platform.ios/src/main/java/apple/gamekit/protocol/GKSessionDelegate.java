@@ -42,7 +42,11 @@ public interface GKSessionDelegate {
     /**
      * Indicates a connection error occurred with a peer, which includes connection request failures, or disconnects due
      * to timeouts.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:connectionWithPeerFailed:withError:")
@@ -53,7 +57,11 @@ public interface GKSessionDelegate {
 
     /**
      * Indicates an error occurred with the session such as failing to make available.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:didFailWithError:")
@@ -66,7 +74,11 @@ public interface GKSessionDelegate {
      * 
      * Accept by calling -acceptConnectionFromPeer:
      * Deny by calling -denyConnectionFromPeer:
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:didReceiveConnectionRequestFromPeer:")
@@ -74,6 +86,11 @@ public interface GKSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("session:peer:didChangeState:")

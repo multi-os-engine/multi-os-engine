@@ -110,7 +110,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("indexBuffer")
@@ -125,7 +129,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].indexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("indexBufferOffset")
     @NUInt
@@ -134,7 +142,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
      * are supported.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("indexType")
     public native int indexType();
@@ -152,6 +164,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native MPSPolygonAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithCoder:group:")
     public native MPSPolygonAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
@@ -162,6 +175,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native MPSPolygonAccelerationStructure initWithDevice(
             @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
+    @Deprecated
     @Generated
     @Selector("initWithGroup:")
     public native MPSPolygonAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
@@ -195,7 +209,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("maskBuffer")
@@ -208,7 +226,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("maskBufferOffset")
     @NUInt
@@ -235,7 +257,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * There must be at least one MPSPolygonBuffer. On argument buffer tier 1 devices, there must be
      * be exactly one MPSPolygonBuffer. Use the argumentBuffersSupport property of the MTLDevice to
      * check for support.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("polygonBuffers")
@@ -248,7 +274,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("polygonCount")
     @NUInt
@@ -257,7 +287,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
      * rebuilding the acceleration structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("polygonType")
     @NUInt
@@ -278,7 +312,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setIndexBuffer:")
     public native void setIndexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -291,7 +329,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].indexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setIndexBufferOffset:")
     public native void setIndexBufferOffset(@NUInt long value);
@@ -299,7 +341,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
      * are supported.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setIndexType:")
     public native void setIndexType(int value);
@@ -311,7 +357,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setMaskBuffer:")
     public native void setMaskBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -322,7 +372,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setMaskBufferOffset:")
     public native void setMaskBufferOffset(@NUInt long value);
@@ -343,7 +397,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * There must be at least one MPSPolygonBuffer. On argument buffer tier 1 devices, there must be
      * be exactly one MPSPolygonBuffer. Use the argumentBuffersSupport property of the MTLDevice to
      * check for support.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setPolygonBuffers:")
     public native void setPolygonBuffers(@Nullable NSArray<? extends MPSPolygonBuffer> value);
@@ -355,7 +413,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setPolygonCount:")
     public native void setPolygonCount(@NUInt long value);
@@ -363,7 +425,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
      * rebuilding the acceleration structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setPolygonType:")
     public native void setPolygonType(@NUInt long value);
@@ -391,7 +457,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].vertexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setVertexBuffer:")
     public native void setVertexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -403,7 +473,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setVertexBufferOffset:")
     public native void setVertexBufferOffset(@NUInt long value);
@@ -417,7 +491,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
      * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the
      * acceleration structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setVertexStride:")
     public native void setVertexStride(@NUInt long value);
@@ -460,7 +538,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].vertexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("vertexBuffer")
@@ -474,7 +556,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("vertexBufferOffset")
     @NUInt
@@ -489,7 +575,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
      * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the
      * acceleration structure.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("vertexStride")
     @NUInt

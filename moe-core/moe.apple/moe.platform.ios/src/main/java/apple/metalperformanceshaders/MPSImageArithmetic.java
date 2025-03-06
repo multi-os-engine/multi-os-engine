@@ -103,6 +103,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bias")
     public native float bias();
@@ -185,6 +188,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     @Selector("new")
     public static native MPSImageArithmetic new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("primaryScale")
     public native float primaryScale();
@@ -194,6 +200,8 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
      * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primaryStrideInPixels")
@@ -208,6 +216,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("secondaryScale")
     public native float secondaryScale();
@@ -217,16 +228,24 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
      * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("secondaryStrideInPixels")
     @ByValue
     public native MTLSize secondaryStrideInPixels();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setBias:")
     public native void setBias(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPrimaryScale:")
     public native void setPrimaryScale(float value);
@@ -236,11 +255,16 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
      * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrimaryStrideInPixels:")
     public native void setPrimaryStrideInPixels(@ByValue MTLSize value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSecondaryScale:")
     public native void setSecondaryScale(float value);
@@ -250,6 +274,8 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
      * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSecondaryStrideInPixels:")

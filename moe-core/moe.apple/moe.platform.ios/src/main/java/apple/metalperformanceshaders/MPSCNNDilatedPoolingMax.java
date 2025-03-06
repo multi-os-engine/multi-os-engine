@@ -101,6 +101,8 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
      * [@property] dilationRateX
      * 
      * dilationRateX for accessing the image passed in as source
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dilationRateX")
@@ -111,6 +113,8 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
      * [@property] dilationRateY
      * 
      * dilationRateY for accessing the image passed in as source
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dilationRateY")
@@ -138,6 +142,8 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNDilatedPoolingMax
      * @param device   The MTLDevice on which to make the MPSCNNDilatedPoolingMax
      * @return A new MPSCNNDilatedPoolingMax object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -165,6 +171,9 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNDilatedPoolingMax object or nil, if failure.
+     * 
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:dilationRateX:dilationRateY:strideInPixelsX:strideInPixelsY:")

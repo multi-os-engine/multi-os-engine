@@ -99,6 +99,8 @@ public class UIFocusEffect extends NSObject implements NSCopying {
 
     /**
      * Creates a default system effect using metrics inferred from the focus item.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("effect")

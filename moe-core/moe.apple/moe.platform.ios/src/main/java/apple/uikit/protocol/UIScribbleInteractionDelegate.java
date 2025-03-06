@@ -32,6 +32,8 @@ public interface UIScribbleInteractionDelegate {
      * @param interaction The interaction asking if it can begin handling user input.
      * @param location    The location in the interaction's view coordinate system.
      * @return Return NO to disallow writing at the specified location.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -46,6 +48,8 @@ public interface UIScribbleInteractionDelegate {
      * transcribed and committed.
      * 
      * @param interaction The interaction notifying about writing state changes.
+     * 
+     *                    API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -64,6 +68,8 @@ public interface UIScribbleInteractionDelegate {
      * 
      * @param interaction The interaction asking about delaying focus.
      * @return Return YES to delay focusing the text input.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -78,6 +84,8 @@ public interface UIScribbleInteractionDelegate {
      * placeholders or other UI elements that can interfere with writing.
      * 
      * @param interaction The interaction notifying about writing state changes.
+     * 
+     *                    API-Since: 14.0
      */
     @Generated
     @IsOptional

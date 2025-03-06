@@ -80,6 +80,8 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
      * if a modifier key is held, this property will contain the modified characters according
      * the rules for that particular modifier key (i.e., if shift is held on a Latin keyboard, this will
      * contain capital letters).
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -92,6 +94,8 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
      * 
      * for Latin based languages, expect this to be always in lowercase (unmodified meaning not
      * taking shift key into account). If only a modifier key was pressed, this property will contain an empty string.
+     * 
+     * API-Since: 13.4
      */
     @NotNull
     @Generated
@@ -159,6 +163,8 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
 
     /**
      * [@returns] the raw HID usage code for the pressed key. See UIKeyConstants.h.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("keyCode")
@@ -172,6 +178,8 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
 
     /**
      * [@returns] a bitfield representing which modifier keys are currently being held in addition to this key.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("modifierFlags")

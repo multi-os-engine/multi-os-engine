@@ -197,6 +197,8 @@ public class CAMetalLayer extends CALayer {
      * On iOS this defaults to MTLCreateSystemDefaultDevice().
      * On macOS this defaults to nil and must be set explicitly before asking for
      * the first drawable.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -208,6 +210,8 @@ public class CAMetalLayer extends CALayer {
      * This property controls the pixel dimensions of the returned drawable
      * objects. The most typical value will be the layer size multiplied by
      * the layer contentsScale property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("drawableSize")
@@ -222,6 +226,8 @@ public class CAMetalLayer extends CALayer {
      * allocate the MTLTexture objects in ways that are optimized for display
      * purposes that makes them unsuitable for sampling. The recommended
      * value for most applications is YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("framebufferOnly")
@@ -246,6 +252,8 @@ public class CAMetalLayer extends CALayer {
      * 2) All drawables in the swap queue are in-use and the 1 second timeout
      * has elapsed. (except when `allowsNextDrawableTimeout' is set to NO)
      * 3) Process is out of memory.
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -257,6 +265,8 @@ public class CAMetalLayer extends CALayer {
      * This property controls the pixel format of the MTLTexture objects.
      * The two supported values are MTLPixelFormatBGRA8Unorm and
      * MTLPixelFormatBGRA8Unorm_sRGB.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("pixelFormat")
@@ -268,6 +278,8 @@ public class CAMetalLayer extends CALayer {
      * appear on-screen asynchronously to normal layer updates. When true,
      * changes to the MTL content are sent to the screen via the standard
      * CATransaction mechanisms.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("presentsWithTransaction")
@@ -279,6 +291,8 @@ public class CAMetalLayer extends CALayer {
      * On iOS this defaults to MTLCreateSystemDefaultDevice().
      * On macOS this defaults to nil and must be set explicitly before asking for
      * the first drawable.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDevice:")
@@ -288,6 +302,8 @@ public class CAMetalLayer extends CALayer {
      * This property controls the pixel dimensions of the returned drawable
      * objects. The most typical value will be the layer size multiplied by
      * the layer contentsScale property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDrawableSize:")
@@ -301,6 +317,8 @@ public class CAMetalLayer extends CALayer {
      * allocate the MTLTexture objects in ways that are optimized for display
      * purposes that makes them unsuitable for sampling. The recommended
      * value for most applications is YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFramebufferOnly:")
@@ -310,6 +328,8 @@ public class CAMetalLayer extends CALayer {
      * This property controls the pixel format of the MTLTexture objects.
      * The two supported values are MTLPixelFormatBGRA8Unorm and
      * MTLPixelFormatBGRA8Unorm_sRGB.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPixelFormat:")
@@ -320,6 +340,8 @@ public class CAMetalLayer extends CALayer {
      * appear on-screen asynchronously to normal layer updates. When true,
      * changes to the MTL content are sent to the screen via the standard
      * CATransaction mechanisms.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPresentsWithTransaction:")
@@ -363,6 +385,8 @@ public class CAMetalLayer extends CALayer {
      * The colorspace of the rendered frames. If nil, no colormatching occurs.
      * If non-nil, the rendered content will be colormatched to the colorspace of
      * the context containing this layer (typically the display's colorspace).
+     * 
+     * API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -401,6 +425,8 @@ public class CAMetalLayer extends CALayer {
      * The colorspace of the rendered frames. If nil, no colormatching occurs.
      * If non-nil, the rendered content will be colormatched to the colorspace of
      * the context containing this layer (typically the display's colorspace).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setColorspace:")

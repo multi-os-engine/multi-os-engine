@@ -74,6 +74,8 @@ public class UICollectionViewPlaceholder extends NSObject {
 
     /**
      * Called whenever the placeholder cell is visible to update the contents of the cell.
+     * 
+     * API-Since: 11.0
      */
     @Nullable
     @Generated
@@ -115,6 +117,9 @@ public class UICollectionViewPlaceholder extends NSObject {
     @Selector("init")
     public native UICollectionViewPlaceholder init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithInsertionIndexPath:reuseIdentifier:")
     public native UICollectionViewPlaceholder initWithInsertionIndexPathReuseIdentifier(
@@ -157,6 +162,8 @@ public class UICollectionViewPlaceholder extends NSObject {
 
     /**
      * Called whenever the placeholder cell is visible to update the contents of the cell.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCellUpdateHandler:")

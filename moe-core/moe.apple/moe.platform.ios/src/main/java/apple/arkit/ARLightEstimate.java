@@ -62,6 +62,8 @@ public class ARLightEstimate extends NSObject {
      * The ambient color temperature of the lighting.
      * 
      * This specifies the ambient color temperature of the lighting in Kelvin (6500 corresponds to pure white).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("ambientColorTemperature")
@@ -73,6 +75,8 @@ public class ARLightEstimate extends NSObject {
      * 
      * In a well lit environment, this value is close to 1000. It typically ranges from 0 (very dark) to around 2000
      * (very bright).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("ambientIntensity")

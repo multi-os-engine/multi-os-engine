@@ -23,4 +23,17 @@ public final class AUSpatialMixerPersonalizedHRTFMode {
     @Generated
     private AUSpatialMixerPersonalizedHRTFMode() {
     }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int Off = 0x00000000;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int On = 0x00000001;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated public static final int Auto = 0x00000002;
 }

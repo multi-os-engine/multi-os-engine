@@ -76,6 +76,8 @@ public class UIMenu extends UIMenuElement {
      * The menu's sub-elements and sub-menus. On iOS 14.0, elements of your own menus are mutable, -copying a menu will
      * produce mutable elements, and UIKit will take immutable copies of menus it receives. Prior to iOS 14.0, menus are
      * always fully immutable.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -107,6 +109,8 @@ public class UIMenu extends UIMenuElement {
 
     /**
      * Unique identifier.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -117,6 +121,9 @@ public class UIMenu extends UIMenuElement {
     @Selector("init")
     public native UIMenu init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIMenu initWithCoder(@NotNull NSCoder coder);
@@ -149,6 +156,8 @@ public class UIMenu extends UIMenuElement {
      * @param newChildren The replacement children.
      * 
      * @return A copy of this menu with updated children.
+     * 
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -194,6 +203,8 @@ public class UIMenu extends UIMenuElement {
 
     /**
      * Options.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("options")
@@ -278,4 +289,25 @@ public class UIMenu extends UIMenuElement {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Display preferences for this menu's immediate children. Preferences are not inherited by sub menus,
+     * and may be ignored or overridden by the system in certain element sizes or menu layouts.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("displayPreferences")
+    @Nullable
+    public native UIMenuDisplayPreferences displayPreferences();
+
+    /**
+     * Display preferences for this menu's immediate children. Preferences are not inherited by sub menus,
+     * and may be ignored or overridden by the system in certain element sizes or menu layouts.
+     * 
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setDisplayPreferences:")
+    public native void setDisplayPreferences(@Nullable UIMenuDisplayPreferences value);
 }

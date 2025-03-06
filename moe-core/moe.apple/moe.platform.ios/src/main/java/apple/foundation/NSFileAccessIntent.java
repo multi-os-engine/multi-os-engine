@@ -133,6 +133,9 @@ public class NSFileAccessIntent extends NSObject {
     @Selector("new")
     public static native NSFileAccessIntent new_objc();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("readingIntentWithURL:options:")
@@ -159,6 +162,9 @@ public class NSFileAccessIntent extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("writingIntentWithURL:options:")
@@ -167,6 +173,8 @@ public class NSFileAccessIntent extends NSObject {
     /**
      * Use this URL within the accessor block. This property may change from its original value in response to actions
      * from other writers.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

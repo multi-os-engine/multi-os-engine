@@ -60,7 +60,10 @@ public class MTRWiFiNetworkDiagnosticsClusterAssociationFailureEvent extends NSO
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use associationFailureCause
      */
+    @Deprecated
     @Generated
     @Selector("associationFailure")
     @NotNull
@@ -152,7 +155,10 @@ public class MTRWiFiNetworkDiagnosticsClusterAssociationFailureEvent extends NSO
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 17.4
+     * Deprecated-Message: Please use associationFailureCause
      */
+    @Deprecated
     @Generated
     @Selector("setAssociationFailure:")
     public native void setAssociationFailure(@NotNull NSNumber value);
@@ -189,4 +195,19 @@ public class MTRWiFiNetworkDiagnosticsClusterAssociationFailureEvent extends NSO
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("associationFailureCause")
+    @NotNull
+    public native NSNumber associationFailureCause();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @Selector("setAssociationFailureCause:")
+    public native void setAssociationFailureCause(@NotNull NSNumber value);
 }

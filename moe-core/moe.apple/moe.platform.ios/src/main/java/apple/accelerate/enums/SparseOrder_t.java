@@ -8,9 +8,9 @@ public final class SparseOrder_t {
     private SparseOrder_t() {
     }
 
-    @Generated public static final byte SparseOrderDefault = 0;
-    @Generated public static final byte SparseOrderUser = 1;
-    @Generated public static final byte SparseOrderAMD = 2;
-    @Generated public static final byte SparseOrderMetis = 3;
-    @Generated public static final byte SparseOrderCOLAMD = 4;
+    @Generated public static final byte Default = 0;
+    @Generated public static final byte User = 1;
+    @Generated public static final byte AMD = 2;
+    @Generated public static final byte Metis = 3;
+    @Generated public static final byte COLAMD = 4;
 }

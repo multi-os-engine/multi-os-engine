@@ -87,6 +87,8 @@ public class NSFileProviderManager extends NSObject {
      * When the domain is backed by a NSFileProviderReplicatedExtension, the system will create
      * a disk location where the domain will be replicated. If that location already exists on disk
      * this call will fail with the code NSFileWriteFileExistsError.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("addDomain:completionHandler:")
@@ -169,6 +171,8 @@ public class NSFileProviderManager extends NSObject {
 
     /**
      * Get all registered domains.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("getDomainsWithCompletionHandler:")
@@ -216,6 +220,8 @@ public class NSFileProviderManager extends NSObject {
 
     /**
      * Return the manager for the specified domain.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("managerForDomain:")
@@ -255,6 +261,8 @@ public class NSFileProviderManager extends NSObject {
      * A given item can only have one task registered at a time. The task must be
      * suspended at the time of calling.
      * The task's progress is displayed on the item when the task is executed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("registerURLSessionTask:forItemWithIdentifier:completionHandler:")
@@ -271,6 +279,8 @@ public class NSFileProviderManager extends NSObject {
 
     /**
      * Remove all registered domains.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeAllDomainsWithCompletionHandler:")
@@ -286,6 +296,8 @@ public class NSFileProviderManager extends NSObject {
 
     /**
      * Remove a domain.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeDomain:completionHandler:")
@@ -341,6 +353,8 @@ public class NSFileProviderManager extends NSObject {
      * }
      * with a topic of "<your application identifier>.pushkit.fileprovider" will be
      * translated into a call to signalEnumeratorForContainerItemIdentifier:completionHandler:.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("signalEnumeratorForContainerItemIdentifier:completionHandler:")
@@ -494,6 +508,8 @@ public class NSFileProviderManager extends NSObject {
 
     /**
      * Retrieve the service with the specified named for the specified item.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("getServiceWithName:itemIdentifier:completionHandler:")
@@ -664,8 +680,8 @@ public class NSFileProviderManager extends NSObject {
      * In case the extension has lost its synchronisation state and is not interested in preserving
      * the data cached on disk, it can remove and re-add the affected domain.
      * 
-     * The completion handler is called immediately and does not reflect the end of the import.
-     * When the import of the file hierarchy is finished, the system calls
+     * The completion handler is called as soon as the reimport is initiated and does not not reflect
+     * the end of the import. When the import of the file hierarchy is finished, the system calls
      * -[NSFileProviderExtension importDidFinishWithCompletionHandler:].
      * 
      * In some circumstances, in particular in case the requested item is the root item, calling
@@ -756,11 +772,12 @@ public class NSFileProviderManager extends NSObject {
      * Calling this method will cause the system to cancel throttling on every item which has been throttled due to the
      * given error.
      * 
-     * This call supports 4 types of errors:
+     * This call supports the following errors:
      * - NSFileProviderErrorNotAuthenticated
      * - NSFileProviderErrorInsufficientQuota
      * - NSFileProviderErrorServerUnreachable
      * - NSFileProviderErrorCannotSynchronize
+     * - NSFileProviderErrorExcludedFromSync
      * 
      * API-Since: 16.0
      */
@@ -785,10 +802,13 @@ public class NSFileProviderManager extends NSObject {
      * or modifyItem.
      * 
      * If the system cannot find a suitable directory, this calls will fail. This could happen e.g. if the domain
-     * does not exist.
+     * does not exist or is in instance of initialization.
      * 
-     * This call will not fail when called from the extension process with an active instance of the extension
-     * for that domain.
+     * This call succeeds when called from the extension process with an instance of the extension for the domain
+     * unless domain was disconnected by
+     * `-[NSFileProviderExternalVolumeHandling shouldConnectExternalDomainWithCompletionHandler:]`.
+     * It can also fail in the extension process if the domain (external) is being setup for the very first time
+     * (meaning it never existed).
      * 
      * API-Since: 16.0
      */

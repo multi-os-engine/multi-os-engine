@@ -42,6 +42,8 @@ public interface INSearchForMediaIntentHandling {
      *                   about the intent that may be relevant for the system to show the user prior to handling.
      * 
      * @see INSearchForMediaIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -68,6 +70,8 @@ public interface INSearchForMediaIntentHandling {
      *                   the result of having executed the intent
      * 
      * @see INSearchForMediaIntentResponse
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("handleSearchForMedia:completion:")
@@ -91,6 +95,8 @@ public interface INSearchForMediaIntentHandling {
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
      * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @IsOptional

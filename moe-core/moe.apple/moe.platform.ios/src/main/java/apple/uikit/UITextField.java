@@ -70,6 +70,7 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.uikit.protocol.UILetterformAwareAdjusting;
+import apple.corefoundation.struct.CGAffineTransform;
 
 /**
  * API-Since: 2.0
@@ -397,6 +398,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is NO. if YES, text will shrink to minFontSize along baseline
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
@@ -492,6 +495,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. draw in border rect. image should be stretchable
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -516,6 +521,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * drawing and positioning overrides
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("borderRectForBounds:")
@@ -524,6 +531,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is UITextBorderStyleNone. If set to UITextBorderStyleRoundedRect, custom background images are ignored.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("borderStyle")
@@ -555,12 +564,17 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * sets when the clear button shows up. default is UITextFieldViewModeNever
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("clearButtonMode")
     @NInt
     public native long clearButtonMode();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("clearButtonRectForBounds:")
     @ByValue
@@ -568,6 +582,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is NO which moves cursor to location clicked. if YES, all text cleared
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("clearsOnBeginEditing")
@@ -610,6 +626,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -633,12 +651,17 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. ignored if background not set. image should be stretchable
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
     @Selector("disabledBackground")
     public native UIImage disabledBackground();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("drawPlaceholderInRect:")
     public native void drawPlaceholderInRect(@ByValue CGRect rect);
@@ -653,6 +676,9 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("drawTextInRect:")
     public native void drawTextInRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("editingRectForBounds:")
     @ByValue
@@ -684,6 +710,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. use system font 12 pt
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -727,6 +755,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -749,6 +779,9 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("insertText:")
     public native void insertText(@NotNull String text);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
@@ -777,6 +810,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * e.g. magnifying glass
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -785,12 +820,17 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * sets when the left view shows up. default is UITextFieldViewModeNever
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("leftViewMode")
     @NInt
     public native long leftViewMode();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("leftViewRectForBounds:")
     @ByValue
@@ -808,6 +848,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is 0.0. actual min may be pinned to something readable. used if adjustsFontSizeToFitWidth is YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("minimumFontSize")
@@ -821,12 +863,17 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. string is drawn 70% gray
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
     @Selector("placeholder")
     public native String placeholder();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("placeholderRectForBounds:")
     @ByValue
@@ -873,6 +920,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * e.g. bookmarks button
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -881,12 +930,17 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * sets when the right view shows up. default is UITextFieldViewModeNever
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("rightViewMode")
     @NInt
     public native long rightViewMode();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rightViewRectForBounds:")
     @ByValue
@@ -914,6 +968,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is NO. if YES, text will shrink to minFontSize along baseline
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
@@ -958,6 +1014,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. draw in border rect. image should be stretchable
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBackground:")
@@ -969,6 +1027,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is UITextBorderStyleNone. If set to UITextBorderStyleRoundedRect, custom background images are ignored.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setBorderStyle:")
@@ -976,6 +1036,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * sets when the clear button shows up. default is UITextFieldViewModeNever
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setClearButtonMode:")
@@ -983,6 +1045,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is NO which moves cursor to location clicked. if YES, all text cleared
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setClearsOnBeginEditing:")
@@ -1009,6 +1073,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -1016,6 +1082,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. weak reference
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextFieldDelegate value) {
@@ -1031,6 +1099,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. ignored if background not set. image should be stretchable
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDisabledBackground:")
@@ -1043,6 +1113,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. use system font 12 pt
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setFont:")
@@ -1071,6 +1143,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setInputView:")
@@ -1088,6 +1162,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * e.g. magnifying glass
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLeftView:")
@@ -1095,6 +1171,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * sets when the left view shows up. default is UITextFieldViewModeNever
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setLeftViewMode:")
@@ -1110,6 +1188,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is 0.0. actual min may be pinned to something readable. used if adjustsFontSizeToFitWidth is YES
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setMinimumFontSize:")
@@ -1117,6 +1197,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. string is drawn 70% gray
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setPlaceholder:")
@@ -1129,6 +1211,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * e.g. bookmarks button
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setRightView:")
@@ -1136,6 +1220,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * sets when the right view shows up. default is UITextFieldViewModeNever
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setRightViewMode:")
@@ -1157,6 +1243,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setText:")
@@ -1164,6 +1252,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is NSLeftTextAlignment
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTextAlignment:")
@@ -1171,6 +1261,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. use opaque black
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setTextColor:")
@@ -1203,6 +1295,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1211,6 +1305,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is NSLeftTextAlignment
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("textAlignment")
@@ -1219,6 +1315,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     /**
      * default is nil. use opaque black
+     * 
+     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1247,6 +1345,9 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     public native UITextRange textRangeFromPositionToPosition(@NotNull UITextPosition fromPosition,
             @NotNull UITextPosition toPosition);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("textRectForBounds:")
     @ByValue
@@ -1555,4 +1656,91 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("allowedWritingToolsResultOptions")
+    @NUInt
+    public native long allowedWritingToolsResultOptions();
+
+    @Generated
+    @IsOptional
+    @Selector("attributedTextInRange:")
+    @NotNull
+    public native NSAttributedString attributedTextInRange(@NotNull UITextRange range);
+
+    @Generated
+    @IsOptional
+    @Selector("caretTransformForPosition:")
+    @ByValue
+    public native CGAffineTransform caretTransformForPosition(@NotNull UITextPosition position);
+
+    @Generated
+    @IsOptional
+    @Selector("didDismissWritingTools")
+    public native void didDismissWritingTools();
+
+    @Generated
+    @IsOptional
+    @Selector("insertAdaptiveImageGlyph:replacementRange:")
+    public native void insertAdaptiveImageGlyphReplacementRange(@NotNull NSAdaptiveImageGlyph adaptiveImageGlyph,
+            @NotNull UITextRange replacementRange);
+
+    @Generated
+    @IsOptional
+    @Selector("insertAttributedText:")
+    public native void insertAttributedText(@NotNull NSAttributedString string);
+
+    @Generated
+    @IsOptional
+    @Selector("isEditable")
+    public native boolean isEditable();
+
+    @Generated
+    @IsOptional
+    @Selector("mathExpressionCompletionType")
+    @NInt
+    public native long mathExpressionCompletionType();
+
+    @Generated
+    @IsOptional
+    @Selector("replaceRange:withAttributedText:")
+    public native void replaceRangeWithAttributedText(@NotNull UITextRange range,
+            @NotNull NSAttributedString attributedText);
+
+    @Generated
+    @IsOptional
+    @Selector("setAllowedWritingToolsResultOptions:")
+    public native void setAllowedWritingToolsResultOptions(@NUInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setMathExpressionCompletionType:")
+    public native void setMathExpressionCompletionType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setSupportsAdaptiveImageGlyph:")
+    public native void setSupportsAdaptiveImageGlyph(boolean value);
+
+    @Generated
+    @IsOptional
+    @Selector("setWritingToolsBehavior:")
+    public native void setWritingToolsBehavior(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("supportsAdaptiveImageGlyph")
+    public native boolean supportsAdaptiveImageGlyph();
+
+    @Generated
+    @IsOptional
+    @Selector("willPresentWritingTools")
+    public native void willPresentWritingTools();
+
+    @Generated
+    @IsOptional
+    @Selector("writingToolsBehavior")
+    @NInt
+    public native long writingToolsBehavior();
 }

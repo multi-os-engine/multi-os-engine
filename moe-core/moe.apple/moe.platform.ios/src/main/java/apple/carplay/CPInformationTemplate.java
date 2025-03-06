@@ -54,6 +54,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
      * To update the actions appearing in this information template, assign a new array to this property.
      * 
      * [@note] The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -123,6 +125,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
      * will be used.
      * The maximum number of @c CPTextButton is 3. If you specify more than 3, only the first 3 will be used.
      * 
+     * API-Since: 14.0
+     * 
      * @param layout  Information template layout, either leading aligned or two columns
      * @param title   Information template title, appears at the top of the template
      * @param items   Information items that will appear in the template
@@ -156,6 +160,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
      * To update the items appearing in this information template, assign a new array to this property.
      * 
      * [@note] The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -169,6 +175,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
 
     /**
      * Information template layout, either leading aligned or two columns.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("layout")
@@ -194,6 +202,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
      * To update the actions appearing in this information template, assign a new array to this property.
      * 
      * [@note] The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActions:")
@@ -205,6 +215,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
      * To update the items appearing in this information template, assign a new array to this property.
      * 
      * [@note] The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setItems:")
@@ -212,6 +224,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
 
     /**
      * Title that will appear at the top of the template.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTitle:")
@@ -237,6 +251,8 @@ public class CPInformationTemplate extends CPTemplate implements CPBarButtonProv
 
     /**
      * Title that will appear at the top of the template.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

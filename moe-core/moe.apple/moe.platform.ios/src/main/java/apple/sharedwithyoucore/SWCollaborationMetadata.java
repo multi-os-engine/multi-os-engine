@@ -101,6 +101,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * Globally unique identifier for the item represented by this metadata.
      * 
      * This identifier is unique across platforms and shares of the same item.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -120,6 +122,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
 
     /**
      * The collaboration options that this content supports (updated).
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -147,10 +151,16 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
     @Selector("initWithCoder:")
     public native SWCollaborationMetadata initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithCollaborationIdentifier:")
     public native SWCollaborationMetadata initWithCollaborationIdentifier(@NotNull String collaborationIdentifier);
 
+    /**
+     * API-Since: 16.0
+     */
     @Generated
     @Selector("initWithLocalIdentifier:")
     public native SWCollaborationMetadata initWithLocalIdentifier(@NotNull String localIdentifier);
@@ -160,6 +170,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * 
      * Set by the initiating application to allow the user to confirm the handle being used before beginning
      * collaboration. Value will not be transmitted to recipients, and will be nil when not initiating collaboration.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -171,6 +183,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * 
      * Set by the initiating application to allow the user to confirm the name being used before beginning
      * collaboration. Value will not be transmitted to recipients, and will be nil when not initiating collaboration.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -230,6 +244,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * Locally unique identifier for the item represented by this metadata.
      * 
      * Use this identifier to uniquely identify this metadata before a collaborationIdentifier can be created
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -284,6 +300,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
 
     /**
      * The collaboration options that this content supports (updated).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDefaultShareOptions:")
@@ -294,6 +312,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * 
      * Set by the initiating application to allow the user to confirm the handle being used before beginning
      * collaboration. Value will not be transmitted to recipients, and will be nil when not initiating collaboration.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInitiatorHandle:")
@@ -304,6 +324,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * 
      * Set by the initiating application to allow the user to confirm the name being used before beginning
      * collaboration. Value will not be transmitted to recipients, and will be nil when not initiating collaboration.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setInitiatorNameComponents:")
@@ -313,6 +335,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * Title of the content.
      * 
      * Title of the collaboration if provided by the app which owns the collaboration item.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setTitle:")
@@ -320,6 +344,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
 
     /**
      * The collaboration options that the user selected when sending the invite (updated).
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setUserSelectedShareOptions:")
@@ -347,6 +373,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * Title of the content.
      * 
      * Title of the collaboration if provided by the app which owns the collaboration item.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -355,6 +383,8 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
 
     /**
      * The collaboration options that the user selected when sending the invite (updated).
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

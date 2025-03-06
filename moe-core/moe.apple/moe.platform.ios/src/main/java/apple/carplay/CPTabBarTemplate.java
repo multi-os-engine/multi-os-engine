@@ -90,6 +90,8 @@ public class CPTabBarTemplate extends CPTemplate {
 
     /**
      * The tab bar delegate is informed of tab bar events, like selecting a tab.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -119,6 +121,8 @@ public class CPTabBarTemplate extends CPTemplate {
      * becomes a tab on the tab bar.
      * 
      * The maximum number of tabs in the tab bar template is given by @c maximumTabCount.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithTemplates:")
@@ -152,6 +156,8 @@ public class CPTabBarTemplate extends CPTemplate {
      * 
      * [@warning] The system will throw an exception if your app attempts to display more
      * than this number of tabs in your tab bar template.
+     * 
+     * API-Since: 14.0
      */
     @NInt
     @Generated
@@ -173,6 +179,8 @@ public class CPTabBarTemplate extends CPTemplate {
 
     /**
      * The currently-selected template in the tab bar.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -181,6 +189,8 @@ public class CPTabBarTemplate extends CPTemplate {
 
     /**
      * The tab bar delegate is informed of tab bar events, like selecting a tab.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -188,6 +198,8 @@ public class CPTabBarTemplate extends CPTemplate {
 
     /**
      * The tab bar delegate is informed of tab bar events, like selecting a tab.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPTabBarTemplateDelegate value) {
@@ -222,6 +234,8 @@ public class CPTabBarTemplate extends CPTemplate {
     /**
      * The currently-visible templates in the tab bar. Each template corresponds to
      * a single tab on the tab bar.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -231,6 +245,8 @@ public class CPTabBarTemplate extends CPTemplate {
     /**
      * Update the tabs displayed in this tab bar, replacing the currently-visible tabs.
      * Each template in the array becomes a tab on the tab bar.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateTemplates:")

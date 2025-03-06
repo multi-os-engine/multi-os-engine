@@ -169,6 +169,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -176,10 +178,16 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @ObjCBlock(name = "call_fetchShareParticipantsCompletionBlock_ret")
     public native Block_fetchShareParticipantsCompletionBlock_ret fetchShareParticipantsCompletionBlock();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("init")
     public native CKFetchShareParticipantsOperation init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithUserIdentityLookupInfos:")
     public native CKFetchShareParticipantsOperation initWithUserIdentityLookupInfos(
@@ -195,6 +203,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFetchShareParticipantsCompletionBlock:")
@@ -219,6 +229,9 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     public native void setShareParticipantFetchedBlock(
             @Nullable @ObjCBlock(name = "call_setShareParticipantFetchedBlock") Block_setShareParticipantFetchedBlock value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setUserIdentityLookupInfos:")
     public native void setUserIdentityLookupInfos(@Nullable NSArray<? extends CKUserIdentityLookupInfo> value);
@@ -242,6 +255,9 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @ObjCBlock(name = "call_shareParticipantFetchedBlock_ret")
     public native Block_shareParticipantFetchedBlock_ret shareParticipantFetchedBlock();
 
+    /**
+     * API-Since: 10.0
+     */
     @Nullable
     @Generated
     @Selector("userIdentityLookupInfos")
@@ -281,6 +297,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -302,6 +320,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
      * should not be concurrently used outside of blocks assigned to this operation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPerShareParticipantCompletionBlock:")

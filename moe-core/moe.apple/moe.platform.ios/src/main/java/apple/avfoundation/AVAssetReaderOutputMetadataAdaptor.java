@@ -92,6 +92,8 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
      * used to initialize an AVAssetReaderOutputMetadataAdaptor, calling -copyNextSampleBuffer on that instance will
      * result in an exception being thrown.
      * 
+     * API-Since: 8.0
+     * 
      * @param assetReaderOutput
      *                          An instance of AVAssetReaderTrackOutput that vends sample buffers containing metadata,
      *                          e.g. an AVAssetReaderTrackOutput object initialized with a track of media type
@@ -194,6 +196,8 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
      * [@property] assetReaderTrackOutput
      * 
      * The asset reader track output from which the receiver pulls timed metadata groups.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -223,6 +227,8 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
      * This method throws an exception if the track's output was used to initialize another adaptor or if the track
      * output's asset reader has already started reading.
      * 
+     * API-Since: 8.0
+     * 
      * @param assetReaderOutput
      *                          An instance of AVAssetReaderTrackOutput that vends sample buffers containing metadata,
      *                          e.g. an AVAssetReaderTrackOutput object initialized with a track of media type
@@ -251,6 +257,8 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
      * AVAssetReader via a prior call to -addOutput: and that -startReading has been called on the asset reader.
      * 
      * This method throws an exception if track output is not attached to an asset reader and reading has not yet begun.
+     * 
+     * API-Since: 8.0
      * 
      * @return
      *         An instance of AVTimedMetadataGroup, representing the next logical segment of metadata coming from the

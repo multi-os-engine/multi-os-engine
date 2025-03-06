@@ -38,11 +38,23 @@ import org.jetbrains.annotations.NotNull;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentMenuDelegate")
 public interface UIDocumentMenuDelegate {
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: UIDocumentMenuDelegate is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     @Selector("documentMenu:didPickDocumentPicker:")
     void documentMenuDidPickDocumentPicker(@NotNull UIDocumentMenuViewController documentMenu,
             @NotNull UIDocumentPickerViewController documentPicker);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: UIDocumentMenuDelegate is deprecated. Use UIDocumentPickerViewController directly.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("documentMenuWasCancelled:")

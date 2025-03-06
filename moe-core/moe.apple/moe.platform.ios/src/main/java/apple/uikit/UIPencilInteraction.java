@@ -87,6 +87,11 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The interaction's delegate
+     * 
+     * API-Since: 12.1
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -123,6 +128,11 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Whether the interaction is enabled or not
+     * 
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
@@ -141,6 +151,11 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Selector("new")
     public static native UIPencilInteraction new_objc();
 
+    /**
+     * The user’s preferred double-tap action as set in Settings app
+     * 
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("preferredTapAction")
     @NInt
@@ -154,10 +169,20 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The interaction's delegate
+     * 
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIPencilInteractionDelegate value);
 
+    /**
+     * The interaction's delegate
+     * 
+     * API-Since: 12.1
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPencilInteractionDelegate value) {
         Object __old = delegate();
@@ -170,6 +195,11 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
         }
     }
 
+    /**
+     * Whether the interaction is enabled or not
+     * 
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
@@ -196,6 +226,11 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
 
+    /**
+     * The user's preference for drawing with pencil only as set in Settings app or the system tool picker
+     * 
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("prefersPencilOnlyDrawing")
     public static native boolean prefersPencilOnlyDrawing();
@@ -204,4 +239,34 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Initialize an interaction and set the provided delegate
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("initWithDelegate:")
+    public native UIPencilInteraction initWithDelegate(
+            @Mapped(ObjCObjectMapper.class) @NotNull UIPencilInteractionDelegate delegate);
+
+    /**
+     * The user’s preferred squeeze action as set in Settings app
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("preferredSqueezeAction")
+    @NInt
+    public static native long preferredSqueezeAction();
+
+    /**
+     * The user's preference for if hovering with pencil should show a preview of the current drawing tool as set in
+     * Settings app
+     * 
+     * API-Since: 17.5
+     */
+    @Generated
+    @Selector("prefersHoverToolPreview")
+    public static native boolean prefersHoverToolPreview();
 }

@@ -185,6 +185,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     /**
      * Only fetch the properties that will be used.
      * 
+     * API-Since: 9.0
+     * 
      * @param keysToFetch
      *                    The properties to fetch for the returned contacts.
      */
@@ -196,6 +198,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * The properties to fetch in the returned contacts.
      * 
      * Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -218,6 +222,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * 
      * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all
      * contacts.
+     * 
+     * API-Since: 9.0
      */
     @Nullable
     @Generated
@@ -228,6 +234,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * The properties to fetch in the returned contacts.
      * 
      * Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setKeysToFetch:")
@@ -249,6 +257,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * 
      * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all
      * contacts.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPredicate:")
@@ -258,6 +268,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * To return contacts in a specific sort order.
      * 
      * Default is CNContactSortOrderNone.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSortOrder:")
@@ -270,6 +282,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * 
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an
      * individual contact is not linked then the unified contact is simply that individual contact.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUnifyResults:")
@@ -279,6 +293,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * To return contacts in a specific sort order.
      * 
      * Default is CNContactSortOrderNone.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("sortOrder")
@@ -298,6 +314,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * 
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an
      * individual contact is not linked then the unified contact is simply that individual contact.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("unifyResults")

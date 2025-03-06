@@ -186,11 +186,16 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
      * valueInKilometers = valueInMeters / 1000
      * where the coefficient is 1000 and the constant is 0. This API provides a convenience initializer
      * initWithCoefficient: that assumes the constant is 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("coefficient")
     public native double coefficient();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("constant")
     public native double constant();
@@ -207,10 +212,16 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
     @Selector("initWithCoder:")
     public native NSUnitConverterLinear initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoefficient:")
     public native NSUnitConverterLinear initWithCoefficient(double coefficient);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoefficient:constant:")
     public native NSUnitConverterLinear initWithCoefficientConstant(double coefficient, double constant);

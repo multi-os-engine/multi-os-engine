@@ -90,6 +90,9 @@ public class CNFixedDetectionTrack extends CNDetectionTrack {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 17.0
+     */
     @Generated
     @Selector("focusDisparity")
     public native float focusDisparity();
@@ -105,6 +108,8 @@ public class CNFixedDetectionTrack extends CNDetectionTrack {
 
     /**
      * Create a detection track with fixed focus at the given disparity.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithFocusDisparity:")
@@ -112,6 +117,8 @@ public class CNFixedDetectionTrack extends CNDetectionTrack {
 
     /**
      * Create a detection track with fixed focus at the disparity of an existing detection.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithOriginalDetection:")
@@ -152,6 +159,9 @@ public class CNFixedDetectionTrack extends CNDetectionTrack {
      * 
      * - Important: To get a detection from the fixed detection track, use detectionAtOrBeforeTime: instead, which will
      * return a properly time-stamped detection.
+     * 
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("originalDetection")

@@ -53,6 +53,8 @@ public class AVMediaDataStorage extends NSObject {
      * URL
      * 
      * The URL from which the receiver was initialized; may be nil.
+     * 
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -127,6 +129,8 @@ public class AVMediaDataStorage extends NSObject {
      *                An NSDictionary object that contains keys for specifying options for the initialization of the
      *                AVMediaDataStorage object. Currently no keys are defined.
      * @return An AVMediaDataStorage object
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithURL:options:")

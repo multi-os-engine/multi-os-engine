@@ -78,6 +78,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * atm
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -112,6 +114,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * cmAq
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -130,6 +134,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * count
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -158,6 +164,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * d
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -170,6 +178,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * degC
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -178,6 +188,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * degF
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -188,6 +200,9 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("energyFormatterUnitFromUnit:")
     @NInt
@@ -195,6 +210,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * fl_oz_imp
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -203,6 +220,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * fl_oz_us
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -211,6 +230,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * ft
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -219,6 +240,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * g
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -227,6 +250,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * g
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -240,6 +265,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * hr
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -248,6 +275,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * in
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -273,6 +302,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * J
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -281,6 +312,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * J
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -289,6 +322,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * K
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -302,12 +337,17 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * 1 kcal = 4184.0 J
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("kilocalorieUnit")
     public static native HKUnit kilocalorieUnit();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("lengthFormatterUnitFromUnit:")
     @NInt
@@ -315,6 +355,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * L
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -323,12 +365,17 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * L
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
     @Selector("literUnitWithMetricPrefix:")
     public static native HKUnit literUnitWithMetricPrefix(@NInt long prefix);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("massFormatterUnitFromUnit:")
     @NInt
@@ -336,6 +383,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * m
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -344,6 +393,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * m
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -352,6 +403,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * mi
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -360,6 +413,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * mmHg
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -368,6 +423,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * min
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -376,6 +433,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * mol<double>
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -384,6 +443,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * mol<double>
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -397,6 +458,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * oz
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -405,6 +468,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Pa
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -413,6 +478,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Pa
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -421,6 +488,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * % (0.0 - 1.0)
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -429,6 +498,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * pt_imp
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -437,6 +508,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * pt_us
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -445,6 +518,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * lb
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -461,6 +536,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * s
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -469,6 +546,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * s
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -481,6 +560,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * S
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -489,6 +570,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * S
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -497,6 +580,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * st
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -511,10 +596,16 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("unitFromEnergyFormatterUnit:")
     public static native HKUnit unitFromEnergyFormatterUnit(@NInt long energyFormatterUnit);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("unitFromLengthFormatterUnit:")
     public static native HKUnit unitFromLengthFormatterUnit(@NInt long lengthFormatterUnit);
@@ -524,11 +615,16 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      * When converting from Foundation formatter unit to HKUnit, if there's not a match, nil will be returned.
      * When converting from HKUnit to the Foundation formatter unit, if there's not a match, an exception will be
      * thrown.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("unitFromMassFormatterUnit:")
     public static native HKUnit unitFromMassFormatterUnit(@NInt long massFormatterUnit);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("unitFromString:")
     public static native HKUnit unitFromString(@NotNull String string);
@@ -567,10 +663,16 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native HKUnit initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isNull")
     public native boolean isNull();
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("reciprocalUnit")
@@ -582,16 +684,25 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("unitDividedByUnit:")
     public native HKUnit unitDividedByUnit(@NotNull HKUnit unit);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("unitMultipliedByUnit:")
     public native HKUnit unitMultipliedByUnit(@NotNull HKUnit unit);
 
+    /**
+     * API-Since: 8.0
+     */
     @NotNull
     @Generated
     @Selector("unitRaisedToPower:")
@@ -599,6 +710,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a unique string representation for the unit that could be used with +unitFromString:
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -799,4 +912,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * appleEffortScore
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("appleEffortScoreUnit")
+    @NotNull
+    public static native HKUnit appleEffortScoreUnit();
 }

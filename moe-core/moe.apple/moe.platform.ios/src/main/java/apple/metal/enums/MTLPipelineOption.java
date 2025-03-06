@@ -34,8 +34,9 @@ public final class MTLPipelineOption {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
-    @Generated @NUInt public static final long ArgumentInfo = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long ArgumentInfo = 0x0000000000000001L;
     /**
      * API-Since: 8.0
      */
@@ -49,4 +50,8 @@ public final class MTLPipelineOption {
      * API-Since: 14.0
      */
     @Generated @NUInt public static final long FailOnBinaryArchiveMiss = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
+    @Generated @NUInt public static final long BindingInfo = 0x0000000000000001L;
 }

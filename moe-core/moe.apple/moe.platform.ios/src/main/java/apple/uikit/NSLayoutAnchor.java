@@ -170,6 +170,8 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
 
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -178,6 +180,8 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
 
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor + constant.
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -185,22 +189,34 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
     public native NSLayoutConstraint constraintEqualToAnchorConstant(@NotNull NSLayoutAnchor<_AnchorType> anchor,
             @NFloat double c);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchor(@NotNull NSLayoutAnchor<_AnchorType> anchor);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:constant:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorConstant(
             @NotNull NSLayoutAnchor<_AnchorType> anchor, @NFloat double c);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:")
     public native NSLayoutConstraint constraintLessThanOrEqualToAnchor(@NotNull NSLayoutAnchor<_AnchorType> anchor);
 
+    /**
+     * API-Since: 9.0
+     */
     @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:constant:")

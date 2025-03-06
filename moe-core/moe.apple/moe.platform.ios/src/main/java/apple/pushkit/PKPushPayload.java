@@ -173,6 +173,8 @@ public class PKPushPayload extends NSObject {
      * 
      * For VoIP pushes, the sender is free to specify any fields for the contained data
      * as long as it is provided in a text-encodable JSON format.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated
@@ -187,6 +189,8 @@ public class PKPushPayload extends NSObject {
      * The type value indicating how to interpret the payload.
      * 
      * For possible values, see ``PushKit/PKPushType``.
+     * 
+     * API-Since: 8.0
      */
     @NotNull
     @Generated

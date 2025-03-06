@@ -69,6 +69,8 @@ public class MTLBlitPassDescriptor extends NSObject implements NSCopying {
      * blitPassDescriptor
      * 
      * Create an autoreleased default frame buffer descriptor
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated
@@ -159,6 +161,8 @@ public class MTLBlitPassDescriptor extends NSObject implements NSCopying {
      * [@property] sampleBufferAttachments
      * 
      * An array of sample buffers and associated sample indices.
+     * 
+     * API-Since: 14.0
      */
     @NotNull
     @Generated

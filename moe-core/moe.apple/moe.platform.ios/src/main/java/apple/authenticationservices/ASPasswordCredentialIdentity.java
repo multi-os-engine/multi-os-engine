@@ -121,6 +121,8 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
      * @param serviceIdentifier the service identifier for which this credential identity is valid.
      * @param user              the user that can authenticate into the service indicated by the serviceIdentifier.
      * @param recordIdentifier  an optional string to uniquely identify this record in your local database.
+     * 
+     *                          API-Since: 12.0
      */
     @Generated
     @Selector("identityWithServiceIdentifier:user:recordIdentifier:")
@@ -142,6 +144,8 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
      * @param serviceIdentifier the service identifier for which this credential identity is valid.
      * @param user              the user that can authenticate into the service indicated by the serviceIdentifier.
      * @param recordIdentifier  an optional string to uniquely identify this record in your local database.
+     * 
+     *                          API-Since: 12.0
      */
     @Generated
     @Selector("initWithServiceIdentifier:user:recordIdentifier:")

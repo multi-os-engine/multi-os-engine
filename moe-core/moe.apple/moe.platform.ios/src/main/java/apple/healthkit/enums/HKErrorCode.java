@@ -41,6 +41,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] HKErrorDataSizeExceeded The provided data's size exceeds the maximum allowed.
  * [@constant] HKErrorBackgroundWorkoutSessionNotAllowed A workout session is not allowed to start or prepare when this
  * app is in the background.
+ * [@constant] HKErrorNotPermissibleForGuestUserMode Protected Health data changes are not allowed in Guest User mode on
+ * visionOS.
  * 
  * API-Since: 8.0
  */
@@ -116,4 +118,8 @@ public final class HKErrorCode {
      * API-Since: 17.0
      */
     @Generated @NInt public static final long ErrorBackgroundWorkoutSessionNotAllowed = 0x000000000000000EL;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NInt public static final long ErrorNotPermissibleForGuestUserMode = 0x000000000000000FL;
 }

@@ -120,6 +120,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      *                    audio component description structure that describes the audio component of type
      *                    kAudioUnitType_MusicDevice
      *                    or kAudioUnitType_RemoteInstrument.
+     * 
+     *                    API-Since: 8.0
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -181,6 +183,9 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * @param channel
      *                   the channel number to which the event is sent.
      *                   Range: 0 -> 15
+     * 
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("sendController:withValue:onChannel:")
@@ -195,6 +200,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      *                   the STATUS value of the MIDI event
      * @param data1
      *                   the first data byte of the MIDI event
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("sendMIDIEvent:data1:")
@@ -211,6 +218,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      *                   the first data byte of the MIDI event
      * @param data2
      *                   the second data byte of the MIDI event.
+     * 
+     *                   API-Since: 8.0
      */
     @Generated
     @Selector("sendMIDIEvent:data1:data2:")
@@ -223,6 +232,9 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * 
      * @param midiData
      *                 a NSData object containing the complete SysEx data including start(F0) and termination(F7) bytes.
+     * 
+     * 
+     *                 API-Since: 8.0
      */
     @Generated
     @Selector("sendMIDISysExEvent:")
@@ -239,6 +251,9 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * @param channel
      *                  the channel number to which the event is sent.
      *                  Range: 0 -> 15
+     * 
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @Selector("sendPitchBend:onChannel:")
@@ -255,6 +270,9 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * @param channel
      *                 the channel number to which the event is sent.
      *                 Range: 0 -> 15
+     * 
+     * 
+     *                 API-Since: 8.0
      */
     @Generated
     @Selector("sendPressure:onChannel:")
@@ -274,6 +292,9 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * @param channel
      *                the channel number to which the event is sent.
      *                Range: 0 -> 15
+     * 
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @Selector("sendPressureForKey:withValue:onChannel:")
@@ -296,6 +317,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * @param channel
      *                the channel number to which the event is sent.
      *                Range: 0 -> 15
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @Selector("sendProgramChange:bankMSB:bankLSB:onChannel:")
@@ -308,6 +331,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * 
      * the instrument will be loaded from the bank that has been previous set by MIDI Bank Select
      * controller messages (0 and 31). If none has been set, bank 0 will be used.
+     * 
+     * API-Since: 8.0
      * 
      * @param program
      *                the program number.
@@ -338,6 +363,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * @param channel
      *                 the channel number to which the event is sent
      *                 Range: 0 -> 15
+     * 
+     *                 API-Since: 8.0
      */
     @Generated
     @Selector("startNote:withVelocity:onChannel:")
@@ -354,6 +381,9 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
      * @param channel
      *                the channel number to which the event is sent.
      *                Range: 0 -> 15
+     * 
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @Selector("stopNote:onChannel:")

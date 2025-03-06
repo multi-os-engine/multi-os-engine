@@ -14,6 +14,10 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.foundation.NSError;
+import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NInt;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 @Generated
 @Library("Accessibility")
@@ -119,4 +123,115 @@ public final class Accessibility {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String AXAnimatedImagesEnabledDidChangeNotification();
+
+    /**
+     * Returns whether Assistive Access is running.
+     * The value does not change during a process's lifetime, so it is not necessary to observe changes.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean AXAssistiveAccessEnabled();
+
+    /**
+     * Returns whether the system setting to prefer non-blinking text insertion indicators in editable text fields is
+     * enabled. Apps that draw custom insertion indicators should honor this setting.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean AXPrefersNonBlinkingTextInsertionIndicator();
+
+    /**
+     * Open the Settings app to a specific section.
+     * If successful, the completion handler will set error to nil.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native void AXOpenSettingsFeature(@NInt long feature,
+            @ObjCBlock(name = "call_AXOpenSettingsFeature") @Nullable Block_AXOpenSettingsFeature completionHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_AXOpenSettingsFeature {
+        @Generated
+        void call_AXOpenSettingsFeature(@Nullable NSError arg0);
+    }
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologyVoiceOver();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologySwitchControl();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologyVoiceControl();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologyFullKeyboardAccess();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologySpeakScreen();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologyAutomation();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologyHoverText();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AXTechnologyZoom();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AXPrefersNonBlinkingTextInsertionIndicatorDidChangeNotification();
 }

@@ -89,6 +89,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] channel
      * The MIDI channel for the event. Range: 0-15.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("channel")
@@ -115,6 +117,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] duration
      * The duration of the event in AVMusicTimeStamp beats. Range: Any non-negative number.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("duration")
@@ -142,6 +146,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
      *                 The MIDI velocity. Range: 0-127 with zero indicating a note-off event.
      * @param duration
      *                 The duration in beats for this note. Range: Any non-negative number.
+     * 
+     *                 API-Since: 16.0
      */
     @Generated
     @Selector("initWithChannel:key:velocity:duration:")
@@ -168,6 +174,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] key
      * The MIDI key number for the event. Range: 0-127.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("key")
@@ -194,6 +202,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] channel
      * The MIDI channel for the event. Range: 0-15.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setChannel:")
@@ -202,6 +212,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] duration
      * The duration of the event in AVMusicTimeStamp beats. Range: Any non-negative number.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setDuration:")
@@ -210,6 +222,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] key
      * The MIDI key number for the event. Range: 0-127.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setKey:")
@@ -218,6 +232,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] velocity
      * The MIDI velocity for the event. Range: 0-127.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("setVelocity:")
@@ -234,6 +250,8 @@ public class AVMIDINoteEvent extends AVMusicEvent {
     /**
      * [@property] velocity
      * The MIDI velocity for the event. Range: 0-127.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("velocity")

@@ -55,11 +55,17 @@ public class INSendMessageAttachment extends NSObject {
     @Selector("allocWithZone:")
     public static native INSendMessageAttachment allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @NotNull
     @Generated
     @Selector("attachmentWithAudioMessageFile:")
     public static native INSendMessageAttachment attachmentWithAudioMessageFile(@NotNull INFile audioMessageFile);
 
+    /**
+     * API-Since: 14.0
+     */
     @Nullable
     @Generated
     @Selector("audioMessageFile")

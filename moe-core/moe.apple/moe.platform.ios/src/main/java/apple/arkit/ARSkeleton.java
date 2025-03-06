@@ -92,6 +92,8 @@ public class ARSkeleton extends NSObject {
 
     /**
      * Skeleton definition.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -129,6 +131,8 @@ public class ARSkeleton extends NSObject {
      * 
      * @param jointIndex The index of the joint.
      * @return True if the joint is tracked. False otherwise.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("isJointTracked:")
@@ -140,6 +144,8 @@ public class ARSkeleton extends NSObject {
 
     /**
      * The number of joints.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("jointCount")

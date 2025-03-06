@@ -117,6 +117,8 @@ public class MTRCertificateInfo extends NSObject implements NSCopying {
      * 
      * This can be a node operational certificate, a Matter intermediate
      * certificate, or a Matter root certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("initWithTLVBytes:")
@@ -151,6 +153,8 @@ public class MTRCertificateInfo extends NSObject implements NSCopying {
      * 
      * Matter root certificates are self-signed, i.e. the issuer and the subject are
      * the same.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("issuer")
@@ -167,11 +171,17 @@ public class MTRCertificateInfo extends NSObject implements NSCopying {
     @Selector("new")
     public static native MTRCertificateInfo new_objc();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("notAfter")
     @NotNull
     public native NSDate notAfter();
 
+    /**
+     * API-Since: 16.4
+     */
     @Generated
     @Selector("notBefore")
     @NotNull
@@ -191,6 +201,8 @@ public class MTRCertificateInfo extends NSObject implements NSCopying {
 
     /**
      * The Distinguished Name of the entity represented by the certificate.
+     * 
+     * API-Since: 16.4
      */
     @Generated
     @Selector("subject")
@@ -210,4 +222,14 @@ public class MTRCertificateInfo extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Public key data for this certificate
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("publicKeyData")
+    @Nullable
+    public native NSData publicKeyData();
 }

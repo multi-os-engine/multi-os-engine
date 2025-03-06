@@ -24,9 +24,14 @@ import org.moe.natj.general.ann.Generated;
  * you must call VTCompressionSessionEndPass to end each pass; and in each pass you must pass an identical sequence of
  * source frames, frame properties and timestamps (except that source frames outside a pass' time ranges should be
  * skipped). See kVTCompressionPropertyKey_MultiPassStorage for additional rules and guidance.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class VTCompressionSessionOptionFlags {
+    /**
+     * API-Since: 8.0
+     */
     @Generated public static final int kVTCompressionSessionBeginFinalPass = 0x00000001;
 
     @Generated

@@ -185,6 +185,8 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
      * @param thresholdValue The threshold value to use
      * @param transform      This matrix is an array of 3 floats.
      *                       The default if no transform is specifed is BT.601/JPEG: {0.299f, 0.587f, 0.114f};
+     * 
+     *                       API-Since: 9.0
      */
     @Generated
     @Selector("initWithDevice:thresholdValue:linearGrayColorTransform:")
@@ -196,6 +198,8 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
      * [@property] thresholdValue
      * 
      * The threshold value used to init the threshold filter
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("thresholdValue")
@@ -205,6 +209,8 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
      * [@property] transform
      * 
      * The color transform used to init the threshold filter
+     * 
+     * API-Since: 9.0
      */
     @NotNull
     @Generated

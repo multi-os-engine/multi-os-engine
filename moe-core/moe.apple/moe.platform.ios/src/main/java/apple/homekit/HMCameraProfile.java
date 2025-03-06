@@ -167,6 +167,8 @@ public class HMCameraProfile extends HMAccessoryProfile {
 
     /**
      * Object that can be used to control the microphone settings on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -175,6 +177,8 @@ public class HMCameraProfile extends HMAccessoryProfile {
 
     /**
      * Object that can be used to control the settings on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -183,6 +187,8 @@ public class HMCameraProfile extends HMAccessoryProfile {
 
     /**
      * Object that can be used to take image snapshots from the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -191,6 +197,8 @@ public class HMCameraProfile extends HMAccessoryProfile {
 
     /**
      * Object that can be used to control the speaker settings on the camera.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -199,6 +207,8 @@ public class HMCameraProfile extends HMAccessoryProfile {
 
     /**
      * Object that can be used to control the camera stream.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated

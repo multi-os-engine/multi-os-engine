@@ -66,6 +66,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                        A curve type that defines which kind of fade curve to apply.
      * @param subtree
      *                        A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * 
+     *                        API-Since: 15.0
      */
     @Generated
     @Selector("addRangeForInputValuesAbove:fullGainAtValue:fadeCurveType:subtree:")
@@ -87,6 +89,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                        A curve type that defines which kind of fade curve to apply.
      * @param subtree
      *                        A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * 
+     *                        API-Since: 15.0
      */
     @Generated
     @Selector("addRangeForInputValuesBelow:fullGainAtValue:fadeCurveType:subtree:")
@@ -114,6 +118,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                            A curve type that defines which kind of fade curve to apply for the high fade range..
      * @param subtree
      *                            A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * 
+     *                            API-Since: 15.0
      */
     @Generated
     @Selector("addRangeForInputValuesBetween:highValue:fullGainAtLowValue:fullGainAtHighValue:lowFadeCurveType:highFadeCurveType:subtree:")
@@ -130,6 +136,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                 The PHASEEnvelope object that defines the output gain for a range.
      * @param subtree
      *                 A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * 
+     *                 API-Since: 15.0
      */
     @Generated
     @Selector("addRangeWithEnvelope:subtree:")
@@ -155,6 +163,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * 
      * The readonly property that returns the PHASENumberMetaParameterDefinition this blend node was created with and
      * assigned to.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -209,6 +219,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                               between the source and listener.
      * @return
      *         A new PHASEBlendNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initDistanceBlendWithSpatialMixerDefinition:")
@@ -227,6 +239,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                               An optional custom identifier to give to this object
      * @return
      *         A new PHASEBlendNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initDistanceBlendWithSpatialMixerDefinition:identifier:")
@@ -243,6 +257,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                                     blend node at runtime.
      * @return
      *         A new PHASEBlendNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithBlendMetaParameterDefinition:")
@@ -261,6 +277,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *                                     An optional custom identifier to give to this object
      * @return
      *         A new PHASEBlendNodeDefinition object
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("initWithBlendMetaParameterDefinition:identifier:")
@@ -311,6 +329,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * 
      * The readonly property that returns the PHASESpatialMixerDefinition this blend node was created with and assigned
      * to.
+     * 
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

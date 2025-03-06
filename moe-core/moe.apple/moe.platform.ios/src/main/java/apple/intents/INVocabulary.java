@@ -149,6 +149,9 @@ public class INVocabulary extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.0
+     */
     @NotNull
     @Generated
     @Selector("sharedVocabulary")
@@ -169,6 +172,8 @@ public class INVocabulary extends NSObject {
 
     /**
      * Removes all vocabulary strings for every INVocabularyStringType the calling app has previously registered.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("removeAllVocabularyStrings")
@@ -180,6 +185,8 @@ public class INVocabulary extends NSObject {
      * There is no guarantee that every provided string will be used, but preference is given to strings at the
      * beginning of the set.
      * Any strings larger than 1024 bytes when encoded as UTF-16 (roughly 500 characters) will be discarded.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setVocabularyStrings:ofType:")

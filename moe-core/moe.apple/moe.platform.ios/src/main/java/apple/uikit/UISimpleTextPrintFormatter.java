@@ -168,11 +168,17 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("attributedText")
     public native NSAttributedString attributedText();
 
+    /**
+     * API-Since: 4.2
+     */
     @Nullable
     @Generated
     @Selector("color")
     public native UIColor color();
 
+    /**
+     * API-Since: 4.2
+     */
     @Nullable
     @Generated
     @Selector("font")
@@ -189,6 +195,9 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("initWithAttributedText:")
     public native UISimpleTextPrintFormatter initWithAttributedText(@NotNull NSAttributedString attributedText);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("initWithText:")
     public native UISimpleTextPrintFormatter initWithText(@NotNull String text);
@@ -200,33 +209,49 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("setAttributedText:")
     public native void setAttributedText(@Nullable NSAttributedString value);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("setColor:")
     public native void setColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("setFont:")
     public native void setFont(@Nullable UIFont value);
 
     /**
      * cannot change once drawing started
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setText:")
     public native void setText(@Nullable String value);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
     /**
      * cannot change once drawing started
+     * 
+     * API-Since: 4.2
      */
     @Nullable
     @Generated
     @Selector("text")
     public native String text();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("textAlignment")
     @NInt

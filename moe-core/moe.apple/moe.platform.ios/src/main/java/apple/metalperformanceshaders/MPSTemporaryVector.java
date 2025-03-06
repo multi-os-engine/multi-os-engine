@@ -160,6 +160,8 @@ public class MPSTemporaryVector extends MPSVector {
      * 
      * @param commandBuffer  The command buffer on which the MPSTemporaryVector will be used
      * @param descriptorList A NSArray of MPSVectorDescriptor objects, indicating vectors that will be created
+     * 
+     *                       API-Since: 11.0
      */
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:descriptorList:")
@@ -193,6 +195,8 @@ public class MPSTemporaryVector extends MPSVector {
      * The Metal API Validation layer will assert if a MPSTemporaryVector is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("readCount")
@@ -233,6 +237,8 @@ public class MPSTemporaryVector extends MPSVector {
      * The Metal API Validation layer will assert if a MPSTemporaryVector is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReadCount:")
@@ -255,6 +261,8 @@ public class MPSTemporaryVector extends MPSVector {
      *         released when the command buffer is committed. The underlying buffer will become invalid before
      *         this time due to the action of the readCount property. Please read and understand the use of
      *         the readCount property before using this object.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("temporaryVectorWithCommandBuffer:descriptor:")
