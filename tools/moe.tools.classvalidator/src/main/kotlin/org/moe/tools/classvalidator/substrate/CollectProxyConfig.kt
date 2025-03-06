@@ -9,7 +9,7 @@ import java.lang.reflect.Modifier
 class CollectProxyConfig(
     private val config: ProxyConfig,
     next: ClassVisitor? = null,
-) : ClassVisitor(Opcodes.ASM5, next) {
+) : ClassVisitor(Opcodes.ASM9, next) {
 
     private lateinit var name: String
     private var isInterface: Boolean = false
@@ -32,15 +32,5 @@ class CollectProxyConfig(
         }
 
         return super.visitAnnotation(descriptor, visible)
-    }
-
-    override fun visitNestHost(nestHost: String?) {
-        // Do nothing
-        // Fix error "NestHost requires ASM7" without the need of updating to ASM7
-    }
-
-    override fun visitNestMember(nestMember: String?) {
-        // Do nothing
-        // Fix error "NestMember requires ASM7" without the need of updating to ASM7
     }
 }
