@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 plugins {
-    id "com.diffplug.spotless" version "6.8.0"
+    id "com.diffplug.spotless" version "7.0.2"
 }
 
 apply plugin: 'java'
@@ -40,8 +40,11 @@ dependencies {
 }
 
 task generateBindings(type: JavaExec) {
+    finalizedBy spotlessApply
+
     def tempFile = file("build/generate_bindings.log")
     tempFile.parentFile.mkdirs()
+
     classpath configurations.natJGen
     mainClass = "org.moe.natjgen.Main"
     args = [file("../").absolutePath, "moe.platform.ios", file("platform.natjgen").absolutePath]
