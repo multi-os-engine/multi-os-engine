@@ -613,6 +613,10 @@ public class Type {
             }
         }
 
+        if (type.kind() == CXTypeKind.Elaborated) {
+            type = type.getNamedType();
+        }
+
         // Set basic infos
         int typeKind = type.kind();
         alignment = type.getAlignOf();
