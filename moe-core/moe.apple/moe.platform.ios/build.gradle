@@ -41,6 +41,7 @@ dependencies {
 
 task generateBindings(type: JavaExec) {
     def tempFile = file("build/generate_bindings.log")
+    tempFile.parentFile.mkdirs()
     classpath configurations.natJGen
     mainClass = "org.moe.natjgen.Main"
     args = [file("../").absolutePath, "moe.platform.ios", file("platform.natjgen").absolutePath]
