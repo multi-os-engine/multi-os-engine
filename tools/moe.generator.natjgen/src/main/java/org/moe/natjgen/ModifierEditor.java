@@ -193,6 +193,7 @@ public class ModifierEditor extends EditContext {
     private Annotation aDeprecated;
 
     private Annotation aNullAnnotation;
+    private Annotation aNotNullAnnotation;
 
     private static final String Deprecated[] = new String[] { "Deprecated", null
     };
@@ -349,6 +350,10 @@ public class ModifierEditor extends EditContext {
                     aXIB = (Annotation)it;
                 } else if (type_name.equals("Deprecated")) {
                     aDeprecated = (Annotation)it;
+                } else if (type_name.equals(Constants.NullableAnnotation) || type_name.equals(Constants.NullableFQ)) {
+                    aNullAnnotation = (Annotation)it;
+                } else if (type_name.equals(Constants.NotNullAnnotation) || type_name.equals(Constants.NotNullFQ)) {
+                    aNotNullAnnotation = (Annotation)it;
                 }
                 allAnnotations.add((Annotation)it);
             } else if (it.isModifier()) {
@@ -760,7 +765,7 @@ public class ModifierEditor extends EditContext {
     }
 
     public void setNotNull() throws GeneratorException {
-        aNullAnnotation = newMarker(aNullAnnotation, NotNull);
+        aNotNullAnnotation = newMarker(aNotNullAnnotation, NotNull);
     }
 
     private Annotation newMarker(Annotation annotation, String type[]) throws GeneratorException {
