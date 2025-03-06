@@ -593,27 +593,6 @@ public class MTRDeviceController extends NSObject {
     }
 
     /**
-     * API-Since: 16.1
-     * Deprecated-Since: 16.4
-     * Deprecated-Message: Please use sharedControllerWithID:xpcConnectBlock:
-     */
-    @Generated
-    @Deprecated
-    @Selector("sharedControllerWithId:xpcConnectBlock:")
-    @NotNull
-    public static native MTRDeviceController sharedControllerWithIdXpcConnectBlock(
-            @Mapped(ObjCObjectMapper.class) @Nullable Object controllerID,
-            @ObjCBlock(name = "call_sharedControllerWithIdXpcConnectBlock") @NotNull Block_sharedControllerWithIdXpcConnectBlock xpcConnectBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sharedControllerWithIdXpcConnectBlock {
-        @Generated
-        @NotNull
-        NSXPCConnection call_sharedControllerWithIdXpcConnectBlock();
-    }
-
-    /**
      * Shut down the controller. Calls to shutdown after the first one are NO-OPs.
      * This must be called, either directly or via shutting down the
      * MTRDeviceControllerFactory, to avoid leaking the controller.
