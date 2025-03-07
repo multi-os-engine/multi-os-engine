@@ -19,7 +19,7 @@ apply plugin: 'java'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(8)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -33,14 +33,16 @@ sourceSets {
         java {
             srcDirs += external_java_sources
         }
-        resources {
-            srcDirs = java.srcDirs
-        }
     }
 }
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
+
+dependencies {
+    implementation 'org.moe:natj'
+    compileOnly 'org.graalvm.nativeimage:svm:23.0.7'
+}
 
 // Don't run tests with the built-in junit
 test { exclude '**' }

@@ -32,6 +32,7 @@ import java.util.Map;
 @Structure
 public class SEL extends StructObject {
 
+    private static long __natjCache;
     /**
      * Collection to cached already resolved SEL objects.
      */
