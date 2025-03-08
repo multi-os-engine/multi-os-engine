@@ -16,6 +16,7 @@ import SQLite.ProgressHandler;
 import SQLite.Stmt;
 import SQLite.Trace;
 import SQLite.Vm;
+import org.graalvm.nativeimage.AnnotationAccess;
 import org.graalvm.nativeimage.hosted.Feature;
 import org.graalvm.nativeimage.hosted.RuntimeJNIAccess;
 import org.graalvm.nativeimage.hosted.RuntimeProxyCreation;
@@ -266,7 +267,7 @@ public class ReflectionCollectionFeature implements Feature {
             RuntimeReflection.registerAllMethods(aClass);
 
             for (Method method : aClass.getDeclaredMethods()) {
-                if (!method.isAnnotationPresent(Selector.class))
+                if (!AnnotationAccess.isAnnotationPresent(method, Selector.class))
                     continue;
                 if (Modifier.isNative(method.getModifiers()) || Modifier.isAbstract(method.getModifiers()))
                     continue;
@@ -276,7 +277,7 @@ public class ReflectionCollectionFeature implements Feature {
         }, ObjCObject.class);
 
         access.registerSubtypeReachabilityHandler((duringAnalysisAccess, aClass) -> {
-            if (!aClass.isAnnotationPresent(Runtime.class))
+            if (!AnnotationAccess.isAnnotationPresent(aClass, Runtime.class))
                 return;
             RuntimeReflection.register(aClass);
             RuntimeReflection.registerAllMethods(aClass);
@@ -285,7 +286,7 @@ public class ReflectionCollectionFeature implements Feature {
             if (!aClass.isInterface())
                 return;
 
-            if (aClass.isAnnotationPresent(ObjCProtocolName.class)) {
+            if (AnnotationAccess.isAnnotationPresent(aClass, ObjCProtocolName.class)) {
                 RuntimeProxyCreation.register(aClass);
                 return;
             }
