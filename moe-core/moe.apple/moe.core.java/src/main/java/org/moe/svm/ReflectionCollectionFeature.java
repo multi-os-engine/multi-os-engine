@@ -1,5 +1,21 @@
 package org.moe.svm;
 
+import SQLite.Authorizer;
+import SQLite.Backup;
+import SQLite.Blob;
+import SQLite.BusyHandler;
+import SQLite.Callback;
+import SQLite.Database;
+import SQLite.Exception;
+import SQLite.Function;
+import SQLite.FunctionContext;
+import SQLite.JDBC2z1.JDBCConnection;
+import SQLite.JDBCDriver;
+import SQLite.Profile;
+import SQLite.ProgressHandler;
+import SQLite.Stmt;
+import SQLite.Trace;
+import SQLite.Vm;
 import org.graalvm.nativeimage.hosted.Feature;
 import org.graalvm.nativeimage.hosted.RuntimeJNIAccess;
 import org.graalvm.nativeimage.hosted.RuntimeProxyCreation;
@@ -67,6 +83,10 @@ public class ReflectionCollectionFeature implements Feature {
             ObjCCategory.class, ProtocolClassMethod.class, Structure.class, StructureField.class, CFunction.class, CVariable.class
     };
 
+    private static final Class<?>[] JAVA_SQLITE_UPCALL_INTERFACES = { Authorizer.class, BusyHandler.class, Callback.class,
+            Function.class, Profile.class, ProgressHandler.class, Trace.class
+    };
+
     private void registerNatJ(BeforeAnalysisAccess access) {
         try {
             RuntimeJNIAccess.register(Buffer.class.getDeclaredMethod("position"));
@@ -127,12 +147,75 @@ public class ReflectionCollectionFeature implements Feature {
     }
 
     private void registerSQLite(BeforeAnalysisAccess access) {
-        // TODO: 08.03.2025
+        access.registerReachabilityHandler(duringAnalysisAccess -> {
+            try {
+                RuntimeReflection.register(JDBCConnection.class);
+                RuntimeReflection.register(JDBCConnection.class.getDeclaredConstructor(String.class, String.class, String.class, String.class, String.class));
+
+                RuntimeJNIAccess.register(Exception.class.getDeclaredConstructor(String.class));
+                RuntimeJNIAccess.register(FunctionContext.class.getDeclaredConstructor());
+                RuntimeJNIAccess.register(FunctionContext.class.getDeclaredField("handle"));
+
+            } catch (NoSuchMethodException | NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
+        }, JDBCDriver.class);
+
+        for (Class<?> upcallInterface : JAVA_SQLITE_UPCALL_INTERFACES) {
+            access.registerReachabilityHandler(duringAnalysisAccess -> {
+                RuntimeJNIAccess.register(upcallInterface.getDeclaredMethods());
+            }, upcallInterface);
+        }
+
+        access.registerReachabilityHandler(duringAnalysisAccess -> {
+            try {
+                RuntimeJNIAccess.register(Backup.class.getDeclaredField("handle"));
+            } catch (NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
+        }, Backup.class);
+
+        access.registerReachabilityHandler(duringAnalysisAccess -> {
+            try {
+                RuntimeJNIAccess.register(Blob.class.getDeclaredField("handle"));
+                RuntimeJNIAccess.register(Blob.class.getDeclaredField("size"));
+            } catch (NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
+        }, Blob.class);
+
+        access.registerReachabilityHandler(duringAnalysisAccess -> {
+            try {
+                RuntimeJNIAccess.register(Database.class.getDeclaredField("handle"));
+                RuntimeJNIAccess.register(Database.class.getDeclaredField("error_code"));
+            } catch (NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
+        }, Database.class);
+
+        access.registerReachabilityHandler(duringAnalysisAccess -> {
+            try {
+                RuntimeJNIAccess.register(Stmt.class.getDeclaredField("handle"));
+                RuntimeJNIAccess.register(Stmt.class.getDeclaredField("error_code"));
+            } catch (NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
+        }, Stmt.class);
+
+        access.registerReachabilityHandler(duringAnalysisAccess -> {
+            try {
+                RuntimeJNIAccess.register(Vm.class.getDeclaredField("handle"));
+                RuntimeJNIAccess.register(Vm.class.getDeclaredField("error_code"));
+            } catch (NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
+        }, Vm.class);
     }
 
     @Override
     public void beforeAnalysis(BeforeAnalysisAccess access) {
         registerNatJ(access);
+        registerSQLite(access);
 
         access.registerSubtypeReachabilityHandler((duringAnalysisAccess, aClass) -> {
             if (!aClass.isInterface())
