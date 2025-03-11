@@ -277,6 +277,15 @@ public class ReflectionCollectionFeature implements Feature {
         }, ObjCObject.class);
 
         access.registerSubtypeReachabilityHandler((duringAnalysisAccess, aClass) -> {
+            for (Method method : aClass.getMethods()) {
+                if (!Modifier.isNative(method.getModifiers())) {
+                    if (AnnotationAccess.isAnnotationPresent(method, Selector.class)) {
+                        RuntimeJNIAccess.register(method);
+                        RuntimeReflection.registerAsQueried(method);
+                    }
+                }
+            }
+
             if (!AnnotationAccess.isAnnotationPresent(aClass, Runtime.class))
                 return;
             RuntimeReflection.register(aClass);
