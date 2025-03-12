@@ -21,7 +21,7 @@ public class NativeImageOptions {
         this.options = options;
     }
 
-    private boolean useLLVM = true;
+    private boolean useLLVM = false;
 
     public boolean isUseLLVM() {
         return useLLVM;
