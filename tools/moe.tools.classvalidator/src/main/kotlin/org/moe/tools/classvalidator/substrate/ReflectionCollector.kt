@@ -19,12 +19,12 @@ object ReflectionCollector {
         ).use {
             val reflectionConfig = ReflectionConfig()
 
-            /*inputFiles.classAndJarInputIterator { _, inputStream ->
+            inputFiles.classAndJarInputIterator { _, inputStream ->
                 val cr = ClassReader(inputStream)
 
-                val chain = CollectReflectionConfig(config = reflectionConfig)
+                val chain = CollectSimpleReflectionConfig(config = reflectionConfig)
                 cr.accept(chain, 0)
-            }*/
+            }
 
             // Add main class if necessary
             mainClassName?.let {

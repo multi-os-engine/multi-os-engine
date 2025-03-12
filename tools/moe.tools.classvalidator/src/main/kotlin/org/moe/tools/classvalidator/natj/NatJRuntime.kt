@@ -1,7 +1,7 @@
 package org.moe.tools.classvalidator.natj
 
 import org.moe.tools.classvalidator.getClassFor
-import java.util.LinkedList
+import java.util.*
 
 object NatJRuntime {
 
@@ -28,6 +28,8 @@ object NatJRuntime {
         const val RUNTIME_DESC = "Lorg/moe/natj/general/ann/Runtime;"
         const val OBJC_PROTOCOL_NAME_DESC = "Lorg/moe/natj/objc/ann/ObjCProtocolName;"
         const val OBJC_IS_OPTIONAL_DESC = "Lorg/moe/natj/objc/ann/IsOptional;"
+
+        const val REGISTER_ON_STARTUP: String = "Lorg/moe/natj/general/ann/RegisterOnStartup;"
 
         val OPTIONALS_DESC: List<String> = listOf(
             BY_VALUE_DESC,
