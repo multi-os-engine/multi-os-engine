@@ -115,6 +115,15 @@ public class Script extends BaseTask {
         runnables.add(() -> System.out.println("> " + msg));
     }
 
+    public void copy(File from, File to) {
+        runnables.add(() -> {
+            getProject().copy(copySpec -> {
+                copySpec.from(from);
+                copySpec.into(to);
+            });
+        });
+    }
+
     public void exec(String exec, String... args) {
         exec(exec, Arrays.asList(args));
     }
