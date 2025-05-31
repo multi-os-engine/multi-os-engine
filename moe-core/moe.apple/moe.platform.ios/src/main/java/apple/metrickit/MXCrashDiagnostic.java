@@ -259,9 +259,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * [@property] exceptionReason
      * 
      * The MXCrashDiagnosticObjectiveCExceptionReason object associated with this crash.
-     * 
-     * @see <MetricKit/MXCrashDiagnosticObjectiveCExceptionReason.h>
-     * 
+     *
      *      API-Since: 17.0
      */
     @Generated
