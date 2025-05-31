@@ -10,7 +10,6 @@ import apple.foundation.NSSet;
 import apple.uikit.UIScrollView;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
-import apple.uikit.protocol.UIAppearanceContainer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -145,14 +144,14 @@ public class BEScrollView extends UIScrollView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @NotNull
     public static native BEScrollView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable Class ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @NotNull
     public BEScrollView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -160,13 +159,13 @@ public class BEScrollView extends UIScrollView {
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @NotNull
     public static native BEScrollView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     @NotNull
     public BEScrollView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
-            @NotNull NSArray<?> containerTypes) {
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -175,27 +174,26 @@ public class BEScrollView extends UIScrollView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @NotNull
-    public static native BEScrollView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native BEScrollView appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @NotNull
-    public BEScrollView _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+    public BEScrollView _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @NotNull
-    public static native BEScrollView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
+    public static native BEScrollView appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
     @NotNull
-    public BEScrollView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public BEScrollView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

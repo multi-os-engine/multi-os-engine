@@ -11,7 +11,6 @@ import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
 import apple.uikit.UIWindow;
 import apple.uikit.UIWindowScene;
-import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -139,14 +138,14 @@ public class CPWindow extends UIWindow {
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native CPWindow appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public CPWindow _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -154,13 +153,13 @@ public class CPWindow extends UIWindow {
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native CPWindow appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public CPWindow _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
-            @NotNull NSArray<?> containerTypes) {
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -169,27 +168,26 @@ public class CPWindow extends UIWindow {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native CPWindow appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native CPWindow appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public CPWindow _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public CPWindow _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native CPWindow appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
+    public static native CPWindow appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public CPWindow _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public CPWindow _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

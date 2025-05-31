@@ -22,7 +22,6 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentConfiguration;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -136,28 +135,27 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native UICollectionViewCell appearanceForTraitCollectionWhenContainedIn(
-            @NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @NotNull UITraitCollection trait, @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UICollectionViewCell appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native UICollectionViewCell appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UICollectionViewCell appearanceWhenContainedIn(@Nullable Class ContainerClass,
+            Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native UICollectionViewCell appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -391,7 +389,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public UICollectionViewCell _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -399,7 +397,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public UICollectionViewCell _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -407,15 +405,15 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UICollectionViewCell _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UICollectionViewCell _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UICollectionViewCell _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public UICollectionViewCell _appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

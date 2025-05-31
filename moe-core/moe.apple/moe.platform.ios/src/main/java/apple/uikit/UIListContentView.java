@@ -6,7 +6,6 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentConfiguration;
 import apple.uikit.protocol.UIContentView;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -135,14 +134,14 @@ public class UIListContentView extends UIView implements UIContentView {
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native UIListContentView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public UIListContentView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -150,13 +149,13 @@ public class UIListContentView extends UIView implements UIContentView {
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UIListContentView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public UIListContentView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -165,15 +164,13 @@ public class UIListContentView extends UIView implements UIContentView {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native UIListContentView appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIListContentView appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UIListContentView _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIListContentView _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -181,12 +178,13 @@ public class UIListContentView extends UIView implements UIContentView {
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native UIListContentView appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIListContentView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public UIListContentView _appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

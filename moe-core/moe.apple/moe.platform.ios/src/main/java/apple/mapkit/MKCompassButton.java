@@ -8,7 +8,6 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
-import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -134,14 +133,14 @@ public class MKCompassButton extends UIView {
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native MKCompassButton appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public MKCompassButton _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -149,13 +148,13 @@ public class MKCompassButton extends UIView {
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native MKCompassButton appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public MKCompassButton _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -164,15 +163,13 @@ public class MKCompassButton extends UIView {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native MKCompassButton appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native MKCompassButton appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public MKCompassButton _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public MKCompassButton _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -180,12 +177,13 @@ public class MKCompassButton extends UIView {
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native MKCompassButton appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public MKCompassButton _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public MKCompassButton _appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

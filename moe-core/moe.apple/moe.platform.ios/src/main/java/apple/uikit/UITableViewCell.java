@@ -23,7 +23,6 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
-import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentConfiguration;
 import apple.uikit.protocol.UIGestureRecognizerDelegate;
 import apple.uikit.struct.UIEdgeInsets;
@@ -140,27 +139,26 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native UITableViewCell appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UITableViewCell appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native UITableViewCell appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UITableViewCell appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native UITableViewCell appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -426,7 +424,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public UITableViewCell _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -434,7 +432,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public UITableViewCell _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -442,15 +440,15 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UITableViewCell _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UITableViewCell _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UITableViewCell _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public UITableViewCell _appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

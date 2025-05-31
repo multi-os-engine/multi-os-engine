@@ -9,7 +9,6 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
-import apple.uikit.protocol.UIAppearanceContainer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -141,15 +140,14 @@ public class BELayerHierarchyHostingView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @NotNull
     public static native BELayerHierarchyHostingView appearanceForTraitCollectionWhenContainedIn(
-            @NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+            @NotNull UITraitCollection trait, @Nullable Class ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @NotNull
     public BELayerHierarchyHostingView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -157,13 +155,13 @@ public class BELayerHierarchyHostingView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @NotNull
     public static native BELayerHierarchyHostingView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     @NotNull
     public BELayerHierarchyHostingView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -172,15 +170,14 @@ public class BELayerHierarchyHostingView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @NotNull
-    public static native BELayerHierarchyHostingView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native BELayerHierarchyHostingView appearanceWhenContainedIn(@Nullable Class ContainerClass,
+            Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @NotNull
-    public BELayerHierarchyHostingView _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+    public BELayerHierarchyHostingView _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -188,13 +185,13 @@ public class BELayerHierarchyHostingView extends UIView {
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @NotNull
     public static native BELayerHierarchyHostingView appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
     @NotNull
     public BELayerHierarchyHostingView _appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes) {
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

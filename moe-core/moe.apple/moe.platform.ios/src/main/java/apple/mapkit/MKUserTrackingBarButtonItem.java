@@ -27,7 +27,6 @@ import apple.uikit.UIImage;
 import apple.uikit.UIMenu;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
-import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -95,28 +94,27 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native MKUserTrackingBarButtonItem appearanceForTraitCollectionWhenContainedIn(
-            @NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @NotNull UITraitCollection trait, @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native MKUserTrackingBarButtonItem appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native MKUserTrackingBarButtonItem appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native MKUserTrackingBarButtonItem appearanceWhenContainedIn(@Nullable Class ContainerClass,
+            Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native MKUserTrackingBarButtonItem appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -223,7 +221,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public MKUserTrackingBarButtonItem _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -231,7 +229,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public MKUserTrackingBarButtonItem _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -239,8 +237,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public MKUserTrackingBarButtonItem _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public MKUserTrackingBarButtonItem _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -248,7 +245,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
     public MKUserTrackingBarButtonItem _appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes) {
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

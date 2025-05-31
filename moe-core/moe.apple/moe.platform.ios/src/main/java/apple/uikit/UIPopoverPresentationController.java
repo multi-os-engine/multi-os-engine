@@ -20,7 +20,6 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.uikit.protocol.UIPopoverBackgroundViewMethods;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -251,8 +250,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Nullable
     @Generated
     @Selector("popoverBackgroundViewClass")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIPopoverBackgroundViewMethods popoverBackgroundViewClass();
+    public native Class popoverBackgroundViewClass();
 
     /**
      * Clients may wish to change the available area for popover display. The default implementation of this method
@@ -343,8 +341,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
-    public native void setPopoverBackgroundViewClass(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIPopoverBackgroundViewMethods value);
+    public native void setPopoverBackgroundViewClass(@Nullable Class value);
 
     /**
      * Clients may wish to change the available area for popover display. The default implementation of this method

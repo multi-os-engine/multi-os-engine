@@ -46,9 +46,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import apple.uikit.protocol.UICGFloatTraitDefinition;
-import apple.uikit.protocol.UINSIntegerTraitDefinition;
-import apple.uikit.protocol.UIObjectTraitDefinition;
 
 /**
  * A trait collection encapsulates the system traits of an interface's environment.
@@ -549,7 +546,7 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("changedTraitsFromTraitCollection:")
     @NotNull
-    public native NSSet<?> changedTraitsFromTraitCollection(@Nullable UITraitCollection traitCollection);
+    public native NSSet<? extends Class> changedTraitsFromTraitCollection(@Nullable UITraitCollection traitCollection);
 
     /**
      * The imageDynamicRange determines how HDR images will render in the given trait environment. SDR images are
@@ -566,8 +563,7 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("objectForTrait:")
     @MappedReturn(ObjCObjectMapper.class)
     @Nullable
-    public native apple.protocol.NSObject objectForTrait(
-            @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+    public native apple.protocol.NSObject objectForTrait(@NotNull Class trait);
 
     /**
      * Scene capture state represents whether a scene is currently being mirrored or recorded.
@@ -582,12 +578,12 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("systemTraitsAffectingColorAppearance")
     @NotNull
-    public static native NSArray<?> systemTraitsAffectingColorAppearance();
+    public static native NSArray<? extends Class> systemTraitsAffectingColorAppearance();
 
     @Generated
     @Selector("systemTraitsAffectingImageLookup")
     @NotNull
-    public static native NSArray<?> systemTraitsAffectingImageLookup();
+    public static native NSArray<? extends Class> systemTraitsAffectingImageLookup();
 
     @Generated
     @Selector("traitCollectionByModifyingTraits:")
@@ -606,26 +602,25 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionByReplacingCGFloatValue:forTrait:")
     @NotNull
     public native UITraitCollection traitCollectionByReplacingCGFloatValueForTrait(@NFloat double value,
-            @Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+            @NotNull Class trait);
 
     @Generated
     @Selector("traitCollectionByReplacingNSIntegerValue:forTrait:")
     @NotNull
     public native UITraitCollection traitCollectionByReplacingNSIntegerValueForTrait(@NInt long value,
-            @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+            @NotNull Class trait);
 
     @Generated
     @Selector("traitCollectionByReplacingObject:forTrait:")
     @NotNull
     public native UITraitCollection traitCollectionByReplacingObjectForTrait(
-            @Mapped(ObjCObjectMapper.class) @Nullable apple.protocol.NSObject object,
-            @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+            @Mapped(ObjCObjectMapper.class) @Nullable apple.protocol.NSObject object, @NotNull Class trait);
 
     @Generated
     @Selector("traitCollectionWithCGFloatValue:forTrait:")
     @NotNull
     public static native UITraitCollection traitCollectionWithCGFloatValueForTrait(@NFloat double value,
-            @Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+            @NotNull Class trait);
 
     /**
      * Construct a new trait collection with the given image content dynamic range.
@@ -641,14 +636,13 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithNSIntegerValue:forTrait:")
     @NotNull
     public static native UITraitCollection traitCollectionWithNSIntegerValueForTrait(@NInt long value,
-            @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+            @NotNull Class trait);
 
     @Generated
     @Selector("traitCollectionWithObject:forTrait:")
     @NotNull
     public static native UITraitCollection traitCollectionWithObjectForTrait(
-            @Mapped(ObjCObjectMapper.class) @Nullable apple.protocol.NSObject object,
-            @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+            @Mapped(ObjCObjectMapper.class) @Nullable apple.protocol.NSObject object, @NotNull Class trait);
 
     /**
      * Construct a new trait collection with the given scene capture state.
@@ -697,13 +691,12 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("valueForCGFloatTrait:")
     @NFloat
-    public native double valueForCGFloatTrait(@Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+    public native double valueForCGFloatTrait(@NotNull Class trait);
 
     @Generated
     @Selector("valueForNSIntegerTrait:")
     @NInt
-    public native long valueForNSIntegerTrait(
-            @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+    public native long valueForNSIntegerTrait(@NotNull Class trait);
 
     /**
      * The list environment represents whether a given trait collection is from a view in a UITableView or a

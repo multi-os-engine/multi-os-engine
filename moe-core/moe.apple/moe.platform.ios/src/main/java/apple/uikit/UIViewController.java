@@ -31,12 +31,10 @@ import apple.uikit.protocol.UIContentContainer;
 import apple.uikit.protocol.UIFocusEnvironment;
 import apple.uikit.protocol.UIFocusItemContainer;
 import apple.uikit.protocol.UILayoutSupport;
-import apple.uikit.protocol.UIObjectRestoration;
 import apple.uikit.protocol.UIStateRestoring;
 import apple.uikit.protocol.UITraitEnvironment;
 import apple.uikit.protocol.UIViewControllerPreviewing;
 import apple.uikit.protocol.UIViewControllerPreviewingDelegate;
-import apple.uikit.protocol.UIViewControllerRestoration;
 import apple.uikit.protocol.UIViewControllerTransitionCoordinator;
 import apple.uikit.protocol.UIViewControllerTransitioningDelegate;
 import apple.uikit.struct.NSDirectionalEdgeInsets;
@@ -774,8 +772,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Generated
     @IsOptional
     @Selector("objectRestorationClass")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIObjectRestoration objectRestorationClass();
+    public native Class objectRestorationClass();
 
     /**
      * API-Since: 8.0
@@ -1010,8 +1007,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Nullable
     @Generated
     @Selector("restorationClass")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIViewControllerRestoration restorationClass();
+    public native Class restorationClass();
 
     /**
      * API-Since: 6.0
@@ -1275,23 +1271,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      */
     @Generated
     @Selector("setRestorationClass:")
-    public native void setRestorationClass_unsafe(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerRestoration value);
-
-    /**
-     * API-Since: 6.0
-     */
-    @Generated
-    public void setRestorationClass(@Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerRestoration value) {
-        Object __old = restorationClass();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setRestorationClass_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
+    public native void setRestorationClass(@Nullable Class value);
 
     /**
      * API-Since: 6.0
@@ -2290,22 +2270,23 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Selector("registerForTraitChanges:withAction:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits,
+    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<? extends Class> traits,
             @NotNull SEL action);
 
     @Generated
     @Selector("registerForTraitChanges:withHandler:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<? extends Class> traits,
             @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull UITraitChangeObservable.Block_registerForTraitChangesWithHandler handler);
 
     @Generated
     @Selector("registerForTraitChanges:withTarget:action:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
-            @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
+    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(
+            @NotNull NSArray<? extends Class> traits, @Mapped(ObjCObjectMapper.class) @NotNull Object target,
+            @NotNull SEL action);
 
     /**
      * Setting a content unavailable configuration replaces the existing content unavailable view of the view controller

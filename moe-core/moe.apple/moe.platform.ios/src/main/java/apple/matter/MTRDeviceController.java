@@ -849,4 +849,25 @@ public class MTRDeviceController extends NSObject {
     @Selector("nodesWithStoredData")
     @NotNull
     public native NSArray<? extends NSNumber> nodesWithStoredData();
+
+    /**
+     * API-Since: 16.1
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Please use sharedControllerWithID:xpcConnectBlock:
+     */
+    @Generated
+    @Deprecated
+    @Selector("sharedControllerWithId:xpcConnectBlock:")
+    @NotNull
+    public static native MTRDeviceController sharedControllerWithIdXpcConnectBlock(
+            @Mapped(ObjCObjectMapper.class) @Nullable Object controllerID,
+            @ObjCBlock(name = "call_sharedControllerWithIdXpcConnectBlock") @NotNull Block_sharedControllerWithIdXpcConnectBlock xpcConnectBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sharedControllerWithIdXpcConnectBlock {
+        @Generated
+        @NotNull
+        NSXPCConnection call_sharedControllerWithIdXpcConnectBlock();
+    }
 }

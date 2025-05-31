@@ -6,7 +6,6 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
-import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -71,8 +70,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
      */
     @Generated
     @Selector("addTypeIdentifiersForAcceptingClass:")
-    public native void addTypeIdentifiersForAcceptingClass(
-            @NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
+    public native void addTypeIdentifiersForAcceptingClass(@NotNull Class aClass);
 
     @Generated
     @Owned
@@ -159,8 +157,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
      */
     @Generated
     @Selector("initWithTypeIdentifiersForAcceptingClass:")
-    public native UIPasteConfiguration initWithTypeIdentifiersForAcceptingClass(
-            @NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
+    public native UIPasteConfiguration initWithTypeIdentifiersForAcceptingClass(@NotNull Class aClass);
 
     @Generated
     @Selector("instanceMethodForSelector:")

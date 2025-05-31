@@ -343,22 +343,23 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
     @Selector("registerForTraitChanges:withAction:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits,
+    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<? extends Class> traits,
             @NotNull SEL action);
 
     @Generated
     @Selector("registerForTraitChanges:withHandler:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<? extends Class> traits,
             @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull UITraitChangeObservable.Block_registerForTraitChangesWithHandler handler);
 
     @Generated
     @Selector("registerForTraitChanges:withTarget:action:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
-            @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
+    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(
+            @NotNull NSArray<? extends Class> traits, @Mapped(ObjCObjectMapper.class) @NotNull Object target,
+            @NotNull SEL action);
 
     @Generated
     @Deprecated

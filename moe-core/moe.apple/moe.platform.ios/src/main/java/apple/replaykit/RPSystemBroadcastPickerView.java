@@ -9,7 +9,6 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
-import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -139,15 +138,14 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native RPSystemBroadcastPickerView appearanceForTraitCollectionWhenContainedIn(
-            @NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @NotNull UITraitCollection trait, @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public RPSystemBroadcastPickerView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -155,13 +153,13 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native RPSystemBroadcastPickerView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public RPSystemBroadcastPickerView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -170,15 +168,14 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native RPSystemBroadcastPickerView appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native RPSystemBroadcastPickerView appearanceWhenContainedIn(@Nullable Class ContainerClass,
+            Object... varargs);
 
     @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public RPSystemBroadcastPickerView _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public RPSystemBroadcastPickerView _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -186,13 +183,13 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native RPSystemBroadcastPickerView appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
     public RPSystemBroadcastPickerView _appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes) {
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

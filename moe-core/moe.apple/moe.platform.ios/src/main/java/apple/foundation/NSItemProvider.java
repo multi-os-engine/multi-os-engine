@@ -18,7 +18,6 @@ package apple.foundation;
 
 import apple.NSObject;
 import apple.foundation.protocol.NSCopying;
-import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSItemProviderWriting;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -268,7 +267,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("canLoadObjectOfClass:")
-    public native boolean canLoadObjectOfClass(@NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
+    public native boolean canLoadObjectOfClass(@NotNull Class aClass);
 
     /**
      * API-Since: 11.0
@@ -358,8 +357,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @NotNull
     @Generated
     @Selector("loadObjectOfClass:completionHandler:")
-    public native NSProgress loadObjectOfClassCompletionHandler(
-            @NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass,
+    public native NSProgress loadObjectOfClassCompletionHandler(@NotNull Class aClass,
             @NotNull @ObjCBlock(name = "call_loadObjectOfClassCompletionHandler") Block_loadObjectOfClassCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -575,8 +573,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("registerObjectOfClass:visibility:loadHandler:")
-    public native void registerObjectOfClassVisibilityLoadHandler(
-            @NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderWriting aClass, @NInt long visibility,
+    public native void registerObjectOfClassVisibilityLoadHandler(@NotNull Class aClass, @NInt long visibility,
             @NotNull @ObjCBlock(name = "call_registerObjectOfClassVisibilityLoadHandler") Block_registerObjectOfClassVisibilityLoadHandler loadHandler);
 
     @Runtime(ObjCRuntime.class)

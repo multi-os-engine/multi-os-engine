@@ -17,7 +17,6 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.avfoundation.protocol.AVVideoCompositing;
 import apple.avfoundation.protocol.AVVideoCompositionValidationHandling;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeRange;
@@ -339,8 +338,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Nullable
     @Generated
     @Selector("customVideoCompositorClass")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVVideoCompositing customVideoCompositorClass();
+    public native Class customVideoCompositorClass();
 
     /**
      * indicates the interval which the video composition, when enabled, should render composed video frames

@@ -14,6 +14,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.objc.Class;
 
 /**
  * API-Since: 17.0
@@ -32,7 +33,8 @@ public interface UITraitChangeObservable {
     @Selector("registerForTraitChanges:withAction:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits, @NotNull SEL action);
+    UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<? extends Class> traits,
+            @NotNull SEL action);
 
     /**
      * API-Since: 17.0
@@ -41,7 +43,7 @@ public interface UITraitChangeObservable {
     @Selector("registerForTraitChanges:withHandler:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+    UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<? extends Class> traits,
             @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull Block_registerForTraitChangesWithHandler handler);
 
     @Runtime(ObjCRuntime.class)
@@ -65,7 +67,7 @@ public interface UITraitChangeObservable {
     @Selector("registerForTraitChanges:withTarget:action:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
+    UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<? extends Class> traits,
             @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
 
     /**
