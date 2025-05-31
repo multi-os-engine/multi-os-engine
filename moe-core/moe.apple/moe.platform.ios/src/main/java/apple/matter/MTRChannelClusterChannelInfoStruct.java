@@ -234,4 +234,34 @@ public class MTRChannelClusterChannelInfoStruct extends NSObject implements NSCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("identifier")
+    @Nullable
+    public native String identifier();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setIdentifier:")
+    public native void setIdentifier(@Nullable String value);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setType:")
+    public native void setType(@Nullable NSNumber value);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("type")
+    @Nullable
+    public native NSNumber type();
 }

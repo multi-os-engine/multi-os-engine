@@ -49,6 +49,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKLeaderboardSet represents the sets that leaderboards can be broken out into.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("GameKit")
@@ -189,6 +191,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     /**
      * set when leaderboardSets have been designated a game group; set when loadLeaderboardSetsWithCompletionHandler has
      * been called for leaderboards that support game groups
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -197,6 +201,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     /**
      * leaderboard set.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -211,6 +217,9 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Selector("initWithCoder:")
     public native GKLeaderboardSet initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
@@ -233,6 +242,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     /**
      * leaderboard set.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setIdentifier:")
@@ -246,6 +257,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     /**
      * Localized set title.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

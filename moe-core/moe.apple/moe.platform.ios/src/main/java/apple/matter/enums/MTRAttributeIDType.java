@@ -17720,4 +17720,1684 @@ public final class MTRAttributeIDType {
      * API-Since: 17.6
      */
     @Generated public static final int AttributeIDTypeClusterRadonConcentrationMeasurementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster AccessControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterAccessControlAttributeCommissioningARLID = 0x00000005;
+    /**
+     * Cluster AccessControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterAccessControlAttributeARLID = 0x00000006;
+    /**
+     * Cluster BasicInformation attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterBasicInformationAttributeSpecificationVersionID = 0x00000015;
+    /**
+     * Cluster BasicInformation attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterBasicInformationAttributeMaxPathsPerInvokeID = 0x00000016;
+    /**
+     * Cluster NetworkCommissioning attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterNetworkCommissioningAttributeSupportedWiFiBandsID = 0x00000008;
+    /**
+     * Cluster NetworkCommissioning attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterNetworkCommissioningAttributeSupportedThreadFeaturesID = 0x00000009;
+    /**
+     * Cluster NetworkCommissioning attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterNetworkCommissioningAttributeThreadVersionID = 0x0000000A;
+    /**
+     * Cluster TimeSynchronization attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTimeSynchronizationAttributeTimeZoneListMaxSizeID = 0x0000000A;
+    /**
+     * Cluster TimeSynchronization attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTimeSynchronizationAttributeDSTOffsetListMaxSizeID = 0x0000000B;
+    /**
+     * Cluster TimeSynchronization attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTimeSynchronizationAttributeSupportsDNSResolveID = 0x0000000C;
+    /**
+     * Cluster BridgedDeviceBasicInformation attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterBridgedDeviceBasicInformationAttributeProductIDID = 0x00000004;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeIdleModeDurationID = 0x00000000;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeActiveModeDurationID = 0x00000001;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeActiveModeThresholdID = 0x00000002;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeRegisteredClientsID = 0x00000003;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeICDCounterID = 0x00000004;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeClientsSupportedPerFabricID = 0x00000005;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeUserActiveModeTriggerHintID = 0x00000006;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeUserActiveModeTriggerInstructionID = 0x00000007;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeOperatingModeID = 0x00000008;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeMaximumCheckInBackOffID = 0x00000009;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ICDManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterICDManagementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributePhaseListID = 0x00000000;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeCurrentPhaseID = 0x00000001;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeCountdownTimeID = 0x00000002;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeOperationalStateListID = 0x00000003;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeOperationalStateID = 0x00000004;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeOperationalErrorID = 0x00000005;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster OvenCavityOperationalState attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenCavityOperationalStateAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster OvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster OvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster OvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster OvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster OvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster OvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster OvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOvenModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster LaundryDryerControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryDryerControlsAttributeSupportedDrynessLevelsID = 0x00000000;
+    /**
+     * Cluster LaundryDryerControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryDryerControlsAttributeSelectedDrynessLevelID = 0x00000001;
+    /**
+     * Cluster LaundryDryerControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryDryerControlsAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster LaundryDryerControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryDryerControlsAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster LaundryDryerControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryDryerControlsAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster LaundryDryerControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryDryerControlsAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster LaundryDryerControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryDryerControlsAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster LaundryWasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster LaundryWasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster LaundryWasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster LaundryWasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster LaundryWasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster LaundryWasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster LaundryWasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeSpinSpeedsID = 0x00000000;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeSpinSpeedCurrentID = 0x00000001;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeNumberOfRinsesID = 0x00000002;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeSupportedRinsesID = 0x00000003;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster LaundryWasherControls attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterLaundryWasherControlsAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeTemperatureSetpointID = 0x00000000;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeMinTemperatureID = 0x00000001;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeMaxTemperatureID = 0x00000002;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeStepID = 0x00000003;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeSelectedTemperatureLevelID = 0x00000004;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeSupportedTemperatureLevelsID = 0x00000005;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster TemperatureControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterTemperatureControlAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeMaskID = 0x00000000;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeStateID = 0x00000002;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeSupportedID = 0x00000003;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster RefrigeratorAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterRefrigeratorAlarmAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster DishwasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster DishwasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster DishwasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster DishwasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster DishwasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster DishwasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster DishwasherMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeMaskID = 0x00000000;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeLatchID = 0x00000001;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeStateID = 0x00000002;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeSupportedID = 0x00000003;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster DishwasherAlarm attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDishwasherAlarmAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster MicrowaveOvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster MicrowaveOvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster MicrowaveOvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster MicrowaveOvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster MicrowaveOvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster MicrowaveOvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster MicrowaveOvenMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeCookTimeID = 0x00000000;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeMaxCookTimeID = 0x00000001;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributePowerSettingID = 0x00000002;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeMinPowerID = 0x00000003;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeMaxPowerID = 0x00000004;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributePowerStepID = 0x00000005;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeWattRatingID = 0x00000008;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster MicrowaveOvenControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMicrowaveOvenControlAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeHeaterTypesID = 0x00000000;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeHeatDemandID = 0x00000001;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeTankVolumeID = 0x00000002;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeEstimatedHeatRequiredID = 0x00000003;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeTankPercentageID = 0x00000004;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeBoostStateID = 0x00000005;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster WaterHeaterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterManagementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster Messages attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMessagesAttributeMessagesID = 0x00000000;
+    /**
+     * Cluster Messages attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMessagesAttributeActiveMessageIDsID = 0x00000001;
+    /**
+     * Cluster Messages attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMessagesAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster Messages attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMessagesAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster Messages attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMessagesAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster Messages attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMessagesAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster Messages attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterMessagesAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeESATypeID = 0x00000000;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeESACanGenerateID = 0x00000001;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeESAStateID = 0x00000002;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeAbsMinPowerID = 0x00000003;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeAbsMaxPowerID = 0x00000004;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributePowerAdjustmentCapabilityID = 0x00000005;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeForecastID = 0x00000006;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeOptOutStateID = 0x00000007;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster DeviceEnergyManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeStateID = 0x00000000;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeSupplyStateID = 0x00000001;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeFaultStateID = 0x00000002;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeChargingEnabledUntilID = 0x00000003;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeCircuitCapacityID = 0x00000005;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeMinimumChargeCurrentID = 0x00000006;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeMaximumChargeCurrentID = 0x00000007;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeUserMaximumChargeCurrentID = 0x00000009;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeRandomizationDelayWindowID = 0x0000000A;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeNextChargeStartTimeID = 0x00000023;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeNextChargeTargetTimeID = 0x00000024;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeNextChargeRequiredEnergyID = 0x00000025;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeNextChargeTargetSoCID = 0x00000026;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeApproximateEVEfficiencyID = 0x00000027;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeSessionIDID = 0x00000040;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeSessionDurationID = 0x00000041;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeSessionEnergyChargedID = 0x00000042;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster EnergyEVSE attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster PowerTopology attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerTopologyAttributeAvailableEndpointsID = 0x00000000;
+    /**
+     * Cluster PowerTopology attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerTopologyAttributeActiveEndpointsID = 0x00000001;
+    /**
+     * Cluster PowerTopology attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerTopologyAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster PowerTopology attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerTopologyAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster PowerTopology attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerTopologyAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster PowerTopology attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerTopologyAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster PowerTopology attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterPowerTopologyAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster EnergyEVSEMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster EnergyEVSEMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster EnergyEVSEMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster EnergyEVSEMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster EnergyEVSEMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster EnergyEVSEMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster EnergyEVSEMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterEnergyEVSEModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster WaterHeaterMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster WaterHeaterMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster WaterHeaterMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster WaterHeaterMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster WaterHeaterMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster WaterHeaterMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster WaterHeaterMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWaterHeaterModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster DeviceEnergyManagementMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementModeAttributeSupportedModesID = 0x00000000;
+    /**
+     * Cluster DeviceEnergyManagementMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementModeAttributeCurrentModeID = 0x00000001;
+    /**
+     * Cluster DeviceEnergyManagementMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementModeAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster DeviceEnergyManagementMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementModeAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster DeviceEnergyManagementMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementModeAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster DeviceEnergyManagementMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementModeAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster DeviceEnergyManagementMode attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDeviceEnergyManagementModeAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeAliroReaderVerificationKeyID = 0x00000080;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeAliroReaderGroupIdentifierID = 0x00000081;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeAliroReaderGroupSubIdentifierID = 0x00000082;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeAliroExpeditedTransactionSupportedProtocolVersionsID = 0x00000083;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeAliroGroupResolvingKeyID = 0x00000084;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeAliroSupportedBLEUWBProtocolVersionsID = 0x00000085;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeAliroBLEAdvertisingVersionID = 0x00000086;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeNumberOfAliroCredentialIssuerKeysSupportedID = 0x00000087;
+    /**
+     * Cluster DoorLock attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterDoorLockAttributeNumberOfAliroEndpointKeysSupportedID = 0x00000088;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeSupportedAreasID = 0x00000000;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeSupportedMapsID = 0x00000001;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeSelectedAreasID = 0x00000002;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeCurrentAreaID = 0x00000003;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeEstimatedEndTimeID = 0x00000004;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeProgressID = 0x00000005;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ServiceArea attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterServiceAreaAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributePresetTypesID = 0x00000048;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeScheduleTypesID = 0x00000049;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeNumberOfPresetsID = 0x0000004A;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeNumberOfSchedulesID = 0x0000004B;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeNumberOfScheduleTransitionsID = 0x0000004C;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeNumberOfScheduleTransitionPerDayID = 0x0000004D;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeActivePresetHandleID = 0x0000004E;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeActiveScheduleHandleID = 0x0000004F;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributePresetsID = 0x00000050;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeSchedulesID = 0x00000051;
+    /**
+     * Cluster Thermostat attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThermostatAttributeSetpointHoldExpiryTimestampID = 0x00000052;
+    /**
+     * Cluster OccupancySensing attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOccupancySensingAttributeHoldTimeID = 0x00000003;
+    /**
+     * Cluster OccupancySensing attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterOccupancySensingAttributeHoldTimeLimitsID = 0x00000004;
+    /**
+     * Cluster WiFiNetworkManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWiFiNetworkManagementAttributeSSIDID = 0x00000000;
+    /**
+     * Cluster WiFiNetworkManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWiFiNetworkManagementAttributePassphraseSurrogateID = 0x00000001;
+    /**
+     * Cluster WiFiNetworkManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWiFiNetworkManagementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster WiFiNetworkManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWiFiNetworkManagementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster WiFiNetworkManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWiFiNetworkManagementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster WiFiNetworkManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWiFiNetworkManagementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster WiFiNetworkManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWiFiNetworkManagementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeBorderRouterNameID = 0x00000000;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeBorderAgentIDID = 0x00000001;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeThreadVersionID = 0x00000002;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeInterfaceEnabledID = 0x00000003;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeActiveDatasetTimestampID = 0x00000004;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributePendingDatasetTimestampID = 0x00000005;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ThreadBorderRouterManagement attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadBorderRouterManagementAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributePreferredExtendedPanIDID = 0x00000000;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributeThreadNetworksID = 0x00000001;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributeThreadNetworkTableSizeID = 0x00000002;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ThreadNetworkDirectory attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterThreadNetworkDirectoryAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster WakeOnLAN attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterWakeOnLANAttributeLinkLocalAddressID = 0x00000001;
+    /**
+     * Cluster ContentAppObserver attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterContentAppObserverAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster ContentAppObserver attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterContentAppObserverAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster ContentAppObserver attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterContentAppObserverAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster ContentAppObserver attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterContentAppObserverAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster ContentAppObserver attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterContentAppObserverAttributeClusterRevisionID = 0x0000FFFD;
+    /**
+     * Cluster CommissionerControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterCommissionerControlAttributeSupportedDeviceCategoriesID = 0x00000000;
+    /**
+     * Cluster CommissionerControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterCommissionerControlAttributeGeneratedCommandListID = 0x0000FFF8;
+    /**
+     * Cluster CommissionerControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterCommissionerControlAttributeAcceptedCommandListID = 0x0000FFF9;
+    /**
+     * Cluster CommissionerControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterCommissionerControlAttributeAttributeListID = 0x0000FFFB;
+    /**
+     * Cluster CommissionerControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterCommissionerControlAttributeFeatureMapID = 0x0000FFFC;
+    /**
+     * Cluster CommissionerControl attributes
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int AttributeIDTypeClusterCommissionerControlAttributeClusterRevisionID = 0x0000FFFD;
 }

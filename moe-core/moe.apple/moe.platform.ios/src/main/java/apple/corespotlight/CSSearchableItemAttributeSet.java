@@ -3916,4 +3916,49 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("isPriority")
+    @Nullable
+    public native NSNumber isPriority();
+
+    /**
+     * Move the internals from a source object to this object,
+     * sourceAttributeSet param should NOT be used after calling this method.
+     * 
+     * API-Since: 9.0
+     */
+    @Generated
+    @Selector("moveFrom:")
+    public native void moveFrom(@NotNull CSSearchableItemAttributeSet sourceAttributeSet);
+
+    /**
+     * Write-only accessor for transcribed textContent. This property can be queried as textContent.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setTranscribedTextContent:")
+    public native void setTranscribedTextContent(@Nullable String value);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("textContentSummary")
+    @Nullable
+    public native String textContentSummary();
+
+    /**
+     * Write-only accessor for transcribed textContent. This property can be queried as textContent.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("transcribedTextContent")
+    @Nullable
+    public native String transcribedTextContent();
 }

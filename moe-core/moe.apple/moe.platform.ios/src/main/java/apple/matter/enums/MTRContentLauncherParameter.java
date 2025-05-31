@@ -67,4 +67,16 @@ public final class MTRContentLauncherParameter {
      * API-Since: 16.4
      */
     @Generated public static final byte Video = 13;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Season = 14;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Episode = 15;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Any = 16;
 }

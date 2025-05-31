@@ -345,4 +345,60 @@ public class MTRClusterGeneralDiagnostics extends MTRGenericCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("payloadTestRequestWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void payloadTestRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRGeneralDiagnosticsClusterPayloadTestRequestParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_payloadTestRequestWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_payloadTestRequestWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_payloadTestRequestWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_payloadTestRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRGeneralDiagnosticsClusterPayloadTestResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("timeSnapshotWithExpectedValues:expectedValueInterval:completion:")
+    public native void timeSnapshotWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_timeSnapshotWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_timeSnapshotWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_timeSnapshotWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_timeSnapshotWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRGeneralDiagnosticsClusterTimeSnapshotResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("timeSnapshotWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void timeSnapshotWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable MTRGeneralDiagnosticsClusterTimeSnapshotParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_timeSnapshotWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_timeSnapshotWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_timeSnapshotWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_timeSnapshotWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRGeneralDiagnosticsClusterTimeSnapshotResponseParams data, @Nullable NSError error);
+    }
 }

@@ -301,7 +301,7 @@ public interface CPMapTemplateDelegate {
      * 
      * @return YES if the template should provide navigation metadata, otherwise NO
      * 
-     *         API-Since: 12.0
+     *         API-Since: 17.4
      */
     @Generated
     @IsOptional

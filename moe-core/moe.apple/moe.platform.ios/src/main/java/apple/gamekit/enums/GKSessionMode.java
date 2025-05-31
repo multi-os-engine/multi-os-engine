@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Generated;
  * 
  * API-Since: 3.0
  * Deprecated-Since: 7.0
+ * Deprecated-Message: No longer supported
  */
 @Deprecated
 @Generated
@@ -30,6 +31,7 @@ public final class GKSessionMode {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Server = 0x00000000;
     /**
@@ -37,6 +39,7 @@ public final class GKSessionMode {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Client = 0x00000001;
     /**
@@ -45,6 +48,7 @@ public final class GKSessionMode {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Peer = 0x00000002;
 

@@ -21,39 +21,77 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Possible invitee responses
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class GKInviteRecipientResponse {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long InviteRecipientResponseAccepted = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long InviteRecipientResponseDeclined = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long InviteRecipientResponseFailed = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long InviteRecipientResponseIncompatible = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long InviteRecipientResponseUnableToConnect = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long InviteRecipientResponseNoAnswer = 0x0000000000000005L;
     /**
      * Old names
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 18.4
      */
-    @Generated @NInt public static final long InviteeResponseAccepted = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long InviteeResponseAccepted = 0x0000000000000000L;
     /**
      * Old names
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 18.4
      */
-    @Generated @NInt public static final long InviteeResponseDeclined = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long InviteeResponseDeclined = 0x0000000000000001L;
     /**
      * Old names
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 18.4
      */
-    @Generated @NInt public static final long InviteeResponseFailed = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long InviteeResponseFailed = 0x0000000000000002L;
     /**
      * Old names
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 18.4
      */
-    @Generated @NInt public static final long InviteeResponseIncompatible = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long InviteeResponseIncompatible = 0x0000000000000003L;
     /**
      * Old names
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 18.4
      */
-    @Generated @NInt public static final long InviteeResponseUnableToConnect = 0x0000000000000004L;
+    @Deprecated @Generated @NInt public static final long InviteeResponseUnableToConnect = 0x0000000000000004L;
     /**
      * Old names
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 18.4
      */
-    @Generated @NInt public static final long InviteeResponseNoAnswer = 0x0000000000000005L;
+    @Deprecated @Generated @NInt public static final long InviteeResponseNoAnswer = 0x0000000000000005L;
 
     @Generated
     private GKInviteRecipientResponse() {

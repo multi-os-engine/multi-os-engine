@@ -19,10 +19,22 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 public final class GKMatchType {
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long PeerToPeer = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long Hosted = 0x0000000000000001L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long TurnBased = 0x0000000000000002L;
 
     @Generated

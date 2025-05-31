@@ -55,4 +55,16 @@ public final class MTRDoorLockLockDataType {
      * API-Since: 16.5
      */
     @Generated public static final byte Face = 10;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte AliroCredentialIssuerKey = 11;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte AliroEvictableEndpointKey = 12;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte AliroNonEvictableEndpointKey = 13;
 }

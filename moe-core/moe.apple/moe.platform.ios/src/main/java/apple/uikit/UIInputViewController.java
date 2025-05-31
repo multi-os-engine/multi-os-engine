@@ -327,4 +327,9 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("conversationContext:didChange:")
+    public native void conversationContextDidChange(@Nullable UIConversationContext context,
+            @Mapped(ObjCObjectMapper.class) @Nullable UITextInput textInput);
 }

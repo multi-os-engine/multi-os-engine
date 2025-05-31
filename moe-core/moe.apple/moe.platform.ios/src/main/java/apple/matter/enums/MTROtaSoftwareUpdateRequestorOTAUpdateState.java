@@ -10,10 +10,6 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Deprecated
 public final class MTROtaSoftwareUpdateRequestorOTAUpdateState {
-    @Generated
-    private MTROtaSoftwareUpdateRequestorOTAUpdateState() {
-    }
-
     /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
@@ -68,4 +64,8 @@ public final class MTROtaSoftwareUpdateRequestorOTAUpdateState {
      * Deprecated-Message: Please use MTROTASoftwareUpdateRequestorUpdateStateDelayedOnUserConsent
      */
     @Generated @Deprecated public static final byte DelayedOnUserConsent = 8;
+
+    @Generated
+    private MTROtaSoftwareUpdateRequestorOTAUpdateState() {
+    }
 }

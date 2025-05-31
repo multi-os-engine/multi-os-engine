@@ -26,6 +26,9 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * A representation of a "device type revision" in the sense used in the Matter
@@ -37,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRDeviceTypeRevision extends NSObject implements NSCopying {
+public class MTRDeviceTypeRevision extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -191,4 +194,43 @@ public class MTRDeviceTypeRevision extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTRDeviceTypeRevision initWithCoder(@NotNull NSCoder coder);
+
+    /**
+     * Initializes the receiver based on the values in the specified struct.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("initWithDeviceTypeStruct:")
+    public native MTRDeviceTypeRevision initWithDeviceTypeStruct(
+            @NotNull MTRDescriptorClusterDeviceTypeStruct deviceTypeStruct);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * Returns the MTRDeviceType corresponding to deviceTypeID,
+     * or nil if deviceTypeID does not represent a known device type.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("typeInformation")
+    @Nullable
+    public native MTRDeviceType typeInformation();
 }

@@ -432,4 +432,36 @@ public class UITab extends NSObject implements UIPopoverPresentationControllerSo
     @Selector("viewController")
     @Nullable
     public native UIViewController viewController();
+
+    /**
+     * Determines if the tab has a visible placement. Returns YES if the tab is visible in a tab bar
+     * that supports different tab placements. Otherwise returns NO.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("hasVisiblePlacement")
+    public native boolean hasVisiblePlacement();
+
+    /**
+     * Determines if the tab is enabled. When NO, tabs will have a disabled appearance and cannot be selected by the
+     * user.
+     * Default is YES.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * Determines if the tab is enabled. When NO, tabs will have a disabled appearance and cannot be selected by the
+     * user.
+     * Default is YES.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
 }

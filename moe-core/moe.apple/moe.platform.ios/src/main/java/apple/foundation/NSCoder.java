@@ -57,6 +57,7 @@ import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.UncertainReturn;
 
 @Generated
 @Library("Foundation")
@@ -755,4 +756,31 @@ public class NSCoder extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Decode bytes from the decoder for a given key. The length of the bytes must be greater than or equal to the
+     * `length` parameter.
+     * If the result exists, but is of insufficient length, then the decoder uses `failWithError` to fail the entire
+     * decode operation. The result of that is configurable on a per-NSCoder basis using `NSDecodingFailurePolicy`.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("decodeBytesForKey:minimumLength:")
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @MappedReturn(CStringMapper.class)
+    @Nullable
+    public native String decodeBytesForKeyMinimumLength(@NotNull String key, @NUInt long length);
+
+    /**
+     * Decode bytes from the decoder. The length of the bytes must be greater than or equal to the `length` parameter.
+     * If the result exists, but is of insufficient length, then the decoder uses `failWithError` to fail the entire
+     * decode operation. The result of that is configurable on a per-NSCoder basis using `NSDecodingFailurePolicy`.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("decodeBytesWithMinimumLength:")
+    @Nullable
+    public native VoidPtr decodeBytesWithMinimumLength(@NUInt long length);
 }

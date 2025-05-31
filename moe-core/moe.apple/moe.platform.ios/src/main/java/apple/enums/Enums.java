@@ -816,4 +816,6 @@ public final class Enums {
     @Generated public static final int XPC_ACTIVITY_STATE_DEFER = 0x00000003;
     @Generated public static final int XPC_ACTIVITY_STATE_CONTINUE = 0x00000004;
     @Generated public static final int XPC_ACTIVITY_STATE_DONE = 0x00000005;
+    @Generated public static final int eNoteExitReparentedDeprecated = 0x00080000;
+    @Generated public static final int eNoteReapDeprecated = 0x10000000;
 }

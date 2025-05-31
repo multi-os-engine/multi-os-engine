@@ -31,4 +31,8 @@ public final class MTRSwitchFeature {
      * API-Since: 16.2
      */
     @Generated public static final int MomentarySwitchMultiPress = 0x00000010;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int ActionSwitch = 0x00000020;
 }

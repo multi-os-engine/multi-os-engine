@@ -113,10 +113,10 @@ public class UIWritingToolsCoordinatorContext extends NSObject {
     /**
      * The portion of your view’s text to evaluate.
      * 
-     * The `NSWritingToolsCoordinator/Context` object initializes the value of this
+     * The `UIWritingToolsCoordinator/Context` object initializes the value of this
      * property at creation time and doesn’t change it during the course of an operation.
      * Instead, it suggests changes to the text in the indicated range and reports
-     * those changes to your ``NS/UIWritingToolsCoordinatorDelegate`` object. Use the methods
+     * those changes to your ``UIWritingToolsCoordinator/Delegate`` object. Use the methods
      * of your delegate object to integrate those changes back into your view’s text storage.
      * 
      * It’s your responsibility to track the location of this text in your
@@ -174,7 +174,7 @@ public class UIWritingToolsCoordinatorContext extends NSObject {
     /**
      * The unique identifier of the context object.
      * 
-     * The ``UIWritingToolsCoordinator.Context`` object initializes the value of
+     * The ``UIWritingToolsCoordinator/Context`` object initializes the value of
      * this property at creation time. Use this value to identify the
      * context object within your app.
      * 
@@ -266,7 +266,7 @@ public class UIWritingToolsCoordinatorContext extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The range that Writing Tools ends up using (sometimes larger than range)
+     * The range where Writing Tools suggests replacements, may be larger than range
      * 
      * API-Since: 18.2
      */

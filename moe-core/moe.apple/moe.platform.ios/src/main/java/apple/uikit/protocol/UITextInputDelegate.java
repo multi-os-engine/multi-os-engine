@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIConversationContext;
 
 /**
  * The input delegate must be notified of changes to the selection and text.
@@ -49,4 +50,14 @@ public interface UITextInputDelegate {
     @Generated
     @Selector("textWillChange:")
     void textWillChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
+
+    /**
+     * Tells the input delegate when text has changed in the input object for a conversation.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("conversationContext:didChange:")
+    void conversationContextDidChange(@Nullable UIConversationContext context,
+            @Mapped(ObjCObjectMapper.class) @Nullable UITextInput textInput);
 }

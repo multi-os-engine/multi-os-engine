@@ -22,6 +22,8 @@ import org.moe.natj.general.ann.NInt;
  * device‘s Low Power Mode or Background App Refresh settings.
  * [@constant] BAErrorCodeDownloadWouldExceedAllowance The requested download cannot be enqueued. The download would
  * exceed the download allowance.
+ * [@constant] BAErrorCodeDownloadDoesNotExist The operation for a download cannot be performed because that BADownload
+ * object does not exist.
  * [@constant] BAErrorCodeSessionDownloadDisallowedByDomain The requested URL is not permitted to be downloaded until
  * the application is launched.
  * [@constant] BAErrorCodeSessionDownloadDisallowedByAllowance The requested download will not be allowed due to running
@@ -103,4 +105,8 @@ public final class BAErrorCode {
      * API-Since: 17.0
      */
     @Generated @NInt public static final long SessionDownloadNotPermittedBeforeAppLaunch = 0x00000000000000CEL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long DownloadDoesNotExist = 0x0000000000000071L;
 }

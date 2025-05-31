@@ -1223,4 +1223,15 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("writingToolsBehavior")
     @NInt
     public native long writingToolsBehavior();
+
+    @Generated
+    @IsOptional
+    @Selector("conversationContext")
+    @Nullable
+    public native UIConversationContext conversationContext();
+
+    @Generated
+    @IsOptional
+    @Selector("setConversationContext:")
+    public native void setConversationContext(@Nullable UIConversationContext value);
 }

@@ -78,7 +78,7 @@ public interface UIWritingToolsCoordinatorDelegate {
      * you finish your cleanup work, call the completion handler to notify Writing Tools.
      * 
      * Writing Tools calls this method only after previous calls to the
-     * ``writingToolsCoordinator(_:previewFor:range:context:completion:)``
+     * ``writingToolsCoordinator(_:requestsPreviewFor:range:context:completion:)``
      * and ``writingToolsCoordinator(_:prepareFor:range:context:completion:)``
      * methods for the same animation type. However, Writing Tools can interleave
      * calls to this method with calls to prepare an animation of a different
@@ -139,7 +139,7 @@ public interface UIWritingToolsCoordinatorDelegate {
      * method to undo any changes you make to your content.
      * 
      * For a single animation type, the system calls the
-     * ``writingToolsCoordinator(_:previewFor:range:context:completion:)`` method,
+     * ``writingToolsCoordinator(_:requestsPreviewFor:range:context:completion:)`` method,
      * followed sequentially by this method and the ``writingToolsCoordinator(_:finish:for:in:completion:)``
      * method. Each method executes asynchronously, but the system calls the next
      * method in the sequence only after you call the completion handler of the previous
@@ -324,7 +324,7 @@ public interface UIWritingToolsCoordinatorDelegate {
      * example, it might use an entire paragraph, instead of only the selected sentence,
      * to evaluate ways to rewrite that sentence. It’s best to include the text up
      * to the nearest paragraph boundary before and after the selection. If you
-     * include extra text in your context object, set the ``NS/UIWritingToolsCoordinator/Context/range``
+     * include extra text in your context object, set the ``UIWritingToolsCoordinator/Context/range``
      * property to the range of the selected text.
      * 
      * > Note: When a context object stores only a subset of your view’s text, record
@@ -376,7 +376,7 @@ public interface UIWritingToolsCoordinatorDelegate {
      * If your view uses multiple ``NSTextContainer`` objects to draw text in different
      * regions, use this method to provide Writing Tools with the view to use for the
      * specified range of text. After calling your delegate’s
-     * ``writingToolsCoordinator(_:singleContainerSubrangesOf:in:)``
+     * ``writingToolsCoordinator(_:requestsSingleContainerSubrangesOf:in:completion:)``
      * method, Writing Tools calls this method for each subrange of text you provided.
      * Find or provide a view situated visibly below the specified text in your text
      * view. It's also satisfactory to provide a view that’s visually in front of the
@@ -512,12 +512,20 @@ public interface UIWritingToolsCoordinatorDelegate {
      * `2` and a length of `1`.
      * 
      * API-Since: 18.2
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: In iOS 18.4 and later and visionOS 2.4 and later, UIWritingToolsCoordinator automatically
+     * determines the location of the character at the specified point in your view's coordinate system and no longer
+     * calls this method.
      */
+    @IsOptional
+    @Deprecated
     @Generated
     @Selector("writingToolsCoordinator:requestsRangeInContextWithIdentifierForPoint:completion:")
-    void writingToolsCoordinatorRequestsRangeInContextWithIdentifierForPointCompletion(
+    default void writingToolsCoordinatorRequestsRangeInContextWithIdentifierForPointCompletion(
             @NotNull UIWritingToolsCoordinator writingToolsCoordinator, @ByValue CGPoint point,
-            @ObjCBlock(name = "call_writingToolsCoordinatorRequestsRangeInContextWithIdentifierForPointCompletion") @NotNull Block_writingToolsCoordinatorRequestsRangeInContextWithIdentifierForPointCompletion completion);
+            @ObjCBlock(name = "call_writingToolsCoordinatorRequestsRangeInContextWithIdentifierForPointCompletion") @NotNull Block_writingToolsCoordinatorRequestsRangeInContextWithIdentifierForPointCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated

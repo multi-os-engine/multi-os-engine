@@ -63,6 +63,7 @@ import apple.uikit.UITextItemMenuConfiguration;
 import apple.uikit.protocol.UIContextMenuInteractionAnimating;
 import apple.foundation.NSValue;
 import apple.uikit.UITextFormattingViewController;
+import apple.uikit.UIInputSuggestion;
 
 /**
  * API-Since: 8.0
@@ -649,4 +650,10 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @IsOptional
     @Selector("textViewWritingToolsWillBegin:")
     public native void textViewWritingToolsWillBegin(@NotNull UITextView textView);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:insertInputSuggestion:")
+    public native void textViewInsertInputSuggestion(@NotNull UITextView textView,
+            @NotNull UIInputSuggestion inputSuggestion);
 }

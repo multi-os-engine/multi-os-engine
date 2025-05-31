@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
 
 /**
  * Cluster Thermostat
@@ -9017,5 +9018,770 @@ public class MTRBaseClusterThermostat extends MTRGenericBaseCluster {
     public interface Block_writeAttributeUnoccupiedSetbackWithValueParamsCompletionHandler {
         @Generated
         void call_writeAttributeUnoccupiedSetbackWithValueParamsCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * Command AtomicRequest
+     * 
+     * Begins, Commits or Cancels an atomic write
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("atomicRequestWithParams:completion:")
+    public native void atomicRequestWithParamsCompletion(@NotNull MTRThermostatClusterAtomicRequestParams params,
+            @ObjCBlock(name = "call_atomicRequestWithParamsCompletion") @NotNull Block_atomicRequestWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_atomicRequestWithParamsCompletion {
+        @Generated
+        void call_atomicRequestWithParamsCompletion(@Nullable MTRThermostatClusterAtomicResponseParams data,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeActivePresetHandleWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeActivePresetHandleWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeActivePresetHandleWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeActivePresetHandleWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeActivePresetHandleWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeActivePresetHandleWithClusterStateCacheEndpointQueueCompletion(@Nullable NSData value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeActivePresetHandleWithCompletion:")
+    public native void readAttributeActivePresetHandleWithCompletion(
+            @ObjCBlock(name = "call_readAttributeActivePresetHandleWithCompletion") @NotNull Block_readAttributeActivePresetHandleWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeActivePresetHandleWithCompletion {
+        @Generated
+        void call_readAttributeActivePresetHandleWithCompletion(@Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeActiveScheduleHandleWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeActiveScheduleHandleWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeActiveScheduleHandleWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeActiveScheduleHandleWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeActiveScheduleHandleWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeActiveScheduleHandleWithClusterStateCacheEndpointQueueCompletion(@Nullable NSData value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeActiveScheduleHandleWithCompletion:")
+    public native void readAttributeActiveScheduleHandleWithCompletion(
+            @ObjCBlock(name = "call_readAttributeActiveScheduleHandleWithCompletion") @NotNull Block_readAttributeActiveScheduleHandleWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeActiveScheduleHandleWithCompletion {
+        @Generated
+        void call_readAttributeActiveScheduleHandleWithCompletion(@Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfPresetsWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeNumberOfPresetsWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeNumberOfPresetsWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeNumberOfPresetsWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfPresetsWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeNumberOfPresetsWithClusterStateCacheEndpointQueueCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfPresetsWithCompletion:")
+    public native void readAttributeNumberOfPresetsWithCompletion(
+            @ObjCBlock(name = "call_readAttributeNumberOfPresetsWithCompletion") @NotNull Block_readAttributeNumberOfPresetsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfPresetsWithCompletion {
+        @Generated
+        void call_readAttributeNumberOfPresetsWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfScheduleTransitionPerDayWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeNumberOfScheduleTransitionPerDayWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeNumberOfScheduleTransitionPerDayWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeNumberOfScheduleTransitionPerDayWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfScheduleTransitionPerDayWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeNumberOfScheduleTransitionPerDayWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfScheduleTransitionPerDayWithCompletion:")
+    public native void readAttributeNumberOfScheduleTransitionPerDayWithCompletion(
+            @ObjCBlock(name = "call_readAttributeNumberOfScheduleTransitionPerDayWithCompletion") @NotNull Block_readAttributeNumberOfScheduleTransitionPerDayWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfScheduleTransitionPerDayWithCompletion {
+        @Generated
+        void call_readAttributeNumberOfScheduleTransitionPerDayWithCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfScheduleTransitionsWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeNumberOfScheduleTransitionsWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeNumberOfScheduleTransitionsWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeNumberOfScheduleTransitionsWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfScheduleTransitionsWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeNumberOfScheduleTransitionsWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfScheduleTransitionsWithCompletion:")
+    public native void readAttributeNumberOfScheduleTransitionsWithCompletion(
+            @ObjCBlock(name = "call_readAttributeNumberOfScheduleTransitionsWithCompletion") @NotNull Block_readAttributeNumberOfScheduleTransitionsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfScheduleTransitionsWithCompletion {
+        @Generated
+        void call_readAttributeNumberOfScheduleTransitionsWithCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfSchedulesWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeNumberOfSchedulesWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeNumberOfSchedulesWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeNumberOfSchedulesWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfSchedulesWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeNumberOfSchedulesWithClusterStateCacheEndpointQueueCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfSchedulesWithCompletion:")
+    public native void readAttributeNumberOfSchedulesWithCompletion(
+            @ObjCBlock(name = "call_readAttributeNumberOfSchedulesWithCompletion") @NotNull Block_readAttributeNumberOfSchedulesWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfSchedulesWithCompletion {
+        @Generated
+        void call_readAttributeNumberOfSchedulesWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributePresetTypesWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributePresetTypesWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributePresetTypesWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributePresetTypesWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributePresetTypesWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributePresetTypesWithClusterStateCacheEndpointQueueCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributePresetTypesWithCompletion:")
+    public native void readAttributePresetTypesWithCompletion(
+            @ObjCBlock(name = "call_readAttributePresetTypesWithCompletion") @NotNull Block_readAttributePresetTypesWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributePresetTypesWithCompletion {
+        @Generated
+        void call_readAttributePresetTypesWithCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributePresetsWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributePresetsWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributePresetsWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributePresetsWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributePresetsWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributePresetsWithClusterStateCacheEndpointQueueCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributePresetsWithCompletion:")
+    public native void readAttributePresetsWithCompletion(
+            @ObjCBlock(name = "call_readAttributePresetsWithCompletion") @NotNull Block_readAttributePresetsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributePresetsWithCompletion {
+        @Generated
+        void call_readAttributePresetsWithCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeScheduleTypesWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeScheduleTypesWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeScheduleTypesWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeScheduleTypesWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeScheduleTypesWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeScheduleTypesWithClusterStateCacheEndpointQueueCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeScheduleTypesWithCompletion:")
+    public native void readAttributeScheduleTypesWithCompletion(
+            @ObjCBlock(name = "call_readAttributeScheduleTypesWithCompletion") @NotNull Block_readAttributeScheduleTypesWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeScheduleTypesWithCompletion {
+        @Generated
+        void call_readAttributeScheduleTypesWithCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSchedulesWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeSchedulesWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeSchedulesWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeSchedulesWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSchedulesWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeSchedulesWithClusterStateCacheEndpointQueueCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSchedulesWithCompletion:")
+    public native void readAttributeSchedulesWithCompletion(
+            @ObjCBlock(name = "call_readAttributeSchedulesWithCompletion") @NotNull Block_readAttributeSchedulesWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSchedulesWithCompletion {
+        @Generated
+        void call_readAttributeSchedulesWithCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSetpointHoldExpiryTimestampWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeSetpointHoldExpiryTimestampWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeSetpointHoldExpiryTimestampWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeSetpointHoldExpiryTimestampWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSetpointHoldExpiryTimestampWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeSetpointHoldExpiryTimestampWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSetpointHoldExpiryTimestampWithCompletion:")
+    public native void readAttributeSetpointHoldExpiryTimestampWithCompletion(
+            @ObjCBlock(name = "call_readAttributeSetpointHoldExpiryTimestampWithCompletion") @NotNull Block_readAttributeSetpointHoldExpiryTimestampWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSetpointHoldExpiryTimestampWithCompletion {
+        @Generated
+        void call_readAttributeSetpointHoldExpiryTimestampWithCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Command SetActivePresetRequest
+     * 
+     * ID
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setActivePresetRequestWithParams:completion:")
+    public native void setActivePresetRequestWithParamsCompletion(
+            @NotNull MTRThermostatClusterSetActivePresetRequestParams params,
+            @ObjCBlock(name = "call_setActivePresetRequestWithParamsCompletion") @NotNull Block_setActivePresetRequestWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setActivePresetRequestWithParamsCompletion {
+        @Generated
+        void call_setActivePresetRequestWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * Command SetActiveScheduleRequest
+     * 
+     * Upon receipt, if the Schedules attribute contains a ScheduleStruct whose ScheduleHandle field matches the value
+     * of the ScheduleHandle field, the server SHALL set the thermostat's ActiveScheduleHandle attribute to the value of
+     * the ScheduleHandle field.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setActiveScheduleRequestWithParams:completion:")
+    public native void setActiveScheduleRequestWithParamsCompletion(
+            @NotNull MTRThermostatClusterSetActiveScheduleRequestParams params,
+            @ObjCBlock(name = "call_setActiveScheduleRequestWithParamsCompletion") @NotNull Block_setActiveScheduleRequestWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setActiveScheduleRequestWithParamsCompletion {
+        @Generated
+        void call_setActiveScheduleRequestWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeActivePresetHandleWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeActivePresetHandleWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeActiveScheduleHandleWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeActiveScheduleHandleWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeNumberOfPresetsWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeNumberOfPresetsWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeNumberOfScheduleTransitionPerDayWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeNumberOfScheduleTransitionPerDayWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeNumberOfScheduleTransitionsWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeNumberOfScheduleTransitionsWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeNumberOfSchedulesWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeNumberOfSchedulesWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributePresetTypesWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributePresetTypesWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributePresetsWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributePresetsWithParamsSubscriptionEstablishedReportHandler_2(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeScheduleTypesWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeScheduleTypesWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeSchedulesWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeSchedulesWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeSetpointHoldExpiryTimestampWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeSetpointHoldExpiryTimestampWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributePresetsWithValue:completion:")
+    public native void writeAttributePresetsWithValueCompletion(@NotNull NSArray<?> value,
+            @ObjCBlock(name = "call_writeAttributePresetsWithValueCompletion") @NotNull Block_writeAttributePresetsWithValueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributePresetsWithValueCompletion {
+        @Generated
+        void call_writeAttributePresetsWithValueCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributePresetsWithValue:params:completion:")
+    public native void writeAttributePresetsWithValueParamsCompletion(@NotNull NSArray<?> value,
+            @Nullable MTRWriteParams params,
+            @ObjCBlock(name = "call_writeAttributePresetsWithValueParamsCompletion") @NotNull Block_writeAttributePresetsWithValueParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributePresetsWithValueParamsCompletion {
+        @Generated
+        void call_writeAttributePresetsWithValueParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeSchedulesWithValue:completion:")
+    public native void writeAttributeSchedulesWithValueCompletion(@NotNull NSArray<?> value,
+            @ObjCBlock(name = "call_writeAttributeSchedulesWithValueCompletion") @NotNull Block_writeAttributeSchedulesWithValueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeSchedulesWithValueCompletion {
+        @Generated
+        void call_writeAttributeSchedulesWithValueCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeSchedulesWithValue:params:completion:")
+    public native void writeAttributeSchedulesWithValueParamsCompletion(@NotNull NSArray<?> value,
+            @Nullable MTRWriteParams params,
+            @ObjCBlock(name = "call_writeAttributeSchedulesWithValueParamsCompletion") @NotNull Block_writeAttributeSchedulesWithValueParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeSchedulesWithValueParamsCompletion {
+        @Generated
+        void call_writeAttributeSchedulesWithValueParamsCompletion(@Nullable NSError error);
     }
 }

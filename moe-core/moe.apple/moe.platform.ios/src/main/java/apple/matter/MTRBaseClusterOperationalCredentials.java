@@ -1839,7 +1839,8 @@ public class MTRBaseClusterOperationalCredentials extends MTRGenericBaseCluster 
     /**
      * Command UpdateNOC
      * 
-     * Sender is requesting to update the node operational certificates.
+     * This command SHALL replace the NOC and optional associated ICAC (if present) scoped under the accessing fabric
+     * upon successful validation of all arguments and preconditions.
      * 
      * API-Since: 16.4
      */

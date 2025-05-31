@@ -51,6 +51,8 @@ import apple.foundation.NSNumber;
 /**
  * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store
  * Connect.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -150,6 +152,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     /**
      * Asynchronously load all achievement descriptions
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("loadAchievementDescriptionsWithCompletionHandler:")
@@ -196,6 +200,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     /**
      * The description for an unachieved achievement.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -216,6 +222,9 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("groupIdentifier")
     public native String groupIdentifier();
 
+    /**
+     * API-Since: 4.1
+     */
     @Nullable
     @Generated
     @Selector("identifier")
@@ -244,6 +253,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     /**
      * Whether or not the achievement should be listed or displayed if not yet unhidden by the game.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("isHidden")
@@ -269,6 +280,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     /**
      * Maximum points available for completing this achievement.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("maximumPoints")
@@ -283,6 +296,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     /**
      * The title of the achievement.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -291,6 +306,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     /**
      * The description for an achieved achievement.
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -327,4 +344,14 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The release state of the achievement in App Store Connect.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("releaseState")
+    @NUInt
+    public native long releaseState();
 }

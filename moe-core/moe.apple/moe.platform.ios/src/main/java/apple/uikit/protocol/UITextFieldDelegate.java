@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIInputSuggestion;
 
 @Generated
 @Library("UIKit")
@@ -186,6 +187,23 @@ public interface UITextFieldDelegate {
     @Selector("textField:willPresentEditMenuWithAnimator:")
     default void textFieldWillPresentEditMenuWithAnimator(@NotNull UITextField textField,
             @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate when the keyboard delivers an input suggestion.
+     * 
+     * - Parameters:
+     * - textField: The text field that is currently the first responder.
+     * - inputSuggestion: The input suggestion that the user or system selected.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("textField:insertInputSuggestion:")
+    default void textFieldInsertInputSuggestion(@NotNull UITextField textField,
+            @NotNull UIInputSuggestion inputSuggestion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

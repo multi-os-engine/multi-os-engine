@@ -51,6 +51,8 @@ import apple.foundation.NSDictionary;
 /**
  * GKMatch represents an active networking sessions between players. It handles network communications and can report
  * player connection status. All matches are created by a GKMatchmaker.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -192,6 +194,8 @@ public class GKMatch extends NSObject {
 
     /**
      * all the GKPlayers in the match
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -202,11 +206,16 @@ public class GKMatch extends NSObject {
     /**
      * Disconnect the match. This will show all other players in the match that the local player has disconnected. This
      * should be called before releasing the match instance.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("disconnect")
     public native void disconnect();
 
+    /**
+     * API-Since: 4.1
+     */
     @Generated
     @Selector("expectedPlayerCount")
     @NUInt
@@ -278,6 +287,8 @@ public class GKMatch extends NSObject {
     /**
      * Asynchronously broadcasts data to all players. Returns YES if delivery started, NO if unable to start sending and
      * error will be set.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("sendDataToAllPlayers:withDataMode:error:")
@@ -286,6 +297,8 @@ public class GKMatch extends NSObject {
 
     /**
      * all the GKPlayers in the match
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setDelegate:")
@@ -293,6 +306,8 @@ public class GKMatch extends NSObject {
 
     /**
      * all the GKPlayers in the match
+     * 
+     * API-Since: 4.1
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) GKMatchDelegate value) {

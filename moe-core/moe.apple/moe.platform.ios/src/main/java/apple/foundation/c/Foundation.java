@@ -4377,7 +4377,10 @@ public final class Foundation {
      * The protocol for FTP
      * 
      * API-Since: 2.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: FTP is deprecated and only supported in the classic loading mode
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4416,7 +4419,10 @@ public final class Foundation {
      * The proxy type for ftp proxies
      * 
      * API-Since: 2.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: FTP is deprecated and only supported in the classic loading mode
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4604,7 +4610,10 @@ public final class Foundation {
      * to the same value for backward-compatibility, but this symbol name has a better prefix.
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Use NSURLErrorFailingURLErrorKey instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4622,7 +4631,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      * Deprecated-Since: 4.0
-     * Deprecated-Message: Use NSURLErrorFailingURLStringErrorKey instead
+     * Deprecated-Message: Use NSURLErrorFailingURLErrorKey instead
      */
     @NotNull
     @Deprecated

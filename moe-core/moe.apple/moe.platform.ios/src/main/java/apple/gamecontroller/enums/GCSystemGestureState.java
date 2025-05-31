@@ -27,6 +27,8 @@ import org.moe.natj.general.ann.NInt;
  * 
  * @see GCControllerElement.boundToSystemGesture
  * @see GCControllerElement.preferredSystemGestureState
+ * 
+ *      API-Since: 14.0
  */
 @Generated
 public final class GCSystemGestureState {
@@ -36,14 +38,20 @@ public final class GCSystemGestureState {
 
     /**
      * System gesture recognizers will run before input is sent to app, this is the default state
+     * 
+     * API-Since: 14.0
      */
     @Generated @NInt public static final long Enabled = 0x0000000000000000L;
     /**
      * Input is sent to app and processed by system gesture recognizers simultaneously
+     * 
+     * API-Since: 14.0
      */
     @Generated @NInt public static final long AlwaysReceive = 0x0000000000000001L;
     /**
      * System gesture recognizers will not run at all. Input is passed directly to app
+     * 
+     * API-Since: 14.0
      */
     @Generated @NInt public static final long Disabled = 0x0000000000000002L;
 }

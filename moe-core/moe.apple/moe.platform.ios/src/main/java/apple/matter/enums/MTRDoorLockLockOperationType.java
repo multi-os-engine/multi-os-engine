@@ -27,4 +27,8 @@ public final class MTRDoorLockLockOperationType {
      * API-Since: 16.4
      */
     @Generated public static final byte ForcedUserEvent = 3;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Unlatch = 4;
 }

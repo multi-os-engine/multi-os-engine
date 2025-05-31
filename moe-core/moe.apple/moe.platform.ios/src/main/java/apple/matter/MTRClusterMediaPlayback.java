@@ -1039,4 +1039,75 @@ public class MTRClusterMediaPlayback extends MTRGenericCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("activateAudioTrackWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void activateAudioTrackWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRMediaPlaybackClusterActivateAudioTrackParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_activateAudioTrackWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_activateAudioTrackWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_activateAudioTrackWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_activateAudioTrackWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("activateTextTrackWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void activateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRMediaPlaybackClusterActivateTextTrackParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_activateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_activateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_activateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_activateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("deactivateTextTrackWithExpectedValues:expectedValueInterval:completion:")
+    public native void deactivateTextTrackWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_deactivateTextTrackWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_deactivateTextTrackWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deactivateTextTrackWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_deactivateTextTrackWithExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("deactivateTextTrackWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void deactivateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable MTRMediaPlaybackClusterDeactivateTextTrackParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_deactivateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_deactivateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deactivateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_deactivateTextTrackWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
 }

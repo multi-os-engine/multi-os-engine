@@ -287,4 +287,26 @@ public class AVAssetDownloadConfiguration extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * setInterstitialMediaSelectionCriteria:forMediaCharacteristic:
+     * 
+     * Sets media selection on interstitials for this asset
+     * 
+     * Typically, interstitial assets have not been discovered when the main download is initiated.
+     * This method allows the user to specify AVMediaSelectionCriteria for all interstitials that are discovered.
+     * Each AVPlayerMediaSelectionCriteria in the array of criteria specfies a set of criteria for a variant to
+     * download.
+     * 
+     * @param criteria
+     *                            The array of selection criteria to set
+     * @param mediaCharacteristic
+     *                            The AVMediaCharacteristic to which the criteria will be applied
+     * 
+     *                            API-Since: 18.4
+     */
+    @Generated
+    @Selector("setInterstitialMediaSelectionCriteria:forMediaCharacteristic:")
+    public native void setInterstitialMediaSelectionCriteriaForMediaCharacteristic(
+            @NotNull NSArray<? extends AVPlayerMediaSelectionCriteria> criteria, @NotNull String mediaCharacteristic);
 }

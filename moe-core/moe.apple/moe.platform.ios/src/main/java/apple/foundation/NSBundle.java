@@ -594,4 +594,23 @@ public class NSBundle extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Look up a localized string given a list of available localizations.
+     * - Parameters:
+     * - key: The key for the localized string to retrieve.
+     * - value: A default value to return if a localized string for ``key`` cannot be found.
+     * - tableName: The name of the strings file to search. If `nil`, the method uses tables in `Localizable.strings`.
+     * - localizations: An array of BCP 47 language codes corresponding to available localizations. Bundle compares the
+     * array against its available localizations, and uses the best result to retrieve the localized string. If empty,
+     * we treat it as no localization is available, and may return a fallback.
+     * - Returns: A localized version of the string designated by ``key`` in table ``tableName``.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("localizedStringForKey:value:table:localizations:")
+    @NotNull
+    public native String localizedStringForKeyValueTableLocalizations(@NotNull String key, @Nullable String value,
+            @Nullable String tableName, @NotNull NSArray<String> localizations);
 }

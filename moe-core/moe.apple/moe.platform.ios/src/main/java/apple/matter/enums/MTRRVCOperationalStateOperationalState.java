@@ -23,4 +23,20 @@ public final class MTRRVCOperationalStateOperationalState {
      * API-Since: 17.4
      */
     @Generated public static final byte Docked = 66;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Stopped = 0;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Running = 1;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Paused = 2;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Error = 3;
 }

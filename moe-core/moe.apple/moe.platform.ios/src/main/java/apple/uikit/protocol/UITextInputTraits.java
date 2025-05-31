@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.general.ann.NUInt;
+import apple.uikit.UIConversationContext;
 
 /**
  * UITextInputTraits
@@ -424,6 +425,41 @@ public interface UITextInputTraits {
     @Selector("writingToolsBehavior")
     @NInt
     default long writingToolsBehavior() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * A reference to a conversation, such as a mail or messaging thread.
+     * 
+     * Set this conversation context before the keyboard appears; the keyboard uses this context to initialize its
+     * conversation context value. When updates occur in the conversation, call
+     * ``UITextInputDelegate/conversationContext(_:didChange:)`` on the ``inputDelegate`` property for ``UITextInput``
+     * objects, such as UITextView/inputDelegate`` or ``UITextField/inputDelegate``.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("conversationContext")
+    @Nullable
+    default UIConversationContext conversationContext() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * A reference to a conversation, such as a mail or messaging thread.
+     * 
+     * Set this conversation context before the keyboard appears; the keyboard uses this context to initialize its
+     * conversation context value. When updates occur in the conversation, call
+     * ``UITextInputDelegate/conversationContext(_:didChange:)`` on the ``inputDelegate`` property for ``UITextInput``
+     * objects, such as UITextView/inputDelegate`` or ``UITextField/inputDelegate``.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("setConversationContext:")
+    default void setConversationContext(@Nullable UIConversationContext value) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

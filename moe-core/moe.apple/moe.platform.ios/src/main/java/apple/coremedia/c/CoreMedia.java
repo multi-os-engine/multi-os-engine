@@ -11080,6 +11080,12 @@ public final class CoreMedia {
      * Indicates the projection that should be applied to presented decoded video frames.
      * [@constant] `kCMFormatDescriptionProjectionKind_Rectilinear`
      * Indicates rectilinear projection. Generally less than 90 degree field of view with no barrel distortion.
+     * [@constant] `kCMFormatDescriptionProjectionKind_Equirectangular`
+     * Indicates equirectangular projection of a 360 degree sphere to a rectangular plane, where longitude and latitude
+     * of the sphere are mapped linearly to the x,y axes of the plane.
+     * [@constant] `kCMFormatDescriptionProjectionKind_HalfEquirectangular`
+     * Indicates half equirectangular projection of a 180 degree hemisphere to a rectangular plane, where longitude and
+     * latitude of the sphere are mapped linearly to the x,y axes of the plane
      * 
      * The value is a CFString holding one of the kCMFormatDescriptionProjectionKind_* constants.
      * 
@@ -11191,4 +11197,20 @@ public final class CoreMedia {
     @CVariable()
     @NotNull
     public static native CFStringRef kCMMetadataDataType_QuickTimeMetadataMilliLux();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionProjectionKind_Equirectangular();
+
+    /**
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionProjectionKind_HalfEquirectangular();
 }

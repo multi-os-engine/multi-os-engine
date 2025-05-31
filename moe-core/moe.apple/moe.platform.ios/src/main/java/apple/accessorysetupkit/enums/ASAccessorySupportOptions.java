@@ -15,11 +15,20 @@ public final class ASAccessorySupportOptions {
     }
 
     /**
-     * Accessory supports Bluetooth Low Energy pairing.
+     * The accessory supports Bluetooth Low Energy pairing.
      */
     @Generated @NUInt public static final long PairingLE = 0x0000000000000002L;
     /**
-     * Accessory supports bring up of classic transport profiles when low energy transport for peripheral is connected.
+     * The accessory supports bridging to Bluetooth classic transport.
+     * 
+     * This option indicates that when connecting with low energy transport, the accessory supports activating Bluetooth
+     * classic transport profiles.
      */
     @Generated @NUInt public static final long TransportBridging = 0x0000000000000004L;
+    /**
+     * The accessory supports Bluetooth Low Energy HID service.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated @NUInt public static final long HID = 0x0000000000000008L;
 }

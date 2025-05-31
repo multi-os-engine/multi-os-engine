@@ -2402,4 +2402,86 @@ public class MTRBaseClusterMediaPlayback extends MTRGenericBaseCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Command ActivateAudioTrack
+     * 
+     * Upon receipt, the server SHALL set the active Audio Track to the one identified by the TrackID in the Track
+     * catalog for the streaming media. If the TrackID does not exist in the Track catalog, OR does not correspond to
+     * the streaming media OR no media is being streamed at the time of receipt of this command, the server will return
+     * an error status of INVALID_ARGUMENT.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("activateAudioTrackWithParams:completion:")
+    public native void activateAudioTrackWithParamsCompletion(
+            @NotNull MTRMediaPlaybackClusterActivateAudioTrackParams params,
+            @ObjCBlock(name = "call_activateAudioTrackWithParamsCompletion") @NotNull Block_activateAudioTrackWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_activateAudioTrackWithParamsCompletion {
+        @Generated
+        void call_activateAudioTrackWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * Command ActivateTextTrack
+     * 
+     * Upon receipt, the server SHALL set the active Text Track to the one identified by the TrackID in the Track
+     * catalog for the streaming media. If the TrackID does not exist in the Track catalog, OR does not correspond to
+     * the streaming media OR no media is being streamed at the time of receipt of this command, the server SHALL return
+     * an error status of INVALID_ARGUMENT.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("activateTextTrackWithParams:completion:")
+    public native void activateTextTrackWithParamsCompletion(
+            @NotNull MTRMediaPlaybackClusterActivateTextTrackParams params,
+            @ObjCBlock(name = "call_activateTextTrackWithParamsCompletion") @NotNull Block_activateTextTrackWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_activateTextTrackWithParamsCompletion {
+        @Generated
+        void call_activateTextTrackWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("deactivateTextTrackWithCompletion:")
+    public native void deactivateTextTrackWithCompletion(
+            @ObjCBlock(name = "call_deactivateTextTrackWithCompletion") @NotNull Block_deactivateTextTrackWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deactivateTextTrackWithCompletion {
+        @Generated
+        void call_deactivateTextTrackWithCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * Command DeactivateTextTrack
+     * 
+     * If a Text Track is active (i.e. being displayed), upon receipt of this command, the server SHALL stop displaying
+     * it.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("deactivateTextTrackWithParams:completion:")
+    public native void deactivateTextTrackWithParamsCompletion(
+            @Nullable MTRMediaPlaybackClusterDeactivateTextTrackParams params,
+            @ObjCBlock(name = "call_deactivateTextTrackWithParamsCompletion") @NotNull Block_deactivateTextTrackWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deactivateTextTrackWithParamsCompletion {
+        @Generated
+        void call_deactivateTextTrackWithParamsCompletion(@Nullable NSError error);
+    }
 }

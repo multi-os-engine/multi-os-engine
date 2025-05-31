@@ -1700,4 +1700,11 @@ public class MTRBaseClusterBridgedDeviceBasic extends MTRBaseClusterBridgedDevic
         @Generated
         void call_writeAttributeNodeLabelWithValueParamsCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Selector("readAttributeProductIDWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion") @NotNull MTRBaseClusterBridgedDeviceBasicInformation.Block_readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion completion);
 }

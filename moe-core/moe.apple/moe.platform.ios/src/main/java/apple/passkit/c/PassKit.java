@@ -595,4 +595,20 @@ public final class PassKit {
     @Generated
     @CVariable()
     public static native short PKMerchantCategoryCodeNone();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkHimyan();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkJaywan();
 }

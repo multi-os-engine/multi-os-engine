@@ -43,6 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -185,6 +188,8 @@ public class GKPlayer extends GKBasePlayer {
      * The alias property contains the player's nickname. When you need to display the name to the user, consider using
      * displayName instead. The nickname is unique but not invariant: the player may change their nickname. The nickname
      * may be very long, so be sure to use appropriate string truncation API when drawing.
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -236,7 +241,7 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 13.0
-     * Deprecated-Message: Use either the gamePlayerID or teamPlayerID property to identify a player.
+     * Deprecated-Message: Use ``GKPlayer/gamePlayerID`` or ``GKPlayer/teamPlayerID`` instead.
      */
     @NotNull
     @Deprecated

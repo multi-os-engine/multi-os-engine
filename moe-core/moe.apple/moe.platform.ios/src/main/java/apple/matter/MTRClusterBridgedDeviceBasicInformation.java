@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSError;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * * Cluster Bridged Device Basic Information
@@ -355,4 +357,30 @@ public class MTRClusterBridgedDeviceBasicInformation extends MTRGenericCluster {
     public native void writeAttributeNodeLabelWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("keepActiveWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void keepActiveWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRBridgedDeviceBasicInformationClusterKeepActiveParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_keepActiveWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_keepActiveWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_keepActiveWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_keepActiveWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeProductIDWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeProductIDWithParams(@Nullable MTRReadParams params);
 }

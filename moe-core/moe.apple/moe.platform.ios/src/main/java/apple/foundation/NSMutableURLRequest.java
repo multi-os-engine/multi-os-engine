@@ -269,7 +269,10 @@ public class NSMutableURLRequest extends NSURLRequest {
      * a resource, etc.).
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Only supported in the classic loader, please adopt HTTP/2 and HTTP/3 instead
      */
+    @Deprecated
     @Generated
     @Selector("HTTPShouldUsePipelining")
     public native boolean HTTPShouldUsePipelining();
@@ -518,7 +521,10 @@ public class NSMutableURLRequest extends NSURLRequest {
      * a resource, etc.).
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Only supported in the classic loader, please adopt HTTP/2 and HTTP/3 instead
      */
+    @Deprecated
     @Generated
     @Selector("setHTTPShouldUsePipelining:")
     public native void setHTTPShouldUsePipelining(boolean value);

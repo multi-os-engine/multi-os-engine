@@ -2141,4 +2141,178 @@ public class MTRBaseClusterNetworkCommissioning extends MTRGenericBaseCluster {
         void call_scanNetworksWithCompletion(@Nullable MTRNetworkCommissioningClusterScanNetworksResponseParams data,
                 @Nullable NSError error);
     }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSupportedThreadFeaturesWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeSupportedThreadFeaturesWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeSupportedThreadFeaturesWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeSupportedThreadFeaturesWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSupportedThreadFeaturesWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeSupportedThreadFeaturesWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSupportedThreadFeaturesWithCompletion:")
+    public native void readAttributeSupportedThreadFeaturesWithCompletion(
+            @ObjCBlock(name = "call_readAttributeSupportedThreadFeaturesWithCompletion") @NotNull Block_readAttributeSupportedThreadFeaturesWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSupportedThreadFeaturesWithCompletion {
+        @Generated
+        void call_readAttributeSupportedThreadFeaturesWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSupportedWiFiBandsWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeSupportedWiFiBandsWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeSupportedWiFiBandsWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeSupportedWiFiBandsWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSupportedWiFiBandsWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeSupportedWiFiBandsWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSupportedWiFiBandsWithCompletion:")
+    public native void readAttributeSupportedWiFiBandsWithCompletion(
+            @ObjCBlock(name = "call_readAttributeSupportedWiFiBandsWithCompletion") @NotNull Block_readAttributeSupportedWiFiBandsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSupportedWiFiBandsWithCompletion {
+        @Generated
+        void call_readAttributeSupportedWiFiBandsWithCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeThreadVersionWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeThreadVersionWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeThreadVersionWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeThreadVersionWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeThreadVersionWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeThreadVersionWithClusterStateCacheEndpointQueueCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeThreadVersionWithCompletion:")
+    public native void readAttributeThreadVersionWithCompletion(
+            @ObjCBlock(name = "call_readAttributeThreadVersionWithCompletion") @NotNull Block_readAttributeThreadVersionWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeThreadVersionWithCompletion {
+        @Generated
+        void call_readAttributeThreadVersionWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeSupportedThreadFeaturesWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeSupportedThreadFeaturesWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeSupportedWiFiBandsWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeSupportedWiFiBandsWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeThreadVersionWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeThreadVersionWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
 }

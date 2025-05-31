@@ -44,6 +44,8 @@ import apple.foundation.NSDictionary;
 
 /**
  * GKMatchRequest represents the parameters needed to create the match.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -208,6 +210,8 @@ public class GKMatchRequest extends NSObject {
 
     /**
      * Maximum number of players for the match
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("maxPlayers")
@@ -216,6 +220,8 @@ public class GKMatchRequest extends NSObject {
 
     /**
      * Minimum number of players for the match
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("minPlayers")
@@ -228,6 +234,8 @@ public class GKMatchRequest extends NSObject {
      * automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with
      * player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the
      * resulting match equals 0xFFFFFFFF.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("playerAttributes")
@@ -235,6 +243,8 @@ public class GKMatchRequest extends NSObject {
 
     /**
      * The player group identifier. Matchmaking will only take place between players in the same group.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("playerGroup")
@@ -306,6 +316,8 @@ public class GKMatchRequest extends NSObject {
 
     /**
      * Maximum number of players for the match
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setMaxPlayers:")
@@ -313,6 +325,8 @@ public class GKMatchRequest extends NSObject {
 
     /**
      * Minimum number of players for the match
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setMinPlayers:")
@@ -324,6 +338,8 @@ public class GKMatchRequest extends NSObject {
      * automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with
      * player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the
      * resulting match equals 0xFFFFFFFF.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setPlayerAttributes:")
@@ -331,6 +347,8 @@ public class GKMatchRequest extends NSObject {
 
     /**
      * The player group identifier. Matchmaking will only take place between players in the same group.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setPlayerGroup:")

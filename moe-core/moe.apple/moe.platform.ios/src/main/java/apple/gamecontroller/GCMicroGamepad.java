@@ -200,6 +200,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput buttonX();
 
     /**
+     * A profile keeps a reference to the controller that this profile is mapping input from.
+     * 
      * API-Since: 9.0
      */
     @Nullable
@@ -251,9 +253,9 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * 
      * @see GCMicroGamepadSnapshot
      * 
-     *      API-Since: 7.0
+     *      API-Since: 9.0
      *      Deprecated-Since: 13.0
-     *      Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController capture] instead
+     *      Deprecated-Message: Use the -[GCController capture] method instead
      */
     @NotNull
     @Deprecated

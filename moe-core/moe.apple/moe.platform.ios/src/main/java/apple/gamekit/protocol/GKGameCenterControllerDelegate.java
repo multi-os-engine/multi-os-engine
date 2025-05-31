@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

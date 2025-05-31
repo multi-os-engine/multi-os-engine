@@ -7,6 +7,9 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
+import apple.struct.kevent;
+import apple.struct.kevent64_s;
+import org.moe.natj.general.ann.UncertainArgument;
 
 @Generated
 @Library("BrowserEngineCore")
@@ -110,4 +113,27 @@ public final class BrowserEngineCore {
     @Inline
     @CFunction
     public static native void be_memory_inline_jit_restrict_rwx_to_rx_with_witness();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CFunction
+    public static native int be_kevent(int kq,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent changelist, int nchanges,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent eventlist, int nevents,
+            int be_flags);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CFunction
+    public static native int be_kevent64(int kq,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent64_s changelist, int nchanges,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent64_s eventlist, int nevents,
+            int flags);
+
+    @Generated public static final double BE_KEVENT_NO_FLAGS = 0.0;
+    @Generated public static final double BE_KEVENT_RETURN_IMMEDIATELY = 1.0;
 }

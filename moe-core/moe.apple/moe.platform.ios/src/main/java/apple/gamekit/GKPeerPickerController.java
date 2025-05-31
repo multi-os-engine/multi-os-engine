@@ -200,6 +200,7 @@ public class GKPeerPickerController extends NSObject {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Nullable
     @Deprecated
@@ -260,6 +261,7 @@ public class GKPeerPickerController extends NSObject {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated
     @Generated
@@ -273,6 +275,7 @@ public class GKPeerPickerController extends NSObject {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated
     @Generated

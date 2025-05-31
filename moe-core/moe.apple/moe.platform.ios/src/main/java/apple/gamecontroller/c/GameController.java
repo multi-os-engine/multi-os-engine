@@ -59,7 +59,7 @@ public final class GameController {
      * 
      *         API-Since: 7.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
+     *         Deprecated-Message: Use GCExtendedGamepad instead
      */
     @Deprecated
     @Generated
@@ -77,7 +77,7 @@ public final class GameController {
      * 
      *         API-Since: 7.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
+     *         Deprecated-Message: Use GCExtendedGamepad instead
      */
     @Nullable
     @Deprecated
@@ -92,10 +92,9 @@ public final class GameController {
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
      * 
-     *         API-Since: 9.0
+     *         API-Since: 7.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithExtendedGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithExtendedGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -112,10 +111,9 @@ public final class GameController {
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with
      *         GCExtendedGamepadSnapshot.snapshotData
      * 
-     *         API-Since: 9.0
+     *         API-Since: 7.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithExtendedGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithExtendedGamepad] method instead
      */
     @Nullable
     @Deprecated
@@ -132,8 +130,7 @@ public final class GameController {
      * 
      *         API-Since: 9.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithMicroGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -151,8 +148,7 @@ public final class GameController {
      * 
      *         API-Since: 9.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithMicroGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Nullable
     @Deprecated
@@ -206,10 +202,9 @@ public final class GameController {
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
      * 
-     *         API-Since: 9.0
+     *         API-Since: 13.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithExtendedGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithExtendedGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -227,10 +222,9 @@ public final class GameController {
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with
      *         GCExtendedGamepadSnapshot.snapshotData
      * 
-     *         API-Since: 9.0
+     *         API-Since: 13.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithExtendedGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithExtendedGamepad] method instead
      */
     @Nullable
     @Deprecated
@@ -245,10 +239,9 @@ public final class GameController {
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
      * 
-     *         API-Since: 9.0
+     *         API-Since: 13.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithMicroGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -264,10 +257,9 @@ public final class GameController {
      * 
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
      * 
-     *         API-Since: 9.0
+     *         API-Since: 13.0
      *         Deprecated-Since: 13.0
-     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
-     *         controllerWithMicroGamepad] instead
+     *         Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Nullable
     @Deprecated
@@ -279,8 +271,7 @@ public final class GameController {
     /**
      * API-Since: 9.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
-     * controllerWithExtendedGamepad] instead
+     * Deprecated-Message: Use the -[GCController controllerWithExtendedGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -289,10 +280,9 @@ public final class GameController {
     public static native long GCCurrentExtendedGamepadSnapshotDataVersion();
 
     /**
-     * API-Since: 9.0
+     * API-Since: 13.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
-     * instead
+     * Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -3844,12 +3834,18 @@ public final class GameController {
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCProductCategoryArcadeStick();
 
+    /**
+     * API-Since: 17.4
+     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native GCPoint2 GCPoint2Make(float x, float y);
 
+    /**
+     * API-Since: 17.4
+     */
     @Generated
     @Inline
     @CFunction

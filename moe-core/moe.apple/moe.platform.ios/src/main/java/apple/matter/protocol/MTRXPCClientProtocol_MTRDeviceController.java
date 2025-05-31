@@ -5,6 +5,11 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
+import apple.foundation.NSDictionary;
+import apple.foundation.NSUUID;
+import org.jetbrains.annotations.NotNull;
+import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.Selector;
 
 /**
  * API-Since: 18.2
@@ -14,4 +19,15 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTRXPCClientProtocol_MTRDeviceController")
 public interface MTRXPCClientProtocol_MTRDeviceController {
+
+    /**
+     * API-Since: 18.3
+     */
+    @Generated
+    @IsOptional
+    @Selector("controller:controllerConfigurationUpdated:")
+    default void controllerControllerConfigurationUpdated(@NotNull NSUUID controller,
+            @NotNull NSDictionary<?, ?> configuration) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

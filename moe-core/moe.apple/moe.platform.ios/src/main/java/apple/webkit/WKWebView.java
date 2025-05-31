@@ -926,7 +926,7 @@ public class WKWebView extends UIView {
     public interface Block_evaluateJavaScriptCompletionHandler {
         @Generated
         void call_evaluateJavaScriptCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object arg0,
-                @Nullable NSError error);
+                @Nullable NSError arg1);
     }
 
     /**
@@ -1121,7 +1121,7 @@ public class WKWebView extends UIView {
     @Generated
     public interface Block_createWebArchiveDataWithCompletionHandler {
         @Generated
-        void call_createWebArchiveDataWithCompletionHandler(@NotNull NSData arg0, @NotNull NSError arg1);
+        void call_createWebArchiveDataWithCompletionHandler(@Nullable NSData arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -1139,9 +1139,9 @@ public class WKWebView extends UIView {
      * No matter which WKContentWorld you use to evaluate your JavaScript string, you can make changes to the underlying
      * web content. (e.g. the Document and its DOM structure)
      * Such changes will be visible to script executing in all WKContentWorlds.
-     * Evaluating your JavaScript string can leave behind other changes to global state visibile to JavaScript. (e.g.
+     * Evaluating your JavaScript string can leave behind other changes to global state visible to JavaScript. (e.g.
      * `window.myVariable = 1;`)
-     * Those changes will only be visibile to scripts executed in the same WKContentWorld.
+     * Those changes will only be visible to scripts executed in the same WKContentWorld.
      * evaluateJavaScript: is a great way to set up global state for future JavaScript execution in a given world. (e.g.
      * Importing libraries/utilities that future JavaScript execution will rely on)
      * Once your global state is set up, consider using callAsyncJavaScript: for more flexible interaction with the
@@ -1165,7 +1165,7 @@ public class WKWebView extends UIView {
     public interface Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler {
         @Generated
         void call_evaluateJavaScriptInFrameInContentWorldCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object arg0, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) Object arg0, @Nullable NSError arg1);
     }
 
     /**

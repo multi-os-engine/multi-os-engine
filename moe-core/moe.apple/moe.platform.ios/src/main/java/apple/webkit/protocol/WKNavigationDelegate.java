@@ -36,6 +36,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.webkit.WKBackForwardListItem;
 
 /**
  * A class conforming to the WKNavigationDelegate protocol can provide
@@ -334,5 +335,44 @@ public interface WKNavigationDelegate {
     default void webViewNavigationResponseDidBecomeDownload(@NotNull WKWebView webView,
             @NotNull WKNavigationResponse navigationResponse, @NotNull WKDownload download) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the webpage initiates a back/forward navigation via JavaScript
+     * 
+     * Back/forward navigations - including those triggered by webpage JavaScript - will consult the WebKit client via
+     * this delegate.
+     * If the `willUseInstantBack` argument is `YES`, then the navigation is to a webpage that is suspended in memory
+     * and might be resumed without
+     * the normal webpage loading process.
+     * Even if the `willUseInstantBack` argument is `YES`, it is possible that the suspended webpage will not be used
+     * and the normal loading
+     * process will take place.
+     * In the case where the normal webpage loading process takes place, additional navigation delegate calls will
+     * continue to happen for this
+     * navigation starting with `decidePolicyForNavigationAction`
+     * 
+     * API-Since: 18.4
+     * 
+     * @param webView             The web view invoking the delegate method.
+     * @param backForwardListItem The back/forward list item that will be navigated to
+     * @param willUseInstantBack  Whether or not the navigation will resume a previously suspended webpage that is
+     *                            eligible for Instant Back
+     * @param completionHandler   The completion handler you must invoke to allow or disallow the navigation
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:shouldGoToBackForwardListItem:willUseInstantBack:completionHandler:")
+    default void webViewShouldGoToBackForwardListItemWillUseInstantBackCompletionHandler(@NotNull WKWebView webView,
+            @NotNull WKBackForwardListItem backForwardListItem, boolean willUseInstantBack,
+            @ObjCBlock(name = "call_webViewShouldGoToBackForwardListItemWillUseInstantBackCompletionHandler") @NotNull Block_webViewShouldGoToBackForwardListItemWillUseInstantBackCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewShouldGoToBackForwardListItemWillUseInstantBackCompletionHandler {
+        @Generated
+        void call_webViewShouldGoToBackForwardListItemWillUseInstantBackCompletionHandler(boolean shouldGoToItem);
     }
 }

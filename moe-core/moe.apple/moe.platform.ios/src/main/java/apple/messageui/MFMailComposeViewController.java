@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSItemProvider;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * MFMailComposeViewController
@@ -396,4 +398,27 @@ public class MFMailComposeViewController extends UINavigationController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * insertCollaborationItemProvider:
+     * 
+     * Returns <tt>YES</tt> if the item provider was added to the composition successfully.
+     * 
+     * If the return value is YES, the itemProvider was added to the composition. The itemProvider must be non-nil.
+     * 
+     * API-Since: 18.4
+     * 
+     * @param itemProvider specifying the intended content for collaboration
+     */
+    @Generated
+    @Selector("insertCollaborationItemProvider:completionHandler:")
+    public native void insertCollaborationItemProviderCompletionHandler(@NotNull NSItemProvider itemProvider,
+            @ObjCBlock(name = "call_insertCollaborationItemProviderCompletionHandler") @NotNull Block_insertCollaborationItemProviderCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_insertCollaborationItemProviderCompletionHandler {
+        @Generated
+        void call_insertCollaborationItemProviderCompletionHandler(boolean arg0);
+    }
 }

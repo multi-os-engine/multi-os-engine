@@ -32,7 +32,7 @@ public interface GCDevice {
      * @see GCControllerDirectionPad.valueChangedHandler
      * @see GCMotion.valueChangedHandler
      * 
-     *      API-Since: 7.0
+     *      API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -84,7 +84,7 @@ public interface GCDevice {
      * @see GCControllerDirectionPad.valueChangedHandler
      * @see GCMotion.valueChangedHandler
      * 
-     *      API-Since: 7.0
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setHandlerQueue:")

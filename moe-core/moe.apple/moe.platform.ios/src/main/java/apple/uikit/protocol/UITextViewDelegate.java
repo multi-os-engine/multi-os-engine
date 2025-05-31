@@ -41,6 +41,7 @@ import apple.uikit.UITextItem;
 import apple.uikit.UITextItemMenuConfiguration;
 import apple.foundation.NSValue;
 import apple.uikit.UITextFormattingViewController;
+import apple.uikit.UIInputSuggestion;
 
 @Generated
 @Library("UIKit")
@@ -393,6 +394,23 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("textViewWritingToolsWillBegin:")
     default void textViewWritingToolsWillBegin(@NotNull UITextView textView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate when the keyboard delivers an input suggestion.
+     * 
+     * - Parameters:
+     * - textView: The text view that is currently the first responder.
+     * - inputSuggestion: The input suggestion that the user or system selected.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:insertInputSuggestion:")
+    default void textViewInsertInputSuggestion(@NotNull UITextView textView,
+            @NotNull UIInputSuggestion inputSuggestion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -214,4 +214,12 @@ public class MTRClusterWakeOnLAN extends MTRGenericCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeLinkLocalAddressWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeLinkLocalAddressWithParams(@Nullable MTRReadParams params);
 }

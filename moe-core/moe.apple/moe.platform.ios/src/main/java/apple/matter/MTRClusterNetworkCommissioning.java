@@ -565,4 +565,29 @@ public class MTRClusterNetworkCommissioning extends MTRGenericCluster {
         void call_scanNetworksWithExpectedValuesExpectedValueIntervalCompletion(
                 @Nullable MTRNetworkCommissioningClusterScanNetworksResponseParams data, @Nullable NSError error);
     }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSupportedThreadFeaturesWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeSupportedThreadFeaturesWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSupportedWiFiBandsWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeSupportedWiFiBandsWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeThreadVersionWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeThreadVersionWithParams(@Nullable MTRReadParams params);
 }

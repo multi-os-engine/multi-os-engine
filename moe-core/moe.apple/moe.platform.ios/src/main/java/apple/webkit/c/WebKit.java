@@ -261,4 +261,376 @@ public final class WebKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String WKWebsiteDataTypeHashSalt();
+
+    /**
+     * Indicates a ``WKWebExtensionMatchPattern`` error.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionMatchPatternErrorDomain();
+
+    /**
+     * The `activeTab` permission requests that when the user interacts with the extension, the extension is granted
+     * extra permissions for the active tab only.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionActiveTab();
+
+    /**
+     * The `alarms` permission requests access to the `browser.alarms` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionAlarms();
+
+    /**
+     * The `clipboardWrite` permission requests access to write to the clipboard.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionClipboardWrite();
+
+    /**
+     * The `contextMenus` permission requests access to the `browser.contextMenus` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionContextMenus();
+
+    /**
+     * The `cookies` permission requests access to the `browser.cookies` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionCookies();
+
+    /**
+     * The `declarativeNetRequest` permission requests access to the `browser.declarativeNetRequest` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionDeclarativeNetRequest();
+
+    /**
+     * The `declarativeNetRequestFeedback` permission requests access to the `browser.declarativeNetRequest` APIs with
+     * extra information on matched rules.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionDeclarativeNetRequestFeedback();
+
+    /**
+     * The `declarativeNetRequestWithHostAccess` permission requests access to the `browser.declarativeNetRequest` APIs
+     * with the ability to modify or redirect requests.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionDeclarativeNetRequestWithHostAccess();
+
+    /**
+     * The `menus` permission requests access to the `browser.menus` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionMenus();
+
+    /**
+     * The `nativeMessaging` permission requests access to send messages to the App Extension bundle.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionNativeMessaging();
+
+    /**
+     * The `scripting` permission requests access to the `browser.scripting` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionScripting();
+
+    /**
+     * The `storage` permission requests access to the `browser.storage` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionStorage();
+
+    /**
+     * The `tabs` permission requests access extra information on the `browser.tabs` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionTabs();
+
+    /**
+     * The `unlimitedStorage` permission requests access to an unlimited quota on the `browser.storage.local` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionUnlimitedStorage();
+
+    /**
+     * The `webNavigation` permission requests access to the `browser.webNavigation` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionWebNavigation();
+
+    /**
+     * The `webRequest` permission requests access to the `browser.webRequest` APIs.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionPermissionWebRequest();
+
+    /**
+     * Indicates a ``WKWebExtension`` error.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionErrorDomain();
+
+    /**
+     * Indicates a ``WKWebExtensionContext`` error.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextErrorDomain();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has new errors or errors were cleared.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextErrorsDidUpdateNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly granted permissions.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextPermissionsWereGrantedNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly denied permissions.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextPermissionsWereDeniedNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly removed granted permissions.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextGrantedPermissionsWereRemovedNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly removed denied permissions.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextDeniedPermissionsWereRemovedNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly granted permission match patterns.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextPermissionMatchPatternsWereGrantedNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly denied permission match patterns.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextPermissionMatchPatternsWereDeniedNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly removed granted permission match
+     * patterns.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextGrantedPermissionMatchPatternsWereRemovedNotification();
+
+    /**
+     * This notification is sent whenever a ``WKWebExtensionContext`` has newly removed denied permission match
+     * patterns.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextDeniedPermissionMatchPatternsWereRemovedNotification();
+
+    /**
+     * The corresponding value represents the affected permissions in ``WKWebExtensionContext`` notifications.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextNotificationUserInfoKeyPermissions();
+
+    /**
+     * The corresponding value represents the affected permission match patterns in ``WKWebExtensionContext``
+     * notifications.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionContextNotificationUserInfoKeyMatchPatterns();
+
+    /**
+     * Specifies local storage, including `browser.storage.local`.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionDataTypeLocal();
+
+    /**
+     * Specifies session storage, including `browser.storage.session`.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionDataTypeSession();
+
+    /**
+     * Specifies synchronized storage, including `browser.storage.sync`.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebExtensionDataTypeSynchronized();
+
+    /**
+     * Indicates a ``WKWebExtensionDataRecord`` error.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionDataRecordErrorDomain();
+
+    /**
+     * Indicates a ``WKWebExtensionMessagePort`` error.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebExtensionMessagePortErrorDomain();
 }

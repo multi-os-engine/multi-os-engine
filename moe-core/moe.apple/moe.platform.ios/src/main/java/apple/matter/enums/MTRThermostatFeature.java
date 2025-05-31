@@ -51,4 +51,12 @@ public final class MTRThermostatFeature {
      * API-Since: 17.0
      */
     @Generated public static final int LocalTemperatureNotExposed = 0x00000040;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int MatterScheduleConfiguration = 0x00000080;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int Presets = 0x00000100;
 }

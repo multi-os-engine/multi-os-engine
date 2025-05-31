@@ -100,8 +100,8 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * Returns Inactive, Limited, or Complete after considering system information along with the value of
-     * preferredBehavior
+     * Returns None, Limited, or Complete after considering system information along with the value of
+     * preferredBehavior.
      * 
      * API-Since: 18.2
      */
@@ -149,8 +149,9 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
      * property to host any visual elements.
      * 
      * If you display your view’s text using multiple text containers, implement the
-     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:singleContainerSubrangesOf:in:)``
-     * and ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:decorationContainerViewFor:in:)``
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsSingleContainerSubrangesOf:in:completion:)``
+     * and
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsDecorationContainerViewFor:in:completion:)``
      * methods to provide separate decoration views for each container.
      * 
      * API-Since: 18.2
@@ -197,7 +198,7 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
      * uses the object in its ``UIInteraction/view`` property to host any visual effects.
      * 
      * If you display your view’s text using multiple text containers, implement the
-     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:singleContainerSubrangesOf:in:)``
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsSingleContainerSubrangesOf:in:completion:)``
      * method to request multiple previews.
      * 
      * API-Since: 18.2
@@ -330,8 +331,9 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
      * property to host any visual elements.
      * 
      * If you display your view’s text using multiple text containers, implement the
-     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:singleContainerSubrangesOf:in:)``
-     * and ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:decorationContainerViewFor:in:)``
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsSingleContainerSubrangesOf:in:completion:)``
+     * and
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsDecorationContainerViewFor:in:completion:)``
      * methods to provide separate decoration views for each container.
      * 
      * API-Since: 18.2
@@ -354,8 +356,9 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
      * property to host any visual elements.
      * 
      * If you display your view’s text using multiple text containers, implement the
-     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:singleContainerSubrangesOf:in:)``
-     * and ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:decorationContainerViewFor:in:)``
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsSingleContainerSubrangesOf:in:completion:)``
+     * and
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsDecorationContainerViewFor:in:completion:)``
      * methods to provide separate decoration views for each container.
      * 
      * API-Since: 18.2
@@ -385,7 +388,7 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
      * uses the object in its ``UIInteraction/view`` property to host any visual effects.
      * 
      * If you display your view’s text using multiple text containers, implement the
-     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:singleContainerSubrangesOf:in:)``
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsSingleContainerSubrangesOf:in:completion:)``
      * method to request multiple previews.
      * 
      * API-Since: 18.2
@@ -407,7 +410,7 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
      * uses the object in its ``UIInteraction/view`` property to host any visual effects.
      * 
      * If you display your view’s text using multiple text containers, implement the
-     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:singleContainerSubrangesOf:in:)``
+     * ``UIWritingToolsCoordinator/Delegate/writingToolsCoordinator(_:requestsSingleContainerSubrangesOf:in:completion:)``
      * method to request multiple previews.
      * 
      * API-Since: 18.2

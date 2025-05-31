@@ -12,7 +12,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * API-Since: 18.2
+ * API-Since: 18.3
  */
 @Generated
 @Library("Matter")
@@ -20,23 +20,12 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MTRXPCServerProtocol")
 public interface MTRXPCServerProtocol extends MTRXPCServerProtocol_MTRDevice, MTRXPCServerProtocol_MTRDeviceController {
     /**
-     * API-Since: 18.2
+     * API-Since: 18.3
      */
     @Generated
     @IsOptional
     @Selector("deviceController:checkInWithContext:")
     default void deviceControllerCheckInWithContext(@NotNull NSUUID controller, @NotNull NSDictionary<?, ?> context) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    /**
-     * API-Since: 18.2
-     */
-    @Generated
-    @IsOptional
-    @Selector("deviceController:updateControllerConfiguration:")
-    default void deviceControllerUpdateControllerConfiguration(@NotNull NSUUID controller,
-            @NotNull NSDictionary<?, ?> controllerState) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

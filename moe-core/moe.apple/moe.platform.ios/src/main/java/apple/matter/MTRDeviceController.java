@@ -506,11 +506,13 @@ public class MTRDeviceController extends NSObject {
      * Then a PASE session will be established with the device, unless an error
      * occurs. MTRDeviceControllerDelegate will be notified as follows:
      * 
-     * * Invalid connection information: onStatusUpdate with MTRCommissioningStatusFailed.
+     * * Invalid connection information: controller:statusUpdate: with MTRCommissioningStatusFailed.
      * 
-     * * Commissioning session setup fails: onPairingComplete with an error.
+     * * Commissioning session setup fails:
+     * controller:commissioningSessionEstablishmentDone: with non-nil error.
      * 
-     * * Commissioning session setup succeeds: onPairingComplete with no error.
+     * * Commissioning session setup succeeds:
+     * controller:commissioningSessionEstablishmentDone: with nil error.
      * 
      * Once a commissioning session is set up, getDeviceBeingCommissioned
      * can be used to get an MTRBaseDevice and discover what sort of network
@@ -543,12 +545,13 @@ public class MTRDeviceController extends NSObject {
      * Then a PASE session will be established with the device, unless an error
      * occurs. MTRDeviceControllerDelegate will be notified as follows:
      * 
-     * * Discovery fails: onStatusUpdate with MTRCommissioningStatusFailed.
+     * * Discovery fails: controller:statusUpdate: with MTRCommissioningStatusFailed.
      * 
-     * * Discovery succeeds but commissioning session setup fails: onPairingComplete
-     * with an error.
+     * * Commissioning session setup fails:
+     * controller:commissioningSessionEstablishmentDone: with non-nil error.
      * 
-     * * Commissioning session setup succeeds: onPairingComplete with no error.
+     * * Commissioning session setup succeeds:
+     * controller:commissioningSessionEstablishmentDone: with nil error.
      * 
      * Once a commissioning session is set up, getDeviceBeingCommissioned
      * can be used to get an MTRBaseDevice and discover what sort of network
@@ -813,4 +816,37 @@ public class MTRDeviceController extends NSObject {
     @Selector("uniqueIdentifier")
     @NotNull
     public native NSUUID uniqueIdentifier();
+
+    /**
+     * Returns the list of MTRDevice instances that this controller has loaded
+     * into memory. Returns an empty array if no devices are in memory.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("devices")
+    @NotNull
+    public native NSArray<? extends MTRDevice> devices();
+
+    /**
+     * Forget any information we have about the device with the given node ID. That
+     * includes clearing any information we have stored about it.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("forgetDeviceWithNodeID:")
+    public native void forgetDeviceWithNodeID(@NotNull NSNumber nodeID);
+
+    /**
+     * Returns the list of node IDs for which this controller has stored
+     * information. Returns empty list if the controller does not have any
+     * information stored.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("nodesWithStoredData")
+    @NotNull
+    public native NSArray<? extends NSNumber> nodesWithStoredData();
 }

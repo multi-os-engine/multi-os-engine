@@ -47,6 +47,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -138,6 +141,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * Query challenges for the current game issued to the local player -- equivalent GKChallenge objects are not
      * guaranteed to be pointer equivalent across calls, but equal GKChallenge objects will have equal hashes
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("loadReceivedChallengesWithCompletionHandler:")
@@ -176,6 +181,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * Date the challenge was completed or aborted
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -185,6 +192,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * Any GKChallenge object to be declined must be in a state of GKChallengeStatePending in order to be successfully
      * cancelled
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("decline")
@@ -204,6 +213,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * Date the challenge was issued
+     * 
+     * API-Since: 6.0
      */
     @NotNull
     @Generated
@@ -234,6 +245,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The message sent to receivers of this challenge
+     * 
+     * API-Since: 6.0
      */
     @Nullable
     @Generated
@@ -264,6 +277,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * Current state of the challenge
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("state")

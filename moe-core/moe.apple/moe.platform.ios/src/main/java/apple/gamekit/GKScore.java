@@ -156,7 +156,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * 3. Communications problem
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("reportScores:withCompletionHandler:")
     public static native void reportScoresWithCompletionHandler(@NotNull NSArray<? extends GKScore> scores,
@@ -242,7 +244,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * Default value of zero is returned if no value is set.
      * 
      * API-Since: 5.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("context")
     public native long context();
@@ -319,7 +323,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * match.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithLeaderboardIdentifier:player:")
     public native GKScore initWithLeaderboardIdentifierPlayer(@NotNull String identifier, @NotNull GKPlayer player);
@@ -339,7 +345,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * leaderboard identifier (required)
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("leaderboardIdentifier")
@@ -349,7 +357,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * The player that recorded the score.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("player")
@@ -403,7 +413,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * Default value of zero is returned if no value is set.
      * 
      * API-Since: 5.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("setContext:")
     public native void setContext(long value);
@@ -412,7 +424,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * leaderboard identifier (required)
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("setLeaderboardIdentifier:")
     public native void setLeaderboardIdentifier(@NotNull String value);
@@ -423,7 +437,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
      * 
      * API-Since: 5.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("setShouldSetDefaultLeaderboard:")
     public native void setShouldSetDefaultLeaderboard(boolean value);
@@ -445,7 +461,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
      * 
      * API-Since: 5.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("shouldSetDefaultLeaderboard")
     public native boolean shouldSetDefaultLeaderboard();

@@ -320,4 +320,31 @@ public class UITabBarControllerSidebar extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Additional items to add to the overflow menu in the sidebar's navigation bar. Setting this property to a non-nil
+     * value will force the overflow button
+     * to appear, regardless of if you provide any content in the element's callback. Items returned are displayed
+     * directly in the presented menu. When
+     * set, the "Edit Sidebar" action will also be moved into the overflow menu after the app-provided items.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("navigationOverflowItems")
+    @Nullable
+    public native UIDeferredMenuElement navigationOverflowItems();
+
+    /**
+     * Additional items to add to the overflow menu in the sidebar's navigation bar. Setting this property to a non-nil
+     * value will force the overflow button
+     * to appear, regardless of if you provide any content in the element's callback. Items returned are displayed
+     * directly in the presented menu. When
+     * set, the "Edit Sidebar" action will also be moved into the overflow menu after the app-provided items.
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("setNavigationOverflowItems:")
+    public native void setNavigationOverflowItems(@Nullable UIDeferredMenuElement value);
 }

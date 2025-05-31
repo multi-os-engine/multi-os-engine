@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * The object you use to delete web-usage data.
@@ -219,4 +220,85 @@ public class STWebHistory extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Fetches all web history associated with the bundle identifier and profile identifier
+     * you specified during initialization.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("fetchAllHistoryWithCompletionHandler:")
+    public native void fetchAllHistoryWithCompletionHandler(
+            @ObjCBlock(name = "call_fetchAllHistoryWithCompletionHandler") @NotNull Block_fetchAllHistoryWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchAllHistoryWithCompletionHandler {
+        @Generated
+        void call_fetchAllHistoryWithCompletionHandler(@Nullable NSSet<? extends NSURL> urls, @Nullable NSError error);
+    }
+
+    /**
+     * Fetches web history that occurred during the date interval you specify.
+     * 
+     * - Parameters:
+     * - interval: The date interval of web history you want to fetch.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("fetchHistoryDuringInterval:completionHandler:")
+    public native void fetchHistoryDuringIntervalCompletionHandler(@NotNull NSDateInterval interval,
+            @ObjCBlock(name = "call_fetchHistoryDuringIntervalCompletionHandler") @NotNull Block_fetchHistoryDuringIntervalCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchHistoryDuringIntervalCompletionHandler {
+        @Generated
+        void call_fetchHistoryDuringIntervalCompletionHandler(@Nullable NSSet<? extends NSURL> urls,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Creates a web history instance to delete web-usage data associated to the
+     * bundle identifier and profile identifier you specify.
+     * 
+     * The default value for `bundleIdentifier` is `Bundle.main.bundleIdentifier`.
+     * This is the recommended identifier to use, except for example, if a helper
+     * process is presenting web UI and you want to group that web-usage under the
+     * main app’s bundle identifier.
+     * 
+     * The default value for `profileIdentifier` is `nil`. This identifier can be used to delete
+     * browsing history for a specific profile. Using `nil` will only delete web history reported
+     * without a profile identifier.
+     * 
+     * - Parameters:
+     * - bundleIdentifier: The bundle identifier.
+     * - profileIdentifier: The identifier of the current browsing profile.
+     * - error: Any error that occurred while changing the bundle identifier.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("initWithBundleIdentifier:profileIdentifier:error:")
+    public native STWebHistory initWithBundleIdentifierProfileIdentifierError(@NotNull String bundleIdentifier,
+            @Nullable String profileIdentifier, @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a web history instance to delete web-usage data associated to the
+     * profile identifier you specify.
+     * 
+     * The default value for `profileIdentifier` is `nil`. This identifier can be used to delete
+     * browsing history for a specific profile. Using `nil` will only delete web history reported
+     * without a profile identifier.
+     * 
+     * - Parameters:
+     * - profileIdentifier: The identifier of the current browsing profile.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("initWithProfileIdentifier:")
+    public native STWebHistory initWithProfileIdentifier(@Nullable String profileIdentifier);
 }

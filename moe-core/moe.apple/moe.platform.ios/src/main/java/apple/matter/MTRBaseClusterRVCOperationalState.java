@@ -880,4 +880,41 @@ public class MTRBaseClusterRVCOperationalState extends MTRGenericBaseCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("goHomeWithCompletion:")
+    public native void goHomeWithCompletion(
+            @ObjCBlock(name = "call_goHomeWithCompletion") @NotNull Block_goHomeWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_goHomeWithCompletion {
+        @Generated
+        void call_goHomeWithCompletion(@Nullable MTRRVCOperationalStateClusterOperationalCommandResponseParams data,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Command GoHome
+     * 
+     * On receipt of this command, the device SHALL start seeking the charging dock, if possible in the current state of
+     * the device.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("goHomeWithParams:completion:")
+    public native void goHomeWithParamsCompletion(@Nullable MTRRVCOperationalStateClusterGoHomeParams params,
+            @ObjCBlock(name = "call_goHomeWithParamsCompletion") @NotNull Block_goHomeWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_goHomeWithParamsCompletion {
+        @Generated
+        void call_goHomeWithParamsCompletion(
+                @Nullable MTRRVCOperationalStateClusterOperationalCommandResponseParams data, @Nullable NSError error);
+    }
 }

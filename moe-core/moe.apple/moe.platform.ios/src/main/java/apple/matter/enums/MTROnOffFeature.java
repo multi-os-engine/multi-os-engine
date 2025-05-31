@@ -25,4 +25,8 @@ public final class MTROnOffFeature {
      * Deprecated-Message: Please use MTROnOffFeatureDeadFrontBehavior
      */
     @Generated @Deprecated public static final int DeadFront = 0x00000002;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int OffOnly = 0x00000004;
 }

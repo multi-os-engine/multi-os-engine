@@ -142,7 +142,10 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding, NSCopyi
      * Generate a random Matter-valid setup PIN.
      * 
      * API-Since: 16.1
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Please use generateRandomSetupPasscode
      */
+    @Deprecated
     @Generated
     @Selector("generateRandomPIN")
     @NUInt
@@ -544,4 +547,14 @@ public class MTRSetupPayload extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("vendorElements")
     @NotNull
     public native NSArray<? extends MTROptionalQRCodeInfo> vendorElements();
+
+    /**
+     * Check whether the provided setup passcode (represented as an unsigned
+     * integer) is a valid setup passcode.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("isValidSetupPasscode:")
+    public static native boolean isValidSetupPasscode(@NotNull NSNumber setupPasscode);
 }

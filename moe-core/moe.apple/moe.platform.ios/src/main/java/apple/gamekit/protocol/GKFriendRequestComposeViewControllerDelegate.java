@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
  * 
  * API-Since: 4.2
  * Deprecated-Since: 10.0
+ * Deprecated-Message: No longer supported.
  */
 @Deprecated
 @Generated
@@ -42,6 +43,7 @@ public interface GKFriendRequestComposeViewControllerDelegate {
      * 
      * API-Since: 4.2
      * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported.
      */
     @Deprecated
     @Generated

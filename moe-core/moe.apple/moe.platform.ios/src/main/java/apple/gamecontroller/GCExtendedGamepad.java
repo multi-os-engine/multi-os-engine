@@ -201,6 +201,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput buttonY();
 
     /**
+     * A profile keeps a reference to the controller that this profile is mapping input from.
+     * 
      * API-Since: 7.0
      */
     @Nullable
@@ -294,7 +296,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController capture] instead
+     * Deprecated-Message: Use the -[GCController capture] method instead
      */
     @NotNull
     @Deprecated

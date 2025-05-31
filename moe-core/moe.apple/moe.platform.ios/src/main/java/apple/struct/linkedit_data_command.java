@@ -40,7 +40,8 @@ public final class linkedit_data_command extends StructObject {
      * LC_FUNCTION_STARTS, LC_DATA_IN_CODE,
      * LC_DYLIB_CODE_SIGN_DRS, LC_ATOM_INFO,
      * LC_LINKER_OPTIMIZATION_HINT,
-     * LC_DYLD_EXPORTS_TRIE, or
+     * LC_DYLD_EXPORTS_TRIE,
+     * LC_FUNCTION_VARIANTS, LC_FUNCTION_VARIANT_FIXUPS, or
      * LC_DYLD_CHAINED_FIXUPS.
      */
     @Generated
@@ -52,7 +53,8 @@ public final class linkedit_data_command extends StructObject {
      * LC_FUNCTION_STARTS, LC_DATA_IN_CODE,
      * LC_DYLIB_CODE_SIGN_DRS, LC_ATOM_INFO,
      * LC_LINKER_OPTIMIZATION_HINT,
-     * LC_DYLD_EXPORTS_TRIE, or
+     * LC_DYLD_EXPORTS_TRIE,
+     * LC_FUNCTION_VARIANTS, LC_FUNCTION_VARIANT_FIXUPS, or
      * LC_DYLD_CHAINED_FIXUPS.
      */
     @Generated

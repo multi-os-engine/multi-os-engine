@@ -33,6 +33,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corespotlight.CSSearchableItem;
 
 /**
  * An application that is long running should provide a CSSearchableIndexDelegate conforming object to handle
@@ -147,5 +148,39 @@ public interface CSSearchableIndexDelegate {
             @NotNull CSSearchableIndex searchableIndex, @NotNull String itemIdentifier, @NotNull String typeIdentifier,
             boolean inPlace, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * The developer may want to be notified when an item has been updated with specific attributes (see:
+     * CSSearchableItemUpdateListenerOptions for Apple Intelligence attributes)
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("searchableItemsDidUpdate:")
+    default void searchableItemsDidUpdate(@NotNull NSArray<? extends CSSearchableItem> items) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * The index requests that the delegate provide searchable items for the provided identifiers
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("searchableItemsForIdentifiers:searchableItemsHandler:")
+    default void searchableItemsForIdentifiersSearchableItemsHandler(@NotNull NSArray<String> identifiers,
+            @ObjCBlock(name = "call_searchableItemsForIdentifiersSearchableItemsHandler") @NotNull Block_searchableItemsForIdentifiersSearchableItemsHandler searchableItemsHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_searchableItemsForIdentifiersSearchableItemsHandler {
+        @Generated
+        void call_searchableItemsForIdentifiersSearchableItemsHandler(
+                @NotNull NSArray<? extends CSSearchableItem> items);
     }
 }

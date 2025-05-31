@@ -1285,4 +1285,186 @@ public class MTRClusterThermostat extends MTRGenericCluster {
     public native void writeAttributeUnoccupiedSetbackWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("atomicRequestWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void atomicRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRThermostatClusterAtomicRequestParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_atomicRequestWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_atomicRequestWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_atomicRequestWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_atomicRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRThermostatClusterAtomicResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeActivePresetHandleWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeActivePresetHandleWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeActiveScheduleHandleWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeActiveScheduleHandleWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfPresetsWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeNumberOfPresetsWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfScheduleTransitionPerDayWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeNumberOfScheduleTransitionPerDayWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfScheduleTransitionsWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeNumberOfScheduleTransitionsWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfSchedulesWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeNumberOfSchedulesWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributePresetTypesWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributePresetTypesWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributePresetsWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributePresetsWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeScheduleTypesWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeScheduleTypesWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSchedulesWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeSchedulesWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSetpointHoldExpiryTimestampWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeSetpointHoldExpiryTimestampWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setActivePresetRequestWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void setActivePresetRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRThermostatClusterSetActivePresetRequestParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_setActivePresetRequestWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_setActivePresetRequestWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setActivePresetRequestWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_setActivePresetRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setActiveScheduleRequestWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void setActiveScheduleRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRThermostatClusterSetActiveScheduleRequestParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_setActiveScheduleRequestWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_setActiveScheduleRequestWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setActiveScheduleRequestWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_setActiveScheduleRequestWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributePresetsWithValue:expectedValueInterval:")
+    public native void writeAttributePresetsWithValueExpectedValueInterval(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributePresetsWithValue:expectedValueInterval:params:")
+    public native void writeAttributePresetsWithValueExpectedValueIntervalParams(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
+            @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeSchedulesWithValue:expectedValueInterval:")
+    public native void writeAttributeSchedulesWithValueExpectedValueInterval(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeSchedulesWithValue:expectedValueInterval:params:")
+    public native void writeAttributeSchedulesWithValueExpectedValueIntervalParams(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
+            @Nullable MTRWriteParams params);
 }

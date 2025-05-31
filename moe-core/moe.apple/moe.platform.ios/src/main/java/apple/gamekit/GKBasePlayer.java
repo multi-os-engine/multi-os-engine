@@ -40,6 +40,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +161,8 @@ public class GKBasePlayer extends NSObject {
      * This player's name representation as displayed in the Game Center in-game UI. Use this when you need to display
      * the player's name. The display name may be very long, so be sure to use appropriate string truncation API when
      * drawing.
+     * 
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -169,9 +174,8 @@ public class GKBasePlayer extends NSObject {
     public native GKBasePlayer init();
 
     /**
-     * API-Since: 4.1
+     * API-Since: 10.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: Use either the gamePlayerID or teamPlayerID property to identify a player.
      */
     @Nullable
     @Deprecated

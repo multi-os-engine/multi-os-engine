@@ -19,4 +19,8 @@ public final class MTRTimeFormatLocalizationHourFormat {
      * API-Since: 16.1
      */
     @Generated public static final byte Format24hr = 1;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte FormatUseActiveLocale = -1;
 }

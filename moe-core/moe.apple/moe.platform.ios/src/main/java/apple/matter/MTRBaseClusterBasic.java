@@ -2183,4 +2183,18 @@ public class MTRBaseClusterBasic extends MTRBaseClusterBasicInformation {
         @Generated
         void call_writeAttributeNodeLabelWithValueParamsCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Selector("readAttributeMaxPathsPerInvokeWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion") @NotNull MTRBaseClusterBasicInformation.Block_readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Generated
+    @Selector("readAttributeSpecificationVersionWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion") @NotNull MTRBaseClusterBasicInformation.Block_readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion completion);
 }

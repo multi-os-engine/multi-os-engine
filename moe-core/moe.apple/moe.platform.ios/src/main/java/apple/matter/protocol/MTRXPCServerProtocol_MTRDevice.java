@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.matter.MTRCommandWithRequiredResponse;
 
 /**
  * API-Since: 18.2
@@ -218,5 +219,25 @@ public interface MTRXPCServerProtocol_MTRDevice {
     public interface Block_downloadLogOfTypeNodeIDTimeoutCompletion {
         @Generated
         void call_downloadLogOfTypeNodeIDTimeoutCompletion(@Nullable NSURL url, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("deviceController:nodeID:invokeCommands:completion:")
+    default void deviceControllerNodeIDInvokeCommandsCompletion(@NotNull NSUUID controller, @NotNull NSNumber nodeID,
+            @NotNull NSArray<? extends NSArray<? extends MTRCommandWithRequiredResponse>> commands,
+            @ObjCBlock(name = "call_deviceControllerNodeIDInvokeCommandsCompletion") @NotNull Block_deviceControllerNodeIDInvokeCommandsCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deviceControllerNodeIDInvokeCommandsCompletion {
+        @Generated
+        void call_deviceControllerNodeIDInvokeCommandsCompletion(
+                @Nullable NSArray<? extends NSDictionary<String, ?>> values, @Nullable NSError error);
     }
 }

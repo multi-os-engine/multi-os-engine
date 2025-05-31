@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.NUInt;
  * 
  * API-Since: 3.0
  * Deprecated-Since: 7.0
+ * Deprecated-Message: No longer supported
  */
 @Deprecated
 @Generated
@@ -33,6 +34,7 @@ public final class GKPeerPickerConnectionType {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated @NUInt public static final long Online = 0x0000000000000001L;
     /**
@@ -40,6 +42,7 @@ public final class GKPeerPickerConnectionType {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated @NUInt public static final long Nearby = 0x0000000000000002L;
 

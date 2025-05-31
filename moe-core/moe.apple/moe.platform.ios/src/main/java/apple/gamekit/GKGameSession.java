@@ -201,7 +201,6 @@ public class GKGameSession extends NSObject {
     /**
      * API-Since: 10.0
      * Deprecated-Since: 12.0
-     * Deprecated-Message: -[GKLocalPlayer unregisterListener:] or -[GKLocalPlayer unregisterAllListeners:]
      */
     @Deprecated
     @Generated

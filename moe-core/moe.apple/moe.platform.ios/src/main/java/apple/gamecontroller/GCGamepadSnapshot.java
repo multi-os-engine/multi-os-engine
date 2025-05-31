@@ -55,7 +55,7 @@ import org.jetbrains.annotations.Nullable;
  * 
  *      API-Since: 7.0
  *      Deprecated-Since: 13.0
- *      Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
+ *      Deprecated-Message: Use GCExtendedGamepad instead
  */
 @Deprecated
 @Generated
@@ -179,7 +179,7 @@ public class GCGamepadSnapshot extends GCGamepad {
     /**
      * API-Since: 7.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
+     * Deprecated-Message: Use GCExtendedGamepad instead
      */
     @Deprecated
     @Generated
@@ -190,7 +190,7 @@ public class GCGamepadSnapshot extends GCGamepad {
     /**
      * API-Since: 7.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
+     * Deprecated-Message: Use GCExtendedGamepad instead
      */
     @Deprecated
     @Generated
@@ -200,7 +200,7 @@ public class GCGamepadSnapshot extends GCGamepad {
     /**
      * API-Since: 7.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
+     * Deprecated-Message: Use GCExtendedGamepad instead
      */
     @Deprecated
     @Generated
@@ -210,7 +210,7 @@ public class GCGamepadSnapshot extends GCGamepad {
     /**
      * API-Since: 7.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
+     * Deprecated-Message: Use GCExtendedGamepad instead
      */
     @Deprecated
     @NotNull

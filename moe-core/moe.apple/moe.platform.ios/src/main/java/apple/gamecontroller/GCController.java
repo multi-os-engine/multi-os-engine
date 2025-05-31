@@ -263,8 +263,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      *      API-Since: 7.0
      *      Deprecated-Since: 13.0
-     *      Deprecated-Message: controllerPausedHandler has been deprecated. Use the Menu button found on the
-     *      controller's profile, if it exists.
+     *      Deprecated-Message: Use the Menu button found on the controller's input profile, if it exists.
      */
     @Nullable
     @Deprecated
@@ -334,7 +333,7 @@ public class GCController extends NSObject implements GCDevice {
     public native boolean isAttachedToDevice();
 
     /**
-     * API-Since: 7.0
+     * API-Since: 10.0
      */
     @Nullable
     @Generated
@@ -400,8 +399,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      *      API-Since: 7.0
      *      Deprecated-Since: 13.0
-     *      Deprecated-Message: controllerPausedHandler has been deprecated. Use the Menu button found on the
-     *      controller's profile, if it exists.
+     *      Deprecated-Message: Use the Menu button found on the controller's input profile, if it exists.
      */
     @Deprecated
     @Generated
@@ -460,13 +458,16 @@ public class GCController extends NSObject implements GCDevice {
     }
 
     /**
-     * Polls the state vector of the controller and saves it to a new and writable instance of GCController.
+     * Polls the state vector of the controller and saves it to a new and writable
+     * instance of GCController.
      * 
-     * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
-     * a snapshot will not change based on user input once it is taken.
+     * If your application is heavily multithreaded this may also be useful to
+     * guarantee atomicity of input handling as a snapshot will not change based
+     * on user input once it is taken.
      * 
      * @see snapshot
-     * @return A new controller with the duplicated state vector of the current controller
+     * @return A new controller with the duplicated state vector of the current
+     *         controller.
      * 
      *         API-Since: 13.0
      */
@@ -494,8 +495,8 @@ public class GCController extends NSObject implements GCDevice {
     /**
      * Creates a controller with a micro gamepad profile.
      * 
-     * This controller will be considered a snapshot, allowing developers to write to any GCControllerElement of its
-     * profiles.
+     * This controller will be considered a snapshot, allowing developers to write
+     * to any GCControllerElement of its profiles.
      * 
      * @see snapshot
      * @return A new controller with a micro gamepad profile
@@ -508,12 +509,11 @@ public class GCController extends NSObject implements GCDevice {
     public static native GCController controllerWithMicroGamepad();
 
     /**
-     * A controller may represent a real device managed by the operating system, or a virtual snapshot created by the
-     * developer.
-     * If a controller is directly created by the developer, it is considered to be a snapshot, allowing direct writes
-     * to any
-     * GCControllerElement of its profiles. If the controller is not snapshot, the system will reject any write requests
-     * to GCControllerElement.
+     * A controller may represent a real device managed by the operating system,
+     * or a virtual snapshot created by the developer. If a controller is created
+     * by the developer, it is considered to be a snapshot, allowing direct writes
+     * to any GCControllerElement of its profiles. If the controller is not
+     * snapshot, the system will reject any write requests to GCControllerElement.
      * 
      * @see controllerWithMicroGamepad
      * @see controllerWithExtendedGamepad
@@ -545,13 +545,14 @@ public class GCController extends NSObject implements GCDevice {
     public native GCDeviceBattery battery();
 
     /**
-     * The most recently used game controller. If a user actuates a game controller input, that controller will become
-     * the current one.
+     * The most recently used game controller. If a user actuates a game controller
+     * input, that controller will become the current one.
      * 
-     * [@note] This is useful for single player games where you only care about whether an input is pressed, and not
-     * where it came from. You
-     * will still need to register for changes to GCController.current so that your UI can remain up-to-date with the
-     * current controller.
+     * [@note]
+     * This is useful for single player games where you only care about whether an
+     * input is pressed, and not where it came from. You will still need to
+     * register for changes to GCController.current so that your UI can remain
+     * up-to-date with the current controller.
      * 
      * API-Since: 14.0
      */

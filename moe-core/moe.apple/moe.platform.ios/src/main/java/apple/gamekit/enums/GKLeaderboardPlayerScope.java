@@ -19,9 +19,18 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class GKLeaderboardPlayerScope {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Global = 0x0000000000000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long FriendsOnly = 0x0000000000000001L;
 
     @Generated

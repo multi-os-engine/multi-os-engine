@@ -1305,4 +1305,80 @@ public class MTRBaseClusterChannel extends MTRGenericBaseCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Command CancelRecordProgram
+     * 
+     * Cancel recording for a specific program or series.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("cancelRecordProgramWithParams:completion:")
+    public native void cancelRecordProgramWithParamsCompletion(
+            @NotNull MTRChannelClusterCancelRecordProgramParams params,
+            @ObjCBlock(name = "call_cancelRecordProgramWithParamsCompletion") @NotNull Block_cancelRecordProgramWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_cancelRecordProgramWithParamsCompletion {
+        @Generated
+        void call_cancelRecordProgramWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("getProgramGuideWithCompletion:")
+    public native void getProgramGuideWithCompletion(
+            @ObjCBlock(name = "call_getProgramGuideWithCompletion") @NotNull Block_getProgramGuideWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getProgramGuideWithCompletion {
+        @Generated
+        void call_getProgramGuideWithCompletion(@Nullable MTRChannelClusterProgramGuideResponseParams data,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Command GetProgramGuide
+     * 
+     * This command retrieves the program guide. It accepts several filter parameters to return specific schedule and
+     * program information from a content app. The command shall receive in response a ProgramGuideResponse.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("getProgramGuideWithParams:completion:")
+    public native void getProgramGuideWithParamsCompletion(@Nullable MTRChannelClusterGetProgramGuideParams params,
+            @ObjCBlock(name = "call_getProgramGuideWithParamsCompletion") @NotNull Block_getProgramGuideWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getProgramGuideWithParamsCompletion {
+        @Generated
+        void call_getProgramGuideWithParamsCompletion(@Nullable MTRChannelClusterProgramGuideResponseParams data,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Command RecordProgram
+     * 
+     * Record a specific program or series when it goes live. This functionality enables DVR recording features.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("recordProgramWithParams:completion:")
+    public native void recordProgramWithParamsCompletion(@NotNull MTRChannelClusterRecordProgramParams params,
+            @ObjCBlock(name = "call_recordProgramWithParamsCompletion") @NotNull Block_recordProgramWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_recordProgramWithParamsCompletion {
+        @Generated
+        void call_recordProgramWithParamsCompletion(@Nullable NSError error);
+    }
 }

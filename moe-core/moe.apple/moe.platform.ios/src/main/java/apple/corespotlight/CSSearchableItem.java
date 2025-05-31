@@ -323,4 +323,27 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("setIsUpdate:")
     public native void setIsUpdate(boolean value);
+
+    /**
+     * An option flag to specify whether to listen for specific attribute updates that Spotlight can provide.
+     * A developer may be notified by a call of searchableItemsDidUpdate to its delegate, where specific properties will
+     * be available on the item.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setUpdateListenerOptions:")
+    public native void setUpdateListenerOptions(@NUInt long value);
+
+    /**
+     * An option flag to specify whether to listen for specific attribute updates that Spotlight can provide.
+     * A developer may be notified by a call of searchableItemsDidUpdate to its delegate, where specific properties will
+     * be available on the item.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("updateListenerOptions")
+    @NUInt
+    public native long updateListenerOptions();
 }

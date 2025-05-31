@@ -46,6 +46,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.2
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: No longer supported.
+ */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -145,7 +151,12 @@ public class GKFriendRequestComposeViewController extends UINavigationController
 
     /**
      * Get the maximum number of recipients permitted
+     * 
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("maxNumberOfRecipients")
     @NUInt
@@ -189,6 +200,12 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("addRecipientPlayers:")
     public native void addRecipientPlayers(@NotNull NSArray<? extends GKPlayer> players);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported.
+     */
+    @Deprecated
     @Generated
     @Selector("addRecipientsWithEmailAddresses:")
     public native void addRecipientsWithEmailAddresses(@NotNull NSArray<String> emailAddresses);
@@ -205,6 +222,7 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     /**
      * API-Since: 4.2
      * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported.
      */
     @Nullable
     @Deprecated
@@ -239,6 +257,7 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     /**
      * API-Since: 4.2
      * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported.
      */
     @Deprecated
     @Generated
@@ -249,6 +268,7 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     /**
      * API-Since: 4.2
      * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported.
      */
     @Deprecated
     @Generated
@@ -266,7 +286,12 @@ public class GKFriendRequestComposeViewController extends UINavigationController
 
     /**
      * Specify the message sent to the invitee. A default message will be used if you don't specify one.
+     * 
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("setMessage:")
     public native void setMessage(@Nullable String message);

@@ -240,7 +240,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
      * this trip, arranged from most to least preferred. You must provide at least one variant.
      * The variant strings should be provided as localized, displayable content.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("destinationNameVariants")
@@ -252,7 +252,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
      * this trip, arranged from most to least preferred. You must provide at least one variant.
      * The variant strings should be provided as localized, displayable content.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("setDestinationNameVariants:")

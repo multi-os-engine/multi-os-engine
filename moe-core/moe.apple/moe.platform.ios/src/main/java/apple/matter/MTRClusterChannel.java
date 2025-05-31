@@ -363,4 +363,77 @@ public class MTRClusterChannel extends MTRGenericCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("cancelRecordProgramWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void cancelRecordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRChannelClusterCancelRecordProgramParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_cancelRecordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_cancelRecordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_cancelRecordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_cancelRecordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("getProgramGuideWithExpectedValues:expectedValueInterval:completion:")
+    public native void getProgramGuideWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_getProgramGuideWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_getProgramGuideWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getProgramGuideWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_getProgramGuideWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRChannelClusterProgramGuideResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("getProgramGuideWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void getProgramGuideWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable MTRChannelClusterGetProgramGuideParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_getProgramGuideWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_getProgramGuideWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getProgramGuideWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_getProgramGuideWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRChannelClusterProgramGuideResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("recordProgramWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void recordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRChannelClusterRecordProgramParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_recordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_recordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_recordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_recordProgramWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
 }

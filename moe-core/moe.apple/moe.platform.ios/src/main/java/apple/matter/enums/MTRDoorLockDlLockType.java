@@ -55,4 +55,8 @@ public final class MTRDoorLockDlLockType {
      * API-Since: 16.1
      */
     @Generated public static final byte DoorFurniture = 10;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Eurocylinder = 11;
 }

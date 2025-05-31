@@ -327,4 +327,33 @@ public class STWebpageController extends UIViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * An optional identifier for the current browsing profile.
+     * 
+     * The default value is `nil`. This identifier represents a profile and allows you to keep your browsing separate
+     * for topics like work, personal, or school. Using `nil` will report web history without a profile identifier.
+     * Web browsers with a "default" profile may want to use `nil` in order to match any web history reported prior
+     * to this API.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("profileIdentifier")
+    @Nullable
+    public native String profileIdentifier();
+
+    /**
+     * An optional identifier for the current browsing profile.
+     * 
+     * The default value is `nil`. This identifier represents a profile and allows you to keep your browsing separate
+     * for topics like work, personal, or school. Using `nil` will report web history without a profile identifier.
+     * Web browsers with a "default" profile may want to use `nil` in order to match any web history reported prior
+     * to this API.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setProfileIdentifier:")
+    public native void setProfileIdentifier(@Nullable String value);
 }

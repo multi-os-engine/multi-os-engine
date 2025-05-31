@@ -2626,7 +2626,7 @@ public class MTRBaseClusterFanControl extends MTRGenericBaseCluster {
     /**
      * Command Step
      * 
-     * The Step command speeds up or slows down the fan, in steps.
+     * This command speeds up or slows down the fan, in steps, without a client having to know the fan speed.
      * 
      * API-Since: 17.6
      */

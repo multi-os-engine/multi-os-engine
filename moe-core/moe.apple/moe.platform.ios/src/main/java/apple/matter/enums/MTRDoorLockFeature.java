@@ -101,4 +101,16 @@ public final class MTRDoorLockFeature {
      * API-Since: 16.1
      */
     @Generated public static final int HolidaySchedules = 0x00000800;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int Unbolt = 0x00001000;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int AliroProvisioning = 0x00002000;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int AliroBLEUWB = 0x00004000;
 }

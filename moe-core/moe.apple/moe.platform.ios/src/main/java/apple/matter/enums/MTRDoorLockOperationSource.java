@@ -51,4 +51,8 @@ public final class MTRDoorLockOperationSource {
      * API-Since: 16.4
      */
     @Generated public static final byte Biometric = 9;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Aliro = 10;
 }

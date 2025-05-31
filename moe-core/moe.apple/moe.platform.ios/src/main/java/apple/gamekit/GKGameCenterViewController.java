@@ -46,6 +46,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

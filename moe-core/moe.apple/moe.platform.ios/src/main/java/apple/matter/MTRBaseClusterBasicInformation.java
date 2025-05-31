@@ -1773,4 +1773,120 @@ public class MTRBaseClusterBasicInformation extends MTRGenericBaseCluster {
         @Generated
         void call_writeAttributeNodeLabelWithValueParamsCompletion(@Nullable NSError error);
     }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeMaxPathsPerInvokeWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeMaxPathsPerInvokeWithClusterStateCacheEndpointQueueCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeMaxPathsPerInvokeWithCompletion:")
+    public native void readAttributeMaxPathsPerInvokeWithCompletion(
+            @ObjCBlock(name = "call_readAttributeMaxPathsPerInvokeWithCompletion") @NotNull Block_readAttributeMaxPathsPerInvokeWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMaxPathsPerInvokeWithCompletion {
+        @Generated
+        void call_readAttributeMaxPathsPerInvokeWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSpecificationVersionWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeSpecificationVersionWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSpecificationVersionWithCompletion:")
+    public native void readAttributeSpecificationVersionWithCompletion(
+            @ObjCBlock(name = "call_readAttributeSpecificationVersionWithCompletion") @NotNull Block_readAttributeSpecificationVersionWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSpecificationVersionWithCompletion {
+        @Generated
+        void call_readAttributeSpecificationVersionWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeMaxPathsPerInvokeWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeMaxPathsPerInvokeWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeSpecificationVersionWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeSpecificationVersionWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
 }

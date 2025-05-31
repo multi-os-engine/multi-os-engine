@@ -229,4 +229,19 @@ public class MTRAccountLoginClusterLogoutParams extends NSObject implements NSCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("node")
+    @Nullable
+    public native NSNumber node();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setNode:")
+    public native void setNode(@Nullable NSNumber value);
 }

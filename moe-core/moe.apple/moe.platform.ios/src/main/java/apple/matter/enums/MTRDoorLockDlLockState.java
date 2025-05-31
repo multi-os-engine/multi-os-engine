@@ -23,4 +23,8 @@ public final class MTRDoorLockDlLockState {
      * API-Since: 16.1
      */
     @Generated public static final byte Unlocked = 2;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Unlatched = 3;
 }

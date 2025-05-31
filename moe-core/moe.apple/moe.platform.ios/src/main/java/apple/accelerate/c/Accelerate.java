@@ -82,6 +82,8 @@ import apple.accelerate.opaque.la_object_t;
 import org.moe.natj.c.map.CStringArrayMapper;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.ReferenceInfo;
+import apple.accelerate.opaque.sparse_matrix_double_complex;
+import apple.accelerate.opaque.sparse_matrix_float_complex;
 
 @Generated
 @Library("Accelerate")
@@ -53571,11 +53573,11 @@ public final class Accelerate {
             int indices_data_type, @Nullable ConstVoidPtr indices, @NUInt long idx_stride);
 
     /**
-     * Returns required workspace size for a call to BNNSMatMul() with the given paramters.
+     * Returns required workspace size for a call to BNNSMatMul() with the given parameters.
      * 
      * This routine does not access the data pointers on the array descriptors, so they need not point to actual data.
      * 
-     * [@returns] Required allocation size for workspace paramter to BNNSMatMul, in bytes.
+     * [@returns] Required allocation size for workspace parameter to BNNSMatMul, in bytes.
      * If parameters are invalid, a negative value is returned.
      * 
      * API-Since: 16.0
@@ -54984,7 +54986,7 @@ public final class Accelerate {
             VoidPtr tempBuffer, @NUInt long seedX, @NUInt long seedY, char newValue, int connectivity, int flags);
 
     @Generated public static final double vDSP_Version0 = 1068.0;
-    @Generated public static final double vDSP_Version1 = 60.0;
+    @Generated public static final double vDSP_Version1 = 100.0;
     @Generated public static final double USE_NON_APPLE_STANDARD_DATATYPES = 1.0;
     @Generated public static final double LA_L1_NORM = 1.0;
     @Generated public static final double LA_L2_NORM = 2.0;
@@ -56115,4 +56117,339 @@ public final class Accelerate {
     @CFunction
     @NUInt
     public static native long BNNSDataLayoutGetRank(int layout);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native int sparse_permute_rows_float_complex(sparse_matrix_float_complex A, ConstLongPtr perm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native int sparse_permute_rows_double_complex(sparse_matrix_double_complex A, ConstLongPtr perm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native int sparse_permute_cols_float_complex(sparse_matrix_float_complex A, ConstLongPtr perm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native int sparse_permute_cols_double_complex(sparse_matrix_double_complex A, ConstLongPtr perm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native float sparse_elementwise_norm_float_complex(sparse_matrix_float_complex A, int norm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native double sparse_elementwise_norm_double_complex(sparse_matrix_double_complex A, int norm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native float sparse_operator_norm_float_complex(sparse_matrix_float_complex A, int norm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native double sparse_operator_norm_double_complex(sparse_matrix_double_complex A, int norm);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native sparse_matrix_float_complex sparse_matrix_create_float_complex(long M, long N);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native sparse_matrix_double_complex sparse_matrix_create_double_complex(long M, long N);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native sparse_matrix_float_complex sparse_matrix_block_create_float_complex(long Mb, long Nb, long k,
+            long l);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native sparse_matrix_double_complex sparse_matrix_block_create_double_complex(long Mb, long Nb,
+            long k, long l);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native sparse_matrix_float_complex sparse_matrix_variable_block_create_float_complex(long Mb, long Nb,
+            ConstLongPtr K, ConstLongPtr L);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native sparse_matrix_double_complex sparse_matrix_variable_block_create_double_complex(long Mb,
+            long Nb, ConstLongPtr K, ConstLongPtr L);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native int _SparseFromKindComplex(int K);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native int _SparseToKindComplex(int K);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorLU_Double(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorLU_Float(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorHermitian_Complex_Double(@NotNull VoidPtr Matrix,
+            @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorQR_Complex_Double(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorLU_Complex_Double(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseMultiplySubfactor_Complex_Double(@NotNull VoidPtr Subfactor, @Nullable VoidPtr x,
+            @NotNull VoidPtr y, @NotNull BytePtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseSolveSubfactor_Complex_Double(@NotNull VoidPtr Subfactor, @Nullable VoidPtr b,
+            @NotNull VoidPtr x, @NotNull BytePtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseSolveOpaque_Complex_Double(@NotNull VoidPtr Factored, @Nullable VoidPtr RHS,
+            @NotNull VoidPtr Soln, @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseDestroyOpaqueNumeric_Complex_Double(@NotNull VoidPtr toFree);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRetainNumeric_Complex_Double(@NotNull VoidPtr numericFactor);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Complex_Double(
+            @NotNull VoidPtr factor);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long _SparseGetIterativeStateSize_Complex_Double(@NotNull VoidPtr method,
+            boolean preconditioner, int m, int n, int nrhs);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseReleaseOpaquePreconditioner_Complex_Double(@NotNull VoidPtr toFree);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorHermitian_Complex_Float(@NotNull VoidPtr Matrix,
+            @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorQR_Complex_Float(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorLU_Complex_Float(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseMultiplySubfactor_Complex_Float(@NotNull VoidPtr Subfactor, @Nullable VoidPtr x,
+            @NotNull VoidPtr y, @NotNull BytePtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseSolveSubfactor_Complex_Float(@NotNull VoidPtr Subfactor, @Nullable VoidPtr b,
+            @NotNull VoidPtr x, @NotNull BytePtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseSolveOpaque_Complex_Float(@NotNull VoidPtr Factored, @Nullable VoidPtr RHS,
+            @NotNull VoidPtr Soln, @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseDestroyOpaqueNumeric_Complex_Float(@NotNull VoidPtr toFree);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRetainNumeric_Complex_Float(@NotNull VoidPtr numericFactor);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Complex_Float(
+            @NotNull VoidPtr factor);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long _SparseGetIterativeStateSize_Complex_Float(@NotNull VoidPtr method,
+            boolean preconditioner, int m, int n, int nrhs);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseReleaseOpaquePreconditioner_Complex_Float(@NotNull VoidPtr toFree);
+
+    /**
+     * Sets streaming advancement amount for cases with dynamically shaped inputs.
+     * 
+     * For models compiled with the `BNNSOption` attribute `StateMode=Streaming` enabled, where
+     * `slice_update` ops use an update parameter of dynamic shape, BNNS cannot unambigiously
+     * determine the streaming advancement size. Instead the user must use this function *prior* to calling
+     * `BNNSGraphContextExecute()` to set the advancement size for each frame.
+     * 
+     * The internal state pointer will then be advanced by `advance_count` elements in the streaming
+     * dimension prior to returning from `BNNSGraphContextExecute()`. The BNNS streaming APIs
+     * do not support models that require different advancement amounts for different states.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSGraphContextSetStreamingAdvanceCount(@ByValue bnns_graph_context_t context,
+            @NUInt long advance_count);
 }
