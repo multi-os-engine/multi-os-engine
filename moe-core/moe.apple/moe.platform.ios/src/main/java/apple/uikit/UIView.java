@@ -197,26 +197,26 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native UIView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UIView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    public static native UIView appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIView appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs);
 
     @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UIView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
+    public static native UIView appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes);
 
     /**
      * API-Since: 2.0
@@ -682,7 +682,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     public UIView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -690,7 +690,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public UIView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
-            @NotNull NSArray<?> containerTypes) {
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -698,15 +698,14 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UIView _appearanceWhenContainedIn(
-            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIView _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public UIView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -2755,22 +2754,23 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("registerForTraitChanges:withAction:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits,
+    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<? extends Class> traits,
             @NotNull SEL action);
 
     @Generated
     @Selector("registerForTraitChanges:withHandler:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<? extends Class> traits,
             @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull UITraitChangeObservable.Block_registerForTraitChangesWithHandler handler);
 
     @Generated
     @Selector("registerForTraitChanges:withTarget:action:")
     @MappedReturn(ObjCObjectMapper.class)
     @NotNull
-    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
-            @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
+    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(
+            @NotNull NSArray<? extends Class> traits, @Mapped(ObjCObjectMapper.class) @NotNull Object target,
+            @NotNull SEL action);
 
     /**
      * The hover style associated with this view. Defaults to `nil`,

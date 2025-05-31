@@ -2,11 +2,9 @@ package apple.uikit.protocol;
 
 import apple.foundation.NSArray;
 import apple.foundation.NSProgress;
-import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSProgressReporting;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
-import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
@@ -17,6 +15,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.objc.Class;
 
 /**
  * API-Since: 11.0
@@ -41,7 +40,7 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     @NotNull
     @Generated
     @Selector("loadObjectsOfClass:completion:")
-    NSProgress loadObjectsOfClassCompletion(@NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass,
+    NSProgress loadObjectsOfClassCompletion(@NotNull Class aClass,
             @NotNull @ObjCBlock(name = "call_loadObjectsOfClassCompletion") Block_loadObjectsOfClassCompletion completion);
 
     @Runtime(ObjCRuntime.class)

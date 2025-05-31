@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.objc.Class;
 
 /**
  * Conform to this protocol if you want your objects to participate in state restoration.
@@ -80,8 +81,7 @@ public interface UIStateRestoring {
     @Generated
     @IsOptional
     @Selector("objectRestorationClass")
-    @MappedReturn(ObjCObjectMapper.class)
-    default UIObjectRestoration objectRestorationClass() {
+    default Class objectRestorationClass() {
         throw new java.lang.UnsupportedOperationException();
     }
 

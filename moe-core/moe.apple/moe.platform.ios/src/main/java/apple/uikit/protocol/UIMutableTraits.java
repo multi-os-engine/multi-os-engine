@@ -14,6 +14,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.objc.Class;
 
 /**
  * API-Since: 17.0
@@ -99,7 +100,7 @@ public interface UIMutableTraits {
     @Selector("objectForTrait:")
     @MappedReturn(ObjCObjectMapper.class)
     @Nullable
-    NSObject objectForTrait(@Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+    NSObject objectForTrait(@NotNull Class trait);
 
     /**
      * API-Since: 17.0
@@ -133,8 +134,7 @@ public interface UIMutableTraits {
      */
     @Generated
     @Selector("setCGFloatValue:forTrait:")
-    void setCGFloatValueForTrait(@NFloat double value,
-            @Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+    void setCGFloatValueForTrait(@NFloat double value, @NotNull Class trait);
 
     /**
      * API-Since: 17.0
@@ -190,16 +190,14 @@ public interface UIMutableTraits {
      */
     @Generated
     @Selector("setNSIntegerValue:forTrait:")
-    void setNSIntegerValueForTrait(@NInt long value,
-            @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+    void setNSIntegerValueForTrait(@NInt long value, @NotNull Class trait);
 
     /**
      * API-Since: 17.0
      */
     @Generated
     @Selector("setObject:forTrait:")
-    void setObjectForTrait(@Mapped(ObjCObjectMapper.class) @Nullable NSObject object,
-            @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+    void setObjectForTrait(@Mapped(ObjCObjectMapper.class) @Nullable NSObject object, @NotNull Class trait);
 
     /**
      * API-Since: 17.0
@@ -291,7 +289,7 @@ public interface UIMutableTraits {
     @Generated
     @Selector("valueForCGFloatTrait:")
     @NFloat
-    double valueForCGFloatTrait(@Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+    double valueForCGFloatTrait(@NotNull Class trait);
 
     /**
      * API-Since: 17.0
@@ -299,7 +297,7 @@ public interface UIMutableTraits {
     @Generated
     @Selector("valueForNSIntegerTrait:")
     @NInt
-    long valueForNSIntegerTrait(@Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+    long valueForNSIntegerTrait(@NotNull Class trait);
 
     /**
      * API-Since: 17.0

@@ -17,7 +17,6 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.avfoundation.protocol.AVVideoCompositing;
 import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
@@ -30,7 +29,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -341,8 +339,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Nullable
     @Generated
     @Selector("customVideoCompositorClass")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVVideoCompositing customVideoCompositorClass();
+    public native Class customVideoCompositorClass();
 
     /**
      * indicates the interval which the video composition, when enabled, should render composed video frames
@@ -457,8 +454,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setCustomVideoCompositorClass:")
-    public native void setCustomVideoCompositorClass(
-            @Nullable @Mapped(ObjCObjectMapper.class) AVVideoCompositing value);
+    public native void setCustomVideoCompositorClass(@Nullable Class value);
 
     /**
      * indicates the interval which the video composition, when enabled, should render composed video frames

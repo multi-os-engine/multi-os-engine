@@ -7,7 +7,6 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentConfiguration;
 import apple.uikit.protocol.UIContentView;
 import org.jetbrains.annotations.NotNull;
@@ -142,15 +141,14 @@ public class UIContentUnavailableView extends UIView implements UIContentView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @NotNull
     public static native UIContentUnavailableView appearanceForTraitCollectionWhenContainedIn(
-            @NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+            @NotNull UITraitCollection trait, @Nullable Class ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @NotNull
     public UIContentUnavailableView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -158,13 +156,13 @@ public class UIContentUnavailableView extends UIView implements UIContentView {
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @NotNull
     public static native UIContentUnavailableView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     @NotNull
     public UIContentUnavailableView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -173,15 +171,14 @@ public class UIContentUnavailableView extends UIView implements UIContentView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @NotNull
-    public static native UIContentUnavailableView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIContentUnavailableView appearanceWhenContainedIn(@Nullable Class ContainerClass,
+            Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @NotNull
-    public UIContentUnavailableView _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIContentUnavailableView _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -189,12 +186,13 @@ public class UIContentUnavailableView extends UIView implements UIContentView {
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @NotNull
     public static native UIContentUnavailableView appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
     @NotNull
-    public UIContentUnavailableView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public UIContentUnavailableView _appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 

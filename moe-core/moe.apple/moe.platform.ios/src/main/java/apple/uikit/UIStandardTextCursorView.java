@@ -8,7 +8,6 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UITextCursorView;
 import org.jetbrains.annotations.NotNull;
@@ -148,15 +147,14 @@ public class UIStandardTextCursorView extends UIView implements UITextCursorView
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @NotNull
     public static native UIStandardTextCursorView appearanceForTraitCollectionWhenContainedIn(
-            @NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+            @NotNull UITraitCollection trait, @Nullable Class ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @NotNull
     public UIStandardTextCursorView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable Class ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -164,13 +162,13 @@ public class UIStandardTextCursorView extends UIView implements UITextCursorView
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @NotNull
     public static native UIStandardTextCursorView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     @NotNull
     public UIStandardTextCursorView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
@@ -179,15 +177,14 @@ public class UIStandardTextCursorView extends UIView implements UITextCursorView
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @NotNull
-    public static native UIStandardTextCursorView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIStandardTextCursorView appearanceWhenContainedIn(@Nullable Class ContainerClass,
+            Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @NotNull
-    public UIStandardTextCursorView _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) @Nullable UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIStandardTextCursorView _appearanceWhenContainedIn(@Nullable Class ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -195,12 +192,13 @@ public class UIStandardTextCursorView extends UIView implements UITextCursorView
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @NotNull
     public static native UIStandardTextCursorView appearanceWhenContainedInInstancesOfClasses(
-            @NotNull NSArray<?> containerTypes);
+            @NotNull NSArray<? extends Class> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
     @NotNull
-    public UIStandardTextCursorView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
+    public UIStandardTextCursorView _appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<? extends Class> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
