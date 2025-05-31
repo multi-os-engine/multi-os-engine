@@ -21,6 +21,7 @@ import org.clang.enums.CXCursorKind;
 import org.clang.enums.CXTypeKind;
 import org.clang.enums.CXTypeNullabilityKind;
 import org.clang.struct.CXCursor;
+import org.clang.struct.CXString;
 import org.clang.struct.CXType;
 import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.PrimitiveType.Code;
@@ -586,6 +587,30 @@ public class Type {
         return type;
     }
 
+    // TODO: Is this sane?
+    boolean isClassWithProtocolQualification(CXType type) {
+        if (type.kind() != CXTypeKind.ObjCObjectPointer)
+            return false;
+
+        CXType pointeeType = clang.clang_getPointeeType(type);
+
+        if (pointeeType.kind() == CXTypeKind.ObjCObject) {
+            int numProtocols = clang.clang_Type_getNumObjCProtocolRefs(pointeeType);
+            if (numProtocols > 0) {
+                CXType baseType = clang.clang_Type_getObjCObjectBaseType(pointeeType);
+                CXString baseTypeName = clang.clang_getTypeSpelling(baseType);
+                String name = clang.clang_getCString(baseTypeName);
+
+                boolean isClass = name.equals("Class");
+
+                clang.clang_disposeString(baseTypeName);
+                return isClass;
+            }
+        }
+
+        return false;
+    }
+
     /**
      * Create a new type with a CXType
      *
@@ -668,6 +693,10 @@ public class Type {
         switch (typeKind) {
         // Objective-C specials
         case CXTypeKind.ObjCObjectPointer: {
+            if (isClassWithProtocolQualification(type)) {
+                kind = ObjCClass;
+                break;
+            }
             int NTA = clang.clang_Type_getNumTemplateArguments(type);
             if (NTA > 0) {
                 typeArgs = new ArrayList<Type>();
@@ -695,7 +724,7 @@ public class Type {
             }
 
             elementName = pointeeType.getTypeDeclaration().toString();
-            if (elementName == null || elementName.length() == 0) {
+            if (elementName.isEmpty()) {
                 elementName = null;
                 kind = ObjCId;
             } else {

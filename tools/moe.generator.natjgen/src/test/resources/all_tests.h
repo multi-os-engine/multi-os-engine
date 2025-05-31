@@ -23,3 +23,4 @@ limitations under the License.
 
 #include "objc_generics.h"
 #include "protocols.h"
+#include "objc_class.h"
