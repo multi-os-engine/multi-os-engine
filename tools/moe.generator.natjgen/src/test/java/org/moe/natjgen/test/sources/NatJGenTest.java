@@ -170,6 +170,7 @@ public class NatJGenTest {
         copyResource("pointers.h", INCLUDES_DIR);
         copyResource("structs.h", INCLUDES_DIR);
         copyResource("protocols.h", INCLUDES_DIR);
+        copyResource("objc_class.h", INCLUDES_DIR);
 
         // Create dir for frameworks
         FRAMEWORKS_DIR = new File(TEST_DIR, "frameworks");
