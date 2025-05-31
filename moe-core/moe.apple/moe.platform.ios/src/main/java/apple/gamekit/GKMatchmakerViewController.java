@@ -46,6 +46,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -185,6 +188,7 @@ public class GKMatchmakerViewController extends UINavigationController {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Nullable
     @Generated
@@ -203,6 +207,8 @@ public class GKMatchmakerViewController extends UINavigationController {
     /**
      * Initialize with an accepted invite, allowing the user to see the status of other invited players and get notified
      * when the game starts
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("initWithInvite:")
@@ -210,6 +216,8 @@ public class GKMatchmakerViewController extends UINavigationController {
 
     /**
      * Initialize with a matchmaking request, allowing the user to send invites and/or start matchmaking
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("initWithMatchRequest:")
@@ -232,6 +240,8 @@ public class GKMatchmakerViewController extends UINavigationController {
     /**
      * set to YES to receive hosted (eg. not peer-to-peer) match results. Will cause the controller to return an array
      * of players instead of a match.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("isHosted")
@@ -240,16 +250,24 @@ public class GKMatchmakerViewController extends UINavigationController {
     /**
      * set to YES to receive hosted (eg. not peer-to-peer) match results. Will cause the controller to return an array
      * of players instead of a match.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setHosted:")
     public native void setHosted(boolean value);
 
+    /**
+     * API-Since: 4.1
+     */
     @NotNull
     @Generated
     @Selector("matchRequest")
     public native GKMatchRequest matchRequest();
 
+    /**
+     * API-Since: 4.1
+     */
     @Nullable
     @Generated
     @Selector("matchmakerDelegate")
@@ -261,6 +279,7 @@ public class GKMatchmakerViewController extends UINavigationController {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Generated
     @Deprecated
@@ -290,19 +309,23 @@ public class GKMatchmakerViewController extends UINavigationController {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 5.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use setHostedPlayer:connected:
-     * instead
      */
     @Generated
     @Deprecated
     @Selector("setHostedPlayerReady:")
     public native void setHostedPlayerReady(@NotNull String playerID);
 
+    /**
+     * API-Since: 4.1
+     */
     @Generated
     @Selector("setMatchmakerDelegate:")
     public native void setMatchmakerDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value);
 
+    /**
+     * API-Since: 4.1
+     */
     @Generated
     public void setMatchmakerDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value) {
@@ -319,6 +342,8 @@ public class GKMatchmakerViewController extends UINavigationController {
     /**
      * this controls which mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).
      * Throws an exeption if you can not set to the desired mode (due to restrictions)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("matchmakingMode")
@@ -328,6 +353,8 @@ public class GKMatchmakerViewController extends UINavigationController {
     /**
      * this controls which mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).
      * Throws an exeption if you can not set to the desired mode (due to restrictions)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMatchmakingMode:")

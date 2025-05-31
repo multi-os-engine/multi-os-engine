@@ -43,4 +43,20 @@ public final class MTRRVCOperationalStateErrorState {
      * API-Since: 17.4
      */
     @Generated public static final byte MopCleaningPadMissing = 71;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte NoError = 0;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte UnableToStartOrResume = 1;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte UnableToCompleteOperation = 2;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte CommandInvalidInState = 3;
 }

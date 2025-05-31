@@ -19,19 +19,31 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 public final class GKChallengeState {
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Invalid = 0x0000000000000000L;
     /**
      * The challenge has been issued, but neither completed nor declined
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Pending = 0x0000000000000001L;
     /**
      * The challenge has been completed by the receiving player
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Completed = 0x0000000000000002L;
     /**
      * The challenge has been declined by the receiving player
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Declined = 0x0000000000000003L;
 

@@ -20,6 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Reasons for exception for a guarded mach port
+ * 
+ * Arguments are documented in doc/mach_ipc/guard_exceptions.md,
+ * please update when adding a new type.
+ * 
+ * Note: these had been designed as bitfields,
+ * hence the weird spaced values,
+ * but are truly an enum, please add new values in the "holes".
  */
 @Generated
 public final class mach_port_guard_exception_codes {
@@ -48,40 +55,28 @@ public final class mach_port_guard_exception_codes {
      */
     @Generated public static final int INVALID_VALUE = 0x00000400;
     /**
-     * start of [optionally] non-fatal guards
+     * really kGUARD_EXC_ALREADY_GUARDED
      */
     @Generated public static final int INVALID_ARGUMENT = 0x00000800;
     /**
-     * start of [optionally] non-fatal guards
+     * unused
      */
     @Generated public static final int RIGHT_EXISTS = 0x00001000;
     /**
-     * start of [optionally] non-fatal guards
+     * unused
      */
     @Generated public static final int KERN_NO_SPACE = 0x00002000;
     /**
-     * start of [optionally] non-fatal guards
+     * really kGUARD_EXC_INVALID_PDREQUEST
      */
     @Generated public static final int KERN_FAILURE = 0x00004000;
     /**
-     * start of [optionally] non-fatal guards
+     * unused
      */
     @Generated public static final int KERN_RESOURCE = 0x00008000;
-    /**
-     * start of [optionally] non-fatal guards
-     */
     @Generated public static final int SEND_INVALID_REPLY = 0x00010000;
-    /**
-     * start of [optionally] non-fatal guards
-     */
     @Generated public static final int SEND_INVALID_VOUCHER = 0x00020000;
-    /**
-     * start of [optionally] non-fatal guards
-     */
     @Generated public static final int SEND_INVALID_RIGHT = 0x00040000;
-    /**
-     * start of [optionally] non-fatal guards
-     */
     @Generated public static final int RCV_INVALID_NAME = 0x00080000;
     /**
      * for development only
@@ -94,4 +89,13 @@ public final class mach_port_guard_exception_codes {
     @Generated public static final int REQUIRE_REPLY_PORT_SEMANTICS = 0x00800000;
     @Generated public static final int THREAD_SET_STATE = 0x00000005;
     @Generated public static final int EXCEPTION_BEHAVIOR_ENFORCE = 0x00000006;
+    /**
+     * unused, for future sp defense enablement
+     */
+    @Generated public static final int SERVICE_PORT_VIOLATION_FATAL = 0x00000007;
+    /**
+     * unused, for future sp defense enablement
+     */
+    @Generated public static final int SERVICE_PORT_VIOLATION_NON_FATAL = 0x00100001;
+    @Generated public static final int PROVISIONAL_REPLY_PORT = 0x00100002;
 }

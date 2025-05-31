@@ -55,8 +55,7 @@ import org.jetbrains.annotations.Nullable;
  * 
  *      API-Since: 9.0
  *      Deprecated-Since: 13.0
- *      Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
- *      instead
+ *      Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
  */
 @Deprecated
 @Generated
@@ -180,8 +179,7 @@ public class GCMicroGamepadSnapshot extends GCMicroGamepad {
     /**
      * API-Since: 9.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
-     * instead
+     * Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -192,8 +190,7 @@ public class GCMicroGamepadSnapshot extends GCMicroGamepad {
     /**
      * API-Since: 9.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
-     * instead
+     * Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -203,8 +200,7 @@ public class GCMicroGamepadSnapshot extends GCMicroGamepad {
     /**
      * API-Since: 9.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
-     * instead
+     * Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Deprecated
     @Generated
@@ -214,8 +210,7 @@ public class GCMicroGamepadSnapshot extends GCMicroGamepad {
     /**
      * API-Since: 9.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
-     * instead
+     * Deprecated-Message: Use the -[GCController controllerWithMicroGamepad] method instead
      */
     @Deprecated
     @NotNull

@@ -19,11 +19,19 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class GKMatchSendDataMode {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Reliable = 0x0000000000000000L;
     /**
      * a.s.a.p. but requires fragmentation and reassembly for large messages, may stall if network congestion occurs
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long Unreliable = 0x0000000000000001L;
 

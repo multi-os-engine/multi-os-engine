@@ -427,4 +427,20 @@ public class MTRClusterBasicInformation extends MTRGenericCluster {
     public native void writeAttributeNodeLabelWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeMaxPathsPerInvokeWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeMaxPathsPerInvokeWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeSpecificationVersionWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeSpecificationVersionWithParams(@Nullable MTRReadParams params);
 }

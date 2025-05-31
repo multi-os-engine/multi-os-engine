@@ -24,15 +24,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
+ * Meta-data about a device type defined in the Matter specification.
+ * 
  * API-Since: 18.2
  */
 @Generated
 @Library("Matter")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTRDeviceType extends NSObject {
+public class MTRDeviceType extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -190,4 +194,11 @@ public class MTRDeviceType extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 }

@@ -50,6 +50,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -149,6 +152,9 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     public static native void loadPlayersForIdentifiersWithCompletionHandler(@NotNull NSArray<String> identifiers,
             @Nullable @ObjCBlock(name = "call_loadPlayersForIdentifiersWithCompletionHandler") GKPlayer.Block_loadPlayersForIdentifiersWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 4.1
+     */
     @NotNull
     @Generated
     @Selector("localPlayer")
@@ -257,6 +263,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     /**
      * Authentication state
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("isAuthenticated")
@@ -264,6 +272,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     /**
      * Indicates if a player is under age
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("isUnderage")
@@ -550,6 +560,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * Possible reasons for error:
      * 1. Communications problem
      * 2. Unauthenticated player
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("loadChallengableFriendsWithCompletionHandler:")
@@ -734,17 +746,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     }
 
     /**
-     * presentFriendRequestCreatorFromViewController:
-     * 
-     * Discussion:
-     * iOS only. When invoked, a Messages sheet will be presented on the viewController passed in, using the existing
-     * flow of presentation on behalf of an application.
-     * If an error is returned, control are returned directly to the application, without presentation.
-     * 
-     * Possible reasons for error:
-     * - The local player user account is not allowed to add friends
-     * - The device is not allowing outgoing traffic at the time of the operation
-     * 
      * API-Since: 15.0
      */
     @Generated

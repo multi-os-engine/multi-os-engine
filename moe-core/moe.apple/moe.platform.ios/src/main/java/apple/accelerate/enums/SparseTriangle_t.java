@@ -8,6 +8,12 @@ public final class SparseTriangle_t {
     private SparseTriangle_t() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final byte UpperTriangle = 0;
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final byte LowerTriangle = 1;
 }

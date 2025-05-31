@@ -30,6 +30,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
 
 /**
  * API-Since: 16.1
@@ -303,4 +304,19 @@ public class MTRDoorLockClusterGetCredentialStatusResponseParams extends NSObjec
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("credentialData")
+    @Nullable
+    public native NSData credentialData();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setCredentialData:")
+    public native void setCredentialData(@Nullable NSData value);
 }

@@ -213,7 +213,7 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
     /**
      * Distance remaining for displaying to the user. If not set falls back to distanceRemaining;
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("distanceRemainingToDisplay")
@@ -221,7 +221,7 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
     public native NSMeasurement<NSUnitLength> distanceRemainingToDisplay();
 
     /**
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("initWithDistanceRemaining:distanceRemainingToDisplay:timeRemaining:")

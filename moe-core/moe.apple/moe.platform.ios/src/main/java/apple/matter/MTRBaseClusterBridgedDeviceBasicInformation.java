@@ -1425,4 +1425,83 @@ public class MTRBaseClusterBridgedDeviceBasicInformation extends MTRGenericBaseC
         @Generated
         void call_writeAttributeNodeLabelWithValueParamsCompletion(@Nullable NSError error);
     }
+
+    /**
+     * Command KeepActive
+     * 
+     * The server SHALL attempt to keep the devices specified active for StayActiveDuration milliseconds when they are
+     * next active.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("keepActiveWithParams:completion:")
+    public native void keepActiveWithParamsCompletion(
+            @NotNull MTRBridgedDeviceBasicInformationClusterKeepActiveParams params,
+            @ObjCBlock(name = "call_keepActiveWithParamsCompletion") @NotNull Block_keepActiveWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_keepActiveWithParamsCompletion {
+        @Generated
+        void call_keepActiveWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeProductIDWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeProductIDWithClusterStateCacheEndpointQueueCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeProductIDWithCompletion:")
+    public native void readAttributeProductIDWithCompletion(
+            @ObjCBlock(name = "call_readAttributeProductIDWithCompletion") @NotNull Block_readAttributeProductIDWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeProductIDWithCompletion {
+        @Generated
+        void call_readAttributeProductIDWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeProductIDWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeProductIDWithParamsSubscriptionEstablishedReportHandler_2(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
 }

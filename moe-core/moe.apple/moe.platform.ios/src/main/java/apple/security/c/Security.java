@@ -5345,6 +5345,15 @@ public final class Security {
      * field is meant to be displayed to the user as the validated
      * name of the company or entity that owns the certificate if the
      * kSecTrustExtendedValidation key is present.
+     * [@constant] kSecTrustQCStatements
+     * This key will be present and have a value of CFStringRef if
+     * the leaf certificate contains qualified certificate statements.
+     * The string can be displayed to the user as a representation
+     * of a qualified certificate's purpose.
+     * [@constant] kSecTrustQWACValidation
+     * This key will be present and have a value of kCFBooleanTrue
+     * if this chain was successfully validated as a Qualified Website
+     * Authentication Certificate.
      * [@constant] kSecTrustResultValue
      * This key will be present if a trust evaluation has been performed.
      * Its value is a CFNumberRef representing the SecTrustResultType result
@@ -6363,7 +6372,9 @@ public final class Security {
      * @return A NULL-terminated string carrying the negotiated protocol.
      * 
      *         API-Since: 12.0
+     *         Deprecated-Since: 18.5
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -6633,7 +6644,9 @@ public final class Security {
      *         if none was provided.
      * 
      *         API-Since: 12.0
+     *         Deprecated-Since: 18.5
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -7584,4 +7597,110 @@ public final class Security {
     @CVariable()
     @NotNull
     public static native CFStringRef kSecImportToMemoryOnly();
+
+    /**
+     * [@function] sec_protocol_metadata_copy_negotiated_protocol
+     * 
+     * Copy the application protocol negotiated, e.g., via the TLS ALPN extension.
+     * The caller is expected to `free` the output string when no longer needed.
+     * 
+     * @param metadata
+     *                 A `sec_protocol_metadata_t` instance.
+     * 
+     * @return A NULL-terminated string carrying the negotiated protocol.
+     * 
+     *         API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String sec_protocol_metadata_copy_negotiated_protocol(
+            @NotNull sec_protocol_metadata_t metadata);
+
+    /**
+     * [@function] sec_protocol_metadata_copy_server_name
+     * 
+     * Obtain a copy of the server name offered by a client or server during
+     * connection establishmet. This is the value commonly carried
+     * in the TLS SNI extesion. The caller is expected to `free` the output
+     * string when it is no longer needed.
+     * 
+     * @param metadata
+     *                 A `sec_protocol_metadata_t` instance.
+     * 
+     * @return Returns A NULL-terminated string carrying the server name, or NULL
+     *         if none was provided.
+     * 
+     *         API-Since: 18.5
+     */
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Nullable
+    public static native String sec_protocol_metadata_copy_server_name(@NotNull sec_protocol_metadata_t metadata);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecPolicyAppleSSLServer();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecPolicyAppleSSLClient();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecPolicyAppleEAPServer();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecPolicyAppleEAPClient();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecPolicyAppleIPSecServer();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecPolicyAppleIPSecClient();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecTrustQCStatements();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecTrustQWACValidation();
 }

@@ -192,7 +192,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Generated
     @Selector("predicateForChannelCount:mediaSelectionOption:operatorType:")
     public static native NSPredicate predicateForChannelCountMediaSelectionOptionOperatorType(@NInt long channelCount,
-            @NotNull AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
+            @Nullable AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
 
     /**
      * predicateForPresentationHeight:operatorType:
@@ -275,7 +275,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Selector("predicateForBinauralAudio:mediaSelectionOption:")
     @NotNull
     public static native NSPredicate predicateForBinauralAudioMediaSelectionOption(boolean isBinauralAudio,
-            @NotNull AVMediaSelectionOption mediaSelectionOption);
+            @Nullable AVMediaSelectionOption mediaSelectionOption);
 
     /**
      * predicateForDownmixAudio:mediaSelectionOption:
@@ -294,7 +294,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Selector("predicateForDownmixAudio:mediaSelectionOption:")
     @NotNull
     public static native NSPredicate predicateForDownmixAudioMediaSelectionOption(boolean isDownmixAudio,
-            @NotNull AVMediaSelectionOption mediaSelectionOption);
+            @Nullable AVMediaSelectionOption mediaSelectionOption);
 
     /**
      * predicateForImmersiveAudio:mediaSelectionOption:
@@ -313,7 +313,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Selector("predicateForImmersiveAudio:mediaSelectionOption:")
     @NotNull
     public static native NSPredicate predicateForImmersiveAudioMediaSelectionOption(boolean isImmersiveAudio,
-            @NotNull AVMediaSelectionOption mediaSelectionOption);
+            @Nullable AVMediaSelectionOption mediaSelectionOption);
 
     @Generated
     @Deprecated
@@ -342,5 +342,120 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Selector("predicateForAudioSampleRate:mediaSelectionOption:operatorType:")
     @NotNull
     public static native NSPredicate predicateForAudioSampleRateMediaSelectionOptionOperatorType(double sampleRate,
-            @NotNull AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
+            @Nullable AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
+
+    /**
+     * predicateForAudioSampleRate:operatorType:
+     * 
+     * Creates a NSPredicate for audio sample rate which can be used with other NSPredicates to express variant
+     * preferences.
+     * 
+     * Predicate will be evaluated on the media selection option selected for the asset.
+     * Media selection options for primary assets may be specified in the AVAssetDownloadConfiguration mediaSelections
+     * property.
+     * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
+     * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
+     * 
+     * API-Since: 18.5
+     * 
+     * @param sampleRate
+     *                     The RHS value for the sample rate in the predicate equation.
+     * @param operatorType
+     *                     The valid values are NSLessThanPredicateOperatorType,
+     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     *                     NSNotEqualToPredicateOperatorType.
+     */
+    @Generated
+    @Selector("predicateForAudioSampleRate:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForAudioSampleRateOperatorType(double sampleRate,
+            @NUInt long operatorType);
+
+    /**
+     * predicateForBinauralAudio:
+     * 
+     * Creates a NSPredicate for binaural which can be used with other NSPredicates to express variant preferences.
+     * 
+     * @param isBinaural
+     *                   The RHS value for the value of isBinauralAudio in the predicate equation.
+     * 
+     *                   API-Since: 18.5
+     */
+    @Generated
+    @Selector("predicateForBinauralAudio:")
+    @NotNull
+    public static native NSPredicate predicateForBinauralAudio(boolean isBinauralAudio);
+
+    /**
+     * predicateForChannelCount:operatorType:
+     * 
+     * Creates a NSPredicate for audio channel count which can be used with other NSPredicates to express variant
+     * preferences.
+     * 
+     * Predicate will be evaluated on the media selection option selected for the asset.
+     * Media selection options for primary assets may be specified in the AVAssetDownloadConfiguration mediaSelections
+     * property.
+     * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
+     * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
+     * 
+     * API-Since: 18.5
+     * 
+     * @param channelCount
+     *                     The RHS value for the channel count in the predicate equation.
+     * @param operatorType
+     *                     The valid values are NSLessThanPredicateOperatorType,
+     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     *                     NSNotEqualToPredicateOperatorType.
+     */
+    @Generated
+    @Selector("predicateForChannelCount:operatorType:")
+    @NotNull
+    public static native NSPredicate predicateForChannelCountOperatorType(@NInt long channelCount,
+            @NUInt long operatorType);
+
+    /**
+     * predicateForDownmixAudio:mediaSelectionOption:
+     * 
+     * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
+     * preferences.
+     * 
+     * Predicate will be evaluated on the media selection option selected for the asset.
+     * Media selection options for primary assets may be specified in the AVAssetDownloadConfiguration mediaSelections
+     * property.
+     * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
+     * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
+     * 
+     * API-Since: 18.5
+     * 
+     * @param isDownmixAudio
+     *                       The RHS value for the value of isDownmixAudio in the predicate equation.
+     */
+    @Generated
+    @Selector("predicateForDownmixAudio:")
+    @NotNull
+    public static native NSPredicate predicateForDownmixAudio(boolean isDownmixAudio);
+
+    /**
+     * predicateForImmersiveAudio
+     * 
+     * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
+     * preferences.
+     * 
+     * Predicate will be evaluated on the media selection option selected for the asset.
+     * Media selection options for primary assets may be specified in the AVAssetDownloadConfiguration mediaSelections
+     * property.
+     * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
+     * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
+     * 
+     * API-Since: 18.5
+     * 
+     * @param isImmersiveAudio
+     *                         The RHS value for the value of isImmersiveAudio in the predicate equation.
+     */
+    @Generated
+    @Selector("predicateForImmersiveAudio:")
+    @NotNull
+    public static native NSPredicate predicateForImmersiveAudio(boolean isImmersiveAudio);
 }

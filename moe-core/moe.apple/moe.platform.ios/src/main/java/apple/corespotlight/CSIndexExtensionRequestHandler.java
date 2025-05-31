@@ -215,4 +215,15 @@ public class CSIndexExtensionRequestHandler extends NSObject implements NSExtens
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @IsOptional
+    @Selector("searchableItemsDidUpdate:")
+    public native void searchableItemsDidUpdate(@NotNull NSArray<? extends CSSearchableItem> items);
+
+    @Generated
+    @IsOptional
+    @Selector("searchableItemsForIdentifiers:searchableItemsHandler:")
+    public native void searchableItemsForIdentifiersSearchableItemsHandler(@NotNull NSArray<String> identifiers,
+            @ObjCBlock(name = "call_searchableItemsForIdentifiersSearchableItemsHandler") @NotNull CSSearchableIndexDelegate.Block_searchableItemsForIdentifiersSearchableItemsHandler searchableItemsHandler);
 }

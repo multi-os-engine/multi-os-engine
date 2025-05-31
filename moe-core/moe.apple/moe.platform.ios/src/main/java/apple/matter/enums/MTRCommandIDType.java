@@ -3272,4 +3272,568 @@ public final class MTRCommandIDType {
      * API-Since: 17.6
      */
     @Generated public static final int CommandIDTypeClusterFanControlCommandStepID = 0x00000000;
+    /**
+     * Cluster AccessControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterAccessControlCommandReviewFabricRestrictionsID = 0x00000000;
+    /**
+     * Cluster AccessControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterAccessControlCommandReviewFabricRestrictionsResponseID = 0x00000001;
+    /**
+     * Cluster GeneralDiagnostics commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterGeneralDiagnosticsCommandTimeSnapshotID = 0x00000001;
+    /**
+     * Cluster GeneralDiagnostics commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterGeneralDiagnosticsCommandTimeSnapshotResponseID = 0x00000002;
+    /**
+     * Cluster GeneralDiagnostics commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterGeneralDiagnosticsCommandPayloadTestRequestID = 0x00000003;
+    /**
+     * Cluster GeneralDiagnostics commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterGeneralDiagnosticsCommandPayloadTestResponseID = 0x00000004;
+    /**
+     * Cluster TimeSynchronization commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterTimeSynchronizationCommandSetUTCTimeID = 0x00000000;
+    /**
+     * Cluster TimeSynchronization commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterTimeSynchronizationCommandSetTrustedTimeSourceID = 0x00000001;
+    /**
+     * Cluster TimeSynchronization commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterTimeSynchronizationCommandSetTimeZoneID = 0x00000002;
+    /**
+     * Cluster TimeSynchronization commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterTimeSynchronizationCommandSetTimeZoneResponseID = 0x00000003;
+    /**
+     * Cluster TimeSynchronization commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterTimeSynchronizationCommandSetDSTOffsetID = 0x00000004;
+    /**
+     * Cluster TimeSynchronization commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterTimeSynchronizationCommandSetDefaultNTPID = 0x00000005;
+    /**
+     * Cluster BridgedDeviceBasicInformation commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterBridgedDeviceBasicInformationCommandKeepActiveID = 0x00000080;
+    /**
+     * Cluster ICDManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterICDManagementCommandRegisterClientID = 0x00000000;
+    /**
+     * Cluster ICDManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterICDManagementCommandRegisterClientResponseID = 0x00000001;
+    /**
+     * Cluster ICDManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterICDManagementCommandUnregisterClientID = 0x00000002;
+    /**
+     * Cluster ICDManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterICDManagementCommandStayActiveRequestID = 0x00000003;
+    /**
+     * Cluster ICDManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterICDManagementCommandStayActiveResponseID = 0x00000004;
+    /**
+     * Cluster OvenCavityOperationalState commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterOvenCavityOperationalStateCommandStopID = 0x00000001;
+    /**
+     * Cluster OvenCavityOperationalState commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterOvenCavityOperationalStateCommandStartID = 0x00000002;
+    /**
+     * Cluster OvenCavityOperationalState commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterOvenCavityOperationalStateCommandOperationalCommandResponseID = 0x00000004;
+    /**
+     * Cluster OvenMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterOvenModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster OvenMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterOvenModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster LaundryWasherMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterLaundryWasherModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster LaundryWasherMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterLaundryWasherModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster RefrigeratorAndTemperatureControlledCabinetMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterRefrigeratorAndTemperatureControlledCabinetModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster TemperatureControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterTemperatureControlCommandSetTemperatureID = 0x00000000;
+    /**
+     * Cluster DishwasherMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDishwasherModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster DishwasherMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDishwasherModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster DishwasherAlarm commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDishwasherAlarmCommandResetID = 0x00000000;
+    /**
+     * Cluster DishwasherAlarm commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDishwasherAlarmCommandModifyEnabledAlarmsID = 0x00000001;
+    /**
+     * Cluster MicrowaveOvenControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterMicrowaveOvenControlCommandSetCookingParametersID = 0x00000000;
+    /**
+     * Cluster MicrowaveOvenControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterMicrowaveOvenControlCommandAddMoreTimeID = 0x00000001;
+    /**
+     * Cluster RVCOperationalState commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterRVCOperationalStateCommandGoHomeID = 0x00000080;
+    /**
+     * Cluster WaterHeaterManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterWaterHeaterManagementCommandBoostID = 0x00000000;
+    /**
+     * Cluster WaterHeaterManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterWaterHeaterManagementCommandCancelBoostID = 0x00000001;
+    /**
+     * Cluster Messages commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterMessagesCommandPresentMessagesRequestID = 0x00000000;
+    /**
+     * Cluster Messages commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterMessagesCommandCancelMessagesRequestID = 0x00000001;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandPowerAdjustRequestID = 0x00000000;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandCancelPowerAdjustRequestID = 0x00000001;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandStartTimeAdjustRequestID = 0x00000002;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandPauseRequestID = 0x00000003;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandResumeRequestID = 0x00000004;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandModifyForecastRequestID = 0x00000005;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandRequestConstraintBasedForecastID = 0x00000006;
+    /**
+     * Cluster DeviceEnergyManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementCommandCancelRequestID = 0x00000007;
+    /**
+     * Cluster EnergyEVSE commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSECommandGetTargetsResponseID = 0x00000000;
+    /**
+     * Cluster EnergyEVSE commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSECommandDisableID = 0x00000001;
+    /**
+     * Cluster EnergyEVSE commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSECommandEnableChargingID = 0x00000002;
+    /**
+     * Cluster EnergyEVSE commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSECommandStartDiagnosticsID = 0x00000004;
+    /**
+     * Cluster EnergyEVSE commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSECommandSetTargetsID = 0x00000005;
+    /**
+     * Cluster EnergyEVSE commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSECommandGetTargetsID = 0x00000006;
+    /**
+     * Cluster EnergyEVSE commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSECommandClearTargetsID = 0x00000007;
+    /**
+     * Cluster EnergyEVSEMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSEModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster EnergyEVSEMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterEnergyEVSEModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster WaterHeaterMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterWaterHeaterModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster WaterHeaterMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterWaterHeaterModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster DeviceEnergyManagementMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementModeCommandChangeToModeID = 0x00000000;
+    /**
+     * Cluster DeviceEnergyManagementMode commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDeviceEnergyManagementModeCommandChangeToModeResponseID = 0x00000001;
+    /**
+     * Cluster DoorLock commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDoorLockCommandUnboltDoorID = 0x00000027;
+    /**
+     * Cluster DoorLock commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDoorLockCommandSetAliroReaderConfigID = 0x00000028;
+    /**
+     * Cluster DoorLock commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterDoorLockCommandClearAliroReaderConfigID = 0x00000029;
+    /**
+     * Cluster ServiceArea commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterServiceAreaCommandSelectAreasID = 0x00000000;
+    /**
+     * Cluster ServiceArea commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterServiceAreaCommandSelectAreasResponseID = 0x00000001;
+    /**
+     * Cluster ServiceArea commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterServiceAreaCommandSkipAreaID = 0x00000002;
+    /**
+     * Cluster ServiceArea commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterServiceAreaCommandSkipAreaResponseID = 0x00000003;
+    /**
+     * Cluster Thermostat commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThermostatCommandSetActiveScheduleRequestID = 0x00000005;
+    /**
+     * Cluster Thermostat commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThermostatCommandSetActivePresetRequestID = 0x00000006;
+    /**
+     * Cluster Thermostat commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThermostatCommandAtomicResponseID = 0x000000FD;
+    /**
+     * Cluster Thermostat commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThermostatCommandAtomicRequestID = 0x000000FE;
+    /**
+     * Cluster WiFiNetworkManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterWiFiNetworkManagementCommandNetworkPassphraseRequestID = 0x00000000;
+    /**
+     * Cluster WiFiNetworkManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterWiFiNetworkManagementCommandNetworkPassphraseResponseID = 0x00000001;
+    /**
+     * Cluster ThreadBorderRouterManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadBorderRouterManagementCommandGetActiveDatasetRequestID = 0x00000000;
+    /**
+     * Cluster ThreadBorderRouterManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadBorderRouterManagementCommandGetPendingDatasetRequestID = 0x00000001;
+    /**
+     * Cluster ThreadBorderRouterManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadBorderRouterManagementCommandDatasetResponseID = 0x00000002;
+    /**
+     * Cluster ThreadBorderRouterManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadBorderRouterManagementCommandSetActiveDatasetRequestID = 0x00000003;
+    /**
+     * Cluster ThreadBorderRouterManagement commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadBorderRouterManagementCommandSetPendingDatasetRequestID = 0x00000004;
+    /**
+     * Cluster ThreadNetworkDirectory commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadNetworkDirectoryCommandAddNetworkID = 0x00000000;
+    /**
+     * Cluster ThreadNetworkDirectory commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadNetworkDirectoryCommandRemoveNetworkID = 0x00000001;
+    /**
+     * Cluster ThreadNetworkDirectory commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadNetworkDirectoryCommandGetOperationalDatasetID = 0x00000002;
+    /**
+     * Cluster ThreadNetworkDirectory commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterThreadNetworkDirectoryCommandOperationalDatasetResponseID = 0x00000003;
+    /**
+     * Cluster Channel commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterChannelCommandGetProgramGuideID = 0x00000004;
+    /**
+     * Cluster Channel commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterChannelCommandProgramGuideResponseID = 0x00000005;
+    /**
+     * Cluster Channel commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterChannelCommandRecordProgramID = 0x00000006;
+    /**
+     * Cluster Channel commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterChannelCommandCancelRecordProgramID = 0x00000007;
+    /**
+     * Cluster MediaPlayback commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterMediaPlaybackCommandActivateAudioTrackID = 0x0000000C;
+    /**
+     * Cluster MediaPlayback commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterMediaPlaybackCommandActivateTextTrackID = 0x0000000D;
+    /**
+     * Cluster MediaPlayback commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterMediaPlaybackCommandDeactivateTextTrackID = 0x0000000E;
+    /**
+     * Cluster ContentAppObserver commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterContentAppObserverCommandContentAppMessageID = 0x00000000;
+    /**
+     * Cluster ContentAppObserver commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterContentAppObserverCommandContentAppMessageResponseID = 0x00000001;
+    /**
+     * Cluster CommissionerControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterCommissionerControlCommandRequestCommissioningApprovalID = 0x00000000;
+    /**
+     * Cluster CommissionerControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterCommissionerControlCommandCommissionNodeID = 0x00000001;
+    /**
+     * Cluster CommissionerControl commands
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int CommandIDTypeClusterCommissionerControlCommandReverseOpenCommissioningWindowID = 0x00000002;
 }

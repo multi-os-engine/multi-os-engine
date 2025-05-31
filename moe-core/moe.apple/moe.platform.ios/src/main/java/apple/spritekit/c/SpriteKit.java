@@ -19,6 +19,6 @@ public final class SpriteKit {
     }
 
     @Generated public static final double PHYSICSKIT_MINUS_GL_IMPORTS = 1.0;
-    @Generated public static final double SK_VERSION = 5.1000003E7;
+    @Generated public static final double SK_VERSION = 5.1005001E7;
     @Generated public static final double SKVIEW_AVAILABLE = 1.0;
 }

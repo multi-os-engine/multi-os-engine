@@ -23,4 +23,16 @@ public final class MTRApplicationLauncherStatus {
      * API-Since: 16.1
      */
     @Generated public static final byte SystemBusy = 2;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte PendingUserApproval = 3;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Downloading = 4;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte Installing = 5;
 }

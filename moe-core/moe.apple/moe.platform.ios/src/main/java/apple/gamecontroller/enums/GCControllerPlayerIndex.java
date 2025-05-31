@@ -25,13 +25,30 @@ import org.moe.natj.general.ann.NInt;
  * Controllers retain the player index they have been assigned between game sessions, so if you wish to unset the player
  * index of a
  * controller set it back to this value.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class GCControllerPlayerIndex {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long IndexUnset = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Index1 = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Index2 = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Index3 = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Index4 = 0x0000000000000003L;
 
     @Generated

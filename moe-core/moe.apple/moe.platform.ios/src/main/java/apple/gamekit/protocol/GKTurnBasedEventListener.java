@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -66,6 +69,8 @@ public interface GKTurnBasedEventListener {
 
     /**
      * called when the match has ended.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

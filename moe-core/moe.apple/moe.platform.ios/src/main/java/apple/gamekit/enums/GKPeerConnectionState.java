@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Generated;
  * 
  * API-Since: 3.0
  * Deprecated-Since: 7.0
+ * Deprecated-Message: No longer supported
  */
 @Deprecated
 @Generated
@@ -30,6 +31,7 @@ public final class GKPeerConnectionState {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Available = 0x00000000;
     /**
@@ -37,6 +39,7 @@ public final class GKPeerConnectionState {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Unavailable = 0x00000001;
     /**
@@ -44,6 +47,7 @@ public final class GKPeerConnectionState {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Connected = 0x00000002;
     /**
@@ -51,6 +55,7 @@ public final class GKPeerConnectionState {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Disconnected = 0x00000003;
     /**
@@ -58,6 +63,7 @@ public final class GKPeerConnectionState {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int Connecting = 0x00000004;
 
@@ -70,6 +76,7 @@ public final class GKPeerConnectionState {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Deprecated @Generated public static final int ConnectedRelay = 0x00000005;
 }

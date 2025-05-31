@@ -79,4 +79,52 @@ public final class MTRTimeSynchronizationTimeSource {
      * API-Since: 16.1
      */
     @Generated public static final byte Gnss = 16;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte NonMatterSNTP = 4;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte NonMatterNTP = 5;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte MatterSNTP = 6;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte MatterNTP = 7;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte MixedNTP = 8;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte NonMatterSNTPNTS = 9;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte NonMatterNTPNTS = 10;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte MatterSNTPNTS = 11;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte MatterNTPNTS = 12;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte MixedNTPNTS = 13;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte PTP = 15;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte GNSS = 16;
 }

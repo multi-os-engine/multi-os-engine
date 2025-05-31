@@ -209,6 +209,7 @@ public class GKSession extends NSObject {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Deprecated
     @Generated
@@ -285,6 +286,7 @@ public class GKSession extends NSObject {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer available
      */
     @Generated
     @Deprecated
@@ -331,6 +333,7 @@ public class GKSession extends NSObject {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Generated
     @Deprecated
@@ -343,6 +346,7 @@ public class GKSession extends NSObject {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Generated
     @Deprecated
@@ -355,6 +359,7 @@ public class GKSession extends NSObject {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Generated
     @Deprecated
@@ -374,6 +379,7 @@ public class GKSession extends NSObject {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Generated
     @Deprecated
@@ -395,6 +401,7 @@ public class GKSession extends NSObject {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Deprecated
     @Generated
@@ -404,6 +411,7 @@ public class GKSession extends NSObject {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported.
      */
     @Deprecated
     @Generated

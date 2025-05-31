@@ -42,6 +42,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKInvite represents an accepted game invite, it is used to create a GKMatchmakerViewController
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -173,6 +175,9 @@ public class GKInvite extends NSObject {
     @Selector("inviter")
     public native String inviter();
 
+    /**
+     * API-Since: 4.1
+     */
     @Generated
     @Selector("isHosted")
     public native boolean isHosted();

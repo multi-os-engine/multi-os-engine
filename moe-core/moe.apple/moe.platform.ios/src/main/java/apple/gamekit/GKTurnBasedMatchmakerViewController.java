@@ -46,6 +46,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -177,6 +180,9 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("initWithCoder:")
     public native GKTurnBasedMatchmakerViewController initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithMatchRequest:")
     public native GKTurnBasedMatchmakerViewController initWithMatchRequest(@NotNull GKMatchRequest request);
@@ -196,15 +202,24 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     public native GKTurnBasedMatchmakerViewController initWithRootViewController(
             @NotNull UIViewController rootViewController);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setShowExistingMatches:")
     public native void setShowExistingMatches(boolean value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setTurnBasedMatchmakerDelegate:")
     public native void setTurnBasedMatchmakerDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     public void setTurnBasedMatchmakerDelegate(
             @Nullable @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value) {
@@ -218,10 +233,16 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
         }
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("showExistingMatches")
     public native boolean showExistingMatches();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("turnBasedMatchmakerDelegate")

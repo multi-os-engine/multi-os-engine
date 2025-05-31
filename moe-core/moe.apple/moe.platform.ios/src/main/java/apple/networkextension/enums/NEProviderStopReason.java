@@ -136,7 +136,7 @@ public final class NEProviderStopReason {
      */
     @Generated @NInt public static final long AppUpdate = 0x0000000000000010L;
     /**
-     * [@const] NEProviderStopReasonInternalError
+     * [@const] NEProviderStopReasonInternalError An internal error occurred in the NetworkExtension framework
      * 
      * API-Since: 18.1
      */

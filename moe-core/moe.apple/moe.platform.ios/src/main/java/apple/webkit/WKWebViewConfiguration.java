@@ -727,4 +727,23 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Selector("writingToolsBehavior")
     @NInt
     public native long writingToolsBehavior();
+
+    /**
+     * The web extension controller to associate with the web view.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setWebExtensionController:")
+    public native void setWebExtensionController(@Nullable WKWebExtensionController value);
+
+    /**
+     * The web extension controller to associate with the web view.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("webExtensionController")
+    @Nullable
+    public native WKWebExtensionController webExtensionController();
 }

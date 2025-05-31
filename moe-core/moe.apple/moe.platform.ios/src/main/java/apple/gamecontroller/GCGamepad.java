@@ -211,6 +211,8 @@ public class GCGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput buttonY();
 
     /**
+     * A profile keeps a reference to the controller that this profile is mapping input from.
+     * 
      * API-Since: 7.0
      * Deprecated-Since: 10.0
      */
@@ -303,14 +305,14 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(@NotNull GCGamepad arg0, @NotNull GCControllerElement arg1);
+        void call_setValueChangedHandler(@NotNull GCGamepad gamepad, @NotNull GCControllerElement element);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(@NotNull GCGamepad arg0, @NotNull GCControllerElement arg1);
+        void call_valueChangedHandler_ret(@NotNull GCGamepad gamepad, @NotNull GCControllerElement element);
     }
 
     @Generated

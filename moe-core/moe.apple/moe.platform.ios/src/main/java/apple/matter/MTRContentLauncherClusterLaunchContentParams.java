@@ -274,4 +274,19 @@ public class MTRContentLauncherClusterLaunchContentParams extends NSObject imple
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setUseCurrentContext:")
+    public native void setUseCurrentContext(@Nullable NSNumber value);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("useCurrentContext")
+    @Nullable
+    public native NSNumber useCurrentContext();
 }

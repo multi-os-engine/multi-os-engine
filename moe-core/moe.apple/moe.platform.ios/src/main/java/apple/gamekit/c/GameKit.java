@@ -38,6 +38,9 @@ public final class GameKit {
     private GameKit() {
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @CVariable()
@@ -59,6 +62,8 @@ public final class GameKit {
     /**
      * Notification will be posted whenever the player details changes. The object of the notification will be the
      * player.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -111,13 +116,24 @@ public final class GameKit {
 
     /**
      * domain
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GKSessionErrorDomain();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

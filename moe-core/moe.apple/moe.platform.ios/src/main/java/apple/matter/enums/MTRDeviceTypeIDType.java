@@ -275,4 +275,20 @@ public final class MTRDeviceTypeIDType {
      * API-Since: 18.2
      */
     @Generated public static final int OnOffSensorID = 0x00000850;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int SolarPowerID = 0x00000017;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int BatteryStorageID = 0x00000018;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int HeatPumpID = 0x00000309;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int WaterHeaterID = 0x0000050F;
 }

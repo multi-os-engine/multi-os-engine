@@ -1580,4 +1580,142 @@ public class MTRBaseClusterAccessControl extends MTRGenericBaseCluster {
         @Generated
         void call_writeAttributeExtensionWithValueParamsCompletionHandler(@Nullable NSError error);
     }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeARLWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeARLWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeARLWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeARLWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeARLWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeARLWithClusterStateCacheEndpointQueueCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeARLWithParams:completion:")
+    public native void readAttributeARLWithParamsCompletion(@Nullable MTRReadParams params,
+            @ObjCBlock(name = "call_readAttributeARLWithParamsCompletion") @NotNull Block_readAttributeARLWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeARLWithParamsCompletion {
+        @Generated
+        void call_readAttributeARLWithParamsCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeCommissioningARLWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeCommissioningARLWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeCommissioningARLWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeCommissioningARLWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeCommissioningARLWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeCommissioningARLWithClusterStateCacheEndpointQueueCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeCommissioningARLWithCompletion:")
+    public native void readAttributeCommissioningARLWithCompletion(
+            @ObjCBlock(name = "call_readAttributeCommissioningARLWithCompletion") @NotNull Block_readAttributeCommissioningARLWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeCommissioningARLWithCompletion {
+        @Generated
+        void call_readAttributeCommissioningARLWithCompletion(@Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * Command ReviewFabricRestrictions
+     * 
+     * This command signals to the service associated with the device vendor that the fabric administrator would like a
+     * review of the current restrictions on the accessing fabric.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("reviewFabricRestrictionsWithParams:completion:")
+    public native void reviewFabricRestrictionsWithParamsCompletion(
+            @NotNull MTRAccessControlClusterReviewFabricRestrictionsParams params,
+            @ObjCBlock(name = "call_reviewFabricRestrictionsWithParamsCompletion") @NotNull Block_reviewFabricRestrictionsWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reviewFabricRestrictionsWithParamsCompletion {
+        @Generated
+        void call_reviewFabricRestrictionsWithParamsCompletion(
+                @Nullable MTRAccessControlClusterReviewFabricRestrictionsResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeARLWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeARLWithParamsSubscriptionEstablishedReportHandler_2(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeCommissioningARLWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeCommissioningARLWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
 }

@@ -47,6 +47,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.uikit.NSAdaptiveImageGlyph;
+import apple.uikit.UIInputSuggestion;
 
 @Generated
 @Library("UIKit")
@@ -632,6 +633,18 @@ public interface UITextInput extends UIKeyInput {
     @IsOptional
     @Selector("willPresentWritingTools")
     default void willPresentWritingTools() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Inserts the user or system’s input suggestion into the document.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("insertInputSuggestion:")
+    default void insertInputSuggestion(@NotNull UIInputSuggestion inputSuggestion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

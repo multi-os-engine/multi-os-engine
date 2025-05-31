@@ -41,5 +41,5 @@ public final class GameplayKit {
     private GameplayKit() {
     }
 
-    @Generated public static final double GK_VERSION = 1.00000001E8;
+    @Generated public static final double GK_VERSION = 1.00004001E8;
 }

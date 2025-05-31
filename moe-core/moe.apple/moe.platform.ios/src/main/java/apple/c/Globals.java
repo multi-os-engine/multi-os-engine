@@ -45,7 +45,6 @@ import apple.struct.lldiv_t;
 import apple.struct.mach_header;
 import apple.struct.mach_msg_header_t;
 import apple.struct.msghdr;
-import apple.struct.os_unfair_lock_s;
 import apple.struct.os_workgroup_attr_opaque_s;
 import apple.struct.os_workgroup_interval_data_opaque_s;
 import apple.struct.os_workgroup_join_token_opaque_s;
@@ -140,6 +139,9 @@ import apple.struct.vm_info_region_64;
 import apple.struct.vm_purgeable_info;
 import org.moe.natj.c.map.CStringMapper;
 import org.moe.natj.general.ptr.ConstDoublePtr;
+import apple.opaque.locale_t;
+import apple.struct.kevent;
+import apple.struct.kevent64_s;
 
 @Generated
 @Runtime(CRuntime.class)
@@ -457,7 +459,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native BytePtr getcwd(BytePtr arg1, @NUInt long arg2);
+    public static native BytePtr getcwd(BytePtr arg1, @NUInt long __size);
 
     @Generated
     @CFunction
@@ -473,7 +475,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int getgroups(int arg1, IntPtr arg2);
+    public static native int getgroups(int __gidsetsize, IntPtr arg2);
 
     @Generated
     @CFunction
@@ -522,7 +524,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long read(int arg1, VoidPtr arg2, @NUInt long arg3);
+    public static native long read(int arg1, VoidPtr arg2, @NUInt long __nbyte);
 
     @Generated
     @CFunction
@@ -568,7 +570,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int ttyname_r(int arg1, BytePtr arg2, @NUInt long arg3);
+    public static native int ttyname_r(int arg1, BytePtr arg2, @NUInt long __len);
 
     @Generated
     @CFunction
@@ -583,11 +585,11 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long confstr(int arg1, BytePtr arg2, @NUInt long arg3);
+    public static native long confstr(int arg1, BytePtr arg2, @NUInt long __len);
 
     @Generated
     @CFunction
-    public static native int getopt(int arg1, ConstPtr<BytePtr> arg2,
+    public static native int getopt(int __argc, ConstPtr<BytePtr> arg2,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3);
 
     @Generated
@@ -692,7 +694,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void swab(ConstVoidPtr arg1, VoidPtr arg2, @NInt long arg3);
+    public static native void swab(ConstVoidPtr arg1, VoidPtr arg2, @NInt long __len);
 
     @Generated
     @CFunction
@@ -728,7 +730,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int getlogin_r(BytePtr arg1, @NUInt long arg2);
+    public static native int getlogin_r(BytePtr arg1, @NUInt long __namelen);
 
     @Generated
     @CFunction
@@ -736,14 +738,14 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int gethostname(BytePtr arg1, @NUInt long arg2);
+    public static native int gethostname(BytePtr arg1, @NUInt long __namelen);
 
     @Generated
     @CFunction
     @NInt
     public static native long readlink(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            BytePtr arg2, @NUInt long arg3);
+            BytePtr arg2, @NUInt long __bufsize);
 
     @Generated
     @CFunction
@@ -783,7 +785,7 @@ public final class Globals {
     @CFunction
     public static native int accessx_np(
             @UncertainArgument("Options: reference, array Fallback: reference") accessx_descriptor arg1,
-            @NUInt long arg2, IntPtr arg3, int arg4);
+            @NUInt long __sz, IntPtr arg3, int arg4);
 
     @Generated
     @CFunction
@@ -792,7 +794,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int add_profil(BytePtr arg1, @NUInt long arg2, @NUInt long arg3, int arg4);
+    public static native int add_profil(BytePtr arg1, @NUInt long __bufsiz, @NUInt long arg3, int arg4);
 
     @Generated
     @CFunction
@@ -811,13 +813,13 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int getdomainname(BytePtr arg1, int arg2);
+    public static native int getdomainname(BytePtr arg1, int __namelen);
 
     @Generated
     @CFunction
     public static native int getgrouplist(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2,
-            IntPtr arg3, IntPtr arg4);
+            IntPtr arg3, IntPtr __ngroups);
 
     @Generated
     @CFunction
@@ -907,7 +909,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int profil(BytePtr arg1, @NUInt long arg2, @NUInt long arg3, int arg4);
+    public static native int profil(BytePtr arg1, @NUInt long __bufsiz, @NUInt long arg3, int arg4);
 
     @Generated
     @CFunction
@@ -972,7 +974,8 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int setdomainname(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            int __namelen);
 
     @Generated
     @CFunction
@@ -985,7 +988,8 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int sethostname(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            int __namelen);
 
     @Generated
     @CFunction
@@ -1061,26 +1065,26 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int fgetattrlist(int arg1, VoidPtr arg2, VoidPtr arg3, @NUInt long arg4, int arg5);
+    public static native int fgetattrlist(int arg1, VoidPtr arg2, VoidPtr arg3, @NUInt long __attrBufSize, int arg5);
 
     /**
      * API-Since: 3.0
      */
     @Generated
     @CFunction
-    public static native int fsetattrlist(int arg1, VoidPtr arg2, VoidPtr arg3, @NUInt long arg4, int arg5);
+    public static native int fsetattrlist(int arg1, VoidPtr arg2, VoidPtr arg3, @NUInt long __attrBufSize, int arg5);
 
     @Generated
     @CFunction
     public static native int getattrlist(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            VoidPtr arg2, VoidPtr arg3, @NUInt long arg4, int arg5);
+            VoidPtr arg2, VoidPtr arg3, @NUInt long __attrBufSize, int arg5);
 
     @Generated
     @CFunction
     public static native int setattrlist(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            VoidPtr arg2, VoidPtr arg3, @NUInt long arg4, int arg5);
+            VoidPtr arg2, VoidPtr arg3, @NUInt long __attrBufSize, int arg5);
 
     @Generated
     @CFunction
@@ -1090,8 +1094,8 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int getdirentriesattr(int arg1, VoidPtr arg2, VoidPtr arg3, @NUInt long arg4, IntPtr arg5,
-            IntPtr arg6, IntPtr arg7, int arg8);
+    public static native int getdirentriesattr(int arg1, VoidPtr arg2, VoidPtr arg3, @NUInt long __attrBufSize,
+            IntPtr arg5, IntPtr arg6, IntPtr arg7, int arg8);
 
     @Generated
     @CFunction
@@ -4454,8 +4458,6 @@ public final class Globals {
      * Create a heap based copy of a Block or simply add a reference to an existing one.
      * This must be paired with Block_release to recover memory, even when running
      * under Objective-C Garbage Collection.
-     * 
-     * API-Since: 3.2
      */
     @Generated
     @CFunction
@@ -4463,8 +4465,6 @@ public final class Globals {
 
     /**
      * Lose the reference, and if heap based and last reference, recover the memory
-     * 
-     * API-Since: 3.2
      */
     @Generated
     @CFunction
@@ -4472,8 +4472,6 @@ public final class Globals {
 
     /**
      * Used by the compiler. Do not call this function yourself.
-     * 
-     * API-Since: 3.2
      */
     @Generated
     @CFunction
@@ -4481,8 +4479,6 @@ public final class Globals {
 
     /**
      * Used by the compiler. Do not call this function yourself.
-     * 
-     * API-Since: 3.2
      */
     @Generated
     @CFunction
@@ -4874,7 +4870,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native BytePtr fgets(BytePtr arg1, int arg2,
+    public static native BytePtr fgets(BytePtr arg1, int __size,
             @UncertainArgument("Options: reference, array Fallback: reference") FILE arg3);
 
     @Generated
@@ -5012,7 +5008,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int setvbuf(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1,
-            BytePtr arg2, int arg3, @NUInt long arg4);
+            BytePtr arg2, int arg3, @NUInt long __size);
 
     @Generated
     @Variadic()
@@ -5245,7 +5241,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native BytePtr fgetln(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1,
-            NUIntPtr arg2);
+            NUIntPtr __len);
 
     @Generated
     @CFunction
@@ -5261,7 +5257,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void setbuffer(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1,
-            BytePtr arg2, int arg3);
+            BytePtr arg2, int __size);
 
     @Generated
     @CFunction
@@ -5295,7 +5291,7 @@ public final class Globals {
     @Generated
     @Variadic()
     @CFunction
-    public static native int __snprintf_chk(BytePtr arg1, @NUInt long arg2, int arg3, @NUInt long arg4,
+    public static native int __snprintf_chk(BytePtr arg1, @NUInt long __maxlen, int arg3, @NUInt long arg4,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
             Object... varargs);
 
@@ -5307,7 +5303,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int __vsnprintf_chk(BytePtr arg1, @NUInt long arg2, int arg3, @NUInt long arg4,
+    public static native int __vsnprintf_chk(BytePtr arg1, @NUInt long __maxlen, int arg3, @NUInt long arg4,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
             BytePtr arg6);
 
@@ -5372,7 +5368,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native VoidPtr alloca(@NUInt long arg1);
+    public static native VoidPtr alloca(@NUInt long __size);
 
     @Generated
     @CFunction
@@ -5477,13 +5473,13 @@ public final class Globals {
     @NUInt
     public static native long mbstowcs(IntPtr arg1,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+            @NUInt long __n);
 
     @Generated
     @CFunction
     public static native int mbtowc(IntPtr arg1,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+            @NUInt long __n);
 
     /**
      * rdar://120689514
@@ -5558,7 +5554,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long wcstombs(BytePtr arg1, ConstIntPtr arg2, @NUInt long arg3);
+    public static native long wcstombs(BytePtr arg1, ConstIntPtr arg2, @NUInt long __n);
 
     @Generated
     @CFunction
@@ -5592,7 +5588,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native BytePtr initstate(int arg1, BytePtr arg2, @NUInt long arg3);
+    public static native BytePtr initstate(int arg1, BytePtr arg2, @NUInt long __size);
 
     @Generated
     @CFunction
@@ -5676,7 +5672,7 @@ public final class Globals {
     @Deprecated
     @Generated
     @CFunction
-    public static native void arc4random_addrandom(BytePtr arg1, int arg2);
+    public static native void arc4random_addrandom(BytePtr arg1, int __datlen);
 
     /**
      * API-Since: 4.3
@@ -5789,7 +5785,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int getloadavg(DoublePtr arg1, int arg2);
+    public static native int getloadavg(DoublePtr arg1, int __nelem);
 
     @Generated
     @CFunction
@@ -6149,15 +6145,15 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int bcmp(ConstVoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native int bcmp(ConstVoidPtr arg1, ConstVoidPtr arg2, @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native void bcopy(ConstVoidPtr arg1, VoidPtr arg2, @NUInt long arg3);
+    public static native void bcopy(ConstVoidPtr arg1, VoidPtr arg2, @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native void bzero(VoidPtr arg1, @NUInt long arg2);
+    public static native void bzero(VoidPtr arg1, @NUInt long __n);
 
     @Generated
     @CFunction
@@ -6262,7 +6258,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long strftime(BytePtr arg1, @NUInt long arg2,
+    public static native long strftime(BytePtr arg1, @NUInt long __maxsize,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
             @UncertainArgument("Options: reference, array Fallback: reference") tm arg4);
 
@@ -6691,62 +6687,6 @@ public final class Globals {
     @Generated
     @CFunction
     public static native BytePtr acl_to_text(acl_t acl, NIntPtr len_p);
-
-    /**
-     * [@function] os_unfair_lock_lock
-     * 
-     * Locks an os_unfair_lock.
-     * 
-     * @param lock
-     *             Pointer to an os_unfair_lock.
-     * 
-     *             API-Since: 10.0
-     */
-    @Generated
-    @CFunction
-    public static native void os_unfair_lock_lock(
-            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
-
-    /**
-     * [@function] os_unfair_lock_trylock
-     * 
-     * Locks an os_unfair_lock if it is not already locked.
-     * 
-     * It is invalid to surround this function with a retry loop, if this function
-     * returns false, the program must be able to proceed without having acquired
-     * the lock, or it must call os_unfair_lock_lock() directly (a retry loop around
-     * os_unfair_lock_trylock() amounts to an inefficient implementation of
-     * os_unfair_lock_lock() that hides the lock waiter from the system and prevents
-     * resolution of priority inversions).
-     * 
-     * @param lock
-     *             Pointer to an os_unfair_lock.
-     * 
-     * @return
-     *         Returns true if the lock was succesfully locked and false if the lock was
-     *         already locked.
-     * 
-     *         API-Since: 10.0
-     */
-    @Generated
-    @CFunction
-    public static native boolean os_unfair_lock_trylock(
-            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
-
-    /**
-     * [@function] os_unfair_lock_unlock
-     * 
-     * Unlocks an os_unfair_lock.
-     * 
-     * @param lock
-     *             Pointer to an os_unfair_lock.
-     * 
-     *             API-Since: 10.0
-     */
-    @Generated
-    @CFunction
-    public static native void os_unfair_lock_unlock(
-            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     @Generated
     @CFunction
@@ -9263,49 +9203,6 @@ public final class Globals {
     @Inline
     @CFunction
     public static native void _os_log_sensitive_deprecated();
-
-    /**
-     * [@function] os_unfair_lock_assert_owner
-     * 
-     * Asserts that the calling thread is the current owner of the specified
-     * unfair lock.
-     * 
-     * If the lock is currently owned by the calling thread, this function returns.
-     * 
-     * If the lock is unlocked or owned by a different thread, this function
-     * asserts and terminates the process.
-     * 
-     * @param lock
-     *             Pointer to an os_unfair_lock.
-     * 
-     *             API-Since: 10.0
-     */
-    @Generated
-    @CFunction
-    public static native void os_unfair_lock_assert_owner(
-            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
-
-    /**
-     * [@function] os_unfair_lock_assert_not_owner
-     * 
-     * Asserts that the calling thread is not the current owner of the specified
-     * unfair lock.
-     * 
-     * If the lock is unlocked or owned by a different thread, this function
-     * returns.
-     * 
-     * If the lock is currently owned by the current thread, this function asserts
-     * and terminates the process.
-     * 
-     * @param lock
-     *             Pointer to an os_unfair_lock.
-     * 
-     *             API-Since: 10.0
-     */
-    @Generated
-    @CFunction
-    public static native void os_unfair_lock_assert_not_owner(
-            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
      * Get value of service property.
@@ -13313,7 +13210,7 @@ public final class Globals {
     @Generated public static final double SHUT_RD = 0.0;
     @Generated public static final double SHUT_WR = 1.0;
     @Generated public static final double SHUT_RDWR = 2.0;
-    @Generated public static final double _DNS_SD_H = 2.559060039E9;
+    @Generated public static final double _DNS_SD_H = 2.600120012E9;
     @Generated public static final double DNS_SD_ORIGINAL_ENCODING_VERSION_NUMBER_MAX = 1.661E7;
     @Generated public static final double _DNS_SD_LIBDISPATCH = 1.0;
     @Generated public static final double kDNSServiceMaxServiceName = 64.0;
@@ -13553,7 +13450,6 @@ public final class Globals {
     @Generated public static final double OS_LOG_TARGET_HAS_10_14_FEATURES = 0.0;
     @Generated public static final double OS_LOG_TARGET_HAS_10_13_FEATURES = 0.0;
     @Generated public static final double OS_LOG_TARGET_HAS_10_12_FEATURES = 0.0;
-    @Generated public static final double OS_LOCK_API_VERSION = 2.0160309E7;
     @Generated public static final double OS_SIGNPOST_TYPE_MASK = 3.0;
     @Generated public static final double IPPROTO_IP = 0.0;
     @Generated public static final double IPPROTO_HOPOPTS = 0.0;
@@ -19119,25 +19015,6 @@ public final class Globals {
             Object... varargs);
 
     /**
-     * [@function] os_unfair_lock_lock_with_flags
-     * 
-     * Locks an os_unfair_lock.
-     * 
-     * @param lock
-     *              Pointer to an os_unfair_lock.
-     * 
-     * @param flags
-     *              Flags to alter the behavior of the lock. See os_unfair_lock_flags_t.
-     * 
-     *              API-Since: 18.0
-     */
-    @Generated
-    @CFunction
-    public static native void os_unfair_lock_lock_with_flags(
-            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull os_unfair_lock_s lock,
-            int flags);
-
-    /**
      * API-Since: 5.0
      */
     @Generated
@@ -19595,7 +19472,7 @@ public final class Globals {
     @Generated public static final double EXC_MACF_MIN = 131072.0;
     @Generated public static final double EXC_MACF_MAX = 196607.0;
     @Generated public static final double ARM_EXCEPTION_STATE64_V2 = 10.0;
-    @Generated public static final double THREAD_STATE_FLAVORS = 29.0;
+    @Generated public static final double THREAD_STATE_FLAVORS = 50.0;
     @Generated public static final double THREAD_STATE_FLAVOR_LIST = 0.0;
     @Generated public static final double THREAD_STATE_FLAVOR_LIST_NEW = 128.0;
     @Generated public static final double THREAD_STATE_FLAVOR_LIST_10_9 = 129.0;
@@ -19840,4 +19717,187 @@ public final class Globals {
     @Generated public static final double DYLIB_USE_UPWARD = 4.0;
     @Generated public static final double DYLIB_USE_DELAYED_INIT = 8.0;
     @Generated public static final double DYLIB_USE_MARKER = 4.43815936E8;
+
+    @Generated
+    @CFunction
+    public static native locale_t duplocale(locale_t arg1);
+
+    @Generated
+    @CFunction
+    public static native int freelocale(locale_t arg1);
+
+    @Generated
+    @CFunction
+    public static native locale_t newlocale(int arg1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
+            locale_t arg3);
+
+    @Generated
+    @CFunction
+    public static native locale_t uselocale(locale_t arg1);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @CFunction
+    public static native BytePtr strchrnul(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s, int __c);
+
+    @Generated
+    @CFunction
+    public static native int kqueue();
+
+    @Generated
+    @CFunction
+    public static native int kevent(int kq,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent changelist, int nchanges,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent eventlist, int nevents,
+            @UncertainArgument("Options: reference, array Fallback: reference") timespec timeout);
+
+    @Generated
+    @CFunction
+    public static native int kevent64(int kq,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent64_s changelist, int nchanges,
+            @UncertainArgument("Options: reference, array Fallback: reference") kevent64_s eventlist, int nevents,
+            int flags, @UncertainArgument("Options: reference, array Fallback: reference") timespec timeout);
+
+    @Generated public static final double __API_TO_BE_DEPRECATED_MACOSAPPLICATIONEXTENSION = 100000.0;
+    @Generated public static final double __API_TO_BE_DEPRECATED_IOSAPPLICATIONEXTENSION = 100000.0;
+    @Generated public static final double __API_TO_BE_DEPRECATED_MACCATALYSTAPPLICATIONEXTENSION = 100000.0;
+    @Generated public static final double __API_TO_BE_DEPRECATED_WATCHOSAPPLICATIONEXTENSION = 100000.0;
+    @Generated public static final double __API_TO_BE_DEPRECATED_TVOSAPPLICATIONEXTENSION = 100000.0;
+    @Generated public static final double __API_TO_BE_DEPRECATED_VISIONOSAPPLICATIONEXTENSION = 100000.0;
+    @Generated public static final double __API_TO_BE_DEPRECATED_KERNELKIT = 100000.0;
+    @Generated public static final double __MAC_13_7 = 130700.0;
+    @Generated public static final double __MAC_14_6 = 140600.0;
+    @Generated public static final double __MAC_14_7 = 140700.0;
+    @Generated public static final double __MAC_15_3 = 150300.0;
+    @Generated public static final double __MAC_15_4 = 150400.0;
+    @Generated public static final double __MAC_15_5 = 150500.0;
+    @Generated public static final double __IPHONE_17_6 = 170600.0;
+    @Generated public static final double __IPHONE_17_7 = 170700.0;
+    @Generated public static final double __IPHONE_18_3 = 180300.0;
+    @Generated public static final double __IPHONE_18_4 = 180400.0;
+    @Generated public static final double __IPHONE_18_5 = 180500.0;
+    @Generated public static final double __WATCHOS_10_6 = 100600.0;
+    @Generated public static final double __WATCHOS_10_7 = 100700.0;
+    @Generated public static final double __WATCHOS_11_3 = 110300.0;
+    @Generated public static final double __WATCHOS_11_4 = 110400.0;
+    @Generated public static final double __WATCHOS_11_5 = 110500.0;
+    @Generated public static final double __TVOS_17_6 = 170600.0;
+    @Generated public static final double __TVOS_18_3 = 180300.0;
+    @Generated public static final double __TVOS_18_4 = 180400.0;
+    @Generated public static final double __TVOS_18_5 = 180500.0;
+    @Generated public static final double __BRIDGEOS_8_6 = 80600.0;
+    @Generated public static final double __BRIDGEOS_9_3 = 90300.0;
+    @Generated public static final double __BRIDGEOS_9_4 = 90400.0;
+    @Generated public static final double __BRIDGEOS_9_5 = 90500.0;
+    @Generated public static final double __DRIVERKIT_23_6 = 230600.0;
+    @Generated public static final double __DRIVERKIT_24_3 = 240300.0;
+    @Generated public static final double __DRIVERKIT_24_4 = 240400.0;
+    @Generated public static final double __DRIVERKIT_24_5 = 240500.0;
+    @Generated public static final double __VISIONOS_1_3 = 10300.0;
+    @Generated public static final double __VISIONOS_2_3 = 20300.0;
+    @Generated public static final double __VISIONOS_2_4 = 20400.0;
+    @Generated public static final double __VISIONOS_2_5 = 20500.0;
+    @Generated public static final double _LC_NUM_MASK = 6.0;
+    @Generated public static final double IOPOL_VFS_SKIP_MTIME_UPDATE_IGNORE = 2.0;
+    @Generated public static final double O_RESOLVE_BENEATH = 4096.0;
+    @Generated public static final double ARM_SME_STATE = 28.0;
+    @Generated public static final double ARM_SVE_Z_STATE1 = 29.0;
+    @Generated public static final double ARM_SVE_Z_STATE2 = 30.0;
+    @Generated public static final double ARM_SVE_P_STATE = 31.0;
+    @Generated public static final double ARM_SME_ZA_STATE1 = 32.0;
+    @Generated public static final double ARM_SME_ZA_STATE2 = 33.0;
+    @Generated public static final double ARM_SME_ZA_STATE3 = 34.0;
+    @Generated public static final double ARM_SME_ZA_STATE4 = 35.0;
+    @Generated public static final double ARM_SME_ZA_STATE5 = 36.0;
+    @Generated public static final double ARM_SME_ZA_STATE6 = 37.0;
+    @Generated public static final double ARM_SME_ZA_STATE7 = 38.0;
+    @Generated public static final double ARM_SME_ZA_STATE8 = 39.0;
+    @Generated public static final double ARM_SME_ZA_STATE9 = 40.0;
+    @Generated public static final double ARM_SME_ZA_STATE10 = 41.0;
+    @Generated public static final double ARM_SME_ZA_STATE11 = 42.0;
+    @Generated public static final double ARM_SME_ZA_STATE12 = 42.0;
+    @Generated public static final double ARM_SME_ZA_STATE13 = 44.0;
+    @Generated public static final double ARM_SME_ZA_STATE14 = 45.0;
+    @Generated public static final double ARM_SME_ZA_STATE15 = 46.0;
+    @Generated public static final double ARM_SME_ZA_STATE16 = 47.0;
+    @Generated public static final double ARM_SME2_STATE = 48.0;
+    @Generated public static final double TASK_SECURITY_CONFIG_INFO = 32.0;
+    @Generated public static final double LC_FUNCTION_VARIANTS = 55.0;
+    @Generated public static final double LC_FUNCTION_VARIANT_FIXUPS = 56.0;
+    @Generated public static final double LC_TARGET_TRIPLE = 57.0;
+    @Generated public static final double PLATFORM_MACOS_EXCLAVECORE = 15.0;
+    @Generated public static final double PLATFORM_MACOS_EXCLAVEKIT = 16.0;
+    @Generated public static final double PLATFORM_IOS_EXCLAVECORE = 17.0;
+    @Generated public static final double PLATFORM_IOS_EXCLAVEKIT = 18.0;
+    @Generated public static final double PLATFORM_TVOS_EXCLAVECORE = 19.0;
+    @Generated public static final double PLATFORM_TVOS_EXCLAVEKIT = 20.0;
+    @Generated public static final double PLATFORM_WATCHOS_EXCLAVECORE = 21.0;
+    @Generated public static final double PLATFORM_WATCHOS_EXCLAVEKIT = 22.0;
+    @Generated public static final double PLATFORM_VISIONOS_EXCLAVECORE = 23.0;
+    @Generated public static final double PLATFORM_VISIONOS_EXCLAVEKIT = 24.0;
+    @Generated public static final double EVFILT_SYSCOUNT = 18.0;
+    @Generated public static final double KEVENT_FLAG_NONE = 0.0;
+    @Generated public static final double KEVENT_FLAG_IMMEDIATE = 1.0;
+    @Generated public static final double KEVENT_FLAG_ERROR_EVENTS = 2.0;
+    @Generated public static final double EV_ADD = 1.0;
+    @Generated public static final double EV_DELETE = 2.0;
+    @Generated public static final double EV_ENABLE = 4.0;
+    @Generated public static final double EV_DISABLE = 8.0;
+    @Generated public static final double EV_ONESHOT = 16.0;
+    @Generated public static final double EV_CLEAR = 32.0;
+    @Generated public static final double EV_RECEIPT = 64.0;
+    @Generated public static final double EV_DISPATCH = 128.0;
+    @Generated public static final double EV_UDATA_SPECIFIC = 256.0;
+    @Generated public static final double EV_VANISHED = 512.0;
+    @Generated public static final double EV_SYSFLAGS = 61440.0;
+    @Generated public static final double EV_FLAG0 = 4096.0;
+    @Generated public static final double EV_FLAG1 = 8192.0;
+    @Generated public static final double EV_EOF = 32768.0;
+    @Generated public static final double EV_ERROR = 16384.0;
+    @Generated public static final double NOTE_TRIGGER = 1.6777216E7;
+    @Generated public static final double NOTE_FFNOP = 0.0;
+    @Generated public static final double NOTE_FFAND = 1.073741824E9;
+    @Generated public static final double NOTE_FFLAGSMASK = 1.6777215E7;
+    @Generated public static final double NOTE_LOWAT = 1.0;
+    @Generated public static final double NOTE_OOB = 2.0;
+    @Generated public static final double NOTE_DELETE = 1.0;
+    @Generated public static final double NOTE_WRITE = 2.0;
+    @Generated public static final double NOTE_EXTEND = 4.0;
+    @Generated public static final double NOTE_ATTRIB = 8.0;
+    @Generated public static final double NOTE_LINK = 16.0;
+    @Generated public static final double NOTE_RENAME = 32.0;
+    @Generated public static final double NOTE_REVOKE = 64.0;
+    @Generated public static final double NOTE_NONE = 128.0;
+    @Generated public static final double NOTE_FUNLOCK = 256.0;
+    @Generated public static final double NOTE_LEASE_DOWNGRADE = 512.0;
+    @Generated public static final double NOTE_LEASE_RELEASE = 1024.0;
+    @Generated public static final double NOTE_FORK = 1.073741824E9;
+    @Generated public static final double NOTE_EXEC = 5.36870912E8;
+    @Generated public static final double NOTE_SIGNAL = 1.34217728E8;
+    @Generated public static final double NOTE_EXITSTATUS = 6.7108864E7;
+    @Generated public static final double NOTE_EXIT_DETAIL = 3.3554432E7;
+    @Generated public static final double NOTE_PDATAMASK = 1048575.0;
+    @Generated public static final double NOTE_EXIT_DETAIL_MASK = 458752.0;
+    @Generated public static final double NOTE_EXIT_DECRYPTFAIL = 65536.0;
+    @Generated public static final double NOTE_EXIT_MEMORY = 131072.0;
+    @Generated public static final double NOTE_EXIT_CSERROR = 262144.0;
+    @Generated public static final double NOTE_VM_PRESSURE_TERMINATE = 1.073741824E9;
+    @Generated public static final double NOTE_VM_PRESSURE_SUDDEN_TERMINATE = 5.36870912E8;
+    @Generated public static final double NOTE_VM_ERROR = 2.68435456E8;
+    @Generated public static final double NOTE_SECONDS = 1.0;
+    @Generated public static final double NOTE_USECONDS = 2.0;
+    @Generated public static final double NOTE_NSECONDS = 4.0;
+    @Generated public static final double NOTE_ABSOLUTE = 8.0;
+    @Generated public static final double NOTE_LEEWAY = 16.0;
+    @Generated public static final double NOTE_CRITICAL = 32.0;
+    @Generated public static final double NOTE_BACKGROUND = 64.0;
+    @Generated public static final double NOTE_MACH_CONTINUOUS_TIME = 128.0;
+    @Generated public static final double NOTE_MACHTIME = 256.0;
+    @Generated public static final double NOTE_TRACK = 1.0;
+    @Generated public static final double NOTE_TRACKERR = 2.0;
+    @Generated public static final double NOTE_CHILD = 4.0;
 }

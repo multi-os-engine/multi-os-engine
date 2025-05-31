@@ -469,4 +469,26 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * If YES, a spinning activity indicator will be displayed while the list template contains no items.
+     * The activity indicator will be displayed in addition to any @c emptyViewTitleVariants or
+     * [@c] emptyViewSubtitleVariants.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setShowsSpinnerWhileEmpty:")
+    public native void setShowsSpinnerWhileEmpty(boolean value);
+
+    /**
+     * If YES, a spinning activity indicator will be displayed while the list template contains no items.
+     * The activity indicator will be displayed in addition to any @c emptyViewTitleVariants or
+     * [@c] emptyViewSubtitleVariants.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("showsSpinnerWhileEmpty")
+    public native boolean showsSpinnerWhileEmpty();
 }

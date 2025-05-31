@@ -11877,4 +11877,24 @@ public final class CoreFoundation {
     public static native CFStringRef kCFNumberFormatterMinGroupingDigits();
 
     @Generated public static final double CF_HAS_TYPED_ALLOCATOR = 0.0;
+
+    /**
+     * Returns a localized string given a list of possible localizations. The one most suitable to use with the given
+     * ``bundle`` is returned.
+     * - Parameters:
+     * - bundle: The bundle to examine.
+     * - key: The key for the localized string to retrieve.
+     * - value: A default value to return if no value exists for ``key``.
+     * - tableName: The name of the strings file to search.
+     * - localizations: An array of BCP 47 language codes corresponding to available localizations. Bundle compares the
+     * array against its available localizations, and uses the best result to retrieve the localized string. If empty,
+     * we treat it as no localization is available, and may return a fallback.
+     * - Returns: A localized version of the string designated by ``key`` in table ``tableName``.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CFunction
+    public static native CFStringRef CFBundleCopyLocalizedStringForLocalizations(CFBundleRef bundle, CFStringRef key,
+            CFStringRef value, CFStringRef tableName, CFArrayRef localizations);
 }

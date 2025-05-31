@@ -20,6 +20,8 @@ import org.moe.natj.objc.ann.Selector;
  * 
  * Implementations of the keypair methods must not call into any Matter
  * framework APIs.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 @Library("Matter")
@@ -27,12 +29,21 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MTRKeypair")
 public interface MTRKeypair {
     /**
-     * Return public key for the keypair.
+     * Returns public key for the keypair without adding a reference. DEPRECATED - please use copyPublicKey, otherwise
+     * this will leak.
+     * 
+     * API-Since: 16.1
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Please implement copyPublicKey, this will leak otherwise
      */
+    @IsOptional
+    @Deprecated
     @Generated
     @Selector("publicKey")
     @NotNull
-    SecKeyRef publicKey();
+    default SecKeyRef publicKey() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     /**
      * A function to sign a message using ECDSA
@@ -43,6 +54,8 @@ public interface MTRKeypair {
      * 
      *         Either this selector or signMessageECDSA_RAW must be supported by a
      *         MTRKeypair.
+     * 
+     *         API-Since: 16.1
      */
     @Generated
     @IsOptional
@@ -63,12 +76,27 @@ public interface MTRKeypair {
      * 
      *         Either this selector or signMessageECDSA_DER must be supported by a
      *         MTRKeypair.
+     * 
+     *         API-Since: 16.1
      */
     @Generated
     @IsOptional
     @Selector("signMessageECDSA_RAW:")
     @NotNull
     default NSData signMessageECDSA_RAW(@NotNull NSData message) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Returns a copy of the public key for the keypair.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("copyPublicKey")
+    @NotNull
+    default SecKeyRef copyPublicKey() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

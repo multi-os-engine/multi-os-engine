@@ -44,6 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -173,6 +176,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * date when this exchange completed
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -181,6 +186,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * data to send with the exchange.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -189,6 +196,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * persistent identifier used to refer to this exchange.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -201,6 +210,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * localized message for the push notification sent to all recipients of this exchange
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -209,6 +220,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * participants who are the recipients of the exchange
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -217,6 +230,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * Array of GKTurnBasedExchangeReply.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -237,6 +252,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * send date for the exchange.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -245,6 +262,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * participant who sent the exchange
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -253,6 +272,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * status of the exchange
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("status")
@@ -260,6 +281,8 @@ public class GKTurnBasedExchange extends NSObject {
 
     /**
      * timeout date for the exchange.
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated

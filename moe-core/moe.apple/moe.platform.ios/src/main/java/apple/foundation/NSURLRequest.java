@@ -303,7 +303,10 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      *         before transmitting.
      * 
      *         API-Since: 4.0
+     *         Deprecated-Since: 18.4
+     *         Deprecated-Message: Only supported in the classic loader, please adopt HTTP/2 and HTTP/3 instead
      */
+    @Deprecated
     @Generated
     @Selector("HTTPShouldUsePipelining")
     public native boolean HTTPShouldUsePipelining();

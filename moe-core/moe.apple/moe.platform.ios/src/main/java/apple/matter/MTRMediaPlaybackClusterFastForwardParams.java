@@ -229,4 +229,19 @@ public class MTRMediaPlaybackClusterFastForwardParams extends NSObject implement
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("audioAdvanceUnmuted")
+    @Nullable
+    public native NSNumber audioAdvanceUnmuted();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setAudioAdvanceUnmuted:")
+    public native void setAudioAdvanceUnmuted(@Nullable NSNumber value);
 }

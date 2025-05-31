@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * whether the touchpad is actively being touched, and generates events based on a
  * change in touch state.
  * 
- * API-Since: 14.0
+ * API-Since: 13.0
  */
 @Generated
 @Library("GameController")
@@ -68,7 +68,7 @@ public class GCControllerTouchpad extends GCControllerElement {
      * Button is the button built into the touch surface.
      * 
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -153,7 +153,7 @@ public class GCControllerTouchpad extends GCControllerElement {
      * 
      * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Generated
     @Selector("reportsAbsoluteTouchSurfaceValues")
@@ -180,7 +180,7 @@ public class GCControllerTouchpad extends GCControllerElement {
      * 
      * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setReportsAbsoluteTouchSurfaceValues:")
@@ -189,7 +189,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Called when a touch event begins on the touchpad.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTouchDown:")
@@ -206,7 +206,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Called when a touch event continues on the touchpad, but not when it begins or ends.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTouchMoved:")
@@ -223,7 +223,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Called when a touch event ends on the touchpad.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTouchUp:")
@@ -245,7 +245,7 @@ public class GCControllerTouchpad extends GCControllerElement {
      * @see touchSurface
      * @see touchState
      * 
-     *      API-Since: 14.0
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setValueForXAxis:yAxis:touchDown:buttonValue:")
@@ -263,7 +263,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Called when a touch event begins on the touchpad.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -282,7 +282,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Called when a touch event continues on the touchpad, but not when it begins or ends.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Nullable
     @Generated
@@ -301,7 +301,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Indicates the current state of the touch event on the touchpad.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Generated
     @Selector("touchState")
@@ -316,7 +316,7 @@ public class GCControllerTouchpad extends GCControllerElement {
      * 
      * @see touchState - Should be polled in conjunction with touchSurface to determine if values are valid
      * 
-     *      API-Since: 14.0
+     *      API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -326,7 +326,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Called when a touch event ends on the touchpad.
      * 
-     * API-Since: 14.0
+     * API-Since: 13.0
      */
     @Nullable
     @Generated

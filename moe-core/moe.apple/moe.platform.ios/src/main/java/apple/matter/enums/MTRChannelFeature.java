@@ -19,4 +19,12 @@ public final class MTRChannelFeature {
      * API-Since: 16.1
      */
     @Generated public static final int LineupInfo = 0x00000002;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int ElectronicGuide = 0x00000004;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int RecordProgram = 0x00000008;
 }

@@ -216,4 +216,15 @@ public final class ShazamKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String SHMediaItemCreationDate();
+
+    /**
+     * The value ranges from 0.0 to 1.0, where 1.0 indicates the highest level of confidence.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SHMediaItemConfidence();
 }

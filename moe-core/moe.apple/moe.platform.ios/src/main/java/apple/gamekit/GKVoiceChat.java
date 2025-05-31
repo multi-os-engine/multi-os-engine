@@ -239,7 +239,10 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("playerVoiceChatStateDidChangeHandler")
@@ -247,10 +250,11 @@ public class GKVoiceChat extends NSObject {
     public native Block_playerVoiceChatStateDidChangeHandler_ret playerVoiceChatStateDidChangeHandler();
 
     /**
-     * array of GKPlayer *
-     * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("players")
@@ -271,7 +275,10 @@ public class GKVoiceChat extends NSObject {
      * stop receiving audio from the chat
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setPlayer:muted:")
     public native void setPlayerMuted(@NotNull GKPlayer player, boolean isMuted);
@@ -288,7 +295,10 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setPlayerVoiceChatStateDidChangeHandler:")
     public native void setPlayerVoiceChatStateDidChangeHandler(

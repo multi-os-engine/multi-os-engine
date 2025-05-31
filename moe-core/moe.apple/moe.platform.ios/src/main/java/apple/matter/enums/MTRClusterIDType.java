@@ -764,4 +764,112 @@ public final class MTRClusterIDType {
      * API-Since: 17.6
      */
     @Generated public static final int IDTypeRadonConcentrationMeasurementID = 0x0000042F;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeICDManagementID = 0x00000046;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeOvenCavityOperationalStateID = 0x00000048;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeOvenModeID = 0x00000049;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeLaundryDryerControlsID = 0x0000004A;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeLaundryWasherModeID = 0x00000051;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeRefrigeratorAndTemperatureControlledCabinetModeID = 0x00000052;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeLaundryWasherControlsID = 0x00000053;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeTemperatureControlID = 0x00000056;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeRefrigeratorAlarmID = 0x00000057;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeDishwasherModeID = 0x00000059;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeDishwasherAlarmID = 0x0000005D;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeMicrowaveOvenModeID = 0x0000005E;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeMicrowaveOvenControlID = 0x0000005F;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeWaterHeaterManagementID = 0x00000094;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeMessagesID = 0x00000097;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeDeviceEnergyManagementID = 0x00000098;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeEnergyEVSEID = 0x00000099;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypePowerTopologyID = 0x0000009C;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeEnergyEVSEModeID = 0x0000009D;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeWaterHeaterModeID = 0x0000009E;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeDeviceEnergyManagementModeID = 0x0000009F;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeServiceAreaID = 0x00000150;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeWiFiNetworkManagementID = 0x00000451;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeThreadBorderRouterManagementID = 0x00000452;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeThreadNetworkDirectoryID = 0x00000453;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeContentAppObserverID = 0x00000510;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int IDTypeCommissionerControlID = 0x00000751;
 }

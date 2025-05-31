@@ -31,6 +31,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * GKInviteEventListener uses the GKLocalPlayerListener mechanism on GKLocalPlayer to listen to the two kinds of invite
  * events that a game must respond to
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("GameKit")

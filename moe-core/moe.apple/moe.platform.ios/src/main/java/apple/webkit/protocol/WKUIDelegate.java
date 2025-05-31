@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.uikit.protocol.UIEditMenuInteractionAnimating;
+import apple.foundation.NSURL;
+import apple.webkit.WKOpenPanelParameters;
 
 /**
  * A class conforming to the WKUIDelegate protocol provides methods for
@@ -415,7 +417,7 @@ public interface WKUIDelegate {
      * 
      * If you do not implement this method, the web view will display the default Lockdown Mode message.
      * 
-     * API-Since: 13.0
+     * API-Since: 16.0
      * 
      * @param webView           The web view invoking the delegate method.
      * @param message           The message WebKit would display if this delegate were not invoked.
@@ -469,5 +471,40 @@ public interface WKUIDelegate {
     default void webViewWillPresentEditMenuWithAnimator(@NotNull WKWebView webView,
             @Mapped(ObjCObjectMapper.class) @NotNull UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Displays a file upload panel.
+     * 
+     * @param webView           The web view invoking the delegate method.
+     * @param parameters        Parameters describing the file upload control.
+     * @param frame             Information about the frame whose file upload control initiated this call.
+     * @param completionHandler The completion handler to call after open panel has been dismissed. Pass the selected
+     *                          URLs if the user chose OK, otherwise nil.
+     * 
+     *                          If you do not implement this method on macOS, the web view will behave as if the user
+     *                          selected the Cancel button.
+     *                          If you do not implement this method on iOS, the web view will match the file upload
+     *                          behavior of Safari. If you desire
+     *                          the web view to act as if the user selected the Cancel button on iOS, immediately call
+     *                          the completion handler with nil.
+     * 
+     *                          API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:")
+    default void webViewRunOpenPanelWithParametersInitiatedByFrameCompletionHandler(@NotNull WKWebView webView,
+            @NotNull WKOpenPanelParameters parameters, @NotNull WKFrameInfo frame,
+            @ObjCBlock(name = "call_webViewRunOpenPanelWithParametersInitiatedByFrameCompletionHandler") @NotNull Block_webViewRunOpenPanelWithParametersInitiatedByFrameCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewRunOpenPanelWithParametersInitiatedByFrameCompletionHandler {
+        @Generated
+        void call_webViewRunOpenPanelWithParametersInitiatedByFrameCompletionHandler(
+                @Nullable NSArray<? extends NSURL> URLs);
     }
 }

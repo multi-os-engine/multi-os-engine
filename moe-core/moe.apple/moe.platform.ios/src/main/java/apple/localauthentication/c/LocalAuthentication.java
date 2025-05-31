@@ -81,4 +81,10 @@ public final class LocalAuthentication {
     @Generated public static final double kLAErrorBiometryDisconnected = -13.0;
     @Generated public static final double kLAErrorInvalidDimensions = -14.0;
     @Generated public static final double kLABiometryTypeNone = 0.0;
+    @Generated public static final double kLAAccessControlOperationCreateItem = 0.0;
+    @Generated public static final double kLAAccessControlOperationUseItem = 1.0;
+    @Generated public static final double kLAAccessControlOperationCreateKey = 2.0;
+    @Generated public static final double kLAAccessControlOperationUseKeySign = 3.0;
+    @Generated public static final double kLAAccessControlOperationUseKeyDecrypt = 4.0;
+    @Generated public static final double kLAAccessControlOperationUseKeyKeyExchange = 5.0;
 }

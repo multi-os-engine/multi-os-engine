@@ -585,4 +585,37 @@ public class MTRClusterOccupancySensing extends MTRGenericCluster {
     public native void writeAttributeUltrasonicUnoccupiedToOccupiedThresholdWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeHoldTimeLimitsWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeHoldTimeLimitsWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeHoldTimeWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeHoldTimeWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeHoldTimeWithValue:expectedValueInterval:")
+    public native void writeAttributeHoldTimeWithValueExpectedValueInterval(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeHoldTimeWithValue:expectedValueInterval:params:")
+    public native void writeAttributeHoldTimeWithValueExpectedValueIntervalParams(
+            @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
+            @Nullable MTRWriteParams params);
 }

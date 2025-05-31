@@ -19,15 +19,25 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class GKPlayerConnectionState {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
      * initial player state
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long Connected = 0x0000000000000001L;
     /**
      * connected to the match
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long Disconnected = 0x0000000000000002L;
 

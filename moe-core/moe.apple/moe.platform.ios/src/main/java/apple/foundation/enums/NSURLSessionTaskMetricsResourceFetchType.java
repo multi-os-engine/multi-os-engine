@@ -40,8 +40,10 @@ public final class NSURLSessionTaskMetricsResourceFetchType {
      * The resource was pushed by the server to the client.
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Server push is no longer supported as of iOS 17 and aligned releases
      */
-    @Generated @NInt public static final long ServerPush = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long ServerPush = 0x0000000000000002L;
     /**
      * The resource was retrieved from the local storage.
      * 

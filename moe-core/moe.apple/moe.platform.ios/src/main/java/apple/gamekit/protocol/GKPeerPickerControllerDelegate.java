@@ -44,7 +44,13 @@ import org.jetbrains.annotations.NotNull;
 public interface GKPeerPickerControllerDelegate {
     /**
      * Notifies delegate that the peer was connected to a GKSession.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController along with MCBrowserViewControllerDelegate from the
+     * MultipeerConnectivity framework.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("peerPickerController:didConnectPeer:toSession:")
@@ -55,7 +61,13 @@ public interface GKPeerPickerControllerDelegate {
 
     /**
      * Notifies delegate that a connection type was chosen by the user.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController along with MCBrowserViewControllerDelegate from the
+     * MultipeerConnectivity framework.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("peerPickerController:didSelectConnectionType:")
@@ -68,7 +80,13 @@ public interface GKPeerPickerControllerDelegate {
      * 
      * You should return a valid GKSession object for use by the picker. If this method is not implemented or returns
      * 'nil', a default GKSession is created on the delegate's behalf.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController along with MCBrowserViewControllerDelegate from the
+     * MultipeerConnectivity framework.
      */
+    @Deprecated
     @NotNull
     @Generated
     @IsOptional
@@ -80,7 +98,13 @@ public interface GKPeerPickerControllerDelegate {
 
     /**
      * Notifies delegate that the user cancelled the picker.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MCBrowserViewController along with MCBrowserViewControllerDelegate from the
+     * MultipeerConnectivity framework.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("peerPickerControllerDidCancel:")

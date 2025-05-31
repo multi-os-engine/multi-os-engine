@@ -44,6 +44,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKMatchmaker is a singleton object to manage match creation from invites and automatching.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -152,6 +154,8 @@ public class GKMatchmaker extends NSObject {
 
     /**
      * The shared matchmaker
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -173,6 +177,8 @@ public class GKMatchmaker extends NSObject {
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Timeout
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("addPlayersToMatch:matchRequest:completionHandler:")
@@ -182,6 +188,8 @@ public class GKMatchmaker extends NSObject {
 
     /**
      * Cancel matchmaking and any pending invites
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("cancel")
@@ -216,6 +224,8 @@ public class GKMatchmaker extends NSObject {
      * Note that the players property on the returned GKMatch instance will only contain connected players. It will
      * initially be empty as players are connecting. Implement the GKMatchDelegate method
      * match:player:didChangeConnectionState: to listen for updates to the GKMatch instance's players property.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("findMatchForRequest:withCompletionHandler:")
@@ -268,8 +278,7 @@ public class GKMatchmaker extends NSObject {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use registerListener on GKLocalPlayer to register an object that implements the
-     * GKInviteEventListener instead.
+     * Deprecated-Message: Use the ``GKLocalPlayer/register(_:)`` method instead.
      */
     @Nullable
     @Generated
@@ -295,6 +304,8 @@ public class GKMatchmaker extends NSObject {
      * Query the server for recent activity for all the player groups of that game. Error will be nil on success.
      * Possible reasons for error:
      * 1. Communications failure
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("queryActivityWithCompletionHandler:")
@@ -306,6 +317,8 @@ public class GKMatchmaker extends NSObject {
      * has seen more recent activity. Error will be nil on success.
      * Possible reasons for error:
      * 1. Communications failure
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("queryPlayerGroupActivity:withCompletionHandler:")
@@ -315,8 +328,7 @@ public class GKMatchmaker extends NSObject {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use registerListener on GKLocalPlayer to register an object that implements the
-     * GKInviteEventListener instead.
+     * Deprecated-Message: Use the ``GKLocalPlayer/register(_:)`` method instead.
      */
     @Generated
     @Deprecated

@@ -82,20 +82,32 @@ public final class _RuneLocale extends StructObject {
     @StructureField(order = 1, isGetter = false, count = 32)
     public native void set__encoding(byte value, int field_idx);
 
+    /**
+     * NULL or within bounds of __string
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call___sgetrune")
     public native Function___sgetrune __sgetrune();
 
+    /**
+     * NULL or within bounds of __string
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void set__sgetrune(@FunctionPtr(name = "call___sgetrune") Function___sgetrune value);
 
+    /**
+     * NULL or within bounds of __string
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call___sputrune")
     public native Function___sputrune __sputrune();
 
+    /**
+     * NULL or within bounds of __string
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void set__sputrune(@FunctionPtr(name = "call___sputrune") Function___sputrune value);

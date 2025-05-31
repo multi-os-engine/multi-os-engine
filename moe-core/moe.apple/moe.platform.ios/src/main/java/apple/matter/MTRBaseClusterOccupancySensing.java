@@ -2983,4 +2983,152 @@ public class MTRBaseClusterOccupancySensing extends MTRGenericBaseCluster {
         void call_writeAttributeUltrasonicUnoccupiedToOccupiedThresholdWithValueParamsCompletionHandler(
                 @Nullable NSError error);
     }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeHoldTimeLimitsWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeHoldTimeLimitsWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeHoldTimeLimitsWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeHoldTimeLimitsWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeHoldTimeLimitsWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeHoldTimeLimitsWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable MTROccupancySensingClusterHoldTimeLimitsStruct value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeHoldTimeLimitsWithCompletion:")
+    public native void readAttributeHoldTimeLimitsWithCompletion(
+            @ObjCBlock(name = "call_readAttributeHoldTimeLimitsWithCompletion") @NotNull Block_readAttributeHoldTimeLimitsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeHoldTimeLimitsWithCompletion {
+        @Generated
+        void call_readAttributeHoldTimeLimitsWithCompletion(
+                @Nullable MTROccupancySensingClusterHoldTimeLimitsStruct value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeHoldTimeWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeHoldTimeWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeHoldTimeWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeHoldTimeWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeHoldTimeWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeHoldTimeWithClusterStateCacheEndpointQueueCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeHoldTimeWithCompletion:")
+    public native void readAttributeHoldTimeWithCompletion(
+            @ObjCBlock(name = "call_readAttributeHoldTimeWithCompletion") @NotNull Block_readAttributeHoldTimeWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeHoldTimeWithCompletion {
+        @Generated
+        void call_readAttributeHoldTimeWithCompletion(@Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeHoldTimeLimitsWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeHoldTimeLimitsWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable MTROccupancySensingClusterHoldTimeLimitsStruct value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeHoldTimeWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeHoldTimeWithParamsSubscriptionEstablishedReportHandler_2(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeHoldTimeWithValue:completion:")
+    public native void writeAttributeHoldTimeWithValueCompletion(@NotNull NSNumber value,
+            @ObjCBlock(name = "call_writeAttributeHoldTimeWithValueCompletion") @NotNull Block_writeAttributeHoldTimeWithValueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeHoldTimeWithValueCompletion {
+        @Generated
+        void call_writeAttributeHoldTimeWithValueCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("writeAttributeHoldTimeWithValue:params:completion:")
+    public native void writeAttributeHoldTimeWithValueParamsCompletion(@NotNull NSNumber value,
+            @Nullable MTRWriteParams params,
+            @ObjCBlock(name = "call_writeAttributeHoldTimeWithValueParamsCompletion") @NotNull Block_writeAttributeHoldTimeWithValueParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeHoldTimeWithValueParamsCompletion {
+        @Generated
+        void call_writeAttributeHoldTimeWithValueParamsCompletion(@Nullable NSError error);
+    }
 }

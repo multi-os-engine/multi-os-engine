@@ -413,4 +413,24 @@ public class MTRCommissioningParameters extends NSObject {
     @Selector("wifiSSID")
     @Nullable
     public native NSData wifiSSID();
+
+    /**
+     * Read device type information from all endpoints during commissioning.
+     * Defaults to NO.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readEndpointInformation")
+    public native boolean readEndpointInformation();
+
+    /**
+     * Read device type information from all endpoints during commissioning.
+     * Defaults to NO.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setReadEndpointInformation:")
+    public native void setReadEndpointInformation(boolean value);
 }

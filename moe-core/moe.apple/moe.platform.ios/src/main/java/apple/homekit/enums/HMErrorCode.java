@@ -453,4 +453,8 @@ public final class HMErrorCode {
      * API-Since: 17.4
      */
     @Generated @NInt public static final long PartialCommunicationFailure = 0x0000000000000068L;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated @NInt public static final long HomeUpgradeRequired = 0x0000000000000069L;
 }

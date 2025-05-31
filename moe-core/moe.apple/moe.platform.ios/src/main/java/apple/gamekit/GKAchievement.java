@@ -50,6 +50,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKAchievement represents a game achievement that the player has started or completely achieved.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -141,6 +143,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Asynchronously load all achievements for the local player
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("loadAchievementsWithCompletionHandler:")
@@ -187,6 +191,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * Possible reasons for error:
      * 1. Local player not authenticated
      * 2. Communications failure
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("resetAchievementsWithCompletionHandler:")
@@ -250,6 +256,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Achievement identifier
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated
@@ -266,13 +274,15 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Designated initializer
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("initWithIdentifier:")
     public native GKAchievement initWithIdentifier(@Nullable String identifier);
 
     /**
-     * This method is obsolete. Calling this initialiser does nothing and will return nil **
+     * This method is obsolete. Calling this initializer does nothing and will return nil **
      * 
      * API-Since: 7.0
      * Deprecated-Since: 8.0
@@ -294,6 +304,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Set to NO until percentComplete = 100.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("isCompleted")
@@ -321,6 +333,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Date the achievement was last reported. Read-only. Created at initialization
+     * 
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -329,6 +343,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Required, Percentage of achievement complete.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("percentComplete")
@@ -371,6 +387,7 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
+     * Deprecated-Message: This method is obsolete.
      */
     @Generated
     @Deprecated
@@ -391,6 +408,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Achievement identifier
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setIdentifier:")
@@ -398,6 +417,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * Required, Percentage of achievement complete.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("setPercentComplete:")

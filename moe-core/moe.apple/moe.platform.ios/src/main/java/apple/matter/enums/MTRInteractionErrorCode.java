@@ -12,7 +12,6 @@ import org.moe.natj.general.ann.NInt;
  * key named @"clusterStatus" whose value is the cluster-specific status that
  * was reported. This key will be absent if there was no cluster-specific
  * status.
- * clang-format off
  */
 @Generated
 public final class MTRInteractionErrorCode {

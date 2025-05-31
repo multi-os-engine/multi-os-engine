@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSError;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * * Cluster Access Control
@@ -331,4 +333,39 @@ public class MTRClusterAccessControl extends MTRGenericCluster {
     public native void writeAttributeExtensionWithValueExpectedValueIntervalParams(
             @NotNull NSDictionary<String, ?> dataValueDictionary, @NotNull NSNumber expectedValueIntervalMs,
             @Nullable MTRWriteParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeARLWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeARLWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeCommissioningARLWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeCommissioningARLWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("reviewFabricRestrictionsWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void reviewFabricRestrictionsWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRAccessControlClusterReviewFabricRestrictionsParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_reviewFabricRestrictionsWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_reviewFabricRestrictionsWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reviewFabricRestrictionsWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_reviewFabricRestrictionsWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRAccessControlClusterReviewFabricRestrictionsResponseParams data, @Nullable NSError error);
+    }
 }

@@ -251,7 +251,7 @@ public class CPNavigationSession extends NSObject {
      * Use this method to add CPLaneGuidances in chronological order to the navigation session.
      * CPLaneGuidance objects must be added as soon as they are available.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("addLaneGuidances:")
@@ -262,7 +262,7 @@ public class CPNavigationSession extends NSObject {
      * The application must provide as many maneuvers as possible, as soon as they are available. All
      * maneuvers set in upcomingManeuvers must be first added using this method.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("addManeuvers:")
@@ -273,7 +273,7 @@ public class CPNavigationSession extends NSObject {
      * Must be set to nil if there is no current lane guidance. CPLaneGuidances set here must first be added to the
      * session using addLaneGuidances:
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("currentLaneGuidance")
@@ -283,7 +283,7 @@ public class CPNavigationSession extends NSObject {
     /**
      * Set this property with variants of the current road name. From most to least verbose.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("currentRoadNameVariants")
@@ -293,7 +293,7 @@ public class CPNavigationSession extends NSObject {
     /**
      * Set this property with the current maneuver state based on how close the maneuver is.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("maneuverState")
@@ -316,7 +316,7 @@ public class CPNavigationSession extends NSObject {
      * Must be set to nil if there is no current lane guidance. CPLaneGuidances set here must first be added to the
      * session using addLaneGuidances:
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("setCurrentLaneGuidance:")
@@ -325,7 +325,7 @@ public class CPNavigationSession extends NSObject {
     /**
      * Set this property with variants of the current road name. From most to least verbose.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("setCurrentRoadNameVariants:")
@@ -334,7 +334,7 @@ public class CPNavigationSession extends NSObject {
     /**
      * Set this property with the current maneuver state based on how close the maneuver is.
      * 
-     * API-Since: 12.0
+     * API-Since: 17.4
      */
     @Generated
     @Selector("setManeuverState:")

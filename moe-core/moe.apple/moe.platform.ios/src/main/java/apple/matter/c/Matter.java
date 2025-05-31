@@ -507,4 +507,40 @@ public final class Matter {
     public static native String MTRDeviceControllerRegistrationControllerContextKey();
 
     @Generated public static final double MTR_ENABLE_UNSTABLE_API = 0.0;
+
+    /**
+     * API-Since: 18.3
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTRDeviceControllerRegistrationControllerNodeIDKey();
+
+    /**
+     * API-Since: 18.3
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTRDeviceControllerRegistrationControllerIsRunningKey();
+
+    /**
+     * API-Since: 18.3
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTRDeviceControllerRegistrationDeviceInternalStateKey();
+
+    /**
+     * API-Since: 18.3
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTRDeviceControllerRegistrationControllerCompressedFabricIDKey();
 }

@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
 
 /**
  * Cluster Door Lock
@@ -7308,5 +7309,624 @@ public class MTRBaseClusterDoorLock extends MTRGenericBaseCluster {
     public interface Block_unlockDoorWithCompletion {
         @Generated
         void call_unlockDoorWithCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("clearAliroReaderConfigWithCompletion:")
+    public native void clearAliroReaderConfigWithCompletion(
+            @ObjCBlock(name = "call_clearAliroReaderConfigWithCompletion") @NotNull Block_clearAliroReaderConfigWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_clearAliroReaderConfigWithCompletion {
+        @Generated
+        void call_clearAliroReaderConfigWithCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * Command ClearAliroReaderConfig
+     * 
+     * This command clears an existing Aliro Reader configuration for the lock.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("clearAliroReaderConfigWithParams:completion:")
+    public native void clearAliroReaderConfigWithParamsCompletion(
+            @Nullable MTRDoorLockClusterClearAliroReaderConfigParams params,
+            @ObjCBlock(name = "call_clearAliroReaderConfigWithParamsCompletion") @NotNull Block_clearAliroReaderConfigWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_clearAliroReaderConfigWithParamsCompletion {
+        @Generated
+        void call_clearAliroReaderConfigWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroBLEAdvertisingVersionWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAliroBLEAdvertisingVersionWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAliroBLEAdvertisingVersionWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAliroBLEAdvertisingVersionWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroBLEAdvertisingVersionWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAliroBLEAdvertisingVersionWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroBLEAdvertisingVersionWithCompletion:")
+    public native void readAttributeAliroBLEAdvertisingVersionWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAliroBLEAdvertisingVersionWithCompletion") @NotNull Block_readAttributeAliroBLEAdvertisingVersionWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroBLEAdvertisingVersionWithCompletion {
+        @Generated
+        void call_readAttributeAliroBLEAdvertisingVersionWithCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithCompletion:")
+    public native void readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithCompletion") @NotNull Block_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithCompletion {
+        @Generated
+        void call_readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithCompletion(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroGroupResolvingKeyWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAliroGroupResolvingKeyWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAliroGroupResolvingKeyWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAliroGroupResolvingKeyWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroGroupResolvingKeyWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAliroGroupResolvingKeyWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroGroupResolvingKeyWithCompletion:")
+    public native void readAttributeAliroGroupResolvingKeyWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAliroGroupResolvingKeyWithCompletion") @NotNull Block_readAttributeAliroGroupResolvingKeyWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroGroupResolvingKeyWithCompletion {
+        @Generated
+        void call_readAttributeAliroGroupResolvingKeyWithCompletion(@Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderGroupIdentifierWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAliroReaderGroupIdentifierWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAliroReaderGroupIdentifierWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAliroReaderGroupIdentifierWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroReaderGroupIdentifierWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAliroReaderGroupIdentifierWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderGroupIdentifierWithCompletion:")
+    public native void readAttributeAliroReaderGroupIdentifierWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAliroReaderGroupIdentifierWithCompletion") @NotNull Block_readAttributeAliroReaderGroupIdentifierWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroReaderGroupIdentifierWithCompletion {
+        @Generated
+        void call_readAttributeAliroReaderGroupIdentifierWithCompletion(@Nullable NSData value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderGroupSubIdentifierWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAliroReaderGroupSubIdentifierWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAliroReaderGroupSubIdentifierWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAliroReaderGroupSubIdentifierWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroReaderGroupSubIdentifierWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAliroReaderGroupSubIdentifierWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderGroupSubIdentifierWithCompletion:")
+    public native void readAttributeAliroReaderGroupSubIdentifierWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAliroReaderGroupSubIdentifierWithCompletion") @NotNull Block_readAttributeAliroReaderGroupSubIdentifierWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroReaderGroupSubIdentifierWithCompletion {
+        @Generated
+        void call_readAttributeAliroReaderGroupSubIdentifierWithCompletion(@Nullable NSData value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderVerificationKeyWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAliroReaderVerificationKeyWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAliroReaderVerificationKeyWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAliroReaderVerificationKeyWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroReaderVerificationKeyWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAliroReaderVerificationKeyWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderVerificationKeyWithCompletion:")
+    public native void readAttributeAliroReaderVerificationKeyWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAliroReaderVerificationKeyWithCompletion") @NotNull Block_readAttributeAliroReaderVerificationKeyWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroReaderVerificationKeyWithCompletion {
+        @Generated
+        void call_readAttributeAliroReaderVerificationKeyWithCompletion(@Nullable NSData value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroSupportedBLEUWBProtocolVersionsWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeAliroSupportedBLEUWBProtocolVersionsWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeAliroSupportedBLEUWBProtocolVersionsWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeAliroSupportedBLEUWBProtocolVersionsWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroSupportedBLEUWBProtocolVersionsWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeAliroSupportedBLEUWBProtocolVersionsWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroSupportedBLEUWBProtocolVersionsWithCompletion:")
+    public native void readAttributeAliroSupportedBLEUWBProtocolVersionsWithCompletion(
+            @ObjCBlock(name = "call_readAttributeAliroSupportedBLEUWBProtocolVersionsWithCompletion") @NotNull Block_readAttributeAliroSupportedBLEUWBProtocolVersionsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAliroSupportedBLEUWBProtocolVersionsWithCompletion {
+        @Generated
+        void call_readAttributeAliroSupportedBLEUWBProtocolVersionsWithCompletion(@Nullable NSArray<?> value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithCompletion:")
+    public native void readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithCompletion(
+            @ObjCBlock(name = "call_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithCompletion") @NotNull Block_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithCompletion {
+        @Generated
+        void call_readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfAliroEndpointKeysSupportedWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeNumberOfAliroEndpointKeysSupportedWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeNumberOfAliroEndpointKeysSupportedWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeNumberOfAliroEndpointKeysSupportedWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfAliroEndpointKeysSupportedWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeNumberOfAliroEndpointKeysSupportedWithClusterStateCacheEndpointQueueCompletion(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfAliroEndpointKeysSupportedWithCompletion:")
+    public native void readAttributeNumberOfAliroEndpointKeysSupportedWithCompletion(
+            @ObjCBlock(name = "call_readAttributeNumberOfAliroEndpointKeysSupportedWithCompletion") @NotNull Block_readAttributeNumberOfAliroEndpointKeysSupportedWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfAliroEndpointKeysSupportedWithCompletion {
+        @Generated
+        void call_readAttributeNumberOfAliroEndpointKeysSupportedWithCompletion(@Nullable NSNumber value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Command SetAliroReaderConfig
+     * 
+     * This command communicates an Aliro Reader configuration to the lock.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setAliroReaderConfigWithParams:completion:")
+    public native void setAliroReaderConfigWithParamsCompletion(
+            @NotNull MTRDoorLockClusterSetAliroReaderConfigParams params,
+            @ObjCBlock(name = "call_setAliroReaderConfigWithParamsCompletion") @NotNull Block_setAliroReaderConfigWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAliroReaderConfigWithParamsCompletion {
+        @Generated
+        void call_setAliroReaderConfigWithParamsCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeAliroBLEAdvertisingVersionWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAliroBLEAdvertisingVersionWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeAliroGroupResolvingKeyWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAliroGroupResolvingKeyWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeAliroReaderGroupIdentifierWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAliroReaderGroupIdentifierWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeAliroReaderGroupSubIdentifierWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAliroReaderGroupSubIdentifierWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeAliroReaderVerificationKeyWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAliroReaderVerificationKeyWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeAliroSupportedBLEUWBProtocolVersionsWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSArray<?> value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeNumberOfAliroEndpointKeysSupportedWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSNumber value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("unboltDoorWithCompletion:")
+    public native void unboltDoorWithCompletion(
+            @ObjCBlock(name = "call_unboltDoorWithCompletion") @NotNull Block_unboltDoorWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_unboltDoorWithCompletion {
+        @Generated
+        void call_unboltDoorWithCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * Command UnboltDoor
+     * 
+     * This command causes the lock device to unlock the door without pulling the latch.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("unboltDoorWithParams:completion:")
+    public native void unboltDoorWithParamsCompletion(@Nullable MTRDoorLockClusterUnboltDoorParams params,
+            @ObjCBlock(name = "call_unboltDoorWithParamsCompletion") @NotNull Block_unboltDoorWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_unboltDoorWithParamsCompletion {
+        @Generated
+        void call_unboltDoorWithParamsCompletion(@Nullable NSError error);
     }
 }

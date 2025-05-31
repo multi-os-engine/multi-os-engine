@@ -615,4 +615,120 @@ public class MTRDevice extends NSObject {
     @Generated
     @Selector("removeDelegate:")
     public native void removeDelegate(@Mapped(ObjCObjectMapper.class) @NotNull MTRDeviceDelegate delegate);
+
+    /**
+     * Read all known attributes from descriptor clusters on all known endpoints.
+     * 
+     * @return A dictionary with the paths of the attributes as keys and the
+     *         data-values (as described in the documentation for
+     *         MTRDeviceResponseHandler) as values.
+     * 
+     *         API-Since: 18.4
+     */
+    @Generated
+    @Selector("descriptorClusters")
+    @NotNull
+    public native NSDictionary<? extends MTRAttributePath, ? extends NSDictionary<String, ?>> descriptorClusters();
+
+    /**
+     * Invoke one or more groups of commands.
+     * 
+     * For any given group, if any command in any preceding group failed, the group
+     * will be skipped. If all commands in all preceding groups succeeded, the
+     * commands within the group will be invoked, with no ordering guarantees within
+     * that group.
+     * 
+     * Results from all commands that were invoked will be passed to the provided
+     * completion as an array of response-value dictionaries. Each of these will
+     * have the command path of the command (see MTRCommandPathKey) and one of three
+     * things:
+     * 
+     * 1) No other fields, indicating that the command invoke returned a succcess
+     * status.
+     * 2) A field for MTRErrorKey, indicating that the invoke returned a failure
+     * status (which is the value of the field).
+     * 3) A field for MTRDataKey, indicating that the invoke returned a data
+     * response. In this case the data-value representing the response will be
+     * the value of this field.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("invokeCommands:queue:completion:")
+    public native void invokeCommandsQueueCompletion(
+            @NotNull NSArray<? extends NSArray<? extends MTRCommandWithRequiredResponse>> commands,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_invokeCommandsQueueCompletion") @NotNull Block_invokeCommandsQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_invokeCommandsQueueCompletion {
+        @Generated
+        void call_invokeCommandsQueueCompletion(@Nullable NSArray<? extends NSDictionary<String, ?>> values,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Network commissioning features supported by the device.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("networkCommissioningFeatures")
+    public native int networkCommissioningFeatures();
+
+    /**
+     * The Product Identifier associated with the device.
+     * 
+     * A non-nil value if the product identifier has been determined from the device, nil if unknown.
+     * 
+     * API-Since: 18.3
+     */
+    @Generated
+    @Selector("productID")
+    @Nullable
+    public native NSNumber productID();
+
+    /**
+     * The Vendor Identifier associated with the device.
+     * 
+     * A non-nil value if the vendor identifier has been determined from the device, nil if unknown.
+     * 
+     * API-Since: 18.3
+     */
+    @Generated
+    @Selector("vendorID")
+    @Nullable
+    public native NSNumber vendorID();
+
+    /**
+     * Sets up the provided completion to be called when any of the following
+     * happens:
+     * 
+     * 1) A set of attributes reaches certain values: completion called with nil.
+     * 2) The provided timeout expires: completion called with MTRErrorCodeTimeout error.
+     * 3) The wait is canceled: completion called with MTRErrorCodeCancelled error.
+     * 
+     * If the MTRAttributeValueWaiter is destroyed before the
+     * completion is called, that is treated the same as canceling the waiter.
+     * 
+     * The attributes and values to wait for are represented as a dictionary which
+     * has the attribute paths as keys and the expected data-values as values.
+     * 
+     * API-Since: 18.3
+     */
+    @Generated
+    @Selector("waitForAttributeValues:timeout:queue:completion:")
+    @NotNull
+    public native MTRAttributeValueWaiter waitForAttributeValuesTimeoutQueueCompletion(
+            @NotNull NSDictionary<? extends MTRAttributePath, ? extends NSDictionary<String, ?>> values, double timeout,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_waitForAttributeValuesTimeoutQueueCompletion") @NotNull Block_waitForAttributeValuesTimeoutQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_waitForAttributeValuesTimeoutQueueCompletion {
+        @Generated
+        void call_waitForAttributeValuesTimeoutQueueCompletion(@Nullable NSError error);
+    }
 }

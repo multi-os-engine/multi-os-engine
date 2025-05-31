@@ -18,6 +18,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSArray;
+import apple.uikit.UIAction;
+import apple.uikit.UIDragItem;
+import apple.uikit.UITabGroup;
+import org.moe.natj.general.ann.NUInt;
 
 /**
  * API-Since: 18.0
@@ -142,6 +147,78 @@ public interface UITabBarControllerSidebarDelegate {
     default void tabBarControllerSidebarVisibilityWillChangeAnimator(@NotNull UITabBarController tabBarController,
             @NotNull UITabBarControllerSidebar sidebar,
             @Mapped(ObjCObjectMapper.class) @NotNull UITabBarControllerSidebarAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when a new drag session is requesting items to add to the existing drag session in the sidebar from the
+     * specified `tab`.
+     * Return items if the specified tab can add to the drag session, or an empty array if nothing should be added.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("tabBarController:sidebar:itemsForAddingToDragSession:tab:")
+    @NotNull
+    default NSArray<? extends UIDragItem> tabBarControllerSidebarItemsForAddingToDragSessionTab(
+            @NotNull UITabBarController tabBarController, @NotNull UITabBarControllerSidebar sidebar,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIDragSession dragSession, @NotNull UITab tab) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when a new drag session has begun in the sidebar from the specified `tab`. Return drag items if the
+     * specified tab can be dragged, or an empty array if no drags should begin.
+     * Note that if drag items are returned on tabs in groups that allow reordering, then tab reordering is disabled
+     * when the sidebar is not in editing.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("tabBarController:sidebar:itemsForBeginningDragSession:tab:")
+    @NotNull
+    default NSArray<? extends UIDragItem> tabBarControllerSidebarItemsForBeginningDragSessionTab(
+            @NotNull UITabBarController tabBarController, @NotNull UITabBarControllerSidebar sidebar,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIDragSession dragSession, @NotNull UITab tab) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Receive the drop from into the `sidebarAction` using the specified session. This is only called if the drop
+     * operation returned
+     * from `tabBarController:sidebar:sidebarAction:operationForAcceptingItemsFromDropSession` is valid for a drop.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("tabBarController:sidebar:sidebarAction:group:acceptItemsFromDropSession:")
+    default void tabBarControllerSidebarSidebarActionGroupAcceptItemsFromDropSession(
+            @NotNull UITabBarController tabBarController, @NotNull UITabBarControllerSidebar sidebar,
+            @NotNull UIAction sidebarAction, @NotNull UITabGroup group,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIDropSession session) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Determines if items from the specified drop session can be dropped into the specified `sidebarAction`. If the
+     * operation is either a `.move` or `.copy`,
+     * then the drop will proceed and `tabBarController:sidebar:sidebarAction:acceptItemsFromDropSession:` is called. By
+     * default, the drop will be
+     * treated as a cancel operation if this is not implemented.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("tabBarController:sidebar:sidebarAction:group:operationForAcceptingItemsFromDropSession:")
+    @NUInt
+    default long tabBarControllerSidebarSidebarActionGroupOperationForAcceptingItemsFromDropSession(
+            @NotNull UITabBarController tabBarController, @NotNull UITabBarControllerSidebar sidebar,
+            @NotNull UIAction sidebarAction, @NotNull UITabGroup group,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

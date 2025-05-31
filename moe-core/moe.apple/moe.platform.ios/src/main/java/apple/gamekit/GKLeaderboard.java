@@ -51,6 +51,8 @@ import org.jetbrains.annotations.Nullable;
  * Leaderboards can be of the following types:
  * 1. Classic - Traditional, non-expiring leaderboards
  * 2. Recurring - Periodic timed leaderboards that follow a recurrence rule defined in App Store Connect.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -428,6 +430,8 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Localized title
+     * 
+     * API-Since: 4.1
      */
     @Nullable
     @Generated

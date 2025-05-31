@@ -21,12 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Constants that describe the state of the overall match
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GKTurnBasedMatchStatus {
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Open = 0x0000000000000001L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Ended = 0x0000000000000002L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Matching = 0x0000000000000003L;
 
     @Generated

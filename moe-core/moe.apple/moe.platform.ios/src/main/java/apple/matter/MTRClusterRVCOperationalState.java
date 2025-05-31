@@ -330,4 +330,41 @@ public class MTRClusterRVCOperationalState extends MTRGenericCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("goHomeWithExpectedValues:expectedValueInterval:completion:")
+    public native void goHomeWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_goHomeWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_goHomeWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_goHomeWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_goHomeWithExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRRVCOperationalStateClusterOperationalCommandResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("goHomeWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void goHomeWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable MTRRVCOperationalStateClusterGoHomeParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_goHomeWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_goHomeWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_goHomeWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_goHomeWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable MTRRVCOperationalStateClusterOperationalCommandResponseParams data, @Nullable NSError error);
+    }
 }

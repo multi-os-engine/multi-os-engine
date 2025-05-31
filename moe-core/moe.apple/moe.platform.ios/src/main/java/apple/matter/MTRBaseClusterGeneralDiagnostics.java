@@ -1979,4 +1979,61 @@ public class MTRBaseClusterGeneralDiagnostics extends MTRGenericBaseCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Command PayloadTestRequest
+     * 
+     * Request a variable length payload response.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("payloadTestRequestWithParams:completion:")
+    public native void payloadTestRequestWithParamsCompletion(
+            @NotNull MTRGeneralDiagnosticsClusterPayloadTestRequestParams params,
+            @ObjCBlock(name = "call_payloadTestRequestWithParamsCompletion") @NotNull Block_payloadTestRequestWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_payloadTestRequestWithParamsCompletion {
+        @Generated
+        void call_payloadTestRequestWithParamsCompletion(
+                @Nullable MTRGeneralDiagnosticsClusterPayloadTestResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("timeSnapshotWithCompletion:")
+    public native void timeSnapshotWithCompletion(
+            @ObjCBlock(name = "call_timeSnapshotWithCompletion") @NotNull Block_timeSnapshotWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_timeSnapshotWithCompletion {
+        @Generated
+        void call_timeSnapshotWithCompletion(@Nullable MTRGeneralDiagnosticsClusterTimeSnapshotResponseParams data,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Command TimeSnapshot
+     * 
+     * Take a snapshot of system time and epoch time.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("timeSnapshotWithParams:completion:")
+    public native void timeSnapshotWithParamsCompletion(@Nullable MTRGeneralDiagnosticsClusterTimeSnapshotParams params,
+            @ObjCBlock(name = "call_timeSnapshotWithParamsCompletion") @NotNull Block_timeSnapshotWithParamsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_timeSnapshotWithParamsCompletion {
+        @Generated
+        void call_timeSnapshotWithParamsCompletion(
+                @Nullable MTRGeneralDiagnosticsClusterTimeSnapshotResponseParams data, @Nullable NSError error);
+    }
 }

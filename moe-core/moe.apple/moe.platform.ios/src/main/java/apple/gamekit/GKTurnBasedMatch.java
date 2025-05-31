@@ -44,6 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -110,6 +113,8 @@ public class GKTurnBasedMatch extends NSObject {
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Unauthenticated player
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("findMatchForRequest:withCompletionHandler:")
@@ -156,6 +161,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * This method retrieves the list of GKTurnBasedMatches that the current player is or has participated in. The
      * callback’s array contains GKTurnBasedMatches
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("loadMatchesWithCompletionHandler:")
@@ -219,6 +226,9 @@ public class GKTurnBasedMatch extends NSObject {
     @Selector("completedExchanges")
     public native NSArray<? extends GKTurnBasedExchange> completedExchanges();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("creationDate")
@@ -227,6 +237,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * This indicates the participant who has the current turn. This is set by passing the next participant into
      * endTurnWithNextParticipant:matchData:completionHandler:
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -246,6 +258,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * This will end the match for all participants. You must set each participant’s matchOutcome before calling this
      * method. All completed exchanges must be resolved or canceled before calling this.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("endMatchInTurnWithMatchData:completionHandler:")
@@ -336,6 +350,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * This method fetches the match data and exchanges for this match. This data is the state of the game at this point
      * in time. This may update the status and/or participant properties if they have changed.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("loadMatchDataWithCompletionHandler:")
@@ -347,6 +363,8 @@ public class GKTurnBasedMatch extends NSObject {
      * loadMatchDataWithCompletionHandler:
      * The developer can submit updated matchData by passing it into
      * endTurnWithNextParticipant:matchData:completionHandler: or endMatchInTurnWithMatchData:completionHandler:
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -363,6 +381,9 @@ public class GKTurnBasedMatch extends NSObject {
     @NUInt
     public native long matchDataMaximumSize();
 
+    /**
+     * API-Since: 5.0
+     */
     @Nullable
     @Generated
     @Selector("matchID")
@@ -371,6 +392,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * returns the localizable message in the current locale. Setting this is equivalent to calling [self
      * setLocalizableMessageWithKey:message arguments:nil]
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -404,6 +427,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * Abandon the match when it is not the current participant's turn. In this there is no update to matchData and no
      * need to set nextParticipant.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("participantQuitOutOfTurnWithOutcome:withCompletionHandler:")
@@ -412,6 +437,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * array of GKTurnBasedParticipant objects
+     * 
+     * API-Since: 5.0
      */
     @Nullable
     @Generated
@@ -437,6 +464,8 @@ public class GKTurnBasedMatch extends NSObject {
      * Remove a declined or completed match (one with a matchOutcome set) from the player's list of matches. If using
      * the GKTurnBasedMatchmakerViewController UI, this will remove it from the finished sessions. The developer should
      * not do this without user input.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("removeWithCompletionHandler:")
@@ -525,11 +554,16 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * returns the localizable message in the current locale. Setting this is equivalent to calling [self
      * setLocalizableMessageWithKey:message arguments:nil]
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(@Nullable String value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("status")
     @NInt

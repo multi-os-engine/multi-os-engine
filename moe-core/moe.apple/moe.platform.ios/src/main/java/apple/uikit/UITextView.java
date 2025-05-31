@@ -1785,4 +1785,30 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("writingToolsCoordinator")
     @NotNull
     public native UIWritingToolsCoordinator writingToolsCoordinator();
+
+    @Generated
+    @IsOptional
+    @Selector("conversationContext")
+    @Nullable
+    public native UIConversationContext conversationContext();
+
+    @Generated
+    @IsOptional
+    @Selector("insertInputSuggestion:")
+    public native void insertInputSuggestion(@NotNull UIInputSuggestion inputSuggestion);
+
+    @Generated
+    @IsOptional
+    @Selector("setConversationContext:")
+    public native void setConversationContext(@Nullable UIConversationContext value);
+
+    /**
+     * Asserts this is actually a subclass of UIWritingToolsCoordinator
+     * 
+     * API-Since: 18.2
+     */
+    @Generated
+    @Selector("subclassForWritingToolsCoordinator")
+    @NotNull
+    public native Class subclassForWritingToolsCoordinator();
 }

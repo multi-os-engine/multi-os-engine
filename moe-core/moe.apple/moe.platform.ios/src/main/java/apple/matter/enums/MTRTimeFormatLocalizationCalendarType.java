@@ -59,4 +59,8 @@ public final class MTRTimeFormatLocalizationCalendarType {
      * API-Since: 16.1
      */
     @Generated public static final byte Taiwanese = 11;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte UseActiveLocale = -1;
 }

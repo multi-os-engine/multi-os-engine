@@ -19,4 +19,16 @@ public final class MTRContentLauncherFeature {
      * API-Since: 16.1
      */
     @Generated public static final int URLPlayback = 0x00000002;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int AdvancedSeek = 0x00000004;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int TextTracks = 0x00000008;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final int AudioTracks = 0x00000010;
 }

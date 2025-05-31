@@ -23,4 +23,12 @@ public final class MTRContentLauncherStatus {
      * API-Since: 17.4
      */
     @Generated public static final byte AuthFailed = 2;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte TextTrackNotAvailable = 3;
+    /**
+     * API-Since: 18.4
+     */
+    @Generated public static final byte AudioTrackNotAvailable = 4;
 }

@@ -1582,4 +1582,173 @@ public class MTRClusterDoorLock extends MTRGenericCluster {
         @Generated
         void call_unlockDoorWithExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
     }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("clearAliroReaderConfigWithExpectedValues:expectedValueInterval:completion:")
+    public native void clearAliroReaderConfigWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_clearAliroReaderConfigWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_clearAliroReaderConfigWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_clearAliroReaderConfigWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_clearAliroReaderConfigWithExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("clearAliroReaderConfigWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void clearAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable MTRDoorLockClusterClearAliroReaderConfigParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_clearAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_clearAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_clearAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_clearAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion(
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroBLEAdvertisingVersionWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAliroBLEAdvertisingVersionWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAliroExpeditedTransactionSupportedProtocolVersionsWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroGroupResolvingKeyWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAliroGroupResolvingKeyWithParams(@Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderGroupIdentifierWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAliroReaderGroupIdentifierWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderGroupSubIdentifierWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAliroReaderGroupSubIdentifierWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroReaderVerificationKeyWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAliroReaderVerificationKeyWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeAliroSupportedBLEUWBProtocolVersionsWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeAliroSupportedBLEUWBProtocolVersionsWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeNumberOfAliroCredentialIssuerKeysSupportedWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeNumberOfAliroEndpointKeysSupportedWithParams:")
+    @Nullable
+    public native NSDictionary<String, ?> readAttributeNumberOfAliroEndpointKeysSupportedWithParams(
+            @Nullable MTRReadParams params);
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setAliroReaderConfigWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void setAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @NotNull MTRDoorLockClusterSetAliroReaderConfigParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_setAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_setAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_setAliroReaderConfigWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("unboltDoorWithExpectedValues:expectedValueInterval:completion:")
+    public native void unboltDoorWithExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedValues,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_unboltDoorWithExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_unboltDoorWithExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_unboltDoorWithExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_unboltDoorWithExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("unboltDoorWithParams:expectedValues:expectedValueInterval:completion:")
+    public native void unboltDoorWithParamsExpectedValuesExpectedValueIntervalCompletion(
+            @Nullable MTRDoorLockClusterUnboltDoorParams params,
+            @Nullable NSArray<? extends NSDictionary<String, ?>> expectedDataValueDictionaries,
+            @Nullable NSNumber expectedValueIntervalMs,
+            @ObjCBlock(name = "call_unboltDoorWithParamsExpectedValuesExpectedValueIntervalCompletion") @NotNull Block_unboltDoorWithParamsExpectedValuesExpectedValueIntervalCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_unboltDoorWithParamsExpectedValuesExpectedValueIntervalCompletion {
+        @Generated
+        void call_unboltDoorWithParamsExpectedValuesExpectedValueIntervalCompletion(@Nullable NSError error);
+    }
 }

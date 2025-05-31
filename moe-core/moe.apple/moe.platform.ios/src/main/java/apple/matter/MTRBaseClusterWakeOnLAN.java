@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
 
 /**
  * Cluster Wake on LAN
@@ -516,4 +517,62 @@ public class MTRBaseClusterWakeOnLAN extends MTRGenericBaseCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeLinkLocalAddressWithClusterStateCache:endpoint:queue:completion:")
+    public static native void readAttributeLinkLocalAddressWithClusterStateCacheEndpointQueueCompletion(
+            @NotNull MTRClusterStateCacheContainer clusterStateCacheContainer, @NotNull NSNumber endpoint,
+            @NotNull dispatch_queue_t queue,
+            @ObjCBlock(name = "call_readAttributeLinkLocalAddressWithClusterStateCacheEndpointQueueCompletion") @NotNull Block_readAttributeLinkLocalAddressWithClusterStateCacheEndpointQueueCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeLinkLocalAddressWithClusterStateCacheEndpointQueueCompletion {
+        @Generated
+        void call_readAttributeLinkLocalAddressWithClusterStateCacheEndpointQueueCompletion(@Nullable NSData value,
+                @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("readAttributeLinkLocalAddressWithCompletion:")
+    public native void readAttributeLinkLocalAddressWithCompletion(
+            @ObjCBlock(name = "call_readAttributeLinkLocalAddressWithCompletion") @NotNull Block_readAttributeLinkLocalAddressWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeLinkLocalAddressWithCompletion {
+        @Generated
+        void call_readAttributeLinkLocalAddressWithCompletion(@Nullable NSData value, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("subscribeAttributeLinkLocalAddressWithParams:subscriptionEstablished:reportHandler:")
+    public native void subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler(
+            @NotNull MTRSubscribeParams params,
+            @ObjCBlock(name = "call_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_1") @Nullable Block_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_1 subscriptionEstablished,
+            @ObjCBlock(name = "call_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_2") @NotNull Block_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_2 reportHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_1 {
+        @Generated
+        void call_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_2 {
+        @Generated
+        void call_subscribeAttributeLinkLocalAddressWithParamsSubscriptionEstablishedReportHandler_2(
+                @Nullable NSData value, @Nullable NSError error);
+    }
 }

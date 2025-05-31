@@ -21,31 +21,45 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Constants that describe the state of individual participants in the match
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GKTurnBasedParticipantStatus {
     /**
      * Statuses that are set by GameKit
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
      * a participant has been invited but not yet responded
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Invited = 0x0000000000000001L;
     /**
      * a participant that has declined an invite to this match
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Declined = 0x0000000000000002L;
     /**
      * a participant that is waiting to be matched
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Matching = 0x0000000000000003L;
     /**
      * a participant that is active in this match
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Active = 0x0000000000000004L;
     /**
      * a participant is done with this session
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Done = 0x0000000000000005L;
 

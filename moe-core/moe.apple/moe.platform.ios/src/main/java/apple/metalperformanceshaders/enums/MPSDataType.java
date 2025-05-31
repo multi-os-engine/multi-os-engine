@@ -159,4 +159,16 @@ public final class MPSDataType {
      * API-Since: 18.0
      */
     @Generated public static final int UInt4 = 0x00000004;
+    /**
+     * signed integers
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int Int2 = 0x20000002;
+    /**
+     * unsigned integers. Range: [0, UTYPE_MAX]
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int UInt2 = 0x00000002;
 }

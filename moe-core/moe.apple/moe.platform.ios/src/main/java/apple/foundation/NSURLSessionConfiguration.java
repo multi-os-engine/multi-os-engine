@@ -265,7 +265,10 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * Allow the use of HTTP pipelining
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Only supported in the classic loader, please adopt HTTP/2 and HTTP/3 instead
      */
+    @Deprecated
     @Generated
     @Selector("HTTPShouldUsePipelining")
     public native boolean HTTPShouldUsePipelining();
@@ -496,7 +499,10 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * Allow the use of HTTP pipelining
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Only supported in the classic loader, please adopt HTTP/2 and HTTP/3 instead
      */
+    @Deprecated
     @Generated
     @Selector("setHTTPShouldUsePipelining:")
     public native void setHTTPShouldUsePipelining(boolean value);
@@ -561,13 +567,11 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native void setSharedContainerIdentifier(@Nullable String value);
 
     /**
-     * Enable extended background idle mode for any tcp sockets created. Enabling this mode asks the system to keep the
-     * socket open
-     * and delay reclaiming it when the process moves to the background (see
-     * https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
-     * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Not supported
      */
+    @Deprecated
     @Generated
     @Selector("setShouldUseExtendedBackgroundIdleMode:")
     public native void setShouldUseExtendedBackgroundIdleMode(boolean value);
@@ -645,13 +649,11 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native String sharedContainerIdentifier();
 
     /**
-     * Enable extended background idle mode for any tcp sockets created. Enabling this mode asks the system to keep the
-     * socket open
-     * and delay reclaiming it when the process moves to the background (see
-     * https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
-     * 
      * API-Since: 9.0
+     * Deprecated-Since: 18.4
+     * Deprecated-Message: Not supported
      */
+    @Deprecated
     @Generated
     @Selector("shouldUseExtendedBackgroundIdleMode")
     public native boolean shouldUseExtendedBackgroundIdleMode();
@@ -829,4 +831,30 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Uses the classic network loader.
+     * 
+     * NOTE: FTP and HTTP/1 pipelining are only supported in the classic loading mode.
+     * 
+     * Defaults to YES. The default may be NO in a future OS update.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setUsesClassicLoadingMode:")
+    public native void setUsesClassicLoadingMode(boolean value);
+
+    /**
+     * Uses the classic network loader.
+     * 
+     * NOTE: FTP and HTTP/1 pipelining are only supported in the classic loading mode.
+     * 
+     * Defaults to YES. The default may be NO in a future OS update.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("usesClassicLoadingMode")
+    public native boolean usesClassicLoadingMode();
 }

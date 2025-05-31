@@ -956,4 +956,190 @@ public final class MTREventIDType {
      * API-Since: 17.6
      */
     @Generated public static final int EventIDTypeClusterElectricalEnergyMeasurementEventPeriodicEnergyMeasuredID = 0x00000001;
+    /**
+     * Cluster AccessControl events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterAccessControlEventFabricRestrictionReviewUpdateID = 0x00000002;
+    /**
+     * Cluster TimeSynchronization events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterTimeSynchronizationEventDSTTableEmptyID = 0x00000000;
+    /**
+     * Cluster TimeSynchronization events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterTimeSynchronizationEventDSTStatusID = 0x00000001;
+    /**
+     * Cluster TimeSynchronization events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterTimeSynchronizationEventTimeZoneStatusID = 0x00000002;
+    /**
+     * Cluster TimeSynchronization events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterTimeSynchronizationEventTimeFailureID = 0x00000003;
+    /**
+     * Cluster TimeSynchronization events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterTimeSynchronizationEventMissingTrustedTimeSourceID = 0x00000004;
+    /**
+     * Cluster BridgedDeviceBasicInformation events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterBridgedDeviceBasicInformationEventActiveChangedID = 0x00000080;
+    /**
+     * Cluster OvenCavityOperationalState events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterOvenCavityOperationalStateEventOperationalErrorID = 0x00000000;
+    /**
+     * Cluster OvenCavityOperationalState events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterOvenCavityOperationalStateEventOperationCompletionID = 0x00000001;
+    /**
+     * Cluster RefrigeratorAlarm events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterRefrigeratorAlarmEventNotifyID = 0x00000000;
+    /**
+     * Cluster DishwasherAlarm events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterDishwasherAlarmEventNotifyID = 0x00000000;
+    /**
+     * Cluster WaterHeaterManagement events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterWaterHeaterManagementEventBoostStartedID = 0x00000000;
+    /**
+     * Cluster WaterHeaterManagement events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterWaterHeaterManagementEventBoostEndedID = 0x00000001;
+    /**
+     * Cluster Messages events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterMessagesEventMessageQueuedID = 0x00000000;
+    /**
+     * Cluster Messages events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterMessagesEventMessagePresentedID = 0x00000001;
+    /**
+     * Cluster Messages events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterMessagesEventMessageCompleteID = 0x00000002;
+    /**
+     * Cluster DeviceEnergyManagement events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterDeviceEnergyManagementEventPowerAdjustStartID = 0x00000000;
+    /**
+     * Cluster DeviceEnergyManagement events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterDeviceEnergyManagementEventPowerAdjustEndID = 0x00000001;
+    /**
+     * Cluster DeviceEnergyManagement events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterDeviceEnergyManagementEventPausedID = 0x00000002;
+    /**
+     * Cluster DeviceEnergyManagement events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterDeviceEnergyManagementEventResumedID = 0x00000003;
+    /**
+     * Cluster EnergyEVSE events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterEnergyEVSEEventEVConnectedID = 0x00000000;
+    /**
+     * Cluster EnergyEVSE events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterEnergyEVSEEventEVNotDetectedID = 0x00000001;
+    /**
+     * Cluster EnergyEVSE events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterEnergyEVSEEventEnergyTransferStartedID = 0x00000002;
+    /**
+     * Cluster EnergyEVSE events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterEnergyEVSEEventEnergyTransferStoppedID = 0x00000003;
+    /**
+     * Cluster EnergyEVSE events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterEnergyEVSEEventFaultID = 0x00000004;
+    /**
+     * Cluster EnergyEVSE events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterEnergyEVSEEventRFIDID = 0x00000005;
+    /**
+     * Cluster OccupancySensing events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterOccupancySensingEventOccupancyChangedID = 0x00000000;
+    /**
+     * Cluster TargetNavigator events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterTargetNavigatorEventTargetUpdatedID = 0x00000000;
+    /**
+     * Cluster MediaPlayback events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterMediaPlaybackEventStateChangedID = 0x00000000;
+    /**
+     * Cluster AccountLogin events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterAccountLoginEventLoggedOutID = 0x00000000;
+    /**
+     * Cluster CommissionerControl events
+     * 
+     * API-Since: 18.4
+     */
+    @Generated public static final int EventIDTypeClusterCommissionerControlEventCommissioningRequestResultID = 0x00000000;
 }

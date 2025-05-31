@@ -45,6 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * NSFormatter does not specify if it is Sendable. Subclasses should annotate themselves.
+ * This allows subclasses to declare sendable conformances without requiring that all subclasses must be sendable
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)

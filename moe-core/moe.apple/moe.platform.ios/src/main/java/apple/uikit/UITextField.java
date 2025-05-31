@@ -1743,4 +1743,20 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("writingToolsBehavior")
     @NInt
     public native long writingToolsBehavior();
+
+    @Generated
+    @IsOptional
+    @Selector("conversationContext")
+    @Nullable
+    public native UIConversationContext conversationContext();
+
+    @Generated
+    @IsOptional
+    @Selector("insertInputSuggestion:")
+    public native void insertInputSuggestion(@NotNull UIInputSuggestion inputSuggestion);
+
+    @Generated
+    @IsOptional
+    @Selector("setConversationContext:")
+    public native void setConversationContext(@Nullable UIConversationContext value);
 }

@@ -215,8 +215,9 @@ public class NERelayManager extends NSObject {
     /**
      * [@property] matchDomains
      * 
-     * An array of strings containing domain names. If this property is non-nil, the relay will only be used to access
-     * hosts within the specified domains. If the property is nil, the relay will be used for all domains.
+     * An array of strings containing domain names. If this property is non-nil, the relay will be used to access hosts
+     * within the specified domains. If this and the match FQDNs property is nil, the relay will be used for all
+     * domains.
      * 
      * API-Since: 17.0
      */
@@ -346,8 +347,9 @@ public class NERelayManager extends NSObject {
     /**
      * [@property] matchDomains
      * 
-     * An array of strings containing domain names. If this property is non-nil, the relay will only be used to access
-     * hosts within the specified domains. If the property is nil, the relay will be used for all domains.
+     * An array of strings containing domain names. If this property is non-nil, the relay will be used to access hosts
+     * within the specified domains. If this and the match FQDNs property is nil, the relay will be used for all
+     * domains.
      * 
      * API-Since: 17.0
      */
@@ -439,4 +441,82 @@ public class NERelayManager extends NSObject {
         @Generated
         void call_getLastClientErrorsCompletionHandler(@Nullable NSArray<? extends NSError> errors);
     }
+
+    /**
+     * [@property] excludedFQDNs
+     * 
+     * An array of strings containing Fully Qualified Domain Names (FQDNs). If the destination host matches one of these
+     * strings then the relay will not be used. An excluded FQDN takes priority over the matchDomain property. This
+     * means the relay will not be used if the hostname matches an FQDN in this array even if the matchDomains contains
+     * a domain that would have been considered a match.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("excludedFQDNs")
+    @Nullable
+    public native NSArray<String> excludedFQDNs();
+
+    /**
+     * [@property] uiToggleEnabled
+     * 
+     * Determines if the user will have the ability to enable and disable the relay
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isUIToggleEnabled")
+    public native boolean isUIToggleEnabled();
+
+    /**
+     * [@property] matchFQDNs
+     * 
+     * An array of strings containing Fully Qualified Domain Names (FQDNs). If this property is non-nil, the relay will
+     * be used to access the specified hosts. If this and the matchDomains property is nil, the relay will be used for
+     * all domains.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("matchFQDNs")
+    @Nullable
+    public native NSArray<String> matchFQDNs();
+
+    /**
+     * [@property] excludedFQDNs
+     * 
+     * An array of strings containing Fully Qualified Domain Names (FQDNs). If the destination host matches one of these
+     * strings then the relay will not be used. An excluded FQDN takes priority over the matchDomain property. This
+     * means the relay will not be used if the hostname matches an FQDN in this array even if the matchDomains contains
+     * a domain that would have been considered a match.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setExcludedFQDNs:")
+    public native void setExcludedFQDNs(@Nullable NSArray<String> value);
+
+    /**
+     * [@property] matchFQDNs
+     * 
+     * An array of strings containing Fully Qualified Domain Names (FQDNs). If this property is non-nil, the relay will
+     * be used to access the specified hosts. If this and the matchDomains property is nil, the relay will be used for
+     * all domains.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMatchFQDNs:")
+    public native void setMatchFQDNs(@Nullable NSArray<String> value);
+
+    /**
+     * [@property] uiToggleEnabled
+     * 
+     * Determines if the user will have the ability to enable and disable the relay
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setUIToggleEnabled:")
+    public native void setUIToggleEnabled(boolean value);
 }

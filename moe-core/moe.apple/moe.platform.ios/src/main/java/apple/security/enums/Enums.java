@@ -2446,4 +2446,8 @@ public final class Enums {
      * ChaCha20-Poly1305 Cipher Suites for Transport Layer Security (TLS), RFC 7905
      */
     @Generated public static final char TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256 = 0xCCAC;
+    /**
+     * A qualified certificate statement was expected but missing.
+     */
+    @Generated public static final int errSecMissingQualifiedCertStatement = 0xFFFEF6C0;
 }

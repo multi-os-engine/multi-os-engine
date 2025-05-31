@@ -234,4 +234,13 @@ public final class Accessibility {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String AXPrefersNonBlinkingTextInsertionIndicatorDidChangeNotification();
+
+    /**
+     * API-Since: 18.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AXFeatureOverrideSessionErrorDomain();
 }

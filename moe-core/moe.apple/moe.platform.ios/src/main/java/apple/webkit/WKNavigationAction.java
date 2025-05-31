@@ -220,4 +220,24 @@ public class WKNavigationAction extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The button mask of the index of the mouse button causing the navigation to be requested.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("buttonNumber")
+    @NInt
+    public native long buttonNumber();
+
+    /**
+     * The modifier keys that were in effect when the navigation was requested.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("modifierFlags")
+    @NInt
+    public native long modifierFlags();
 }

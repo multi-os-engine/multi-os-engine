@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Available photo sizes. Actual pixel dimensions will vary on different devices.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GKPhotoSize {
@@ -12,6 +14,12 @@ public final class GKPhotoSize {
     private GKPhotoSize() {
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Small = 0x0000000000000000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Normal = 0x0000000000000001L;
 }

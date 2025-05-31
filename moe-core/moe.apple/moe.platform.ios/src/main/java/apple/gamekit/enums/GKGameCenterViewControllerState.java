@@ -19,6 +19,9 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 public final class GKGameCenterViewControllerState {
     @Generated @NInt public static final long Default = 0xFFFFFFFFFFFFFFFFL;
@@ -30,7 +33,16 @@ public final class GKGameCenterViewControllerState {
     private GKGameCenterViewControllerState() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long LocalPlayerProfile = 0x0000000000000003L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Dashboard = 0x0000000000000004L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long LocalPlayerFriendsList = 0x0000000000000005L;
 }

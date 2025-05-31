@@ -180,7 +180,7 @@ public class GCMotion extends NSObject {
      * @see hasAttitude
      * @see GCMicroGamepad
      * 
-     *      API-Since: 11.0
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("attitude")
@@ -188,7 +188,11 @@ public class GCMotion extends NSObject {
     public native GCQuaternion attitude();
 
     /**
-     * API-Since: 8.0
+     * A profile keeps a reference to the controller that it is mapping input from.
+     * 
+     * @see GCController
+     * 
+     *      API-Since: 8.0
      */
     @Nullable
     @Generated
@@ -223,7 +227,7 @@ public class GCMotion extends NSObject {
      * @see hasRotationRate
      * @see GCMicroGamepad
      * 
-     *      API-Since: 11.0
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("rotationRate")
@@ -282,7 +286,7 @@ public class GCMotion extends NSObject {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: hasAttitudeAndRotationRate has been deprecated, use -hasAttitude and -hasRotationRate instead
+     * Deprecated-Message: Use -hasAttitude and -hasRotationRate methods instead
      */
     @Deprecated
     @Generated

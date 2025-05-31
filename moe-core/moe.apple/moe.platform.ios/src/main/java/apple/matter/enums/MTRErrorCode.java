@@ -13,7 +13,6 @@ import org.moe.natj.general.ann.NInt;
  * 
  * Errors reported by the server side of a Matter interaction via the normal
  * Matter error-reporting mechanisms use MTRInteractionErrorDomain instead.
- * clang-format off
  */
 @Generated
 public final class MTRErrorCode {
@@ -165,4 +164,23 @@ public final class MTRErrorCode {
      * API-Since: 17.6
      */
     @Generated @NInt public static final long Cancelled = 0x0000000000000010L;
+    /**
+     * Access to some resource was denied.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated @NInt public static final long AccessDenied = 0x0000000000000011L;
+    /**
+     * A request was made to some entity, and that entity cannot handle the
+     * request right now, but might be able to at a different point in time.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated @NInt public static final long Busy = 0x0000000000000012L;
+    /**
+     * Something was requested that could not be located.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated @NInt public static final long NotFound = 0x0000000000000013L;
 }

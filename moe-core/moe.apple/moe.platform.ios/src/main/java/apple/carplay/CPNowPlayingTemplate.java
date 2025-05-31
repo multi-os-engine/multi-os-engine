@@ -305,4 +305,23 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The currently-active now playing mode. See @c CPNowPlayingMode.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("nowPlayingMode")
+    @Nullable
+    public native CPNowPlayingMode nowPlayingMode();
+
+    /**
+     * The currently-active now playing mode. See @c CPNowPlayingMode.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("setNowPlayingMode:")
+    public native void setNowPlayingMode(@Nullable CPNowPlayingMode value);
 }

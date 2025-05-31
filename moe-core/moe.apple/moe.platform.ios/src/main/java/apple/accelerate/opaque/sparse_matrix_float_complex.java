@@ -1,0 +1,20 @@
+package apple.accelerate.opaque;
+
+import org.moe.natj.c.CRuntime;
+import org.moe.natj.c.OpaquePtr;
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
+
+@Generated
+@Runtime(CRuntime.class)
+public interface sparse_matrix_float_complex extends OpaquePtr {
+    @Generated
+    class Impl extends OpaquePtrImpl implements sparse_matrix_float_complex {
+        @Generated
+        protected Impl(Pointer peer) {
+            super(peer);
+        }
+    }
+}
