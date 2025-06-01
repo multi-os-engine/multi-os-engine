@@ -131,7 +131,7 @@ class SubstrateExecutor(
         }
 
         CAP_CACHES.forEach {
-            javaClass.classLoader.getResourceAsStream("cap/$it").use { input ->
+            javaClass.classLoader.getResourceAsStream("cap_${config.target.arch}/$it").use { input ->
                 Files.copy(input, capPath.resolve(it))
             }
         }
