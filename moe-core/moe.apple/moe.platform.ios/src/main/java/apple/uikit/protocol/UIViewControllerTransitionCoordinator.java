@@ -107,14 +107,16 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
     @Generated
     public interface Block_animateAlongsideTransitionCompletion_0 {
         @Generated
-        void call_animateAlongsideTransitionCompletion_0(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
+        void call_animateAlongsideTransitionCompletion_0(
+                @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinatorContext context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_animateAlongsideTransitionCompletion_1 {
         @Generated
-        void call_animateAlongsideTransitionCompletion_1(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
+        void call_animateAlongsideTransitionCompletion_1(
+                @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinatorContext context);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -122,7 +124,7 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
     public interface Block_animateAlongsideTransitionInViewAnimationCompletion_1 {
         @Generated
         void call_animateAlongsideTransitionInViewAnimationCompletion_1(
-                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
+                @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinatorContext context);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -130,20 +132,22 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
     public interface Block_animateAlongsideTransitionInViewAnimationCompletion_2 {
         @Generated
         void call_animateAlongsideTransitionInViewAnimationCompletion_2(
-                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
+                @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinatorContext context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_notifyWhenInteractionChangesUsingBlock {
         @Generated
-        void call_notifyWhenInteractionChangesUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
+        void call_notifyWhenInteractionChangesUsingBlock(
+                @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinatorContext context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_notifyWhenInteractionEndsUsingBlock {
         @Generated
-        void call_notifyWhenInteractionEndsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
+        void call_notifyWhenInteractionEndsUsingBlock(
+                @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinatorContext context);
     }
 }

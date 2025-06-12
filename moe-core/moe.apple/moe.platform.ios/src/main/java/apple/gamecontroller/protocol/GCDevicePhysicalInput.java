@@ -77,8 +77,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     public interface Block_elementValueDidChangeHandler_ret {
         @Generated
-        void call_elementValueDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_elementValueDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) GCDevicePhysicalInput arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg1);
     }
 
     /**
@@ -126,7 +126,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     public interface Block_inputStateAvailableHandler_ret {
         @Generated
-        void call_inputStateAvailableHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_inputStateAvailableHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) GCDevicePhysicalInput arg0);
     }
 
     /**
@@ -178,8 +178,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     public interface Block_setElementValueDidChangeHandler {
         @Generated
-        void call_setElementValueDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_setElementValueDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) GCDevicePhysicalInput arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg1);
     }
 
     /**
@@ -226,7 +226,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     public interface Block_setInputStateAvailableHandler {
         @Generated
-        void call_setInputStateAvailableHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_setInputStateAvailableHandler(@NotNull @Mapped(ObjCObjectMapper.class) GCDevicePhysicalInput arg0);
     }
 
     /**

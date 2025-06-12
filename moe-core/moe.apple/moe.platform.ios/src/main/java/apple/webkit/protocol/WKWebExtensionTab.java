@@ -146,7 +146,7 @@ public interface WKWebExtensionTab {
     public interface Block_duplicateUsingConfigurationForWebExtensionContextCompletionHandler {
         @Generated
         void call_duplicateUsingConfigurationForWebExtensionContextCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) @Nullable Object duplicatedTab, @Nullable NSError error);
+                @Mapped(ObjCObjectMapper.class) @Nullable WKWebExtensionTab duplicatedTab, @Nullable NSError error);
     }
 
     /**

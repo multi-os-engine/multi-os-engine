@@ -144,7 +144,7 @@ public interface MTLLibrary {
     public interface Block_newFunctionWithNameConstantValuesCompletionHandler {
         @Generated
         void call_newFunctionWithNameConstantValuesCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object function, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLFunction function, @Nullable NSError error);
     }
 
     /**
@@ -179,8 +179,8 @@ public interface MTLLibrary {
     @Generated
     public interface Block_newFunctionWithDescriptorCompletionHandler {
         @Generated
-        void call_newFunctionWithDescriptorCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object function,
-                @Nullable NSError error);
+        void call_newFunctionWithDescriptorCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLFunction function, @Nullable NSError error);
     }
 
     /**
@@ -214,7 +214,7 @@ public interface MTLLibrary {
     public interface Block_newIntersectionFunctionWithDescriptorCompletionHandler {
         @Generated
         void call_newIntersectionFunctionWithDescriptorCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object function, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLFunction function, @Nullable NSError error);
     }
 
     /**

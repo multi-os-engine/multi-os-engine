@@ -47,6 +47,7 @@ import apple.uniformtypeidentifiers.UTType;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.protocol.NSItemProviderReading;
 
 /**
  * An NSItemProvider is a high level abstraction for an item supporting multiple representations.
@@ -251,15 +252,15 @@ public class NSItemProvider extends NSObject implements NSCopying {
     public interface Block_loadItemForTypeIdentifierOptionsCompletionHandler {
         @Generated
         void call_loadItemForTypeIdentifierOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object item, NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSSecureCoding item, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadPreviewImageWithOptionsCompletionHandler {
         @Generated
-        void call_loadPreviewImageWithOptionsCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object item,
-                NSError error);
+        void call_loadPreviewImageWithOptionsCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) NSSecureCoding item, NSError error);
     }
 
     /**
@@ -364,8 +365,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     public interface Block_loadObjectOfClassCompletionHandler {
         @Generated
-        void call_loadObjectOfClassCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object object,
-                @Nullable NSError error);
+        void call_loadObjectOfClassCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) NSItemProviderReading object, @Nullable NSError error);
     }
 
     /**

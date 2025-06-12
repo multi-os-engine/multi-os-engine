@@ -47,7 +47,7 @@ public interface CPSelectableListItem extends CPListTemplateItem {
         }
 
         @Generated
-        void call_handler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+        void call_handler_ret(@NotNull @Mapped(ObjCObjectMapper.class) CPSelectableListItem arg0,
                 @NotNull @ObjCBlock(name = "call_Block_handler_ret") Block_Block_handler_ret arg1);
     }
 
@@ -73,7 +73,7 @@ public interface CPSelectableListItem extends CPListTemplateItem {
         }
 
         @Generated
-        void call_setHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+        void call_setHandler(@NotNull @Mapped(ObjCObjectMapper.class) CPSelectableListItem arg0,
                 @NotNull @ObjCBlock(name = "call_Block_setHandler") Block_Block_setHandler arg1);
     }
 }

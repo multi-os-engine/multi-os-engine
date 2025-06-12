@@ -94,8 +94,8 @@ public interface GCLinearInput {
     @Generated
     public interface Block_setValueDidChangeHandler {
         @Generated
-        void call_setValueDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_setValueDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCLinearInput arg1, float arg2);
     }
 
     /**
@@ -132,8 +132,8 @@ public interface GCLinearInput {
     @Generated
     public interface Block_valueDidChangeHandler_ret {
         @Generated
-        void call_valueDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_valueDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCLinearInput arg1, float arg2);
     }
 
     /**

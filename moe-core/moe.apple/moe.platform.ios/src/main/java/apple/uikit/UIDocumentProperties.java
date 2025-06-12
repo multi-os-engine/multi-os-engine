@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UIDragSession;
 
 /**
  * API-Since: 16.0
@@ -128,7 +129,8 @@ public class UIDocumentProperties extends NSObject {
     public interface Block_dragItemsProvider_ret {
         @NotNull
         @Generated
-        NSArray<? extends UIDragItem> call_dragItemsProvider_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
+        NSArray<? extends UIDragItem> call_dragItemsProvider_ret(
+                @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession arg0);
     }
 
     @Generated
@@ -238,7 +240,8 @@ public class UIDocumentProperties extends NSObject {
     public interface Block_setDragItemsProvider {
         @NotNull
         @Generated
-        NSArray<? extends UIDragItem> call_setDragItemsProvider(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
+        NSArray<? extends UIDragItem> call_setDragItemsProvider(
+                @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession arg0);
     }
 
     /**

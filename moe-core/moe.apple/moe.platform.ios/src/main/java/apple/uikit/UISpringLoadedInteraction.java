@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UISpringLoadedInteractionContext;
 
 /**
  * API-Since: 11.0
@@ -125,7 +126,7 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     public interface Block_initWithActivationHandler {
         @Generated
         void call_initWithActivationHandler(@NotNull UISpringLoadedInteraction interaction,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
+                @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
     }
 
     /**
@@ -154,7 +155,7 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
         @Generated
         void call_initWithInteractionBehaviorInteractionEffectActivationHandler(
                 @NotNull UISpringLoadedInteraction interaction,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
+                @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
     }
 
     @Generated

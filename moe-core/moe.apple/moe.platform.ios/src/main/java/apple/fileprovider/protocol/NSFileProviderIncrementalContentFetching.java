@@ -52,7 +52,7 @@ public interface NSFileProviderIncrementalContentFetching {
     public interface Block_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler {
         @Generated
         void call_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler(
-                @Nullable NSURL fileContents, @Nullable @Mapped(ObjCObjectMapper.class) Object item,
+                @Nullable NSURL fileContents, @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem item,
                 @Nullable NSError error);
     }
 }

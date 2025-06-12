@@ -73,7 +73,7 @@ public interface MTLDrawable {
     @Generated
     public interface Block_addPresentedHandler {
         @Generated
-        void call_addPresentedHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addPresentedHandler(@NotNull @Mapped(ObjCObjectMapper.class) MTLDrawable arg0);
     }
 
     /**

@@ -50,7 +50,8 @@ public interface UITraitChangeObservable {
     @Generated
     public interface Block_registerForTraitChangesWithHandler {
         @Generated
-        void call_registerForTraitChangesWithHandler(@Mapped(ObjCObjectMapper.class) @NotNull Object traitEnvironment,
+        void call_registerForTraitChangesWithHandler(
+                @Mapped(ObjCObjectMapper.class) @NotNull UITraitEnvironment traitEnvironment,
                 @NotNull UITraitCollection previousCollection);
     }
 

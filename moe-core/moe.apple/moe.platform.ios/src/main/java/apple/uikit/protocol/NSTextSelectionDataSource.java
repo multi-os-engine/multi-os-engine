@@ -69,7 +69,8 @@ public interface NSTextSelectionDataSource {
     public interface Block_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock {
         @Generated
         void call_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock(@NFloat double caretOffset,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object location, boolean leadingEdge, @NotNull BoolPtr stop);
+                @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, boolean leadingEdge,
+                @NotNull BoolPtr stop);
     }
 
     /**
@@ -92,7 +93,7 @@ public interface NSTextSelectionDataSource {
     public interface Block_enumerateContainerBoundariesFromLocationReverseUsingBlock {
         @Generated
         void call_enumerateContainerBoundariesFromLocationReverseUsingBlock(
-                @NotNull @Mapped(ObjCObjectMapper.class) Object boundaryLocation, @NotNull BoolPtr stop);
+                @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation boundaryLocation, @NotNull BoolPtr stop);
     }
 
     /**

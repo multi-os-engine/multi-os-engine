@@ -103,8 +103,8 @@ public interface GCSwitchPositionInput {
     @Generated
     public interface Block_positionDidChangeHandler_ret {
         @Generated
-        void call_positionDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @NInt long arg2);
+        void call_positionDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCSwitchPositionInput arg1, @NInt long arg2);
     }
 
     /**
@@ -134,8 +134,8 @@ public interface GCSwitchPositionInput {
     @Generated
     public interface Block_setPositionDidChangeHandler {
         @Generated
-        void call_setPositionDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @NInt long arg2);
+        void call_setPositionDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCSwitchPositionInput arg1, @NInt long arg2);
     }
 
     /**

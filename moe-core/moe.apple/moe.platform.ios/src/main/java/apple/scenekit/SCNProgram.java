@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.scenekit.protocol.SCNBufferStream;
+import apple.scenekit.protocol.SCNShadable;
 
 /**
  * SCNProgram
@@ -433,9 +435,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_handleBindingOfBufferNamedFrequencyUsingBlock {
         @Generated
-        void call_handleBindingOfBufferNamedFrequencyUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object buffer,
-                @NotNull SCNNode node, @NotNull @Mapped(ObjCObjectMapper.class) Object shadable,
-                @NotNull SCNRenderer renderer);
+        void call_handleBindingOfBufferNamedFrequencyUsingBlock(
+                @NotNull @Mapped(ObjCObjectMapper.class) SCNBufferStream buffer, @NotNull SCNNode node,
+                @NotNull @Mapped(ObjCObjectMapper.class) SCNShadable shadable, @NotNull SCNRenderer renderer);
     }
 
     @Generated

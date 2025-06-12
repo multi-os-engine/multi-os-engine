@@ -566,7 +566,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
     public native MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(
-            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSCNNConvolutionGradientState> sourceStates,
             @NotNull MPSImage destinationImage);
 
     /**
@@ -588,7 +588,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
     public native MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
-            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
+            @Nullable NSArray<? extends MPSCNNConvolutionGradientState> sourceStates,
+            @NotNull MPSImage destinationImage);
 
     @Generated
     @Deprecated

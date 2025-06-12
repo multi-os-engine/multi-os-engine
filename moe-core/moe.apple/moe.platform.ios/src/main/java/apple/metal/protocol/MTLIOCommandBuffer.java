@@ -58,7 +58,7 @@ public interface MTLIOCommandBuffer {
     @Generated
     public interface Block_addCompletedHandler {
         @Generated
-        void call_addCompletedHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addCompletedHandler(@NotNull @Mapped(ObjCObjectMapper.class) MTLIOCommandBuffer arg0);
     }
 
     /**

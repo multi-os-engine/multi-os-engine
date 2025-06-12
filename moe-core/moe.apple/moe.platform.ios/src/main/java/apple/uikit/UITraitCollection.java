@@ -46,6 +46,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UIMutableTraits;
 
 /**
  * A trait collection encapsulates the system traits of an interface's environment.
@@ -595,7 +596,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Generated
     public interface Block_traitCollectionByModifyingTraits {
         @Generated
-        void call_traitCollectionByModifyingTraits(@Mapped(ObjCObjectMapper.class) @NotNull Object mutableTraits);
+        void call_traitCollectionByModifyingTraits(
+                @Mapped(ObjCObjectMapper.class) @NotNull UIMutableTraits mutableTraits);
     }
 
     @Generated
