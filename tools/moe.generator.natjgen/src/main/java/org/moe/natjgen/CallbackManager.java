@@ -164,6 +164,9 @@ public class CallbackManager {
                 cbman = new CallbackManager(manager, new NestedCallback(), -1);
                 descriptor.getType().setCallbackManager(cbman);
             }
+            // TODO: There is an infinite reursion with this, no idea why.
+            if (cbman == this)
+                return false;
             if (!cbman.isSupported()) {
                 return false;
             }
