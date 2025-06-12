@@ -249,8 +249,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     public interface Block_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler {
         @Generated
         void call_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object createdItem, @NUInt long stillPendingFields,
-                boolean shouldFetchContent, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem createdItem,
+                @NUInt long stillPendingFields, boolean shouldFetchContent, @Nullable NSError error);
     }
 
     /**
@@ -464,7 +464,7 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     public interface Block_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler {
         @Generated
         void call_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler(@Nullable NSURL fileContents,
-                @Nullable @Mapped(ObjCObjectMapper.class) Object item, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem item, @Nullable NSError error);
     }
 
     /**
@@ -593,8 +593,8 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     @Generated
     public interface Block_itemForIdentifierRequestCompletionHandler {
         @Generated
-        void call_itemForIdentifierRequestCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object arg0,
-                @Nullable NSError arg1);
+        void call_itemForIdentifierRequestCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -852,7 +852,7 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     public interface Block_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler {
         @Generated
         void call_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object item, @NUInt long stillPendingFields,
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem item, @NUInt long stillPendingFields,
                 boolean shouldFetchContent, @Nullable NSError error);
     }
 

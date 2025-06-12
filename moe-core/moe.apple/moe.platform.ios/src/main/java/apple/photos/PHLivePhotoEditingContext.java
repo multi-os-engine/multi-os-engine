@@ -48,6 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.photos.protocol.PHLivePhotoFrame;
 
 /**
  * API-Since: 10.0
@@ -305,7 +306,7 @@ public class PHLivePhotoEditingContext extends NSObject {
     public interface Block_frameProcessor_ret {
         @Nullable
         @Generated
-        CIImage call_frameProcessor_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object frame,
+        CIImage call_frameProcessor_ret(@NotNull @Mapped(ObjCObjectMapper.class) PHLivePhotoFrame frame,
                 @NotNull @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
@@ -329,7 +330,7 @@ public class PHLivePhotoEditingContext extends NSObject {
     public interface Block_setFrameProcessor {
         @Nullable
         @Generated
-        CIImage call_setFrameProcessor(@NotNull @Mapped(ObjCObjectMapper.class) Object frame,
+        CIImage call_setFrameProcessor(@NotNull @Mapped(ObjCObjectMapper.class) PHLivePhotoFrame frame,
                 @NotNull @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 

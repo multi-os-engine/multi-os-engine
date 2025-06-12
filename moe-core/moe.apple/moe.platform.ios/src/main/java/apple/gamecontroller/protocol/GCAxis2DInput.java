@@ -96,8 +96,8 @@ public interface GCAxis2DInput {
     @Generated
     public interface Block_setValueDidChangeHandler {
         @Generated
-        void call_setValueDidChangeHandler(@Mapped(ObjCObjectMapper.class) @NotNull Object arg0,
-                @Mapped(ObjCObjectMapper.class) @NotNull Object arg1, @ByValue GCPoint2 arg2);
+        void call_setValueDidChangeHandler(@Mapped(ObjCObjectMapper.class) @NotNull GCPhysicalInputElement arg0,
+                @Mapped(ObjCObjectMapper.class) @NotNull GCAxis2DInput arg1, @ByValue GCPoint2 arg2);
     }
 
     /**
@@ -147,7 +147,7 @@ public interface GCAxis2DInput {
     @Generated
     public interface Block_valueDidChangeHandler_ret {
         @Generated
-        void call_valueDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) @NotNull Object arg0,
-                @Mapped(ObjCObjectMapper.class) @NotNull Object arg1, @ByValue GCPoint2 arg2);
+        void call_valueDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) @NotNull GCPhysicalInputElement arg0,
+                @Mapped(ObjCObjectMapper.class) @NotNull GCAxis2DInput arg1, @ByValue GCPoint2 arg2);
     }
 }

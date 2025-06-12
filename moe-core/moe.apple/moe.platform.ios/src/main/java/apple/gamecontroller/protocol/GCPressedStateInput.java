@@ -86,8 +86,8 @@ public interface GCPressedStateInput {
     @Generated
     public interface Block_pressedDidChangeHandler_ret {
         @Generated
-        void call_pressedDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_pressedDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCPressedStateInput arg1, boolean arg2);
     }
 
     /**
@@ -104,8 +104,8 @@ public interface GCPressedStateInput {
     @Generated
     public interface Block_setPressedDidChangeHandler {
         @Generated
-        void call_setPressedDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_setPressedDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCPressedStateInput arg1, boolean arg2);
     }
 
     /**

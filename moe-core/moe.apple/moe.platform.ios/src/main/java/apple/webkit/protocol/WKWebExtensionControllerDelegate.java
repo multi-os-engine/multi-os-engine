@@ -151,7 +151,7 @@ public interface WKWebExtensionControllerDelegate {
     public interface Block_webExtensionControllerOpenNewTabUsingConfigurationForExtensionContextCompletionHandler {
         @Generated
         void call_webExtensionControllerOpenNewTabUsingConfigurationForExtensionContextCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) @Nullable Object newTab, @Nullable NSError error);
+                @Mapped(ObjCObjectMapper.class) @Nullable WKWebExtensionTab newTab, @Nullable NSError error);
     }
 
     /**
@@ -188,7 +188,7 @@ public interface WKWebExtensionControllerDelegate {
     public interface Block_webExtensionControllerOpenNewWindowUsingConfigurationForExtensionContextCompletionHandler {
         @Generated
         void call_webExtensionControllerOpenNewWindowUsingConfigurationForExtensionContextCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) @Nullable Object newWindow, @Nullable NSError error);
+                @Mapped(ObjCObjectMapper.class) @Nullable WKWebExtensionWindow newWindow, @Nullable NSError error);
     }
 
     /**

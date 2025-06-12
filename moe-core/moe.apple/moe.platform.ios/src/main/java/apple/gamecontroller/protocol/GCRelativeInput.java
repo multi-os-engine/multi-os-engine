@@ -54,8 +54,8 @@ public interface GCRelativeInput {
     @Generated
     public interface Block_deltaDidChangeHandler_ret {
         @Generated
-        void call_deltaDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_deltaDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCRelativeInput arg1, float arg2);
     }
 
     /**
@@ -114,8 +114,8 @@ public interface GCRelativeInput {
     @Generated
     public interface Block_setDeltaDidChangeHandler {
         @Generated
-        void call_setDeltaDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_setDeltaDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCRelativeInput arg1, float arg2);
     }
 
     /**

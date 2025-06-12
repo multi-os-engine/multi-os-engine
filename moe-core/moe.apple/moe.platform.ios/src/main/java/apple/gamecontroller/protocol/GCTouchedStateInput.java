@@ -83,8 +83,8 @@ public interface GCTouchedStateInput {
     @Generated
     public interface Block_setTouchedDidChangeHandler {
         @Generated
-        void call_setTouchedDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_setTouchedDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCTouchedStateInput arg1, boolean arg2);
     }
 
     /**
@@ -102,8 +102,8 @@ public interface GCTouchedStateInput {
     @Generated
     public interface Block_touchedDidChangeHandler_ret {
         @Generated
-        void call_touchedDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_touchedDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) GCTouchedStateInput arg1, boolean arg2);
     }
 
     /**

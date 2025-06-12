@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.NSCollectionLayoutEnvironment;
 
 /**
  * API-Since: 13.0
@@ -144,7 +145,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
         @Nullable
         @Generated
         NSCollectionLayoutSection call_initWithSectionProvider(@NInt long sectionIndex,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+                @NotNull @Mapped(ObjCObjectMapper.class) NSCollectionLayoutEnvironment layoutEnvironment);
     }
 
     /**
@@ -162,7 +163,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
         @Nullable
         @Generated
         NSCollectionLayoutSection call_initWithSectionProviderConfiguration(@NInt long sectionIndex,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+                @NotNull @Mapped(ObjCObjectMapper.class) NSCollectionLayoutEnvironment layoutEnvironment);
     }
 
     @Generated

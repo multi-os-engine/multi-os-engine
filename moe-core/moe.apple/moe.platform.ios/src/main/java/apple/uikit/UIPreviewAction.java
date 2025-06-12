@@ -203,7 +203,8 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Generated
     public interface Block_handler_ret {
         @Generated
-        void call_handler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0, @NotNull UIViewController arg1);
+        void call_handler_ret(@NotNull @Mapped(ObjCObjectMapper.class) UIPreviewActionItem arg0,
+                @NotNull UIViewController arg1);
     }
 
     @Generated

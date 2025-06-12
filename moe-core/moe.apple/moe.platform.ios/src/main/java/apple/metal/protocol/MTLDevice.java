@@ -550,7 +550,7 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object computePipelineState,
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLComputePipelineState computePipelineState,
                 @Nullable MTLComputePipelineReflection reflection, @Nullable NSError error);
     }
 
@@ -559,7 +559,8 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithFunctionCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithFunctionCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object computePipelineState, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLComputePipelineState computePipelineState,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -567,7 +568,7 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithFunctionOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithFunctionOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object computePipelineState,
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLComputePipelineState computePipelineState,
                 @Nullable MTLComputePipelineReflection reflection, @Nullable NSError error);
     }
 
@@ -575,8 +576,8 @@ public interface MTLDevice {
     @Generated
     public interface Block_newLibraryWithSourceOptionsCompletionHandler {
         @Generated
-        void call_newLibraryWithSourceOptionsCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object library,
-                @Nullable NSError error);
+        void call_newLibraryWithSourceOptionsCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLLibrary library, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -584,7 +585,8 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithDescriptorCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithDescriptorCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object renderPipelineState, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLRenderPipelineState renderPipelineState,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -592,7 +594,7 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object renderPipelineState,
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLRenderPipelineState renderPipelineState,
                 @Nullable MTLRenderPipelineReflection reflection, @Nullable NSError error);
     }
 
@@ -735,7 +737,7 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object renderPipelineState,
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLRenderPipelineState renderPipelineState,
                 @Nullable MTLRenderPipelineReflection reflection, @Nullable NSError error);
     }
 
@@ -1320,7 +1322,7 @@ public interface MTLDevice {
     public interface Block_newLibraryWithStitchedDescriptorCompletionHandler {
         @Generated
         void call_newLibraryWithStitchedDescriptorCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object library, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLLibrary library, @Nullable NSError error);
     }
 
     /**
@@ -1548,7 +1550,7 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithMeshDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithMeshDescriptorOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object renderPipelineState,
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLRenderPipelineState renderPipelineState,
                 @Nullable MTLRenderPipelineReflection reflection, @Nullable NSError error);
     }
 

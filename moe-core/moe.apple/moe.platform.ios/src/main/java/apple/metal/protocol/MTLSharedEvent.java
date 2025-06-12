@@ -46,7 +46,7 @@ public interface MTLSharedEvent extends MTLEvent {
     @Generated
     public interface Block_notifyListenerAtValueBlock {
         @Generated
-        void call_notifyListenerAtValueBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0, long arg1);
+        void call_notifyListenerAtValueBlock(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent arg0, long arg1);
     }
 
     /**

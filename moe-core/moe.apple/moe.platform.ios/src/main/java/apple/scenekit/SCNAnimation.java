@@ -32,6 +32,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.scenekit.protocol.SCNAnimatable;
 
 /**
  * SCNAnimation represents an animation that targets a specific key path.
@@ -82,7 +83,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     public interface Block_animationDidStart_ret {
         @Generated
         void call_animationDidStart_ret(@NotNull SCNAnimation animation,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver);
+                @NotNull @Mapped(ObjCObjectMapper.class) SCNAnimatable receiver);
     }
 
     /**
@@ -104,7 +105,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     public interface Block_animationDidStop_ret {
         @Generated
         void call_animationDidStop_ret(@NotNull SCNAnimation animation,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver, boolean completed);
+                @NotNull @Mapped(ObjCObjectMapper.class) SCNAnimatable receiver, boolean completed);
     }
 
     /**
@@ -405,7 +406,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     public interface Block_setAnimationDidStart {
         @Generated
         void call_setAnimationDidStart(@NotNull SCNAnimation animation,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver);
+                @NotNull @Mapped(ObjCObjectMapper.class) SCNAnimatable receiver);
     }
 
     /**
@@ -426,7 +427,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     public interface Block_setAnimationDidStop {
         @Generated
         void call_setAnimationDidStop(@NotNull SCNAnimation animation,
-                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver, boolean completed);
+                @NotNull @Mapped(ObjCObjectMapper.class) SCNAnimatable receiver, boolean completed);
     }
 
     /**

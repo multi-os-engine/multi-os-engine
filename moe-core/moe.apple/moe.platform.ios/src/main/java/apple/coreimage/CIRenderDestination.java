@@ -253,7 +253,7 @@ public class CIRenderDestination extends NSObject {
         @NotNull
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider();
+        MTLTexture call_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider();
     }
 
     @Generated

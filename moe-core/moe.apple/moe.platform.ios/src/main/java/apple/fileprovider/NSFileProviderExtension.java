@@ -352,7 +352,8 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_createDirectoryWithNameInParentItemIdentifierCompletionHandler {
         @Generated
         void call_createDirectoryWithNameInParentItemIdentifierCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object createdDirectoryItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem createdDirectoryItem,
+                @Nullable NSError error);
     }
 
     /**
@@ -545,7 +546,8 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_importDocumentAtURLToParentItemIdentifierCompletionHandler {
         @Generated
         void call_importDocumentAtURLToParentItemIdentifierCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object importedDocumentItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem importedDocumentItem,
+                @Nullable NSError error);
     }
 
     /**
@@ -575,7 +577,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_renameItemWithIdentifierToNameCompletionHandler {
         @Generated
         void call_renameItemWithIdentifierToNameCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object renamedItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem renamedItem, @Nullable NSError error);
     }
 
     /**
@@ -603,7 +605,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_reparentItemWithIdentifierToParentItemWithIdentifierNewNameCompletionHandler {
         @Generated
         void call_reparentItemWithIdentifierToParentItemWithIdentifierNewNameCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object reparentedItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem reparentedItem, @Nullable NSError error);
     }
 
     /**
@@ -634,7 +636,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_setFavoriteRankForItemIdentifierCompletionHandler {
         @Generated
         void call_setFavoriteRankForItemIdentifierCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object favoriteItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem favoriteItem, @Nullable NSError error);
     }
 
     /**
@@ -664,7 +666,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_setLastUsedDateForItemIdentifierCompletionHandler {
         @Generated
         void call_setLastUsedDateForItemIdentifierCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object recentlyUsedItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem recentlyUsedItem, @Nullable NSError error);
     }
 
     /**
@@ -696,7 +698,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_setTagDataForItemIdentifierCompletionHandler {
         @Generated
         void call_setTagDataForItemIdentifierCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object taggedItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem taggedItem, @Nullable NSError error);
     }
 
     /**
@@ -739,8 +741,8 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_trashItemWithIdentifierCompletionHandler {
         @Generated
-        void call_trashItemWithIdentifierCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object trashedItem,
-                @Nullable NSError error);
+        void call_trashItemWithIdentifierCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem trashedItem, @Nullable NSError error);
     }
 
     /**
@@ -770,7 +772,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_untrashItemWithIdentifierToParentItemIdentifierCompletionHandler {
         @Generated
         void call_untrashItemWithIdentifierToParentItemIdentifierCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object untrashedItem, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) NSFileProviderItem untrashedItem, @Nullable NSError error);
     }
 
     @Generated

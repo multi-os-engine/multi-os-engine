@@ -40,6 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UIFocusAnimationContext;
 
 /**
  * UIFocusAnimationCoordinator is used to coordinate disparate animations that are related to a focus update.
@@ -221,7 +222,7 @@ public class UIFocusAnimationCoordinator extends NSObject {
     public interface Block_addCoordinatedFocusingAnimationsCompletion_0 {
         @Generated
         void call_addCoordinatedFocusingAnimationsCompletion_0(
-                @NotNull @Mapped(ObjCObjectMapper.class) Object animationContext);
+                @NotNull @Mapped(ObjCObjectMapper.class) UIFocusAnimationContext animationContext);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -255,7 +256,7 @@ public class UIFocusAnimationCoordinator extends NSObject {
     public interface Block_addCoordinatedUnfocusingAnimationsCompletion_0 {
         @Generated
         void call_addCoordinatedUnfocusingAnimationsCompletion_0(
-                @NotNull @Mapped(ObjCObjectMapper.class) Object animationContext);
+                @NotNull @Mapped(ObjCObjectMapper.class) UIFocusAnimationContext animationContext);
     }
 
     @Runtime(ObjCRuntime.class)

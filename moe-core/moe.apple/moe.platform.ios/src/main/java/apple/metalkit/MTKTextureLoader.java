@@ -486,7 +486,7 @@ public class MTKTextureLoader extends NSObject {
     public interface Block_newTextureWithCGImageOptionsCompletionHandler {
         @Generated
         void call_newTextureWithCGImageOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object texture, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture texture, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -494,15 +494,15 @@ public class MTKTextureLoader extends NSObject {
     public interface Block_newTextureWithContentsOfURLOptionsCompletionHandler {
         @Generated
         void call_newTextureWithContentsOfURLOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object texture, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture texture, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newTextureWithDataOptionsCompletionHandler {
         @Generated
-        void call_newTextureWithDataOptionsCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object texture,
-                @Nullable NSError error);
+        void call_newTextureWithDataOptionsCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture texture, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -510,7 +510,7 @@ public class MTKTextureLoader extends NSObject {
     public interface Block_newTextureWithMDLTextureOptionsCompletionHandler {
         @Generated
         void call_newTextureWithMDLTextureOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object texture, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture texture, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -518,7 +518,7 @@ public class MTKTextureLoader extends NSObject {
     public interface Block_newTextureWithNameScaleFactorBundleOptionsCompletionHandler {
         @Generated
         void call_newTextureWithNameScaleFactorBundleOptionsCompletionHandler(
-                @Nullable @Mapped(ObjCObjectMapper.class) Object texture, @Nullable NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture texture, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

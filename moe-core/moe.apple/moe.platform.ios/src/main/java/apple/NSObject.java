@@ -3411,7 +3411,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
         @Nullable
-        Object call_accessibilityTextInputResponderBlock_ret();
+        UITextInput call_accessibilityTextInputResponderBlock_ret();
     }
 
     /**
@@ -3680,7 +3680,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
         @Nullable
-        Object call_setAccessibilityTextInputResponderBlock();
+        UITextInput call_setAccessibilityTextInputResponderBlock();
     }
 
     /**

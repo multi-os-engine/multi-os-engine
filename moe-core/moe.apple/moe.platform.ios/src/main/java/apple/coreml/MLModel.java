@@ -422,8 +422,8 @@ public class MLModel extends NSObject {
     @Generated
     public interface Block_predictionFromFeaturesCompletionHandler {
         @Generated
-        void call_predictionFromFeaturesCompletionHandler(@Mapped(ObjCObjectMapper.class) @Nullable Object output,
-                @Nullable NSError error);
+        void call_predictionFromFeaturesCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) @Nullable MLFeatureProvider output, @Nullable NSError error);
     }
 
     /**
@@ -449,7 +449,7 @@ public class MLModel extends NSObject {
     public interface Block_predictionFromFeaturesOptionsCompletionHandler {
         @Generated
         void call_predictionFromFeaturesOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) @Nullable Object output, @Nullable NSError error);
+                @Mapped(ObjCObjectMapper.class) @Nullable MLFeatureProvider output, @Nullable NSError error);
     }
 
     @Generated
@@ -548,7 +548,7 @@ public class MLModel extends NSObject {
     public interface Block_predictionFromFeaturesUsingStateOptionsCompletionHandler {
         @Generated
         void call_predictionFromFeaturesUsingStateOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) @Nullable Object output, @Nullable NSError error);
+                @Mapped(ObjCObjectMapper.class) @Nullable MLFeatureProvider output, @Nullable NSError error);
     }
 
     /**
