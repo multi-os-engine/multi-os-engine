@@ -11,4 +11,8 @@
 
 @end
 
+@protocol ContextProtocol
+- (void)withContext:(void (^ __nullable)(id <ContextProtocol>context))par;
+@end
+
 #endif /* __OBJC__ */

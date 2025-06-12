@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.moe.natjgen.Type.CallbackArgument;
 import org.moe.natjgen.TypeResolver.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -331,6 +332,14 @@ public class ObjCClassManager extends AbstractUnitManager {
     private void tryResolveObjCProtocolledId(final ObjCMethod method, final int argIdx) {
         // Get shared ObjCProtocolGenerationState object
         Type methodType = method.getTypeAt(argIdx);
+        // TODO: I genuinly have no idea what I'm doing. This is lazy work to get https://github.com/multi-os-engine/multi-os-engine/issues/214 fixed
+        //  Probably wont work with nested callbacks? Not sure!
+        if (methodType.isCallback()) {
+            methodType.getCallbackDescriptor().getType().setObjcProtocolGenerationState(new Type.ObjCProtocolGenerationState());
+            for (CallbackArgument argument : methodType.getCallbackDescriptor().getArguments()) {
+                argument.getType().setObjcProtocolGenerationState(new Type.ObjCProtocolGenerationState());
+            }
+        }
         Type.ObjCProtocolGenerationState state = methodType.getObjcProtocolGenerationState();
         if (state == null) {
             SuperInfo lastNonNullSuperInfo = getSuperOf(method);
