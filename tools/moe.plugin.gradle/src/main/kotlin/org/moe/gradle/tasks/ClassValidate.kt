@@ -18,6 +18,7 @@ import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
 import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.FileUtils
+import org.moe.gradle.utils.GradleCompatUtils
 import org.moe.gradle.utils.Mode
 import org.moe.tools.classvalidator.ClassValidator
 import java.io.File
@@ -66,7 +67,11 @@ open class ClassValidate : AbstractBaseTask() {
 
     val outputJars: ConfigurableFileCollection
         @Internal
-        get() = project.files(getOutputDir().listFiles())
+        get() {
+            if (!getOutputDir().isDirectory)
+                throw GradleException("${getOutputDir().absolutePath} must be a directory")
+            return project.files(getOutputDir().listFiles())
+        }
 
     override fun run() {
         // Clean output dir
@@ -140,7 +145,7 @@ open class ClassValidate : AbstractBaseTask() {
         addConvention(CONVENTION_INPUT_FILES) {
             sourceSet.runtimeClasspath.files.toMutableSet().also { jars ->
                 jars.removeIf { it.isDirectory }
-                jars.add(jarTaskDep.archiveFile.get().asFile)
+                jars.add(GradleCompatUtils.archiveFile(jarTaskDep))
 
                 jars.remove(moeSDK.coreJar)
                 jars.remove(moeExtension.platformJar)

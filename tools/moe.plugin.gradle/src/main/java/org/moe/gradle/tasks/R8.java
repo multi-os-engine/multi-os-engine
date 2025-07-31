@@ -29,6 +29,7 @@ import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
+import org.gradle.util.GradleVersion;
 import org.moe.common.utils.FileUtilsKt;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
@@ -302,7 +303,11 @@ public class R8 extends AbstractBaseTask {
 
         javaexec(spec -> {
             spec.setExecutable(getMoePlugin().getGraalVM().getJavaPath().toFile().getAbsolutePath());
-            spec.getMainClass().set("com.android.tools.r8.R8");
+            if (GradleVersion.current().compareTo(GradleVersion.version("6.4")) >= 0) {
+                spec.getMainClass().set("com.android.tools.r8.R8");
+            } else {
+                spec.setMain("com.android.tools.r8.R8");
+            }
             spec.classpath(getR8Jar());
             spec.args(args.toArray());
         });

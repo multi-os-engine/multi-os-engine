@@ -10,6 +10,7 @@ import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
 import org.moe.gradle.utils.FileUtils
+import org.moe.gradle.utils.GradleCompatUtils
 import org.moe.gradle.utils.Mode
 import org.moe.tools.classvalidator.substrate.ResourceCollector
 import org.moe.tools.classvalidator.substrate.ResourceConfig
@@ -110,7 +111,7 @@ open class ResourceCollect : AbstractBaseTask() {
         addConvention(CONVENTION_INPUT_FILES) {
             listOfNotNull(
                 r8Task.outJar,
-                resourceTask.archiveFile.get(),
+                GradleCompatUtils.archiveFile(resourceTask),
             ).toSet()
         }
         addConvention(CONVENTION_AUTO_DETECTION_ENABLED) { moeExtension.resources.detectionOptions.isEnabled }

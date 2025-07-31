@@ -15,6 +15,7 @@ import org.moe.gradle.anns.NotNull
 import org.moe.gradle.anns.Nullable
 import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.Arch
+import org.moe.gradle.utils.GradleCompatUtils
 import org.moe.gradle.utils.Mode
 import org.moe.tools.substrate.Config
 import org.moe.tools.substrate.SubstrateExecutor
@@ -290,7 +291,7 @@ open class NativeImage : AbstractBaseTask() {
 
             files
         }
-        addConvention(CONVENTION_RESOURCE_JAR) { resourceTask.archiveFile.get() }
+        addConvention(CONVENTION_RESOURCE_JAR) { GradleCompatUtils.archiveFile(resourceTask) }
         addConvention(CONVENTION_MAIN_CLASS_NAME) { moeExtension.mainClassName }
         addConvention(CONVENTION_SVM_TMP_DIR) { resolvePathInBuildDir(out, "svmTmp") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "NativeImage.log") }

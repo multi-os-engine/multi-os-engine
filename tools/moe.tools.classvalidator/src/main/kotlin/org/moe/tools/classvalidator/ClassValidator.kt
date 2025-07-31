@@ -7,7 +7,15 @@ import org.moe.tools.classvalidator.natj.RewriteChangedBindingClasses
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
+import java.io.ByteArrayOutputStream
 import java.io.File
+import java.io.InputStream
+
+fun InputStream.readBytesBackport(): ByteArray {
+    val buffer = ByteArrayOutputStream(maxOf(DEFAULT_BUFFER_SIZE, this.available()))
+    copyTo(buffer)
+    return buffer.toByteArray()
+}
 
 object ClassValidator {
     fun process(
@@ -23,7 +31,7 @@ object ClassValidator {
                 classSavers.add(classSaver)
 
                 inputFile.classpathIterator({ _, inputStream ->
-                    val originalByteCode = inputStream.readBytes()
+                    val originalByteCode = inputStream.readBytesBackport()
                     val cr = ClassReader(originalByteCode)
                     val processedByteCode = processClass(cr) { next ->
                         next

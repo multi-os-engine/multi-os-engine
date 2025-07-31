@@ -29,6 +29,7 @@ import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.groovy.closures.ConfigurationClosure;
 import org.moe.gradle.options.ProGuardOptions;
+import org.moe.gradle.utils.GradleCompatUtils;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.StringUtils;
@@ -106,8 +107,8 @@ public class ResourcePackager {
             }
             else {
                 // we must be on an old version of gradle, try the older methods
-                TaskUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-                TaskUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
+                GradleCompatUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                GradleCompatUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
             }
             resourcePackagerTask.from(project.zipTree(r8Task.getOutJar()));
             resourcePackagerTask.exclude("**/*.class");
