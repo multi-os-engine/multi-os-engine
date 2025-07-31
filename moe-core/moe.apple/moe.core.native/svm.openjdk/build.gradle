@@ -33,13 +33,18 @@ task('jdk_gensrc', type: Script) {
 
     progress 'Configure jdk'
     rawWorkDir "${builtJdkDir}"
+
+    exec "sh", "-c", "patch -p1 < ${file("zutil-clang17.patch").absolutePath}"
+    exec "sh", "-c", "patch -p1 < ${file("pngpriv-clang17.patch").absolutePath}"
+
+
     def JVMCI_VERSION = "jvmci-23.1-b33"
     // For whatever reason setting "--with-boot-jdk" does not work
     env "JAVA_HOME", file(bootJDK.absolutePath + "/jdk21/Contents/Home").absolutePath
     env 'MX_PYTHON', 'python3'
     exec "sh", "configure", "--with-conf-name=labsjdk", "--with-version-opt=$JVMCI_VERSION", "--with-version-pre=",
             "--with-vendor-name=GraalVM Community", "--with-vendor-url=https://www.graalvm.org/", "--with-vendor-bug-url=https://github.com/oracle/graal/issues",
-            "--with-vendor-vm-bug-url=https://github.com/oracle/graal/issues"
+            "--with-vendor-vm-bug-url=https://github.com/oracle/graal/issues", "--with-extra-cflags=-Wno-error=macro-redefined",  "--with-extra-cxxflags=-Wno-error=vla-cxx-extension"
     progress 'Make jdk'
     exec "make", "CONF_NAME=labsjdk", "graal-builder-image"
 }
