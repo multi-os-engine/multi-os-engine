@@ -23,6 +23,7 @@ import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.provider.Property;
+import org.gradle.api.provider.Provider;
 import org.gradle.internal.reflect.Instantiator;
 import org.gradle.jvm.toolchain.JavaLanguageVersion;
 import org.gradle.jvm.toolchain.JavaLauncher;
@@ -30,6 +31,7 @@ import org.gradle.jvm.toolchain.JavaToolchainService;
 import org.gradle.jvm.toolchain.JvmImplementation;
 import org.gradle.jvm.toolchain.JvmVendorSpec;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
+import org.gradle.util.GradleVersion;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
@@ -124,9 +126,8 @@ public class MoePlugin extends AbstractMoePlugin {
         super.apply(project);
 
         graalVM = project.getObjects().property(GraalVM.class);
-        graalVM.finalizeValueOnRead();
 
-        graalVM.convention(project.provider(() -> {
+        Provider<GraalVM> graalVMProvider = project.provider(() -> {
             if (PropertiesUtil.tryGetProperty(project, MOE_GRAALVM_HOME_PROPERTY) != null) {
                 return new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
             } else {
@@ -138,7 +139,16 @@ public class MoePlugin extends AbstractMoePlugin {
                 }).get();
                 return new GraalVM(launcher.getExecutablePath().getAsFile().getParentFile().getParentFile().toPath());
             }
-        }));
+        });
+
+        if (GradleVersion.current().compareTo(GradleVersion.version("6.1")) >= 0) {
+            graalVM.finalizeValueOnRead();
+            graalVM.convention(graalVMProvider);
+        } else {
+            graalVM.set(graalVMProvider);
+        }
+
+
 
         // Setup explicit archs
         String archsProp = PropertiesUtil.tryGetProperty(project, MOE_ARCHS_PROPERTY);

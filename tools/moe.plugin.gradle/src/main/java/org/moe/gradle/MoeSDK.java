@@ -89,22 +89,20 @@ public class MoeSDK {
                 project.getBuildscript().getConfigurations().getByName("classpath");
         Require.nonNull(classpathConfiguration, "Couldn't find the classpath configuration in the buildscript.");
 
+        final Properties props = new Properties();
+        try {
+            props.load(MoeSDK.class.getResourceAsStream("moe.properties"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         // Check if explicit SDK version is defined.
         String sdkVersion = getMoeSDKVersion(project);
         if (sdkVersion == null) {
             // There's no explicit SDK version, retrieving version
             // from moe.properties.
-            {
-                // Get SDK version from moe.properties
-                final Properties props = new Properties();
-                try {
-                    props.load(MoeSDK.class.getResourceAsStream("moe.properties"));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                sdkVersion = props.getProperty("MOE-SDK-Version");
-            }
-            if (sdkVersion == null || sdkVersion.length() == 0) {
+            sdkVersion = props.getProperty("MOE-SDK-Version");
+            if (sdkVersion == null || sdkVersion.isEmpty()) {
                 throw new GradleException("MOE SDK version is undefined");
             }
 
@@ -113,25 +111,8 @@ public class MoeSDK {
             LOG.info("Using explicit moe-sdk version: {}", sdkVersion);
         }
 
-        // Retrieve and resolve the moe-gradle plugin version.
-        ResolvedArtifact artifact;
-        {
-            Project classpathProject = project;
-            while ((artifact = classpathConfiguration.getResolvedConfiguration().getResolvedArtifacts()
-                    .stream()
-                    .filter(p -> MOE_GRADLE_ARTIFACT_ID.equals(p.getName()))
-                    .findAny()
-                    .orElse(null)) == null) {
-                classpathProject = classpathProject.getParent();
-                if (classpathProject == null) {
-                    break;
-                }
-                classpathConfiguration = classpathProject.getBuildscript().getConfigurations().getByName("classpath");
-                Require.nonNull(classpathConfiguration, "Couldn't find the classpath configuration in the buildscript.");
-            }
-        }
-        Require.nonNull(artifact, "Couldn't find the moe-gradle artifact.");
-        final String pluginVersion = artifact.getModuleVersion().getId().getVersion();
+
+        final String pluginVersion = props.getProperty("MOE-Plugin-Version");
         Require.nonNull(pluginVersion, "Couldn't resolve the version of the moe-gradle artifact.");
         LOG.info("Resolved moe-gradle version: {}", pluginVersion);
 
