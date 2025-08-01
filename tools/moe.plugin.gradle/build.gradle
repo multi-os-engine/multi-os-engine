@@ -67,7 +67,7 @@ dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: '2.4'
     implementation group: 'com.jcraft', name: 'jsch', version: '0.1.53'
 
-    implementation group: 'org.ow2.asm', name: 'asm', version: '9.1'
+    implementation group: 'org.ow2.asm', name: 'asm', version: '9.8'
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
 
     included project(':moe.tools.common')
