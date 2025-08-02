@@ -279,6 +279,12 @@ public class ReflectionCollectionFeature implements Feature {
         access.registerSubtypeReachabilityHandler((duringAnalysisAccess, aClass) -> {
             for (Method method : aClass.getMethods()) {
                 if (!Modifier.isNative(method.getModifiers())) {
+                    // TODO: I feel like this is a native-image bug. The lower check should work just fine
+                    if (method.getName().startsWith("call_")) {
+                        RuntimeReflection.register(method);
+                        RuntimeJNIAccess.register(method);
+                    }
+
                     if (AnnotationAccess.isAnnotationPresent(method, Selector.class)) {
                         RuntimeJNIAccess.register(method);
                         RuntimeReflection.registerAsQueried(method);
