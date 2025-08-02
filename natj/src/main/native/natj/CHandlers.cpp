@@ -136,6 +136,9 @@ void nativeToJavaCallbackHandler(ffi_cif* cif, void* result, void** args,
     LOCK_POINTER(info);
     if (info->cached == false) {
       info->methodId = env->FromReflectedMethod(info->method);
+      if (info->methodId == 0) {
+        failCallbackWithMethod("JNI method", env, info->method);
+      }
       buildInfos(env, info->method, true, &info->paramInfos, &info->returnInfo);
       env->DeleteGlobalRef(info->method);
       info->method = NULL;
