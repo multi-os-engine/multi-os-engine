@@ -28,6 +28,7 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.impl.PtrImplementer;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Mapper for references.
@@ -56,19 +57,19 @@ public class ReferenceMapper implements Mapper {
         Pointer pointer = CRuntime.createStrongPointer(peer, info.owned);
         try {
             synchronized (info) {
-                Constructor<?> constructor;
                 Object[] localData = (Object[]) info.data;
                 if (localData[0] == null) {
+                    PointerConstructor<?> constructor;
                     if (localData[1] == null) {
                         if (OpaquePtr.class.isAssignableFrom(info.type)) {
-                            constructor = getOpaqueConstructor(info.type, Pointer.class);
+                            constructor = getOpaqueConstructor(info.type);
                             localData[1] = constructor;
                         } else {
-                            constructor = getSimpleConstructor(info.type, Pointer.class);
+                            constructor = getSimpleConstructor(info.type);
                             localData[1] = constructor;
                         }
                     } else {
-                        constructor = ((Constructor<?>) localData[1]);
+                        constructor = ((PointerConstructor<?>) localData[1]);
                     }
                     return constructor.newInstance(pointer);
                 } else {
@@ -76,24 +77,24 @@ public class ReferenceMapper implements Mapper {
 
                         ReferenceInfo inf = (ReferenceInfo) localData[0];
                         if (inf.depth() == 1) {
+                            ClassPointerConstructor<?> constructor;
                             // Argument is a Class
                             if (localData[1] == null) {
-                                constructor = getConstructor(inf, info.type, Class.class,
-                                        Pointer.class);
+                                constructor = getConstructorClassPointer(inf.type(), info.type);
                                 localData[1] = constructor;
                             } else {
-                                constructor = ((Constructor<?>) localData[1]);
+                                constructor = ((ClassPointerConstructor<?>) localData[1]);
                             }
                             return constructor.newInstance(inf.type(), pointer);
 
                         } else if (inf.depth() > 1) {
+                            ClassIntPointerConstructor<?> constructor;
                             // Argument is a Class and an int
                             if (localData[1] == null) {
-                                constructor = getConstructor(inf, info.type, Class.class,
-                                        int.class, Pointer.class);
+                                constructor = getConstructorClassIntPointer(info.type);
                                 localData[1] = constructor;
                             } else {
-                                constructor = ((Constructor<?>) localData[1]);
+                                constructor = ((ClassIntPointerConstructor<?>) localData[1]);
                             }
                             return constructor.newInstance(inf.type(), inf.depth(), pointer);
                         } else {
@@ -101,15 +102,15 @@ public class ReferenceMapper implements Mapper {
                         }
 
                     } else if (localData[0] instanceof Class) {
+                        ClassPointerConstructor<?> constructor;
                         // Argument is a Class
                         if (localData[1] == null) {
-                            constructor = getConstructor(null, info.type, Class.class,
-                                    Pointer.class);
+                            constructor = getConstructorClassPointer((Class<?>)localData[0], info.type);
                             localData[1] = constructor;
                         } else {
-                            constructor = ((Constructor<?>) localData[1]);
+                            constructor = ((ClassPointerConstructor<?>) localData[1]);
                         }
-                        return constructor.newInstance(localData[0], pointer);
+                        return constructor.newInstance((Class<?>)localData[0], pointer);
                     }
                 }
             }
@@ -119,26 +120,25 @@ public class ReferenceMapper implements Mapper {
         }
     }
 
-    private Constructor<?> getSimpleConstructor(Class<?> type, Class<?>... args)
-            throws SecurityException, NoSuchMethodException {
-        Class<?> impl = PtrImplementer.primitivePtrTypeMap.get(type);
+    private PointerConstructor<?> getSimpleConstructor(Class<?> type) {
+        PointerConstructor<?> impl = PtrImplementer.primitivePtrTypeMap.get(type);
         if (impl == null) throw new RuntimeException("No matching type found in ptr mapper");
-
-        Constructor<?> constructor = impl.getDeclaredConstructor(args);
-        constructor.setAccessible(true);
-        return constructor;
+        return impl;
     }
 
-    private Constructor<?> getConstructor(ReferenceInfo info, Class<?> type, Class<?>... args)
-            throws SecurityException, NoSuchMethodException {
-        Class<?> impl = PtrImplementer.getImplementer(info, type == ConstPtr.class);
+    private ClassPointerConstructor<?> getConstructorClassPointer(Class<?> infoType, Class<?> type)
+            throws SecurityException {
+        ClassPointerConstructor<?> impl = PtrImplementer.getImplementerClassPointer(infoType, type == ConstPtr.class);
         if (impl == null) throw new RuntimeException("No matching type found in ptr mapper");
-        Constructor<?> constructor = impl.getDeclaredConstructor(args);
-        constructor.setAccessible(true);
-        return constructor;
+        return impl;
     }
 
-    private Constructor<?> getOpaqueConstructor(Class<?> type, Class<?>... args)
+    private ClassIntPointerConstructor<?> getConstructorClassIntPointer(Class<?> type)
+            throws SecurityException {
+        return (ClassIntPointerConstructor<?>)PtrImplementer.getImplementerClassIntPointer(type == ConstPtr.class);
+    }
+
+    private PointerConstructor<?> getOpaqueConstructor(Class<?> type)
             throws SecurityException, NoSuchMethodException {
         Class<?> impl = null;
         for (Class<?> declared : type.getDeclaredClasses()) {
@@ -148,8 +148,26 @@ public class ReferenceMapper implements Mapper {
             }
         }
         if (impl == null) throw new RuntimeException("No matching type found in ptr mapper");
-        Constructor<?> constructor = impl.getDeclaredConstructor(args);
+        Constructor<?> constructor = impl.getDeclaredConstructor(Pointer.class);
         constructor.setAccessible(true);
-        return constructor;
+        return initargs -> {
+            try {
+                return constructor.newInstance(initargs);
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
+        };
+    }
+
+    public interface PointerConstructor<T> {
+        T newInstance(Pointer pointer);
+    }
+
+    public interface ClassPointerConstructor<T> {
+        T newInstance(Class<?> clazz, Pointer pointer);
+    }
+
+    public interface ClassIntPointerConstructor<T> {
+        T newInstance(Class<?> clazz, int i, Pointer pointer);
     }
 }

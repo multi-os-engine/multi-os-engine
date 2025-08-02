@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NLong;
 import org.moe.natj.general.ann.NULong;
 import org.moe.natj.general.ann.WCharT;
+import org.moe.natj.general.map.ReferenceMapper.PointerConstructor;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.CharPtr;
@@ -352,34 +353,17 @@ public class CxxRuntime {
                 return PtrImplementer.getCxxObjectPtr(cls, pointer);
             }
 
-            final Class<?> implClass;
+            final PointerConstructor<?> implClass;
             final Class<?> ptrClass = primitivePtrTypeMap.get(elementClass);
             if (ptrClass != null) {
                 implClass = PtrImplementer.primitivePtrTypeMap.get(ptrClass);
                 if (implClass == null) {
                     throw new RuntimeException("failed to locate impl class");
                 }
+
+                return (ConstVoidPtr)implClass.newInstance(pointer);
             } else {
                 throw new RuntimeException("failed to locate ptr class");
-            }
-            final Constructor<?> constructor;
-            try {
-                constructor = implClass.getDeclaredConstructor(Pointer.class);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            }
-            if (constructor == null) {
-                throw new RuntimeException("failed to locate impl class constructor");
-            }
-            constructor.setAccessible(true);
-            try {
-                return (ConstVoidPtr) constructor.newInstance(pointer);
-            } catch (InstantiationException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
             }
         }
 

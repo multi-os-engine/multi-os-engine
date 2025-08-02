@@ -19,7 +19,9 @@ package org.moe.natj.general.ptr.impl;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.cxx.CxxObject;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.map.ReferenceMapper.ClassIntPointerConstructor;
+import org.moe.natj.general.map.ReferenceMapper.ClassPointerConstructor;
+import org.moe.natj.general.map.ReferenceMapper.PointerConstructor;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.CharPtr;
@@ -62,40 +64,40 @@ public class PtrImplementer {
 
     }
 
-    public static final Map<Class<?>, Class<?>> primitivePtrTypeMap;
+    public static final Map<Class<?>, PointerConstructor<?>> primitivePtrTypeMap;
 
     static {
-        HashMap<Class<?>, Class<?>> ptrMap = new HashMap<Class<?>, Class<?>>(32);
-        ptrMap.put(ConstVoidPtr.class, VoidPtrImpl.ConstVoidPtrImpl.class);
-        ptrMap.put(VoidPtr.class, VoidPtrImpl.class);
-        ptrMap.put(ConstCharPtr.class, CharPtrImpl.ConstCharPtrImpl.class);
-        ptrMap.put(CharPtr.class, CharPtrImpl.class);
-        ptrMap.put(ConstBoolPtr.class, BoolPtrImpl.ConstBoolPtrImpl.class);
-        ptrMap.put(BoolPtr.class, BoolPtrImpl.class);
-        ptrMap.put(ConstBytePtr.class, BytePtrImpl.ConstBytePtrImpl.class);
-        ptrMap.put(BytePtr.class, BytePtrImpl.class);
-        ptrMap.put(ConstShortPtr.class, ShortPtrImpl.ConstShortPtrImpl.class);
-        ptrMap.put(ShortPtr.class, ShortPtrImpl.class);
-        ptrMap.put(ConstIntPtr.class, IntPtrImpl.ConstIntPtrImpl.class);
-        ptrMap.put(IntPtr.class, IntPtrImpl.class);
-        ptrMap.put(ConstLongPtr.class, LongPtrImpl.ConstLongPtrImpl.class);
-        ptrMap.put(LongPtr.class, LongPtrImpl.class);
-        ptrMap.put(ConstFloatPtr.class, FloatPtrImpl.ConstFloatPtrImpl.class);
-        ptrMap.put(FloatPtr.class, FloatPtrImpl.class);
-        ptrMap.put(ConstDoublePtr.class, DoublePtrImpl.ConstDoublePtrImpl.class);
-        ptrMap.put(DoublePtr.class, DoublePtrImpl.class);
-        ptrMap.put(ConstNFloatPtr.class, NFloatPtrImpl.ConstNFloatPtrImpl.class);
-        ptrMap.put(NFloatPtr.class, NFloatPtrImpl.class);
-        ptrMap.put(ConstNUIntPtr.class, NUIntPtrImpl.ConstNUIntPtrImpl.class);
-        ptrMap.put(NUIntPtr.class, NUIntPtrImpl.class);
-        ptrMap.put(ConstNIntPtr.class, NIntPtrImpl.ConstNIntPtrImpl.class);
-        ptrMap.put(NIntPtr.class, NIntPtrImpl.class);
-        ptrMap.put(ConstNULongPtr.class, NULongPtrImpl.ConstNULongPtrImpl.class);
-        ptrMap.put(NULongPtr.class, NULongPtrImpl.class);
-        ptrMap.put(ConstNLongPtr.class, NLongPtrImpl.ConstNLongPtrImpl.class);
-        ptrMap.put(NLongPtr.class, NLongPtrImpl.class);
-        ptrMap.put(ConstWCharTPtr.class, WCharTPtrImpl.ConstWCharTPtrImpl.class);
-        ptrMap.put(WCharTPtr.class, WCharTPtrImpl.class);
+        HashMap<Class<?>, PointerConstructor<?>> ptrMap = new HashMap<>(32);
+        ptrMap.put(ConstVoidPtr.class, VoidPtrImpl.ConstVoidPtrImpl::new);
+        ptrMap.put(VoidPtr.class, VoidPtrImpl::new);
+        ptrMap.put(ConstCharPtr.class, CharPtrImpl.ConstCharPtrImpl::new);
+        ptrMap.put(CharPtr.class, CharPtrImpl::new);
+        ptrMap.put(ConstBoolPtr.class, BoolPtrImpl.ConstBoolPtrImpl::new);
+        ptrMap.put(BoolPtr.class, BoolPtrImpl::new);
+        ptrMap.put(ConstBytePtr.class, BytePtrImpl.ConstBytePtrImpl::new);
+        ptrMap.put(BytePtr.class, BytePtrImpl::new);
+        ptrMap.put(ConstShortPtr.class, ShortPtrImpl.ConstShortPtrImpl::new);
+        ptrMap.put(ShortPtr.class, ShortPtrImpl::new);
+        ptrMap.put(ConstIntPtr.class, IntPtrImpl.ConstIntPtrImpl::new);
+        ptrMap.put(IntPtr.class, IntPtrImpl::new);
+        ptrMap.put(ConstLongPtr.class, LongPtrImpl.ConstLongPtrImpl::new);
+        ptrMap.put(LongPtr.class, LongPtrImpl::new);
+        ptrMap.put(ConstFloatPtr.class, FloatPtrImpl.ConstFloatPtrImpl::new);
+        ptrMap.put(FloatPtr.class, FloatPtrImpl::new);
+        ptrMap.put(ConstDoublePtr.class, DoublePtrImpl.ConstDoublePtrImpl::new);
+        ptrMap.put(DoublePtr.class, DoublePtrImpl::new);
+        ptrMap.put(ConstNFloatPtr.class, NFloatPtrImpl.ConstNFloatPtrImpl::new);
+        ptrMap.put(NFloatPtr.class, NFloatPtrImpl::new);
+        ptrMap.put(ConstNUIntPtr.class, NUIntPtrImpl.ConstNUIntPtrImpl::new);
+        ptrMap.put(NUIntPtr.class, NUIntPtrImpl::new);
+        ptrMap.put(ConstNIntPtr.class, NIntPtrImpl.ConstNIntPtrImpl::new);
+        ptrMap.put(NIntPtr.class, NIntPtrImpl::new);
+        ptrMap.put(ConstNULongPtr.class, NULongPtrImpl.ConstNULongPtrImpl::new);
+        ptrMap.put(NULongPtr.class, NULongPtrImpl::new);
+        ptrMap.put(ConstNLongPtr.class, NLongPtrImpl.ConstNLongPtrImpl::new);
+        ptrMap.put(NLongPtr.class, NLongPtrImpl::new);
+        ptrMap.put(ConstWCharTPtr.class, WCharTPtrImpl.ConstWCharTPtrImpl::new);
+        ptrMap.put(WCharTPtr.class, WCharTPtrImpl::new);
         primitivePtrTypeMap = Collections.unmodifiableMap(ptrMap);
     }
 
@@ -130,35 +132,41 @@ public class PtrImplementer {
      * @param isConst Is Constant pointer
      * @return Class of pointer implementation
      */
-    public static final Class<?> getImplementer(ReferenceInfo info, boolean isConst) {
-        if (info != null && info.depth() == 1) {
-            if (StructObject.class.isAssignableFrom(info.type())) {
-                if (isConst) {
-                    return StructPtrImpl.ConstStructPtrImpl.class;
-                } else {
-                    return StructPtrImpl.class;
-                }
-            } else if (ObjCObject.class.isAssignableFrom(info.type())) {
-                if (isConst) {
-                    return ObjCObjectPtrImpl.ConstObjCObjectPtrImpl.class;
-                } else {
-                    return ObjCObjectPtrImpl.class;
-                }
-            } else if (CxxObject.class.isAssignableFrom(info.type())) {
-                if (isConst) {
-                    return CxxObjectPtrImpl.ConstCxxObjectPtrImpl.class;
-                } else {
-                    return CxxObjectPtrImpl.class;
-                }
-            }
-        } else {
+    public static final ClassPointerConstructor getImplementerClassPointer(Class<?> type, boolean isConst) {
+        if (StructObject.class.isAssignableFrom(type)) {
             if (isConst) {
-                return IndirectPtrImpl.ConstIndirectPtrImpl.class;
+                return StructPtrImpl.ConstStructPtrImpl::new;
             } else {
-                return IndirectPtrImpl.class;
+                return StructPtrImpl::new;
+            }
+        } else if (ObjCObject.class.isAssignableFrom(type)) {
+            if (isConst) {
+                return ObjCObjectPtrImpl.ConstObjCObjectPtrImpl::new;
+            } else {
+                return ObjCObjectPtrImpl::new;
+            }
+        } else if (CxxObject.class.isAssignableFrom(type)) {
+            if (isConst) {
+                return CxxObjectPtrImpl.ConstCxxObjectPtrImpl::new;
+            } else {
+                return CxxObjectPtrImpl::new;
             }
         }
+
         return null;
     }
 
+    /**
+     * Returns implementation for the given reference kind.
+     *
+     * @param isConst Is Constant pointer
+     * @return Class of pointer implementation
+     */
+    public static final ClassIntPointerConstructor getImplementerClassIntPointer(boolean isConst) {
+        if (isConst) {
+            return IndirectPtrImpl.ConstIndirectPtrImpl::new;
+        } else {
+            return IndirectPtrImpl::new;
+        }
+    }
 }
