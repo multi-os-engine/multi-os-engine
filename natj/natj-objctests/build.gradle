@@ -25,34 +25,14 @@ targetCompatibility = "1.8"
 
 dependencies {
     testImplementation 'junit:junit:[4,)'
-    implementation rootProject
-    testImplementation files(System.getProperty("java.home") + "/../lib/tools.jar")
+    implementation project(":")
 }
 
-task processTestsClasses(type: JavaExec) {
-    dependsOn(sourceSets.test.output)
-
-    args '-Dretrolambda.inputDir=build/classes/test'
-    args "-Dretrolambda.classpath=build/classes/test:../build/libs/natj-${version}.jar"
-    args '-Dretrolambda.defaultMethods=true'
-    args '-Dretrolambda.natjSupport=true'
-    args '-Dretrolambda.outputDir=build/classes/processedTestClasses'
-    main '-jar'
-    args 'tools/retrolambda-2.0.2.jar'
-
-    inputs.files('build/classes/test')
-    outputs.files('build/classes/processedTestClasses')
-}
-
-tasks.withType(Test) {
+test {
     def nativeConfiguration = 'Release'
-    dependsOn tasks.processTestsClasses, ":natj-mac:build_TestClassesObjC_${nativeConfiguration}_macosx"
+    dependsOn ":natj-mac:build_TestClassesObjC_${nativeConfiguration}_macosx"
 
-    doFirst {
-        sourceSets.test.output.classesDir = 'build/classes/processedTestClasses'
-    }
     systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
-    testClassesDirs = processTestsClasses.outputs.files
     testLogging.showStandardStreams = true
     if (rootProject.hasProperty("moe.use.addresssanitizer")) {
         environment['DYLD_INSERT_LIBRARIES'] = '/Applications/Xcode.app/Contents/Developer/Toolchains/' +
