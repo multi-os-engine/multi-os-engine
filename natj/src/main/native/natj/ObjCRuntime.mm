@@ -427,8 +427,13 @@ void Java_org_moe_natj_objc_ObjCRuntime_releaseAutoreleasePool(JNIEnv* env,
 jstring Java_org_moe_natj_objc_ObjCRuntime_createJavaString(JNIEnv* env,
                                                                 jclass clazz,
                                                                 jlong address) {
-  const char* cStr = [reinterpret_cast<NSString*>(address) UTF8String];
-  return env->NewStringUTF(cStr);
+  NSString* nsStr = reinterpret_cast<NSString*>(address);
+  NSUInteger length = [nsStr length];
+  unichar* buffer = (unichar*)malloc(length * sizeof(unichar));
+  [nsStr getCharacters:buffer range:NSMakeRange(0, length)];
+  jstring result = env->NewString((const jchar*)buffer, length);
+  free(buffer);
+  return result;
 }
 
 @interface _NatJObjCCastProxy : NSObject
@@ -497,9 +502,10 @@ jlong Java_org_moe_natj_objc_ObjCRuntime_getObjCCastProxyPeer(JNIEnv* env,
 
 jlong Java_org_moe_natj_objc_ObjCRuntime_createNativeString(
     JNIEnv* env, jclass clazz, jstring string) {
-  const char* cStr = env->GetStringUTFChars(string, NULL);
-  NSString* str = [[NSString alloc] initWithUTF8String:cStr];
-  env->ReleaseStringUTFChars(string, cStr);
+  const jchar* chars = env->GetStringChars(string, NULL);
+  jsize length = env->GetStringLength(string);
+  NSString* str = [[NSString alloc] initWithCharacters:(const unichar*)chars length:length];
+  env->ReleaseStringChars(string, chars);
   return reinterpret_cast<jlong>(str);
 }
 

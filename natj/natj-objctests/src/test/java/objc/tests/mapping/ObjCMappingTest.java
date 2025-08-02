@@ -22,10 +22,14 @@ import apple.foundation.NSMutableSet;
 import objc.binding.MappingClass;
 import org.junit.Assert;
 import org.junit.Test;
+import org.moe.natj.objc.ObjCRuntime;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class ObjCMappingTest {
 
@@ -90,6 +94,14 @@ public class ObjCMappingTest {
 
         long count = MappingClass.testIteratorMapping(set.iterator());
         Assert.assertEquals(count, 3 + "apple".length() + "pear".length() + "melon".length());
+    }
+
+    @Test
+    public void test_stringMapping()  {
+        String string = "\ud83e\uddd1 ? - 0";
+        long encoded = ObjCRuntime.createNativeString(string);
+        assertNotEquals(0, encoded);
+        assertEquals(string, ObjCRuntime.createJavaString(encoded));
     }
 
 }
