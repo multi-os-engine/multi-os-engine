@@ -103,8 +103,14 @@ def getSDKCopySpec() {
         into('sdk/iphoneos/MOE.framework') {
             from files(rootProject.external.moe_core.out.iphoneos_MOE_framework)
         }
+        into('sdk/iphoneos/MOE.framework.dSYM') {
+            from files(rootProject.external.moe_core.out.iphoneos_MOE_framework_dsym)
+        }
         into('sdk/iphonesimulator/MOE.framework') {
             from files(rootProject.external.moe_core.out.iphonesimulator_MOE_framework)
+        }
+        into('sdk/iphonesimulator/MOE.framework.dSYM') {
+            from files(rootProject.external.moe_core.out.iphonesimulator_MOE_framework_dsym)
         }
         into('tools') {
             from files(rootProject.external.moe_core.out.dex2oat_exec.parentFile) {

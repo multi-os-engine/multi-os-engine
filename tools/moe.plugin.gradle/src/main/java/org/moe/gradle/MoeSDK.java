@@ -363,7 +363,9 @@ public class MoeSDK {
 
             if (!isLocalSDK) {
                 validate(DIR, path, "sdk/iphoneos/MOE.framework");
+                validate(DIR, path, "sdk/iphoneos/MOE.framework.dSYM");
                 validate(DIR, path, "sdk/iphonesimulator/MOE.framework");
+                validate(DIR, path, "sdk/iphonesimulator/MOE.framework.dSYM");
             }
 
             validate(FIL | EXE, path, "tools/dex2oat");

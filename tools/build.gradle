@@ -111,10 +111,14 @@ ext {
     }
     if (project.hasProperty('moe.moe_core.sdk.debug')) {
         external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/MOE.framework")
+        external.moe_core.out.iphoneos_MOE_framework_dsym = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/MOE.framework.dSYM")
         external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/MOE.framework")
+        external.moe_core.out.iphonesimulator_MOE_framework_dsym = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/MOE.framework.dSYM")
     } else {
         external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/MOE.framework")
+        external.moe_core.out.iphoneos_MOE_framework_dsym = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/MOE.framework.dSYM")
         external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/MOE.framework")
+        external.moe_core.out.iphonesimulator_MOE_framework_dsym = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/MOE.framework.dSYM")
     }
 }
 
