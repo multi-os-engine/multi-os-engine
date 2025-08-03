@@ -25,11 +25,12 @@ import com.sun.source.util.Plugin;
 import com.sun.source.util.TaskEvent;
 import com.sun.source.util.TaskListener;
 import com.sun.source.util.TreeScanner;
-import com.sun.tools.javac.util.Context;
-import com.sun.tools.javac.util.Names;
 import com.sun.tools.javac.api.BasicJavacTask;
 import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.tree.TreeMaker;
+import com.sun.tools.javac.util.Context;
+import com.sun.tools.javac.util.List;
+import com.sun.tools.javac.util.Names;
 
 public class StaticLoad implements Plugin {
 
@@ -55,6 +56,15 @@ public class StaticLoad implements Plugin {
         // Using a TreeScanner might be somewhat simpler, but would not be as precise.
         CompilationUnitTree compilationUnitTree = taskEvent.getCompilationUnit();
         if (compilationUnitTree != null) {
+          // Add @Deprecated annotations to all class declarations
+          if (shouldDeprecateCU(compilationUnitTree)) {
+            compilationUnitTree
+                    .getTypeDecls()
+                    .stream()
+                    .filter(decl -> decl instanceof JCTree.JCClassDecl)
+                    .forEach(decl -> addDeprecatedAnnotation((JCTree.JCClassDecl) decl));
+          }
+
           compilationUnitTree
               .getTypeDecls()
               .stream()
@@ -71,6 +81,46 @@ public class StaticLoad implements Plugin {
       }
 
     });
+  }
+
+  private boolean shouldDeprecateCU(CompilationUnitTree compilationUnit) {
+    String packageName = "";
+    if (compilationUnit.getPackageName() != null) {
+      packageName = compilationUnit.getPackageName().toString();
+    }
+
+    if (packageName.startsWith("java."))
+      return false;
+    if (packageName.startsWith("javax."))
+      return false;
+    if (packageName.startsWith("org.moe"))
+      return false;
+    if (packageName.startsWith("org.w3c."))
+      return false;
+    if (packageName.startsWith("org.xml."))
+      return false;
+    if (packageName.startsWith("SQLite"))
+      return false;
+
+    return true;
+  }
+
+  private void addDeprecatedAnnotation(JCTree.JCClassDecl classDecl) {
+    boolean hasDeprecated = classDecl.mods.annotations.stream()
+            .anyMatch(annotation -> {
+              if (annotation != null) {
+                  return annotation.annotationType.toString().equals("Deprecated") ||
+                        annotation.annotationType.toString().equals("java.lang.Deprecated");
+              }
+              return false;
+            });
+
+    if (!hasDeprecated) {
+      JCTree.JCIdent deprecatedIdent = maker.Ident(names.fromString("Deprecated"));
+      JCTree.JCAnnotation deprecatedAnnotation = maker.Annotation(deprecatedIdent, List.nil());
+
+      classDecl.mods.annotations = classDecl.mods.annotations.prepend(deprecatedAnnotation);
+    }
   }
 
   private static StaticLoadScanner scanner = new StaticLoadScanner();
