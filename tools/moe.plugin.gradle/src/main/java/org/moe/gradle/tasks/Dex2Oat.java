@@ -35,6 +35,8 @@ import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,8 +44,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Dex2Oat extends AbstractBaseTask {
 
@@ -56,6 +61,7 @@ public class Dex2Oat extends AbstractBaseTask {
     private static final String CONVENTION_COMPILER_BACKEND = "compilerBackend";
     private static final String CONVENTION_DEST_IMAGE_FILE = "destImageFile";
     private static final String CONVENTION_DEST_OAT_FILE = "destOatFile";
+    private static final String CONVENTION_RUNTIME_ARGS = "runtimeArgs";
 
     private static final String BACKEND_QUICK = "Quick";
     private static final String BACKEND_OPTIMIZING = "Optimizing";
@@ -160,6 +166,20 @@ public class Dex2Oat extends AbstractBaseTask {
     }
 
     @Nullable
+    private List<String> runtimeArgs;
+
+    @Input
+    @NotNull
+    public List<String> getRuntimeArgs() {
+        return getOrConvention(runtimeArgs, CONVENTION_RUNTIME_ARGS);
+    }
+
+    @IgnoreUnused
+    public void setRuntimeArgs(@Nullable List<String> runtimeArgs) {
+        this.runtimeArgs = runtimeArgs;
+    }
+
+    @Nullable
     private Object destImageFile;
 
     @OutputFile
@@ -254,9 +274,12 @@ public class Dex2Oat extends AbstractBaseTask {
                 optionalRosetta = "arch --x86_64 ";
             }
 
+            String runtimeArgs = getRuntimeArgs().stream().map(s -> "-runtime-arg " + s).collect(Collectors.joining(" "));
+
             remoteServer.exec("dex2oat", optionalRosetta + dex2oatExec + " " +
                     "--instruction-set=" + Arch.validateArchFamily(getArchFamily()) + " " +
                     "--base=0x" + Long.toHexString(getBase()) + " " +
+                    runtimeArgs +
                     "--compiler-backend=" + validateBackend(getCompilerBackend()) + " " +
                     (getEmitDebugInfo() ? "--generate-debug-info" : "--no-generate-debug-info") + " " +
                     "--image=" + remoteDestArt + " " +
@@ -286,6 +309,7 @@ public class Dex2Oat extends AbstractBaseTask {
                 // Set target options
                 spec.args("--instruction-set=" + Arch.validateArchFamily(getArchFamily()));
                 spec.args("--base=0x" + Long.toHexString(getBase()));
+                getRuntimeArgs().forEach(s ->  spec.args("--runtime-arg", s));
 
                 // Set compiler backend
                 spec.args("--compiler-backend=" + validateBackend(getCompilerBackend()));
@@ -371,6 +395,7 @@ public class Dex2Oat extends AbstractBaseTask {
         addConvention(CONVENTION_DEST_IMAGE_FILE, () -> resolvePathInBuildDir(out, "image.art"));
         addConvention(CONVENTION_DEST_OAT_FILE, () -> resolvePathInBuildDir(out, "application.oat"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "Dex2Oat.log"));
+        addConvention(CONVENTION_RUNTIME_ARGS, () -> Collections.singletonList("-Xmx256m"));
     }
 
     private static String validateBackend(@NotNull String name) {
